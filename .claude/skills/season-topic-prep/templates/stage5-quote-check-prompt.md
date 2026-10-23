@@ -45,16 +45,27 @@ Answer four questions. Each is true or false; there is no "mostly".
 3. **`on_topic`** — Codebook V2. The passage is about {{TOPIC_NAME}} as the question asks it, not a neighbouring
    subject.
 4. **`names_party`** — The passage (or, for a local record, the passage and the `note` shown with it) names a
-   political party or uses a party's name as a label for people. "Democratic process" is not a party name;
-   "the Democrats", "Republican leaders", "the GOP" are.
+   political party, uses a party's name as a label for people, or uses a party colour as a label ("red states",
+   "a blue district"). "Democratic process" is not a party name; "the Democrats", "Democratic lawmakers",
+   "Republican leaders", "the GOP" are.
+5. **`fair_summary`** — Local records only; leave it out for own words. For a local record, voters see the
+   finding's `note`, not the page. True only when the note says what the page shows the person did, and nothing
+   more, in plain words, with no adjectives about the person.
 
-`verdict` is `"passed"` only when `on_page`, `own_words` and `on_topic` are all true and `names_party` is false.
+Also record **`shown_sha256`**: the sha256 of the exact text voters will see, character for character. For own
+words that is the `passage`; for a local record it is the `note`. Compute it with `shownSha256` in
+`backend/scripts/lib/stage5QuoteCheck.ts`, for example
+`node -e "process.stdout.write(require('crypto').createHash('sha256').update(process.argv[1]).digest('hex'))" "<text>"`.
+If that text changes later, the check no longer counts.
+
+`verdict` is `"passed"` only when `on_page`, `own_words` and `on_topic` are all true, `names_party` is false, and
+(for a local record) `fair_summary` is true.
 Anything else is `"failed"`. The schema refuses a `passed` line that breaks this rule.
 
 ## Output — one line per finding, appended to quote-checks.jsonl
 
 ```json
-{"finding_id":"<64-hex id>","politician_id":"…","topic_key":"{{TOPIC_KEY}}","verdict":"passed","on_page":true,"own_words":true,"on_topic":true,"names_party":false,"reason":"…","checker":"stage5-quote-checker","at":"<ISO timestamp>"}
+{"finding_id":"<64-hex id>","politician_id":"…","topic_key":"{{TOPIC_KEY}}","verdict":"passed","on_page":true,"own_words":true,"on_topic":true,"names_party":false,"shown_sha256":"<64-hex>","reason":"…","checker":"stage5-quote-checker","at":"<ISO timestamp>"}
 ```
 
 `reason` is one or two plain sentences: where on the page the words are and why they are the person's own and on

@@ -1,8 +1,8 @@
 import { describe, it, expect } from 'vitest';
 import { parse } from 'csv-parse/sync';
-import { applyBatch, assertDraftSeason, blankReasonFor, planBatch } from './stage5Write.js';
+import { applyBatch, applyBlocker, assertDraftSeason, blankReasonFor, planBatch } from './stage5Write.js';
 import type { Stage5Code } from './stage5Code.js';
-import type { QuoteCheck } from './stage5QuoteCheck.js';
+import { shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
 import { findingId, type Finding, type PersonFindings } from './sourceStore.js';
 
 const PID = '11111111-1111-4111-8111-111111111111';
@@ -29,8 +29,9 @@ const code = (over: Partial<Stage5Code>): Stage5Code => ({
 
 const check = (f: Finding, over: Partial<QuoteCheck> = {}): QuoteCheck => ({
   finding_id: f.id, politician_id: PID, topic_key: 'voting-rights', verdict: 'passed', on_page: true, own_words: true,
-  on_topic: true, names_party: false, reason: 'On the page; their words; on topic.', checker: 'stage5-quote-checker',
-  at: '2026-10-22T01:00:00Z', ...over,
+  on_topic: true, names_party: false, shown_sha256: shownSha256(f.kind === 'own-words' ? f.passage! : f.note),
+  ...(f.local_record ? { fair_summary: true } : {}),
+  reason: 'On the page; their words; on topic.', checker: 'stage5-quote-checker', at: '2026-10-22T01:00:00Z', ...over,
 });
 
 const names = new Map([[PID, 'Jane Doe'], [PID2, 'John Roe']]);
@@ -56,7 +57,7 @@ describe('planBatch', () => {
     const r = plan([code({})], [person(PID, [words])], [check(words, { verdict: 'failed', on_page: false, reason: 'Not on the page.' })]);
     expect(r.outcomes).toHaveLength(1);
     expect(r.passages).toEqual([]);
-    expect(r.refused).toEqual([{ politician_id: PID, reason: expect.stringMatching(/quote check failed.*Not on the page/) }]);
+    expect(r.refused).toEqual([{ politician_id: PID, kind: 'passage', reason: expect.stringMatching(/quote check failed.*Not on the page/) }]);
   });
 
   it('no check at all refuses the passage', () => {
@@ -92,6 +93,30 @@ describe('planBatch', () => {
       ['local-record', 'Voted for a resolution adding two polling places.'],
     ]);
     expect(r.refused).toEqual([]);
+  });
+
+  it('a check of different text does not count: the shown text must hash to what was checked', () => {
+    const r = plan([code({})], [person(PID, [words])], [check(words, { shown_sha256: shownSha256('Some other text.') })]);
+    expect(r.passages).toEqual([]);
+    expect(r.refused[0].reason).toMatch(/text changed since its quote check/);
+  });
+
+  it('a local record needs a fair-summary check', () => {
+    const r = plan([code({ finding_ids: [words.id, local.id], evidence_basis: 'joint' })], [person(PID, [words, local])], [check(words), check(local, { fair_summary: undefined })]);
+    expect(r.passages.map((p) => p.kind)).toEqual(['own-words']);
+    expect(r.refused[0].reason).toMatch(/fair summary/);
+  });
+
+  it('a local record is never shown alone: with no own words left it is refused', () => {
+    const r = plan([code({ finding_ids: [words.id, local.id], evidence_basis: 'joint' })], [person(PID, [words, local])], [check(local)]);
+    expect(r.passages).toEqual([]);
+    expect(r.refused.map((x) => x.reason)).toEqual([expect.stringMatching(/no quote check/), expect.stringMatching(/never shown alone/)]);
+    expect(r.outcomes).toHaveLength(1);
+  });
+
+  it('tags a refused code apart from a refused passage', () => {
+    const r = plan([code({ open_note: '' }), code({ politician_id: PID2 })], [person(PID, [words]), person(PID2, [words])], []);
+    expect(r.refused.map((x) => [x.politician_id, x.kind])).toEqual([[PID, 'code'], [PID2, 'passage']]);
   });
 
   it('no-stance → outcome only, no passages', () => {
@@ -209,5 +234,15 @@ describe('applyBatch', () => {
   it('refuses a plan for another season', async () => {
     const { q } = fake();
     await expect(applyBatch(q, p(), '44444444-4444-4444-8444-444444444444')).rejects.toThrow(/season/);
+  });
+});
+
+describe('applyBlocker', () => {
+  it('blocks --apply while any code is refused, so an earlier write is never left stale', () => {
+    const r = plan([code({ open_note: '' })], [person(PID, [words])], []);
+    expect(applyBlocker(r)).toMatch(/1 code.*refused/);
+  });
+  it('lets passage refusals through: those passages stay off the page', () => {
+    expect(applyBlocker(plan([code({})], [person(PID, [words])], []))).toBeNull();
   });
 });

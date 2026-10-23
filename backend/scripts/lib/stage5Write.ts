@@ -9,7 +9,10 @@
  *   - `researchCsv` — seats and blanks for the existing pipeline (stance-gate.ts → verify-stance-research.ts
  *     --season draft), so stanceGate, decidePublish and the pre-write audit still run. An own-words seat is
  *     `statement` evidence, so it keeps the `statement-evidence` hold (RULINGS.md "Stage 5 rulings").
- *   - `refused` — codes not written at all, and passages kept off the page, each with the reason.
+ *   - `refused` — codes not written at all (`kind: 'code'`), and passages kept off the page (`kind: 'passage'`).
+ *     A local record is shown only beside at least one shown own-words passage (spec §8), and only when its
+ *     check also confirmed the plain-words note is a fair summary. Every check must cover the exact text
+ *     stored (`shown_sha256`), so text changed after its check has no check.
  *   - `notInCsv` — blanks whose Stage 5 detail maps to no single codebook V6 reason: their outcome row is
  *     written, but the research.csv row is left for the runner to add by hand.
  *
@@ -19,7 +22,7 @@
 import { stringify } from 'csv-stringify/sync';
 import type { BlankReason } from '../../src/lib/blankReasons.js';
 import { checkCode, type Stage5Code } from './stage5Code.js';
-import { namesParty, type QuoteCheck } from './stage5QuoteCheck.js';
+import { namesParty, shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
 import type { SeasonTarget } from './seasonTarget.js';
 import type { Finding, PersonFindings } from './sourceStore.js';
 
@@ -47,14 +50,15 @@ export type PassageRow = {
   quote_checker: string;
 };
 
-export type Refusal = { politician_id: string; reason: string };
+/** `code`: the whole code was not written. `passage`: one passage kept off the page; the outcome is still written. */
+export type Refusal = { politician_id: string; kind: 'code' | 'passage'; reason: string };
 
 export type BatchPlan = {
   outcomes: OutcomeRow[];
   passages: PassageRow[];
   researchCsv: string;
   refused: Refusal[];
-  notInCsv: Refusal[];
+  notInCsv: { politician_id: string; reason: string }[];
 };
 
 /** Stage 5 writes only to the draft season (Global Constraints). */
@@ -99,13 +103,14 @@ export function planBatch(
   const outcomes: OutcomeRow[] = [];
   const passages: PassageRow[] = [];
   const refused: Refusal[] = [];
-  const notInCsv: Refusal[] = [];
+  const notInCsv: { politician_id: string; reason: string }[] = [];
   const csvRows: { full_name: string; topic_key: string; value: number; reasoning: string; evidence_type: string; blank_reason: string; urls: string[] }[] = [];
   const seen = new Set<string>();
 
   for (const code of codes) {
     const pid = code.politician_id;
-    const refuse = (reason: string) => refused.push({ politician_id: pid, reason });
+    const refuse = (reason: string) => refused.push({ politician_id: pid, kind: 'code', reason });
+    const keepOff = (reason: string) => refused.push({ politician_id: pid, kind: 'passage', reason });
     if (code.season_id !== opts.seasonId) { refuse(`coded for season ${code.season_id}, not the draft season ${opts.seasonId}`); continue; }
     const key = `${pid} ${code.topic_key}`;
     if (seen.has(key)) { refuse(`more than one code for ${code.topic_key}; keep one`); continue; }
@@ -125,21 +130,33 @@ export function planBatch(
 
     const checkers = new Set<string>();
     if (code.outcome === 'doesnt-fit') {
+      const shownHere: { row: PassageRow; checker: string }[] = [];
       for (const f of cited) {
         const kind = shownKind(f);
         if (!kind) continue;
         const shown = kind === 'own-words' ? f.passage! : f.note;
         const c = newestCheck(checks, f, code);
         const label = `finding ${f.id.slice(0, 12)}…`;
-        if (!c) { refuse(`${label}: no quote check on file; kept off the page`); continue; }
-        if (c.verdict !== 'passed') { refuse(`${label}: quote check failed (${c.reason}); kept off the page`); continue; }
-        if (namesParty(shown) || (f.passage && namesParty(f.passage))) { refuse(`${label}: names a party; never shown, never edited`); continue; }
-        checkers.add(c.checker);
-        passages.push({
-          politician_id: pid, topic_key: code.topic_key, season_id: code.season_id, finding_id: f.id, kind,
-          passage: shown, source_url: f.url, source_date: isDate(f.date) ? f.date : null,
-          source_date_precision: f.date_precision, quote_check: 'passed', quote_checked_at: c.at, quote_checker: c.checker,
+        if (!c) { keepOff(`${label}: no quote check on file; kept off the page`); continue; }
+        if (c.verdict !== 'passed') { keepOff(`${label}: quote check failed (${c.reason}); kept off the page`); continue; }
+        if (c.shown_sha256 !== shownSha256(shown)) { keepOff(`${label}: text changed since its quote check; check it again`); continue; }
+        if (kind === 'local-record' && c.fair_summary !== true) { keepOff(`${label}: a local record needs its check to confirm the note is a fair summary`); continue; }
+        if (namesParty(shown) || (f.passage && namesParty(f.passage))) { keepOff(`${label}: names a party; never shown, never edited`); continue; }
+        shownHere.push({
+          checker: c.checker,
+          row: {
+            politician_id: pid, topic_key: code.topic_key, season_id: code.season_id, finding_id: f.id, kind,
+            passage: shown, source_url: f.url, source_date: isDate(f.date) ? f.date : null,
+            source_date_precision: f.date_precision, quote_check: 'passed', quote_checked_at: c.at, quote_checker: c.checker,
+          },
         });
+      }
+      // A local record supports their own words; it is never shown alone (spec §8).
+      const ownWordsShown = shownHere.some((x) => x.row.kind === 'own-words');
+      for (const x of shownHere) {
+        if (!ownWordsShown) { keepOff(`finding ${x.row.finding_id.slice(0, 12)}…: a local record is never shown alone, and none of their own words passed`); continue; }
+        checkers.add(x.checker);
+        passages.push(x.row);
       }
     }
 
@@ -227,4 +244,14 @@ export async function applyBatch(q: Query, plan: BatchPlan, seasonId: string): P
     throw err;
   }
   return { outcomes: plan.outcomes.length, passages: plan.passages.length };
+}
+
+/**
+ * Why `--apply` must not run, or null. A refused code is never written, so its person's earlier outcome and
+ * passages would stay live from the last write; the codes are fixed first. Refused passages do not block:
+ * they stay off the page because the person's passages are replaced whole.
+ */
+export function applyBlocker(plan: BatchPlan): string | null {
+  const n = plan.refused.filter((r) => r.kind === 'code').length;
+  return n ? `${n} code(s) refused: fix them and dry-run again before --apply (an earlier write for those people would stay live)` : null;
 }
