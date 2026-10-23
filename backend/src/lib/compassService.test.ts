@@ -583,3 +583,16 @@ describe('getCandidateResearchStates — via race_candidates.politician_id', () 
     expect(mockQuery.mock.calls[1][1]).toEqual(['p9']);
   });
 });
+
+// CA_0322 lands by hand after the early check; the route ships first. Until the table exists the read is
+// empty, not a 500 on every profile.
+describe('getResearchStates before CA_0322 is applied', () => {
+  it('returns [] when the outcomes table does not exist yet (42P01)', async () => {
+    mockQuery.mockRejectedValueOnce(Object.assign(new Error('relation "inform.topic_research_outcomes" does not exist'), { code: '42P01' }));
+    expect(await getResearchStates('p1')).toEqual([]);
+  });
+  it('still throws any other error', async () => {
+    mockQuery.mockRejectedValueOnce(Object.assign(new Error('boom'), { code: '57014' }));
+    await expect(getResearchStates('p1')).rejects.toThrow('boom');
+  });
+});
