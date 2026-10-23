@@ -94,6 +94,11 @@ describe('Stage5CodeSchema', () => {
     const r = Stage5CodeSchema.safeParse(rest);
     expect(r.success && r.data.tags).toEqual([]);
   });
+  it('reads a missing finding_ids list as none cited', () => {
+    const { finding_ids: _f, ...rest } = code({ outcome: 'no-stance', value: undefined, evidence_basis: undefined });
+    const r = Stage5CodeSchema.safeParse(rest);
+    expect(r.success && r.data.finding_ids).toEqual([]);
+  });
   it('refuses an unknown tag', () => {
     expect(Stage5CodeSchema.safeParse(code({ tags: ['nonsense' as never] })).success).toBe(false);
   });
