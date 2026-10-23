@@ -119,9 +119,76 @@ cases), or split the topic. 📋 Monday step (SKILL.md), stage `5`.
 
 ### 7. Write and show (after the early check passes)
 
-Built separately (plan Phase B): the quote check (which also fails any passage that names a party: such a quote
-is never shown, and never edited), the two tables for research outcomes and shown passages, the
-writer and the voter-facing rows. Seats and blanks still go through the research-stances pipeline with
-`--season draft`, so the stance gate and the pre-write `audit-chair-evidence.mjs` check still run. Seats placed
-on own words alone keep the `statement-evidence` hold until the topic's blind check passes (RULINGS.md "Own-words
-seats: the hold ends after a blind check").
+Once the early check passes, each batch goes through three steps: a quote check, a dry run, and a write after
+the runner's yes. Voters see the result only when the draft season opens.
+
+**First, once per topic, migration CA_0322.** It adds `inform.topic_research_outcomes` (the "we researched"
+marker, kept apart from `value = 0`) and `inform.own_words_passages` (which can hold only a passage with a passed
+quote check). 🛑 It needs two yeses from the runner: one for a `BEGIN … ROLLBACK` dry run, and one for the real apply.
+
+**a. Quote check.** Run [templates/stage5-quote-check-prompt.md](templates/stage5-quote-check-prompt.md) as a
+**separate** agent: never the searcher or the coder. Use one subagent per batch of about 20 findings. Check every
+finding that a `doesnt-fit` code cites and that is own words or a local record. The agent fetches each page fresh
+and appends one line per finding to `stage5/quote-checks.jsonl`. A passage **passes** only when:
+
+- it is on the page word for word (only whitespace, quote marks and long dashes may differ);
+- it is the person's own words (codebook V1);
+- it is on the topic;
+- it names no party.
+
+A passage that names a party fails and is never edited (RULINGS.md "Quotes that name a party are never shown").
+Run the check again every time you write a batch. The newest check for a finding wins.
+
+**b. Dry run.**
+
+```bash
+npm run topic:stage5-write --prefix backend -- --topic <key> --research <abs topic folder> --season draft --units federal,state:xx --csv-out <abs>/stage5/write/<batch>/research.csv
+```
+
+It reads the database only to find the draft season. It prints:
+
+- the outcome rows by type, and the passages it would store;
+- **not in research.csv**: blanks whose detail fits no single codebook V6 reason. Add those rows by hand.
+- **refused**: codes that fail `checkCode`, and passages with no passed check or that name a party. Those
+  passages stay off the page; the person's outcome row is still written.
+
+It also writes `research.csv` for the seats and blanks. Run that file through the research-stances pipeline with
+`--season draft`: `stance-gate.ts`, then the pre-write `audit-chair-evidence.mjs --csv`, then
+`verify-stance-research.ts`. A seat placed on own words alone is `statement` evidence, so it keeps the
+`statement-evidence` hold until the topic's blind check passes (step 8).
+
+**c. Write.** 🛑 Show the runner the dry-run counts and the refused list. After their yes **for this batch**, run
+the same command with `--apply`. It writes the outcomes and passages in one transaction. Running it again for the
+same people replaces their outcome and their passages. It refuses any season but the draft one.
+
+**What voters see when the season opens.** The profile reads
+`GET /api/compass/politicians/:id/research-states` (and the candidate route). It shows:
+
+- **No stance found:** "We researched {name} and found no public stance on {topic}." and the research date.
+- **Own words:** the checked passages under "In their own words — not a position on the scale", each with its
+  source and date. A local record appears in plain words.
+- **Seated:** the topic shows as today. A seat in the same or a newer season hides the research state.
+
+### 8. Blind check for own-words seats (after coding, per topic)
+
+A seat placed on own words alone keeps the `statement-evidence` hold until a blind check on that topic agrees with
+the coder at the Stage 3 bar (RULINGS.md "Own-words seats: the hold ends after a blind check").
+
+1. **Draw the sample.** List the topic's own-words-only seats: codes with outcome `seated` and
+   `evidence_basis: own-words`. Hash a seed and record it in `stage5/blind-check/seed.txt` before you draw, as in
+   Stage 1. Then draw at least 30, or every one if there are fewer. Record the drawn ids in the same file.
+2. **Code blind.** Run separate blind validators: fresh subagents on the most capable model that never saw the
+   codes. Each gets only:
+   - the codebook;
+   - the pinned ladder (`topic:ladder-lint --season draft`);
+   - the topic's annex and RULINGS.md;
+   - each sampled person's findings file.
+
+   Use the coder prompt, with the person's code removed. Write `stage5/blind-check/<politician_id>.json`.
+3. **Compare.** A case agrees when both give the same rung, or both leave it blank. Agreement is agreeing cases
+   divided by sampled cases. Write `stage5/blind-check/result.md` with the count and every miss, each with both
+   readings and the findings cited.
+4. **Decide.** At **95% or more**, open one PR that releases the hold for this topic and updates CLAUDE.md's
+   "separate reliability stratum" rule (ruling 2b). Below 95%, the hold stays. Report the misses to the runner and
+   recommend what to fix: the coder prompt, the annex, or the rungs.
+
