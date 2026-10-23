@@ -17,12 +17,11 @@ import {
   FindingSchema, PersonFindingsSchema, ProvenanceSchema, findingId, searchedFor, storePaths,
   type Finding, type PersonFindings,
 } from './sourceStore.js';
+import { namesParty } from './stage5QuoteCheck.js';
 import type { RosterRow } from './stage5Roster.js';
 import type { Level } from '../../src/lib/topicApplicability.js';
 
 export type Unit = { level: Level; state?: string };
-
-const PARTY_RE = /\b(republicans?|democrats?|democratic party|libertarians?|GOP|DNC|RNC|green party|independent party)\b/i;
 
 /** `federal`, `state:in`, `local:in` → a unit. */
 export function parseUnit(s: string): Unit {
@@ -90,7 +89,7 @@ export function importFindFile(
   // Antipartisan rule: our own text never names a party. A verbatim passage is the person's words and is kept
   // as found; whether it may be shown is the quote check's call.
   const ours = [...file.searched.places, ...file.searched.subjects, ...file.findings.flatMap((f) => [f.note, ...f.subjects])];
-  const hit = ours.find((t) => PARTY_RE.test(t.replace(/https?:\/\/\S+/g, "")));
+  const hit = ours.find((t) => namesParty(t.replace(/https?:\/\/\S+/g, "")));
   if (hit) throw new Error(`${pid}: a party name in our own text ("${hit.slice(0, 80)}"); write notes, subjects and places without parties`);
   const findings: Finding[] = file.findings.map((c, i) => {
     const { method, saved_copy, ...rest } = c;

@@ -13,7 +13,9 @@ import {
   isNoPromotedTopicsError, NoPromotedTopicsError,
   getPoliticianAnswers, getPoliticianContext, getPoliticianContextAll,
   compareWithPoliticians, getPoliticianCitations,
+  getResearchStates, getCandidateResearchStates,
 } from './compassService.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -498,5 +500,86 @@ describe('getPoliticianCitations — wording follows the served revision', () =>
     expect(blocks.find(b => b.topic_key === 'abortion')!.all_stances.map(s => s.text)).toEqual(['A1']);
     // internal only — the response contract is unchanged
     expect(blocks[0]).not.toHaveProperty('served_revision_id');
+  });
+});
+
+// Stage 5 (spec 2026-10-22 §8): "we researched {name} and found no public stance", or their own words
+// "not a position on the scale". A NEW reader, beside getPoliticianAnswers, which stays as it is: its
+// consumers treat any returned value as a position.
+describe('getResearchStates — Stage 5 research outcomes, newest published season', () => {
+  it('collapses to the newest PUBLISHED season per topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.topic_research_outcomes');
+    expect(sql).toContain(SEASON_IS_PUBLISHED);
+    expect(sql).toMatch(/DISTINCT ON \(\s*o\.topic_id\s*\)/);
+    expect(sql).toMatch(/ORDER BY\s+o\.topic_id,\s*s\.number DESC/);
+    expect(mockQuery.mock.calls[0][1]).toEqual(['p1']);
+  });
+
+  // The blank filter sits OUTSIDE the collapse, so a newer seat hides an older blank.
+  it('filters the outcome AFTER the collapse and carries the counts-blanks marker', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const collapseEnd = sql.indexOf(') latest');
+    const outcomeFilter = sql.search(/latest\.outcome IN \('doesnt-fit', 'no-stance'\)/);
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(outcomeFilter).toBeGreaterThan(collapseEnd);
+    expect(sql).toContain('@zero-scope: counts-blanks');
+  });
+
+  // The compass shows the person's NEWEST published answer in any season (getPoliticianAnswers). A seat
+  // there must hide the research state even when it is OLDER than the outcome (an outcome with no answer
+  // row of its own season, e.g. a blank left out of research.csv), or the two reads disagree.
+  it('hides a topic the compass seats: the same newest-published-answer collapse, any season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const guard = sql.slice(sql.indexOf('NOT EXISTS'));
+    expect(guard).toMatch(/DISTINCT ON \(\s*a\.topic_id\s*\)[\s\S]*inform\.politician_answers[\s\S]*ORDER BY\s+a\.topic_id,\s*sa\.number DESC/);
+    expect(guard).toMatch(/\)\s*na\s+WHERE\s+na\.value <> 0/);
+    expect(guard).not.toMatch(/number >= latest\.season_number/);
+  });
+
+  it('attaches each topic\'s passages and returns plain JSON', async () => {
+    mockQuery.mockResolvedValue({ rows: [
+      { topic_id: 't1', outcome: 'doesnt-fit', researched_on: '2026-10-20', passages: [
+        { kind: 'own-words', passage: 'Every voter should vote by mail.', source_url: 'https://x.example/a', source_date: '2026-09-01' },
+      ] },
+      { topic_id: 't2', outcome: 'no-stance', researched_on: '2026-10-21', passages: null },
+    ] });
+    const out = await getResearchStates('p1');
+    expect(out).toEqual([
+      { topic_id: 't1', outcome: 'doesnt-fit', researched_on: '2026-10-20', passages: [
+        { kind: 'own-words', passage: 'Every voter should vote by mail.', source_url: 'https://x.example/a', source_date: '2026-09-01' },
+      ] },
+      { topic_id: 't2', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] },
+    ]);
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.own_words_passages');
+    expect(sql).toMatch(/w\.season_id = latest\.season_id/);
+  });
+});
+
+describe('getCandidateResearchStates — via race_candidates.politician_id', () => {
+  it('returns [] when the candidate has no politician', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ politician_id: null }] });
+    expect(await getCandidateResearchStates('c1')).toEqual([]);
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+
+  it('returns [] for an unknown candidate', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    expect(await getCandidateResearchStates('c1')).toEqual([]);
+  });
+
+  it('reads the politician\'s research states', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ politician_id: 'p9' }] })
+      .mockResolvedValueOnce({ rows: [{ topic_id: 't1', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] }] });
+    expect(await getCandidateResearchStates('c1')).toEqual([{ topic_id: 't1', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] }]);
+    expect(mockQuery.mock.calls[1][1]).toEqual(['p9']);
   });
 });

@@ -746,6 +746,87 @@ export async function getPoliticianAnswers(
   }));
 }
 
+/** One passage shown as the person's own words, "not a position on the scale" (Stage 5, CA_0322). */
+export interface ResearchPassage {
+  kind: 'own-words' | 'local-record';
+  passage: string;
+  source_url: string;
+  source_date: string | null;
+}
+
+/** A topic Stage 5 researched for this person that holds no seat (spec 2026-10-22 §8). */
+export interface ResearchState {
+  topic_id: string;
+  outcome: 'doesnt-fit' | 'no-stance';
+  researched_on: string;
+  passages: ResearchPassage[];
+}
+
+/**
+ * getResearchStates
+ * The topics Stage 5 researched for this person and found no seat on: `no-stance` ("We researched {name}
+ * and found no public stance on {topic}.") or `doesnt-fit` (their checked own words, not a position on the
+ * scale). A NEW read on purpose: getPoliticianAnswers stays as it is, because its consumers treat any value
+ * it returns as a position.
+ *
+ * Only people Stage 5 actually researched appear: inform.topic_research_outcomes is the marker, not
+ * `value = 0`, which also covers older blanks and people never researched (spec §8).
+ *
+ * Newest PUBLISHED season per topic first (a draft season's rows stay hidden until it opens), THEN the
+ * outcome filter, so a newer seat hides an older blank. A topic the compass seats (the person's newest
+ * published answer, in any season, is not 0) returns nothing, so this read never contradicts the compass.
+ */
+export async function getResearchStates(politicianId: string): Promise<ResearchState[]> {
+  const { rows } = await pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
+    `-- @zero-scope: counts-blanks — shows voters that a person was researched and holds no seat; the
+     -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
+     SELECT latest.topic_id, latest.outcome, latest.researched_on::text AS researched_on, p.passages
+       FROM (
+         SELECT DISTINCT ON (o.topic_id) o.topic_id, o.season_id, o.outcome, o.researched_on
+           FROM inform.topic_research_outcomes o
+           JOIN inform.seasons s ON s.id = o.season_id AND ${SEASON_IS_PUBLISHED}
+          WHERE o.politician_id = $1
+          ORDER BY o.topic_id, s.number DESC
+       ) latest
+       LEFT JOIN LATERAL (
+         SELECT json_agg(json_build_object(
+                  'kind', w.kind, 'passage', w.passage, 'source_url', w.source_url, 'source_date', w.source_date::text)
+                  ORDER BY w.source_date DESC NULLS LAST, w.id) AS passages
+           FROM inform.own_words_passages w
+          WHERE w.politician_id = $1 AND w.topic_id = latest.topic_id AND w.season_id = latest.season_id
+       ) p ON true
+      WHERE latest.outcome IN ('doesnt-fit', 'no-stance')
+        -- The compass's own read (getPoliticianAnswers): the newest published answer, any season. A seat
+        -- there hides the topic here, so the two never disagree.
+        AND NOT EXISTS (
+              SELECT 1 FROM (
+                SELECT DISTINCT ON (a.topic_id) a.value
+                  FROM inform.politician_answers a
+                  JOIN inform.seasons sa ON sa.id = a.season_id AND sa.status <> 'draft'
+                 WHERE a.politician_id = $1 AND a.topic_id = latest.topic_id
+                 ORDER BY a.topic_id, sa.number DESC
+              ) na WHERE na.value <> 0)
+      ORDER BY latest.topic_id ASC`,
+    [politicianId]
+  );
+  return rows.map((r) => ({
+    topic_id: r.topic_id,
+    outcome: r.outcome,
+    researched_on: r.researched_on,
+    passages: r.passages ?? [],
+  }));
+}
+
+/** getResearchStates for a race candidate, through race_candidates.politician_id; [] when there is none. */
+export async function getCandidateResearchStates(candidateId: string): Promise<ResearchState[]> {
+  const { rows } = await pool.query<{ politician_id: string | null }>(
+    `SELECT politician_id FROM essentials.race_candidates WHERE id = $1`,
+    [candidateId]
+  );
+  const politicianId = rows[0]?.politician_id;
+  return politicianId ? getResearchStates(politicianId) : [];
+}
+
 /** One dated source of a context row (CA_0301). Read the date with its precision. */
 export interface ContextEvidenceDate {
   source_url: string;

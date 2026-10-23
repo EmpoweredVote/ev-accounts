@@ -13,6 +13,8 @@ import {
   getCandidates,
   getCandidateAnswers,
   getPoliticianAnswers,
+  getResearchStates,
+  getCandidateResearchStates,
   getPoliticianContext,
   getPoliticianContextAll,
   validateTopicIds,
@@ -733,6 +735,31 @@ router.get(
 );
 
 // ---------------------------------------------------------------------------
+// GET /api/compass/candidates/:id/research-states
+// Auth: optional — public, no PII
+// Stage 5 research states (no public stance found / own words, not a position on the scale) for the
+// candidate's politician, through race_candidates.politician_id. [] when there is none.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/candidates/:id/research-states',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const candidateId = req.params.id as string;
+      if (!UUID_REGEX.test(candidateId)) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid candidate ID format' });
+        return;
+      }
+      res.status(200).json(await getCandidateResearchStates(candidateId));
+    } catch (err) {
+      console.error('[GET /compass/candidates/:id/research-states] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
 // GET /api/compass/politicians
 // Auth: optional — works unauthenticated
 // Returns all active politicians ordered by name.
@@ -836,6 +863,31 @@ router.get(
       res.status(200).json(data);
     } catch (err) {
       console.error('[GET /compass/politicians/:id/answers] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/politicians/:id/research-states
+// Auth: optional — works unauthenticated
+// Stage 5 research states: the topics researched for this politician that hold no seat, with any checked
+// own-words passages (spec 2026-10-22 §8). Separate from /answers, which stays positions only.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/politicians/:id/research-states',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const politicianId = req.params.id as string;
+      if (!UUID_REGEX.test(politicianId)) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+        return;
+      }
+      res.status(200).json(await getResearchStates(politicianId));
+    } catch (err) {
+      console.error('[GET /compass/politicians/:id/research-states] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }
