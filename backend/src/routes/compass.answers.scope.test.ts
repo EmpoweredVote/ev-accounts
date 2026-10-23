@@ -59,6 +59,7 @@ vi.mock('../lib/compassService.js', () => ({
   getCompassCategories: vi.fn(),
   getCompassLenses: vi.fn(),
   getCompassPoliticians: vi.fn(),
+  getCompassPoliticianIds: vi.fn(),
   getCandidates: vi.fn(),
   getCandidateAnswers: vi.fn(),
   getPoliticianAnswers: vi.fn(),
