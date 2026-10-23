@@ -139,7 +139,8 @@ and appends one line per finding to `stage5/quote-checks.jsonl`. A passage **pas
 
 Each check also records the sha256 of the exact text it checked, so a passage or note edited later has no check.
 A passage that names a party fails and is never edited (RULINGS.md "Quotes that name a party are never shown").
-Run the check again every time you write a batch. The newest check for a finding wins.
+Run the check again every time you write a batch. The newest check for a finding wins, and a check made before
+the code was made never counts. Each line's `at` is an ISO timestamp with a time zone.
 
 **b. Dry run.**
 
@@ -147,7 +148,9 @@ Run the check again every time you write a batch. The newest check for a finding
 npm run topic:stage5-write --prefix backend -- --topic <key> --research <abs topic folder> --season draft --units federal,state:xx --csv-out <abs>/stage5/write/<batch>/research.csv
 ```
 
-It reads the database only to find the draft season. It prints:
+It reads the database only to find the draft season. It fetches each own-words passage's page again and keeps the
+passage only when it is there word for word, whatever the quote check said. A page that is not HTML (a PDF) or will
+not load keeps the quote check's word and is listed under **not re-checked on the page**. It prints:
 
 - the outcome rows by type, and the passages it would store;
 - **not in research.csv**: blanks whose detail fits no single codebook V6 reason. Add those rows by hand.

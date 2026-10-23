@@ -22,7 +22,7 @@
 import { stringify } from 'csv-stringify/sync';
 import type { BlankReason } from '../../src/lib/blankReasons.js';
 import { checkCode, type Stage5Code } from './stage5Code.js';
-import { namesParty, shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
+import { namesParty, pageText, passageOnPage, shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
 import type { SeasonTarget } from './seasonTarget.js';
 import type { Finding, PersonFindings } from './sourceStore.js';
 
@@ -81,11 +81,16 @@ export function blankReasonFor(code: Stage5Code): BlankReason | null {
 const day = (iso: string) => iso.slice(0, 10);
 const isDate = (s: string) => /^\d{4}-\d{2}-\d{2}$/.test(s);
 
-/** The newest check for this finding, person and topic. A later run overrides an earlier one. */
+/**
+ * The newest check for this finding, person and topic, made since the code was. A later run overrides an
+ * earlier one, and a check from before the code (an earlier run) never carries over. Compared as times.
+ */
 function newestCheck(checks: QuoteCheck[], f: Finding, code: Stage5Code): QuoteCheck | undefined {
+  const since = Date.parse(code.coded_at);
   return checks
     .filter((c) => c.finding_id === f.id && c.politician_id === code.politician_id && c.topic_key === code.topic_key)
-    .sort((a, b) => a.at.localeCompare(b.at))
+    .filter((c) => !(Date.parse(c.at) < since))
+    .sort((a, b) => Date.parse(a.at) - Date.parse(b.at))
     .at(-1);
 }
 
@@ -137,7 +142,7 @@ export function planBatch(
         const shown = kind === 'own-words' ? f.passage! : f.note;
         const c = newestCheck(checks, f, code);
         const label = `finding ${f.id.slice(0, 12)}…`;
-        if (!c) { keepOff(`${label}: no quote check on file; kept off the page`); continue; }
+        if (!c) { keepOff(`${label}: no quote check since this code was made; kept off the page`); continue; }
         if (c.verdict !== 'passed') { keepOff(`${label}: quote check failed (${c.reason}); kept off the page`); continue; }
         if (c.shown_sha256 !== shownSha256(shown)) { keepOff(`${label}: text changed since its quote check; check it again`); continue; }
         if (kind === 'local-record' && c.fair_summary !== true) { keepOff(`${label}: a local record needs its check to confirm the note is a fair summary`); continue; }
@@ -203,6 +208,9 @@ export async function applyBatch(q: Query, plan: BatchPlan, seasonId: string): P
   const keys = [...new Set(plan.outcomes.map((o) => o.topic_key))];
   await q('BEGIN');
   try {
+    // The season was checked before the dry run; check again inside the write, holding it while we write.
+    const { rows: seasonRows } = await q('SELECT status FROM inform.seasons WHERE id = $1 FOR SHARE', [seasonId]);
+    if (seasonRows[0]?.status !== 'draft') throw new Error(`season ${seasonId} is no longer a draft (${seasonRows[0]?.status ?? 'missing'}); nothing written`);
     const { rows } = await q(
       `SELECT t.id::text AS id, t.topic_key,
               EXISTS (SELECT 1 FROM inform.season_questions sq WHERE sq.season_id = $2 AND sq.topic_id = t.id) AS asked
@@ -254,4 +262,44 @@ export async function applyBatch(q: Query, plan: BatchPlan, seasonId: string): P
 export function applyBlocker(plan: BatchPlan): string | null {
   const n = plan.refused.filter((r) => r.kind === 'code').length;
   return n ? `${n} code(s) refused: fix them and dry-run again before --apply (an earlier write for those people would stay live)` : null;
+}
+
+/**
+ * Re-fetch each own-words passage's page and keep it only when `passageOnPage` finds it there: a mechanical
+ * check beside the quote-check agent's word. A page that cannot be fetched keeps the agent's verdict and is
+ * listed in `unchecked`. A local record left with none of the person's own words is dropped, as in planBatch.
+ */
+export async function refusePassagesNotOnPage(
+  plan: BatchPlan,
+  fetchText: (url: string) => Promise<string>,
+): Promise<BatchPlan & { unchecked: { politician_id: string; reason: string }[] }> {
+  const pages = new Map<string, Promise<string>>();
+  const page = (url: string) => {
+    if (!pages.has(url)) pages.set(url, fetchText(url).then(pageText));
+    return pages.get(url)!;
+  };
+  const refused = [...plan.refused];
+  const unchecked: { politician_id: string; reason: string }[] = [];
+  const kept: PassageRow[] = [];
+  for (const p of plan.passages) {
+    if (p.kind !== 'own-words') { kept.push(p); continue; }
+    const label = `finding ${p.finding_id.slice(0, 12)}…`;
+    let text: string;
+    try {
+      text = await page(p.source_url);
+    } catch (err) {
+      unchecked.push({ politician_id: p.politician_id, reason: `${label}: could not re-fetch ${p.source_url} (${err instanceof Error ? err.message : String(err)}); kept on the quote check alone` });
+      kept.push(p);
+      continue;
+    }
+    if (passageOnPage(p.passage, text)) kept.push(p);
+    else refused.push({ politician_id: p.politician_id, kind: 'passage', reason: `${label}: not on the page when re-fetched; kept off the page` });
+  }
+  const withOwnWords = new Set(kept.filter((p) => p.kind === 'own-words').map((p) => `${p.politician_id} ${p.topic_key}`));
+  const passages = kept.filter((p) => {
+    if (p.kind === 'own-words' || withOwnWords.has(`${p.politician_id} ${p.topic_key}`)) return true;
+    refused.push({ politician_id: p.politician_id, kind: 'passage', reason: `finding ${p.finding_id.slice(0, 12)}…: a local record is never shown alone, and none of their own words passed` });
+    return false;
+  });
+  return { ...plan, passages, refused, unchecked };
 }

@@ -16,6 +16,10 @@
  * (`draft`, or the draft season's uuid); `open` and any other season are refused. `--apply` also refuses while
  * any code is refused (lib/stage5Write.applyBlocker), so no earlier write is left stale.
  *
+ * Before printing, it re-fetches each own-words passage's page and keeps the passage only when it is on the page
+ * word for word (`--no-verify-pages` skips this). A page that is not HTML or text, or will not load, keeps the
+ * quote check's word and is listed.
+ *
  * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts; never prints it.
  * Exit 0 = planned (or written); 3 = some codes or passages were refused (listed); 2 = a usage or input error.
  */
@@ -30,11 +34,23 @@ import { Stage5CodeSchema, type Stage5Code } from './lib/stage5Code.js';
 import { parseUnit } from './lib/stage5Find.js';
 import { readQuoteChecks } from './lib/stage5QuoteCheck.js';
 import { parseRosterTsv } from './lib/stage5Roster.js';
-import { applyBatch, applyBlocker, assertDraftSeason, planBatch } from './lib/stage5Write.js';
+import { applyBatch, applyBlocker, assertDraftSeason, planBatch, refusePassagesNotOnPage } from './lib/stage5Write.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadBackendEnv(backendDir);
 const flag = (name: string) => readFlag(process.argv, name);
+/** A page as text for the re-check. Not HTML or text (a PDF, say) → throw, so it is listed, never refused. */
+async function fetchPage(url: string): Promise<string> {
+  const res = await fetch(url, {
+    headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36', Accept: 'text/html,text/plain;q=0.9,*/*;q=0.5' },
+    signal: AbortSignal.timeout(20_000),
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const type = res.headers.get('content-type') ?? '';
+  if (!/text\/html|text\/plain|xhtml/i.test(type)) throw new Error(`not an HTML page (${type || 'no content type'})`);
+  return res.text();
+}
+
 const abs = (name: string, p: string | undefined) => {
   if (!p) throw new Error(`${name} is required`);
   if (!isAbsolute(p)) throw new Error(`${name} must be an absolute path (npm runs this from backend/): ${p}`);
@@ -85,7 +101,9 @@ async function main(): Promise<number> {
     const season = await resolveSeasonTarget(seasonSpec, q).finally(() => q('ROLLBACK'));
     assertDraftSeason(season);
 
-    const plan = planBatch(codes, findings, checks, { seasonId: season.id, names });
+    const planned = planBatch(codes, findings, checks, { seasonId: season.id, names });
+    const verify = !hasFlag(process.argv, '--no-verify-pages');
+    const plan = verify ? await refusePassagesNotOnPage(planned, fetchPage) : { ...planned, unchecked: [] };
     if (csvOut) writeFileSync(csvOut, plan.researchCsv, { flag: 'wx' });
 
     const by = (o: string) => plan.outcomes.filter((x) => x.outcome === o).length;
@@ -93,6 +111,11 @@ async function main(): Promise<number> {
     console.log(`outcomes:  ${plan.outcomes.length} (seated ${by('seated')}, doesnt-fit ${by('doesnt-fit')}, no-stance ${by('no-stance')})`);
     console.log(`passages:  ${plan.passages.length} (own-words ${plan.passages.filter((p) => p.kind === 'own-words').length}, local-record ${plan.passages.filter((p) => p.kind === 'local-record').length})`);
     if (csvOut) console.log(`research.csv: ${csvOut} (run stance-gate.ts and verify-stance-research.ts --season draft on it)`);
+    if (!verify) console.log('pages NOT re-fetched (--no-verify-pages): passages rest on the quote check alone');
+    if (plan.unchecked.length) {
+      console.log(`not re-checked on the page (${plan.unchecked.length}) — kept on the quote check alone:`);
+      for (const r of plan.unchecked) console.log(`  ${r.politician_id}  ${r.reason}`);
+    }
     if (plan.notInCsv.length) {
       console.log(`not in research.csv (${plan.notInCsv.length}) — add by hand:`);
       for (const r of plan.notInCsv) console.log(`  ${r.politician_id}  ${r.reason}`);
