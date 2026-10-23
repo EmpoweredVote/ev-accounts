@@ -53,6 +53,16 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // because this endpoint is a cross-app contract and trimming it by default would
 // be a silent breaking change.
 //
+// ⚠⚠ EXCEPT THE BARE PATH, WHICH IS A 422 `FULL_LIST_TOO_LARGE`. The full shape
+// with no narrowing (no slug/entity_type/state/county_id/fields=index) carries
+// one object per budget row for every entity. Budget rows doubled in October
+// 2026 (583k): that response measured 122 MB, ~47 s and ~1 GB of RSS, and in
+// prod it ran into ev_api's 30 s statement_timeout (57014) or a 499, holding a
+// pool connection the whole time. Nobody got a usable answer from it, so a
+// fast, explicit refusal is not a regression for any caller. Its last caller,
+// Essentials' fetchTreasuryCities, moved to `?fields=index&datasets=summary`
+// (essentials #223). A narrowed full list is still served unchanged.
+//
 // ⚠ `?slug=<entity-slug>` narrows the response to the single entity that slug
 // addresses, as an ARRAY (empty when nothing matches) — same shape, same rows,
 // same contract, so a caller can swap it in without special-casing the result.
@@ -107,16 +117,27 @@ router.get('/cities', optionalAuth, async (req: Request, res: Response): Promise
       return;
     }
 
-    const cities = await getCities(
-      req.query['datasets'] === 'summary' ? 'summary' : 'full',
-      slugParam || undefined,
-      {
-        entityTypes: types.values,
-        state: stateParam || undefined,
-        countyId: countyParam || undefined,
-        fields: req.query['fields'] === 'index' ? 'index' : undefined,
-      }
-    );
+    const mode = req.query['datasets'] === 'summary' ? 'summary' : 'full';
+    const filters = {
+      entityTypes: types.values,
+      state: stateParam || undefined,
+      countyId: countyParam || undefined,
+      fields: req.query['fields'] === 'index' ? ('index' as const) : undefined,
+    };
+    if (
+      mode === 'full' && !filters.fields && !slugParam &&
+      !filters.entityTypes.length && !filters.state && !filters.countyId
+    ) {
+      res.status(422).json({
+        code: 'FULL_LIST_TOO_LARGE',
+        message:
+          'the unfiltered full list is no longer served; use ?fields=index&datasets=summary ' +
+          '(or ?datasets=summary), or narrow it with slug, entity_type, state or county_id',
+      });
+      return;
+    }
+
+    const cities = await getCities(mode, slugParam || undefined, filters);
     res.set('Cache-Control', 'public, max-age=300, stale-while-revalidate=3600');
     res.status(200).json(cities);
   } catch (err) {
