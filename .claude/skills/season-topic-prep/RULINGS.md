@@ -211,6 +211,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2b (design §9).
 - **Scope:** every topic, decided per topic.
 
+### A vote on the record carries a joint seat
+- **Ruling:** a seat that rests on the person's own words together with a legislative record (a vote, sponsorship
+  or other act on an instrument, not a local record) is record evidence. It goes through the record gate and does
+  not take the `statement-evidence` hold. Only a seat on own words alone, or own words with a local record, keeps
+  the hold until the topic's blind check passes.
+- **Date and source:** 2026-10-23, Chris Andrews, Stage 5 Phase B review (`backend/scripts/lib/stage5Write.ts`
+  `planBatch`: `evidence_type = record` when any cited finding is a non-local record).
+- **Scope:** every topic.
+
 ### The Stage 5 early-check bar
 - **Ruling:** the early check stops the run and asks whether to fix the rungs when "doesn't fit" is more than 1 in 5
   of the people with any on-topic evidence, **or** any single theme from the theme pass holds more than 1 in 10 of
