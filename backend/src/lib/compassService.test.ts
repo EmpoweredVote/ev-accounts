@@ -513,8 +513,8 @@ describe('getResearchStates — Stage 5 research outcomes, newest published seas
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toContain('inform.topic_research_outcomes');
     expect(sql).toContain(SEASON_IS_PUBLISHED);
-    expect(sql).toMatch(/DISTINCT ON \(\s*o\.topic_id\s*\)/);
-    expect(sql).toMatch(/ORDER BY\s+o\.topic_id,\s*s\.number DESC/);
+    expect(sql).toMatch(/DISTINCT ON \(\s*ro\.topic_id\s*\)/);
+    expect(sql).toMatch(/ORDER BY\s+ro\.topic_id,\s*s\.number DESC/);
     expect(mockQuery.mock.calls[0][1]).toEqual(['p1']);
   });
 

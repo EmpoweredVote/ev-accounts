@@ -223,17 +223,17 @@ export async function applyBatch(q: Query, plan: BatchPlan, seasonId: string): P
     const missing = keys.find((k) => !topicId.has(k));
     if (missing) throw new Error(`the draft season does not ask ${missing}; nothing written`);
 
-    for (const o of plan.outcomes) {
+    for (const row of plan.outcomes) {
       await q(
         `INSERT INTO inform.topic_research_outcomes (politician_id, topic_id, season_id, outcome, researched_on, checked_by)
          VALUES ($1, $2, $3, $4, $5, $6)
          ON CONFLICT (politician_id, topic_id, season_id)
          DO UPDATE SET outcome = EXCLUDED.outcome, researched_on = EXCLUDED.researched_on, checked_by = EXCLUDED.checked_by`,
-        [o.politician_id, topicId.get(o.topic_key), o.season_id, o.outcome, o.researched_on, o.checked_by],
+        [row.politician_id, topicId.get(row.topic_key), row.season_id, row.outcome, row.researched_on, row.checked_by],
       );
       await q(
         'DELETE FROM inform.own_words_passages WHERE politician_id = $1 AND topic_id = $2 AND season_id = $3',
-        [o.politician_id, topicId.get(o.topic_key), o.season_id],
+        [row.politician_id, topicId.get(row.topic_key), row.season_id],
       );
     }
     for (const p of plan.passages) {

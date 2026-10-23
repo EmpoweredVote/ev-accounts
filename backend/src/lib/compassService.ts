@@ -823,11 +823,11 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
      -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
      SELECT latest.topic_id, latest.outcome, latest.researched_on::text AS researched_on, p.passages
        FROM (
-         SELECT DISTINCT ON (o.topic_id) o.topic_id, o.season_id, o.outcome, o.researched_on
-           FROM inform.topic_research_outcomes o
-           JOIN inform.seasons s ON s.id = o.season_id AND ${SEASON_IS_PUBLISHED}
-          WHERE o.politician_id = $1
-          ORDER BY o.topic_id, s.number DESC
+         SELECT DISTINCT ON (ro.topic_id) ro.topic_id, ro.season_id, ro.outcome, ro.researched_on
+           FROM inform.topic_research_outcomes ro
+           JOIN inform.seasons s ON s.id = ro.season_id AND ${SEASON_IS_PUBLISHED}
+          WHERE ro.politician_id = $1
+          ORDER BY ro.topic_id, s.number DESC
        ) latest
        LEFT JOIN LATERAL (
          SELECT json_agg(json_build_object(
