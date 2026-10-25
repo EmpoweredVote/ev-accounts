@@ -189,7 +189,13 @@ cities will disagree with each other.
 
 ---
 
-## The queue — 16 cities, 120 offices
+## The queue — 15 cities, 104 offices
+
+⚠ This heading read **"16 cities, 120 offices"** until 2026-10-25 — it was not updated when
+Westbrook was seated (`CC_0283`), though the summary at the top of this file was. The table below
+has always been right. **Re-measured against prod 2026-10-25 and it reconciles exactly**: these 15
+governments hold 104 undated flagged offices, and with the `State of Maine` tribal seat noted below
+that is the 105 Maine rows `offices_missing_terms` reports.
 
 ⚠ **An elected office we do not model:** Westbrook elects a `Portland Water District Rep.`
 (Malory Shaughnessy) and we hold no office for it. Creating one means modelling a regional water
