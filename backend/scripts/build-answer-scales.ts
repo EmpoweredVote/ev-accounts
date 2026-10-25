@@ -50,7 +50,10 @@ import {
 } from '../src/trivia/services/questionQuality/answerScale.js';
 
 const SELFTEST = process.argv.includes('--selftest');
-const OUT_DIR = path.join('data', 'answer-scales-2026-10-25');
+const outFlag = process.argv.indexOf('--out');
+const OUT_DIR = outFlag === -1
+  ? path.join('data', 'answer-scales-2026-10-25')
+  : process.argv[outFlag + 1];
 
 /** A number inside an option, with enough context to render a sibling that matches it. */
 interface Parsed {
@@ -130,6 +133,38 @@ function render(p: Pick<Parsed, 'template' | 'decimals' | 'grouped'>, value: num
  */
 const SEATS_IN_A_BODY =
   /\b(members?|justices?|judges?|senators?|representatives?|councill?ors?|commissioners?|supervisors?|aldermen|delegates?|trustees?|directors?|seats?)\b/;
+
+/** The year this is being generated in. Every year bound below is relative to it. */
+export const CURRENT_YEAR = new Date().getUTCFullYear();
+
+/** Four whole numbers that all read as calendar years. */
+export function isYearSeries(values: number[]): boolean {
+  return values.every((v) => Number.isInteger(v) && v >= 1500 && v <= 2100);
+}
+
+/**
+ * The bounds on a year question, taken from WHICH SIDE OF TODAY THE ANSWER IS ON.
+ *
+ * 🔴 THE OBVIOUS RULE IS WRONG. "A year question must not offer a year in the future"
+ * would be a free elimination test that fires on 13 active questions that are correct:
+ * "In what year is the next presidential election scheduled?" offers 2026/2027/2028/2030
+ * and should. The question is not whether a mark is in the future -- it is whether a mark
+ * is on the WRONG SIDE of today for the event being asked about.
+ *
+ * Reading the answer settles it without parsing tense, which is the part that would be a
+ * guess. An answer at or before this year is an event that has happened, so no mark may
+ * be later than this year: nothing has happened in 2031. An answer after this year is an
+ * event still to come, so no mark may be earlier than this year: the NEXT election cannot
+ * have been in 2024.
+ *
+ * The consequence is deliberate and is why several of these refuse: an event two years
+ * out cannot be centred, because there are not three plausible years between today and it.
+ */
+export function yearDomain(answer: number): { min: number; max: number } {
+  return answer > CURRENT_YEAR
+    ? { min: CURRENT_YEAR, max: 2100 }
+    : { min: 1500, max: CURRENT_YEAR };
+}
 
 /**
  * Hard bounds the real world puts on a quantity.
@@ -223,12 +258,32 @@ export function proposeScale(
   const fmt = { template: ps[0].template, decimals, grouped: ps[correctAnswer].grouped };
 
   const answer = ps[correctAnswer].value;
-  const { min, max } = domainOf(fmt.template, text, integerOnly);
+  const isYears = isYearSeries(values);
+  // A year question's bounds come from the calendar, not from the words. They also take
+  // priority: "In what year did the council expand to 15 members?" would otherwise pick up
+  // the seats floor, which says nothing useful about a year.
+  const { min, max } = isYears ? yearDomain(answer) : domainOf(fmt.template, text, integerOnly);
 
   // The writer's own spacing is the starting point: the tightest gap they thought fair.
   const sorted = [...values].sort((a, b) => a - b);
-  const target = Math.min(sorted[1] - sorted[0], sorted[2] - sorted[1], sorted[3] - sorted[2]);
+  const gaps = [sorted[1] - sorted[0], sorted[2] - sorted[1], sorted[3] - sorted[2]];
+  const target = Math.min(...gaps);
   if (!(target > 0)) return refuse('two options share a value');
+
+  // An evenly spaced set states a CADENCE the writer chose, and for years that cadence is
+  // usually real: elections run every two or four years, policy targets land on 2030,
+  // 2035, 2040. Shrinking it to fit the calendar produces marks like 2026/2029/2032
+  // around a round answer of 2035, where the answer is the only round year on offer --
+  // a tell. So an evenly spaced year set keeps its cadence or is refused.
+  const evenlySpaced = new Set(gaps).size === 1;
+  if (isYears && evenlySpaced) {
+    const sI = gaps[0];
+    if (answer - 3 * sI < min || answer + 3 * sI > max) {
+      return refuse(
+        `evenly spaced years every ${sI}: keeping that cadence runs past ${answer > CURRENT_YEAR ? 'today' : CURRENT_YEAR}`,
+      );
+    }
+  }
 
   // Integer arithmetic at the answer's granularity, so a 0.1 step does not drift.
   const scaleUp = 10 ** decimals;
@@ -236,10 +291,13 @@ export function proposeScale(
   const minI = Math.round(min * scaleUp);
   const maxI = Number.isFinite(max) ? Math.round(max * scaleUp) : Number.POSITIVE_INFINITY;
 
+  // An evenly spaced set is tried at its own cadence first, before any ladder rung.
+  // For years that cadence has already been bounds-checked above, so it will be taken.
   const ladder = stepLadder(granularity).filter((s) => s <= target + 1e-12);
-  if (!ladder.length) return refuse(`no step at or below the tightest gap (${target})`);
+  const candidates = evenlySpaced ? [gaps[0], ...ladder.filter((s) => s !== gaps[0])] : ladder;
+  if (!candidates.length) return refuse(`no step at or below the tightest gap (${target})`);
 
-  for (const step of ladder) {
+  for (const step of candidates) {
     const sI = Math.round(step * scaleUp);
     if (sI < 1) continue;
     if (aI - 3 * sI < minI) continue; // would fall through the floor
@@ -387,6 +445,43 @@ export const CONTROL_CASES: ControlCase[] = (
       'the singular mark reads "1 day", never "1 days"',
       '1 day | 2 days | 3 days | 4 days | 5 days | 6 days | 7 days',
     ],
+    [
+      'In what year was the university established?',
+      ['1836', '1848', '1866', '1888'],
+      1,
+      'accept',
+      'a past event: unevenly spaced, so the ladder picks a round step (10, not the 12 gap)',
+      '1818 | 1828 | 1838 | 1848 | 1858 | 1868 | 1878',
+    ],
+    [
+      'In what year was the mayor first elected?',
+      ['2014', '2016', '2018', '2020'],
+      2,
+      'accept',
+      'evenly spaced years keep their cadence: every 2, not every 1',
+      '2012 | 2014 | 2016 | 2018 | 2020 | 2022 | 2024',
+    ],
+    [
+      'In what year is the next presidential election scheduled?',
+      ['2026', '2027', '2028', '2030'],
+      2,
+      'refuse',
+      'a FUTURE event two years out: there are not three plausible years between today and it',
+    ],
+    [
+      'By what year does the agency plan to convert its fleet?',
+      ['2035', '2040', '2045', '2050'],
+      0,
+      'refuse',
+      'a future target every 5 years cannot keep that cadence without reaching back before today',
+    ],
+    [
+      'In what year did the council last redraw its wards?',
+      ['2019', '2021', '2023', '2025'],
+      3,
+      'refuse',
+      'a past event in 2025 has no room for three later years that have happened',
+    ],
   ] as ControlCase[]
 );
 
@@ -446,7 +541,6 @@ for (const r of rows) {
   const options: string[] = Array.isArray(r.options) ? r.options : JSON.parse(r.options);
   const values = options.length === 4 ? magnitudeValues(options) : null;
   if (!values) continue; // prose: not this script's business
-  if (values.every((v) => Number.isInteger(v) && v >= 1500 && v <= 2100)) continue; // years: a later pass
   proposals.push(proposeScale(r.text, options, r.correct_answer, r.id, r.external_id));
 }
 
