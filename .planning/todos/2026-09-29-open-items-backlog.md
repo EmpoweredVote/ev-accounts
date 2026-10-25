@@ -7,6 +7,12 @@ query or the file that produced it so the next session does not have to re-deriv
 🔴 **These exist because they were found in passing, not because anyone planned them.** Several are
 invisible to CI and to every existing gate. Re-measure before acting — the counts move.
 
+**Status 2026-10-25 — items 1, 3 and 6 ✅ CLOSED, item 2 ◐ half closed. Six remain, and ▶ NEXT is
+item 7.** ⚠ That re-measure instruction earned its keep this pass: item 1's population had fallen
+210 → 153 on its own, item 3 had been quietly resolved by someone else, and item 6's baseline turned
+out never to have moved. **Three of the four were already partly or wholly fixed before anyone
+looked.** Measure before you plan the work, not after.
+
 ---
 
 ## 1. ✅ CLOSED 2026-10-25 — governments with a NULL `geo_id` are unreachable from the landing page
@@ -73,7 +79,7 @@ Full mechanism: `reference_government_geoid_reachability` memory, and `CC_0183`'
 
 ---
 
-## 2. 86 active politicians render a PAGE URL as their photo
+## 2. ◐ HALF CLOSED — 86 active politicians render a PAGE URL as their photo
 
 **Measured 2026-09-29: 86.** `photo_custom_url` is empty and `photo_origin_url` points at an HTML
 page, so the read path serves a page URL into an `<img>`.
@@ -93,6 +99,31 @@ render and poisons the fallback.
 
 ▶ **Two jobs:** clear or repair the 86, and fix the skill so the next run writes `photo_custom_url`.
 The St. Louis wave wrote all three columns; that is the pattern to copy.
+
+### ◐ HALF CLOSED 2026-10-25 — the 86 are repaired; the CAUSE is unverified
+
+**The query above now returns 0.** 🔴 **That zero is only meaningful because of a positive
+control** — a count of 0 from this predicate is exactly what a broken predicate also returns.
+
+| probe | 2026-10-25 |
+| --- | --- |
+| active politicians whose `photo_origin_url` is NOT an image extension | **6,174** |
+| …of those, rescued by a `photo_custom_url` | **6,174** |
+| …still broken (`photo_custom_url` empty) — **the item** | **0** |
+
+⚠ **My first attempt at this control was worthless and looked fine.** I ran the inverted regex
+*inside* the `photo_custom_url = ''` filter, so the control was nested in the very set I was
+testing; it returned 0 because its parent returned 0, and that reads just like a pass. The control
+has to sit OUTSIDE the filter under test. → `feedback_control_must_fail_first`
+
+🔴 **THE POISONED FALLBACK IS STILL THERE — 6,174 ROWS RENDER ONLY BECAUSE THE CUSTOM COLUMN IS
+FILLED.** Clear `photo_custom_url` on any one of them, for any reason, and it serves a page URL
+into an `<img>` again. The symptom is fixed; the shape that caused it is not.
+
+▶ **STILL OWED: the second job, and it was NOT checked.** The `find-headshots` skill is not on disk
+in this repo or under `~/.claude/skills`, so whether its import step now writes `photo_custom_url`
+could not be verified here. **Do not read this item as closed until someone reads that skill.**
+Until then, treat 0 as a count that can come back.
 
 ---
 
@@ -133,18 +164,27 @@ have their data fixed but still no chip.
 
 ---
 
-## 6. CLAUDE.md's `offices_missing_terms` baseline is stale
+## 6. ✅ CLOSED 2026-10-25 — CLAUDE.md's `offices_missing_terms` baseline is stale
 
-CLAUDE.md says **238** unflagged. **Measured 2026-09-29: 239.** Wave 3 created the St. Louis Sheriff
-seat unseated by ruling, which moved it, and that is recorded in the MO spec but never propagated to
-CLAUDE.md.
+The original complaint (CLAUDE.md said **238**, the measurement was **239**) was fixed before this
+pass; CLAUDE.md has read 239 for some time. **Re-measured 2026-10-25: `400 / 161 / 239`.**
 
-▶ One-line edit: read the baseline as **239**. A stale high baseline hides drift; a stale low one
-cries wolf.
+✅ **THE BASELINE IS CORRECT AND HAS NOT MOVED.** 239 unflagged, exactly as recorded. What was stale
+was the *dated observation* beside it — `433 / 194` from 2026-10-20 — because Augusta and Westbrook
+were seated in between (`CC_0282`/`CC_0283`). Both numbers are now current in CLAUDE.md.
+
+🔴 **The distinction that keeps this from recurring, now written into CLAUDE.md: only `unflagged` is
+a baseline. `total` and `flagged` are dated observations and a seating wave is SUPPOSED to move
+them.** Reading all three as a baseline is what produced the "+194 of drift" false alarm.
+
+⚠ **One thing the closure surfaced and did NOT fix:** the 13 flagged seats that carry a
+`vacant_since` date — the audited, real vacancies — have not moved at all, while the undated pile
+fell 181 → 148. The flagged total is falling because Maine is being seeded, not because any audited
+vacancy was resolved. Read the two sub-buckets apart.
 
 ---
 
-## 7. ⚠ 349 offices carry a NULL `chamber_id`, and nothing distinguishes orphaned from legitimate
+## 7. ▶ NEXT TASK — 349 offices carry a NULL `chamber_id`, and nothing distinguishes orphaned from legitimate
 
 **Measured 2026-09-29: 349** (was 356 before `CC_0183` attached Wichita's 7).
 

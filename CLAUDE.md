@@ -74,11 +74,16 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-20: `433 / 194 / 239`.** The Knight trackers report it in exactly this
-`total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md` §"Flagging is
-load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since: 239 UNFLAGGED.
-Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared vacancy* and is
-deliberately not drift.
+**Measured 2026-10-25: `400 / 161 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 33 that left
+are Augusta and Westbrook being seated, `CC_0282`/`CC_0283`). The Knight trackers report it in
+exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
+§"Flagging is load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since:
+239 UNFLAGGED. Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared
+vacancy* and is deliberately not drift.
+
+⚠ **ONLY THE UNFLAGGED NUMBER IS A BASELINE — THE OTHER TWO ARE DATED OBSERVATIONS.** Seating a
+city moves `total` and `flagged` and must leave `239` alone. It has, across every wave so far, and
+that is the point: a wave that seats people should shrink the flagged bucket, never the baseline.
 
 ⚠ **READING THE TOTAL AGAINST THE BASELINE RAISES A FALSE ALARM**, and has: on 2026-10-20 a
 session reported "433 against a baseline of 239, +194 of drift". The +194 it had found was the
@@ -88,13 +93,18 @@ The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling 
 that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 194 flagged on 2026-10-20,
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 161 flagged on 2026-10-25,
 only **13 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **181 are flagged with no date**, and **138 of
-those are Maine**: every municipal and school office in 17 Maine cities, 100% of them, none ever
-seated. That is "we have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a
+incumbent died or resigned; see `fl.md`). The other **148 are flagged with no date**, and **105 of
+those are Maine**: every municipal and school office in the 15 cities not yet seeded, 100% of them,
+none ever seated. That is "we have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a
 vacancy to voters and keeps the rows out of the drift metric. Seeding Maine municipalities is the
 fix; until then, **do not read a stable 239 as "occupancy is clean".**
+
+🔴 **THE 13 DATED VACANCIES HAVE NOT MOVED WHILE THE UNDATED FELL 181 → 148.** Every seat a wave
+seats comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
+vacancies being resolved. **Read the two sub-buckets separately, or a falling flagged total will
+look like progress on something it has not touched.**
 
 Use the helpers rather than hand-rolling the two-step:
 
