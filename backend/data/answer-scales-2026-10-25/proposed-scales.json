@@ -1,0 +1,6382 @@
+[
+ {
+  "id": 121,
+  "externalId": "bli-001",
+  "text": "How many members serve on the Bloomington Common Council?",
+  "options": [
+   "9 members",
+   "11 members",
+   "13 members",
+   "15 members"
+  ],
+  "answer": "9 members",
+  "scale": [
+   "3 members",
+   "5 members",
+   "7 members",
+   "9 members",
+   "11 members",
+   "13 members",
+   "15 members"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13552,
+  "externalId": "wisco-001",
+  "text": "How many members serve in the Wisconsin State Senate?",
+  "options": [
+   "33",
+   "50",
+   "72",
+   "99"
+  ],
+  "answer": "33",
+  "scale": [
+   "3",
+   "13",
+   "23",
+   "33",
+   "43",
+   "53",
+   "63"
+  ],
+  "step": 10
+ },
+ {
+  "id": 127,
+  "externalId": "bli-007",
+  "text": "How many parks does Bloomington Parks and Recreation manage?",
+  "options": [
+   "32 parks",
+   "38 parks",
+   "45 parks",
+   "55 parks"
+  ],
+  "answer": "32 parks",
+  "scale": [
+   "17 parks",
+   "22 parks",
+   "27 parks",
+   "32 parks",
+   "37 parks",
+   "42 parks",
+   "47 parks"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10729,
+  "externalId": "nysts-002",
+  "text": "How many members are in the New York State Assembly?",
+  "options": [
+   "63",
+   "100",
+   "120",
+   "150"
+  ],
+  "answer": "150",
+  "scale": [
+   "90",
+   "110",
+   "130",
+   "150",
+   "170",
+   "190",
+   "210"
+  ],
+  "step": 20
+ },
+ {
+  "id": 7205,
+  "externalId": "wdc-001",
+  "text": "How many members serve on the Council of the District of Columbia?",
+  "options": [
+   "13 members",
+   "15 members",
+   "17 members",
+   "19 members"
+  ],
+  "answer": "13 members",
+  "scale": [
+   "7 members",
+   "9 members",
+   "11 members",
+   "13 members",
+   "15 members",
+   "17 members",
+   "19 members"
+  ],
+  "step": 2
+ },
+ {
+  "id": 30,
+  "externalId": "q030",
+  "text": "How many amendments have been added to the Constitution?",
+  "options": [
+   "10",
+   "17",
+   "24",
+   "27"
+  ],
+  "answer": "27",
+  "scale": [
+   "18",
+   "21",
+   "24",
+   "27",
+   "30",
+   "33",
+   "36"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 13621,
+  "externalId": "wisco-070",
+  "text": "How many counties does Wisconsin have?",
+  "options": [
+   "72",
+   "80",
+   "88",
+   "95"
+  ],
+  "answer": "72",
+  "scale": [
+   "57",
+   "62",
+   "67",
+   "72",
+   "77",
+   "82",
+   "87"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13629,
+  "externalId": "wisco-078",
+  "text": "About what share of the nation's cranberries does Wisconsin grow?",
+  "options": [
+   "About 20 percent",
+   "About 35 percent",
+   "About 60 percent",
+   "About 90 percent"
+  ],
+  "answer": "About 60 percent",
+  "scale": [
+   "About 30 percent",
+   "About 40 percent",
+   "About 50 percent",
+   "About 60 percent",
+   "About 70 percent",
+   "About 80 percent",
+   "About 90 percent"
+  ],
+  "step": 10
+ },
+ {
+  "id": 363,
+  "externalId": "ins-043",
+  "text": "At what age can Indiana residents register to vote?",
+  "options": [
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "21 years old"
+  ],
+  "answer": "18 years old",
+  "scale": [
+   "15 years old",
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "19 years old",
+   "20 years old",
+   "21 years old"
+  ],
+  "step": 1
+ },
+ {
+  "id": 387,
+  "externalId": "cas-018",
+  "text": "How many separately elected constitutional officers does California have in its executive branch?",
+  "options": [
+   "8 officers",
+   "10 officers",
+   "12 officers",
+   "15 officers"
+  ],
+  "answer": "8 officers",
+  "scale": [
+   "2 officers",
+   "4 officers",
+   "6 officers",
+   "8 officers",
+   "10 officers",
+   "12 officers",
+   "14 officers"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10930,
+  "externalId": "queny-116",
+  "text": "Approximately how many New York State Assembly districts cover the Queens borough?",
+  "options": [
+   "14",
+   "16",
+   "18",
+   "22"
+  ],
+  "answer": "14",
+  "scale": [
+   "8",
+   "10",
+   "12",
+   "14",
+   "16",
+   "18",
+   "20"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13627,
+  "externalId": "wisco-076",
+  "text": "About what share of all cheese made in the United States comes from Wisconsin?",
+  "options": [
+   "About 26 percent",
+   "About 40 percent",
+   "About 55 percent",
+   "About 70 percent"
+  ],
+  "answer": "About 26 percent",
+  "scale": [
+   "About 11 percent",
+   "About 16 percent",
+   "About 21 percent",
+   "About 26 percent",
+   "About 31 percent",
+   "About 36 percent",
+   "About 41 percent"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13630,
+  "externalId": "wisco-079",
+  "text": "Wisconsin grows roughly what share of the nation's ginseng?",
+  "options": [
+   "About 30 percent",
+   "About 55 percent",
+   "About 75 percent",
+   "About 97 percent"
+  ],
+  "answer": "About 97 percent",
+  "scale": [
+   "About 94 percent",
+   "About 95 percent",
+   "About 96 percent",
+   "About 97 percent",
+   "About 98 percent",
+   "About 99 percent",
+   "About 100 percent"
+  ],
+  "step": 1
+ },
+ {
+  "id": 14063,
+  "externalId": "milwi-090",
+  "text": "About how many people live in the Milwaukee metropolitan area?",
+  "options": [
+   "About 577,000",
+   "About 850,000",
+   "About 1,570,000",
+   "About 3,200,000"
+  ],
+  "answer": "About 1,570,000",
+  "scale": [
+   "About 820,000",
+   "About 1,070,000",
+   "About 1,320,000",
+   "About 1,570,000",
+   "About 1,820,000",
+   "About 2,070,000",
+   "About 2,320,000"
+  ],
+  "step": 250000
+ },
+ {
+  "id": 11144,
+  "externalId": "pitpa-002",
+  "text": "How many districts does the Pittsburgh City Council have?",
+  "options": [
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "answer": "9",
+  "scale": [
+   "3",
+   "5",
+   "7",
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13594,
+  "externalId": "wisco-043",
+  "text": "About how many Wisconsin troops fought for the Union in the Civil War?",
+  "options": [
+   "About 91,000",
+   "About 150,000",
+   "About 220,000",
+   "About 300,000"
+  ],
+  "answer": "About 91,000",
+  "scale": [
+   "About 16,000",
+   "About 41,000",
+   "About 66,000",
+   "About 91,000",
+   "About 116,000",
+   "About 141,000",
+   "About 166,000"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 133,
+  "externalId": "bli-013",
+  "text": "What is the approximate population of Bloomington?",
+  "options": [
+   "85,000 residents",
+   "95,000 residents",
+   "110,000 residents",
+   "125,000 residents"
+  ],
+  "answer": "85,000 residents",
+  "scale": [
+   "55,000 residents",
+   "65,000 residents",
+   "75,000 residents",
+   "85,000 residents",
+   "95,000 residents",
+   "105,000 residents",
+   "115,000 residents"
+  ],
+  "step": 10000
+ },
+ {
+  "id": 13574,
+  "externalId": "wisco-023",
+  "text": "How many articles does the Wisconsin Constitution contain?",
+  "options": [
+   "7",
+   "10",
+   "12",
+   "14"
+  ],
+  "answer": "14",
+  "scale": [
+   "8",
+   "10",
+   "12",
+   "14",
+   "16",
+   "18",
+   "20"
+  ],
+  "step": 2
+ },
+ {
+  "id": 169,
+  "externalId": "bli-049",
+  "text": "What is the voter registration deadline in Indiana before an election?",
+  "options": [
+   "7 days before",
+   "14 days before",
+   "21 days before",
+   "29 days before"
+  ],
+  "answer": "29 days before",
+  "scale": [
+   "14 days before",
+   "19 days before",
+   "24 days before",
+   "29 days before",
+   "34 days before",
+   "39 days before",
+   "44 days before"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16079,
+  "externalId": "climc-0090",
+  "text": "The IPCC's Sixth Assessment Report estimated how much human-caused warming of the global surface had occurred in 2011-2020, compared with 1850-1900?",
+  "options": [
+   "About 1.1C",
+   "About 1.9C",
+   "About 2.4C",
+   "About 3.0C"
+  ],
+  "answer": "About 1.1C",
+  "scale": [
+   "About 0.2C",
+   "About 0.5C",
+   "About 0.8C",
+   "About 1.1C",
+   "About 1.4C",
+   "About 1.7C",
+   "About 2.0C"
+  ],
+  "step": 0.25
+ },
+ {
+  "id": 16086,
+  "externalId": "ins-117",
+  "text": "How many seats does Indiana hold in the United States House of Representatives?",
+  "options": [
+   "9",
+   "7",
+   "12",
+   "15"
+  ],
+  "answer": "9",
+  "scale": [
+   "3",
+   "5",
+   "7",
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "step": 2
+ },
+ {
+  "id": 352,
+  "externalId": "ins-032",
+  "text": "How many judges serve on the Indiana Court of Appeals?",
+  "options": [
+   "9 judges",
+   "12 judges",
+   "15 judges",
+   "18 judges"
+  ],
+  "answer": "15 judges",
+  "scale": [
+   "6 judges",
+   "9 judges",
+   "12 judges",
+   "15 judges",
+   "18 judges",
+   "21 judges",
+   "24 judges"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10207,
+  "externalId": "arizs-051",
+  "text": "How many federally recognized Native American tribes are there in Arizona — more than almost any other state?",
+  "options": [
+   "22",
+   "26",
+   "30",
+   "36"
+  ],
+  "answer": "22",
+  "scale": [
+   "13",
+   "16",
+   "19",
+   "22",
+   "25",
+   "28",
+   "31"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 5551,
+  "externalId": "pla-068",
+  "text": "What was Plano's population in the year 2000?",
+  "options": [
+   "222,030",
+   "250,000",
+   "285,000",
+   "320,000"
+  ],
+  "answer": "222,030",
+  "scale": [
+   "147,030",
+   "172,030",
+   "197,030",
+   "222,030",
+   "247,030",
+   "272,030",
+   "297,030"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 10541,
+  "externalId": "norca-002",
+  "text": "How many members serve in the North Carolina House of Representatives?",
+  "options": [
+   "120",
+   "130",
+   "150",
+   "180"
+  ],
+  "answer": "120",
+  "scale": [
+   "90",
+   "100",
+   "110",
+   "120",
+   "130",
+   "140",
+   "150"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9207,
+  "externalId": "ica-053",
+  "text": "How many acres does the Empire Polo Club in Indio encompass?",
+  "options": [
+   "1,000 acres",
+   "1,500 acres",
+   "2,000 acres",
+   "2,500 acres"
+  ],
+  "answer": "1,000 acres",
+  "scale": [
+   "250 acres",
+   "500 acres",
+   "750 acres",
+   "1,000 acres",
+   "1,250 acres",
+   "1,500 acres",
+   "1,750 acres"
+  ],
+  "step": 250
+ },
+ {
+  "id": 1399,
+  "externalId": "ind-094",
+  "text": "How many articles does the Indiana Constitution contain?",
+  "options": [
+   "7 articles",
+   "10 articles",
+   "16 articles",
+   "20 articles"
+  ],
+  "answer": "16 articles",
+  "scale": [
+   "7 articles",
+   "10 articles",
+   "13 articles",
+   "16 articles",
+   "19 articles",
+   "22 articles",
+   "25 articles"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 16126,
+  "externalId": "ica-213",
+  "text": "How many seats does California hold in the United States House of Representatives?",
+  "options": [
+   "52",
+   "38",
+   "45",
+   "60"
+  ],
+  "answer": "52",
+  "scale": [
+   "37",
+   "42",
+   "47",
+   "52",
+   "57",
+   "62",
+   "67"
+  ],
+  "step": 5
+ },
+ {
+  "id": 3688,
+  "externalId": "cal-121",
+  "text": "How many members serve in the California State Assembly?",
+  "options": [
+   "80 members",
+   "100 members",
+   "120 members",
+   "150 members"
+  ],
+  "answer": "80 members",
+  "scale": [
+   "20 members",
+   "40 members",
+   "60 members",
+   "80 members",
+   "100 members",
+   "120 members",
+   "140 members"
+  ],
+  "step": 20
+ },
+ {
+  "id": 7,
+  "externalId": "q007",
+  "text": "How many justices serve on the U.S. Supreme Court?",
+  "options": [
+   "9",
+   "11",
+   "12",
+   "13"
+  ],
+  "answer": "9",
+  "scale": [
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5950,
+  "externalId": "por-001",
+  "text": "How many councilors serve on the Portland City Council?",
+  "options": [
+   "7 councilors",
+   "9 councilors",
+   "12 councilors",
+   "15 councilors"
+  ],
+  "answer": "12 councilors",
+  "scale": [
+   "6 councilors",
+   "8 councilors",
+   "10 councilors",
+   "12 councilors",
+   "14 councilors",
+   "16 councilors",
+   "18 councilors"
+  ],
+  "step": 2
+ },
+ {
+  "id": 11275,
+  "externalId": "wiran-0020",
+  "text": "How long did the Iran Hostage Crisis last?",
+  "options": [
+   "444 days",
+   "521 days",
+   "600 days",
+   "730 days"
+  ],
+  "answer": "444 days",
+  "scale": [
+   "294 days",
+   "344 days",
+   "394 days",
+   "444 days",
+   "494 days",
+   "544 days",
+   "594 days"
+  ],
+  "step": 50
+ },
+ {
+  "id": 11283,
+  "externalId": "wiran-0028",
+  "text": "Roughly what percentage of the world's oil supply passes through the Strait of Hormuz, making it central to US-Iran tensions?",
+  "options": [
+   "5%",
+   "10%",
+   "15%",
+   "20%"
+  ],
+  "answer": "20%",
+  "scale": [
+   "5%",
+   "10%",
+   "15%",
+   "20%",
+   "25%",
+   "30%",
+   "35%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11295,
+  "externalId": "wiran-0040",
+  "text": "When Iran enriched uranium to 60% purity in 2021 — far beyond civilian energy needs — what weapons-grade threshold was it approaching?",
+  "options": [
+   "80%",
+   "90%",
+   "95%",
+   "97%"
+  ],
+  "answer": "90%",
+  "scale": [
+   "84%",
+   "86%",
+   "88%",
+   "90%",
+   "92%",
+   "94%",
+   "96%"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16143,
+  "externalId": "pla-167",
+  "text": "In Texas, how far ahead of Election Day must a Plano resident be registered in order to vote?",
+  "options": [
+   "15 days",
+   "30 days",
+   "45 days",
+   "60 days"
+  ],
+  "answer": "30 days",
+  "scale": [
+   "15 days",
+   "20 days",
+   "25 days",
+   "30 days",
+   "35 days",
+   "40 days",
+   "45 days"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16145,
+  "externalId": "pla-169",
+  "text": "What was Plano's population at the 2020 census?",
+  "options": [
+   "198,410",
+   "241,760",
+   "285,494",
+   "312,880"
+  ],
+  "answer": "285,494",
+  "scale": [
+   "210,494",
+   "235,494",
+   "260,494",
+   "285,494",
+   "310,494",
+   "335,494",
+   "360,494"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 9983,
+  "externalId": "stlmo-010",
+  "text": "How many wards does St. Louis, Missouri have?",
+  "options": [
+   "10",
+   "14",
+   "20",
+   "28"
+  ],
+  "answer": "14",
+  "scale": [
+   "5",
+   "8",
+   "11",
+   "14",
+   "17",
+   "20",
+   "23"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 9985,
+  "externalId": "stlmo-012",
+  "text": "How many neighborhoods does the City of St. Louis officially recognize?",
+  "options": [
+   "79",
+   "100",
+   "125",
+   "150"
+  ],
+  "answer": "79",
+  "scale": [
+   "19",
+   "39",
+   "59",
+   "79",
+   "99",
+   "119",
+   "139"
+  ],
+  "step": 20
+ },
+ {
+  "id": 9990,
+  "externalId": "stlmo-017",
+  "text": "What is the total number of votes possible in the St. Louis Board of Aldermen, including the Board President?",
+  "options": [
+   "15",
+   "16",
+   "18",
+   "20"
+  ],
+  "answer": "15",
+  "scale": [
+   "12",
+   "13",
+   "14",
+   "15",
+   "16",
+   "17",
+   "18"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7209,
+  "externalId": "wdc-005",
+  "text": "How many Advisory Neighborhood Commissions (ANCs) currently operate in Washington, D.C.?",
+  "options": [
+   "46 ANCs",
+   "52 ANCs",
+   "60 ANCs",
+   "70 ANCs"
+  ],
+  "answer": "46 ANCs",
+  "scale": [
+   "31 ANCs",
+   "36 ANCs",
+   "41 ANCs",
+   "46 ANCs",
+   "51 ANCs",
+   "56 ANCs",
+   "61 ANCs"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7618,
+  "externalId": "wdc-162",
+  "text": "What is Washington, DC's population according to the 2020 census?",
+  "options": [
+   "689,545",
+   "739,545",
+   "789,545",
+   "839,545"
+  ],
+  "answer": "689,545",
+  "scale": [
+   "539,545",
+   "589,545",
+   "639,545",
+   "689,545",
+   "739,545",
+   "789,545",
+   "839,545"
+  ],
+  "step": 50000
+ },
+ {
+  "id": 7869,
+  "externalId": "wdc-253",
+  "text": "How many Single Member Districts (SMDs) make up Washington, DC's Advisory Neighborhood Commission system?",
+  "options": [
+   "345 SMDs",
+   "395 SMDs",
+   "445 SMDs",
+   "495 SMDs"
+  ],
+  "answer": "345 SMDs",
+  "scale": [
+   "195 SMDs",
+   "245 SMDs",
+   "295 SMDs",
+   "345 SMDs",
+   "395 SMDs",
+   "445 SMDs",
+   "495 SMDs"
+  ],
+  "step": 50
+ },
+ {
+  "id": 7206,
+  "externalId": "wdc-002",
+  "text": "How many wards does Washington, D.C. have for local representation?",
+  "options": [
+   "8 wards",
+   "10 wards",
+   "12 wards",
+   "14 wards"
+  ],
+  "answer": "8 wards",
+  "scale": [
+   "2 wards",
+   "4 wards",
+   "6 wards",
+   "8 wards",
+   "10 wards",
+   "12 wards",
+   "14 wards"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10283,
+  "externalId": "tucaz-029",
+  "text": "Tucson is approximately how many miles from the U.S.–Mexico border?",
+  "options": [
+   "60 miles",
+   "90 miles",
+   "120 miles",
+   "150 miles"
+  ],
+  "answer": "60 miles",
+  "scale": [
+   "30 miles",
+   "40 miles",
+   "50 miles",
+   "60 miles",
+   "70 miles",
+   "80 miles",
+   "90 miles"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8231,
+  "externalId": "bxl-012",
+  "text": "What was the population of Biloxi according to the 2020 census?",
+  "options": [
+   "39,449",
+   "44,449",
+   "49,449",
+   "59,449"
+  ],
+  "answer": "49,449",
+  "scale": [
+   "34,449",
+   "39,449",
+   "44,449",
+   "49,449",
+   "54,449",
+   "59,449",
+   "64,449"
+  ],
+  "step": 5000
+ },
+ {
+  "id": 6386,
+  "externalId": "por-288",
+  "text": "How many acres does Forest Park in Portland cover?",
+  "options": [
+   "About 800 acres",
+   "About 2,500 acres",
+   "About 5,200 acres",
+   "About 12,000 acres"
+  ],
+  "answer": "About 5,200 acres",
+  "scale": [
+   "About 2,200 acres",
+   "About 3,200 acres",
+   "About 4,200 acres",
+   "About 5,200 acres",
+   "About 6,200 acres",
+   "About 7,200 acres",
+   "About 8,200 acres"
+  ],
+  "step": 1000
+ },
+ {
+  "id": 10423,
+  "externalId": "phxaz-073",
+  "text": "What is Phoenix's goal for shade coverage of the city by 2030?",
+  "options": [
+   "10% of the city",
+   "15% of the city",
+   "25% of the city",
+   "50% of the city"
+  ],
+  "answer": "25% of the city",
+  "scale": [
+   "10% of the city",
+   "15% of the city",
+   "20% of the city",
+   "25% of the city",
+   "30% of the city",
+   "35% of the city",
+   "40% of the city"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9929,
+  "externalId": "sprmo-050",
+  "text": "Approximately how many Confederate troops fought at the Battle of Wilson's Creek?",
+  "options": [
+   "12,000",
+   "16,000",
+   "20,000",
+   "25,000"
+  ],
+  "answer": "12,000",
+  "scale": [
+   "4,500",
+   "7,000",
+   "9,500",
+   "12,000",
+   "14,500",
+   "17,000",
+   "19,500"
+  ],
+  "step": 2500
+ },
+ {
+  "id": 5742,
+  "externalId": "tex-001",
+  "text": "How many members serve in the Texas House of Representatives?",
+  "options": [
+   "150",
+   "180",
+   "200",
+   "435"
+  ],
+  "answer": "150",
+  "scale": [
+   "90",
+   "110",
+   "130",
+   "150",
+   "170",
+   "190",
+   "210"
+  ],
+  "step": 20
+ },
+ {
+  "id": 5743,
+  "externalId": "tex-002",
+  "text": "How many senators serve in the Texas Senate?",
+  "options": [
+   "25",
+   "28",
+   "31",
+   "50"
+  ],
+  "answer": "31",
+  "scale": [
+   "22",
+   "25",
+   "28",
+   "31",
+   "34",
+   "37",
+   "40"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 9947,
+  "externalId": "sprmo-068",
+  "text": "Bass Pro Shops' flagship Springfield store draws approximately how many visitors per year?",
+  "options": [
+   "500,000",
+   "1,000,000",
+   "4,000,000",
+   "10,000,000"
+  ],
+  "answer": "4,000,000",
+  "scale": [
+   "2,500,000",
+   "3,000,000",
+   "3,500,000",
+   "4,000,000",
+   "4,500,000",
+   "5,000,000",
+   "5,500,000"
+  ],
+  "step": 500000
+ },
+ {
+  "id": 5803,
+  "externalId": "tex-066",
+  "text": "How many articles does the Texas Constitution contain?",
+  "options": [
+   "7 articles",
+   "10 articles",
+   "14 articles",
+   "17 articles"
+  ],
+  "answer": "17 articles",
+  "scale": [
+   "8 articles",
+   "11 articles",
+   "14 articles",
+   "17 articles",
+   "20 articles",
+   "23 articles",
+   "26 articles"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 15868,
+  "externalId": "tex-204",
+  "text": "How many counties does Texas have — more than any other state?",
+  "options": [
+   "64",
+   "120",
+   "198",
+   "254"
+  ],
+  "answer": "254",
+  "scale": [
+   "104",
+   "154",
+   "204",
+   "254",
+   "304",
+   "354",
+   "404"
+  ],
+  "step": 50
+ },
+ {
+  "id": 5494,
+  "externalId": "pla-003",
+  "text": "How many members serve on the Plano City Council, including the Mayor?",
+  "options": [
+   "5 members total",
+   "6 members total",
+   "7 members total",
+   "8 members total"
+  ],
+  "answer": "8 members total",
+  "scale": [
+   "5 members total",
+   "6 members total",
+   "7 members total",
+   "8 members total",
+   "9 members total",
+   "10 members total",
+   "11 members total"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5760,
+  "externalId": "tex-019",
+  "text": "What percentage of Texas's electric load does ERCOT manage?",
+  "options": [
+   "50%",
+   "70%",
+   "80%",
+   "90%"
+  ],
+  "answer": "90%",
+  "scale": [
+   "81%",
+   "84%",
+   "87%",
+   "90%",
+   "93%",
+   "96%",
+   "99%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 5788,
+  "externalId": "tex-051",
+  "text": "How many justices serve on the Texas Supreme Court?",
+  "options": [
+   "9 justices",
+   "11 justices",
+   "13 justices",
+   "15 justices"
+  ],
+  "answer": "9 justices",
+  "scale": [
+   "3 justices",
+   "5 justices",
+   "7 justices",
+   "9 justices",
+   "11 justices",
+   "13 justices",
+   "15 justices"
+  ],
+  "step": 2
+ },
+ {
+  "id": 8663,
+  "externalId": "mis-170",
+  "text": "How many counties does Mississippi have?",
+  "options": [
+   "82",
+   "88",
+   "95",
+   "105"
+  ],
+  "answer": "82",
+  "scale": [
+   "67",
+   "72",
+   "77",
+   "82",
+   "87",
+   "92",
+   "97"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5500,
+  "externalId": "pla-009",
+  "text": "What was Plano's population in 1970, before the dramatic growth of the Sun Belt era?",
+  "options": [
+   "3,695",
+   "10,000",
+   "17,872",
+   "72,000"
+  ],
+  "answer": "17,872",
+  "scale": [
+   "2,872",
+   "7,872",
+   "12,872",
+   "17,872",
+   "22,872",
+   "27,872",
+   "32,872"
+  ],
+  "step": 5000
+ },
+ {
+  "id": 10795,
+  "externalId": "nysts-068",
+  "text": "What is the approximate GDP of New York State?",
+  "options": [
+   "$1 trillion",
+   "$1.5 trillion",
+   "$2.3 trillion",
+   "$4 trillion"
+  ],
+  "answer": "$2.3 trillion",
+  "scale": [
+   "$0.8 trillion",
+   "$1.3 trillion",
+   "$1.8 trillion",
+   "$2.3 trillion",
+   "$2.8 trillion",
+   "$3.3 trillion",
+   "$3.8 trillion"
+  ],
+  "step": 0.5
+ },
+ {
+  "id": 10804,
+  "externalId": "nysts-077",
+  "text": "Approximately how many students are enrolled across all SUNY campuses?",
+  "options": [
+   "About 100,000",
+   "About 200,000",
+   "About 300,000",
+   "About 400,000"
+  ],
+  "answer": "About 400,000",
+  "scale": [
+   "About 100,000",
+   "About 200,000",
+   "About 300,000",
+   "About 400,000",
+   "About 500,000",
+   "About 600,000",
+   "About 700,000"
+  ],
+  "step": 100000
+ },
+ {
+  "id": 16517,
+  "externalId": "smo-512",
+  "text": "Which California State Assembly district represents Santa Monica?",
+  "options": [
+   "AD-49",
+   "AD-51",
+   "AD-54",
+   "AD-62"
+  ],
+  "answer": "AD-51",
+  "scale": [
+   "AD-45",
+   "AD-47",
+   "AD-49",
+   "AD-51",
+   "AD-53",
+   "AD-55",
+   "AD-57"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16519,
+  "externalId": "smo-515",
+  "text": "Which California State Senate district represents Santa Monica?",
+  "options": [
+   "SD-18",
+   "SD-22",
+   "SD-24",
+   "SD-26"
+  ],
+  "answer": "SD-24",
+  "scale": [
+   "SD-18",
+   "SD-20",
+   "SD-22",
+   "SD-24",
+   "SD-26",
+   "SD-28",
+   "SD-30"
+  ],
+  "step": 2
+ },
+ {
+  "id": 8384,
+  "externalId": "bxl-169",
+  "text": "What was the storm surge height that Hurricane Katrina produced in Biloxi?",
+  "options": [
+   "18 feet",
+   "22 feet",
+   "27 feet",
+   "30 feet"
+  ],
+  "answer": "30 feet",
+  "scale": [
+   "21 feet",
+   "24 feet",
+   "27 feet",
+   "30 feet",
+   "33 feet",
+   "36 feet",
+   "39 feet"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10159,
+  "externalId": "arizs-003",
+  "text": "How many members serve in the Arizona House of Representatives?",
+  "options": [
+   "60",
+   "75",
+   "90",
+   "120"
+  ],
+  "answer": "60",
+  "scale": [
+   "30",
+   "40",
+   "50",
+   "60",
+   "70",
+   "80",
+   "90"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10168,
+  "externalId": "arizs-012",
+  "text": "How many legislative districts are there in Arizona, each electing one state senator and two state representatives?",
+  "options": [
+   "30",
+   "35",
+   "40",
+   "45"
+  ],
+  "answer": "30",
+  "scale": [
+   "15",
+   "20",
+   "25",
+   "30",
+   "35",
+   "40",
+   "45"
+  ],
+  "step": 5
+ },
+ {
+  "id": 139,
+  "externalId": "bli-019",
+  "text": "What is the approximate population of Monroe County?",
+  "options": [
+   "About 105,000 residents",
+   "About 140,000 residents",
+   "About 175,000 residents",
+   "About 210,000 residents"
+  ],
+  "answer": "About 140,000 residents",
+  "scale": [
+   "About 65,000 residents",
+   "About 90,000 residents",
+   "About 115,000 residents",
+   "About 140,000 residents",
+   "About 165,000 residents",
+   "About 190,000 residents",
+   "About 215,000 residents"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 9993,
+  "externalId": "stlmo-020",
+  "text": "What was the population of the City of St. Louis at the 2020 census?",
+  "options": [
+   "301,578",
+   "412,940",
+   "486,220",
+   "573,110"
+  ],
+  "answer": "301,578",
+  "scale": [
+   "151,578",
+   "201,578",
+   "251,578",
+   "301,578",
+   "351,578",
+   "401,578",
+   "451,578"
+  ],
+  "step": 50000
+ },
+ {
+  "id": 11060,
+  "externalId": "phipa-014",
+  "text": "What was Philadelphia's population according to the 2020 U.S. Census?",
+  "options": [
+   "About 800,000",
+   "About 1,100,000",
+   "About 1,400,000",
+   "About 1,600,000"
+  ],
+  "answer": "About 1,600,000",
+  "scale": [
+   "About 1,000,000",
+   "About 1,200,000",
+   "About 1,400,000",
+   "About 1,600,000",
+   "About 1,800,000",
+   "About 2,000,000",
+   "About 2,200,000"
+  ],
+  "step": 200000
+ },
+ {
+  "id": 326,
+  "externalId": "ins-006",
+  "text": "How many days does the Indiana General Assembly meet in even-numbered years?",
+  "options": [
+   "10 days",
+   "15 days",
+   "20 days",
+   "30 days"
+  ],
+  "answer": "30 days",
+  "scale": [
+   "15 days",
+   "20 days",
+   "25 days",
+   "30 days",
+   "35 days",
+   "40 days",
+   "45 days"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11108,
+  "externalId": "phipa-062",
+  "text": "How many steps lead to the entrance of the Philadelphia Museum of Art, famously known as the \"Rocky Steps\"?",
+  "options": [
+   "72 steps",
+   "88 steps",
+   "104 steps",
+   "120 steps"
+  ],
+  "answer": "72 steps",
+  "scale": [
+   "42 steps",
+   "52 steps",
+   "62 steps",
+   "72 steps",
+   "82 steps",
+   "92 steps",
+   "102 steps"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10420,
+  "externalId": "phxaz-070",
+  "text": "In 2024, Phoenix set a record for how many consecutive days with temperatures reaching at least 100°F?",
+  "options": [
+   "113 days",
+   "125 days",
+   "142 days",
+   "160 days"
+  ],
+  "answer": "113 days",
+  "scale": [
+   "83 days",
+   "93 days",
+   "103 days",
+   "113 days",
+   "123 days",
+   "133 days",
+   "143 days"
+  ],
+  "step": 10
+ },
+ {
+  "id": 5065,
+  "externalId": "cam-024",
+  "text": "Approximately how many election workers does Cambridge recruit to staff polling locations for each election?",
+  "options": [
+   "260 workers",
+   "350 workers",
+   "450 workers",
+   "600 workers"
+  ],
+  "answer": "260 workers",
+  "scale": [
+   "110 workers",
+   "160 workers",
+   "210 workers",
+   "260 workers",
+   "310 workers",
+   "360 workers",
+   "410 workers"
+  ],
+  "step": 50
+ },
+ {
+  "id": 5068,
+  "externalId": "cam-027",
+  "text": "What was the margin of votes when Cambridge voters rejected Plan E in November 1938?",
+  "options": [
+   "1,767 votes",
+   "3,452 votes",
+   "5,234 votes",
+   "7,552 votes"
+  ],
+  "answer": "1,767 votes",
+  "scale": [
+   "267 votes",
+   "767 votes",
+   "1,267 votes",
+   "1,767 votes",
+   "2,267 votes",
+   "2,767 votes",
+   "3,267 votes"
+  ],
+  "step": 500
+ },
+ {
+  "id": 10256,
+  "externalId": "tucaz-002",
+  "text": "How many ward council members serve on the Tucson City Council, in addition to the mayor?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "answer": "6",
+  "scale": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10920,
+  "externalId": "queny-106",
+  "text": "How many New York State Senate districts cover Queens?",
+  "options": [
+   "6",
+   "7",
+   "8",
+   "10"
+  ],
+  "answer": "6",
+  "scale": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11183,
+  "externalId": "pitpa-041",
+  "text": "How tall is the U.S. Steel Tower in Pittsburgh?",
+  "options": [
+   "650 feet",
+   "750 feet",
+   "841 feet",
+   "920 feet"
+  ],
+  "answer": "841 feet",
+  "scale": [
+   "691 feet",
+   "741 feet",
+   "791 feet",
+   "841 feet",
+   "891 feet",
+   "941 feet",
+   "991 feet"
+  ],
+  "step": 50
+ },
+ {
+  "id": 321,
+  "externalId": "ins-001",
+  "text": "How many members serve in the Indiana House of Representatives?",
+  "options": [
+   "100",
+   "120",
+   "150",
+   "200"
+  ],
+  "answer": "100",
+  "scale": [
+   "40",
+   "60",
+   "80",
+   "100",
+   "120",
+   "140",
+   "160"
+  ],
+  "step": 20
+ },
+ {
+  "id": 322,
+  "externalId": "ins-002",
+  "text": "How many members serve in the Indiana Senate?",
+  "options": [
+   "50",
+   "60",
+   "75",
+   "100"
+  ],
+  "answer": "50",
+  "scale": [
+   "20",
+   "30",
+   "40",
+   "50",
+   "60",
+   "70",
+   "80"
+  ],
+  "step": 10
+ },
+ {
+  "id": 325,
+  "externalId": "ins-005",
+  "text": "How many days does the Indiana General Assembly meet in odd-numbered years?",
+  "options": [
+   "61 days",
+   "75 days",
+   "90 days",
+   "120 days"
+  ],
+  "answer": "61 days",
+  "scale": [
+   "31 days",
+   "41 days",
+   "51 days",
+   "61 days",
+   "71 days",
+   "81 days",
+   "91 days"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16629,
+  "externalId": "wdc-435",
+  "text": "Roughly how many residents is each Advisory Neighborhood Commission single-member district meant to contain?",
+  "options": [
+   "500",
+   "2,000",
+   "10,000",
+   "25,000"
+  ],
+  "answer": "2,000",
+  "scale": [
+   "500",
+   "1,000",
+   "1,500",
+   "2,000",
+   "2,500",
+   "3,000",
+   "3,500"
+  ],
+  "step": 500
+ },
+ {
+  "id": 372,
+  "externalId": "cas-002",
+  "text": "How many senators serve in the California State Senate?",
+  "options": [
+   "20 senators",
+   "30 senators",
+   "35 senators",
+   "40 senators"
+  ],
+  "answer": "40 senators",
+  "scale": [
+   "25 senators",
+   "30 senators",
+   "35 senators",
+   "40 senators",
+   "45 senators",
+   "50 senators",
+   "55 senators"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10352,
+  "externalId": "phxaz-002",
+  "text": "Including the mayor, how many members serve on the Phoenix City Council?",
+  "options": [
+   "5",
+   "6",
+   "7",
+   "9"
+  ],
+  "answer": "9",
+  "scale": [
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "step": 1
+ },
+ {
+  "id": 375,
+  "externalId": "cas-005",
+  "text": "What is the maximum number of years a California legislator can serve across both chambers combined?",
+  "options": [
+   "8 years",
+   "10 years",
+   "12 years",
+   "16 years"
+  ],
+  "answer": "12 years",
+  "scale": [
+   "6 years",
+   "8 years",
+   "10 years",
+   "12 years",
+   "14 years",
+   "16 years",
+   "18 years"
+  ],
+  "step": 2
+ },
+ {
+  "id": 399,
+  "externalId": "cas-027",
+  "text": "What is the minimum age requirement to register to vote in California?",
+  "options": [
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "21 years old"
+  ],
+  "answer": "18 years old",
+  "scale": [
+   "15 years old",
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "19 years old",
+   "20 years old",
+   "21 years old"
+  ],
+  "step": 1
+ },
+ {
+  "id": 4406,
+  "externalId": "nor-106",
+  "text": "How many councillors serve on Norwich City Council?",
+  "options": [
+   "39 councillors",
+   "48 councillors",
+   "55 councillors",
+   "60 councillors"
+  ],
+  "answer": "39 councillors",
+  "scale": [
+   "24 councillors",
+   "29 councillors",
+   "34 councillors",
+   "39 councillors",
+   "44 councillors",
+   "49 councillors",
+   "54 councillors"
+  ],
+  "step": 5
+ },
+ {
+  "id": 4407,
+  "externalId": "nor-107",
+  "text": "How many wards does Norwich have for local elections?",
+  "options": [
+   "5 wards",
+   "8 wards",
+   "10 wards",
+   "13 wards"
+  ],
+  "answer": "13 wards",
+  "scale": [
+   "7 wards",
+   "9 wards",
+   "11 wards",
+   "13 wards",
+   "15 wards",
+   "17 wards",
+   "19 wards"
+  ],
+  "step": 2
+ },
+ {
+  "id": 5136,
+  "externalId": "cam-110",
+  "text": "What is the fine for failing to clear snow from sidewalks in Cambridge?",
+  "options": [
+   "$20 per day",
+   "$35 per day",
+   "$50 per day",
+   "$100 per day"
+  ],
+  "answer": "$50 per day",
+  "scale": [
+   "$20 per day",
+   "$30 per day",
+   "$40 per day",
+   "$50 per day",
+   "$60 per day",
+   "$70 per day",
+   "$80 per day"
+  ],
+  "step": 10
+ },
+ {
+  "id": 5287,
+  "externalId": "mas-003",
+  "text": "How many senators serve in the Massachusetts Senate?",
+  "options": [
+   "25 senators",
+   "30 senators",
+   "35 senators",
+   "40 senators"
+  ],
+  "answer": "40 senators",
+  "scale": [
+   "25 senators",
+   "30 senators",
+   "35 senators",
+   "40 senators",
+   "45 senators",
+   "50 senators",
+   "55 senators"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5507,
+  "externalId": "pla-016",
+  "text": "How many buildings were destroyed in Plano's devastating 1881 fire?",
+  "options": [
+   "20 buildings",
+   "30 buildings",
+   "40 buildings",
+   "52 buildings"
+  ],
+  "answer": "52 buildings",
+  "scale": [
+   "22 buildings",
+   "32 buildings",
+   "42 buildings",
+   "52 buildings",
+   "62 buildings",
+   "72 buildings",
+   "82 buildings"
+  ],
+  "step": 10
+ },
+ {
+  "id": 6796,
+  "externalId": "ore-001",
+  "text": "How many members serve in the Oregon House of Representatives?",
+  "options": [
+   "40 members",
+   "50 members",
+   "60 members",
+   "90 members"
+  ],
+  "answer": "60 members",
+  "scale": [
+   "30 members",
+   "40 members",
+   "50 members",
+   "60 members",
+   "70 members",
+   "80 members",
+   "90 members"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10122,
+  "externalId": "misso-057",
+  "text": "What is the total length of the Missouri River, making it the longest river in North America?",
+  "options": [
+   "2,341 miles",
+   "2,800 miles",
+   "3,200 miles",
+   "3,800 miles"
+  ],
+  "answer": "2,341 miles",
+  "scale": [
+   "1,591 miles",
+   "1,841 miles",
+   "2,091 miles",
+   "2,341 miles",
+   "2,591 miles",
+   "2,841 miles",
+   "3,091 miles"
+  ],
+  "step": 250
+ },
+ {
+  "id": 9678,
+  "externalId": "lou-008",
+  "text": "Into how many parishes is Louisiana divided?",
+  "options": [
+   "64",
+   "72",
+   "82",
+   "95"
+  ],
+  "answer": "64",
+  "scale": [
+   "49",
+   "54",
+   "59",
+   "64",
+   "69",
+   "74",
+   "79"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9681,
+  "externalId": "lou-011",
+  "text": "How many justices serve on the Louisiana Supreme Court?",
+  "options": [
+   "3",
+   "5",
+   "6",
+   "7"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7214,
+  "externalId": "wdc-010",
+  "text": "How many judges serve on the District of Columbia Court of Appeals?",
+  "options": [
+   "5 judges",
+   "7 judges",
+   "9 judges",
+   "11 judges"
+  ],
+  "answer": "9 judges",
+  "scale": [
+   "3 judges",
+   "5 judges",
+   "7 judges",
+   "9 judges",
+   "11 judges",
+   "13 judges",
+   "15 judges"
+  ],
+  "step": 2
+ },
+ {
+  "id": 5090,
+  "externalId": "cam-049",
+  "text": "What was the margin of votes when Cambridge voters approved Plan E in 1940?",
+  "options": [
+   "1,767 votes",
+   "3,452 votes",
+   "5,234 votes",
+   "7,552 votes"
+  ],
+  "answer": "7,552 votes",
+  "scale": [
+   "4,552 votes",
+   "5,552 votes",
+   "6,552 votes",
+   "7,552 votes",
+   "8,552 votes",
+   "9,552 votes",
+   "10,552 votes"
+  ],
+  "step": 1000
+ },
+ {
+  "id": 11210,
+  "externalId": "pitpa-068",
+  "text": "What is Pittsburgh's approximate population according to the 2025 estimate?",
+  "options": [
+   "About 250,000",
+   "About 280,000",
+   "About 310,000",
+   "About 340,000"
+  ],
+  "answer": "About 310,000",
+  "scale": [
+   "About 235,000",
+   "About 260,000",
+   "About 285,000",
+   "About 310,000",
+   "About 335,000",
+   "About 360,000",
+   "About 385,000"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 5137,
+  "externalId": "cam-111",
+  "text": "How long do Cambridge property owners have to remove snow from sidewalks after it stops falling during the day?",
+  "options": [
+   "6 hours",
+   "12 hours",
+   "24 hours",
+   "48 hours"
+  ],
+  "answer": "12 hours",
+  "scale": [
+   "3 hours",
+   "6 hours",
+   "9 hours",
+   "12 hours",
+   "15 hours",
+   "18 hours",
+   "21 hours"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10513,
+  "externalId": "ashnc-072",
+  "text": "Hurricane Helene caused Buncombe County's unemployment rate to jump from 2.5% to approximately what level?",
+  "options": [
+   "10.4%",
+   "13.8%",
+   "17.5%",
+   "21.0%"
+  ],
+  "answer": "10.4%",
+  "scale": [
+   "2.9%",
+   "5.4%",
+   "7.9%",
+   "10.4%",
+   "12.9%",
+   "15.4%",
+   "17.9%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 13819,
+  "externalId": "benor-063",
+  "text": "About what elevation is the city of Bend?",
+  "options": [
+   "About 800 feet",
+   "About 1,200 feet",
+   "About 3,642 feet",
+   "About 5,400 feet"
+  ],
+  "answer": "About 3,642 feet",
+  "scale": [
+   "About 2,892 feet",
+   "About 3,142 feet",
+   "About 3,392 feet",
+   "About 3,642 feet",
+   "About 3,892 feet",
+   "About 4,142 feet",
+   "About 4,392 feet"
+  ],
+  "step": 250
+ },
+ {
+  "id": 13975,
+  "externalId": "milwi-002",
+  "text": "How many members serve on the Milwaukee Common Council?",
+  "options": [
+   "15",
+   "18",
+   "21",
+   "25"
+  ],
+  "answer": "15",
+  "scale": [
+   "6",
+   "9",
+   "12",
+   "15",
+   "18",
+   "21",
+   "24"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 13821,
+  "externalId": "benor-065",
+  "text": "About how many people live in the Bend metropolitan area?",
+  "options": [
+   "About 261,000",
+   "About 180,000",
+   "About 230,000",
+   "About 320,000"
+  ],
+  "answer": "About 261,000",
+  "scale": [
+   "About 186,000",
+   "About 211,000",
+   "About 236,000",
+   "About 261,000",
+   "About 286,000",
+   "About 311,000",
+   "About 336,000"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 16687,
+  "externalId": "climc-0145",
+  "text": "The English government's organic farming plan unveiled in October 2026 aims for what share of English agricultural land to be farmed organically by 2036?",
+  "options": [
+   "5%",
+   "7.5%",
+   "10%",
+   "15%"
+  ],
+  "answer": "10%",
+  "scale": [
+   "1%",
+   "4%",
+   "7%",
+   "10%",
+   "13%",
+   "16%",
+   "19%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10548,
+  "externalId": "norca-009",
+  "text": "How many justices serve on the North Carolina Supreme Court?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5750,
+  "externalId": "tex-009",
+  "text": "What is the maximum length of a special session of the Texas Legislature?",
+  "options": [
+   "15 days",
+   "30 days",
+   "60 days",
+   "90 days"
+  ],
+  "answer": "30 days",
+  "scale": [
+   "15 days",
+   "20 days",
+   "25 days",
+   "30 days",
+   "35 days",
+   "40 days",
+   "45 days"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7884,
+  "externalId": "wdc-268",
+  "text": "How many neighborhoods does Washington, DC officially recognize?",
+  "options": [
+   "131 neighborhoods",
+   "156 neighborhoods",
+   "185 neighborhoods",
+   "220 neighborhoods"
+  ],
+  "answer": "131 neighborhoods",
+  "scale": [
+   "56 neighborhoods",
+   "81 neighborhoods",
+   "106 neighborhoods",
+   "131 neighborhoods",
+   "156 neighborhoods",
+   "181 neighborhoods",
+   "206 neighborhoods"
+  ],
+  "step": 25
+ },
+ {
+  "id": 8221,
+  "externalId": "bxl-002",
+  "text": "How many members serve on the Biloxi City Council?",
+  "options": [
+   "5 members",
+   "7 members",
+   "9 members",
+   "11 members"
+  ],
+  "answer": "7 members",
+  "scale": [
+   "4 members",
+   "5 members",
+   "6 members",
+   "7 members",
+   "8 members",
+   "9 members",
+   "10 members"
+  ],
+  "step": 1
+ },
+ {
+  "id": 16698,
+  "externalId": "climc-0148",
+  "text": "A UN Convention on Biological Diversity stocktaking report found countries falling short on how many of the 23 targets in the Kunming-Montreal Global Biodiversity Framework?",
+  "options": [
+   "7",
+   "15",
+   "19",
+   "22"
+  ],
+  "answer": "22",
+  "scale": [
+   "13",
+   "16",
+   "19",
+   "22",
+   "25",
+   "28",
+   "31"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 16700,
+  "externalId": "climc-0150",
+  "text": "Brazil's Prodes/INPE satellite data released in October 2026 showed Amazon deforestation in the year to July 2026 fell by roughly what percentage compared with the previous year?",
+  "options": [
+   "12.5%",
+   "25.3%",
+   "41.8%",
+   "58.6%"
+  ],
+  "answer": "41.8%",
+  "scale": [
+   "11.8%",
+   "21.8%",
+   "31.8%",
+   "41.8%",
+   "51.8%",
+   "61.8%",
+   "71.8%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8386,
+  "externalId": "bxl-171",
+  "text": "How many people did Hurricane Katrina kill in Mississippi?",
+  "options": [
+   "238",
+   "267",
+   "300",
+   "350"
+  ],
+  "answer": "238",
+  "scale": [
+   "163",
+   "188",
+   "213",
+   "238",
+   "263",
+   "288",
+   "313"
+  ],
+  "step": 25
+ },
+ {
+  "id": 16701,
+  "externalId": "climc-0151",
+  "text": "According to Prodes/INPE data, Amazon deforestation in Brazil in the year to July 2026 totalled about how many square kilometres?",
+  "options": [
+   "3,335",
+   "5,120",
+   "7,450",
+   "9,001"
+  ],
+  "answer": "3,335",
+  "scale": [
+   "335",
+   "1,335",
+   "2,335",
+   "3,335",
+   "4,335",
+   "5,335",
+   "6,335"
+  ],
+  "step": 1000
+ },
+ {
+  "id": 8544,
+  "externalId": "mis-002",
+  "text": "How many members serve in the Mississippi House of Representatives?",
+  "options": [
+   "122 members",
+   "140 members",
+   "160 members",
+   "180 members"
+  ],
+  "answer": "122 members",
+  "scale": [
+   "92 members",
+   "102 members",
+   "112 members",
+   "122 members",
+   "132 members",
+   "142 members",
+   "152 members"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16707,
+  "externalId": "climc-0152",
+  "text": "According to a Guardian analysis published in October 2026, the Cahaya nickel mining concession in Sulawesi, Indonesia covers how many hectares?",
+  "options": [
+   "2,100 hectares",
+   "7,500 hectares",
+   "21,000 hectares",
+   "48,000 hectares"
+  ],
+  "answer": "21,000 hectares",
+  "scale": [
+   "6,000 hectares",
+   "11,000 hectares",
+   "16,000 hectares",
+   "21,000 hectares",
+   "26,000 hectares",
+   "31,000 hectares",
+   "36,000 hectares"
+  ],
+  "step": 5000
+ },
+ {
+  "id": 16709,
+  "externalId": "climc-0154",
+  "text": "Heathrow's proposed third runway project has been estimated to cost how many billions of pounds?",
+  "options": [
+   "£13bn",
+   "£23bn",
+   "£33bn",
+   "£43bn"
+  ],
+  "answer": "£33bn",
+  "scale": [
+   "£3bn",
+   "£13bn",
+   "£23bn",
+   "£33bn",
+   "£43bn",
+   "£53bn",
+   "£63bn"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16710,
+  "externalId": "climc-0155",
+  "text": "According to a Carbon Brief analysis ahead of COP17 in Yerevan, how many of the 196 parties to the UN biodiversity convention had submitted new national biodiversity strategies and action plans (NBSAPs) as of 16 October 2026?",
+  "options": [
+   "55",
+   "86",
+   "113",
+   "150"
+  ],
+  "answer": "113",
+  "scale": [
+   "38",
+   "63",
+   "88",
+   "113",
+   "138",
+   "163",
+   "188"
+  ],
+  "step": 25
+ },
+ {
+  "id": 8547,
+  "externalId": "mis-005",
+  "text": "How many justices serve on the Mississippi Supreme Court?",
+  "options": [
+   "3 justices",
+   "5 justices",
+   "7 justices",
+   "9 justices"
+  ],
+  "answer": "9 justices",
+  "scale": [
+   "3 justices",
+   "5 justices",
+   "7 justices",
+   "9 justices",
+   "11 justices",
+   "13 justices",
+   "15 justices"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16711,
+  "externalId": "climc-0156",
+  "text": "Carbon Brief reported that only about what percentage of parties met the original COP16 deadline in October 2024 for submitting new NBSAPs?",
+  "options": [
+   "15%",
+   "35%",
+   "50%",
+   "70%"
+  ],
+  "answer": "15%",
+  "scale": [
+   "6%",
+   "9%",
+   "12%",
+   "15%",
+   "18%",
+   "21%",
+   "24%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 8590,
+  "externalId": "mis-055",
+  "text": "What is the retail sales tax rate in Mississippi?",
+  "options": [
+   "4%",
+   "5%",
+   "6%",
+   "7%"
+  ],
+  "answer": "7%",
+  "scale": [
+   "4%",
+   "5%",
+   "6%",
+   "7%",
+   "8%",
+   "9%",
+   "10%"
+  ],
+  "step": 1
+ },
+ {
+  "id": 8599,
+  "externalId": "mis-066",
+  "text": "What percentage of Mississippi's workforce participation rate places it among the lowest in the nation?",
+  "options": [
+   "42 percent",
+   "48 percent",
+   "52 percent",
+   "56 percent"
+  ],
+  "answer": "56 percent",
+  "scale": [
+   "47 percent",
+   "50 percent",
+   "53 percent",
+   "56 percent",
+   "59 percent",
+   "62 percent",
+   "65 percent"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 8605,
+  "externalId": "mis-073",
+  "text": "What was Mississippi's estimated total state product in 2024?",
+  "options": [
+   "$85 billion",
+   "$100 billion",
+   "$125 billion",
+   "$150 billion"
+  ],
+  "answer": "$150 billion",
+  "scale": [
+   "$120 billion",
+   "$130 billion",
+   "$140 billion",
+   "$150 billion",
+   "$160 billion",
+   "$170 billion",
+   "$180 billion"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8607,
+  "externalId": "mis-075",
+  "text": "What is Mississippi's unemployment rate as of August 2025?",
+  "options": [
+   "2.8%",
+   "3.9%",
+   "5.2%",
+   "6.1%"
+  ],
+  "answer": "3.9%",
+  "scale": [
+   "2.4%",
+   "2.9%",
+   "3.4%",
+   "3.9%",
+   "4.4%",
+   "4.9%",
+   "5.4%"
+  ],
+  "step": 0.5
+ },
+ {
+  "id": 10821,
+  "externalId": "queny-007",
+  "text": "How many NYC City Council districts are located in Queens?",
+  "options": [
+   "13",
+   "15",
+   "17",
+   "19"
+  ],
+  "answer": "13",
+  "scale": [
+   "7",
+   "9",
+   "11",
+   "13",
+   "15",
+   "17",
+   "19"
+  ],
+  "step": 2
+ },
+ {
+  "id": 8627,
+  "externalId": "mis-095",
+  "text": "How many stars appear on Mississippi's current state flag?",
+  "options": [
+   "21 stars",
+   "25 stars",
+   "33 stars",
+   "50 stars"
+  ],
+  "answer": "21 stars",
+  "scale": [
+   "12 stars",
+   "15 stars",
+   "18 stars",
+   "21 stars",
+   "24 stars",
+   "27 stars",
+   "30 stars"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 16714,
+  "externalId": "climc-0157",
+  "text": "New research on the 2019-20 black summer bushfires in New South Wales examined 2,475 homes that were destroyed. What percentage of these homes were found to be within 100 metres of flammable vegetation?",
+  "options": [
+   "54%",
+   "68%",
+   "81%",
+   "94%"
+  ],
+  "answer": "94%",
+  "scale": [
+   "88%",
+   "90%",
+   "92%",
+   "94%",
+   "96%",
+   "98%",
+   "100%"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16727,
+  "externalId": "climc-0162",
+  "text": "The NSW government announced legislation to let the Mount Pleasant mine in the Hunter Valley produce up to how many million tonnes of coal per year until 2032?",
+  "options": [
+   "14.5",
+   "15.0",
+   "16.5",
+   "18.0"
+  ],
+  "answer": "16.5",
+  "scale": [
+   "15.0",
+   "15.5",
+   "16.0",
+   "16.5",
+   "17.0",
+   "17.5",
+   "18.0"
+  ],
+  "step": 0.5
+ },
+ {
+  "id": 16728,
+  "externalId": "climc-0163",
+  "text": "Before the proposed legislation, the Mount Pleasant mine's permitted annual coal output was how many million tonnes?",
+  "options": [
+   "8.5",
+   "10.0",
+   "12.5",
+   "14.0"
+  ],
+  "answer": "12.5",
+  "scale": [
+   "9.5",
+   "10.5",
+   "11.5",
+   "12.5",
+   "13.5",
+   "14.5",
+   "15.5"
+  ],
+  "step": 1
+ },
+ {
+  "id": 16729,
+  "externalId": "climc-0164",
+  "text": "The Norwegian Institute of Public Health recommends a manganese limit of how many micrograms per litre in drinking water, a threshold exceeded about 25 times in Longyearbyen's supply in September 2025?",
+  "options": [
+   "5 micrograms per litre",
+   "20 micrograms per litre",
+   "50 micrograms per litre",
+   "500 micrograms per litre"
+  ],
+  "answer": "50 micrograms per litre",
+  "scale": [
+   "20 micrograms per litre",
+   "30 micrograms per litre",
+   "40 micrograms per litre",
+   "50 micrograms per litre",
+   "60 micrograms per litre",
+   "70 micrograms per litre",
+   "80 micrograms per litre"
+  ],
+  "step": 10
+ },
+ {
+  "id": 3,
+  "externalId": "q003",
+  "text": "What is the minimum age requirement to become President of the United States?",
+  "options": [
+   "30 years old",
+   "35 years old",
+   "40 years old",
+   "45 years old"
+  ],
+  "answer": "35 years old",
+  "scale": [
+   "20 years old",
+   "25 years old",
+   "30 years old",
+   "35 years old",
+   "40 years old",
+   "45 years old",
+   "50 years old"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16730,
+  "externalId": "climc-0165",
+  "text": "Approximately how many residents of Longyearbyen, Svalbard, received an alert about contaminated tap water in September 2025?",
+  "options": [
+   "260",
+   "1,300",
+   "2,600",
+   "26,000"
+  ],
+  "answer": "2,600",
+  "scale": [
+   "1,100",
+   "1,600",
+   "2,100",
+   "2,600",
+   "3,100",
+   "3,600",
+   "4,100"
+  ],
+  "step": 500
+ },
+ {
+  "id": 9256,
+  "externalId": "ica-102",
+  "text": "What percentage of the nation's date crop is produced in the Coachella Valley?",
+  "options": [
+   "Nearly 50 percent",
+   "Nearly 60 percent",
+   "Nearly 75 percent",
+   "Nearly 95 percent"
+  ],
+  "answer": "Nearly 95 percent",
+  "scale": [
+   "Nearly 92 percent",
+   "Nearly 93 percent",
+   "Nearly 94 percent",
+   "Nearly 95 percent",
+   "Nearly 96 percent",
+   "Nearly 97 percent",
+   "Nearly 98 percent"
+  ],
+  "step": 1
+ },
+ {
+  "id": 16733,
+  "externalId": "climc-0166",
+  "text": "Pagham harbour's sandwich tern colony in West Sussex was wiped out by avian flu in 2022. How many breeding pairs did it have in 2026?",
+  "options": [
+   "276",
+   "456",
+   "756",
+   "1,056"
+  ],
+  "answer": "756",
+  "scale": [
+   "456",
+   "556",
+   "656",
+   "756",
+   "856",
+   "956",
+   "1056"
+  ],
+  "step": 100
+ },
+ {
+  "id": 16734,
+  "externalId": "climc-0167",
+  "text": "The Pagham harbour sandwich tern colony produced how many fledglings in the summer of 2026?",
+  "options": [
+   "120",
+   "310",
+   "570",
+   "840"
+  ],
+  "answer": "570",
+  "scale": [
+   "270",
+   "370",
+   "470",
+   "570",
+   "670",
+   "770",
+   "870"
+  ],
+  "step": 100
+ },
+ {
+  "id": 9535,
+  "externalId": "alxla-077",
+  "text": "Approximately how many troops passed through Central Louisiana during the 1941 Louisiana Maneuvers?",
+  "options": [
+   "50,000",
+   "150,000",
+   "300,000",
+   "500,000"
+  ],
+  "answer": "500,000",
+  "scale": [
+   "200,000",
+   "300,000",
+   "400,000",
+   "500,000",
+   "600,000",
+   "700,000",
+   "800,000"
+  ],
+  "step": 100000
+ },
+ {
+  "id": 16735,
+  "externalId": "climc-0168",
+  "text": "How many scientists, MPs and activists signed the letter urging Prime Minister Andy Burnham to hold a national inquiry into the unequal health impacts of air pollution?",
+  "options": [
+   "50",
+   "100",
+   "150",
+   "300"
+  ],
+  "answer": "150",
+  "scale": [
+   "75",
+   "100",
+   "125",
+   "150",
+   "175",
+   "200",
+   "225"
+  ],
+  "step": 25
+ },
+ {
+  "id": 9691,
+  "externalId": "lou-021",
+  "text": "How much did the United States pay France for the Louisiana Purchase?",
+  "options": [
+   "$7 million",
+   "$10 million",
+   "$15 million",
+   "$20 million"
+  ],
+  "answer": "$15 million",
+  "scale": [
+   "$6 million",
+   "$9 million",
+   "$12 million",
+   "$15 million",
+   "$18 million",
+   "$21 million",
+   "$24 million"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 16736,
+  "externalId": "climc-0169",
+  "text": "According to Institute for Fiscal Studies research cited in the story, minority-ethnic populations in the UK are exposed to roughly what percentage higher air pollution levels than white populations?",
+  "options": [
+   "About 2%",
+   "About 6%",
+   "About 15%",
+   "About 30%"
+  ],
+  "answer": "About 6%",
+  "scale": [
+   "About 3%",
+   "About 4%",
+   "About 5%",
+   "About 6%",
+   "About 7%",
+   "About 8%",
+   "About 9%"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9723,
+  "externalId": "lou-053",
+  "text": "What percentage of all U.S. crawfish production comes from Louisiana?",
+  "options": [
+   "45%",
+   "60%",
+   "75%",
+   "90%"
+  ],
+  "answer": "90%",
+  "scale": [
+   "81%",
+   "84%",
+   "87%",
+   "90%",
+   "93%",
+   "96%",
+   "99%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 15524,
+  "externalId": "climc-0005",
+  "text": "Roughly what was the concentration of carbon dioxide in the atmosphere before the Industrial Revolution?",
+  "options": [
+   "About 180 parts per million",
+   "About 280 parts per million",
+   "About 380 parts per million",
+   "About 480 parts per million"
+  ],
+  "answer": "About 280 parts per million",
+  "scale": [
+   "About 130 parts per million",
+   "About 180 parts per million",
+   "About 230 parts per million",
+   "About 280 parts per million",
+   "About 330 parts per million",
+   "About 380 parts per million",
+   "About 430 parts per million"
+  ],
+  "step": 50
+ },
+ {
+  "id": 9739,
+  "externalId": "lou-069",
+  "text": "How many state constitutions has Louisiana had since statehood?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "11",
+  "scale": [
+   "5",
+   "7",
+   "9",
+   "11",
+   "13",
+   "15",
+   "17"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16744,
+  "externalId": "climc-0170",
+  "text": "A study using records dating back to 1921 covered what percentage of Europe's bee and hover fly species?",
+  "options": [
+   "28%",
+   "52%",
+   "67%",
+   "88%"
+  ],
+  "answer": "88%",
+  "scale": [
+   "79%",
+   "82%",
+   "85%",
+   "88%",
+   "91%",
+   "94%",
+   "97%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 4416,
+  "externalId": "nor-116",
+  "text": "What is the minimum age to vote in local elections in Norwich?",
+  "options": [
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "21 years old"
+  ],
+  "answer": "18 years old",
+  "scale": [
+   "15 years old",
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "19 years old",
+   "20 years old",
+   "21 years old"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10158,
+  "externalId": "arizs-002",
+  "text": "How many members serve in the Arizona State Senate?",
+  "options": [
+   "25",
+   "30",
+   "35",
+   "40"
+  ],
+  "answer": "30",
+  "scale": [
+   "15",
+   "20",
+   "25",
+   "30",
+   "35",
+   "40",
+   "45"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10165,
+  "externalId": "arizs-009",
+  "text": "How many congressional districts does Arizona have?",
+  "options": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "answer": "9",
+  "scale": [
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10191,
+  "externalId": "arizs-035",
+  "text": "How long is the Grand Canyon from end to end?",
+  "options": [
+   "127 miles",
+   "200 miles",
+   "277 miles",
+   "377 miles"
+  ],
+  "answer": "277 miles",
+  "scale": [
+   "127 miles",
+   "177 miles",
+   "227 miles",
+   "277 miles",
+   "327 miles",
+   "377 miles",
+   "427 miles"
+  ],
+  "step": 50
+ },
+ {
+  "id": 16748,
+  "externalId": "climc-0172",
+  "text": "A newly released report found that a wildlife overpass on Interstate 25 between Denver and Colorado Springs reduced wildlife-vehicle collisions by what percentage?",
+  "options": [
+   "34%",
+   "58%",
+   "73%",
+   "91%"
+  ],
+  "answer": "91%",
+  "scale": [
+   "82%",
+   "85%",
+   "88%",
+   "91%",
+   "94%",
+   "97%",
+   "100%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10209,
+  "externalId": "arizs-053",
+  "text": "The Hopi village of Oraibi in northeastern Arizona is believed to be the oldest continuously inhabited settlement in the United States. When does its known habitation date back to?",
+  "options": [
+   "1150 AD",
+   "1300 AD",
+   "1500 AD",
+   "1650 AD"
+  ],
+  "answer": "1150 AD",
+  "scale": [
+   "850 AD",
+   "950 AD",
+   "1050 AD",
+   "1150 AD",
+   "1250 AD",
+   "1350 AD",
+   "1450 AD"
+  ],
+  "step": 100
+ },
+ {
+  "id": 16750,
+  "externalId": "climc-0174",
+  "text": "According to WWF's Living Planet report, by what average percentage have monitored vertebrate wildlife populations declined over the past 52 years?",
+  "options": [
+   "23%",
+   "48%",
+   "61%",
+   "73%"
+  ],
+  "answer": "73%",
+  "scale": [
+   "58%",
+   "63%",
+   "68%",
+   "73%",
+   "78%",
+   "83%",
+   "88%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16751,
+  "externalId": "climc-0175",
+  "text": "The Living Planet report found monitored freshwater vertebrate populations had declined by what average percentage?",
+  "options": [
+   "35%",
+   "54%",
+   "69%",
+   "85%"
+  ],
+  "answer": "85%",
+  "scale": [
+   "70%",
+   "75%",
+   "80%",
+   "85%",
+   "90%",
+   "95%",
+   "100%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15528,
+  "externalId": "climc-0009",
+  "text": "According to the US Energy Information Administration, US electric power sector CO2 emissions fell by roughly how much between 2005 and 2019?",
+  "options": [
+   "About 12%",
+   "About 22%",
+   "About 27%",
+   "About 32%"
+  ],
+  "answer": "About 32%",
+  "scale": [
+   "About 17%",
+   "About 22%",
+   "About 27%",
+   "About 32%",
+   "About 37%",
+   "About 42%",
+   "About 47%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 47,
+  "externalId": "q047",
+  "text": "How many senators are needed to invoke cloture and end a filibuster?",
+  "options": [
+   "60",
+   "63",
+   "67",
+   "75"
+  ],
+  "answer": "60",
+  "scale": [
+   "51",
+   "54",
+   "57",
+   "60",
+   "63",
+   "66",
+   "69"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 11683,
+  "externalId": "bniwa-021",
+  "text": "How many Japanese American residents lived on Bainbridge Island at the time of the 1942 forced removal?",
+  "options": [
+   "103",
+   "276",
+   "450",
+   "512"
+  ],
+  "answer": "276",
+  "scale": [
+   "126",
+   "176",
+   "226",
+   "276",
+   "326",
+   "376",
+   "426"
+  ],
+  "step": 50
+ },
+ {
+  "id": 15532,
+  "externalId": "climc-0013",
+  "text": "What is the average rate of global mean sea level rise measured by satellites since 1993?",
+  "options": [
+   "About 3.3 mm per year",
+   "About 6 mm per year",
+   "About 10 mm per year",
+   "About 18 mm per year"
+  ],
+  "answer": "About 3.3 mm per year",
+  "scale": [
+   "About 0.3 mm per year",
+   "About 1.3 mm per year",
+   "About 2.3 mm per year",
+   "About 3.3 mm per year",
+   "About 4.3 mm per year",
+   "About 5.3 mm per year",
+   "About 6.3 mm per year"
+  ],
+  "step": 1
+ },
+ {
+  "id": 16752,
+  "externalId": "wnews-0265",
+  "text": "In Alberta's October 2026 referendum, roughly what percentage of voters chose to remain in Canada, according to unofficial Elections Alberta results?",
+  "options": [
+   "56%",
+   "66%",
+   "76%",
+   "86%"
+  ],
+  "answer": "76%",
+  "scale": [
+   "61%",
+   "66%",
+   "71%",
+   "76%",
+   "81%",
+   "86%",
+   "91%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16753,
+  "externalId": "wnews-0266",
+  "text": "Unofficial results from Alberta's October 2026 referendum showed about what share of voters backing the start of a process toward separation from Canada?",
+  "options": [
+   "14%",
+   "24%",
+   "34%",
+   "44%"
+  ],
+  "answer": "24%",
+  "scale": [
+   "9%",
+   "14%",
+   "19%",
+   "24%",
+   "29%",
+   "34%",
+   "39%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16755,
+  "externalId": "wnews-0268",
+  "text": "Justice Diana Mochache's October 2026 verdict found Paul Mackenzie guilty of murdering how many people, including 190 children and one adult?",
+  "options": [
+   "47",
+   "112",
+   "191",
+   "429"
+  ],
+  "answer": "191",
+  "scale": [
+   "41",
+   "91",
+   "141",
+   "191",
+   "241",
+   "291",
+   "341"
+  ],
+  "step": 50
+ },
+ {
+  "id": 16756,
+  "externalId": "wiran-1776",
+  "text": "Shabwa authorities raised the death toll from the Houthi missile strike on al-Alam camp to how many on 20 October?",
+  "options": [
+   "53",
+   "63",
+   "73",
+   "93"
+  ],
+  "answer": "73",
+  "scale": [
+   "43",
+   "53",
+   "63",
+   "73",
+   "83",
+   "93",
+   "103"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16758,
+  "externalId": "wnews-0269",
+  "text": "Nigeria's health ministry reported that how many contacts of its first Ebola patient in Abuja were being traced?",
+  "options": [
+   "14",
+   "24",
+   "44",
+   "84"
+  ],
+  "answer": "44",
+  "scale": [
+   "14",
+   "24",
+   "34",
+   "44",
+   "54",
+   "64",
+   "74"
+  ],
+  "step": 10
+ },
+ {
+  "id": 15542,
+  "externalId": "climc-0023",
+  "text": "The EIA attributes most of the 2005-2019 fall in US power sector CO2 to a single change. Roughly what share does it attribute to that change?",
+  "options": [
+   "About 25%",
+   "About 45%",
+   "About 55%",
+   "About 65%"
+  ],
+  "answer": "About 65%",
+  "scale": [
+   "About 35%",
+   "About 45%",
+   "About 55%",
+   "About 65%",
+   "About 75%",
+   "About 85%",
+   "About 95%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16768,
+  "externalId": "wnews-0273",
+  "text": "A man appeared in court after the October 2026 attack on MP Helen Haines in Wangaratta. How old was he reported to be?",
+  "options": [
+   "29",
+   "36",
+   "43",
+   "57"
+  ],
+  "answer": "43",
+  "scale": [
+   "28",
+   "33",
+   "38",
+   "43",
+   "48",
+   "53",
+   "58"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10479,
+  "externalId": "ashnc-038",
+  "text": "How many rooms does Biltmore Estate contain?",
+  "options": [
+   "250",
+   "310",
+   "400",
+   "500"
+  ],
+  "answer": "250",
+  "scale": [
+   "100",
+   "150",
+   "200",
+   "250",
+   "300",
+   "350",
+   "400"
+  ],
+  "step": 50
+ },
+ {
+  "id": 16773,
+  "externalId": "wnews-0278",
+  "text": "Ukraine says it faces a funding shortfall in 2027 to pay for its defence and civilian needs. How large is the projected gap?",
+  "options": [
+   "€20bn",
+   "€45bn",
+   "€70bn",
+   "€110bn"
+  ],
+  "answer": "€70bn",
+  "scale": [
+   "€10bn",
+   "€30bn",
+   "€50bn",
+   "€70bn",
+   "€90bn",
+   "€110bn",
+   "€130bn"
+  ],
+  "step": 20
+ },
+ {
+  "id": 16778,
+  "externalId": "wnews-0279",
+  "text": "France's interior ministry said it would deploy about how many police officers for nationwide protests on Saturday 24 October 2026?",
+  "options": [
+   "7,000",
+   "20,000",
+   "40,000",
+   "70,000"
+  ],
+  "answer": "70,000",
+  "scale": [
+   "40,000",
+   "50,000",
+   "60,000",
+   "70,000",
+   "80,000",
+   "90,000",
+   "100,000"
+  ],
+  "step": 10000
+ },
+ {
+  "id": 16780,
+  "externalId": "wnews-0281",
+  "text": "According to Kenya's health ministry in late October 2026, how many other Ebola patients were still in isolation after the second death?",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "12"
+  ],
+  "answer": "7",
+  "scale": [
+   "1",
+   "3",
+   "5",
+   "7",
+   "9",
+   "11",
+   "13"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13812,
+  "externalId": "benor-056",
+  "text": "What was Bend's population in the 2020 census?",
+  "options": [
+   "99,178",
+   "120,000",
+   "148,900",
+   "180,000"
+  ],
+  "answer": "99,178",
+  "scale": [
+   "39,178",
+   "59,178",
+   "79,178",
+   "99,178",
+   "119,178",
+   "139,178",
+   "159,178"
+  ],
+  "step": 20000
+ },
+ {
+  "id": 9483,
+  "externalId": "alxla-025",
+  "text": "What is the approximate population of the City of Alexandria proper?",
+  "options": [
+   "About 15,000",
+   "About 43,000",
+   "About 85,000",
+   "About 164,000"
+  ],
+  "answer": "About 43,000",
+  "scale": [
+   "About 13,000",
+   "About 23,000",
+   "About 33,000",
+   "About 43,000",
+   "About 53,000",
+   "About 63,000",
+   "About 73,000"
+  ],
+  "step": 10000
+ },
+ {
+  "id": 5302,
+  "externalId": "mas-018",
+  "text": "How many members serve on the Massachusetts Governor's Council?",
+  "options": [
+   "8 members",
+   "9 members",
+   "10 members",
+   "12 members"
+  ],
+  "answer": "8 members",
+  "scale": [
+   "5 members",
+   "6 members",
+   "7 members",
+   "8 members",
+   "9 members",
+   "10 members",
+   "11 members"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9672,
+  "externalId": "lou-002",
+  "text": "How many members serve in the Louisiana State Senate?",
+  "options": [
+   "33",
+   "39",
+   "45",
+   "50"
+  ],
+  "answer": "39",
+  "scale": [
+   "24",
+   "29",
+   "34",
+   "39",
+   "44",
+   "49",
+   "54"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9673,
+  "externalId": "lou-003",
+  "text": "How many members serve in the Louisiana House of Representatives?",
+  "options": [
+   "105",
+   "120",
+   "140",
+   "160"
+  ],
+  "answer": "105",
+  "scale": [
+   "75",
+   "85",
+   "95",
+   "105",
+   "115",
+   "125",
+   "135"
+  ],
+  "step": 10
+ },
+ {
+  "id": 14053,
+  "externalId": "milwi-080",
+  "text": "What was Milwaukee's population in the 2020 census?",
+  "options": [
+   "577,222",
+   "650,000",
+   "741,324",
+   "900,000"
+  ],
+  "answer": "577,222",
+  "scale": [
+   "427,222",
+   "477,222",
+   "527,222",
+   "577,222",
+   "627,222",
+   "677,222",
+   "727,222"
+  ],
+  "step": 50000
+ },
+ {
+  "id": 13544,
+  "externalId": "madwi-083",
+  "text": "About how many people lived in Madison at the 2020 census?",
+  "options": [
+   "About 270,000",
+   "About 320,000",
+   "About 370,000",
+   "About 420,000"
+  ],
+  "answer": "About 270,000",
+  "scale": [
+   "About 120,000",
+   "About 170,000",
+   "About 220,000",
+   "About 270,000",
+   "About 320,000",
+   "About 370,000",
+   "About 420,000"
+  ],
+  "step": 50000
+ },
+ {
+  "id": 15656,
+  "externalId": "wnews-0123",
+  "text": "For approximately how many years did Elizabeth II reign?",
+  "options": [
+   "63 years",
+   "67 years",
+   "70 years",
+   "74 years"
+  ],
+  "answer": "70 years",
+  "scale": [
+   "61 years",
+   "64 years",
+   "67 years",
+   "70 years",
+   "73 years",
+   "76 years",
+   "79 years"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10728,
+  "externalId": "nysts-001",
+  "text": "How many members are in the New York State Senate?",
+  "options": [
+   "63",
+   "80",
+   "100",
+   "150"
+  ],
+  "answer": "63",
+  "scale": [
+   "33",
+   "43",
+   "53",
+   "63",
+   "73",
+   "83",
+   "93"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10732,
+  "externalId": "nysts-005",
+  "text": "How many judges serve on New York's highest court, including the Chief Judge?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9725,
+  "externalId": "lou-055",
+  "text": "What percentage of all U.S. grain exports are shipped through Louisiana's Mississippi River ports?",
+  "options": [
+   "35%",
+   "45%",
+   "60%",
+   "75%"
+  ],
+  "answer": "60%",
+  "scale": [
+   "30%",
+   "40%",
+   "50%",
+   "60%",
+   "70%",
+   "80%",
+   "90%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10834,
+  "externalId": "queny-020",
+  "text": "The NYC City Council has how many total members representing all five boroughs?",
+  "options": [
+   "51",
+   "55",
+   "59",
+   "65"
+  ],
+  "answer": "51",
+  "scale": [
+   "42",
+   "45",
+   "48",
+   "51",
+   "54",
+   "57",
+   "60"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10823,
+  "externalId": "queny-009",
+  "text": "How many Community Boards exist in Queens?",
+  "options": [
+   "14",
+   "16",
+   "18",
+   "20"
+  ],
+  "answer": "14",
+  "scale": [
+   "8",
+   "10",
+   "12",
+   "14",
+   "16",
+   "18",
+   "20"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13618,
+  "externalId": "wisco-067",
+  "text": "How many islands make up Apostle Islands National Lakeshore?",
+  "options": [
+   "12",
+   "15",
+   "18",
+   "21"
+  ],
+  "answer": "21",
+  "scale": [
+   "12",
+   "15",
+   "18",
+   "21",
+   "24",
+   "27",
+   "30"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10953,
+  "externalId": "penns-002",
+  "text": "How many members serve in the Pennsylvania State Senate?",
+  "options": [
+   "50",
+   "60",
+   "75",
+   "100"
+  ],
+  "answer": "50",
+  "scale": [
+   "20",
+   "30",
+   "40",
+   "50",
+   "60",
+   "70",
+   "80"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10954,
+  "externalId": "penns-003",
+  "text": "How many members serve in the Pennsylvania House of Representatives?",
+  "options": [
+   "203",
+   "220",
+   "250",
+   "300"
+  ],
+  "answer": "203",
+  "scale": [
+   "173",
+   "183",
+   "193",
+   "203",
+   "213",
+   "223",
+   "233"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9921,
+  "externalId": "sprmo-042",
+  "text": "Approximately how many Union troops fought at the Battle of Wilson's Creek?",
+  "options": [
+   "2,000",
+   "5,400",
+   "8,500",
+   "10,000"
+  ],
+  "answer": "5,400",
+  "scale": [
+   "2,400",
+   "3,400",
+   "4,400",
+   "5,400",
+   "6,400",
+   "7,400",
+   "8,400"
+  ],
+  "step": 1000
+ },
+ {
+  "id": 11005,
+  "externalId": "penns-054",
+  "text": "Approximately how many words long is the Gettysburg Address?",
+  "options": [
+   "97 words",
+   "150 words",
+   "210 words",
+   "271 words"
+  ],
+  "answer": "271 words",
+  "scale": [
+   "121 words",
+   "171 words",
+   "221 words",
+   "271 words",
+   "321 words",
+   "371 words",
+   "421 words"
+  ],
+  "step": 50
+ },
+ {
+  "id": 11020,
+  "externalId": "penns-069",
+  "text": "How many rooms are in the Pennsylvania State Capitol building?",
+  "options": [
+   "475 rooms",
+   "550 rooms",
+   "650 rooms",
+   "800 rooms"
+  ],
+  "answer": "475 rooms",
+  "scale": [
+   "325 rooms",
+   "375 rooms",
+   "425 rooms",
+   "475 rooms",
+   "525 rooms",
+   "575 rooms",
+   "625 rooms"
+  ],
+  "step": 50
+ },
+ {
+  "id": 9973,
+  "externalId": "sprmo-094",
+  "text": "Approximately how many employees work for the City of Springfield, Missouri across its 20-plus departments?",
+  "options": [
+   "500",
+   "2,300",
+   "5,000",
+   "10,000"
+  ],
+  "answer": "2,300",
+  "scale": [
+   "800",
+   "1,300",
+   "1,800",
+   "2,300",
+   "2,800",
+   "3,300",
+   "3,800"
+  ],
+  "step": 500
+ },
+ {
+  "id": 11030,
+  "externalId": "penns-079",
+  "text": "Pennsylvania shares a border with how many other U.S. states?",
+  "options": [
+   "3 states",
+   "4 states",
+   "5 states",
+   "6 states"
+  ],
+  "answer": "6 states",
+  "scale": [
+   "3 states",
+   "4 states",
+   "5 states",
+   "6 states",
+   "7 states",
+   "8 states",
+   "9 states"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11031,
+  "externalId": "penns-080",
+  "text": "Approximately what percentage of Pennsylvania's land area is forested?",
+  "options": [
+   "30%",
+   "40%",
+   "50%",
+   "60%"
+  ],
+  "answer": "60%",
+  "scale": [
+   "30%",
+   "40%",
+   "50%",
+   "60%",
+   "70%",
+   "80%",
+   "90%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10014,
+  "externalId": "stlmo-041",
+  "text": "How tall is the Gateway Arch in St. Louis?",
+  "options": [
+   "400 feet",
+   "500 feet",
+   "630 feet",
+   "750 feet"
+  ],
+  "answer": "630 feet",
+  "scale": [
+   "330 feet",
+   "430 feet",
+   "530 feet",
+   "630 feet",
+   "730 feet",
+   "830 feet",
+   "930 feet"
+  ],
+  "step": 100
+ },
+ {
+  "id": 10040,
+  "externalId": "stlmo-067",
+  "text": "How many World Series titles have the St. Louis Cardinals won, ranking second in Major League Baseball history?",
+  "options": [
+   "3",
+   "7",
+   "11",
+   "15"
+  ],
+  "answer": "11",
+  "scale": [
+   "2",
+   "5",
+   "8",
+   "11",
+   "14",
+   "17",
+   "20"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 11048,
+  "externalId": "phipa-002",
+  "text": "How many members serve on the Philadelphia City Council?",
+  "options": [
+   "17",
+   "21",
+   "25",
+   "31"
+  ],
+  "answer": "17",
+  "scale": [
+   "8",
+   "11",
+   "14",
+   "17",
+   "20",
+   "23",
+   "26"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10089,
+  "externalId": "misso-024",
+  "text": "The Missouri Senate has how many members?",
+  "options": [
+   "34",
+   "50",
+   "63",
+   "100"
+  ],
+  "answer": "34",
+  "scale": [
+   "4",
+   "14",
+   "24",
+   "34",
+   "44",
+   "54",
+   "64"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10096,
+  "externalId": "misso-031",
+  "text": "How many judges serve on the Missouri Supreme Court?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10103,
+  "externalId": "misso-038",
+  "text": "What is Missouri's approximate population?",
+  "options": [
+   "3 million",
+   "4.5 million",
+   "6.2 million",
+   "10 million"
+  ],
+  "answer": "6.2 million",
+  "scale": [
+   "3.2 million",
+   "4.2 million",
+   "5.2 million",
+   "6.2 million",
+   "7.2 million",
+   "8.2 million",
+   "9.2 million"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11098,
+  "externalId": "phipa-052",
+  "text": "How tall is Philadelphia City Hall, including its statue atop the tower?",
+  "options": [
+   "548 feet",
+   "620 feet",
+   "700 feet",
+   "800 feet"
+  ],
+  "answer": "548 feet",
+  "scale": [
+   "398 feet",
+   "448 feet",
+   "498 feet",
+   "548 feet",
+   "598 feet",
+   "648 feet",
+   "698 feet"
+  ],
+  "step": 50
+ },
+ {
+  "id": 10119,
+  "externalId": "misso-054",
+  "text": "How many states does Missouri border?",
+  "options": [
+   "4 states",
+   "5 states",
+   "6 states",
+   "8 states"
+  ],
+  "answer": "8 states",
+  "scale": [
+   "5 states",
+   "6 states",
+   "7 states",
+   "8 states",
+   "9 states",
+   "10 states",
+   "11 states"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10126,
+  "externalId": "misso-061",
+  "text": "The Ozark Mountains cover approximately how many square miles of Missouri?",
+  "options": [
+   "33,000 square miles",
+   "40,000 square miles",
+   "50,000 square miles",
+   "62,000 square miles"
+  ],
+  "answer": "33,000 square miles",
+  "scale": [
+   "18,000 square miles",
+   "23,000 square miles",
+   "28,000 square miles",
+   "33,000 square miles",
+   "38,000 square miles",
+   "43,000 square miles",
+   "48,000 square miles"
+  ],
+  "step": 5000
+ },
+ {
+  "id": 10127,
+  "externalId": "misso-062",
+  "text": "Missouri is known as \"The Cave State\" because it has more than how many recorded caves?",
+  "options": [
+   "500 caves",
+   "1,000 caves",
+   "3,000 caves",
+   "7,300 caves"
+  ],
+  "answer": "7,300 caves",
+  "scale": [
+   "5,800 caves",
+   "6,300 caves",
+   "6,800 caves",
+   "7,300 caves",
+   "7,800 caves",
+   "8,300 caves",
+   "8,800 caves"
+  ],
+  "step": 500
+ },
+ {
+  "id": 13582,
+  "externalId": "wisco-031",
+  "text": "In 2025 the Wisconsin Supreme Court upheld a partial veto that stretched a two-year school funding increase to what length?",
+  "options": [
+   "40 years",
+   "100 years",
+   "400 years",
+   "1,000 years"
+  ],
+  "answer": "400 years",
+  "scale": [
+   "250 years",
+   "300 years",
+   "350 years",
+   "400 years",
+   "450 years",
+   "500 years",
+   "550 years"
+  ],
+  "step": 50
+ },
+ {
+  "id": 10741,
+  "externalId": "nysts-014",
+  "text": "What is the total number of seats in the New York State Legislature across both the Senate and Assembly?",
+  "options": [
+   "213",
+   "230",
+   "250",
+   "280"
+  ],
+  "answer": "213",
+  "scale": [
+   "183",
+   "193",
+   "203",
+   "213",
+   "223",
+   "233",
+   "243"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11111,
+  "externalId": "phipa-065",
+  "text": "How large is Fairmount Park, Philadelphia's largest municipal park?",
+  "options": [
+   "2,052 acres",
+   "2,800 acres",
+   "3,500 acres",
+   "4,500 acres"
+  ],
+  "answer": "2,052 acres",
+  "scale": [
+   "552 acres",
+   "1,052 acres",
+   "1,552 acres",
+   "2,052 acres",
+   "2,552 acres",
+   "3,052 acres",
+   "3,552 acres"
+  ],
+  "step": 500
+ },
+ {
+  "id": 10527,
+  "externalId": "ashnc-086",
+  "text": "What is the population of Buncombe County according to the 2020 U.S. Census?",
+  "options": [
+   "232,000",
+   "269,452",
+   "305,000",
+   "348,000"
+  ],
+  "answer": "269,452",
+  "scale": [
+   "194,452",
+   "219,452",
+   "244,452",
+   "269,452",
+   "294,452",
+   "319,452",
+   "344,452"
+  ],
+  "step": 25000
+ },
+ {
+  "id": 11131,
+  "externalId": "phipa-085",
+  "text": "The Barnes Foundation's art collection holds how many Renoir paintings?",
+  "options": [
+   "181",
+   "230",
+   "300",
+   "400"
+  ],
+  "answer": "181",
+  "scale": [
+   "106",
+   "131",
+   "156",
+   "181",
+   "206",
+   "231",
+   "256"
+  ],
+  "step": 25
+ },
+ {
+  "id": 5042,
+  "externalId": "cam-001",
+  "text": "How many members serve on the Cambridge City Council?",
+  "options": [
+   "7 members",
+   "9 members",
+   "11 members",
+   "13 members"
+  ],
+  "answer": "9 members",
+  "scale": [
+   "3 members",
+   "5 members",
+   "7 members",
+   "9 members",
+   "11 members",
+   "13 members",
+   "15 members"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10788,
+  "externalId": "nysts-061",
+  "text": "Approximately how many people live in New York State?",
+  "options": [
+   "About 20 million",
+   "About 25 million",
+   "About 30 million",
+   "About 40 million"
+  ],
+  "answer": "About 20 million",
+  "scale": [
+   "About 5 million",
+   "About 10 million",
+   "About 15 million",
+   "About 20 million",
+   "About 25 million",
+   "About 30 million",
+   "About 35 million"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10993,
+  "externalId": "penns-042",
+  "text": "How much does the Liberty Bell weigh?",
+  "options": [
+   "2,080 pounds",
+   "2,500 pounds",
+   "3,000 pounds",
+   "3,600 pounds"
+  ],
+  "answer": "2,080 pounds",
+  "scale": [
+   "1,330 pounds",
+   "1,580 pounds",
+   "1,830 pounds",
+   "2,080 pounds",
+   "2,330 pounds",
+   "2,580 pounds",
+   "2,830 pounds"
+  ],
+  "step": 250
+ },
+ {
+  "id": 10803,
+  "externalId": "nysts-076",
+  "text": "How many schools does SUNY operate in total across all campus types?",
+  "options": [
+   "64",
+   "75",
+   "90",
+   "110"
+  ],
+  "answer": "64",
+  "scale": [
+   "34",
+   "44",
+   "54",
+   "64",
+   "74",
+   "84",
+   "94"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11193,
+  "externalId": "pitpa-051",
+  "text": "Approximately how many bridges does Pittsburgh have, earning it the nickname \"City of Bridges\"?",
+  "options": [
+   "214",
+   "312",
+   "446",
+   "502"
+  ],
+  "answer": "446",
+  "scale": [
+   "296",
+   "346",
+   "396",
+   "446",
+   "496",
+   "546",
+   "596"
+  ],
+  "step": 50
+ },
+ {
+  "id": 8321,
+  "externalId": "bxl-106",
+  "text": "How many miles of beaches did the Biloxi Wade-Ins seek to desegregate?",
+  "options": [
+   "8 miles",
+   "14 miles",
+   "20 miles",
+   "26 miles"
+  ],
+  "answer": "26 miles",
+  "scale": [
+   "11 miles",
+   "16 miles",
+   "21 miles",
+   "26 miles",
+   "31 miles",
+   "36 miles",
+   "41 miles"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11197,
+  "externalId": "pitpa-055",
+  "text": "How many official neighborhoods does the City of Pittsburgh have?",
+  "options": [
+   "76",
+   "90",
+   "104",
+   "118"
+  ],
+  "answer": "90",
+  "scale": [
+   "60",
+   "70",
+   "80",
+   "90",
+   "100",
+   "110",
+   "120"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11202,
+  "externalId": "pitpa-060",
+  "text": "What percentage of bridges in the Pittsburgh area were found to be structurally deficient in a 2011 study?",
+  "options": [
+   "11.2%",
+   "18.6%",
+   "24.5%",
+   "30.4%"
+  ],
+  "answer": "30.4%",
+  "scale": [
+   "15.4%",
+   "20.4%",
+   "25.4%",
+   "30.4%",
+   "35.4%",
+   "40.4%",
+   "45.4%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10774,
+  "externalId": "nysts-047",
+  "text": "What was the total cost of building the New York State Capitol, making it the most expensive U.S. government building of its era?",
+  "options": [
+   "$5 million",
+   "$10 million",
+   "$18 million",
+   "$25 million"
+  ],
+  "answer": "$25 million",
+  "scale": [
+   "$10 million",
+   "$15 million",
+   "$20 million",
+   "$25 million",
+   "$30 million",
+   "$35 million",
+   "$40 million"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11206,
+  "externalId": "pitpa-064",
+  "text": "How many Fortune 500 companies are headquartered in Pittsburgh?",
+  "options": [
+   "10",
+   "14",
+   "18",
+   "23"
+  ],
+  "answer": "10",
+  "scale": [
+   "1",
+   "4",
+   "7",
+   "10",
+   "13",
+   "16",
+   "19"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 11212,
+  "externalId": "pitpa-070",
+  "text": "The Pittsburgh metropolitan area is approximately what size in population?",
+  "options": [
+   "1.1 million",
+   "1.6 million",
+   "2.0 million",
+   "2.43 million"
+  ],
+  "answer": "2.43 million",
+  "scale": [
+   "1.68 million",
+   "1.93 million",
+   "2.18 million",
+   "2.43 million",
+   "2.68 million",
+   "2.93 million",
+   "3.18 million"
+  ],
+  "step": 0.25
+ },
+ {
+  "id": 11216,
+  "externalId": "pitpa-074",
+  "text": "How many museums does the Carnegie Museums of Pittsburgh organization operate?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "answer": "4",
+  "scale": [
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11089,
+  "externalId": "phipa-043",
+  "text": "How many National Historic Landmarks does Philadelphia contain — more than any other American city?",
+  "options": [
+   "67",
+   "85",
+   "103",
+   "130"
+  ],
+  "answer": "67",
+  "scale": [
+   "37",
+   "47",
+   "57",
+   "67",
+   "77",
+   "87",
+   "97"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8645,
+  "externalId": "mis-129",
+  "text": "How many members serve in the Mississippi State Senate?",
+  "options": [
+   "52 members",
+   "67 members",
+   "82 members",
+   "100 members"
+  ],
+  "answer": "52 members",
+  "scale": [
+   "22 members",
+   "32 members",
+   "42 members",
+   "52 members",
+   "62 members",
+   "72 members",
+   "82 members"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11766,
+  "externalId": "washs-009",
+  "text": "How many justices serve on the Washington Supreme Court?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "9",
+  "scale": [
+   "3",
+   "5",
+   "7",
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "step": 2
+ },
+ {
+  "id": 11794,
+  "externalId": "washs-037",
+  "text": "How many major glaciers does Mount Rainier have, making it the most heavily glaciated peak in the lower 48 states?",
+  "options": [
+   "26",
+   "32",
+   "40",
+   "50"
+  ],
+  "answer": "26",
+  "scale": [
+   "11",
+   "16",
+   "21",
+   "26",
+   "31",
+   "36",
+   "41"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9939,
+  "externalId": "sprmo-060",
+  "text": "Which interstate highway replaced Route 66 across Missouri by 1972?",
+  "options": [
+   "I-35",
+   "I-44",
+   "I-55",
+   "I-70"
+  ],
+  "answer": "I-44",
+  "scale": [
+   "I-29",
+   "I-34",
+   "I-39",
+   "I-44",
+   "I-49",
+   "I-54",
+   "I-59"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13464,
+  "externalId": "madwi-003",
+  "text": "How many members serve on Madison's Common Council?",
+  "options": [
+   "12",
+   "15",
+   "20",
+   "26"
+  ],
+  "answer": "20",
+  "scale": [
+   "11",
+   "14",
+   "17",
+   "20",
+   "23",
+   "26",
+   "29"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10090,
+  "externalId": "misso-025",
+  "text": "The Missouri House of Representatives has how many members?",
+  "options": [
+   "163",
+   "180",
+   "200",
+   "240"
+  ],
+  "answer": "163",
+  "scale": [
+   "133",
+   "143",
+   "153",
+   "163",
+   "173",
+   "183",
+   "193"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10737,
+  "externalId": "nysts-010",
+  "text": "How often does the New York State Constitution require voters to decide whether to hold a constitutional convention?",
+  "options": [
+   "Every 4 years",
+   "Every 10 years",
+   "Every 20 years",
+   "Every 25 years"
+  ],
+  "answer": "Every 20 years",
+  "scale": [
+   "Every 5 years",
+   "Every 10 years",
+   "Every 15 years",
+   "Every 20 years",
+   "Every 25 years",
+   "Every 30 years",
+   "Every 35 years"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10746,
+  "externalId": "nysts-019",
+  "text": "How many constitutional conventions has New York held throughout its history?",
+  "options": [
+   "4",
+   "6",
+   "7",
+   "9"
+  ],
+  "answer": "9",
+  "scale": [
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10250,
+  "externalId": "arizs-094",
+  "text": "How many U.S. House seats does Arizona hold in Congress as of 2025, following the 2020 census reapportionment?",
+  "options": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "answer": "9",
+  "scale": [
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11",
+   "12"
+  ],
+  "step": 1
+ },
+ {
+  "id": 13815,
+  "externalId": "benor-059",
+  "text": "How many acres did Bend add to its urban growth boundary in the 2016 expansion?",
+  "options": [
+   "2,380 acres",
+   "5,000 acres",
+   "9,100 acres",
+   "15,000 acres"
+  ],
+  "answer": "2,380 acres",
+  "scale": [
+   "880 acres",
+   "1,380 acres",
+   "1,880 acres",
+   "2,380 acres",
+   "2,880 acres",
+   "3,380 acres",
+   "3,880 acres"
+  ],
+  "step": 500
+ },
+ {
+  "id": 15826,
+  "externalId": "arizs-301",
+  "text": "How many counties does Arizona have?",
+  "options": [
+   "12",
+   "15",
+   "20",
+   "24"
+  ],
+  "answer": "15",
+  "scale": [
+   "6",
+   "9",
+   "12",
+   "15",
+   "18",
+   "21",
+   "24"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 13791,
+  "externalId": "benor-035",
+  "text": "How long ago did the eruption occur that produced Newberry's Big Obsidian Flow?",
+  "options": [
+   "About 1,300 years ago",
+   "About 7,000 years ago",
+   "About 20,000 years ago",
+   "About 75,000 years ago"
+  ],
+  "answer": "About 1,300 years ago",
+  "scale": [
+   "About 550 years ago",
+   "About 800 years ago",
+   "About 1,050 years ago",
+   "About 1,300 years ago",
+   "About 1,550 years ago",
+   "About 1,800 years ago",
+   "About 2,050 years ago"
+  ],
+  "step": 250
+ },
+ {
+  "id": 16,
+  "externalId": "q016",
+  "text": "How many total members are in the U.S. House of Representatives?",
+  "options": [
+   "435",
+   "535",
+   "538",
+   "550"
+  ],
+  "answer": "435",
+  "scale": [
+   "426",
+   "429",
+   "432",
+   "435",
+   "438",
+   "441",
+   "444"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 13786,
+  "externalId": "benor-030",
+  "text": "What is the elevation of Pilot Butte?",
+  "options": [
+   "2,800 feet",
+   "3,642 feet",
+   "4,142 feet",
+   "5,280 feet"
+  ],
+  "answer": "4,142 feet",
+  "scale": [
+   "2,642 feet",
+   "3,142 feet",
+   "3,642 feet",
+   "4,142 feet",
+   "4,642 feet",
+   "5,142 feet",
+   "5,642 feet"
+  ],
+  "step": 500
+ },
+ {
+  "id": 1,
+  "externalId": "q001",
+  "text": "How many amendments are in the Bill of Rights?",
+  "options": [
+   "4",
+   "6",
+   "8",
+   "10"
+  ],
+  "answer": "10",
+  "scale": [
+   "4",
+   "6",
+   "8",
+   "10",
+   "12",
+   "14",
+   "16"
+  ],
+  "step": 2
+ },
+ {
+  "id": 23,
+  "externalId": "q023",
+  "text": "How many total Electoral College votes are there?",
+  "options": [
+   "435",
+   "500",
+   "535",
+   "538"
+  ],
+  "answer": "538",
+  "scale": [
+   "529",
+   "532",
+   "535",
+   "538",
+   "541",
+   "544",
+   "547"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 11743,
+  "externalId": "bniwa-081",
+  "text": "How long does the Washington State Ferry crossing between Bainbridge Island and Seattle take?",
+  "options": [
+   "35 minutes",
+   "45 minutes",
+   "55 minutes",
+   "70 minutes"
+  ],
+  "answer": "35 minutes",
+  "scale": [
+   "5 minutes",
+   "15 minutes",
+   "25 minutes",
+   "35 minutes",
+   "45 minutes",
+   "55 minutes",
+   "65 minutes"
+  ],
+  "step": 10
+ },
+ {
+  "id": 342,
+  "externalId": "ins-022",
+  "text": "How many statewide elected executive officers does Indiana have?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "answer": "6",
+  "scale": [
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "step": 1
+ },
+ {
+  "id": 677,
+  "externalId": "fre-001",
+  "text": "How many districts make up Fremont's City Council?",
+  "options": [
+   "4 districts",
+   "5 districts",
+   "6 districts",
+   "7 districts"
+  ],
+  "answer": "6 districts",
+  "scale": [
+   "3 districts",
+   "4 districts",
+   "5 districts",
+   "6 districts",
+   "7 districts",
+   "8 districts",
+   "9 districts"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10520,
+  "externalId": "ashnc-079",
+  "text": "Tourism accounts for approximately what share of Buncombe County's gross domestic product in typical years?",
+  "options": [
+   "5%",
+   "10%",
+   "20%",
+   "35%"
+  ],
+  "answer": "20%",
+  "scale": [
+   "5%",
+   "10%",
+   "15%",
+   "20%",
+   "25%",
+   "30%",
+   "35%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5143,
+  "externalId": "cam-120",
+  "text": "What is the deadline for Cambridge residents to pay a parking ticket to avoid additional fees?",
+  "options": [
+   "21 days",
+   "28 days",
+   "35 days",
+   "45 days"
+  ],
+  "answer": "21 days",
+  "scale": [
+   "6 days",
+   "11 days",
+   "16 days",
+   "21 days",
+   "26 days",
+   "31 days",
+   "36 days"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5286,
+  "externalId": "mas-002",
+  "text": "How many members serve in the Massachusetts House of Representatives?",
+  "options": [
+   "160 members",
+   "180 members",
+   "200 members",
+   "240 members"
+  ],
+  "answer": "160 members",
+  "scale": [
+   "100 members",
+   "120 members",
+   "140 members",
+   "160 members",
+   "180 members",
+   "200 members",
+   "220 members"
+  ],
+  "step": 20
+ },
+ {
+  "id": 5319,
+  "externalId": "mas-036",
+  "text": "What is the total number of members on the Governor's Council including the ex officio member?",
+  "options": [
+   "6 members",
+   "7 members",
+   "8 members",
+   "9 members"
+  ],
+  "answer": "9 members",
+  "scale": [
+   "6 members",
+   "7 members",
+   "8 members",
+   "9 members",
+   "10 members",
+   "11 members",
+   "12 members"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5353,
+  "externalId": "mas-072",
+  "text": "How many Republicans currently serve in the Massachusetts Senate?",
+  "options": [
+   "5 Republicans",
+   "8 Republicans",
+   "11 Republicans",
+   "15 Republicans"
+  ],
+  "answer": "5 Republicans",
+  "scale": [
+   "2 Republicans",
+   "3 Republicans",
+   "4 Republicans",
+   "5 Republicans",
+   "6 Republicans",
+   "7 Republicans",
+   "8 Republicans"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5791,
+  "externalId": "tex-054",
+  "text": "How many judges serve on the Texas Court of Criminal Appeals?",
+  "options": [
+   "5 judges",
+   "7 judges",
+   "9 judges",
+   "12 judges"
+  ],
+  "answer": "9 judges",
+  "scale": [
+   "3 judges",
+   "5 judges",
+   "7 judges",
+   "9 judges",
+   "11 judges",
+   "13 judges",
+   "15 judges"
+  ],
+  "step": 2
+ },
+ {
+  "id": 6805,
+  "externalId": "ore-011",
+  "text": "How many federally recognized Native American tribes does Oregon have?",
+  "options": [
+   "9 tribes",
+   "12 tribes",
+   "15 tribes",
+   "20 tribes"
+  ],
+  "answer": "9 tribes",
+  "scale": [
+   "3 tribes",
+   "5 tribes",
+   "7 tribes",
+   "9 tribes",
+   "11 tribes",
+   "13 tribes",
+   "15 tribes"
+  ],
+  "step": 2
+ },
+ {
+  "id": 6809,
+  "externalId": "ore-015",
+  "text": "What was the original deposit amount set by Oregon's Bottle Bill, signed into law in 1971?",
+  "options": [
+   "2 cents",
+   "5 cents",
+   "10 cents",
+   "25 cents"
+  ],
+  "answer": "5 cents",
+  "scale": [
+   "2 cents",
+   "3 cents",
+   "4 cents",
+   "5 cents",
+   "6 cents",
+   "7 cents",
+   "8 cents"
+  ],
+  "step": 1
+ },
+ {
+  "id": 6818,
+  "externalId": "ore-025",
+  "text": "What percentage of voter signatures is required to place a constitutional amendment initiative on the Oregon ballot?",
+  "options": [
+   "4% of votes in last gubernatorial election",
+   "6% of votes in last gubernatorial election",
+   "8% of votes in last gubernatorial election",
+   "10% of votes in last gubernatorial election"
+  ],
+  "answer": "8% of votes in last gubernatorial election",
+  "scale": [
+   "2% of votes in last gubernatorial election",
+   "4% of votes in last gubernatorial election",
+   "6% of votes in last gubernatorial election",
+   "8% of votes in last gubernatorial election",
+   "10% of votes in last gubernatorial election",
+   "12% of votes in last gubernatorial election",
+   "14% of votes in last gubernatorial election"
+  ],
+  "step": 2
+ },
+ {
+  "id": 15864,
+  "externalId": "misso-203",
+  "text": "How many seats does Missouri hold in the U.S. House of Representatives?",
+  "options": [
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "answer": "8",
+  "scale": [
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7069,
+  "externalId": "ore-105",
+  "text": "How many justices serve on the Oregon Supreme Court?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7074,
+  "externalId": "ore-110",
+  "text": "How many counties does Oregon have?",
+  "options": [
+   "36",
+   "39",
+   "42",
+   "48"
+  ],
+  "answer": "36",
+  "scale": [
+   "27",
+   "30",
+   "33",
+   "36",
+   "39",
+   "42",
+   "45"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 7823,
+  "externalId": "wdc-204",
+  "text": "How many days does Congress have to review DC laws before they can take effect under the Home Rule Act?",
+  "options": [
+   "15 days",
+   "30 days",
+   "60 days",
+   "90 days"
+  ],
+  "answer": "30 days",
+  "scale": [
+   "15 days",
+   "20 days",
+   "25 days",
+   "30 days",
+   "35 days",
+   "40 days",
+   "45 days"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8350,
+  "externalId": "bxl-135",
+  "text": "What percentage of Keesler Air Force Base came under water during Hurricane Katrina?",
+  "options": [
+   "25%",
+   "50%",
+   "75%",
+   "90%"
+  ],
+  "answer": "50%",
+  "scale": [
+   "20%",
+   "30%",
+   "40%",
+   "50%",
+   "60%",
+   "70%",
+   "80%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8558,
+  "externalId": "mis-016",
+  "text": "What percentage of Mississippi voters approved the new state flag design in November 2020?",
+  "options": [
+   "51.2%",
+   "62.5%",
+   "72.8%",
+   "86.0%"
+  ],
+  "answer": "72.8%",
+  "scale": [
+   "57.8%",
+   "62.8%",
+   "67.8%",
+   "72.8%",
+   "77.8%",
+   "82.8%",
+   "87.8%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8568,
+  "externalId": "mis-027",
+  "text": "How many miles of coastline does Mississippi have along the Gulf of Mexico?",
+  "options": [
+   "44 miles",
+   "62 miles",
+   "90 miles",
+   "120 miles"
+  ],
+  "answer": "44 miles",
+  "scale": [
+   "14 miles",
+   "24 miles",
+   "34 miles",
+   "44 miles",
+   "54 miles",
+   "64 miles",
+   "74 miles"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8574,
+  "externalId": "mis-036",
+  "text": "What percentage of Mississippi's population was enslaved by 1860, just before the Civil War?",
+  "options": [
+   "35%",
+   "45%",
+   "55%",
+   "65%"
+  ],
+  "answer": "55%",
+  "scale": [
+   "25%",
+   "35%",
+   "45%",
+   "55%",
+   "65%",
+   "75%",
+   "85%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8604,
+  "externalId": "mis-071",
+  "text": "What percentage of small businesses make up all businesses in Mississippi?",
+  "options": [
+   "85.0%",
+   "90.0%",
+   "95.0%",
+   "99.4%"
+  ],
+  "answer": "99.4%",
+  "scale": [
+   "98.8%",
+   "99.0%",
+   "99.2%",
+   "99.4%",
+   "99.6%",
+   "99.8%",
+   "100.0%"
+  ],
+  "step": 0.2
+ },
+ {
+  "id": 8842,
+  "externalId": "smo-006",
+  "text": "How many members serve on the Santa Monica City Council?",
+  "options": [
+   "5 members",
+   "7 members",
+   "9 members",
+   "11 members"
+  ],
+  "answer": "7 members",
+  "scale": [
+   "4 members",
+   "5 members",
+   "6 members",
+   "7 members",
+   "8 members",
+   "9 members",
+   "10 members"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9460,
+  "externalId": "alxla-002",
+  "text": "How many members serve on the Alexandria, Louisiana City Council?",
+  "options": [
+   "7",
+   "9",
+   "11",
+   "13"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10357,
+  "externalId": "phxaz-007",
+  "text": "How many geographic districts does Phoenix divide its City Council representation into?",
+  "options": [
+   "4",
+   "5",
+   "6",
+   "8"
+  ],
+  "answer": "8",
+  "scale": [
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10",
+   "11"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10540,
+  "externalId": "norca-001",
+  "text": "How many members serve in the North Carolina Senate?",
+  "options": [
+   "40",
+   "50",
+   "60",
+   "100"
+  ],
+  "answer": "50",
+  "scale": [
+   "20",
+   "30",
+   "40",
+   "50",
+   "60",
+   "70",
+   "80"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10584,
+  "externalId": "norca-045",
+  "text": "What is the total length of the Blue Ridge Parkway, which connects Shenandoah and Great Smoky Mountains National Parks?",
+  "options": [
+   "252 miles",
+   "356 miles",
+   "469 miles",
+   "527 miles"
+  ],
+  "answer": "469 miles",
+  "scale": [
+   "319 miles",
+   "369 miles",
+   "419 miles",
+   "469 miles",
+   "519 miles",
+   "569 miles",
+   "619 miles"
+  ],
+  "step": 50
+ },
+ {
+  "id": 10529,
+  "externalId": "ashnc-088",
+  "text": "The mountains surrounding Asheville can reach elevations exceeding how many feet?",
+  "options": [
+   "2,500 feet",
+   "3,400 feet",
+   "4,200 feet",
+   "5,000 feet"
+  ],
+  "answer": "5,000 feet",
+  "scale": [
+   "3,500 feet",
+   "4,000 feet",
+   "4,500 feet",
+   "5,000 feet",
+   "5,500 feet",
+   "6,000 feet",
+   "6,500 feet"
+  ],
+  "step": 500
+ },
+ {
+  "id": 10475,
+  "externalId": "ashnc-034",
+  "text": "What was Asheville's population at the time the Buncombe Turnpike opened in 1827?",
+  "options": [
+   "About 100",
+   "About 350",
+   "About 1,200",
+   "About 3,500"
+  ],
+  "answer": "About 350",
+  "scale": [
+   "About 50",
+   "About 150",
+   "About 250",
+   "About 350",
+   "About 450",
+   "About 550",
+   "About 650"
+  ],
+  "step": 100
+ },
+ {
+  "id": 10887,
+  "externalId": "queny-073",
+  "text": "Approximately what percentage of Queens residents identified as Asian in the 2020 census?",
+  "options": [
+   "14%",
+   "20%",
+   "27%",
+   "35%"
+  ],
+  "answer": "27%",
+  "scale": [
+   "12%",
+   "17%",
+   "22%",
+   "27%",
+   "32%",
+   "37%",
+   "42%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10873,
+  "externalId": "queny-059",
+  "text": "How many languages are spoken in Queens, according to census research?",
+  "options": [
+   "About 40",
+   "About 90",
+   "About 140",
+   "About 300"
+  ],
+  "answer": "About 140",
+  "scale": [
+   "About 65",
+   "About 90",
+   "About 115",
+   "About 140",
+   "About 165",
+   "About 190",
+   "About 215"
+  ],
+  "step": 25
+ },
+ {
+  "id": 10515,
+  "externalId": "ashnc-074",
+  "text": "By what percentage did Asheville-area tourism revenue drop in Q4 2024 following Hurricane Helene?",
+  "options": [
+   "25%",
+   "40%",
+   "55%",
+   "70%"
+  ],
+  "answer": "70%",
+  "scale": [
+   "40%",
+   "50%",
+   "60%",
+   "70%",
+   "80%",
+   "90%",
+   "100%"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10885,
+  "externalId": "queny-071",
+  "text": "Approximately what percentage of Queens residents speak a language other than English at home?",
+  "options": [
+   "35%",
+   "45%",
+   "54%",
+   "68%"
+  ],
+  "answer": "54%",
+  "scale": [
+   "39%",
+   "44%",
+   "49%",
+   "54%",
+   "59%",
+   "64%",
+   "69%"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10522,
+  "externalId": "ashnc-081",
+  "text": "At approximately what elevation above sea level is Asheville, NC located?",
+  "options": [
+   "2,200 feet",
+   "3,100 feet",
+   "4,000 feet",
+   "5,200 feet"
+  ],
+  "answer": "2,200 feet",
+  "scale": [
+   "700 feet",
+   "1,200 feet",
+   "1,700 feet",
+   "2,200 feet",
+   "2,700 feet",
+   "3,200 feet",
+   "3,700 feet"
+  ],
+  "step": 500
+ },
+ {
+  "id": 10473,
+  "externalId": "ashnc-032",
+  "text": "What was Asheville's population according to the 2020 U.S. Census?",
+  "options": [
+   "81,000",
+   "94,589",
+   "108,000",
+   "125,000"
+  ],
+  "answer": "94,589",
+  "scale": [
+   "64,589",
+   "74,589",
+   "84,589",
+   "94,589",
+   "104,589",
+   "114,589",
+   "124,589"
+  ],
+  "step": 10000
+ },
+ {
+  "id": 11044,
+  "externalId": "penns-093",
+  "text": "How many justices serve on the Pennsylvania Supreme Court?",
+  "options": [
+   "5",
+   "7",
+   "9",
+   "11"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11274,
+  "externalId": "wiran-0019",
+  "text": "How many American diplomats and citizens were held hostage at the US Embassy in Tehran starting in November 1979?",
+  "options": [
+   "26",
+   "38",
+   "52",
+   "66"
+  ],
+  "answer": "52",
+  "scale": [
+   "22",
+   "32",
+   "42",
+   "52",
+   "62",
+   "72",
+   "82"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11760,
+  "externalId": "washs-003",
+  "text": "How many members serve in the Washington State Senate?",
+  "options": [
+   "39",
+   "49",
+   "59",
+   "98"
+  ],
+  "answer": "49",
+  "scale": [
+   "19",
+   "29",
+   "39",
+   "49",
+   "59",
+   "69",
+   "79"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11761,
+  "externalId": "washs-004",
+  "text": "How many members serve in the Washington State House of Representatives?",
+  "options": [
+   "49",
+   "69",
+   "88",
+   "98"
+  ],
+  "answer": "98",
+  "scale": [
+   "68",
+   "78",
+   "88",
+   "98",
+   "108",
+   "118",
+   "128"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11856,
+  "externalId": "washs-099",
+  "text": "How many U.S. House of Representatives members does Washington State send to Congress?",
+  "options": [
+   "6",
+   "8",
+   "10",
+   "12"
+  ],
+  "answer": "10",
+  "scale": [
+   "4",
+   "6",
+   "8",
+   "10",
+   "12",
+   "14",
+   "16"
+  ],
+  "step": 2
+ },
+ {
+  "id": 12319,
+  "externalId": "lac-122",
+  "text": "How many members serve on the Los Angeles City Council?",
+  "options": [
+   "9 members",
+   "11 members",
+   "15 members",
+   "17 members"
+  ],
+  "answer": "15 members",
+  "scale": [
+   "9 members",
+   "11 members",
+   "13 members",
+   "15 members",
+   "17 members",
+   "19 members",
+   "21 members"
+  ],
+  "step": 2
+ },
+ {
+  "id": 12320,
+  "externalId": "cas-101",
+  "text": "How many days before an election must California voters register to participate?",
+  "options": [
+   "7 days before",
+   "14 days before",
+   "15 days before",
+   "30 days before"
+  ],
+  "answer": "15 days before",
+  "scale": [
+   "12 days before",
+   "13 days before",
+   "14 days before",
+   "15 days before",
+   "16 days before",
+   "17 days before",
+   "18 days before"
+  ],
+  "step": 1
+ },
+ {
+  "id": 15882,
+  "externalId": "ore-201",
+  "text": "How many members serve in the Oregon State Senate?",
+  "options": [
+   "30",
+   "45",
+   "50",
+   "60"
+  ],
+  "answer": "30",
+  "scale": [
+   "15",
+   "20",
+   "25",
+   "30",
+   "35",
+   "40",
+   "45"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10443,
+  "externalId": "ashnc-002",
+  "text": "How many members are on Asheville's City Council, including the mayor?",
+  "options": [
+   "7",
+   "9",
+   "11",
+   "13"
+  ],
+  "answer": "7",
+  "scale": [
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9881,
+  "externalId": "sprmo-002",
+  "text": "How many total members serve on Springfield, Missouri's city council, including the mayor?",
+  "options": [
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "answer": "9",
+  "scale": [
+   "3",
+   "5",
+   "7",
+   "9",
+   "11",
+   "13",
+   "15"
+  ],
+  "step": 2
+ },
+ {
+  "id": 9533,
+  "externalId": "alxla-075",
+  "text": "Approximately what percentage of Alexandria was destroyed when Union forces burned the city in 1864?",
+  "options": [
+   "25%",
+   "50%",
+   "75%",
+   "90%"
+  ],
+  "answer": "90%",
+  "scale": [
+   "81%",
+   "84%",
+   "87%",
+   "90%",
+   "93%",
+   "96%",
+   "99%"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 10706,
+  "externalId": "wmnla-076",
+  "text": "What was West Monroe's population according to the 2020 U.S. Census?",
+  "options": [
+   "8,500",
+   "13,103",
+   "18,600",
+   "25,400"
+  ],
+  "answer": "13,103",
+  "scale": [
+   "5,603",
+   "8,103",
+   "10,603",
+   "13,103",
+   "15,603",
+   "18,103",
+   "20,603"
+  ],
+  "step": 2500
+ },
+ {
+  "id": 11731,
+  "externalId": "bniwa-069",
+  "text": "According to the 2020 U.S. Census, what was the population of Bainbridge Island?",
+  "options": [
+   "18,342",
+   "24,825",
+   "31,500",
+   "42,110"
+  ],
+  "answer": "24,825",
+  "scale": [
+   "9,825",
+   "14,825",
+   "19,825",
+   "24,825",
+   "29,825",
+   "34,825",
+   "39,825"
+  ],
+  "step": 5000
+ },
+ {
+  "id": 11737,
+  "externalId": "bniwa-075",
+  "text": "What is the approximate median age of Bainbridge Island's population, making it notably older than many Washington State cities?",
+  "options": [
+   "50.7 years",
+   "55.3 years",
+   "60.1 years",
+   "65.4 years"
+  ],
+  "answer": "50.7 years",
+  "scale": [
+   "43.2 years",
+   "45.7 years",
+   "48.2 years",
+   "50.7 years",
+   "53.2 years",
+   "55.7 years",
+   "58.2 years"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 9907,
+  "externalId": "sprmo-028",
+  "text": "How many acres did Springfield founder John Polk Campbell donate when the town site was platted in 1835?",
+  "options": [
+   "10 acres",
+   "25 acres",
+   "50 acres",
+   "100 acres"
+  ],
+  "answer": "50 acres",
+  "scale": [
+   "20 acres",
+   "30 acres",
+   "40 acres",
+   "50 acres",
+   "60 acres",
+   "70 acres",
+   "80 acres"
+  ],
+  "step": 10
+ },
+ {
+  "id": 15908,
+  "externalId": "ore-211",
+  "text": "Roughly how many people live in Oregon?",
+  "options": [
+   "About 2.6 million",
+   "About 4.3 million",
+   "About 6.1 million",
+   "About 8.4 million"
+  ],
+  "answer": "About 4.3 million",
+  "scale": [
+   "About 1.3 million",
+   "About 2.3 million",
+   "About 3.3 million",
+   "About 4.3 million",
+   "About 5.3 million",
+   "About 6.3 million",
+   "About 7.3 million"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7271,
+  "externalId": "wdc-068",
+  "text": "What is the maximum dollar amount for cases heard in the Small Claims and Conciliation Branch?",
+  "options": [
+   "$2,500",
+   "$5,000",
+   "$10,000",
+   "$25,000"
+  ],
+  "answer": "$10,000",
+  "scale": [
+   "$2,500",
+   "$5,000",
+   "$7,500",
+   "$10,000",
+   "$12,500",
+   "$15,000",
+   "$17,500"
+  ],
+  "step": 2500
+ },
+ {
+  "id": 10198,
+  "externalId": "arizs-042",
+  "text": "How much did Robert McCulloch pay to purchase London Bridge in 1968?",
+  "options": [
+   "$1.2 million",
+   "$2.46 million",
+   "$4 million",
+   "$6.5 million"
+  ],
+  "answer": "$2.46 million",
+  "scale": [
+   "$0.96 million",
+   "$1.46 million",
+   "$1.96 million",
+   "$2.46 million",
+   "$2.96 million",
+   "$3.46 million",
+   "$3.96 million"
+  ],
+  "step": 0.5
+ },
+ {
+  "id": 9946,
+  "externalId": "sprmo-067",
+  "text": "How much floor space did Bass Pro Shops occupy when Johnny Morris first started the business in 1972?",
+  "options": [
+   "8 square feet",
+   "80 square feet",
+   "800 square feet",
+   "8,000 square feet"
+  ],
+  "answer": "8 square feet",
+  "scale": [
+   "2 square feet",
+   "4 square feet",
+   "6 square feet",
+   "8 square feet",
+   "10 square feet",
+   "12 square feet",
+   "14 square feet"
+  ],
+  "step": 2
+ },
+ {
+  "id": 15981,
+  "externalId": "la-125",
+  "text": "How many incorporated cities are there in Los Angeles County?",
+  "options": [
+   "88",
+   "120",
+   "150",
+   "200"
+  ],
+  "answer": "88",
+  "scale": [
+   "13",
+   "38",
+   "63",
+   "88",
+   "113",
+   "138",
+   "163"
+  ],
+  "step": 25
+ },
+ {
+  "id": 15982,
+  "externalId": "la-126",
+  "text": "Besides patrolling unincorporated areas, the Los Angeles County Sheriff's Department polices roughly how many cities that contract with it for police services?",
+  "options": [
+   "About 5",
+   "About 15",
+   "About 25",
+   "About 40"
+  ],
+  "answer": "About 40",
+  "scale": [
+   "About 10",
+   "About 20",
+   "About 30",
+   "About 40",
+   "About 50",
+   "About 60",
+   "About 70"
+  ],
+  "step": 10
+ },
+ {
+  "id": 15973,
+  "externalId": "la-117",
+  "text": "About how many people live in Los Angeles County, the most populous county in the United States?",
+  "options": [
+   "About 3 million",
+   "About 5 million",
+   "About 8 million",
+   "About 10 million"
+  ],
+  "answer": "About 10 million",
+  "scale": [
+   "About 4 million",
+   "About 6 million",
+   "About 8 million",
+   "About 10 million",
+   "About 12 million",
+   "About 14 million",
+   "About 16 million"
+  ],
+  "step": 2
+ },
+ {
+  "id": 417,
+  "externalId": "cas-036",
+  "text": "At what age can California residents pre-register to vote?",
+  "options": [
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "21 years old"
+  ],
+  "answer": "16 years old",
+  "scale": [
+   "13 years old",
+   "14 years old",
+   "15 years old",
+   "16 years old",
+   "17 years old",
+   "18 years old",
+   "19 years old"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10346,
+  "externalId": "tucaz-092",
+  "text": "What is the approximate population of the city of Tucson?",
+  "options": [
+   "About 550,000",
+   "About 680,000",
+   "About 800,000",
+   "About 950,000"
+  ],
+  "answer": "About 550,000",
+  "scale": [
+   "About 250,000",
+   "About 350,000",
+   "About 450,000",
+   "About 550,000",
+   "About 650,000",
+   "About 750,000",
+   "About 850,000"
+  ],
+  "step": 100000
+ },
+ {
+  "id": 10,
+  "externalId": "q010",
+  "text": "What is the minimum voting age in the United States?",
+  "options": [
+   "18",
+   "19",
+   "20",
+   "21"
+  ],
+  "answer": "18",
+  "scale": [
+   "15",
+   "16",
+   "17",
+   "18",
+   "19",
+   "20",
+   "21"
+  ],
+  "step": 1
+ },
+ {
+  "id": 16038,
+  "externalId": "q146",
+  "text": "What is the minimum age to serve as a U.S. Senator?",
+  "options": [
+   "30",
+   "35",
+   "45",
+   "55"
+  ],
+  "answer": "30",
+  "scale": [
+   "15",
+   "20",
+   "25",
+   "30",
+   "35",
+   "40",
+   "45"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16029,
+  "externalId": "q137",
+  "text": "How many executive departments make up the federal government?",
+  "options": [
+   "15",
+   "18",
+   "22",
+   "26"
+  ],
+  "answer": "15",
+  "scale": [
+   "6",
+   "9",
+   "12",
+   "15",
+   "18",
+   "21",
+   "24"
+  ],
+  "step": 2.5
+ },
+ {
+  "id": 16059,
+  "externalId": "fre-139",
+  "text": "About how many people live in Fremont?",
+  "options": [
+   "About 230,000",
+   "About 350,000",
+   "About 500,000",
+   "About 750,000"
+  ],
+  "answer": "About 230,000",
+  "scale": [
+   "About 80,000",
+   "About 130,000",
+   "About 180,000",
+   "About 230,000",
+   "About 280,000",
+   "About 330,000",
+   "About 380,000"
+  ],
+  "step": 50000
+ }
+]
