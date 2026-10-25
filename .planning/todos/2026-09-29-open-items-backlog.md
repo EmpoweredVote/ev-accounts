@@ -7,8 +7,8 @@ query or the file that produced it so the next session does not have to re-deriv
 🔴 **These exist because they were found in passing, not because anyone planned them.** Several are
 invisible to CI and to every existing gate. Re-measure before acting — the counts move.
 
-**Status 2026-10-25 — items 1, 3 and 6 ✅ CLOSED, item 2 ◐ half closed. Six remain, and ▶ NEXT is
-item 7.** ⚠ That re-measure instruction earned its keep this pass: item 1's population had fallen
+**Status 2026-10-25 — items 1, 3, 6 and 7 ✅ CLOSED, item 2 ◐ half closed. Five remain, and ▶ NEXT is
+item 4 (St. Louis banner).** ⚠ That re-measure instruction earned its keep this pass: item 1's population had fallen
 210 → 153 on its own, item 3 had been quietly resolved by someone else, and item 6's baseline turned
 out never to have moved. **Three of the four were already partly or wholly fixed before anyone
 looked.** Measure before you plan the work, not after.
@@ -141,7 +141,7 @@ code `1836003` is still absent from `essentials.districts` and should stay unuse
 
 ---
 
-## 4. ⏳ St. Louis city and county have no banner — and that blocks their chip
+## 4. ▶ NEXT TASK — ⏳ St. Louis city and county have no banner, and that blocks their chip
 
 `buildingImages.js` holds no `st louis` / `saint louis` key (checked 2026-09-29). `CC_0183` gave both
 governments a `geo_id`, so the DATA is ready; the chip is a one-line `coverage.js` addition **once a
@@ -184,7 +184,54 @@ vacancy was resolved. Read the two sub-buckets apart.
 
 ---
 
-## 7. ▶ NEXT TASK — 349 offices carry a NULL `chamber_id`, and nothing distinguishes orphaned from legitimate
+## 7. ✅ CLOSED 2026-10-25 — 349 offices carry a NULL `chamber_id`, and nothing distinguishes orphaned from legitimate
+
+**The gate now exists: `npm run check:chamberless-orphans` (CI job "chamber-less orphans",
+schedule-only).** Production is clean — **0 seated offices are hidden from their own government.**
+
+🔴 **THE COUNT 349 IS NOT THE PROBLEM AND NEVER WAS. Only 201 of them are SEATED, and an empty
+office drops nobody.** The other 148 — 80 CA/IN county seats, 24 Indiana judicial, 23 Indiana local,
+21 with no district at all — hold no one.
+
+**All 201 seated ones render.** Verified end-to-end against prod, not inferred:
+
+| Probe | `POST /api/essentials/coordinate-lookup` |
+| --- | --- |
+| Culebra, PR | 30 officials, **all chamber-less** — the mayor, 14 senators, 14 representatives, the Resident Commissioner |
+| Washington, DC | 47 officials, 13 chamber-less — Council Members, SBOE, both shadow senators, the Delegate |
+
+They work because the address and coordinate paths run `districts → offices →
+office_current_holder` and **`LEFT JOIN`** the chamber. Only the landing-page browse query needs
+one, and its `governments → chambers → offices` join is INNER.
+
+### The predicate, and why it needs no carve-out for DC
+
+An office is an **orphan** when all three hold: `chamber_id IS NULL` · somebody is **seated** in it ·
+its district's **`(mtfcc, geo_id)`** matches a `governments` row, so a chip for that government
+*should* list this person.
+
+🟢 **Condition 3 is what makes the old false positive disappear.** No `governments` row matches
+Puerto Rico's municipal districts or DC's council districts, so neither was ever reachable through a
+chamber and neither is flagged — without naming them. Wichita satisfied all three.
+🔴 The key is the **pair** `(mtfcc, geo_id)`, never `geo_id` alone.
+
+### ◐ 121 LATENT, and this is the number to watch
+
+An **unseated** chamber-less office whose government exists becomes an orphan the moment anyone
+seats it. There are **121**, in 13 governments — **96 in Monroe County IN**, 4 in LA County, the
+rest one or two per Indiana township. The check prints them and does **not** fail on them.
+▶ **Seating Monroe County without attaching those offices to a chamber would create 96 orphans in
+one migration.**
+
+### 🔴 The control had to be MANUFACTURED
+
+A healthy database contains zero orphans, so unlike `check-rls-coverage` — which always has
+`spatial_ref_sys` sitting there — there was nothing standing to prove the detector works. The script
+opens a transaction, strips the chamber from a real seated office, confirms the detector reports it,
+and **always rolls back**; it cannot write. If the planted orphan is not seen, the check **errors**
+instead of passing, because an empty result would then mean nothing. Both paths were exercised:
+green with the control passing, and red (exit 1) against a planted orphan. Rollback verified — 349
+and 201 unchanged after the run.
 
 **Measured 2026-09-29: 349** (was 356 before `CC_0183` attached Wichita's 7).
 
