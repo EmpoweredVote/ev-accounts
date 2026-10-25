@@ -255,7 +255,11 @@ export function proposeScale(
         `rendered answer "${marks[SCALE_ANSWER_INDEX]}" does not match stored "${base.answer}"`,
       );
     }
-    return { ...base, scale: marks, step };
+    // 🔴 REPORT THE STEP THAT WAS USED, NOT THE LADDER VALUE THAT PRODUCED IT.
+    // A 2.5 rung rounds to 3 when the answer has no decimal place, so 35 proposals
+    // carried a `step` column that disagreed with their own marks. The marks were right
+    // and uniform throughout -- but the review file is read by a person comparing the two.
+    return { ...base, scale: marks, step: sI / scaleUp };
   }
   return refuse(`no step fits the domain (answer ${answer}, floor ${min}, ceiling ${max})`);
 }

@@ -36,7 +36,6 @@ BEGIN;
 
 WITH proposed(id, scale) AS (
   VALUES
-
     (1, '["4", "6", "8", "10", "12", "14", "16"]'::jsonb),
     (3, '["20 years old", "25 years old", "30 years old", "35 years old", "40 years old", "45 years old", "50 years old"]'::jsonb),
     (7, '["6", "7", "8", "9", "10", "11", "12"]'::jsonb),
