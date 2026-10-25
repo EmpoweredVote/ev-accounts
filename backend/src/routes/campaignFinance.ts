@@ -137,7 +137,10 @@ router.get(
 // ---------------------------------------------------------------------------
 // GET /api/campaign-finance/politician/:id/contributions
 // Query params: ?cursor=... ?limit=50 ?cycle=2024 ?confidence=high|medium|estimated
+//               ?donor=<a summary top_donors name, exactly as returned>
 // ---------------------------------------------------------------------------
+
+const DONOR_MAX_LENGTH = 300;
 
 router.get(
   '/politician/:id/contributions',
@@ -179,6 +182,19 @@ router.get(
       return;
     }
 
+    // Validate ?donor — matched exactly (not trimmed), so it must be one non-blank string
+    const donorRaw = req.query.donor;
+    if (
+      donorRaw !== undefined &&
+      (typeof donorRaw !== 'string' || donorRaw.trim() === '' || donorRaw.length > DONOR_MAX_LENGTH)
+    ) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: `donor must be a single non-empty name of at most ${DONOR_MAX_LENGTH} characters`,
+      });
+      return;
+    }
+
     const cursor = req.query.cursor as string | undefined;
 
     try {
@@ -187,6 +203,7 @@ router.get(
         limit,
         cycle: cycleRaw,
         confidence,
+        donor: donorRaw ?? null,
       });
       if (updatedAt) {
         res.setHeader('X-Data-Updated-At', updatedAt);

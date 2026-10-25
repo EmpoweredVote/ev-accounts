@@ -1,4 +1,5 @@
-import pg, { type ClientBase } from 'pg';
+import { type ClientBase } from 'pg';
+import { SessionPoolerPool } from '../../lib/sessionPoolerPool.js';
 
 // NOTE (engine fold-in, Phase 1): the standalone CTC service called
 // `setDefaultResultOrder('ipv4first')` here. That is a PROCESS-WIDE side effect and
@@ -9,14 +10,13 @@ import pg, { type ClientBase } from 'pg';
 // works with the process default. The engine's Render start command already governs
 // DNS order for the whole process; the sub-app does not.
 
-const { Pool } = pg;
-
 // Dedicated pg pool for the CTC (trivia) schema. Kept SEPARATE from the engine's
 // pool (src/lib/db.ts) so its `search_path TO trivia` connect hook — which the raw
 // SQL in these routes relies on — cannot leak into engine connections. Sized small
-// (max 5) so the combined footprint (engine 10 + trivia 5 = 15) stays inside the
-// session pooler's limit.
-const pool = new Pool({
+// (max 5): engine 10 + trivia 5 = 15 is the session pooler's ENTIRE per-role limit, so
+// a second instance (a deploy's overlap) has no room. sessionPoolerPool.ts handles that.
+// SessionPoolerPool: same ev_api role as the engine pool, so the same session cap applies.
+const pool = new SessionPoolerPool({
   connectionString: process.env.DATABASE_URL,
   // Cap trivia's share of the shared session pooler. See sizing note above.
   max: 5,

@@ -1,0 +1,139 @@
+# voting-rights — Season 3 draft, served revision 08e7026f-2eb5-4386-9288-f1dbfc3185c3 (v3 r4, CA_0318)
+
+**Applied:** 2026-10-21 by CA_0318 (approved and parked; pinned in the draft Season 3 only).
+
+**Status:** drafted 2026-10-21 in the Stage 4 package of the season-topic-prep skill (research folder
+`~/Documents/GitHub/.planning/research/s3-prep-voting-rights/`). The Season 2 annex (`../voting-rights.md`) stays as it
+is for Season 2 rows. Rulings by Chris Andrews, 2026-10-20/21: P1, census Q1, J1–J10, Q1–Q8, D1–D6, C1, C-Q1–C-Q5, DC1.
+
+**Question:** "What proof of identity or citizenship should a person have to show to vote?"
+
+**Spectrum (L1):** how much proof a person must show before their vote counts. Pole 1: "No proof of identity".
+Pole 5: "Documents that prove citizenship". Stored as the first line of the revision's rationale; not shown to voters
+yet.
+
+**Orientation:** standard. Rung 1 asks for the least proof, rung 5 the most.
+
+**Levels with a lever:** federal, state. **Asked at:** federal, state, local (`compass_topic_roles`). Own words only
+at: local.
+
+**Rungs:**
+1. Require no proof of identity to vote.
+2. Accept non-photo documents, such as a utility bill or bank statement, as voter ID.
+3. Require photo ID to vote, with a sworn statement for a voter who has none.
+4. Require ID before a ballot counts: photo ID at the polls, or an ID number or a copy of an ID with each mail ballot.
+5. Require documentary proof of citizenship to register or to vote.
+
+**Rung map from revision 3:** identity (1→1 … 5→5).
+
+**Scope line — "proof a person shows" (annex, both drafts).** A document, an ID number, a copy of an ID, or a
+sworn statement that a law requires a person to give before a ballot counts or before registration is accepted,
+at the polls, with a mail ballot, or at registration. Out of scope → `adjacent` (codebook V2): checks that
+officials run without the voter giving anything (signature matching, database matching, list maintenance);
+ballot rules with no identity clause (drop boxes, deadlines, early voting, mail eligibility); registration
+access (same-day, automatic, online registration); citizen-only voting amendments and non-citizen voting in local
+elections; ballot design, counting and tabulators; and a law that bars another level from setting ID rules
+(preemption, V2 / H12), since no rung is about which level decides.
+
+## Lines for every rung
+
+- **Furthest act** (standing rulebook, every topic). A record that states the acts of two neighbouring rungs sits on
+  the rung of its furthest act; each lower act must still be stated. Acts from both sides of the middle in one
+  record → BLANK `adjacent-chairs`.
+- **Rung 1** ("Require no proof of identity to vote.") needs a stated end of every proof-of-identity rule: a repeal of
+  every ID requirement for voting, a statute that says a voter need not show any proof (a document or a sworn
+  statement), or own words that none should be required. A law that lets a voter vote on a signed statement in place
+  of any document → 2 (ruling D4). A repeal of a photo-only rule that leaves a list of
+  non-photo documents → 2. An all-mail or signature-verification law that says nothing about ID → `adjacent`
+  (silence is not a clause, V4.2). A law that bars **local** ID rules → `adjacent` (preemption, V2).
+- **Rung 2** needs a stated list of accepted documents that includes at least one document without a photo,
+  **accepted on its own, without a sworn statement** (ruling D2). Non-photo documents that only cure a provisional
+  ballot after election day are not accepted as voter ID (ruling D5). If the
+  list includes a non-photo document, the rung is 2 even when photo ID is listed first. A law that keeps such a
+  list against a move to photo only → 2. A bill that amends an ID law without setting what ID is accepted →
+  BLANK `no-evidence` (the existing law is not the person's position).
+- **Rung 3** needs photo ID **and** a stated sworn-statement path, open to any voter without photo ID, that lets the
+  ballot count. A non-photo document accepted only together with that statement is part of this fallback (D2). One law
+  usually states both; this is one law-stated condition (L5), and the rung is a single act. A photo-ID law that
+  states no fallback at all → BLANK `direction-only` (restriction side) under both drafts; Draft C rung 4 (a) gives the cure-only law its rung.
+- **Rung 5** needs a document that proves citizenship (passport, birth certificate, naturalization papers or
+  similar), required at registration or before a ballot counts. A rule that is not documentary proof (an ID number
+  or a database match at registration, a sworn statement of citizenship) matches no rung → BLANK
+  `direction-only` (restriction side). A DPOC law sits on 5 by its own act; it does not need to state any
+  photo-ID rule. A records-match fallback the registrar runs, or an attestation-plus-evidence route, beside a stated
+  documents rule does not move the record off 5 (ruling D6).
+- **Free ID** is no longer part of any rung. It does not decide the chair.
+- **A No vote** on any ID or proof-of-citizenship bill → BLANK `direction-only` (V4.1).
+- **Single-subject (codebook V4.1, replaces the Season 2 annex line "an omnibus election bill that includes an ID
+  clause → multi-subject").** An election bill is `multi-subject` only when an operative part other than the ID
+  part would be V2 `on-question` evidence for **another topic served in the season being coded** (for example
+  ranked-choice voting, redistricting, campaign finance). Parts that are `adjacent` here (mail-voting rules, drop
+  boxes, registration access, list maintenance) are not evidence for another served topic, so they do **not** make
+  the bill multi-subject. Record the season's served-topic list and the codebook version with the verdict.
+- **Higher-law duty.** State legislatures and Congress have more than 10 voting members, so only the 10%-No rule
+  applies (gate `near-unanimous`); the higher-law-duty gate does not. Local officials are own words only. For
+  reference: federal law already requires an ID number at registration and ID from some first-time voters who
+  registered by mail. A state provision that copies those duties is coded on its own text; a rule for first-time
+  voters only does not meet a rung that names every voter or each mail ballot.
+
+## Rung 4
+- **Rung 4 needs one branch, stated.** Either (a) the polls branch or (b) the mail branch. A record need not state
+  both. Nothing is inferred about the other channel from silence.
+- **(a) Polls branch — photo condition (D1).** The law must state that the ID shown at the polls (election day or
+  early in-person voting) has a photo. A list that accepts any government-issued ID with no photo condition does
+  not state photo ID; a title does not govern. Such a list → 2 if it also states a non-photo document accepted on
+  its own (D2), otherwise BLANK `direction-only` (restriction side). A rule that accepts an ID number at the polls
+  in place of a photo → not branch (a).
+- **(a) Polls branch — the cure act.** The law must state that a voter without photo ID casts a provisional ballot
+  that counts once the voter shows ID (at the election office, within the period the law sets). A photo-ID law
+  that states no fallback and no cure → BLANK `direction-only` (silence, V4.2; other law may hold a sworn
+  statement). Every voter can cast a provisional ballot under federal law, so at the polls it is the counting rule,
+  not the requirement alone, that separates 3 from 4.
+- **The 3/4 line (D3; a topic-scoped reading of the furthest-act rule).** If **any** voter without ID can have the
+  ballot count by signing a sworn statement — for any reason, or for a reasonable impediment — the law is at 3,
+  **even when it also states a cure** (show ID later). If a sworn statement is open only to named exemptions (for
+  example a religious objection to being photographed, or inability to pay for a document) and every other voter
+  must show ID before the ballot counts → 4. The same line reads the mail branch: a sworn statement any mail voter
+  may give in place of the ID number or copy → not branch (b). The law's text decides; nothing is inferred from
+  silence. This reading is for `voting-rights` only; list it under "Topic-scoped readings" in `RULINGS.md` with
+  the revision.
+- **(b) Mail branch.** The law must require an ID number (a driver's licence or state ID number, or the last digits
+  of a Social Security number) or a copy of an ID with **each** mail ballot. The requirement attached to the ballot
+  is itself the stated act: unlike the polls, there is no general provisional path for a mail ballot to fall back
+  on, so a stated cure is **not** also needed (the Draft A standard, unchanged). A copy of any document the law
+  accepts as ID meets the branch; the photo condition (D1) binds the polls branch only. A stated sworn-statement
+  path in place of the ID → not branch (b) → BLANK `direction-only` (restriction side). A rule for first-time mail
+  voters only, or one that copies the federal first-time-voter duty → `direction-only`. A signature check on the
+  envelope → `adjacent` (scope line).
+- **(b) A mail-ballot rule on the request.** An ID number or copy required with the **application** for a mail
+  ballot meets branch (b) only when the law makes the ballot count only after that check: no ballot is issued, or
+  an issued ballot is not counted, until the ID on the request is verified. A request-ID rule whose failure still
+  lets the ballot be sent and counted on other checks, or one a sworn statement can replace → `direction-only`. A
+  request rule that also applies to the ballot is read on the ballot clause.
+- **Furthest act, 3/4.** A record that states photo ID with a sworn-statement path at the polls (3) **and** an ID
+  number or copy with each mail ballot (4) → 4. A record that states both branches of rung 4 → 4. A record that
+  states either branch of rung 4 **and** documentary proof of citizenship → 5 (each lower act stated). A mail-ballot
+  ID law that says nothing about the polls → 4; a strict photo-ID law that says nothing about mail ballots → 4.
+- **Synonyms to add:** "strict photo ID", "provisional ballot", "cure", "ID number on the return envelope",
+  "copy of ID with the ballot", "reasonable impediment" (for the 3/4 line).
+
+## Topic-scoped readings (also listed in RULINGS.md "Topic-scoped readings")
+- **D3 — 3/4 line (furthest act).** A sworn-statement path open to any voter with a reasonable impediment keeps a law
+  at 3 even when it also states a cure; sworn statements only for named exemptions leave it at 4.
+- **C-Q4 — mail branch exemptions.** A mail-ballot law leaves rung 4 only if any voter who does not give the ID can
+  use a sworn statement instead; a statement limited to people never issued any of the listed numbers is a named
+  exemption.
+- **DC1 — request rule.** A mail-ballot request-ID rule whose failure still lets the ballot be sent and counted on
+  documents that are not the requested ID does not meet rung 4.
+
+## Hard cases
+- **Preemption is not the rule (codebook V2, H12).** A law that bars local ID rules → `adjacent`.
+- **Ballots, not voters; officials' checks.** Ballot design, counting, signature and database checks officials run →
+  `adjacent` (ruling Q5).
+- **Single-subject (codebook V4.1; ruling Q4).** An election bill is multi-subject only when another operative part is
+  evidence for a different served topic. Mail-voting, registration-access, list-maintenance and poll-watcher parts are
+  not. A ban on private funding of election offices is not campaign-finance evidence (census ruling Q1).
+- **A No vote** on any ID or proof-of-citizenship bill → BLANK `direction-only`.
+- **Registration rules that are not documentary proof** (ID number or database match at registration, a sworn
+  statement of citizenship) → BLANK `direction-only` (ruling Q6).
+- **A title does not govern** (codebook C38; ruling D1).

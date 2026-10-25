@@ -2,3 +2,13 @@
 # Install with: pip install -r requirements.txt
 # Recommended: use a virtual environment (python3 -m venv .venv && source .venv/bin/activate)
 psycopg2-binary
+
+# Headshot importers: lib/headshot_image.py applies EXIF orientation and refuses a frame
+# with no face in it (an office seal, an election-results map, a blank). Pillow does the
+# image work; opencv supplies the YuNet face detector, whose model is downloaded and
+# checksummed on first use.
+Pillow
+opencv-python-headless
+# check-headshot-faces.py fetches every published image. It ran locally on an interpreter that
+# already had requests, so its absence here only showed up when the check was wired into CI.
+requests

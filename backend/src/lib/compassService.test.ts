@@ -13,7 +13,9 @@ import {
   isNoPromotedTopicsError, NoPromotedTopicsError,
   getPoliticianAnswers, getPoliticianContext, getPoliticianContextAll,
   compareWithPoliticians, getPoliticianCitations,
+  getResearchStates, getCandidateResearchStates,
 } from './compassService.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -425,11 +427,11 @@ describe('getPoliticianCitations — the topic set follows the answer’s season
         topic_tension_name: 'Gun Policy', stance_value: 2,
         stance_text: 'Require universal background checks.', reasoning: 'Sponsored S.1.',
         source_url: 'https://example.gov/s1', snippet: 'I sponsored S.1.',
-        verified_at: '2026-09-20', is_primary: true,
+        verified_at: '2026-09-20', is_primary: true, served_revision_id: 'rev-gun',
       }] })
       .mockResolvedValueOnce({ rows: [
-        { topic_key: 'gun-policy', value: 1, text: 'Ban' },
-        { topic_key: 'gun-policy', value: 2, text: 'Require universal background checks.' },
+        { topic_revision_id: 'rev-gun', value: 1, text: 'Ban' },
+        { topic_revision_id: 'rev-gun', value: 2, text: 'Require universal background checks.' },
       ] });
 
     const [block] = await getPoliticianCitations('p1');
@@ -438,5 +440,159 @@ describe('getPoliticianCitations — the topic set follows the answer’s season
       citations: [{ source_url: 'https://example.gov/s1', domain: 'example.gov', is_primary: true }],
     });
     expect(block.all_stances).toHaveLength(2);
+  });
+});
+
+// 🔴 THE TITLE, TENSION NAME AND LADDER MUST COME FROM THE SERVED REVISION, not
+// the compass_topics text columns. CA_0012 froze those; measured 2026-10-21, 22 of
+// 185 citation blocks (4 topics) showed old wording — climate-change titled
+// "Climate Change" over a Clean Energy ladder. ADR 0006: the revision is the one
+// the ANSWER's season pinned, since an answer is locked to the ladder it was given
+// against; with no answer, the context's season pin.
+describe('getPoliticianCitations — wording follows the served revision', () => {
+  const citationSql = async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    return (mockQuery.mock.calls[0][0] as string).replace(/--[^\n]*/g, '');
+  };
+
+  it('reads no text column from compass_topics', async () => {
+    const sql = await citationSql();
+    expect(sql).not.toMatch(/ct\.(question_text|short_title|title)\b/);
+    expect(sql).toMatch(/COALESCE\(eff\.question_text, eff\.short_title\)\s+AS topic_title/);
+    expect(sql).toMatch(/eff\.short_title\s+AS topic_tension_name/);
+  });
+
+  it('resolves through the shared servedRevisionLateral, pinned by the answer, else the context season', async () => {
+    const sql = await citationSql();
+    expect(sql).toContain("e.status IN ('published', 'superseded')");
+    expect(sql).toMatch(/WHERE pin\.id = COALESCE\(pa\.topic_revision_id,/);
+    expect(sql).toMatch(/shown_sq\.season_id = pc\.season_id AND shown_sq\.topic_id = pce\.topic_id/);
+    // after both collapses, so the pin is the one of the season the block shows
+    expect(sql.indexOf('WHERE pin.id = COALESCE')).toBeGreaterThan(sql.indexOf(') pc ON true'));
+  });
+
+  it('takes stance_text from that same revision, never re-resolving is_current', async () => {
+    const sql = await citationSql();
+    expect(sql).toMatch(/sr\.topic_revision_id = eff\.id AND sr\.value = pa\.value/);
+    expect(sql).not.toMatch(/is_current/);
+  });
+
+  it('builds the ladder from each block\'s served revision id, not by topic or is_current', async () => {
+    const row = (key: string, rev: string) => ({
+      topic_key: key, topic_title: `${key}?`, topic_tension_name: key, stance_value: 1,
+      stance_text: 'One', reasoning: 'r', source_url: 'https://a.gov/x', snippet: 's',
+      verified_at: '2026-10-01', is_primary: true, served_revision_id: rev,
+    });
+    mockQuery
+      .mockResolvedValueOnce({ rows: [row('climate-change', 'rev-c'), row('abortion', 'rev-a')] })
+      .mockResolvedValueOnce({ rows: [
+        { topic_revision_id: 'rev-a', value: 1, text: 'A1' },
+        { topic_revision_id: 'rev-c', value: 1, text: 'C1' },
+        { topic_revision_id: 'rev-c', value: 2, text: 'C2' },
+      ] });
+
+    const blocks = await getPoliticianCitations('p1');
+    const ladderSql = mockQuery.mock.calls[1][0] as string;
+    expect(ladderSql).not.toMatch(/is_current|compass_topics\b/);
+    expect(mockQuery.mock.calls[1][1]).toEqual([['rev-c', 'rev-a']]);
+    expect(blocks.find(b => b.topic_key === 'climate-change')!.all_stances.map(s => s.text)).toEqual(['C1', 'C2']);
+    expect(blocks.find(b => b.topic_key === 'abortion')!.all_stances.map(s => s.text)).toEqual(['A1']);
+    // internal only — the response contract is unchanged
+    expect(blocks[0]).not.toHaveProperty('served_revision_id');
+  });
+});
+
+// Stage 5 (spec 2026-10-22 §8): "we researched {name} and found no public stance", or their own words
+// "not a position on the scale". A NEW reader, beside getPoliticianAnswers, which stays as it is: its
+// consumers treat any returned value as a position.
+describe('getResearchStates — Stage 5 research outcomes, newest published season', () => {
+  it('collapses to the newest PUBLISHED season per topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.topic_research_outcomes');
+    expect(sql).toContain(SEASON_IS_PUBLISHED);
+    expect(sql).toMatch(/DISTINCT ON \(\s*ro\.topic_id\s*\)/);
+    expect(sql).toMatch(/ORDER BY\s+ro\.topic_id,\s*s\.number DESC/);
+    expect(mockQuery.mock.calls[0][1]).toEqual(['p1']);
+  });
+
+  // The blank filter sits OUTSIDE the collapse, so a newer seat hides an older blank.
+  it('filters the outcome AFTER the collapse and carries the counts-blanks marker', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const collapseEnd = sql.indexOf(') latest');
+    const outcomeFilter = sql.search(/latest\.outcome IN \('doesnt-fit', 'no-stance'\)/);
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(outcomeFilter).toBeGreaterThan(collapseEnd);
+    expect(sql).toContain('@zero-scope: counts-blanks');
+  });
+
+  // The compass shows the person's NEWEST published answer in any season (getPoliticianAnswers). A seat
+  // there must hide the research state even when it is OLDER than the outcome (an outcome with no answer
+  // row of its own season, e.g. a blank left out of research.csv), or the two reads disagree.
+  it('hides a topic the compass seats: the same newest-published-answer collapse, any season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    const guard = sql.slice(sql.indexOf('NOT EXISTS'));
+    expect(guard).toMatch(/DISTINCT ON \(\s*a\.topic_id\s*\)[\s\S]*inform\.politician_answers[\s\S]*ORDER BY\s+a\.topic_id,\s*sa\.number DESC/);
+    expect(guard).toMatch(/\)\s*na\s+WHERE\s+na\.value <> 0/);
+    expect(guard).not.toMatch(/number >= latest\.season_number/);
+  });
+
+  it('attaches each topic\'s passages and returns plain JSON', async () => {
+    mockQuery.mockResolvedValue({ rows: [
+      { topic_id: 't1', outcome: 'doesnt-fit', researched_on: '2026-10-20', passages: [
+        { kind: 'own-words', passage: 'Every voter should vote by mail.', source_url: 'https://x.example/a', source_date: '2026-09-01' },
+      ] },
+      { topic_id: 't2', outcome: 'no-stance', researched_on: '2026-10-21', passages: null },
+    ] });
+    const out = await getResearchStates('p1');
+    expect(out).toEqual([
+      { topic_id: 't1', outcome: 'doesnt-fit', researched_on: '2026-10-20', passages: [
+        { kind: 'own-words', passage: 'Every voter should vote by mail.', source_url: 'https://x.example/a', source_date: '2026-09-01' },
+      ] },
+      { topic_id: 't2', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] },
+    ]);
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('inform.own_words_passages');
+    expect(sql).toMatch(/w\.season_id = latest\.season_id/);
+  });
+});
+
+describe('getCandidateResearchStates — via race_candidates.politician_id', () => {
+  it('returns [] when the candidate has no politician', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ politician_id: null }] });
+    expect(await getCandidateResearchStates('c1')).toEqual([]);
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+
+  it('returns [] for an unknown candidate', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    expect(await getCandidateResearchStates('c1')).toEqual([]);
+  });
+
+  it('reads the politician\'s research states', async () => {
+    mockQuery
+      .mockResolvedValueOnce({ rows: [{ politician_id: 'p9' }] })
+      .mockResolvedValueOnce({ rows: [{ topic_id: 't1', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] }] });
+    expect(await getCandidateResearchStates('c1')).toEqual([{ topic_id: 't1', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] }]);
+    expect(mockQuery.mock.calls[1][1]).toEqual(['p9']);
+  });
+});
+
+// CA_0322 lands by hand after the early check; the route ships first. Until the table exists the read is
+// empty, not a 500 on every profile.
+describe('getResearchStates before CA_0322 is applied', () => {
+  it('returns [] when the outcomes table does not exist yet (42P01)', async () => {
+    mockQuery.mockRejectedValueOnce(Object.assign(new Error('relation "inform.topic_research_outcomes" does not exist'), { code: '42P01' }));
+    expect(await getResearchStates('p1')).toEqual([]);
+  });
+  it('still throws any other error', async () => {
+    mockQuery.mockRejectedValueOnce(Object.assign(new Error('boom'), { code: '57014' }));
+    await expect(getResearchStates('p1')).rejects.toThrow('boom');
   });
 });

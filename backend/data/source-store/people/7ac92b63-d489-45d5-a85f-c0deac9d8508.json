@@ -1,0 +1,12 @@
+{
+  "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508",
+  "sources": [],
+  "terms": [
+    {
+      "office": "State Senate (WA)",
+      "start": "2020-05-13",
+      "precision": "day",
+      "source": "essentials roster export (s3-census-education-equity-programs-supplement/raw/roster-legislators.tsv)"
+    }
+  ]
+}

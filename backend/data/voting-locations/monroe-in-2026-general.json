@@ -1,0 +1,72 @@
+{
+  "_comment": "Hand-checked voting locations for one county and one election. Input to scripts/generate-voting-locations-migration.mjs. Every field below was read from the county's own documents on last_checked; see README.md in this folder before editing.",
+  "county_fips": "18105",
+  "county_name": "Monroe County",
+  "state": "IN",
+  "election_name": "2026 General Election",
+  "election_date": "2026-11-03",
+  "source_label": "Monroe County Election Board — Official 2026 Poll Site Locations",
+  "source_url": "https://www.in.gov/counties/monroe/Departments/clerk-of-court/voter-registration/",
+  "last_checked": "2026-10-22",
+  "lookup_url": "https://indianavoters.in.gov/",
+  "documents": {
+    "poll_sites_pdf": {
+      "url": "https://monroecounty99.sharepoint.com/:b:/s/TSDHelpdesk/IQDd3w5mN5EIQpu79cJf3bIqAWEYKpwZAYOyImozAQdyDds?e=PGE4e5",
+      "modified": "2026-03-26",
+      "sha256": "3033e0fac5c35bc5c32044b2353dcf558fa224f1863538965ae8de7202176530"
+    },
+    "early_voting_pdf": {
+      "url": "https://monroecounty99.sharepoint.com/:b:/s/TSDHelpdesk/IQCoIaD5xdW1SrhYKjiroCmIATibWm3tY6BdqxF2WUXBGPM?e=GCvCuo",
+      "modified": "2026-09-08",
+      "sha256": "469f7dc519f92633cede6fe1cab0ead52f8cd423aca4e443f61f572455274955"
+    }
+  },
+  "precincts": {
+    "layer_url": "https://services1.arcgis.com/nYfGJ9xFTKW6VPqW/arcgis/rest/services/MOCO_Precincts/FeatureServer/2",
+    "code_field": "Precinct",
+    "expected_count": 83,
+    "_note": "Use this layer's POLYGONS only. Its PollName/PollAddr fields are stale (last edited 2025-08-12): 23 of 83 precincts point at pre-2026 sites."
+  },
+  "election_day_hours": "Tue, Nov 3: 6 am - 6 pm",
+  "election_day_sites": [
+    { "name": "Academy", "address": "444 S Patterson Dr, Bloomington, IN 47403", "lat": 39.16293, "lng": -86.55137, "precincts": ["PERRY 01", "PERRY 29"] },
+    { "name": "Binford Elementary", "address": "2300 E 2nd St, Bloomington, IN 47401", "lat": 39.16022, "lng": -86.50522, "precincts": ["PERRY 17", "PERRY 20", "PERRY 26"] },
+    { "name": "Bloomington High School North", "address": "3901 N Kinser Pike, Bloomington, IN 47404", "lat": 39.19927, "lng": -86.54852, "precincts": ["BLOOMINGTON 13", "BLOOMINGTON 17", "BLOOMINGTON 24"] },
+    { "name": "Bloomington High School South", "address": "1965 S Walnut St, Bloomington, IN 47401", "lat": 39.14322, "lng": -86.52935, "precincts": ["PERRY 06", "PERRY 09", "PERRY 13", "PERRY 31", "PERRY 32"] },
+    { "name": "Boys & Girls Lincoln Street Club", "address": "311 S Lincoln St, Bloomington, IN 47401", "lat": 39.16395, "lng": -86.53085, "precincts": ["PERRY 08", "PERRY 15", "PERRY 16", "PERRY 30"] },
+    { "name": "Burgoon Baptist Church", "address": "8598 E Burgoon Church Rd, Bloomington, IN 47401", "lat": 39.05459, "lng": -86.4019, "precincts": ["POLK"] },
+    { "name": "Christ Community Church", "address": "503 S High St, Bloomington, IN 47401", "lat": 39.16171, "lng": -86.5072, "precincts": ["BLOOMINGTON 08", "BLOOMINGTON 21"] },
+    { "name": "Election Central", "address": "501 N Morton St, Bloomington, IN 47404", "lat": 39.17041, "lng": -86.53693, "precincts": ["BLOOMINGTON 03", "BLOOMINGTON 06", "BLOOMINGTON 19", "BLOOMINGTON 20"] },
+    { "name": "Eastview Church of the Nazarene", "address": "4545 E Lampkins Ridge Rd, Bloomington, IN 47401", "lat": 39.15079, "lng": -86.47086, "precincts": ["PERRY 21", "PERRY 22", "SALT CREEK"] },
+    { "name": "Ellettsville Christian Church", "address": "731 E Independence St, Ellettsville, IN 47429", "lat": 39.2257, "lng": -86.61743, "precincts": ["RICHLAND 01", "RICHLAND 02", "RICHLAND 05", "RICHLAND 06"] },
+    { "name": "Emmanuel Church", "address": "1503 W That Rd, Bloomington, IN 47403", "lat": 39.11381, "lng": -86.55142, "precincts": ["PERRY 04", "PERRY 10", "PERRY 24", "PERRY 25", "PERRY 27"] },
+    { "name": "Faith Lutheran Church", "address": "2200 S High St, Bloomington, IN 47401", "lat": 39.14091, "lng": -86.50952, "precincts": ["PERRY 14"] },
+    { "name": "Family Life Church", "address": "8449 N Fox Hollow Rd, Bloomington, IN 47408", "lat": 39.28734, "lng": -86.51795, "precincts": ["BLOOMINGTON 12", "BLOOMINGTON 15", "WASHINGTON"] },
+    { "name": "Grandview Elementary", "address": "2300 S Endwright Rd, Bloomington, IN 47403", "lat": 39.14444, "lng": -86.59933, "precincts": ["VAN BUREN 04", "VAN BUREN 05", "VAN BUREN 06"] },
+    { "name": "Harrodsburg Community Center", "address": "1002 W Popcorn Rd, Bloomington, IN 47403", "lat": 39.01261, "lng": -86.54835, "precincts": ["CLEAR CREEK 03"] },
+    { "name": "Highland Park Elementary", "address": "900 S Park Square Dr, Bloomington, IN 47403", "lat": 39.15754, "lng": -86.59253, "precincts": ["RICHLAND 09", "VAN BUREN 01", "VAN BUREN 02", "VAN BUREN 03"] },
+    { "name": "Indian Creek Lions Club", "address": "8120 S Rockport Rd, Bloomington, IN 47403", "lat": 39.04627, "lng": -86.61435, "precincts": ["INDIAN CREEK"] },
+    { "name": "Indiana Memorial Union (IMU)", "address": "900 E 7th St, Bloomington, IN 47405", "lat": 39.16783, "lng": -86.52351, "precincts": ["BLOOMINGTON 01", "BLOOMINGTON 04", "BLOOMINGTON 05", "BLOOMINGTON 07", "BLOOMINGTON 18", "PERRY 07"] },
+    { "name": "Jackson Creek Middle School", "address": "3980 S Sare Rd, Bloomington, IN 47401", "lat": 39.12379, "lng": -86.51089, "precincts": ["PERRY 11", "PERRY 12", "PERRY 23", "PERRY 28"] },
+    { "name": "Sherwood Oaks Christian Church", "address": "2700 E Rogers Rd, Bloomington, IN 47401", "lat": 39.13493, "lng": -86.50096, "precincts": ["PERRY 18", "PERRY 19"] },
+    { "name": "Smithville Christian Church", "address": "7280 S Fairfax Rd, Bloomington, IN 47401", "lat": 39.0715, "lng": -86.50383, "precincts": ["CLEAR CREEK 02"] },
+    { "name": "Souls Harbor Church", "address": "7510 S Old State Road 37, Bloomington, IN 47403", "lat": 39.06291, "lng": -86.54196, "precincts": ["CLEAR CREEK 01"] },
+    { "name": "St. John's Catholic Church", "address": "4607 W State Road 46, Bloomington, IN 47404", "lat": 39.21353, "lng": -86.59562, "precincts": ["RICHLAND 03", "RICHLAND 04", "RICHLAND 07", "RICHLAND 08"] },
+    { "name": "Stinesville Lions Club", "address": "8060 N Stinesville Rd, Stinesville, IN 47464", "lat": 39.28376, "lng": -86.66137, "precincts": ["BEAN BLOSSOM 01", "BEAN BLOSSOM 02", "BEAN BLOSSOM 03"] },
+    { "name": "Summit Elementary", "address": "1450 W Countryside Ln, Bloomington, IN 47403", "lat": 39.14235, "lng": -86.55366, "precincts": ["PERRY 02", "PERRY 03", "PERRY 05"] },
+    { "name": "Tri-North Middle School", "address": "1000 W 15th St, Bloomington, IN 47404", "lat": 39.17755, "lng": -86.54596, "precincts": ["BLOOMINGTON 02", "BLOOMINGTON 14", "BLOOMINGTON 23"] },
+    { "name": "Unionville Elementary", "address": "8144 E State Road 45, Unionville, IN 47468", "lat": 39.22952, "lng": -86.41486, "precincts": ["BENTON 01", "BENTON 02"] },
+    { "name": "University Elementary", "address": "1111 N Russell Rd, Bloomington, IN 47408", "lat": 39.1758, "lng": -86.48263, "precincts": ["BLOOMINGTON 09", "BLOOMINGTON 10", "BLOOMINGTON 11", "BLOOMINGTON 16", "BLOOMINGTON 22"] }
+  ],
+  "early_vote_sites": [
+    {
+      "name": "Election Central (Monroe County Government Center)",
+      "address": "501 N Morton St, Suite 101, Bloomington, IN 47404",
+      "lat": 39.17041,
+      "lng": -86.53693,
+      "start_date": "2026-10-06",
+      "end_date": "2026-11-02",
+      "hours": "Weekdays through Fri, Oct 30: 8 am - 6 pm\nSat, Oct 24: 9 am - 4 pm\nSat, Oct 31: 9 am - 4 pm\nMon, Nov 2: 8 am - 12 pm (noon)"
+    }
+  ]
+}

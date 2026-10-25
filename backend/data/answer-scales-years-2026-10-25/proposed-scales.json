@@ -1,0 +1,5150 @@
+[
+ {
+  "id": 13640,
+  "externalId": "wisco-089",
+  "text": "In what year was the University of Wisconsin–Madison established?",
+  "options": [
+   "1836",
+   "1848",
+   "1866",
+   "1888"
+  ],
+  "answer": "1848",
+  "scale": [
+   "1818",
+   "1828",
+   "1838",
+   "1848",
+   "1858",
+   "1868",
+   "1878"
+  ],
+  "step": 10
+ },
+ {
+  "id": 150,
+  "externalId": "bli-030",
+  "text": "When was Indiana University established in Bloomington?",
+  "options": [
+   "1810",
+   "1816",
+   "1818",
+   "1820"
+  ],
+  "answer": "1820",
+  "scale": [
+   "1814",
+   "1816",
+   "1818",
+   "1820",
+   "1822",
+   "1824",
+   "1826"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13626,
+  "externalId": "wisco-075",
+  "text": "In what year did \"America's Dairyland\" become official in Wisconsin?",
+  "options": [
+   "1912",
+   "1940",
+   "1965",
+   "1986"
+  ],
+  "answer": "1940",
+  "scale": [
+   "1880",
+   "1900",
+   "1920",
+   "1940",
+   "1960",
+   "1980",
+   "2000"
+  ],
+  "step": 20
+ },
+ {
+  "id": 10837,
+  "externalId": "queny-023",
+  "text": "In what year was Queens County established by royal charter?",
+  "options": [
+   "1659",
+   "1664",
+   "1676",
+   "1683"
+  ],
+  "answer": "1683",
+  "scale": [
+   "1668",
+   "1673",
+   "1678",
+   "1683",
+   "1688",
+   "1693",
+   "1698"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10841,
+  "externalId": "queny-027",
+  "text": "In what year did the first European settlers (Dutch) arrive near Flushing Bay in Queens?",
+  "options": [
+   "1609",
+   "1614",
+   "1626",
+   "1636"
+  ],
+  "answer": "1636",
+  "scale": [
+   "1621",
+   "1626",
+   "1631",
+   "1636",
+   "1641",
+   "1646",
+   "1651"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10842,
+  "externalId": "queny-028",
+  "text": "Queens became one of New York City's five boroughs in what year?",
+  "options": [
+   "1874",
+   "1880",
+   "1886",
+   "1898"
+  ],
+  "answer": "1898",
+  "scale": [
+   "1883",
+   "1888",
+   "1893",
+   "1898",
+   "1903",
+   "1908",
+   "1913"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10849,
+  "externalId": "queny-035",
+  "text": "Flushing, one of Queens' earliest communities, was established in what year?",
+  "options": [
+   "1626",
+   "1636",
+   "1642",
+   "1645"
+  ],
+  "answer": "1645",
+  "scale": [
+   "1636",
+   "1639",
+   "1642",
+   "1645",
+   "1648",
+   "1651",
+   "1654"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10895,
+  "externalId": "queny-081",
+  "text": "LaGuardia Airport in Queens opened for commercial operations in what year?",
+  "options": [
+   "1927",
+   "1930",
+   "1935",
+   "1939"
+  ],
+  "answer": "1939",
+  "scale": [
+   "1930",
+   "1933",
+   "1936",
+   "1939",
+   "1942",
+   "1945",
+   "1948"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10846,
+  "externalId": "queny-032",
+  "text": "The Queensboro Bridge was formally renamed the Ed Koch Queensboro Bridge in what year?",
+  "options": [
+   "2008",
+   "2011",
+   "2014",
+   "2016"
+  ],
+  "answer": "2011",
+  "scale": [
+   "2005",
+   "2007",
+   "2009",
+   "2011",
+   "2013",
+   "2015",
+   "2017"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13571,
+  "externalId": "wisco-020",
+  "text": "In what year was the Wisconsin Constitution ratified?",
+  "options": [
+   "1820",
+   "1836",
+   "1846",
+   "1848"
+  ],
+  "answer": "1848",
+  "scale": [
+   "1842",
+   "1844",
+   "1846",
+   "1848",
+   "1850",
+   "1852",
+   "1854"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13485,
+  "externalId": "madwi-024",
+  "text": "In what year was the isthmus land that became Madison bought and platted?",
+  "options": [
+   "1826",
+   "1836",
+   "1846",
+   "1856"
+  ],
+  "answer": "1836",
+  "scale": [
+   "1806",
+   "1816",
+   "1826",
+   "1836",
+   "1846",
+   "1856",
+   "1866"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13585,
+  "externalId": "wisco-034",
+  "text": "In what year was the Wisconsin Territory created?",
+  "options": [
+   "1818",
+   "1836",
+   "1848",
+   "1854"
+  ],
+  "answer": "1836",
+  "scale": [
+   "1821",
+   "1826",
+   "1831",
+   "1836",
+   "1841",
+   "1846",
+   "1851"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13520,
+  "externalId": "madwi-059",
+  "text": "In what year was State Street converted from a four-lane road into a largely car-free street?",
+  "options": [
+   "1964",
+   "1974",
+   "1984",
+   "1994"
+  ],
+  "answer": "1974",
+  "scale": [
+   "1944",
+   "1954",
+   "1964",
+   "1974",
+   "1984",
+   "1994",
+   "2004"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13576,
+  "externalId": "wisco-025",
+  "text": "In what year did Wisconsin's governor gain line-item veto authority?",
+  "options": [
+   "1848",
+   "1900",
+   "1930",
+   "1970"
+  ],
+  "answer": "1930",
+  "scale": [
+   "1855",
+   "1880",
+   "1905",
+   "1930",
+   "1955",
+   "1980",
+   "2005"
+  ],
+  "step": 25
+ },
+ {
+  "id": 13778,
+  "externalId": "benor-022",
+  "text": "In what year was Bend incorporated as a city?",
+  "options": [
+   "1886",
+   "1905",
+   "1916",
+   "1929"
+  ],
+  "answer": "1905",
+  "scale": [
+   "1875",
+   "1885",
+   "1895",
+   "1905",
+   "1915",
+   "1925",
+   "1935"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16095,
+  "externalId": "nor-127",
+  "text": "In which year was Norwich designated England's first UNESCO City of Literature?",
+  "options": [
+   "2012",
+   "2016",
+   "2020",
+   "2024"
+  ],
+  "answer": "2012",
+  "scale": [
+   "2000",
+   "2004",
+   "2008",
+   "2012",
+   "2016",
+   "2020",
+   "2024"
+  ],
+  "step": 4
+ },
+ {
+  "id": 16103,
+  "externalId": "nor-135",
+  "text": "In which year did Norwich City Council stop meeting at the medieval Guildhall?",
+  "options": [
+   "1938",
+   "1952",
+   "1967",
+   "1981"
+  ],
+  "answer": "1938",
+  "scale": [
+   "1908",
+   "1918",
+   "1928",
+   "1938",
+   "1948",
+   "1958",
+   "1968"
+  ],
+  "step": 10
+ },
+ {
+  "id": 16105,
+  "externalId": "nor-137",
+  "text": "Under the Local Government Act 1972, Norwich was reconstituted as a lower-tier district in which year?",
+  "options": [
+   "1974",
+   "1986",
+   "1995",
+   "2003"
+  ],
+  "answer": "1974",
+  "scale": [
+   "1959",
+   "1964",
+   "1969",
+   "1974",
+   "1979",
+   "1984",
+   "1989"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10658,
+  "externalId": "wmnla-028",
+  "text": "In what year was the Monroe Gas Field discovered, helping boost industrial development in the West Monroe area?",
+  "options": [
+   "1882",
+   "1895",
+   "1905",
+   "1916"
+  ],
+  "answer": "1916",
+  "scale": [
+   "1886",
+   "1896",
+   "1906",
+   "1916",
+   "1926",
+   "1936",
+   "1946"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10669,
+  "externalId": "wmnla-039",
+  "text": "In what year was Antique Alley officially established as a shopping district in West Monroe?",
+  "options": [
+   "1960",
+   "1972",
+   "1980",
+   "1987"
+  ],
+  "answer": "1987",
+  "scale": [
+   "1972",
+   "1977",
+   "1982",
+   "1987",
+   "1992",
+   "1997",
+   "2002"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10678,
+  "externalId": "wmnla-048",
+  "text": "In what year did the Ike Hamilton Expo Center open in West Monroe?",
+  "options": [
+   "1987",
+   "1992",
+   "1995",
+   "2002"
+  ],
+  "answer": "2002",
+  "scale": [
+   "1993",
+   "1996",
+   "1999",
+   "2002",
+   "2005",
+   "2008",
+   "2011"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10245,
+  "externalId": "arizs-089",
+  "text": "In what year was Arizona State University founded?",
+  "options": [
+   "1865",
+   "1872",
+   "1879",
+   "1885"
+  ],
+  "answer": "1885",
+  "scale": [
+   "1870",
+   "1875",
+   "1880",
+   "1885",
+   "1890",
+   "1895",
+   "1900"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13788,
+  "externalId": "benor-032",
+  "text": "In what year was Pilot Butte given to the State of Oregon as a park?",
+  "options": [
+   "1905",
+   "1912",
+   "1928",
+   "1920"
+  ],
+  "answer": "1928",
+  "scale": [
+   "1913",
+   "1918",
+   "1923",
+   "1928",
+   "1933",
+   "1938",
+   "1943"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10573,
+  "externalId": "norca-034",
+  "text": "In what year did the Province of Carolina officially separate into North and South Carolina?",
+  "options": [
+   "1663",
+   "1680",
+   "1696",
+   "1712"
+  ],
+  "answer": "1712",
+  "scale": [
+   "1682",
+   "1692",
+   "1702",
+   "1712",
+   "1722",
+   "1732",
+   "1742"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10590,
+  "externalId": "norca-051",
+  "text": "Since what year has Raleigh served as North Carolina's state capital?",
+  "options": [
+   "1766",
+   "1776",
+   "1789",
+   "1792"
+  ],
+  "answer": "1792",
+  "scale": [
+   "1783",
+   "1786",
+   "1789",
+   "1792",
+   "1795",
+   "1798",
+   "1801"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9182,
+  "externalId": "ica-028",
+  "text": "What year did Indio officially incorporate as a city?",
+  "options": [
+   "1910",
+   "1918",
+   "1925",
+   "1930"
+  ],
+  "answer": "1930",
+  "scale": [
+   "1915",
+   "1920",
+   "1925",
+   "1930",
+   "1935",
+   "1940",
+   "1945"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9191,
+  "externalId": "ica-037",
+  "text": "What year did the Riverside County Fair and National Date Festival begin celebrating the date fruit crop?",
+  "options": [
+   "1932",
+   "1937",
+   "1942",
+   "1947"
+  ],
+  "answer": "1947",
+  "scale": [
+   "1932",
+   "1937",
+   "1942",
+   "1947",
+   "1952",
+   "1957",
+   "1962"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9194,
+  "externalId": "ica-040",
+  "text": "What year did SunLine Transit Agency become the first transit agency in the United States to convert its fleet to alternative fuel?",
+  "options": [
+   "1984",
+   "1988",
+   "1990",
+   "1994"
+  ],
+  "answer": "1994",
+  "scale": [
+   "1988",
+   "1990",
+   "1992",
+   "1994",
+   "1996",
+   "1998",
+   "2000"
+  ],
+  "step": 2
+ },
+ {
+  "id": 9187,
+  "externalId": "ica-033",
+  "text": "What year was the first Coachella Valley Music and Arts Festival held at the Empire Polo Club in Indio?",
+  "options": [
+   "1993",
+   "1996",
+   "1999",
+   "2003"
+  ],
+  "answer": "1999",
+  "scale": [
+   "1990",
+   "1993",
+   "1996",
+   "1999",
+   "2002",
+   "2005",
+   "2008"
+  ],
+  "step": 3
+ },
+ {
+  "id": 2267,
+  "externalId": "cal-094",
+  "text": "What year did California become the 31st state of the United States?",
+  "options": [
+   "1836",
+   "1840",
+   "1848",
+   "1850"
+  ],
+  "answer": "1850",
+  "scale": [
+   "1844",
+   "1846",
+   "1848",
+   "1850",
+   "1852",
+   "1854",
+   "1856"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16257,
+  "externalId": "wiran-1738",
+  "text": "The country known in the West as Persia asked to be called Iran in which year?",
+  "options": [
+   "1906",
+   "1921",
+   "1935",
+   "1979"
+  ],
+  "answer": "1935",
+  "scale": [
+   "1905",
+   "1915",
+   "1925",
+   "1935",
+   "1945",
+   "1955",
+   "1965"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13492,
+  "externalId": "madwi-031",
+  "text": "In what year did the first public school classes meet in Madison?",
+  "options": [
+   "1838",
+   "1848",
+   "1856",
+   "1874"
+  ],
+  "answer": "1838",
+  "scale": [
+   "1823",
+   "1828",
+   "1833",
+   "1838",
+   "1843",
+   "1848",
+   "1853"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16136,
+  "externalId": "por-673",
+  "text": "Portland was incorporated as a city in 1851. In what year was the settlement itself founded?",
+  "options": [
+   "1834",
+   "1859",
+   "1861",
+   "1845"
+  ],
+  "answer": "1845",
+  "scale": [
+   "1839",
+   "1841",
+   "1843",
+   "1845",
+   "1847",
+   "1849",
+   "1851"
+  ],
+  "step": 2
+ },
+ {
+  "id": 6122,
+  "externalId": "por-157",
+  "text": "When did Portland adopt its commission form of government?",
+  "options": [
+   "1903",
+   "1913",
+   "1923",
+   "1933"
+  ],
+  "answer": "1913",
+  "scale": [
+   "1883",
+   "1893",
+   "1903",
+   "1913",
+   "1923",
+   "1933",
+   "1943"
+  ],
+  "step": 10
+ },
+ {
+  "id": 5069,
+  "externalId": "cam-028",
+  "text": "When did Cambridge hold its first proportional representation election?",
+  "options": [
+   "1920",
+   "1930",
+   "1938",
+   "1941"
+  ],
+  "answer": "1941",
+  "scale": [
+   "1932",
+   "1935",
+   "1938",
+   "1941",
+   "1944",
+   "1947",
+   "1950"
+  ],
+  "step": 3
+ },
+ {
+  "id": 16141,
+  "externalId": "pla-165",
+  "text": "In what year did Plano first adopt the home-rule charter that still governs the city?",
+  "options": [
+   "1961",
+   "1973",
+   "1984",
+   "1996"
+  ],
+  "answer": "1961",
+  "scale": [
+   "1931",
+   "1941",
+   "1951",
+   "1961",
+   "1971",
+   "1981",
+   "1991"
+  ],
+  "step": 10
+ },
+ {
+  "id": 5599,
+  "externalId": "pla-118",
+  "text": "When was Plano's public school system organized?",
+  "options": [
+   "1860",
+   "1873",
+   "1882",
+   "1891"
+  ],
+  "answer": "1891",
+  "scale": [
+   "1876",
+   "1881",
+   "1886",
+   "1891",
+   "1896",
+   "1901",
+   "1906"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7902,
+  "externalId": "wdc-290",
+  "text": "What year did Congress pass the Organic Act that created a territorial government for the entire District of Columbia?",
+  "options": [
+   "1801",
+   "1820",
+   "1846",
+   "1871"
+  ],
+  "answer": "1871",
+  "scale": [
+   "1841",
+   "1851",
+   "1861",
+   "1871",
+   "1881",
+   "1891",
+   "1901"
+  ],
+  "step": 10
+ },
+ {
+  "id": 7907,
+  "externalId": "wdc-297",
+  "text": "When was the Washington Monument completed?",
+  "options": [
+   "1848",
+   "1860",
+   "1865",
+   "1884"
+  ],
+  "answer": "1884",
+  "scale": [
+   "1869",
+   "1874",
+   "1879",
+   "1884",
+   "1889",
+   "1894",
+   "1899"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7244,
+  "externalId": "wdc-040",
+  "text": "What year did the first presidential election occur in which D.C. residents could vote?",
+  "options": [
+   "1948",
+   "1956",
+   "1961",
+   "1964"
+  ],
+  "answer": "1964",
+  "scale": [
+   "1955",
+   "1958",
+   "1961",
+   "1964",
+   "1967",
+   "1970",
+   "1973"
+  ],
+  "step": 3
+ },
+ {
+  "id": 7318,
+  "externalId": "wdc-119",
+  "text": "When did the Washington Metro subway system open?",
+  "options": [
+   "1960",
+   "1968",
+   "1973",
+   "1976"
+  ],
+  "answer": "1976",
+  "scale": [
+   "1967",
+   "1970",
+   "1973",
+   "1976",
+   "1979",
+   "1982",
+   "1985"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10303,
+  "externalId": "tucaz-049",
+  "text": "In what year was Saguaro National Monument elevated to full National Park status by Congress?",
+  "options": [
+   "1976",
+   "1986",
+   "1990",
+   "1994"
+  ],
+  "answer": "1994",
+  "scale": [
+   "1985",
+   "1988",
+   "1991",
+   "1994",
+   "1997",
+   "2000",
+   "2003"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10286,
+  "externalId": "tucaz-032",
+  "text": "In what year was the University of Arizona founded, making it the first public university in Arizona?",
+  "options": [
+   "1865",
+   "1872",
+   "1880",
+   "1885"
+  ],
+  "answer": "1885",
+  "scale": [
+   "1870",
+   "1875",
+   "1880",
+   "1885",
+   "1890",
+   "1895",
+   "1900"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5781,
+  "externalId": "tex-044",
+  "text": "When was the Texas State Capitol building completed?",
+  "options": [
+   "1836",
+   "1876",
+   "1888",
+   "1901"
+  ],
+  "answer": "1888",
+  "scale": [
+   "1858",
+   "1868",
+   "1878",
+   "1888",
+   "1898",
+   "1908",
+   "1918"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10416,
+  "externalId": "phxaz-066",
+  "text": "When did TSMC announce its plans to build a semiconductor manufacturing facility in Phoenix?",
+  "options": [
+   "2016",
+   "2018",
+   "2020",
+   "2022"
+  ],
+  "answer": "2020",
+  "scale": [
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024",
+   "2026"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10386,
+  "externalId": "phxaz-036",
+  "text": "In what year did Camelback Mountain become a Phoenix city park?",
+  "options": [
+   "1958",
+   "1968",
+   "1978",
+   "1988"
+  ],
+  "answer": "1968",
+  "scale": [
+   "1938",
+   "1948",
+   "1958",
+   "1968",
+   "1978",
+   "1988",
+   "1998"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10390,
+  "externalId": "phxaz-040",
+  "text": "When was the Desert Botanical Garden in Phoenix founded?",
+  "options": [
+   "1915",
+   "1921",
+   "1929",
+   "1939"
+  ],
+  "answer": "1939",
+  "scale": [
+   "1924",
+   "1929",
+   "1934",
+   "1939",
+   "1944",
+   "1949",
+   "1954"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10400,
+  "externalId": "phxaz-050",
+  "text": "When did the City of Phoenix purchase Sky Harbor Airport?",
+  "options": [
+   "1929",
+   "1935",
+   "1942",
+   "1952"
+  ],
+  "answer": "1935",
+  "scale": [
+   "1920",
+   "1925",
+   "1930",
+   "1935",
+   "1940",
+   "1945",
+   "1950"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8839,
+  "externalId": "smo-003",
+  "text": "What year was Santa Monica incorporated as a city?",
+  "options": [
+   "1860",
+   "1875",
+   "1886",
+   "1909"
+  ],
+  "answer": "1886",
+  "scale": [
+   "1856",
+   "1866",
+   "1876",
+   "1886",
+   "1896",
+   "1906",
+   "1916"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9924,
+  "externalId": "sprmo-045",
+  "text": "Wilson's Creek National Battlefield was designated a National Park Service unit in what year?",
+  "options": [
+   "1935",
+   "1945",
+   "1952",
+   "1960"
+  ],
+  "answer": "1960",
+  "scale": [
+   "1945",
+   "1950",
+   "1955",
+   "1960",
+   "1965",
+   "1970",
+   "1975"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9950,
+  "externalId": "sprmo-071",
+  "text": "In what year did Southwest Missouri State University officially become Missouri State University?",
+  "options": [
+   "1985",
+   "1995",
+   "2000",
+   "2005"
+  ],
+  "answer": "2005",
+  "scale": [
+   "1990",
+   "1995",
+   "2000",
+   "2005",
+   "2010",
+   "2015",
+   "2020"
+  ],
+  "step": 5
+ },
+ {
+  "id": 1982,
+  "externalId": "la-055",
+  "text": "Los Angeles was incorporated as a city in which year?",
+  "options": [
+   "1781",
+   "1850",
+   "1876",
+   "1900"
+  ],
+  "answer": "1850",
+  "scale": [
+   "1790",
+   "1810",
+   "1830",
+   "1850",
+   "1870",
+   "1890",
+   "1910"
+  ],
+  "step": 20
+ },
+ {
+  "id": 8658,
+  "externalId": "mis-161",
+  "text": "What year did the Mississippi Legislature vote to change the state flag that contained Confederate imagery?",
+  "options": [
+   "2016",
+   "2018",
+   "2020",
+   "2022"
+  ],
+  "answer": "2020",
+  "scale": [
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024",
+   "2026"
+  ],
+  "step": 2
+ },
+ {
+  "id": 5784,
+  "externalId": "tex-047",
+  "text": "When was the Governor's Mansion in Texas built?",
+  "options": [
+   "1836",
+   "1845",
+   "1850",
+   "1856"
+  ],
+  "answer": "1856",
+  "scale": [
+   "1841",
+   "1846",
+   "1851",
+   "1856",
+   "1861",
+   "1866",
+   "1871"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5778,
+  "externalId": "tex-041",
+  "text": "What year did Texas join the United States?",
+  "options": [
+   "1821",
+   "1836",
+   "1840",
+   "1845"
+  ],
+  "answer": "1845",
+  "scale": [
+   "1836",
+   "1839",
+   "1842",
+   "1845",
+   "1848",
+   "1851",
+   "1854"
+  ],
+  "step": 3
+ },
+ {
+  "id": 6836,
+  "externalId": "ore-045",
+  "text": "What year did Oregon become the first state to decriminalize cannabis possession?",
+  "options": [
+   "1963",
+   "1967",
+   "1973",
+   "1985"
+  ],
+  "answer": "1973",
+  "scale": [
+   "1964",
+   "1967",
+   "1970",
+   "1973",
+   "1976",
+   "1979",
+   "1982"
+  ],
+  "step": 3
+ },
+ {
+  "id": 11727,
+  "externalId": "bniwa-065",
+  "text": "When did the Navy's Station S at Fort Ward on Bainbridge Island close?",
+  "options": [
+   "1953",
+   "1960",
+   "1968",
+   "1975"
+  ],
+  "answer": "1953",
+  "scale": [
+   "1938",
+   "1943",
+   "1948",
+   "1953",
+   "1958",
+   "1963",
+   "1968"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11726,
+  "externalId": "bniwa-064",
+  "text": "In what year was Fort Ward on Bainbridge Island officially named and established as a U.S. Army fort?",
+  "options": [
+   "1875",
+   "1885",
+   "1890",
+   "1903"
+  ],
+  "answer": "1903",
+  "scale": [
+   "1888",
+   "1893",
+   "1898",
+   "1903",
+   "1908",
+   "1913",
+   "1918"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11787,
+  "externalId": "washs-030",
+  "text": "English explorer George Vancouver explored the waters of what is now Washington State in what year?",
+  "options": [
+   "1770",
+   "1775",
+   "1788",
+   "1792"
+  ],
+  "answer": "1792",
+  "scale": [
+   "1783",
+   "1786",
+   "1789",
+   "1792",
+   "1795",
+   "1798",
+   "1801"
+  ],
+  "step": 3
+ },
+ {
+  "id": 11829,
+  "externalId": "washs-072",
+  "text": "Starbucks, the global coffeehouse chain, was founded in Seattle in what year?",
+  "options": [
+   "1962",
+   "1971",
+   "1978",
+   "1985"
+  ],
+  "answer": "1971",
+  "scale": [
+   "1956",
+   "1961",
+   "1966",
+   "1971",
+   "1976",
+   "1981",
+   "1986"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8846,
+  "externalId": "smo-010",
+  "text": "What year did Santa Monica first propose its Sustainable City Plan?",
+  "options": [
+   "1988",
+   "1992",
+   "1998",
+   "2002"
+  ],
+  "answer": "1992",
+  "scale": [
+   "1983",
+   "1986",
+   "1989",
+   "1992",
+   "1995",
+   "1998",
+   "2001"
+  ],
+  "step": 3
+ },
+ {
+  "id": 8295,
+  "externalId": "bxl-080",
+  "text": "When was Beauvoir designated as a National Historic Landmark?",
+  "options": [
+   "1969",
+   "1974",
+   "1981",
+   "1998"
+  ],
+  "answer": "1974",
+  "scale": [
+   "1959",
+   "1964",
+   "1969",
+   "1974",
+   "1979",
+   "1984",
+   "1989"
+  ],
+  "step": 5
+ },
+ {
+  "id": 16531,
+  "externalId": "smo-531",
+  "text": "When did the city of Santa Monica acquire the privately-owned Newcomb Pier?",
+  "options": [
+   "1974",
+   "1980",
+   "1983",
+   "1989"
+  ],
+  "answer": "1974",
+  "scale": [
+   "1965",
+   "1968",
+   "1971",
+   "1974",
+   "1977",
+   "1980",
+   "1983"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15738,
+  "externalId": "bxl-501",
+  "text": "In what year did French colonists establish the first settlement at Biloxi?",
+  "options": [
+   "1620",
+   "1699",
+   "1745",
+   "1803"
+  ],
+  "answer": "1699",
+  "scale": [
+   "1624",
+   "1649",
+   "1674",
+   "1699",
+   "1724",
+   "1749",
+   "1774"
+  ],
+  "step": 25
+ },
+ {
+  "id": 16549,
+  "externalId": "smo-548",
+  "text": "When did Santa Monica Airport first open?",
+  "options": [
+   "1923",
+   "1928",
+   "1935",
+   "1941"
+  ],
+  "answer": "1923",
+  "scale": [
+   "1908",
+   "1913",
+   "1918",
+   "1923",
+   "1928",
+   "1933",
+   "1938"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8853,
+  "externalId": "smo-017",
+  "text": "What year did the Santa Monica Pier originally open?",
+  "options": [
+   "1895",
+   "1905",
+   "1909",
+   "1924"
+  ],
+  "answer": "1909",
+  "scale": [
+   "1900",
+   "1903",
+   "1906",
+   "1909",
+   "1912",
+   "1915",
+   "1918"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9489,
+  "externalId": "alxla-031",
+  "text": "In what year was the Alexandria Museum of Art founded?",
+  "options": [
+   "1968",
+   "1977",
+   "1985",
+   "1995"
+  ],
+  "answer": "1977",
+  "scale": [
+   "1962",
+   "1967",
+   "1972",
+   "1977",
+   "1982",
+   "1987",
+   "1992"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9530,
+  "externalId": "alxla-072",
+  "text": "When did Alexandria receive its official city charter from the Louisiana Legislature?",
+  "options": [
+   "1819",
+   "1832",
+   "1850",
+   "1882"
+  ],
+  "answer": "1832",
+  "scale": [
+   "1802",
+   "1812",
+   "1822",
+   "1832",
+   "1842",
+   "1852",
+   "1862"
+  ],
+  "step": 10
+ },
+ {
+  "id": 716,
+  "externalId": "fre-041",
+  "text": "What year was Mission San Jose de Guadalupe founded?",
+  "options": [
+   "1769",
+   "1777",
+   "1787",
+   "1797"
+  ],
+  "answer": "1797",
+  "scale": [
+   "1782",
+   "1787",
+   "1792",
+   "1797",
+   "1802",
+   "1807",
+   "1812"
+  ],
+  "step": 5
+ },
+ {
+  "id": 396,
+  "externalId": "ins-053",
+  "text": "What year did Indiana become the 19th state admitted to the Union?",
+  "options": [
+   "1800",
+   "1806",
+   "1812",
+   "1816"
+  ],
+  "answer": "1816",
+  "scale": [
+   "1807",
+   "1810",
+   "1813",
+   "1816",
+   "1819",
+   "1822",
+   "1825"
+  ],
+  "step": 3
+ },
+ {
+  "id": 11113,
+  "externalId": "phipa-067",
+  "text": "In what year did the Philadelphia Eagles win their first Super Bowl?",
+  "options": [
+   "1995",
+   "2004",
+   "2010",
+   "2018"
+  ],
+  "answer": "2018",
+  "scale": [
+   "2012",
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024"
+  ],
+  "step": 2
+ },
+ {
+  "id": 11081,
+  "externalId": "phipa-035",
+  "text": "Philadelphia claims to have the first hospital in the United States. In what year was it founded?",
+  "options": [
+   "1720",
+   "1731",
+   "1751",
+   "1776"
+  ],
+  "answer": "1751",
+  "scale": [
+   "1721",
+   "1731",
+   "1741",
+   "1751",
+   "1761",
+   "1771",
+   "1781"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11103,
+  "externalId": "phipa-057",
+  "text": "When did Reading Terminal Market open in Philadelphia?",
+  "options": [
+   "1860",
+   "1875",
+   "1893",
+   "1912"
+  ],
+  "answer": "1893",
+  "scale": [
+   "1863",
+   "1873",
+   "1883",
+   "1893",
+   "1903",
+   "1913",
+   "1923"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10485,
+  "externalId": "ashnc-044",
+  "text": "When did Pope John Paul II elevate the Basilica of Saint Lawrence to minor basilica status?",
+  "options": [
+   "1985",
+   "1989",
+   "1993",
+   "2001"
+  ],
+  "answer": "1993",
+  "scale": [
+   "1984",
+   "1987",
+   "1990",
+   "1993",
+   "1996",
+   "1999",
+   "2002"
+  ],
+  "step": 3
+ },
+ {
+  "id": 11124,
+  "externalId": "phipa-078",
+  "text": "The University of Pennsylvania established the first medical school in North America. In what year?",
+  "options": [
+   "1740",
+   "1752",
+   "1765",
+   "1776"
+  ],
+  "answer": "1765",
+  "scale": [
+   "1735",
+   "1745",
+   "1755",
+   "1765",
+   "1775",
+   "1785",
+   "1795"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10503,
+  "externalId": "ashnc-062",
+  "text": "In what year did Thomas Wolfe die?",
+  "options": [
+   "1931",
+   "1938",
+   "1944",
+   "1952"
+  ],
+  "answer": "1938",
+  "scale": [
+   "1923",
+   "1928",
+   "1933",
+   "1938",
+   "1943",
+   "1948",
+   "1953"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11129,
+  "externalId": "phipa-083",
+  "text": "In what year was the Philadelphia Orchestra founded?",
+  "options": [
+   "1875",
+   "1900",
+   "1913",
+   "1925"
+  ],
+  "answer": "1900",
+  "scale": [
+   "1870",
+   "1880",
+   "1890",
+   "1900",
+   "1910",
+   "1920",
+   "1930"
+  ],
+  "step": 10
+ },
+ {
+  "id": 14017,
+  "externalId": "milwi-044",
+  "text": "In what year did the Harley-Davidson Museum open in Milwaukee?",
+  "options": [
+   "2008",
+   "2012",
+   "2016",
+   "2020"
+  ],
+  "answer": "2008",
+  "scale": [
+   "1996",
+   "2000",
+   "2004",
+   "2008",
+   "2012",
+   "2016",
+   "2020"
+  ],
+  "step": 4
+ },
+ {
+  "id": 10275,
+  "externalId": "tucaz-021",
+  "text": "In what year was Tucson incorporated as a city, making it the oldest incorporated city in Arizona?",
+  "options": [
+   "1860",
+   "1863",
+   "1875",
+   "1877"
+  ],
+  "answer": "1877",
+  "scale": [
+   "1871",
+   "1873",
+   "1875",
+   "1877",
+   "1879",
+   "1881",
+   "1883"
+  ],
+  "step": 2
+ },
+ {
+  "id": 13999,
+  "externalId": "milwi-026",
+  "text": "In what year did the fur trader who became Milwaukee's first mayor arrive in the area?",
+  "options": [
+   "1795",
+   "1805",
+   "1818",
+   "1834"
+  ],
+  "answer": "1818",
+  "scale": [
+   "1788",
+   "1798",
+   "1808",
+   "1818",
+   "1828",
+   "1838",
+   "1848"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10487,
+  "externalId": "ashnc-046",
+  "text": "In what year was the Grove Arcade in Asheville completed?",
+  "options": [
+   "1921",
+   "1929",
+   "1936",
+   "1948"
+  ],
+  "answer": "1929",
+  "scale": [
+   "1914",
+   "1919",
+   "1924",
+   "1929",
+   "1934",
+   "1939",
+   "1944"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10384,
+  "externalId": "phxaz-034",
+  "text": "In what year was Phoenix's current city flag design adopted?",
+  "options": [
+   "1921",
+   "1950",
+   "1968",
+   "1990"
+  ],
+  "answer": "1990",
+  "scale": [
+   "1960",
+   "1970",
+   "1980",
+   "1990",
+   "2000",
+   "2010",
+   "2020"
+  ],
+  "step": 10
+ },
+ {
+  "id": 5079,
+  "externalId": "cam-038",
+  "text": "When was the Board of Election Commissioners established in Cambridge?",
+  "options": [
+   "1888",
+   "1901",
+   "1911",
+   "1921"
+  ],
+  "answer": "1921",
+  "scale": [
+   "1891",
+   "1901",
+   "1911",
+   "1921",
+   "1931",
+   "1941",
+   "1951"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10748,
+  "externalId": "nysts-021",
+  "text": "In what year was New York's third state constitution adopted?",
+  "options": [
+   "1777",
+   "1821",
+   "1846",
+   "1894"
+  ],
+  "answer": "1846",
+  "scale": [
+   "1771",
+   "1796",
+   "1821",
+   "1846",
+   "1871",
+   "1896",
+   "1921"
+  ],
+  "step": 25
+ },
+ {
+  "id": 8394,
+  "externalId": "bxl-182",
+  "text": "When was the area of today's city of Biloxi first settled around Fort Louis?",
+  "options": [
+   "1680",
+   "1699",
+   "1710",
+   "1720"
+  ],
+  "answer": "1720",
+  "scale": [
+   "1690",
+   "1700",
+   "1710",
+   "1720",
+   "1730",
+   "1740",
+   "1750"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10108,
+  "externalId": "misso-043",
+  "text": "In what year was the Missouri State Capitol building completed?",
+  "options": [
+   "1824",
+   "1860",
+   "1876",
+   "1917"
+  ],
+  "answer": "1917",
+  "scale": [
+   "1887",
+   "1897",
+   "1907",
+   "1917",
+   "1927",
+   "1937",
+   "1947"
+  ],
+  "step": 10
+ },
+ {
+  "id": 6819,
+  "externalId": "ore-027",
+  "text": "What year was Oregon's current constitution originally adopted?",
+  "options": [
+   "1843",
+   "1848",
+   "1853",
+   "1857"
+  ],
+  "answer": "1857",
+  "scale": [
+   "1848",
+   "1851",
+   "1854",
+   "1857",
+   "1860",
+   "1863",
+   "1866"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10081,
+  "externalId": "misso-016",
+  "text": "The Louisiana Purchase of what year brought Missouri's territory under U.S. control?",
+  "options": [
+   "1776",
+   "1789",
+   "1803",
+   "1821"
+  ],
+  "answer": "1803",
+  "scale": [
+   "1773",
+   "1783",
+   "1793",
+   "1803",
+   "1813",
+   "1823",
+   "1833"
+  ],
+  "step": 10
+ },
+ {
+  "id": 6831,
+  "externalId": "ore-040",
+  "text": "What year was Oregon's current State Capitol building completed?",
+  "options": [
+   "1920",
+   "1928",
+   "1935",
+   "1938"
+  ],
+  "answer": "1938",
+  "scale": [
+   "1929",
+   "1932",
+   "1935",
+   "1938",
+   "1941",
+   "1944",
+   "1947"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9715,
+  "externalId": "lou-045",
+  "text": "In what year was Mardi Gras made a legal holiday in Louisiana by the governor?",
+  "options": [
+   "1857",
+   "1875",
+   "1900",
+   "1920"
+  ],
+  "answer": "1875",
+  "scale": [
+   "1845",
+   "1855",
+   "1865",
+   "1875",
+   "1885",
+   "1895",
+   "1905"
+  ],
+  "step": 10
+ },
+ {
+  "id": 7213,
+  "externalId": "wdc-009",
+  "text": "What year were the first Advisory Neighborhood Commissioners elected?",
+  "options": [
+   "1973",
+   "1974",
+   "1975",
+   "1976"
+  ],
+  "answer": "1975",
+  "scale": [
+   "1972",
+   "1973",
+   "1974",
+   "1975",
+   "1976",
+   "1977",
+   "1978"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5072,
+  "externalId": "cam-031",
+  "text": "When was CRLS formed by merging two existing high schools?",
+  "options": [
+   "1950",
+   "1960",
+   "1971",
+   "1977"
+  ],
+  "answer": "1977",
+  "scale": [
+   "1962",
+   "1967",
+   "1972",
+   "1977",
+   "1982",
+   "1987",
+   "1992"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13511,
+  "externalId": "madwi-050",
+  "text": "In what year was Monona Terrace first proposed?",
+  "options": [
+   "1928",
+   "1938",
+   "1948",
+   "1958"
+  ],
+  "answer": "1938",
+  "scale": [
+   "1908",
+   "1918",
+   "1928",
+   "1938",
+   "1948",
+   "1958",
+   "1968"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13762,
+  "externalId": "benor-006",
+  "text": "In what year did Bend's current form of city government take effect?",
+  "options": [
+   "1905",
+   "1916",
+   "1929",
+   "1958"
+  ],
+  "answer": "1929",
+  "scale": [
+   "1899",
+   "1909",
+   "1919",
+   "1929",
+   "1939",
+   "1949",
+   "1959"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13823,
+  "externalId": "benor-067",
+  "text": "In what year did Deschutes Brewery open in Bend?",
+  "options": [
+   "1975",
+   "1988",
+   "1996",
+   "2004"
+  ],
+  "answer": "1988",
+  "scale": [
+   "1973",
+   "1978",
+   "1983",
+   "1988",
+   "1993",
+   "1998",
+   "2003"
+  ],
+  "step": 5
+ },
+ {
+  "id": 26,
+  "externalId": "q026",
+  "text": "In which year was the U.S. Constitution ratified?",
+  "options": [
+   "1776",
+   "1781",
+   "1783",
+   "1788"
+  ],
+  "answer": "1788",
+  "scale": [
+   "1782",
+   "1784",
+   "1786",
+   "1788",
+   "1790",
+   "1792",
+   "1794"
+  ],
+  "step": 2
+ },
+ {
+  "id": 14000,
+  "externalId": "milwi-027",
+  "text": "In what year did Milwaukee's Bridge War take place?",
+  "options": [
+   "1834",
+   "1845",
+   "1846",
+   "1871"
+  ],
+  "answer": "1845",
+  "scale": [
+   "1842",
+   "1843",
+   "1844",
+   "1845",
+   "1846",
+   "1847",
+   "1848"
+  ],
+  "step": 1
+ },
+ {
+  "id": 14037,
+  "externalId": "milwi-064",
+  "text": "In what year was Summerfest first held?",
+  "options": [
+   "1958",
+   "1968",
+   "1976",
+   "1985"
+  ],
+  "answer": "1968",
+  "scale": [
+   "1953",
+   "1958",
+   "1963",
+   "1968",
+   "1973",
+   "1978",
+   "1983"
+  ],
+  "step": 5
+ },
+ {
+  "id": 14012,
+  "externalId": "milwi-039",
+  "text": "In what year did Pabst leave Milwaukee?",
+  "options": [
+   "1959",
+   "1971",
+   "1982",
+   "1996"
+  ],
+  "answer": "1996",
+  "scale": [
+   "1966",
+   "1976",
+   "1986",
+   "1996",
+   "2006",
+   "2016",
+   "2026"
+  ],
+  "step": 10
+ },
+ {
+  "id": 14031,
+  "externalId": "milwi-058",
+  "text": "In what year was the Quadracci Pavilion completed?",
+  "options": [
+   "1957",
+   "1975",
+   "1987",
+   "2001"
+  ],
+  "answer": "2001",
+  "scale": [
+   "1986",
+   "1991",
+   "1996",
+   "2001",
+   "2006",
+   "2011",
+   "2016"
+  ],
+  "step": 5
+ },
+ {
+  "id": 14014,
+  "externalId": "milwi-041",
+  "text": "In what year was Harley-Davidson founded in Milwaukee?",
+  "options": [
+   "1875",
+   "1886",
+   "1895",
+   "1903"
+  ],
+  "answer": "1903",
+  "scale": [
+   "1888",
+   "1893",
+   "1898",
+   "1903",
+   "1908",
+   "1913",
+   "1918"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13804,
+  "externalId": "benor-048",
+  "text": "In what year did Brooks-Scanlon's Mill A finally close?",
+  "options": [
+   "1950",
+   "1960",
+   "1971",
+   "1983"
+  ],
+  "answer": "1983",
+  "scale": [
+   "1953",
+   "1963",
+   "1973",
+   "1983",
+   "1993",
+   "2003",
+   "2013"
+  ],
+  "step": 10
+ },
+ {
+  "id": 7903,
+  "externalId": "wdc-291",
+  "text": "When did Congress abolish DC's territorial government and replace it with a three-member Board of Commissioners?",
+  "options": [
+   "1846",
+   "1860",
+   "1871",
+   "1874"
+  ],
+  "answer": "1874",
+  "scale": [
+   "1865",
+   "1868",
+   "1871",
+   "1874",
+   "1877",
+   "1880",
+   "1883"
+  ],
+  "step": 3
+ },
+ {
+  "id": 8856,
+  "externalId": "smo-020",
+  "text": "What year did the Third Street Promenade open in its current form?",
+  "options": [
+   "1965",
+   "1972",
+   "1980",
+   "1989"
+  ],
+  "answer": "1989",
+  "scale": [
+   "1974",
+   "1979",
+   "1984",
+   "1989",
+   "1994",
+   "1999",
+   "2004"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8859,
+  "externalId": "smo-023",
+  "text": "What year did Santa Monica switch to 100% renewably sourced electricity?",
+  "options": [
+   "2010",
+   "2013",
+   "2015",
+   "2019"
+  ],
+  "answer": "2019",
+  "scale": [
+   "2013",
+   "2015",
+   "2017",
+   "2019",
+   "2021",
+   "2023",
+   "2025"
+  ],
+  "step": 2
+ },
+ {
+  "id": 8861,
+  "externalId": "smo-025",
+  "text": "What year did Big Blue Bus become the first transit operator in California to operate a bus with a wheelchair lift?",
+  "options": [
+   "1965",
+   "1970",
+   "1975",
+   "1978"
+  ],
+  "answer": "1978",
+  "scale": [
+   "1969",
+   "1972",
+   "1975",
+   "1978",
+   "1981",
+   "1984",
+   "1987"
+  ],
+  "step": 3
+ },
+ {
+  "id": 8884,
+  "externalId": "smo-049",
+  "text": "When did the carousel on Santa Monica Pier, built by the Philadelphia Toboggan Company, open?",
+  "options": [
+   "1905",
+   "1909",
+   "1916",
+   "1922"
+  ],
+  "answer": "1922",
+  "scale": [
+   "1913",
+   "1916",
+   "1919",
+   "1922",
+   "1925",
+   "1928",
+   "1931"
+  ],
+  "step": 3
+ },
+ {
+  "id": 11273,
+  "externalId": "wiran-0018",
+  "text": "In what year did the Islamic Revolution overthrow the US-backed Shah of Iran?",
+  "options": [
+   "1971",
+   "1975",
+   "1977",
+   "1979"
+  ],
+  "answer": "1979",
+  "scale": [
+   "1973",
+   "1975",
+   "1977",
+   "1979",
+   "1981",
+   "1983",
+   "1985"
+  ],
+  "step": 2
+ },
+ {
+  "id": 9518,
+  "externalId": "alxla-060",
+  "text": "Approximately when was Kent House in Alexandria built?",
+  "options": [
+   "1750",
+   "1796",
+   "1820",
+   "1850"
+  ],
+  "answer": "1796",
+  "scale": [
+   "1736",
+   "1756",
+   "1776",
+   "1796",
+   "1816",
+   "1836",
+   "1856"
+  ],
+  "step": 20
+ },
+ {
+  "id": 13803,
+  "externalId": "benor-047",
+  "text": "In what year did the Shevlin-Hixon mill close?",
+  "options": [
+   "1929",
+   "1950",
+   "1983",
+   "1993"
+  ],
+  "answer": "1950",
+  "scale": [
+   "1920",
+   "1930",
+   "1940",
+   "1950",
+   "1960",
+   "1970",
+   "1980"
+  ],
+  "step": 10
+ },
+ {
+  "id": 15520,
+  "externalId": "climc-0001",
+  "text": "In what year did Charles David Keeling begin the continuous record of atmospheric carbon dioxide at Mauna Loa Observatory?",
+  "options": [
+   "1958",
+   "1968",
+   "1978",
+   "1988"
+  ],
+  "answer": "1958",
+  "scale": [
+   "1928",
+   "1938",
+   "1948",
+   "1958",
+   "1968",
+   "1978",
+   "1988"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10177,
+  "externalId": "arizs-021",
+  "text": "In what year was Arizona Territory officially separated from New Mexico Territory?",
+  "options": [
+   "1848",
+   "1853",
+   "1858",
+   "1863"
+  ],
+  "answer": "1863",
+  "scale": [
+   "1848",
+   "1853",
+   "1858",
+   "1863",
+   "1868",
+   "1873",
+   "1878"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11736,
+  "externalId": "bniwa-074",
+  "text": "Since what decade has Bainbridge Island functioned primarily as a bedroom community of Seattle?",
+  "options": [
+   "1940s",
+   "1950s",
+   "1960s",
+   "1980s"
+  ],
+  "answer": "1960s",
+  "scale": [
+   "1930s",
+   "1940s",
+   "1950s",
+   "1960s",
+   "1970s",
+   "1980s",
+   "1990s"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11690,
+  "externalId": "bniwa-028",
+  "text": "When did Japanese immigrants first begin arriving on Bainbridge Island to farm?",
+  "options": [
+   "1860",
+   "1872",
+   "1883",
+   "1905"
+  ],
+  "answer": "1883",
+  "scale": [
+   "1853",
+   "1863",
+   "1873",
+   "1883",
+   "1893",
+   "1903",
+   "1913"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11693,
+  "externalId": "bniwa-031",
+  "text": "In what year did Congress formally include the Bainbridge Island Japanese American Exclusion Memorial site within the Minidoka National Historic Site?",
+  "options": [
+   "2008",
+   "2011",
+   "2014",
+   "2018"
+  ],
+  "answer": "2008",
+  "scale": [
+   "1999",
+   "2002",
+   "2005",
+   "2008",
+   "2011",
+   "2014",
+   "2017"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15538,
+  "externalId": "climc-0019",
+  "text": "In what year did the Paris Agreement enter into force?",
+  "options": [
+   "2016",
+   "2017",
+   "2018",
+   "2020"
+  ],
+  "answer": "2016",
+  "scale": [
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018",
+   "2019"
+  ],
+  "step": 1
+ },
+ {
+  "id": 11719,
+  "externalId": "bniwa-057",
+  "text": "When was Pickle Ball, Inc. incorporated to promote and sell the sport?",
+  "options": [
+   "1965",
+   "1968",
+   "1972",
+   "1975"
+  ],
+  "answer": "1968",
+  "scale": [
+   "1959",
+   "1962",
+   "1965",
+   "1968",
+   "1971",
+   "1974",
+   "1977"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15548,
+  "externalId": "climc-0029",
+  "text": "In what year was the Kyoto Protocol adopted?",
+  "options": [
+   "1992",
+   "1997",
+   "2005",
+   "2015"
+  ],
+  "answer": "1997",
+  "scale": [
+   "1982",
+   "1987",
+   "1992",
+   "1997",
+   "2002",
+   "2007",
+   "2012"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15521,
+  "externalId": "climc-0002",
+  "text": "In what year was the Paris Agreement adopted?",
+  "options": [
+   "2009",
+   "2012",
+   "2015",
+   "2018"
+  ],
+  "answer": "2015",
+  "scale": [
+   "2006",
+   "2009",
+   "2012",
+   "2015",
+   "2018",
+   "2021",
+   "2024"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15552,
+  "externalId": "climc-0033",
+  "text": "In what year did the United Kingdom pass its Climate Change Act, the first national law to set legally binding carbon budgets?",
+  "options": [
+   "2002",
+   "2008",
+   "2015",
+   "2019"
+  ],
+  "answer": "2008",
+  "scale": [
+   "1999",
+   "2002",
+   "2005",
+   "2008",
+   "2011",
+   "2014",
+   "2017"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10492,
+  "externalId": "ashnc-051",
+  "text": "What year did the Grove Arcade reopen after its restoration?",
+  "options": [
+   "1985",
+   "1995",
+   "2002",
+   "2010"
+  ],
+  "answer": "2002",
+  "scale": [
+   "1987",
+   "1992",
+   "1997",
+   "2002",
+   "2007",
+   "2012",
+   "2017"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10512,
+  "externalId": "ashnc-071",
+  "text": "When did UNCA join the University of North Carolina system and adopt its current name?",
+  "options": [
+   "1948",
+   "1955",
+   "1962",
+   "1969"
+  ],
+  "answer": "1969",
+  "scale": [
+   "1948",
+   "1955",
+   "1962",
+   "1969",
+   "1976",
+   "1983",
+   "1990"
+  ],
+  "step": 7
+ },
+ {
+  "id": 13783,
+  "externalId": "benor-027",
+  "text": "In what year was the county that Bend sits in created?",
+  "options": [
+   "1880",
+   "1893",
+   "1905",
+   "1916"
+  ],
+  "answer": "1916",
+  "scale": [
+   "1886",
+   "1896",
+   "1906",
+   "1916",
+   "1926",
+   "1936",
+   "1946"
+  ],
+  "step": 10
+ },
+ {
+  "id": 13779,
+  "externalId": "benor-023",
+  "text": "In what year was the Bend townsite platted, just before incorporation?",
+  "options": [
+   "1904",
+   "1896",
+   "1899",
+   "1901"
+  ],
+  "answer": "1904",
+  "scale": [
+   "1898",
+   "1900",
+   "1902",
+   "1904",
+   "1906",
+   "1908",
+   "1910"
+  ],
+  "step": 2
+ },
+ {
+  "id": 9694,
+  "externalId": "lou-024",
+  "text": "In what year did French explorer La Salle claim the Mississippi River valley for France, naming it Louisiana?",
+  "options": [
+   "1682",
+   "1699",
+   "1718",
+   "1762"
+  ],
+  "answer": "1682",
+  "scale": [
+   "1652",
+   "1662",
+   "1672",
+   "1682",
+   "1692",
+   "1702",
+   "1712"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10594,
+  "externalId": "norca-055",
+  "text": "When was Research Triangle Park in North Carolina founded?",
+  "options": [
+   "1935",
+   "1946",
+   "1952",
+   "1959"
+  ],
+  "answer": "1959",
+  "scale": [
+   "1944",
+   "1949",
+   "1954",
+   "1959",
+   "1964",
+   "1969",
+   "1974"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15648,
+  "externalId": "wnews-0115",
+  "text": "In what year did the United Kingdom hold its referendum on leaving the European Union?",
+  "options": [
+   "2012",
+   "2014",
+   "2016",
+   "2019"
+  ],
+  "answer": "2016",
+  "scale": [
+   "2010",
+   "2012",
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022"
+  ],
+  "step": 2
+ },
+ {
+  "id": 15652,
+  "externalId": "wnews-0119",
+  "text": "A huge explosion at a port devastated central Beirut in which year?",
+  "options": [
+   "2016",
+   "2018",
+   "2020",
+   "2022"
+  ],
+  "answer": "2020",
+  "scale": [
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024",
+   "2026"
+  ],
+  "step": 2
+ },
+ {
+  "id": 15653,
+  "externalId": "wnews-0120",
+  "text": "The James Webb Space Telescope launched in December of which year?",
+  "options": [
+   "2015",
+   "2018",
+   "2019",
+   "2021"
+  ],
+  "answer": "2021",
+  "scale": [
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022",
+   "2023",
+   "2024"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10766,
+  "externalId": "nysts-039",
+  "text": "The Adirondacks received \"Forever Wild\" protection under the New York State Constitution in what year?",
+  "options": [
+   "1872",
+   "1885",
+   "1892",
+   "1900"
+  ],
+  "answer": "1892",
+  "scale": [
+   "1877",
+   "1882",
+   "1887",
+   "1892",
+   "1897",
+   "1902",
+   "1907"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10775,
+  "externalId": "nysts-048",
+  "text": "In what year was the New York State Capitol designated a National Historic Landmark?",
+  "options": [
+   "1950",
+   "1960",
+   "1970",
+   "1979"
+  ],
+  "answer": "1979",
+  "scale": [
+   "1964",
+   "1969",
+   "1974",
+   "1979",
+   "1984",
+   "1989",
+   "1994"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10783,
+  "externalId": "nysts-056",
+  "text": "In what year did construction begin on the New York State Capitol?",
+  "options": [
+   "1850",
+   "1867",
+   "1880",
+   "1900"
+  ],
+  "answer": "1867",
+  "scale": [
+   "1837",
+   "1847",
+   "1857",
+   "1867",
+   "1877",
+   "1887",
+   "1897"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10888,
+  "externalId": "queny-074",
+  "text": "In what year did Citi Field open for the New York Mets?",
+  "options": [
+   "2006",
+   "2007",
+   "2008",
+   "2009"
+  ],
+  "answer": "2009",
+  "scale": [
+   "2006",
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012"
+  ],
+  "step": 1
+ },
+ {
+  "id": 8406,
+  "externalId": "bxl-195",
+  "text": "When was a historical marker placed at the Biloxi Lighthouse commemorating the wade-ins?",
+  "options": [
+   "1968",
+   "2005",
+   "2009",
+   "2010"
+  ],
+  "answer": "2010",
+  "scale": [
+   "2007",
+   "2008",
+   "2009",
+   "2010",
+   "2011",
+   "2012",
+   "2013"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9736,
+  "externalId": "lou-066",
+  "text": "In what year did Louisiana codify its laws, drawing from the same legal tradition as the Napoleonic Code?",
+  "options": [
+   "1804",
+   "1808",
+   "1812",
+   "1818"
+  ],
+  "answer": "1808",
+  "scale": [
+   "1799",
+   "1802",
+   "1805",
+   "1808",
+   "1811",
+   "1814",
+   "1817"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9738,
+  "externalId": "lou-068",
+  "text": "Louisiana uses the term \"parishes\" instead of \"counties.\" When was the term officially adopted by the territorial legislature?",
+  "options": [
+   "1803",
+   "1807",
+   "1812",
+   "1820"
+  ],
+  "answer": "1807",
+  "scale": [
+   "1798",
+   "1801",
+   "1804",
+   "1807",
+   "1810",
+   "1813",
+   "1816"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9740,
+  "externalId": "lou-070",
+  "text": "In what year was Louisiana's current state constitution adopted?",
+  "options": [
+   "1921",
+   "1954",
+   "1966",
+   "1974"
+  ],
+  "answer": "1974",
+  "scale": [
+   "1959",
+   "1964",
+   "1969",
+   "1974",
+   "1979",
+   "1984",
+   "1989"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10860,
+  "externalId": "queny-046",
+  "text": "Kaufman Astoria Studios was founded in what year?",
+  "options": [
+   "1905",
+   "1910",
+   "1915",
+   "1920"
+  ],
+  "answer": "1920",
+  "scale": [
+   "1905",
+   "1910",
+   "1915",
+   "1920",
+   "1925",
+   "1930",
+   "1935"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15636,
+  "externalId": "wnews-0103",
+  "text": "In what year did the United Kingdom formally leave the European Union?",
+  "options": [
+   "2016",
+   "2018",
+   "2020",
+   "2022"
+  ],
+  "answer": "2020",
+  "scale": [
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024",
+   "2026"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10872,
+  "externalId": "queny-058",
+  "text": "The USTA facility in Queens was renamed to honor Billie Jean King in what year?",
+  "options": [
+   "2003",
+   "2006",
+   "2009",
+   "2012"
+  ],
+  "answer": "2006",
+  "scale": [
+   "1997",
+   "2000",
+   "2003",
+   "2006",
+   "2009",
+   "2012",
+   "2015"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10990,
+  "externalId": "penns-039",
+  "text": "When was the Liberty Bell first commissioned?",
+  "options": [
+   "1701",
+   "1732",
+   "1752",
+   "1776"
+  ],
+  "answer": "1752",
+  "scale": [
+   "1692",
+   "1712",
+   "1732",
+   "1752",
+   "1772",
+   "1792",
+   "1812"
+  ],
+  "step": 20
+ },
+ {
+  "id": 9959,
+  "externalId": "sprmo-080",
+  "text": "The Walnut Street Historic District in Springfield was added to the National Register of Historic Places in what year?",
+  "options": [
+   "1960",
+   "1970",
+   "1985",
+   "2000"
+  ],
+  "answer": "1985",
+  "scale": [
+   "1955",
+   "1965",
+   "1975",
+   "1985",
+   "1995",
+   "2005",
+   "2015"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9978,
+  "externalId": "stlmo-005",
+  "text": "In what year did St. Louis officially separate from St. Louis County?",
+  "options": [
+   "1840",
+   "1850",
+   "1865",
+   "1877"
+  ],
+  "answer": "1877",
+  "scale": [
+   "1847",
+   "1857",
+   "1867",
+   "1877",
+   "1887",
+   "1897",
+   "1907"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10010,
+  "externalId": "stlmo-037",
+  "text": "The St. Louis city flag was adopted in what year?",
+  "options": [
+   "1876",
+   "1904",
+   "1964",
+   "2000"
+  ],
+  "answer": "1964",
+  "scale": [
+   "1904",
+   "1924",
+   "1944",
+   "1964",
+   "1984",
+   "2004",
+   "2024"
+  ],
+  "step": 20
+ },
+ {
+  "id": 10022,
+  "externalId": "stlmo-049",
+  "text": "The Gateway Arch was redesignated as a National Park in what year?",
+  "options": [
+   "1935",
+   "1967",
+   "2000",
+   "2018"
+  ],
+  "answer": "2018",
+  "scale": [
+   "2012",
+   "2014",
+   "2016",
+   "2018",
+   "2020",
+   "2022",
+   "2024"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10033,
+  "externalId": "stlmo-060",
+  "text": "In what year did Forest Park open?",
+  "options": [
+   "1840",
+   "1855",
+   "1865",
+   "1876"
+  ],
+  "answer": "1876",
+  "scale": [
+   "1846",
+   "1856",
+   "1866",
+   "1876",
+   "1886",
+   "1896",
+   "1906"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10042,
+  "externalId": "stlmo-069",
+  "text": "In what year was the St. Louis Blues NHL franchise founded?",
+  "options": [
+   "1955",
+   "1967",
+   "1975",
+   "1990"
+  ],
+  "answer": "1967",
+  "scale": [
+   "1952",
+   "1957",
+   "1962",
+   "1967",
+   "1972",
+   "1977",
+   "1982"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10043,
+  "externalId": "stlmo-070",
+  "text": "When did the St. Louis Blues win their first Stanley Cup Championship?",
+  "options": [
+   "2012",
+   "2019",
+   "2022",
+   "2024"
+  ],
+  "answer": "2019",
+  "scale": [
+   "2013",
+   "2015",
+   "2017",
+   "2019",
+   "2021",
+   "2023",
+   "2025"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10049,
+  "externalId": "stlmo-076",
+  "text": "Washington University in St. Louis was founded in what year?",
+  "options": [
+   "1853",
+   "1875",
+   "1900",
+   "1920"
+  ],
+  "answer": "1853",
+  "scale": [
+   "1793",
+   "1813",
+   "1833",
+   "1853",
+   "1873",
+   "1893",
+   "1913"
+  ],
+  "step": 20
+ },
+ {
+  "id": 13488,
+  "externalId": "madwi-027",
+  "text": "In what year was Madison incorporated as a village?",
+  "options": [
+   "1836",
+   "1846",
+   "1856",
+   "1866"
+  ],
+  "answer": "1846",
+  "scale": [
+   "1816",
+   "1826",
+   "1836",
+   "1846",
+   "1856",
+   "1866",
+   "1876"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11112,
+  "externalId": "phipa-066",
+  "text": "In what year were the Philadelphia Eagles founded?",
+  "options": [
+   "1925",
+   "1933",
+   "1940",
+   "1950"
+  ],
+  "answer": "1933",
+  "scale": [
+   "1918",
+   "1923",
+   "1928",
+   "1933",
+   "1938",
+   "1943",
+   "1948"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11133,
+  "externalId": "phipa-087",
+  "text": "The Philadelphia Zoo, which holds the distinction of being the first zoo in the United States, opened in what year?",
+  "options": [
+   "1840",
+   "1852",
+   "1866",
+   "1874"
+  ],
+  "answer": "1874",
+  "scale": [
+   "1859",
+   "1864",
+   "1869",
+   "1874",
+   "1879",
+   "1884",
+   "1889"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11161,
+  "externalId": "pitpa-019",
+  "text": "In what year was Pittsburgh incorporated as a borough?",
+  "options": [
+   "1783",
+   "1794",
+   "1802",
+   "1818"
+  ],
+  "answer": "1794",
+  "scale": [
+   "1779",
+   "1784",
+   "1789",
+   "1794",
+   "1799",
+   "1804",
+   "1809"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11165,
+  "externalId": "pitpa-023",
+  "text": "In what year was Pittsburgh incorporated as a city?",
+  "options": [
+   "1794",
+   "1800",
+   "1816",
+   "1830"
+  ],
+  "answer": "1816",
+  "scale": [
+   "1801",
+   "1806",
+   "1811",
+   "1816",
+   "1821",
+   "1826",
+   "1831"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15726,
+  "externalId": "cam-156",
+  "text": "In what year was Cambridge incorporated as a city?",
+  "options": [
+   "1630",
+   "1776",
+   "1846",
+   "1900"
+  ],
+  "answer": "1846",
+  "scale": [
+   "1696",
+   "1746",
+   "1796",
+   "1846",
+   "1896",
+   "1946",
+   "1996"
+  ],
+  "step": 50
+ },
+ {
+  "id": 10982,
+  "externalId": "penns-031",
+  "text": "What year was William Penn born?",
+  "options": [
+   "1634",
+   "1644",
+   "1650",
+   "1658"
+  ],
+  "answer": "1644",
+  "scale": [
+   "1629",
+   "1634",
+   "1639",
+   "1644",
+   "1649",
+   "1654",
+   "1659"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10801,
+  "externalId": "nysts-074",
+  "text": "In what year was SUNY founded?",
+  "options": [
+   "1900",
+   "1930",
+   "1948",
+   "1960"
+  ],
+  "answer": "1948",
+  "scale": [
+   "1918",
+   "1928",
+   "1938",
+   "1948",
+   "1958",
+   "1968",
+   "1978"
+  ],
+  "step": 10
+ },
+ {
+  "id": 11715,
+  "externalId": "bniwa-053",
+  "text": "In what year was pickleball invented on Bainbridge Island?",
+  "options": [
+   "1958",
+   "1962",
+   "1965",
+   "1971"
+  ],
+  "answer": "1965",
+  "scale": [
+   "1956",
+   "1959",
+   "1962",
+   "1965",
+   "1968",
+   "1971",
+   "1974"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15772,
+  "externalId": "mis-302",
+  "text": "In what year did Mississippi become a U.S. state?",
+  "options": [
+   "1798",
+   "1817",
+   "1835",
+   "1861"
+  ],
+  "answer": "1817",
+  "scale": [
+   "1787",
+   "1797",
+   "1807",
+   "1817",
+   "1827",
+   "1837",
+   "1847"
+  ],
+  "step": 10
+ },
+ {
+  "id": 153,
+  "externalId": "bli-033",
+  "text": "When was Monroe County, Indiana formed?",
+  "options": [
+   "1816",
+   "1818",
+   "1820",
+   "1825"
+  ],
+  "answer": "1818",
+  "scale": [
+   "1812",
+   "1814",
+   "1816",
+   "1818",
+   "1820",
+   "1822",
+   "1824"
+  ],
+  "step": 2
+ },
+ {
+  "id": 11808,
+  "externalId": "washs-051",
+  "text": "In what year was the Washington State Capitol building in Olympia completed?",
+  "options": [
+   "1912",
+   "1928",
+   "1941",
+   "1955"
+  ],
+  "answer": "1928",
+  "scale": [
+   "1898",
+   "1908",
+   "1918",
+   "1928",
+   "1938",
+   "1948",
+   "1958"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9940,
+  "externalId": "sprmo-061",
+  "text": "In what year was U.S. Route 66 officially decommissioned as a federal highway?",
+  "options": [
+   "1965",
+   "1972",
+   "1978",
+   "1985"
+  ],
+  "answer": "1985",
+  "scale": [
+   "1970",
+   "1975",
+   "1980",
+   "1985",
+   "1990",
+   "1995",
+   "2000"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13517,
+  "externalId": "madwi-056",
+  "text": "In what year did Madison's Overture Center for the Arts open?",
+  "options": [
+   "1985",
+   "1992",
+   "1997",
+   "2004"
+  ],
+  "answer": "2004",
+  "scale": [
+   "1989",
+   "1994",
+   "1999",
+   "2004",
+   "2009",
+   "2014",
+   "2019"
+  ],
+  "step": 5
+ },
+ {
+  "id": 13512,
+  "externalId": "madwi-051",
+  "text": "In what year did Monona Terrace finally open?",
+  "options": [
+   "1975",
+   "1985",
+   "1992",
+   "1997"
+  ],
+  "answer": "1997",
+  "scale": [
+   "1982",
+   "1987",
+   "1992",
+   "1997",
+   "2002",
+   "2007",
+   "2012"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10098,
+  "externalId": "misso-033",
+  "text": "Missouri's merit-based nonpartisan court plan for selecting judges has been in place since what year?",
+  "options": [
+   "1821",
+   "1870",
+   "1940",
+   "2000"
+  ],
+  "answer": "1940",
+  "scale": [
+   "1865",
+   "1890",
+   "1915",
+   "1940",
+   "1965",
+   "1990",
+   "2015"
+  ],
+  "step": 25
+ },
+ {
+  "id": 10233,
+  "externalId": "arizs-077",
+  "text": "Arizona does not observe Daylight Saving Time — a policy in place since what year?",
+  "options": [
+   "1952",
+   "1960",
+   "1968",
+   "1975"
+  ],
+  "answer": "1968",
+  "scale": [
+   "1953",
+   "1958",
+   "1963",
+   "1968",
+   "1973",
+   "1978",
+   "1983"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10739,
+  "externalId": "nysts-012",
+  "text": "In what year did New York adopt its first state constitution?",
+  "options": [
+   "1777",
+   "1781",
+   "1789",
+   "1800"
+  ],
+  "answer": "1777",
+  "scale": [
+   "1768",
+   "1771",
+   "1774",
+   "1777",
+   "1780",
+   "1783",
+   "1786"
+  ],
+  "step": 3
+ },
+ {
+  "id": 10901,
+  "externalId": "queny-087",
+  "text": "AirTrain JFK opened for passengers in what year?",
+  "options": [
+   "2000",
+   "2003",
+   "2006",
+   "2010"
+  ],
+  "answer": "2003",
+  "scale": [
+   "1994",
+   "1997",
+   "2000",
+   "2003",
+   "2006",
+   "2009",
+   "2012"
+  ],
+  "step": 3
+ },
+ {
+  "id": 7581,
+  "externalId": "wdc-122",
+  "text": "When did the federal government officially move from Philadelphia to Washington, DC?",
+  "options": [
+   "1783",
+   "1790",
+   "1796",
+   "1800"
+  ],
+  "answer": "1800",
+  "scale": [
+   "1791",
+   "1794",
+   "1797",
+   "1800",
+   "1803",
+   "1806",
+   "1809"
+  ],
+  "step": 3
+ },
+ {
+  "id": 5535,
+  "externalId": "pla-052",
+  "text": "By what year had Plano's population more than quadrupled from 1970 to surpass 72,000 residents?",
+  "options": [
+   "1975",
+   "1980",
+   "1985",
+   "1990"
+  ],
+  "answer": "1980",
+  "scale": [
+   "1965",
+   "1970",
+   "1975",
+   "1980",
+   "1985",
+   "1990",
+   "1995"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9903,
+  "externalId": "sprmo-024",
+  "text": "In what year was the Springfield, Missouri town site officially platted?",
+  "options": [
+   "1820",
+   "1826",
+   "1829",
+   "1835"
+  ],
+  "answer": "1835",
+  "scale": [
+   "1826",
+   "1829",
+   "1832",
+   "1835",
+   "1838",
+   "1841",
+   "1844"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9923,
+  "externalId": "sprmo-044",
+  "text": "From what year until the end of the Civil War did Springfield, Missouri remain under continuous Union control?",
+  "options": [
+   "1858",
+   "1860",
+   "1861",
+   "1863"
+  ],
+  "answer": "1863",
+  "scale": [
+   "1860",
+   "1861",
+   "1862",
+   "1863",
+   "1864",
+   "1865",
+   "1866"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5351,
+  "externalId": "mas-070",
+  "text": "When did Massachusetts become a state?",
+  "options": [
+   "1780",
+   "1788",
+   "1789",
+   "1791"
+  ],
+  "answer": "1788",
+  "scale": [
+   "1785",
+   "1786",
+   "1787",
+   "1788",
+   "1789",
+   "1790",
+   "1791"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5371,
+  "externalId": "mas-093",
+  "text": "What year did Massachusetts ratify the 19th Amendment, granting women the right to vote?",
+  "options": [
+   "1918",
+   "1919",
+   "1920",
+   "1921"
+  ],
+  "answer": "1920",
+  "scale": [
+   "1917",
+   "1918",
+   "1919",
+   "1920",
+   "1921",
+   "1922",
+   "1923"
+  ],
+  "step": 1
+ },
+ {
+  "id": 5801,
+  "externalId": "tex-064",
+  "text": "When was the current Texas Constitution ratified?",
+  "options": [
+   "1836",
+   "1845",
+   "1876",
+   "1900"
+  ],
+  "answer": "1876",
+  "scale": [
+   "1861",
+   "1866",
+   "1871",
+   "1876",
+   "1881",
+   "1886",
+   "1891"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7221,
+  "externalId": "wdc-017",
+  "text": "What year was the District of Columbia Court of Appeals established as the highest local court?",
+  "options": [
+   "1942",
+   "1962",
+   "1970",
+   "1973"
+  ],
+  "answer": "1970",
+  "scale": [
+   "1961",
+   "1964",
+   "1967",
+   "1970",
+   "1973",
+   "1976",
+   "1979"
+  ],
+  "step": 3
+ },
+ {
+  "id": 7628,
+  "externalId": "wdc-173",
+  "text": "What year did Congress pass the District of Columbia Home Rule Act, establishing an elected mayor and council?",
+  "options": [
+   "1961",
+   "1967",
+   "1973",
+   "1975"
+  ],
+  "answer": "1973",
+  "scale": [
+   "1967",
+   "1969",
+   "1971",
+   "1973",
+   "1975",
+   "1977",
+   "1979"
+  ],
+  "step": 2
+ },
+ {
+  "id": 7810,
+  "externalId": "wdc-191",
+  "text": "When was the DC Attorney General position first elected by voters?",
+  "options": [
+   "2010",
+   "2012",
+   "2014",
+   "2015"
+  ],
+  "answer": "2015",
+  "scale": [
+   "2012",
+   "2013",
+   "2014",
+   "2015",
+   "2016",
+   "2017",
+   "2018"
+  ],
+  "step": 1
+ },
+ {
+  "id": 7833,
+  "externalId": "wdc-214",
+  "text": "When did the District of Columbia Voting Rights Amendment expire without being ratified?",
+  "options": [
+   "1978",
+   "1982",
+   "1985",
+   "1990"
+  ],
+  "answer": "1985",
+  "scale": [
+   "1976",
+   "1979",
+   "1982",
+   "1985",
+   "1988",
+   "1991",
+   "1994"
+  ],
+  "step": 3
+ },
+ {
+  "id": 7899,
+  "externalId": "wdc-285",
+  "text": "When was the Twenty-third Amendment ratified, granting DC residents electoral votes for president?",
+  "options": [
+   "1957",
+   "1961",
+   "1964",
+   "1973"
+  ],
+  "answer": "1961",
+  "scale": [
+   "1952",
+   "1955",
+   "1958",
+   "1961",
+   "1964",
+   "1967",
+   "1970"
+  ],
+  "step": 3
+ },
+ {
+  "id": 7908,
+  "externalId": "wdc-298",
+  "text": "What year did Georgetown officially merge its street grid and administrative details with the City of Washington?",
+  "options": [
+   "1871",
+   "1888",
+   "1895",
+   "1901"
+  ],
+  "answer": "1895",
+  "scale": [
+   "1880",
+   "1885",
+   "1890",
+   "1895",
+   "1900",
+   "1905",
+   "1910"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7932,
+  "externalId": "wdc-322",
+  "text": "When was the DC Voting Rights Amendment proposed?",
+  "options": [
+   "1961",
+   "1973",
+   "1978",
+   "1985"
+  ],
+  "answer": "1978",
+  "scale": [
+   "1963",
+   "1968",
+   "1973",
+   "1978",
+   "1983",
+   "1988",
+   "1993"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8263,
+  "externalId": "bxl-048",
+  "text": "When was the Maritime & Seafood Industry Museum in Biloxi established?",
+  "options": [
+   "1941",
+   "1969",
+   "1986",
+   "2005"
+  ],
+  "answer": "1986",
+  "scale": [
+   "1956",
+   "1966",
+   "1976",
+   "1986",
+   "1996",
+   "2006",
+   "2016"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8328,
+  "externalId": "bxl-113",
+  "text": "When were the Mississippi State Sovereignty Commission's records finally unsealed?",
+  "options": [
+   "1975",
+   "1985",
+   "1998",
+   "2005"
+  ],
+  "answer": "1998",
+  "scale": [
+   "1983",
+   "1988",
+   "1993",
+   "1998",
+   "2003",
+   "2008",
+   "2013"
+  ],
+  "step": 5
+ },
+ {
+  "id": 8843,
+  "externalId": "smo-007",
+  "text": "What year was Santa Monica's City Hall built?",
+  "options": [
+   "1928",
+   "1930",
+   "1935",
+   "1940"
+  ],
+  "answer": "1930",
+  "scale": [
+   "1924",
+   "1926",
+   "1928",
+   "1930",
+   "1932",
+   "1934",
+   "1936"
+  ],
+  "step": 2
+ },
+ {
+  "id": 9490,
+  "externalId": "alxla-032",
+  "text": "The Alexandria Museum of Art is housed in a building originally constructed in what year?",
+  "options": [
+   "1855",
+   "1865",
+   "1882",
+   "1898"
+  ],
+  "answer": "1898",
+  "scale": [
+   "1868",
+   "1878",
+   "1888",
+   "1898",
+   "1908",
+   "1918",
+   "1928"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8969,
+  "externalId": "smo-136",
+  "text": "By what year has Big Blue Bus committed to achieving full conversion to zero-emissions operation?",
+  "options": [
+   "2028",
+   "2030",
+   "2031",
+   "2035"
+  ],
+  "answer": "2031",
+  "scale": [
+   "2028",
+   "2029",
+   "2030",
+   "2031",
+   "2032",
+   "2033",
+   "2034"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9180,
+  "externalId": "ica-026",
+  "text": "What year did the Southern Pacific Railroad reach Indio (then known as Indian Wells)?",
+  "options": [
+   "1873",
+   "1876",
+   "1877",
+   "1880"
+  ],
+  "answer": "1876",
+  "scale": [
+   "1873",
+   "1874",
+   "1875",
+   "1876",
+   "1877",
+   "1878",
+   "1879"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9500,
+  "externalId": "alxla-042",
+  "text": "In what year was England Air Force Base closed?",
+  "options": [
+   "1988",
+   "1990",
+   "1992",
+   "1995"
+  ],
+  "answer": "1992",
+  "scale": [
+   "1986",
+   "1988",
+   "1990",
+   "1992",
+   "1994",
+   "1996",
+   "1998"
+  ],
+  "step": 2
+ },
+ {
+  "id": 10354,
+  "externalId": "phxaz-004",
+  "text": "In what year did Phoenix voters adopt the city's current form of government?",
+  "options": [
+   "1901",
+   "1913",
+   "1925",
+   "1935"
+  ],
+  "answer": "1913",
+  "scale": [
+   "1883",
+   "1893",
+   "1903",
+   "1913",
+   "1923",
+   "1933",
+   "1943"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10374,
+  "externalId": "phxaz-024",
+  "text": "When did Phoenix become the Arizona Territorial Capital?",
+  "options": [
+   "1889",
+   "1901",
+   "1912",
+   "1925"
+  ],
+  "answer": "1889",
+  "scale": [
+   "1859",
+   "1869",
+   "1879",
+   "1889",
+   "1899",
+   "1909",
+   "1919"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10378,
+  "externalId": "phxaz-028",
+  "text": "In what year was the Arizona Territorial Capitol building completed?",
+  "options": [
+   "1901",
+   "1912",
+   "1920",
+   "1935"
+  ],
+  "answer": "1901",
+  "scale": [
+   "1886",
+   "1891",
+   "1896",
+   "1901",
+   "1906",
+   "1911",
+   "1916"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10382,
+  "externalId": "phxaz-032",
+  "text": "When did the first Southern Pacific railroad train arrive in Phoenix?",
+  "options": [
+   "1887",
+   "1895",
+   "1910",
+   "1926"
+  ],
+  "answer": "1887",
+  "scale": [
+   "1872",
+   "1877",
+   "1882",
+   "1887",
+   "1892",
+   "1897",
+   "1902"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9476,
+  "externalId": "alxla-018",
+  "text": "Alexandria's first official incorporation as a town took place in which year?",
+  "options": [
+   "1795",
+   "1805",
+   "1812",
+   "1819"
+  ],
+  "answer": "1819",
+  "scale": [
+   "1804",
+   "1809",
+   "1814",
+   "1819",
+   "1824",
+   "1829",
+   "1834"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10591,
+  "externalId": "norca-052",
+  "text": "In what year was the current North Carolina State Capitol building completed?",
+  "options": [
+   "1823",
+   "1831",
+   "1840",
+   "1865"
+  ],
+  "answer": "1840",
+  "scale": [
+   "1825",
+   "1830",
+   "1835",
+   "1840",
+   "1845",
+   "1850",
+   "1855"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10634,
+  "externalId": "wmnla-004",
+  "text": "What year did West Monroe receive its first city charter?",
+  "options": [
+   "1883",
+   "1889",
+   "1899",
+   "1905"
+  ],
+  "answer": "1889",
+  "scale": [
+   "1874",
+   "1879",
+   "1884",
+   "1889",
+   "1894",
+   "1899",
+   "1904"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10466,
+  "externalId": "ashnc-025",
+  "text": "In what year was Asheville incorporated as a city?",
+  "options": [
+   "1870",
+   "1878",
+   "1883",
+   "1890"
+  ],
+  "answer": "1883",
+  "scale": [
+   "1868",
+   "1873",
+   "1878",
+   "1883",
+   "1888",
+   "1893",
+   "1898"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10845,
+  "externalId": "queny-031",
+  "text": "In what year was the Queensboro Bridge completed and opened to traffic?",
+  "options": [
+   "1903",
+   "1909",
+   "1915",
+   "1921"
+  ],
+  "answer": "1909",
+  "scale": [
+   "1891",
+   "1897",
+   "1903",
+   "1909",
+   "1915",
+   "1921",
+   "1927"
+  ],
+  "step": 6
+ },
+ {
+  "id": 10877,
+  "externalId": "queny-063",
+  "text": "Queens Public Library was founded in what year?",
+  "options": [
+   "1883",
+   "1896",
+   "1904",
+   "1912"
+  ],
+  "answer": "1896",
+  "scale": [
+   "1881",
+   "1886",
+   "1891",
+   "1896",
+   "1901",
+   "1906",
+   "1911"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10469,
+  "externalId": "ashnc-028",
+  "text": "In what year did Asheville finally finish paying off the municipal bonds it took on during the 1920s and Great Depression?",
+  "options": [
+   "1945",
+   "1960",
+   "1977",
+   "1985"
+  ],
+  "answer": "1977",
+  "scale": [
+   "1962",
+   "1967",
+   "1972",
+   "1977",
+   "1982",
+   "1987",
+   "1992"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11019,
+  "externalId": "penns-068",
+  "text": "In what year was the Pennsylvania State Capitol designated a National Historic Landmark?",
+  "options": [
+   "1977",
+   "1987",
+   "1996",
+   "2006"
+  ],
+  "answer": "2006",
+  "scale": [
+   "1991",
+   "1996",
+   "2001",
+   "2006",
+   "2011",
+   "2016",
+   "2021"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11071,
+  "externalId": "phipa-025",
+  "text": "In what year was Philadelphia founded?",
+  "options": [
+   "1650",
+   "1664",
+   "1674",
+   "1682"
+  ],
+  "answer": "1682",
+  "scale": [
+   "1667",
+   "1672",
+   "1677",
+   "1682",
+   "1687",
+   "1692",
+   "1697"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11083,
+  "externalId": "phipa-037",
+  "text": "In what year did the Pennsylvania state capital move from Philadelphia to Harrisburg?",
+  "options": [
+   "1776",
+   "1791",
+   "1800",
+   "1812"
+  ],
+  "answer": "1812",
+  "scale": [
+   "1797",
+   "1802",
+   "1807",
+   "1812",
+   "1817",
+   "1822",
+   "1827"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11091,
+  "externalId": "phipa-045",
+  "text": "In what year did the Liberty Bell move to its current home at the Liberty Bell Center?",
+  "options": [
+   "1976",
+   "1988",
+   "2003",
+   "2010"
+  ],
+  "answer": "2003",
+  "scale": [
+   "1988",
+   "1993",
+   "1998",
+   "2003",
+   "2008",
+   "2013",
+   "2018"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11747,
+  "externalId": "bniwa-085",
+  "text": "In what year did the Agate Pass Bridge, connecting Bainbridge Island to the Kitsap Peninsula, open?",
+  "options": [
+   "1935",
+   "1942",
+   "1950",
+   "1965"
+  ],
+  "answer": "1950",
+  "scale": [
+   "1935",
+   "1940",
+   "1945",
+   "1950",
+   "1955",
+   "1960",
+   "1965"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11813,
+  "externalId": "washs-056",
+  "text": "Construction of Grand Coulee Dam on the Columbia River began in what year?",
+  "options": [
+   "1929",
+   "1933",
+   "1937",
+   "1941"
+  ],
+  "answer": "1933",
+  "scale": [
+   "1921",
+   "1925",
+   "1929",
+   "1933",
+   "1937",
+   "1941",
+   "1945"
+  ],
+  "step": 4
+ },
+ {
+  "id": 11827,
+  "externalId": "washs-070",
+  "text": "Boeing, one of the world's largest aircraft manufacturers, was founded in Seattle in what year?",
+  "options": [
+   "1903",
+   "1910",
+   "1916",
+   "1922"
+  ],
+  "answer": "1916",
+  "scale": [
+   "1901",
+   "1906",
+   "1911",
+   "1916",
+   "1921",
+   "1926",
+   "1931"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9885,
+  "externalId": "sprmo-006",
+  "text": "In what year did Springfield, Missouri adopt its city charter?",
+  "options": [
+   "1938",
+   "1951",
+   "1965",
+   "1972"
+  ],
+  "answer": "1951",
+  "scale": [
+   "1936",
+   "1941",
+   "1946",
+   "1951",
+   "1956",
+   "1961",
+   "1966"
+  ],
+  "step": 5
+ },
+ {
+  "id": 9900,
+  "externalId": "sprmo-021",
+  "text": "In what year was Springfield, Missouri founded?",
+  "options": [
+   "1820",
+   "1826",
+   "1829",
+   "1838"
+  ],
+  "answer": "1829",
+  "scale": [
+   "1820",
+   "1823",
+   "1826",
+   "1829",
+   "1832",
+   "1835",
+   "1838"
+  ],
+  "step": 3
+ },
+ {
+  "id": 9937,
+  "externalId": "sprmo-058",
+  "text": "In what year was the U.S. Highway 66 Association founded?",
+  "options": [
+   "1926",
+   "1927",
+   "1931",
+   "1938"
+  ],
+  "answer": "1927",
+  "scale": [
+   "1924",
+   "1925",
+   "1926",
+   "1927",
+   "1928",
+   "1929",
+   "1930"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9941,
+  "externalId": "sprmo-062",
+  "text": "In what year did the Missouri Route 66 Association form to preserve the highway's heritage?",
+  "options": [
+   "1972",
+   "1985",
+   "1990",
+   "2000"
+  ],
+  "answer": "1990",
+  "scale": [
+   "1975",
+   "1980",
+   "1985",
+   "1990",
+   "1995",
+   "2000",
+   "2005"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11708,
+  "externalId": "bniwa-046",
+  "text": "In what year was the City of Winslow, which later became Bainbridge Island, incorporated?",
+  "options": [
+   "1920",
+   "1930",
+   "1938",
+   "1947"
+  ],
+  "answer": "1947",
+  "scale": [
+   "1932",
+   "1937",
+   "1942",
+   "1947",
+   "1952",
+   "1957",
+   "1962"
+  ],
+  "step": 5
+ },
+ {
+  "id": 11703,
+  "externalId": "bniwa-041",
+  "text": "When did English explorer George Vancouver first encounter the Suquamish people at Bainbridge Island?",
+  "options": [
+   "1774",
+   "1792",
+   "1805",
+   "1820"
+  ],
+  "answer": "1792",
+  "scale": [
+   "1762",
+   "1772",
+   "1782",
+   "1792",
+   "1802",
+   "1812",
+   "1822"
+  ],
+  "step": 10
+ },
+ {
+  "id": 10694,
+  "externalId": "wmnla-064",
+  "text": "In what year was Glenwood Regional Medical Center established in West Monroe?",
+  "options": [
+   "1935",
+   "1945",
+   "1955",
+   "1962"
+  ],
+  "answer": "1962",
+  "scale": [
+   "1947",
+   "1952",
+   "1957",
+   "1962",
+   "1967",
+   "1972",
+   "1977"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15565,
+  "externalId": "climc-0046",
+  "text": "In what year did the Kigali Amendment enter into force?",
+  "options": [
+   "2016",
+   "2017",
+   "2019",
+   "2021"
+  ],
+  "answer": "2019",
+  "scale": [
+   "2016",
+   "2017",
+   "2018",
+   "2019",
+   "2020",
+   "2021",
+   "2022"
+  ],
+  "step": 1
+ },
+ {
+  "id": 9938,
+  "externalId": "sprmo-059",
+  "text": "By what year was Route 66 completely paved across Missouri?",
+  "options": [
+   "1926",
+   "1931",
+   "1938",
+   "1945"
+  ],
+  "answer": "1931",
+  "scale": [
+   "1916",
+   "1921",
+   "1926",
+   "1931",
+   "1936",
+   "1941",
+   "1946"
+  ],
+  "step": 5
+ },
+ {
+  "id": 5595,
+  "externalId": "pla-114",
+  "text": "In what year was the non-profit that runs Plano's Interurban Railway Museum formed?",
+  "options": [
+   "1998",
+   "2001",
+   "2005",
+   "2008"
+  ],
+  "answer": "2001",
+  "scale": [
+   "1992",
+   "1995",
+   "1998",
+   "2001",
+   "2004",
+   "2007",
+   "2010"
+  ],
+  "step": 3
+ },
+ {
+  "id": 13489,
+  "externalId": "madwi-028",
+  "text": "In what year did Madison incorporate as a city?",
+  "options": [
+   "1846",
+   "1852",
+   "1856",
+   "1861"
+  ],
+  "answer": "1856",
+  "scale": [
+   "1847",
+   "1850",
+   "1853",
+   "1856",
+   "1859",
+   "1862",
+   "1865"
+  ],
+  "step": 3
+ },
+ {
+  "id": 15913,
+  "externalId": "pitpa-099",
+  "text": "In what year is Pittsburgh's next mayoral election scheduled?",
+  "options": [
+   "2027",
+   "2028",
+   "2029",
+   "2030"
+  ],
+  "answer": "2029",
+  "scale": [
+   "2026",
+   "2027",
+   "2028",
+   "2029",
+   "2030",
+   "2031",
+   "2032"
+  ],
+  "step": 1
+ },
+ {
+  "id": 15919,
+  "externalId": "pla-153",
+  "text": "In what year is Plano's next mayoral election scheduled?",
+  "options": [
+   "2026",
+   "2027",
+   "2028",
+   "2029"
+  ],
+  "answer": "2029",
+  "scale": [
+   "2026",
+   "2027",
+   "2028",
+   "2029",
+   "2030",
+   "2031",
+   "2032"
+  ],
+  "step": 1
+ },
+ {
+  "id": 10194,
+  "externalId": "arizs-038",
+  "text": "In what year was Grand Canyon National Park officially established by Congress?",
+  "options": [
+   "1908",
+   "1919",
+   "1928",
+   "1935"
+  ],
+  "answer": "1919",
+  "scale": [
+   "1904",
+   "1909",
+   "1914",
+   "1919",
+   "1924",
+   "1929",
+   "1934"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10747,
+  "externalId": "nysts-020",
+  "text": "In what year was New York's second state constitution adopted?",
+  "options": [
+   "1800",
+   "1821",
+   "1846",
+   "1860"
+  ],
+  "answer": "1821",
+  "scale": [
+   "1791",
+   "1801",
+   "1811",
+   "1821",
+   "1831",
+   "1841",
+   "1851"
+  ],
+  "step": 10
+ },
+ {
+  "id": 9945,
+  "externalId": "sprmo-066",
+  "text": "In what year was Bass Pro Shops founded in Springfield, Missouri?",
+  "options": [
+   "1952",
+   "1958",
+   "1965",
+   "1972"
+  ],
+  "answer": "1972",
+  "scale": [
+   "1957",
+   "1962",
+   "1967",
+   "1972",
+   "1977",
+   "1982",
+   "1987"
+  ],
+  "step": 5
+ },
+ {
+  "id": 10744,
+  "externalId": "nysts-017",
+  "text": "In what year was New York's current state constitution adopted?",
+  "options": [
+   "1777",
+   "1846",
+   "1894",
+   "1938"
+  ],
+  "answer": "1894",
+  "scale": [
+   "1819",
+   "1844",
+   "1869",
+   "1894",
+   "1919",
+   "1944",
+   "1969"
+  ],
+  "step": 25
+ },
+ {
+  "id": 9189,
+  "externalId": "ica-035",
+  "text": "What year did the Stagecoach country music festival first take place in Indio?",
+  "options": [
+   "2003",
+   "2005",
+   "2007",
+   "2009"
+  ],
+  "answer": "2007",
+  "scale": [
+   "2001",
+   "2003",
+   "2005",
+   "2007",
+   "2009",
+   "2011",
+   "2013"
+  ],
+  "step": 2
+ },
+ {
+  "id": 693,
+  "externalId": "fre-018",
+  "text": "When was Fremont officially incorporated as a city?",
+  "options": [
+   "1946",
+   "1956",
+   "1966",
+   "1976"
+  ],
+  "answer": "1956",
+  "scale": [
+   "1926",
+   "1936",
+   "1946",
+   "1956",
+   "1966",
+   "1976",
+   "1986"
+  ],
+  "step": 10
+ },
+ {
+  "id": 15967,
+  "externalId": "la-111",
+  "text": "Los Angeles replaced its 1925 city charter. In which year did the current charter take effect?",
+  "options": [
+   "1965",
+   "1985",
+   "2000",
+   "2012"
+  ],
+  "answer": "2000",
+  "scale": [
+   "1985",
+   "1990",
+   "1995",
+   "2000",
+   "2005",
+   "2010",
+   "2015"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7909,
+  "externalId": "wdc-299",
+  "text": "When did Washington Union Station open as the city's central terminal?",
+  "options": [
+   "1875",
+   "1888",
+   "1901",
+   "1907"
+  ],
+  "answer": "1907",
+  "scale": [
+   "1892",
+   "1897",
+   "1902",
+   "1907",
+   "1912",
+   "1917",
+   "1922"
+  ],
+  "step": 5
+ },
+ {
+  "id": 7910,
+  "externalId": "wdc-300",
+  "text": "What year did the first motorized streetcars begin service in Washington, DC?",
+  "options": [
+   "1862",
+   "1871",
+   "1880",
+   "1888"
+  ],
+  "answer": "1888",
+  "scale": [
+   "1873",
+   "1878",
+   "1883",
+   "1888",
+   "1893",
+   "1898",
+   "1903"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15975,
+  "externalId": "la-119",
+  "text": "In which year did Los Angeles County voters approve the charter that gave the county greater freedom to govern itself?",
+  "options": [
+   "1866",
+   "1880",
+   "1895",
+   "1913"
+  ],
+  "answer": "1913",
+  "scale": [
+   "1883",
+   "1893",
+   "1903",
+   "1913",
+   "1923",
+   "1933",
+   "1943"
+  ],
+  "step": 10
+ },
+ {
+  "id": 8395,
+  "externalId": "bxl-184",
+  "text": "When was the first cannery built in Biloxi to process seafood?",
+  "options": [
+   "1848",
+   "1860",
+   "1869",
+   "1881"
+  ],
+  "answer": "1881",
+  "scale": [
+   "1866",
+   "1871",
+   "1876",
+   "1881",
+   "1886",
+   "1891",
+   "1896"
+  ],
+  "step": 5
+ },
+ {
+  "id": 15985,
+  "externalId": "cal-139",
+  "text": "California's current constitution replaced the original drafted at statehood. In which year was it ratified?",
+  "options": [
+   "1866",
+   "1879",
+   "1892",
+   "1911"
+  ],
+  "answer": "1879",
+  "scale": [
+   "1849",
+   "1859",
+   "1869",
+   "1879",
+   "1889",
+   "1899",
+   "1909"
+  ],
+  "step": 10
+ },
+ {
+  "id": 7898,
+  "externalId": "wdc-284",
+  "text": "What year did DC regain control over its finances from the Financial Control Board?",
+  "options": [
+   "1998",
+   "2001",
+   "2005",
+   "2007"
+  ],
+  "answer": "2001",
+  "scale": [
+   "1995",
+   "1997",
+   "1999",
+   "2001",
+   "2003",
+   "2005",
+   "2007"
+  ],
+  "step": 2
+ },
+ {
+  "id": 16044,
+  "externalId": "q152",
+  "text": "In what year did the American colonies declare independence?",
+  "options": [
+   "1765",
+   "1776",
+   "1783",
+   "1789"
+  ],
+  "answer": "1776",
+  "scale": [
+   "1761",
+   "1766",
+   "1771",
+   "1776",
+   "1781",
+   "1786",
+   "1791"
+  ],
+  "step": 5
+ }
+]

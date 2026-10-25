@@ -1,0 +1,50 @@
+{
+  "id": "PALM-SPRINGS-ORD-2099",
+  "scope": "place:0655254",
+  "title": "AN ORDINANCE OF THE CITY COUNCIL OF THE CITY OF PALM SPRINGS, CALIFORNIA, AMENDING THE PALM SPRINGS MUNICIPAL CODE, RELATING TO REGULATING ENCAMPMENTS AND SLEEPING ON PUBLIC PROPERTY",
+  "urls": [],
+  "version": "other",
+  "operative_text": "11.40.040(a): \"It is unlawful for any person to camp or to maintain an encampment in or upon any public property, including in any street, sidewalk, park, open space, waterway, and banks of a waterway, unless specifically authorized by the city manager.\"",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-07-25",
+      "body": "Palm Springs City Council",
+      "motion": "unknown (see pilot)",
+      "kind": "action-item",
+      "yes": 4,
+      "no": 1,
+      "body_size": 5,
+      "members": [
+        {
+          "name": "Grace Elena Garner",
+          "politician_id": "13979c8e-df26-4d07-918e-e064fce6dc53",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey Bernstein",
+          "politician_id": "befbbea4-9e33-4f37-9745-c7184e824d48",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron deHarte",
+          "politician_id": "24ba9d44-a972-4125-b370-380b457a226c",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

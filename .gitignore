@@ -220,3 +220,7 @@ backend/data/seed-ms-2026/_assets/harrison-processed/
 backend/data/seed-ms-2026/_assets/recrop/
 backend/data/seed-ms-2026/_assets/*.png
 backend/data/seed-ms-2026/_assets/*.html
+
+# YuNet face-detection model, downloaded and checksummed on first use by
+# backend/scripts/lib/headshot_image.py
+backend/.cache/

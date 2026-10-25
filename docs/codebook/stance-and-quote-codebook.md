@@ -64,6 +64,29 @@ the chair rests on is the body's own choice (not a duty a higher law imposes). B
 keep the 10% rule. Labels and gold coded under 0.5 stay 0.5. 0.6 rows go to review until a small gold
 round on board votes covers them under certification eb2f791a. Prompted by the `education-library-books`
 Season 3 Stage 3 test (2026-10-14/15), where every 5-0 school-board vote was refused.
+**Clarified 2026-10-19 (still 0.6 — a topic-scoped reading, no new variable or value; ruling by Chris
+Andrews 2026-10-19, R1):** V4.1 "The single-subject test" gains one topic-scoped reading for
+`education-equity-programs`: a separate operative part makes a bill multi-subject only when it acts outside
+K-12 schools. It applies to the Season 3 revision 2 of that topic only (CA_0314). No label or gold row on this
+topic exists under any version, so no recorded result changes. Decision record:
+`.planning/research/s3-pilot-equity-programs/stage3/results.md` (rulings R1–R5; workspace root).
+**Clarified 2026-10-21 (still 0.6 — a topic-scoped reading, no new variable or value; rulings by Chris
+Andrews 2026-10-21, D3, C-Q4, DC1):** `voting-rights` gains three topic-scoped readings of its rung 3/4 line.
+D3: a sworn-statement path open to any voter with a reasonable impediment keeps a law at rung 3 even when it
+also states a cure; sworn statements only for named exemptions leave it at rung 4. C-Q4: on the mail branch, a
+statement limited to people never issued any listed ID number is a named exemption. DC1: a mail-ballot
+request-ID rule whose failure still lets the ballot be sent and counted on documents that are not the requested
+ID does not meet rung 4. They apply to the Season 3 revision 4 of that topic only (CA_0318). The [real]
+`voting-rights` examples below (Kennedy / SAVE Act under V1 and V6, Durazo / SB 1174 under V2) were coded
+against the Season 1 ladder; under Season 2 and this revision a proof-of-citizenship law is rung 5. Decision
+record: `.planning/research/s3-prep-voting-rights/stage3/results.md` and `stage4/` (workspace root).
+**Clarified 2026-10-22 (still 0.6 — no new variable or value; ruling by Chris Andrews 2026-10-22, from the
+season-topic-prep fixes, finding #50):** D3 is no longer topic-scoped. Wherever a Season annex carries the
+furthest-act line, it applies only among acts that bind: a record that also states an escape open to **any**
+person sits on the escape's rung, even when it states a stricter act such as a cure (V4.2 "An escape open to
+everyone"). C-Q4 and DC1 stay topic-scoped to `voting-rights`. Three annexes carry the furthest-act line (the
+Season 3 `education-library-books`, `education-equity-programs` and `voting-rights`); only `voting-rights` has a
+rung that turns on an escape, and D3 already applied there, so no recorded label changes.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -386,6 +409,18 @@ A vote does not mean support for every clause of a bill.
   - [real] **CA AB 1955 (2024) → single-subject.** Ed Code 217 (resources for parents of LGBTQ
     pupils), 220.1 (no retaliation against staff) and 220.3/220.5 (disclosure) all fall inside
     `education-gender-identity`. No part is evidence for another topic.
+  - **Topic-scoped reading: `education-equity-programs` (ruling 2026-10-19, Chris Andrews; Season 3
+    revision 2).** For this topic only, one operative part that is evidence for both this topic and a
+    broader topic (`civil-rights`) does not make the bill multi-subject. A separate operative part makes it
+    multi-subject **only when it acts outside K-12 schools**: colleges' or state agencies' own operations,
+    or other employers. Parts of a school equity instrument on racial-harassment reporting, hiring or
+    Title VI compliance, and preparation or licensure standards for K-12 staff, stay inside the topic.
+    Whether this reading extends to other topics is not ruled; everywhere else, apply the test as written.
+    - [real] **WA ESSB 5044 (2021) → single-subject.** Beside the duty on districts to train staff in
+      equity, it sets standards for the preparation of K-12 educators. Both act on K-12 schools, so the
+      bill stays inside `education-equity-programs`.
+    - A ban on equity offices that also covers public colleges or state agencies → **multi-subject**: the
+      college or agency part is `civil-rights` evidence and acts outside K-12 schools.
 - **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
   what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
   on the bill's own text:
@@ -449,6 +484,18 @@ A vote does not mean support for every clause of a bill.
     31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
     energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
   - The same test applies on every ladder: match the rung's object, not only its verb.
+- **An escape open to everyone (ruling 2026-10-22; generalises `voting-rights` D3).** Where a Season annex
+  carries the furthest-act line (a record that states the acts of two neighbouring rungs sits on its furthest
+  act), that line applies only among acts that **bind**. If the record also states an escape that lets **any**
+  person avoid the requirement (for any reason, or for a reasonable impediment), the record sits on the
+  escape's rung, even when it also states a stricter act such as a cure. An escape limited to **named
+  exemptions** is not an escape here: the stricter act decides. The escape must be stated in the text, like any
+  clause (silence is not an escape).
+  - Photo ID at the polls, **or** a sworn statement of a reasonable impediment that lets the ballot count,
+    **and** a provisional ballot cured by showing ID within six days → the sworn-statement rung, not the
+    cure rung (`voting-rights` D3).
+  - The same law with the sworn statement limited to voters with a religious objection or a disaster → the
+    stricter rung.
 - **Joint evidence (0.5; E2, Season 3 rulebook, ruled 2026-10-08).** Two or more sources may together
   seat a compound rung that no one of them meets in full. All six conditions must hold:
   1. Each passage is the person's own act or own words and passes V1, V2, V3 and V5 as for a chair. A

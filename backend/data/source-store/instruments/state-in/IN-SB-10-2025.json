@@ -1,0 +1,39 @@
+{
+  "id": "IN-SB-10-2025",
+  "scope": "state:in",
+  "title": "SB 10 (2025) (2025) — Bars student IDs from public colleges as polling-place ID (per news); tracker abstract: proof of identification may not include a document issued by an educational institution",
+  "urls": [
+    "https://www.wboi.org/2025-04-01/house-republicans-vote-to-ban-use-of-college-student-ids-at-polling-places"
+  ],
+  "version": "other",
+  "operative_text": "Student IDs from Indiana public colleges not valid voter ID: would ban the use of student IDs from Indiana public colleges and universities to prove someone's identity\nOther provisions: [not examined; iga.in.gov unreachable]",
+  "single_subject": [],
+  "higher_law_duty": "not checked",
+  "votes": [
+    {
+      "date": "2025-02 (early Feb)",
+      "body": "IN Senate",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 11,
+      "note": "member names not captured; date as printed: 2025-02 (early Feb)",
+      "members": []
+    },
+    {
+      "date": "2025-04-01",
+      "body": "IN House",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 66,
+      "no": 25,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

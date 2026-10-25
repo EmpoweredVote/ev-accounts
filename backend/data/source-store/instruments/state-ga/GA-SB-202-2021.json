@@ -1,0 +1,43 @@
+{
+  "id": "GA-SB-202-2021",
+  "scope": "state:ga",
+  "title": "SB 202 (2021) Election Integrity Act of 2021 (2021-2022) — omnibus election law including ID number or ID copy on absentee requests",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/60396 (unreadable JS; unconfirmed it is SB 202)",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/201424 (compressed PDF, unreadable by tool)",
+    "https://en.wikipedia.org/wiki/Election_Integrity_Act_of_2021"
+  ],
+  "version": "enrolled",
+  "operative_text": "Absentee ID (secondary: Wikipedia): Requires absentee voters to supply a driver's license or state ID number, the last four digits of their Social Security number, or a photocopy of an accepted ID when requesting a ballot.\nSignature match replaced: Replaces signature-match verification of absentee ballots by poll workers.\nDrop boxes: Codifies permanent drop boxes for general elections and requires at least one per county.\nAbsentee request window: Moves the request deadline from four days to eleven days before Election Day.\nUnsolicited absentee applications: Bars state and local officials from sending unsolicited absentee ballot request forms to registered voters.\nEarly voting: Mandates three weeks of in-person early voting, including two Saturdays and optionally two Sundays.\nState control of county boards and State Election Board composition: Lets the State Board of Elections replace a county board with a state-chosen administrator if the State Board deems the county board to be performing poorly.\nRunoffs and special elections: Shortens the Senate runoff period from nine weeks to four weeks.\nLong lines: Requires counties with precincts of more than 2,000 voters that had waits over an hour in 2020 to add a voting station or add staff or equipment.\nFood and water: Makes it illegal to give free food or water to voters waiting in line within 150 feet of polling locations or 25 feet of voting lines\nWrong-precinct provisional ballots: Eliminates the option of casting a provisional ballot at the wrong polling location, requiring voters to go to the correct precinct.\nThird-party funding: Prohibits outside, third-party funding of elections.\nOther (litigation coverage): A general ban on photographing voted ballots (preliminarily enjoined in August 2021).",
+  "single_subject": [],
+  "higher_law_duty": "not obtained",
+  "votes": [
+    {
+      "date": "2021-03-25",
+      "body": "GA Senate",
+      "motion": "agree to House substitute (final)",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 20,
+      "body_size": 56,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2021-03-25",
+      "body": "GA House",
+      "motion": "passage of House substitute",
+      "kind": "roll-call",
+      "yes": 100,
+      "no": 75,
+      "body_size": 180,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "C (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

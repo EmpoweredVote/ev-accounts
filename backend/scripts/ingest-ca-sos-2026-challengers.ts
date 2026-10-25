@@ -15,6 +15,25 @@
  *   4. Idempotent — skips by name collision within the same race.
  *   5. Updates incumbents not seeking re-election to candidate_status='withdrawn'.
  *
+ * 🔴 IF YOU GIVE A CANDIDATE A PHOTOGRAPH, MIRROR IT. DO NOT STORE THE URL YOU SCRAPED.
+ *   race_candidates.photo_url is what election and ballot pages render — electionService
+ *   selects COALESCE(rc.photo_url, pi.url), so it outranks the profile column. Writing the
+ *   source URL there leaves us serving someone else's file from someone else's host, and
+ *   CC_0260 blanked three published photographs that had gone 404, 401 and 403. Each was
+ *   live and correct when imported; no migration broke them, the web did.
+ *
+ *   After importing, run:
+ *     npm run mirror:candidate-photos --prefix backend -- --state CA          # dry run
+ *     npm run mirror:candidate-photos --prefix backend -- --state CA --apply
+ *
+ *   It works for a candidate with NO politician_id — which every row this script creates is,
+ *   and the reason the six CA photographs CC_0261 mirrored sat off-site for months. It also
+ *   REFUSES a frame with no face, which the Utah script it generalises did not, and that is
+ *   how three campaign yard signs became published headshots (CC_0255).
+ *
+ *   The nightly `headshot faces` CI job sweeps for off-site images, so a new hotlink is found
+ *   within a day — but it is found AFTER it has been published. Mirror at import.
+ *
  * DATA PROVENANCE — READ BEFORE ADDING CANDIDATES:
  *   Only add candidates to this script from a citable, human-verified source.
  *   Do NOT add candidates based on inference, prior election history, or speculation.

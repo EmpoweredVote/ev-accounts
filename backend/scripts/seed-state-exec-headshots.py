@@ -8,8 +8,16 @@ re-run only fills remaining gaps.
 
 Pipeline (per migration 271 / _tmp-va-execs-headshots.py + feedback_headshot_resize_no_distort):
   Wikipedia pageimages API (lead portrait) -> license via imageinfo extmetadata (FREE licenses only) ->
-  download -> RGB -> CROP 4:5 first (never stretch) -> RESIZE 600x750 LANCZOS q90 ->
+  download -> EXIF-oriented RGB -> MUST CONTAIN A FACE -> CROP 4:5 first (never stretch) ->
+  RESIZE 600x750 LANCZOS q90 ->
   upload to politician_photos/{uuid}-headshot.jpg (x-upsert) -> INSERT politician_images WHERE NOT EXISTS.
+
+Face guard (2026-10-19): `prop=pageimages` returns the ARTICLE's lead image, not necessarily a
+portrait. Six state executives shipped with their office SEAL and two with an election-results MAP,
+because nothing asked whether the frame held a face; a ninth shipped rotated 90 degrees because
+PIL does not apply EXIF orientation unless asked. Both are now handled in scripts/lib/headshot_image.py
+(`open_portrait` + `assert_portrait`) - a frame with no face is an honest-skip, and a sideways one
+is turned upright rather than rejected. Needs opencv-python; see scripts/requirements.txt.
 
 Wrong-person guard (T-141-11): the resolved Wikipedia page's wikidata description MUST contain a political
 keyword (or the officeholder's state), else honest-skip. Non-free/fair-use images: honest-skip (T-141-12).
@@ -22,6 +30,9 @@ import os, io, sys, json, time, urllib.parse
 import requests
 import psycopg2
 from PIL import Image
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib'))
+from headshot_image import open_portrait, assert_portrait, PortraitRejected  # noqa: E402
 
 ENV = {}
 with open(os.path.join(os.path.dirname(__file__), '..', '.env')) as f:
@@ -169,10 +180,10 @@ def run_manual(manual_path):
         res = {'external_id': ext, 'full_name': name, 'state': '?', 'uuid': uuid}
         try:
             raw = open(url, 'rb').read() if not url.startswith('http') else download(url)
-            img = Image.open(io.BytesIO(raw))
-            if img.mode != 'RGB': img = img.convert('RGB')
+            img = open_portrait(raw)                      # applies EXIF orientation
             if img.width < 120 or img.height < 120:
                 raise Exception(f'too-small:{img.width}x{img.height}')
+            img = assert_portrait(img, name)              # refuse a seal/logo/map/blank frame
             img = crop_to_4_5(img).resize(TARGET_SIZE, Image.Resampling.LANCZOS)
             buf = io.BytesIO(); img.save(buf, format='JPEG', quality=JPEG_QUALITY, optimize=True)
             cdn = upload(uuid, buf.getvalue())
@@ -214,16 +225,30 @@ def main():
     conn = psycopg2.connect(DATABASE_URL); conn.autocommit = False
     cur = conn.cursor()
     cur.execute("""
-        SELECT p.id, p.external_id, p.full_name, d.state, o.role_canonical
-        FROM essentials.politicians p
-        JOIN essentials.offices o ON o.politician_id = p.id
-        JOIN essentials.districts d ON d.id = o.district_id
-        WHERE d.district_type='STATE_EXEC'
-          AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
-          AND ((p.external_id <= -100001 AND p.external_id NOT BETWEEN -4900009 AND -4900001)
-               OR p.external_id IN (642977, 688298))
-          AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id)
-        ORDER BY d.state, p.external_id;
+        -- Occupancy comes from office_terms via office_current_holder. This used to join
+        -- offices directly on the officeholder column that ADR 0002 phase 5 (migration 1463)
+        -- DROPPED, so it has been a RUNTIME ERROR ever since -- the script crashed on its
+        -- first query. Nothing surfaced it because the occupancy guard is branch-scoped and
+        -- no branch touched this file again until 2026-10-19.
+        -- DISTINCT ON (p.id) because this join is POLITICIAN-ROOTED and can fan out: the
+        -- exclusion constraint on office_terms forbids two people on one office but cannot
+        -- see one person on two. Measured 2026-10-19: 209 execs resolve, 0 duplicates today
+        -- -- the guard is for the day that stops being true.
+        SELECT * FROM (
+          SELECT DISTINCT ON (p.id)
+                 p.id, p.external_id, p.full_name, d.state, o.role_canonical
+          FROM essentials.politicians p
+          JOIN essentials.office_current_holder och ON och.politician_id = p.id
+          JOIN essentials.offices o ON o.id = och.office_id
+          JOIN essentials.districts d ON d.id = o.district_id
+          WHERE d.district_type='STATE_EXEC'
+            AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+            AND ((p.external_id <= -100001 AND p.external_id NOT BETWEEN -4900009 AND -4900001)
+                 OR p.external_id IN (642977, 688298))
+            AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id)
+          ORDER BY p.id, d.state, o.role_canonical
+        ) t
+        ORDER BY t.state, t.external_id;
     """)
     rows = cur.fetchall()
     STATE_NAME = {'AK':'Alaska','AL':'Alabama','AZ':'Arizona','AR':'Arkansas','CO':'Colorado','CT':'Connecticut','DE':'Delaware','FL':'Florida','GA':'Georgia','HI':'Hawaii','IA':'Iowa','ID':'Idaho','IL':'Illinois','KS':'Kansas','KY':'Kentucky','LA':'Louisiana','MI':'Michigan','MN':'Minnesota','MO':'Missouri','MS':'Mississippi','MT':'Montana','NC':'North Carolina','ND':'North Dakota','NE':'Nebraska','NH':'New Hampshire','NJ':'New Jersey','NM':'New Mexico','NV':'Nevada','NY':'New York','OH':'Ohio','OK':'Oklahoma','PA':'Pennsylvania','RI':'Rhode Island','SC':'South Carolina','SD':'South Dakota','TN':'Tennessee','VT':'Vermont','WA':'Washington','WI':'Wisconsin','WV':'West Virginia','WY':'Wyoming','IN':'Indiana'}
@@ -241,11 +266,15 @@ def main():
             img = None; used = None; last_err = None
             for u in cands:
                 try:
-                    cand = Image.open(io.BytesIO(download(u)))
-                    if cand.mode != 'RGB': cand = cand.convert('RGB')
+                    cand = open_portrait(download(u))     # applies EXIF orientation
                     if cand.width < 200 or cand.height < 200:
                         last_err = f'too-small:{cand.width}x{cand.height}'; continue
+                    # pageimages returns the ARTICLE's lead image, which for several officials is
+                    # the office seal or an election-results map. Refuse anything with no face.
+                    cand = assert_portrait(cand, u.split('/')[-1])
                     img = cand; used = u; break
+                except PortraitRejected as pe:
+                    last_err = f'not-a-portrait:{str(pe)[:60]}'; continue
                 except Exception as ie:
                     last_err = f'open:{str(ie)[:40]}'; continue
             if img is None:

@@ -1,0 +1,132 @@
+{
+  "id": "CO-COLORADO-SPRINGS-ORD-26-08-2026",
+  "scope": "place:0816000",
+  "title": "An Ordinance Amending Section 110 (Camping on Public Property Prohibited) ... Pertaining to Camping Regulation",
+  "urls": [
+    "https://legistar2.granicus.com/coloradosprings/meetings/2026/2/2771_M_City_Council_26-02-24_Meeting_Minutes.pdf",
+    "https://legistar2.granicus.com/coloradosprings/meetings/2026/3/2773_M_City_Council_26-03-10_Meeting_Minutes.pdf",
+    "https://legistar2.granicus.com/coloradosprings/attachments/0933b54a-2d70-457d-944c-f5ca68763e40.pdf",
+    "https://legistar2.granicus.com/coloradosprings/meetings/2025/11/2658_M_City_Council_25-11-10_Meeting_Minutes.pdf",
+    "https://legistar2.granicus.com/coloradosprings/meetings/2026/2/2769_M_City_Council_26-02-10_Meeting_Minutes.pdf"
+  ],
+  "version": "other",
+  "operative_text": "It is unlawful for any person to camp on any public property. It is unlawful for any person to camp in a motor vehicle on any public property.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-24",
+      "body": "Colorado Springs City Council",
+      "motion": "finally passed (Pass)",
+      "kind": "action-item",
+      "yes": 7,
+      "no": 2,
+      "body_size": 9,
+      "members": [
+        {
+          "name": "Brandy Williams",
+          "politician_id": "3a5875b4-4eeb-4c1f-b69c-1446f7955b43",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Risley",
+          "politician_id": "1159bf27-4a47-4b88-958e-847871403a81",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Donelson",
+          "politician_id": "234fefcf-6ae6-43eb-892b-730e9469baa4",
+          "vote": "yea"
+        },
+        {
+          "name": "David Leinweber",
+          "politician_id": "e0e02e79-583b-4db8-86a0-6674faa0f090",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Gold",
+          "politician_id": "543aaf23-3ae2-4853-be54-a17ffc3d2265",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynette Crow-Iverson",
+          "politician_id": "ac91cacc-2bd7-496c-894f-47d9e9d31fa4",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Henjum",
+          "politician_id": "1c7a1685-37ce-4b2f-8ce3-44796d171c0c",
+          "vote": "nay"
+        },
+        {
+          "name": "Roland Rainey Jr.",
+          "politician_id": "faf31068-b1cf-4360-b78e-466b521bffca",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "body": "Colorado Springs City Council",
+      "motion": "finally passed (Pass)",
+      "kind": "action-item",
+      "yes": 7,
+      "no": 2,
+      "body_size": 9,
+      "members": [
+        {
+          "name": "Brandy Williams",
+          "politician_id": "3a5875b4-4eeb-4c1f-b69c-1446f7955b43",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Risley",
+          "politician_id": "1159bf27-4a47-4b88-958e-847871403a81",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Donelson",
+          "politician_id": "234fefcf-6ae6-43eb-892b-730e9469baa4",
+          "vote": "yea"
+        },
+        {
+          "name": "David Leinweber",
+          "politician_id": "e0e02e79-583b-4db8-86a0-6674faa0f090",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Gold",
+          "politician_id": "543aaf23-3ae2-4853-be54-a17ffc3d2265",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynette Crow-Iverson",
+          "politician_id": "ac91cacc-2bd7-496c-894f-47d9e9d31fa4",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Henjum",
+          "politician_id": "1c7a1685-37ce-4b2f-8ce3-44796d171c0c",
+          "vote": "nay"
+        },
+        {
+          "name": "Roland Rainey Jr.",
+          "politician_id": "faf31068-b1cf-4360-b78e-466b521bffca",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "PA-HB-2028-2026",
+  "scope": "state:pa",
+  "title": "Permitted use of public space; Ending the Criminalization of Homelessness (Smith-Wade-El)",
+  "urls": [
+    "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=60&rollcallid=2002&sessYr=2025&sessInd=0",
+    "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=60&rollcallid=2001&sessYr=2025&sessInd=0"
+  ],
+  "version": "other",
+  "operative_text": "An individual experiencing homelessness may use public spaces for life-sustaining activities if the activities do not obstruct a public walkway or public street in a manner that pedestrians or vehicles cannot pass",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-04-27",
+      "body": "PA House",
+      "motion": "Report bill as amended, House Judiciary Committee",
+      "kind": "roll-call",
+      "yes": 14,
+      "no": 12,
+      "members": [
+        {
+          "name": "Andrew Kuzma",
+          "politician_id": "c74a3a93-20e3-42cf-b522-6134c667347e",
+          "vote": "nay"
+        },
+        {
+          "name": "Emily Kinkead",
+          "politician_id": "46f9ef45-e45d-405d-b8bb-2b68b33dbb15",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph C. Hohenstein",
+          "politician_id": "7de7f516-ae01-4859-9187-9916da9a8804",
+          "vote": "yea"
+        },
+        {
+          "name": "Liz Hanbidge",
+          "politician_id": "11f2f390-208a-4338-bf28-091c394254f1",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Borowicz",
+          "politician_id": "7458604f-683a-414c-91bc-b9da7ded2260",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Briggs",
+          "politician_id": "496b24cc-47b5-4c7c-bf20-6316a765d49f",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

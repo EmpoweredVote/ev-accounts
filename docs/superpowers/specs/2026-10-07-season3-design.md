@@ -35,7 +35,7 @@ your rung" follow-up (need Empowered accounts, about a year out); On the Record 
 | **L7** | **"Or" is allowed only when both alternatives sit at the same point on the axis** — two ways of doing the same kind of act ("public money **or** guaranteed prices"). "Ban camping **or** fund shelters" fails: two positions. | Keeps "or" from merging two stances into one chair. |
 | **L8** | **Level-neutral verbs.** "Your government requires …", not "Congress" / "national". One ladder serves every level that is asked the topic. | minimum-wage rung 3 says "national" and cannot be met by a state record. |
 | **L9** | **The rung's object is what records act on.** Name the object laws actually regulate (emissions **or** energy sources; developers **or** deployers). | H17: emissions limits matched no climate rung; AI liability bills bind deployers. |
-| **L10** | **Five rungs, each a distinct stance.** No rung defined as "more of" its neighbour. If a topic cannot reach five kinds of act along one axis, propose fewer rungs for that topic as an exception (needs a separate ruling: voter compass shape). | Nested rungs cannot be separated by records. |
+| **L10** | **Five rungs, each a distinct stance.** No rung defined as "more of" its neighbour. ~~If a topic cannot reach five kinds of act along one axis, propose fewer rungs for that topic as an exception (needs a separate ruling: voter compass shape).~~ **Ruled 2026-10-08: five always in Season 3, no exception** (ladder-evaluation spec, "Rulebook rulings"). | Nested rungs cannot be separated by records. |
 
 ### 2.1 Worked examples (drafts for illustration — not proposals yet; each goes through §4)
 
@@ -69,7 +69,9 @@ Measured rows it would seat: Montenegro, Thomson (→ 4), Pierce, Taylor (→ 2 
 ### 3.1 E1 — Sponsorship
 - **Prime author** of a **single-subject** bill whose **operative text** (as filed, or the version they acted on)
   meets every clause of one rung → seats the chair, tier **single-source**.
-- **Co-sponsor / co-author** → seats only with a second source: their vote on the final text, or their own words.
+- ~~**Co-sponsor / co-author** → seats only with a second source: their vote on the final text, or their own words.~~
+  **Superseded 2026-10-08** (ruling, `2026-10-07-season3-ladder-evaluation.md` "Evidence rules", E1 "No
+  tightening"; codebook V3): a co-sponsorship seats a chair by itself.
 - **Every member who voted Yea** on that bill's final passage → seated by the same instrument (whole-body pass,
   calibration A4, after the cohort check). A Nay seats nothing (V4.1).
 - Guards that stay: vehicle bills and amended-out-of-shape bills (C37; HEA 1296 2022), near-unanimous votes,
@@ -137,6 +139,9 @@ annex exposure cut-off of 2026-10-02).
    civil-rights, healthcare, ai-regulation, minimum-wage, school-vouchers, taxes, tariffs, ukraine-support.
 5. Clarifying-only changes where a ladder already passes T1 (gun-policy, same-sex-marriage, trans-athletes,
    voting-rights): keep seats, no re-audit (ruling 2026-08-28).
+   ⚠ **Stale for voting-rights** (measured 2026-10-20): it seated 6 of 100 researched rows in Season 2, so it did
+   not pass T1. It went through the full season-topic-prep Stages 0a–4 (revision 4, CA_0318). Measure a topic's
+   seat rate before treating it as clarifying-only.
 
 ## 6. Pre-staging: research Season 3 in the draft season, then open it (*Ruling* on 6.3; Cantrell review)
 

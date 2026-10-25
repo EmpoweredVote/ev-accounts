@@ -1,0 +1,50 @@
+{
+  "id": "NC-H-589-2013",
+  "scope": "state:nc",
+  "title": "H 589 (SL 2013-381) (2013-2014) — VIVA/Election Reform: omnibus; photo ID plus early-voting cuts and other election changes (one line only)",
+  "urls": [
+    "https://www.ncleg.gov/BillLookUp/2013/H589",
+    "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+    "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/882"
+  ],
+  "version": "enrolled",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "not examined",
+  "votes": [
+    {
+      "date": "2013-07-25",
+      "body": "NC House",
+      "motion": "concur in Senate committee substitute",
+      "kind": "roll-call",
+      "yes": 73,
+      "no": 41,
+      "body_size": 120,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2013-07-25",
+      "body": "NC Senate",
+      "motion": "third reading",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 14,
+      "body_size": 50,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "C (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}
