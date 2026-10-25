@@ -1,0 +1,1900 @@
+[
+ {
+  "id": 12,
+  "externalId": "q012",
+  "text": "How many years is one term for a U.S. Senator?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "6 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 499,
+  "externalId": "bli-106",
+  "text": "What time do polls close on Election Day in Indiana?",
+  "options": [
+   "4:00 PM local time",
+   "5:00 PM local time",
+   "6:00 PM local time",
+   "7:00 PM local time"
+  ],
+  "answer": "6:00 PM local time",
+  "reason": "cannot render a sibling mark: a clock time"
+ },
+ {
+  "id": 20,
+  "externalId": "q020",
+  "text": "Which amendment guarantees the right to a speedy and public trial?",
+  "options": [
+   "5th Amendment",
+   "6th Amendment",
+   "7th Amendment",
+   "8th Amendment"
+  ],
+  "answer": "6th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 356,
+  "externalId": "ins-036",
+  "text": "What is the term length for Indiana Court of Appeals judges?",
+  "options": [
+   "6 years",
+   "8 years",
+   "10 years",
+   "12 years"
+  ],
+  "answer": "10 years",
+  "reason": "term of office: the plausible lengths are institutionally fixed"
+ },
+ {
+  "id": 63,
+  "externalId": "q063",
+  "text": "Which amendment deals with presidential disability and succession?",
+  "options": [
+   "20th Amendment",
+   "22nd Amendment",
+   "25th Amendment",
+   "23rd Amendment"
+  ],
+  "answer": "25th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 7210,
+  "externalId": "wdc-006",
+  "text": "What term length do members of the D.C. Council serve?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 125,
+  "externalId": "bli-005",
+  "text": "How long is the term for Bloomington City Council members?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9888,
+  "externalId": "sprmo-009",
+  "text": "Springfield, Missouri city council members serve terms of how many years?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 373,
+  "externalId": "cas-003",
+  "text": "What is the term length for a California State Assembly member?",
+  "options": [
+   "1 year",
+   "4 years",
+   "2 years",
+   "6 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 374,
+  "externalId": "cas-004",
+  "text": "What is the term length for a California State Senator?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16109,
+  "externalId": "cam-165",
+  "text": "Cambridge is split between which two Massachusetts congressional districts?",
+  "options": [
+   "The 1st and the 3rd",
+   "The 4th and the 6th",
+   "The 5th and the 7th",
+   "The 2nd and the 8th"
+  ],
+  "answer": "The 5th and the 7th",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9461,
+  "externalId": "alxla-003",
+  "text": "How many of Alexandria's city council members represent specific geographic districts?",
+  "options": [
+   "3",
+   "4",
+   "5",
+   "7"
+  ],
+  "answer": "5",
+  "reason": "no step fits the domain (answer 5, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 16120,
+  "externalId": "ica-207",
+  "text": "Indio sits in which California congressional district?",
+  "options": [
+   "The 25th",
+   "The 36th",
+   "The 41st",
+   "The 11th"
+  ],
+  "answer": "The 25th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 4408,
+  "externalId": "nor-108",
+  "text": "How many councillors does each Norwich ward elect?",
+  "options": [
+   "1 councillor",
+   "2 councillors",
+   "4 councillors",
+   "3 councillors"
+  ],
+  "answer": "3 councillors",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 4411,
+  "externalId": "nor-111",
+  "text": "How many parliamentary constituencies cover the city of Norwich?",
+  "options": [
+   "1 constituency",
+   "4 constituencies",
+   "3 constituencies",
+   "2 constituencies"
+  ],
+  "answer": "2 constituencies",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 2,
+  "externalId": "q002",
+  "text": "How many branches are there in the U.S. federal government?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "answer": "3",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5958,
+  "externalId": "por-009",
+  "text": "Which district does Councilor Candace Avalos represent?",
+  "options": [
+   "District 1",
+   "District 2",
+   "District 3",
+   "District 4"
+  ],
+  "answer": "District 1",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5961,
+  "externalId": "por-012",
+  "text": "Which district includes the Portland Downtown neighborhood?",
+  "options": [
+   "District 1",
+   "District 2",
+   "District 3",
+   "District 4"
+  ],
+  "answer": "District 4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5976,
+  "externalId": "por-027",
+  "text": "What ballot measure approved Portland's transition from commission to mayor-council government?",
+  "options": [
+   "Measure 26-228",
+   "Measure 26-218",
+   "Measure 26-238",
+   "Measure 26-208"
+  ],
+  "answer": "Measure 26-228",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 16138,
+  "externalId": "pla-162",
+  "text": "Plano makes up much of which U.S. congressional district?",
+  "options": [
+   "Texas's 3rd",
+   "Texas's 5th",
+   "Texas's 24th",
+   "Texas's 32nd"
+  ],
+  "answer": "Texas's 3rd",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 16140,
+  "externalId": "pla-164",
+  "text": "On a Plano ballot the mayor is not listed as a separate office but as one of the numbered council places. Which place is designated mayor?",
+  "options": [
+   "Place 1",
+   "Place 6",
+   "Place 7",
+   "Place 8"
+  ],
+  "answer": "Place 6",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5300,
+  "externalId": "mas-016",
+  "text": "How long is the term for the Governor of Massachusetts?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5340,
+  "externalId": "mas-057",
+  "text": "How long is the term for a Massachusetts state representative?",
+  "options": [
+   "1 year",
+   "3 years",
+   "2 years",
+   "4 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 6505,
+  "externalId": "por-176",
+  "text": "How many councilors represent each of Portland's four geographic districts?",
+  "options": [
+   "2 councilors",
+   "3 councilors",
+   "4 councilors",
+   "5 councilors"
+  ],
+  "answer": "3 councilors",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 221,
+  "externalId": "lac-001",
+  "text": "How many members serve on the Los Angeles County Board of Supervisors?",
+  "options": [
+   "3 members",
+   "5 members",
+   "7 members",
+   "9 members"
+  ],
+  "answer": "5 members",
+  "reason": "no step fits the domain (answer 5, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 5747,
+  "externalId": "tex-006",
+  "text": "What is the term length for a Texas House of Representatives member?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16169,
+  "externalId": "phxaz-102",
+  "text": "Anna Hernandez sits on the Phoenix City Council. Which district does she represent?",
+  "options": [
+   "District 5",
+   "District 7",
+   "District 2",
+   "District 8"
+  ],
+  "answer": "District 7",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16167,
+  "externalId": "phxaz-100",
+  "text": "Laura Pastor sits on the Phoenix City Council. Which district does she represent?",
+  "options": [
+   "District 1",
+   "District 4",
+   "District 5",
+   "District 7"
+  ],
+  "answer": "District 4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 7218,
+  "externalId": "wdc-014",
+  "text": "What term length do Advisory Neighborhood Commissioners serve?",
+  "options": [
+   "1 year",
+   "4 years",
+   "2 years",
+   "3 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10976,
+  "externalId": "penns-025",
+  "text": "What number state was Pennsylvania when it ratified the U.S. Constitution?",
+  "options": [
+   "1st",
+   "3rd",
+   "2nd",
+   "5th"
+  ],
+  "answer": "2nd",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 13583,
+  "externalId": "wisco-032",
+  "text": "Wisconsin was admitted to the Union as which state in order?",
+  "options": [
+   "The 33rd",
+   "The 30th",
+   "The 28th",
+   "The 25th"
+  ],
+  "answer": "The 30th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 5497,
+  "externalId": "pla-006",
+  "text": "How long are the terms for Plano City Council members?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16181,
+  "externalId": "tex-214",
+  "text": "Texas numbers its legislatures rather than naming them by year. Which one convened in January 2025?",
+  "options": [
+   "The 89th",
+   "The 74th",
+   "The 101st",
+   "The 118th"
+  ],
+  "answer": "The 89th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 5765,
+  "externalId": "tex-025",
+  "text": "How many commissioners serve on the Texas Railroad Commission?",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "9"
+  ],
+  "answer": "3",
+  "reason": "no step fits the domain (answer 3, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 10712,
+  "externalId": "wmnla-082",
+  "text": "West Monroe is not wholly contained in one U.S. House district. Which two congressional districts divide the city?",
+  "options": [
+   "The 4th and the 5th",
+   "The 1st and the 4th",
+   "The 5th and the 6th",
+   "The 2nd and the 5th"
+  ],
+  "answer": "The 4th and the 5th",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10794,
+  "externalId": "nysts-067",
+  "text": "If New York State were an independent country, approximately where would it rank among the world's largest economies?",
+  "options": [
+   "5th",
+   "8th",
+   "15th",
+   "20th"
+  ],
+  "answer": "8th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 8666,
+  "externalId": "mis-174",
+  "text": "What percentage of Mississippi's land area is forested?",
+  "options": [
+   "25-49%",
+   "50-74%",
+   "75-89%",
+   "90-100%"
+  ],
+  "answer": "50-74%",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 16530,
+  "externalId": "smo-530",
+  "text": "Which U.S. Congressional district represents Santa Monica?",
+  "options": [
+   "33rd",
+   "34th",
+   "35th",
+   "36th"
+  ],
+  "answer": "36th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 9473,
+  "externalId": "alxla-015",
+  "text": "Alexandria is not wholly contained in one U.S. House district. Which two congressional districts divide the city?",
+  "options": [
+   "The 4th and the 6th",
+   "The 4th and the 5th",
+   "The 5th and the 6th",
+   "The 3rd and the 5th"
+  ],
+  "answer": "The 4th and the 6th",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 11671,
+  "externalId": "bniwa-009",
+  "text": "What Washington State legislative district includes Bainbridge Island?",
+  "options": [
+   "6th Legislative District",
+   "35th Legislative District",
+   "26th Legislative District",
+   "23rd Legislative District"
+  ],
+  "answer": "23rd Legislative District",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 11801,
+  "externalId": "washs-044",
+  "text": "By area, Washington State ranks how large among all 50 U.S. states?",
+  "options": [
+   "18th",
+   "12th",
+   "24th",
+   "31st"
+  ],
+  "answer": "18th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 9550,
+  "externalId": "alxla-092",
+  "text": "Lizzie Felter represents which district on the Alexandria City Council?",
+  "options": [
+   "District 1",
+   "District 2",
+   "District 3",
+   "District 4"
+  ],
+  "answer": "District 4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 11062,
+  "externalId": "phipa-016",
+  "text": "Mark Squilla represents which district on the Philadelphia City Council?",
+  "options": [
+   "District 1",
+   "District 3",
+   "District 5",
+   "District 8"
+  ],
+  "answer": "District 1",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10343,
+  "externalId": "tucaz-089",
+  "text": "Nikki Lee represents which ward on the Tucson City Council?",
+  "options": [
+   "Ward 2",
+   "Ward 3",
+   "Ward 4",
+   "Ward 6"
+  ],
+  "answer": "Ward 4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10508,
+  "externalId": "ashnc-067",
+  "text": "Approximately how many breweries and taprooms does Asheville have?",
+  "options": [
+   "10-29",
+   "30-59",
+   "60-99",
+   "100-199"
+  ],
+  "answer": "60-99",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 324,
+  "externalId": "ins-004",
+  "text": "What is the term length for an Indiana State Representative?",
+  "options": [
+   "1 year",
+   "4 years",
+   "2 years",
+   "6 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16621,
+  "externalId": "wdc-427",
+  "text": "How many electoral votes does the District of Columbia have in presidential elections?",
+  "options": [
+   "0 electoral votes",
+   "3 electoral votes",
+   "2 electoral votes",
+   "5 electoral votes"
+  ],
+  "answer": "3 electoral votes",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 331,
+  "externalId": "ins-011",
+  "text": "How many consecutive General Assembly sessions must approve a constitutional amendment before it goes to voters?",
+  "options": [
+   "1 session",
+   "4 sessions",
+   "2 sessions",
+   "3 sessions"
+  ],
+  "answer": "2 sessions",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 349,
+  "externalId": "ins-029",
+  "text": "How many justices serve on the Indiana Supreme Court?",
+  "options": [
+   "5 justices",
+   "7 justices",
+   "9 justices",
+   "11 justices"
+  ],
+  "answer": "5 justices",
+  "reason": "no step fits the domain (answer 5, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 5101,
+  "externalId": "cam-061",
+  "text": "What time do polls close on Election Day in Cambridge?",
+  "options": [
+   "5:00 p.m.",
+   "6:00 p.m.",
+   "7:00 p.m.",
+   "8:00 p.m."
+  ],
+  "answer": "8:00 p.m.",
+  "reason": "cannot render a sibling mark: a clock time"
+ },
+ {
+  "id": 11139,
+  "externalId": "phipa-093",
+  "text": "How does Philadelphia's 30th Street Station rank among Amtrak stations nationally by ridership?",
+  "options": [
+   "1st busiest",
+   "2nd busiest",
+   "3rd busiest",
+   "5th busiest"
+  ],
+  "answer": "3rd busiest",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10408,
+  "externalId": "phxaz-058",
+  "text": "Phoenix ranks where among U.S. cities by population?",
+  "options": [
+   "5th largest",
+   "6th largest",
+   "4th largest",
+   "3rd largest"
+  ],
+  "answer": "5th largest",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 11061,
+  "externalId": "phipa-015",
+  "text": "How does Philadelphia rank among U.S. cities by population?",
+  "options": [
+   "3rd largest",
+   "5th largest",
+   "8th largest",
+   "6th largest"
+  ],
+  "answer": "6th largest",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 10782,
+  "externalId": "nysts-055",
+  "text": "Adirondack Park is the largest protected area in the contiguous United States. Approximately how many acres does it cover?",
+  "options": [
+   "About 2 million acres",
+   "About 4 million acres",
+   "About 6 million acres",
+   "About 10 million acres"
+  ],
+  "answer": "About 6 million acres",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9687,
+  "externalId": "lou-017",
+  "text": "How many intermediate Courts of Appeal does Louisiana have?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "answer": "5",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5059,
+  "externalId": "cam-018",
+  "text": "What is the minimum percentage of votes needed for a group to elect at least one Cambridge City Council member under proportional representation?",
+  "options": [
+   "More than 1/15th",
+   "More than 1/12th",
+   "More than 1/10th",
+   "More than 1/9th"
+  ],
+  "answer": "More than 1/10th",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 7220,
+  "externalId": "wdc-016",
+  "text": "How many at-large members serve on the D.C. Council?",
+  "options": [
+   "4 at-large members",
+   "6 at-large members",
+   "8 at-large members",
+   "10 at-large members"
+  ],
+  "answer": "4 at-large members",
+  "reason": "no step fits the domain (answer 4, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 13841,
+  "externalId": "benor-085",
+  "text": "Which two U.S. highways intersect at Bend?",
+  "options": [
+   "U.S. 20 and U.S. 97",
+   "U.S. 26 and U.S. 101",
+   "U.S. 30 and U.S. 395",
+   "U.S. 199 and U.S. 97"
+  ],
+  "answer": "U.S. 20 and U.S. 97",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 5748,
+  "externalId": "tex-007",
+  "text": "What is the term length for a Texas State Senator?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 17,
+  "externalId": "q017",
+  "text": "Which amendment protects against unreasonable searches and seizures?",
+  "options": [
+   "2nd Amendment",
+   "5th Amendment",
+   "4th Amendment",
+   "8th Amendment"
+  ],
+  "answer": "4th Amendment",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10949,
+  "externalId": "queny-135",
+  "text": "What is the term length for NYC City Council members representing Queens?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 33,
+  "externalId": "q033",
+  "text": "Which constitutional amendment established the income tax?",
+  "options": [
+   "14th Amendment",
+   "15th Amendment",
+   "16th Amendment",
+   "17th Amendment"
+  ],
+  "answer": "16th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 58,
+  "externalId": "q058",
+  "text": "Which amendment granted Washington D.C. electoral votes?",
+  "options": [
+   "23rd Amendment",
+   "22nd Amendment",
+   "20th Amendment",
+   "24th Amendment"
+  ],
+  "answer": "23rd Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 9690,
+  "externalId": "lou-020",
+  "text": "What number state was Louisiana when it joined the Union?",
+  "options": [
+   "12th",
+   "14th",
+   "15th",
+   "18th"
+  ],
+  "answer": "18th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 10162,
+  "externalId": "arizs-006",
+  "text": "What is the maximum number of consecutive years an Arizona state legislator may serve in a single chamber under the state's term limits law?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "8 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10789,
+  "externalId": "nysts-062",
+  "text": "Among all U.S. states, where does New York State rank by GDP?",
+  "options": [
+   "3rd largest",
+   "1st largest",
+   "5th largest",
+   "2nd largest"
+  ],
+  "answer": "3rd largest",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 15539,
+  "externalId": "climc-0020",
+  "text": "The IPCC's Sixth Assessment Report gives a best estimate for equilibrium climate sensitivity, the eventual warming from a doubling of CO2. What is it?",
+  "options": [
+   "1.5C",
+   "2C",
+   "3C",
+   "4.5C"
+  ],
+  "answer": "3C",
+  "reason": "no step at or below the tightest gap (0.5)"
+ },
+ {
+  "id": 15540,
+  "externalId": "climc-0021",
+  "text": "AR6 gives a likely range of 2.5C to 4C for equilibrium climate sensitivity. What does the wider very likely range span?",
+  "options": [
+   "2C to 5C",
+   "1.5C to 6C",
+   "2.5C to 4.5C",
+   "3C to 4C"
+  ],
+  "answer": "2C to 5C",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 10538,
+  "externalId": "ashnc-097",
+  "text": "How many of Asheville's seven City Council seats are up for election in December 2026?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": "4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16779,
+  "externalId": "wnews-0280",
+  "text": "As of October 24, 2026, how many Ebola deaths had Kenya's health ministry reported in its first-ever outbreak?",
+  "options": [
+   "1",
+   "5",
+   "2",
+   "7"
+  ],
+  "answer": "2",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 15567,
+  "externalId": "climc-0048",
+  "text": "At which COP did countries agree to establish a dedicated fund for loss and damage?",
+  "options": [
+   "COP21 in 2015",
+   "COP24 in 2018",
+   "COP27 in 2022",
+   "COP28 in 2023"
+  ],
+  "answer": "COP27 in 2022",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 16787,
+  "externalId": "climc-0181",
+  "text": "Kavantissa, an elephant that died in Sri Lanka in October 2026 after being shot in the leg, was thought to be the country's largest. Roughly how tall was he?",
+  "options": [
+   "2.3 meters (7.5 feet)",
+   "2.8 meters (9 feet)",
+   "3.3 meters (11 feet)",
+   "4.0 meters (13 feet)"
+  ],
+  "answer": "3.3 meters (11 feet)",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 10559,
+  "externalId": "norca-020",
+  "text": "How long are terms for members of the North Carolina General Assembly (both House and Senate)?",
+  "options": [
+   "1 year",
+   "2 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9674,
+  "externalId": "lou-004",
+  "text": "How long is a term for a Louisiana state legislator in either chamber?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10261,
+  "externalId": "tucaz-007",
+  "text": "How long are the terms served by Tucson's mayor and city council members?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10632,
+  "externalId": "wmnla-002",
+  "text": "How many members serve on West Monroe's Board of Aldermen?",
+  "options": [
+   "3",
+   "5",
+   "7",
+   "9"
+  ],
+  "answer": "5",
+  "reason": "no step fits the domain (answer 5, floor 3, ceiling Infinity)"
+ },
+ {
+  "id": 10735,
+  "externalId": "nysts-008",
+  "text": "How many Appellate Divisions does New York's court system have?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": "4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10948,
+  "externalId": "queny-134",
+  "text": "What is the standard term length for the Queens Borough President?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10958,
+  "externalId": "penns-007",
+  "text": "How long are terms in the Pennsylvania House of Representatives?",
+  "options": [
+   "2 years",
+   "6 years",
+   "4 years",
+   "1 year"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 11002,
+  "externalId": "penns-051",
+  "text": "Approximately how many combined casualties occurred at the Battle of Gettysburg?",
+  "options": [
+   "15,000–20,000",
+   "25,000–30,000",
+   "46,000–51,000",
+   "70,000–80,000"
+  ],
+  "answer": "46,000–51,000",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 11046,
+  "externalId": "penns-095",
+  "text": "What is the term length for U.S. Senators representing Pennsylvania (and all other states)?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "6 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 11050,
+  "externalId": "phipa-004",
+  "text": "How long is a term for Philadelphia's mayor and city council members?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10067,
+  "externalId": "misso-002",
+  "text": "Missouri was admitted as which numbered state?",
+  "options": [
+   "12th",
+   "18th",
+   "20th",
+   "24th"
+  ],
+  "answer": "24th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 10077,
+  "externalId": "misso-012",
+  "text": "Which constitutional amendments overturned the Dred Scott ruling?",
+  "options": [
+   "The 12th and 13th Amendments",
+   "The 13th and 14th Amendments",
+   "The 14th and 15th Amendments",
+   "The 15th and 16th Amendments"
+  ],
+  "answer": "The 13th and 14th Amendments",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 10734,
+  "externalId": "nysts-007",
+  "text": "How long are terms for New York State legislators in both the Senate and Assembly?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10956,
+  "externalId": "penns-005",
+  "text": "How long is a term for Pennsylvania's governor?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 11137,
+  "externalId": "phipa-091",
+  "text": "How many counties does SEPTA serve?",
+  "options": [
+   "2 counties",
+   "3 counties",
+   "4 counties",
+   "5 counties"
+  ],
+  "answer": "5 counties",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 11150,
+  "externalId": "pitpa-008",
+  "text": "How long is a Pittsburgh mayor's term in office?",
+  "options": [
+   "4 years",
+   "5 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "term of office: the plausible lengths are institutionally fixed"
+ },
+ {
+  "id": 15750,
+  "externalId": "bxl-513",
+  "text": "Which interstate highway runs east-west just north of Biloxi?",
+  "options": [
+   "Interstate 55",
+   "Interstate 20",
+   "Interstate 10",
+   "Interstate 65"
+  ],
+  "answer": "Interstate 10",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Interstate 55\"), it is not a quantity"
+ },
+ {
+  "id": 9294,
+  "externalId": "ica-140",
+  "text": "What is the average annual precipitation in Indio?",
+  "options": [
+   "0-4 inches",
+   "8-12 inches",
+   "15-20 inches",
+   "25-40 inches"
+  ],
+  "answer": "0-4 inches",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 15781,
+  "externalId": "ica-204",
+  "text": "Which interstate highway runs through Indio?",
+  "options": [
+   "Interstate 5",
+   "Interstate 15",
+   "Interstate 8",
+   "Interstate 10"
+  ],
+  "answer": "Interstate 10",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Interstate 5\"), it is not a quantity"
+ },
+ {
+  "id": 163,
+  "externalId": "bli-043",
+  "text": "What time do polls open on Election Day in Indiana?",
+  "options": [
+   "5:00 AM",
+   "6:00 AM",
+   "7:00 AM",
+   "8:00 AM"
+  ],
+  "answer": "6:00 AM",
+  "reason": "cannot render a sibling mark: a clock time"
+ },
+ {
+  "id": 11748,
+  "externalId": "bniwa-086",
+  "text": "What state highway is the primary road artery running through Bainbridge Island from the ferry terminal to the Agate Pass Bridge?",
+  "options": [
+   "State Route 16",
+   "State Route 19",
+   "State Route 104",
+   "State Route 305"
+  ],
+  "answer": "State Route 305",
+  "reason": "cannot render a sibling mark: the number names a thing (\"State Route 16\"), it is not a quantity"
+ },
+ {
+  "id": 10959,
+  "externalId": "penns-008",
+  "text": "How long are terms for Pennsylvania State Senators?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 15812,
+  "externalId": "sprmo-203",
+  "text": "Which interstate highway runs through Springfield, Missouri?",
+  "options": [
+   "Interstate 70",
+   "Interstate 35",
+   "Interstate 44",
+   "Interstate 55"
+  ],
+  "answer": "Interstate 44",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Interstate 70\"), it is not a quantity"
+ },
+ {
+  "id": 10091,
+  "externalId": "misso-026",
+  "text": "Missouri Senate members serve terms of how many years?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10092,
+  "externalId": "misso-027",
+  "text": "Missouri House of Representatives members serve terms of how many years?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10170,
+  "externalId": "arizs-014",
+  "text": "What is the term length for Arizona state legislators in both the Senate and House?",
+  "options": [
+   "1 year",
+   "6 years",
+   "2 years",
+   "4 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10248,
+  "externalId": "arizs-092",
+  "text": "Adelita Grijalva represents which Arizona congressional district in the U.S. House as of 2025?",
+  "options": [
+   "9th District",
+   "5th District",
+   "3rd District",
+   "7th District"
+  ],
+  "answer": "7th District",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 10738,
+  "externalId": "nysts-011",
+  "text": "How many full state constitutions has New York had since statehood?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": "4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10742,
+  "externalId": "nysts-015",
+  "text": "What is the term length for the Governor of New York?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10749,
+  "externalId": "nysts-022",
+  "text": "What are the term lengths for New York's Attorney General and State Comptroller?",
+  "options": [
+   "2 years each",
+   "4 years each",
+   "6 years each",
+   "8 years each"
+  ],
+  "answer": "4 years each",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8,
+  "externalId": "q008",
+  "text": "What is the term length for a U.S. Representative?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 42,
+  "externalId": "q042",
+  "text": "Which amendment provided for direct election of U.S. Senators?",
+  "options": [
+   "15th Amendment",
+   "16th Amendment",
+   "17th Amendment",
+   "18th Amendment"
+  ],
+  "answer": "17th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 54,
+  "externalId": "q054",
+  "text": "Which amendment lowered the voting age to 18?",
+  "options": [
+   "24th Amendment",
+   "25th Amendment",
+   "26th Amendment",
+   "27th Amendment"
+  ],
+  "answer": "26th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 73,
+  "externalId": "q073",
+  "text": "Which amendment extended voting rights regardless of race?",
+  "options": [
+   "13th Amendment",
+   "14th Amendment",
+   "15th Amendment",
+   "19th Amendment"
+  ],
+  "answer": "15th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 15838,
+  "externalId": "wmnla-205",
+  "text": "Which interstate highway runs through West Monroe?",
+  "options": [
+   "Interstate 10",
+   "Interstate 12",
+   "Interstate 20",
+   "Interstate 49"
+  ],
+  "answer": "Interstate 20",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Interstate 10\"), it is not a quantity"
+ },
+ {
+  "id": 15840,
+  "externalId": "wmnla-207",
+  "text": "How long is a term for the Mayor of West Monroe?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 24,
+  "externalId": "q024",
+  "text": "Which amendment protects the right to bear arms?",
+  "options": [
+   "2nd Amendment",
+   "1st Amendment",
+   "3rd Amendment",
+   "4th Amendment"
+  ],
+  "answer": "2nd Amendment",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 28,
+  "externalId": "q028",
+  "text": "Which amendment ended prohibition?",
+  "options": [
+   "18th Amendment",
+   "21st Amendment",
+   "19th Amendment",
+   "22nd Amendment"
+  ],
+  "answer": "21st Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 85,
+  "externalId": "q085",
+  "text": "Which amendment changed the start date for presidential and congressional terms?",
+  "options": [
+   "18th Amendment",
+   "20th Amendment",
+   "19th Amendment",
+   "21st Amendment"
+  ],
+  "answer": "20th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 11,
+  "externalId": "q011",
+  "text": "Which amendment gave women the right to vote?",
+  "options": [
+   "15th Amendment",
+   "19th Amendment",
+   "17th Amendment",
+   "21st Amendment"
+  ],
+  "answer": "19th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 16190,
+  "externalId": "wmnla-216",
+  "text": "The West Monroe City Court has jurisdiction over the city and which Ouachita Parish ward?",
+  "options": [
+   "Ward 1",
+   "Ward 3",
+   "Ward 5",
+   "Ward 7"
+  ],
+  "answer": "Ward 5",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 15850,
+  "externalId": "stlmo-206",
+  "text": "How long is a term for the Mayor of St. Louis?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 323,
+  "externalId": "ins-003",
+  "text": "What is the term length for an Indiana State Senator?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 328,
+  "externalId": "ins-008",
+  "text": "How many chambers make up the Indiana General Assembly?",
+  "options": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "answer": "2",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 335,
+  "externalId": "ins-015",
+  "text": "What is the term length for the Governor of Indiana?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 679,
+  "externalId": "fre-003",
+  "text": "Which Alameda County Supervisor district includes Fremont?",
+  "options": [
+   "District 1",
+   "District 2",
+   "District 3",
+   "District 4"
+  ],
+  "answer": "District 1",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 5100,
+  "externalId": "cam-060",
+  "text": "What time do polls open on Election Day in Cambridge?",
+  "options": [
+   "6:00 a.m.",
+   "7:00 a.m.",
+   "8:00 a.m.",
+   "9:00 a.m."
+  ],
+  "answer": "7:00 a.m.",
+  "reason": "cannot render a sibling mark: a clock time"
+ },
+ {
+  "id": 5797,
+  "externalId": "tex-060",
+  "text": "What term length do judges on the Texas Court of Criminal Appeals serve?",
+  "options": [
+   "4 years",
+   "6 years",
+   "8 years",
+   "10 years"
+  ],
+  "answer": "6 years",
+  "reason": "term of office: the plausible lengths are institutionally fixed"
+ },
+ {
+  "id": 7077,
+  "externalId": "ore-113",
+  "text": "What 2014 Oregon ballot measure legalized recreational cannabis for adult use?",
+  "options": [
+   "Measure 37",
+   "Measure 49",
+   "Measure 80",
+   "Measure 91"
+  ],
+  "answer": "Measure 91",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Measure 37\"), it is not a quantity"
+ },
+ {
+  "id": 7872,
+  "externalId": "wdc-256",
+  "text": "Into how many quadrants is Washington, DC divided?",
+  "options": [
+   "2 quadrants",
+   "4 quadrants",
+   "6 quadrants",
+   "8 quadrants"
+  ],
+  "answer": "4 quadrants",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8545,
+  "externalId": "mis-003",
+  "text": "How long is the term of office for Mississippi state senators and representatives?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8720,
+  "externalId": "mis-402",
+  "text": "What is the term length for Mississippi's Governor and other statewide elected officials?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8987,
+  "externalId": "smo-154",
+  "text": "What is the term of office for Santa Monica City Council members?",
+  "options": [
+   "2 years",
+   "4 years",
+   "6 years",
+   "8 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9464,
+  "externalId": "alxla-006",
+  "text": "How long is a mayor's term of office in Alexandria, Louisiana?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10160,
+  "externalId": "arizs-004",
+  "text": "Arizona voters approved legislative term limits in 1992 via which ballot proposition?",
+  "options": [
+   "Proposition 100",
+   "Proposition 107",
+   "Proposition 200",
+   "Proposition 301"
+  ],
+  "answer": "Proposition 107",
+  "reason": "cannot render a sibling mark: the number names a thing (\"Proposition 100\"), it is not a quantity"
+ },
+ {
+  "id": 10270,
+  "externalId": "tucaz-016",
+  "text": "Selina Barajas and Miranda Schubert were elected to the Tucson City Council in November 2025. They represent which two wards?",
+  "options": [
+   "Wards 1 and 2",
+   "Wards 2 and 4",
+   "Wards 3 and 4",
+   "Wards 5 and 6"
+  ],
+  "answer": "Wards 5 and 6",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10569,
+  "externalId": "norca-030",
+  "text": "How long was the first (shortest) of the Wright Brothers' four powered flights on December 17, 1903?",
+  "options": [
+   "4 seconds, 60 feet",
+   "12 seconds, 120 feet",
+   "30 seconds, 600 feet",
+   "59 seconds, 852 feet"
+  ],
+  "answer": "12 seconds, 120 feet",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 10876,
+  "externalId": "queny-062",
+  "text": "Queens Public Library is one of how many independent library systems serving New York City?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "answer": "3",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10514,
+  "externalId": "ashnc-073",
+  "text": "Prior to Hurricane Helene, tourism contributed approximately how much in annual visitor spending to the Asheville area?",
+  "options": [
+   "$1 billion",
+   "$3 billion",
+   "$4 billion",
+   "$6 billion"
+  ],
+  "answer": "$3 billion",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 9887,
+  "externalId": "sprmo-008",
+  "text": "Springfield, Missouri's city council has 4 General Seats (A–D) and how many Zone seats?",
+  "options": [
+   "2",
+   "3",
+   "4",
+   "6"
+  ],
+  "answer": "4",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 4409,
+  "externalId": "nor-109",
+  "text": "What is the term length for a Norwich city councillor?",
+  "options": [
+   "2 years",
+   "3 years",
+   "4 years",
+   "5 years"
+  ],
+  "answer": "4 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 15568,
+  "externalId": "climc-0049",
+  "text": "By what margin was Massachusetts v. EPA decided in the US Supreme Court?",
+  "options": [
+   "9 to 0",
+   "7 to 2",
+   "6 to 3",
+   "5 to 4"
+  ],
+  "answer": "5 to 4",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 10913,
+  "externalId": "queny-099",
+  "text": "Community Board members in Queens serve how long a term?",
+  "options": [
+   "1 year",
+   "3 years",
+   "2 years",
+   "4 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 4332,
+  "externalId": "nor-031",
+  "text": "In what century was Norwich Cathedral founded?",
+  "options": [
+   "11th century",
+   "12th century",
+   "13th century",
+   "14th century"
+  ],
+  "answer": "11th century",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 11156,
+  "externalId": "pitpa-014",
+  "text": "Kim Salinetro won which Pittsburgh City Council district seat in November 2025?",
+  "options": [
+   "District 1",
+   "District 2",
+   "District 4",
+   "District 8"
+  ],
+  "answer": "District 2",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10265,
+  "externalId": "tucaz-011",
+  "text": "Lane Santa Cruz represents which Tucson City Council ward?",
+  "options": [
+   "Ward 1",
+   "Ward 2",
+   "Ward 4",
+   "Ward 6"
+  ],
+  "answer": "Ward 1",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 10750,
+  "externalId": "nysts-023",
+  "text": "New York was the ___ state admitted to the Union.",
+  "options": [
+   "7th",
+   "8th",
+   "9th",
+   "11th"
+  ],
+  "answer": "11th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 5339,
+  "externalId": "mas-056",
+  "text": "How long is the term for a Massachusetts state senator?",
+  "options": [
+   "1 year",
+   "2 years",
+   "4 years",
+   "6 years"
+  ],
+  "answer": "2 years",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8365,
+  "externalId": "bxl-150",
+  "text": "What is the approximate size of Gulf Islands National Seashore today?",
+  "options": [
+   "10,000-49,999 acres",
+   "50,000-99,999 acres",
+   "100,000-199,999 acres",
+   "200,000-399,999 acres"
+  ],
+  "answer": "100,000-199,999 acres",
+  "reason": "cannot render a sibling mark: two or more numbers in one option"
+ },
+ {
+  "id": 15974,
+  "externalId": "la-118",
+  "text": "Each Los Angeles County supervisor represents roughly how many residents?",
+  "options": [
+   "About 2 million",
+   "About 3 million",
+   "About 5 million",
+   "About 7 million"
+  ],
+  "answer": "About 2 million",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 8235,
+  "externalId": "bxl-016",
+  "text": "What congressional district does Biloxi belong to?",
+  "options": [
+   "Mississippi's 3rd congressional district",
+   "Mississippi's 4th congressional district",
+   "Mississippi's 2nd congressional district",
+   "Mississippi's 1st congressional district"
+  ],
+  "answer": "Mississippi's 4th congressional district",
+  "reason": "bounded series: no honest mark below the floor"
+ },
+ {
+  "id": 16026,
+  "externalId": "q134",
+  "text": "Which numbered Congress is currently in session?",
+  "options": [
+   "The 117th",
+   "The 118th",
+   "The 119th",
+   "The 120th"
+  ],
+  "answer": "The 119th",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 5,
+  "externalId": "q005",
+  "text": "Which amendment to the Constitution abolished slavery?",
+  "options": [
+   "11th Amendment",
+   "13th Amendment",
+   "15th Amendment",
+   "19th Amendment"
+  ],
+  "answer": "13th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ },
+ {
+  "id": 48,
+  "externalId": "q048",
+  "text": "Which amendment abolished poll taxes in federal elections?",
+  "options": [
+   "24th Amendment",
+   "19th Amendment",
+   "23rd Amendment",
+   "15th Amendment"
+  ],
+  "answer": "24th Amendment",
+  "reason": "cannot render a sibling mark: an ordinal: a rank or a name, not a quantity"
+ }
+]
