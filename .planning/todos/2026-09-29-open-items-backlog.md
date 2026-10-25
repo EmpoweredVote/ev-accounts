@@ -9,12 +9,17 @@ invisible to CI and to every existing gate. Re-measure before acting — the cou
 
 ---
 
-## 1. ▶ NEXT TASK — governments with a NULL `geo_id` are unreachable from the landing page
+## 1. ✅ CLOSED 2026-10-25 — governments with a NULL `geo_id` are unreachable from the landing page
 
-**Measured 2026-09-29: 210 governments carry `geo_id IS NULL` and still have at least one current
-occupant. 184 of them are California.**
+**Closed by `CC_0288` and `CC_0289`.** What is left in the NULL-geoid set is correct and is not
+owed a geoid.
+
+**Re-measured 2026-10-25: 210 → 153 before the fix, 137 after.** The drop from 210 happened on its
+own, as other waves seated people and loaded boundaries. 🔴 **The estimate in the line this replaces
+— "the city-and-town subset is roughly 80" — did not survive measurement. The subset is ZERO.**
 
 ```sql
+-- the population this item was about
 SELECT count(*) FROM essentials.governments g
  WHERE g.geo_id IS NULL AND EXISTS (
    SELECT 1 FROM essentials.chambers c
@@ -23,27 +28,47 @@ SELECT count(*) FROM essentials.governments g
     WHERE c.government_id = g.id AND och.politician_id IS NOT NULL);
 ```
 
-⚠ **The operator asked for "the 80 LA County cities", and 80 was my own narrower figure** — the
-count after excluding school districts, water districts and community colleges. The honest total is
-**210 with occupants / 184 in CA**; the city-and-town subset is roughly 80. Agree the scope before
-starting, because "all 210" and "the ~80 cities" are different jobs.
+Reading what the 153 actually were is what settled the scope:
 
-**Why it matters:** a landing-page chip is keyed on `governments.geo_id`
-(`WHERE g.geo_id = ANY($1)` in `essentialsBrowseService.getPoliticiansByGovernmentList`). A NULL
-cannot be named by any browse URL. **Address search still works**, because it goes
-`districts → offices → office_current_holder` and never touches `essentials.governments` — which is
-exactly why this was invisible until a human noticed two cities missing from the main page.
+| | What | Verdict |
+| --- | --- | --- |
+| 131 | `LOCAL` — school districts, community college districts, water and irrigation districts, library / health / park districts | **Not chips by design.** Reached through the area browse. No geoid owed. |
+| 16 | `Township` (IN) — general-purpose local government: trustees, township boards, small-claims constables | **Fixed — `CC_0289`.** |
+| 5 | `School District` (IN) | Same as the 131. |
+| 2 | the federal government, duplicated into a `federal` row and a `NATIONAL` row | **Fixed — `CC_0288`.** |
 
-**The rules `CC_0183` established, which apply unchanged:**
-- 🔴 **Verify every `geo_id` against a district that EXISTS and CARRIES A POLYGON.** Do not compose
-  one from a name. `CC_0183`'s gate refused its own first run over this.
-- 🔴 **A geo_id is not always available.** Indianapolis has none — see item 3.
-- 🔴 `geo_id` must stay unique table-wide. It currently is; the gate re-asserts it.
-- ⚠ Most of the 184 CA rows are **school, water and community-college districts that were never
-  meant to be chips** — they are reached through the area browse, not their own card. Fixing their
-  `geo_id` may be correct data hygiene but it is not the reachability win. **Decide which tier is in
-  scope first.**
+🔴 **NOT ONE CITY OR TOWN IS UNREACHABLE, AND A POSITIVE CONTROL IS THE ONLY REASON THAT ZERO CAN
+BE BELIEVED.** The detector is a title predicate — mayor / council member / alderman / city clerk /
+city attorney / selectman — over the offices of the NULL-geoid set. It returned 0. The same
+predicate over the geoid-bearing set returned **280**, which is what proves the 0 is an absence and
+not a broken query. Every row of type `City` (80), `Town` (9), `Village` (11), `County` (84) and
+`STATE` (50) carries a geoid.
 
+**What `CC_0289` did, and the rule it follows.** The 16 townships were the only general-purpose
+local governments left without a chip. Each one's offices already hang off districts carrying a
+TIGER county-subdivision geoid (MTFCC **G4040**), all 16 resolve to exactly one distinct geoid, and
+all 16 have a matching polygon — so 🔴 **every geoid was verified against a district that EXISTS and
+CARRIES A POLYGON** (`CC_0183`'s rule), never composed from a name. ⚠ Indiana reuses township names
+across counties, so the migration keys on the government UUID and re-derives each geoid from that
+government's own districts in its gate.
+
+**Proved end-to-end, not by count.** `POST /api/essentials/browse/by-government-list` against
+production returns 7 officials for Center Township (`1809711512`), 4 for Bloomington
+(`1810505878`), 4 for Ashland (`1810902440`).
+
+**What `CC_0288` did.** The United States Federal Government was two rows: a `federal` row holding
+only the Supreme Court and its nine justices, and a `NATIONAL` row holding the President, Cabinet,
+House and Senate. Merged into the `NATIONAL` row. 🔴 **`essentials.chambers.government_id` HAS NO
+FOREIGN KEY**, so deleting first would have silently orphaned the chamber and dropped all nine
+justices out of every government-joined read with no error anywhere — repoint, then delete. The
+surviving row keeps its NULL `geo_id`, correctly: federal officials are served by the supplemental
+query in `essentialsBrowseService.ts` keyed on `d.district_type IN (… 'NATIONAL_JUDICIAL')`, never
+by a chip, and a national government has no TIGER geoid to carry.
+
+⚠ **The remaining 137 are the correct resting state, not a backlog.** Do not re-open this by
+counting NULLs again — count the ones that should be chips.
+
+Full mechanism: `reference_government_geoid_reachability` memory, and `CC_0183`'s header.
 Full mechanism: `reference_government_geoid_reachability` memory, and `CC_0183`'s header.
 
 ---
@@ -71,18 +96,17 @@ The St. Louis wave wrote all three columns; that is the pattern to copy.
 
 ---
 
-## 3. 🔴 Indianapolis has no `geo_id` that is both correct and free
+## 3. ✅ CLOSED — Indianapolis has no `geo_id` that is both correct and free
 
-Indianapolis and Marion County are consolidated (Unigov). Its Mayor sits on the **county** polygon
-`18097` — but `Marion County, Indiana, US` **already carries `18097`**, with 38 chambers. The place
-code `1836003` appears **nowhere** in `essentials.districts`.
+**Resolved before 2026-10-25 and confirmed on that date.** The modelling question this item asked
+has been answered: the city and the county are **one government row**, not two.
+`Consolidated City of Indianapolis and Marion County, Indiana, US` is type `City` and carries
+`geo_id 18097` / `mtfcc G4020`, with 64 seated officials. There is no longer a separate
+`Marion County, Indiana, US` row to collide with it, so `18097` is both correct and unique —
+`CC_0289`'s gate re-asserts that `geo_id` is unique table-wide and passed.
 
-So `18097` duplicates and `1836003` points at ground the database does not hold. `CC_0183`'s gate
-refused the write, and its 6 seats stay browse-unreachable (they still answer an address).
-
-▶ **This is a modelling decision, not a data fix.** How should a consolidated city-county be
-represented when the city and the county are two government rows over one polygon? Answer that
-before touching it.
+▶ **The ruling worth keeping: a consolidated city-county is ONE row on ONE polygon.** The place
+code `1836003` is still absent from `essentials.districts` and should stay unused.
 
 ---
 
