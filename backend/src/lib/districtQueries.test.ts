@@ -130,3 +130,19 @@ describe('buildStatewideQuery', () => {
       .toContain("AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))");
   });
 });
+
+describe('every politician row carries its office id', () => {
+  // The mapper tests in essentialsService.vacantRows.test.ts mock the query, so they cannot
+  // see whether the column is actually selected. This is the half that can.
+  const base = { spatialPredicate: 'ST_Covers(gb.geometry, $1)' };
+
+  it('selects o.id AS office_id — the only key a VACANT row has', () => {
+    // A seat with no current term comes back with every p.* column NULL. Without this column
+    // such a row carries no identifier at all and a client cannot key, link or dedupe it.
+    expect(buildDistrictQuery(base)).toContain('o.id AS office_id');
+  });
+
+  it('selects it on the statewide query too, which is where most vacancies surface', () => {
+    expect(buildStatewideQuery()).toContain('o.id AS office_id');
+  });
+});

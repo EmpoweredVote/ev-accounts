@@ -88,6 +88,12 @@ export const DISTRICT_SELECT_FIELDS = `
     COALESCE(p.valid_to, '') AS term_end,
     COALESCE(p.term_date_precision, '') AS term_date_precision,
     COALESCE(p.appointment_date::text, '') AS appointment_date,
+    -- 🔴 THE ONLY KEY A VACANT ROW HAS. office_current_holder LEFT JOINs from offices, so a seat
+    -- with no current term returns a row whose p.* columns are all NULL — no p.id, no name. Until
+    -- this column existed the whole politician surface carried NO office identity, so such a row
+    -- could not be keyed on anything at all, and it reached voters as a blank card. Selected on
+    -- every politician query, held or not, so one shape answers both.
+    o.id AS office_id,
     o.title AS office_title, o.representing_state, o.representing_city,
     o.voting_powers, o.representation_note,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
