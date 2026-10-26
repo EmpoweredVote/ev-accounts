@@ -1,0 +1,57 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "lib-ward",
+      "row_id": "R-L002",
+      "person": "John Ward",
+      "expected_chair": 3,
+      "politician_id": "27e003b0-543c-505d-b375-2e86119a61e3",
+      "office_id": "564e565f-2cc5-5f78-8903-993c1efe325b",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/5927/631_-_library_materials_02122024docx.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        },
+        {
+          "url": "https://docs.google.com/document/d/1d8AVK7pdfRMM2zk4A1D3r0uYDYFG7JyzZFHaMzXymJ4/export?format=txt",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-jackson",
+      "row_id": "R-L063",
+      "person": "Ed Jackson",
+      "expected_chair": 3,
+      "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729",
+      "office_id": "19848bf8-1ab5-45cf-a96a-9f3e5574ac3a",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    }
+  ]
+}

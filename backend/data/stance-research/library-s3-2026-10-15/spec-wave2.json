@@ -1,0 +1,495 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "lib-defay",
+      "row_id": "R-L093",
+      "person": "Ariel Defay",
+      "expected_chair": 4,
+      "politician_id": "93216d36-4824-4817-823e-a3e0dcbd1f7f",
+      "office_id": "d7d981e5-c9f4-4914-94e9-538fb019e1f9",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-wilson",
+      "row_id": "R-L095",
+      "person": "Chris H. Wilson",
+      "expected_chair": 4,
+      "politician_id": "98f08e54-df08-43df-ba89-2cabd738d6bb",
+      "office_id": "3731c18d-fa2f-483e-ad4e-a89c997c4259",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-balderree",
+      "row_id": "R-L096",
+      "person": "Heidi Balderree",
+      "expected_chair": 4,
+      "politician_id": "a352d492-ecaf-45bd-b352-8c9a2cc9cc18",
+      "office_id": "8793a8e1-315d-4bf0-bd6f-b3c49a4a3f47",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-elison",
+      "row_id": "R-L097",
+      "person": "Joseph Elison",
+      "expected_chair": 4,
+      "politician_id": "d5daa5b6-b5f4-45ba-a471-99d14c779afd",
+      "office_id": "a76b494c-5943-49c7-a441-397423b00f55",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-ivory",
+      "row_id": "R-L098",
+      "person": "Ken Ivory",
+      "expected_chair": 4,
+      "politician_id": "f3c4cdf1-724e-43d6-ad59-70573badae75",
+      "office_id": "49140efc-8b9e-43b0-941e-ffa8306db21a",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-weiler",
+      "row_id": "R-L101",
+      "person": "Todd Weiler",
+      "expected_chair": 4,
+      "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198",
+      "office_id": "f6f30218-7679-45e4-8c76-43d3bfdce726",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-cruz",
+      "row_id": "R-L007",
+      "person": "Andrew Cruz",
+      "expected_chair": 4,
+      "politician_id": "5c6d7649-d5ff-56a6-b197-7e408513725b",
+      "office_id": "fb1fff2e-bfa4-53db-b9bb-ad7132de3fc9",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/bp_61631.pdf",
+          "human_saved_path": "human-saved/chino-bp-61631.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/ar_13122_.pdf",
+          "human_saved_path": "human-saved/chino-ar-13122.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://www.chino.k12.ca.us/cms/lib/CA01902308/Centricity/domain/677/2023/minutes/11-16-23%20Minutes.pdf",
+          "human_saved_path": "human-saved/chino-minutes-2023-11-16.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-na",
+      "row_id": "R-L008",
+      "person": "James Na",
+      "expected_chair": 4,
+      "politician_id": "643448b9-804f-58d5-9bc8-aa5c3576d3c1",
+      "office_id": "c94da716-3c9d-58a3-90b1-a35cad7ff3c1",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/bp_61631.pdf",
+          "human_saved_path": "human-saved/chino-bp-61631.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/ar_13122_.pdf",
+          "human_saved_path": "human-saved/chino-ar-13122.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://www.chino.k12.ca.us/cms/lib/CA01902308/Centricity/domain/677/2023/minutes/11-16-23%20Minutes.pdf",
+          "human_saved_path": "human-saved/chino-minutes-2023-11-16.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-shaw",
+      "row_id": "R-L009",
+      "person": "Sonja Shaw",
+      "expected_chair": 4,
+      "politician_id": "5f76110b-eb6c-59b4-8c6a-c97e8722cc05",
+      "office_id": "e264fa58-7548-533d-a403-a0ccbdda86b4",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/bp_61631.pdf",
+          "human_saved_path": "human-saved/chino-bp-61631.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://files.smartsites.parentsquare.com/7144/ar_13122_.pdf",
+          "human_saved_path": "human-saved/chino-ar-13122.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        },
+        {
+          "url": "https://www.chino.k12.ca.us/cms/lib/CA01902308/Centricity/domain/677/2023/minutes/11-16-23%20Minutes.pdf",
+          "human_saved_path": "human-saved/chino-minutes-2023-11-16.txt",
+          "instruments": [
+            "Chino Valley USD BP 6163.1 Library Media Centers and AR 1312.2 Complaints Concerning Instructional Materials (revised 2023-11-16)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-bergosh",
+      "row_id": "R-L025",
+      "person": "Carissa Bergosh",
+      "expected_chair": 3,
+      "politician_id": "a510247c-f50f-5a6f-8fd7-fa5c6bdb9d38",
+      "office_id": "00ed81b2-163f-5f18-9208-80f51e38861e",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DAXSTX744B5F/$file/2522%20CHALLENGES%20TO%20ADOPTION%20OR%20USE%20OF%20INSTRUCTIONAL%2C%20LIBRARY%2C%20OR%20READING%20LIST%20MATERIALS%20REVISED%20(1).pdf",
+          "human_saved_path": "human-saved/esc-2522-2024.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D8RNLQ604D27&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-10-15.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D9HM2R59282E&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-11-19.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DM9Q6F67C539/$file/091825-2%20-%20Rule%202522%20-%20Challenges%20to%20Instructional%2C%20Library%2C%20Reading%20Lists%20(Adoption)%20Stamped%202.pdf",
+          "human_saved_path": "human-saved/esc-2522-2025b.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=DLCPAD63A9AC&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2025-10-21.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-williams",
+      "row_id": "R-L026",
+      "person": "David Williams",
+      "expected_chair": 3,
+      "politician_id": "02ff3b3f-11e6-5b11-a0a0-f142a381522d",
+      "office_id": "11a03014-ca5d-5516-a6e8-942e42494f09",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DAXSTX744B5F/$file/2522%20CHALLENGES%20TO%20ADOPTION%20OR%20USE%20OF%20INSTRUCTIONAL%2C%20LIBRARY%2C%20OR%20READING%20LIST%20MATERIALS%20REVISED%20(1).pdf",
+          "human_saved_path": "human-saved/esc-2522-2024.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D8RNLQ604D27&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-10-15.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D9HM2R59282E&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-11-19.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DM9Q6F67C539/$file/091825-2%20-%20Rule%202522%20-%20Challenges%20to%20Instructional%2C%20Library%2C%20Reading%20Lists%20(Adoption)%20Stamped%202.pdf",
+          "human_saved_path": "human-saved/esc-2522-2025b.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=DLCPAD63A9AC&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2025-10-21.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-adams",
+      "row_id": "R-L027",
+      "person": "Kevin Adams",
+      "expected_chair": 3,
+      "politician_id": "1e2d6569-3bff-5e81-b7be-e362e2fd7012",
+      "office_id": "0a0b256b-9b89-5839-b70c-a598cc9f879c",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DAXSTX744B5F/$file/2522%20CHALLENGES%20TO%20ADOPTION%20OR%20USE%20OF%20INSTRUCTIONAL%2C%20LIBRARY%2C%20OR%20READING%20LIST%20MATERIALS%20REVISED%20(1).pdf",
+          "human_saved_path": "human-saved/esc-2522-2024.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D8RNLQ604D27&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-10-15.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D9HM2R59282E&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-11-19.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DM9Q6F67C539/$file/091825-2%20-%20Rule%202522%20-%20Challenges%20to%20Instructional%2C%20Library%2C%20Reading%20Lists%20(Adoption)%20Stamped%202.pdf",
+          "human_saved_path": "human-saved/esc-2522-2025b.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=DLCPAD63A9AC&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2025-10-21.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-fetsko",
+      "row_id": "R-L029",
+      "person": "Paul H. Fetsko",
+      "expected_chair": 3,
+      "politician_id": "1989c671-5762-5ecc-bdc5-f7ffc866fa86",
+      "office_id": "9b6a99a1-0d97-5131-a2c1-532f352a8c92",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DAXSTX744B5F/$file/2522%20CHALLENGES%20TO%20ADOPTION%20OR%20USE%20OF%20INSTRUCTIONAL%2C%20LIBRARY%2C%20OR%20READING%20LIST%20MATERIALS%20REVISED%20(1).pdf",
+          "human_saved_path": "human-saved/esc-2522-2024.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D8RNLQ604D27&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-10-15.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D9HM2R59282E&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-11-19.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DM9Q6F67C539/$file/091825-2%20-%20Rule%202522%20-%20Challenges%20to%20Instructional%2C%20Library%2C%20Reading%20Lists%20(Adoption)%20Stamped%202.pdf",
+          "human_saved_path": "human-saved/esc-2522-2025b.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=DLCPAD63A9AC&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2025-10-21.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-harrell",
+      "row_id": "R-L030",
+      "person": "Tom Harrell",
+      "expected_chair": 3,
+      "politician_id": "1d211d48-18bd-5691-a9fe-de211be1e44d",
+      "office_id": "ad12c59f-146e-5b5e-a6d3-d9903e1210c9",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DAXSTX744B5F/$file/2522%20CHALLENGES%20TO%20ADOPTION%20OR%20USE%20OF%20INSTRUCTIONAL%2C%20LIBRARY%2C%20OR%20READING%20LIST%20MATERIALS%20REVISED%20(1).pdf",
+          "human_saved_path": "human-saved/esc-2522-2024.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D8RNLQ604D27&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-10-15.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=D9HM2R59282E&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2024-11-19.txt",
+          "instruments": [
+            "Escambia County School Board Policy 2522 Challenges to Adoption or Use of Instructional, Library, or Reading List Materials (2024-10-15 / 2024-11-19)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/files/DM9Q6F67C539/$file/091825-2%20-%20Rule%202522%20-%20Challenges%20to%20Instructional%2C%20Library%2C%20Reading%20Lists%20(Adoption)%20Stamped%202.pdf",
+          "human_saved_path": "human-saved/esc-2522-2025b.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        },
+        {
+          "url": "https://go.boarddocs.com/fl/escambia/Board.nsf/PRINT-AgendaDetailed?open&id=DLCPAD63A9AC&current_committee_id=A4EP6J588C05",
+          "human_saved_path": "human-saved/esc-agenda-2025-10-21.txt",
+          "instruments": [
+            "Escambia County School Board Rule 2522 Challenges to Instructional, Library, Reading Lists (adopted 2025-10-21)"
+          ]
+        }
+      ]
+    }
+  ]
+}
