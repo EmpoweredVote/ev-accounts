@@ -107,16 +107,37 @@ The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling 
 that 238; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 57 flagged on 2026-10-26,
-only **17 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **40 are flagged with no date**. That is "we
-have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters
-and keeps the rows out of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Measured 2026-10-26, across every
+`is_vacant` office and not just those in the view: **65 flagged, 40 dated, 25 undated** (was
+65 / 24 / 41 before `CC_0298`). An undated flag asserts a vacancy to voters and keeps the row out
+of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
 
-🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND BOTH KINDS ARE IN THERE.**
-In Maine it meant "not seeded yet" 137 times and "a real vacancy nobody dated" once — a gap to
-fill and a fact to publish, indistinguishable in the database and pointing opposite ways. **Date
-a vacancy at the moment you establish it**, or the next session re-derives which kind it was.
+🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND THERE ARE FOUR KINDS.**
+`CC_0298` classified all 41 undated flags one at a time, and only 16 of them wanted a date:
+
+| kind | n | what it needs |
+| --- | --- | --- |
+| real vacancy, date citable | 16 | the date — `CC_0298` wrote these |
+| real vacancy, date not published | 1 | **nothing.** Richland County SC SWCD says so in its `description`; that is the correct shape |
+| **not vacant, a holder exists** | 1 | seat the person (Cornelius OR — the city lists four councillors, we hold three) |
+| **not vacant, a duplicate seat** | 20 | retire or merge the duplicate; a date would publish a false claim |
+| unseeded, emptiness unproven | 3 | a roster check, not a date |
+
+🔴🔴 **A DUPLICATE SEAT LOOKS EXACTLY LIKE A VACANCY, AND THE CHAMBER IS WHAT TELLS THEM APART.**
+Eight California bodies carry BOTH legacy `At-Large` office rows and newer by-district rows. In
+all eight the At-Large rows already seat the whole body, so every empty district row is the same
+chair counted twice — Montebello Unified seats five people on five At-Large rows and then shows
+three empty Trustee Area rows for that same five-member board. Nothing about the row says so.
+▶ **Before dating a flag, count the chamber: seated + flagged against the body's real size.** If
+they do not add up to one body, you are looking at a modelling duplicate, not an empty chair.
+
+🔴 **A COMPLETE, FULLY-SEATED CHAMBER IS THE SIGNATURE OF A REAL VACANCY.** The 19 non-California
+undated flags all sat in rosters that were whole except for exactly the flagged seats (MO House
+163 offices / 155 seated / 8 flagged; MA House 160 / 158 / 2). That shape says the loader found
+everyone there was to find. The California 22 had the opposite shape and were all duplicates or
+unseeded.
+
+**Date a vacancy at the moment you establish it**, or the next session re-derives which kind it was.
 
 🟢 **MAINE IS FINISHED AND CLOSED (2026-10-26).** It was the bulk of this bucket: 138 municipal
 offices across 17 cities, 100% flagged-undated, none ever seated, plus one real state-level
@@ -208,6 +229,17 @@ SELECT essentials.seat_officeholder(office_id, politician_id, term_start, source
 SELECT essentials.vacate_office(office_id, first_vacant_day, source);
 ```
 
+🔴 **`vacant_since` IS THE FIRST DAY THE SEAT WAS EMPTY, NOT THE DAY THE MEMBER LEFT.** The helper
+defines it: it writes `vacant_since = p_as_of` and closes the predecessor at `term_end = p_as_of - 1`.
+Almost every source publishes the *departure* date instead, so **a date copied straight off a
+source is one day early.** Ballotpedia's state-legislative tables head that column "DATE OF
+VACANCY", which reads like the same thing and is not: it gives Missouri Senate 10 as 2026-05-15,
+and the Missouri Senate's own page says "Senator Fitzwater resigned his seat on 05-15-2026".
+Departure + 1 also reproduces five of this repo's nine comparable existing rows exactly.
+⚠ **The column is already internally inconsistent** — four other rows (CA Senate 10, CA Assembly 3,
+VA House 20, TX Senate 22) disagree with that rule by one or two days, from earlier passes. Known,
+not new; do not "fix" one without re-sourcing it.
+
 Seating is a **two-step by design**: an open-ended term (`term_end IS NULL`) is an *infinite* range
 that overlaps every future span, so the predecessor must be closed before a successor can be
 inserted. That is a feature — it makes "when did the last term end?" a required answer instead of a
@@ -245,6 +277,17 @@ Four rules the municipal seeding waves paid for, each after getting a real seat 
   rather than reusing the number that happens to be printed.
 - 🔴 **A DEPARTED OFFICIAL'S URL CAN SERVE THEIR SUCCESSOR**, with no redirect and no error.
   Assert that the page NAMES the person before you record it as their source.
+- 🔴 **THE CHAMBER'S OWN ROSTER OUTRANKS EVERY AGGREGATOR, AND THEY DO DISAGREE.** On 2026-10-26 a
+  web search reported the Missouri House as having five vacancies against our eight, which read
+  like stale data on our side; `house.mo.gov`'s member grid listed exactly our eight. For three of
+  them Ballotpedia still showed the member *sitting*. **A search summary is a lead. Open the
+  roster.**
+- 🟢 **WHEN THE AGGREGATORS DISAGREE, THE LEGISLATIVE JOURNAL SETTLES IT.** Those three Missouri
+  seats appear in no vacancy table anywhere, and the resignation letters are printed verbatim —
+  name, district, and the hour the resignation took effect — in the House Journal for the day they
+  were read in (`documents.house.mo.gov/billtracking/bills261/jrnpdf/jrnNNN.pdf`). A Wikipedia
+  infobox citation is often the fastest way to find the right journal number. Most chambers
+  publish the equivalent; reach for it before recording a date as unobtainable.
 
 ### The `is_vacant` trap
 
