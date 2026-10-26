@@ -31,7 +31,7 @@
 --   3. Approves it and PARKS it (approved, NOT published; is_current stays on the previous revision).
 --      The open season keeps serving the previous revision.
 --   4. Pins it into the draft season. The pin is inert until that season opens.
---   0. (Before 1) REJECTS revision 4 (08e7026f-8eb5-4386-9288-f1dbfc3185c3), the approved but never-published Draft C wording this
+--   0. (Before 1) REJECTS revision 4 (08e7026f-2eb5-4386-9288-f1dbfc3185c3), the approved but never-published Draft C wording this
 --      revision replaces (RULINGS.md, Stage 4: a draft that replaces an approved, unpublished revision is measured
 --      from the current published revision, and the approved one is rejected in the same migration).
 --   4b. CARRIES the 57 draft-season answer and context rows on this topic from revision 4 to the new revision,
@@ -85,7 +85,7 @@ BEGIN
     RAISE EXCEPTION 'CA_0334 precondition: expected 57 draft-season answers on this topic (re-measure; the carry was ruled on 57)';
   END IF;
   IF NOT EXISTS (SELECT 1 FROM inform.compass_topic_revisions
-                  WHERE id = '08e7026f-8eb5-4386-9288-f1dbfc3185c3' AND status IN ('approved','rejected')) THEN
+                  WHERE id = '08e7026f-2eb5-4386-9288-f1dbfc3185c3' AND status IN ('approved','rejected')) THEN
     RAISE EXCEPTION 'CA_0334 precondition: revision 4 is neither approved nor already rejected';
   END IF;
 END $$;
@@ -97,8 +97,8 @@ CREATE TEMP TABLE IF NOT EXISTS slot_pre_answers ON COMMIT DROP AS
 -- ── 0b. Reject revision 4 (approved, pinned, never published) ───────────────────────────────────
 DO $$
 BEGIN
-  IF EXISTS (SELECT 1 FROM inform.compass_topic_revisions WHERE id = '08e7026f-8eb5-4386-9288-f1dbfc3185c3' AND status = 'approved') THEN
-    PERFORM inform.admin_reject_topic_revision('08e7026f-8eb5-4386-9288-f1dbfc3185c3', '854fbc06-40fc-458d-b523-20ef8e5ad1b2',
+  IF EXISTS (SELECT 1 FROM inform.compass_topic_revisions WHERE id = '08e7026f-2eb5-4386-9288-f1dbfc3185c3' AND status = 'approved') THEN
+    PERFORM inform.admin_reject_topic_revision('08e7026f-2eb5-4386-9288-f1dbfc3185c3', '854fbc06-40fc-458d-b523-20ef8e5ad1b2',
       'Replaced before Season 3 opened by revision 5 (Draft F): same acts, clearer wording on registering vs casting a ballot. Stage 3 2026-10-26.');
     RAISE NOTICE 'CA_0334: revision 4 rejected';
   ELSE
@@ -178,7 +178,7 @@ DECLARE
   v_actor CONSTANT uuid := '854fbc06-40fc-458d-b523-20ef8e5ad1b2';
   v_topic CONSTANT uuid := 'd1792200-1d3b-4955-a0b7-0e6980d7a7b2';
   v_draft CONSTANT uuid := '7b3a066c-815d-43b2-a6a0-6a3029778075';
-  v_rev4  CONSTANT uuid := '08e7026f-8eb5-4386-9288-f1dbfc3185c3';
+  v_rev4  CONSTANT uuid := '08e7026f-2eb5-4386-9288-f1dbfc3185c3';
   v_new   uuid;
   v_a     int;
   v_c     int;
@@ -293,7 +293,7 @@ BEGIN
    WHERE a.topic_id = v_topic AND a.season_id = v_draft
      AND NOT EXISTS (SELECT 1 FROM slot_pre_answers p WHERE p.politician_id = a.politician_id AND p.value = a.value);
   IF v_n <> 0 THEN RAISE EXCEPTION 'CA_0334 verify: % carried answer(s) changed value or person', v_n; END IF;
-  IF NOT EXISTS (SELECT 1 FROM inform.compass_topic_revisions WHERE id = '08e7026f-8eb5-4386-9288-f1dbfc3185c3' AND status = 'rejected') THEN
+  IF NOT EXISTS (SELECT 1 FROM inform.compass_topic_revisions WHERE id = '08e7026f-2eb5-4386-9288-f1dbfc3185c3' AND status = 'rejected') THEN
     RAISE EXCEPTION 'CA_0334 verify: revision 4 is not rejected';
   END IF;
   IF (SELECT count(*) FROM pg_constraint
