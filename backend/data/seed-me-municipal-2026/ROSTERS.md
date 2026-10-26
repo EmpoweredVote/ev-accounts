@@ -15,7 +15,10 @@ directly. Three Maine rows remain in `offices_missing_terms` and all three are c
 | --- | --- |
 | Brewer, Council Member (At-Large 5) | a REAL vacancy, dated `2026-08-12` (R9d) |
 | South Portland Public Schools, Board Member (District 5) | a REAL vacancy, dated `2026-04-06` |
-| State of Maine, **Tribal Representative** | ⚠ **STILL OPEN** — see the singleton note below |
+| State of Maine, Tribal Representative (Penobscot Nation) | a REAL vacancy, dated `2015-05-27` (`CC_0294`, R12) |
+
+🟢 **AND NOT ONE MAINE OFFICE AT ANY LEVEL IS FLAGGED VACANT WITHOUT A DATE.** `CC_0294` gates
+that statewide — city, school and state. Maine is closed.
 
 Read this file before touching any Maine municipal office. The rules below were each paid for.
 
@@ -564,16 +567,90 @@ directors, wardens and ward clerks**; Hallowell elects an **RSU 2 Director**. Th
 or administrative seats outside the city government we model. Creating offices for them means
 modelling bodies that span several municipalities — out of scope for a seating migration.
 
-**Two singletons are NOT part of this pattern:**
-* `State of Maine` — 1 flagged seat, a **Tribal Representative**. Maine seats three non-voting
-  tribal representatives (ADR 0003), and a tribe may genuinely have withdrawn its seat. That could
-  be a real vacancy. Do not seat it from a roster without checking. **Still open.**
+**Two singletons were NOT part of this pattern, and both are now resolved:**
+* 🟢 `State of Maine`, **Tribal Representative (Penobscot Nation)** — **RESOLVED 2026-10-26,
+  `CC_0294`.** The tracker said *"that could be a real vacancy — do not seat it from a roster
+  without checking."* It is one, and nobody was seated. See **R12** below for the dates, the
+  sources and the fourth seat that is coming.
 * 🟢 `South Portland Public Schools` — **RESOLVED 2026-10-25, and it is NOT skeleton work.** The
   tracker guessed "likely a genuine single vacancy". Measured: it was then the **only** flagged
   Maine municipal office carrying a `vacant_since` DATE, out of 105. That date is the signature of
   a real, documented vacancy — the thing the flag is actually for. Leave it flagged.
-  ⚠ It is no longer the only one: Brewer's At-Large 5 joined it on 2026-10-25 (R9d). Two dated
-  Maine vacancies now, and both are real.
+  ⚠ It is no longer the only one: Brewer's At-Large 5 joined it on 2026-10-25 (R9d) and the
+  Penobscot seat on 2026-10-26. Three dated Maine vacancies now, and all three are real.
+
+---
+
+## 🔴🔴 R12. AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS
+
+`CC_0294`, 2026-10-26. Across Maine, `is_vacant = true` with a NULL `vacant_since` meant
+**"nobody has seeded this"** 137 times and **"a real vacancy nobody dated"** once. The two are
+indistinguishable in the database and point in opposite directions — one is a gap to fill, the
+other is a fact to publish. The programme spent five waves on the first and one migration on
+the second, and **only the date tells them apart.**
+
+▶ **Date a vacancy at the moment you establish it**, or the next session has to re-derive which
+kind it was. That cost this one a full research pass on a seat whose answer migration 1718 had
+already written into prose — in the `representation_note`, where no query could find it.
+
+### What the Penobscot seat actually is
+
+Maine seats Wabanaki tribal representatives in the House under **3 MRSA §1** (ADR 0003, offices
+created by migration 1718). They are `representation_basis = 'membership'`, carry **no `geo_id`**
+— enrolment is not inferable from an address — and are `committee_only`.
+
+The Legislature's own member list for the 132nd Legislature, read 2026-10-26, shows exactly two
+sitting under the heading "Tribal Representatives": **Aaron M. Dana** (Passamaquoddy, Princeton)
+and **Brian Reynolds** (Maliseet, Augusta). No Penobscot representative. Our data was right.
+
+The date comes from the Legislature Law Library's own **Chronology of Wabanaki Tribal
+Representation** (`legislature.maine.gov/lawlibrary/chronology-of-tribal-representation/9262`),
+and it records **two different events**:
+
+| date | what happened |
+| --- | --- |
+| **2015-05-26** | *"the Penobscot Nation and Passamaquoddy Tribe withdrew their representatives to the Maine Legislature"* |
+| 2016-06-20 | *"The Penobscot Nation states it is formally vacating its Legislative seat in favor of naming an ambassador…"* |
+
+▶ **The 2015 withdrawal emptied the seat; the 2016 statement confirmed a state that already
+existed.** `vacant_since = 2015-05-27` — the day after, because the representative addressed the
+House on 26 May and then left. That is the **Brewer rule** (R9d) applied unchanged: someone
+recorded at the meeting that ended their tenure held the seat for that day.
+
+⚠ **A WITHDRAWN TRIBAL SEAT IS NOT A DELETED SEAT.** The Passamaquoddy withdrew on the *same day*
+and returned in 2022; the Maliseet declined theirs on 2018-11-28 and reclaimed it in May 2025.
+That is exactly why this is a dated vacancy and not a removal.
+
+### ⚠ A FOURTH SEAT EXISTS IN LAW. DO NOT CREATE IT YET.
+
+**PL 2026 c. 705** (LD 785 / SP 344), signed by the Governor **2026-04-15**, amends 3 MRSA §1:
+
+> *"**Beginning with the 133rd Legislature**, the Tribal Clerk of the Mi'kmaq Nation shall …
+> furnish … a certification … of the name and residence of the Representative-elect of the
+> Mi'kmaq Nation to the Legislature."*
+
+🔴 **The 133rd Legislature convenes on the first Wednesday of December 2026 — `2026-12-02`.**
+Until then the Mi'kmaq Nation has no seat to hold, and creating the office now would tell a
+Mi'kmaq citizen they are represented in Augusta today when they are not. `CC_0294` **refuses to
+run while a Mi'kmaq seat exists**, the same way `CC_0290` refuses while a Missouri 2026 polygon
+does.
+
+▶ **DATED FOLLOW-UP, 2026-12-02** — create it as a 4th `membership` district with **no `geo_id`**,
+`voting_powers = 'committee_only'` and a `representation_note`; seat it **only** if the Nation has
+certified a Representative-elect, which it is not obliged to do.
+🔴 **Write BOTH exits down.** The Missouri hedge sat unexited for a year because only one of its
+two exits created work — see `project_mo_2026_map_blocked_not_stale`. Here the two exits are
+"they certified someone" (seat them) and "they did not" (a dated, documented vacancy from the day
+the Legislature convened).
+
+### ⚠ These seats are deliberately invisible to address search, and that is correct
+
+A Penobscot-territory address returns **no tribal row**, and neither does any other Maine
+address. That is not a defect and not the R9e blank-row bug: a `membership` district has no
+geometry by design, `check-address-reachability.mjs` carries a `membershipGeometryInvariant()`
+that **fails** if one ever acquires any, and the gate excludes them from address expectations.
+▶ So the `representation_note` is the only place a reader learns this seat exists and is empty.
+**Keep it accurate** — the read path is required not to render a non-residency seat without it.
 
 ---
 

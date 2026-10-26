@@ -95,30 +95,44 @@ that 239; it is not drift. Lower this number whenever a change shrinks it — a 
 hides drift, and 🔴 **never raise it to clear a red.**
 
 ⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 58 flagged on 2026-10-26,
-only **14 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **44 are flagged with no date**. That is "we
+only **15 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
+incumbent died or resigned; see `fl.md`). The other **43 are flagged with no date**. That is "we
 have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters
 and keeps the rows out of the drift metric. **Do not read a stable 239 as "occupancy is clean".**
 
-🟢 **THE MAINE MUNICIPAL SKELETON IS FINISHED (2026-10-26).** It was the bulk of this bucket:
-138 offices across 17 cities, 100% flagged-undated, none ever seated. All 17 are seated and
-**no Maine city government carries an undated flag any more**; the only Maine rows left are
-Brewer's and South Portland Public Schools' *dated* vacancies, plus the `State of Maine` Tribal
-Representative, which may be a genuine withdrawal. Rules, sources and the open questions:
-`backend/data/seed-me-municipal-2026/ROSTERS.md` — **open it before any Maine municipal work.**
+🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND BOTH KINDS ARE IN THERE.**
+In Maine it meant "not seeded yet" 137 times and "a real vacancy nobody dated" once — a gap to
+fill and a fact to publish, indistinguishable in the database and pointing opposite ways. **Date
+a vacancy at the moment you establish it**, or the next session re-derives which kind it was.
 
-🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 44.** Every seat a wave seats
+🟢 **MAINE IS FINISHED AND CLOSED (2026-10-26).** It was the bulk of this bucket: 138 municipal
+offices across 17 cities, 100% flagged-undated, none ever seated, plus one real state-level
+vacancy. **Not one Maine office at any level — city, school or state — is now flagged without a
+date** (`CC_0294` gates that statewide). The three that remain flagged are all dated and real:
+Brewer's council seat, South Portland Public Schools', and the Penobscot Nation's tribal seat,
+empty since 2015-05-27. Rules, sources and the dated follow-ups:
+`backend/data/seed-me-municipal-2026/ROSTERS.md` — **open it before any Maine work.**
+▶ **2026-12-02**: the 133rd Legislature convenes and PL 2026 c.705 gives the Mi'kmaq Nation a
+fourth tribal seat. Create it then, not before.
+
+🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 43.** Every seat a wave seats
 comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
 vacancies being resolved. **Read the two sub-buckets separately, or a falling flagged total will
-look like progress on something it has not touched.** (13 → 14 is the one real addition: Brewer's
-At-Large 5, `CC_0292` — a councillor who resigned in July 2026. A wave can CREATE a documented
-vacancy as well as clear undated ones.)
+look like progress on something it has not touched.** (13 → 15 are the two real additions, and
+they are different acts: Brewer's At-Large 5, `CC_0292` — a councillor who resigned in July 2026,
+so a wave can CREATE a documented vacancy as well as clear undated ones — and the Penobscot
+Nation's tribal seat, `CC_0294`, which was not created but **moved out of the undated pile by
+being dated**. That second kind changes no total and is the whole point of the sub-buckets.)
 
 ⚠ **A FLAGGED-VACANT OFFICE IS STILL RETURNED BY ADDRESS SEARCH, AS A NAMELESS ROW** with
 `id: null` and an empty `full_name` — `office_current_holder` LEFT JOINs from `offices`, so the
 read path emits the seat with no holder. Measured 2026-10-25 on two unrelated vacancies. It is
-pre-existing and is **not** caused by any seating wave, but it means those 44 undated flags are
+pre-existing and is **not** caused by any seating wave, but it means those 43 undated flags are
 rendering as blanks to voters today.
+⚠ **A `membership`-basis seat is the exception and is NOT affected** — it has no `geo_id` by
+design (ADR 0003) and `check:reachability` fails if one ever acquires geometry, so Maine's
+vacant Penobscot tribal seat is never returned for an address at all. Its
+`representation_note` is the only place a reader learns it exists.
 
 🔴 **AND THE OPPOSITE DEFECT, ON THE SAME ENDPOINT: ADDRESS SEARCH RETURNS AT MOST ONE SEAT PER
 PERSON.** `27` active people hold two or more current seats, and a voter sees only one of them.
