@@ -188,14 +188,30 @@ migration 1900 hit on this very topic. ▶ **Adjudication, not citation repair.*
 | **20** | `/192/S2745` | *An Act relative to recovery high schools* | immigrant-advocacy records |
 | **14** | `/192/H3256` | *An Act to establish municipal access to utility poles located in municipal rights-of-way* | *"the Work and Family Mobility Act (H.3256, 2022)"* |
 
-All 34 are voter-facing and serve from Season 1 — and **`immigration` has no Season 2 question at
-all** (`season_questions` returns 0 rows for it in Season 2). There is no Season 2 row to insert, so
-unlike every other cohort here these cannot be repaired forward *by any means* until the topic gets
-a Season 2 question. This is the known 1,678-stance orphan topic.
+All 34 serve from Season 1 on the `immigration` topic, which **is not in Season 2**.
+
+⚖ **That is a deliberate decision, not a gap — read `CA_0066_immigration_freeze_remove_s2.sql`.**
+Immigration was removed from Season 2 on 2026-08-31 (Chris Andrews) because **three** Season 2
+topics already own its dimensions — `deportation` (q9, removal of the undocumented already here),
+`border-security` (q46, the border and asylum) and `local-immigration` (q28, local police vs ICE) —
+and the broad topic overlapped deportation by **72%** (1212 of its 1678 seated politicians are also
+seated on deportation). A v2 "admission dial" rework was rejected in the same migration as a
+mis-scope, with a legal-front-door rebuild left as the open option.
+
+So the subject matter **was** carried forward; what is stranded is this topic's rows. They are
+beyond a citation pass because Season 1 is closed, there is no Season 2 `immigration` row to write,
+and moving a member onto `deportation` or `border-security` is a **re-seat on a different ladder** —
+an adjudication, and a 1,678-row one. ⚠ `border-security` is also `is_live = false`.
+
+⚠ An earlier draft of this ledger said these rows "cannot be repaired by any means" because the
+topic has no Season 2 question. That was wrong and is corrected here. **"No Season 2 question" is a
+fact about one `season_questions` row, not about whether the subject survived the season** — check
+for successor topics, and read the migration that made the change rather than inferring intent from
+the schema.
 
 ⚖ So the running total of wrong-bill rows found by this pass is **21 repaired, 4 blocked on a
-rewritten ladder or a missing target, 18 blocked on the voting-rights ladder, and 34 blocked on a
-topic with no open-season question** — and the sweep is only 53% complete.
+rewritten ladder or a missing target, 18 blocked on the voting-rights ladder, and 34 behind the
+immigration freeze** — and the sweep is only 53% complete.
 
 ### Other candidates, fetched but NOT individually re-opened
 
@@ -255,10 +271,11 @@ moved.
 
 Ordered by how many voter-facing rows are waiting on each.
 
-1. 🔴🔴 **The 34 `immigration` rows** citing a recovery-high-schools bill (20) and a utility-pole
-   bill (14) — section 6. **Blocked on the topic itself**: `immigration` has no Season 2 question,
-   so there is nothing to write forward into. Nothing can be repaired here until that is resolved,
-   which makes it an argument for resolving it.
+1. **The 34 `immigration` rows** citing a recovery-high-schools bill (20) and a utility-pole bill
+   (14) — section 6. Behind the **deliberate** Season 2 freeze (`CA_0066`), whose three successor
+   topics already carry the subject. Fixing these means re-seating members onto `deportation` /
+   `border-security`, which is part of the "legal front door" rebuild that migration leaves open —
+   scope it there, don't reopen the old topic for it.
 2. 🔴 **The 18 `/192/S2977` VOTES Act rows** (section 6). The correct vehicle is already known from
    migration 1900 (S.2924, Chapter 92 of 2022); blocked on the replaced voting-rights ladder.
 3. **The 4 adjudications in section 5** — the climate chair-3 pair, Madaro/fossil-fuels, Arambula.

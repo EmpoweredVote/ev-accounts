@@ -44,8 +44,13 @@
 -- 🔴🔴 THAT PARTIAL SWEEP FOUND THREE MORE COHORTS, ALL BIGGER THAN ANYTHING REPAIRED HERE, AND
 -- ALL BLOCKED. 34 `immigration` rows cite a RECOVERY HIGH SCHOOLS bill (/192/S2745, 20 rows) and a
 -- MUNICIPAL UTILITY POLE bill (/192/H3256, 14 rows, described as "the Work and Family Mobility
--- Act") — and immigration has NO SEASON 2 QUESTION AT ALL, so there is nothing to write forward
--- into and no repair of any kind is possible there yet. And:
+-- Act"). They are beyond a CITATION pass: Season 1 is closed and `immigration` is not in Season 2.
+-- ⚖ That absence is DELIBERATE, not a gap — CA_0066_immigration_freeze_remove_s2.sql removed the
+-- topic on 2026-08-31 because THREE Season 2 topics already own its dimensions (deportation q9,
+-- border-security q46, local-immigration q28) and it overlapped deportation 72% (1212/1678). So the
+-- subject was carried forward; moving these members onto a successor topic is a RE-SEAT ON A
+-- DIFFERENT LADDER, which is adjudication. 🔑 "No Season 2 question" is a fact about one
+-- season_questions row, never about whether the subject survived — look for successors first. And:
 -- 18 voter-facing voting-rights rows say the member "voted for the 2022 VOTES Act" and cite
 -- /Bills/192/S2977 — which is ORDER S.2977, "Order relative to authorizing the joint committee on
 -- Mental Health, Substance Use and Recovery to make an investigation and study of ... a model
