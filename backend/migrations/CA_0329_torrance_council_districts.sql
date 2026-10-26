@@ -129,7 +129,7 @@ BEGIN
     FROM essentials.geofence_boundaries a JOIN essentials.geofence_boundaries b
       ON a.geo_id < b.geo_id AND a.mtfcc = 'X0001' AND b.mtfcc = 'X0001'
    WHERE a.geo_id LIKE 'torrance-council-district-%' AND b.geo_id LIKE 'torrance-council-district-%'
-     AND public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)::geography) > 1000;
+     AND public.ST_Area(public.ST_Intersection(a.geometry, b.geometry)) > 1e-7;   -- ~1,000 m2 (planar degrees; no ::geography, decision 0006)
   IF bad <> 0 THEN RAISE EXCEPTION 'CA_0329: % pair(s) of Torrance districts overlap', bad; END IF;
 
   -- each polygon lies inside the city (TIGER place, which also takes in ocean)
