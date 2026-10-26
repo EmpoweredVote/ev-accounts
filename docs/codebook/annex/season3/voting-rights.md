@@ -1,8 +1,8 @@
-# voting-rights — Season 3 draft, served revision 5 (v3 r5, Draft F, CA_0334; id filled on apply)
+# voting-rights — Season 3 draft, served revision 9429596c-4727-4a6d-8403-94509ec54466 (v3 r5, Draft F, CA_0334)
 
-**Applied:** not yet — CA_0334 (drafted 2026-10-26) rejects revision 4 (`08e7026f…`, Draft C, CA_0318, approved
-2026-10-21, never published), proposes and approves revision 5, pins it in the draft Season 3, and carries the 57
-draft-season rows from revision 4 to revision 5 unchanged.
+**Applied:** 2026-10-26 by CA_0334, which rejected revision 4 (`08e7026f…`, Draft C, CA_0318, approved
+2026-10-21, never published), proposed and approved revision 5 (approved and parked), pinned it in the draft Season 3, and
+carried the 57 draft-season rows from revision 4 to revision 5 unchanged.
 
 **Status:** drafted 2026-10-21 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-voting-rights/`). The Season 2 annex (`../voting-rights.md`) stays as it
