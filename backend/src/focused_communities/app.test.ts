@@ -36,7 +36,7 @@ vi.mock('../lib/accountMeService.js', () => ({
   }),
 }));
 
-const limit = vi.fn(async () => ({ success: true, reset: Date.now() + 1000 }));
+const limit = vi.fn(async (_id: string) => ({ success: true, reset: Date.now() + 1000 }));
 vi.mock('./lib/rateLimit.js', () => ({ postRateLimiter: { limit: (id: string) => limit(id) } }));
 
 const { focusedCommunitiesRouter } = await import('./app.js');
