@@ -134,15 +134,24 @@ design (ADR 0003) and `check:reachability` fails if one ever acquires geometry, 
 vacant Penobscot tribal seat is never returned for an address at all. Its
 `representation_note` is the only place a reader learns it exists.
 
-🔴 **AND THE OPPOSITE DEFECT, ON THE SAME ENDPOINT: ADDRESS SEARCH RETURNS AT MOST ONE SEAT PER
-PERSON.** `27` active people hold two or more current seats, and a voter sees only one of them.
-Measured 2026-10-26 against four cases, two of which predate every Maine wave (Medford MA's mayor,
-who also sits ex officio on the school committee; South Portland ME's mayor, who is also a
-councillor), so it is pre-existing. It is the `DISTINCT ON (p.id)` de-duplication described under
-**Reading** above, seen from the other side: what stops a list printing two Aaron Freemans also
-stops a voter seeing a real second seat. ⚠ **Seating someone who already holds a seat therefore
-REPLACES their visible row rather than adding to it** — `CC_0292` and `CC_0293` each did this once,
-to sitting Maine House members. Probe the address after any `reuse`.
+🟢 **FIXED 2026-10-26 — ADDRESS SEARCH USED TO RETURN AT MOST ONE SEAT PER PERSON.** The shared
+district query de-duplicated on `COALESCE(p.id, o.id)` — the PERSON — so someone holding two seats
+reachable from one address collapsed to one row and the voter never saw the second. `27` active
+people hold two or more current seats. The key is now **`OFFICE_DEDUP_KEY = 'o.id'`** in
+`src/lib/districtQueries.ts`: **one row per OFFICE**, which is what the endpoint means.
+- 🔴 **The DISTINCT itself is load-bearing and stays.** Several geofence rows can share a `geo_id`
+  and map to the same district type, so the join really does return an office twice: measured,
+  Indianapolis 129 raw rows for 89 offices. Removing it lets duplicates reach the response.
+- 🔴 **The INVERSE still applies to politician-rooted reads** (`?q=` list, `getPoliticianById`,
+  everything in `essentialsBrowseService.ts`): those fan out one row per office a person holds and
+  need `DISTINCT ON (p.id)`. See **Reading** above — the two join directions do NOT carry the same
+  guarantee, and the right key is opposite in each.
+- ⚠ **A de-dup keyed on the wrong column LAUNDERS the rows it keeps.** Keyed on the person, two
+  duplicate OFFICE rows held by one person showed as one and looked fine: Indiana's Secretary of
+  State and Treasurer each existed twice for four years, invisibly. `CC_0295` retired them, and its
+  post-verify gates at zero repo-wide the condition that would make this visible again.
+  ▶ When you fix a de-duplication, **diff the rows, not the count** — the rows it adds that should
+  not be there are the finding.
 
 Use the helpers rather than hand-rolling the two-step:
 

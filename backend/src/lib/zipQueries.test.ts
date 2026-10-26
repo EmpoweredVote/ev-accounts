@@ -100,7 +100,7 @@ describe('buildZipDistrictQuery', () => {
   });
 
   it('orders by share descending with nulls last', () => {
-    expect(sql).toContain('ORDER BY COALESCE(p.id, o.id), share DESC NULLS LAST');
+    expect(sql).toContain('ORDER BY o.id, share DESC NULLS LAST');
   });
 
   it('reuses the shared district join, so it cannot drift from the address path', () => {
