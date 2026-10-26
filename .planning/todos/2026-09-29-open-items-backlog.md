@@ -7,8 +7,8 @@ query or the file that produced it so the next session does not have to re-deriv
 🔴 **These exist because they were found in passing, not because anyone planned them.** Several are
 invisible to CI and to every existing gate. Re-measure before acting — the counts move.
 
-**Status 2026-10-25 — items 1, 3, 4, 5, 6, 7 and 8 ✅ CLOSED, item 2 ◐ half closed. Two remain
-(9 and 10), and both are the operator's call or cosmetic.** ⚠ That re-measure instruction earned its
+**Status 2026-10-25 — items 1, 3, 4, 5, 6, 7 and 8 ✅ CLOSED; 2 and 10 ◐ half closed (10's fix is
+up for review). Only item 9 needs a decision, and it is the operator's.** ⚠ That re-measure instruction earned its
 keep seven times over this pass: item 1's population had fallen 210 → 153 on its own, items 3, 4 and
 5 had been quietly resolved by someone else, item 6's baseline turned out never to have moved, and
 **item 8's premise was simply false — the map was right, and the real defect was underneath it.**
@@ -344,8 +344,25 @@ further than the transcript.
 
 ---
 
-## 10. Cosmetic — `npm run banners:check` reports stale on a clean `main`
+## 10. ◐ FIX IS UP FOR REVIEW 2026-10-25 — `banners:check` reports stale on a clean `main`
 
-The generated `public/banners.json` is byte-identical to what `gen-banners-json.mjs` produces; the
-check trips on **CRLF** line endings in the working copy. Pre-existing, not caused by any recent
-change. Worth a `.gitattributes` entry so the CI check stops crying wolf.
+**Diagnosis confirmed by measurement, and it is in the ESSENTIALS repo, not this one** —
+`public/banners.json` + `scripts/gen-banners-json.mjs` live in
+`C:\Transparent Motivations\essentials`.
+
+The generator writes **LF**. Windows git checks the file out as **CRLF** under the default
+`core.autocrlf=true`, and `--check` compares bytes. Strip the carriage returns from both copies and
+the SHA-256 is identical (`0e6543a5f6f6fa57`): **the content was never stale.**
+
+⚠ **CI was never red** — `build-check.yml` runs on Linux, where there are no CRs. This cried wolf
+only on a local Windows run. The cost is still real: a developer regenerates a file that did not
+need it and then carries a phantom modification in `git status`, which is the state in which a
+genuine staleness goes unnoticed.
+
+▶ **essentials PR [#228](https://github.com/EmpoweredVote/essentials/pull/228)** adds a
+`.gitattributes` pinning that one file to LF — scoped deliberately, not a repo-wide `* text=auto`,
+which would renormalise everything and collide with work in flight. Watched failing (exit 1) then
+passing (exit 0) in a clean worktree. **Close this item when #228 merges.**
+
+⚠ **Existing clones need one step**, because an attribute does not rewrite a working tree:
+`git add --renormalize public/banners.json`, or delete the file and `git checkout --` it.

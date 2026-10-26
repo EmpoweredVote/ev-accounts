@@ -602,9 +602,19 @@ jobs:
       # upstream is WILLING to answer, not that an election is live — `no_election`
       # passes, only `unavailable` fails.
       #
-      # ⚠ Expect this RED until the Google key is fixed. That is the point; the card is
-      # empty for every voter right now. It runs on master and the schedule, never on a
-      # PR, so it reports the breakage without blocking anyone's merge.
+      # 🟢 THE OUTAGE IS OVER — re-measured 2026-10-25, GREEN: all three probe addresses
+      # returned `ok`, exit 0. A live probe of /api/essentials/voter-info agreed, and
+      # Atlanta came back with real drop-off sites and their hours. The line that stood
+      # here said "⚠ Expect this RED until the Google key is fixed", which stopped being
+      # true at some point nobody recorded.
+      #
+      # ⚠ A STANDING "EXPECT THIS RED" IS A GATE SWITCHED OFF IN PROSE. Nobody looks twice
+      # at a job they have been told will fail, so the next real breakage reads as the old
+      # one. If this goes red again, FIX IT OR DATE THE NOTE — do not re-add an open-ended
+      # expectation of failure.
+      #
+      # It runs on master and the schedule, never on a PR, so it reports breakage without
+      # blocking anyone's merge.
       - name: Check the voter-info upstream is answering
         if: ${{ !cancelled() }}
         run: npm run check:voter-info
