@@ -74,31 +74,44 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-26: `297 / 58 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 136 that left
+**Measured 2026-10-26: `295 / 57 / 238`** (was `433 / 194 / 239` on 2026-10-20; the 136 that left
 are all 17 Maine cities being seated — `CC_0282` Augusta, `CC_0283` Westbrook, `CC_0291` Bath,
 `CC_0292` the nine all-at-large, `CC_0293` the final five). The Knight trackers report it in
 exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
-§"Flagging is load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since:
-239 UNFLAGGED. Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared
-vacancy* and is deliberately not drift.
+§"Flagging is load-bearing twice over". **Baseline, LOWERED to 238 UNFLAGGED by `CC_0296` on
+2026-10-26** (239 from 2026-09-29 until then). **Treat a count above 238 unflagged as new drift.**
+A flagged seat is a *declared vacancy* and is deliberately not drift.
 
 ⚠ **ONLY THE UNFLAGGED NUMBER IS A BASELINE — THE OTHER TWO ARE DATED OBSERVATIONS.** Seating a
-city moves `total` and `flagged` and must leave `239` alone. It has, across every wave so far, and
-that is the point: a wave that seats people should shrink the flagged bucket, never the baseline.
+city moves `total` and `flagged` and must leave the baseline alone. It has, across every Maine
+wave: a wave that seats *flagged* seats shrinks the flagged bucket, never the baseline.
+
+🟢 **THE BASELINE FALLS ONLY ONE HONEST WAY: BY SEATING A SEAT THAT WAS UNFLAGGED AND UNSEATED.**
+That is what `CC_0296` did — Indiana's real Comptroller office sat empty inside the 239 while a
+duplicate office row held the officer, so merging the two seated it and took the baseline to 238.
+🔴 **That is the only reason to move it down. Never lower it to match a number you measured, and
+never raise it at all** — a lower baseline is a tighter net, and raising one hides the drift it
+was put there to catch.
+
+⚠ **THE OTHER TWO NUMBERS MOVE UNDER YOU BETWEEN SESSIONS.** `CC_0295` measured `297 / 58 / 239`
+and `CC_0296`, hours later, measured `296 / 57 / 239` before writing anything — another session had
+resolved one flagged seat and dated two more in between. Neither migration caused it and neither
+was wrong. ▶ **Gate a migration on the DELTA it creates, captured in its own transaction, not on a
+total somebody else can move while you write the file.** `CC_0296`'s post-verify shows the shape.
 
 ⚠ **READING THE TOTAL AGAINST THE BASELINE RAISES A FALSE ALARM**, and has: on 2026-10-20 a
 session reported "433 against a baseline of 239, +194 of drift". The +194 it had found was the
 flagged population itself — the metric was intact and nothing was wrong.
 
 The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in
-that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
+that 238; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 58 flagged on 2026-10-26,
-only **15 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **43 are flagged with no date**. That is "we
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 57 flagged on 2026-10-26,
+only **17 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
+incumbent died or resigned; see `fl.md`). The other **40 are flagged with no date**. That is "we
 have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters
-and keeps the rows out of the drift metric. **Do not read a stable 239 as "occupancy is clean".**
+and keeps the rows out of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
 
 🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND BOTH KINDS ARE IN THERE.**
 In Maine it meant "not seeded yet" 137 times and "a real vacancy nobody dated" once — a gap to
@@ -127,7 +140,7 @@ being dated**. That second kind changes no total and is the whole point of the s
 ⚠ **A FLAGGED-VACANT OFFICE IS STILL RETURNED BY ADDRESS SEARCH, AS A NAMELESS ROW** with
 `id: null` and an empty `full_name` — `office_current_holder` LEFT JOINs from `offices`, so the
 read path emits the seat with no holder. Measured 2026-10-25 on two unrelated vacancies. It is
-pre-existing and is **not** caused by any seating wave, but it means those 43 undated flags are
+pre-existing and is **not** caused by any seating wave, but it means those 40 undated flags are
 rendering as blanks to voters today.
 ⚠ **A `membership`-basis seat is the exception and is NOT affected** — it has no `geo_id` by
 design (ADR 0003) and `check:reachability` fails if one ever acquires geometry, so Maine's
@@ -152,6 +165,21 @@ people hold two or more current seats. The key is now **`OFFICE_DEDUP_KEY = 'o.i
   post-verify gates at zero repo-wide the condition that would make this visible again.
   ▶ When you fix a de-duplication, **diff the rows, not the count** — the rows it adds that should
   not be there are the finding.
+- 🔴 **A DUPLICATE OFFICE CAN HIDE FOR THE OPPOSITE REASON, AND THE DE-DUP KEY HAS NOTHING TO DO
+  WITH IT.** `CC_0295`'s own gate then found a THIRD Indiana duplicate, `Comptroller x2`, split
+  the other way: the race-carrying copy was empty and the duplicate held the officer. `CC_0295`'s
+  PR reasoned from the de-dup key that both already showed, and **that was wrong** — measured
+  against the live endpoint, only one ever did, because `buildStatewideQuery` ends with
+  `AND (p.is_active = true OR o.is_vacant = true)` and an unseated, unflagged office satisfies
+  neither arm. That is the **Writing** rule above (*an office with no term is invisible*) wearing
+  a different hat. `CC_0296` merged it. ▶ **REASONING ABOUT A READ PATH IS NOT MEASURING IT** —
+  ask the live endpoint before you write down what a voter sees.
+- 🔴 **MERGING TWO OFFICE ROWS IS NOT DELETING ONE.** When the term sits on one copy and the race
+  on the other, move the term first, then delete: `office_terms.office_id` is `ON DELETE CASCADE`,
+  so deleting the held copy eats the term and silently unseats the officer. And repoint the
+  deprecated `politicians.office_id` snapshot in the same migration — **it has NO foreign key**, so
+  the delete leaves it dangling without complaint. Both hazards were confirmed by running `CC_0296`
+  with each step removed and watching its gates fail.
 
 Use the helpers rather than hand-rolling the two-step:
 
