@@ -1,15 +1,27 @@
-# voting-rights — Season 3 draft, served revision 08e7026f-2eb5-4386-9288-f1dbfc3185c3 (v3 r4, CA_0318)
+# voting-rights — Season 3 draft, served revision 5 (v3 r5, Draft F, CA_0334; id filled on apply)
 
-**Applied:** 2026-10-21 by CA_0318 (approved and parked; pinned in the draft Season 3 only).
+**Applied:** not yet — CA_0334 (drafted 2026-10-26) rejects revision 4 (`08e7026f…`, Draft C, CA_0318, approved
+2026-10-21, never published), proposes and approves revision 5, pins it in the draft Season 3, and carries the 57
+draft-season rows from revision 4 to revision 5 unchanged.
 
 **Status:** drafted 2026-10-21 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-voting-rights/`). The Season 2 annex (`../voting-rights.md`) stays as it
-is for Season 2 rows. Rulings by Chris Andrews, 2026-10-20/21: P1, census Q1, J1–J10, Q1–Q8, D1–D6, C1, C-Q1–C-Q5, DC1.
+is for Season 2 rows. Rulings by Chris Andrews, 2026-10-20/21: P1, census Q1, J1–J10, Q1–Q8, D1–D6, C1, C-Q1–C-Q5, DC1;
+2026-10-26 (Stage 3 for Drafts F and G, `stage3-fg/`): FG-Q6, F-Q1–F-Q4, DF1, SS-HB958, T7, and the Stage 4 package P1–P4.
+Revision 5 keeps every act of revision 4 and changes only the words: registration appeared only at rung 5, and a
+voter could not tell whether rung 1 meant registering, voting or both.
 
-**Question:** "What proof of identity or citizenship should a person have to show to vote?"
+**Question:** "What proof of identity or citizenship should a person have to show to cast a ballot or to register to
+vote?"
 
-**Spectrum (L1):** how much proof a person must show before their vote counts. Pole 1: "No proof of identity".
-Pole 5: "Documents that prove citizenship". Stored as the first line of the revision's rationale; not shown to voters
+**Guidance (voters see it):** "Options 1 to 4 are about what a voter shows with a ballot, in person or by mail.
+Option 5 is about proving citizenship, usually when registering: choose it if you want that, whatever you want at the
+ballot. Federal law already requires anyone registering to vote to give a driver's license or Social Security number,
+if they have one. The trade-off: ineligible votes cast, or eligible voters turned away."
+
+**Spectrum (L1):** how much proof a person must show before their vote counts: proof of identity with the ballot,
+then proof of citizenship. Pole 1: "No proof of identity with the ballot". Pole 5: "A document that proves
+citizenship, such as a passport, birth certificate or naturalization papers". Stored as the first line of the revision's rationale; not shown to voters
 yet.
 
 **Orientation:** standard. Rung 1 asks for the least proof, rung 5 the most.
@@ -18,13 +30,14 @@ yet.
 at: local.
 
 **Rungs:**
-1. Require no proof of identity to vote.
-2. Accept non-photo documents, such as a utility bill or bank statement, as voter ID.
-3. Require photo ID to vote, with a sworn statement for a voter who has none.
+1. Require no proof of identity to cast a ballot.
+2. Accept non-photo documents, such as a utility bill or bank statement, as ID to cast a ballot.
+3. Require photo ID to cast a ballot, with a sworn statement for a voter who has none.
 4. Require ID before a ballot counts: photo ID at the polls, or an ID number or a copy of an ID with each mail ballot.
-5. Require documentary proof of citizenship to register or to vote.
+5. Require a document that proves citizenship, such as a passport, birth certificate or naturalization papers, to
+   register to vote or to cast a ballot.
 
-**Rung map from revision 3:** identity (1→1 … 5→5).
+**Rung map from revision 3:** identity (1→1 … 5→5), as revision 4's.
 
 **Scope line — "proof a person shows" (annex, both drafts).** A document, an ID number, a copy of an ID, or a
 sworn statement that a law requires a person to give before a ballot counts or before registration is accepted,
@@ -34,6 +47,24 @@ ballot rules with no identity clause (drop boxes, deadlines, early voting, mail 
 access (same-day, automatic, online registration); citizen-only voting amendments and non-citizen voting in local
 elections; ballot design, counting and tabulators; and a law that bars another level from setting ID rules
 (preemption, V2 / H12), since no rung is about which level decides.
+
+## Revision 5 (Draft F) lines
+
+- **Which point each rung covers.** Rungs 1–4 are about what a voter shows to cast a ballot, in person or by mail.
+  Rung 5 is about a document proving citizenship, to register or to cast a ballot.
+- **F-Q2 (topic-scoped; ruled 2026-10-26).** A record that requires a document proving citizenship to register sits on
+  5 whatever ballot rule it also states (an exception to the `adjacent-chairs` line for this topic).
+- **The registration floor.** The ID number federal law asks of every registrant is the floor every rung assumes; a
+  record or words that only restate it meet no rung.
+- **Named documents are examples.** "A passport, birth certificate or naturalization papers" names kinds of
+  citizenship document; a records-match fallback the registrar runs beside a stated documents rule stays at 5 (D6).
+- **DF1 (ruled 2026-10-26).** KY SB 2 (2020): an affirmation allowed for a stated list of everyday impediments
+  (transportation, documents, work schedule, lost ID, illness, family duties, ID applied for) is open to any voter;
+  the law stays at 3.
+- **SS-HB958 (ruled 2026-10-26).** NC HB 958 (2025) is multi-subject (campaign-finance reporting; census data for
+  district maps); its votes and sponsorships seat no one.
+- **Named bills in own words (codebook H4).** A person who backs "the SAVE Act" by name is read by that bill's
+  operative text (documents to register: rung 5); such seats rest on own words and keep the `statement-evidence` hold.
 
 ## Lines for every rung
 

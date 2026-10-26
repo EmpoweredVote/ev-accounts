@@ -187,6 +187,25 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Date and source:** C1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/c-lesson.md`, `.planning/research/s3-prep-voting-rights/stage2/drafts-c.md`).
 - **Scope:** every topic.
 
+### Stage 3: the voter-placement test (T7)
+- **Ruling:** Stage 3 adds a voter-placement test for every topic. Separate agents play ordinary voters: each reads only
+  one ladder's question, guidance and rungs, plus a list of first-person views in a seeded order, and picks the rung
+  that view would choose, or none. The views and their target rungs (or "none fits") are pre-registered with the other
+  Stage 3 rules. The score is the share of placements on target, reported beside T1–T6 for the control and every
+  draft. It measures what the record tests cannot: whether a voter can find their own view.
+- **Date and source:** 2026-10-26, Chris Andrews (`voting-rights`, `.planning/research/s3-prep-voting-rights/stage3-fg/`:
+  three voters per ladder, ten views; revision 4 placed 19/30, Draft F 25/30).
+- **Scope:** every topic, from 2026-10-26.
+
+### Stage 4: a draft that replaces an approved, unpublished revision
+- **Ruling:** when the winning draft replaces a revision that was approved but never published (for example, pinned in
+  a draft season that has not opened), the new revision is measured from the current published revision (its change
+  class, version and rung map), and the approved one is rejected in the same migration. Draft-season rows that cite
+  the approved revision are carried to the new one in that migration when Stage 3 shows none moves, or withdrawn,
+  by the runner's ruling.
+- **Date and source:** 2026-10-26, Chris Andrews (`voting-rights` revision 5, CA_0334, replacing revision 4).
+- **Scope:** every topic.
+
 ## Stage 5 rulings
 
 ### Local records support own words, never seat alone
@@ -272,9 +291,20 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Date and source:** D3, C-Q4, DC1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage3/disputes.md`,
   `.planning/research/s3-prep-voting-rights/stage3/disputes-C.md`); written into the codebook "Clarified 2026-10-21" header line and the Season 3 annex
   (`docs/codebook/annex/season3/voting-rights.md`, EmpoweredVote/ev-accounts#1096).
-- **Scope:** the Season 3 revision 4 of `voting-rights` only (CA_0318).
+- **Scope:** the Season 3 revisions 4 and 5 of `voting-rights` only (CA_0318; CA_0334, which keeps every act of
+  revision 4).
 - **Contrast:** the standing furthest-act rule (above). A record that states both a rung 3 and a rung 4 act sits at
   rung 4.
+
+### voting-rights — F-Q2 (citizenship documents beside a ballot rule)
+- **Reading:** a record that requires a document proving citizenship to register sits on rung 5 whatever ballot rule
+  it also states, an exception to the `adjacent-chairs` line ("acts from both sides of the middle") for this topic.
+  So a voter's "proved it once, at registration" view and the coder's reading of such a law land on the same rung.
+- **Date and source:** F-Q2, 2026-10-26, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/drafts-fg.md`
+  §7); written into the Season 3 annex (`docs/codebook/annex/season3/voting-rights.md`, CA_0334).
+- **Scope:** the Season 3 revision 5 of `voting-rights` only (CA_0334).
+- **Contrast:** the standing furthest-act rule, under which acts from both sides of the middle in one record are BLANK
+  `adjacent-chairs`.
 
 ## How to add a ruling
 
