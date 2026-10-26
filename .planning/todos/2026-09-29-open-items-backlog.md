@@ -7,11 +7,16 @@ query or the file that produced it so the next session does not have to re-deriv
 🔴 **These exist because they were found in passing, not because anyone planned them.** Several are
 invisible to CI and to every existing gate. Re-measure before acting — the counts move.
 
-**Status 2026-10-25 — items 1, 3, 6 and 7 ✅ CLOSED, item 2 ◐ half closed. Five remain, and ▶ NEXT is
-item 4 (St. Louis banner).** ⚠ That re-measure instruction earned its keep this pass: item 1's population had fallen
-210 → 153 on its own, item 3 had been quietly resolved by someone else, and item 6's baseline turned
-out never to have moved. **Three of the four were already partly or wholly fixed before anyone
-looked.** Measure before you plan the work, not after.
+**Status 2026-10-25 — items 1, 3, 4, 5, 6, 7 and 8 ✅ CLOSED, item 2 ◐ half closed. Two remain
+(9 and 10), and both are the operator's call or cosmetic.** ⚠ That re-measure instruction earned its
+keep seven times over this pass: item 1's population had fallen 210 → 153 on its own, items 3, 4 and
+5 had been quietly resolved by someone else, item 6's baseline turned out never to have moved, and
+**item 8's premise was simply false — the map was right, and the real defect was underneath it.**
+Measure before you plan the work, not after.
+
+🔴 **THE SHARPEST LESSON OF THIS PASS: A BACKLOG ITEM IS A HYPOTHESIS, NOT A FINDING.** Six of eight
+were wrong about their own subject — five already fixed, one (8) wrong about which thing was broken.
+An item that has sat for a month is evidence that somebody once saw something, nothing more.
 
 ---
 
@@ -141,26 +146,41 @@ code `1836003` is still absent from `essentials.districts` and should stay unuse
 
 ---
 
-## 4. ▶ NEXT TASK — ⏳ St. Louis city and county have no banner, and that blocks their chip
+## 4. ✅ CLOSED 2026-10-25 — St. Louis has a banner and a chip, and both are live
 
-`buildingImages.js` holds no `st louis` / `saint louis` key (checked 2026-09-29). `CC_0183` gave both
-governments a `geo_id`, so the DATA is ready; the chip is a one-line `coverage.js` addition **once a
-banner is certified**.
+Shipped by someone else and never recorded here. The Gateway Arch photograph moved down a tier to
+`cities/st-louis.jpg` (essentials PR #176, 2026-09-29) and the chip followed the same day.
 
-Full spec, including the 1700×540 asset spec, the D-09 no-AI rule and the Bend-crop trap:
-`2026-09-28-st-louis-mo-deep-seed.md`, "What wave 5b still owes".
+**Verified live 2026-10-25** in the served bundle `/assets/index-CLfT3Xh3.js`:
+
+```js
+{label:"St. Louis", browseGovernmentList:["2965000"], browseStateAbbrev:"MO", hasContext:!1}
+```
+
+and end-to-end through `POST /api/essentials/browse/by-government-list`: **22 officials**.
+
+⚠ **St. Louis COUNTY (29189) still has no chip, and that is DELIBERATE** — counties stay off the
+grid. Do not read its absence as unfinished work.
 
 ---
 
-## 5. ⚠ The Kansas and Kentucky chips are UNCOMMITTED in the essentials working tree
+## 5. ✅ CLOSED 2026-10-25 — the Kansas and Kentucky chips are committed and live
 
-Wichita and Lexington chips were added to `src/lib/coverage.js` in
-`C:\Transparent Motivations\essentials` on 2026-09-29 and **deliberately not committed**: that repo
-had a large uncommitted pass on `main` (8 new state blocks, a 112-line `Landing.jsx` rewrite, a
-`LocationCombobox.jsx` change) belonging to another session.
+The other session's pass landed. **Verified live 2026-10-25** in the served bundle, with whole new
+Kansas and Kentucky state blocks beside them:
 
-▶ **Check with whoever owns that session before committing.** Until it lands, Wichita and Lexington
-have their data fixed but still no chip.
+```js
+{label:"Wichita",   browseGovernmentList:["2079000"], browseStateAbbrev:"KS", hasContext:!1}
+{label:"Lexington", browseGovernmentList:["2146027"], browseStateAbbrev:"KY", hasContext:!1}
+```
+
+End-to-end through the landing page's own join: **Wichita 7** (Mayor Lily Wu and council),
+**Lexington 34**, against a **control of 123** for a chip already known good.
+
+🔴 **THE FIRST MEASUREMENT OF THIS SAID ALL THREE RETURNED ZERO, AND IT WAS THE PROBE THAT WAS
+BROKEN** — the API returns a bare array and the parser had lost its `Array.isArray` fallback. Only
+the control exposed it: it returned 0 for a chip whose answer was known to be 123. **A chip check
+without a known-good chip beside it cannot tell "no officials" from "no parser".**
 
 ---
 
@@ -255,14 +275,61 @@ compare a government's own office count against the seats sitting on districts i
 
 ---
 
-## 8. ⚠ MO congressional map may be the superseded one
+## 8. ✅ CLOSED 2026-10-25 — the MO map is the RIGHT one. The defect was five hidden races.
 
-Prod holds MO congressional as plain `census_tiger_2024`, `2901`–`2908`, with no vintage tag, but
-Missouri redistricted mid-decade in 2025 and the Census geocoder's `120th Congressional Districts`
-layer puts **414 E 12th St, Kansas City in CD-4**. Found during wave 1 and deliberately out of that
-slice's scope.
+**The premise was false, and checking it found a worse problem underneath.**
 
-▶ Belongs with `2026-08-19-congressional-map-vintage-collision.md`.
+This item said prod "may" hold the superseded Missouri map, because the Census geocoder's
+`120th Congressional Districts` layer puts 414 E 12th St, Kansas City in CD-4 while we answer CD-5.
+Both halves are true. The conclusion does not follow.
+
+🔴 **THE CENSUS GEOCODER'S 120th-CD LAYER SERVES MISSOURI'S 2025 MAP, AND THAT MAP IS BLOCKED.**
+The Supreme Court of the United States, *People Not Politicians v. Onder*, No. 26A388, per curiam,
+**25 September 2026**, 609 U.S. ___ (2026), at 1:
+
+> "In short, as a matter of state law, the 2022 map — not the 2025 map — must be used in the 2026
+> congressional election."
+
+quoting the Missouri Supreme Court's 3 September 2026 holding that the 2025 map **"is not the law
+and has never been the law"** in Missouri and cannot take effect unless voters approve it by
+referendum — **Proposition A, on the 2026-11-03 ballot**. So `census_tiger_2024` / `G5200` /
+`2901`–`2908` is correct for *both* questions our read paths ask, and **no boundary change was
+owed**.
+
+⚠ **THE CENSUS LAYER IS AHEAD OF THE LAW, SO IT IS NOT AN AUTHORITY ON WHICH MAP GOVERNS.** Anyone
+re-running the obvious check will "find" this defect again. It is not one. Read the courts.
+
+**What checking it DID find — and this is what the item should have said all along:** migration
+1206 parked **5 of Missouri's 8 U.S. House races** (geo_id 2902–2906) on the past-dated
+`MO 2026 Congressional Redistricting - Polygon Pending` election so they could never surface, on
+the stated reason "new-map field vs. old-map polygon". The courts dissolved that reason. Nobody
+un-withheld them. Measured against prod on **2026-10-25, nine days before the election**:
+
+| address | before | after `CC_0290` |
+| --- | --- | --- |
+| 414 E 12th St, Kansas City (CD-5) | **no elections at all** | Emanuel Cleaver, Rick Brattin, Randall Langkraehr |
+| 701 E Broadway, Columbia (CD-4) | **no elections at all** | Mark Alford, Thomas Holbrook, Jordan Herrera |
+| 1200 Market St, St. Louis (CD-1, control) | Bell / Berry / Schmitz | unchanged |
+| 840 Boonville Ave, Springfield (CD-7, control) | Burlison / Craig / Hesketh | unchanged |
+
+The Cleaver–Brattin race — the one the whole redistricting fight was about — was invisible.
+
+**Closed by `CC_0290`**, applied 2026-10-25, which also verified all 24 live candidates against the
+Missouri Secretary of State's own **Certification of Candidates, 25 August 2026**: 24 of 24 match,
+3 per district. The candidate field needed no change; migration 1578 had already culled it
+correctly.
+
+🔴 **DO NOT LOAD MISSOURI INTO `G5200V26`.** `electionService.ts` prefers a 2026-vintage polygon
+whenever one exists, so loading MO's 2025 map there would silently re-point every one of these
+races at the blocked map, with nothing erroring. It would look like helpful catch-up work.
+`CC_0290`'s precondition refuses to run if any MO `G5200V26` row exists. **That load becomes correct
+only if Proposition A passes on 2026-11-03 — and then it is a January-2027 change, for the 120th
+Congress, not a 2026 one.**
+
+▶ **One dated follow-up, 2026-11-04:** read the Proposition A result. A YES means Missouri's map
+changes for the 120th Congress and the work above becomes owed. A NO means the 2022 map stands and
+this file is done with Missouri. Context:
+`2026-08-19-congressional-map-vintage-collision.md`.
 
 ---
 
