@@ -58,8 +58,18 @@ instrument. The sample lands on both kinds:
 | **4** | 🔴 **defective** (1 read) | **MA jail moratorium → jail-capacity rung 1** |
 | **3** | 🔴 **defective** (1 read) | **MA Safe Communities Act → deportation rung 1** |
 
-**66 rows sit in clusters read and found defective; 82 in clusters read and found sound; 248 in
+**62 rows sit in clusters read and found defective; 74 in clusters read and found sound; 95 in
 clusters never read.** Eight clusters of 3+ rows were never sampled at all (36 rows).
+
+> 🔴 **CORRECTED 2026-10-22, while working the queue.** This line first read "66 / 82 / 248". All
+> three were wrong: the eight defective cluster sizes in the table above sum to **62**
+> (14+13+11+7+6+4+4+3), the eight sound ones to **74**, and 231 − 62 − 74 leaves **95** fingerprinted
+> rows in clusters nobody read. The "36 rows in 8 unread clusters of 3+" figure was right.
+> ⚖ **The lesson is not the arithmetic.** A headline total written by hand beside a table that
+> already contains the answer is a number with no owner — nothing recomputes it when the table
+> moves, and it was carried forward verbatim into two memory files and a resume note before anyone
+> added it up. **Totals quoted next to a table should be derived from the table, not typed beside
+> it.** Recompute with `node -e` over `clusters.json` rather than trusting any of these figures.
 
 ▶ **This changes how to work the queue: fix a MAPPING, not a row.** Re-seating the 14 ROE-Act rows
 is one decision applied fourteen times, not fourteen readings.

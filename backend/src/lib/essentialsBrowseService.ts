@@ -445,6 +445,7 @@ export async function getPoliticiansByArea(
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -494,6 +495,7 @@ export async function getPoliticiansByArea(
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+             o.id AS office_id,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.voting_powers, o.representation_note,
              o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -542,7 +544,9 @@ export async function getPoliticiansByArea(
   });
 
   const politicians: PoliticianFlatRecord[] = uniqueRows.map((row) => ({
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -638,8 +642,8 @@ export async function getPoliticiansByArea(
       });
     }
     for (const p of politicians) {
-      p.images = imageMap.get(p.id) ?? [];
-      (p as { committees: Array<{ name: string; position: string; urls: string[] }> }).committees = committeeMap.get(p.id) ?? [];
+      p.images = p.id ? imageMap.get(p.id) ?? [] : [];
+      (p as { committees: Array<{ name: string; position: string; urls: string[] }> }).committees = p.id ? committeeMap.get(p.id) ?? [] : [];
     }
   }
 
@@ -660,6 +664,7 @@ const DISTRICT_POLITICIAN_SELECT = `
   COALESCE(p.valid_to, '') AS term_end,
   COALESCE(p.term_date_precision, '') AS term_date_precision,
   COALESCE(p.appointment_date::text, '') AS appointment_date,
+  o.id AS office_id,
   o.title AS office_title, o.representing_state, o.representing_city,
   o.voting_powers, o.representation_note,
   o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -734,6 +739,7 @@ export async function getPoliticiansByGovernmentList(
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -790,6 +796,7 @@ export async function getPoliticiansByGovernmentList(
              COALESCE(p.valid_to, '') AS term_end,
              COALESCE(p.term_date_precision, '') AS term_date_precision,
              COALESCE(p.appointment_date::text, '') AS appointment_date,
+             o.id AS office_id,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.voting_powers, o.representation_note,
              o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -851,7 +858,9 @@ export async function getPoliticiansByGovernmentList(
   });
 
   const politicians: PoliticianFlatRecord[] = allRows.map((row) => ({
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name as string ?? '',
     middle_initial: row.middle_initial as string ?? '',
@@ -917,7 +926,7 @@ export async function getPoliticiansByGovernmentList(
       if (!imageMap.has(pid)) imageMap.set(pid, []);
       imageMap.get(pid)!.push({ id: r.id as string, url: r.url, type: r.type, photo_license: r.photo_license, focal_point: (r.focal_point as string) ?? null });
     }
-    for (const p of politicians) p.images = imageMap.get(p.id) ?? [];
+    for (const p of politicians) p.images = p.id ? imageMap.get(p.id) ?? [] : [];
   }
 
   return politicians;
@@ -936,7 +945,9 @@ export async function getPoliticiansByGovernmentList(
 
 function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
   return {
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',
@@ -1003,7 +1014,7 @@ async function attachBrowseImages(politicians: PoliticianFlatRecord[]): Promise<
     if (!imageMap.has(pid)) imageMap.set(pid, []);
     imageMap.get(pid)!.push({ id: r.id as string, url: r.url as string, type: r.type as string, photo_license: r.photo_license as string, focal_point: (r.focal_point as string) ?? null });
   }
-  for (const p of politicians) p.images = imageMap.get(p.id) ?? [];
+  for (const p of politicians) p.images = p.id ? imageMap.get(p.id) ?? [] : [];
 }
 
 export async function getStatewideOfficials(stateAbbrev: string): Promise<PoliticianFlatRecord[]> {
@@ -1022,6 +1033,7 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -1093,6 +1105,7 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,

@@ -1,0 +1,12 @@
+{
+  "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de",
+  "sources": [],
+  "terms": [
+    {
+      "office": "State House (WA)",
+      "start": "1999-01-01",
+      "precision": "year",
+      "source": "essentials roster export (s3-census-education-equity-programs-supplement/raw/roster-legislators.tsv)"
+    }
+  ]
+}

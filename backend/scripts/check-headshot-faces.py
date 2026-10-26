@@ -295,8 +295,13 @@ def main():
         url = rec['url']
         # ONE retry on a fetch failure, because UNREACHABLE can fail a scheduled run and a
         # single blip across ~9,200 requests would redden a nightly that is otherwise green.
-        # Only the FETCH is retried: a decode failure is deterministic and retrying it just
-        # doubles the work.
+        #
+        # ⚠ NO Content-Length CHECK HERE, AND THAT IS DELIBERATE — `requests` ALREADY DOES IT.
+        # A first pass at the 2026-10-25 fix added one, on the reasoning that "a clean 200 lies in
+        # five ways, truncation among them". Measured against a local server that declares the full
+        # length and sends half: requests raises ChunkedEncodingError on its own, so that case was
+        # already caught by this loop and reported UNREACHABLE. The guard was dead code with a
+        # confident comment attached. The retry that matters is the one below, on the DECODE.
         last = None
         for attempt in (1, 2):
             try:
@@ -311,16 +316,53 @@ def main():
         if r is None:
             rec.update(verdict='UNREACHABLE', error=f'{type(last).__name__}: {str(last)[:100]}')
             return rec
+        # 🔴 AN UNDECODABLE BODY GETS ONE FRESH FETCH BEFORE IT IS BELIEVED, BECAUSE A DECODE
+        # FAILURE IS NOT DETERMINISTIC. The comment above this block used to assert that it was,
+        # and used that to justify never retrying. It reddened master on 2026-10-25.
+        #
+        # 🔴 THE PROOF IS THAT RE-RUNNING THE SAME COMMIT FLAGGED A DIFFERENT PERSON.
+        #   scheduled run  -> NEW UNDECODABLE best=0.00  Tommy Vitolo
+        #   re-run, same SHA, same 9,192 images, same data
+        #                  -> NEW UNDECODABLE best=0.00  Douglas Wozniak   (Vitolo passed)
+        # Exactly one image fails per sweep and it is a different one each time. Both files were
+        # then fetched by hand and are perfectly good JPEGs — 600x750 and 500x625 — that decode
+        # every time; 30 parallel fetches of Vitolo's returned 30 byte-identical copies. So the
+        # verdict is a property of the TRANSFER, never of the image.
+        #
+        # The mechanism: a truncated or mangled body makes PIL raise `OSError: image file is
+        # truncated`, which is indistinguishable from a genuinely corrupt file. Transport failure
+        # arrives wearing a content defect's clothes, and the no-retry rule guaranteed it stuck.
+        #
+        # Proved against a local server before shipping: an endpoint that serves a short body
+        # ONCE and then succeeds goes UNDECODABLE under the old logic and OK under this one.
+        # ⚠ An endpoint that serves a short body with NO Content-Length *every* time still reports
+        # UNDECODABLE, correctly — this retries a blip, it does not paper over a broken host.
+        # Cost is one extra request per flagged image (17 on the run that prompted it); a file
+        # that genuinely is not an image fails twice and is reported exactly as before.
+        def decode_into(rec_, body):
+            img = open_portrait(body)
+            rep = face_report(img, short_circuit_at=FACE_BAR)
+            rec_.update(verdict=classify(rep), confs=rep['confs'], eye_angle=rep['eye_angle'],
+                        dims=list(img.size))
+
         rec['sha256'] = hashlib.sha256(r.content).hexdigest()
         try:
-            img = open_portrait(r.content)
-            rep = face_report(img, short_circuit_at=FACE_BAR)
-            rec.update(verdict=classify(rep), confs=rep['confs'], eye_angle=rep['eye_angle'],
-                       dims=list(img.size))
+            decode_into(rec, r.content)
         except PortraitRejected as e:
             rec.update(verdict='CHECK_FAILED', error=str(e)[:120])
-        except Exception as e:
-            rec.update(verdict='UNDECODABLE', error=f'{type(e).__name__}: {str(e)[:100]}')
+        except Exception as first_err:                   # noqa: BLE001 - reported below if it recurs
+            try:
+                time.sleep(1.5)
+                r2 = session.get(url, timeout=45)
+                r2.raise_for_status()
+                rec['sha256'] = hashlib.sha256(r2.content).hexdigest()
+                decode_into(rec, r2.content)
+                rec['refetched'] = True
+            except PortraitRejected as e:
+                rec.update(verdict='CHECK_FAILED', error=str(e)[:120])
+            except Exception:                            # noqa: BLE001 - the FIRST error is the honest one
+                rec.update(verdict='UNDECODABLE',
+                           error=f'{type(first_err).__name__}: {str(first_err)[:100]} (twice)')
         return rec
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:

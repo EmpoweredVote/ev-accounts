@@ -45,6 +45,14 @@ describe('NAMES_INSTRUMENT — what each widening admits', () => {
     expect(NAMES_INSTRUMENT.test('voted for H.R. 8')).toBe(true);
   });
 
+  it('sees a Massachusetts bill number — the eighth widening', () => {
+    expect(NAMES_INSTRUMENT.test('Frost authored H.4359 House Amendment #7 (2022), which requires valid photo identification')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('voted for S.2554 on final passage')).toBe(true);
+    // Refused: an initial, and a spaced short number.
+    expect(NAMES_INSTRUMENT.test('as H. Smith argued in committee')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('see H. 12 of the report')).toBe(false);
+  });
+
   it('sees a Miami-Dade County resolution — the sixth widening', () => {
     // The three instruments the transportation and housing rows are seated on.
     expect(NAMES_INSTRUMENT.test('She is the prime sponsor of R-551-26, adopted in 2026')).toBe(true);
@@ -57,6 +65,23 @@ describe('NAMES_INSTRUMENT — what each widening admits', () => {
   it('still sees the San Diego form the sixth widening did not replace', () => {
     // `\bR-\d{5,6}\b` and the new `\bR-\d{1,4}-\d{2}\b` are siblings, not substitutes.
     expect(NAMES_INSTRUMENT.test('Resolution R-316659 (Climate Action Plan)')).toBe(true);
+  });
+});
+
+describe('NAMES_INSTRUMENT — the seventh widening ("File" states)', () => {
+  it('sees a Wyoming, Iowa or Minnesota bill number', () => {
+    // The CA_0318 re-audit's false fail: a Wyoming chief sponsor's row named SF0190.
+    expect(NAMES_INSTRUMENT.test('chief sponsor of SF0190 (2025), read at wyoleg.gov')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('voted for Senate File 79')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('sponsored House File 590')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('authored HF 1830')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('Senate File No. 12')).toBe(true);
+  });
+
+  it('refuses a bare "file" and a token that only starts with SF', () => {
+    expect(NAMES_INSTRUMENT.test('she filed a complaint with the Senate')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('a fan of the SF 49ers')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('the senate file room was closed')).toBe(false);
   });
 });
 

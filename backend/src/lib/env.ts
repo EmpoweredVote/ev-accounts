@@ -31,6 +31,14 @@ const envSchema = z.object({
   // returns 500 (misconfigured) but nothing else is affected. Lives in the Render dashboard,
   // never in git. See src/civic_spaces/config/database.ts and migration CA_0111.
   CIVIC_SPACES_DATABASE_URL: z.string().optional(),
+  // FOCUSED_COMMUNITIES_DATABASE_URL: connection string for the folded Focused Communities
+  // backend. It authenticates as the DEDICATED, least-privilege role `focused_communities_app`
+  // (migration CA_0323): five connect tables and one function, NOT connect.connected_profiles
+  // or the other identity-adjacent connect tables — NOT the broad service_role key the standalone
+  // used. Optional so the engine boots without it: absent = the /fc/api routes 500, nothing else
+  // is affected. Lives in the Render dashboard, never in git. See
+  // src/focused_communities/config/database.ts.
+  FOCUSED_COMMUNITIES_DATABASE_URL: z.string().optional(),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),

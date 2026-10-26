@@ -70,6 +70,17 @@ describe('buildCoderReviewRow', () => {
     expect(r.evidence[0].snippets[0].matched_span).toContain('REQUIRES every landlord');
     expect(r.verified_source_count).toBe(1);
   });
+  it('writes the chair and the source requests to notes on a needs-source row, and nothing otherwise', () => {
+    const rows = [passage()];
+    const r = buildCoderReviewRow({
+      batchId: 'b', seasonId: 'season', codebookVersion: '0.4', seat: { politician_id: 'p', office_id: 'o', full_name: 'Jane Doe' },
+      topic: { topic_id: 't', topic_key: 'rent', served_revision_id: 'r' }, report: report({ shadow: 'would-review', shadow_reasons: ['needs-source'] }),
+      consensusRow: { ...coderRow(rows), needs_source: ['term dates', 'roll call'] }, snapshots: snaps,
+    })!;
+    expect(r.queue_reasons).toEqual(['needs-source']);
+    expect(r.notes).toBe('Coder chair 2; the coder asked for more sources: (1) term dates (2) roll call');
+    expect(build(report())!.notes).toBeNull();
+  });
   it('keeps the report\'s review reasons and adds no stratum reason to a row that would review anyway', () =>
     expect(build(report({ shadow: 'would-review', shadow_reasons: ['statement-other'] }))!.queue_reasons).toEqual(['statement-other']));
   it('lists a source with no publishable window as unpublishable', () => {

@@ -55,11 +55,29 @@ describe('buildDistrictQuery', () => {
 
   it('appends orderByTail after the DISTINCT ON key', () => {
     const sql = buildDistrictQuery({ ...base, orderByTail: ', share DESC NULLS LAST' });
-    expect(sql).toContain('ORDER BY COALESCE(p.id, o.id), share DESC NULLS LAST');
+    expect(sql).toContain('ORDER BY o.id, share DESC NULLS LAST');
   });
 
-  it('keeps DISTINCT ON keyed on COALESCE(p.id, o.id) so a vacant seat still dedupes', () => {
-    expect(buildDistrictQuery(base)).toContain('DISTINCT ON (COALESCE(p.id, o.id))');
+  // 🔴 The key is the OFFICE, never the politician. Keyed on the person (the old
+  // `COALESCE(p.id, o.id)`), someone holding two seats reachable from one address collapsed to
+  // one row and the voter never saw the second — a state representative who also sits on the
+  // city council showed as one or the other. 27 active people hold 2+ current seats.
+  it('keys DISTINCT ON the office, so one person holding two seats returns two rows', () => {
+    const sql = buildDistrictQuery(base);
+    expect(sql).toContain('DISTINCT ON (o.id)');
+    expect(sql).not.toContain('DISTINCT ON (COALESCE(p.id, o.id))');
+  });
+
+  // 🟢 ...but a DISTINCT must still be there. Several geofence rows can share a geo_id and map
+  // to the same district type, so the join really does return an office more than once:
+  // measured against prod 2026-10-26, Indianapolis returned 129 rows for 89 offices.
+  it('still de-duplicates, because the geofence join fans the same office out', () => {
+    expect(buildDistrictQuery(base)).toContain('DISTINCT ON (');
+  });
+
+  // The ORDER BY must lead with the DISTINCT ON key or Postgres rejects the query outright.
+  it('orders by the same key it de-duplicates on', () => {
+    expect(buildDistrictQuery(base)).toContain('ORDER BY o.id');
   });
 });
 
@@ -110,5 +128,21 @@ describe('buildStatewideQuery', () => {
   it('scopes to the bound state while letting federal offices through', () => {
     expect(buildStatewideQuery())
       .toContain("AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))");
+  });
+});
+
+describe('every politician row carries its office id', () => {
+  // The mapper tests in essentialsService.vacantRows.test.ts mock the query, so they cannot
+  // see whether the column is actually selected. This is the half that can.
+  const base = { spatialPredicate: 'ST_Covers(gb.geometry, $1)' };
+
+  it('selects o.id AS office_id — the only key a VACANT row has', () => {
+    // A seat with no current term comes back with every p.* column NULL. Without this column
+    // such a row carries no identifier at all and a client cannot key, link or dedupe it.
+    expect(buildDistrictQuery(base)).toContain('o.id AS office_id');
+  });
+
+  it('selects it on the statewide query too, which is where most vacancies surface', () => {
+    expect(buildStatewideQuery()).toContain('o.id AS office_id');
   });
 });

@@ -1,0 +1,96 @@
+{
+  "id": "VA-VBCPS-0506-8-2025",
+  "scope": "school:5103840",
+  "title": "Vote on the Motion to amend previous vote (pause parts of the 2025-04-08 resolution)",
+  "urls": [
+    "https://resources.finalsite.net/images/v1748865421/vbschoolscom/kpnzsh92yd5jotewrbgb/050625M.pdf"
+  ],
+  "version": "other",
+  "operative_text": "8. Vote on the Motion to amend previous vote: Chair Brown called for a motion to amend previous vote, namely,\n to amend the April 8, 2025 School Board Resolution To comply with legal obligations in exchange for receiving\n federal financial assistance to pause the below listed portions of the April 8th Resolution until the federal courts\n have ruled whether Executive Order #14190 can be enforced:\n A. Resolution Sections 1, 3, 4, 5 and 6.\n B. Resolution Section 2 the second sentence regarding suspension of all educational programs offerings\n that do not comply with the above federal guidance, including but not limited to: the Equity Plan, the\n Equity Dashboard, and any educational program offerings that would not comply.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-05-06",
+      "body": "Virginia Beach City Public Schools",
+      "motion": "Vote on the Motion to amend previous vote (pause parts of the 2025-04-08 resolution)",
+      "kind": "action-item",
+      "yes": 5,
+      "no": 5,
+      "absent": 1,
+      "members": [
+        {
+          "name": "Matt Cummings",
+          "politician_id": "00e6f571-4d8b-5241-87c3-5898e0ae2e18",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Felton",
+          "politician_id": "718007cb-41cd-5e5e-8b89-fddd6b460ef1",
+          "vote": "yea"
+        },
+        {
+          "name": "Alveta J. Green",
+          "politician_id": "31702c5f-ed24-52f2-9746-f4b13331aa03",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly A. Melnyk",
+          "politician_id": "853c008a-d5bd-5700-8728-bb8f35b73921",
+          "vote": "yea"
+        },
+        {
+          "name": "Melinda Rogers",
+          "politician_id": "f47ed783-a319-5805-8016-2d909597aea1",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Brown",
+          "politician_id": "3e74e711-c6c1-5e3b-8f47-25f1f0f3fc03",
+          "vote": "nay"
+        },
+        {
+          "name": "Carolyn D. Weems",
+          "politician_id": "ffe07962-8735-5aa6-ae8c-2a34df0151dd",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Bohenstiel",
+          "politician_id": "df08ad09-9459-53a1-ad87-81406a986bd5",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Callan",
+          "politician_id": "43c21625-3268-5580-a750-bcdd22fd6ab5",
+          "vote": "nay"
+        },
+        {
+          "name": "Rose Dwyer",
+          "politician_id": "d3fd9c85-f1e7-551c-a43b-51b2d840c4e0",
+          "vote": "nay"
+        },
+        {
+          "name": "David Culpepper",
+          "politician_id": "bc799057-7962-565a-b924-862385fdd535",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+    "fetched_at": "2026-10-19T19:24:17.418Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-pilot-equity-programs/stage1/raw/vb/050625M.pdf",
+      "sha256": "08fa4b8620325a36fd7c1976ac15db47fedd8c7a9e6443e70514e2e84d162c8c"
+    }
+  }
+}

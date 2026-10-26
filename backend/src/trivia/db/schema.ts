@@ -184,6 +184,9 @@ export const questions = triviaSchema.table('questions', {
   externalId: text('external_id').notNull().unique(), // Preserves "q001" style IDs from JSON
   text: text('text').notNull(),
   options: jsonb('options').$type<string[]>().notNull(), // Array of 4 strings
+  // 7 ascending marks, correct answer at index 3. NULL for prose and for any numeric
+  // question predating scales. See CC_0188 and rollWindow() in answerScale.ts.
+  optionsScale: jsonb('options_scale').$type<string[] | null>(),
   correctAnswer: integer('correct_answer').notNull(), // 0-based index
   explanation: text('explanation').notNull(),
   difficulty: text('difficulty').notNull(), // 'easy' | 'medium' | 'hard'

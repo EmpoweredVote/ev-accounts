@@ -34,16 +34,40 @@
  * fixing an import. As of 2026-10-20 that was San Tan Valley AZ (~100k residents), Mountain House
  * CA, Mulberry GA, Keystone CO, Starbase TX, Bloomington TX, Baldwin MN and Greenleaf WI.
  *
+ * BASELINED, AND BASELINED ON IDENTITIES RATHER THAN COUNTS. There is a real backlog here — eight
+ * municipalities to load and 570 shapes to explain — and failing on it every day would only teach
+ * people to ignore this check, the way a permanently-red check always does. So the known set is
+ * recorded in data/tiger-layer-fidelity-baseline.json and the gate fires on anything NEW.
+ *
+ * 🔑 The baseline stores GEOIDs, not totals, and that is deliberate. Its sibling
+ * check-address-reachability.mjs baselines counts per bucket, which cannot see a defect that
+ * replaces another: load San Tan Valley on the same day a different town incorporates and the count
+ * is unchanged while the facts are not. GEOIDs are stable identifiers and these sets are small, so
+ * there is no reason to accept that blind spot here.
+ *
+ * A polygon leaving the baseline is reported too — that is somebody fixing something, and the
+ * baseline should shrink to match. Never let it grow without saying why in the commit message.
+ *
  * Usage:
  *   node scripts/check-tiger-layer-fidelity.mjs
  *   node scripts/check-tiger-layer-fidelity.mjs --mtfcc G4110
  *   node scripts/check-tiger-layer-fidelity.mjs --json
+ *   node scripts/check-tiger-layer-fidelity.mjs --update-baseline
+ *     ⚠ regenerates EVERY layer from whatever production says today, so it will absorb a real
+ *     regression that landed this morning as though it were always known. Prefer hand-editing one
+ *     layer's list. If you do run it, read the diff before committing it.
  */
 import 'dotenv/config';
 import pg from 'pg';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 const CLAIMED = 'tigerWMS_ACS2024'; // the vintage `census_tiger_2024` means
 const BASE = 'https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb';
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const BASELINE_PATH = path.join(HERE, '..', 'data', 'tiger-layer-fidelity-baseline.json');
 
 const LAYERS = [
   // `governed: true` = this layer's FUNCSTAT distinguishes units with a government from units
@@ -72,7 +96,22 @@ const AREA_TOLERANCE = 0.05;
 
 const argv = process.argv.slice(2);
 const asJson = argv.includes('--json');
+const updateBaseline = argv.includes('--update-baseline');
 const onlyMtfcc = argv.includes('--mtfcc') ? argv[argv.indexOf('--mtfcc') + 1] : null;
+
+/** Known-and-accepted defects, keyed mtfcc -> { missing: [geoid], areaOff: [geoid] }. */
+function loadBaseline() {
+  try {
+    const raw = JSON.parse(readFileSync(BASELINE_PATH, 'utf8'));
+    return raw.layers ?? {};
+  } catch {
+    // No baseline yet: treat everything as new. Better to be noisy on day one than to
+    // silently accept whatever happens to be broken when the file first appears.
+    return {};
+  }
+}
+const baseline = loadBaseline();
+const asSet = (xs) => new Set(xs ?? []);
 
 if (!process.env.DATABASE_URL) {
   console.log('check-tiger-layer-fidelity: DATABASE_URL is not set — skipping.');
@@ -85,7 +124,7 @@ async function fetchLayer(layerId, governed) {
   const out = new Map();
   for (let offset = 0; ; offset += 1000) {
     const url = `${BASE}/${CLAIMED}/MapServer/${layerId}/query?where=1%3D1` +
-      `&outFields=GEOID,NAME,FUNCSTAT,AREALAND,AREAWATER&returnGeometry=false` +
+      `&outFields=GEOID,NAME,FUNCSTAT,AREALAND,AREAWATER,CENTLAT,CENTLON&returnGeometry=false` +
       `&resultOffset=${offset}&resultRecordCount=1000&f=json`;
     let json;
     try {
@@ -111,6 +150,9 @@ async function fetchLayer(layerId, governed) {
         area: land + (Number(a.AREAWATER) || 0),
         name: String(a.NAME ?? ''),
         statistical: fs === 'S',
+        // TIGER ships a signed-string centroid ("+38.0537", "-078.5570").
+        lat: Number(a.CENTLAT),
+        lon: Number(a.CENTLON),
       });
     }
     if (feats.length < 1000) break;
@@ -123,21 +165,39 @@ const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, ssl: { re
 
 /** Keyset-paged, NOT OFFSET — a growing OFFSET re-sorts the layer each page and blows the 30s
  *  statement timeout around the 30,000th ZCTA. */
-async function ourRows(mtfcc, withArea) {
+async function ourRows(mtfcc, withGeometry) {
   const m = new Map();
   let after = '';
   for (;;) {
     const { rows } = await pool.query(
-      `SELECT geo_id${withArea ? ', public.ST_Area(geometry::public.geography) AS area' : ''}
+      `SELECT geo_id${withGeometry ? `,
+              public.ST_Area(geometry::public.geography) AS area,
+              public.ST_X(public.ST_Centroid(geometry)) AS lon,
+              public.ST_Y(public.ST_Centroid(geometry)) AS lat` : ''}
          FROM essentials.geofence_boundaries
         WHERE mtfcc = $1 AND geo_id > $2 ORDER BY geo_id LIMIT 2000`,
       [mtfcc, after]
     );
-    for (const r of rows) m.set(String(r.geo_id), withArea ? Number(r.area) : 0);
+    for (const r of rows) {
+      m.set(String(r.geo_id), withGeometry
+        ? { area: Number(r.area), lat: Number(r.lat), lon: Number(r.lon) }
+        : null);
+    }
     if (rows.length < 2000) break;
     after = rows[rows.length - 1].geo_id;
   }
   return m;
+}
+
+/** Great-circle km. */
+function kmBetween(aLat, aLon, bLat, bLon) {
+  const R = 6371;
+  const toRad = (d) => (d * Math.PI) / 180;
+  const dLat = toRad(bLat - aLat);
+  const dLon = toRad(bLon - aLon);
+  const h = Math.sin(dLat / 2) ** 2 +
+    Math.cos(toRad(aLat)) * Math.cos(toRad(bLat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
 }
 
 let failed = false;
@@ -198,19 +258,66 @@ try {
       entry.statisticalGaps = real.filter((r) => r.statistical).length;
 
       const offenders = [];
-      for (const [geoid, ourArea] of ours) {
+      const displaced = [];
+      for (const [geoid, mine] of ours) {
         const t = theirs.get(geoid);
-        if (!t?.area || !ourArea) continue;
-        const d = Math.abs(ourArea - t.area) / t.area;
+        if (!t?.area || !mine?.area) continue;
+        const d = Math.abs(mine.area - t.area) / t.area;
         if (d > AREA_TOLERANCE) {
-          offenders.push({ geoid, name: t.name, delta: d, ourKm2: ourArea / 1e6, theirKm2: t.area / 1e6 });
+          offenders.push({ geoid, name: t.name, delta: d, ourKm2: mine.area / 1e6, theirKm2: t.area / 1e6 });
+        }
+        // DISPLACEMENT — a different question from area, and the one that catches the worst
+        // defect class: the right GEOID carrying the wrong place's geometry. 5100090 is
+        // "Albemarle County Public Schools" and we held ALEXANDRIA CITY under it, 159 km away;
+        // area caught that only because the two happened to differ 47-fold. A swap between two
+        // similarly sized districts would have passed every area test silently.
+        //
+        // Scale-free threshold: flag when the centroids are further apart than the authority's
+        // own radius (sqrt(area/pi)), floored at 2 km so tiny polygons do not fire on rounding.
+        // A boundary revision moves a centroid a fraction of its radius; a swap moves it multiples.
+        //
+        // ⚠ ANTIMERIDIAN. A centroid is meaningless for a polygon that crosses 180° longitude:
+        // the Aleutians West Census Area (02016) reported a 5,228 km displacement — halfway
+        // round the planet — because ST_Centroid averaged longitudes either side of the line.
+        // That is this method's own false positive, not a defect, so skip anything out there
+        // rather than baselining a number that was never true.
+        const nearAntimeridian = Math.abs(t.lon) > 170 || Math.abs(mine.lon ?? 0) > 170;
+        if (!nearAntimeridian && Number.isFinite(t.lat) && Number.isFinite(t.lon) && Number.isFinite(mine.lat)) {
+          const km = kmBetween(mine.lat, mine.lon, t.lat, t.lon);
+          const radiusKm = Math.sqrt(t.area / Math.PI) / 1000;
+          if (km > Math.max(2, radiusKm)) {
+            displaced.push({ geoid, name: t.name, km, radiusKm });
+          }
         }
       }
+      displaced.sort((a, b) => b.km - a.km);
       offenders.sort((a, b) => b.delta - a.delta);
       entry.areaOff = offenders.length;
       entry.worstArea = offenders.length ? `${(offenders[0].delta * 100).toFixed(2)}%` : '0%';
       entry.worstOffenders = offenders.slice(0, 5);
-      entry.ok = entry.gaps.length === 0 && offenders.length === 0;
+
+      // Score against the baseline by IDENTITY. Known defects do not fail; anything new does,
+      // and anything that has left the baseline is reported so the file can shrink.
+      const known = baseline[spec.mtfcc] ?? {};
+      const knownMissing = asSet(known.missing);
+      const knownAreaOff = asSet(known.areaOff);
+      const knownDisplaced = asSet(known.displaced);
+
+      entry.currentMissing = entry.gaps.map((g) => g.geoid);
+      entry.currentAreaOff = offenders.map((o) => o.geoid);
+      entry.currentDisplaced = displaced.map((d) => d.geoid);
+
+      entry.newMissing = entry.gaps.filter((g) => !knownMissing.has(g.geoid));
+      entry.newAreaOff = offenders.filter((o) => !knownAreaOff.has(o.geoid));
+      entry.newDisplaced = displaced.filter((d) => !knownDisplaced.has(d.geoid));
+      entry.fixedMissing = [...knownMissing].filter((g) => !entry.currentMissing.includes(g));
+      entry.fixedAreaOff = [...knownAreaOff].filter((g) => !entry.currentAreaOff.includes(g));
+      entry.knownMissing = entry.gaps.length - entry.newMissing.length;
+      entry.knownAreaOff = offenders.length - entry.newAreaOff.length;
+      entry.worstDisplaced = displaced.slice(0, 5);
+
+      entry.ok = entry.newMissing.length === 0 && entry.newAreaOff.length === 0 &&
+                 entry.newDisplaced.length === 0;
       if (!entry.ok) failed = true;
     } catch (err) {
       if (err instanceof UpstreamUnavailable) { entry.ok = true; entry.skipped = true; entry.note = `SKIPPED — ${err.message}`; }
@@ -220,6 +327,55 @@ try {
     if (!asJson) print(entry);
   }
   if (asJson) console.log(JSON.stringify({ ok: !failed, vintage: CLAIMED, results }, null, 2));
+
+  if (updateBaseline) {
+    if (onlyMtfcc) {
+      console.error('\nRefusing to --update-baseline for a single layer: it would rewrite the whole');
+      console.error('file from one layer\'s result and silently empty every other layer. Run it bare,');
+      console.error('or hand-edit the one list you mean to change.');
+      process.exitCode = 1;
+    } else {
+      const layers = {};
+      for (const r of results) {
+        if (r.skipped || r.currentMissing === undefined) {
+          // Never write a layer we could not measure: an unreachable authority would otherwise
+          // blank its list and silently forgive every known defect in it.
+          layers[r.mtfcc] = baseline[r.mtfcc] ?? { missing: [], areaOff: [] };
+          continue;
+        }
+        layers[r.mtfcc] = {
+          missing: [...r.currentMissing].sort(),
+          areaOff: [...r.currentAreaOff].sort(),
+          displaced: [...r.currentDisplaced].sort(),
+        };
+      }
+      const payload = {
+        _comment:
+          'Baseline for check-tiger-layer-fidelity.mjs, keyed mtfcc -> { missing, areaOff, ' +
+          'displaced } as GEOIDs. Identities, NOT counts: a count baseline cannot see a defect ' +
+          'that replaces another. `missing` = a governed polygon the authority lists inside a ' +
+          'state we have adopted and we do not hold (2026-10-21: eight newly incorporated ' +
+          'municipalities, San Tan Valley AZ the largest at ~100k residents). `areaOff` = right ' +
+          'GEOID, area off the claimed vintage by >5%, cause not diagnosed. `displaced` = right ' +
+          'GEOID, geometry in the WRONG PLACE. ' +
+          'THE displaced LIST IS NOT NOISE AND MUST NOT BE TREATED AS ACCEPTED: 5100090 is ' +
+          '"Albemarle County Public Schools" and we hold ALEXANDRIA CITY under it, 156 km away, ' +
+          'so nobody in Albemarle County reaches their school board and Alexandria residents ' +
+          'reach Albemarle\'s. 5513359275 (Oconomowoc town) is 7 km off with a 1 km radius and ' +
+          '81 sq km against the authority\'s 1.3. Those two are repairs owed, baselined only to ' +
+          'keep the gate green while they are worked. The gate fires on anything NOT in these ' +
+          'lists. Shrink them as the backlog is worked off; never grow one without saying why in ' +
+          'the commit message.',
+        _asOf: new Date().toISOString().slice(0, 10),
+        _vintage: CLAIMED,
+        layers,
+      };
+      writeFileSync(BASELINE_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+      console.log(`\nBaseline written to ${path.relative(process.cwd(), BASELINE_PATH)}`);
+      console.log('Read the diff before committing it — this absorbs whatever is broken today.');
+      process.exitCode = 0;
+    }
+  }
 } finally {
   await pool.end();
 }
@@ -231,16 +387,33 @@ function print(r) {
   if (r.note) console.log(`        ! ${r.note}`);
   if (r.nettedAsDualListed) console.log(`        · ${r.nettedAsDualListed} netted as TIGER dual-listings already held in the sibling layer`);
   if (r.statisticalGaps) console.log(`        · ${r.statisticalGaps} statistical-only units absent (no government; not a routing defect)`);
-  if (r.gaps?.length) {
-    console.log(`        ! ${r.gaps.length} GOVERNED polygons the authority has and we do not:`);
-    for (const g of r.gaps.slice(0, 10)) console.log(`            ${g.geoid}  ${g.name}`);
-    if (r.gaps.length > 10) console.log(`            … and ${r.gaps.length - 10} more`);
+  if (r.knownMissing) console.log(`        · ${r.knownMissing} missing polygons, all baselined (known backlog)`);
+  if (r.knownAreaOff) console.log(`        · ${r.knownAreaOff} area mismatches, all baselined (known backlog)`);
+  if (r.newMissing?.length) {
+    console.log(`        ! ${r.newMissing.length} GOVERNED polygons NOT in the baseline — the authority has them, we do not:`);
+    for (const g of r.newMissing.slice(0, 10)) console.log(`            ${g.geoid}  ${g.name}`);
+    if (r.newMissing.length > 10) console.log(`            … and ${r.newMissing.length - 10} more`);
   }
-  if (r.areaOff) {
-    console.log(`        ! ${r.areaOff} polygons differ in area by >5% (worst ${r.worstArea}):`);
-    for (const o of r.worstOffenders) {
+  if (r.newAreaOff?.length) {
+    console.log(`        ! ${r.newAreaOff.length} polygons NOT in the baseline differ in area by >5%:`);
+    for (const o of r.newAreaOff.slice(0, 5)) {
       console.log(`            ${o.geoid}  ${o.name}: ours ${o.ourKm2.toFixed(1)} km2, authority ${o.theirKm2.toFixed(1)} km2`);
     }
+  }
+  // Somebody fixed something. Not a failure, but the baseline should stop claiming it.
+  if (r.fixedMissing?.length) {
+    console.log(`        ✓ ${r.fixedMissing.length} baselined missing polygon(s) now present — shrink the baseline: ${r.fixedMissing.slice(0, 6).join(', ')}`);
+  }
+  if (r.fixedAreaOff?.length) {
+    console.log(`        ✓ ${r.fixedAreaOff.length} baselined area mismatch(es) resolved — shrink the baseline: ${r.fixedAreaOff.slice(0, 6).join(', ')}`);
+  }
+  if (r.newDisplaced?.length) {
+    console.log(`        🔴 ${r.newDisplaced.length} polygon(s) are IN THE WRONG PLACE — right GEOID, somebody else's geometry:`);
+    for (const d of r.newDisplaced.slice(0, 5)) {
+      console.log(`            ${d.geoid}  ${d.name}: our centroid is ${d.km.toFixed(0)} km away (its own radius is ${d.radiusKm.toFixed(0)} km)`);
+    }
+  } else if (r.currentDisplaced?.length) {
+    console.log(`        · ${r.currentDisplaced.length} displaced polygon(s), all baselined — these are REAL defects awaiting repair, not noise`);
   }
 }
 

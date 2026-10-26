@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { sessionManager, Question } from '../services/sessionService.js';
+import { presentQuestion } from '../services/servePresentation.js';
 import { optionalAuth } from '../middleware/auth.js';
 import { calculateProgression, checkAccountContext, awardPlatformGems, upsertPlayerStats, calculateXpAmount, awardPlatformXp } from '../services/progressionService.js';
 import { storageFactory } from '../config/redis.js';
@@ -178,12 +179,14 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
           ownedBobits
         );
 
-        const sessionId = await sessionManager.createSession(
+        const created = await sessionManager.createSession(
           userId,
           [firstQuestion],
           collectionMeta ? { id: collectionMeta.id, name: collectionMeta.name, slug: collectionMeta.slug } : undefined,
           accountContext
         );
+        const { sessionId } = created;
+        const [presentedFirstQuestion] = created.questions;
 
         // Set adaptive state on the session and persist
         const session = await sessionManager.getSession(sessionId);
@@ -198,12 +201,14 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
         }
 
         // Record first question for recent-question exclusion
-        recordPlayedQuestions(userId, [firstQuestion.id]);
+        recordPlayedQuestions(userId, [presentedFirstQuestion.id]);
 
-        // Return session with 1 question stripped of correctAnswer
+        // Return session with 1 question stripped of correctAnswer -- serve what
+        // createSession returned, not the pre-presentation `firstQuestion` object; see
+        // createSession's doc comment for why that distinction is load-bearing.
         return res.status(201).json({
           sessionId,
-          questions: stripAnswers([firstQuestion]),
+          questions: stripAnswers([presentedFirstQuestion]),
           degraded: storageFactory.isDegradedMode(),
           collectionName: collectionMeta?.name ?? FEDERAL_NAME,
           collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
@@ -221,7 +226,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
       );
     }
 
-    const sessionId = await sessionManager.createSession(
+    const { sessionId, questions: presentedQuestions } = await sessionManager.createSession(
       userId,
       selectedQuestions,
       collectionMeta ? { id: collectionMeta.id, name: collectionMeta.name, slug: collectionMeta.slug } : undefined,
@@ -229,12 +234,13 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
     );
 
     // Record played questions for recent-question exclusion
-    recordPlayedQuestions(userId, selectedQuestions.map(q => q.id));
+    recordPlayedQuestions(userId, presentedQuestions.map(q => q.id));
 
-    // Return session with questions stripped of correctAnswer
+    // Return session with questions stripped of correctAnswer -- serve what
+    // createSession returned, not `selectedQuestions`; see createSession's doc comment.
     res.status(201).json({
       sessionId,
-      questions: stripAnswers(selectedQuestions),
+      questions: stripAnswers(presentedQuestions),
       degraded: storageFactory.isDegradedMode(),
       collectionName: collectionMeta?.name ?? FEDERAL_NAME,
       collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
@@ -339,15 +345,20 @@ router.post('/answer', async (req: Request, res: Response) => {
           // Transform to Question
           const nextQ = await transformSingleDBQuestion(nextRow);
 
+          // Present (roll/shuffle) before it ever enters the session -- this is the
+          // second entry point, easy to miss: classic mode presents in createSession,
+          // but adaptive mode appends after session creation.
+          const presented = presentQuestion(nextQ);
+
           // Push onto session questions (server-side)
-          session.questions.push(nextQ);
+          session.questions.push(presented);
           session.adaptiveState.usedQuestionIds.push(nextRow.id);
 
           // Record for recent-question exclusion
-          recordPlayedQuestions(session.userId, [nextQ.id]);
+          recordPlayedQuestions(session.userId, [presented.id]);
 
           // Strip correctAnswer for client
-          nextQuestionStripped = stripAnswer(nextQ);
+          nextQuestionStripped = stripAnswer(presented);
 
           console.log(
             `[easy-steps-adaptive] Q${questionNumber + 1}: correctCount=${session.adaptiveState.correctCount}, ` +

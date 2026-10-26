@@ -1,0 +1,15 @@
+{
+  "scope": "state:sc",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://www.scstatehouse.gov/member.php?chamber=H&session=119",
+      "note": "House member list, 119th General Assembly (2011-2012) (official); used for the voting-rights identity check 2026-10-20"
+    },
+    {
+      "url": "https://www.scstatehouse.gov/member.php?chamber=S&session=119",
+      "note": "Senate member list, 119th General Assembly (2011-2012) (official); used for the voting-rights identity check 2026-10-20"
+    }
+  ],
+  "higher_law_duties": []
+}

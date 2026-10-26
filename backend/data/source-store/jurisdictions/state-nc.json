@@ -1,0 +1,15 @@
+{
+  "scope": "state:nc",
+  "portals": [],
+  "rosters": [
+    {
+      "url": "https://webservices.ncleg.gov/ViewDocSiteFile/7882",
+      "note": "House member list, 2017-2018 (2017 General Assembly; roster as printed in 2018 sessions) (official); used for the voting-rights identity check 2026-10-20"
+    },
+    {
+      "url": "https://webservices.ncleg.gov/ViewDocSiteFile/6257",
+      "note": "Senate member list, 2017-2018 (2017 General Assembly; roster as printed in Second Extra Session 2018) (official); used for the voting-rights identity check 2026-10-20"
+    }
+  ],
+  "higher_law_duties": []
+}

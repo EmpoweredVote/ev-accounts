@@ -1,0 +1,51 @@
+{
+  "id": "UT-HB-300-2025",
+  "scope": "state:ut",
+  "title": "HB 300 'Amendments to Election Law' (2025 General) — Last-four ID digits on mail-ballot return envelope; opt-in mail ballots from 2029; SAVE registration; many election-administration parts",
+  "urls": [
+    "https://le.utah.gov/Session/2025/bills/enrolled/HB0300.pdf",
+    "https://le.utah.gov/~2025/bills/static/HB0300.html",
+    "https://www.yahoo.com/news/utah-legislature-approves-bill-require-024719633.html",
+    "same"
+  ],
+  "version": "enrolled",
+  "operative_text": "Mail ballots: last four digits of licence/ID number on return envelope; SSN last-four as alternate: requires a registered voter who has a Utah driver license or a state identification card to place the last four digits of the card's number on the return envelope\nSignature comparison until 2029 if digits not entered: until 2029, permits a voter's identity to be verified using signature comparison, if the voter doesn't enter the digits\nFrom 2029, voter without UT licence/ID/SS card may enclose photocopy of certain ID: may provide identification by including a photocopy of certain forms of identification in the return envelope\nFrom 2029 voter with no listed ID must vote in person unless exception: requires the voter to vote in person, unless the voter qualifies for certain exceptions\nFrom 2029 no mail ballot unless requested; request lasts 8 years: a voter will not receive a ballot by mail unless the voter requests to receive a ballot by mail\nLt. governor: evaluate registration records by address for anomalies; investigate undeliverable-ballot registrations: develop a procedure to evaluate voter registration records based on addresses to identify potential anomalies\nRegister with SAVE (federal citizenship verification): register with the Systematic Alien Verification for Entitlements program\nAgreement with federal courts for jury-disqualification notices (convictions, non-citizen): the courts will notify the state of individuals who are disqualified from jury service due to criminal convictions or non-citizen status\nWays to request/renew mail ballot (register, online, licence application, polling place): provides that a voter may request, or renew a request, to receive a ballot by mail\nVoter registration forms amended for ballot notifications and mailed ballot request: amends voter registration forms relating to\nAssisting a voter at a polling place: modifies requirements for an individual to assist a voter to vote at a polling place\nReturn envelope warnings; emergency ballot; ballot processing: modifies provisions relating to obtaining and returning an emergency ballot\nException to mail ballots from a Utah location when USPS centre is out of state: creates an exception to the requirement that the bulk of ballots initially mailed to voters must be mailed from a location in Utah\nExpanded Lt. governor duties on voter database; technical changes: expands the duties of the lieutenant governor in relation to maintaining the voter registration database\nAppropriation: This bill appropriates $2,000,000 in operating and capital budgets for fiscal year 2026, all of which is from the General Fund.\nRepeals: 20A-3a-101 ... 53-3-801 (repealed)",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-06 (final; may be concurrence)",
+      "body": "UT House",
+      "motion": "final passage",
+      "kind": "roll-call",
+      "yes": 56,
+      "no": 15,
+      "body_size": 75,
+      "note": "member names not captured; date as printed: 2025-03-06 (final; may be concurrence)",
+      "members": []
+    },
+    {
+      "date": "2025-03-06",
+      "body": "UT Senate",
+      "motion": "final passage",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 10,
+      "body_size": 29,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "id": "NC-HB-781-2025",
+  "scope": "state:nc",
+  "title": "Unauthorized Public Camping & Sleeping (Edition 2, committee substitute favorable 5/6/25)",
+  "urls": [
+    "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/324"
+  ],
+  "version": "other",
+  "operative_text": "a local government may not authorize or otherwise allow any person to regularly engage in public camping or sleeping on any public property, including any public building or its grounds and any public right-of-way",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-05-07",
+      "body": "NC House",
+      "motion": "Second Reading (Roll Call H-324), HB 781",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 42,
+      "members": [
+        {
+          "name": "Beth Helfrich",
+          "politician_id": "cbbf5ae6-0793-46fb-ba4f-e6e3ffe90849",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Biggs",
+          "politician_id": "27e79e89-a6cc-4cca-a85e-fe82ee8c0e8f",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles W. Miller",
+          "politician_id": "f17c2322-69b4-4b9a-bcea-e5ea4ace8649",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Brody",
+          "politician_id": "f6a9e3a7-cf2c-40e5-97b9-3af9b65b838f",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Belk",
+          "politician_id": "607091ec-f6d3-470f-bf2b-06160885f249",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Schietzelt",
+          "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

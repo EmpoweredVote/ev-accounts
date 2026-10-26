@@ -1,0 +1,24 @@
+{
+  "id": "US-HR-1-2021",
+  "scope": "federal",
+  "title": "H.R. 1 (For the People Act) (117th Congress, 2021) — Omnibus election bill",
+  "urls": [],
+  "version": "other",
+  "operative_text": "One-line flag only, from general knowledge, NOT verified by fetch: contains voter ID rules (allowing sworn statement in place of ID), automatic/online/same-day registration, early voting and mail voting, redistricting commissions, campaign finance and disclosure, ethics:",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "not checked",
+  "votes": [],
+  "provenance": {
+    "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

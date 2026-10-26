@@ -1,0 +1,58 @@
+{
+  "id": "NV-LAS-VEGAS-BILL-2024-29-2024",
+  "scope": "place:3240000",
+  "title": "Bill No. 2024-29 - Amends LVMC Chapter 10.86, relating to camping, lodging and similar activities in public rights-of-way, to apply the general prohibitions throughout the City and update applicable enforcement and penalty provisions. Sponsored by: Mayor Carolyn G. Goodman",
+  "urls": [
+    "https://lasvegas.primegov.com/Public/CompiledDocument?meetingTemplateId=39673&compileOutputType=1",
+    "https://lasvegas.primegov.com/Public/CompiledDocument?meetingTemplateId=39600&compileOutputType=1"
+  ],
+  "version": "other",
+  "operative_text": "Bill title as printed: 'Amends LVMC Chapter 10.86, relating to camping, lodging and similar activities in public rights-of-way, to apply the general prohibitions throughout the City and update applicable enforcement and penalty provisions.' (bill text itself not retrieved)",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-11-06",
+      "body": "Las Vegas City Council",
+      "motion": "Second reading and bill adopted as introduced as Ordinance No. 6889. Motion made by Brian Knudsen to Approve",
+      "kind": "action-item",
+      "yes": 7,
+      "no": 0,
+      "body_size": 7,
+      "members": [
+        {
+          "name": "Brian Knudsen",
+          "politician_id": "169596c9-1ece-4a8a-b601-ce87af369a33",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis Allen-Palenske",
+          "politician_id": "91544dd2-07c7-4885-943f-f431836ddecf",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy E. Brune",
+          "politician_id": "0a0ea0c6-ed7b-4e84-833d-f6a04d3350e9",
+          "vote": "yea"
+        },
+        {
+          "name": "Olivia Diaz",
+          "politician_id": "168705cc-2899-4432-b062-cb8583ac99e6",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

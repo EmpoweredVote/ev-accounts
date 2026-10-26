@@ -1,0 +1,480 @@
+{
+ "meta": {
+  "topic": "homelessness"
+ },
+ "items": [
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "901398ea-3180-4b6d-8ba4-9f0dd85d7bb1",
+   "name": "Eva Diaz",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "no",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-090"
+  },
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+   "name": "Frank Carroll",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "yes",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-091"
+  },
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "sponsor+vote",
+   "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+   "name": "John Kavanagh",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "yes",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-092"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "725d4081-e820-4064-83dc-3f8470bd7c2b",
+   "name": "Curren D. Price Jr.",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-041"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+   "name": "John Lee",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-042"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+   "name": "Marqueece Harris-Dawson",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-043"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "authored",
+   "politician_id": "04ebd79f-3154-4c3a-8a81-eff516ca95bd",
+   "name": "Liliana Bakhtiari",
+   "body": "Atlanta City Council",
+   "gov": "City of Atlanta, Georgia, US",
+   "body_size": 17,
+   "instrument": "ATLANTA-CLEARING-MACHINERY-2025",
+   "title": "Temporary halt on heavy machinery during encampment clearings; report on clearing procedures (resolution)",
+   "acts": [
+    {
+     "date": "2025-02-03",
+     "act": "author",
+     "type": "AUTHORED",
+     "item": "not captured",
+     "tally": "approved, tally not printed",
+     "printed": "Liliana Bakhtiari",
+     "url": "",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "the council approved a \"temporary halt on the use of heavy machinery during encampment clearings.\" Councilmember Liliana Bakhtiari sponsored this legislation.",
+    "penalty_terms": "n/a",
+    "condition_terms": "Continuum of Care to produce a report on procedures in encampment clearings"
+   },
+   "sources": [],
+   "origin": "census",
+   "item_id": "hl-001"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "authored",
+   "politician_id": "e1385747-e3fb-4d30-aa7c-359faddadc0c",
+   "name": "Rolando Escalona",
+   "body": "Miami City Commission",
+   "gov": "City of Miami, Florida, US",
+   "body_size": 5,
+   "instrument": "MIAMI-WARNING-REPEAL-2026",
+   "title": "Ordinance ending written-warning requirement before arrest for public encampments (City of Miami)",
+   "acts": [
+    {
+     "date": "2026-07-09",
+     "act": "author",
+     "type": "AUTHORED",
+     "item": "not captured",
+     "tally": "",
+     "printed": "Rolando Escalona",
+     "url": "",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Sponsored by District 3 Commissioner Rolando Escalona.",
+    "penalty_terms": "\"refusal to accept would qualify as grounds for arrest\" (news)",
+    "condition_terms": "\"If a shelter bed is available, it must be offered.\" (news); verbal warning and reasonable time to leave"
+   },
+   "sources": [],
+   "origin": "census",
+   "item_id": "hl-053"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "6f39bc7a-2538-4f47-8219-3c992e0f3d40",
+   "name": "Brandon Taylor",
+   "body": "Nashville Metro Council",
+   "gov": "Metropolitan Government of Nashville and Davidson County, Tennessee, US",
+   "body_size": 40,
+   "instrument": "NASHVILLE-BL2022-1533",
+   "title": "An ordinance setting conditions for the closure of an encampment at Brookmeade Park and accepting an easement on certain property located at 7034 Charlotte Pike (Parcel No. 10200008600) owned by Lowes Home Centers, LLC (Proposal No. 2022M-036AG-001).",
+   "acts": [
+    {
+     "date": "2022-12-20",
+     "act": "abstain",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "BL2022-1533",
+     "tally": "Yes (14); No (16); Abstain (7) - failed",
+     "printed": "Taylor",
+     "url": "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "not in the minutes text; the substitute text read: Section 1. The easement agreement ... is hereby approved, subject to the following conditions related to the closure of the encampment at Brookmeade Park",
+    "penalty_terms": "not stated (bill sets no penalty)",
+    "condition_terms": "b) All individuals residing at the Brookmeade Park encampment as of December 6, 2022, have been engaged ... and have been offered a clear path to permanent housing.",
+    "motion_quote": "Council Member Rosenberg offered a substitute bill and moved that it be adopted, which motion was properly seconded.",
+    "section": "Bills on Second Reading"
+   },
+   "sources": [
+    "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf"
+   ],
+   "origin": "census",
+   "item_id": "hl-054"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "a5832455-f2b6-4dae-9523-5bb0f84b1e41",
+   "name": "Courtney Johnston",
+   "body": "Nashville Metro Council",
+   "gov": "Metropolitan Government of Nashville and Davidson County, Tennessee, US",
+   "body_size": 40,
+   "instrument": "NASHVILLE-BL2022-1533",
+   "title": "An ordinance setting conditions for the closure of an encampment at Brookmeade Park and accepting an easement on certain property located at 7034 Charlotte Pike (Parcel No. 10200008600) owned by Lowes Home Centers, LLC (Proposal No. 2022M-036AG-001).",
+   "acts": [
+    {
+     "date": "2022-12-20",
+     "act": "no",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "BL2022-1533",
+     "tally": "Yes (14); No (16); Abstain (7) - failed",
+     "printed": "Johnston",
+     "url": "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "not in the minutes text; the substitute text read: Section 1. The easement agreement ... is hereby approved, subject to the following conditions related to the closure of the encampment at Brookmeade Park",
+    "penalty_terms": "not stated (bill sets no penalty)",
+    "condition_terms": "b) All individuals residing at the Brookmeade Park encampment as of December 6, 2022, have been engaged ... and have been offered a clear path to permanent housing.",
+    "motion_quote": "Council Member Rosenberg offered a substitute bill and moved that it be adopted, which motion was properly seconded.",
+    "section": "Bills on Second Reading"
+   },
+   "sources": [
+    "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf"
+   ],
+   "origin": "census",
+   "item_id": "hl-055"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "85741f19-1c12-43ad-8504-d615522725d7",
+   "name": "David R Rollo",
+   "body": "Bloomington IN Common Council",
+   "gov": "City of Bloomington, Indiana, US",
+   "body_size": 9,
+   "instrument": "BLOOMINGTON-IN-ORD-21-06",
+   "title": "To Amend Title 2 (\"Administration and Personnel\") of the Bloomington Municipal Code Re: Adding Chapter 2.87 (Protections for People Experiencing Homelessness)",
+   "acts": [
+    {
+     "date": "2021-03-04",
+     "act": "no",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "Ordinance 21-06",
+     "tally": "Ayes 4, Nays 4, Abstain 0 (failed); vote at 3:21am Mar 4 (meeting dated 03-03-21)",
+     "printed": "Rollo",
+     "url": "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Before the city may displace a person experiencing homelessness from a camp, the city must give at least fifteen (15) days' written notice to the person experiencing homelessness living in the camp",
+    "penalty_terms": "not stated (protective ordinance)",
+    "condition_terms": "15 days' written notice; offer of available transitional or permanent housing before closing a camp",
+    "motion_quote": "The motion to adopt Ordinance 21-06 received a roll call vote of Ayes: 4 (Flaherty, Piedmont-Smith, Rosenbarger, Volan), Nays: 4, Abstain: 0. FAILED",
+    "section": "LEGISLATION FOR SECOND READING AND RESOLUTIONS"
+   },
+   "sources": [
+    "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+    "https://example.org/candidate-campaign-site"
+   ],
+   "origin": "census",
+   "item_id": "hl-003"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "91f6d45d-5e7e-48f6-aab1-9476d81946b5",
+   "name": "Isabel Piedmont-Smith",
+   "body": "Bloomington IN Common Council",
+   "gov": "City of Bloomington, Indiana, US",
+   "body_size": 9,
+   "instrument": "BLOOMINGTON-IN-ORD-21-06",
+   "title": "To Amend Title 2 (\"Administration and Personnel\") of the Bloomington Municipal Code Re: Adding Chapter 2.87 (Protections for People Experiencing Homelessness)",
+   "acts": [
+    {
+     "date": "2021-03-04",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "Ordinance 21-06",
+     "tally": "Ayes 4, Nays 4, Abstain 0 (failed); vote at 3:21am Mar 4 (meeting dated 03-03-21)",
+     "printed": "Piedmont-Smith",
+     "url": "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Before the city may displace a person experiencing homelessness from a camp, the city must give at least fifteen (15) days' written notice to the person experiencing homelessness living in the camp",
+    "penalty_terms": "not stated (protective ordinance)",
+    "condition_terms": "15 days' written notice; offer of available transitional or permanent housing before closing a camp",
+    "motion_quote": "The motion to adopt Ordinance 21-06 received a roll call vote of Ayes: 4 (Flaherty, Piedmont-Smith, Rosenbarger, Volan), Nays: 4, Abstain: 0. FAILED",
+    "section": "LEGISLATION FOR SECOND READING AND RESOLUTIONS"
+   },
+   "sources": [
+    "https://bloomington.in.gov/onboard/meetingFiles/8496/download"
+   ],
+   "origin": "census",
+   "item_id": "hl-004"
+  }
+ ]
+}

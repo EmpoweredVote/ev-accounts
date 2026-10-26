@@ -1,13 +1,13 @@
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 export async function sendEmail(opts: {
-  to: string;
+  to: string | string[];
   subject: string;
   html: string;
-}): Promise<void> {
+}): Promise<boolean> {
   if (!RESEND_API_KEY) {
     console.warn('[emailService] RESEND_API_KEY not set — skipping email:', opts.subject);
-    return;
+    return false;
   }
 
   try {
@@ -28,9 +28,13 @@ export async function sendEmail(opts: {
     if (!res.ok) {
       const body = await res.text();
       console.error('[emailService] send failed:', res.status, body);
+      return false;
     }
+    return true;
   } catch (err) {
     console.error('[emailService] send failed:', err);
-    // Do NOT throw — email failure should not break the request flow
+    // Do NOT throw — email failure should not break the request flow. Callers that
+    // must know (the job-health alarm) read the returned boolean instead.
+    return false;
   }
 }

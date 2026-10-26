@@ -1,0 +1,49 @@
+{
+  "id": "KS-HB-2067-2011",
+  "scope": "state:ks",
+  "title": "HB 2067 (SAFE Act) (2011) — Voter photographic identification requirements (one line; no members-sat check done: roster term_start for KS is 2025 for all rows)",
+  "urls": [
+    "https://www.kslegislature.gov/li_2012/b2011_12/measures/hb2067/"
+  ],
+  "version": "enrolled",
+  "operative_text": "Subject (short title): Voter photographic identification requirements.",
+  "single_subject": [],
+  "higher_law_duty": "not checked",
+  "votes": [
+    {
+      "date": "2011-02-25",
+      "body": "KS House",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 83,
+      "no": 36,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2011-03-23",
+      "body": "KS Senate",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 36,
+      "no": 3,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2011-03-29",
+      "body": "KS House",
+      "motion": "concur with conference amendments",
+      "kind": "roll-call",
+      "yes": 111,
+      "no": 11,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

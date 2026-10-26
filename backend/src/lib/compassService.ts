@@ -492,6 +492,47 @@ export async function getCompassPoliticians() {
 }
 
 /**
+ * getCompassPoliticianIds
+ * The ids getCompassPoliticians would list, and nothing else. Essentials only
+ * needs to know WHO has a compass; the full list is ~3.3 MB (1.26 MB of it
+ * answered_topic_ids), this is ~165 KB. Same set by construction: the same
+ * is_active filter and the same published-season answer join. The office
+ * LEFT JOINs there never add or drop a person (DISTINCT ON p.id), so they are
+ * left out here.
+ *
+ * Cached in memory for COMPASS_IDS_TTL_MS. The list changes only when research
+ * is published, and a one-minute lag on "does this person have a compass" is
+ * harmless. Concurrent misses share one query.
+ */
+const COMPASS_IDS_TTL_MS = 60_000;
+let compassIdsCache: { at: number; ids: Promise<string[]> } | null = null;
+
+export function getCompassPoliticianIds(now: number = Date.now()): Promise<string[]> {
+  if (compassIdsCache && now - compassIdsCache.at < COMPASS_IDS_TTL_MS) return compassIdsCache.ids;
+  const ids = pool
+    .query(
+      `SELECT p.id
+         FROM essentials.politicians p
+        WHERE p.is_active = true
+          AND EXISTS (SELECT 1 FROM inform.politician_answers a
+                        JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+                       WHERE a.politician_id = p.id)
+        ORDER BY p.id`
+    )
+    .then(({ rows }) => rows.map((r) => r.id as string));
+  const entry = { at: now, ids };
+  compassIdsCache = entry;
+  // A failed query must not be served from the cache for the next minute.
+  ids.catch(() => { if (compassIdsCache === entry) compassIdsCache = null; });
+  return ids;
+}
+
+/** Test hook: forget the cached id list. */
+export function resetCompassPoliticianIdsCache(): void {
+  compassIdsCache = null;
+}
+
+/**
  * getCandidates
  * Returns active election candidates that have at least one compass answer via
  * either their empowered_profile (Path A: compass_responses) or researched stances
@@ -744,6 +785,92 @@ export async function getPoliticianAnswers(
     topic_id: r.topic_id,
     value: parseFloat(r.value),
   }));
+}
+
+/** One passage shown as the person's own words, "not a position on the scale" (Stage 5, CA_0322). */
+export interface ResearchPassage {
+  kind: 'own-words' | 'local-record';
+  passage: string;
+  source_url: string;
+  source_date: string | null;
+}
+
+/** A topic Stage 5 researched for this person that holds no seat (spec 2026-10-22 §8). */
+export interface ResearchState {
+  topic_id: string;
+  outcome: 'doesnt-fit' | 'no-stance';
+  researched_on: string;
+  passages: ResearchPassage[];
+}
+
+/**
+ * getResearchStates
+ * The topics Stage 5 researched for this person and found no seat on: `no-stance` ("We researched {name}
+ * and found no public stance on {topic}.") or `doesnt-fit` (their checked own words, not a position on the
+ * scale). A NEW read on purpose: getPoliticianAnswers stays as it is, because its consumers treat any value
+ * it returns as a position.
+ *
+ * Only people Stage 5 actually researched appear: inform.topic_research_outcomes is the marker, not
+ * `value = 0`, which also covers older blanks and people never researched (spec §8).
+ *
+ * Newest PUBLISHED season per topic first (a draft season's rows stay hidden until it opens), THEN the
+ * outcome filter, so a newer seat hides an older blank. A topic the compass seats (the person's newest
+ * published answer, in any season, is not 0) returns nothing, so this read never contradicts the compass.
+ */
+export async function getResearchStates(politicianId: string): Promise<ResearchState[]> {
+  // CA_0322 is applied by hand after the Stage 5 early check, and this route ships before it. Until the
+  // table exists nobody has been researched, so the answer is [] rather than a 500 on every profile.
+  const { rows } = await pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
+    `-- @zero-scope: counts-blanks — shows voters that a person was researched and holds no seat; the
+     -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
+     SELECT latest.topic_id, latest.outcome, latest.researched_on::text AS researched_on, p.passages
+       FROM (
+         SELECT DISTINCT ON (ro.topic_id) ro.topic_id, ro.season_id, ro.outcome, ro.researched_on
+           FROM inform.topic_research_outcomes ro
+           JOIN inform.seasons s ON s.id = ro.season_id AND ${SEASON_IS_PUBLISHED}
+          WHERE ro.politician_id = $1
+          ORDER BY ro.topic_id, s.number DESC
+       ) latest
+       LEFT JOIN LATERAL (
+         SELECT json_agg(json_build_object(
+                  'kind', w.kind, 'passage', w.passage, 'source_url', w.source_url, 'source_date', w.source_date::text)
+                  ORDER BY w.source_date DESC NULLS LAST, w.id) AS passages
+           FROM inform.own_words_passages w
+          WHERE w.politician_id = $1 AND w.topic_id = latest.topic_id AND w.season_id = latest.season_id
+       ) p ON true
+      WHERE latest.outcome IN ('doesnt-fit', 'no-stance')
+        -- The compass's own read (getPoliticianAnswers): the newest published answer, any season. A seat
+        -- there hides the topic here, so the two never disagree.
+        AND NOT EXISTS (
+              SELECT 1 FROM (
+                SELECT DISTINCT ON (a.topic_id) a.value
+                  FROM inform.politician_answers a
+                  JOIN inform.seasons sa ON sa.id = a.season_id AND sa.status <> 'draft'
+                 WHERE a.politician_id = $1 AND a.topic_id = latest.topic_id
+                 ORDER BY a.topic_id, sa.number DESC
+              ) na WHERE na.value <> 0)
+      ORDER BY latest.topic_id ASC`,
+    [politicianId]
+  ).catch((err: { code?: string }) => {
+    if (err?.code === '42P01') return { rows: [] };
+    throw err;
+  });
+  return rows.map((r) => ({
+    topic_id: r.topic_id,
+    outcome: r.outcome,
+    researched_on: r.researched_on,
+    passages: r.passages ?? [],
+  }));
+}
+
+/** getResearchStates for a race candidate, through race_candidates.politician_id; [] when there is none. */
+export async function getCandidateResearchStates(candidateId: string): Promise<ResearchState[]> {
+  const { rows } = await pool.query<{ politician_id: string | null }>(
+    `SELECT politician_id FROM essentials.race_candidates WHERE id = $1`,
+    [candidateId]
+  );
+  const politicianId = rows[0]?.politician_id;
+  return politicianId ? getResearchStates(politicianId) : [];
 }
 
 /** One dated source of a context row (CA_0301). Read the date with its precision. */
@@ -1205,6 +1332,8 @@ interface RawCitationRow {
   topic_key: string;
   topic_title: string;
   topic_tension_name: string;
+  /** The served revision the block's wording and ladder come from. Not sent to the client. */
+  served_revision_id?: string;
   stance_value: number | null;
   stance_text: string | null;
   reasoning: string | null;
@@ -1265,8 +1394,14 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
   const { rows } = await pool.query<RawCitationRow>(
     `SELECT
        ct.topic_key                                                   AS topic_key,
-       COALESCE(ct.question_text, ct.short_title)                    AS topic_title,
-       ct.short_title                                                 AS topic_tension_name,
+       -- Wording from the SERVED revision (eff, below), never the compass_topics
+       -- text columns: CA_0012 froze those, so they are stale for every topic
+       -- revised since. Measured 2026-10-21: 22 of 185 blocks (4 topics) showed
+       -- old wording, climate-change titled "Climate Change" over a Clean Energy
+       -- ladder.
+       COALESCE(eff.question_text, eff.short_title)                  AS topic_title,
+       eff.short_title                                                AS topic_tension_name,
+       eff.id::text                                                   AS served_revision_id,
        -- 🔴 NULLIF, NOT A FILTER ON pa. A blanked answer is value 0, and
        -- groupCitationRows reads has_stance as "stance_value != null" — 0 is not
        -- null, so the block rendered as "has a stance" with nothing to name:
@@ -1289,7 +1424,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        pce.source_date_precision,
        (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
      FROM inform.politician_context_evidence pce
-     -- Topic identity and title only. Which topics may appear is decided by the
+     -- Topic identity only. Which topics may appear is decided by the
      -- season_questions predicate in the WHERE below, never by is_live.
      JOIN inform.compass_topics ct ON ct.id = pce.topic_id
      -- 🔴 THESE MUST BE LATERALs, AND pc MUST SHARE pa'S SEASON.
@@ -1308,22 +1443,6 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         ORDER BY s.number DESC
         LIMIT 1
      ) pa ON true
-     -- ADR 0006 (Option Y): the displayed stance is the ladder of the revision the
-     -- ANSWER was recorded against — the latest published/superseded revision of the
-     -- version pinned when the answer was written (pa.topic_revision_id), not
-     -- is_current. A null pa (has_stance = false) yields a null stance_text.
-     LEFT JOIN LATERAL (
-       SELECT upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
-         FROM inform.compass_topic_revisions pin
-         JOIN inform.compass_topic_revisions eff
-           ON eff.topic_id = pin.topic_id AND eff.version = pin.version
-          AND eff.status IN ('published', 'superseded')
-         JOIN inform.compass_stance_revisions sr
-           ON sr.topic_revision_id = eff.id AND sr.value = pa.value
-        WHERE pin.id = pa.topic_revision_id
-        ORDER BY eff.revision DESC
-        LIMIT 1
-     ) cs ON true
      LEFT JOIN LATERAL (
        -- season_id is read only by the topic-set predicate in the WHERE below.
        SELECT c.reasoning, c.sources, c.season_id
@@ -1337,6 +1456,24 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         ORDER BY s.number DESC
         LIMIT 1
      ) pc ON true
+     -- ADR 0006 (Option Y): title, tension name, stance text and the ladder below
+     -- all come from ONE revision — the served revision (latest published/
+     -- superseded) of the version pinned by the season this block shows. That is
+     -- the ANSWER's season: an answer is locked to the ladder it was given against,
+     -- so its recorded pin (pa.topic_revision_id) decides, not the open season.
+     -- With no answer, the context's season pin. Shared resolver, so this page
+     -- reads the same text the compass and the research bundle do.
+     JOIN ${servedRevisionLateral(
+       `COALESCE(pa.topic_revision_id,
+                 (SELECT shown_sq.topic_revision_id FROM inform.season_questions shown_sq
+                   WHERE shown_sq.season_id = pc.season_id AND shown_sq.topic_id = pce.topic_id))`,
+       'eff')} ON true
+     -- A null pa (has_stance = false) yields a null stance_text.
+     LEFT JOIN LATERAL (
+       SELECT upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
+         FROM inform.compass_stance_revisions sr
+        WHERE sr.topic_revision_id = eff.id AND sr.value = pa.value
+     ) cs ON true
      WHERE pce.politician_id = $1
        -- Evidence written for a DRAFT season (research pre-staged before it opens) is not published:
        -- without this, a draft snippet for a pair that has a published context would render under it.
@@ -1373,44 +1510,29 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
   const blocks = groupCitationRows(rows);
   if (blocks.length === 0) return blocks;
 
-  const topicKeys = blocks.map((b) => b.topic_key);
-  const { rows: stanceRows } = await pool.query<{ topic_key: string; value: number; text: string }>(
-    // ADR 0006 (Option Y): the full ladder shown under a citation must match the
-    // version the answer was recorded against, so the highlighted stance_value
-    // indexes the same rungs as stance_text above. Resolve, per topic, the version
-    // of this politician's latest-season answer; with no answer, fall back to the
-    // topic's current revision (the pre-seasons behavior).
-    `SELECT ct.topic_key, sr.value,
+  // The full ladder comes from the SAME served revision as the title and
+  // stance_text above, so the highlighted stance_value indexes the rungs the
+  // voter reads. Resolving it a second time here could disagree with the first.
+  const revisionByTopic = new Map<string, string>();
+  for (const r of rows) {
+    if (r.served_revision_id) revisionByTopic.set(r.topic_key, r.served_revision_id);
+  }
+  const { rows: stanceRows } = await pool.query<{ topic_revision_id: string; value: number; text: string }>(
+    `SELECT sr.topic_revision_id::text AS topic_revision_id, sr.value,
             upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
-     FROM inform.compass_topics ct
-     JOIN LATERAL (
-       SELECT eff.id
-         FROM inform.compass_topic_revisions eff
-        WHERE eff.topic_id = ct.id
-          AND eff.status IN ('published', 'superseded')
-          AND eff.version = COALESCE(
-            (SELECT pin.version
-               FROM inform.politician_answers a
-               JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
-               JOIN inform.compass_topic_revisions pin ON pin.id = a.topic_revision_id
-              WHERE a.politician_id = $2 AND a.topic_id = ct.id
-              ORDER BY s.number DESC LIMIT 1),
-            (SELECT cur.version FROM inform.compass_topic_revisions cur
-              WHERE cur.topic_id = ct.id AND cur.is_current))
-        ORDER BY eff.revision DESC LIMIT 1
-     ) eff ON true
-     JOIN inform.compass_stance_revisions sr ON sr.topic_revision_id = eff.id
-     WHERE ct.topic_key = ANY($1)
-     ORDER BY ct.topic_key, sr.value ASC`,
-    [topicKeys, politicianId],
+     FROM inform.compass_stance_revisions sr
+     WHERE sr.topic_revision_id = ANY($1::uuid[])
+     ORDER BY sr.topic_revision_id, sr.value ASC`,
+    [[...new Set(revisionByTopic.values())]],
   );
-  const stancesByTopic = new Map<string, StanceOption[]>();
+  const stancesByRevision = new Map<string, StanceOption[]>();
   for (const s of stanceRows) {
-    if (!stancesByTopic.has(s.topic_key)) stancesByTopic.set(s.topic_key, []);
-    stancesByTopic.get(s.topic_key)!.push({ value: Number(s.value), text: s.text });
+    if (!stancesByRevision.has(s.topic_revision_id)) stancesByRevision.set(s.topic_revision_id, []);
+    stancesByRevision.get(s.topic_revision_id)!.push({ value: Number(s.value), text: s.text });
   }
   for (const block of blocks) {
-    block.all_stances = stancesByTopic.get(block.topic_key) ?? [];
+    const rev = revisionByTopic.get(block.topic_key);
+    block.all_stances = (rev && stancesByRevision.get(rev)) || [];
   }
   return blocks;
 }

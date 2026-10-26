@@ -1,0 +1,19 @@
+{
+  "scope": "state:or",
+  "portals": [
+    {
+      "name": "olis.oregonlegislature.gov",
+      "url": "https://olis.oregonlegislature.gov/",
+      "status": "works",
+      "how": "WebFetch could not decode the PDF; read the saved PDF with pdftotext. Enrolled text. Approval date and chapter from OLIS OData MeasureHistoryActions (https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureHistoryActions, SB 732, 20",
+      "checked_at": "2026-10-19T19:24:17.419Z",
+      "provenance": {
+        "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+        "fetched_at": "2026-10-19T19:24:17.419Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "rosters": [],
+  "higher_law_duties": []
+}
