@@ -117,6 +117,20 @@ const REGISTRY = [
     // 86/540 against the enjoined Nov2022 map. We are NOT serving the enjoined boundaries.
   },
   {
+    key: 'torrance',
+    label: 'Torrance city council',
+    ocdPrefix: 'torrance-council-district-',
+    // City of Torrance GIS, the layer behind the city's own "Electoral Districts Lookup" app.
+    url:
+      'https://services1.arcgis.com/38fAqAZVRCrVtPUU/arcgis/rest/services/Council_Districts/' +
+      'FeatureServer/4/query?where=1%3D1&outFields=DISTRICTID&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(String(props.DISTRICTID).replace(/\D/g, '')),
+    expect: 6,
+    // Proved 2026-10-26 against LA County Registrar-Recorder precincts (Political_Boundaries
+    // MapServer 34, DST_CITY=TR / DIV_CITY): 569 of 569 precincts in the same district. Like San
+    // Diego, no converse test — no superseded Torrance map was located. See CA_0329.
+  },
+  {
     key: 'lacounty',
     label: 'Los Angeles County Board of Supervisors',
     ocdPrefix: 'ocd-division/country:us/state:ca/county:los_angeles/council_district:',
