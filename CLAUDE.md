@@ -230,6 +230,22 @@ Honesty rules that the schema enforces:
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
 
+### Sourcing a seat from a roster or an election result
+
+Four rules the municipal seeding waves paid for, each after getting a real seat wrong:
+
+- 🔴 **A CERTIFIED RESULT IS NOT A FACT ABOUT WHO HOLDS THE SEAT.** It records who won an
+  election. Taking office is a separate, later event, and people decline, resign, die or are
+  appointed in between. Seat from a source about the *officeholder*, not about the count.
+- 🔴 **A SOURCE CAN BE AUTHORITATIVE FOR ONE FIELD AND STALE FOR ANOTHER.** A city's own council
+  page is the authority on who sits there and can still show term dates that expired two years
+  ago. Judge a page field by field, never as a whole.
+- 🔴 **"FIRST ELECTED" IS NOT A TERM START.** A roster label like that says how someone ARRIVED,
+  not when the current term began. Write an open-ended term with `start_precision => 'unknown'`
+  rather than reusing the number that happens to be printed.
+- 🔴 **A DEPARTED OFFICIAL'S URL CAN SERVE THEIR SUCCESSOR**, with no redirect and no error.
+  Assert that the page NAMES the person before you record it as their source.
+
 ### The `is_vacant` trap
 
 If a query filters `AND o.is_vacant = false`, that condition must constrain the **match**, not a
@@ -521,11 +537,67 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     ~1.4 MB here and overflowed `execFileSync`'s 1 MB default with `ENOBUFS`, which the error
     handler swallowed into an empty result. Without the control it would have said
     **"0 untracked, SAFE TO DELETE"** for a worktree full of files.
-  - 🔴 **Run a positive control on any detector that reports "nothing found"** — the rule this
-    encodes. Two detectors were silently broken on 2026-09-04 and only a control exposed them:
-    a file-mtime scan whose threshold predated the checkout, and a `curl` sweep where the host
-    had begun 403-ing every request, turning "this file does not exist" into "you are being
-    blocked".
+  - 🔴 **Run a positive control on any detector that reports "nothing found."** Two detectors were
+    silently broken on 2026-09-04 and only a control exposed them: a file-mtime scan whose
+    threshold predated the checkout, and a `curl` sweep where the host had begun 403-ing every
+    request, turning "this file does not exist" into "you are being blocked". The general form of
+    this rule, and the part about watching the control FAIL first, is in **Verification rules**
+    below.
+
+## Verification rules that each cost a real failure
+
+Every rule here is in the file because skipping it broke something. They are about *checking* —
+they belong to no one subsystem, so they sit on their own rather than inside the section where
+each was first learned.
+
+- 🔴🔴 **A UNIFORM ANSWER IS A BROKEN DETECTOR UNTIL A POSITIVE CONTROL PASSES — AND THE CONTROL
+  MUST BE WATCHED FAILING FIRST.** A control that has only ever passed proves nothing: it can pass
+  for the wrong reason, an earlier gate can shadow the one you meant to test, and a tamper that
+  cannot trip the comparison tests nothing at all. Plant the fault, see the detector go red, then
+  remove it and see it go green.
+  - ⚠ **A control proves a verifier CAN fail. It does not prove the verifier reads the RIGHT
+    ROWS** — for that, check the count it actually examined.
+  - 🔴 **A CONTROL CAN FAIL CORRECTLY, FOR THE WRONG PROPERTY, AND STILL MISS THE DEFECT.**
+    `ev-jobs-legiscan` died of heap exhaustion; the fix shipped a real control proving a repeat
+    read re-parses — that nothing is **retained** — and the job died again, because the defect was
+    **allocation on the first read** (26,707 entries inflated back to back to read one integer).
+    Removing retention is not removing allocation. **Ask what the defect's MECHANISM is and pin
+    that**, not the nearest property that is easy to assert.
+  - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
+    is alive but not which guard holds which claim.
+- 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
+  on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
+  of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
+  clean permutation of a real one, so "this looks malformed" is a hypothesis, not a finding.
+- 🔴🔴 **GREEN CI IS NOT "THE SERVER BOOTS".** Four deploys have gone out green and failed to
+  start. Boot the built artifact against a **dead** `DATABASE_URL` and watch it come up; and note
+  that `npm install` passing is not `npm ci` passing — the lockfile is what the deploy resolves.
+- 🔴🔴 **PUT THE DIAGNOSTIC WHERE THE PROCESS CAN STILL REACH IT.** A summary printed after the
+  loop teaches a crash nothing. Log the size before, and progress from inside. For memory,
+  `heapUsed`, `external` and `rss` are three different answers — print all three, because the one
+  that grows tells you which thing is leaking.
+  ⚠ **A green run can be a no-op.** Read what it says it did, not just its exit code.
+- 🔴🔴 **`WebFetch` FABRICATES NAMES AND DATES AND FORMATS THEM AS QUOTATIONS.** It once invented
+  four officeholder names and three district labels and presented them as quoted text from the
+  page. Use it to LOCATE a document; never source a **name, a date or a count** from it. A web
+  search summary is a lead, not evidence — open the page and read it.
+- 🔴 **A WAF REJECTION CAN BE HTTP 200 OR 202, so never judge a fetch by `r.ok`.** F5 WAFs on
+  government hosts reject Node's `fetch` on its TLS fingerprint and answer 200 with a challenge
+  body; `curl` and Python `requests` get through. A 403 that persists even with a browser
+  `User-Agent` means **fetch it in Playwright**. Wikimedia 429s a generic UA. ⚠ The inverse
+  happens too, and a challenge may cover **pages** while leaving **files** open.
+- 🔴 **ONE DENIED COMMAND IS NOT A BLOCKED PATH.** Try a different shape before reporting a
+  capability as unavailable — and **never print a secret's value** while doing it. ⚠ An
+  unexplained break from the normal workflow usually means "I am doing this wrong", not "the
+  environment changed".
+- ⚠ **A WORKAROUND SIZED IN UNITS OF A BUG OUTLIVES THE BUG FIX.** When a constant is chosen to
+  dodge a defect, write down what it is dodging, or it becomes permanent and nobody can say why
+  it is that number. 🔴 Render instance of the same thing: **`NODE_OPTIONS` applies to the BUILD**,
+  so a heap flag meant for a job belongs on that job's START command.
+- **Image sourcing is measured, not eyeballed.** A no-monochrome rule that is not enforced in code
+  is not enforced — unenforced it cost 156 frames. **A badge is portrait-shaped: look at the image
+  before accepting it as a headshot.** **A bare CDN URL is not the original** — both the resize and
+  the quality loss can be hiding in the query string.
 
 ## Repo facts worth knowing
 
