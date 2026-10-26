@@ -1,6 +1,6 @@
 -- CA_0327 — SC U.S. Senate (Class II) 2026-11-03 general: match the race to the State Election
 -- Commission's candidate list. Lindsey Graham -> withdrawn (deceased after primary); add Darline Graham.
--- Refs ev-qa #1089. Follows CA_0325, which ended Lindsey Graham's term (died 2026-07-11) and seated
+-- Refs #1089 (filed by the ev-qa bot). Follows CA_0325, which ended Lindsey Graham's term (died 2026-07-11) and seated
 -- Darline Graham (2026-07-14 .. 2027-01-03).
 --
 -- ===========================================================================================
