@@ -74,9 +74,9 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-25: `335 / 96 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 98 that left
-are Augusta, Westbrook, Bath and the nine all-at-large Maine cities being seated,
-`CC_0282`/`CC_0283`/`CC_0291`/`CC_0292`). The Knight trackers report it in
+**Measured 2026-10-26: `297 / 58 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 136 that left
+are all 17 Maine cities being seated — `CC_0282` Augusta, `CC_0283` Westbrook, `CC_0291` Bath,
+`CC_0292` the nine all-at-large, `CC_0293` the final five). The Knight trackers report it in
 exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
 §"Flagging is load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since:
 239 UNFLAGGED. Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared
@@ -94,16 +94,20 @@ The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling 
 that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 96 flagged on 2026-10-25,
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 58 flagged on 2026-10-26,
 only **14 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **82 are flagged with no date**, and **38 of
-those are Maine**: every municipal office in the 5 cities not yet seeded — Belfast, Gardiner,
-Hallowell, Saco, Waterville — 100% of them, none ever seated. That is "we have not seeded a
-holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters and keeps the rows
-out of the drift metric. Seeding the last five Maine cities is the fix; until then, **do not read
-a stable 239 as "occupancy is clean".**
+incumbent died or resigned; see `fl.md`). The other **44 are flagged with no date**. That is "we
+have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters
+and keeps the rows out of the drift metric. **Do not read a stable 239 as "occupancy is clean".**
 
-🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 82.** Every seat a wave seats
+🟢 **THE MAINE MUNICIPAL SKELETON IS FINISHED (2026-10-26).** It was the bulk of this bucket:
+138 offices across 17 cities, 100% flagged-undated, none ever seated. All 17 are seated and
+**no Maine city government carries an undated flag any more**; the only Maine rows left are
+Brewer's and South Portland Public Schools' *dated* vacancies, plus the `State of Maine` Tribal
+Representative, which may be a genuine withdrawal. Rules, sources and the open questions:
+`backend/data/seed-me-municipal-2026/ROSTERS.md` — **open it before any Maine municipal work.**
+
+🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 44.** Every seat a wave seats
 comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
 vacancies being resolved. **Read the two sub-buckets separately, or a falling flagged total will
 look like progress on something it has not touched.** (13 → 14 is the one real addition: Brewer's
@@ -113,8 +117,18 @@ vacancy as well as clear undated ones.)
 ⚠ **A FLAGGED-VACANT OFFICE IS STILL RETURNED BY ADDRESS SEARCH, AS A NAMELESS ROW** with
 `id: null` and an empty `full_name` — `office_current_holder` LEFT JOINs from `offices`, so the
 read path emits the seat with no holder. Measured 2026-10-25 on two unrelated vacancies. It is
-pre-existing and is **not** caused by any seating wave, but it means those 82 undated flags are
+pre-existing and is **not** caused by any seating wave, but it means those 44 undated flags are
 rendering as blanks to voters today.
+
+🔴 **AND THE OPPOSITE DEFECT, ON THE SAME ENDPOINT: ADDRESS SEARCH RETURNS AT MOST ONE SEAT PER
+PERSON.** `27` active people hold two or more current seats, and a voter sees only one of them.
+Measured 2026-10-26 against four cases, two of which predate every Maine wave (Medford MA's mayor,
+who also sits ex officio on the school committee; South Portland ME's mayor, who is also a
+councillor), so it is pre-existing. It is the `DISTINCT ON (p.id)` de-duplication described under
+**Reading** above, seen from the other side: what stops a list printing two Aaron Freemans also
+stops a voter seeing a real second seat. ⚠ **Seating someone who already holds a seat therefore
+REPLACES their visible row rather than adding to it** — `CC_0292` and `CC_0293` each did this once,
+to sitting Maine House members. Probe the address after any `reuse`.
 
 Use the helpers rather than hand-rolling the two-step:
 
