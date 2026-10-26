@@ -37,6 +37,7 @@ import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
 import { runElectionDetection } from '../trivia/cron/electionDetection.js';
 import { runPipelineCron } from '../trivia/cron/pipelineCron.js';
 import { runLegiscanRefresh } from '../lib/legiscan/refresh.js';
+import { runJobHealthCheck } from '../lib/jobHealth.js';
 
 export type JobFn = () => Promise<unknown>;
 
@@ -85,6 +86,10 @@ export const JOBS: Record<string, JobFn> = {
   'trivia-expiration': () => runExpirationSweep(),
   'trivia-election-detection': () => runElectionDetection(),
   'trivia-pipeline': () => runPipelineCron(),
+  // The alarm for all of the above (ev-cto task 2026-09-14): reads pg_cron run history and
+  // each Render job's proof-of-run, emails ADMIN_EMAIL once when anything failed or went
+  // stale, and is silent on a healthy day. Daily via Supabase Cron job `ev-job-health`.
+  'job-health': () => runJobHealthCheck(),
 };
 
 /** Sorted job names, for help text and tests. */
