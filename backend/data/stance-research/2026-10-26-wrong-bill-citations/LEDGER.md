@@ -129,23 +129,28 @@ names the collision. Nothing to repair.
 
 ## 6. The title sweep — PARTIAL, and what it already found
 
-`ma-bill-titles.tsv` holds the document kind, General Court and official title of **268 of the 726**
-malegislature.gov bill pages this corpus cites from a serving voter-facing row. All 268 returned
-HTTP 200, no duplicates. **It is not the whole sweep**: malegislature.gov began refusing requests
-after roughly 700 fetches and every later request timed out with zero bytes. The remaining 458 pages
-are owed.
+`ma-bill-titles.tsv` holds the document kind, General Court and official title of **388 of the 726**
+malegislature.gov bill pages this corpus cites from a serving voter-facing row. **Every published
+line returned HTTP 200 and carries a title**; lines from failed fetches are excluded, not patched.
+**It is not the whole sweep** — malegislature.gov degraded under the fetching and the remaining 338
+pages are owed.
+
+🔴 **A further 92 paths returned 404 during the degraded window and are NOT published and NOT
+treated as evidence.** A later spot-check returned **HTTP 500 for `/Bills/192/S9`**, a page verified
+as 200 earlier the same day, so the site's failure responses that afternoon say nothing about
+whether a bill exists. "This cited page 404s" would be a serious finding and it has not been
+established; those paths simply count as unfetched.
 
 Reproduce with `dump-ma-citations.mjs` (run from `backend/`), then `fetch-bill-titles.sh`, then
-`compare-bill-titles.mjs`. ⚠ Fetch slowly and in one process — see the warning at the end.
+`compare-bill-titles.mjs`. ⚠ Fetch slowly and in ONE process — see the warning at the end.
 
-Over the 658 citations that have a title, comparing the title's distinctive words against the
+Over the 769 citations that have a title, comparing the title's distinctive words against the
 citing row's prose:
 
 ```
-ok                451
-NO_OVERLAP        135     prose shares not one content word with the page it cites
+ok                574
+NO_OVERLAP        159     prose shares not one content word with the page it cites
 CITES_AN_ORDER     36     the cited document is an Order, not a bill
-NO_TITLE           36     page carries no title (2 distinct bills)
 ```
 
 ⚠ **This is a reading queue at well under 100% precision, not a defect count.** Confirmed false
@@ -176,6 +181,22 @@ existing records"*). Different revision, different question. Carrying a chair ac
 position on a subject the member was never assessed on. This is the same LADDER_SCOPE block
 migration 1900 hit on this very topic. ▶ **Adjudication, not citation repair.**
 
+### 🔴🔴 And two cohorts larger still, both on `immigration` — structurally unrepairable
+
+| rows | cited page | is actually | the prose claims |
+|---:|---|---|---|
+| **20** | `/192/S2745` | *An Act relative to recovery high schools* | immigrant-advocacy records |
+| **14** | `/192/H3256` | *An Act to establish municipal access to utility poles located in municipal rights-of-way* | *"the Work and Family Mobility Act (H.3256, 2022)"* |
+
+All 34 are voter-facing and serve from Season 1 — and **`immigration` has no Season 2 question at
+all** (`season_questions` returns 0 rows for it in Season 2). There is no Season 2 row to insert, so
+unlike every other cohort here these cannot be repaired forward *by any means* until the topic gets
+a Season 2 question. This is the known 1,678-stance orphan topic.
+
+⚖ So the running total of wrong-bill rows found by this pass is **21 repaired, 4 blocked on a
+rewritten ladder or a missing target, 18 blocked on the voting-rights ladder, and 34 blocked on a
+topic with no open-season question** — and the sweep is only 53% complete.
+
 ### Other candidates, fetched but NOT individually re-opened
 
 Flagged by the sweep and consistent with the H.4933 shape. Each still needs its page read before
@@ -192,15 +213,22 @@ reported as a queue, not as findings:
 
 ### ⚠ The sweep script bit me with the defect it was built to find
 
-The first run was clean. A **resumed** run reused a fixed temp filename and did not delete it between
-iterations, so when a fetch failed the extractor read **the previous page's HTML** and recorded that
-page's title against the new bill's path — and two resumed runs then ran concurrently over the same
-temp file. 15 rows were labelled with a confidently wrong title before it was caught by noticing
-HTTP `000` beside a populated title column. Those lines were discarded; only the 268 from the clean
-single run are published here. 🔑 **The failure mode of a title checker is a wrong title, which looks
-exactly like a finding.** `fetch-bill-titles.sh` as shipped uses a PID-scoped temp file and removes
-it each iteration, so a failed fetch yields an empty title rather than a borrowed one. Never run two
-copies against one output.
+The long first run appeared to have stalled, so it was "resumed" — **but it was still alive**, and
+the resume script reused a *fixed* temp filename it never deleted between iterations. So when a
+fetch failed, the extractor read **the previous page's HTML** and recorded that page's title against
+the new bill's path, while two processes appended to one output file. **15 rows were labelled with a
+confidently wrong title.** It was caught by noticing HTTP `000` sitting beside a populated title
+column — the status code was the only thing that disagreed.
+
+🔑 **The failure mode of a title checker is a wrong title, and a wrong title looks exactly like a
+finding.** Three rules, all now in the shipped script:
+1. PID-scope the temp file and delete it every iteration, so a failed fetch yields an *empty* title
+   rather than a borrowed one.
+2. **Record the HTTP status beside every extracted value**, and publish only `200` rows. That single
+   column is what made the corruption visible and what let the good rows be recovered afterwards —
+   a 200 line is trustworthy no matter which process wrote it, because the bug only fires on failure.
+3. Never run two copies against one output. "It looks stalled" is not evidence that it stopped;
+   check before starting a second.
 
 ## 7. What the measured scope got wrong
 
@@ -225,14 +253,21 @@ moved.
 
 ## 8. Owed after this
 
-1. **The 4 adjudications in section 5** — the climate chair-3 pair, Madaro/fossil-fuels, Arambula.
-0. 🔴 **The 18 `/192/S2977` VOTES Act rows** (section 6). Bigger than anything this pass repaired,
-   and blocked on the same replaced voting-rights ladder migration 1900 hit.
-2. **The H.2983 sentences** on 5 rows: is there a Massachusetts "100% clean energy" bill these
+Ordered by how many voter-facing rows are waiting on each.
+
+1. 🔴🔴 **The 34 `immigration` rows** citing a recovery-high-schools bill (20) and a utility-pole
+   bill (14) — section 6. **Blocked on the topic itself**: `immigration` has no Season 2 question,
+   so there is nothing to write forward into. Nothing can be repaired here until that is resolved,
+   which makes it an argument for resolving it.
+2. 🔴 **The 18 `/192/S2977` VOTES Act rows** (section 6). The correct vehicle is already known from
+   migration 1900 (S.2924, Chapter 92 of 2022); blocked on the replaced voting-rights ladder.
+3. **The 4 adjudications in section 5** — the climate chair-3 pair, Madaro/fossil-fuels, Arambula.
+4. **The H.2983 sentences** on 5 rows: is there a Massachusetts "100% clean energy" bill these
    members actually co-sponsored, and if not, what survives?
-3. **Finish the title sweep** — 458 of 726 pages are unfetched, and the partial third already turned
-   up an 18-row cohort. Then turn `compare-bill-titles.mjs` into a checked-in reading queue. It is
-   the only thing that catches this class.
-4. **Other legislatures.** This pass covered Massachusetts only. California's `bill_id` collisions
+5. **Finish the title sweep** — 338 of 726 pages are unfetched (92 of them returned 404 only while
+   the site was failing, so they must be re-checked). The 53% already done turned up cohorts of 20,
+   18 and 14 rows. Then turn `compare-bill-titles.mjs` into a checked-in reading queue — it is the
+   only thing that catches this class.
+6. **Other legislatures.** This pass covered Massachusetts only. California's `bill_id` collisions
    (migration 1945) and the Texas reuse across the 85th–89th are the same defect with different
    URL shapes.

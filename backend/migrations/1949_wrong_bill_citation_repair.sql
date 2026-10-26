@@ -36,10 +36,16 @@
 -- THE SAME wrong number. H.4933 appears in both halves of all 14 climate rows. The two halves
 -- agree with each other and both disagree with reality, so any check that compares them is blind
 -- by construction. ▶ The detector has to fetch the cited page and compare its TITLE with the act
--- named in the prose. That sweep was started for this pass and got through 268 of the 726 distinct
--- bill pages before malegislature.gov began refusing requests; it is recorded in the ledger.
+-- named in the prose. That sweep was started for this pass and got through 388 of the 726 distinct
+-- bill pages before malegislature.gov degraded under it; it is recorded in the ledger. 🔴 A further
+-- 92 paths answered 404 during that window and are NOT treated as evidence — a later spot-check
+-- returned HTTP 500 for /Bills/192/S9, a page verified as 200 the same day.
 --
--- 🔴🔴 THAT PARTIAL THIRD ALREADY FOUND A SIXTH COHORT, BIGGER THAN ANYTHING REPAIRED HERE.
+-- 🔴🔴 THAT PARTIAL SWEEP FOUND THREE MORE COHORTS, ALL BIGGER THAN ANYTHING REPAIRED HERE, AND
+-- ALL BLOCKED. 34 `immigration` rows cite a RECOVERY HIGH SCHOOLS bill (/192/S2745, 20 rows) and a
+-- MUNICIPAL UTILITY POLE bill (/192/H3256, 14 rows, described as "the Work and Family Mobility
+-- Act") — and immigration has NO SEASON 2 QUESTION AT ALL, so there is nothing to write forward
+-- into and no repair of any kind is possible there yet. And:
 -- 18 voter-facing voting-rights rows say the member "voted for the 2022 VOTES Act" and cite
 -- /Bills/192/S2977 — which is ORDER S.2977, "Order relative to authorizing the joint committee on
 -- Mental Health, Substance Use and Recovery to make an investigation and study of ... a model
