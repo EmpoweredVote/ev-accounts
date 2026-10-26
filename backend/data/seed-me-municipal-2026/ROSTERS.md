@@ -1,6 +1,7 @@
 # Maine municipalities — seating the flagged-vacant skeletons
 
-**Done: Augusta (`CC_0282`, 18) · Westbrook (`CC_0283`, 15). 15 cities and 104 offices left.**
+**Done: Augusta (`CC_0282`, 18) · Westbrook (`CC_0283`, 15) · Bath (`CC_0291`, 9).
+14 cities and 95 offices left.**
 Read this before touching any Maine municipal office.
 
 | | total | flagged | unflagged |
@@ -8,6 +9,7 @@ Read this before touching any Maine municipal office.
 | before Augusta | 433 | 194 | **239** |
 | after Augusta | 415 | 176 | **239** |
 | after Westbrook | 400 | 161 | **239** |
+| after Bath | 391 | 152 | **239** |
 
 ---
 
@@ -189,13 +191,87 @@ cities will disagree with each other.
 
 ---
 
-## The queue — 15 cities, 104 offices
+## 🔴🔴 R8. THE OFFICE TITLES THEMSELVES CAN BE THE DEFECT — COUNT THE WARDS BEFORE YOU SEAT
+
+Bath, 2026-10-25. Our schema held nine offices named `Council Member (At-Large 1..9)`. The city's
+own council page says:
+
+> "The Bath City Council is composed of nine members, one member from each of the City's seven
+> wards and two at-large members."
+
+**Seven of the nine were ward seats, and we were telling a Bath voter they elect all nine at
+large.**
+
+🔴 **NOTHING WOULD EVER HAVE CAUGHT THIS.** The office count was right. The chamber was right. The
+district was right. Reachability does not read a title, `offices_missing_terms` does not read a
+title, and no gate in the repo compares a seat's name to the body's own description of itself. It
+surfaced only because seating a city forces you to match a *person* to a *seat*, and the roster had
+seven ward councillors and nowhere to put them.
+
+⚠ **R6 IS NOT A DEFENCE HERE.** R6 says at-large seat numbers are ours and carry no meaning — true,
+and irrelevant, because these were not at-large seats. R6 applies *after* you have established that
+a seat is at-large. Bath is the case where that premise was false.
+
+▶ **Nine queued cities are still modelled as all-at-large** (Brewer, Calais, Caribou, Eastport,
+Ellsworth, Old Town, Presque Isle, Rockland, Sanford). **Count the wards on each city's own page
+before seating it.** Bath proves the check is load-bearing, not ceremony.
+
+🟢 **The fix is a RETITLE, not a remodel.** Four Maine cities already carry ward titles on one
+citywide district — Belfast, Hallowell, Saco, Waterville — so Bath simply joined them. **R7 is
+untouched**: an address still returns every seat in the city, including wards that voter does not
+elect, and that still needs one Maine-wide decision rather than fifteen local ones.
+
+### 🔴 R8b. A COUNCILLOR LISTED BY A ROTATING ROLE — THE CONTACT ADDRESS SAYS WHICH SEAT
+
+Bath's page labels two of its nine by their rotating role and shows **no ward** for either:
+
+| page label | actual seat | what proved it |
+| --- | --- | --- |
+| Roo Dunn, "City Council Chairperson" | **Ward 4** | `ward4@cityofbathmaine.gov` |
+| Caitlin McCorkle, "City Council Vice Chair" | **Ward 6** | `ward6@cityofbathmaine.gov` |
+
+Wards 4 and 6 appear nowhere else on the page. **Seating from the visible labels would have created
+a `Chairperson` office and a `Vice Chair` office and left two real ward seats empty** — R5's
+rotating-role trap wearing a new disguise, and worse than the Westbrook case because here the role
+*replaces* the seat name instead of sitting beside it.
+
+🟢 Same source settles something R6 says is ours to choose: Bath numbers its own at-large seats,
+`atlarge1@` (Ambrosino) and `atlarge2@` (Mansfield-Pryor). **For Bath those numbers are the city's.
+Do not "correct" them.**
+
+⚠ **Bath has no Mayor and that is correct** — council–manager city, chair chosen from the council.
+Nine of the fourteen cities left DO hold a `Mayor` office, so check rather than assume either way;
+`CC_0291` gates that Bath still has none.
+
+### Bath dates, and the election eight days later
+
+Bath publishes **no** election dates — only "Councilors serve three-year terms". So all nine are
+`start_precision => 'unknown'`, and R4b's trap cannot even arise. ⚠ A Maine municipal election falls
+on **2026-11-03**, and Bath's terms are staggered three-year. **Some of these nine will change; a
+re-check is owed in December.** That is not a reason to have waited — the alternative was to keep
+asserting that all nine Bath seats are empty, which was false the whole time.
+
+---
+
+## The queue — 14 cities, 95 offices
 
 ⚠ This heading read **"16 cities, 120 offices"** until 2026-10-25 — it was not updated when
 Westbrook was seated (`CC_0283`), though the summary at the top of this file was. The table below
-has always been right. **Re-measured against prod 2026-10-25 and it reconciles exactly**: these 15
-governments hold 104 undated flagged offices, and with the `State of Maine` tribal seat noted below
-that is the 105 Maine rows `offices_missing_terms` reports.
+has always been right. **Re-measured against prod 2026-10-25 and it reconciles exactly**: before
+Bath, these governments held 104 undated flagged offices, and with the `State of Maine` tribal seat
+noted below that was the 105 Maine rows `offices_missing_terms` reported. Bath took 9 of them.
+
+🔴 **HOW EACH CITY IS CURRENTLY MODELLED — AND NINE OF THESE ARE UNVERIFIED.** Measured against
+prod 2026-10-25. Bath sat in the "all at-large" column and was **wrong** (see R8), so treat that
+column as a claim to check, not a fact.
+
+| modelled as | cities |
+| --- | --- |
+| ward or district titles already | Belfast 5+mayor · Gardiner 4 districts+3 at-large+mayor · Hallowell 4+3 at-large+mayor · Saco 7+mayor · Waterville 7+mayor |
+| **all at-large — VERIFY EACH** | Brewer 4+mayor · Calais 6+mayor · Caribou 6+mayor · Eastport 4+mayor · Ellsworth 6+mayor · Old Town 7 · Presque Isle 6+mayor · Rockland 4+mayor · Sanford 6+mayor |
+
+Every city uses **one citywide district**, including the five that already name wards — so R7 is a
+pre-existing Maine-wide condition, not something a retitle introduces.
 
 ⚠ **An elected office we do not model:** Westbrook elects a `Portland Water District Rep.`
 (Malory Shaughnessy) and we hold no office for it. Creating one means modelling a regional water
@@ -204,21 +280,25 @@ Maine cities to elect similar regional seats, and do not invent an office to hol
 
 | City | offices | | City | offices |
 | --- | --- | --- | --- | --- |
-| Bath | 9 | | Old Town | 7 |
 | Gardiner | 8 | | Presque Isle | 7 |
 | Hallowell | 8 | | Sanford | 7 |
 | Saco | 8 | | Belfast | 6 |
 | Waterville | 8 | | Brewer | 5 |
 | Calais | 7 | | Eastport | 5 |
 | Caribou | 7 | | Rockland | 5 |
-| Ellsworth | 7 | | **total** | **104** |
+| Ellsworth | 7 | | **total** | **95** |
+| Old Town | 7 | | | |
 
-**Two singletons are NOT part of this pattern and need their own look:**
+~~Bath 9~~ — **done 2026-10-25, `CC_0291`.**
+
+**Two singletons are NOT part of this pattern:**
 * `State of Maine` — 1 flagged seat, a **Tribal Representative**. Maine seats three non-voting
   tribal representatives (ADR 0003), and a tribe may genuinely have withdrawn its seat. That could
-  be a real vacancy. Do not seat it from a roster without checking.
-* `South Portland Public Schools` — 1 flagged seat out of 7, i.e. that district is otherwise
-  seated. Likely a genuine single vacancy, not the Maine skeleton shape.
+  be a real vacancy. Do not seat it from a roster without checking. **Still open.**
+* 🟢 `South Portland Public Schools` — **RESOLVED 2026-10-25, and it is NOT skeleton work.** The
+  tracker guessed "likely a genuine single vacancy". Measured: it is the **only** flagged Maine
+  municipal office that carries a `vacant_since` DATE, out of 105. That date is the signature of a
+  real, documented vacancy — the thing the flag is actually for. Leave it flagged.
 
 ### Per-city recipe
 
