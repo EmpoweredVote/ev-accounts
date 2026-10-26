@@ -64,6 +64,12 @@ describe('evaluate', () => {
     expect(problems[0].what).toMatch(/^no run since/);
   });
 
+  it('does not flag a job that has never run (a new job) except under the test override', () => {
+    const fresh = job({ jobname: 'anon-execute-sweep-assert', last_start: null });
+    expect(evaluate({ ...base, pgCron: [fresh] })).toEqual([]);
+    expect(evaluate({ ...base, pgCron: [fresh], staleOverrideMinutes: 1 })[0].what).toMatch(/^has never run/);
+  });
+
   it('ignores staleness on a paused job but still reports its failures', () => {
     const problems = evaluate({ ...base, pgCron: [job({ active: false, last_start: ago(99_999), fails: 1, first_fail_at: ago(10) })] });
     expect(problems).toHaveLength(1);

@@ -118,8 +118,12 @@ export function evaluate(input: {
     const interval = scheduleIntervalMinutes(j.schedule);
     if (interval === null && staleOverrideMinutes === undefined) continue;
     const limit = staleOverrideMinutes ?? STALE_INTERVALS * (interval as number);
+    // A job with no run yet is usually just new (cron.job keeps no creation time, so age
+    // is unknowable). Skipped: if the scheduler itself died, every OTHER job goes stale.
     if (!j.last_start) {
-      problems.push({ job: j.jobname, what: `has never run (schedule ${j.schedule})`, since: null });
+      if (staleOverrideMinutes !== undefined) {
+        problems.push({ job: j.jobname, what: `has never run (schedule ${j.schedule})`, since: null });
+      }
     } else if (ageMin(j.last_start) > limit) {
       problems.push({
         job: j.jobname,
