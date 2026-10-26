@@ -98,20 +98,16 @@ export async function provisionWorkosUser(workosUserId: string): Promise<Provisi
     if (!userId) return { ok: false, code: 'INTERNAL_ERROR' };
 
     if (created) {
-      // Best-effort display name from the AuthKit signup form. Non-fatal —
-      // the profile page can set it later (same policy as the signup route).
-      let displayName = [workosUser.first_name, workosUser.last_name]
-        .filter(Boolean)
-        .join(' ')
-        .trim();
-      if (!displayName) {
-        // No name from AuthKit: mint a best-effort-unique pseudonym so the account never
-        // reaches Connected tier nameless (watchlist #70). Non-fatal.
-        try {
-          displayName = await generateUniqueAutoName(pool);
-        } catch (err) {
-          console.error('[workosProvision] auto-name generation failed (non-fatal):', err);
-        }
+      // Always mint a pseudonym; the profile page can change it later. NEVER build
+      // the display name from the AuthKit first/last name: display_name is public,
+      // and a real name there undoes the identity vault (decision 0022). A
+      // pseudonym also means no account reaches Connected tier nameless
+      // (watchlist #70). Non-fatal.
+      let displayName = '';
+      try {
+        displayName = await generateUniqueAutoName(pool);
+      } catch (err) {
+        console.error('[workosProvision] auto-name generation failed (non-fatal):', err);
       }
       if (displayName) {
         try {
