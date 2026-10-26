@@ -60,7 +60,8 @@ room as the board members who will hold the shares.
    `id-vault-share-{1..4}-of-4.txt`, into `<out-dir>`.
 2. **Distribute one share file to each of the four board members**, offline (e.g. on a USB
    drive handed over in person, or a password manager entry only that member can open — never a
-   shared channel, never email, never Slack).
+   shared channel, never email, never Slack). If the board cannot meet in person, follow §4a
+   instead.
 3. Set the two printed values in the **production** environment:
    ```
    ID_VAULT_PUBLIC_KEY=<the printed base64 public key>
@@ -76,6 +77,96 @@ room as the board members who will hold the shares.
    one can find later is as good as lost.
 
 Do this once per keypair. It is repeated only when the key is rotated (§7).
+
+## 4a. Remote distribution (when the board cannot meet)
+
+The board lives in different places, so the in-person handover in §4 is usually not possible.
+This section replaces §4 steps 1, 2 and 4 for a remote ceremony. Steps 3 and 5 are unchanged.
+
+**Why remote is acceptable.** One share alone reveals nothing about the key. An attacker has to
+obtain **two** shares, from two different people, to read anything. So the goal is not a perfect
+channel — it is that no single channel, device or service ever holds two shares, and that no
+share is left behind on the ceremony machine.
+
+**Accept two facts before you start:**
+
+- The person who runs the ceremony (the *operator*) sees all four shares. That cannot be
+  avoided with a single dealer. The operator must be trusted to destroy them afterwards.
+- "Offline" does not need an air-gapped computer. It means the shares never reach a disk that
+  syncs, backs up, or keeps deleted files. The steps below get that on an ordinary Mac.
+
+### Before the ceremony
+
+1. Confirm with the founders **which four people** hold shares, and record the assignment
+   (share 1 → name, share 2 → name, …) somewhere outside this repo.
+2. Each holder installs **Signal** on their phone. Signal messages are end-to-end encrypted:
+   only the sender and receiver can read them.
+3. On a **phone or video call** with each holder, compare your Signal **safety number** with
+   theirs (open the chat → their name → *View safety number*). If the numbers match, no one is
+   sitting between you. Do this before any share is sent.
+4. In each one-to-one Signal chat, turn on **disappearing messages** (1 hour is enough).
+5. On the ceremony Mac, pause **Time Machine** for the session, and do not use a folder inside
+   iCloud Drive, Desktop or Documents.
+
+### The ceremony (operator)
+
+1. Turn off Wi-Fi and unplug Ethernet. The machine stays offline while shares exist.
+2. Create a RAM disk — a temporary drive that lives only in memory. It is never written to the
+   SSD, never synced, never backed up, and it is gone when ejected:
+   ```bash
+   diskutil erasevolume APFS VaultCeremony $(hdiutil attach -nomount ram://65536)
+   ```
+3. From `backend/`, generate the keypair into the RAM disk:
+   ```bash
+   npx tsx scripts/id-vault-keygen.mts /Volumes/VaultCeremony --key-version 1
+   ```
+4. Copy the two printed lines (`ID_VAULT_PUBLIC_KEY=…`, `ID_VAULT_KEY_VERSION=1`) into a
+   note. **These are not secret** — the public key can only seal, never read.
+5. Send each share to its holder through **Signal on your phone**, one chat per holder, one
+   share per chat. Never put two shares in the same message, chat or file. Re-type each share
+   by hand from the screen (the phone never touches the Mac's files), then have the holder read
+   back the first and last eight characters on the call to confirm the copy is exact.
+   - *Simpler, slightly weaker:* drag each share file into Signal **Desktop**. This is still
+     end-to-end encrypted, but the Mac's Signal app then holds every share until the messages
+     disappear.
+   - Do **not** run the ceremony inside Claude Code or any AI or chat tool — its output leaves
+     the machine.
+6. Each holder saves their share **offline** — printed on paper, or on a USB stick — stores it
+   somewhere safe (a home safe, a safe-deposit box), and confirms back to you. The Signal
+   message then deletes itself; ask them to delete it by hand too.
+7. Eject the RAM disk (`diskutil eject /Volumes/VaultCeremony`), clear the terminal scrollback,
+   and only then turn the network back on.
+8. Continue with §4 step 3 (set the two values in prod) and step 5 (confirm every holder can
+   find their share).
+
+### Low-tech and high-security alternatives
+
+- **Post.** Print each share and mail it in a sealed envelope, one share per envelope, to one
+  holder. One lost envelope does no harm, but you cannot tell whether an envelope was opened —
+  so if one arrives damaged, rotate (§7).
+- **Encrypt each share to its holder's own key.** Each holder installs `age`, runs
+  `age-keygen -o key.txt`, and sends you only the public line (`age1…`). You run
+  `age -r age1… -o share-N.age id-vault-share-N-of-4.txt`; the `.age` file is then safe to send
+  over any channel, even email. This is the strongest option, but every holder must manage a
+  command-line tool and a private key file, so it suits a technical board best.
+
+### Remote break-glass
+
+A break-glass needs two shares on one machine. Remotely, that means one holder sends their share
+to the other, so the §6 rule "do not consolidate both shares ahead of time" becomes "consolidate
+only during the run, with both people on the call":
+
+1. Both holders join a video call and agree the `--reason` (§6 step 2).
+2. The holder who will **not** run the tool sends their share over a safety-number-verified
+   Signal chat with disappearing messages on, during the call.
+3. The runner saves it to a RAM disk (as above), runs §6 step 3, then ejects the RAM disk.
+4. The runner has now held a full key, and the sender's share has passed through a second
+   person. **Consider rotating (§7) after a real break-glass.** A new key protects everything
+   sealed from then on; rows sealed under the old key stay readable with the old key until they
+   are re-sealed (§7 step 3).
+
+Note that the break-glass tool needs a `--db` connection to read the sealed rows, so unlike the
+ceremony, that machine cannot be fully offline while it runs.
 
 ## 5. Phase C — backfill, then null (in that order, only after B)
 
