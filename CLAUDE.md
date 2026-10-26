@@ -137,11 +137,28 @@ so a wave can CREATE a documented vacancy as well as clear undated ones — and 
 Nation's tribal seat, `CC_0294`, which was not created but **moved out of the undated pile by
 being dated**. That second kind changes no total and is the whole point of the sub-buckets.)
 
-⚠ **A FLAGGED-VACANT OFFICE IS STILL RETURNED BY ADDRESS SEARCH, AS A NAMELESS ROW** with
-`id: null` and an empty `full_name` — `office_current_holder` LEFT JOINs from `offices`, so the
-read path emits the seat with no holder. Measured 2026-10-25 on two unrelated vacancies. It is
-pre-existing and is **not** caused by any seating wave, but it means those 40 undated flags are
-rendering as blanks to voters today.
+🟢 **FIXED 2026-10-26 — A FLAGGED-VACANT OFFICE USED TO COME BACK AS A NAMELESS ROW.**
+`office_current_holder` LEFT JOINs from `offices`, so the read path emits an empty seat as a row
+whose `p.*` columns are all NULL. `PoliticianFlatRecord.id` was typed `string` and the mapper cast
+that NULL through with `as string`, so **the type told every consumer each row is a person** and a
+voter got a blank card. Measured live: a Santa Clarita address returned two of them. The row now
+says what it is:
+- **`id` is `string | null`.** The type no longer lies, and TypeScript found all seven mappers and
+  every `imageMap.get(p.id)` that assumed otherwise.
+- **`office_id` is on every politician row.** Before this the whole surface carried NO office
+  identity: a held row could be keyed on the person and a vacancy could be keyed on *nothing*.
+- **`seat_status: 'held' | 'vacant'`** — 🔴 **derived from whether a holder resolved, NEVER from
+  `is_vacant`.** Those answer different questions: `is_vacant` is an assertion on the office (see
+  **The `is_vacant` trap** below), `seat_status` is "is there a name in this row". ⚠ They agree on
+  every row in prod today — measured, zero flagged-and-held offices repo-wide — because the seating
+  migrations gate it to zero. That is a reason to keep them separate, not to collapse them: the
+  moment one flagged-and-held row appears, the collapsed version is wrong and silent.
+
+⚠ **THE DATA HALF IS STILL OPEN.** 40 of the 57 flagged offices carry no `vacant_since`, so they
+render as "vacant, date unknown" — honest about the record and still wrong about the world in most
+cases, because `is_vacant` was used to mean "not seeded". 21 of the 40 are Los Angeles County
+school boards and special districts; 8 are Missouri House seats. Each needs research, not a
+read-path change.
 ⚠ **A `membership`-basis seat is the exception and is NOT affected** — it has no `geo_id` by
 design (ADR 0003) and `check:reachability` fails if one ever acquires geometry, so Maine's
 vacant Penobscot tribal seat is never returned for an address at all. Its
