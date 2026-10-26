@@ -1,39 +1,1986 @@
 {
   "id": "IN-SB-10-2025",
   "scope": "state:in",
-  "title": "SB 10 (2025) (2025) — Bars student IDs from public colleges as polling-place ID (per news); tracker abstract: proof of identification may not include a document issued by an educational institution",
+  "title": "SB 10 (2025), Senate Enrolled Act 10, Public Law 70 — voter registration; proof of identification may not include a document issued by an educational institution",
   "urls": [
-    "https://www.wboi.org/2025-04-01/house-republicans-vote-to-ban-use-of-college-student-ids-at-polling-places"
+    "https://iga.in.gov/legislative/2025/bills/senate/10",
+    "https://iga.in.gov/api/getBillDetails?session_lpid=session_2025&bill_basename=SB0010",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/SB0010.04.ENRH.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/SB0010.01.INTR.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.66_S.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.352_S.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.40_S.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.326_H.pdf",
+    "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.327_H.pdf"
   ],
-  "version": "other",
-  "operative_text": "Student IDs from Indiana public colleges not valid voter ID: would ban the use of student IDs from Indiana public colleges and universities to prove someone's identity\nOther provisions: [not examined; iga.in.gov unreachable]",
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) (section) SEA 10 Sec. 1, IC 3-5-2-40.5(a)\n(quote) Sec. 40.5. (a) Except as provided in subsection (b), \"proof of identification\" refers to a document that satisfies all the following:\n\n(a_in_person_id) (section) SEA 10 Sec. 1, IC 3-5-2-40.5(a)(1)-(4)\n(quote) (1) The document shows the name of the individual to whom the document was issued, and the name conforms to the name in the individual's voter registration record. (2) The document shows a photograph of the individual to whom the document was issued. (3) The document includes an expiration date, and the document: (A) is not expired; or (B) expired after the date of the most recent general election. (4) The document was issued by the United States or the state of Indiana.\n\n(a_in_person_id) (section) SEA 10 Sec. 1, IC 3-5-2-40.5(c) (student-ID exclusion)\n(quote) (c) The term does not include a document issued by an educational institution.\n\n(b_no_id_remedy) (section) n/a\n(quote) (x) not stated in SEA 10 (the enrolled act text does not address what a voter without proof of identification may do; the only appeal in the act concerns citizenship, below)\n\n(b_no_id_remedy) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(e) (citizenship appeal, not an ID remedy)\n(quote) (e) An individual who is unable to provide documentation as proof of citizenship under this section may appeal in person or by mail to the county election board of the county in which the person was registered to vote.\n\n(c_mail_ballot_id) (section) n/a\n(quote) (x) not stated in SEA 10\n\n(d_proof_of_citizenship) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(a)\n(quote) Sec. 7.3. (a) For purposes of this section, \"proof of citizenship\" means one (1) or more of the following: (1) The voter's birth certificate or a legible photocopy of the voter's birth certificate. (2) The voter's United States passport or a legible photocopy of the pages of the passport that identify the voter and show the passport number.\n\n(d_proof_of_citizenship) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(a)(3)-(5)\n(quote) (3) The voter's United States naturalization documentation, a legible photocopy of the voter's naturalization documentation, or the voter's certificate of naturalization number.\n(4) A document or method of proof of citizenship established under the Immigration Reform and Control Act of 1986 (8 U.S.C. 1101 et seq.). (5) The voter's consular report of birth abroad (CRBA).\n\n(d_proof_of_citizenship) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(c)\n(quote) (c) After receiving a notice under subsection (b), the county voter registration office shall send a notice to the registered voter inquiring whether the individual is eligible to be registered to vote. An individual who receives a notice under this subsection shall, within thirty (30) days of receiving the notice, provide proof of citizenship to the county voter registration office in person or by mail.\n\n(d_proof_of_citizenship) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(d)\n(quote) (d) If the individual does not provide proof of citizenship within thirty (30) days of receipt of the notice under subsection (c), the county voter registration office that issued the notice shall cancel the individual's registration.\n\n(e_signature_or_records_verification) (section) SEA 10 Sec. 2, IC 3-7-26.3-11\n(quote) Sec. 11. As required under 52 U.S.C. 21083, the county voter registration office shall perform list maintenance with respect to the computerized list on a regular basis within forty-eight (48) hours of receiving information that requires voter list maintenance activity.\n\n(e_signature_or_records_verification) (section) SEA 10 Sec. 2, IC 3-7-26.3-11(5)\n(quote) (5) a notice issued by a county voter registration office under IC 3-7-38.2-7.3 that the individual has not provided proof of citizenship.\n\n(e_signature_or_records_verification) (section) SEA 10 Sec. 3, IC 3-7-38.2-2(l)\n(quote) (l) A county voter registration office shall conduct a voter list maintenance program under this section for each voter who has not cast a vote in the two (2) most recent general elections.\n\n(e_signature_or_records_verification) (section) SEA 10 Sec. 5, IC 3-7-38.2-7.3(b)\n(quote) (b) The NVRA official shall compare the statewide voter registration system with the bureau of motor vehicles list of temporary credentials issued under IC 9-24-11-5(c) or IC 9-24-16-3(f).\n\n(e_signature_or_records_verification) (section) SEA 10 Sec. 6, IC 3-7-38.2-19(a)\n(quote) Sec. 19. (a) Not later than January 1, 2026, the secretary of state shall send a written or electronic communication to each state to request that the state or a group of states execute an agreement with Indiana to share certain information in the possession of the secretary of state and the other state or states for the purpose of: (1) maintaining the statewide voter registration list; and (2) identifying whether a voter of Indiana may also be registered to vote in another state.\n\n(version) Enrolled (SB0010.04.ENRH, printed 03/27/2025; header reads 'SENATE ENROLLED ACT No. 10', running footer 'SEA 10 -- Concur'). Text is from pdftotext, so strike-through/underline marks are lost; the student-ID sentence in 3-5-2-40.5(c) is the new language.\n(correction) Caller expected House passage 66-25. Official House roll call 340 on 2025-04-01 is 66 yea, 26 nay, 5 excused (66+26+5+3=100). Senate third reading 02/04/2025 is 39-11 (matches). Final enactment step was Senate concurrence (roll 352, 39-9, 1 excused) on 04/07/2025. The Stage 0 copy of this file had the House tally as 66-25 and the Senate date as \"2025-02 (early Feb)\", both from news; replaced by the official roll calls.\nSponsors as printed: Authored by Senators Doriot, Garten, Gaskill (API: Blake Doriot, Chris Garten, Mike Gaskill); House sponsor: Representative Culp (API: Kendell Culp); Cosponsors: Representatives Wesco and Miller D (API: Timothy Wesco, Doug Miller). Senate coauthors from the IGA API.",
+  "sponsors": [
+    {
+      "name": "Blake Doriot",
+      "role": "author",
+      "version": "as printed on the enrolled act (Senate authors)"
+    },
+    {
+      "name": "Chris Garten",
+      "role": "author",
+      "version": "as printed on the enrolled act (Senate authors)"
+    },
+    {
+      "name": "Mike Gaskill",
+      "role": "author",
+      "version": "as printed on the enrolled act (Senate authors)"
+    },
+    {
+      "name": "Stacey Donato",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Tyler Johnson",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Linda Rogers",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Scott Baldwin",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Aaron Freeman",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "James Tomes",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Gary Byrne",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Mike Bohacek",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Daryl Schmitt",
+      "role": "co",
+      "version": "Senate coauthor (IGA API)"
+    },
+    {
+      "name": "Kendell Culp",
+      "role": "prime",
+      "version": "House sponsor (as printed: Representative Culp)"
+    },
+    {
+      "name": "Timothy Wesco",
+      "role": "co",
+      "version": "House cosponsor (as printed: Wesco)"
+    },
+    {
+      "name": "Doug Miller",
+      "role": "co",
+      "version": "House cosponsor (as printed: Miller D)"
+    }
+  ],
   "single_subject": [],
-  "higher_law_duty": "not checked",
   "votes": [
     {
-      "date": "2025-02 (early Feb)",
+      "date": "2025-02-04",
       "body": "IN Senate",
-      "motion": "passage",
+      "motion": "SB 10 - Doriot - 3rd Reading: Bill Passed (roll call 66)",
       "kind": "roll-call",
       "yes": 39,
       "no": 11,
-      "note": "member names not captured; date as printed: 2025-02 (early Feb)",
-      "members": []
+      "absent": 0,
+      "body_size": 50,
+      "note": "Senate third reading / final passage in origin chamber. Not voting: 0 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.66_S.pdf sha256 1d5fa33a7763f6c2d45581c9feec126bbd664355bc3c0a01dbb1b2c133f18f5e.",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Alting",
+          "vote": "yea"
+        },
+        {
+          "name": "Baldwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bassler",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bohacek",
+          "vote": "yea"
+        },
+        {
+          "name": "Bray",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Buchanan",
+          "vote": "yea"
+        },
+        {
+          "name": "Buck",
+          "vote": "yea"
+        },
+        {
+          "name": "Busch",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrne",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrasco",
+          "vote": "yea"
+        },
+        {
+          "name": "Charbonneau",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Crider",
+          "vote": "yea"
+        },
+        {
+          "name": "Deery",
+          "vote": "yea"
+        },
+        {
+          "name": "Dernulc",
+          "vote": "yea"
+        },
+        {
+          "name": "Donato",
+          "vote": "yea"
+        },
+        {
+          "name": "Doriot",
+          "vote": "yea"
+        },
+        {
+          "name": "Freeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Garten",
+          "vote": "yea"
+        },
+        {
+          "name": "Gaskill",
+          "vote": "yea"
+        },
+        {
+          "name": "Glick",
+          "vote": "yea"
+        },
+        {
+          "name": "Goode",
+          "vote": "yea"
+        },
+        {
+          "name": "Holdman",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Koch",
+          "vote": "yea"
+        },
+        {
+          "name": "Leising",
+          "vote": "yea"
+        },
+        {
+          "name": "Maxwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Mishler",
+          "vote": "yea"
+        },
+        {
+          "name": "Niemeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Raatz",
+          "vote": "yea"
+        },
+        {
+          "name": "Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tomes",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker K",
+          "vote": "yea"
+        },
+        {
+          "name": "Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Zay",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford J.D.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hunley",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Niezgodski",
+          "vote": "nay"
+        },
+        {
+          "name": "Pol",
+          "vote": "nay"
+        },
+        {
+          "name": "Qaddoura",
+          "vote": "nay"
+        },
+        {
+          "name": "Randolph",
+          "vote": "nay"
+        },
+        {
+          "name": "Spencer",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker G",
+          "vote": "nay"
+        },
+        {
+          "name": "Yoder",
+          "vote": "nay"
+        }
+      ]
     },
     {
       "date": "2025-04-01",
       "body": "IN House",
-      "motion": "passage",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
       "kind": "roll-call",
       "yes": 66,
-      "no": 25,
-      "note": "member names not captured",
-      "members": []
+      "no": 26,
+      "absent": 5,
+      "body_size": 100,
+      "note": "House third reading / final passage. Not voting: 3 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.340_H.pdf sha256 dcc83ab3054027b4631ead1ad385c4d865a0c2fdb214f0f0b5549f384139dcb6.",
+      "members": [
+        {
+          "name": "Abbott",
+          "vote": "yea"
+        },
+        {
+          "name": "Aylesworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Baird",
+          "vote": "yea"
+        },
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bartels",
+          "vote": "yea"
+        },
+        {
+          "name": "Bascom",
+          "vote": "yea"
+        },
+        {
+          "name": "Borders",
+          "vote": "yea"
+        },
+        {
+          "name": "Carbaugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Cash",
+          "vote": "yea"
+        },
+        {
+          "name": "Clere",
+          "vote": "yea"
+        },
+        {
+          "name": "Commons",
+          "vote": "yea"
+        },
+        {
+          "name": "Criswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Culp",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "DeVon",
+          "vote": "yea"
+        },
+        {
+          "name": "Engleman",
+          "vote": "yea"
+        },
+        {
+          "name": "Genda",
+          "vote": "yea"
+        },
+        {
+          "name": "Goss-Reaves",
+          "vote": "yea"
+        },
+        {
+          "name": "Greene",
+          "vote": "yea"
+        },
+        {
+          "name": "Haggard",
+          "vote": "yea"
+        },
+        {
+          "name": "Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Heaton",
+          "vote": "yea"
+        },
+        {
+          "name": "Heine",
+          "vote": "yea"
+        },
+        {
+          "name": "Hostettler",
+          "vote": "yea"
+        },
+        {
+          "name": "Ireland",
+          "vote": "yea"
+        },
+        {
+          "name": "Isa",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeter",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Judy",
+          "vote": "yea"
+        },
+        {
+          "name": "Karickhoff",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Ledbetter",
+          "vote": "yea"
+        },
+        {
+          "name": "Lehman",
+          "vote": "yea"
+        },
+        {
+          "name": "Lindauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Lopez",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "May",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayfield",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire",
+          "vote": "yea"
+        },
+        {
+          "name": "McNamara",
+          "vote": "yea"
+        },
+        {
+          "name": "Meltzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, D",
+          "vote": "yea"
+        },
+        {
+          "name": "Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Olthoff",
+          "vote": "yea"
+        },
+        {
+          "name": "Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Prescott",
+          "vote": "yea"
+        },
+        {
+          "name": "Pressel",
+          "vote": "yea"
+        },
+        {
+          "name": "Rowray",
+          "vote": "yea"
+        },
+        {
+          "name": "Shonkwiler",
+          "vote": "yea"
+        },
+        {
+          "name": "Slager",
+          "vote": "yea"
+        },
+        {
+          "name": "Smaltz",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, H",
+          "vote": "yea"
+        },
+        {
+          "name": "Snow",
+          "vote": "yea"
+        },
+        {
+          "name": "Soliday",
+          "vote": "yea"
+        },
+        {
+          "name": "Steuerwald",
+          "vote": "yea"
+        },
+        {
+          "name": "Sweet",
+          "vote": "yea"
+        },
+        {
+          "name": "Teshka",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "VanNatter",
+          "vote": "yea"
+        },
+        {
+          "name": "Wesco",
+          "vote": "yea"
+        },
+        {
+          "name": "Yocum",
+          "vote": "yea"
+        },
+        {
+          "name": "Zimmerman",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrade",
+          "vote": "nay"
+        },
+        {
+          "name": "Bartlett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Boy",
+          "vote": "nay"
+        },
+        {
+          "name": "Campbell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dant Chesser",
+          "vote": "nay"
+        },
+        {
+          "name": "DeLaney",
+          "vote": "nay"
+        },
+        {
+          "name": "Dvorak",
+          "vote": "nay"
+        },
+        {
+          "name": "Errington",
+          "vote": "nay"
+        },
+        {
+          "name": "GiaQuinta",
+          "vote": "nay"
+        },
+        {
+          "name": "Hamilton",
+          "vote": "nay"
+        },
+        {
+          "name": "Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatcher",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, C",
+          "vote": "nay"
+        },
+        {
+          "name": "Klinker",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller, K",
+          "vote": "nay"
+        },
+        {
+          "name": "Moed",
+          "vote": "nay"
+        },
+        {
+          "name": "Moseley",
+          "vote": "nay"
+        },
+        {
+          "name": "Pack",
+          "vote": "nay"
+        },
+        {
+          "name": "Pfaff",
+          "vote": "nay"
+        },
+        {
+          "name": "Pierce, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Porter",
+          "vote": "nay"
+        },
+        {
+          "name": "Pryor",
+          "vote": "nay"
+        },
+        {
+          "name": "Shackleford",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, V",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "nay"
+        },
+        {
+          "name": "Behning",
+          "vote": "absent"
+        },
+        {
+          "name": "Garcia Wilburn",
+          "vote": "absent"
+        },
+        {
+          "name": "Gore",
+          "vote": "absent"
+        },
+        {
+          "name": "Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Pierce, K",
+          "vote": "absent"
+        },
+        {
+          "name": "Burton",
+          "vote": "abstain"
+        },
+        {
+          "name": "Lawson",
+          "vote": "abstain"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-07",
+      "body": "IN Senate",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 9,
+      "absent": 1,
+      "body_size": 50,
+      "note": "Senate concurrence with House amendments (final step). Not voting: 1 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.352_S.pdf sha256 fc87f328fa4f090b11e6833c2175dac38e80429859c44a3f14f1eed79a3fe89c.",
+      "members": [
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Alting",
+          "vote": "yea"
+        },
+        {
+          "name": "Baldwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bassler",
+          "vote": "yea"
+        },
+        {
+          "name": "Bohacek",
+          "vote": "yea"
+        },
+        {
+          "name": "Bray",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Buchanan",
+          "vote": "yea"
+        },
+        {
+          "name": "Buck",
+          "vote": "yea"
+        },
+        {
+          "name": "Busch",
+          "vote": "yea"
+        },
+        {
+          "name": "Byrne",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrasco",
+          "vote": "yea"
+        },
+        {
+          "name": "Charbonneau",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Crider",
+          "vote": "yea"
+        },
+        {
+          "name": "Deery",
+          "vote": "yea"
+        },
+        {
+          "name": "Dernulc",
+          "vote": "yea"
+        },
+        {
+          "name": "Donato",
+          "vote": "yea"
+        },
+        {
+          "name": "Doriot",
+          "vote": "yea"
+        },
+        {
+          "name": "Freeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Garten",
+          "vote": "yea"
+        },
+        {
+          "name": "Gaskill",
+          "vote": "yea"
+        },
+        {
+          "name": "Glick",
+          "vote": "yea"
+        },
+        {
+          "name": "Goode",
+          "vote": "yea"
+        },
+        {
+          "name": "Holdman",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Koch",
+          "vote": "yea"
+        },
+        {
+          "name": "Leising",
+          "vote": "yea"
+        },
+        {
+          "name": "Maxwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Mishler",
+          "vote": "yea"
+        },
+        {
+          "name": "Niemeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Raatz",
+          "vote": "yea"
+        },
+        {
+          "name": "Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tomes",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker G",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker K",
+          "vote": "yea"
+        },
+        {
+          "name": "Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Zay",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford J.D.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hunley",
+          "vote": "nay"
+        },
+        {
+          "name": "Niezgodski",
+          "vote": "nay"
+        },
+        {
+          "name": "Pol",
+          "vote": "nay"
+        },
+        {
+          "name": "Qaddoura",
+          "vote": "nay"
+        },
+        {
+          "name": "Randolph",
+          "vote": "nay"
+        },
+        {
+          "name": "Spencer",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Yoder",
+          "vote": "nay"
+        },
+        {
+          "name": "Becker",
+          "vote": "absent"
+        },
+        {
+          "name": "Jackson",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-30",
+      "body": "IN Senate",
+      "motion": "SB 10 - Doriot - 2nd Reading: Amendment Failed (roll call 40)",
+      "kind": "roll-call",
+      "yes": 11,
+      "no": 37,
+      "absent": 2,
+      "body_size": 50,
+      "note": "Senate amendment #1 (Ford J.D.), failed - not final passage. Not voting: 0 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.40_S.pdf sha256 4136322a6c70385286bccd0e118a2df28f1d8c743debdb8ac6131db6aeb0aaca.",
+      "members": [
+        {
+          "name": "Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Ford J.D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hunley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Pol",
+          "vote": "yea"
+        },
+        {
+          "name": "Qaddoura",
+          "vote": "yea"
+        },
+        {
+          "name": "Randolph",
+          "vote": "yea"
+        },
+        {
+          "name": "Spencer",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker G",
+          "vote": "yea"
+        },
+        {
+          "name": "Yoder",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Alting",
+          "vote": "nay"
+        },
+        {
+          "name": "Baldwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Bassler",
+          "vote": "nay"
+        },
+        {
+          "name": "Bohacek",
+          "vote": "nay"
+        },
+        {
+          "name": "Bray",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Buchanan",
+          "vote": "nay"
+        },
+        {
+          "name": "Buck",
+          "vote": "nay"
+        },
+        {
+          "name": "Byrne",
+          "vote": "nay"
+        },
+        {
+          "name": "Carrasco",
+          "vote": "nay"
+        },
+        {
+          "name": "Charbonneau",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Crider",
+          "vote": "nay"
+        },
+        {
+          "name": "Deery",
+          "vote": "nay"
+        },
+        {
+          "name": "Dernulc",
+          "vote": "nay"
+        },
+        {
+          "name": "Donato",
+          "vote": "nay"
+        },
+        {
+          "name": "Doriot",
+          "vote": "nay"
+        },
+        {
+          "name": "Freeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Garten",
+          "vote": "nay"
+        },
+        {
+          "name": "Gaskill",
+          "vote": "nay"
+        },
+        {
+          "name": "Glick",
+          "vote": "nay"
+        },
+        {
+          "name": "Goode",
+          "vote": "nay"
+        },
+        {
+          "name": "Holdman",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Koch",
+          "vote": "nay"
+        },
+        {
+          "name": "Leising",
+          "vote": "nay"
+        },
+        {
+          "name": "Maxwell",
+          "vote": "nay"
+        },
+        {
+          "name": "Mishler",
+          "vote": "nay"
+        },
+        {
+          "name": "Niemeyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Raatz",
+          "vote": "nay"
+        },
+        {
+          "name": "Rogers",
+          "vote": "nay"
+        },
+        {
+          "name": "Schmitt",
+          "vote": "nay"
+        },
+        {
+          "name": "Tomes",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker K",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Zay",
+          "vote": "nay"
+        },
+        {
+          "name": "Busch",
+          "vote": "absent"
+        },
+        {
+          "name": "Niezgodski",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "body": "IN House",
+      "motion": "SB 10 - Culp - 2nd Reading: Amendment Failed (roll call 326)",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 67,
+      "absent": 5,
+      "body_size": 100,
+      "note": "House amendment #2 (Boy), failed - not final passage. Not voting: 1 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.326_H.pdf sha256 7792f7392bfcc37d7b131cb201161a86812ae547af395ca75c6dfc9a4a50ba2f.",
+      "members": [
+        {
+          "name": "Andrade",
+          "vote": "yea"
+        },
+        {
+          "name": "Bartlett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Boy",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dant Chesser",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLaney",
+          "vote": "yea"
+        },
+        {
+          "name": "Dvorak",
+          "vote": "yea"
+        },
+        {
+          "name": "Errington",
+          "vote": "yea"
+        },
+        {
+          "name": "GiaQuinta",
+          "vote": "yea"
+        },
+        {
+          "name": "Gore",
+          "vote": "yea"
+        },
+        {
+          "name": "Hamilton",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, C",
+          "vote": "yea"
+        },
+        {
+          "name": "Klinker",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, K",
+          "vote": "yea"
+        },
+        {
+          "name": "Moed",
+          "vote": "yea"
+        },
+        {
+          "name": "Moseley",
+          "vote": "yea"
+        },
+        {
+          "name": "Pfaff",
+          "vote": "yea"
+        },
+        {
+          "name": "Pierce, M",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "vote": "yea"
+        },
+        {
+          "name": "Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Shackleford",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, V",
+          "vote": "yea"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Abbott",
+          "vote": "nay"
+        },
+        {
+          "name": "Aylesworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bartels",
+          "vote": "nay"
+        },
+        {
+          "name": "Bascom",
+          "vote": "nay"
+        },
+        {
+          "name": "Behning",
+          "vote": "nay"
+        },
+        {
+          "name": "Borders",
+          "vote": "nay"
+        },
+        {
+          "name": "Carbaugh",
+          "vote": "nay"
+        },
+        {
+          "name": "Cash",
+          "vote": "nay"
+        },
+        {
+          "name": "Clere",
+          "vote": "nay"
+        },
+        {
+          "name": "Commons",
+          "vote": "nay"
+        },
+        {
+          "name": "Criswell",
+          "vote": "nay"
+        },
+        {
+          "name": "Culp",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "DeVon",
+          "vote": "nay"
+        },
+        {
+          "name": "Engleman",
+          "vote": "nay"
+        },
+        {
+          "name": "Genda",
+          "vote": "nay"
+        },
+        {
+          "name": "Goss-Reaves",
+          "vote": "nay"
+        },
+        {
+          "name": "Greene",
+          "vote": "nay"
+        },
+        {
+          "name": "Haggard",
+          "vote": "nay"
+        },
+        {
+          "name": "Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Heaton",
+          "vote": "nay"
+        },
+        {
+          "name": "Heine",
+          "vote": "nay"
+        },
+        {
+          "name": "Hostettler",
+          "vote": "nay"
+        },
+        {
+          "name": "Ireland",
+          "vote": "nay"
+        },
+        {
+          "name": "Isa",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeter",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Judy",
+          "vote": "nay"
+        },
+        {
+          "name": "Karickhoff",
+          "vote": "nay"
+        },
+        {
+          "name": "King",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lawson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ledbetter",
+          "vote": "nay"
+        },
+        {
+          "name": "Lehman",
+          "vote": "nay"
+        },
+        {
+          "name": "Lindauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Manning",
+          "vote": "nay"
+        },
+        {
+          "name": "May",
+          "vote": "nay"
+        },
+        {
+          "name": "Mayfield",
+          "vote": "nay"
+        },
+        {
+          "name": "McGuire",
+          "vote": "nay"
+        },
+        {
+          "name": "McNamara",
+          "vote": "nay"
+        },
+        {
+          "name": "Meltzer",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller, D",
+          "vote": "nay"
+        },
+        {
+          "name": "Morris",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Olthoff",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "nay"
+        },
+        {
+          "name": "Pierce, K",
+          "vote": "nay"
+        },
+        {
+          "name": "Prescott",
+          "vote": "nay"
+        },
+        {
+          "name": "Pressel",
+          "vote": "nay"
+        },
+        {
+          "name": "Rowray",
+          "vote": "nay"
+        },
+        {
+          "name": "Shonkwiler",
+          "vote": "nay"
+        },
+        {
+          "name": "Slager",
+          "vote": "nay"
+        },
+        {
+          "name": "Smaltz",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, H",
+          "vote": "nay"
+        },
+        {
+          "name": "Snow",
+          "vote": "nay"
+        },
+        {
+          "name": "Soliday",
+          "vote": "nay"
+        },
+        {
+          "name": "Steuerwald",
+          "vote": "nay"
+        },
+        {
+          "name": "Sweet",
+          "vote": "nay"
+        },
+        {
+          "name": "Teshka",
+          "vote": "nay"
+        },
+        {
+          "name": "Thompson",
+          "vote": "nay"
+        },
+        {
+          "name": "VanNatter",
+          "vote": "nay"
+        },
+        {
+          "name": "Wesco",
+          "vote": "nay"
+        },
+        {
+          "name": "Yocum",
+          "vote": "nay"
+        },
+        {
+          "name": "Zimmerman",
+          "vote": "nay"
+        },
+        {
+          "name": "Baird",
+          "vote": "absent"
+        },
+        {
+          "name": "Garcia Wilburn",
+          "vote": "absent"
+        },
+        {
+          "name": "Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Pack",
+          "vote": "absent"
+        },
+        {
+          "name": "Patterson",
+          "vote": "absent"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-31",
+      "body": "IN House",
+      "motion": "SB 10 - Culp - 2nd Reading: Amendment Failed (roll call 327)",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 66,
+      "absent": 5,
+      "body_size": 100,
+      "note": "House amendment #3 (Errington), failed - not final passage. Not voting: 3 ('abstain'). Official roll-call PDF s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.327_H.pdf sha256 447916abfa53b28f4c41e266b26fec5ee6cd3a93028447af6c99a6935569df86.",
+      "members": [
+        {
+          "name": "Andrade",
+          "vote": "yea"
+        },
+        {
+          "name": "Bartlett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Boy",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "DeLaney",
+          "vote": "yea"
+        },
+        {
+          "name": "Dvorak",
+          "vote": "yea"
+        },
+        {
+          "name": "Errington",
+          "vote": "yea"
+        },
+        {
+          "name": "GiaQuinta",
+          "vote": "yea"
+        },
+        {
+          "name": "Gore",
+          "vote": "yea"
+        },
+        {
+          "name": "Hamilton",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, C",
+          "vote": "yea"
+        },
+        {
+          "name": "Klinker",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, K",
+          "vote": "yea"
+        },
+        {
+          "name": "Moed",
+          "vote": "yea"
+        },
+        {
+          "name": "Moseley",
+          "vote": "yea"
+        },
+        {
+          "name": "Pfaff",
+          "vote": "yea"
+        },
+        {
+          "name": "Pierce, M",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "vote": "yea"
+        },
+        {
+          "name": "Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Shackleford",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, V",
+          "vote": "yea"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Abbott",
+          "vote": "nay"
+        },
+        {
+          "name": "Aylesworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bartels",
+          "vote": "nay"
+        },
+        {
+          "name": "Bascom",
+          "vote": "nay"
+        },
+        {
+          "name": "Behning",
+          "vote": "nay"
+        },
+        {
+          "name": "Borders",
+          "vote": "nay"
+        },
+        {
+          "name": "Carbaugh",
+          "vote": "nay"
+        },
+        {
+          "name": "Cash",
+          "vote": "nay"
+        },
+        {
+          "name": "Clere",
+          "vote": "nay"
+        },
+        {
+          "name": "Commons",
+          "vote": "nay"
+        },
+        {
+          "name": "Criswell",
+          "vote": "nay"
+        },
+        {
+          "name": "Culp",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "DeVon",
+          "vote": "nay"
+        },
+        {
+          "name": "Engleman",
+          "vote": "nay"
+        },
+        {
+          "name": "Genda",
+          "vote": "nay"
+        },
+        {
+          "name": "Goss-Reaves",
+          "vote": "nay"
+        },
+        {
+          "name": "Greene",
+          "vote": "nay"
+        },
+        {
+          "name": "Haggard",
+          "vote": "nay"
+        },
+        {
+          "name": "Hall",
+          "vote": "nay"
+        },
+        {
+          "name": "Heaton",
+          "vote": "nay"
+        },
+        {
+          "name": "Heine",
+          "vote": "nay"
+        },
+        {
+          "name": "Hostettler",
+          "vote": "nay"
+        },
+        {
+          "name": "Ireland",
+          "vote": "nay"
+        },
+        {
+          "name": "Isa",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeter",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Judy",
+          "vote": "nay"
+        },
+        {
+          "name": "King",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lawson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ledbetter",
+          "vote": "nay"
+        },
+        {
+          "name": "Lehman",
+          "vote": "nay"
+        },
+        {
+          "name": "Lindauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Manning",
+          "vote": "nay"
+        },
+        {
+          "name": "May",
+          "vote": "nay"
+        },
+        {
+          "name": "Mayfield",
+          "vote": "nay"
+        },
+        {
+          "name": "McGuire",
+          "vote": "nay"
+        },
+        {
+          "name": "McNamara",
+          "vote": "nay"
+        },
+        {
+          "name": "Meltzer",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller, D",
+          "vote": "nay"
+        },
+        {
+          "name": "Morris",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Olthoff",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "nay"
+        },
+        {
+          "name": "Pierce, K",
+          "vote": "nay"
+        },
+        {
+          "name": "Prescott",
+          "vote": "nay"
+        },
+        {
+          "name": "Pressel",
+          "vote": "nay"
+        },
+        {
+          "name": "Rowray",
+          "vote": "nay"
+        },
+        {
+          "name": "Shonkwiler",
+          "vote": "nay"
+        },
+        {
+          "name": "Slager",
+          "vote": "nay"
+        },
+        {
+          "name": "Smaltz",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, H",
+          "vote": "nay"
+        },
+        {
+          "name": "Snow",
+          "vote": "nay"
+        },
+        {
+          "name": "Soliday",
+          "vote": "nay"
+        },
+        {
+          "name": "Steuerwald",
+          "vote": "nay"
+        },
+        {
+          "name": "Sweet",
+          "vote": "nay"
+        },
+        {
+          "name": "Teshka",
+          "vote": "nay"
+        },
+        {
+          "name": "Thompson",
+          "vote": "nay"
+        },
+        {
+          "name": "VanNatter",
+          "vote": "nay"
+        },
+        {
+          "name": "Wesco",
+          "vote": "nay"
+        },
+        {
+          "name": "Yocum",
+          "vote": "nay"
+        },
+        {
+          "name": "Zimmerman",
+          "vote": "nay"
+        },
+        {
+          "name": "Baird",
+          "vote": "absent"
+        },
+        {
+          "name": "Garcia Wilburn",
+          "vote": "absent"
+        },
+        {
+          "name": "Johnson",
+          "vote": "absent"
+        },
+        {
+          "name": "Pack",
+          "vote": "absent"
+        },
+        {
+          "name": "Patterson",
+          "vote": "absent"
+        },
+        {
+          "name": "Dant Chesser",
+          "vote": "abstain"
+        },
+        {
+          "name": "Karickhoff",
+          "vote": "abstain"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "abstain"
+        }
+      ]
     }
   ],
   "provenance": {
-    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+    "fetched_at": "2026-10-26T21:19:41Z",
+    "method": "api",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+      "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+    }
   }
 }
