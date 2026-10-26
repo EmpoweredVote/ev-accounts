@@ -6,7 +6,7 @@
 **Null-column migration (Phase C, unapplied until the backfill is verified):**
 `backend/migrations/CA_0119_null_connected_legal_name.sql`
 
-Read this before you run any of the four scripts below. It explains what the vault is, when
+Read this before you run any of the scripts below. It explains what the vault is, when
 each script runs, and — most importantly — the ceremony and break-glass procedures, which are
 **human processes**, not just commands.
 
@@ -26,6 +26,7 @@ move behind this second lock.
 | Script | Runs | Purpose |
 |---|---|---|
 | `id-vault-keygen.mts` | **Once**, offline, at ceremony time (Phase B) | Generates the vault keypair and splits the private key into four share files. |
+| `id-vault-check-shares.mts` | After the ceremony, offline, two holders | Confirms two shares rebuild the key for the production public key. Opens no record, prints no key. |
 | `id-vault-backfill.mts` | **Once**, on prod, after Phase B | Seals every existing `connect.connected_profiles.legal_name` with the production public key. |
 | *(null-column migration)* | **Once**, on prod, after the backfill is verified (Phase C) | `CA_0119_null_connected_legal_name.sql` — not a script, but the step that follows the backfill. Nulls `legal_name` once every row has a sealed counterpart. |
 | `id-vault-break-glass.mts` | **As needed**, offline, two people at a time | The only read path. Reconstructs the private key from two share files and decrypts one named user's identity. |
@@ -138,6 +139,26 @@ share is left behind on the ceremony machine.
    and only then turn the network back on.
 8. Continue with §4 step 3 (set the two values in prod) and step 5 (confirm every holder can
    find their share).
+
+### Check a pair before anything depends on the shares
+
+Hand-copied shares can carry a typo that the read-back of the first and last characters misses.
+Before Phase C clears the plain-text names (§5 step 3), prove that one pair rebuilds the key:
+
+1. Two holders join a call. One sends their share to the other over Signal, as in the remote
+   break-glass below.
+2. The receiver saves both shares as files on a RAM disk, turns off the network, and runs:
+   ```bash
+   npx tsx scripts/id-vault-check-shares.mts \
+     --pubkey <production public key> \
+     --share /Volumes/VaultCeremony/a.txt --share /Volumes/VaultCeremony/b.txt
+   ```
+3. `MATCH` (exit 0) means the pair rebuilds the production key. `NO MATCH` (exit 1) means it
+   does not — try the other share holders before you conclude the ceremony failed, and do
+   **not** apply `CA_0119` until a pair matches.
+4. Eject the RAM disk. The tool opens no record and writes no audit line, because it reads no
+   identity — but the receiver has now seen two shares, the same exposure as a break-glass.
+
 
 ### Low-tech and high-security alternatives
 
