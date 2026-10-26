@@ -87,7 +87,7 @@ export const JOBS: Record<string, JobFn> = {
   'trivia-election-detection': () => runElectionDetection(),
   'trivia-pipeline': () => runPipelineCron(),
   // The alarm for all of the above (ev-cto task 2026-09-14): reads pg_cron run history and
-  // each Render job's proof-of-run, emails ADMIN_EMAIL once when anything failed or went
+  // each Render job's proof-of-run, emails JOB_HEALTH_ALERT_TO (else ADMIN_EMAIL) once when anything failed or went
   // stale, and is silent on a healthy day. Daily via Supabase Cron job `ev-job-health`.
   'job-health': () => runJobHealthCheck(),
 };

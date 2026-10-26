@@ -132,15 +132,19 @@ export async function runJobHealthCheck(): Promise<JobHealthResult> {
 
   if (problems.length === 0) return { problems, lines, emailed: false };
 
-  const to = process.env.JOB_HEALTH_ALERT_TO || process.env.ADMIN_EMAIL;
-  if (!to) throw new Error('[job-health] problems found but neither JOB_HEALTH_ALERT_TO nor ADMIN_EMAIL is set');
+  // Comma-separated list. JOB_HEALTH_ALERT_TO wins; ADMIN_EMAIL is the fallback.
+  const to = (process.env.JOB_HEALTH_ALERT_TO || process.env.ADMIN_EMAIL || '')
+    .split(',')
+    .map((a) => a.trim())
+    .filter(Boolean);
+  if (to.length === 0) throw new Error('[job-health] problems found but neither JOB_HEALTH_ALERT_TO nor ADMIN_EMAIL is set');
 
   const subject =
     `${staleOverrideMinutes !== undefined ? '[TEST] ' : ''}` +
     `Scheduled jobs: ${problems.length} problem${problems.length === 1 ? '' : 's'}`;
   const sent = await sendEmail({ to, subject, html: renderEmail(lines, now, staleOverrideMinutes) });
   if (!sent) throw new Error(`[job-health] ${problems.length} problem(s) found but the alert email was not sent`);
-  console.info(`[job-health] alert emailed to ${to}`);
+  console.info(`[job-health] alert emailed to ${to.join(', ')}`);
   return { problems, lines, emailed: true };
 }
 

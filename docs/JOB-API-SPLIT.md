@@ -58,7 +58,7 @@ the job worked — the thing to watch after Move 2.
 | `trivia-expiration` | `trivia/cron/startCron.ts:14` | `0 * * * *` (hourly) | Supabase Cron | trivia `questions.status` `active`→`expired` on newly-expired rows |
 | `trivia-election-detection` | `trivia/cron/startCron.ts` | `0 6 * * *` ET (daily) | Supabase Cron (LLM spend — measure) | trivia `election_races.questions_generated` `false`→`true` — **no write when 0 races detected** |
 | `trivia-pipeline` | `trivia/cron/startCron.ts` | `0 2 * * *` ET (daily) | Supabase Cron (LLM spend — measure) | new trivia `generation_jobs` row per collection with terminal `status` |
-| `job-health` | `lib/jobHealth.ts` (added 2026-10-26) | `0 13 * * *` (daily 13:00 UTC) | Supabase Cron `ev-job-health` | its own `cron.job_run_details` rows; an email to `ADMIN_EMAIL` **only** when something is wrong (silent on a healthy day, by design) |
+| `job-health` | `lib/jobHealth.ts` (added 2026-10-26) | `0 13 * * *` (daily 13:00 UTC) | Supabase Cron `ev-job-health` | its own `cron.job_run_details` rows; an email to `JOB_HEALTH_ALERT_TO` (comma-separated; falls back to `ADMIN_EMAIL`) **only** when something is wrong (silent on a healthy day, by design) |
 
 ### Who is told when a job fails
 
