@@ -1,7 +1,10 @@
 # Maine municipalities — seating the flagged-vacant skeletons
 
-**Done: Augusta (`CC_0282`, 18) · Westbrook (`CC_0283`, 15) · Bath (`CC_0291`, 9).
-14 cities and 95 offices left.**
+**Done: Augusta (`CC_0282`, 18) · Westbrook (`CC_0283`, 15) · Bath (`CC_0291`, 9) ·
+and the nine all-at-large cities in one wave, `CC_0292`, 57 offices —
+Brewer 5 · Calais 7 · Caribou 7 · Eastport 5 · Ellsworth 7 · Old Town 7 · Presque Isle 7 ·
+Rockland 5 · Sanford 7.
+5 cities and 38 offices left: Belfast 6 · Gardiner 8 · Hallowell 8 · Saco 8 · Waterville 8.**
 Read this before touching any Maine municipal office.
 
 | | total | flagged | unflagged |
@@ -10,6 +13,11 @@ Read this before touching any Maine municipal office.
 | after Augusta | 415 | 176 | **239** |
 | after Westbrook | 400 | 161 | **239** |
 | after Bath | 391 | 152 | **239** |
+| after the nine (`CC_0292`) | 335 | 96 | **239** |
+
+🟢 **Flagged has fallen 194 → 96 and not one of the 98 was cleared by moving a baseline.** Of the
+96 still flagged, **14 carry a `vacant_since` date** — up from 13, because Brewer's is the first
+real, documented vacancy this programme has produced rather than removed.
 
 ---
 
@@ -212,9 +220,10 @@ seven ward councillors and nowhere to put them.
 and irrelevant, because these were not at-large seats. R6 applies *after* you have established that
 a seat is at-large. Bath is the case where that premise was false.
 
-▶ **Nine queued cities are still modelled as all-at-large** (Brewer, Calais, Caribou, Eastport,
-Ellsworth, Old Town, Presque Isle, Rockland, Sanford). **Count the wards on each city's own page
-before seating it.** Bath proves the check is load-bearing, not ceremony.
+✅ **THE NINE WERE CHECKED (`CC_0292`, 2026-10-25) AND NOT ONE HAS A WARD SEAT.** Brewer, Calais,
+Caribou, Eastport, Ellsworth, Old Town, Presque Isle, Rockland and Sanford all elect their whole
+council at large, and our At-Large titles were right. 🔴 **The check still paid for itself six
+times over** — see R9. Running it is what found the phantom Mayor offices.
 
 🟢 **The fix is a RETITLE, not a remodel.** Four Maine cities already carry ward titles on one
 citywide district — Belfast, Hallowell, Saco, Waterville — so Bath simply joined them. **R7 is
@@ -240,8 +249,8 @@ rotating-role trap wearing a new disguise, and worse than the Westbrook case bec
 Do not "correct" them.**
 
 ⚠ **Bath has no Mayor and that is correct** — council–manager city, chair chosen from the council.
-Nine of the fourteen cities left DO hold a `Mayor` office, so check rather than assume either way;
-`CC_0291` gates that Bath still has none.
+Eight of the nine cities that followed held a `Mayor` office and **six of those eight were wrong**;
+see R9. `CC_0291` gates that Bath still has none.
 
 ### Bath dates, and the election eight days later
 
@@ -253,41 +262,154 @@ asserting that all nine Bath seats are empty, which was false the whole time.
 
 ---
 
-## The queue — 14 cities, 95 offices
+## 🔴🔴 R9. "DOES THIS CITY HAVE A MAYOR?" IS A QUESTION ABOUT HOW THE CHAIR IS CHOSEN
 
-⚠ This heading read **"16 cities, 120 offices"** until 2026-10-25 — it was not updated when
-Westbrook was seated (`CC_0283`), though the summary at the top of this file was. The table below
-has always been right. **Re-measured against prod 2026-10-25 and it reconciles exactly**: before
-Bath, these governments held 104 undated flagged offices, and with the `State of Maine` tribal seat
-noted below that was the 105 Maine rows `offices_missing_terms` reported. Bath took 9 of them.
+`CC_0292`, 2026-10-25, the nine all-at-large cities. R8 said to count the wards. **Not one of the
+nine had a ward seat — and six of them carried a `Mayor` office that is not an office.**
 
-🔴 **HOW EACH CITY IS CURRENTLY MODELLED — AND NINE OF THESE ARE UNVERIFIED.** Measured against
-prod 2026-10-25. Bath sat in the "all at-large" column and was **wrong** (see R8), so treat that
-column as a claim to check, not a fact.
+▶ **A VERIFICATION PASS FINDS WHAT IS THERE, NOT WHAT YOU WENT LOOKING FOR.** Scoped to "count the
+wards", nine cities would have come back green and six phantom offices would have survived the
+audit meant to catch them. Read the whole page, not the field you came for.
 
-| modelled as | cities |
+A rotating chair modelled as an office does **two** things, and the second is the quiet one:
+
+1. it tells a voter their city elects a Mayor when it does not; and
+2. it **eats the seat its holder actually occupies**, so the council comes out one short and the
+   shortfall looks like an ordinary vacancy.
+
+| city | we held | the city's own words | fix |
+| --- | --- | --- | --- |
+| Brewer | 4 AL + Mayor | charter §2 *"five (5) members … elected at large"*; §3 the chairman is *"styled as Mayor"* | Mayor → At-Large 5 |
+| Caribou | 6 AL + Mayor | §2.01(a) *"seven (7) members elected … at large"*; §2.03 *"The Council shall elect from among its members"* the Mayor | Mayor → At-Large 7 |
+| Eastport | 4 AL + Mayor | P&S 1935 c.66 §2 *"5 members elected at large"*; §3 council elects *"1 of its members as president"* | Mayor → At-Large 5 |
+| Ellsworth | 6 AL + Mayor | *"Seven City Council members are elected"*; the 2026 ballot carries **City Council — two seats** and no mayor | Mayor → At-Large 7 |
+| Presque Isle | 6 AL + Mayor | *"seven individuals elected at-large"*; *"Each year, the City Council elects a Council Chair"* | Mayor → At-Large 7 |
+| Rockland | 4 AL + Mayor | *"The voters elect the five City Councilors. The Mayor is chosen by the Council for a 1-year term."* | Mayor → At-Large 5 |
+
+🟢 **Three were right, and the difference is three words long:**
+* **Calais** — *"City Councilors are elected at large by the citizens of Calais, **as is the
+  Mayor**."* A real, directly elected office. Keep it.
+* **Sanford** — the clerk's 2026 filings list four qualified candidates **"for Mayor"** beside
+  "City Council" filings that carry no ward. A real office. Keep it.
+* **Old Town** — *"seven elected councilors, including one Council President"*, and we modelled no
+  mayoral office. Nothing to change.
+
+🔴 **NEVER INFER THIS FROM WHETHER THE CITY USES THE WORD.** Caribou's own page says "Mayor
+Courtney Boma" in the same breath as a charter giving it seven councillors and no mayoralty.
+▶ Find the sentence that says who **elects** the presiding officer. *"The Mayor is chosen by the
+Council"* and *"elected at large by the citizens, as is the Mayor"* look alike and mean opposites.
+
+### ⚠ R9b. WARDS EXIST IN THESE CITIES — AS VOTING WARDS, NOT COUNCIL DISTRICTS
+
+Brewer's charter divides the city into wards **and** elects the council at large, in the same
+document. Eastport's 1935 charter does the same with four wards. Ellsworth ran a 2024 proposal to
+consolidate four wards into one for election-day administration. A session that greps a Maine
+charter for "ward" and ward-titles the seats would invert Bath's defect and tell a voter they
+elect a councillor they do not. ▶ **The test is the sentence about how COUNCILLORS ARE ELECTED,
+never the presence of the word "ward".**
+
+### 🔴 R9c. THE DEDUPE IS A GATE, NOT A PRE-FLIGHT NOTE
+
+Two of the 56 names collided with existing rows and they resolved **opposite** ways. Bath's
+resolver matched on `(first_name, last_name) + is_active` and would have got one of them wrong in
+silence. `CC_0292` therefore makes every roster row declare its disposition and **refuses an
+undeclared collision**:
+
+| name | disposition | why |
+| --- | --- | --- |
+| Dani O'Halloran, Brewer | **reuse**, pinned by UUID | already present as Maine House District 20, residence Brewer. She holds **both** seats. |
+| Nancy Smith, Ellsworth | **new-despite-namesake** | an active Nancy Smith sits on Palmdale Elementary, California (`CA_0158`). A different person 3,000 miles away. |
+| the other 54 | **new**, gated on zero namesakes | the zero was controlled: the same predicate returned Emanuel Cleaver and Jared Golden. |
+
+⚠ **A SOURCE CAN BE AUTHORITATIVE FOR ONE FIELD AND STALE FOR ANOTHER.** The Maine Legislature's
+member profile is the authority for O'Halloran's district and residence, and its biography calls
+her *"Former … Brewer City Council"* — while Brewer's council page lists her today and the 11
+August 2026 minutes record her present at the meeting.
+
+⚠ The repo's `DUPLICATE_POLITICIAN_NAME` guard fired on Nancy Smith and was **right to**. The
+exemption (`essentials.allow_duplicate_name`) is opened for that one insert and closed again, so
+the other 55 stay under the guard. Never open it for a whole migration.
+
+### 🔴 R9d. BREWER HAS THE FIRST REAL VACANCY THIS PROGRAMME HAS PRODUCED
+
+Four of Brewer's five seats are filled. The fifth is genuinely empty and, unlike the undated
+skeleton flags, it has a document behind it — City Council Minutes, 11 August 2026, Resolve
+2026-B029: Councillor **William Kimball**'s resignation letter is dated **2026-07-29**, the council
+accepted it on **2026-08-11** and declared the vacancy, to be filled at the 2026-11-03 election for
+the unexpired term ending **2027-11-16**.
+
+▶ `vacant_since = 2026-08-12` — **the day after the council accepted it**, not the date on the
+letter. The same minutes' roll call records "Councilor Kimball-absent", so he was still a member of
+record when that meeting opened. No `office_terms` vacancy span is written: he was never seeded, so
+there is no term to close.
+
+### ⚠ R9e. A DECLARED VACANCY RENDERS AS A NAMELESS ROW IN ADDRESS SEARCH — PRE-EXISTING
+
+`/api/essentials/address-search` returns a politician object with `id: null` and an empty
+`full_name` for every flagged-vacant office. **This is not new and `CC_0292` did not cause it**:
+measured the same day, a South Portland address returns the identical blank row for that district's
+April 2026 vacancy, which predates this wave. `office_current_holder` LEFT JOINs from `offices`, so
+a vacancy is a NULL `politician_id` and the read path emits it anyway.
+
+🔴 It is still a live defect, and the Maine skeleton makes it worse than it looks: **every one of
+the 38 offices still queued is rendering as a blank row to a voter in that city today.** Finishing
+Maine removes 38 of them. Fixing the read path is a separate change and is not a seating
+migration's job.
+
+### Dates for all 56: unknown, and two tempting columns refused
+
+Every one of the nine publishes a **"Term Expires"** year, and Caribou publishes **"First elected
+YYYY"** for all seven. 🔴 **Neither dates anyone.** An expiry is the end of a TERM, not of an
+occupancy — R4's trap, and writing it would silently un-seat people on 1 January. "First elected"
+is a label about how someone **arrived** and cannot exclude a gap and a later return. All 56 are
+`start_precision => 'unknown'`, and `CC_0292` gates that none is dated.
+
+The published figures are kept here as a dating lead for whoever wants one, not as data:
+
+| city | what it publishes |
 | --- | --- |
-| ward or district titles already | Belfast 5+mayor · Gardiner 4 districts+3 at-large+mayor · Hallowell 4+3 at-large+mayor · Saco 7+mayor · Waterville 7+mayor |
-| **all at-large — VERIFY EACH** | Brewer 4+mayor · Calais 6+mayor · Caribou 6+mayor · Eastport 4+mayor · Ellsworth 6+mayor · Old Town 7 · Presque Isle 6+mayor · Rockland 4+mayor · Sanford 6+mayor |
+| Brewer · Eastport · Old Town · Rockland · Sanford · Ellsworth | term-expiry year per seat |
+| Caribou | term-expiry year **and** "First elected YYYY" per seat |
+| Presque Isle | term-expiry date (`12/31/YYYY`) per seat |
+| Calais | term-expiry year per seat |
 
-Every city uses **one citywide district**, including the five that already name wards — so R7 is a
+⚠ Caribou's council photo caption names **Joan Theriault**, who is not in the contact list of seven;
+Lori Knight Phair (first elected 2025) replaced her. **The caption is older than the list.**
+
+### ▶ December re-check, owed for all twelve seated cities
+
+A Maine municipal election falls on **2026-11-03**, nine days after this wave. Every one of these
+councils is staggered, so some of the 56 will change — and Brewer's vacancy is explicitly on that
+ballot. Seating now was still right: the alternative was to keep asserting to voters in nine cities
+that all 57 seats are empty.
+
+---
+
+## The queue — 5 cities, 38 offices
+
+**Re-measured against prod after `CC_0292`, 2026-10-25, and it reconciles exactly**: 95 queued
+before this wave, minus the 57 it took, leaves 38 — which is what `offices_missing_terms` now
+reports for Maine municipalities, plus the `State of Maine` tribal seat noted below.
+
+🟢 **ALL FIVE THAT REMAIN ALREADY CARRY WARD OR DISTRICT TITLES**, so R8's question is settled for
+them — but R9's is not. Each still holds a `Mayor` office that nobody has checked.
+
+| City | offices | modelled as | ▶ what to check |
+| --- | --- | --- | --- |
+| Gardiner | 8 | 4 districts + 3 at-large + mayor | is the Mayor elected, or the council's chair? |
+| Hallowell | 8 | 4 wards + 3 at-large + mayor | same |
+| Saco | 8 | 7 wards + mayor | same |
+| Waterville | 8 | 7 wards + mayor | same |
+| Belfast | 6 | 5 wards + mayor | same |
+| **total** | **38** | | |
+
+Every city uses **one citywide district**, including the five that name wards — so R7 is a
 pre-existing Maine-wide condition, not something a retitle introduces.
 
 ⚠ **An elected office we do not model:** Westbrook elects a `Portland Water District Rep.`
 (Malory Shaughnessy) and we hold no office for it. Creating one means modelling a regional water
 district spanning several municipalities — out of scope for a seating migration. Expect other
 Maine cities to elect similar regional seats, and do not invent an office to hold them.
-
-| City | offices | | City | offices |
-| --- | --- | --- | --- | --- |
-| Gardiner | 8 | | Presque Isle | 7 |
-| Hallowell | 8 | | Sanford | 7 |
-| Saco | 8 | | Belfast | 6 |
-| Waterville | 8 | | Brewer | 5 |
-| Calais | 7 | | Eastport | 5 |
-| Caribou | 7 | | Rockland | 5 |
-| Ellsworth | 7 | | **total** | **95** |
-| Old Town | 7 | | | |
 
 ~~Bath 9~~ — **done 2026-10-25, `CC_0291`.**
 
@@ -296,17 +418,26 @@ Maine cities to elect similar regional seats, and do not invent an office to hol
   tribal representatives (ADR 0003), and a tribe may genuinely have withdrawn its seat. That could
   be a real vacancy. Do not seat it from a roster without checking. **Still open.**
 * 🟢 `South Portland Public Schools` — **RESOLVED 2026-10-25, and it is NOT skeleton work.** The
-  tracker guessed "likely a genuine single vacancy". Measured: it is the **only** flagged Maine
-  municipal office that carries a `vacant_since` DATE, out of 105. That date is the signature of a
-  real, documented vacancy — the thing the flag is actually for. Leave it flagged.
+  tracker guessed "likely a genuine single vacancy". Measured: it was then the **only** flagged
+  Maine municipal office carrying a `vacant_since` DATE, out of 105. That date is the signature of
+  a real, documented vacancy — the thing the flag is actually for. Leave it flagged.
+  ⚠ It is no longer the only one: Brewer's At-Large 5 joined it on 2026-10-25 (R9d). Two dated
+  Maine vacancies now, and both are real.
 
 ### Per-city recipe
 
 1. Read the council/committee roster from the **body's own page** — not a news article.
-2. Run the dedupe pass on `(first_name, last_name)` **with a control that fires**.
-3. Seat every filled seat; leave genuinely vacant seats flagged, and give them a real
-   `vacant_since` if the date is known.
-4. Clear `is_vacant` on exactly the seats filled, in the **same transaction**.
-5. Post-verify: 18-style term count · none still flagged · none unflagged-and-unseated ·
-   zero seated-and-flagged repo-wide · **unflagged still 239** · total down by the city's count.
-6. Probe an address point in the city and confirm the holders come back.
+2. **Read the city's own description of its council structure**, in this order: the charter if the
+   site carries it, else the clerk's nomination-paper notice or candidate filings, which enumerate
+   exactly the offices on the ballot. Both answer R8 (wards?) and R9 (mayor?) at once.
+3. Run the dedupe pass on `(first_name, last_name)` **and** on a normalised `full_name`, **with a
+   control that fires**. Declare every collision in the roster as `reuse` or
+   `new-despite-namesake`; make the migration refuse an undeclared one (R9c).
+4. Seat every filled seat; leave genuinely vacant seats flagged, and give them a real
+   `vacant_since` if the date is known (R9d).
+5. Clear `is_vacant` on exactly the seats filled, in the **same transaction**.
+6. Post-verify: the term count · none still flagged · none unflagged-and-unseated · zero
+   seated-and-flagged repo-wide · **unflagged still 239** · total down by the city's count ·
+   **the surviving mayoral offices named explicitly** · no rotating role became a seat.
+7. Probe an address point in the city and confirm the holders come back, **with a control city
+   that already works** — a uniform zero across nine cities was a parser bug, not a data defect.

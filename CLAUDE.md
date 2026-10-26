@@ -74,8 +74,9 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-25: `391 / 152 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 42 that left
-are Augusta, Westbrook and Bath being seated, `CC_0282`/`CC_0283`/`CC_0291`). The Knight trackers report it in
+**Measured 2026-10-25: `335 / 96 / 239`** (was `433 / 194 / 239` on 2026-10-20; the 98 that left
+are Augusta, Westbrook, Bath and the nine all-at-large Maine cities being seated,
+`CC_0282`/`CC_0283`/`CC_0291`/`CC_0292`). The Knight trackers report it in
 exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
 §"Flagging is load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since:
 239 UNFLAGGED. Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared
@@ -93,18 +94,27 @@ The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling 
 that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 152 flagged on 2026-10-25,
-only **13 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **139 are flagged with no date**, and **96 of
-those are Maine**: every municipal office in the 14 cities not yet seeded, 100% of them,
-none ever seated. That is "we have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a
-vacancy to voters and keeps the rows out of the drift metric. Seeding Maine municipalities is the
-fix; until then, **do not read a stable 239 as "occupancy is clean".**
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 96 flagged on 2026-10-25,
+only **14 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
+incumbent died or resigned; see `fl.md`). The other **82 are flagged with no date**, and **38 of
+those are Maine**: every municipal office in the 5 cities not yet seeded — Belfast, Gardiner,
+Hallowell, Saco, Waterville — 100% of them, none ever seated. That is "we have not seeded a
+holder" wearing "this seat is empty"'s clothes — it asserts a vacancy to voters and keeps the rows
+out of the drift metric. Seeding the last five Maine cities is the fix; until then, **do not read
+a stable 239 as "occupancy is clean".**
 
-🔴 **THE 13 DATED VACANCIES HAVE NOT MOVED WHILE THE UNDATED FELL 181 → 139.** Every seat a wave
-seats comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
+🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 82.** Every seat a wave seats
+comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
 vacancies being resolved. **Read the two sub-buckets separately, or a falling flagged total will
-look like progress on something it has not touched.**
+look like progress on something it has not touched.** (13 → 14 is the one real addition: Brewer's
+At-Large 5, `CC_0292` — a councillor who resigned in July 2026. A wave can CREATE a documented
+vacancy as well as clear undated ones.)
+
+⚠ **A FLAGGED-VACANT OFFICE IS STILL RETURNED BY ADDRESS SEARCH, AS A NAMELESS ROW** with
+`id: null` and an empty `full_name` — `office_current_holder` LEFT JOINs from `offices`, so the
+read path emits the seat with no holder. Measured 2026-10-25 on two unrelated vacancies. It is
+pre-existing and is **not** caused by any seating wave, but it means those 82 undated flags are
+rendering as blanks to voters today.
 
 Use the helpers rather than hand-rolling the two-step:
 
