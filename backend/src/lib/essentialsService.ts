@@ -62,6 +62,7 @@ import {
   UPCOMING_ELECTIONS_LATERAL,
   DISTRICT_SELECT_FIELDS,
   DISTRICT_JOINS,
+  OFFICE_DEDUP_KEY,
   buildDistrictQuery,
   buildStatewideQuery,
 } from './districtQueries.js';
@@ -1905,7 +1906,7 @@ export async function getRepresentativesByJurisdiction(
     WHERE (${conditions.join(' OR ')})
     AND (p.is_active = true OR o.is_vacant = true)
     AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-    ORDER BY COALESCE(p.id, o.id)
+    ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 
   // Statewide politicians (senators, president, governor) — derive state from congressional GEOID.
@@ -2050,7 +2051,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
       AND d.geo_id = ANY($1::text[])
       AND (p.is_active = true OR o.is_vacant = true)
       AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-    ORDER BY COALESCE(p.id, o.id)
+    ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 
   const result = await pool.query(queryText, [geoIds]);
