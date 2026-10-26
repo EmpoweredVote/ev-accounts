@@ -1,0 +1,23 @@
+{
+  "scope": "school:5103840",
+  "portals": [
+    {
+      "name": "resources.finalsite.net",
+      "url": "https://resources.finalsite.net/",
+      "status": "works",
+      "how": "Single curl of the finalsite PDF, pdftotext -layout; resolution read into the minutes verbatim.",
+      "checked_at": "2026-10-19T19:24:17.418Z",
+      "provenance": {
+        "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+        "fetched_at": "2026-10-19T19:24:17.418Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-pilot-equity-programs/stage1/raw/vb/040825M.pdf",
+          "sha256": "e20ba82c875817ad5eddc439517bd42822923e9a2df7d3f04aba677a80a91d5f"
+        }
+      }
+    }
+  ],
+  "rosters": [],
+  "higher_law_duties": []
+}

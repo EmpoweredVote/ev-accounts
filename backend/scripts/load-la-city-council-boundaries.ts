@@ -1,20 +1,38 @@
 /**
  * load-la-city-council-boundaries.ts
  *
- * Fetches the 15 LA City Council district boundaries from the LA City GeoHub
- * ArcGIS FeatureServer and inserts them into essentials.geofence_boundaries.
+ * Fetches the 15 LA City Council district boundaries from the City of Los Angeles'
+ * own NavigateLA Boundaries service and inserts them into essentials.geofence_boundaries.
+ *
+ * 🔴 2026-10-20 — THIS SCRIPT SHIPPED THE WRONG MAP FOR YEARS. It pointed at
+ * services5.arcgis.com/7nsPwEMP38bSkCjy, a third-party ArcGIS Online COPY of the council
+ * districts whose editingInfo.lastEditDate is 2021-03-22 — months before the current
+ * post-redistricting map took effect. Every address in 6.1% of the city was shown the wrong
+ * councilmember until CA_0317 repaired the rows. The copy even carried a councilmember NAME per
+ * polygon, and every name was a sitting member, so nothing looked wrong.
+ *   - Take boundaries from the government that draws them, never from a re-publication.
+ *   - A name field on a boundary layer dates the ROSTER, not the BOUNDARY. It is corroboration
+ *     only; it cannot establish vintage.
+ *   - Verify with `npm run check:district-vintage` (scripts/check-council-district-vintage.mjs),
+ *     which compares our polygons against the LA County Registrar-Recorder precinct layer's
+ *     authority and fails on a stale map.
  *
  * Each district is stored with:
  *   geo_id  = 'ocd-division/country:us/state:ca/place:los_angeles/council_district:{N}'
  *   mtfcc   = 'X0001'
  *   state   = '06'
- *   source  = 'la_city_geohub_council_districts_2024'
+ *   source  = the NavigateLA provenance string in SOURCE below (was the bare, undated tag
+ *             'la_city_geohub_council_districts_2024' — a tag that names a publisher and a year
+ *             but proves nothing is how this went unnoticed)
  *
  * These geo_ids match existing rows in essentials.districts (district_type='LOCAL'),
  * so resolve_user_jurisdiction will immediately find the correct council district
  * for any address that falls within LA City limits.
  *
- * Safe to re-run — ON CONFLICT (geo_id, mtfcc) DO NOTHING ensures idempotency.
+ * Re-running only ever ADDS missing districts: ON CONFLICT (geo_id, mtfcc) DO NOTHING means it
+ * will NOT refresh a row whose geometry has gone stale — re-running was never a repair path, which
+ * is part of how the 2012 map survived. To replace existing boundaries, write a numbered migration
+ * (see CA_0317_la_council_district_current_map.sql) so the change is reviewable and reversible.
  *
  * Usage (from backend/):
  *   npx tsx scripts/load-la-city-council-boundaries.ts --dry-run
@@ -28,14 +46,22 @@ import * as http from 'http';
 
 // ─── Config ───────────────────────────────────────────────────────────────────
 
-// LA City GeoHub ArcGIS FeatureServer — Council Districts (public, no auth required)
+// City of Los Angeles, NavigateLA "Boundaries" MapServer layer 13 — Council Districts.
+// This is the city's own live service (the one its NavigateLA / district-lookup tools read).
+// ⚠ Do NOT swap this for an arcgis.com item without checking that service's
+// editingInfo.lastEditDate and proving the vintage — that is the mistake CA_0317 repaired.
 const ARCGIS_URL =
-  'https://services5.arcgis.com/7nsPwEMP38bSkCjy/arcgis/rest/services/Council_Districts/FeatureServer/0/query' +
-  '?where=1%3D1&outFields=*&f=geojson&outSR=4326&geometryType=esriGeometryPolygon';
+  'https://maps.lacity.org/lahub/rest/services/Boundaries/MapServer/13/query' +
+  '?where=1%3D1&outFields=District&returnGeometry=true&outSR=4326&f=geojson';
 
 const MTFCC   = 'X0001';
 const STATE   = '06';
-const SOURCE  = 'la_city_geohub_council_districts_2024';
+// Kept in step with the source string written by CA_0317, which carries the full vintage proof.
+const SOURCE  =
+  'City of Los Angeles, NavigateLA Boundaries MapServer layer 13 "Council Districts" ' +
+  '(maps.lacity.org/lahub/rest/services/Boundaries/MapServer/13); vintage proved against the LA ' +
+  'County Registrar-Recorder precinct layer (Political_Boundaries MapServer 34, DST_CITY=LS / ' +
+  'DIV_CITY), the layer the county builds ballots from — see CA_0317.';
 
 const DRY_RUN = process.argv.includes('--dry-run');
 
@@ -79,7 +105,9 @@ function fetchJson(url: string): Promise<unknown> {
 /** Extract district number from a feature's properties.
  *  Tries common field names used in LA City ArcGIS exports. */
 function extractDistrictNumber(props: Record<string, unknown>): number | null {
-  for (const field of ['CD', 'DISTRICT', 'DISTNUM', 'NAME', 'LABEL', 'district', 'cd']) {
+  // 'District' is the field NavigateLA layer 13 uses, and it must be tried BEFORE 'NAME' —
+  // on that layer NAME holds the councilmember, not the number.
+  for (const field of ['District', 'CD', 'DISTRICT', 'DISTNUM', 'NAME', 'LABEL', 'district', 'cd']) {
     const v = props[field];
     if (v == null) continue;
     const n = parseInt(String(v), 10);

@@ -1,0 +1,61 @@
+{
+  "id": "ND-HB-1369-2017",
+  "scope": "state:nd",
+  "title": "HB 1369 (2017) — Voter ID and residency rules; non-citizen licence/ID card design; penalty",
+  "urls": [
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1369.html",
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1369.html",
+    "https://ndlegis.gov/assembly/65-2017/documents/17-0750-07000.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec 1 elector qualifications (16.1-01-04); strikes student-residency and military-residency rules: A qualified elector shall provide a valid form of identification to the proper election official before receiving a ballot for voting.\nSec 2 valid ID list: A driver's license or nondriver's identification card issued by the North Dakota department of transportation; or An official form of identification issued by a tribal government to a tribal member residing in this state.\nSec 2 supplemental documents when ID lacks address or is outdated: A current utility bill; A current bank statement; A check issued by a federal, state, or local government; A paycheck; or A document issued by a federal, state, or local government.\nSec 2 special circumstances (long-term care certificate, military ID/passport, signature of another elector for disabled): the signature on an absentee or mail ballot application from another qualified elector who, by signing, certifies the applicant is a qualified elector.\nSec 2 voter without ID may set-aside ballot, show ID by 6th day after election: the individual may mark a ballot that must be securely set aside in a sealed envelope designed by the secretary of state.\nSec 3 residence rules for voting: The acts of residing at a new address for thirty days and verifying that address as provided under section 16.1-01-04.1 constitute a change in the individual's voting residence.\nSec 4 election offenses and penalties (16.1-01-12): It is unlawful for an individual, measure committee as described in section 16.1-08.1-01, or other organization to:\nSec 5 DOT reports to SoS incl. citizenship status: Citizenship status, including both previous and current citizenship status if changed.\nSec 6 poll clerks check ID in any election: Before delivering a ballot to an individual in any election, the poll clerks shall require the individual to show a valid form of identification with the information required under section 16.1-01-04.1.\nSec 7 mail ballot application form includes ID number: The identification number from one of the applicant's valid forms of identification, a copy of the applicant's long-term care certificate, and, if necessary, a copy of the applicant's supplemental identification\nSec 8-9 set-aside ballots delivered to election official and canvassing board: The verified and unverified ballots set aside must be delivered to the members of the canvassing board for proper inclusion or exclusion from the canvass of votes.\nSec 10 nondriver ID card for non-citizens, distinguishable: The identification card must be designed in a manner to clearly make the card distinguishable from a similar card issued to a citizen of the United States and resident of this state.\nSec 11 licence applicant must verify citizenship: The license issued to a noncitizen of the United States must be designed in a manner to distinguish the license clearly from a similar license issued to a citizen of the United States.\nSec 12 operator's licence to non-citizens, distinguishable: The license issued under this subsection may be replaced with a card issued to a citizen of this country and resident of this state only when proof of United States citizenship is provided",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-01",
+      "body": "ND House",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 74,
+      "no": 16,
+      "body_size": 94,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2017-04-02",
+      "body": "ND Senate",
+      "motion": "passage as amended",
+      "kind": "roll-call",
+      "yes": 37,
+      "no": 10,
+      "body_size": 47,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2017-04-17",
+      "body": "ND Senate",
+      "motion": "final passage after conference",
+      "kind": "roll-call",
+      "yes": 35,
+      "no": 10,
+      "body_size": 47,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

@@ -36,6 +36,33 @@ import { normalizeDonorName } from './adapters/normalizeDonorName.js';
 export const OWN_FUNDRAISING_SQL =
   `ps.research_status = 'confirmed' AND ps.source_type = 'candidate_committee'`;
 
+/**
+ * NON_CONTRIBUTION_SQL — filed money that is not a donation. LA City Ethics (la_socrata) publishes Schedule B
+ * (loans received) and Schedule I ("Misc. Increases to Cash": public matching funds, vendor refunds, voided checks,
+ * deposits in error) beside the contribution schedules A and C, and its dataset notes say Schedule I records
+ * "should not be totaled with" them. Measured 2026-10-21 over confirmed la_socrata links: $9.6M of city matching
+ * funds, $2.0M of other Schedule I and $3.6M of loans were counted as raised (Bass 2026 showed $2.03M raised;
+ * $973k of it was donations).
+ *
+ * DONATION_SQL and REFUND_SQL are the row predicates for every gross figure (raised, contribution_count, the
+ * individual/PAC split, sectors, top donors, the PAC list) and for total_refunded. A refund row (amount < 0) is
+ * not a donation, so it never appears as a negative "donor" or shrinks a sector; $0 rows stay counted (CA_0255).
+ */
+export const NON_CONTRIBUTION_SQL =
+  `(COALESCE(c.data_source, '') = 'la_socrata' AND COALESCE(c.raw_record->>'schedule', '') IN ('B', 'I'))`;
+export const DONATION_SQL = `(c.amount >= 0 AND NOT ${NON_CONTRIBUTION_SQL})`;
+export const REFUND_SQL = `(c.amount < 0 AND NOT ${NON_CONTRIBUTION_SQL})`;
+
+/**
+ * PUBLIC_MATCHING_FUNDS_SQL — the Schedule I rows that are LA City public matching funds: paid by a City body
+ * (filed as "City of Los Angeles", "Los Angeles City Treasury", "... City Clerk Elections Division", "... City
+ * Ethics Commission", one misspelled "CITY OF LOS AGELES") or described as matching funds / public financing.
+ * They are public money, so the summary reports them on their own line (public_matching_funds), not as a donor.
+ */
+export const PUBLIC_MATCHING_FUNDS_SQL = `(COALESCE(c.data_source, '') = 'la_socrata' AND c.raw_record->>'schedule' = 'I'
+    AND (c.raw_record->>'con_desc' ~* '(matching|public financ)'
+      OR c.raw_record->>'con_name' ~* '(city of los a|los angeles city)'))`;
+
 // ---------------------------------------------------------------------------
 // TypeScript interfaces — ported from models.go
 // ---------------------------------------------------------------------------
@@ -228,7 +255,18 @@ export interface SummaryResponse {
   filed_reports?: FiledReportResponse[];
   composition?: CompositionResponse;
   pac_contributions?: PacListResponse;
+  /**
+   * LA City public matching funds for the cycle (PUBLIC_MATCHING_FUNDS_SQL). Public money, so it is NOT in
+   * total_raised and no top donor; present only when the cycle has some.
+   */
+  public_matching_funds?: PublicMatchingFundsResponse;
   outside_spending: OutsideSpendingResponse;
+}
+
+export interface PublicMatchingFundsResponse {
+  total_amount: number;
+  /** Number of payment rows (a reversal or return of funds is a negative row, netted in total_amount). */
+  payment_count: number;
 }
 
 export interface ContributionResult {
@@ -253,6 +291,9 @@ export interface PageInfo {
 export interface ContributionsResponse {
   results: ContributionResult[];
   page_info: PageInfo;
+  /** Echo of the donor filter, present only when ?donor= was applied. Clients use it to tell
+   *  an API that filters from an older one that ignores the parameter. */
+  filter?: { donor: string };
 }
 
 // ---------------------------------------------------------------------------
@@ -412,12 +453,29 @@ function parseRawRecord(rawRecord: string | object | null): FecRawRecord {
   }
 }
 
-function extractDonorType(rawRecord: string | object | null): string {
+export function extractDonorType(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   // Indiana CFA-4 data uses a simple 'type' field set at ingest time
   const simpleType = (rec.type as string | undefined)?.toLowerCase();
   if (simpleType === 'pac' || simpleType === 'corporate_direct') return 'pac';
   if (simpleType === 'direct' || simpleType === 'in_kind') return 'individual';
+  // State sources: same mapping as IS_INDIVIDUAL_SQL / IS_PAC_SQL. A typed row that is neither is a
+  // 'committee' (building icon), never a PAC.
+  const calEntity = rec['ENTITY_CD'] as string | undefined;
+  if (calEntity) {
+    if (calEntity === 'IND') return 'individual';
+    if (calEntity === 'SCC' || calEntity === 'PTY') return 'pac';
+    return 'committee';
+  }
+  const indianaType = rec['ContributorType'] as string | undefined;
+  if (indianaType) {
+    if (indianaType === 'Individual') return 'individual';
+    if (indianaType === 'Political Action Committee' || indianaType === 'Political Action') return 'pac';
+    return 'committee';
+  }
+  const ocpfType = rec['recordTypeDescription'] as string | undefined;
+  if (ocpfType === 'Individual') return 'individual';
+  if (ocpfType === 'Committee' || ocpfType === 'Union/Association') return 'committee';
   // FEC / Socrata / Netfile use entity_type. Classify consistently with the individual/PAC split
   // (see PAC_CASE_SQL): IND + CAN (candidate/self) are people; PAC + PTY are true PACs; other
   // committees/orgs (COM/CCM/ORG) are 'committee' (building icon) but NOT labeled a PAC — this
@@ -426,6 +484,8 @@ function extractDonorType(rawRecord: string | object | null): string {
   if (entityType.startsWith('IND') || entityType.startsWith('CAN')) return 'individual';
   if (entityType.startsWith('PAC') || entityType.startsWith('PTY')) return 'pac';
   if (entityType.startsWith('COM') || entityType.startsWith('CCM') || entityType.startsWith('ORG')) return 'committee';
+  // Older FEC filings (mostly before 2004) leave entity_type blank but set is_individual (see IS_INDIVIDUAL_SQL).
+  if (entityType === '' && rec['is_individual'] === true) return 'individual';
   if (rec.contributor_committee_id) return 'committee';
   if (entityType !== '') return 'committee';
   return 'unknown';
@@ -797,7 +857,8 @@ const PAC_LIST_LIMIT = 25;
 
 /**
  * getPacContributions returns the itemized "PACs & committees" list for a politician + cycle,
- * from contributions with entity_type IN ('PAC','PTY'). Real PACs + party committees only —
+ * from contributions matching IS_PAC_SQL (FEC entity_type PAC/PTY and the state equivalents). Real PACs +
+ * party committees only —
  * excludes self-funding, victory-fund/JFC transfers, and candidate-committee transfers that the
  * entity-based split misclassifies as PAC (see project_pac_classification). Returns null when the
  * politician has no PAC/party rows for the cycle. Scoped to the politician's confirmed sources so
@@ -814,8 +875,8 @@ async function getPacContributions(
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
-       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
-       AND ${NOT_REFUND_SQL}`,
+       AND ${IS_PAC_SQL}
+       AND ${DONATION_SQL}`,
     [politicianId, cycle]
   );
   const total = Number(totalsRes.rows[0]?.total ?? 0);
@@ -824,15 +885,15 @@ async function getPacContributions(
 
   const listRes = await pool.query<{ name: string; entity_type: string; total: string; n: string }>(
     `SELECT ${DONOR_NAME_SQL} AS name,
-            MAX(c.raw_record->>'entity_type') AS entity_type,
+            MAX(COALESCE(c.raw_record->>'entity_type', c.raw_record->>'ENTITY_CD')) AS entity_type,
             SUM(c.amount) AS total,
             COUNT(*) AS n
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
-       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
-       AND ${NOT_REFUND_SQL}
+       AND ${IS_PAC_SQL}
+       AND ${DONATION_SQL}
      GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total DESC
      LIMIT ${PAC_LIST_LIMIT}`,
@@ -843,12 +904,35 @@ async function getPacContributions(
     .filter((r) => r.name && r.name.trim() !== '')
     .map((r) => ({
       name: r.name,
-      entity_type: r.entity_type ?? 'PAC',
+      entity_type: r.entity_type === 'PTY' ? 'PTY' : 'PAC',
       total_amount: Number(r.total),
       contribution_count: Number(r.n),
     }));
 
   return { pacs, total_amount: total, count };
+}
+
+/**
+ * getPublicMatchingFunds returns the LA City matching funds a politician's own committees received in a cycle,
+ * or null when there are none. Scoped to the politician's confirmed own sources, like getPacContributions.
+ */
+async function getPublicMatchingFunds(
+  politicianId: string,
+  cycle: string
+): Promise<PublicMatchingFundsResponse | null> {
+  const res = await pool.query<{ total: string | null; n: string }>(
+    `SELECT COALESCE(SUM(c.amount), 0) AS total, COUNT(*) AS n
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
+     WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
+       AND c.election_cycle = $2
+       AND ${PUBLIC_MATCHING_FUNDS_SQL}`,
+    [politicianId, cycle]
+  );
+  const total = Number(res.rows[0]?.total ?? 0);
+  const n = Number(res.rows[0]?.n ?? 0);
+  if (n === 0 || total <= 0) return null;
+  return { total_amount: total, payment_count: n };
 }
 
 // ---------------------------------------------------------------------------
@@ -874,20 +958,34 @@ async function getPacContributions(
 //
 // Both splits are GROSS (refund rows, amount < 0, left out), like total_raised: a returned contribution is reported in
 // total_refunded, never netted out of a bucket (CA_0255).
+//
+// State sources keep the donor type under their own raw keys, and each is read here:
+//   cal_access ENTITY_CD:         IND = individual; SCC (small contributor committee) + PTY = PAC.
+//                                 COM (any recipient committee — PACs AND other candidates' committees,
+//                                 which Cal-Access does not tell apart), OTH and RCP fall into neither.
+//   indiana ContributorType:      'Individual'; 'Political Action Committee' / 'Political Action' = PAC.
+//                                 Corporation, Labor Organization, Other Organization fall into neither.
+//   ocpf recordTypeDescription:   'Individual'. OCPF's 'Committee' is likewise not split, so neither.
+// la_socrata and la_county_netfile carry no donor-type field at all, so they stay in neither bucket.
+// Older FEC filings (mostly before 2004) leave entity_type blank but set is_individual. Where both are filled in
+// they agree ~98% of the time (sampled 2026-10-21), so a blank entity_type with is_individual = true counts as an
+// individual. is_individual = false cannot tell a PAC from any other committee, so it stays in neither bucket.
+export const IS_INDIVIDUAL_SQL = `(c.raw_record->>'type' IN ('direct', 'in_kind')
+    OR c.raw_record->>'entity_type' LIKE 'IND%'
+    OR (COALESCE(c.raw_record->>'entity_type', '') = '' AND c.raw_record->>'is_individual' = 'true')
+    OR c.raw_record->>'ENTITY_CD' = 'IND'
+    OR c.raw_record->>'ContributorType' = 'Individual'
+    OR c.raw_record->>'recordTypeDescription' = 'Individual')`;
+export const IS_PAC_SQL = `(c.raw_record->>'type' IN ('pac', 'corporate_direct')
+    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+    OR c.raw_record->>'ENTITY_CD' IN ('SCC', 'PTY')
+    OR c.raw_record->>'ContributorType' IN ('Political Action Committee', 'Political Action'))`;
 const INDIVIDUAL_CASE_SQL = `CASE
-  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('direct', 'in_kind')
-    OR c.raw_record->>'entity_type' LIKE 'IND%')
+  WHEN ${DONATION_SQL} AND ${IS_INDIVIDUAL_SQL}
   THEN c.amount ELSE 0 END`;
 const PAC_CASE_SQL = `CASE
-  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('pac', 'corporate_direct')
-    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY'))
+  WHEN ${DONATION_SQL} AND ${IS_PAC_SQL}
   THEN c.amount ELSE 0 END`;
-/**
- * Row predicate for every gross figure: sector rollup, top donors, the PAC list and contribution_count.
- * A refund row (amount < 0) is not a donation, so it must not appear as a negative "donor" or shrink a sector.
- * $0 rows (432,426 on prod, 2026-09-24) are not refunds and stay counted exactly as before.
- */
-const NOT_REFUND_SQL = `c.amount >= 0`;
 
 /**
  * headlineTotals applies the one rule for "raised" and "refunded" (CA_0255). With FEC's authoritative receipts
@@ -930,11 +1028,11 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
     individual_total: string; pac_total: string; data_source: string | null;
   }>(
     `SELECT COUNT(*) AS row_count,
-            COUNT(*) FILTER (WHERE ${NOT_REFUND_SQL}) AS contribution_count,
+            COUNT(*) FILTER (WHERE ${DONATION_SQL}) AS contribution_count,
             COALESCE(SUM(c.amount), 0) AS total_amount,
-            COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL}), 0) AS gross_amount,
-            COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0), 0) AS refunded_amount,
-            COUNT(*) FILTER (WHERE c.amount < 0) AS refund_count,
+            COALESCE(SUM(c.amount) FILTER (WHERE ${DONATION_SQL}), 0) AS gross_amount,
+            COALESCE(-SUM(c.amount) FILTER (WHERE ${REFUND_SQL}), 0) AS refunded_amount,
+            COUNT(*) FILTER (WHERE ${REFUND_SQL}) AS refund_count,
             COALESCE(MIN(${CONFIDENCE_RANK_SQL}), 1) AS confidence_min,
             COALESCE(SUM(${INDIVIDUAL_CASE_SQL}), 0) AS individual_total,
             COALESCE(SUM(${PAC_CASE_SQL}), 0) AS pac_total,
@@ -961,7 +1059,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
     `SELECT COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
             SUM(c.amount) AS total, COUNT(*) AS count
      FROM transparent_motivations.contributions c
-     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${NOT_REFUND_SQL}
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${DONATION_SQL}
      GROUP BY 1`,
     [politicianSourceId, cycle]
   );
@@ -988,7 +1086,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
             MIN(${CONFIDENCE_RANK_SQL}) AS confidence_level_n,
             MIN(c.raw_record::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
-     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${NOT_REFUND_SQL}
+     WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${DONATION_SQL}
      GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total_amount DESC
      LIMIT ${AGG_TOP_DONORS}`,
@@ -1193,6 +1291,7 @@ async function getSummaryFromAgg(
   const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
   const composition = await getFecComposition(politicianId, effectiveCycle);
   const pacContributions = await getPacContributions(politicianId, effectiveCycle);
+  const publicMatchingFunds = await getPublicMatchingFunds(politicianId, effectiveCycle);
 
   const summary: SummaryResponse = {
     politician_id: politicianId,
@@ -1209,6 +1308,7 @@ async function getSummaryFromAgg(
     top_donors: topDonors,
     ...(composition ? { composition } : {}),
     ...(pacContributions ? { pac_contributions: pacContributions } : {}),
+    ...(publicMatchingFunds ? { public_matching_funds: publicMatchingFunds } : {}),
     outside_spending: outsideSpending,
   };
   return { summary, updatedAt: lastSyncAt };
@@ -1297,13 +1397,13 @@ export async function getSummary(
   // Query totals
   const totalsResult = await pool.query<TotalsRow>(
     `SELECT
-       COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL}), 0) AS gross_total,
-       COALESCE(SUM(c.amount) FILTER (WHERE ${NOT_REFUND_SQL} AND c.data_source != 'fec'), 0) AS non_fec_gross,
-       COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0), 0) AS refunded_total,
-       COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0 AND c.data_source != 'fec'), 0) AS non_fec_refunded,
-       COUNT(*) FILTER (WHERE c.amount < 0) AS refund_count,
-       COUNT(*) FILTER (WHERE c.amount < 0 AND c.data_source != 'fec') AS non_fec_refund_count,
-       COUNT(*) FILTER (WHERE ${NOT_REFUND_SQL}) AS contribution_count,
+       COALESCE(SUM(c.amount) FILTER (WHERE ${DONATION_SQL}), 0) AS gross_total,
+       COALESCE(SUM(c.amount) FILTER (WHERE ${DONATION_SQL} AND c.data_source != 'fec'), 0) AS non_fec_gross,
+       COALESCE(-SUM(c.amount) FILTER (WHERE ${REFUND_SQL}), 0) AS refunded_total,
+       COALESCE(-SUM(c.amount) FILTER (WHERE ${REFUND_SQL} AND c.data_source != 'fec'), 0) AS non_fec_refunded,
+       COUNT(*) FILTER (WHERE ${REFUND_SQL}) AS refund_count,
+       COUNT(*) FILTER (WHERE ${REFUND_SQL} AND c.data_source != 'fec') AS non_fec_refund_count,
+       COUNT(*) FILTER (WHERE ${DONATION_SQL}) AS contribution_count,
        COALESCE(MIN(CASE c.confidence_level
            WHEN 'HIGH'      THEN 1
            WHEN 'MEDIUM'    THEN 2
@@ -1356,7 +1456,7 @@ export async function getSummary(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
-       AND ${NOT_REFUND_SQL}
+       AND ${DONATION_SQL}
        ${confidenceClause}`,
     baseParams
   );
@@ -1393,7 +1493,7 @@ export async function getSummary(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
-       AND ${NOT_REFUND_SQL}
+       AND ${DONATION_SQL}
        ${confidenceClause}
      GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')
      ORDER BY total_amount DESC
@@ -1452,6 +1552,7 @@ export async function getSummary(
   const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
   const composition = await getFecComposition(politicianId, effectiveCycle);
   const pacContributions = await getPacContributions(politicianId, effectiveCycle);
+  const publicMatchingFunds = await getPublicMatchingFunds(politicianId, effectiveCycle);
 
   const summary: SummaryResponse = {
     politician_id: politicianId,
@@ -1468,6 +1569,7 @@ export async function getSummary(
     top_donors: topDonors,
     ...(composition ? { composition } : {}),
     ...(pacContributions ? { pac_contributions: pacContributions } : {}),
+    ...(publicMatchingFunds ? { public_matching_funds: publicMatchingFunds } : {}),
     outside_spending: outsideSpending,
   };
 
@@ -1501,6 +1603,9 @@ async function mostRecentCycleWithData(politicianId: string): Promise<string | n
  * Default limit 50, max 100.
  * Cursor uses contribution_date DESC, id DESC ordering.
  * politician_source_id is never exposed in returned objects.
+ *
+ * options.donor is a top_donors `name` from the summary. It returns exactly the rows grouped under
+ * that name there (refunds included). See donorFilterClause for why it matches on two columns.
  */
 export async function getContributions(
   politicianId: string,
@@ -1509,10 +1614,12 @@ export async function getContributions(
     limit?: number;
     cycle?: string;
     confidence?: string | null;
+    donor?: string | null;
   } = {}
 ): Promise<{ response: ContributionsResponse; updatedAt: string | null }> {
   const effectiveCycle = options.cycle ?? (await mostRecentCycleWithData(politicianId)) ?? defaultCompletedCycle();
   const confidenceFilter = options.confidence ?? null;
+  const donorFilter = options.donor ?? null;
 
   // Clamp limit: default 50, max 100
   let limit = options.limit ?? 50;
@@ -1535,6 +1642,7 @@ export async function getContributions(
     confidenceClause = `AND c.confidence_level = $${queryParams.length + 1}`;
     queryParams.push(confidenceFilter);
   }
+  const donorClause = donorFilter ? donorFilterClause(queryParams, donorFilter) : '';
 
   let cursorClause = '';
   if (cursorDate !== null && cursorId !== null) {
@@ -1559,6 +1667,7 @@ export async function getContributions(
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}
+       ${donorClause}
        ${cursorClause}
      ORDER BY c.contribution_date DESC, c.id DESC
      LIMIT ${limit + 1}`,
@@ -1604,6 +1713,7 @@ export async function getContributions(
     countConfidenceClause = `AND c.confidence_level = $${countParams.length + 1}`;
     countParams.push(confidenceFilter);
   }
+  const countDonorClause = donorFilter ? donorFilterClause(countParams, donorFilter) : '';
 
   const countResult = await pool.query<TotalCountRow>(
     `SELECT COUNT(*) AS count
@@ -1612,7 +1722,8 @@ export async function getContributions(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
-       ${countConfidenceClause}`,
+       ${countConfidenceClause}
+       ${countDonorClause}`,
     countParams
   );
   const totalCount = Number(countResult.rows[0]?.count ?? 0);
@@ -1634,9 +1745,30 @@ export async function getContributions(
         end_cursor: endCursor,
         total_count: totalCount,
       },
+      ...(donorFilter ? { filter: { donor: donorFilter } } : {}),
     },
     updatedAt,
   };
+}
+
+/**
+ * donorFilterClause pushes the params for a ?donor= filter and returns its SQL.
+ *
+ * The exact match is on DONOR_NAME_SQL, the key top_donors groups by, so the rows are exactly the
+ * ones behind that donor's summary entry. That expression has no index, so a second predicate on
+ * the indexed donor_name_normalized narrows the rows first; the planner ANDs it with
+ * idx_contrib_src_cycle and reads only the matching heap rows, not the whole
+ * (politician_source_id, election_cycle) slice, which is 204k rows for a Senate campaign.
+ *
+ * The normalized column is matched as IN (key, ''): ~63k older rows (mostly la_socrata) were
+ * loaded with donor_name_normalized = '' and never re-normalized, so the key alone would miss them.
+ * The exact DONOR_NAME_SQL match keeps other donors' '' rows out.
+ */
+function donorFilterClause(params: unknown[], donor: string): string {
+  params.push(normalizeDonorName(donor), donor);
+  const keyParam = params.length - 1;
+  return `AND c.donor_name_normalized IN ($${keyParam}, '')
+       AND ${DONOR_NAME_SQL} = $${keyParam + 1}`;
 }
 
 // ---------------------------------------------------------------------------

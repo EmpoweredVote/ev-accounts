@@ -1,0 +1,12 @@
+{
+  "politician_id": "b316dce9-ed2e-44f6-b974-bf639cacb816",
+  "sources": [],
+  "terms": [
+    {
+      "office": "State Senate (WA)",
+      "start": "2015-01-12",
+      "precision": "day",
+      "source": "essentials roster export (s3-census-education-equity-programs-supplement/raw/roster-legislators.tsv)"
+    }
+  ]
+}

@@ -136,7 +136,63 @@ async function main() {
   }
 
   if (writing) {
-    const keys = rows.map(keyOf).sort();
+    // 🔴🔴 BANKING THE RATCHET IS AN INTERSECTION, NEVER "WRITE WHAT IS CONFIRMED TODAY".
+    // This used to write `rows.map(keyOf)` — every currently-confirmed key. That was right
+    // exactly once, at the 2026-10-10 seed, when NO row carried an adjudication marker and so
+    // "confirmed today" and "the legacy population" were the same set. They have diverged.
+    //
+    // Measured 2026-10-18, banking the first 70-key shrink: 461 confirmed, 520 in the baseline.
+    // The old path would have written 461 — dropping the 70 cleared (correct) while ABSORBING
+    // 11 adjudicated attributions into the grandfather list (wrong). All 11 carried a marker:
+    // Newsom 1418587, Gipson 1448127, four Stern, four Umberg, one Durazo.
+    //
+    // That is not a cosmetic difference. This file's own note says these keys are "NOT vouched
+    // for", and the header counts adjudicated rows as a SEPARATE category from the grandfathered
+    // population. Moving a vouched-for row into the unvouched list erases the distinction the
+    // guard exists to maintain, and — because a baseline hit short-circuits the marker test —
+    // it would let someone later strip `adjudicated_by` from one of them with nothing noticing.
+    //
+    // So: keep the baseline keys that are STILL confirmed, and add nothing. The list can only
+    // shrink, which is what "a ratchet, not a freeze" means.
+    //
+    // ▶ AND A KEY WHOSE ROW NOW CARRIES ITS OWN MARKER IS DROPPED TOO. "Shrink this list as the
+    // audit clears rows" — an adjudicated row IS a cleared row. Leaving it grandfathered is not
+    // harmless: a baseline hit short-circuits the marker test, so the row would keep passing if
+    // its `adjudicated_by` were ever removed. Measured 2026-10-18: 13 of the 450 still-confirmed
+    // keys had been adjudicated since the seed, and stripping every marker in the corpus
+    // produced only 11 violations instead of 24 — those 13 were being carried by the baseline,
+    // not by their own evidence. Dropping them makes the invariant honest and checkable:
+    //
+    //     a key is in this file  XOR  its row carries an adjudication marker — never both.
+    const prior = loadBaseline();
+    const confirmedKeys = new Set(rows.map(keyOf));
+    const markedKeys = new Set(rows.filter((r) => hasAdjudicationMarker(r.notes)).map(keyOf));
+    const keys = [...prior].filter((k) => confirmedKeys.has(k) && !markedKeys.has(k)).sort();
+    const dropped = [...prior].filter((k) => !confirmedKeys.has(k));
+    const droppedAdjudicated = [...prior].filter((k) => confirmedKeys.has(k) && markedKeys.has(k));
+    const wouldAbsorb = rows.filter((r) => !prior.has(keyOf(r)));
+
+    // The ratchet only turns one way. If this ever tries to grow, something is wrong with the
+    // caller's assumptions, not with the baseline — refuse rather than widen the carve-out.
+    const added = keys.filter((k) => !prior.has(k));
+    if (added.length > 0 || keys.length > prior.size) {
+      console.error(
+        `cal-access attribution: REFUSING to write — the baseline would GROW ` +
+          `(${prior.size} -> ${keys.length}, ${added.length} new key(s)). It may only shrink.`
+      );
+      return 1;
+    }
+
+    console.log(
+      `cal-access attribution: banking the ratchet — ${prior.size} -> ${keys.length} ` +
+        `(${dropped.length} no longer confirmed, ${droppedAdjudicated.length} now adjudicated).`
+    );
+    if (wouldAbsorb.length > 0) {
+      console.log(
+        `  ${wouldAbsorb.length} confirmed attribution(s) are deliberately NOT added: they carry ` +
+          'their own adjudication and are not grandfathered.'
+      );
+    }
     writeFileSync(
       BASELINE_PATH,
       `${JSON.stringify(
@@ -157,6 +213,7 @@ async function main() {
     console.log(`cal-access attribution: wrote ${keys.length} grandfathered keys to ${BASELINE_PATH}`);
     return 0;
   }
+
 
   const baseline = loadBaseline();
   const violations = findViolations(rows, baseline);

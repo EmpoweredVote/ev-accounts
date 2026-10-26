@@ -10,6 +10,7 @@ import { MemoryStorage } from './storage/MemoryStorage.js';
 import { PLAUSIBILITY_THRESHOLDS, getAdjustedThreshold, type PlausibilityDifficulty } from '../config/plausibilityThresholds.js';
 import type { DBQuestionRow } from './gameModes.js';
 import type { XpAwardResult } from './progressionService.js';
+import { presentQuestion } from './servePresentation.js';
 
 // Question type matching backend data structure
 export interface Question {
@@ -17,6 +18,8 @@ export interface Question {
   text: string;
   options: string[];
   correctAnswer: number;
+  /** 7 ascending marks with the answer at index 3, or null. Rolled at serve time. */
+  optionsScale?: string[] | null;
   explanation: string;
   difficulty: string;
   topic: string;
@@ -128,21 +131,32 @@ export class SessionManager {
    * @param userId - User identifier (UUID string for authenticated users, or 'anonymous' for unauthenticated)
    * @param questions - Array of questions for this game
    * @param collectionMeta - Optional collection metadata (defaults to null for backward compat)
-   * @returns Session ID
+   * @returns Session ID and the presented questions -- the caller MUST serve
+   *   `stripAnswers(result.questions)`, not its own input array. presentQuestion rolls
+   *   or shuffles each question's options per session, and does not mutate its input, so
+   *   the only array guaranteed to reflect what was stored is the one returned here. An
+   *   earlier version of this method mutated the caller's array in place instead, on the
+   *   assumption every caller re-read it; one call site (the adaptive-mode first
+   *   question, game.ts) built a second, unrelated array from the same un-mutated
+   *   question object and served that -- shipping the client a different option order
+   *   than the session scored against. Returning the presented array removes the need
+   *   for any caller to honour that contract at all.
    */
   async createSession(
     userId: string,
     questions: Question[],
     collectionMeta?: { id: number; name: string; slug: string },
     accountContext?: { isConnected: boolean; isSuspended: boolean; accessToken: string }
-  ): Promise<string> {
+  ): Promise<{ sessionId: string; questions: Question[] }> {
     const sessionId = randomUUID();
     const now = new Date();
+
+    const presented = questions.map((q) => presentQuestion(q));
 
     const session: GameSession = {
       sessionId,
       userId,
-      questions,
+      questions: presented,
       answers: [],
       createdAt: now,
       lastActivityTime: now,
@@ -157,7 +171,7 @@ export class SessionManager {
     };
 
     await this.storage.set(sessionId, session, 3600); // 1 hour TTL
-    return sessionId;
+    return { sessionId, questions: presented };
   }
 
   /**

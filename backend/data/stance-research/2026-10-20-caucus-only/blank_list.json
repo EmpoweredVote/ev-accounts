@@ -1,0 +1,916 @@
+[
+ {
+  "T": "C002",
+  "key": "b0215f01-089f-4892-85a1-f9abcb4ff4af|669cac97-66a6-4087-b036-936fbe62efb3",
+  "politician_id": "b0215f01-089f-4892-85a1-f9abcb4ff4af",
+  "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+  "name": "Adelita S. Grijalva",
+  "topic": "housing",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Adelita_Grijalva"
+  ],
+  "code": "ADMITS+RUNGTEXT",
+  "why": "Grijalva/housing: a board 'focus area' is not a position, and the row admits 'evidence is thin (no specific House bill found)'. Rung 3 demands binding rules."
+ },
+ {
+  "T": "C004",
+  "key": "26636234-c292-4a02-8205-6b84f6864f82|87d20824-a6e9-407b-983c-65440084a0ab",
+  "politician_id": "26636234-c292-4a02-8205-6b84f6864f82",
+  "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+  "name": "Adriano Espaillat",
+  "topic": "social-security",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Adriano_Espaillat"
+  ],
+  "code": "AFFIL+NONCOSP",
+  "why": "Espaillat/social-security: Expand Social Security Caucus membership only; 'expand' names a DIRECTION spanning rungs 1-2, not a rung, and an absence of cap-removal cosponsorship does the seating."
+ },
+ {
+  "T": "C005",
+  "key": "26636234-c292-4a02-8205-6b84f6864f82|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "26636234-c292-4a02-8205-6b84f6864f82",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Adriano Espaillat",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Adriano_Espaillat"
+  ],
+  "code": "AFFIL",
+  "why": "Espaillat/ukraine: membership + 'no documented opposition found'."
+ },
+ {
+  "T": "C006",
+  "key": "65df6ce5-a824-4b24-a0a9-d031e3631272|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "politician_id": "65df6ce5-a824-4b24-a0a9-d031e3631272",
+  "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "name": "Alexi Giannoulias",
+  "topic": "abortion",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Alexi_Giannoulias"
+  ],
+  "code": "AFFIL+VINTAGE",
+  "why": "Giannoulias/abortion: a 2010 Planned Parenthood endorsement OF him, a pledge to join a caucus that does not exist, and 'the mainstream Democratic position'. He is now Secretary of State."
+ },
+ {
+  "T": "C007",
+  "key": "65df6ce5-a824-4b24-a0a9-d031e3631272|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "65df6ce5-a824-4b24-a0a9-d031e3631272",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Alexi Giannoulias",
+  "topic": "healthcare",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Alexi_Giannoulias"
+  ],
+  "code": "AFFIL",
+  "why": "Giannoulias/healthcare: SEIU and AFL-CIO endorsements OF him plus a caucus pledge."
+ },
+ {
+  "T": "C008",
+  "key": "65df6ce5-a824-4b24-a0a9-d031e3631272|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "65df6ce5-a824-4b24-a0a9-d031e3631272",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Alexi Giannoulias",
+  "topic": "taxes",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Alexi_Giannoulias"
+  ],
+  "code": "AFFIL",
+  "why": "Giannoulias/taxes: reasons from what the endorsing UNIONS support."
+ },
+ {
+  "T": "C009",
+  "key": "a75a3e6e-31ff-4870-8aea-501e41326fd1|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "a75a3e6e-31ff-4870-8aea-501e41326fd1",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Bonnie Watson Coleman",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Bonnie_Watson_Coleman"
+  ],
+  "code": "AFFIL",
+  "why": "Watson Coleman/ukraine: membership and nothing else."
+ },
+ {
+  "T": "C011",
+  "key": "a5d68f92-d5e2-4fa1-a191-a64e8ebb2ada|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "a5d68f92-d5e2-4fa1-a191-a64e8ebb2ada",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Brian K. Fitzpatrick",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Brian_Fitzpatrick_(American_politician)"
+  ],
+  "code": "AFFIL",
+  "why": "Fitzpatrick/ukraine: co-chairing is the strongest form of this shape, but a caucus organised around a COUNTRY cannot seat a rung defined by aid LEVEL. 'A consistent advocate for Ukraine' characterises the affiliation rather than naming a position. REPAIR IS CHEAP - his supplemental votes are abundant."
+ },
+ {
+  "T": "C012",
+  "key": "3142051c-9ded-4883-95fc-4af1de6e6eec|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "3142051c-9ded-4883-95fc-4af1de6e6eec",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Brittany Pettersen",
+  "topic": "healthcare",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Brittany_Pettersen",
+   "https://en.wikipedia.org/wiki/New_Democrat_Coalition"
+  ],
+  "code": "AFFIL",
+  "why": "Pettersen/healthcare: New Dem + Problem Solvers, what those groups back, and absences from both ends."
+ },
+ {
+  "T": "C014",
+  "key": "c20345d9-e451-4813-8645-985734fedba3|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Christopher R. Deluzio",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chris_Deluzio"
+  ],
+  "code": "AFFIL",
+  "why": "Deluzio/civil-rights: CPC Deputy Whip + Equality Caucus, and the row admits no equity legislation was found."
+ },
+ {
+  "T": "C015",
+  "key": "c20345d9-e451-4813-8645-985734fedba3|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "c20345d9-e451-4813-8645-985734fedba3",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Christopher R. Deluzio",
+  "topic": "same-sex-marriage",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chris_Deluzio"
+  ],
+  "code": "AFFIL+AWAY",
+  "why": "Deluzio/same-sex-marriage: the Equality Caucus advocates FULL equality, which is rung 1, and the row seats 3."
+ },
+ {
+  "T": "C016",
+  "key": "f7763de5-8cb1-439b-9176-2c16070c01df|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "politician_id": "f7763de5-8cb1-439b-9176-2c16070c01df",
+  "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "name": "Chuck Edwards",
+  "topic": "abortion",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chuck_Edwards"
+  ],
+  "code": "AFFIL",
+  "why": "Chuck Edwards/abortion: the reasoning is entirely about what the Pro-Life Caucus supports."
+ },
+ {
+  "T": "C017",
+  "key": "f7763de5-8cb1-439b-9176-2c16070c01df|669cac97-66a6-4087-b036-936fbe62efb3",
+  "politician_id": "f7763de5-8cb1-439b-9176-2c16070c01df",
+  "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+  "name": "Chuck Edwards",
+  "topic": "housing",
+  "seated": 5,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chuck_Edwards"
+  ],
+  "code": "AFFIL+STALE-PROSE",
+  "why": "Chuck Edwards/housing: YIMBY co-chair, described via the caucus's advocacy; the prose says 'the value-4 stance' while the row is seated at 5."
+ },
+ {
+  "T": "C018",
+  "key": "82145bc2-770a-421e-a2a1-0e79aae5b643|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643",
+  "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "name": "Craig J. Zucker",
+  "topic": "abortion",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://ballotpedia.org/Craig_Zucker",
+   "https://en.wikipedia.org/wiki/Craig_Zucker"
+  ],
+  "code": "AFFIL+ADMITS",
+  "why": "Zucker/abortion: 'suburban Democratic senator', 'direct abortion bill sponsorship is limited in the available record', and party-line voting."
+ },
+ {
+  "T": "C020",
+  "key": "811f725f-1eaa-4e67-9dbc-389698615e00|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+  "politician_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+  "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+  "name": "David P. Joyce",
+  "topic": "climate-change",
+  "seated": 3,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Climate_Solutions_Caucus",
+   "https://en.wikipedia.org/wiki/David_P._Joyce"
+  ],
+  "code": "AFFIL",
+  "why": "Joyce/climate-change: Climate Solutions Caucus membership plus two absences declining rungs 1 and 2."
+ },
+ {
+  "T": "C021",
+  "key": "811f725f-1eaa-4e67-9dbc-389698615e00|a22215c3-6693-4bc2-b248-01aebba14570",
+  "politician_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+  "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+  "name": "David P. Joyce",
+  "topic": "fossil-fuels",
+  "seated": 3,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Climate_Solutions_Caucus",
+   "https://en.wikipedia.org/wiki/David_P._Joyce"
+  ],
+  "code": "AFFIL",
+  "why": "Joyce/fossil-fuels: 'As a Climate Solutions Caucus member, Joyce supports...' - the position is inferred from the membership."
+ },
+ {
+  "T": "C022",
+  "key": "811f725f-1eaa-4e67-9dbc-389698615e00|cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+  "politician_id": "811f725f-1eaa-4e67-9dbc-389698615e00",
+  "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+  "name": "David P. Joyce",
+  "topic": "medicare/aid",
+  "seated": 3,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/David_P._Joyce",
+   "https://en.wikipedia.org/wiki/Republican_Main_Street_Partnership"
+  ],
+  "code": "AFFIL+ABSENCE",
+  "why": "Joyce/medicare-aid: a 'moderate Republican' label, two caucuses, and an absence declining 4 and 5. STANDARD.md's defensive-record rule needs a RECORD; there is none."
+ },
+ {
+  "T": "C023",
+  "key": "17e59190-17e2-4a90-8353-b5ea8d083480|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "17e59190-17e2-4a90-8353-b5ea8d083480",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "David Schweikert",
+  "topic": "ukraine-support",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/David_Schweikert",
+   "https://ballotpedia.org/David_Schweikert"
+  ],
+  "code": "OFFAXIS+AFFIL",
+  "why": "Schweikert/ukraine: the one named vote is SYRIA troop removal, and the Freedom Caucus attribution is undercut by the row's own '(departed 2023)'."
+ },
+ {
+  "T": "C024",
+  "key": "291f71df-c5c2-4f0a-b6be-d762d7aec9dd|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "291f71df-c5c2-4f0a-b6be-d762d7aec9dd",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Deborah K. Ross",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Deborah_K._Ross"
+  ],
+  "code": "ADMITS+AFFIL",
+  "why": "Ross/ukraine: states outright that no roll-call vote was retrievable and rests on membership."
+ },
+ {
+  "T": "C025",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Denny Hoskins",
+  "topic": "civil-rights",
+  "seated": 5,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL+MAXIMAL-RUNG",
+  "why": "Hoskins/civil-rights: caucus platform and an asserted 16-year record naming nothing, seated at the ladder's extreme."
+ },
+ {
+  "T": "C026",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+  "name": "Denny Hoskins",
+  "topic": "climate-change",
+  "seated": 5,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL",
+  "why": "Hoskins/climate-change: Freedom Caucus membership and what the caucus rejects."
+ },
+ {
+  "T": "C027",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|44905f3b-e105-4f6c-afc7-5d223813dbac",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+  "name": "Denny Hoskins",
+  "topic": "deportation",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL",
+  "why": "Hoskins/deportation: a caucus label, a vague 'supports firm enforcement', and a defamation incident that is not a position."
+ },
+ {
+  "T": "C028",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|a22215c3-6693-4bc2-b248-01aebba14570",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+  "name": "Denny Hoskins",
+  "topic": "fossil-fuels",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL+GEO",
+  "why": "Hoskins/fossil-fuels: caucus, district geography, and 'Missouri conservatives consistently support'."
+ },
+ {
+  "T": "C029",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Denny Hoskins",
+  "topic": "healthcare",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Hoskins/healthcare: opposition attributed through a legislative bloc with no vote named; rung 4's 'only help the poorest' clause unevidenced."
+ },
+ {
+  "T": "C031",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "name": "Denny Hoskins",
+  "topic": "redistricting",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Hoskins/redistricting: the caucus position as described is rung 5 and the row seats 4."
+ },
+ {
+  "T": "C032",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|6b9ba6d9-1001-43f5-b073-4d37130696fd",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+  "name": "Denny Hoskins",
+  "topic": "religious-freedom",
+  "seated": 5,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL",
+  "why": "Hoskins/religious-freedom: caucus platform plus 'Missouri conservatives passed multiple measures'. Maximal rung."
+ },
+ {
+  "T": "C033",
+  "key": "b7318128-42e4-4285-989d-11a849f76e95|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "b7318128-42e4-4285-989d-11a849f76e95",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Denny Hoskins",
+  "topic": "taxes",
+  "seated": 5,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Denny_Hoskins"
+  ],
+  "code": "AFFIL",
+  "why": "Hoskins/taxes: the Freedom Caucus platform, and a 16-year record with nothing named. Maximal rung."
+ },
+ {
+  "T": "C035",
+  "key": "b7612f49-c914-4ea7-a6da-559d71f313c2|c1ac1330-47f7-44ec-baf3-c913d926b97c",
+  "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+  "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+  "name": "Derek Tran",
+  "topic": "childcare",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Derek_Tran",
+   "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+   "https://en.wikipedia.org/wiki/California%27s_45th_congressional_district"
+  ],
+  "code": "AFFIL+OFFAXIS",
+  "why": "Derek Tran/childcare: a caucus co-chairmanship, his own childhood on SNAP and WIC, and 'emphasis on affordability'. Nothing childcare-specific."
+ },
+ {
+  "T": "C037",
+  "key": "b7612f49-c914-4ea7-a6da-559d71f313c2|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+  "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+  "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+  "name": "Derek Tran",
+  "topic": "misinformation",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Derek_Tran",
+   "https://en.wikipedia.org/wiki/New_Democrat_Coalition",
+   "https://en.wikipedia.org/wiki/Congressional_Taiwan_Caucus"
+  ],
+  "code": "OFFAXIS",
+  "why": "Derek Tran/misinformation: a real own vote, but on foreign influence in HIGHER EDUCATION; the ladder is platform content moderation."
+ },
+ {
+  "T": "C038",
+  "key": "786af5d2-9502-401c-a3ed-61de88e589e9|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "786af5d2-9502-401c-a3ed-61de88e589e9",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Dina Titus",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Dina_Titus",
+   "https://en.wikipedia.org/wiki/Congressional_Equality_Caucus"
+  ],
+  "code": "AFFIL+SCORE",
+  "why": "Titus/civil-rights: caucus, a 2010 commission appointment (office duty), and a 93.82% Progressive Punch score."
+ },
+ {
+  "T": "C039",
+  "key": "e08ec276-3194-41d4-833b-953f27454857|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "e08ec276-3194-41d4-833b-953f27454857",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Frank J. Mrvan",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Frank_J._Mrvan"
+  ],
+  "code": "AFFIL",
+  "why": "Mrvan/same-sex-marriage: membership plus 'consistent progressive voting record'."
+ },
+ {
+  "T": "C043",
+  "key": "6cad043f-a4c0-48d5-af76-fdf70d319920|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "6cad043f-a4c0-48d5-af76-fdf70d319920",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Greg Landsman",
+  "topic": "taxes",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Greg_Landsman",
+   "https://ballotpedia.org/Greg_Landsman"
+  ],
+  "code": "AFFIL",
+  "why": "Landsman/taxes: three caucuses and 'centrist positioning'. Same person's abortion row is the corpus's cleanest KEEP - per-person quality is not uniform."
+ },
+ {
+  "T": "C045",
+  "key": "85ec278d-c143-4128-a058-e468899ded8f|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "85ec278d-c143-4128-a058-e468899ded8f",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "J. French Hill",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/French_Hill_(politician)"
+  ],
+  "code": "AFFIL",
+  "why": "French Hill/ukraine: membership plus 'has consistently supported Ukraine's defense' as characterisation."
+ },
+ {
+  "T": "C046",
+  "key": "761aa2ac-d877-4654-97c7-60bf40980f63|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Jill N. Tokuda",
+  "topic": "same-sex-marriage",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Jill_Tokuda"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Tokuda/same-sex-marriage: the row's own gloss says 'Value 2' while seated at 3, and the Equality Caucus platform it cites is rung 1."
+ },
+ {
+  "T": "C047",
+  "key": "c02d8232-aa7a-429a-9abe-dccb409c1c6f|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "c02d8232-aa7a-429a-9abe-dccb409c1c6f",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Joseph D. Morelle",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Joe_Morelle"
+  ],
+  "code": "AFFIL+SCORE",
+  "why": "Morelle/ukraine: founding membership plus a 100% Biden alignment score."
+ },
+ {
+  "T": "C049",
+  "key": "a6a6d7b2-88d4-441b-8191-d5baa0db6987|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "a6a6d7b2-88d4-441b-8191-d5baa0db6987",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Josh Riley",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Josh_Riley"
+  ],
+  "code": "AFFIL",
+  "why": "Josh Riley/same-sex-marriage: 'Membership in this caucus reflects a position' - the defect stated outright."
+ },
+ {
+  "T": "C050",
+  "key": "9b7310b5-d12f-419d-af87-6ad834a1055a|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "9b7310b5-d12f-419d-af87-6ad834a1055a",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Keith Ellison",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Keith_Ellison"
+  ],
+  "code": "AFFIL+OFFAXIS",
+  "why": "Ellison/same-sex-marriage: a caucus vice-chairmanship, a vague 2010 interview line, and an AG coalition on GENDER-AFFIRMING CARE, not marriage."
+ },
+ {
+  "T": "C052",
+  "key": "8a0696c4-5536-4309-9d02-b0ebb61de56b|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "8a0696c4-5536-4309-9d02-b0ebb61de56b",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Kelly Morrison",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kelly_Morrison"
+  ],
+  "code": "AFFIL",
+  "why": "Morrison/same-sex-marriage: 'her membership documents this stance'."
+ },
+ {
+  "T": "C054",
+  "key": "7d800c44-7a73-440e-8023-14f93fde06c0|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "7d800c44-7a73-440e-8023-14f93fde06c0",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Kristen McDonald Rivet",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kristen_McDonald_Rivet"
+  ],
+  "code": "AFFIL+GEO",
+  "why": "McDonald Rivet/civil-rights: caucus, district characteristics, and the majority's legislative record with nothing named."
+ },
+ {
+  "T": "C055",
+  "key": "7d800c44-7a73-440e-8023-14f93fde06c0|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "7d800c44-7a73-440e-8023-14f93fde06c0",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Kristen McDonald Rivet",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kristen_McDonald_Rivet"
+  ],
+  "code": "AFFIL",
+  "why": "McDonald Rivet/same-sex-marriage: membership as 'a documented commitment'."
+ },
+ {
+  "T": "C056",
+  "key": "c8cd097f-ce28-40b1-8236-18bc111ad868|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "c8cd097f-ce28-40b1-8236-18bc111ad868",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "LaMonica McIver",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/LaMonica_McIver"
+  ],
+  "code": "OFFAXIS+AFFIL",
+  "why": "McIver/civil-rights: a nonprofit she co-founded (leadership development) and an ICE facility oversight visit. Neither evidences strengthening civil-rights ENFORCEMENT. BORDERLINE."
+ },
+ {
+  "T": "C057",
+  "key": "bf942e86-fe8c-496f-9a36-212e9f9403e3|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "bf942e86-fe8c-496f-9a36-212e9f9403e3",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Madeleine Dean",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Madeleine_Dean"
+  ],
+  "code": "AFFIL+SCORE",
+  "why": "Madeleine Dean/ukraine: membership, a 100% Biden score, and reasoning from BIDEN's stated position."
+ },
+ {
+  "T": "C058",
+  "key": "a24347dd-c92d-4fca-9629-48cf7631b0c5|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "a24347dd-c92d-4fca-9629-48cf7631b0c5",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Marie Gluesenkamp Perez",
+  "topic": "civil-rights",
+  "seated": 3,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marie_Gluesenkamp_Perez"
+  ],
+  "code": "AFFIL+AWAY",
+  "why": "Gluesenkamp Perez/civil-rights: membership in a rights caucus would support rung 2, and an absence drags the seat down to 3."
+ },
+ {
+  "T": "C059",
+  "key": "a24347dd-c92d-4fca-9629-48cf7631b0c5|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "a24347dd-c92d-4fca-9629-48cf7631b0c5",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Marie Gluesenkamp Perez",
+  "topic": "same-sex-marriage",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marie_Gluesenkamp_Perez"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Gluesenkamp Perez/same-sex-marriage: the row invents a caucus religious-exemption position to justify rung 3; the caucus advocates full equality."
+ },
+ {
+  "T": "C060",
+  "key": "cd4e9f29-d1b0-40c1-9e4a-5024cdc7b028|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "cd4e9f29-d1b0-40c1-9e4a-5024cdc7b028",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Michael Lawler",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mike_Lawler"
+  ],
+  "code": "AFFIL",
+  "why": "Lawler/ukraine: membership only."
+ },
+ {
+  "T": "C061",
+  "key": "527e6a87-9593-4191-bd25-ddfa3159ee52|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "527e6a87-9593-4191-bd25-ddfa3159ee52",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Mike Flood",
+  "topic": "taxes",
+  "seated": 4,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Mike_Flood_(politician)"
+  ],
+  "code": "AFFIL+OFFAXIS",
+  "why": "Mike Flood/taxes: a town-hall remark about DOGE is federal spending and bureaucracy, not tax rates; the rest is a caucus chairmanship and party positioning."
+ },
+ {
+  "T": "C062",
+  "key": "9c8e165b-9079-4ed2-ad0a-0a9d98fd9931|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "9c8e165b-9079-4ed2-ad0a-0a9d98fd9931",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Morgan McGarvey",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Morgan_McGarvey"
+  ],
+  "code": "AFFIL",
+  "why": "McGarvey/same-sex-marriage: 'His membership represents a documented, affirmative action'."
+ },
+ {
+  "T": "C063",
+  "key": "07255876-bbe6-4f6a-8c68-75939d9b5128|669cac97-66a6-4087-b036-936fbe62efb3",
+  "politician_id": "07255876-bbe6-4f6a-8c68-75939d9b5128",
+  "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+  "name": "Ro Khanna",
+  "topic": "housing",
+  "seated": 4,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ro_Khanna"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Ro Khanna/housing: YIMBY membership, and the row's own description (zoning reform, deregulation) is rung 5 while it seats 4."
+ },
+ {
+  "T": "C064",
+  "key": "07255876-bbe6-4f6a-8c68-75939d9b5128|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "07255876-bbe6-4f6a-8c68-75939d9b5128",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Ro Khanna",
+  "topic": "ukraine-support",
+  "seated": 3,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ro_Khanna"
+  ],
+  "code": "RUNGTEXT",
+  "why": "Ro Khanna/ukraine: the named on-axis document - the October 2022 CPC letter he signed - urged DIPLOMACY ALONGSIDE CONTINUED AID, which is rung 2. Rung 3's distinguishing clause is LIMITED humanitarian aid, and an off-axis non-interventionist pattern (Yemen, Syria, Iran) moves the seat there."
+ },
+ {
+  "T": "C065",
+  "key": "28a5f098-7f90-4fa9-af7e-c034d49cb538|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+  "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+  "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+  "name": "Robert Garcia",
+  "topic": "misinformation",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Congressional_Freethought_Caucus",
+   "https://en.wikipedia.org/wiki/Robert_Garcia_(California_congressman)",
+   "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+  ],
+  "code": "AFFIL",
+  "why": "Robert Garcia/misinformation: two caucuses and what they promote."
+ },
+ {
+  "T": "C066",
+  "key": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Robert Menendez",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rob_Menendez"
+  ],
+  "code": "AFFIL",
+  "why": "Rob Menendez/civil-rights: two caucus memberships and 'his pattern of advocacy'."
+ },
+ {
+  "T": "C068",
+  "key": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c|669cac97-66a6-4087-b036-936fbe62efb3",
+  "politician_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+  "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+  "name": "Robert Menendez",
+  "topic": "housing",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rob_Menendez"
+  ],
+  "code": "AFFIL",
+  "why": "Rob Menendez/housing: Renters Caucus membership and campaigning on housing costs - salience, not a position."
+ },
+ {
+  "T": "C070",
+  "key": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "fc7a00d6-c552-4627-87f7-b0fc5cfe486c",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Robert Menendez",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rob_Menendez"
+  ],
+  "code": "AFFIL",
+  "why": "Rob Menendez/ukraine: membership plus 'Democratic Party alignment'."
+ },
+ {
+  "T": "C071",
+  "key": "7ceb0371-baba-4d05-9204-2852cc91dee0|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "7ceb0371-baba-4d05-9204-2852cc91dee0",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Sam Liccardo",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sam_Liccardo"
+  ],
+  "code": "OFFAXIS",
+  "why": "Liccardo/civil-rights: the Digital Inclusion Fund and Cash for Trash are his own named programmes with real figures - and they are anti-poverty, not civil-rights enforcement. The Siddiqui shape."
+ },
+ {
+  "T": "C072",
+  "key": "7ceb0371-baba-4d05-9204-2852cc91dee0|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "7ceb0371-baba-4d05-9204-2852cc91dee0",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Sam Liccardo",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sam_Liccardo"
+  ],
+  "code": "AFFIL",
+  "why": "Liccardo/same-sex-marriage: membership only."
+ },
+ {
+  "T": "C073",
+  "key": "7ceb0371-baba-4d05-9204-2852cc91dee0|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "7ceb0371-baba-4d05-9204-2852cc91dee0",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Sam Liccardo",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Sam_Liccardo"
+  ],
+  "code": "AFFIL",
+  "why": "Liccardo/ukraine: 'Caucus membership documents his position.'"
+ },
+ {
+  "T": "C075",
+  "key": "98b05c70-2a30-48ea-81f3-b3216ffb0ca0|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "98b05c70-2a30-48ea-81f3-b3216ffb0ca0",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Suhas Subramanyam",
+  "topic": "same-sex-marriage",
+  "seated": 3,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Suhas_Subramanyam"
+  ],
+  "code": "AFFIL+RUNGTEXT",
+  "why": "Subramanyam/same-sex-marriage: 'Caucus membership is an active legislative commitment', and the caucus position cited is rung 1 while the row seats 3."
+ },
+ {
+  "T": "C076",
+  "key": "7e37b0b1-d311-4cf3-8f19-f861626d5d98|24e9212c-b011-422a-865c-093e35050901",
+  "politician_id": "7e37b0b1-d311-4cf3-8f19-f861626d5d98",
+  "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+  "name": "Timothy M. Kennedy",
+  "topic": "ukraine-support",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Tim_Kennedy_(politician)"
+  ],
+  "code": "AFFIL",
+  "why": "Tim Kennedy/ukraine: membership only."
+ },
+ {
+  "T": "C077",
+  "key": "dde8a67d-a16a-4442-9732-3e620f4f561b|0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "politician_id": "dde8a67d-a16a-4442-9732-3e620f4f561b",
+  "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+  "name": "Yassamin Ansari",
+  "topic": "civil-rights",
+  "seated": 2,
+  "serving_season": 1,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yassamin_Ansari"
+  ],
+  "code": "AFFIL+IDENTITY",
+  "why": "Ansari/civil-rights: a caucus, a block party, and 'her identity as the first Iranian-American elected in Arizona informs her advocacy'. Identity offered as evidence is the purest form of this defect."
+ },
+ {
+  "T": "C079",
+  "key": "dde8a67d-a16a-4442-9732-3e620f4f561b|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "dde8a67d-a16a-4442-9732-3e620f4f561b",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Yassamin Ansari",
+  "topic": "same-sex-marriage",
+  "seated": 2,
+  "serving_season": 2,
+  "sources": [
+   "https://en.wikipedia.org/wiki/Yassamin_Ansari"
+  ],
+  "code": "AFFIL+OFFAXIS",
+  "why": "Ansari/same-sex-marriage: 'publicly supports LGBTQ+ rights', a block party, and CPC membership; nothing marriage-specific."
+ }
+]

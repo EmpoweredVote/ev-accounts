@@ -1,0 +1,356 @@
+[
+ {
+  "T": "R04",
+  "action": "RESEAT",
+  "key": "a6d96375-a61c-4a13-9afa-99914456e8c2|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "a6d96375-a61c-4a13-9afa-99914456e8c2",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Carl DeMaio",
+  "topic": "same-sex-marriage",
+  "from": 3,
+  "to": 2,
+  "code": "RUNGTEXT",
+  "why": "DeMaio/same-sex-marriage 3 -> 2: FETCHED. The words 'religious' and 'exemption' DO NOT APPEAR ON THE PAGE, so rung 3's distinguishing clause has no support at all. What the page does carry is his announced support for same-sex marriage, his same-sex partner in a 2014 campaign ad, and a Log Cabin Republicans endorsement - which is rung 2. He is himself gay and married; seating him at a religious-carve-out rung is a substantive error, not a technicality.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Carl_DeMaio"
+  ]
+ },
+ {
+  "T": "R05",
+  "action": "RESEAT",
+  "key": "8f59c9fd-03f9-4652-bc4a-418bd8764a1f|fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+  "politician_id": "8f59c9fd-03f9-4652-bc4a-418bd8764a1f",
+  "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+  "name": "Chyanne Chen",
+  "topic": "growth-and-development",
+  "from": 2,
+  "to": 1,
+  "code": "RUNGTEXT",
+  "why": "Chen/growth-and-development 2 -> 1: FETCHED. The page carries MORE than the repair claimed - she VOTED AGAINST the December 2025 bill to upzone 60% of San Francisco, and is quoted at length. 'infrastructure' and 'capacity' DO NOT APPEAR, so rung 2's distinguishing clause is unsupported. Her vote to block the largest upzoning plus 'doing things to our communities, not with our communities' is rung 1 - holding the pace down with residents having a say. JUDGMENT CALL: her stated reason is process and affordability, not pace.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Chyanne_Chen"
+  ]
+ },
+ {
+  "T": "R11",
+  "action": "RESEAT",
+  "key": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3|fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+  "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+  "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+  "name": "Eunisses Hernandez",
+  "topic": "growth-and-development",
+  "from": 2,
+  "to": 1,
+  "code": "RUNGTEXT",
+  "why": "Hernandez/growth-and-development 2 -> 1: her own quoted words are 'My plan to fight gentrification is to be the biggest barrier I can to luxury and market-rate development.' That is rung 1, holding the pace of growth down - not rung 2's infrastructure pacing, a rationale she never gives. Rung 1's referendum clause is not evidenced; it is the nearest rung on a single-choice ladder and the new reasoning says so.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Eunisses_Hernandez"
+  ]
+ },
+ {
+  "T": "R12",
+  "action": "RESEAT",
+  "key": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3|669cac97-66a6-4087-b036-936fbe62efb3",
+  "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+  "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+  "name": "Eunisses Hernandez",
+  "topic": "housing",
+  "from": 3,
+  "to": 2,
+  "code": "RUNGTEXT",
+  "why": "Hernandez/housing 3 -> 2: 🔴 THE SEASON REMAP MOVED HER ONTO A RUNG THAT NEGATES HER OWN EVIDENCE. S1 rung 2 read 'rent caps, required affordable units, AND PUBLICLY FUND NEW HOUSING' - correct for her, since she pushed the city to build a large-scale SOCIAL HOUSING programme. S2 rung 3 reads 'BUILD NO PUBLIC HOUSING, but set binding rules'. The remap dropped the public-funding limb and left her asserting the opposite of what she campaigned for. S2 rung 2 - 'build a large public housing sector' - is exactly social housing.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Eunisses_Hernandez"
+  ]
+ },
+ {
+  "T": "R24",
+  "action": "RESEAT",
+  "key": "6c795b3b-d59d-4667-b79e-8a2e27e0c283|c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+  "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+  "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+  "name": "Hugo Soto-Martinez",
+  "topic": "jail-capacity",
+  "from": 2,
+  "to": 1,
+  "code": "RUNGTEXT",
+  "why": "Soto-Martinez/jail-capacity 2 -> 1: his evidence is supporting Measure J, which allocates at least 10% of county funding to community reinvestment and alternatives to incarceration. That IS rung 1's text - redirecting incarceration funding into community programmes. Rung 2 is about diversion and bail mechanisms he is not shown advocating. Hernandez sits at rung 1 on the same measure (R13).",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez"
+  ]
+ },
+ {
+  "T": "R25",
+  "action": "RESEAT",
+  "key": "6c795b3b-d59d-4667-b79e-8a2e27e0c283|e9ebefcd-c496-45e8-b816-a79f8442ba85",
+  "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+  "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+  "name": "Hugo Soto-Martinez",
+  "topic": "public-safety-approach",
+  "from": 2,
+  "to": 1,
+  "code": "RUNGTEXT",
+  "why": "Soto-Martinez/public-safety-approach 2 -> 1: 🔴 THE SAME ROLL-CALL VOTE SEATS TWO DIFFERENT RUNGS. He voted against the police raises arguing they would 'pull money away from mental health clinicians, homeless outreach workers' - that is rung 1, redirecting police budget to social services, word for word. Hernandez's row (R15) cites the SAME vote and is seated at 1. Rung 2 asserts maintaining staffing with co-responders, which neither of them says.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez"
+  ]
+ },
+ {
+  "T": "R28",
+  "action": "RESEAT",
+  "key": "f224a300-8b54-4b57-b988-5c340667f99b|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "politician_id": "f224a300-8b54-4b57-b988-5c340667f99b",
+  "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "name": "Kathy KL Tran",
+  "topic": "abortion",
+  "from": 2,
+  "to": 1,
+  "code": "RUNGTEXT",
+  "why": "Tran/abortion 2 -> 1: 🔴 FETCHED, AND THE REPAIR SKIPPED A DEDICATED POLICY SECTION ON THE PAGE IT WAS READING. The page carries '== Policy positions == === Abortion ===' recording that she introduced the REPEAL ACT, cutting the physicians required to approve a third-TERM abortion from three to one and lowering the threshold to 'any medical reason'. That is rung 1's 'at all stages'; her Planned Parenthood funding quote supplies rung 1's funding limb. The repair quoted the campaign line and left the instrument on the table.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Kathy_Tran"
+  ]
+ },
+ {
+  "T": "R32",
+  "action": "RESEAT",
+  "key": "ece32bfa-26de-4177-9bb3-cea506870747|48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+  "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "name": "Marqueece Harris-Dawson",
+  "topic": "redistricting",
+  "from": 1,
+  "to": 2,
+  "code": "RUNGTEXT",
+  "why": "Harris-Dawson/redistricting 1 -> 2: FETCHED. The page says he 'advocated for an INDEPENDENT REDISTRICTING COMMISSION by opening up the charter for full reform'. The words 'citizens' and 'elected officials' DO NOT APPEAR, so rung 1's 'no elected officials involved at any level' is unsupported - while rung 2's headline, 'independent redistricting commissions', is the page's own phrase.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marqueece_Harris-Dawson"
+  ]
+ },
+ {
+  "T": "R36",
+  "action": "RESEAT",
+  "key": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "R. Creigh Deeds",
+  "topic": "same-sex-marriage",
+  "from": 3,
+  "to": 2,
+  "code": "RUNGTEXT+VINTAGE",
+  "why": "Deeds/same-sex-marriage 3 -> 2: his recorded 2006 vote against the Virginia constitutional amendment banning same-sex marriage is opposition to a ban, which is rung 2's territory; rung 3's religious-exemption clause is unevidenced and was carried through the remap from an S1 rung that also asserted it. ⚠ VINTAGE: a 2006 basis for a sitting senator - the re-seat is provisional and the row routes to re-research.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Creigh_Deeds",
+   "https://ballotpedia.org/Creigh_Deeds"
+  ]
+ },
+ {
+  "T": "R02",
+  "action": "BLANK",
+  "key": "77ce6e63-7379-4c8a-9038-5c708510d6cc|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "77ce6e63-7379-4c8a-9038-5c708510d6cc",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Briana D. Sewell",
+  "topic": "healthcare",
+  "from": 2,
+  "to": null,
+  "code": "EMPLOYER",
+  "why": "Sewell/healthcare: FETCHED. The page says she worked for 'Campaign for a Family Friendly Economy, AN ORGANIZATION THAT ADVOCATES FOR ... affordable healthcare'. The repair attributed her former EMPLOYER's platform to her. The page carries no 'she supports' or 'she advocates' anywhere, and 'affordable healthcare' seats no rung in any case.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Briana_Sewell"
+  ]
+ },
+ {
+  "T": "R07",
+  "action": "BLANK",
+  "key": "86c12b33-cb76-41da-bdf0-6b58a0cbbed6|1935979c-b290-42e4-baa5-8cb0138b4ffa",
+  "politician_id": "86c12b33-cb76-41da-bdf0-6b58a0cbbed6",
+  "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+  "name": "David Chiu",
+  "topic": "local-environment",
+  "from": 2,
+  "to": null,
+  "code": "OFFAXIS",
+  "why": "Chiu/local-environment: a nail-salon worker-safety programme and AB 546, which streamlines SOLAR PERMITTING. Neither is about the burden on development to prove it will not damage the environment, which is rung 2. AB 546 arguably leans the other way.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/David_Chiu_(politician)"
+  ]
+ },
+ {
+  "T": "R09",
+  "action": "BLANK",
+  "key": "cea4db8b-acb5-4ebb-be09-e731d4412249|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "cea4db8b-acb5-4ebb-be09-e731d4412249",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Elizabeth R. Guzman",
+  "topic": "healthcare",
+  "from": 2,
+  "to": null,
+  "code": "OFFAXIS",
+  "why": "Guzman/healthcare: collective bargaining and paid sick leave for home health care WORKERS is labour policy. This ladder asks about COVERAGE.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Elizabeth_Guzman"
+  ]
+ },
+ {
+  "T": "R17",
+  "action": "BLANK",
+  "key": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3|ba59337e-30e2-4aba-a39a-426b3366eb27",
+  "politician_id": "317698c6-2ae7-4f7f-ab39-bb3811ed50f3",
+  "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+  "name": "Eunisses Hernandez",
+  "topic": "transportation-priorities",
+  "from": 1,
+  "to": null,
+  "code": "AFFIRM",
+  "why": "Hernandez/transportation-priorities: speaking at a bus-shade launch, funding a traffic STUDY, and 'took part in the council's handling of' a gondola proposal. None of these is a position, and rung 1 is the ladder's end rung.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Eunisses_Hernandez"
+  ]
+ },
+ {
+  "T": "R26",
+  "action": "BLANK",
+  "key": "6c795b3b-d59d-4667-b79e-8a2e27e0c283|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "6c795b3b-d59d-4667-b79e-8a2e27e0c283",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Hugo Soto-Martinez",
+  "topic": "taxes",
+  "from": 2,
+  "to": null,
+  "code": "OFFAXIS",
+  "why": "Soto-Martinez/taxes: opposing a budget that cut every department except the LAPD is a SPENDING position. This ladder asks about tax rates, and the row says nothing about them.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Hugo_Soto-Martinez"
+  ]
+ },
+ {
+  "T": "R30",
+  "action": "BLANK",
+  "key": "c490eece-71f4-4051-975d-8fa5ed5f652b|48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "politician_id": "c490eece-71f4-4051-975d-8fa5ed5f652b",
+  "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+  "name": "Marcus B. Simon",
+  "topic": "redistricting",
+  "from": 2,
+  "to": null,
+  "code": "DUTY",
+  "why": "Simon/redistricting: being APPOINTED to the 2021 Virginia Redistricting Commission is an office duty, not a position. Serving on a commission is not advocating for commissions. STANDARD.md step 1(a).",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marcus_B._Simon"
+  ]
+ },
+ {
+  "T": "R31",
+  "action": "BLANK",
+  "key": "ece32bfa-26de-4177-9bb3-cea506870747|eb3d1247-0de1-4b7f-baec-7259861efd53",
+  "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+  "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+  "name": "Marqueece Harris-Dawson",
+  "topic": "economic-development",
+  "from": 2,
+  "to": null,
+  "code": "RUNGTEXT",
+  "why": "Harris-Dawson/economic-development: FETCHED and confirmed - $1.7bn leveraged for streetscapes, and a Senior Meals Program supporting 32 local businesses. The infrastructure figure is rung 1's positive clause and the meals programme is rung 2's, while BOTH rungs turn on a negative commitment about subsidies to outside companies that he has never made. The evidence does not discriminate.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Marqueece_Harris-Dawson"
+  ]
+ },
+ {
+  "T": "R33",
+  "action": "BLANK",
+  "key": "108dfd2c-571a-4fef-aaf2-621c3238eea6|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "politician_id": "108dfd2c-571a-4fef-aaf2-621c3238eea6",
+  "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+  "name": "Michelle Rodriguez",
+  "topic": "healthcare",
+  "from": 2,
+  "to": null,
+  "code": "RUNGTEXT",
+  "why": "Rodriguez/healthcare: 'her legislative priorities included advancing universal healthcare' - a priority-list entry, and 'universal healthcare' is ambiguous between rung 1 (public sector) and rung 2 (universal coverage through a mix). It establishes neither.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Michelle_Rodriguez_(politician)"
+  ]
+ },
+ {
+  "T": "R34",
+  "action": "BLANK",
+  "key": "108dfd2c-571a-4fef-aaf2-621c3238eea6|4938766b-b45a-46e3-93bd-b8b30651271a",
+  "politician_id": "108dfd2c-571a-4fef-aaf2-621c3238eea6",
+  "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+  "name": "Michelle Rodriguez",
+  "topic": "homelessness",
+  "from": 2,
+  "to": null,
+  "code": "AFFIRM",
+  "why": "Rodriguez/homelessness: 'her legislative priorities included addressing homelessness.' That is a salience claim with no direction whatever, and it is seated at a rung asserting decriminalisation. The clearest defect in the queue.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Michelle_Rodriguez_(politician)"
+  ]
+ },
+ {
+  "T": "R35",
+  "action": "BLANK",
+  "key": "597a4057-4ccc-43f6-bf97-bcc701d7e637|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "597a4057-4ccc-43f6-bf97-bcc701d7e637",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "Phillip A. Scott",
+  "topic": "taxes",
+  "from": 4,
+  "to": null,
+  "code": "RUNGTEXT",
+  "why": "Phillip Scott/taxes: one enacted bill letting localities LOWER vehicle tax rates as used-car prices rose. Rung 4 asserts cutting taxes for everyone AND scaling back public services; rung 3 asks about closing loopholes. A narrow local-option measure establishes no system-level posture.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Phillip_Scott_(Virginia_politician)"
+  ]
+ },
+ {
+  "T": "R37",
+  "action": "BLANK",
+  "key": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "politician_id": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd",
+  "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+  "name": "R. Creigh Deeds",
+  "topic": "taxes",
+  "from": 2,
+  "to": null,
+  "code": "AWAY",
+  "why": "Deeds/taxes: 🔴 THE BASIS POINTS THE OPPOSITE WAY. In January 2009 he proposed a $10,000 business tax CREDIT and supported a sales tax EXEMPTION - tax cuts - and the row seats him at 'moderately RAISE taxes on wealthy people and large companies'. Same shape as Scott Brown in mig 1916, and vintage besides.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Creigh_Deeds",
+   "https://ballotpedia.org/Creigh_Deeds"
+  ]
+ },
+ {
+  "T": "R38",
+  "action": "BLANK",
+  "key": "ff77225c-51f9-4628-acc3-020d40382d05|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05",
+  "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+  "name": "Rick Chavez Zbur",
+  "topic": "same-sex-marriage",
+  "from": 2,
+  "to": null,
+  "code": "OFFAXIS",
+  "why": "Zbur/same-sex-marriage: FETCHED, and the word MARRIAGE does not appear on the Wikipedia page at all. ▶ REPAIR ATTEMPTED AND FAILED within bounded effort: his Ballotpedia page carries no marriage, no ACA 5 and no Proposition 3 either (only the Equality California role already known), and the Proposition 3 page names no authors. He very likely co-authored ACA 5 alongside Gabriel, but no accessible source shows it, and an unfetched claim is not a citation. Blanked and ROUTED to re-research.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Rick_Zbur"
+  ]
+ },
+ {
+  "T": "R40",
+  "action": "BLANK",
+  "key": "03ee06fb-9b51-41cc-8942-4632f3a724e3|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3",
+  "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+  "name": "Shannon Grove",
+  "topic": "abortion",
+  "from": 4,
+  "to": null,
+  "code": "RUNGTEXT",
+  "why": "Grove/abortion: ▶ REPAIR ATTEMPTED, AND IT DOES NOT RESCUE THE CHAIR. The pages reference identifies the unnamed bill - a 2014 Assembly bill banning sex-selective abortion, which failed - and her opposition to the 2015 crisis-pregnancy-centre disclosure law. Both are real and both point anti-abortion, but neither states an EXCEPTION FRAMEWORK, which is what rung 4 (rape, incest, life of the mother) and rung 3 both turn on. 🔴 Her Ballotpedia page Planned Parenthood hits are SCORECARD BOILERPLATE listing which organisations rate California legislators - present on every such page and evidence of nothing.",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Shannon_Grove"
+  ]
+ }
+]

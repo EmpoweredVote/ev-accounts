@@ -1,0 +1,69 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "vr-cvanderwall",
+      "person": "Curtis VanderWall",
+      "politician_id": "e40b492e-dc22-4150-9c07-6966e01f41a6",
+      "office_id": "8e69f18d-4e79-4252-93f0-bfb597dc51fb",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "MI-SB-303-2021",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/billenrolled/Senate/htm/2021-SNB-0303.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        },
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/Journal/Senate/htm/2021-SJ-10-06-077.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-routman",
+      "person": "Rick Outman",
+      "politician_id": "e118ad3d-4541-4710-bf50-f643f07f7921",
+      "office_id": "24e99705-c4a5-4e41-b073-f60a4c9f0c92",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "MI-SB-303-2021",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/billenrolled/Senate/htm/2021-SNB-0303.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        },
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/Journal/Senate/htm/2021-SJ-10-06-077.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        }
+      ]
+    }
+  ]
+}

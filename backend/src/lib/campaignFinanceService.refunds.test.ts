@@ -24,7 +24,7 @@ let agg: AggFixture[] = [];
 let fecReceipts: number | null = null;
 let inserted: unknown[] | null = null;
 
-const refundFiltered = (sql: string) => /AND c\.amount >= 0/.test(sql);
+const refundFiltered = (sql: string) => /AND \(?c\.amount >= 0/.test(sql);
 const rowsFor = (sql: string, params: unknown[]) => {
   const cycle = params[1] as string;
   // refreshSummaryAgg keys by politician_source_id; getSummary by politician (one here).
@@ -65,7 +65,7 @@ const query = vi.fn(async (sql: string, params: unknown[] = []) => {
   if (sql.includes('SELECT DISTINCT c.election_cycle')) {
     return { rows: [...new Set(contribs.map((c) => c.cycle))].sort().reverse().map((election_cycle) => ({ election_cycle })) };
   }
-  const all = rowsFor(sql.replace(/AND c\.amount >= 0/g, ''), params); // totals see every row
+  const all = rowsFor(sql.replace(/AND \(?c\.amount >= 0/g, ''), params); // totals see every row
   const gross = all.filter((c) => c.amount >= 0);
   const refunds = all.filter((c) => c.amount < 0);
   if (sql.includes('AS row_count')) {

@@ -1,0 +1,128 @@
+{
+  "id": "TX-HB-1925-2021",
+  "scope": "state:tx",
+  "title": "Relating to prohibitions on camping in a public place and to a political subdivision's designation of property for camping by homeless individuals; creating a criminal offense",
+  "urls": [
+    "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY41FINAL.PDF",
+    "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ05-20-F.PDF",
+    "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY58FINAL.PDF"
+  ],
+  "version": "other",
+  "operative_text": "A person commits an offense if the person intentionally or knowingly camps in a public place without the effective consent of the officer or agency having the legal duty or authority to manage the public place.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-05-06",
+      "body": "TX House",
+      "motion": "Third reading passage (Record 791)",
+      "kind": "roll-call",
+      "yes": 88,
+      "no": 56,
+      "members": [
+        {
+          "name": "Armando Walle",
+          "politician_id": "c456d802-e836-4208-8d18-33402c807429",
+          "vote": "nay"
+        },
+        {
+          "name": "Claudia Ordaz",
+          "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+          "vote": "nay"
+        },
+        {
+          "name": "Diego Bernal",
+          "politician_id": "3a310d29-093f-417b-a23f-885aa3658b12",
+          "vote": "yea"
+        },
+        {
+          "name": "Dustin Burrows",
+          "politician_id": "30063951-196d-4eea-a8da-4ac1702bd867",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Harless",
+          "politician_id": "47101bc2-46a8-4412-b2b6-2347697ba2fe",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2021-05-20",
+      "body": "TX Senate",
+      "motion": "Third reading and final passage (also suspension of 3-day rule and passage to 3rd reading, same 27-4)",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 4,
+      "members": [
+        {
+          "name": "Bob Hall",
+          "politician_id": "452cad0a-57e0-48fd-893a-4101fc41cd48",
+          "vote": "yea"
+        },
+        {
+          "name": "Borris Miles",
+          "politician_id": "67a35228-1353-4044-90b2-cd8fcf48de7b",
+          "vote": "nay"
+        },
+        {
+          "name": "Charles Perry",
+          "politician_id": "eb7ef2a7-d0bb-475e-b2de-d96e6931932c",
+          "vote": "yea"
+        },
+        {
+          "name": "César Blanco",
+          "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-05-28",
+      "body": "TX House",
+      "motion": "Motion to concur in Senate amendments (Record 1560)",
+      "kind": "roll-call",
+      "yes": 101,
+      "no": 45,
+      "members": [
+        {
+          "name": "Claudia Ordaz",
+          "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+          "vote": "nay"
+        },
+        {
+          "name": "Diego Bernal",
+          "politician_id": "3a310d29-093f-417b-a23f-885aa3658b12",
+          "vote": "yea"
+        },
+        {
+          "name": "Dustin Burrows",
+          "politician_id": "30063951-196d-4eea-a8da-4ac1702bd867",
+          "vote": "yea"
+        },
+        {
+          "name": "Giovanni Capriglione",
+          "politician_id": "b652c0bb-1dc5-4043-8a2e-9e12ea034dc8",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Harless",
+          "politician_id": "47101bc2-46a8-4412-b2b6-2347697ba2fe",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

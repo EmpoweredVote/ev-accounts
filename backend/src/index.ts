@@ -82,6 +82,10 @@ import { validationQuestsRouter, startVqCrons } from './vq/app.js';
 // One synchronous request route (POST /api/civic-spaces/assign); NOT a job. See
 // src/civic_spaces/ for the module and its dedicated least-privilege DB pool.
 import civicSpacesRouter from './civic_spaces/routes/assignment.js';
+// Focused Communities — folded in (engine consolidation, same shape as civic_spaces + VQ).
+// Request/reply routes only; NOT a job. See src/focused_communities/app.ts for the seam and
+// src/focused_communities/config/database.ts for its dedicated least-privilege DB pool.
+import { focusedCommunitiesRouter } from './focused_communities/app.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -92,6 +96,8 @@ import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 import { maybeResumeBackfillOnBoot } from './lib/fecBackfill.js';
 import { maybeResumeFecBurstOnBoot } from './lib/fecBurstResume.js';
+import { pool as enginePool } from './lib/db.js';
+import { pool as triviaPool } from './trivia/config/database.js';
 
 const app = express();
 
@@ -279,6 +285,12 @@ app.use(['/ctc/health', '/api/trivia/health'], ctcHealthRouter);
 // /api/vq falls through to the folded VQ routes.
 app.use(['/vq/api', '/api/vq'], validationQuestsRouter);
 
+// === Focused Communities — folded in (engine consolidation) ===
+// /fc/api is the byte-for-byte alias of the old focused-communities service paths, so its
+// frontend cuts over by building with VITE_API_BASE_URL=<this host>/fc; /api/fc is the tidy
+// path. Request/reply only — served under EV_ROLE=api like every other route here.
+app.use(['/fc/api', '/api/fc'], focusedCommunitiesRouter);
+
 export { app }; // For testing
 
 const port = parseInt(env.PORT, 10);
@@ -367,6 +379,9 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
       // Render marks deploys as "Timed Out" after the grace period.
       process.once('SIGTERM', () => {
         server.close(() => process.exit(0));
+        // The new instance is already live and opening sessions under the same ev_api role
+        // cap (15). Hand back the ones this instance is not using; see sessionPoolerPool.ts.
+        void Promise.allSettled([enginePool.releaseIdleSessions(), triviaPool.releaseIdleSessions()]);
       });
     })();
   }

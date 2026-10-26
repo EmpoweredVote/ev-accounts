@@ -88,3 +88,124 @@ and staffs the officers, and state statute (mandates, grants, limits on officers
   school states the rule → `on-question`. A law that only decides which body may contract for
   officers → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..
 - **Study, safety audit or task force** → `study-directive`.
+
+## Higher-law duties by state (codebook 0.6, V4.1 "Small bodies", limb 2)
+
+A school board that acts under one of these duties is carrying out the state's rule, not stating its
+own position (see the 2026-10-16 rulings below). Each entry quotes the operative text as read on the
+official source on 2026-10-16. Check the statute's own history line before applying it to a vote in a
+year this section does not cover.
+
+### Florida — s. 1006.12, Florida Statutes (safe-school officers)
+
+- **Duty:** each school board and superintendent must put one or more safe-school officers at every
+  school facility, charter schools included. The board picks the mix of four options: school resource
+  officer (sub. 1), school safety officer (sub. 2), school guardian (sub. 3), school security guard
+  (sub. 4).
+- **Operative sentence:** "each district school board and school district superintendent shall partner
+  with law enforcement agencies or security agencies to establish or assign one or more safe-school
+  officers at each school facility within the district, including charter schools." The same text adds:
+  "The school district may implement any combination of the options in subsections (1)-(4)".
+- **Effective:** 2018-03-09. The "safe-school officers at each school facility" duty was added by
+  s. 26, ch. 2018-3 (CS/SB 7026), approved by the Governor and filed 2018-03-09; s. 52 of the act says it
+  "shall take effect upon becoming a law" (no separate date for s. 1006.12). The 2018 wording was
+  narrower ("partner with law enforcement agencies"); "or security agencies" and the charter-school text
+  came later.
+- **In force:** all votes 2023-2026 (the 2025 statutes carry it; section history runs through
+  s. 5, ch. 2025-58).
+- **Waiver:** none in the text. The four options are the flexibility.
+- **URL:** https://www.flsenate.gov/Laws/Statutes/2025/1006.12
+
+### Texas — Education Code s. 37.0814 (armed security officer)
+
+- **Duty:** the board sets the number of armed security officers per campus and "must ensure that at
+  least one armed security officer is present during regular school hours at each district campus."
+  The officer must be a district peace officer, a school resource officer, or a commissioned peace
+  officer employed as security personnel under s. 37.081 (sub. b).
+- **Good-cause exception (sub. c-d):** if the district cannot comply because of funding or the
+  availability of qualified personnel, the board "may claim a good cause exception", and must adopt an
+  alternative standard it can meet. The alternative may be a school marshal, or a district employee or
+  contractor who has completed school safety training and carries a handgun under written district
+  authorisation.
+- **Effective:** 2023-09-01. Added by Acts 2023, 88th Leg., R.S., ch. 896 (H.B. 3), s. 10.
+- **2025 amendment:** H.B. 121 (89th Leg., R.S.), s. 2, effective 2025-09-01 (the bill history shows
+  "Effective on 9/1/25"; applies beginning the 2025-2026 school year). It (i) lets an employee or
+  contractor alternative qualify by completing district-approved training within 90 days of starting
+  instead of the handgun-instructor course, and (ii) adds sub. (d-1): a claimed exception "expires on
+  the first anniversary of the date the exception is claimed", and the board must then re-evaluate and,
+  if still unable to comply, renew both the claim and the alternative standard. So a Texas board vote in
+  2025-26 to claim or renew an exception is compliance paperwork under the statute, not a position.
+- **URLs:** https://statutes.capitol.texas.gov/Docs/ED/htm/ED.37.htm#37.0814 ·
+  https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00121F.htm
+
+### Kentucky — KRS 158.4414 (certified school resource officers)
+
+- **Duty:** boards, superintendents and law enforcement "shall cooperate to assign one (1) or more
+  certified school resource officers to serve each campus where one (1) or more school buildings are
+  used to deliver instruction to students on a continuous basis" (sub. 1). Sub. 2: "Local boards of
+  education shall ensure, for each campus in the district, that at least one (1) certified school
+  resource officer is assigned to and working on-site full-time". The officer must be armed (sub. 7).
+- **Waiver (sub. 2):** if funds and qualified personnel are not available for every campus, the board
+  meets the duty "on a per campus basis, as approved in writing by the state school security marshal",
+  until an officer is assigned.
+- **Contract terms fixed by the statute:** an MOU with the employing agency must state that the officer
+  "shall not be responsible for school discipline matters that are the responsibility of school
+  administrators or school employees" (sub. 5; sub. 6 is the equivalent for officers the board employs).
+  Read this with rung 4.
+- **Effective:** the 2022 amendment (2022 Ky. Acts ch. 189 (H.B. 63), s. 1) took effect 2022-07-14;
+  it set an August 1, 2022 assignment deadline and removed "as funds and qualified personnel become
+  available" from sub. 1. Ch. 189 also lets boards create their own police departments (new sections).
+- **Later amendments:** 2025 Ky. Acts ch. 86, s. 7, effective 2025-06-27, adds subs. (3)-(4): from
+  2026-2027 a board unable to meet sub. 2 may, with the marshal's approval, employ guardians under
+  KRS 158.4431, as a stopgap that does not replace the officer. Apply that only to votes in 2026-27
+  or later. (Earlier amendments: 2023 ch. 104, 2024 ch. 165.)
+- **URL:** https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56273
+
+### Utah — Utah Code s. 53G-8-701.5 (school safety personnel)
+
+- **Duty:** "An LEA shall ensure each school within the LEA has the following school safety personnel:
+  (i) a school safety and security specialist ... and (ii) based on the results of the needs assessment
+  ... at least one of the following: (A) a school resource officer; (B) a school guardian; or (C) an
+  armed school security guard" (sub. 2(a)). An LEA is a school district or charter school.
+- **Alternatives:** the three options are the flexibility, as in Florida. Sub. 3 also lets an LEA apply to
+  the state security chief for "an approved alternative" to the section's requirements (factors include
+  size, staffing, location and funding).
+- **Contract terms fixed by the statute:** s. 53G-8-703(2) says what an SRO contract must contain: the
+  officer will "emphasize the use of restorative approaches to address negative behavior"; a designation
+  of offences the officer may refer to juvenile court, must confer on, or must refer to a school
+  administrator; students' rights on searches, questioning, arrests and privacy; and the officer's school,
+  hours and duties. These are statutory, so they are not the board's own provision. A board term that
+  goes further is.
+- **Effective:** 2024-05-01. H.B. 84 (2024 G.S., "School Safety Amendments"), s. 27, repealed and
+  re-enacted s. 53G-8-701.5; s. 54 sets May 1, 2024. Sub. 2(e) (2(f) in the version effective
+  2026-07-01) leaves the compliance timeline to the state security chief; the date that timeline set
+  was not read.
+- **Later amendments:** the version effective 2026-07-01 keeps sub. 2(a) unchanged. It adds a three-year
+  assessment cycle and requires a guardian to carry the firearm on duty.
+- **Apply to:** Utah board votes on or after 2024-05-01. Before that date there was no officer duty (for
+  example Alpine School District, 2019).
+- **URLs:** https://le.utah.gov/~2024/bills/static/HB0084.html ·
+  https://le.utah.gov/xcode/Title53G/Chapter8/53G-8-S701.5.html
+
+## Rulings, 2026-10-16 (Chris Andrews)
+
+- **(J2) Utah is a duty state, read like Texas** _(ruled 2026-10-16)_. A Utah board vote from 2024-05-01
+  that approves an SRO contract meets the s. 53G-8-701.5 duty: "an officer at every school" is
+  `direction-only`. Choosing sworn police over guardians or guards, staffing above one per school, and
+  role terms beyond s. 53G-8-703 are the board's own and are coded on their own. Ruling (b) below applies.
+
+- **(b) A contract under a state mandate is compliance** _(ruled 2026-10-16)_. A board vote that
+  approves or renews an SRO contract in Florida (all years), Texas (from 2023-09-01) or Kentucky (from
+  2022-07-14) meets "an officer at every school". It is `direction-only` for rungs 4 and 5. The board's
+  own provisions beyond the law are coded on their own: sworn police versus guardians, staffing level
+  above the statutory floor, and role or discipline terms. The Kentucky MOU discipline sentence above is
+  statutory, so it is not the board's own provision; a board term that goes further is.
+- **(a2) Guardian bundles** _(ruled 2026-10-16)_. A law that bundles a guardian or armed-staff
+  programme with officer provisions is `multi-subject` (V4). A physical-security bundle (cameras,
+  locks, metal detectors) is not.
+- **(a1) Mandates with waivers or alternatives** _(proposed)_. Open, carried to Stage 2 drafting:
+  does an "officer" rung include armed school staff (Florida guardians, Texas marshals and trained
+  employees, Kentucky 2026-27 guardians)? Until it is ruled, the rung 4 line "A mandate with waivers
+  ... → `direction-only`" stays _(proposed)_.
+
+The Season 3 draft (working draft C) is in `season3/education-school-police.md` (CA_0315).

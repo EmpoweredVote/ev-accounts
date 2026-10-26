@@ -126,7 +126,7 @@ function unitOf(option: string): string {
  * staying small (max ≤ 12). Counts and short durations of that shape are institutionally
  * fixed; populations, dollars, acres and distances are not, and keep sorting.
  */
-function isBoundedSeries(values: number[]): boolean {
+export function isBoundedSeries(values: number[]): boolean {
   if (!values.every((v) => Number.isInteger(v))) return false;
   return Math.min(...values) <= 2 && Math.max(...values) <= 12;
 }

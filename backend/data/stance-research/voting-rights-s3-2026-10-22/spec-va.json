@@ -1,0 +1,438 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "vr-ioquinn",
+      "person": "Israel D. O'Quinn",
+      "politician_id": "36673ec0-1045-4a98-8074-12d6deed5cc8",
+      "office_id": "35824300-70a9-4d2c-8760-156d89a535d8",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-19-2020",
+          "House",
+          "nay",
+          "draw"
+        ],
+        [
+          "VA-HB-1444-2023",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "VA-SB-1256-2013",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "VA-HB-46-2022",
+          "House",
+          "yea",
+          "carry"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+ful+CHAP1064",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 19 (2020), voter identification requirements, Chapter 1064"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV1986+HB0019",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 19 (2020), voter identification requirements, Chapter 1064"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 19 (2020), voter identification requirements, Chapter 1064"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+vot+HV1322+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0725",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1165+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+ful+HB46H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 46 (2022), voter identification, House substitute HB46H1 as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 46 (2022), voter identification, House substitute HB46H1 as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+sum+HB46",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 46 (2022), voter identification, House substitute HB46H1 as passed by the House"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-mobenshain",
+      "person": "Mark D. Obenshain",
+      "politician_id": "b7e9d159-b766-445c-b95f-9797b57247d9",
+      "office_id": "80888760-4e42-447a-beaf-cc8db28323cc",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-SB-1256-2013",
+          "Senate",
+          "yea",
+          "draw"
+        ],
+        [
+          "VA-SB-1256-2013",
+          "Senate",
+          "sponsor",
+          "sponsor"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0725",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0362SB1256+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-mwebert",
+      "person": "Michael J. Webert",
+      "politician_id": "28714014-4c7e-427e-8190-fcc21875377a",
+      "office_id": "615f36c7-f046-4463-9bf2-9178643c6a25",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-1444-2023",
+          "House",
+          "yea",
+          "draw"
+        ],
+        [
+          "VA-SB-1256-2013",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+vot+HV1322+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0725",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1165+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-pscott",
+      "person": "Phillip A. Scott",
+      "politician_id": "597a4057-4ccc-43f6-bf97-bcc701d7e637",
+      "office_id": "14d9a854-4ec8-489f-abe8-7435939ae3cd",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-1444-2023",
+          "",
+          "yea",
+          "season2-row"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+vot+HV1322+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-rmcdougle",
+      "person": "Ryan T. McDougle",
+      "politician_id": "ceba2c53-8da5-4ef9-9e1b-57fdfba98f50",
+      "office_id": "fda3a447-6489-46bb-9ec8-5e45ef8da210",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-SB-1256-2013",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0725",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0362SB1256+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-rware",
+      "person": "R. Lee Ware",
+      "politician_id": "af619400-b4b0-48f4-ba87-69a5ddd53301",
+      "office_id": "91049d07-9d13-4234-9d52-f4397ed0f467",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-1444-2023",
+          "House",
+          "sponsor",
+          "sponsor"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-twilt",
+      "person": "Tony O. Wilt",
+      "politician_id": "742d2c42-b277-4859-9269-1abc55affbe2",
+      "office_id": "ce62604a-4efe-44b5-acae-b7e321f2680c",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-1444-2023",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+vot+HV1322+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 1444 (2023), voter identification, House substitute as passed by the House"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-twright",
+      "person": "Thomas C. Wright, Jr.",
+      "politician_id": "ff50eaf3-0f12-455e-85b2-bc37f1e542db",
+      "office_id": "38e31ad1-9b74-4693-b412-807f5b12fd4a",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-SB-1256-2013",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+ful+CHAP0725",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1165+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia SB 1256 (2013), photo identification for voting, Chapter 725"
+          ]
+        }
+      ]
+    }
+  ]
+}

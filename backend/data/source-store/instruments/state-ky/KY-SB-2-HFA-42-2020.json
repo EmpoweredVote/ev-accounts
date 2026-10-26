@@ -1,0 +1,26 @@
+{
+  "id": "KY-SB-2-HFA-42-2020",
+  "scope": "state:ky",
+  "title": "House Floor Amendment 42 to SB 2/HCS 1 (2020 RS)",
+  "urls": [
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/SB2/HFA42.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(form) [instruction] On page 1, after the enacting clause and beginning on line 14, delete the remaining contents of the bill in its entirety and insert the following in lieu thereof:\n(a_in_person_id_required_and_documents) [S15 (KRS 117.225)] (1) Any person desiring to vote on election day shall give his or her name and address to the clerk of the election and shall provide proof of identification as defined in Section 23 of this Act.\n[S23(12)] (12) \"Proof of identification\" means a document that was issued by: (a) The United States, the Commonwealth of Kentucky, or any other state of the United States, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued;\n(b_voter_without_id) [S1(1)(c)8] 8. The voter has one (1) of the following impediments to procure proof of identification as defined in Section 23 of this Act: a. Lack of transportation; b. Inability to obtain his or her birth certificate or other documents needed to show proof of identification; c. Work schedule; d. Lost or stolen identification; e. Disability or illness; f. Family responsibilities; g. The proof of identification has been applied for, but not yet received; h. The voter has a religious objection to being photographed; or i. The voter claims any impediment to obtaining a qualifying Identification that he or she finds reasonable as long as it is true, with the reasonableness of the claim determined only by the voter.\n[S1(2)] (2) In addition to the requirements of subsection (1) of this section, to cast a ballot, the voter who is unable to provide proof of identification shall provide to an election officer: (a) The voter's Social Security Card; (b) Any identification card issued by a county in this state which has the name of the voter stated and has been approved in writing by the State Board of Elections\n[S2] if a voter is unable to provide proof of identification, as required under Section 15 of this Act and as defined under Section 23 of this Act, or the voter fails to meet the requirements of Section 1 of this Act, the voter may cast a provisional ballot\n(c_mail_ballot_id) [S5] The mail-in absentee ballot application form shall be verified and signed by the voter, and the voter shall provide a copy of his or her proof of identification, as defined in Section 23 of this Act, or the executed voter affirmation as described in subsection (1)(c) of Section 1 of this Act.\n(d_proof_of_citizenship_to_register) not stated\n(e_signature_or_records_verification) Same as the bill text it replaces (signature comparison in KRS 117.087 retained); not separately analysed.\n(difference_from_final_SB2) Word-level comparison of the amendment against the final bill text shows these differences: the amendment adds item 'i.' to the list of impediments ('i. The voter claims any impediment to obtaining a qualifying Identification that he or she finds reasonable as long as it is true, with the reasonableness of the claim determined only by the voter.'); it omits the final bill's Section 1(4) definition sentence and subsection (5) ('For purposes of this subsection, \"personally known\" means that the election officer knows the voter's name and that the voter is a resident of the community.' and the subsection (5) on processing affirmations); omits the preamble; and adds 'Section 34. This Act takes effect November 4, 2020.'. Otherwise the text matches the final bill.\n\nSponsors (as printed): Rep. Joni L. Jenkins (House)\nSource: curl with browser UA, 57-page PDF read with pdftotext. Amendment is a complete strike-and-insert substitute for SB 2/HCS 1. Defeat date from record page; RCS# 168 not independently checked.\n\nAuthors and sponsors as printed (all): {\"prime_sponsor\":\"Rep. Joni L. Jenkins (House)\",\"version_filed\":\"Amendment No. HFA 42 to printed copy SB 2/HCS 1\",\"source_url\":\"https://apps.legislature.ky.gov/recorddocuments/bill/20RS/SB2/HFA42.pdf\",\"note\":\"Printed on amendment form: 'Amendment No. HFA 42 Rep. Rep. Joni L. Jenkins'.\"}",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "Same as SB 2 Section 2: Help America Vote Act of 2002 referenced for provisional ballots.",
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+    "fetched_at": "2026-10-21T03:40:10.568Z",
+    "method": "curl"
+  }
+}

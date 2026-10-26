@@ -58,6 +58,23 @@ the job worked — the thing to watch after Move 2.
 | `trivia-expiration` | `trivia/cron/startCron.ts:14` | `0 * * * *` (hourly) | Supabase Cron | trivia `questions.status` `active`→`expired` on newly-expired rows |
 | `trivia-election-detection` | `trivia/cron/startCron.ts` | `0 6 * * *` ET (daily) | Supabase Cron (LLM spend — measure) | trivia `election_races.questions_generated` `false`→`true` — **no write when 0 races detected** |
 | `trivia-pipeline` | `trivia/cron/startCron.ts` | `0 2 * * *` ET (daily) | Supabase Cron (LLM spend — measure) | new trivia `generation_jobs` row per collection with terminal `status` |
+| `job-health` | `lib/jobHealth.ts` (added 2026-10-26) | `0 13 * * *` (daily 13:00 UTC) | Supabase Cron `ev-job-health` | its own `cron.job_run_details` rows; an email to `JOB_HEALTH_ALERT_TO` (comma-separated; falls back to `ADMIN_EMAIL`) **only** when something is wrong (silent on a healthy day, by design) |
+
+### Who is told when a job fails
+
+| Job home | Watcher | Reaches a human by |
+|---|---|---|
+| Render cron (`ev-jobs-*`) — non-zero exit | Render. Workspace notifications: email on, "failure" (checked 2026-10-26); every cron service is `notifyOnFail: default`, so it inherits that | Render email to both workspace admins |
+| Render cron — stopped running, or exits 0 having done nothing | `job-health` rule (c): the "proof it ran" column above, 48h for daily jobs, 40 days for monthly ones | `job-health` email |
+| pg_cron — a run fails | `job-health` rule (a), via `ops.pg_cron_health()` (CA_0332). Supabase has no built-in pg_cron alert | `job-health` email |
+| pg_cron — stops being scheduled | `job-health` rule (b): newest run older than 3× the job's own interval | `job-health` email |
+| pg_cron HTTP trigger refused (401, 5xx, timeout) — pg_cron still says `succeeded` | `job-health`, via `ops.http_trigger_health()` (pg_net keeps ~6h of responses; `vq-consensus` fires every 5 min, so a dead API or a rotated token shows) | `job-health` email |
+| `ingestion_runs` stuck in `running` > 24h | `job-health` rule (d) | `job-health` email |
+
+Not covered by a staleness rule, on purpose: `trivia-election-detection` (writes nothing on a
+zero-race day) and `legiscan` (writes only when a dataset changed). Render's failure email is
+their only watcher. When a job is added here, add its proof to `RENDER_PROOFS` in
+`lib/jobHealth.ts` too.
 
 Not in the manifest, by design:
 - **`discovery-sweep`** (`cron/discoverySweep.ts`, `0 2 * * 0`) — default-OFF

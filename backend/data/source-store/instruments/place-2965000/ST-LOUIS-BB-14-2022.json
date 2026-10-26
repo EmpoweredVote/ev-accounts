@@ -1,0 +1,25 @@
+{
+  "id": "ST-LOUIS-BB-14-2022",
+  "scope": "place:2965000",
+  "title": "Tent Shelters on Public Right of Ways",
+  "urls": [
+    "https://www.stlouis-mo.gov/government/city-laws/board-bills/boardbill.cfm?bbDetail=true&BBId=14022"
+  ],
+  "version": "other",
+  "operative_text": "The proposed bill would prohibit tents or similar shelters regardless of the materials in their construction or whether temporary or permanent, within public rights or way or in a manner that would impede the use or maintenance or a public right of way.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

@@ -104,12 +104,32 @@
  *     answers AND context fall by the SAME amount, and named pairs account for it exactly
  *                                  →  a WITHDRAWAL. Deliberate.
  *                                     Verify the pairs, then lower BOTH floors.
+ *     answers AND context fall by DIFFERENT amounts, and a row in essentials.politician_merges
+ *     accounts for the difference as named ORPHANS
+ *                                  →  a DEDUPE MERGE. Deliberate.
+ *                                     Verify against the ledger, then lower BOTH floors.
+ *                                     (CC_0215 is the worked example.) Unaccounted: STOP.
  *     answers AND context fall, UNACCOUNTED  →  rows are being destroyed. STOP.
  *     answers fall, context RISES            →  also destruction, with a rewrite on top. STOP.
  *     answers HOLD, context falls, and named ORPHAN pairs (context, no answer in any season)
  *     account for it exactly             →  a context-only WITHDRAWAL. Deliberate.
  *                                           Verify the pairs, then lower the CONTEXT floor.
  *                                           (CA_0214 is the worked example.) Unaccounted: STOP.
+ *
+ * 🔴 THE MERGE BRANCH WAS MISSING UNTIL 2026-10-17, AND ITS ABSENCE MADE CORRECT WORK READ AS
+ * DESTRUCTION — the third time this table has been short a branch, after "only upward" and the
+ * withdrawal. Merging a duplicate person deletes the duplicate's stance rows once they have been
+ * carried onto the canonical. Those two counts fall by DIFFERENT amounts BY CONSTRUCTION: the
+ * duplicate's answers each have a matching context row, but it can also hold context with NO
+ * answer on the canonical, and carrying that forward would leave reasoning attached to nothing.
+ * So the context count falls further, by exactly the number of orphans. Under the old table that
+ * is "unequal falls", which read as `rows are being destroyed. STOP.`
+ *
+ * ▶ A MERGE IS THE ONE DISPOSITION WITH ITS OWN RECORD. `essentials.politician_merges` (CC_0207)
+ * stores `answers_deleted_as_duplicates`, `context_deleted` and a NAMED `context_deleted_orphans`
+ * array, so this branch is verified against a table rather than by re-deriving from migrations.
+ * ⚠ Its counts are TOTALS ACROSS SEASONS, so they will exceed what one season's floor moved —
+ * subtract the other seasons before concluding anything.
  *
  * 🔴 THE WITHDRAWAL BRANCH WAS MISSING UNTIL 2026-09-02, AND ITS ABSENCE MADE CORRECT WORK
  * READ AS DATA LOSS. This table used to say, flatly, "answers AND context fall together →
@@ -288,7 +308,30 @@ const FLOORS = {
     //    and Heather Ferbert, all on Police Accountability, all rewritten 2026-09-01 with
     //    reasoning that documents what was read and why no chair is evidenced. Context held
     //    at 33,818 across the window.
-    answers: flagInt('floor-answers', 1, 33022),
+    //
+    // −14 / −16 on 2026-10-09: CC_0215, the John Fleming duplicate merge — and the FIRST time
+    //    this pair moved by DIFFERENT amounts. See the MERGE branch in the signature table above;
+    //    it did not exist until this window, and without it these numbers read as destruction.
+    //    One man, two politician rows. CC_0215 carried the duplicate's research onto the
+    //    canonical and deleted what was left on the duplicate. The ledger row
+    //    (essentials.politician_merges, migration 'CC_0215', merged_at 2026-10-09 18:35:03Z)
+    //    records 15 answers deleted as duplicates and 17 context deleted, of which SEASON 1 was
+    //    14 and 16 — the other one of each sat in another season whose floor is far below its
+    //    count and so never reported it. 33,022 − 14 = 33,008.
+    //
+    //    🔴 THE ASYMMETRY IS THE WHOLE DIAGNOSIS, AND IT IS NAMED IN THE LEDGER:
+    //    `context_deleted_orphans` = ["homelessness season 1", "voting-rights season 1"]. Those
+    //    two season-1 context rows had no answer on the canonical, so carrying them forward
+    //    would have left reasoning asserting a position attached to nothing — the ORPHAN_CONTEXT
+    //    defect CLAUDE.md's answer-delete rule exists to prevent. 14 answers + 2 orphans = 16.
+    //
+    //    Verified before these numbers moved, the same way the −4 window was: no season 1 row has
+    //    been written since 2026-09-01, so nothing was edited; all 33,008 surviving season 1
+    //    answers carry the 2026-08-26 backfill stamp and NO row in season 2 or 3 carries it, so
+    //    nothing was re-pointed to another season; the retired id holds 0 answers and 0 context;
+    //    and the canonical holds 18/18 in season 1 with ZERO gate-visible orphans. The gate found
+    //    this, not the PR — the fifth time.
+    answers: flagInt('floor-answers', 1, 33008),
     // 33,818 when measured, and it held across all three documented-blank windows — a blank
     // REWRITES its context, so those never moved it, and that it held is what proved each of
     // those answer losses deliberate.
@@ -307,10 +350,17 @@ const FLOORS = {
     //    run at 2026-09-24T01:42Z read 33,806; #699 opened 02:22Z and merged 02:25Z; the pinned
     //    key reads 0 rows now; and no Season 1 context or answer row was created or updated after
     //    01:42Z, so the net −1 cannot hide an addition. 33,806 − 1 = 33,805.
-    context: flagInt('floor-context', 1, 33805),
+    //
+    // −16 context, −14 answers, on 2026-10-09: CC_0215 (the John Fleming merge). The reasoning is
+    //    on the answer floor above and is not repeated; what matters here is that this floor moved
+    //    by MORE than the answer floor, which no previous window did. 16 = the 14 context rows
+    //    paired with the deleted duplicate answers, plus the 2 NAMED season-1 orphans. The
+    //    DEDUPE MERGE branch in the signature table above is what makes that readable rather than
+    //    alarming. 33,805 − 16 = 33,789.
+    context: flagInt('floor-context', 1, 33789),
     questions: flagInt('floor-questions', 1, 44),
     measured: '2026-08-27',
-    adjusted: '2026-09-24',
+    adjusted: '2026-10-09',
   },
   2: {
     // Season 2 opened 2026-09-04 14:31Z with 60 questions, and took no answers of its own at

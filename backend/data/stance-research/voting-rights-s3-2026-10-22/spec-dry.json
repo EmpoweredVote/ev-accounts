@@ -1,0 +1,69 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "vr-dreid",
+      "person": "David A. Reid",
+      "politician_id": "5061959c-b625-4b7a-b17f-a1291c50d001",
+      "office_id": "507b29c2-70ba-4112-bdb9-04858c706a62",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "VA-HB-19-2020",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+ful+CHAP1064",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 19 (2020), voter identification requirements, Chapter 1064"
+          ]
+        },
+        {
+          "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV1986+HB0019",
+          "human_saved_path": null,
+          "instruments": [
+            "Virginia HB 19 (2020), voter identification requirements, Chapter 1064"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-twilson",
+      "person": "Terry Wilson",
+      "politician_id": "56b91150-194f-4699-ba31-e944443eacae",
+      "office_id": "644bed1f-3ae4-4225-96fb-b51d0c0524f8",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-1-2021",
+          "House",
+          "yea",
+          "carry"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/872/billtext/html/SB00001F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -132,11 +132,31 @@ describe('GET /api/treasury/cities', () => {
     expect(filters.fields).toBe('index');
   });
 
-  it('with no parameters, passes no filters and sets the cross-app Cache-Control contract', async () => {
+  it('422s the bare path (unfiltered full list) without touching the database', async () => {
     const app = await makeApp();
     const res = await request(app).get('/api/treasury/cities');
+    expect(res.status).toBe(422);
+    expect(res.body.code).toBe('FULL_LIST_TOO_LARGE');
+    expect(res.body.message).toContain('?fields=index&datasets=summary');
+    expect(mockGetCities).not.toHaveBeenCalled();
+  });
+
+  it('still serves the full shape once anything narrows it', async () => {
+    const app = await makeApp();
+    for (const qs of ['slug=atlanta-ga', 'state=GA', 'entity_type=state', `county_id=${VALID_COUNTY_ID}`]) {
+      const res = await request(app).get(`/api/treasury/cities?${qs}`);
+      expect(res.status, qs).toBe(200);
+    }
+    expect(mockGetCities).toHaveBeenCalledTimes(4);
+    for (const [mode] of mockGetCities.mock.calls) expect(mode).toBe('full');
+  });
+
+  it('with only datasets=summary, passes no filters and sets the cross-app Cache-Control contract', async () => {
+    const app = await makeApp();
+    const res = await request(app).get('/api/treasury/cities?datasets=summary');
     expect(res.status).toBe(200);
     expect(mockGetCities).toHaveBeenCalledTimes(1);
+    expect(mockGetCities.mock.calls[0][0]).toBe('summary');
     const [, , filters] = mockGetCities.mock.calls[0];
     expect(filters).toEqual({
       entityTypes: [],

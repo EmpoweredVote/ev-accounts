@@ -1,0 +1,19 @@
+{
+  "migration": "1939",
+  "note": "Post-write input for scripts/audit-chair-evidence.mjs --check. season_id scopes the lookup to Season 2: both people hold Season 1 rows on other topics, and an unscoped lookup judges whichever row comes back first.",
+  "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+  "rows": [
+    {
+      "politician_id": "fc1d7143-1be8-49b0-be31-6dbc5874230d",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "chair_after": 1,
+      "who": "Tram T. Nguyen / medicare-aid"
+    },
+    {
+      "politician_id": "d33b1fb5-bac7-48b9-9628-8169e28f4e16",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "chair_after": 4,
+      "who": "Steve Marshall / trans-athletes"
+    }
+  ]
+}
