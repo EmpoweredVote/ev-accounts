@@ -14,8 +14,12 @@
 -- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
 -- APPLIED: (fill in on apply — date, who said yes, revision id)
--- Dry run on prod (not yet run) (body twice inside BEGIN, forced RAISE): (fill in — gate OK,
--- second run skipped propose/approve, voter-answer dispositions, rollback confirmed)
+-- Dry run on prod 2026-10-26 (body twice inside BEGIN, forced RAISE): gate OK on both runs; first run rejected
+-- revision 4, proposed + approved revision 5, re-pinned the draft season and carried 57 answer + 57 context rows;
+-- second run skipped every step (idempotent: 0 rows carried); voter-answer dispositions: reworded x6 (4 rows given on
+-- revision 1, 2 on revision 3); ended on "dry run: forced rollback". Confirmed in a new session that nothing persisted
+-- (revision 4 approved and pinned, 57 + 57 rows on revision 4, both pin keys present, no revision 5). An earlier
+-- attempt stopped at the precondition on a typo in revision 4's id (fixed); nothing ran.
 --
 -- WHAT THIS DOES
 --   1. Proposes revision 5 of voting-rights: change_class substantive, version 3.
