@@ -604,6 +604,18 @@ each was first learned.
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
 - `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- 🔴 **`districts.geo_id` IS A LOOKUP KEY, SO AN EMPTY ONE IS A KEY NOTHING CAN EVER MATCH.** A
+  district with `geo_id = ''` is invisible to every `geo_id`-keyed read — today that is the
+  `government_bodies` join in `DISTRICT_SELECT_FIELDS`, which simply never fires for it. The seats
+  still answer an address, because the statewide branch admits by `district_type` + `state`, so
+  nothing looks broken. `gen-state-exec-seed.mjs` already RAISEs on an empty `STATE_EXEC` geo_id
+  for the states it covers; `CC_0297` fixed the last multi-office one outside that list (Indiana's,
+  10 offices). ⚠ One single-office case is left on purpose — California's Board of Equalization
+  seat, which needs a BOE-district geo_id, not the state FIPS.
+  - ⚠ **A SHARED DISTRICT HOLDING SEVERAL OFFICES IS A LEGITIMATE VARIANT, NOT A DEFECT.** Measured
+    across all 51 jurisdictions: 48 give each statewide executive its own district; CA (17 offices),
+    OR (5) and IN (10) share one. Do not "normalise" one of those into per-office districts — check
+    whether its key is wrong before deciding its shape is.
 - The `essentials` frontend never queries `essentials.*` tables directly — it goes through this API.
 - **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
   representatives; the territories and DC send non-voting delegates.
