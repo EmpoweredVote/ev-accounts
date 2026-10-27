@@ -426,6 +426,20 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   house style; match it.
 - **Dry-run against prod first** by wrapping the body `BEGIN; ... ROLLBACK;` — and confirm the
   rollback actually reverted before trusting it.
+- 🔴 **A MIGRATION THAT OVERWRITES A VALUE MUST RECORD THE VALUE IT OVERWROTE, IN ITS OWN HEADER.**
+  There is no history table for most columns, and no `schema_migrations` to replay from, so an
+  `UPDATE` is final: the previous value exists nowhere the moment it commits.
+  - ⚠ **This cost a full production clone on 2026-10-27.** `CA_0335` replaced four
+    `users.display_name` values with generated pseudonyms, recording only the new ones. Undoing it
+    needed a Supabase "restore to a new project" of the whole database to read back four strings
+    — and the clone inherits `pg_cron` and `pg_net`, so it began firing this repo's scheduled jobs
+    at **production** the moment it came up (`cron.unschedule` every job before any read).
+  - 🔴 **It also destroyed the evidence for its own premise.** `CA_0335` said all four rows showed
+    a real name. They did not — two were invented handles. Nobody could check, because the values
+    were gone. **Write the old value down and the claim stays testable.**
+- 🔴 **`ev_api` CANNOT REACH EVERY SCHEMA — `apply-migration-file.mjs` FAILS ON `civic_spaces`**
+  with `permission denied for schema civic_spaces`. That is not a broken credential; it is the
+  role. Apply such a migration through the Supabase MCP, which connects privileged.
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
