@@ -120,22 +120,40 @@ of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
 | real vacancy, date citable | 16 | the date — `CC_0298` wrote these |
 | real vacancy, date not published | 1 | **nothing.** Richland County SC SWCD says so in its `description`; that is the correct shape |
 | **not vacant, a holder exists** | 1 | seat the person (Cornelius OR — the city lists four councillors, we hold three) |
-| **not vacant, a duplicate seat** | 20 | retire or merge the duplicate; a date would publish a false claim |
+| **not vacant, awaiting its FIRST election** | 20 | explain it (`CC_0299`), then seat the winner |
 | unseeded, emptiness unproven | 3 | a roster check, not a date |
 
-🔴🔴 **A DUPLICATE SEAT LOOKS EXACTLY LIKE A VACANCY, AND THE CHAMBER IS WHAT TELLS THEM APART.**
-Eight California bodies carry BOTH legacy `At-Large` office rows and newer by-district rows. In
-all eight the At-Large rows already seat the whole body, so every empty district row is the same
-chair counted twice — Montebello Unified seats five people on five At-Large rows and then shows
-three empty Trustee Area rows for that same five-member board. Nothing about the row says so.
-▶ **Before dating a flag, count the chamber: seated + flagged against the body's real size.** If
-they do not add up to one body, you are looking at a modelling duplicate, not an empty chair.
+🔴🔴 **A SEAT AWAITING ITS FIRST ELECTION LOOKS EXACTLY LIKE A VACANCY. ASK WHAT IS ON THE BALLOT.**
+Eight Los Angeles County bodies carry BOTH legacy `At-Large` office rows and newer by-district
+rows, because they are part-way through a **staggered** by-district conversion under the
+California Voting Rights Act. The at-large rows are the last holdovers and are still legitimately
+in office; the empty district rows are their successors. One set is replacing the other on a
+published schedule — Azusa elected Districts 2, 4 and 5 in November 2024 and elects 1 and 3 in
+November 2026, which is exactly which of its rows are seated and which are empty.
+
+⚠ **`CC_0298` CALLED THESE "DUPLICATE SEATS" AND THAT WAS WRONG** — wrong in a way that would have
+justified deleting real offices. The counting argument it used ("at-large + seated-district = the
+body's size") was TRUE and still pointed at the wrong conclusion. 🔴 **A COUNT CAN BE RIGHT AND
+MEAN SOMETHING ELSE.** What settled it was one query against data we already held: all 20 empty
+offices carry exactly one race, every one dated 2026-11-03, with candidates already filed.
+▶ **Before deciding what an empty seat is, read its races.** Then the chamber count tells you
+whether the body is whole, which is a different question.
 
 🔴 **A COMPLETE, FULLY-SEATED CHAMBER IS THE SIGNATURE OF A REAL VACANCY.** The 19 non-California
 undated flags all sat in rosters that were whole except for exactly the flagged seats (MO House
 163 offices / 155 seated / 8 flagged; MA House 160 / 158 / 2). That shape says the loader found
-everyone there was to find. The California 22 had the opposite shape and were all duplicates or
-unseeded.
+everyone there was to find.
+
+🔴 **DO NOT CLEAR `is_vacant` ON AN UNSEATED OFFICE TO HIDE IT FROM ADDRESS SEARCH.** It works —
+unseated and unflagged is invisible — and it turns the **master-only** reachability gate red on
+whoever merges next. `check-address-reachability.mjs` reports DEAD_GEOGRAPHY for a district with
+`active_holders = 0 AND vacant_offices = 0`, so the flag is the only thing keeping such an office
+out of it, and the gate fires on **any new bucket**. Check `address-reachability-baseline.json`
+before clearing a flag in bulk.
+
+▶ **December 2026:** seat the 20 winners, retire the at-large holdovers in the bodies whose
+conversion completes, and **delete the `CC_0299` descriptions** — they name a past election and
+go false the moment a winner is seated.
 
 **Date a vacancy at the moment you establish it**, or the next session re-derives which kind it was.
 
@@ -600,6 +618,11 @@ each was first learned.
   remove it and see it go green.
   - ⚠ **A control proves a verifier CAN fail. It does not prove the verifier reads the RIGHT
     ROWS** — for that, check the count it actually examined.
+  - 🔴 **A TAMPER THAT DID NOT APPLY IS A CONTROL THAT PROVED NOTHING, AND IT LOOKS LIKE A PASS.**
+    On 2026-10-26 a `sed` that built a tamper file failed on a quoting error, left a **0-byte**
+    file, and `dry-run-migration.mjs` reported **`DRY RUN OK`** on it — an empty migration passes
+    every gate it does not contain. **Assert the tamper is PRESENT in the file before running it**
+    (grep for a marker, or build it in a script that exits non-zero when the replacement misses).
   - 🔴 **A CONTROL CAN FAIL CORRECTLY, FOR THE WRONG PROPERTY, AND STILL MISS THE DEFECT.**
     `ev-jobs-legiscan` died of heap exhaustion; the fix shipped a real control proving a repeat
     read re-parses — that nothing is **retained** — and the job died again, because the defect was

@@ -95,6 +95,17 @@ export const DISTRICT_SELECT_FIELDS = `
     -- every politician query, held or not, so one shape answers both.
     o.id AS office_id,
     o.title AS office_title, o.representing_state, o.representing_city,
+    -- 🔴 WITHOUT THIS THE ADDRESS PATH DROPPED EVERY OFFICE DESCRIPTION ON THE FLOOR. The mapper
+    -- has always read row.office_description, and this select never produced it, so the field
+    -- was a hard-coded '' for every address and coordinate lookup — 605 offices that carry real
+    -- description text, and the ?q= list and detail paths show it (essentialsService.ts selects
+    -- COALESCE(NULLIF(o.description,''), pd_specific.description, pd_generic.description, '')).
+    -- Found by writing a sentence onto a seat in CC_0299, probing the live endpoint, and getting
+    -- "" back: THE DATA WAS CORRECT AND THE READ PATH WAS NOT.
+    -- ⚠ Deliberately NOT the full COALESCE the other paths use. Adding the position_descriptions
+    -- fallback here would give a generic blurb to every one of ~10.6k held rows at once, which is
+    -- a product change, not a bug fix. This surfaces only text somebody wrote about THIS office.
+    o.description AS office_description,
     o.voting_powers, o.representation_note,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
     p.is_appointed, o.faces_retention_vote,
