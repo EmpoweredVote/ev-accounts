@@ -74,9 +74,9 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-27: `294 / 56 / 238`** (`CC_0300` seated the Cornelius OR councillor, which was
-in the FLAGGED bucket — total and flagged each fall by one, the 238 baseline does not move; was
-`295 / 57 / 238` on 2026-10-26, and `433 / 194 / 239` on 2026-10-20; the 136 that left
+**Measured 2026-10-27: `293 / 55 / 238`** (`CC_0300` seated Cornelius OR and `CC_0301` seated
+Caledonia WI; both were in the FLAGGED bucket, so total and flagged each fall and the 238 baseline
+does not move; was `295 / 57 / 238` on 2026-10-26, and `433 / 194 / 239` on 2026-10-20; the 136 that left
 are all 17 Maine cities being seated — `CC_0282` Augusta, `CC_0283` Westbrook, `CC_0291` Bath,
 `CC_0292` the nine all-at-large, `CC_0293` the final five). The Knight trackers report it in
 exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
@@ -110,8 +110,8 @@ that 238; it is not drift. Lower this number whenever a change shrinks it — a 
 hides drift, and 🔴 **never raise it to clear a red.**
 
 ⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Measured 2026-10-26, across every
-`is_vacant` office and not just those in the view: **64 flagged, 40 dated, 24 undated** (was
-65 / 24 / 41 before `CC_0298`, and 65 / 40 / 25 before `CC_0300`). An undated flag asserts a
+`is_vacant` office and not just those in the view: **63 flagged, 41 dated, 22 undated** (was
+65 / 24 / 41 before `CC_0298`, and 64 / 40 / 24 before `CC_0301`). An undated flag asserts a
 vacancy to voters and keeps the row out of the drift metric. **Do not read a stable 238 as
 "occupancy is clean".**
 
@@ -120,11 +120,23 @@ vacancy to voters and keeps the row out of the drift metric. **Do not read a sta
 
 | kind | n | what it needs |
 | --- | --- | --- |
-| real vacancy, date citable | 16 | the date — `CC_0298` wrote these |
-| real vacancy, date not published | 1 | **nothing.** Richland County SC SWCD says so in its `description`; that is the correct shape |
-| ~~not vacant, a holder exists~~ | 1 | ✅ done — `CC_0300` seated the Cornelius OR councillor |
+| real vacancy, date citable | 16 + 1 | ✅ `CC_0298`; `CC_0301` added Three Valleys MWD Division 3 |
+| real vacancy, date not published | 1 + 1 | **nothing but an explanation in `description`** — Richland County SC SWCD, and now Torrance USD Trustee Area D (`CC_0301`). That is the correct shape |
+| ~~not vacant, a holder exists~~ | 2 | ✅ `CC_0300` Cornelius OR, `CC_0301` Caledonia WI |
 | **not vacant, awaiting its FIRST election** | 20 | explain it (`CC_0299`), then seat the winner |
-| unseeded, emptiness unproven | 3 | a roster check, not a date |
+| ~~unseeded, emptiness unproven~~ | 3 | ✅ `CC_0301` — and the three came out **three different ways** |
+
+🔴 **"UNSEEDED, EMPTINESS UNPROVEN" IS A QUEUE OF SINGLETONS, NOT A BATCH.** The last three rows
+of this triage were checked against their own bodies' rosters and no two wanted the same thing:
+Three Valleys MWD Division 3 was vacant **with the date published on the district's page**;
+Torrance Area D was vacant with **no date published anywhere**; Caledonia WI Seat 2 **was not
+vacant at all**. Check them one at a time, against the body's own roster.
+
+🔴 **READ WHAT A SOURCE'S DATE IS A DATE *OF* BEFORE ADJUSTING IT.** `CC_0298` wrote
+departure + 1 because Ballotpedia publishes the member's LAST DAY. Three Valleys publishes
+"Vacant Effective June 3, 2026" — the date the vacancy TAKES EFFECT, which is already the first
+empty day, so it is written unadjusted. Same field, opposite handling, because the sources
+measure different events.
 
 🔴🔴 **A SEAT AWAITING ITS FIRST ELECTION LOOKS EXACTLY LIKE A VACANCY. ASK WHAT IS ON THE BALLOT.**
 Eight Los Angeles County bodies carry BOTH legacy `At-Large` office rows and newer by-district
