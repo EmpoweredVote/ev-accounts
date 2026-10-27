@@ -6,7 +6,12 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Empowered Accounts Admin</title>
     <script>
-      (function(){var s=localStorage.getItem('ev:color-scheme');if(s==='dark'||(!s&&!window.matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.classList.add('dark')})();
+      // Dark unless the person chose light HERE. The OS is deliberately not consulted:
+      // a browser reports prefers-color-scheme: light when the OS has no preference set
+      // at all, so reading it made "never chose" indistinguishable from "chose light",
+      // and every undecided visitor got a light page. Only our own stored choice counts.
+      // A read that throws (private mode, blocked storage) leaves s null and falls to dark.
+      (function(){var s=null;try{s=localStorage.getItem('ev:color-scheme')}catch(e){}if(s!=='light')document.documentElement.classList.add('dark')})();
     </script>
   </head>
   <body>
