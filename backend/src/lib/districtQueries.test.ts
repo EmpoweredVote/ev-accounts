@@ -145,4 +145,16 @@ describe('every politician row carries its office id', () => {
   it('selects it on the statewide query too, which is where most vacancies surface', () => {
     expect(buildStatewideQuery()).toContain('o.id AS office_id');
   });
+
+  it('🔴 selects o.description AS office_description — the mapper reads it and the SQL did not', () => {
+    // This is the exact shape of the defect this guard exists for: the mapper has always done
+    // `office_description: row.office_description ?? ''`, so a missing column is not a crash and
+    // not a type error — it is a silently empty field on every address lookup. Only the SQL text
+    // can show it. Found in production by writing a description and reading "" back from the API.
+    expect(buildDistrictQuery(base)).toContain('o.description AS office_description');
+  });
+
+  it('selects the description on the statewide query too', () => {
+    expect(buildStatewideQuery()).toContain('o.description AS office_description');
+  });
 });
