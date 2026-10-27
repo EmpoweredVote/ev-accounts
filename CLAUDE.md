@@ -74,7 +74,9 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-26: `295 / 57 / 238`** (was `433 / 194 / 239` on 2026-10-20; the 136 that left
+**Measured 2026-10-27: `294 / 56 / 238`** (`CC_0300` seated the Cornelius OR councillor, which was
+in the FLAGGED bucket — total and flagged each fall by one, the 238 baseline does not move; was
+`295 / 57 / 238` on 2026-10-26, and `433 / 194 / 239` on 2026-10-20; the 136 that left
 are all 17 Maine cities being seated — `CC_0282` Augusta, `CC_0283` Westbrook, `CC_0291` Bath,
 `CC_0292` the nine all-at-large, `CC_0293` the final five). The Knight trackers report it in
 exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
@@ -108,9 +110,10 @@ that 238; it is not drift. Lower this number whenever a change shrinks it — a 
 hides drift, and 🔴 **never raise it to clear a red.**
 
 ⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Measured 2026-10-26, across every
-`is_vacant` office and not just those in the view: **65 flagged, 40 dated, 25 undated** (was
-65 / 24 / 41 before `CC_0298`). An undated flag asserts a vacancy to voters and keeps the row out
-of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
+`is_vacant` office and not just those in the view: **64 flagged, 40 dated, 24 undated** (was
+65 / 24 / 41 before `CC_0298`, and 65 / 40 / 25 before `CC_0300`). An undated flag asserts a
+vacancy to voters and keeps the row out of the drift metric. **Do not read a stable 238 as
+"occupancy is clean".**
 
 🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND THERE ARE FOUR KINDS.**
 `CC_0298` classified all 41 undated flags one at a time, and only 16 of them wanted a date:
@@ -119,7 +122,7 @@ of the drift metric. **Do not read a stable 238 as "occupancy is clean".**
 | --- | --- | --- |
 | real vacancy, date citable | 16 | the date — `CC_0298` wrote these |
 | real vacancy, date not published | 1 | **nothing.** Richland County SC SWCD says so in its `description`; that is the correct shape |
-| **not vacant, a holder exists** | 1 | seat the person (Cornelius OR — the city lists four councillors, we hold three) |
+| ~~not vacant, a holder exists~~ | 1 | ✅ done — `CC_0300` seated the Cornelius OR councillor |
 | **not vacant, awaiting its FIRST election** | 20 | explain it (`CC_0299`), then seat the winner |
 | unseeded, emptiness unproven | 3 | a roster check, not a date |
 
@@ -245,6 +248,17 @@ SELECT essentials.seat_officeholder(office_id, politician_id, term_start, source
 
 -- Close a term with no successor, as of the first VACANT day. Syncs is_vacant/vacant_since.
 SELECT essentials.vacate_office(office_id, first_vacant_day, source);
+```
+
+🔴 **THE TWO HELPERS ARE NOT SYMMETRIC ABOUT THE FLAG, AND THE NAMES SUGGEST THEY ARE.**
+`vacate_office` SETS `is_vacant`/`vacant_since`. **`seat_officeholder` DOES NOT CLEAR THEM** — it
+only writes `office_terms` and never touches `essentials.offices`. So **seating someone into a
+flagged seat leaves it held AND vacant**, which is exactly the `is_vacant` trap below: a filter
+applied after the match emits a spurious all-NULL office row for the holder you just seated.
+Clear the flag yourself in the same migration and assert it:
+
+```sql
+UPDATE essentials.offices SET is_vacant = false, vacant_since = NULL WHERE id = <office>;
 ```
 
 🔴 **`vacant_since` IS THE FIRST DAY THE SEAT WAS EMPTY, NOT THE DAY THE MEMBER LEFT.** The helper
