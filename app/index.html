@@ -6,7 +6,17 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Empowered Vote — Profile</title>
     <script>
-      (function(){var s=localStorage.getItem('ev:color-scheme');if(s==='dark'||(!s&&!window.matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.classList.add('dark')})();
+      // Dark unless the person chose light on an Empowered Vote site. The OS is deliberately
+      // not consulted: a browser reports prefers-color-scheme: light when the OS has no
+      // preference set at all, so reading it could not tell "never chose" apart from "chose
+      // light", and every undecided visitor got a light page.
+      //
+      // The ev_theme cookie (.empowered.vote) is the cross-app truth and is read FIRST, the
+      // same order essentials uses. localStorage is per-origin, so without the cookie a light
+      // choice made on essentials would not be visible here and this page would render dark
+      // against the person's stated wish. Reading it is what keeps "their choice still wins"
+      // true across apps. A storage read that throws leaves s null and falls to dark.
+      (function(){var m=document.cookie.match(/(?:^|;\s*)ev_theme=([^;]+)/);var s=m?m[1]:null;if(!s){try{s=localStorage.getItem('ev:color-scheme')}catch(e){}}if(s!=='light')document.documentElement.classList.add('dark')})();
     </script>
   </head>
   <body>
