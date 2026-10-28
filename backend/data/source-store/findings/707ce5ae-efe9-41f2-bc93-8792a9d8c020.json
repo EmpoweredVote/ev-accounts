@@ -1,0 +1,112 @@
+{
+  "politician_id": "707ce5ae-efe9-41f2-bc93-8792a9d8c020",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Washburn'), linked to DALE WASHBURN (district 141) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Washburn'), linked to DALE WASHBURN (district 141) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Washburn'), linked to Dale Washburn (district 144) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr)",
+        "branch.vote candidate page (confirms Roy Dale Washburn Jr., House District 144, unopposed on the 2026 general ballot; voting section is about school-zone cameras): nothing on the subject",
+        "blocked: https://www.13wmaz.com/article/news/georgia-representatives-looking-to-improve-state-elections/93-a54c3d58-20e7-4627-9ca2-ac4845273a2a (403 access denied; search snippets suggest he spoke about photo ID with mailed absentee ballots, but no passage could be copied)",
+        "blocked: https://www.13wmaz.com/article/news/local/georgia-republicans-propose-election-reforms/93-0ed18419-a3d0-4ca4-bc72-7e529af7e31b (403)",
+        "blocked: https://legiscan.com (403); fastdemocracy.com sponsor tab not readable",
+        "blocked: https://ballotpedia.org/Dale_Washburn (fetch returned empty page; a browser-disguised retry was not attempted)",
+        "ajc.com Feb 26 2021 article: does not name him, nothing on the subject",
+        "legis.ga.gov bill pages not opened (login token required, not bypassed)",
+        "official bio PDF on legis.ga.gov: text not readable"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.697Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.405Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

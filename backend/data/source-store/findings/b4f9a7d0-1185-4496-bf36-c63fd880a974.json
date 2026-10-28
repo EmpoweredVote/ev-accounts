@@ -102,6 +102,30 @@
       "found": 3,
       "at": "2026-10-23T00:05:30.628Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter registration drives",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page confirming he holds NC House District 40 (https://nchousedems.com/our-members/phil-rubin-house-district-40/): nothing on the subject",
+        "campaign site home and priorities pages (https://www.philrubin.com/priorities): only a general line about protecting voting rights and fair maps, no ID or citizenship content, not saved",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/856 (HTTP 500)",
+        "not reviewed: his Bluesky posts (page returned no post text)",
+        "not reviewed: https://pluralpolicy.com/app/person/efae51b3-e547-46c0-87df-4ac35c0c60de/ (page returned no content)",
+        "two news searches on name plus voter ID and HB 127: no own words or votes of his found; he is not a listed sponsor of HB 127",
+        "Ballotpedia: not fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:39.713Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

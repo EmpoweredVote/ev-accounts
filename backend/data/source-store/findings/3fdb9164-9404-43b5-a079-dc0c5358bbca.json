@@ -18,6 +18,24 @@
       "found": 0,
       "at": "2026-10-22T21:58:13.617Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia page https://ballotpedia.org/Victor_Arias lists Robert Neeld third in the Florida District 19 primary of August 18, 2026, behind the winner, and the general-election field excludes him)",
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/robert-m-neeld: confirms he was a 2026 district 19 candidate; nothing on the subject",
+        "blocked: https://floridaelectionwatch.gov/CompareStateToCounty/140192 (page returned an error)",
+        "stopped after confirming out of scope; other places not searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:55:51.050Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -25,6 +25,69 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "c4e65fd8eeb540576459d4269259cb4403e96be4d66bae975f979e8f686ff36d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/H1981",
+      "date": "2011-01-24",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1981-2011",
+      "act": "sponsor",
+      "note": "H.1981, An Act establishing identification requirements for voters who registered by mail, filed by Peisch. Reported favorably by committee 2012-05-30, read a second time 2012-06-13 and ordered to a third reading; no further action taken.",
+      "subjects": [
+        "ID for voters who registered by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:45:43.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c0447df6dea0e75cad711d9057dd389c830eeda9b5cee4dde0fa36d37fa67a4",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/186/H663",
+      "date": "2009-01-20",
+      "date_precision": "day",
+      "instrument_id": "MA-H-663-2009",
+      "act": "sponsor",
+      "note": "H.663, An Act establishing identification requirements for voters who registered by mail, filed by Peisch; referred to Election Laws 2009-01-20; the page shows it read a second time 2010-06-23 and ordered to a third reading.",
+      "subjects": [
+        "ID for voters who registered by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:45:43.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c93fe05215cebeba10007ea24410cd7a36808ac342c9a4f8541d3a0403f7b0e6",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H625",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-625-2013",
+      "act": "sponsor",
+      "note": "H.625, An Act relative to absentee ballots, filed by Peisch; referred to Election Laws, hearing scheduled, then accompanied a study order (H.4145) on 2014-06-05. The page title alone does not show its content on ID.",
+      "subjects": [
+        "absentee ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:45:43.351Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -50,6 +113,29 @@
       "found": 0,
       "at": "2026-10-22T23:20:08.260Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for voters who registered by mail",
+        "absentee ballot rules",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady profile (confirms she holds the 14th Norfolk seat and is a 2026 candidate): https://www.ballotready.org/people/alice-hanlon-peisch-a2f858f9-45ea-4974-8893-fb3409ed6473",
+        "malegislature.gov bill pages H.1981 (2011-2012), H.663 (2009-2010), H.625 (2013-2014), H.593 (2015-2016)",
+        "blocked: https://ballotpedia.org/Alice_Peisch (fetch returned empty page)",
+        "blocked: https://malegislature.gov/Legislators/Profile/APH1 (404)",
+        "web search: name plus voter ID, proof of citizenship, election integrity (no own words found)",
+        "own-words statements on the subject: nothing found"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:45:43.351Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

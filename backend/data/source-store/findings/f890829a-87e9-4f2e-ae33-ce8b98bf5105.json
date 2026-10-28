@@ -1,0 +1,28 @@
+{
+  "politician_id": "f890829a-87e9-4f2e-ae33-ce8b98bf5105",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "people without ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record extraction script not run (standing rule against running repo scripts)",
+        "Senate member page apps.senate.virginia.gov S119: confirms Senate District 24, no election text",
+        "web search: name plus voter ID (nothing own-words)",
+        "no campaign site found",
+        "blocked: https://lis.virginia.gov (page loads empty), https://legiscan.com (403)",
+        "vpap pages not fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:56.696Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

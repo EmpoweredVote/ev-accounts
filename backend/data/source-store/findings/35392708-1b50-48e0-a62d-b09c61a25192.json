@@ -24,6 +24,32 @@
       "found": 0,
       "at": "2026-10-22T22:24:01.365Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed on the 2026-11-03 general ballot for Indiana House District 60 via https://www.ballotready.org/people/carrie-l-syczylo",
+        "BallotReady profile: general statements on transparency and local resources, nothing on the subject",
+        "iVoterGuide profile https://ivoterguide.com/candidate/95586/race/30709/election/1456: the photo ID question is marked did not answer, nothing on the subject",
+        "blocked: https://bluevoterguide.org/fr/IN/candidate_Carrie_Syczylo/726760 (Cloudflare challenge)",
+        "no campaign site or official site found in two searches; nothing on the subject",
+        "not a sitting legislator: no bill record",
+        "Ballotpedia not reviewed (no page surfaced in search results)",
+        "news searches (2): nothing on the subject by her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:29:39.146Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

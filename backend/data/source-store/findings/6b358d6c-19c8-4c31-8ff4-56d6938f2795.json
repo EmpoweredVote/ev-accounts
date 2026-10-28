@@ -24,6 +24,54 @@
         "fetched_at": "2026-10-22T23:52:38.784Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "cdc0e00a3068d07df2d5ea238844f92e08f304efe971bc608eae703b02c93de3",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (roll call 758)",
+      "note": "HB 958 (Election Law Changes) is an omnibus election bill. The edition read here includes voter-list maintenance, removal of voters flagged as possible non-citizens, and absentee and ballot-challenge changes. The roll call transcript lists this member among the Noes.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:03:29.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17ff1157d7a9326114a15f8801164ab9ca385b533a2ee111bd0349b093f93e8d",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (roll call 801)",
+      "note": "HB 958 (Election Law Changes) is an omnibus election bill. The edition read here includes voter-list maintenance, removal of voters flagged as possible non-citizens, and absentee and ballot-challenge changes. The roll call transcript lists this member among the Noes.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:03:29.608Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -52,6 +100,30 @@
       "found": 1,
       "at": "2026-10-22T23:52:38.784Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: WUNC article https://www.wunc.org/politics/2026-10-02/granville-vance-nc-house-rematch-bryan-cohn-frank-sossamon says he is running for a second term in House District 32 (November 3, 2026)",
+        "On the Record (0 meetings)",
+        "official legislature page https://house.ncleg.gov/Members/Biography/H/827 plus his vote list https://www.ncleg.gov/Members/Votes/H/827 and introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/827: two roll calls on HB 958 found; his bills list has nothing on the subject",
+        "HB 958 bill page https://www.ncleg.gov/BillLookup/2025/H958 and text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v7.pdf read for contents",
+        "campaign site: none found",
+        "Ballotpedia: not reviewed (only the district page was named in search results)",
+        "two news searches on name plus subject words: no statement by him on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T20:03:29.608Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

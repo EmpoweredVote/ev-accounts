@@ -1,6 +1,37 @@
 {
   "politician_id": "cf6383ed-241b-4cbd-a51d-8bfe2eefdd3c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +56,29 @@
       "found": 0,
       "at": "2026-10-22T22:52:57.352Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this politician id)",
+        "Indiana Senate caucus member page https://www.indianasenaterepublicans.com/charbonneau (confirms he is the District 5 state senator; 73 news items reviewed, none on the subject)",
+        "Ballotpedia https://ballotpedia.org/Ed_Charbonneau (confirms the office; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_edmund_charbonneau_1 (page returned only a heading, needs scripts); roll calls already on file so not pursued",
+        "news search on name plus voter ID, citizenship, mail ballot, election integrity (2 searches): nothing on the subject names him",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:51:33.565Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -28,6 +28,30 @@
       "found": 0,
       "at": "2026-10-22T21:51:34.198Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity and scope confirmed: https://ballotpedia.org/Rodney_King shows him as an independent candidate for U.S. House Tennessee District 3, on the 2026-11-03 general-election ballot; https://rodneykingforcongress.com is titled Rodney Joe King for Congress and matches the same biography",
+        "On the Record (0 appearances)",
+        "campaign site home page and about page https://rodneykingforcongress.com (issues: Social Security, health care, taxes, student loans, war powers, stock trading, grocery costs; nothing on the subject)",
+        "Ballotpedia Candidate Connection survey answers (nothing on the subject)",
+        "the Ballot Brief and BallotReady listings (leads only, no statements)",
+        "congress.gov not applicable (not a sitting member)",
+        "one web search on name plus 2026 candidacy (no statement on the subject found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:48:45.707Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

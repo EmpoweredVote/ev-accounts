@@ -99,6 +99,78 @@
         "fetched_at": "2026-10-23T00:06:11.396Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "861c29a1445770981b17a547bf466be5ba7973b5f156c894d0d75ad54d56cf24",
+      "kind": "own-words",
+      "url": "https://ncpoliticalnews.com/news/leader-blue-leader-reives-statement-on-s747-elections-law-changes",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "passage": "“This legislation is yet another example of Republican leadership making it harder for North Carolinians to vote. It opens the door for voter intimidation at polling places, completely undermines same-day registration during early voting and makes it easier to toss out valid ballots. These changes do not improve the integrity of our elections — if anything, they erode the trust of voters.”",
+      "note": "Joint statement issued by Reives and the Senate minority leader on the committee substitute for Senate Bill 747, Elections Law Changes. It is about election law in general (polling places, same-day registration, ballot challenges); it does not name ID or citizenship.",
+      "subjects": [
+        "election law changes in general",
+        "same-day registration",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.813Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c5e9385225c9af65479e4a0e9bb82d82e8a9fe23a0b4709045b5951cf64cf75",
+      "kind": "own-words",
+      "url": "https://www.wunc.org/politics/2026-08-17/nc-gov-stein-vetoes-elections-judicial-discipline-bills",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "passage": "\"All they want to do is make sure that you have less power as voters and that they have more power for themselves,\"",
+      "note": "Reives, quoted by WUNC at the governor's veto event for House Bill 958 (Election Law Changes). He describes the bill as shifting power away from voters. The quote does not mention ID or citizenship; the bill's keywords on the legislature page include citizenship and ID systems, but its text was not reviewed.",
+      "subjects": [
+        "election law changes in general",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.813Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -127,6 +199,32 @@
       "found": 2,
       "at": "2026-10-23T00:06:11.396Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail ballots",
+        "proof of citizenship to vote",
+        "election law bills in general",
+        "trust in elections and election oversight"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page (confirms House Minority Leader, District 54; 2026 ballot status not shown there)",
+        "NC news site press releases: joint statement on SB 747 (2023) and statement on election oversight (2026)",
+        "WUNC report of the 2026-08-17 veto event for HB 958",
+        "blocked: https://www3.ncleg.gov/Members/Biography/H/426 and /Members/Votes/H/426 (HTTP 500)",
+        "blocked: https://ncnewsline.com/2026/08/17/stein-vetoes-republican-backed-anti-voter-north-carolina-elections-bill/ (bot challenge)",
+        "Ballotpedia (page returned empty)",
+        "2018 voter ID floor-debate coverage from WUNC, Carolina Journal, ABC11 (no Reives quote found)",
+        "not reviewed: https://ncpoliticalnews.com/news/leader-reives-statement-on-veto-overrides (only a search-result lead, not opened)",
+        "no 2018 or 2023 own-words statement on photo ID found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:49:47.813Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

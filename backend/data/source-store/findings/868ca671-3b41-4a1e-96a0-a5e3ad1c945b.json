@@ -1,6 +1,37 @@
 {
   "politician_id": "868ca671-3b41-4a1e-96a0-a5e3ad1c945b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +56,31 @@
       "found": 0,
       "at": "2026-10-22T22:40:52.990Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Michael_Crider (fetched with curl) shows him as the sitting Indiana Senate District 28 member, re-elected 2024, term ends 2028 (not on the 2026 ballot; sitting official)",
+        "On the Record (0 appearances)",
+        "Senate caucus member page https://www.indianasenaterepublicans.com/crider (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2024/bills/house/1264/details (script-driven page, no vote data returned); his vote on 2024 HB 1264 (election security, voter-roll verification) not reached",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (HTTP 403 on fetch and on curl with browser user agent)",
+        "congress.gov: not applicable",
+        "web searches on name plus voter ID / citizenship / absentee / election bills (three searches): no bill authorship, vote, or own words on the subject found; only redistricting and mental-health items surfaced"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:32:04.571Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,157 @@
+{
+  "politician_id": "085cfb33-a561-4bdf-bc8f-6a74d5e85cd1",
+  "findings": [
+    {
+      "id": "e2d7b0a9132c101eb2b6cd1587e0c104cb2462e044e3a75da7006065e725e6a7",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20252026/238454",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HR-885-2025",
+      "act": "sponsor",
+      "note": "Listed as one of four House sponsors of HR 885, which creates the House Study Committee on Election Procedures to review Georgia election laws and who administers them. The document shows no introduction date.",
+      "subjects": [
+        "election integrity laws in general",
+        "election procedures review"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:41.084Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5efce1e00b6529462d4052d3d85536e887229413a27bce609d55c5aaee2535e",
+      "kind": "record",
+      "url": "https://house-press.com/?p=14842",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Appointed by the Speaker to the House Blue-Ribbon Study Committee on Election Procedures",
+      "note": "House press release naming him a member of the committee that studies Georgia election laws and administration and reports findings and legislative recommendations. The committee's February 2026 report lists him as a member and gives meeting dates; it does not itself show his views.",
+      "subjects": [
+        "election integrity laws in general",
+        "election procedures review"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:41.084Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Leverett'), linked to ROB LEVERETT (district 33) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Leverett'), linked to ROB LEVERETT (district 33) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Leverett'), linked to Rob Leverett (district 123) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws",
+        "election procedures study committee"
+      ],
+      "places": [
+        "status: in office (Georgia House District 123, took office 2023 so no 2021 election-law vote) and on the 2026-11-03 general ballot as incumbent, per https://ballotpedia.org/Rob_Leverett",
+        "On the Record (0 appearances found)",
+        "campaign site https://www.voterobleverett.com/ (about page; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Rob_Leverett (no survey answers on the subject)",
+        "House caucus press site: committee appointment releases and a search for his name with election",
+        "legislature bill pages: HR 885 (2025) via the legislature's document download; committee report PDF reviewed, lists him as a member and names no ID or citizenship recommendations in its pages",
+        "blocked: https://www.billtrack50.com/legislatordetail/25828 (bill list loads only through scripts)",
+        "blocked: https://legiscan.com/GA/bill/SB119/2025 (bot check)",
+        "news search: no direct quote from him on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:41:41.084Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.402Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

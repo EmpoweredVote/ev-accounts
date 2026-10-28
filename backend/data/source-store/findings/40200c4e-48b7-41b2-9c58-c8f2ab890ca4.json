@@ -1,6 +1,79 @@
 {
   "politician_id": "40200c4e-48b7-41b2-9c58-c8f2ab890ca4",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "4483cef29dd0654fef669f5649d460b9f46e28139d1a6be7620e12e4620c9ef7",
+      "kind": "own-words",
+      "url": "https://www.indianahousedemocrats.org/news/ras5e1abxzw14ypztsdoxeyodi8u1a",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "“Our student IDs already meet the standards for voter identification. They’re issued by state institutions, include a photo, and show the student’s full name. This is not about voter security—it’s about further voter suppression.",
+      "note": "Statement released by her through the House caucus after the House passed SB 10 on April 1, 2025 (66-25), a bill that bars college students from using state-issued school IDs to vote. She says student IDs already meet the voter ID standard.",
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:07.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acc5f21bfe4039dd00e64e1282bc4163eb7897cfa963168132fbfa4905881f81",
+      "kind": "own-words",
+      "url": "https://www.indianahousedemocrats.org/news/ras5e1abxzw14ypztsdoxeyodi8u1a",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "“This bill is a clear attempt to make it harder for young Hoosiers to vote.",
+      "note": "Opening line of the same statement on SB 10 (student IDs at the polls). She describes the bill's effect on young voters.",
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:07.094Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +99,29 @@
       "found": 0,
       "at": "2026-10-22T22:27:34.965Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voting access"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tonya_Pfaff shows her on the 2026 general-election ballot for Indiana House District 43, having advanced from the May 5, 2026 primary",
+        "On the Record (0 meetings)",
+        "campaign site https://www.tonyapfaff.com: nothing on the subject",
+        "state House caucus news pages (indianahousedemocrats.org): one release on SB 10 saved; an old release on an absentee-voting bill (pfaff-opposes-bill-to-limit-absentee-voting) is now a dead link, blocked: https://indianahousedemocrats.org/news-media/pfaff-opposes-bill-to-limit-absentee-voting",
+        "Ballotpedia: nothing on the subject",
+        "news search on SB 10 (Indiana Public Radio, Indiana Capital Chronicle, Bolts): pages fetched, none quotes her",
+        "iga.in.gov bill and member pages: page text did not load (blocked: https://iga.in.gov/legislative/2025/bills/senate/10/details); roll calls already on file from the official feed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T02:57:07.094Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

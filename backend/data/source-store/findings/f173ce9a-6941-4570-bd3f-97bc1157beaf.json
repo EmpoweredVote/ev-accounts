@@ -1,0 +1,53 @@
+{
+  "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+  "findings": [
+    {
+      "id": "ffc0d111955c5bf7bba7ad51ba8967077b702b4c7a7c30cef0367a1ffe4fa310",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor, third reading (passed 57-16-6)",
+      "note": "Jesse Gabriel's floor vote on SB 1174, Elections: voter identification, a bill that bars local governments from requiring voter ID. Read from the Digital Democracy bill page (a news-site tracker, not the official legislature page, which returned 403).",
+      "subjects": [
+        "local voter ID bans",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:23:22.566Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter ID with no ID fallback",
+        "local voter ID bans"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web searches on name plus voter ID / SAVE Act / election integrity (nothing on the subject in their own words)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (403)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "blocked: https://ballotpedia.org/Phillip_Chen_(California) and ballotpedia pages (empty content)",
+        "2026 ballot status not confirmed from a fetched page",
+        "official site a46.asmdc.org and jessegabriel.com (searched; nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:23:22.566Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

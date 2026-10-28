@@ -42,6 +42,110 @@
         "fetched_at": "2026-10-22T22:17:06.706Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "22d20c863b0cbce871d279922fc9f1847b7118f42932f2dbf7192568dab18704",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/vision",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "District 4 is heavily gerrymandered, splitting cities and parishes to weaken the voices of everyday people. At the same time, voter suppression laws make it harder for working families, students, and seniors to cast a ballot.",
+      "note": "Campaign issue page, undated. Says voter suppression laws make casting a ballot harder. Does not name photo ID, citizenship proof or any specific law.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter suppression laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9bb4812472d4d385df136af95136fed72e8a28e53f33fe8f5c72618ac026bd5a",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/vision",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "We support national standards to end partisan gerrymandering and protect voting rights. That means fair maps, automatic registration, and restored protections under the Voting Rights Act.",
+      "note": "Campaign issue page, undated. Lists automatic registration and Voting Rights Act protections. Says nothing on ID or citizenship documents.",
+      "subjects": [
+        "automatic voter registration",
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "374093222a417731b989568cf24ee88784a0ea06b4845994db033ea0b74e65d7",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "They gerrymander districts, block votes, and erase voter registrations instead of helping everyday people.",
+      "note": "Campaign home page, undated. Criticises removal of voter registrations, a voter-roll topic. No mention of ID or citizenship.",
+      "subjects": [
+        "voter-roll removals",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b39044c1d07da4ea4a44a82c37496a3837380618dc456be68870e7e928a40e81",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "I support overturning Citizens United, banning congressional stock trading, and enforcing strong federal laws to protect voting rights.",
+      "note": "Campaign home page, undated. General support for strong federal voting-rights laws, no specifics on ID or citizenship.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2f4f8f8b94812193d884d531155836d4b00e229c974f121e38796b78ef62ca6",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Conrad_Cable",
+      "date": "2026-10-02",
+      "date_precision": "day",
+      "passage": "Protecting the right to vote is crucial to a functioning democracy, and every citizen deserves a voice at the ballot. We have witnessed firsthand how decisions like LA v Callais dilute the voting power of Americans and leave millions disenfranchised. In Congress, I will support the John Lewis Voting Rights Advancement Act to secure voting rights for all Americans.",
+      "note": "Ballotpedia Candidate Connection survey answer submitted Oct 2, 2026. Says he would support the John Lewis Voting Rights Advancement Act. Does not mention ID or citizenship proof.",
+      "subjects": [
+        "voting rights in general",
+        "John Lewis Voting Rights Advancement Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -70,6 +174,36 @@
       "found": 2,
       "at": "2026-10-22T22:17:06.706Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll removals",
+        "voter suppression laws",
+        "automatic voter registration",
+        "voting rights in general"
+      ],
+      "places": [
+        "status: on the 2026 ballot for U.S. House Louisiana District 4, Nov 3, 2026 (Ballotpedia https://ballotpedia.org/Conrad_Cable); never held office, so no votes or sponsorships",
+        "On the Record (0 meetings)",
+        "campaign site https://www.conrad4congress2026.com (home, /vision, /meet-conrad)",
+        "Ballotpedia (profile and Candidate Connection survey)",
+        "WWNO/WRKF candidate questionnaire https://www.wwno.org/2026-10-20/nov-3-election-guide-meet-the-4th-congressional-district-candidates: nothing on the subject",
+        "KTBS meet-the-candidate article: nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/96790/race/35037/election/1503: nothing on the subject (candidate marked did not answer the photo-ID question)",
+        "news searches (two): nothing on the subject",
+        "congress.gov: not applicable, not a legislator",
+        "not reviewed: https://www.youtube.com/@conrad4congress (campaign videos, not watched)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T00:57:16.063Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -22,11 +22,83 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "9a2bbf816b0745698081d81336b035475b7d0037b46e5b1fd4dacf49c086861e",
+      "kind": "own-words",
+      "url": "https://rhettabowers.com/voting-information/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "If you’re planning to vote by mail, you know must include either a Texas Driver’s License number, Texas State ID number, the last four digits of their Social Security Number, or Election ID Certificate number, with your application and when returning your ballot",
+      "note": "Campaign voting-information FAQ answering what the new Texas voting law means for voters. States the ID-number rule for mail ballots and applications. Informational wording; it gives no view on the rule. Page metadata shows it was last modified 2024-11-05; the date of this text is not stated.",
+      "subjects": [
+        "ID number with a mail ballot or application",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:43.985Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "564b30cf21a59eeee42fc81a2a366006b4b3c8eed03ec5be992304974df7b4c7",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/members/3565/biography",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In 2022, Bowers was a recipient of the Roy Wilkins Civil Rights - NAACP Image Award for breaking quorum to fight for the freedom to vote with her colleagues in the House Democratic Caucus, Texas Legislative Black Caucus, and Mexican American Legislative Caucus.",
+      "note": "Official House biography page (third person, written for her office page), describing an award tied to the 2021 quorum break over the voting bill. Undated page. Related voting-rights item, not an ID rule.",
+      "subjects": [
+        "voting rights",
+        "SB 1 (2021) election law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:43.985Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID number with a mail ballot or application",
+        "proof of citizenship to register or vote",
+        "SB 1 (2021) election law",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia https://ballotpedia.org/Rhetta_Andrews_Bowers (confirms sitting state House member, District 113, on the 2026 general-election ballot; no subject content)",
+        "campaign site https://rhettabowers.com (home, issues, about and voting-information pages)",
+        "official House member page and biography on house.texas.gov",
+        "Texas Legislature Online authored and coauthored lists, 89th regular session (no election-ID bill identified from the numbers; captions not individually reviewed); the 2021 SB 1 vote is already on file",
+        "web search: name plus voter ID / SB 1 / proof of citizenship",
+        "blocked: https://voterguide.dallasnews.com/2022-primary/candidates/2409 (404; the 2024 and 2020 pages load an empty frame)",
+        "blocked: https://legiscan.com (403, not used)",
+        "Texas Tribune 2023 article: nothing on the subject in the page text"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:30:43.985Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

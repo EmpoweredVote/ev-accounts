@@ -115,6 +115,59 @@
         "fetched_at": "2026-10-22T23:55:59.728Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "90339a73f7b5c15768eec539c8437d30161c8eb87e7f00bebc406a7eb0f7356a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Senate second reading (28-13). Johnson is listed among the Ayes.",
+      "note": "Legislative staff summary of Part II of the ratified bill: it requires DMV to send full Social Security numbers to the State Board of Elections monthly, requires the State Board to set a process to remove non-citizens from voter rolls using federal database information, and bars processing a registration application unless the applicant affirmatively says they are a U.S. citizen (with a sworn form if the question is left blank). The Governor vetoed it on 2026-08-17. Staff summary: https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8",
+      "subjects": [
+        "citizenship check on voter registration",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:48.155Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -145,6 +198,31 @@
       "found": 5,
       "at": "2026-10-22T23:55:59.728Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with an absentee or mail ballot request",
+        "proof of citizenship to register",
+        "citizenship check on voter registration applications",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page for Todd Johnson (Senator, district 35, Cabarrus and Union counties): https://www.ncleg.gov/Members/Biography/S/",
+        "BallotReady page: shows him as a candidate for the same Senate seat on the 2026 general-election ballot: https://www.ballotready.org/people/matthew-todd-t-johnson",
+        "NC General Assembly list of bills he sponsored (2025-2026): nothing on voter ID or citizenship; one early-voting bill (SB 994) and one local-commission bill, not on the subject",
+        "NC General Assembly roll-call record for the 2025-2026 session",
+        "NC General Assembly bill page and staff summaries for HB 958",
+        "campaign site and Ballotpedia: not reviewed, not found in search results",
+        "own words (interviews, forums, posts) on the subject: one web search, nothing found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:36:48.155Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

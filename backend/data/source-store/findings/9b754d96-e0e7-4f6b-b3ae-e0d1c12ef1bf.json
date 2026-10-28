@@ -1,6 +1,28 @@
 {
   "politician_id": "9b754d96-e0e7-4f6b-b3ae-e0d1c12ef1bf",
-  "findings": [],
+  "findings": [
+    {
+      "id": "dee552cacbb1fd41a3d1e8c6fedac9040323cfa605c09bdb973a95bf812d5fde",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H3750",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-3750-2025",
+      "act": "sponsor",
+      "note": "H.3750 'An Act to provide identification to youth and adults experiencing homelessness' (lead petitioner James J. O'Day with Sean Garballey) would have the Registrar of Motor Vehicles provide identification to people experiencing homelessness. The bill text does not mention voting; it is saved only as related to access to government-issued ID. Reported favorably by committee 2026-01-27 and sent to House Ways and Means.",
+      "subjects": [
+        "access to state-issued ID (homeless residents), not voting-specific"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:42:47.225Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +46,28 @@
       "found": 0,
       "at": "2026-10-22T23:17:21.334Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "access to government-issued ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/JJO1/194/Sponsor (confirms Representative James J. O'Day of West Boylston, 194th court); his 47 listed sponsored and co-sponsored bills reviewed: none on voter ID, citizenship checks or mail ballots; one bill on state-issued ID for homeless people saved as related",
+        "web search for his name plus the subject words: nothing on voter ID or citizenship; the results were unrelated petitions and advocacy documents that do not name him",
+        "not reviewed: roll-call votes on election bills, his campaign or official site, Ballotpedia, news archives"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:42:47.225Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -92,6 +92,100 @@
         "fetched_at": "2026-10-23T00:05:50.931Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "5b960eaf753d183c814fb87cd44067fc0a38da9af8b66ae72436493a262daa94",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third reading, SB 921: Const. Am./Require Photo ID For All Voters (Roll Call 677)",
+      "note": "Senate third-reading roll call passed 30 to 19; Burgin is on the Ayes list.",
+      "subjects": [
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:09.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a66d874b62ac65a194728410deacd45f4ca16049f0e2e60150cb5499dac3296d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/S250",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "NC-S-250-2019",
+      "act": "sponsor",
+      "note": "S250, Remove Foreign Citizens from Voting Rolls: Burgin is listed as a primary sponsor. The page shows Senate passage in April 2019, a conference report adopted 2019-10-30, and a veto on 2019-11-06.",
+      "subjects": [
+        "removing non-citizens from voter rolls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:09.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e05090185ecadd7d9bbf1402fea107d7335efac492da7e818f780d1dd46e8a4",
+      "kind": "own-words",
+      "url": "https://www.wfae.org/politics/2019-11-03/gop-backed-bill-targets-non-citizens-on-nc-voter-rolls-critics-say-itll-do-more-harm-than-good",
+      "date": "2019-11-03",
+      "date_precision": "day",
+      "passage": "I want everybody that legally can to vote,\" said state Sen. Jim Burgin, a Republican who represents Harnett, Johnston and Lee counties and one of the bill's primary sponsors. \"I wish more people would turn out to vote. So, I think this is a tool that we'll use to make sure the right people are voting.",
+      "note": "Quoted in a WUNC/WFAE story (by Rusty Jacobs) about S250, the bill to remove non-citizens from voter rolls. The passage runs across the reporter's attribution; both of his sentences are inside quotation marks.",
+      "subjects": [
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:09.093Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -120,6 +214,31 @@
       "found": 4,
       "at": "2026-10-23T00:05:50.931Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote",
+        "removing non-citizens from voter rolls",
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady profile (confirms NC Senate District 12 and a November 3, 2026 candidacy): https://www.ballotready.org/people/jim-burgin-e573f500-0d0c-40ae-9555-ffebab542754",
+        "ncleg.gov bill page and roll calls for 2023 S921 (Senate third reading, House third reading)",
+        "ncleg.gov bill page for 2019 S250",
+        "WFAE/WUNC 2019 article quoting him",
+        "web search: name plus voter ID (no own words on photo ID found)",
+        "not reviewed: Wikipedia page lists him as 12th district senator but is a lead only; page does not state 2026 status",
+        "blocked: https://ballotpedia.org/Jim_Burgin (not fetched, shared empty-page problem seen with other Ballotpedia pages)",
+        "his official legislature page and a campaign site were not located"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:48:09.093Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

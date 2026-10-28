@@ -49,6 +49,29 @@
       "found": 0,
       "at": "2026-10-22T23:15:58.424Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/T_C1/194 (confirms 2nd Norfolk District; election-related bills are on candidate residency affidavits, public-employee contributions and a presidential election day holiday, none on ID or citizenship)",
+        "bill page https://malegislature.gov/Bills/194/H808 (candidate residency affidavit, off the subject)",
+        "Ballotpedia https://ballotpedia.org/Tackey_Chan (on the 2026-11-03 general election ballot; nothing on the subject)",
+        "two news searches on his name plus subject words (no own words found)",
+        "campaign site: not reviewed, no URL found",
+        "official 2022 amendment roll call already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:30:26.544Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

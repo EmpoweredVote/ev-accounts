@@ -1,0 +1,54 @@
+{
+  "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+  "findings": [
+    {
+      "id": "7ddb97dd3cdf5febce873cbd27c5e7f5f6f7a17abe6d6baa7afde4fa45ff05cb",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1116 Berman et al., Senate floor",
+      "note": "AB 1116 (Berman, Elections: voter registration) lets a person register online without a California driver license or state ID if they give the last four digits of their Social Security number; the Secretary of State may verify identity from those digits, full name and date of birth; operative 2029. Vote record is from CalMatters Digital Democracy; the official leginfo site blocked automated access. The Governor vetoed the bill on 2026-09-27.",
+      "subjects": [
+        "identity proof to register to vote online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:55.275Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "identity proof to register to vote online",
+        "SAVE Act",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Jerry_McNerney (State Senate District 5 since 2024, term ends 2028; U.S. House 2013-2023)",
+        "official Senate site https://sd05.senate.ca.gov/ (site search did not work; nothing on the subject found)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge)",
+        "SB 1174 of 2024: took office after the vote, no vote recorded",
+        "CalMatters Digital Democracy vote pages for AB 25 of 2025 (failed without a vote), SB 405 of 2025 (failed), AB 1116 of 2025",
+        "House Clerk roll calls for H.R. 8281 SAVE Act 2024 (not a member then, no vote); H.R. 1 For the People Act roll calls 2019 and 2021 show a yea vote but are not saved because the roll-call pages do not show any voter-ID content",
+        "web searches on name plus voter ID and SAVE Act (no statement by this person found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:00:55.275Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

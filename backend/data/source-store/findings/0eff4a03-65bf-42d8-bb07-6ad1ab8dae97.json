@@ -46,6 +46,35 @@
         "fetched_at": "2026-10-22T23:32:14.871Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -74,6 +103,30 @@
       "found": 2,
       "at": "2026-10-22T23:32:14.871Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "https://ncleg.gov/Members/Biography/h/780 (confirms Representative Abe Jones, House District 38, Wake County; page lists no bills; nothing on the subject)",
+        "https://branch.vote candidate page (shows him unopposed in the 2026 general election for District 38; says his site had no voter ID or elections content as of April 2026)",
+        "House caucus member page https://nchousedems.com/our-members/abe-jones-house-district-38/ (nothing on the subject)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Abe_Jones (page returned no content)",
+        "blocked: https://fastdemocracy.com/bill-search//nc/legislators/NCL000317 (bill and vote lists did not load)",
+        "not reviewed: ncleg.gov introduced-bills and roll-call vote pages for voter ID bills since 2021 (not fetched)",
+        "web search on name plus voter ID, photo ID, SB 747, HB 237 (no vote or quote by him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:04:54.844Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,156 @@
+{
+  "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6",
+  "findings": [
+    {
+      "id": "b173abdb2b25cad98478014478c54fba1a552f5198f97ae4dc64b87cf0db5640",
+      "kind": "own-words",
+      "url": "https://www.fox5atlanta.com/news/senate-approves-polarizing-election-overhaul-over-democratic-objections",
+      "date": "2026-06-20",
+      "date_precision": "day",
+      "passage": "Republicans are kind of baking into the process an opportunity to raise doubt to create doubt in November so that they can contest what we know will be a blue wave.",
+      "note": "Quoted by FOX 5 Atlanta (article dated 2026-06-20) during Senate floor debate on a bill to remove QR codes from ballots and create a new election committee. Not about ID directly; saved as an election-law side topic.",
+      "subjects": [
+        "election integrity laws in general",
+        "QR-code ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:47:33.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Jackson, K.'), linked to KIM JACKSON (district 41) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Jackson, K.'), linked to KIM JACKSON (district 41) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Jackson, K.'), linked to KIM JACKSON (district 41) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Jackson'), linked to Jackson, Kim (district 41) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.412Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "campaign site https://kimforgeorgia.com and https://www.kimforgeorgia.com/?p=270 (nothing on the subject)",
+        "scope check: https://branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-41/candidates/kimberly-sue-jackson lists her in the 2026 general-election race for Senate District 41; Wikipedia page confirms she holds that seat",
+        "blocked: https://www.legis.ga.gov/legislation/55499 (SB 202 page loads by script only; its data API returns 401, so her SB 202 roll-call vote could not be read)",
+        "House daily report for 2021-03-25 on dlg.usg.edu gives only totals for SB 202, no names",
+        "blocked: https://ballotpedia.org/Kim_Jackson (fetch returned empty page)",
+        "blocked: https://www.pressreader.com/usa/ga-voice/20221021/281526524978463 (403)",
+        "news searches on her name plus voter ID, absentee, SAVE Act, proof of citizenship: no statement of hers on those found",
+        "not reviewed: Senate floor video for 2021 SB 202 debate"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:47:33.692Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.412Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

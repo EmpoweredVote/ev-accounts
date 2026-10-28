@@ -1,6 +1,28 @@
 {
   "politician_id": "eb8e8033-33dd-4ac3-aa5f-8225d747f91e",
-  "findings": [],
+  "findings": [
+    {
+      "id": "f931d42206b104ccc50d5508b248dd62eb5ee1099b98d3308fb40e0e848418b2",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/robert-g-burke",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voting laws should be simple: MUST be a US Citizen Voter ID Required",
+      "note": "Candidate's issue-stance text on his BallotReady profile for the 2026 MA-8 race, under a Legislation heading, with a link to his campaign priorities page.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T16:39:11.011Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -30,6 +52,32 @@
       "found": 0,
       "at": "2026-10-22T21:55:33.494Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia 2026 Massachusetts US House page (lists him among the 8th district general-election candidates)",
+        "BallotReady candidate profile (issue stance on voting laws)",
+        "campaign site burke4congress.us (home page fetched, nothing on the subject; /priorities returned 404)",
+        "burkeforcongress.com (does not resolve)",
+        "Boston.com 2024 candidate Q&A (nothing on the subject)",
+        "two news searches on his name plus the subject words (nothing further)",
+        "not reviewed: https://ballotpedia.org (no page fetched)",
+        "no legislative record: not a sitting legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-27T16:39:11.011Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

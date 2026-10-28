@@ -71,6 +71,29 @@
       "found": 2,
       "at": "2026-10-22T22:06:00.165Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Zuhdi_Jasser (confirms candidate for Arizona's 4th Congressional District, on the 2026 general-election ballot; his survey answers there say nothing on the subject)",
+        "campaign site https://www.jasserforcongress.com and https://z4az.com (home and about pages, nothing on the subject)",
+        "news debate report https://fox10phoenix.com/news/2026-election-arizona-congressional-district-4-candidates-face-off-debate (nothing on the subject)",
+        "news candidate profile https://www.kjzz.org/elections/2026-10-06/2026-arizona-4th-congressional-district-race-the-candidates-elex (nothing on the subject)",
+        "voter guide https://branch.vote/races/2024-arizona-primary-election-az-state-us-representative-az-congressional-4-r/candidates/zuhdi-jasser (2024 summary written by the guide, not his own words; no ID content, so not saved)",
+        "congressional record: not applicable, he has not held federal office",
+        "web search on name plus voter ID, SAVE Act, proof of citizenship, election integrity (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:17:47.513Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

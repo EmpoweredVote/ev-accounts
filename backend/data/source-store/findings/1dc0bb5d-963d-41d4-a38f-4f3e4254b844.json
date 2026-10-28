@@ -19,6 +19,23 @@
       "found": 0,
       "at": "2026-10-22T21:54:09.053Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary (Alabama 6th District special primary; https://abc3340.com/news/local/alabama-congressional-primary-results-winners-emerge-in-key-us-house-races names him as one of three candidates the winner defeated; the page does not state the date, and 2026-08-11 is the article's publication date)",
+        "On the Record (0 appearances)",
+        "blocked: https://alabamareflector.com/2026/07/27/four-democrats-vie-for-central-alabama-congressional-seat-in-special-primary-election/ (HTTP 403)",
+        "not reviewed: Ballotpedia, campaign site, other sources, because he is out of scope after the primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:11:29.182Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -146,6 +146,115 @@
         "fetched_at": "2026-10-22T22:14:56.513Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "45e5de7102e4acfc73303b57e37e8831db7ade3c4ad8909a4be130e75bc18014",
+      "kind": "own-words",
+      "url": "https://www.wadlinforsenate.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I support the core goal of the SAVE Act: ensuring that only American citizens register and vote in federal elections. Secure elections strengthen public confidence and protect every lawful vote.",
+      "note": "Campaign issues page, under Election Security and Voter Access. States support for the stated goal of the SAVE Act. The page is undated; date is the 2026 campaign year.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:10.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88225dd90a82f6ad3dd000f1811b44880391f6fdff99ab1ef69ac2a92da913cb",
+      "kind": "own-words",
+      "url": "https://www.wadlinforsenate.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "But election security and maximum participation are not opposing goals. Any new citizenship-documentation requirement must be implemented carefully, with adequate time, funding, and practical assistance for local election officials and individual voters.",
+      "note": "Same section. Says a new citizenship-documentation requirement needs careful rollout, time, funding and help for election offices and voters.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "rollout of documentation rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:10.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3606e82855f9d12aa8e4fdce9aad54c315497d881d796de51230af13f16b3bd",
+      "kind": "own-words",
+      "url": "https://www.wadlinforsenate.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The federal government should help states verify existing records, provide required documents without charge, accept reasonable alternative evidence, and give voters notice and time to correct discrepancies.",
+      "note": "Same section. Lists steps he wants alongside a citizenship-documentation rule: record checks by states, free documents, alternative evidence, and notice to correct problems.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "free documents",
+        "alternative evidence of citizenship",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:10.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7db19a7d1f8be93f13d35d59cd4c74a7574883294eb18123eb58874e59a277b",
+      "kind": "own-words",
+      "url": "https://www.wadlinforsenate.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "My standard is simple: prevent illegal voting without needlessly blocking lawful voters.",
+      "note": "Closing line of the Election Security and Voter Access section.",
+      "subjects": [
+        "election security and voter access",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:10.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fd45d18e76c2a8cae3f4acb75f0cf26ec60761b3144d795a2bc0cfb945b11b1",
+      "kind": "own-words",
+      "url": "https://www.wadlinforsenate.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also support making Election Day a national holiday.",
+      "note": "Same section. Related voting-access proposal.",
+      "subjects": [
+        "voting access",
+        "election day holiday"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:10.503Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -174,6 +283,32 @@
       "found": 7,
       "at": "2026-10-22T22:14:56.513Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "election security and voter access",
+        "election day holiday"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Jeff_Wadlin and https://independentarkansas.com/libertarian-jeff-wadlin/ (candidate for U.S. Senate in Arkansas, on the 2026-11-03 general-election ballot; the race is for the Senate, not the House)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.wadlinforsenate.com: issues page reviewed, home, about and in-the-news pages checked",
+        "Ballotpedia: nothing on the subject",
+        "news: https://independentarkansas.com/libertarian-jeff-wadlin/ and https://www.ktlo.com/2026/05/20/bentonville-businessman-announces-run-for-u-s-senate-as-libertarian-candidate/ : nothing on the subject",
+        "news search on name plus voter ID words: no result about him",
+        "legislature records: not applicable, he has not held legislative office"
+      ],
+      "found": 5,
+      "at": "2026-10-27T22:07:10.503Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

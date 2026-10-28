@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -106,17 +110,19 @@
       "date": "2026-05-11",
       "date_precision": "day",
       "passage": "The Vote by Mail Protection Act will invalidate this latest illegal action by President Trump to rewrite election rules for political purposes and ensure that eligible Americans can cast their ballots by mail - just like he regularly does,” added Congressman Lynch.",
-      "note": "Second quote from the same release, saying his bill is meant to keep mail voting open to eligible voters.",
+      "note": "Quote in his official press release on introducing H.R. 8666. The same release quotes him saying the executive order would undermine election integrity by disenfranchising senior citizens, veterans, overseas service members and disabled voters who rely on mail-in voting.",
       "subjects": [
         "mail-ballot rules",
-        "election integrity"
+        "election integrity",
+        "mail-in voting rules",
+        "federal voter lists for mail ballots"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:52:03.096Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:34.567Z",
         "method": "webfetch"
       }
     },
@@ -128,18 +134,19 @@
       "date_precision": "day",
       "instrument_id": "US-HR-8666-2026",
       "act": "sponsor",
-      "note": "He introduced the Vote by Mail Protection Act (H.R. 8666). Per his release, it would invalidate Executive Order 14399 on mail-in voting and bar the Postal Service and other federal agencies from spending funds to carry it out. The release says the order tells the Postal Service to refuse ballots from voters not named on newly created federal voter lists. The bill number and sponsor role come from his release; congress.gov was blocked.",
+      "note": "He introduced the Vote by Mail Protection Act (H.R. 8666). Per his press release, it would invalidate Executive Order 14399 on mail-in voting and bar the Postal Service and other federal agencies from spending funds to carry the order out. The order, as he describes it, would have the Postal Service refuse ballots from voters not named on newly created federal voter lists.",
       "subjects": [
         "mail-ballot rules",
         "federal voter lists for mail ballots",
-        "election integrity"
+        "election integrity",
+        "mail-in voting rules"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:52:03.096Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:34.567Z",
         "method": "webfetch"
       }
     },
@@ -194,6 +201,30 @@
       "found": 4,
       "at": "2026-10-22T21:52:03.096Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-in voting rules",
+        "federal voter lists for mail ballots",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site lynch.house.gov press-release list (one item on the subject, 2026-05-11)",
+        "Ballotpedia page (confirms he is on the 2026 general-election ballot for MA-8; lists his nay vote on H.R. 22)",
+        "news search on his name plus SAVE America Act (nothing from him found)",
+        "blocked: https://lynch.house.gov/search (access denied)",
+        "nothing on the subject: Boston.com 2026-02-13 roundup of state delegation reactions (page text not readable, no statement by him confirmed)",
+        "not reviewed: https://www.congress.gov (sponsorship list beyond H.R. 8666)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:58:34.567Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

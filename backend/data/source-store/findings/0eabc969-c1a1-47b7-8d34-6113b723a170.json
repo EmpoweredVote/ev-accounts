@@ -71,17 +71,18 @@
       "date": "2026-07-12",
       "date_precision": "day",
       "passage": "And that act, which he frames as stopping non-citizens from voting, it's actually about stopping citizens from voting.",
-      "note": "He says the SAVE Act is described by the president as a non-citizen voting measure, and says in his view it keeps citizens from voting.",
+      "note": "He says the president frames the SAVE Act as about non-citizen voting, and that he sees it as aimed at citizens.",
       "subjects": [
         "non-citizen voting",
-        "proof of citizenship to register (SAVE Act)"
+        "proof of citizenship to register (SAVE Act)",
+        "SAVE Act"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
         "method": "webfetch"
       }
     },
@@ -92,17 +93,18 @@
       "date": "2026-06-28",
       "date_precision": "day",
       "passage": "It's not about non-citizens voting.",
-      "note": "In a recorded interview (transcript from On the Record) about a housing bill, he says the SAVE Act is not about non-citizen voting.",
+      "note": "In an interview on a housing bill and his reelection, he says the SAVE Act is not about non-citizen voting, and lists groups he says it would hit: tribal members, college students, women and city residents.",
       "subjects": [
         "non-citizen voting",
-        "proof of citizenship to register (SAVE Act)"
+        "proof of citizenship to register (SAVE Act)",
+        "SAVE Act"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
         "method": "webfetch"
       }
     },
@@ -188,6 +190,136 @@
         "fetched_at": "2026-10-22T22:11:07.436Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "eba427942d15d1b3b3c895ee2266dec114bb8d4b88e35d97905b606a667bcc88",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "It would make it hard for women to vote whose names last names are different than their birth birth certificate names.",
+      "note": "In a full interview he describes the SAVE Act as federalizing elections and says it would purge registrations of voters whose names differ from their birth certificates, who would have to reapply. Transcript text from On the Record.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "voter-roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fdc723fcc4be766b0e0908c46221a44baae061b4ee963039803d9bdde51e5fa4",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "Very very uh difficult for tribal members to vote because of the act says it you have to have an expiration date on your ID.",
+      "note": "He says the SAVE Act would make voting hard for tribal members because tribal IDs have no expiration date.",
+      "subjects": [
+        "SAVE Act",
+        "ID requirements to vote",
+        "tribal ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e907d16d0349a5ea00be6ba7da535512a2b259272d7b47e406e05adb7f8123c",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/03d0fdd3-3126-4938-aee0-de443de9d965",
+      "date": "2026-06-28",
+      "date_precision": "day",
+      "passage": "It says that native tribal members cannot use their tribal ID to vote.",
+      "note": "He describes the SAVE Act as barring tribal IDs for voting and as limiting voter drives on college campuses.",
+      "subjects": [
+        "SAVE Act",
+        "ID requirements to vote",
+        "tribal ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cf5579c7939146cd2a7b8f63952426fb0ef34fa51c16c7da85c6ae32ac42079",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/03d0fdd3-3126-4938-aee0-de443de9d965",
+      "date": "2026-06-28",
+      "date_precision": "day",
+      "passage": "Oregon initiated it and in my For the People Act, which was Senate Bill number one a couple years ago that we came close to passing but unfortunately didn't, that bill would have allowed or actually required vote by mail opportunity for everyone in America cuz that's the top gold standard high integrity system.",
+      "note": "He says vote by mail is a high-integrity system and that his For the People Act would have required a vote-by-mail option nationwide.",
+      "subjects": [
+        "vote by mail integrity",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed045f1f6fc800957719cd95afc26bcd761909de1854f22f5d7c0a1e3d45a7e5",
+      "kind": "own-words",
+      "url": "https://www.kdrv.com/news/top-stories/save-america-act-which-could-change-voting-identification-requirements-heading-to-the-senate/article_a41cccfa-1f66-4c6c-90fb-b36d451245a2.html",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "a sinister ploy to deny millions of Americans their right to vote",
+      "note": "KDRV reports that he shared this on X about the SAVE America Act and that he will vote against it. Only the quoted phrase is his; the rest is the outlet's wording.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0c0d0113d916011eb8660400018ec18ce1a6e1205dcb9b478a9f1b4a22a3b12",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/merkley-slams-save-act-as-an-attempt-to-silence-eligible-voters/",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "This is modern day voter suppression, plain and simple.",
+      "note": "Senate office post about the SAVE Act, issued in his name. The page's publication date is 2025-04-30.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:12.684Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -217,6 +349,30 @@
       "found": 9,
       "at": "2026-10-22T22:11:07.436Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act / SAVE America Act",
+        "proof of citizenship to register",
+        "ID requirements to vote (tribal ID, name mismatch with birth certificate)",
+        "voter-roll purges and federal voter-list checks",
+        "vote by mail integrity",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (3 meetings; 2 touch the subject, 1 nothing on the subject)",
+        "Senate site pages merkley.senate.gov (floor-speech video page and press page on the SAVE Act)",
+        "news search (KDRV article quoting his post on X)",
+        "web search results naming a Merkley and Padilla FAIR Elections Act on federal voter-data checks (search snippet only, not fetched)",
+        "not reviewed: congress.gov bill pages for sponsorships (not fetched)",
+        "not reviewed: https://www.youtube.com/watch?v=pGEBQww1BMA and https://www.youtube.com/watch?v=LFFEvMqY4SA (OTR transcripts used instead)",
+        "Ballotpedia: page request returned HTTP 202 with no content, so not read; 2026 candidacy taken from the June 2026 interview titled as discussing his reelection campaign"
+      ],
+      "found": 8,
+      "at": "2026-10-27T17:04:12.684Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

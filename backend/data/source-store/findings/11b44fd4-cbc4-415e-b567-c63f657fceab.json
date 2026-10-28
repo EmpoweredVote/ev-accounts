@@ -1,0 +1,105 @@
+{
+  "politician_id": "11b44fd4-cbc4-415e-b567-c63f657fceab",
+  "findings": [
+    {
+      "id": "b0c01772c32065bb2743e018fbb29a93b6374b5bc6b225f9e1e0ff889371ead9",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1934216",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1213-2026",
+      "act": "sponsor",
+      "note": "HB 1213 (chief patron): a voter who signs an affirmation statement instead of showing valid ID, in person absentee or on Election Day, must also give full name, year of birth and last four digits of Social Security number if any. Left in the Privileges and Elections committee on 2026-02-18.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter affirmation statement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:01.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31aad87dd4cdf1fb0b3f7805c4ec78f9720ef39f053152c2930387e509f9776",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/814554/virginia-house-bill-78-session-2026",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-78-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (92-Y 6-N 0-A)",
+      "note": "HB 78, elections administration: makes certifying results a ministerial duty of local electoral boards, with removal and civil penalty for refusal. She voted yes on House passage. Related election-law vote, not a voter ID vote.",
+      "subjects": [
+        "election certification (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:01.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34627c73672ebc7d993dad4112149e20dddfcf706a0775048dd9878b4c2f1646",
+      "kind": "own-words",
+      "url": "https://royalexaminer.com/meet-the-candidates-delores-r-oates-virginia-house-of-delegates-district-31/",
+      "date": "2022-06-01",
+      "date_precision": "day",
+      "passage": "It is paramount to restore the trust and integrity of our elections because no citizen should question whether their vote has been accurately collected or counted for who or what they voted for. Delores says she will fight to audit future elections and use common sense voter identification protections.",
+      "note": "Platform summary on the outlet's candidate-profile page for her 2023 House race, written in the third person; it may be campaign-supplied text and is not confirmed as her exact wording. Speaks of auditing elections and voter identification protections.",
+      "subjects": [
+        "voter ID at the polls",
+        "election audits",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:01.855Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "affirmation statement in place of ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election audits",
+        "election integrity",
+        "election certification (related)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House of Delegates member page https://apps.house.virginia.gov/members/H0377 (confirms 31st District delegate since 2024-01-10; no personal site listed; nothing on the subject)",
+        "Ballotpedia (confirms office; no survey answers, nothing on the subject)",
+        "Wikipedia page: nothing on the subject",
+        "Royal Examiner 2022 candidate profile (saved below)",
+        "bill tracker pages for HB 1213 (2026) and SB 526 (2026), plus the HB 78 (2026) vote page",
+        "blocked: https://legilist.com/states/virginia/legislator/oates-delores--va-house-of-delegates-31-oates-d",
+        "blocked: https://legiscan.com/VA/bill/HB1213/2026",
+        "blocked: https://app.legiplex.com/va/legislature/2025/2025-r/bills/hb2402",
+        "blocked: https://www.nvdaily.com/nvdaily/oates-elected-as-delegate-for-31st-district/article_9ab30497-d2d2-57f6-9cc1-92bed574ae03.html (HTTP 429)",
+        "not reviewed: https://lis.virginia.gov/bill-details/20261/HB1213 (script-only page); 2025 bill HB 2402 (same caption) seen only in a search result, page not fetched",
+        "not reviewed: https://www.instagram.com/oatesdelores (social site, needs login)",
+        "news searches on name plus subject words: nothing further"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:28:01.855Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

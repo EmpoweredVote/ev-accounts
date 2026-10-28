@@ -21,6 +21,59 @@
         "fetched_at": "2026-10-22T22:30:44.342Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "f9af6009f5f90b17db6826cb920abec0da6afe23dfc2c1e4dfc8d7ab10c93f8a",
+      "kind": "record",
+      "url": "https://indianacitizen.org/?p=17306",
+      "date": "2024-11-20",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Questioning of Deputy Secretary of State Jerry Bonnet at the State Budget Committee about the citizenship-verification list of 585,774 voter names",
+      "note": "As reported by the Indiana Citizen (not his own quoted words), he asked whether the list held registered voters who may not be citizens. He pointed out that people on the list who voted in 2024 would have had to show a REAL ID driver's license at the polls. He asked whether the office had cross-checked the list against poll books. He also asked whether the office would keep verifying voters' citizenship in the new year.",
+      "subjects": [
+        "citizenship verification of registered voters",
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:59.326Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +102,31 @@
       "found": 1,
       "at": "2026-10-22T22:30:44.342Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "citizenship verification of registered voters",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Indiana House District 86; nothing on the subject)",
+        "his 2026 bill HB 1090 (about attorney general amicus briefs; nothing on the subject)",
+        "official site: iga.in.gov legislator page is a script-only page that returned no text; House caucus member page returned no relevant text. Votes not searched, as instructed.",
+        "campaign site: none found",
+        "Indiana Citizen article of 2024-11-20 (reports his questions to a state official; no direct quote of him)",
+        "Indiana Capital Chronicle 2025-01-28 and 2026-04-16 stories, Indiana Citizen story p=18092 (do not mention him)",
+        "news searches (2) on name plus voter ID / proof of citizenship / SB 10: no direct quote from him found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:51:59.326Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

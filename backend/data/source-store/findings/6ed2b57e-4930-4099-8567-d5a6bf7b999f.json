@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,188 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "231191ec29dccb310d96fb2692882a7d497bae31e9348338d50932a70effd9e2",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "third reading and passage of SJR 37, constitutional amendment clarifying that a voter must be a United States citizen (28 Yeas, 3 Nays)",
+      "note": "Listed among the Yeas.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cefbebfc17a04d19299236f6b7008f2b9388be875a2ad50808aa6b0d22a9b4e",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 passed to engrossment on second reading (20 Yeas, 11 Nays)",
+      "note": "Listed among the Nays on second-reading passage of the committee substitute, which requires proof of citizenship to register to vote. This is separate from the third-reading vote already on file.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7a87f8476312dfd5e819a62ce8ea9a19a630fbd4d72063206b37198fbb53cae",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ03-31-F.PDF",
+      "date": "2021-03-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "CSSB 7 passed to engrossment (18 Yeas, 13 Nays)",
+      "note": "Listed among the Nays on Senate second-reading passage of CSSB 7, relating to elections including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d599aab0ea7c7ee8905e58f45ba59f53e59cf877f848c605f8310a3ac247815a",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ03-31-F.PDF",
+      "date": "2021-03-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "other",
+      "motion": "Floor Amendment No. 28 by Alvarado to CSSB 7",
+      "note": "She offered an amendment requiring the secretary of state to report whether the Act would have a disparate impact on women, the elderly, persons with disabilities, students, or racial and ethnic minorities, with the Act having no effect if such an impact is likely. It failed 13 to 18.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ac102902ca0ca9917fd92a85981bf0403859c789d105cad46b027aa87f77b6c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB144",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-144-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (S.B. No. 144; no other version exists)",
+      "note": "Listed as co of TX-SB-144-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194450ca561e92ddc3a203f9ee7baa7ec33b99cb2a21f214aa96442269ab4bce",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB145",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-145-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (S.B. No. 145; no other version exists)",
+      "note": "Listed as co of TX-SB-145-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.538Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page (confirms Texas Senate District 6, term to 2029)",
+        "Texas Senate Journal 2025-04-01 (SJR 37, SB 16)",
+        "Texas Senate Journal 2021-03-31 (SB 7)",
+        "Texas Legislature Online histories for HB 5337, SB 16 and related 2025 citizenship and ID bills (not an author or sponsor)",
+        "news reports of the 2025-04-01 Senate debate (Texas Tribune, Votebeat): they paraphrase her remarks, no direct quote, so not saved as her words",
+        "a 2021 advocacy-group release about her planned filibuster: not her own words, not saved",
+        "official Senate site and campaign site: no page on the subject reached",
+        "not reviewed: Senate floor video"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:16:40.259Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.538Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

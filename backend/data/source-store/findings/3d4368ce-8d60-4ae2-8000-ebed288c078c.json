@@ -26,6 +26,29 @@
         "fetched_at": "2026-10-21T03:40:10.564Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "19b2fd978e3f162bf32034d017d463d7a229cb841adef61937523fc25e35f15b",
+      "kind": "record",
+      "url": "https://library.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1354",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "Veto Override, SB 824 Implementation of Voter ID Constitutional Amendment (House Roll Call #1354)",
+      "note": "House vote to override the governor's veto of SB 824, the bill setting the rules for photo ID at the polls. It passed 72 to 40. B. Turner is listed among the Noes. This is a different vote from the 2018-12-05 third-reading vote already on file.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:50:17.022Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -53,6 +76,31 @@
       "found": 0,
       "at": "2026-10-22T23:41:47.766Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "Ballotpedia (confirms he won the 2026 primary and is on the 2026 general-election ballot for NC House District 116; nothing on the subject)",
+        "campaign site turnerfornc.com (home page and an issues page; nothing on the subject, issues URL returns not found)",
+        "NC General Assembly roll call page 2017 H 1354 (SB 824 veto override)",
+        "NC General Assembly member introduced-bills page (no ID or citizenship bill seen among titles shown)",
+        "nchousedems.com member page (bio only, nothing on the subject)",
+        "Carolina Journal story on the House debate of the voter ID bill (does not quote him)",
+        "news searches (3) on name plus voter ID / photo ID / SB 824: no quote from him found",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/738 (HTTP 500)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:50:17.022Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

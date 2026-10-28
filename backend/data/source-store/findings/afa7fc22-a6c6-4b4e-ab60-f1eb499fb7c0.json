@@ -22,6 +22,33 @@
       "found": 0,
       "at": "2026-10-22T22:09:05.571Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "The Ballot Brief https://theballotbrief.com/candidate/mark-hackett-sc: confirms he is a minor-party nominee for U.S. Senate in South Carolina on the 2026 general ballot; no campaign website found; nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/55325: every questionnaire answer left blank; nothing on the subject",
+        "FEC page for a 2024 House run https://www.fec.gov/data/candidate/H0SC06245/: no financial data, nothing on the subject",
+        "WRDW news article on the 2026 Senate field: he did not respond to the outlet; nothing on the subject",
+        "blocked: https://www.facebook.com/markhackettSC/ (fetch returned no posts)",
+        "Wikipedia Senate race page: no mention of him in the part read",
+        "web search on name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "Ballotpedia: not reviewed, no page fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:09.490Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -25,6 +25,49 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "8061290691c848b8cc26408d9dff01f811bb3e3fd37924bb8975eeabd72c33d1",
+      "kind": "own-words",
+      "url": "https://progressivemass.com/jake-oliveira-questionnaire-2022",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I strongly support same-day voting registration and will work to bring it to Massachusetts.",
+      "note": "Questionnaire answer from his 2022 State Senate run, on a policy another state has. Speaks to voter registration access; says nothing about ID or proof of citizenship.",
+      "subjects": [
+        "same-day voter registration",
+        "registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:15.821Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fd4ba01905e9f9c6ecb2c2b970141972a64d0688275b2cfa2b25bdcc4d563b61",
+      "kind": "own-words",
+      "url": "https://progressivemass.com/jake-oliveira-questionnaire-2022",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I have strongly supported election day registration, early voting, and vote by mail as ways to break down barriers to voting.",
+      "note": "Questionnaire answer from his 2022 State Senate run on voting access, including vote by mail. Does not mention ID or citizenship proof.",
+      "subjects": [
+        "voting access",
+        "vote by mail",
+        "election day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:15.821Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -55,6 +98,33 @@
       "found": 0,
       "at": "2026-10-22T23:26:16.234Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter registration rules",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page Jacob_Oliveira (sitting state senator, Hampden Hampshire and Worcester district, on the 2026-11-03 general-election ballot, advanced from the 2026-09-01 primary); the page https://ballotpedia.org/Jacob_R._Oliveira is empty; the right page is https://ballotpedia.org/Jacob_Oliveira",
+        "On the Record (0 meetings)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/JRO0 and sponsored-bills list for the 194th court: nothing on the subject (election-law bills found are on candidate address privacy and remote town meetings)",
+        "Ballotpedia: nothing on the subject; no candidate survey completed",
+        "2022 Progressive Massachusetts questionnaire (PDF) at https://progressivemass.com/jake-oliveira-questionnaire-2022: only registration-access answers, nothing on ID or citizenship proof",
+        "news search on name plus voter ID words: nothing on the subject",
+        "blocked: campaign site www.jakeoliveira.com (domain does not resolve); questionnaire lists www.jakeoliveira.org, not reviewed",
+        "not reviewed: https://ontheissues.org/MassScorecard/Oliveira_Jacob.htm (lead-only aggregator)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:06:15.821Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,28 @@
       "found": 0,
       "at": "2026-10-22T22:59:54.408Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "malegislature.gov member profile (confirms him as the 10th Suffolk representative, 194th General Court; sponsored bills listed do not touch the subject)",
+        "campaign site billmacgregor.org: nothing on the subject",
+        "blocked: https://ballotpedia.org/William_MacGregor (empty page returned)",
+        "blocked: https://ballotpedia.org/Bill_MacGregor (empty page returned)",
+        "web search on name plus voter ID words: nothing on the subject",
+        "web search on 2026 status: no 2026 result found; sitting official, not confirmed on or off the 2026 ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:09:36.631Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

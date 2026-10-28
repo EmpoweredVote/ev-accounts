@@ -52,6 +52,30 @@
       "found": 0,
       "at": "2026-10-22T23:22:23.720Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "federal SAVE America Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Adam Scanlon, MA House 14th Bristol, advanced from the 2026-09-01 primary and is on the 2026-11-03 general-election ballot)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/AJS1 (bill list reviewed; no sponsored bill on voting or ID)",
+        "campaign site https://www.scanlonforrep.com (home and issues pages: nothing on the subject)",
+        "Boston Globe article of 2026-02-13 on the SAVE America Act (does not quote him)",
+        "two news searches on name plus voter ID words (nothing from him)",
+        "earlier vote on amendment 7 to H.4359 is already on file and was not re-collected",
+        "not reviewed: his official social media accounts"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:58:38.604Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

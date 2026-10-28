@@ -27,6 +27,30 @@
       "found": 0,
       "at": "2026-10-22T23:12:47.983Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Pavel_Payano) shows him as the sitting Massachusetts Senate 1st Essex District member, advanced from the 2026-09-01 primary and on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia: no 2026 survey answers; nothing on the subject",
+        "legislature profile https://malegislature.gov/Legislators/Profile/PMP0 (sponsored bills, current court): none on voting, ID or citizenship proof",
+        "legislature profile cosponsored list https://malegislature.gov/Legislators/Profile/PMP0/Cosponsored (current court): none on voting, ID or citizenship proof",
+        "campaign site https://www.pavelpayano.com/ (older campaign site, story and housing/education themes): nothing on the subject; its on-the-issues page returned 404",
+        "web search on name plus voter ID and citizenship words (1 search): nothing on the subject",
+        "not reviewed: https://www.facebook.com/SenPavelPayano (social media not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:14:16.307Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

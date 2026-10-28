@@ -1,6 +1,83 @@
 {
   "politician_id": "36b039a6-2224-4b73-90b4-2de142d16183",
-  "findings": [],
+  "findings": [
+    {
+      "id": "024171af7a54925b372892d00d6fb52d0d08790e6c7f78098d452522fc9f93ed",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1334/HB1334.02.COMH.pdf",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1334-2023",
+      "act": "author",
+      "note": "Listed as an author (with Wesco and Speedy) of HB 1334 Absentee voting. The committee version says an absentee ballot application must ask for certain identification numbers or a photocopy of the applicant's Indiana driver's license or ID card, and that the application may be delayed if the county cannot match at least one number to the voter's registration record.",
+      "subjects": [
+        "ID number with a mail or absentee ballot application",
+        "mail-ballot application rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:33:07.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "953735a93d92fdeff7bae83a01c488a69275c2072f4ad8b354514e531e2ea7a4",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/123/2024/house/bills/HB1264/rollcalls/HB1264.67_H.pdf",
+      "date": "2024-01-29",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "yea",
+      "motion": "HB 1264 Election security, House third reading, Roll Call 67 (passed 67 yea, 29 nay, 4 excused)",
+      "note": "Voted yea on House passage of HB 1264. As amended in the House (digest dated 2024-01-25), the bill sets proof-of-residency rules for in-person voter registration at registration agencies, and requires the state to compare the voter registration system with the BMV list of temporary credentials and follow a process when evidence exists that a registered voter is not a citizen.",
+      "subjects": [
+        "proof of citizenship to stay registered",
+        "noncitizen voting and voter-roll checks",
+        "proof of residency to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:33:07.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +104,32 @@
       "found": 0,
       "at": "2026-10-22T22:25:00.807Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID and ID number on absentee application",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "identity and scope confirmed: Indiana House member for District 11 (https://www.indianahouserepublicans.com/members/general/mike-aylesworth); on the 2026 general-election ballot per https://ballotpedia.org/Michael_Aylesworth",
+        "On the Record (0 appearances)",
+        "House caucus member page and press-release list (nothing on the subject)",
+        "Ballotpedia page (nothing on the subject); no campaign site found",
+        "Indiana General Assembly official bill-text and roll-call PDFs for HB 1334 (2023) and HB 1264 (2024)",
+        "Ballotpedia news election-legislation roundup (2023) for the HB 1334 author list",
+        "not reviewed: 2025 HB 1680 roll calls (could not locate the roll-call number; bill page is script-only)",
+        "not reviewed: floor votes on 2023 HB 1334",
+        "web news searches (4): no own-words statement on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T01:33:07.358Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -54,6 +54,28 @@
       "found": 0,
       "at": "2026-10-22T23:17:51.519Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "State legislature profile https://malegislature.gov/Legislators/Profile/AJP1 (confirms 12th Hampden representative; no sponsored bill on voter ID or voting)",
+        "Ballot listing https://theballotbrief.com/state/massachusetts/hampden-county/massachusetts-house-12th-hampden-district (sole name on the Nov 3 2026 ballot; nothing on voter ID)",
+        "NEPM primary article https://www.nepm.org/regional-news/2026-08-28/democratic-primary-in-12th-hampden-district-pits-experience-against-calls-for-change (nothing on voter ID found in page text)",
+        "campaign site: none found",
+        "Ballotpedia: not reviewed",
+        "web search on name plus voter ID words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:45:59.114Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

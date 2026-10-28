@@ -1,0 +1,33 @@
+{
+  "politician_id": "108dfd2c-571a-4fef-aaf2-621c3238eea6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ban by local governments (SB 1174 of 2024)",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia https://ballotpedia.org/Michelle_Rodriguez shows her as the Assembly District 53 incumbent, in office since 2024-12-02, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings)",
+        "official site https://a53.asmdc.org/ (home, press releases): nothing on the subject",
+        "campaign site: not reviewed, https://www.michellerodriguezforassembly.com/ did not load",
+        "Ballotpedia: nothing on the subject",
+        "SB 1174 of 2024 Assembly floor vote (archived copy of leginfo https://web.archive.org/web/2024/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174): the surname Rodriguez is listed as not voting, but that is a different member; she took office after that vote, so no record is saved",
+        "AB 25 of 2025 (voter ID and proof of citizenship) committee vote, archived leginfo https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB25: she is not on that committee and is not listed",
+        "blocked: https://leginfo.legislature.ca.gov (live pages return a bot-check 403)",
+        "blocked: https://legiscan.com (bot-check 403)",
+        "news search on her name plus voter ID, SAVE Act, proof of citizenship, election integrity: nothing by or about her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:59:36.896Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

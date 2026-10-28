@@ -22,6 +22,29 @@
       "found": 0,
       "at": "2026-10-22T23:17:12.054Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/MJM1/194 (confirms Representative Michael J. Moran of Boston, 194th court); his sponsored and co-sponsored bill list in 194th court reviewed: only election bill is H.856 relative to reprecincting, nothing on identification or citizenship",
+        "web search for his bills and roll calls on voter ID or citizenship: nothing found on the subject",
+        "blocked: https://malegislature.gov/RollCall/192/HouseRollCall131.pdf through 138 (HTTP 404 from the legislature site; 2022 amendment roll calls on the early/mail voting bill H.4359 could not be read, and the search text did not make clear how he voted)",
+        "blocked: https://malegislature.gov/Bills/194/H78 (temporarily unavailable; no-excuse absentee amendment, only loosely related)",
+        "not reviewed: his campaign or official site, Ballotpedia, news archives for 2011-2024 sessions"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:41:52.411Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

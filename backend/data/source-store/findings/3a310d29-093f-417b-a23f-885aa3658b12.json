@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,85 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "6f55e28b458c67e4b4bd8a6eacfa789fcb9af4d16198ed19c1f354d9a20a8248",
+      "kind": "own-words",
+      "url": "https://oversightdemocrats.house.gov/sites/evo-subsites/democrats-oversight.house.gov/files/Bernal%20Testimony.pdf",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "Under the guise of “election integrity” Senate Bill 7 sought to restrict access to the polls even though the Texas Secretary of State’s office testified to the House Committee on Elections that the 2020 election had been “smooth and secure.”",
+      "note": "Written testimony to a U.S. House Oversight subcommittee. He speaks about the 2021 Texas election bills SB 7 and HB 3 (poll watchers, voter assistants, drive-through and 24-hour voting, Sunday voting). The testimony does not address photo ID or proof of citizenship.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:04:07.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ac105b9f8789bf6341589c7b03258e3d68d90bc8082db1c0017ef52bf7ebf5f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB1450",
+      "date": "2019-02-06",
+      "date_precision": "month",
+      "instrument_id": "TX-HB-1450-2019",
+      "act": "other",
+      "motion": "coauthor of HB 1450, limiting Secretary of State access to driver's-license data used to check voters for citizenship (filing date 2019-02-06; date Bernal was added not shown)",
+      "note": "Bernal is listed as a coauthor. The bill, captioned as relating to disclosure of personal information on a driver's license application or motor vehicle record, would limit the Secretary of State's access to driver's-license data used to check voters for citizenship. Referred to the Elections committee 2019-02-27.",
+      "subjects": [
+        "non-citizen voter-roll checks",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:04:07.003Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: San Antonio Report 2026 candidate profile and Ballotpedia show Diego Bernal, Texas House District 123, unopposed in 2026",
+        "On the Record (0 appearances; extract-otr run, nothing)",
+        "official House page house.texas.gov/members/123 (member code A3110)",
+        "Texas Legislature Online 89th-session author, coauthor, sponsor and cosponsor lists: no election, ID or citizenship bills by or with him",
+        "Texas Legislature Online SJR 37 (citizenship-to-vote amendment) history read, but the House roll call is script-loaded and I could not reach his individual vote: not reviewed: House roll call for SJR 37 (2025-05-12)",
+        "Ballotpedia (no issue statements on the subject)",
+        "web search x4 (name plus subject words; SB 1 statements; 2021 House Oversight testimony)",
+        "nothing on the subject: https://www.sacurrent.com/?p=347856 (reporter text only, no words of his)",
+        "no campaign site found in Ballotpedia links; not reviewed: his X, Facebook and Instagram accounts (social, not readable)",
+        "Texas Legislature Online 86th-session HB 1450 history (found while checking a different person)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:04:07.003Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

@@ -1,6 +1,53 @@
 {
   "politician_id": "8078ab81-0f7b-4ea1-80d4-127a6e4c6013",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fdab83cb8b3da2435040253967120570be8ce423fc7623ffe709825210629861",
+      "kind": "record",
+      "url": "https://oklegislature.gov/cf/2025-26%20SUPPORT%20DOCUMENTS/votes/House/SB1086_VOTES.HTM",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "instrument_id": "OK-SB-1086-2025",
+      "act": "yea",
+      "motion": "House third reading passage, RCS# 712 (71 yeas, 16 nays); Tedford listed among the yeas",
+      "note": "Bill on voter registration: requires cancelling the registration of a voter found not to be a citizen, lets the State Election Board compare the voter list with other entities, requires notice to the voter and proof of citizenship furnished to the county election board, and limits access to the voter list.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:25:44.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "907f2fa478af22b9bfe20e76cc536a5904ee21c49021d4862d03b14b42a3dfa6",
+      "kind": "record",
+      "url": "https://oklegislature.gov/cf/2025-26%20SUPPORT%20DOCUMENTS/votes/House/SJR47_VOTES.HTM",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "OK-SJR-47-2026",
+      "act": "other",
+      "motion": "House third reading (RCS# 1580) and adoption (RCS# 1581) of SJR47, constitutional amendment requiring proof of identity for voting; Tedford listed as excused on both, so no vote recorded",
+      "note": "He was excused and did not vote on the joint resolution that puts a proof-of-identity-to-vote amendment before Oklahoma voters.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:25:44.912Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -33,6 +80,35 @@
       "found": 0,
       "at": "2026-10-22T21:38:29.545Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for U.S. House Oklahoma District 1 (Ballotpedia https://ballotpedia.org/Mark_Tedford shows the August 25 runoff was cancelled and he is on the November 3 ballot); sitting Oklahoma House member for District 69",
+        "On the Record (0 appearances found)",
+        "campaign site https://www.tedfordforcongress.com (nothing on the subject; only immigration and waste/fraud pages)",
+        "Ballotpedia page and its Candidate Connection survey (nothing on the subject)",
+        "news search on name plus voter ID words (nothing from his own words)",
+        "newson6 announcement story (nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "Oklahoma Legislature vote pages for SB1086 and SJR47 (records found)",
+        "blocked: https://www.legiscan.com/OK/bill/SB1086/2025 (403)",
+        "blocked: https://www.legiscan.com/OK/bill/HR1047/2024 (403)",
+        "not reviewed: his X and Facebook accounts (https://x.com/MarkTedfordOK)",
+        "congress.gov not applicable (state legislator, no federal record)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:25:44.912Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

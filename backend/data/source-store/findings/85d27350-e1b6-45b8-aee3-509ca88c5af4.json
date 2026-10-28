@@ -265,6 +265,135 @@
         "fetched_at": "2026-10-22T22:11:58.592Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d91c061a0a92c29e7371a2ca6d577b3b616dd990bae38c1b82d5cd27f275e3fc",
+      "kind": "own-words",
+      "url": "https://bluevirginia.us/2026/03/senators-mark-warner-tim-kaine-slam-save-america-act-as-voter-suppression-measure-that-could-disenfranchise-millions",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“I support reasonable steps that help maintain trust in our elections, including the voter identification requirements we already have in Virginia,” said the senators. “But the SAVE America Act goes far beyond that – it is a pretext for voter suppression. Republicans continue to raise baseless fears about election fraud and noncitizen voting, despite the fact that our elections are regularly audited and have also been tested repeatedly in courts, especially after 2020. Yet, no evidence of widespread voter fraud has ever been found.",
+      "note": "Joint statement issued in the names of Warner and Kaine, copied from a blog that reposts their press release in full (the Senate site itself returned 403). It says he backs Virginia's current voter ID rules and opposes the SAVE America Act, which would require proof of citizenship to register and photo ID to vote in person or by mail.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "photo ID for mail voting",
+        "election fraud and non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe990fb7a746d15deb11bc1d4e1f5e48f0c87568d10f2d8d286a062b57d59292",
+      "kind": "own-words",
+      "url": "https://www.wavy.com/news/virginia-lawmakers-differ-on-save-america-act/amp/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "“Women who’ve changed their names when they got married, would have to go back and find their birth certificate or marriage license and go back and re-register to vote, or get a passport. About 40% of Virginians don’t have passports,” Warner said.",
+      "note": "Quoted by WAVY. He objects to the document burden of proof of citizenship for registration.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c497542b933253a399d5dba856ace81fd3fbb92839faf10281409de7f2ae1ac2",
+      "kind": "own-words",
+      "url": "https://www.wavy.com/news/virginia-lawmakers-differ-on-save-america-act/amp/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "“I would not trust DHS at this point to not manipulate those voter rolls and knock people off the ballot arbitrarily, knock ’em off the voting list arbitrarily,” Warner said.",
+      "note": "Quoted by WAVY. He objects to the bill's requirement that states hand voter rolls to the federal Homeland Security department.",
+      "subjects": [
+        "voter-roll checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15b96ed9bd6acaa5a57cd67d9ed9b8beeb668c7aa0c76ec33adb67c15e6dab0f",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/media/sen-mark-warner-called-out-abc-interview-inaccurate-voter-id-claims.print",
+      "date": "2026-07-19",
+      "date_precision": "day",
+      "passage": "\"If you can show any photo that is government stamped, would be fine,\" Warner said. \"If you’re going to have a set of IDs, let’s have it across the board as long as it comes from some official point, but this is not about voter ID. The Save Act is about voter disenfranchisement.\"",
+      "note": "Quoted by Fox News from the ABC This Week interview (the article was published 2026-07-20 and says the interview was on Sunday, so 2026-07-19). He says a uniform government photo ID would be fine and separates that from the SAVE Act.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f00e277ee8ab33eca4c5329dd94a1f975b9f989bfdcc3706b1222971e4ddefa",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/media/sen-mark-warner-called-out-abc-interview-inaccurate-voter-id-claims.print",
+      "date": "2026-07-19",
+      "date_precision": "day",
+      "passage": "\"Those become ballots that, if you want to contest later, can be contested. But… we have voter ID of one form or another,\" Warner said.",
+      "note": "Quoted by Fox News from the same interview. He describes Virginia's rules (non-photo ID, signed affidavit if none) as voter ID of one form or another, after saying 'In Virginia, we have voter ID and photo ID.' The interviewer disputed that Virginia requires photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32077160d8b04ce3a84c97842c4cb41462bd8b6465d2c2b1cb8cb3d3bf46987c",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s73",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Senate roll call 73: cloture motion on S.Amdt. 4732 to S.Amdt. 4420 to S. 1383 (page title: 'To require voters to provide photo identification'); rejected 53-47",
+      "note": "Read from watch.vote because senate.gov blocked the fetch. The page lists Warner among the nay votes.",
+      "subjects": [
+        "photo ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.667Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -296,6 +425,31 @@
       "found": 12,
       "at": "2026-10-22T22:11:58.592Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for in-person and mail voting",
+        "proof of citizenship to register (SAVE America Act)",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "voter-roll sharing with the federal government",
+        "election fraud and non-citizen voting claims"
+      ],
+      "places": [
+        "On the Record (0 meetings found by the extract script)",
+        "Ballotpedia https://ballotpedia.org/Mark_Warner (confirms sitting U.S. Senator from Virginia, advanced from the 2026 primary and on the 2026-11-03 general ballot)",
+        "official Senate site: blocked: https://www.warner.senate.gov/newsroom/press-releases/warner-kaine-slam-save-america-act-as-voter-suppression-measure-that-could-disenfranchise-millions/ (403 from the site's firewall; the same joint statement was copied from a Virginia blog that reposts it in full)",
+        "blocked: https://www.kaine.senate.gov/press-releases/warner-kaine-slam-save-america-act-as-voter-suppression-measure-that-could-disenfranchise-millions (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.xml (firewall); the vote was read on watch.vote instead",
+        "news: WAVY (2026-03-19) and Fox News (2026-07-20) quote him directly",
+        "web searches: name plus SAVE Act/voter ID; Senate cloture vote on the SAVE America Act",
+        "not reviewed: the ABC This Week interview video itself; congress.gov cosponsor list"
+      ],
+      "found": 6,
+      "at": "2026-10-27T20:36:30.667Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -48,6 +48,155 @@
         "fetched_at": "2026-10-22T23:54:00.858Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7aa3fab0e427b6742d4267b9da4350318daed646b3067d3c3b3402e39cd1eb1a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/755",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 A1 Blackwell amendment, second reading",
+      "note": "Voted yes on amendment A1 (Blackwell) to HB 958; passed 112-0. HB 958 (Election Law Changes) as shown on the bill page includes sections on photo identification and provisional ballots, ID with returned absentee ballots, and voter registration applications indicating lack of citizenship. The roll call page does not say what this particular motion changes.",
+      "subjects": [
+        "voter ID with mail ballot",
+        "photo ID at the polls (provisional ballot without ID)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95f3ed8f189d8b5759cf3cdf387155580accd7c14b8b0d092f551fb6ad8ae3b7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/756",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 A2 Blackwell amendment, second reading",
+      "note": "Voted no on amendment A2 (Blackwell) to HB 958; passed 69-44. HB 958 (Election Law Changes) as shown on the bill page includes sections on photo identification and provisional ballots, ID with returned absentee ballots, and voter registration applications indicating lack of citizenship. The roll call page does not say what this particular motion changes.",
+      "subjects": [
+        "voter ID with mail ballot",
+        "photo ID at the polls (provisional ballot without ID)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09a2c14482eee6bf38d699ce6d8747aacb06998a3cce04ef39563b7d17881cfd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/757",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 A3 Dahle amendment, second reading",
+      "note": "Voted yes on amendment A3 (Dahle) to HB 958; failed 47-66. HB 958 (Election Law Changes) as shown on the bill page includes sections on photo identification and provisional ballots, ID with returned absentee ballots, and voter registration applications indicating lack of citizenship. The roll call page does not say what this particular motion changes.",
+      "subjects": [
+        "voter ID with mail ballot",
+        "photo ID at the polls (provisional ballot without ID)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2212ee1872e1c657e14089673a67783c1cec94efe8b8390916461dc87c93efa",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 second reading (passage of the bill)",
+      "note": "Voted no on second reading of HB 958; passed 66-47. HB 958 (Election Law Changes) as shown on the bill page includes sections on photo identification and provisional ballots, ID with returned absentee ballots, and voter registration applications indicating lack of citizenship. The roll call page does not say what this particular motion changes.",
+      "subjects": [
+        "voter ID with mail ballot",
+        "photo ID at the polls (provisional ballot without ID)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "068a390c12e9f7f7d694253d2f8ab9946a3e60cf7e7e32ef94db91e48773d9bb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 M11 motion to concur",
+      "note": "Voted no on the motion to concur in HB 958; passed 62-47. HB 958 (Election Law Changes) as shown on the bill page includes sections on photo identification and provisional ballots, ID with returned absentee ballots, and voter registration applications indicating lack of citizenship. The roll call page does not say what this particular motion changes.",
+      "subjects": [
+        "voter ID with mail ballot",
+        "photo ID at the polls (provisional ballot without ID)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -76,6 +225,31 @@
       "found": 2,
       "at": "2026-10-22T23:54:00.858Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: on the 2026 general-election ballot for NC House District 56 (Ballotpedia https://ballotpedia.org/Allen_Buansi)",
+        "On the Record (0 appearances)",
+        "campaign site allenbuansi.com home, priorities and accomplishments pages: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "ncleg.gov member page and bill/roll-call pages for HB 958",
+        "news searches (3): no own words on voter ID found",
+        "Daily Tar Heel 2023 article: HB 293 elections funding bill, not ID",
+        "not reviewed: ncleg member vote list (loads by script) and floor video"
+      ],
+      "found": 5,
+      "at": "2026-10-27T19:57:16.123Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,73 @@
+{
+  "politician_id": "02633f01-08f0-4011-a2d1-7a1a63b1b01f",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Huddleston'), linked to David Huddleston (district 72) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/David_Huddleston (fetched by curl) shows he is the sitting House District 72 member, advanced from the 2026-05-19 primary and is on the 2026-11-03 general-election ballot",
+        "Branch.vote 2026 general-election page for House District 72: fetched; shows him running for this race unopposed",
+        "On the Record (0 appearances)",
+        "He took office in January 2023, so no vote on Georgia SB 202 (2021) applies to him",
+        "Georgia House press office pages tagged with his name (pages 1 and 2) and the 2026-05-11 committee-appointment release: fetched; nothing on the subject (farm, veterinary and tree-care topics only)",
+        "Ballotpedia, Wikipedia and 2022 candidacy announcement (thecitymenus.com): fetched; nothing on the subject",
+        "blocked: official legislature site https://www.legis.ga.gov (page loads by script; its data service returned 401), so his sponsorships and roll-call votes on election bills could not be read from the official page",
+        "blocked: https://www.facebook.com/dhuddlestonstatehouse72/ (HTTP 400)",
+        "blocked: https://www.georgiahouse.org and https://www.gahouse.gov member page (no response)",
+        "no campaign website found (Branch.vote notes none)",
+        "web searches run: 3 of 10 (nothing from him on the subject surfaced)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:42:00.703Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

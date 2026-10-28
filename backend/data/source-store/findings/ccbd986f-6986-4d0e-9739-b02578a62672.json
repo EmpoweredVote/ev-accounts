@@ -22,6 +22,27 @@
       "found": 0,
       "at": "2026-10-22T22:52:19.348Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election security and voter-roll checks"
+      ],
+      "places": [
+        "Found the person: Indiana Department of Insurance commissioner, appointed October 2024, not a legislator (https://www.in.gov/idoi/newsroom/indiana-department-of-insurance-leadership/); her office has no role in election rules",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/Holly_Lambert): career profile only, nothing on the subject",
+        "department newsroom page: nothing on the subject",
+        "news search on name plus voter ID, election and voting words: nothing on the subject",
+        "no legislator page or campaign site exists for this person"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:54:43.594Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

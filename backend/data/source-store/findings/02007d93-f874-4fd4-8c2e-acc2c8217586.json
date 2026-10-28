@@ -40,6 +40,46 @@
         "fetched_at": "2026-10-22T21:28:47.380Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "705663b4f95c473c5f0b0a36c42693cf6e351871561a9cba49c55f814c4a2d20",
+      "kind": "own-words",
+      "url": "https://matts-newsletter-53534b.beehiiv.com/p/release-rpt-chair-candidate-matt-mackowiak-releases-detailed-election-integrity-plan",
+      "date": "2024-05-20",
+      "date_precision": "day",
+      "passage": "There is too much distrust in our election process, so I look forward to playing a significant role in reforming Texas’s election laws and building a sustainable election integrity program that helps guarantee the fair and transparent elections that Texans deserve,",
+      "note": "Quote attributed to Chris Gober, CEO of the Gober Group, in a press release from another person's campaign for Texas state-committee chair that named him to build election-law policies. It speaks of reforming election laws in general and does not mention ID or citizenship. The quote ends with a comma in the release because the attribution follows.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:11:02.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25ed3e376a0957b2d1fbdfc48a17512dbdde85304cd8645ef3961287b207244e",
+      "kind": "own-words",
+      "url": "https://chrisgober.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Defended free speech, election integrity, and the Constitution before the U.S. Supreme Court and courts nationwide.",
+      "note": "Line on his campaign home page (undated page, read in October 2026) describing his legal work. It names election integrity but gives no position on ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:11:02.409Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -69,6 +109,31 @@
       "found": 2,
       "at": "2026-10-22T21:28:47.380Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site chrisgober.com (home page; issues page; only a general election-integrity line, no ID or citizenship statement; election information links page)",
+        "Ballotpedia (page returned empty)",
+        "news pages: Texas Tribune Feb 2026, KBTX Mar 2026, Club for Growth page (nothing on the subject)",
+        "candidate-platform page at branch.vote (lists only 'Support election integrity', no other detail)",
+        "2024 press release from a Texas state-committee chair candidate quoting him on election laws",
+        "news searches on name plus voter ID, SAVE Act, voter rolls (no statement from him on ID or citizenship)",
+        "won the March 2026 primary outright and is on the November 2026 ballot for TX-10, per Ballotpedia news and Club for Growth page"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:11:02.409Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

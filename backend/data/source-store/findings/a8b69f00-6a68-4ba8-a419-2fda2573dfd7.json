@@ -20,6 +20,23 @@
       "found": 0,
       "at": "2026-10-22T21:29:58.272Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (BallotReady lists her in that FL-14 primary: https://www.ballotready.org/people/bea-valenti ; WUSF reports another candidate, Mike Beltran, won the nomination: https://wusf.org/text/politics-issues/2026-08-18/hillsborough-primary-results-2026-mike-beltran-wins-republican-nomination-florida-congressional-district-14 ; the WUSF page does not name her, and her vote share was not confirmed on a citable page)",
+        "On the Record (0 appearances)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:47:03.715Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

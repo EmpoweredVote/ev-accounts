@@ -144,7 +144,8 @@
         },
         {
           "name": "Deeds",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd"
         },
         {
           "name": "Ebbin",
@@ -174,7 +175,8 @@
         },
         {
           "name": "Lucas",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "0efec835-12f2-472b-b7a0-7a166ed937a1"
         },
         {
           "name": "Marsden",
@@ -316,7 +318,8 @@
         },
         {
           "name": "Hodges",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "95cdc29b-18d1-45e1-84c3-ba601f5bec40"
         },
         {
           "name": "Hugo",

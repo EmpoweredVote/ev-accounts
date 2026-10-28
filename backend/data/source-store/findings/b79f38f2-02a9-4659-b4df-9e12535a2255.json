@@ -1,6 +1,79 @@
 {
   "politician_id": "b79f38f2-02a9-4659-b4df-9e12535a2255",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fcb0a62179f349839de0c6742c3e392c0be295606837bbd2476086e198a2640d",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-mcnamara-reminds-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-09-25",
+      "date_precision": "day",
+      "passage": "McNamara said to register, Indiana residents must be at least 18 years old on or before the upcoming election, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before the next election, and not currently imprisoned after being convicted of a crime.",
+      "note": "Caucus press release in her name, reported as her statement, listing what a person needs to register, including a valid Indiana driver's license or state ID and US citizenship. It describes current rules and does not say she wants them changed.",
+      "subjects": [
+        "ID to register",
+        "citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2faefdb5632701bae3d6179e256257f9e6e9cb43c47896783c7986d650b35010",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/mcnamara-supports-postponing-indiana-s-may-primary-to-june-2/",
+      "date": "2020-03-20",
+      "date_precision": "day",
+      "passage": "We will also maintain the integrity of our election process while making sure Hoosiers have access to mail-in absentee ballots.",
+      "note": "Statement in her name about the 2020 primary move to June, saying election integrity will be kept while mail-in absentee ballots stay available. It names no ID rule.",
+      "subjects": [
+        "election integrity in general",
+        "mail-in absentee ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +99,31 @@
       "found": 0,
       "at": "2026-10-22T22:48:27.443Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for registration",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Indiana House caucus member page and press releases (2 releases on voting)",
+        "Ballotpedia (confirms 2026 general-election candidate, House District 76, advanced from the May 5, 2026 primary)",
+        "web search: name plus voter ID (1), name plus bills HB 1264 / HB 1680 / citizenship (2): no McNamara sponsorship or vote found in results",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1680/details (JavaScript page, no bill text returned)",
+        "blocked: https://api.iga.in.gov/ (HTTP 403)",
+        "not reviewed: roll-call votes on HEA 1264 (2024) and HEA 1680 (2025); no readable official roll-call page reached",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T00:57:16.068Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

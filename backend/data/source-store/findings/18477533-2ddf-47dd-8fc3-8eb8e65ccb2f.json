@@ -26,6 +26,27 @@
       "found": 0,
       "at": "2026-10-22T23:00:34.128Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Tara_Hong) shows him as Massachusetts state representative, 18th Middlesex District, on the 2026 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "Legislature profile malegislature.gov/Legislators/Profile/TTH1 and cosponsor list: one petition on presidential electors; nothing on identity or citizenship proof",
+        "Wikipedia page and WGBH 2026-08-04 primary story: nothing on the subject",
+        "no campaign site fetched; search results showed only a Lowell local-news closing statement on re-election",
+        "web searches (2): nothing by him on voter ID, voter registration rules or proof of citizenship"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:13:07.707Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

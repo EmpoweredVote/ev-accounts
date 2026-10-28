@@ -28,6 +28,31 @@
       "found": 0,
       "at": "2026-10-23T00:15:08.384Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voting access and election integrity in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/Haseeb_Fatmi) shows him as the sitting District 18 state senator (appointed 2026-05-21), on the 2026-11-03 general election ballot",
+        "official legislature member page (https://www.ncleg.gov/Members/Biography/S/1002), nothing on the subject",
+        "legislature introduced-bills page (https://ncleg.gov/Members/IntroducedBills/S/1002): no bills introduced by him in 2025-2026, so no sponsorships",
+        "campaign site electhaseeb.com and its platform page: a voting rights section on early voting, campus polling places and fair maps; nothing on ID or citizenship proof, so not saved",
+        "Wikipedia page, nothing on the subject",
+        "blocked: https://ncnewsline.com/voter-guides/contests/n-c-senate-district-18/ (403)",
+        "not reviewed: legislature vote-history page https://library.ncleg.gov/Members/Votes/S/1002 (loaded with no roll-call entries)",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches, nothing tying him to ID or citizenship proof"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:43:24.456Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

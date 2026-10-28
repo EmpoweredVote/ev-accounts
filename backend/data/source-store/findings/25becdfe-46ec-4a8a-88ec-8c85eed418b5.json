@@ -1,6 +1,37 @@
 {
   "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,33 @@
       "found": 0,
       "at": "2026-10-22T22:21:30.312Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: Senate caucus page https://www.indianasenaterepublicans.com/mishler shows him as State Senator for District 9, Appropriations chair; sitting official, in office since 2004, term ends 2028",
+        "On the Record (0 appearances)",
+        "Senate caucus page and its news list: only budget, road-grant, Bears stadium and fiscal statements; nothing on the subject",
+        "Ballotpedia (fetched by curl): committees Appropriations, Health and Provider Services, Tax and Fiscal Policy; nothing on the subject",
+        "not reviewed: https://iga.in.gov/legislative/2025/bills/senate/10/details (page needs scripts; shows no vote), so his floor vote on 2025 SB 10 (student ID at polls) was not found",
+        "blocked: https://api.iga.in.gov/2025/bills/senate/10 (needs an API key)",
+        "blocked: https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/ (403); Yahoo copy read, it names him only as Appropriations chair, not on the subject",
+        "BillTrack50 scorecard: page loaded without vote data",
+        "2023 constituent survey PDF on his site: has a 'voter confidence' chart but no question text, and it is constituent answers, not his words; not saved",
+        "news searches on his name plus voter ID, citizenship and election integrity: nothing by or about him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:19:55.294Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

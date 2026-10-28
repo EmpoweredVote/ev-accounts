@@ -49,6 +49,29 @@
       "found": 0,
       "at": "2026-10-22T23:27:41.099Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile page https://malegislature.gov/Legislators/Profile/REH1 (confirms sitting House member, Boston)",
+        "legislature bills list https://malegislature.gov/Legislators/Profile/REH1/Bills (only election bill is H.839 on voting by people with felony convictions, off subject; nothing on the subject)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Russell_E._Holmes (404)",
+        "news: Boston.com SAVE America Act coverage, does not quote him; nothing on the subject",
+        "two web searches on his name plus voter ID words; nothing on the subject",
+        "blocked: https://legilist.com/states/massachusetts/category/elections-voting/?page=6 (403)",
+        "no campaign or official issue site with subject pages found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:16:46.699Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

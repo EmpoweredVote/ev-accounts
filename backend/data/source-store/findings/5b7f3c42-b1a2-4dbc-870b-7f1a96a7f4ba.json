@@ -48,9 +48,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
       }
     },
     {
@@ -74,11 +78,293 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "840787f3d9e2587130f825c0a1cca7ee9edb6a3360ac686c79944e7cf8ccceec",
+      "kind": "own-words",
+      "url": "https://www.wtvr.com/2013/02/20/virginia-lawmakers-debate-voting-rights",
+      "date": "2013-02-20",
+      "date_precision": "day",
+      "passage": "\"The use of SAVE to conduct systematic purges, places nationalized citizens in a separate disadvantaged class,\" Del. Alphonso Lopez (D - Arlington) said.",
+      "note": "Quoted by WTVR during the House debate on Senate Bill 1256 (photo ID). He is speaking of using the federal SAVE database for voter-roll purges. Date is taken from the page URL; the page shows no posted date. The outlet spells his first name as printed.",
+      "subjects": [
+        "voter-roll checks and list maintenance",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.482Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "916a918aebf47a1e787b2ec4775ec749062dff69e89ea0704f57005be5538696",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV1975+HB1318",
+      "date": "2015-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Passage of HB 1318, absentee ballot applications must include a copy of photo ID (62-Y 34-N)",
+      "note": "HB 1318 required a copy of an accepted ID with a mail or fax absentee ballot application, with exemptions for military, overseas and disabled voters. He is on the nay list.",
+      "subjects": [
+        "ID with a mail or absentee ballot or request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.482Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4af7127f9d2f85179f5c8d95add52c147b5f6d0db43daba69de7e4964d002fd",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV2930+HB1318",
+      "date": "2015-04-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "House vote on the governor's veto of HB 1318 (record titled 'sustain governor's veto', 65-Y 34-N, 66 needed to override)",
+      "note": "A yea was a vote to override the veto; the override failed. He is on the nay list.",
+      "subjects": [
+        "ID with a mail or absentee ballot or request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.482Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d8ca945f7920b918fcbedaddd0f8607215e499bd943e27f27193a1f198fc68d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House passage of HB 46 (52-Y 48-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. He is on the nay list.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.482Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72409f23f702420d5ed806eb8f36b804c4dde1a26549bef4bef535a711f66044",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "851ebc4c21105c0052f35d17363b61533538390128a5b8befc022dfc36b3ef32",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11a46b4b843949b3dac551f86358262c5c7b8a78de69e0e964e3e49c781032bf",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1076+HB1337",
+      "date": "2013-02-19",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "House: VOTE: ADOPTION (64-Y 36-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25b96690d0a9ac954e239ad21b0b7b18ecfa371e44561bbe5f87dcfec7ba4715",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "163916df42f9459dfbd4d04ba9c447b3286e951ecb88ada78479e6ee51b10ca3",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV1975+HB1318",
+      "date": "2015-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "House: VOTE: PASSAGE (62-Y 34-N)",
+      "note": "House roll call as printed ('Lopez'), linked to Alfonso H. Lopez via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.790Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "alfonsolopez.org about and issues pages: nothing on ID or citizenship (only a note on a voting rights act on drop boxes and Sunday voting)",
+        "Wikipedia page: not reviewed",
+        "Ballotpedia: not reviewed (not fetched)",
+        "On the Record (0 appearances found)",
+        "Virginia legacy LIS bill, patron and vote pages for 2013 to 2024 sessions (https://lis.virginia.gov/cgi-bin/legp604.exe)",
+        "House member list page (https://house.vga.virginia.gov/members)",
+        "House subcommittee agenda (https://house.vga.virginia.gov/subcommittees/H18002/agendas/5384)",
+        "blocked: the 2025 and 2026 bill pages on the new LIS site (the page needs scripts), so 2025 and 2026 sponsorships and votes were not reached",
+        "blocked: https://legiscan.com/VA/votes/HB1318/2015 (bot check)",
+        "blocked: https://www.vpap.org/legislators/340307-phillip-scott/voting/?page=2",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legilist.com (403)",
+        "blocked: https://open.pluralpolicy.com/va/bills/2025/HB2434 (404)",
+        "web searches on name plus voter ID, citizenship and election words; no own-words statements on the subject found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:26:43.482Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:53:04.519Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T17:58:27.790Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

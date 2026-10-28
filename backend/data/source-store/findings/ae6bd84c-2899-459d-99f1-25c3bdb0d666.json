@@ -19,6 +19,23 @@
       "found": 0,
       "at": "2026-10-22T21:44:51.736Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (Ballotpedia https://ballotpedia.org/Byron_Nolen states he ran for U.S. House, Michigan District 12, and lost in the primary on August 4, 2026; the same page names him as mayor of Inkster in his career history, which confirms the person)",
+        "On the Record (0 appearances, extract script run)",
+        "one news search on name plus the race: WDET and Wayne County candidate list confirm he filed for the August 4, 2026 primary; the results page found showed blank figures, so Ballotpedia is the page that states the loss",
+        "stopped after confirming the loss, as the brief directs; no subject search was run"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:15:25.268Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

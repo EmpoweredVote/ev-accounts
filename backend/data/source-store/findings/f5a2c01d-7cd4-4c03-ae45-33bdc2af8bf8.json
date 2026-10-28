@@ -31,6 +31,33 @@
       "found": 0,
       "at": "2026-10-22T22:01:55.147Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed in race: Ballotpedia page shows him unopposed in the 2026-08-08 primary for U.S. House Hawaii District 2 and on the November ballot; also sitting Hawaii State Senate District 23",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "campaign site https://www.votebrentonawa.com/ and its issues page: nothing on the subject",
+        "https://www.brentonawa.org/: could not be fetched (no response)",
+        "Wikipedia page (lead only, not cited): nothing on the subject",
+        "blocked: https://www.capitol.hawaii.gov/legislature/memberpage.aspx?member=225&year=2025 (Cloudflare challenge page)",
+        "Hawaii News Now 2026-10-08 forum story: reporter summary only, nothing on the subject in his own words",
+        "news searches (3) on name plus voter ID, SAVE Act, proof of citizenship, election bills: nothing on the subject",
+        "not reviewed: Civil Beat 2026-10 forum video (https://www.hawaiinewsnow.com/2026/10/08/awa-tokuda-face-off-online-forum/)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:39:54.044Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

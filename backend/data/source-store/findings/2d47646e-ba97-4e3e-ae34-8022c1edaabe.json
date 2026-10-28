@@ -28,6 +28,27 @@
       "found": 0,
       "at": "2026-10-22T21:59:11.337Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Michael_Mebruer (confirms candidate for Louisiana's 6th District on the 2026 ballot; his survey answers cover spending, debt and self-funding, nothing on the subject)",
+        "campaign site https://www.mebruerforcongress.com/ (home and about pages reviewed; about page covers legal immigration only; nothing on the subject; no issues page exists)",
+        "web search on name plus voter ID (nothing on the subject)",
+        "congress.gov: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:53.632Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

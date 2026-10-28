@@ -1,0 +1,51 @@
+{
+  "politician_id": "8123c0d7-aaf6-4abe-bb8d-5d835463f733",
+  "findings": [
+    {
+      "id": "fbf676cec75d741cc1f66ab8728a68feae309c67a8be91637510f3e04753d26c",
+      "kind": "own-words",
+      "url": "https://www.griffinforvirginia.com/issues",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "We must ensure that our parents play a leading role in our schools and that we prevent indoctrination & self-hatred of our students on issues like CRT, American history, & trans ideology. We must pass school choice; save our election system by strengthening in-person voting and photo ID; and make sure that Virginia is a friendly place for churches and religious organizations to worship God and practice freely.",
+      "note": "Campaign issues page (undated; from his 2023 House run). One line on election law: strengthen in-person voting and photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:08.093Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee ballots",
+        "affidavit for voters without ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extractor script not run (instructed not to run repo scripts)",
+        "campaign site https://www.griffinforvirginia.com/ and /issues (one finding)",
+        "Ballotpedia page fetched: no issue statements on the subject",
+        "Cardinal News 2023-04-24 profile: reporter paraphrase only, no direct quote on the subject",
+        "blocked: https://lis.virginia.gov (bill pages load by script, no content returned); legiscan, legiplex, legilist, plural policy and vpap also not readable",
+        "news searches: reports of his sponsoring HB1131 (photo ID) and other ID bills could not be confirmed from a page I could read",
+        "blocked: https://www.virginiamercury.com/blog-va/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://legilist.com (Cloudflare)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:08.093Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

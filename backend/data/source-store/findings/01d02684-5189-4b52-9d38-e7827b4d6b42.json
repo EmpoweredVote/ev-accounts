@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,11 +79,40 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Charlie_Geren (fetched by curl) shows he is the sitting Texas House District 99 member and is on the 2026 general-election ballot after winning his 2026 primary; https://house.texas.gov/members/member-page?district=99 also names him",
+        "On the Record (0 appearances for this politician)",
+        "Ballotpedia: nothing on the subject in the page text",
+        "Texas House member page: media tab link not opened; the page shows no election items",
+        "Texas Legislature Online 89R bill histories for SB 16, HB 5337, HB 304, HB 892, HB 1670: fetched; his name is not among the authors, coauthors or sponsors",
+        "campaign site: not located",
+        "news search (2 searches across this person): no own-words statement or sponsorship on the subject surfaced",
+        "blocked: https://app.legiplex.com/profile/charlie-geren-26 (aggregator, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:33:07.135Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

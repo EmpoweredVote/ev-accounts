@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,191 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "bbf2ffb5a59dbe92cb3157efefab4692092db83482d25236532dc1d23488460e",
+      "kind": "own-words",
+      "url": "https://www.tanparker.com/texas-priority-election-integrity/",
+      "date": "2021-10-27",
+      "date_precision": "day",
+      "passage": "The Texas House is hearing legislation on election integrity today. Upholding election integrity is one of the key priorities that Texans have demanded we get done. We must preserve our democracy by making it easy to vote and hard to cheat. #ElectionIntegrity",
+      "note": "Post on his campaign site, written while he served in the Texas House, calling election integrity a priority.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf4f01c66f0214519e27d590862e693ddef43fe0dc02f44c1cc18c9eb01214ed",
+      "kind": "own-words",
+      "url": "https://www.tanparker.com/election-integrity-passes-the-texas-house/",
+      "date": "2021-10-15",
+      "date_precision": "day",
+      "passage": "Election Integrity is almost ready to become the law in Texas. With the passage of Senate Bill 1 in both the House and Senate, we will protect the right of every citizen to cast a secure ballot and make it easy to vote, and hard to cheat, preserving our democracy. #txlege",
+      "note": "Campaign-site post on passage of SB 1 (2021 election law) in both chambers.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60c05120fd89fc66beecfcdc9b24abb10f219253d1fc756ee745ba2bcc1dd3fe",
+      "kind": "own-words",
+      "url": "https://www.tanparker.com/a-full-and-consequential-day-at-the-texas-house/",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "passage": "Today was a very full and consequential day and night for the Texas House. We passed the historic election integrity bill on third reading, and it’s heading to the Senate for a conference committee report.",
+      "note": "Campaign-site post about House third-reading passage of the 2021 election integrity bill (SB 1, second called session).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "926cd84d5511fe8e1ef974b22b72bd0fa2f9430e5e67451a83dc2986f9a32334",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "sponsor",
+      "note": "Texas Legislature Online lists Parker among the House sponsors of enrolled SB 5 (2017), captioned 'Relating to requiring a voter to present proof of identification; providing a criminal penalty and increasing a criminal penalty.' His vote on the conference report is already on file.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b5edd5ebeb0ed1dfe4b548802d5b31dfff6b319337f87ec32f9ca6ad36e7356",
+      "kind": "record",
+      "url": "https://oag.state.tx.us/es/node/7041",
+      "date": "2017-02-27",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2481-2017",
+      "act": "author",
+      "note": "A 2017-02-27 attorney general press release says the House voter ID bill (HB 2481) is to be joint-authored by Chairs Geren, Laubenberg, Parker and Rep. Sanford. This is a statement by the attorney general's office, not by Parker. The bill would allow voters with an approved secondary ID to sign a declaration of reasonable impediment.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "reasonable-impediment declaration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae66c58b9592997eb8ee0402ed3e234abdec9702131614eab0662b29c221aa78",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "Texas Legislature Online lists Parker among the Senate authors of SB 16 (2025), 'Relating to requiring a person to submit proof of citizenship to register to vote; creating criminal offenses.' His yea vote on final passage is already on file.",
+      "subjects": [
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00f51e4b88d2ecc58261ce73946ce6666e9c948aab8927212a32b11b7941de75",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF#page=17",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "passage of SJR 37 on third reading (28 Yeas, 3 Nays), constitutional amendment clarifying that a voter must be a United States citizen",
+      "note": "Senate Journal 2025-04-01 (page 829) lists Parker among the Yeas on the motion to take up SJR 37, its second reading and its third reading and passage.",
+      "subjects": [
+        "citizen-only voting constitutional amendment",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:41.364Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate page for District 12 and Senate press room (nothing on the subject)",
+        "campaign site tanparker.com (site searches for election, voter, citizen: three 2021 posts found)",
+        "Ballotpedia (confirms Senate District 12, current term ends 2029)",
+        "news searches on his name plus subject words (2 searches: no direct quotes found)",
+        "Texas Legislature Online bill pages: SB 16 (2025) author list, SB 5 (2017) sponsor list, SJR 37 (2025) history",
+        "Senate Journal 2025-04-01 (his votes on SJR 37)",
+        "attorney general press release 2017-02-27 (names joint authors of the House voter ID bill)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:03:41.364Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

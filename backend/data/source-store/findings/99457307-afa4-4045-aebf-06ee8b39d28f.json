@@ -28,6 +28,25 @@
       "found": 0,
       "at": "2026-10-22T23:17:32.882Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/BPC0 (Senator Brendan P. Crighton, Third Essex; sponsored bills list has no voter ID or citizenship bills; one bill on time off to vote, not on the subject)",
+        "web searches on name plus voter ID, proof of citizenship, election: nothing on the subject; a search result says he sits on the Joint Committee on Election Laws",
+        "not reviewed: Ballotpedia, official Senate press page, campaign site (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:49.667Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

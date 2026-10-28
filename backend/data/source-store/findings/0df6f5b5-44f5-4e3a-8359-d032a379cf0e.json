@@ -1,0 +1,246 @@
+{
+  "politician_id": "0df6f5b5-44f5-4e3a-8359-d032a379cf0e",
+  "findings": [
+    {
+      "id": "d9d97d05568d28d041a368fbeac8fdb5b75b57986ae2c57b41a1ff31fda9defd",
+      "kind": "own-words",
+      "url": "https://www.gpb.org/news/2021/03/05/georgia-today-democrat-wins-in-georgia-prompt-likely-voting-restrictions",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "Let me tell you something. Our system has been broke, but it was even more broke this year, not so much because of who won or who lost, but it was broke because, bless its heart, the voter suppression idea went right out the door.",
+      "note": "Words from his House floor speech in favour of House Bill 531 (2021 election bill that added an ID number requirement for absentee ballot applications), as played and transcribed in a Georgia Public Broadcasting podcast dated 2021-03-05. The report says the speech was earlier that week, so the exact day is not stated. In it he says the election system was already broken and was worse in 2020.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 election overhaul bill HB 531"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:51.817Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Powell'), linked to ALAN POWELL (district 32) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Powell'), linked to ALAN POWELL (district 32) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59fbc6cfd39d0f6e5bb7da0aeda0e3021dc0b3818a94b8e5ad52ecc82749b77f",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Powell'), linked to Alan T. Powell (district 29) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37a65aaf35aadc28bde4edfa52035f4a4d7073ba23e9cfdf8711ddb99573616e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "yea",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Powell'), linked to Alan T. Powell (district 29) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d751c81711dbe038f4ddbe59334eaa33fb1290fce8cd2a78ec644eadf36d79d",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Powell, A'), linked to Alan T. Powell (district 29) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Powell'), linked to Alan Powell (district 33) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4746c3852c08d2fadb7844ea87c49641e47c9a90460ce08714af287cbc1ca658",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 531 detail API answers 401; not bypassed). History from House Journal 2021 index pp. 1025, 1062, 1262, 1463 and Senate Journal 2021 index pp. 1046, 1052, 2102, 2106 (Senate: referred to Ethics, reported Do Pass by substitute, no floor vote).",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, House committee substitute LC 28 0264S as read and adopted and passed by the House 2021-03-01, 97-72. No \"AS PASSED HOUSE\" PDF was located on the document API; the committee substitute is the text the House Journal shows adopted. Never passed by the Senate.",
+      "note": "Named as co sponsor ('Powell of the 32nd') on the official bill text; linked to ALAN POWELL via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1946a9da0d39e0d7a9527af905599d499872afece46402da1ec78718ccb7874c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 228 detail API answers 401; not bypassed). History from House Journal 2021 (first reading; referred to the Special Committee on Election Integrity) and 2022 House Journal index \"No Action in 2022\".",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-228-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (LC 41 2783). Never left House Special Committee on Election Integrity.",
+      "note": "Named as co sponsor ('Powell of the 32nd') on the official bill text; linked to ALAN POWELL via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "SB 202 and HB 531 votes"
+      ],
+      "places": [
+        "status: sitting Georgia House member (District 33); on the 2026-11-03 general-election ballot for that seat, per https://ballotpedia.org/Alan_Powell",
+        "On the Record (0 appearances)",
+        "Ballotpedia: status only, nothing on the subject",
+        "Wikipedia (https://en.wikipedia.org/wiki/Alan_Powell_(politician)): attributes a floor quote to a 2021-03-25 national newspaper story; not saved because the original page could not be fetched",
+        "blocked: https://www.legis.ga.gov (official bill and vote pages load only through an app whose data calls return 401, so SB 202 and HB 531 House votes and sponsorships such as HB 228 (2021) could not be read)",
+        "blocked: https://www.legiscan.com/GA/bill/HB228/2021 (403)",
+        "blocked: https://www.nytimes.com/2021/03/25/us/politics/georgia-voting-law-republicans.html (fetch not allowed)",
+        "blocked: https://11alive.com/article/news/politics/georgia-lawmakers-pass-gop-election-reform-bill/85-e6022e81-f2f5-4f10-89e9-0c55b483a263 (403)",
+        "Georgia Public Broadcasting transcript 2021-03-05 (saved)",
+        "https://www.revolt.tv/article/2021-03-30/56680/fact-check-is-georgia-gov-kemps-new-voting-law-legalizing-voter-suppression-in-2021: reporter's paraphrase only, not his words",
+        "news search on name plus voter ID, absentee ID, citizenship: nothing further citable",
+        "official House and campaign site: not reviewed (not located)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:40:51.817Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T20:51:14.404Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

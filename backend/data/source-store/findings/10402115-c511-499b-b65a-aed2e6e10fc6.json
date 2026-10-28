@@ -30,6 +30,29 @@
       "found": 0,
       "at": "2026-10-22T22:17:40.953Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "https://ballotpedia.org/Bob_Brooks_(Pennsylvania) (confirms he is on the 2026-11-03 general ballot for U.S. House Pennsylvania District 7; his 2025 survey answers have nothing on the subject)",
+        "campaign site https://brooksforcongress.com/ (home, /on-the-issues/, /campaign-updates/, /voter-info/: nothing on the subject; /voter-info/ only lists the mail-ballot request deadline; the issues page has campaign-finance and immigration text only)",
+        "blocked: https://guides.vote/?p=5397 (a voter guide; the fetch tool's summary says he is marked for easier voting rules and against the SAVE Act, but the page returned 403 to curl, so no passage could be copied and the summary was not used)",
+        "web search on his name with voter ID, SAVE Act, election: nothing found in his own words",
+        "congress.gov: not applicable, he has not served in Congress; no legislative record"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:00:42.068Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

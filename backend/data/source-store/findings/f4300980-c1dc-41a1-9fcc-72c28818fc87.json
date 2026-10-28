@@ -48,6 +48,80 @@
         "fetched_at": "2026-10-23T00:18:46.405Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "033ce20c5881bf70e0c85e774a43e40597636c9eb9b8f2dbcb73c7cf58c3b261",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S352",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-S-352-2023",
+      "act": "sponsor",
+      "note": "Named as a cosponsor of S352, Remove Foreign Citizens from Voting Rolls (primary sponsor Burgin). Date shown is the bill's filing date; the date he signed on is not shown. The bill text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S352v0.pdf) requires United States citizenship to serve as a juror and sends the names of people excused from jury duty for non-citizenship to the State Board of Elections for removal from the voter list.",
+      "subjects": [
+        "non-citizens on voter rolls",
+        "proof of citizenship to vote",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "724702ee06665e503e773b9f0ccd5ecdb75e7abde0188d1dbaaf2e512bd87269",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S356",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-S-356-2023",
+      "act": "sponsor",
+      "note": "Named as a cosponsor of S356, titled Constitutional Amendment/Photo ID on the bill page and on his bill list (primary sponsors Jackson, Perry, Lazzara). The filed version (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S356v0.pdf) was a motor vehicle dealer bill and was retitled later; the date he signed on is not shown, so the date given is the filing date.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.295Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -78,6 +152,30 @@
       "found": 2,
       "at": "2026-10-23T00:18:46.405Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "proof of citizenship to register or vote",
+        "non-citizens on voter rolls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: NC General Assembly biography page https://www.ncleg.gov/Members/Biography/S/438 names him as a sitting Senator; Ballotpedia page under this name returned not found, so no 2026 ballot check made",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC General Assembly bill lists for the member, 2023 and 2025 sessions, all bills incl. cosponsored: https://library.ncleg.gov/Members/IntroducedBills/S/438/2023/false and https://library.ncleg.gov/Members/IntroducedBills/S/438/2025/false",
+        "NC bill pages for S352 and S356 (2023 session), and S88 (absentee ballot deadlines, off the subject, not saved)",
+        "S921 third-reading vote already on file, not collected again",
+        "one web search on his name plus voter ID: no statements in his own words",
+        "not reviewed: official Senate site statements, campaign site and social media (not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:21:16.295Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

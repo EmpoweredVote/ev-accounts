@@ -1,0 +1,112 @@
+{
+  "politician_id": "1d87226a-0e86-4ecb-b4d1-9c158549885d",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Smith, T'), linked to TYLER PAUL SMITH (district 18) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Smith, T'), linked to TYLER PAUL SMITH (district 18) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Smith, T.P.'), linked to Tyler Paul Smith (district 18) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity in general",
+        "SB 202 House vote 2021"
+      ],
+      "places": [
+        "status check: Ballotpedia (https://ballotpedia.org/Tyler_Smith_(Georgia)) shows him as the sitting House District 18 member, advancing from the 2026 primary and running for re-election to the same seat on the 2026-11-03 general ballot",
+        "On the Record (0 meetings found by extract-otr)",
+        "Ballotpedia: nothing on the subject found",
+        "news searches on name plus subject words: nothing from him on the subject; a local paper reports his 2026 re-election announcement, with nothing on voting",
+        "SB 202 (2021): he was seated in January 2021, so a final House vote exists, but the official legislature vote page could not be reached (legislature pages load by script or return 401); not saved",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (403)",
+        "blocked: https://app.legiplex.com (403)",
+        "not reviewed: legis.ga.gov member and bill pages for his sponsorships",
+        "not reviewed: https://www.times-georgian.com/eedition/page-a1/page_ba2ddd47-c5b0-5c04-ad61-60f16d273623.html (announcement; not about the subject per search summary)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:39:10.671Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.405Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

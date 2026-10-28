@@ -22,6 +22,23 @@
       "found": 0,
       "at": "2026-10-22T22:17:01.635Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Massachusetts 6th Congressional District; page: https://news.ballotpedia.org/2026/09/02/dan-koh-defeats-four-others-in-democratic-primary-for-massachusetts-6th-congressional-district/ says Dan Koh defeated Beth Andres-Beck and three others)",
+        "On the Record (0 appearances found)",
+        "Ballotpedia profile page https://ballotpedia.org/Bethany_Andres-Beck does not exist (404)",
+        "not searched further because she is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:31:36.281Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

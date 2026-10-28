@@ -1,6 +1,37 @@
 {
   "politician_id": "2f768304-a6f6-4b5a-b41d-000727f225a1",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -30,6 +61,34 @@
       "found": 0,
       "at": "2026-10-22T22:24:55.923Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity and scope confirmed: https://ballotpedia.org/Michelle_Davis_(Indiana) shows her as the sitting Indiana House District 58 member, not running for re-election to the House, and on the 2026-11-03 general-election ballot for Indiana State Senate District 41",
+        "On the Record (0 appearances)",
+        "Wikipedia (lead only): only her 2021 school-athletics bill; nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1680/details (site loads by script; no readable text), so her bill pages, sponsorships and roll-call votes could not be read; the 2025 citizenship-check bill HB 1680 and the 2024 HB 1264 are leads for later",
+        "blocked: https://legiscan.com/IN/bill/HB1680/2025 (403)",
+        "blocked: https://pluralpolicy.com/app/legislative-tracking/bill/details/state-in-2025-hb1680 (no readable text)",
+        "https://www.cpac.org/foundation/ratings/bill/inh2025hb1680 fetched: gives only the House total vote (65-25), no member names",
+        "BallotReady profile: nothing on the subject",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/senate-district-41/ (403); a search summary says she did not answer its survey",
+        "House caucus member page not found (404 at tried URL patterns)",
+        "her campaign site not located; not reviewed",
+        "news searches on her name plus voter ID / citizenship / election words: nothing naming her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:22:30.596Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

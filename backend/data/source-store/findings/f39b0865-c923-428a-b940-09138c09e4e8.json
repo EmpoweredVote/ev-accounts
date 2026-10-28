@@ -22,11 +22,62 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "7a437d2c37aa9a222e90e7e142e20373bdc2d9f7ed971dafc16b483c0fc00f05",
+      "kind": "own-words",
+      "url": "https://www.vikkigoodwin.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Vikki is pushing Texas to join the majority of states with online registration and successfully implement secure online systems.",
+      "note": "Campaign issues page, written about her in the third person on her own site. Says she backs online voter registration. Says nothing on ID or citizenship proof. Undated page.",
+      "subjects": [
+        "online voter registration",
+        "how people register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:47:49.819Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity laws in general",
+        "voter registration process"
+      ],
+      "places": [
+        "in scope: sitting Texas House member and 2026 general-election candidate for lieutenant governor (Wikipedia page fetched; won the 2026 runoff)",
+        "On the Record (0 meetings)",
+        "campaign site vikkigoodwin.com home and /issues pages (fetched, page text read)",
+        "blocked: https://ballotpedia.org/Vikki_Goodwin (fetch returned empty)",
+        "news searches (3): nothing on voter ID, proof of citizenship or the SAVE Act in her own words; a Sept 2026 story is about AI ads, not ID",
+        "Texas legislature bill pages: not searched for sponsorships beyond the vote already on file",
+        "no own-words passage on voter ID or proof of citizenship found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:47:49.819Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

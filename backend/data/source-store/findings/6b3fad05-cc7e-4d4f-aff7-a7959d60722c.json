@@ -28,6 +28,31 @@
       "found": 0,
       "at": "2026-10-22T22:38:30.655Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Bloomington Chamber of Commerce candidate page (https://www.chamberbloomington.org/state-legislative-candidates-2026.html): confirms he is a House District 46 challenger on the November 2026 ballot; nothing on the subject",
+        "BallotReady profile (confirms 2026 general-election candidacy; no issue answers readable)",
+        "the student newspaper's 2026 primary guide (confirms he faces the primary winner in November)",
+        "iVoterGuide listing (name only, nothing on the subject)",
+        "Ballotpedia page (no candidate profile found)",
+        "news search: name plus subject words (two searches; nothing on the subject)",
+        "campaign site: not found in search results",
+        "not applicable: no legislative record (not a sitting legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:54:41.058Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

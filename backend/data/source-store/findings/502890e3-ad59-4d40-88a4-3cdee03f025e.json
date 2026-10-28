@@ -25,6 +25,29 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "97d519c3b729ef0be25a164ed5b7f218d66976a2716555e4d155132aebfda299",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "nay",
+      "motion": "On adoption of amendment #409 to H.4000 (FY2026 budget), An Act relative to identification to vote; rejected 25 yeas to 131 nays (Yea and Nay No. 42)",
+      "note": "Meschino is recorded N on the roll call sheet. The amendment text (https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content) would require each voter to show valid State or Federal photo identification before receiving a ballot, list acceptable IDs (driver's license, passport, military ID, firearm ID card, other government photo ID), direct the Secretary of the Commonwealth to give a free photo ID to a registered voter without one who signs an affidavit, and take effect January 1, 2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:06.046Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -50,6 +73,31 @@
       "found": 0,
       "at": "2026-10-22T23:08:31.555Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID",
+        "ID or ID number with a mail or absentee ballot",
+        "documentary proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page (confirms sitting member, 3rd Plymouth District, on the 2026 general-election ballot after the 2026-09-01 primary)",
+        "Massachusetts Legislature member profile and sponsored-bill list (no voting, ID or citizenship bills as sponsor)",
+        "Massachusetts House roll calls on H.4000 (Yea and Nay Nos. 30, 36, 42 checked) and the amendment texts",
+        "Beacon Hill Roll Call weekly report (lead to the 2025 vote)",
+        "House amendment 1587 to H.5500 (2026 budget): shown as rejected without a recorded vote, so no member vote to cite",
+        "campaign site joanmeschino.com/issues fetched: nothing on the subject",
+        "one news search on the name plus voter ID, voting and election words: no own-words statements found",
+        "Wikipedia and BallotReady: leads only, not cited"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:07:06.046Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

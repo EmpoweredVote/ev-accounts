@@ -23,6 +23,31 @@
         "fetched_at": "2026-10-22T23:53:57.353Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9c501be726e88c813ad2820ecf4798b656cab6e11336531e5d6d29b66e9668e9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "House Bill 958 Election Law Changes, Senate Second Reading, roll call 693",
+      "note": "Garson is listed among the Noes (28 Ayes, 13 Noes). The House committee substitute text on the legislature site includes a provisional ballot when a voter has no photo ID, a cure deadline to show photo ID, a photocopy of ID with absentee ballots, and citizenship questions for voter registration at drivers license offices.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "ID with absentee ballot",
+        "citizenship check at registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:30.466Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -47,6 +72,28 @@
       "found": 1,
       "at": "2026-10-22T23:53:57.353Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and provisional ballot without ID",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (fetched with curl): sitting State Senate member, District 23, took office 2026-04-10",
+        "NC General Assembly member page (Senate member 1001) and his introduced-bills list: no bill on voting, ID or citizenship",
+        "NC General Assembly roll call for House Bill 958 Election Law Changes in the Senate",
+        "one news search on name plus bill words (nothing from him)",
+        "no campaign site visited; own-words search found nothing on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:36:30.466Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

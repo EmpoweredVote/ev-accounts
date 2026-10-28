@@ -1,6 +1,37 @@
 {
   "politician_id": "27844ca9-5243-48e1-8053-c3ef4e12c0fe",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -29,6 +60,29 @@
       "found": 0,
       "at": "2026-10-22T22:23:28.900Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://www.indianasenaterepublicans.com/alting shows him as State Senator for District 22 (Lafayette), in office since 1998, Public Policy chair; a news report (https://www.newsfromthestates.com/article/senator-facing-theft-investigation-says-he-will-resign-if-reelected-citing-changes-my) says he is on the 2026 ballot for re-election and will resign if re-elected",
+        "On the Record (0 appearances)",
+        "Senate caucus page and its news list: road grants, tax, lottery, wine delivery, internships; nothing on the subject",
+        "Ballotpedia (fetched by curl): nothing on the subject",
+        "not reviewed: https://iga.in.gov (bill and vote pages need scripts; floor votes on 2025 SB 10 and the mail-ballot ID bill were not found)",
+        "news searches on his name plus voter ID, citizenship, election law: no article quotes him on the subject; a Wikipedia lead says he sits on an elections committee, which is not citable and was not confirmed on an official page"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:31.230Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

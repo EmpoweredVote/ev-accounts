@@ -1,0 +1,113 @@
+{
+  "politician_id": "24692acc-cb1c-45cc-a52a-1f78462f55cb",
+  "findings": [
+    {
+      "id": "a01d7208d8674a80250ad39062a9de8a894f8a2da5329dd3b10746b7a4bd85bb",
+      "kind": "own-words",
+      "url": "https://www.voteforgabe.com/issues/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Voting in Georgia should be easy and transparent for all eligible voters, and we must address restrictions on voting that make it harder to vote early or absentee by mail, lengthen lines at the polls, and lead to registration issues for voters.",
+      "note": "Campaign issues page, undated (footer shows 2026). Speaks generally about voting restrictions and absentee voting. It names no ID or citizenship rule.",
+      "subjects": [
+        "voting access restrictions",
+        "absentee voting restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:38:10.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce6c16817ff286448a712792924c5f06d8d805e039ac8fb60277ec39db73c9fe",
+      "kind": "own-words",
+      "url": "https://www.voteforgabe.com/issues/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "He will be a champion for our civil and voting rights, opposing Republican voter suppression tactics and standing against “the big lie” about election fraud in the 2020 election.",
+      "note": "Campaign issues page, undated. A general statement on voting rights and on claims of 2020 election fraud. It names no ID or citizenship rule.",
+      "subjects": [
+        "voting rights",
+        "election fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:38:10.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Okoye'), linked to Gabe Okoye (district 102) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voting access restrictions",
+        "election integrity claims"
+      ],
+      "places": [
+        "status confirmed: sitting House District 102 member, on the 2026-11-03 general-election ballot for the same seat (https://ballotpedia.org/Gabe_Okoye)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.voteforgabe.com/ and its issues page (one passage saved; no voter ID or citizenship text)",
+        "Ballotpedia https://ballotpedia.org/Gabe_Okoye (nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Gabe_Okoye (nothing on the subject)",
+        "blocked: https://www.legis.ga.gov/members/house/5041 (the legislature's member and vote pages load only through a script and its data service refuses requests, so bill and vote records could not be read)",
+        "blocked: https://www.billtrack50.com/legislatordetail/28315 (bill and vote lists did not load)",
+        "blocked: https://legiscan.com/GA/bill/SR563/ (403)",
+        "blocked: https://sos.ga.gov/news/secretary-raffensperger-applauds-general-assembly-acting-non-citizen-voting (bot check)",
+        "web news search on his name plus voting words: nothing on the subject",
+        "not applicable: SB 202 (2021) vote, because he took office 2023-01-09",
+        "nothing on the subject: https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-102/candidates/gabe-okoye and https://thecandidate.com/states/ga/legislature/house/102/gabe-okoye (profile summaries, not his words)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:38:10.222Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

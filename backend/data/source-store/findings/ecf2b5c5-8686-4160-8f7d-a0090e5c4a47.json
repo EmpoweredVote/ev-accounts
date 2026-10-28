@@ -1,0 +1,57 @@
+{
+  "politician_id": "ecf2b5c5-8686-4160-8f7d-a0090e5c4a47",
+  "findings": [
+    {
+      "id": "e4f36fa86c40f306532ade7834ebb79e1d299482c3b317b71ce80aef2051d9b6",
+      "kind": "own-words",
+      "url": "https://www.mikeolcott.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We must ensure that every election is safe and secure. I support tougher penalties for voter fraud and support requiring a photo ID to vote.",
+      "note": "Campaign issues page, Election Integrity section. States support for tougher voter-fraud penalties and for a photo ID requirement to vote. Page metadata shows it was last modified 2026-10-03 and first published 2021-11-13; the date of this text is not stated.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "election integrity",
+        "voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:25:51.436Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "election integrity",
+        "voter fraud penalties",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia (confirms sitting state House member, District 60, on the 2026 general-election ballot; no subject content)",
+        "campaign issues page https://www.mikeolcott.com/issues",
+        "campaign site home page (nothing on the subject)",
+        "official House member page https://house.texas.gov/members/member-page/?district=60 (nothing on the subject)",
+        "Texas Legislature Online member page and authored/coauthored/sponsored lists (89th regular session); captions of 6 authored bills checked, none on the subject; coauthored and other authored captions not individually reviewed; no election-bill sponsorship found",
+        "web search: name plus voter ID / proof of citizenship / noncitizen voting (no hits on this person)",
+        "no recorded votes on file; no record votes on the subject located",
+        "blocked: https://legiscan.com/TX/legislation/2025?sponsor=olcott (403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:25:51.436Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

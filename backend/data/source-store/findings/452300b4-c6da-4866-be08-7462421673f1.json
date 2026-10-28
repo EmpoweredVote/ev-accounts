@@ -1,6 +1,37 @@
 {
   "politician_id": "452300b4-c6da-4866-be08-7462421673f1",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +58,26 @@
       "found": 0,
       "at": "2026-10-22T22:28:22.176Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (provisional ballot, affidavit, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and election integrity generally"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "caucus member page https://www.indianahouserepublicans.com/members/general/hunter-smith/ (confirms sitting District 24 representative; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Hunter_Smith_(Indiana) (confirms he is on the 2026 general-election ballot; nothing on the subject)",
+        "web search on name plus voter ID, election integrity, citizenship: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:01.634Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

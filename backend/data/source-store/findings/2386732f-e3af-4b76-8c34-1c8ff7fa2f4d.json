@@ -50,6 +50,28 @@
       "found": 0,
       "at": "2026-10-22T23:01:12.798Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Kip_Diggs (confirms sitting 2nd Barnstable District member and on the 2026 general-election ballot; nothing on the subject)",
+        "state legislature member profile https://malegislature.gov/Legislators/Profile/KAD1 (confirms the person; no election or ID bills seen)",
+        "state legislature bill pages H.802 and H.833 (photo ID bills; he is not named on them)",
+        "news and web search on his name plus voter ID and voting: nothing on the subject",
+        "his official and campaign site: not reviewed (no page located)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:32:56.941Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

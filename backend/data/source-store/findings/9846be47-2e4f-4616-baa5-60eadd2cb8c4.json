@@ -1,0 +1,111 @@
+{
+  "politician_id": "9846be47-2e4f-4616-baa5-60eadd2cb8c4",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Hitchens'), linked to BILL HITCHENS (district 161) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Hitchens'), linked to BILL HITCHENS (district 161) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Hitchens'), linked to Bill Hitchens (district 161) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity",
+        "ID types accepted at the polls"
+      ],
+      "places": [
+        "WTOC 2026-10-19 interview article: names him as the seven-term House District 161 incumbent facing a challenger on Nov. 3; his quoted words there are not on the subject",
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "blocked: https://ballotpedia.org/Bill_Hitchens (empty page)",
+        "blocked: https://goodparty.org/people/william-hitchens-e9ba91d9 (429)",
+        "House caucus press site, page 1 of 5 of his releases: nothing on the subject; pages 2 to 5 not reviewed: https://house-press.com/representative/Bill-Hitchens",
+        "Cherokee County local group 2026 update page (HB 1109): does not name him; nothing on the subject",
+        "a search result lists him as a sponsor of HB 400 (2019-20, ID cards not proper ID at polls) but the page was blocked (legiscan 403 when opened for another person), so it is not saved as a finding",
+        "two web searches: name plus voter ID / election bill; name plus 2026 race; no own-words found",
+        "not reviewed: personal or campaign site; legislature bill pages (login token required)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:54.254Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.407Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

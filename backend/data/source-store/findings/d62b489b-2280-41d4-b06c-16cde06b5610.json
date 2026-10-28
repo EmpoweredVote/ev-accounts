@@ -1,6 +1,36 @@
 {
   "politician_id": "d62b489b-2280-41d4-b06c-16cde06b5610",
-  "findings": [],
+  "findings": [
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +56,31 @@
       "found": 0,
       "at": "2026-10-23T00:11:36.168Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC legislature member list https://www.ncleg.gov/Members/MemberList/H (confirms Rep. Allen Chesser, District 25, member 799); also on the 2026 general ballot per a voter-guide search result, not fetched",
+        "NC legislature introduced-bills page for 2025 session (93 bills; nothing on voter ID, citizenship or election integrity)",
+        "NC legislature votes page for 2025 session (only local-election and board-election items; nothing on voter ID or citizenship) ",
+        "Wikipedia page for Allen Chesser (nothing on the subject)",
+        "Ballotpedia: page not found under the name tried",
+        "blocked: https://ncnewsline.com/voter-guides/contests/n-c-house-district-25/ (HTTP 403)",
+        "campaign site: allenchesser.com and chesserfornc.com returned nothing usable",
+        "news: Rocky Mount Telegram interview 2024 (nothing on the subject); one web search on name plus subject words (nothing)",
+        "Branch voter guide https://www.branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-25/candidates/allen-chesser (says his website has nothing on voting and elections)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:38.064Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

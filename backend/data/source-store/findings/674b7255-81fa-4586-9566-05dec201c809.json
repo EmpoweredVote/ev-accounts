@@ -53,6 +53,31 @@
       "found": 1,
       "at": "2026-10-22T22:01:05.097Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and no-ID voters",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Monica_Alponte (confirms on the 2026 general-election ballot for Arizona District 1; her survey answers there do not mention the subject)",
+        "campaign site https://monicaalponteaz.com/ (home page and policies page; nothing on the subject)",
+        "campaign policy PDFs linked from the policies page (voter guide, League of Women Voters answers, immigration survey, foreign policy, others; none on ID or citizenship to vote)",
+        "BallotReady and GoodParty candidate pages (nothing on the subject)",
+        "web search on name plus voter ID and election integrity (nothing)",
+        "not a legislator: no bills or votes to review",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:01:55.565Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

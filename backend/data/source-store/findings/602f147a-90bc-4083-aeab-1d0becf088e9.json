@@ -22,6 +22,91 @@
         "fetched_at": "2026-10-22T23:10:26.604Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "177ddc14fea1ad29fb648471867c9837b7b3ef87818407dd4799a1a65f336b0b",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "“Elections should be free, fair and accessible,” Campbell said in the statement. “The Trump Administration’s attempt to disqualify eligible voters and throw out lawfully cast ballots is plainly unconstitutional. We will not stand by while the President tries to impose unlawful barriers to the ballot box.”",
+      "note": "Boston Globe quotes Campbell's statement on joining a 19-state suit against the March 2025 executive order that called for proof of citizenship to register and for limits on counting mail and absentee ballots.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893cd3dedf58c93e7a04d56c6e9e9c43f879d7a5cf49f1215821e61517ff2811",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "Imposing “extraordinarily burdensome proof of citizenship requirements for voter registration” would “disenfranchise countless eligible Massachusetts voters,” according to Campbell’s statement.",
+      "note": "Globe sentence quoting fragments of Campbell's own statement about documentary proof of citizenship for voter registration. Only the quoted fragments are her words.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "610e81b06e925b10e75df1f25e6430c29cc7f37708d001b05c52a6b23e314d38",
+      "kind": "record",
+      "url": "https://www.bostonglobe.com/2025/04/03/metro/mass-ag-andrea-campbell-joins-national-lawsuit-challenging-trump-voter-action/",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined multistate federal suit in Boston against the March 2025 executive order on proof of citizenship for voter registration and mail-ballot counting",
+      "note": "Campbell signed on as one of 19 attorneys general plaintiffs. The suit asks a court to declare the order's provisions unconstitutional and void.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf616a0290e832b46283608c8e01d39488afa3596a927cc4c95d62963e1a32cf",
+      "kind": "own-words",
+      "url": "https://www.benningtonbanner.com/local-news/vermont-other-states-sue-over-federal-executive-order-on-mail-in-voting/article_5b0bb04a-cd2a-446a-89d6-376a740d8792.html",
+      "date": "2026-04-05",
+      "date_precision": "day",
+      "passage": "“Though the President may wish he had unlimited power to restrict voting rights, the Constitution gives states – not the White House – the authority to oversee elections,” said Massachusetts Attorney General General Andrea Joy Campbell. “Mail-in voting is secure, our election laws are strong, and there is absolutely no evidence of widespread voter fraud. I will not back down from ensuring that every eligible voter in Massachusetts can cast their ballot and have their vote counted.”",
+      "note": "Bennington Banner quotes Campbell from the coalition press release on the 2026 suit over the executive order titled Ensuring Citizenship Verification and Integrity in Federal Elections (mail voting and citizenship verification). Page date is the article date, which may be a day or so after the filing.",
+      "subjects": [
+        "mail-ballot rules",
+        "non-citizen voting and voter fraud claims",
+        "citizenship verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:38.392Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -51,6 +136,34 @@
       "found": 1,
       "at": "2026-10-22T23:10:26.604Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "mail-ballot rules and ID",
+        "non-citizen voting and voter fraud claims",
+        "federal election executive orders",
+        "SAVE Act"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Massachusetts_Attorney_General_election,_2026 lists Andrea Campbell on the 2026 general-election ballot for Attorney General",
+        "On the Record (0 meetings)",
+        "blocked: https://www.mass.gov/news/ag-campbell-files-lawsuit-against-trump-administrations-unlawful-attempt-to-restrict-voting-access (403 on fetch and on curl with browser user agent)",
+        "blocked: https://www.mass.gov/news/ag-campbell-sues-trump-administration-over-unlawful-executive-order-attempting-to-exert-federal-control-over-elections (403)",
+        "blocked: https://www.mass.gov/news/ag-campbell-secures-victory-in-blocking-trump-administrations-unlawful-attempt-to-restrict-voting-access (403)",
+        "blocked: https://www.axios.com/local/boston/2026/04/06/massachusetts-mail-in-voting-trump (page returned no text)",
+        "not reviewed: https://www.eagletribune.com/news/boston/ags-sue-to-block-trumps-voting-law-changes/article_4774f916-6c80-4ea0-bcce-b62627a6e54c.html (text scrambled on the page)",
+        "Illinois AG page on the SAVE Act coalition letter (https://illinoisattorneygeneral.gov/news/story/attorney-general-raoul-opposes-federal-legislation-that-would-create-substantial-barriers-to-voting-3-31-25) lists Massachusetts but does not name Campbell: not saved",
+        "Ballotpedia news page on court rulings: describes the orders, no Campbell words: not saved",
+        "no state legislature or campaign-site bill record applies to a statewide law officer; no photo-ID or no-ID-voter statement found",
+        "three news searches on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-27T19:12:38.392Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

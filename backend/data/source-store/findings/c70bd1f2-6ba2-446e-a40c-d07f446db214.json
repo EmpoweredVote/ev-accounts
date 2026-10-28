@@ -53,6 +53,27 @@
       "found": 0,
       "at": "2026-10-22T23:22:28.402Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Thomas_Stanley (confirms sitting Massachusetts House 9th Middlesex member on the 2026 general-election ballot; nothing on the subject)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/TMS1 (nothing on the subject; sponsored-bill list not readable from the page)",
+        "campaign site https://tomstanley.org/ (nothing on the subject)",
+        "two web searches on his name plus voter ID, voting and citizenship words, and the 2026 voter ID initiative (nothing tying him to the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:53.692Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

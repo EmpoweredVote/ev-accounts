@@ -27,6 +27,29 @@
       "found": 0,
       "at": "2026-10-22T23:07:29.609Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Sean_Reid shows him on the November 3, 2026 general-election ballot for Massachusetts House, 11th Essex District, having advanced from the September 1, 2026 primary; state results page https://electionstats.state.ma.us/elections/view/173307/ lists him in that primary",
+        "On the Record (0 meetings)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/S_R1/194 and its cosponsor page: listings fetched, none on the subject (the cosponsor tab returned the same text as the main page, so the full cosponsor list may not have loaded)",
+        "bill page https://malegislature.gov/Bills/194/H802 (photo ID to vote, filed by another member): his name does not appear on the page text",
+        "Ballotpedia: nothing on the subject",
+        "news searches on name plus subject words: nothing on the subject",
+        "blocked: https://ontheissues.org/MassScorecard/Reid_Sean.htm (403)",
+        "no campaign site reachable (seanreidma.com and reidforlynn.com did not respond)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:59:23.234Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

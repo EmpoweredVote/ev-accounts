@@ -22,6 +22,28 @@
         "fetched_at": "2026-10-22T23:12:31.821Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "19481d6317e0752648d7359df8f911a9ad2fff4cf553e9263a4b458e76faf5cc",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/HouseRollCall139.pdf",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359), Voter Identification amendment by Rep. Paul K. Frost",
+      "note": "Roll call #139 shows Philips voting no on the voter identification amendment; it failed 32 yeas to 126 nays. The amendment index page titles it 'Voter Identification'. The amendment was offered to the voting-access bill (S.2554 text).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:20.482Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +71,30 @@
       "found": 1,
       "at": "2026-10-22T23:12:31.821Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: on the 2026 general-election ballot for 8th Norfolk District (Ballotpedia https://ballotpedia.org/Edward_Philips)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "official legislature profile and sponsored-bills list for the 194th session: no voter ID or citizenship bills",
+        "H.4359 amendment index page and House roll call #139 PDF (voter identification amendment)",
+        "news searches (1 each plus shared): no own words on voter ID found",
+        "not reviewed: floor debate video and any personal or campaign site"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:00:20.482Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -50,6 +50,29 @@
       "found": 0,
       "at": "2026-10-22T23:06:36.688Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "malegislature.gov legislator profile DWG1 (confirms 4th Middlesex District; sponsored-bill list has no ID, citizenship or voter-roll bill; nothing on the subject)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot; nothing on the subject)",
+        "campaign site: guessed domains did not load; none found",
+        "Patch 2018 candidate profile (nothing on the subject)",
+        "Wikipedia page (nothing on the subject; lead only)",
+        "news search on name plus voter ID / proof of citizenship / voting rights: nothing on the subject (only local polling-place and council-vacancy bills)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:50:45.941Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

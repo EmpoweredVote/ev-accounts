@@ -50,6 +50,30 @@
       "found": 0,
       "at": "2026-10-22T23:12:30.290Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter registration rules",
+        "election law bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "MA legislature member biography https://malegislature.gov/Legislators/Profile/S_G1/194/Biography (confirms he holds the 23rd Middlesex seat; nothing on the subject)",
+        "MA state election results page https://electionstats.state.ma.us/elections/view/173009/ (2026 primary, 23rd Middlesex, Garballey the only named candidate, 8,720 votes)",
+        "MA bill page H.790 (192nd court), his permanent voter registration bill: about registration for movers, not ID or citizenship, so not saved",
+        "MA roll call page for H.4359 amendment 7 (already on file; page shows the vote only, not the amendment text)",
+        "blocked: https://ballotpedia.org/Sean_Garballey (fetch returned no page content)",
+        "blocked: https://malegislature.gov/Legislators/Profile/SPG1 (404)",
+        "news and own-words searches (2 searches): nothing on the subject; no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:59:09.138Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

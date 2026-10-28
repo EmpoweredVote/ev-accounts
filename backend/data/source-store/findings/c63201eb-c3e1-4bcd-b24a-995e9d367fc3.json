@@ -30,6 +30,32 @@
       "found": 0,
       "at": "2026-10-22T21:32:55.777Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Lancia (confirms on the 2026-11-03 general ballot for CT-3; no survey answers; nothing on the subject)",
+        "campaign site https://lanciaforcongress2026.org/ (home and about text; nothing on the subject; the /issues page returned no text)",
+        "https://theballotbrief.com/candidate/christopher-lancia-ct (nothing on the subject)",
+        "https://ctmirror.org/2026/10/22/in-cts-3rd-district-delauro-eyes-gavel-as-lancia-seeks-change/ (nothing on the subject)",
+        "https://www.wshu.org/connecticut-news/2026-05-06/election-security-ct-federal-lawmakers (does not mention him)",
+        "https://ctcommonsense.substack.com/p/who-is-this-chris-lancia-guy (third-party blog, not his words; nothing on the subject)",
+        "not a sitting legislator: no bill record to search",
+        "one web search on name plus subject words: nothing on the subject",
+        "no debate or forum video found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:27:42.243Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

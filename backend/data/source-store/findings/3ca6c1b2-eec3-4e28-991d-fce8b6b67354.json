@@ -46,6 +46,27 @@
         "fetched_at": "2026-10-22T23:06:49.760Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e34b5241f37422fd02330b0b4e5f97abdf08d95f6ea9cc2386d99d129f764a3f",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849.html",
+      "date": "2025-01-06",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor of H.849, An Act relative to inactive voters and municipal census administration. It amends G.L. c.51 s.37 so that a voter is made inactive after 2 consecutive years instead of the current year. This is about voter-roll upkeep, not ID or citizenship proof.",
+      "subjects": [
+        "voter-roll maintenance (inactive voters)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:48:51.567Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -75,6 +96,29 @@
       "found": 1,
       "at": "2026-10-22T23:06:49.760Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll maintenance (inactive voters)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "malegislature.gov legislator profile DAL1 (confirms 17th Worcester District, lists sponsored bills; no ID or citizenship bill)",
+        "campaign site: davidleboeuf.com is a parked redirect page with no content; other guessed domains did not load",
+        "Ballotpedia (confirms on the 2026 general-election ballot; nothing on the subject)",
+        "news search on name plus voter ID / proof of citizenship: nothing by or about him on the subject",
+        "malegislature.gov bill H.849 page"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:48:51.567Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

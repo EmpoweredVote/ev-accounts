@@ -1,0 +1,103 @@
+{
+  "politician_id": "191ee4e1-1514-4567-8fd4-8308e3b88bb0",
+  "findings": [
+    {
+      "id": "c8de9bb0cf342e3543a5c2be8ebbac41db2769d672f160ae7526f6a39e76ee0f",
+      "kind": "own-words",
+      "url": "https://www.maynivar.com/priorities",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Equal protection under the law is fundamental to a fair and functioning democracy. Every Virginian—regardless of race, religion, ethnicity, gender identity, sex, sexual orientation, ability, or age—deserves the freedom to live safely, be treated with dignity, and participate fully in civic life. My legislative work reflects this commitment, including votes to enshrine reproductive freedom, safeguard marriage equality, and restore voting rights so our democracy remains inclusive and accountable to the people it serves.",
+      "note": "Section 'Protecting equal rights and voting access' on her campaign priorities page; undated. Speaks of voting access and restoring voting rights in general terms, with no mention of ID or citizenship.",
+      "subjects": [
+        "voting access (related)",
+        "voting rights restoration (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:33:05.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab514b8b6d49fe4f17354c8ca582f01905dab12ea771da1c3d51b657bdc65b1a",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/815248/virginia-house-bill-773-session-2026",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-773-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "HB 773, absentee voting cure process: removes the rule that absentee ballots must arrive by the Friday before the election for errors to be cured, and moves the deadline to cure errors in absentee ballot applications to noon on the Monday after the election. She voted yes on House passage.",
+      "subjects": [
+        "mail-ballot cure process (related)",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:33:05.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31aad87dd4cdf1fb0b3f7805c4ec78f9720ef39f053152c2930387e509f9776",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/814554/virginia-house-bill-78-session-2026",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-78-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (92-Y 6-N 0-A)",
+      "note": "HB 78, elections administration: makes certifying results a ministerial duty of local electoral boards, with removal and civil penalty for refusal. She voted yes on House passage. Related election-law vote, not a voter ID vote.",
+      "subjects": [
+        "election certification (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:33:05.616Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "absentee ballot error cure (related)",
+        "voting rights (related)",
+        "election integrity",
+        "election certification (related)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House of Delegates member page https://house.vga.virginia.gov/members/H0397 (confirms 57th District delegate since 2026-01-14; no personal site listed)",
+        "Ballotpedia https://ballotpedia.org/May_Nivar (confirms office; her 2025 survey answers read: nothing on the subject)",
+        "campaign site https://www.maynivar.com/ (home and priorities pages; priorities page saved below)",
+        "VPM interview of 2026-01-05: one general remark about protecting democracy, nothing on voter ID or citizenship; not saved",
+        "Henrico Citizen 2025 race article: paywalled, nothing on the subject visible",
+        "bill vote pages for HB 773 and HB 78 (2026)",
+        "blocked: https://legilist.com/states/virginia/legislator/nivar-may--va-house-of-delegates-57-nivar-m",
+        "not reviewed: https://origin.vpap.org/legislators/497205-may-nivar/list-votes/close-votes (vote list needs scripts)",
+        "not reviewed: https://lis.virginia.gov member and bill pages (script-only)",
+        "news searches on name plus subject words: no voter ID or citizenship bill, vote or statement found for her"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:33:05.616Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

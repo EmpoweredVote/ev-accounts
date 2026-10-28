@@ -26,6 +26,28 @@
       "found": 0,
       "at": "2026-10-22T21:56:20.525Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://ballotpedia.org/Gary_Grossi (confirms he is the 2026 general-election candidate for US House, MA-3, after advancing from the Sept 1 2026 primary; he has not completed the survey; nothing on the subject)",
+        "campaign site https://www.votegarygrossi.com/issues (issues: energy, housing, health care, safe communities, transparency, free speech, gun rights; nothing on the subject)",
+        "campaign site https://www.votegarygrossi.com/about (nothing on the subject)",
+        "web search on name plus voter ID words (nothing on the subject; news coverage found concerns his opioid and border focus)",
+        "not reviewed: https://www.eagletribune.com/grossi-seeks-gop-nod-to-challenge-trahan/article_0dc4cdfc-83c2-4b6e-a47a-c93871ba5e26.html"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:27:44.955Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

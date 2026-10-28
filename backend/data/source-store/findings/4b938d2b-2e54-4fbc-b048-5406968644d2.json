@@ -1,6 +1,37 @@
 {
   "politician_id": "4b938d2b-2e54-4fbc-b048-5406968644d2",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,29 @@
       "found": 0,
       "at": "2026-10-22T22:32:22.144Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (1 meeting: Senate Judiciary Committee 2026-01-14, https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a; his words there are about a homelessness bill, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Rodney_Pol_Jr. (confirms he is Senate District 4 and on the 2026-11-03 general ballot; nothing on the subject)",
+        "Senate caucus site https://indianasenatedemocrats.org/caucus/pol/ and its site search for his name plus voter (his one release found, 2025-10-27, is about mid-decade congressional redistricting, not this subject)",
+        "Senate caucus release on federal election observers (does not quote him; not his words)",
+        "not reviewed: https://iga.in.gov bill pages for sponsorships (script-driven site returned no readable text)",
+        "news searches on his name plus voter ID, student ID, mail ballot and election (nothing by or quoting him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:58:40.519Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

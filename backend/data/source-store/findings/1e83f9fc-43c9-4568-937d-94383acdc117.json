@@ -52,6 +52,27 @@
       "found": 0,
       "at": "2026-10-22T23:00:43.567Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail and absentee ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "The Ballot Brief 2nd Hampden page (shows him on the 2026 general-election ballot)",
+        "malegislature.gov member profile and cosponsor lists for the 192nd to 194th sessions (no voter ID or citizenship bill; election-related filings are H.759 on keeping absentee-ballot applicant records confidential, H.94 on a Longmeadow election commission, H.4309 on Longmeadow preliminary elections, none about ID)",
+        "malegislature.gov H.759 bill text (read; confidentiality of absentee applicants' records, nothing on ID)",
+        "no official or campaign site found; Ballotpedia not fetched",
+        "one news search on name plus voter ID (nothing by him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:37:34.305Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -22,11 +22,59 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "6cff39418b6ca8f7c939eb057153c62b438fc18f4343bb5d7125529dad6bdacb",
+      "kind": "own-words",
+      "url": "https://www.npr.org/transcripts/1017657460",
+      "date": "2021-07-18",
+      "date_precision": "day",
+      "passage": "The reality and the facts are, when you look at this bill and you get down to the numbers, you get down to the manner in which they're cutting voting time for urban community, they're dismantling drive-through voting - which 60% of drive-through voters were women - dismantling 24-hour voting.",
+      "note": "NPR interview with Rep. Ann Johnson during the 2021 walkout over the Texas elections bill that became SB 1. She names voting hours and drive-through voting as her concerns and does not mention ID or citizenship proof in this passage.",
+      "subjects": [
+        "election integrity laws in general",
+        "early voting hours and drive-through voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:32:43.240Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: listed as the incumbent for Texas House District 134 on the 2026 general election list at https://texasaflcio.org/news/2026-general-election-endorsements; official page https://house.texas.gov/es/members/3985 (nothing on the subject)",
+        "Texas Legislature Online authored and coauthored reports, 87R, 88R, 89R and the 891, 892, 893 called sessions (nothing on proof of identity or citizenship)",
+        "NPR interview transcript of 2021-07-18 (one passage saved on the 2021 SB 1 election bill)",
+        "one news search on name plus subject words (turned up a different person with a similar name; nothing own-words on proof of ID or citizenship)",
+        "blocked: https://ballotpedia.org/Ann_Johnson_(Texas) (fetch tool returned empty page)",
+        "not reviewed: campaign site; House floor debate video or journal for the August 2021 SB 1 vote"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:32:43.240Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

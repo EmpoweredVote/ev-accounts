@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,229 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "c9cdf2d26447ceff99752bc88e2e24b15d917c6cbbebdbc6973cb152017599fe",
+      "kind": "own-words",
+      "url": "https://valoreeswanson.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "In each of her five sessions, Valoree has been a member of the Texas House Committee on Elections, working with both parties to keep our elections safe and secure.",
+      "note": "Campaign-site statement in her name (written in the third person) about her Elections Committee work. It names no specific ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "165ea4541357ea7245d7c666dbb1e2fe3f72161fa583353f94d632e9a132a678",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/pdfs/newsletters/150/2021-Newsletter-08.03.2021.pdf",
+      "date": "2021-08-03",
+      "date_precision": "day",
+      "passage": "As a member serving on the Elections Committee and the Urban Affairs Committee, I am fighting to keep elections fair and secure and to keep the voices of voters represented in the process of approving or stopping low-income housing developments.",
+      "note": "Official House newsletter from her office, written in the first person. It speaks generally of keeping elections fair and secure; it names no specific ID or citizenship rule. The same newsletter has an issue survey asking whether the state should do more to combat election fraud.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4f8f8317e2698d1dabfbfe0c4a2314d3d0235e872ff8fbd4ae4ad1a811a5671",
+      "kind": "record",
+      "url": "https://hro.house.texas.gov/pdf/fr2017/170523A.PDF",
+      "date": "2017-05-23",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "House Elections Committee vote reporting SB 5 favorably without amendment",
+      "note": "A House Research Organization analysis of SB 5, titled as modifying voter ID requirements and providing a criminal penalty, lists her among the 5 ayes in the Elections Committee vote (2 nays). This is a committee vote, separate from the floor conference-committee vote already on file.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c3fa51705c45e1683f1f5f70e513a200fb649e2aaac2be77157b128df00400f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB329",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-329-2021",
+      "act": "other",
+      "motion": "listed as a co-author of HB 329",
+      "note": "The official bill page lists her among the co-authors of HB 329 by Cain, relating to election integrity. Last action shown is referral to the Elections committee on 2021-02-25. The page does not give the date she was added.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3717612833bab592b9695904dd4cb66b837778c444f549a0f58f2094c29d1ec6",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB6",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-6-2021",
+      "act": "other",
+      "motion": "listed as a co-author of HB 6",
+      "note": "The official bill page lists her among the co-authors of HB 6, relating to election integrity and security, including preventing fraud in elections and increasing criminal penalties. Last action shown is laid on the table subject to call on 2021-05-07. The page does not give the date she was added.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2158b82a443b564335e2a4a9db363c1576174ee24927bf4642ca0c79a048915",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "listed as a co-author of HB 5337",
+      "note": "The official bill page lists her among the co-authors of HB 5337 by Isaac, relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. Last action shown is committee report sent to Calendars on 2025-05-07. The page does not give the date she was added.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:37.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1fd4d51ad7a274919af0332e9b59baeb2f750b9969b614e66bb4ac7bd63db8c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "author",
+      "motion": "author sponsor, Introduced (only version)",
+      "note": "Listed as author of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "no-ID voter options",
+        "election integrity laws",
+        "non-citizen participation in elections"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with name search, nothing found)",
+        "campaign site https://valoreeswanson.com/ (Meet Valoree page), /issues/, /2018/10/issues/ and /news/ (one general elections passage saved; issue pages themselves have nothing on the subject)",
+        "official House newsletter https://house.texas.gov/pdfs/newsletters/150/2021-Newsletter-08.03.2021.pdf",
+        "official House page https://house.texas.gov/members/member-page/?district=150 (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Valoree_Swanson (confirms she is on the 2026 general-election ballot for District 150; nothing on the subject)",
+        "Texas Legislature Online bill pages for HB 329 and HB 6 (87th session) and HB 5337 (89th session)",
+        "House Research Organization bill analysis of SB 5 (2017), https://hro.house.texas.gov/pdf/fr2017/170523A.PDF",
+        "Community Impact Q&A pages (2018 and 2020), nothing on the subject",
+        "news search on her name plus voter ID, election integrity and proof of citizenship",
+        "not reviewed: House floor and committee video, and the House Journal, for her own words"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:16:37.779Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.519Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

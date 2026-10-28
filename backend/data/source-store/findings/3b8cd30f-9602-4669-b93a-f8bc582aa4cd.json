@@ -1,6 +1,37 @@
 {
   "politician_id": "3b8cd30f-9602-4669-b93a-f8bc582aa4cd",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +58,28 @@
       "found": 0,
       "at": "2026-10-22T22:25:48.742Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting and voter-roll checks"
+      ],
+      "places": [
+        "identity and scope confirmed: state representative for District 97, on the 2026-11-03 general ballot (https://ballotpedia.org/Justin_Moed)",
+        "On the Record (0 meetings)",
+        "official House caucus member page https://www.indianahousedemocrats.org/members/justin-moed: nothing on the subject",
+        "campaign site https://neighborsforjustinmoed.com/: nothing on the subject (no readable text)",
+        "Ballotpedia: nothing on the subject in the profile",
+        "blocked: https://iga.in.gov (bill and vote pages load as an empty app shell; no roll call could be read, so no vote on the 2024 or 2025 citizenship and voter-roll bills was confirmed)",
+        "one news search on name plus subject words: no statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:42.298Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

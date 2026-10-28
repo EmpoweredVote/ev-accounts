@@ -50,6 +50,29 @@
         "fetched_at": "2026-10-23T00:10:40.095Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "240645066cadb06524837b3c87f01726f6424d881feabe713962afd2c24e6b05",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor of HB 1246, Safeguarding Elections Act (filed 2026-07-30, referred to House Rules 2026-08-04)",
+      "note": "He is listed among the co-sponsors. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H1246v1.html) adds a misdemeanor for demanding citizenship documentation from a voter beyond what state law requires, and also covers troops at polling places and voter intimidation. The co-sponsor list reads only 'Lopez'.",
+      "subjects": [
+        "demands for citizenship documents at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:20.478Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -79,6 +102,29 @@
       "found": 2,
       "at": "2026-10-23T00:10:40.095Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "demands for citizenship documents at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in office: the WFAE 2026 voter guide page names him as running for a second consecutive unopposed term for House District 112",
+        "On the Record (0 meetings)",
+        "official legislature bill list for his primary-sponsored bills (https://house.ncleg.gov/Members/IntroducedBills/H/835): no voter ID or proof-of-citizenship bill by title; election titles seen include HB 20, HB 31, HB 93, HB 129, HB 788, HB 1240; one co-sponsored election bill saved below",
+        "state House caucus member page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Jordan_Lopez (page returned empty)",
+        "one web search on name plus voter ID: nothing on the subject beyond bill lists"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:06:20.478Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

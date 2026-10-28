@@ -25,6 +25,29 @@
       "found": 0,
       "at": "2026-10-22T22:15:43.020Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "scope check: https://www.valleynewslive.com/2026/10/09/north-dakota-us-house-challengers-advocate-change/ names him as a 2026 general-election candidate for the ND US House seat at the 2026-10-08 debate",
+        "On the Record (0 appearances)",
+        "campaign site https://www.hammerfornd.com/ (home page text did not load without scripts; /issues and /platform return not-found): nothing on the subject",
+        "Ballotpedia: nothing on the subject in returned text",
+        "Valley News Live 2026-10-09 debate article: topics were prices, data centers, executive power and an anti-gerrymandering bill, nothing on the subject",
+        "news searches on name plus voter ID / SAVE Act / proof of citizenship / election integrity: nothing on the subject",
+        "blocked: https://www.congress.gov (403 earlier in session); he has never held office so no bill record expected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:59:23.385Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

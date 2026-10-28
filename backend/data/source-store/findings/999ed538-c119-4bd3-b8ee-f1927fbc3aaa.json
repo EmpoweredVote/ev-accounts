@@ -78,6 +78,58 @@
         "fetched_at": "2026-10-23T00:01:55.753Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "94064205f36f68ead697d499a681035f8f516c6c8189ab227a3e19446d915ea3",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading, SB 921 Const. Am./Require Photo ID For All Voters (House Roll Call #810, passed 73 Ayes to 45 Noes)",
+      "note": "Voted Aye on third reading of SB 921, the constitutional amendment requiring photo ID for all voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:22.141Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -107,6 +159,30 @@
       "found": 3,
       "at": "2026-10-23T00:01:55.753Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee voters",
+        "proof of citizenship to register",
+        "voter registration at the DMV",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "NC House member bill list https://house.ncleg.gov/Members/IntroducedBills/H/788 (confirms Rep. Donnie Loftis; no bill titled as a voter ID measure)",
+        "NC bill page https://www.ncleg.gov/BillLookUp/2025/H1231 (HB 1231 No Voter Registration Changes At DMV: no summary or ID text on the page, so not saved)",
+        "House roll call https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+        "BallotReady https://www.ballotready.org/people/donnie-loftis-47745fa2-55d4-4ad0-aca4-9d65e890c6c9 (lists him as a 2026 general-election candidate, District 109; the page has only a third-person line on election security, not saved)",
+        "Ballotpedia: not reviewed",
+        "campaign site: none found",
+        "two web searches on name plus voter ID words: nothing further on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:47:22.141Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

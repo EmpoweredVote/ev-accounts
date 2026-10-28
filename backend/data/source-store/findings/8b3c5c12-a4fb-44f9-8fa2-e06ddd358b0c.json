@@ -1,0 +1,115 @@
+{
+  "politician_id": "8b3c5c12-a4fb-44f9-8fa2-e06ddd358b0c",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Watson'), linked to SAM WATSON (district 172) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Watson'), linked to SAM WATSON (district 172) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Watson, S.'), linked to Watson, Sam (district 11) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Sam_Watson_(politician) (member of the Georgia Senate, District 11, since 2023-02-06; House District 172 2013-2022; sitting official, in scope)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Sam_Watson (fetch returned an empty page)",
+        "https://senatepress.net/category/senate-press/sam-watson (one release, on his Ethics committee chair appointment; nothing on the subject)",
+        "https://thepostsearchlight.com/?p=203455 (his 2024-02-07 session column; nothing on the subject)",
+        "blocked: https://app.legiplex.com/profile/sam-watson-654/ga/legislatures/2025/2025-r/legislation (HTTP 403)",
+        "web search for name with voter ID and election integrity (nothing on the subject)",
+        "web search for name with SB 189, SB 202 and citizenship (nothing in his own words; search lists only titles of his 2024-2025 election bills on drop boxes, advance voting and ranked-choice voting, which are not about ID or citizenship and were not saved)",
+        "official Senate page and campaign site: none found with relevant content",
+        "floor votes and bills already linked separately: not searched, as instructed",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.739Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.405Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

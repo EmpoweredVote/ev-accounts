@@ -48,6 +48,83 @@
         "fetched_at": "2026-10-23T00:15:27.356Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "a6e6a5ca8a9495c1f0d2618a7c1cdb1a101e14d68d90c60268dfb640fe60843e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/771",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Karl E. Gillespie voted Aye on second reading of House Bill 958, Election Law Changes (66 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.790Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "995eec8b178e0c07476ce26f42b5aedd6c8571647a8406cacf4c3c53d147251f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/771",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, M11 Concur in Senate committee substitute (House roll call 801)",
+      "note": "Karl E. Gillespie voted Aye on the House vote to concur in the Senate committee substitute of House Bill 958, Election Law Changes (62 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.790Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -78,6 +155,29 @@
       "found": 2,
       "at": "2026-10-23T00:15:27.356Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Karl_Gillespie (confirms sitting District 120 representative, on the 2026 general-election ballot)",
+        "ncleg.gov member list and profile https://www.ncleg.gov/Members/Biography/H/771 (confirms office)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/771 (2025 session; no voter ID, citizenship or voting bills)",
+        "ncleg.gov member votes https://www.ncleg.gov/Members/Votes/H/771 (roll calls on House Bill 958 saved; 2023 photo-ID amendment votes already on file, not collected again)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "web search on name plus voter ID, election integrity, statements (no own words found; no personal campaign site found; not reviewed: https://ncnewsline.com/2026/06/17/advocates-say-a-sweeping-elections-bill-moving-through-the-nc-house-undermines-voting-rights/ )"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:20:56.790Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

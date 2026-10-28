@@ -52,6 +52,83 @@
         "fetched_at": "2026-10-21T03:40:10.564Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "99fd90b72068be01fbbbc51264bb012d5071b560d392c2b0ce063c69d66d006a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (roll call 758)",
+      "note": "House passed 66 to 47; Belk is listed among the Noes. The bill, as summarised by legislative staff, would have required counties to process a registration only if the applicant states they are a citizen (an applicant who leaves it blank gets a form to sign under penalty of perjury), required DMV to send full Social Security numbers to the State Board of Elections, and set up a process to remove non-citizens found in a federal database from the voter rolls. It was vetoed by the Governor on 2026-08-17. Summary source: https://www.ncleg.gov/Legislation/Bills/Summaries/2025/H958 (staff summary of Part II dated 2026-08-19).",
+      "subjects": [
+        "citizenship affirmation to register",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:16:31.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad9be02c9ae30df2052764b9311747a91838b3157db0a19a01b23abb8f5cacfe",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Motion 11 to concur in the Senate committee substitute (roll call 801)",
+      "note": "House concurred 62 to 47; Belk is listed among the Noes. This is the final House vote before the bill went to the Governor, who vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship affirmation to register",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:16:31.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -75,6 +152,35 @@
       "found": 0,
       "at": "2026-10-22T23:48:04.808Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof or affirmation of citizenship to register",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Mary_Belk shows her as the sitting NC House District 88 member on the 2026 general-election ballot; https://www.ncleg.gov/Members/Biography/H/713 names her in that seat",
+        "On the Record (0 meetings)",
+        "legislature votes list https://www.ncleg.gov/Members/Votes/H/713: found the HB 958 roll calls saved here; no other voter ID or citizenship roll call in the 2025-2026 session",
+        "legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/713: nothing on ID or citizenship",
+        "co-sponsorship pages for HB 31 (Election Day holiday) and HB 1230 (federal agents and voter data near polling places): off subject, not saved",
+        "HB 958 bill page, bill summaries and roll-call transcripts on ncleg.gov",
+        "campaign site https://www.marybelk.com: nothing on the subject (appears to be an old-cycle site)",
+        "Ballotpedia: no survey answers on the subject",
+        "WFAE 2026 voter guide for District 88: nothing on the subject",
+        "one 2018 news article on the voter ID bill (ncnewsline) does not mention her; her 2018 SB 824 votes were already on file",
+        "one news search on name plus subject words: nothing on the subject"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:16:31.515Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

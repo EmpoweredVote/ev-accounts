@@ -47,9 +47,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     }
   ],

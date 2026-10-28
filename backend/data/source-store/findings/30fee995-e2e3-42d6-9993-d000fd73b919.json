@@ -1,0 +1,73 @@
+{
+  "politician_id": "30fee995-e2e3-42d6-9993-d000fd73b919",
+  "findings": [
+    {
+      "id": "5aec1caf79169540f92cf6db868abe28df4cba54dc7b67de9b036a0c8a7872c0",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/watchexclusive-interviews-california-voter-id-measure-gets-over-1",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "“When people begin to question the integrity of our elections, trust in the government starts to erode,” Assemblymember Leticia Castillo, R-Corona, told reporters. “That’s exactly why we need voter ID in California.”",
+      "note": "Quoted by The Center Square (republished on Just the News) at a Capitol press conference about the voter ID ballot initiative. She links voter ID to trust in elections. Article dated 2026-03-03; the press conference was the Tuesday of that week.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:38.090Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82d7a5b39909fbb5cd6ad9f991ac732fdd9c4b0d7774ce3a873835a186693555",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/watchexclusive-interviews-california-voter-id-measure-gets-over-1",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "“They’d tell me, ‘You have to check IDs. How do you know it’s really me?’ ” Castillo said.",
+      "note": "Quoted by The Center Square. She describes voters she met while working at the polls who offered their IDs even where not required.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:38.090Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local government voter ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "blocked: https://ad58.asmrc.org/ (403, official site, WebFetch and curl)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (403)",
+        "https://ballotpedia.org/Leticia_Castillo (confirms 2026 general-election ballot)",
+        "CalMatters Digital Democracy: she took office 2024-12-02, after the SB 1174 floor votes (2024-08-27), so no vote on it; not listed as an author or voter on AB 25 (2025)",
+        "https://www.ijpr.org/politics-government/2025-04-11/california-voter-id-bill-voted-down-at-the-state-capitol (photo caption places her at a 2025-04-09 call for statewide voter ID; no quote from her, so not saved)",
+        "not reviewed: https://www.aol.com/news/watch-exclusive-interviews-california-voter-232000471.html (404)",
+        "web searches on the name plus voter ID and election integrity"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:58:38.090Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -21,6 +21,26 @@
         "fetched_at": "2026-10-22T22:12:14.122Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ef07009908676850b49b851b8a1a1d33bfb5c278dc2dbaab5afb87c1fa1696ec",
+      "kind": "own-words",
+      "url": "https://cerettaforga.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Free & fair elections: expand access and protect voters.",
+      "note": "One bullet under 'Defending Democracy & Our Rights' on her campaign site's priorities section. It names no ID or citizenship rule. The page carries no date; it was live by 2026-07-23 per a third-party page.",
+      "subjects": [
+        "election access and voter protection (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:11.916Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -52,6 +72,31 @@
       "found": 1,
       "at": "2026-10-22T22:12:14.122Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "SAVE Act",
+        "election integrity",
+        "voting access"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name)",
+        "Ballotpedia https://ballotpedia.org/Ceretta_Smith (candidate for U.S. House, Georgia 12th district, on the 2026-11-03 general ballot, won the 2026-06-16 primary runoff; 2025 survey answers have nothing on the subject)",
+        "campaign site https://cerettaforga.com/ (one line on elections; no voter ID or citizenship text)",
+        "https://branch.vote candidate page (a summary of her site, not her words; not cited)",
+        "https://theaugustapress.com interview and https://www.wrdw.com/2025/10/19/politician-columbia-county-running-us-congress/ (nothing on the subject)",
+        "news search (1) on name plus voting rights, voter ID, SAVE Act: nothing on the subject",
+        "blocked: https://cerettaforgeorgia.com/ (HTTP 403 by curl; it redirects to cerettaforga.com, which was read)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:21:11.916Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,40 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "his Texas House member page https://house.texas.gov/members/member-page?district=36 (confirms him as District 36 member; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Sergio_Munoz_Jr. (confirms he is the incumbent on the 2026 general-election ballot for House District 36; no stated positions, no candidate survey completed)",
+        "Texas Legislature Online history of 2025 SB 16 (proof of citizenship): bill stopped in House calendars, no House floor vote exists to record",
+        "two web searches on his name plus subject words: no statement from him found",
+        "not reviewed: campaign site (none located)",
+        "not reviewed: news archives beyond two searches"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:11:20.918Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

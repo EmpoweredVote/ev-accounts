@@ -71,6 +71,56 @@
         "fetched_at": "2026-10-22T23:34:10.770Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "619ecb6eac63c10cd4c4aff2d285880d3a0fc55b68053c0202157b0145f53dcd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Second Reading (roll call 758)",
+      "note": "Roll call lists him among the Noes on second reading. H 958 (Election Law Changes) includes provisions on photo ID and provisional ballots for voters without ID, ID copies with absentee ballots, matching ID numbers on registrations, and requiring applicants to state whether they are citizens when registering.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "citizenship question on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:09:03.614Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6b04b7dfb5971faa0dd044e53a1967b66590d31e18d3a4cfcd369106672e12d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Motion 11, concur with Senate changes (roll call 801)",
+      "note": "Roll call lists him among the Noes on the final vote to concur. The bill was vetoed 2026-08-17. H 958 (Election Law Changes) includes provisions on photo ID and provisional ballots for voters without ID, ID copies with absentee ballots, matching ID numbers on registrations, and requiring applicants to state whether they are citizens when registering.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "citizenship question on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:09:03.614Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -99,6 +149,28 @@
       "found": 3,
       "at": "2026-10-22T23:34:10.770Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Mike_Colvin (confirms he is on the 2026 general-election ballot)",
+        "On the Record (0 meetings)",
+        "legislature bill and vote pages: https://www.ncleg.gov/BillLookUp/2025/H958 and roll calls H 755-758 and 801 (HB 958)",
+        "member introduced-bills page on ncleg.gov (no ID or citizenship bill sponsored)",
+        "web search on name plus voter ID and HB 958 (no own words found)",
+        "not reviewed: no campaign site or interview on the subject located"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:09:03.614Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -24,6 +24,28 @@
       "found": 0,
       "at": "2026-10-22T22:16:32.757Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Donnie_Ownby lists him as an independent on the November 3, 2026 general-election ballot for Tennessee District 3",
+        "On the Record (0 meetings)",
+        "campaign site: none found (the Ballot Brief page https://theballotbrief.com/candidate/donnie-lynn-ownby-tn says none is listed)",
+        "Ballotpedia Candidate Connection answers (2026): read in full, nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/94853/race/34518/election/1499: questionnaire items unanswered; nothing on the subject",
+        "BallotReady and the Ballot Brief profile pages: nothing on the subject",
+        "news searches with name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:44.477Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

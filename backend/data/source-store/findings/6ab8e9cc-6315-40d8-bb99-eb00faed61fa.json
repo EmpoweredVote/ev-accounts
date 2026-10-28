@@ -49,6 +49,30 @@
       "found": 0,
       "at": "2026-10-22T23:11:16.890Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://theballotbrief.com/candidate/daniel-j-ryan-ma lists him as the nominee and incumbent for the 2nd Suffolk District in 2026; Legislature profile https://malegislature.gov/Legislators/Profile/DJR1 shows him in that seat",
+        "On the Record (0 meetings)",
+        "Legislature member profile and sponsored/cosponsored bill lists (https://malegislature.gov/Legislators/Profile/djr1/194/Bills/Sponsored and /Cosponsored): the only election-related item is House No. 868 on ballot question committee finance reporting, which is off the subject; the list pages may not show every bill",
+        "no campaign website found (per the Ballot Brief page)",
+        "Ballotpedia: no page found at https://ballotpedia.org/Daniel_Ryan_(Massachusetts) (404)",
+        "two news searches on name plus subject words: nothing on the subject",
+        "the one vote already on file (amendment 7 to H.4359, 2022) was not re-collected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:59:25.950Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

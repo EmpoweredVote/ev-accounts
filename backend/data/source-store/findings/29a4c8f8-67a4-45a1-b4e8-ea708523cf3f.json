@@ -72,8 +72,54 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "8522b7a58478472b4518dc245fc34bfd8a590e300979abaa42b5d2274458dd72",
+      "kind": "own-words",
+      "url": "https://panetta.house.gov/media/press-releases/rep-panetta-joins-nearly-100-lawmakers-demanding-usps-halt-mail-ballot-rule",
+      "date": "2026-09-11",
+      "date_precision": "day",
+      "passage": "The evidence is clear: voting by mail is safe, effective, and helps to ensure everyone is able to execute their constitutional right to vote.",
+      "note": "Sentence from a letter to the Postmaster General signed by nearly 100 House members including Panetta, posted on his official site. The letter opposes a USPS rule under which postal workers would cross-check mail ballots against state voter lists.",
+      "subjects": [
+        "mail-ballot verification rule",
+        "voter fraud and election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:41:55.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75e0bf49edd62d309669c3a04a7f34f7374f3f859ce29899385b9d121d8ad748",
+      "kind": "own-words",
+      "url": "https://panetta.house.gov/media/press-releases/rep-panetta-joins-nearly-100-lawmakers-demanding-usps-halt-mail-ballot-rule",
+      "date": "2026-09-11",
+      "date_precision": "day",
+      "passage": "Voter fraud through vote-by-mail is incredibly rare.",
+      "note": "Same joint letter he signed; it cites a study of mail-vote fraud rates and calls the USPS rule a solution in search of a problem.",
+      "subjects": [
+        "voter fraud and election integrity",
+        "mail-ballot verification rule"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:41:55.795Z",
         "method": "webfetch"
       }
     }
@@ -106,6 +152,27 @@
       "found": 0,
       "at": "2026-10-22T22:15:47.669Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot verification and mail voting rules",
+        "voter fraud and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official site panetta.house.gov: home page, press-release index pages 0-5 scanned for subject words, site search pages (returned nothing)",
+        "Ballotpedia page confirms the 2026 general election is Nov 3, 2026 and mentions nothing on the subject",
+        "nothing on the subject: congress.gov sponsorships not reviewed, not reviewed: https://www.congress.gov",
+        "campaign site: not reviewed",
+        "three news searches: nothing in his own words on voter ID or proof of citizenship; only the mail-ballot letter found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:41:55.795Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

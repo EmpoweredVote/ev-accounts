@@ -25,6 +25,27 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "0f719f853955efad67919dff725351b07a9b0950c75ba9e5059d7b088c65e3c1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4033",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4033-2025",
+      "act": "sponsor",
+      "note": "Home rule petition, filed by her and Rep. Mike Connolly, to give non-citizen residents of Somerville the right to vote in municipal elections. Referred to Election Laws on 2025-04-17. Local approval was received, and on 2026-04-02 it went to a study order. The date is the referral date shown on the page.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:43.616Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -51,6 +72,32 @@
       "found": 0,
       "at": "2026-10-22T23:16:50.237Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting in local elections",
+        "mail-ballot ID",
+        "election integrity bills",
+        "voting rights of people with felony convictions"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/E_U1/ (confirms her as 27th Middlesex representative; sponsored list read)",
+        "bill page https://malegislature.gov/Bills/194/H4033",
+        "two news searches on name plus voter ID, elections and non-citizen voting: no direct quote from her found",
+        "blocked: https://app.legiplex.com/profile/erika-uyterhoeven-12111/ma/legislatures/2025/2025-r/legislation/page/19 (403)",
+        "cosponsored list: not reviewed (the cosponsor page returned the sponsored tab)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:31:43.616Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

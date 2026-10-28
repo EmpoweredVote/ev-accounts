@@ -27,6 +27,27 @@
       "found": 0,
       "at": "2026-10-22T23:06:09.570Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Nick_Collins (confirms sitting 1st Suffolk state senator on the 2026 general-election ballot; nothing on the subject)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/N_C0 (bill list reviewed; only election-law item is Senate No. 500 on specially qualified voters, not about ID or citizenship proof, so not saved)",
+        "news/web search on name plus voter ID, SAVE Act, proof of citizenship (nothing on the subject; results were about a different person)",
+        "not reviewed: official and campaign sites (could not be reached: no response from guessed domains)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:20:40.373Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -28,6 +28,27 @@
       "found": 0,
       "at": "2026-10-22T23:00:28.149Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Dennis_Gallagher) shows him as Massachusetts state representative, 8th Plymouth District, on the 2026 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "Legislature profile malegislature.gov/Legislators/Profile/DCG2 and its cosponsor list: only town-level election petitions (Bridgewater recall, term limits); nothing on the subject",
+        "Campaign site gallagherforrep.com: pages fetched, nothing on the subject found",
+        "Wikipedia page: nothing on the subject",
+        "web searches (3, shared across the roll-call and name searches): nothing by him on voter ID, proof of citizenship or election integrity"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:13:07.704Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

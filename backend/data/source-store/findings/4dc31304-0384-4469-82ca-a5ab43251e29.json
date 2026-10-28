@@ -74,18 +74,21 @@
       "date_precision": "day",
       "instrument_id": "NC-HB-825-2025",
       "act": "sponsor",
-      "note": "Co-sponsor of HB 825, Election Improvements (filed 4/8/2025; sent to House Rules and not acted on). Among other things it would require the last four digits of the Social Security number plus a driver license, state ID card or date of birth number on absentee ballot requests, and set an alternative affidavit for voters who cannot attach an ID copy.",
+      "note": "Ward is a co-sponsor of HB 825, Election Improvements (primary sponsor is another member; date is the bill's filing date, the date Ward was added is not shown). The filed text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf) would change the absentee-ballot request form to require the last four digits of the Social Security number plus a driver license or special ID card number, and would change the alternative affidavit for a voter who cannot attach a copy of ID to a returned absentee ballot. It also bans ranked choice voting and shortens early voting.",
       "subjects": [
         "mail-ballot ID",
         "reasonable-impediment affidavit",
-        "voter ID at the polls"
+        "voter ID at the polls",
+        "ID or ID number with a mail or absentee ballot",
+        "reasonable-impediment affidavit for absentee ballot ID",
+        "election integrity laws in general"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:22.085Z",
         "method": "webfetch"
       }
     },
@@ -179,6 +182,106 @@
         "fetched_at": "2026-10-22T23:45:33.490Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7e34d050dcf7217e2575b7bce9ec21d607de7fbaf94d32debc0ab92d4d65156a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "sponsor",
+      "note": "Ward is listed as a co-sponsor of HB 958, Election Law Changes (not primary sponsor). The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, which says the county board shall process a voter registration application only if it affirmatively indicates the applicant is a US citizen, with a 30-day notice and a statement under penalty of perjury if the answer is blank. It also requires removal processes for voters flagged as possible non-citizens by a federal database, and monthly DMV-to-State-Board data sharing for voter-list upkeep. The bill page shows it ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:22.085Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d16f077206c80a912cc7ab098ed4ad7970674fe59e028324bbeb46416bf2cdd",
+      "kind": "record",
+      "url": "https://ncleg.gov/Members/Votes/h/816",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (House 66-47)",
+      "note": "Ward's own vote on the member votes page is Aye on House second reading of HB 958, which includes a citizenship-answer requirement for voter registration applications and non-citizen voter-roll removal steps.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:22.085Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d96ea058c2035354e5c91ddb57d419fc68c6f057e9bc8a36a040c7dfc79cabe",
+      "kind": "record",
+      "url": "https://ncleg.gov/Members/Votes/h/816",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion 11 concur in Senate committee substitute (House 62-47)",
+      "note": "Ward's own vote on the member votes page is Aye on House concurrence in the Senate version of HB 958, sending it to be enrolled.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:22.085Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -209,6 +312,30 @@
       "found": 8,
       "at": "2026-10-22T23:45:33.490Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with a mail or absentee ballot",
+        "documentary proof or statement of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page (confirms sitting House District 5 member, on the 2026 general-election ballot)",
+        "NC General Assembly member page, introduced-bills list and House votes list for member 816",
+        "NC General Assembly bill pages and bill text for HB 958, HB 825, HB 1231, HB 127",
+        "official site: no separate site found; nothing on the subject",
+        "campaign site: not found by search; nothing on the subject",
+        "two news searches on his name plus voter ID, citizenship and election words: no own-words statements by him found",
+        "Wikipedia and FastDemocracy: leads only, not cited"
+      ],
+      "found": 4,
+      "at": "2026-10-27T18:51:22.085Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

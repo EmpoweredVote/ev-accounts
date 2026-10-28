@@ -1,6 +1,82 @@
 {
   "politician_id": "162def26-1875-44f6-8f46-1ac8128ead01",
-  "findings": [],
+  "findings": [
+    {
+      "id": "e000782acfaac9a67b8e5ea7fdd244d4cf79a2359f7601f8cc4caa207d48b316",
+      "kind": "record",
+      "url": "https://www.journalgazette.net/opinion/editorials/statehouse-proposals-put-more-hurdles-in-place-for-hoosier-voters/article_a9c7765a-ead2-11ef-81d3-435fbe6f2edf.html",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "author",
+      "note": "Journal Gazette editorial reports that Johnson co-authored Senate Bill 10 (2025), which says proof of identification for voting may not include an ID issued by an education institution, requires voter list maintenance at least twice a year, and requires county offices to verify the status of inactive voters. The Senate passed it 39-11 (his own vote not shown on this page). Source is a newspaper, not the official bill page.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID not accepted as voter ID",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:11:00.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "362cd1994d4e60a971c78929f450ca500366330affe4a7d79da16ebd65defc07",
+      "kind": "record",
+      "url": "https://news.ballotpedia.org/2023/04/13/election-legislation-roundup-indiana-general-assembly-3/",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1334-2023",
+      "act": "sponsor",
+      "note": "Ballotpedia lists Johnson among the Senate sponsors of HB 1334 (2023), absentee voting. As introduced it requires absentee ballot applications to ask for a driver's license number, ID card number, or voter registration number plus the last four digits of the Social Security number (only one of the first three for an online application), and bars sending an unrequested absentee application.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:11:00.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +104,33 @@
       "found": 0,
       "at": "2026-10-22T22:20:56.987Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot / absentee ID",
+        "proof of citizenship",
+        "voter-roll maintenance",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Tyler_Johnson_(Indiana)) shows him as State Senator, District 14, on the 2026 general-election ballot after winning the 2026-05-05 primary unopposed; the Senate caucus page names him as District 14 senator",
+        "On the Record (0 appearances)",
+        "Senate caucus member page and its news list: nothing on the subject",
+        "Senate caucus 2026 legislative update page: nothing on the subject",
+        "Ballotpedia",
+        "blocked: https://iga.in.gov/legislative/2025/bills/senate/10/details (page loads without bill data)",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 (bot check)",
+        "blocked: https://api.iga.in.gov/2025/bills/SB0010 (needs API key)",
+        "no campaign site found",
+        "web searches: 2 news searches; no own-words statement by him found on the subject (the Journal Gazette says he declined to comment on SB 10)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T01:11:00.144Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

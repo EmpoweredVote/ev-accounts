@@ -19,6 +19,23 @@
       "found": 0,
       "at": "2026-10-22T22:17:31.679Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida lists the incumbent as nominee for District 1 and Frankman, an Army veteran, among those eliminated in the primary)",
+        "On the Record (0 appearances)",
+        "one web search on name plus 2026 race: confirmed identity as the District 1 candidate",
+        "stopped after confirming out of scope, as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:28:05.000Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

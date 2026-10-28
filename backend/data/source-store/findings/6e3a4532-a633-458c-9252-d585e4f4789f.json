@@ -1,6 +1,101 @@
 {
   "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
-  "findings": [],
+  "findings": [
+    {
+      "id": "6d998c71e98b7af829ee91da8fa6dd41d4654d8ec006f65e26b0a405db68b9d9",
+      "kind": "own-words",
+      "url": "https://www.witn.com/2023/08/11/state-senator-kandie-smith-helps-community-members-obtain-voter-ids",
+      "date": "2023-08-11",
+      "date_precision": "day",
+      "passage": "I’ve personally been trying to help spread the word that if you plan to vote in any election forthcoming, then you have to have photo ID.",
+      "note": "Quoted by WITN. Smith describes her own effort to tell people about the photo ID requirement for voting in North Carolina.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter education on ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:05.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c8181d722e1b62fd4ad039195f7e3d13558d4e87c396a91483553f8d9d31e0c",
+      "kind": "own-words",
+      "url": "https://www.witn.com/2023/08/11/state-senator-kandie-smith-helps-community-members-obtain-voter-ids",
+      "date": "2023-08-11",
+      "date_precision": "day",
+      "passage": "Driver’s license, your learner’s permit, an ID from the DMV, or your passport. If you work for Pitt County government, they have photo IDs and can even use that,",
+      "note": "Quoted by WITN. Smith lists the kinds of photo ID that she says are accepted, after driving residents to the Pitt County Board of Elections to get IDs.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted",
+        "help getting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:05.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43afe514c2b2d441003e23315dfe2323eb5ca966462d335abb4265d714921dfd",
+      "kind": "own-words",
+      "url": "https://www.witn.com/2023/08/11/state-senator-kandie-smith-helps-community-members-obtain-voter-ids",
+      "date": "2023-08-11",
+      "date_precision": "day",
+      "passage": "ECU students can use their ID but I did ask that specific question, how about Pitt Community College and I was told no which can be confusing. Military IDs, passport, so it’s just one of those things where I don’t want people to be confused,",
+      "note": "Quoted by WITN. Smith says she is concerned that rules on which student IDs are accepted are confusing for voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID",
+        "voter confusion about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:05.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +120,28 @@
       "found": 0,
       "at": "2026-10-22T23:52:35.618Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "WITN news story 2023-08-11 naming State Senator Kandie Smith (positive control; own words on photo ID found)",
+        "North Carolina General Assembly member page (blocked: https://www.ncleg.gov/Members/Biography/H/741 and https://www.ncleg.gov/Members/Biography/S/548, both HTTP 500)",
+        "Ballotpedia (page returned empty, not reviewed: https://ballotpedia.org/Kandie_Smith)",
+        "two other web searches on name plus voter ID and election bills (no sponsorship or vote on the subject found; a vote-scorecard result showed no election votes)",
+        "official Senate and campaign site not reached"
+      ],
+      "found": 3,
+      "at": "2026-10-27T13:55:05.784Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

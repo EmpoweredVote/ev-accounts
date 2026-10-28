@@ -72,6 +72,147 @@
         "fetched_at": "2026-10-23T00:05:53.553Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "68ecb888634b33a84d69549089c6c089b2521e63bbb83e54c5034a1dd667412c",
+      "kind": "own-words",
+      "url": "https://www.carolinajournal.com/coalition-presses-nc-house-to-approve-voter-id-constitutional-amendment/",
+      "date": "2024-07-24",
+      "date_precision": "day",
+      "passage": "“It would strike out in-person voting to make it clear that photo ID is required for any type of voting, absentee ballot, in person, whatever voting one may do would require a photo ID,” said Newton.",
+      "note": "Quoted by Carolina Journal as sponsor of SB 630, explaining that the amendment would extend the photo ID requirement to absentee and every other form of voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee and mail voting",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:02.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fca1c02117377988133cead6109d57ace6ca8f809f4115ad1e0a334e25b4342",
+      "kind": "own-words",
+      "url": "https://www.wunc.org/politics/2011-06-16/voter-id-bill-passes-senate",
+      "date": "2011-06-15",
+      "date_precision": "day",
+      "passage": "Every person who has a right to vote in this state, their vote oughta count. Their vote oughta mean something. Their vote is not gonna mean anything if people can go out and vote fifteen times when they're not legally eligible to vote.",
+      "note": "Floor remarks in the 2011 Senate debate on a photo ID bill, as quoted by WUNC (report dated 2011-06-16, describing the previous night's debate). He links ID at the polls to fraud and to the value of each eligible vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity and voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:02.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0f1ff0b404ae816dd599f47806b25f6b6116739f8c6d959f222f1220bc306a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S630",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-630-2023",
+      "act": "sponsor",
+      "note": "Listed as first primary sponsor of SB 630, Various Constitutional Amendments (filed 2023-04-05); as amended it became a photo ID amendment covering all voting types, per Carolina Journal.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "photo ID for absentee and mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:02.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59236ac185fdccc98badd61668149d0e2900059bba925ebe3ef00f7318b4ba3f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/639",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-630-2023",
+      "act": "yea",
+      "motion": "Third reading, SB 630 Various Constitutional Amendments (Senate vote 30 to 13)",
+      "note": "B. Newton is listed among the Ayes on the Senate third reading of SB 630, which he sponsored.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "photo ID for absentee and mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:02.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c4ec341a93c8ad0bc17f6925507178b22287fe23170233a37e8a477174e546c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "yea",
+      "motion": "Third reading, SB 921 Const. Am./Require Photo ID For All Voters (Senate vote 30 to 19)",
+      "note": "B. Newton is listed among the Ayes on the Senate third reading of SB 921, the photo ID amendment sent to voters.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls",
+        "photo ID for absentee and mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:47:02.728Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -101,6 +242,29 @@
       "found": 3,
       "at": "2026-10-23T00:05:53.553Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "photo ID for absentee and mail voting",
+        "election integrity and voter fraud"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Buck_Newton (confirms sitting State Senate District 4 member, on the 2026-11-03 general ballot, primary cancelled)",
+        "NC General Assembly bill pages for S630 and S921 (sponsors, history, vote counts)",
+        "NC Senate roll calls https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/639 and /S/677",
+        "Carolina Journal 2024-07-24 and WUNC 2011-06-16 (own words quoted in news)",
+        "web news search on name plus voter ID, photo ID, election integrity",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/467 (server error)",
+        "not reviewed: official Senate member page and campaign site (not located); ontheissues.org (lead-only)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T21:47:02.728Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

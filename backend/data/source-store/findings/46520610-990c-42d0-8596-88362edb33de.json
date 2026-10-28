@@ -26,6 +26,104 @@
         "fetched_at": "2026-10-21T03:40:10.564Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "873426a7569badc47c49c9a13e4ce7562dd5e401ea58e8313b7f5e4a46bfb433",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/792",
+      "date": "2018-06-29",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Third Reading (Senate roll call 792), HB 1092 Const. Amendment - Require Photo ID to Vote; passed 33-12",
+      "note": "Lowe is listed among the Noes on the Senate final vote to put a constitutional photo-ID-to-vote amendment on the ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:09.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7324556dd67973ad2e3fe82a70d75a630b7fcedd5de171c70bcd0e7ef6c86dde",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and House amendments (Senate roll call 439), S747 Elections Law Changes; passed 27-18",
+      "note": "Lowe is listed among the Noes on the Senate vote to agree to the House changes to S747, Elections Law Changes.",
+      "subjects": [
+        "election law changes",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:09.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a18199e00d6f4fe6fa2b23c2de1a47092b60efd7d797c2efd2406353ed56b873",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (Senate roll call 482), S747 Elections Law Changes; passed 30-19",
+      "note": "Lowe is listed among the Noes on the Senate vote to override the Governor's veto of S747, Elections Law Changes.",
+      "subjects": [
+        "election law changes",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:09.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -51,6 +149,28 @@
       "found": 0,
       "at": "2026-10-22T23:42:45.869Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election law changes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is the sitting state senator for District 32 and on the 2026 general ballot)",
+        "NC General Assembly bill pages and roll-call pages for H1092 (2018), S824 (2018) and S747 (2023)",
+        "two news searches on name plus voter ID (no statement by him found)",
+        "own words: nothing found on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:51:09.439Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

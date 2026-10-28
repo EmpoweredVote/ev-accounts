@@ -48,9 +48,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
       }
     },
     {
@@ -74,11 +78,121 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "7ed39318cefac59a9f3fed57d524cb3e948bb13eebda9be4c57bd821e3584c1e",
+      "kind": "own-words",
+      "url": "https://www.farmvilleherald.com/?p=117544",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "passage": "For example, we passed H.B. 1090 that reinstates photo ID laws.",
+      "note": "Column by Del. Tommy Wright in the Farmville Herald describing House passage of HB 1090 on photo ID. Text taken from the fetch tool's extraction; curl copy was not permitted.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:15.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2967589083c6c28320a0012281b5f2ec5549281a2d639b8d8c141eb7abc8bdc0",
+      "kind": "own-words",
+      "url": "https://www.farmvilleherald.com/?p=117544",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "passage": "This week, we passed legislation that secures our elections and strengthens voter confidence.",
+      "note": "Same column; frames the House election bills (photo ID, in-person absentee limits, third-party absentee mailings, ending standing absentee lists) in his own words.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:15.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c06bb839dc4fd115b5153c58a5f4b59b0f209950f9eef77f105ef5a3bdec62ac",
+      "kind": "own-words",
+      "url": "https://www.farmvilleherald.com/?p=138038",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "They are issued to eligible voters without charge, and one may already cast a ballot by signing an affidavit of identity.",
+      "note": "Column on the governor's veto of HB 26 (acceptable forms of voter ID); he notes free voter ID cards and the affidavit option. Text taken from the fetch tool's extraction.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:15.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "028d66bb539c094d84a866adc4d9c7ce65c7bbdd83254feb11e8b2d20cc96148",
+      "kind": "own-words",
+      "url": "https://www.farmvilleherald.com/?p=138038",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "Expanding this list presents additional complexities for poll workers.",
+      "note": "Same column; his reason given regarding the longer list of accepted IDs under HB 26.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:15.028Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "Farmville Herald columns (two fetched)",
+        "blocked: curl copy of the column pages was refused by the permission system, not retried",
+        "not reviewed: campaign site (address not found)",
+        "Ballotpedia: not reviewed",
+        "not reviewed: On the Record extraction script (not run)",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "web searches on name plus subject words: nothing relevant"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:31:15.028Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

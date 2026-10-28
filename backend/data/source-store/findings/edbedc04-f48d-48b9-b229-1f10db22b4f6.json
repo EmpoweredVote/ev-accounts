@@ -1,0 +1,120 @@
+{
+  "politician_id": "edbedc04-f48d-48b9-b229-1f10db22b4f6",
+  "findings": [
+    {
+      "id": "6a777aeee89aff8e04f0fcaee8cc0f37959f2a370833ee39573f54e21cfa24e4",
+      "kind": "own-words",
+      "url": "https://terrifortexas.com/about",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In addition, she helped pass legislation to secure our elections, require proof of citizenship to vote, and give the attorney general the ability to prosecute election fraud.",
+      "note": "Campaign about page, describing her 89th-session record. Says she helped pass legislation on election security, proof of citizenship to vote, and attorney general prosecution of election fraud. Page carries no date.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "attorney general prosecution of election offenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:28.087Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7780340da08af84ffdabde756d481c85e35ed0854e88b2ce9f7c08626f6fc854",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4068",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4068-2025",
+      "act": "author",
+      "motion": "HB 4068, proof of citizenship to register to vote",
+      "note": "She is the listed author of HB 4068, relating to requiring a person to submit proof of citizenship to register to vote. Referred to the Elections committee on 2025-03-27; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:28.087Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "980320bc02213caf8da7c8021947ea0d04637a532bfa0879390a1d478b2763ba",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "HB 5337, coauthor, proof of citizenship to register to vote; creating criminal offenses",
+      "note": "She is listed among the 56 coauthors of HB 5337, relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The date she signed on is not shown on the page.",
+      "subjects": [
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:28.087Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ad81ff7cb9968e9cc4b10eb86d38a3345e18ee92cf89c289ad8a674b6c41e3c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR103",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-103-2025",
+      "act": "author",
+      "motion": "HJR 103, constitutional amendment on attorney general authority to prosecute election-law offenses",
+      "note": "Listed on her authored-bills report. Proposes a constitutional amendment specifying the attorney general's authority to prosecute a criminal offense under the state's election laws. Referred to State Affairs on 2025-03-12. Related election-integrity item, not an ID rule.",
+      "subjects": [
+        "election integrity",
+        "attorney general prosecution of election offenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:28.087Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "voter ID at the polls",
+        "election integrity",
+        "attorney general prosecution of election offenses",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia (confirms sitting state House member, District 23, on the 2026 general-election ballot; no subject content)",
+        "campaign site https://terrifortexas.com/about",
+        "campaign site home page and issues page (nothing on the subject)",
+        "official House member page https://house.texas.gov/members/member-page/?district=23 (nothing on the subject)",
+        "Texas Legislature Online: authored and coauthored lists for 89th regular and both called sessions; subject bills checked by caption (HB 4068, HB 5337, HJR 103); the 2023 session lists were not reviewed",
+        "web search: name plus voter ID / proof of citizenship / election integrity (bill-tracker listings only, no own words)",
+        "no recorded floor votes on file; none located on the subject"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:27:28.087Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -94,6 +94,29 @@
         "fetched_at": "2026-10-22T21:37:16.186Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5e604fb498f150547bd2254748d58b5b1e9ba75c0619649854f9271ebe6dccde",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "On Passage, H R 8281, Safeguard American Voter Eligibility Act (roll call 345)",
+      "note": "House Clerk roll call XML lists Carl (AL) as Aye on passage of H R 8281, the Safeguard American Voter Eligibility Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:25.944Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -124,6 +147,33 @@
       "found": 4,
       "at": "2026-10-22T21:37:16.186Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page https://ballotpedia.org/Jerry_Carl shows him on the Nov 3, 2026 general-election ballot for Alabama's 1st District after the Aug 11, 2026 primary",
+        "On the Record (0 meetings)",
+        "campaign site https://jerrycarlforcongress.com (home, issues, news pages): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "House Clerk roll call 345 of 2024 (https://clerk.house.gov/evs/2024/roll345.xml): one record found",
+        "one news search on name plus subject words: no Carl statement found",
+        "blocked: https://alabamareflector.com/2026/08/11/former-u-s-rep-jerry-carl-wins-gop-nomination-in-al-01-special-primary/",
+        "blocked: https://www.congress.gov/bill/118th-congress/house-bill/8281/all-actions",
+        "blocked: https://www.govtrack.us/search?q=Jerry+Carl+SAVE+Act",
+        "not reviewed: https://carl.house.gov (did not connect)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:58:25.944Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

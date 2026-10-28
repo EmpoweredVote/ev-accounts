@@ -72,6 +72,54 @@
         "fetched_at": "2026-10-22T23:50:45.423Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3a4f35a1ec663a1b987ef86794311b326ee49c3f5720ab1dbfab4701522130ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #758, Second Reading: passed 66 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "975898e36475b465cea4f64a3b0107e050eab98e0fc50d9985f6ce0d01b92380",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "M11 Concur",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #801, M11 Concur: passed 62 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -98,6 +146,29 @@
       "found": 3,
       "at": "2026-10-22T23:50:45.423Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and no-ID voters",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election law overhaul bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Julia_Greenfield (confirms House District 100, on the 2026 general-election ballot)",
+        "NC General Assembly bill page and roll-call transcripts for HB 958 (https://www.ncleg.gov/BillLookUp/2025/H958)",
+        "web search on name plus HB 958 and voter statement words (no statement of her own found)",
+        "not reviewed: her campaign site and official member page (not located)",
+        "nothing on the subject in her own words"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:59:55.416Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

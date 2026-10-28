@@ -21,6 +21,22 @@
       "found": 0,
       "at": "2026-10-22T21:44:54.577Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary",
+        "https://ballotpedia.org/Adam_Dunigan (page says he ran for U.S. House Virginia District 8 and lost the primary held 2026-08-04; so out of scope, no further search)",
+        "On the Record (0 appearances found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:59:52.141Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

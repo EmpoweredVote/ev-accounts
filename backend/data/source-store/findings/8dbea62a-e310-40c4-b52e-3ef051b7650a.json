@@ -28,6 +28,30 @@
       "found": 0,
       "at": "2026-10-22T21:57:24.995Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Dave_Beckwith (confirms he is on the 2026 general-election ballot for Virginia District 10; his survey answers on the page mention freedoms and the economy, nothing on the subject)",
+        "campaign site Key Issues page https://www.beckwithforcongress.com/key-issues (nothing on the subject; Constitution item covers rights of law-abiding citizens only)",
+        "campaign site Voting Info page https://www.beckwithforcongress.com/voting-info (dates and polling places only, nothing on ID rules or his views)",
+        "campaign site home page (nothing on the subject)",
+        "blocked: https://www.beckwithforcongress.com/safety-and-security (would not connect)",
+        "1 web search on name plus subject words: nothing on the subject",
+        "not reviewed: the campaign Safety and Security, Constitution and 'why I am running' sub-pages"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:32:11.614Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

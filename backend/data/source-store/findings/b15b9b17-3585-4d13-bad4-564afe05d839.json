@@ -24,6 +24,29 @@
       "found": 0,
       "at": "2026-10-22T22:09:31.357Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: listed on the 2026-11-03 general ballot for Tennessee's 1st District as an independent, per https://ballotpedia.org/Joshua_Ray_Ashburn",
+        "Ballotpedia candidate page and 2026 Candidate Connection survey: nothing on the subject (survey covers borders, peace, small business, affordability)",
+        "BallotReady profile https://www.ballotready.org/people/joshua-ray-ashburn: nothing on the subject",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-1/ (403); search snippet says no information is available for him there",
+        "no campaign website found; only a Facebook page is linked and it was not reviewed: not reviewed: Facebook page linked from BallotReady",
+        "congress.gov: not applicable, not a legislator",
+        "web searches: name plus voter ID / election; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:52.668Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

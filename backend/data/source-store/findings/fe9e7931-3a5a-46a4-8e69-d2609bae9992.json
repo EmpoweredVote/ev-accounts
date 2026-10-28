@@ -30,6 +30,29 @@
       "found": 0,
       "at": "2026-10-22T22:13:10.441Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "mail-ballot ID",
+        "territorial residents and federal voting rules",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Ballotpedia https://ballotpedia.org/Kimberlyn_King-Hinds (confirms sitting Northern Mariana Islands at-large member, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "official House site https://king-hinds.house.gov/ (home page and press-release pages 0 to 5 scanned by title: nothing on the subject; no election bills or releases seen)",
+        "blocked: https://king-hinds.house.gov/search/node/voter (site search returned 403)",
+        "blocked: https://www.congress.gov/member/kimberlyn-king-hinds/K000404 (bot check page), so cosponsorships on the subject could not be checked",
+        "blocked: https://kinghinds.com/ and https://king-hindsforcongress.my.canva.site/ (campaign sites returned no readable text)",
+        "two web searches on her name plus SAVE Act, voter ID and citizenship (nothing attributed to her; coverage of territorial voting concerns quotes her predecessor, not her)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:11.158Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

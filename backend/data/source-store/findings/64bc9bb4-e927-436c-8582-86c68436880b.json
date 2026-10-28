@@ -25,6 +25,29 @@
       "found": 0,
       "at": "2026-10-22T21:55:58.503Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://www.ballotready.org/people/jereme-lance-peters (candidate, AZ-6, on the 2026 general ballot) and https://ballotpedia.org/Jereme_Peters (advanced from his primary, on the Nov 3 2026 general ballot)",
+        "Fox 10 candidate profile https://www.fox10phoenix.com/election/2026-election-debate-arizona-congressional-district-6-candidates: nothing on the subject",
+        "Ballotpedia: candidate page has empty campaign-themes and survey sections; nothing on the subject",
+        "no campaign website found; only a campaign Instagram and personal Facebook are linked, not reviewed (social media)",
+        "blocked: https://goodparty.org/candidate/jereme-peters/us-house-of-representatives-arizona-6th-congressional-district (HTTP 429); search snippet says the profile is unclaimed with no platform",
+        "web search on name plus subject words: nothing by him on the subject",
+        "congress.gov: not reviewed, not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:53:39.835Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

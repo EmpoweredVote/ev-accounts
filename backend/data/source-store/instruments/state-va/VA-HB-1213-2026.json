@@ -1,0 +1,36 @@
+{
+  "id": "VA-HB-1213-2026",
+  "scope": "state:va",
+  "title": "HB 1213 (2026 Regular Session (LIS session code 20261)): Elections; affirmation statement in lieu of identification, additional information required.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20261/HB1213",
+    "https://lis.virginia.gov/bill-details/20261/HB1213",
+    "https://lis.blob.core.windows.net/files/1087780.HTML",
+    "https://lis.blob.core.windows.net/files/1087779.PDF (introduced PDF; not read)",
+    "https://lis.blob.core.windows.net/files/1097497.PDF (listed on fastdemocracy page; not read)"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) § 24.2-643 B (existing list of accepted ID, reprinted unchanged)\n(quote) B. An officer of election shall ask the voter for his full name and current residence address and the voter may give such information orally or in writing. The officer of election shall verify with the voter his full name and address and shall repeat, in a voice audible to party and candidate representatives present, the full name provided by the voter. The officer shall ask the voter to present any one of the following forms of identification: (i) his voter confirmation documents; (ii) his valid Virginia driver's license, his valid United States passport, or any other identification issued by the Commonwealth, one of its political subdivisions, or the United States, other than a driver privilege card issued under § 46.2-328.3 or an identification privilege card issued under § 46.2-345.3; (iii) any valid student identification card issued by any institution of higher education located in the Commonwealth or any private school located in the Commonwealth; (iv) any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in any other state or territory of the United States; (v) any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer's business; or (vi) a copy of a current utility bill, bank statement, government check, paycheck, or other government document containing the name and address of the voter. The expiration date on a Virginia driver's license shall not be considered when determining the validity of the driver's license offered for purposes of this section.\n(section) § 24.2-701.1 A (in-person absentee voting; ID or statement, as introduced; new words kept)\n(quote) Except as provided in subsection F, a registered voter voting by absentee ballot in person shall provide one of the forms of identification specified in subsection B of § 24.2-643. If he does not show one of the forms of identification specified in subsection B of § 24.2-643, he shall be allowed to vote after signing a statement, subject to felony penalties for false statements pursuant to § 24.2-1016, that he is the named registered voter he claims to be and providing his full name, year of birth, and the last four digits of his social security number, if any. The form containing the statement and voter information shall be retained as election materials. A voter who requires assistance in voting by reason of a physical disability or an inability to read or write, and who requests assistance pursuant to § 24.2-649, may be assisted in preparation of this statement in accordance with that section. The provisions of § 24.2-649 regarding voters who are unable to sign shall be followed when assisting a voter in completing this statement. A voter who does not show one of the forms of identification specified in this subsection or does not sign this statement shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board shall provide instructions to the general registrar for the handling and counting of such provisional ballots pursuant to § 24.2-653.01 and this section.\n(b_no_id_remedy)\n(section) § 24.2-643 B, second paragraph (as introduced; new words kept)\n(quote) Except as provided in subsection E, any voter who does not show one of the forms of identification specified in this subsection shall be allowed to vote after signing a statement, subject to felony penalties for false statements pursuant to § 24.2-1016, that he is the named registered voter he claims to be and providing his full name, year of birth, and the last four digits of his social security number, if any. The form containing the statement and voter information shall be retained as election materials. A voter who requires assistance in voting by reason of a physical disability or an inability to read or write, and who requests assistance pursuant to § 24.2-649, may be assisted in preparation of this statement in accordance with that section. The provisions of § 24.2-649 regarding voters who are unable to sign shall be followed when assisting a voter in completing this statement. A voter who does not show one of the forms of identification specified in this subsection and does not sign this statement shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board of Elections shall provide an ID-ONLY provisional ballot envelope that requires no follow-up action by the registrar or electoral board other than matching submitted identification documents from the voter for the electoral board to make a determination on whether to count the ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) § 24.2-701.1 B to F: absentee voting in person hours, voting systems, officers of election (existing text reprinted)",
+  "sponsors": [
+    {
+      "name": "Oates",
+      "role": "author",
+      "version": "Introduced (26103686D, 1/14/2026); left in committee 2/18/2026"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:50:01Z)",
+    "fetched_at": "2026-10-28T15:50:01Z",
+    "method": "curl"
+  }
+}

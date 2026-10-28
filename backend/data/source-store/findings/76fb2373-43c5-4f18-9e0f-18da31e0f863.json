@@ -49,11 +49,42 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "no-ID voter options",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with name search, nothing found)",
+        "campaign site https://richardraymond.com/ and /about (home and about pages list tax, education, health, trade, grid; nothing on the subject)",
+        "campaign-site posts richardraymond.com/hello-world-2/ and richardraymond.com/2009/07/ (search leads about a poll-tax-receipts floor speech; both now return 404, so not citable)",
+        "official House biography https://house.texas.gov/members/4215/biography (confirms him as Laredo member; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Richard_Raymond (fetched; page is dated and has nothing on the subject)",
+        "branch.vote 2026 candidate page https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-42/candidates/richard-pena-raymond (confirms 2026 general-election ballot for House District 42; nothing on the subject)",
+        "Texas Tribune and KUT March 2011 floor-debate stories on SB 14 (fetched; neither names him)",
+        "a Houston newspaper politics blog post (redirected, fetched; does not name him)",
+        "news search on 2025 SB 16 proof of citizenship (nothing quoting him)",
+        "not reviewed: Texas House Journal / floor transcripts for his own words"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:14:15.446Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

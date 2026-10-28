@@ -25,6 +25,31 @@
       "found": 0,
       "at": "2026-10-22T23:09:06.347Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "polling place access"
+      ],
+      "places": [
+        "https://malegislature.gov/Legislators/Profile/FAM1 (official legislature profile: names him as the representative from Lawrence, 194th General Court; proves the person was found)",
+        "https://ballotpedia.org/Frank_Moran (lists him as a candidate for the 17th Essex District, 2026 general election on November 3, 2026)",
+        "https://en.wikipedia.org/wiki/Frank_A._Moran (confirms office; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "legislature sponsored-bills list, 194th court (40 bills read): none on ID or citizenship to vote; only tangential items were H.820 (polling-place access for voters with disabilities) and H.3744 (free public transit on election days), not saved because they are not about proof of identity or citizenship",
+        "blocked: legislature cosponsored-bills tab (the server returned the sponsored list again, so cosponsorships were not reviewed): https://malegislature.gov/Legislators/Profile/FAM1/194/Cosponsor",
+        "one web search on his name plus subject words: nothing on the subject",
+        "no personal campaign or official site found for him",
+        "not reviewed: roll-call votes on election bills (no vote on the subject located)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:45:35.815Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

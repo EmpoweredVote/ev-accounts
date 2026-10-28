@@ -1,6 +1,37 @@
 {
   "politician_id": "7c19c055-65b3-4ab0-b93e-f10e06036974",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,32 @@
       "found": 0,
       "at": "2026-10-22T22:40:49.770Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voting access"
+      ],
+      "places": [
+        "in scope: caucus member page https://www.indianahousedemocrats.org/members/earl-l-harris-jr names him as state representative for Indiana House District 2; Ballotpedia shows him running in the 2026-11-03 general election for that seat",
+        "On the Record (0 meetings)",
+        "caucus news list for Rep. Harris (nothing on voter ID)",
+        "caucus statement on redistricting (about the congressional map, nothing on ID)",
+        "Yahoo/news report on the 2025 voting-rights meeting in Chicago (about maps, nothing on ID)",
+        "Ballotpedia and Wikipedia pages (nothing on the subject)",
+        "two news searches on name plus voter ID / SB 10 (no quote from him on ID found)",
+        "blocked: https://indianahousedemocrats.org/news-media/rep.-harris-statement-on-issues-surrounding-voter-suppression (search lists it, but the page returns 404; it concerns polling hours, early voting and registration, not ID, per a search summary only)",
+        "not reviewed: House floor video of SB 10 debate; ontheissues.org; campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:15:13.272Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

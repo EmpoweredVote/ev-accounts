@@ -178,6 +178,115 @@
         "fetched_at": "2026-10-22T22:09:56.094Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2455fe2952d9c37577705ca6d25cd3fba8b4d8369cb015677e930554bb0a8243",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s57",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Senate roll call 57, motion to proceed to S. 1383 (the legislative vehicle for the House-passed SAVE America Act); agreed to 51-48",
+      "note": "Heinrich is on the nay list. The SAVE America Act would require documentary proof of citizenship to register for federal elections and photo ID to vote, per the Ballotpedia explainer https://news.ballotpedia.org/2026/03/25/senate-takes-up-save-america-act-to-require-voter-id-proof-of-citizenship-for-federal-elections/. The tracking site labels S. 1383 with an unrelated title because the Senate used that bill number as the vehicle; the Senate Press Gallery log calls it the legislative vehicle for the SAVE Act. Official senate.gov roll call page could not be fetched.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:00:12.619Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "610493bee99d803bc67b609f8cfcb78d6697311b82aefcbfef0a3e3f907a6db5",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s73",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "US-SAMDT-4732-2026",
+      "act": "nay",
+      "motion": "Senate roll call 73, cloture on S.Amdt. 4732 to S.Amdt. 4420 to S. 1383, an amendment 'to require voters to provide photo identification'; cloture not invoked, 53-47",
+      "note": "Heinrich is on the nay list for cloture on the Husted photo-ID amendment. The Senate Press Gallery log for the day (https://www.dailypress.senate.gov/thursday-march-26-2026/) describes it as cloture on the Husted amendment #4732 in relation to the House message to accompany S.1383.",
+      "subjects": [
+        "photo ID to vote in federal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:00:12.619Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f73b0bbb5371da8b5e7357b97b4c0f28e0fcd790a8bc489779c9d3d2e21e4e5e",
+      "kind": "own-words",
+      "url": "https://www.kunm.org/local-news/2026-03-18/heinrich-save-act-would-stop-thousands-of-new-mexicans-from-voting",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“Requiring voters to purchase or renew a passport for $130 is a modern day poll tax. This is Jim Crow 2.0,” he said.",
+      "note": "Quoted by KUNM from his Senate floor remarks of 2026-03-18 on the SAVE Act's proof-of-citizenship documents. The same story reports, in the reporter's words, that Heinrich said it is not a voter ID bill but a voter suppression bill.",
+      "subjects": [
+        "proof of citizenship to register",
+        "passport or citizenship documents cost"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:00:12.619Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b07307afe60a4938ef2d88b7786e5a6490df5235404801f9582862db281c463a",
+      "kind": "own-words",
+      "url": "https://www.kunm.org/local-news/2026-03-18/heinrich-save-act-would-stop-thousands-of-new-mexicans-from-voting",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“All American citizens should have the same right to vote as the senators in this room, all American citizens deserve to hold the reins of this great democracy in their hands. So for those constituents, for all Americans, I say again, either we are all free or we fail,” he said.",
+      "note": "Closing lines of his Senate floor remarks on the SAVE Act, as quoted by KUNM.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:00:12.619Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18a82d29dce24621f009d34f3000fd10c7c59abbb83c1c86684511573592a7b4",
+      "kind": "own-words",
+      "url": "https://www.kob.com/new-mexico/voting-in-new-mexico-will-new-rules-leave-thousands-millions-out-this-election/",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“This legislation would be absolutely devastating for New Mexico,” said Heinrich. “Now I don’t need to tell you how many New Mexicans do not have a passport.”",
+      "note": "Quoted by KOB at a New Mexico state-leaders event on the SAVE Act's proof-of-citizenship requirement (story published 2026-02-28 UTC).",
+      "subjects": [
+        "proof of citizenship to register",
+        "passport or citizenship documents access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:00:12.619Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -208,6 +317,34 @@
       "found": 8,
       "at": "2026-10-22T22:09:56.094Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote in federal elections",
+        "ID with a mail or absentee ballot",
+        "voter-roll checks against federal data",
+        "election integrity and voter access laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Senate vote records via watch.vote (roll calls 57 and 73 fetched, with senator-by-senator lists)",
+        "Senate Press Gallery floor log for 2026-03-26 (dailypress.senate.gov)",
+        "KUNM and KOB news stories quoting him (fetched in full)",
+        "Ballotpedia news explainer of the SAVE America Act (bill contents)",
+        "blocked: https://www.heinrich.senate.gov/newsroom/press-releases/heinrich-save-act-is-one-of-the-most-extreme-voter-suppression-bills-in-recent-history (HTTP 403)",
+        "blocked: https://www.heinrich.senate.gov/newsroom/blog/its-not-a-voter-id-bill_its-voter-suppression (HTTP 403)",
+        "blocked: https://www.heinrich.senate.gov/newsroom/press-releases (HTTP 403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.xml (security block)",
+        "not reviewed: https://www.heinrich.senate.gov/newsroom/videos/why-im-voting-no-on-the-so-called-save-act (video, site blocked)",
+        "congress.gov sponsorship lists: not reviewed",
+        "two web searches on his name plus SAVE Act and voter ID words"
+      ],
+      "found": 5,
+      "at": "2026-10-27T19:00:12.619Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

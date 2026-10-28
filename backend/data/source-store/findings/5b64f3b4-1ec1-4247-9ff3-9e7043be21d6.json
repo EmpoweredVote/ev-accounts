@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,85 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "c8d605514f41e38c88793c37c0a653fa586b630d73015c6ba758235784952088",
+      "kind": "own-words",
+      "url": "https://www.pressherald.com/?p=6108648",
+      "date": "2021-07-12",
+      "date_precision": "day",
+      "passage": "“What we’re doing is buying time and hopefully gaining attention on this issue. What we really need is for Congress to act.”",
+      "note": "Quoted by the Associated Press (via Press Herald) as Wu left Texas to deny a quorum on the 2021 special-session voting bill (SB 1). Wu is also reported as saying the bill would restrict voting, especially in minority and poor communities. Does not discuss ID rules directly.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 SB 1 voting bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:25.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ba061347ccb16c40151102c3bb511ab6636f3644d9de1bc09e8dd178f29441d",
+      "kind": "own-words",
+      "url": "https://www.fox26houston.com/news/texas-democrats-leave-state-monday-for-washington-deny-republicans-quorum-for-voting-bill",
+      "date": "2021-07-12",
+      "date_precision": "day",
+      "passage": "\"We started out this special session with promises that there would be compromises there, that there would be changes to the bill and that they would work with us. After a 24-hour hearing almost 500 witnesses testified overwhelmingly in opposition. Ten to one in opposition. They just voted it all out. All efforts to make things a little bit better, were rejected without question,\" said Wu.",
+      "note": "Fox 26 Houston quoted Wu as he left for Washington to block the 2021 voting bill (SB 1, which also added ID numbers for mail ballots). He criticizes how the committee handled amendments and witness testimony; he does not name ID rules.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 SB 1 voting bill",
+        "mail-ballot ID (bill content, not discussed by Wu)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:25.198Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register (SB 16)",
+        "election integrity laws in general (2021 SB 1 quorum break)"
+      ],
+      "places": [
+        "in scope: Ballotpedia page shows Texas House District 137, term ends 2027, on the 2026-11-03 ballot",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (district 137): nothing on the subject",
+        "campaign site genefortexas.com home, /press and /issues: nothing on the subject (democracy section covers redistricting only)",
+        "Texas Legislature bill pages: coauthor of HB 1919 and HB 4030 (89R) on voter-registration website/rejection notices, not on ID or citizenship, not saved",
+        "Ballotpedia: nothing on the subject",
+        "news searches (4): found two 2021 interviews about the SB 1 quorum break",
+        "Texas Tribune 2025-01-09 Wu profile and Texas Observer 2023 interview: nothing on the subject",
+        "blocked: https://cbs19.tv/article/news/politics/inside-politics/texas-politics/democrat-rep-gene-wu-house-walkout-senate-bill-7-message-public/287-089f5ea6-a2c4-4914-af1a-e48390e8fc17 (403)",
+        "not found: any own-words statement from Wu on SB 16 (2025) proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:57:25.198Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

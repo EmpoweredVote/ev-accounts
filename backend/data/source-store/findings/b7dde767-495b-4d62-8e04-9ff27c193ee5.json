@@ -19,6 +19,24 @@
       "found": 0,
       "at": "2026-10-22T21:48:19.672Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: not in scope; left the House seat on 2025-01-20 and has been US Ambassador to the United Nations since 2025-09-21, not on a 2026 ballot (https://en.wikipedia.org/wiki/Mike_Waltz)",
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Michael_Waltz (fetch returned empty)",
+        "not reviewed: congress.gov and official site, because the person is no longer a member or candidate"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:08:30.057Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

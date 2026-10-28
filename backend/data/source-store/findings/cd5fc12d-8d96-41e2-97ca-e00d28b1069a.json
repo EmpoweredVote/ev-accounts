@@ -1,6 +1,37 @@
 {
   "politician_id": "cd5fc12d-8d96-41e2-97ca-e00d28b1069a",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,31 @@
       "found": 0,
       "at": "2026-10-22T22:53:16.402Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Cindy_Ledbetter (in scope: on the 2026 general-election ballot for House District 75; 2026 candidate survey has nothing on the subject)",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/cindy-ledbetter/ (news list only voter-registration reminders, nothing on the subject)",
+        "personal site cindyledbetter.com (health practice site, nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_cindy_ledbetter_1 (page needs JavaScript; votes already on file)",
+        "Ballotpedia sponsored-bills table loads empty in the page source; not reviewed",
+        "one web search on name plus subject words: no bill or statement on the subject found",
+        "one web search on SB 10 floor debate: nothing naming her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:58.996Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

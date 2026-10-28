@@ -29,6 +29,30 @@
       "found": 0,
       "at": "2026-10-22T21:44:05.682Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and mail ballot handling"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Carlton_Bowen (confirms he is on the 2026-11-03 general-election ballot for U.S. House Utah District 2; his 2026 survey answers have nothing on the subject)",
+        "BallotReady https://www.ballotready.org/people/carlton-e-bowen (issue stances list defense, infrastructure, taxes; nothing on the subject)",
+        "campaign site https://www.bowenforcongress.com (home page only; nothing on the subject)",
+        "Green Papers Utah 2026 page (lists him as a candidate in District 2)",
+        "Ogden Valley News profile (nothing on the subject)",
+        "Salt Lake Tribune 2026-10-12 race story (nothing on the subject)",
+        "not reviewed: 2024 Utah U.S. Senate voter-guide statement on election integrity and mail ballots (a search summary pointed to https://utahnewsdispatch.com/race-details/utah-u-s-senate-candidates-election-2024/, which returned HTTP 403 and whose text did not show the passage by curl; no passage saved)",
+        "three web searches on name plus election integrity and the 2024 statement"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:56:26.358Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

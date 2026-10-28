@@ -1,6 +1,28 @@
 {
   "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd",
-  "findings": [],
+  "findings": [
+    {
+      "id": "19a33f05cfa80e6ceb82c70ad5a9f525c2af041d664d435fa23f84b5d4c79466",
+      "kind": "record",
+      "url": "https://malegislature.gov/Legislators/Profile/MOM0",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "MA-S-44-2025",
+      "act": "sponsor",
+      "note": "The legislature profile lists S.44 among the bills he filed: legislation relative to deceptive and fraudulent deepfakes in election communications, referred to the Advanced Information Technology, the Internet and Cybersecurity committee. Not about ID or citizenship; saved as a related election-integrity topic. Session year inferred from the current bill list.",
+      "subjects": [
+        "deepfakes in election communications (related election-integrity law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:09.439Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -23,6 +45,28 @@
       "found": 0,
       "at": "2026-10-22T23:22:20.412Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting 2nd Worcester senator, won the 2026-09-01 primary, on the general ballot)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MOM0 (nothing on ID or citizenship; one election-communications bill)",
+        "his official site https://www.senatormikemoore.com (nothing on the subject)",
+        "two news searches on his name plus the subject words (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:29:09.439Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

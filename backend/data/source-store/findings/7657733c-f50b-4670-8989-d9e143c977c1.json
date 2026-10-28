@@ -29,6 +29,32 @@
       "found": 0,
       "at": "2026-10-22T22:10:40.966Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://www.cbsnews.com/detroit/news/michigan-10th-congressional-district-august-primary-election/ reports him projected winner of the 2026-08-04 primary for Michigan's 10th District, so he is the nominee for the general election",
+        "On the Record (0 appearances)",
+        "campaign site: blocked: https://www.bouchardformichigan.com (certificate error on direct request; fetch tool returned an empty page)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Michael_Bouchard_Jr. (empty page)",
+        "https://www.theblaze.com/news/an-insider-look-at-one-of-the-toughest-congressional-races-in-the-country: nothing on the subject in his own words",
+        "https://www.foxnews.com/politics/trump-backed-bronze-star-veteran-secures-party-nod-must-win-district: nothing on the subject (his quotes are on border and military service)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "news searches on name plus voter ID, SAVE Act, election integrity, citizenship: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:13:38.753Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

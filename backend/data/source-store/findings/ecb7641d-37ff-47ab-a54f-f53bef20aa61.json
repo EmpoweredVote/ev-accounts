@@ -92,6 +92,79 @@
         "fetched_at": "2026-10-23T00:15:23.816Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5875a3a077f94405400ae176242f367ae9f19d9a146350510e23ae65417235ad",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-H-825-2025",
+      "act": "sponsor",
+      "motion": "House Bill 825, Election Improvements, primary sponsor (filed 2025-04-08, referred to Rules 2025-04-09)",
+      "note": "Echevarria is a primary sponsor of House Bill 825, Election Improvements. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf) would bar ranked choice voting, shorten early voting, and change the forms of identification for an absentee ballot request: the request form would ask for the last four digits of the Social Security number plus a driver licence number, special ID card number or date of birth, and a voter who cannot attach a photocopy of ID to a returned absentee ballot could use a reasonable-impediment affidavit with the same identifiers. The bill was referred to the Rules committee and the page shows no later action.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot",
+        "reasonable-impediment affidavit",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc9cfe99483a96f0a4900721e3f9cbd1b53c05fc5c29d10f271eeac5222a6335",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Brian Echevarria voted Aye on second reading of House Bill 958, Election Law Changes (66 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64f74b4d05627a2220ff289ae3385ab12153ac26d3f5adeefbde3219d33b2a7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, M11 Concur in Senate committee substitute (House roll call 801)",
+      "note": "Brian Echevarria voted Aye on the House vote to concur in the Senate committee substitute of House Bill 958, Election Law Changes (62 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -122,6 +195,33 @@
       "found": 4,
       "at": "2026-10-23T00:15:23.816Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "ID number to request an absentee ballot"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Brian_Echevarria (confirms sitting District 82 representative, on the 2026 general-election ballot)",
+        "ncleg.gov member profile https://www.ncleg.gov/Members/Biography/H/828 (confirms office)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/828 (2025 session; House Bill 825 saved; House Bill 1231 on voter registration at the DMV, House Bill 127 voter registration drive form, House Bill 31 election day holiday and House Bill 144 are co-sponsored only and not on ID or citizenship proof, not saved)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H825 and text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf",
+        "ncleg.gov member votes https://www.ncleg.gov/Members/Votes/H/828 (roll calls on House Bill 958 saved)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "voter guide https://www.branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-82/candidates/brian-echevarria (guide summary only, says his website had no content on these issues; not own words)",
+        "news voter guides https://www.wfae.org/2026-10-05/n-c-house-of-representatives-82 and WSOC candidate guide (nothing on the subject)",
+        "web search on name plus voting, voter ID (no own words found; no personal campaign site found)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:20:56.791Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "politician_id": "810c320c-bde2-4c1b-8e47-0b003f6b3e3d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed as California State Auditor (appointed 2022, term to 2027, a non-elected official, not on any 2026 ballot) via Ballotpedia",
+        "On the Record (0 meetings)",
+        "Official site auditor.ca.gov: reports list and site search for voter, election, voter identification, citizenship, voter ID; only a 2025 Mendocino County elections-office audit (precinct assignment errors) came up, not about ID or citizenship",
+        "Campaign site: none (appointed official)",
+        "Ballotpedia: nothing on the subject beyond the profile",
+        "Two news searches on name plus voter ID, voter registration audits, AB 25: nothing about him; AB 25 would have given the State Auditor a signature-review role but he made no recorded statement on it",
+        "Bill votes: not applicable (not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:12:00.491Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

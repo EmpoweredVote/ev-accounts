@@ -28,6 +28,29 @@
       "found": 0,
       "at": "2026-10-22T23:29:31.462Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voting access and election integrity bills in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/John_J._Cronin) shows him as the sitting state senator for Worcester and Middlesex, on the 2026-11-03 general election ballot after the 2026-09-01 primary",
+        "Wikipedia page, nothing on the subject",
+        "campaign site johnjcronin.com, nothing on the subject",
+        "Groton Herald 2022-06-16 article on the VOTES Act, a news summary of mail-in and early voting expansion with no quote from him and no ID content (paywalled in part)",
+        "blocked: malegislature.gov legislator pages were not fetched; a Senate roll call PDF seen in search was not opened, its topic is unknown",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches on his name plus voter ID terms, nothing tying him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:25.161Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

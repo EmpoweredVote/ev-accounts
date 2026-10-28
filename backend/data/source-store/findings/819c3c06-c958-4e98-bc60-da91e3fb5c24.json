@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,40 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia page confirms Joseph (Joe) Moody, Texas House District 78, term ends 2027, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (https://house.texas.gov/members/member-page/?district=78): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "no personal or campaign site found beyond the official page and social accounts; not reviewed: his social media account (not reachable by these tools)",
+        "news searches on his name plus subject words (two searches): no quote from him on the subject found; pages fetched from a Dallas newspaper (2025 proof-of-citizenship story) and an El Paso TV site did not quote him on the subject",
+        "SB 16 (2025) did not reach a House floor vote, so no new floor vote on that bill; the two votes already on file are the only records located",
+        "not reviewed: Texas Legislature Online authorship lists (capitol.texas.gov unreliable), House floor debate audio"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:13:20.292Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

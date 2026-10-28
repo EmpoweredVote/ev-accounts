@@ -1,6 +1,37 @@
 {
   "politician_id": "33e307e0-dc84-43c0-b842-de34268c206d",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +59,35 @@
       "found": 0,
       "at": "2026-10-22T22:23:14.967Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Fady_Qaddoura (confirms Indiana Senate District 30 member, term runs to 2028)",
+        "caucus news list https://indianasenatedemocrats.org/caucus/qaddoura/page/3 (headlines only; nothing on the subject)",
+        "BillTrack50 vote page https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/24876 (no voter ID or citizenship bill listed)",
+        "web news searches (nothing naming him on the subject)",
+        "blocked: https://iga.in.gov/legislative/2024/bills/house/1264/details (page loads by script, no roll call text readable)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (HTTP 403)",
+        "blocked: https://legiscan.com/IN/bill/HB1680/2025 (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2026/04/16/civil-rights-advocates-fear-citizenship-verification-law-could-block-many-naturalized-voters/ (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2024/01/18/election-security-bill-with-citizenship-credit-agency-data-provisions-moves-to-house-floor/ (HTTP 403)",
+        "blocked: https://pluralpolicy.com/app/legislative-tracking/bill/details/state-in-2024-hb1264 (no vote table readable)",
+        "not reviewed: individual roll-call votes on HB 1264 (2024) and HB 1680 (2025), the Indiana citizenship-check bills; no readable roll-call page reached"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:35.657Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

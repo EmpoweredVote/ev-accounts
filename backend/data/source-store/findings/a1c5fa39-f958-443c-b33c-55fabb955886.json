@@ -1,0 +1,136 @@
+{
+  "politician_id": "a1c5fa39-f958-443c-b33c-55fabb955886",
+  "findings": [
+    {
+      "id": "9991bff2628f3c2802c4bbfbb6c4af1a8cc956460d5b7b68f1732c766b5b513d",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1850004",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-661-2025",
+      "act": "sponsor",
+      "note": "HB 661 would make a violation of Code section 21-2-216 (qualifications of electors, which includes evidence of citizenship) a felony. BillTrack50 and FastDemocracy list him among six sponsors; the official bill text at https://www.legis.ga.gov/api/legislation/document/20252026/234324 names three sponsors and 'others'. Last action was House second reading on 2025-03-03; marked dead 2026-04-02.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.796Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Gambill'), linked to MATTHEW GAMBILL (district 15) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Gambill'), linked to MATTHEW GAMBILL (district 15) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Gambill'), linked to Matthew Gambill (district 15) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned none)",
+        "blocked: https://ballotpedia.org/Matthew_Gambill (empty page)",
+        "web news searches (2 for this person, none showed the person's own words on the subject)",
+        "Georgia House Journal floor votes: not searched, linked separately",
+        "Branch Politics 2026 profile: confirms 2026 general-election candidate for House District 15 (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-15/candidates/matthew-gambill)",
+        "campaign site votegambill.com (plain curl): only a list heading 'Secured the Integrity of Our Elections', not a full sentence, so not saved",
+        "bill text PDF for HB 661 fetched: https://www.legis.ga.gov/api/legislation/document/20252026/234324 (lists 'and others', not him by name)",
+        "BillTrack50 and FastDemocracy sponsor lists for HB 661 fetched",
+        "blocked: https://legiscan.com/GA/bill/HB661/2025 (403); https://app.legiplex.com/profile/matthew-gambill-1180/... (403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:33:45.796Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.400Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -51,6 +51,29 @@
       "found": 0,
       "at": "2026-10-22T23:29:10.323Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "early and mail voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name)",
+        "campaign site votepaulmark.com (home, about, site search for voter ID, election, voting): nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Paul_Mark (confirms state senator on the 2026-11-03 general ballot, advanced from the 2026-09-01 primary; nothing on the subject)",
+        "malegislature.gov member profile PWM1 (shows House service 2011-2022; no subject bills found)",
+        "news searches (4) on name plus voter ID, citizenship, early voting, mail voting: nothing on the subject",
+        "not reviewed: Senate roll calls on election bills (no bill number found to search)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:17:12.901Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

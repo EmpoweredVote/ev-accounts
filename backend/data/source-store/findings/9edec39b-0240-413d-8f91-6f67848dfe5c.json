@@ -25,6 +25,31 @@
       "found": 0,
       "at": "2026-10-22T21:50:46.192Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.elections.virginia.gov/casting-a-ballot/candidate-list/november-3-2026-gen-elect-federal-offices/: confirms him as an independent on the 2026-11-03 ballot for VA-7, with campaign site joshua.vote",
+        "blocked: https://joshua.vote (certificate expired; fetch tool refused, plain curl returned nothing)",
+        "https://ivoterguide.com/candidate/97250: candidate did not answer the photo-ID questionnaire item; no statements - nothing on the subject",
+        "https://theballotbrief.com/candidate/joshua-e-ertle-va: ballot status only - nothing on the subject",
+        "https://againstthedrift.substack.com/about: his own Substack about page; faith and pro-life topics, nothing on the subject",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/Joshua_Ertle",
+        "congress.gov: not applicable, not a legislator",
+        "news search on his name plus subject words: no coverage"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:47:04.090Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

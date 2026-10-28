@@ -42,6 +42,28 @@
         "fetched_at": "2026-10-22T22:53:26.001Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a0590de4c3045b1f15ca7e44003d13984aabfcadd62d1a40e2bd7fda8c3f99ef",
+      "kind": "own-words",
+      "url": "https://abc57.com/news/abc57s-brian-conybeare-interviews-democratic-secretary-of-state-candidate-beau-bayh",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "\"I'm in favor of voter ID. I think our state's voter ID law has generally made our elections secure. We have a problem in Indiana with access. We rank toward the bottom, if not last, in a lot of years in voter participation,\" said Bayh.",
+      "note": "Quoted by ABC57 in a TV interview. The page date is the posting time shown in the page data. He says he favors voter ID and the current state law, and ties it to low turnout.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity measures in general",
+        "voter participation and access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:24.274Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -68,6 +90,30 @@
       "found": 2,
       "at": "2026-10-22T22:53:26.001Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity measures in general",
+        "voter participation and access",
+        "noncitizen voting and citizenship checks",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "confirmed on the 2026 general-election ballot for secretary of state: https://www.wthitv.com/2026/06/16/beau-bayh-outlines-campaign-platform-indiana-secretary-state-race/",
+        "On the Record (0 meetings)",
+        "campaign site https://www.beaubayh.com: nothing on the subject on the page returned",
+        "blocked: https://ballotpedia.org/Beau_Bayh (page returned empty)",
+        "blocked: https://indianacapitalchronicle.com/2026/08/26/indiana-secretary-of-state-hopefuls-clash-over-voting-rules-office-audit/ (403 to the fetch tool; one curl attempt on it was refused by the permission system)",
+        "blocked: https://www.axios.com/local/indianapolis/2026/10/23/engling-and-bayh-trade-blows-in-one-on-one-debate (403 to the fetch tool; no curl retry made)",
+        "legislature bill pages: not applicable, he has held no legislative seat",
+        "two web searches on name plus voter ID and citizenship terms; the TV interview below is the only own-words source on the subject I could read"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:07:24.274Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

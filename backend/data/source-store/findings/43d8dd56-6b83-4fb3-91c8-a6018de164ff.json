@@ -42,6 +42,28 @@
         "fetched_at": "2026-10-22T21:57:39.845Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "86b32707d1c53bf4840d2255b3ae4273887878782af9fa4bc3e29321d51c5885",
+      "kind": "own-words",
+      "url": "https://www.votejustinearly.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Defend voting rights and safeguard fair and free elections. Every American deserves an equal voice in our democracy, free from voter suppression, gerrymandering, or interference. I’ll work to restore trust in our electoral system and ensure every vote is counted.",
+      "note": "Campaign issues page, undated; a legislative pledge on voting rights and fair elections. It names no ID or citizenship-proof rule.",
+      "subjects": [
+        "voting rights",
+        "election integrity in general",
+        "voter suppression"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:48:46.503Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -71,6 +93,30 @@
       "found": 2,
       "at": "2026-10-22T21:57:39.845Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity in general",
+        "voting rights and voter suppression"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site homepage (nothing on voter ID or citizenship proof)",
+        "campaign site issues page (one on-subject passage, saved)",
+        "Ballotpedia (confirms he advanced to the 2026 general ballot; nothing on the subject)",
+        "Off the Kuff interview post (audio only, not reviewed: https://www.offthekuff.com/wp/?p=122195)",
+        "two news searches on name plus voter ID, SAVE Act, proof of citizenship (nothing on the subject)",
+        "congress.gov: not a legislator, no record"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:48:46.503Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

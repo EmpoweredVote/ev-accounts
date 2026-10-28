@@ -49,6 +49,28 @@
       "found": 0,
       "at": "2026-10-22T23:28:43.757Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter registration and election-law bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/John_Barrett_III (confirms sitting 1st Berkshire representative, on the 2026 general-election ballot; nothing on the subject)",
+        "malegislature.gov bills page https://malegislature.gov/Legislators/Profile/J_B1/Bills (nothing on the subject; only local election bills for Cheshire and Lanesborough)",
+        "news coverage https://www.wamc.org/news/2026-08-14/barrett-fitch-meet-for-only-debate-in-democratic-race-for-1st-berkshire-district-seat (debate remarks on same-day voter registration only; nothing on ID or citizenship)",
+        "news Q&A https://www.iberkshires.com/story/83668/Q-A-with-First-District-Incumbent-John-Barrett-III.html (nothing on the subject)",
+        "web search on name plus voting and voter ID (nothing on the subject)",
+        "official legislature site search for subject words (nothing on the subject; he has no campaign site found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:16:55.075Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

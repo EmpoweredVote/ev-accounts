@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,120 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "e118e098d4ec4c49f8268e4c1af1e91b89580b1d5eaa7cdb7ef23be389abf0e2",
+      "kind": "own-words",
+      "url": "https://www.mattshaheen.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Under my leadership, Texas has implemented sweeping election integrity measures to ensure voter rolls and equipment are secure and only qualified US citizens vote.",
+      "note": "Line under the 'Election Integrity' heading on his campaign site's issues list. It speaks of voter rolls, equipment and citizen-only voting in general; it names no ID rule. The page carries no date.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll security",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:26:12.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "955318fcf93785e6e2d568d2e09a23bdf08741c29308835b70e1556bd2880e74",
+      "kind": "record",
+      "url": "https://www.texastribune.org/2025/07/30/texas-senate-election-crimes-attorney-general/",
+      "date": "2025-07-30",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-11-2025",
+      "act": "author",
+      "motion": "filed HB 11 and an accompanying joint resolution (election crime prosecution by the Attorney General)",
+      "note": "Texas Tribune reports he filed the House bill, with a joint resolution, to let the Attorney General prosecute election crimes. The article's text does not give the bill number; the link behind 'his bill' goes to HB 11. The page date is the article date. This is about election crime, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "election crime prosecution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:26:12.768Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1bd008442e75f5a671e093ce5e5882b30962dde55c9028d17f6da9ee6552ae3",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "author",
+      "motion": "author sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as author of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.533Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "election crime prosecution"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member page (house.texas.gov district 66): confirms Matt Shaheen holds the District 66 seat; nothing on the subject",
+        "campaign site mattshaheen.com: one 'Election Integrity' line saved",
+        "Wikipedia (lead only): pointed to the Texas Tribune article used here",
+        "Texas Tribune 2025-07-30 article on election crime bills: names him as filing a bill; not quoted",
+        "news search on his name plus the subject words: nothing about him in results",
+        "blocked: Ballotpedia (not fetched; a direct request was refused by the tool permission check)",
+        "not reviewed: Texas Legislature Online bill pages for his sponsorships (site needs scripts)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:26:12.768Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.533Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

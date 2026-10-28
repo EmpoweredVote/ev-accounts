@@ -47,6 +47,29 @@
         "fetched_at": "2026-10-22T23:01:55.238Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "81065af14fb5738ea2bbc7c0525f22550897fd52595150d928bf42c6fb68d78a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Legislators/Profile/AXV1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-876-2025",
+      "act": "sponsor",
+      "motion": "H.876, petition relative to the post-election audit process",
+      "note": "Lead filer, with Bruce E. Tarr, of House bill 876 relating to the post-election audit process, referred to the Election Laws committee. It is about checking election results after the vote, not proof of identity; saved as a related election-integrity bill.",
+      "subjects": [
+        "post-election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:10:47.174Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -74,6 +97,30 @@
       "found": 1,
       "at": "2026-10-22T23:01:55.238Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "post-election audits and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/AXV1 (confirms Representative from Haverhill; lists his filed bills)",
+        "Ballotpedia https://ballotpedia.org/Andy_Vargas (on the 2026 general-election ballot, 3rd Essex District; nothing on the subject)",
+        "news searches (2): nothing by him on voter ID or proof of citizenship",
+        "blocked: https://malegislature.gov/Bills/194/H876 (page did not load; the bill text on his profile page was used instead)",
+        "campaign site: not found by search",
+        "not reviewed: Wikipedia and ontheissues (lead-only sources)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T17:10:47.174Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,70 @@
+{
+  "politician_id": "f4f670a3-6cbe-4e11-82b6-d47a39268c13",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Hong'), linked to Soo Hong (district 103) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID / no-ID voters",
+        "ID or ID number with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with the name)",
+        "legis.ga.gov bill pages not opened (login token needed); no bill text document IDs found for the subject",
+        "https://en.wikipedia.org/wiki/Soo_Hong: confirms House District 103 seat since 2023; nothing on the subject; 2026 ballot status not stated on page",
+        "https://house-press.com/representative/soo-hong: first page of her press releases, nothing on the subject",
+        "https://wevoteproject.com/officials/soo-hong: lists HR 59 Voter Integrity Protection Act with no text; co-sponsorship not confirmed from an official page, so not saved",
+        "web searches: nothing from her own words on the subject",
+        "blocked: https://ballotpedia.org (empty page for each member)",
+        "blocked: https://legiscan.com/GA/bill/HR59/2025 (403)",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://www.wabe.org and https://georgiarecorder.com article pages (403)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:32.022Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

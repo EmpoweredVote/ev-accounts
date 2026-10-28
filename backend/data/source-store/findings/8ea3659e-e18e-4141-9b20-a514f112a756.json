@@ -97,6 +97,35 @@
         "fetched_at": "2026-10-22T23:59:15.004Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -127,6 +156,30 @@
       "found": 4,
       "at": "2026-10-22T23:59:15.004Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://ncleg.gov/Members/Biography/H/772 (confirms District 93, sitting, 2025-2026 session)",
+        "legislature introduced-bills list https://ncleg.gov/Members/IntroducedBills/H/772 (only an Election Day holiday bill and a House elections-committee item on the subject area, nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Ray_Pickett (confirms on the 2026-11-03 general election ballot; nothing on the subject)",
+        "Carolina Journal profile (nothing on the subject)",
+        "two news searches on his name plus voter ID (no own words found)",
+        "campaign site: not reviewed, no URL found",
+        "official third-reading roll calls on the photo-ID amendment already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:01.005Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,6 +1,37 @@
 {
   "politician_id": "e0244003-7c41-48ba-863c-12cff608642b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +59,28 @@
       "found": 0,
       "at": "2026-10-22T22:55:23.095Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID with mail ballot",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Alaina_Shonkwiler (confirms sitting House District 29 member, on the 2026-11-03 general ballot; no survey answers on the subject)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/alaina-shonkwiler: nothing on the subject",
+        "local news: re-election filing story and 2024 election story: nothing on the subject",
+        "web search on her name with voter ID, election, citizenship and SB 10 words: nothing on the subject",
+        "not reviewed: author and coauthor list of 2025 SB 10 (iga.in.gov page did not load text); votes already on file from the official feed",
+        "not reviewed: campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:08:23.284Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

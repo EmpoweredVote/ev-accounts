@@ -76,6 +76,85 @@
         "fetched_at": "2026-10-22T23:56:09.420Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "8b086a355ff745eefa0e04f11e40376083fcca000b048f2682598572b876beef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "House Bill 958 Election Law Changes, Second Reading, roll call 758",
+      "note": "Winslow is listed among the Ayes (66 Ayes, 47 Noes). The committee substitute text on the legislature site includes a provisional ballot when a voter has no photo ID, a cure deadline to show photo ID, a photocopy of ID with absentee ballots, and citizenship questions for voter registration at drivers license offices.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "ID with absentee ballot",
+        "citizenship check at registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:55.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8874b7e6651331d220d3d9f660785ae922114a1d024a15c221ac63dbafe76995",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "House Bill 958 Election Law Changes, M11 Concur (House concurs in the Senate committee substitute), roll call 801",
+      "note": "Winslow is listed among the Ayes (62 Ayes, 47 Noes). Same bill as the 2026-06-30 vote; this is the final House vote after the Senate changed it.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "ID with absentee ballot",
+        "citizenship check at registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:55.877Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -104,6 +183,28 @@
       "found": 3,
       "at": "2026-10-22T23:56:09.420Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and provisional ballot without ID",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page and introduced-bills list for Rep. Matthew Winslow (sitting House member, District 7; Ballotpedia shows he did not file to run again in 2026): sponsored bills seen are HB 58 Various Local Elections and HB 411 Reduce Early Voting Period for Primaries, neither about ID",
+        "NC General Assembly bill page and roll calls for House Bill 958 Election Law Changes",
+        "Ballotpedia (fetched with curl; no statements on the subject)",
+        "one news search on name plus subject words, and one on name plus bill words (nothing from him on the subject)",
+        "no campaign site found (not seeking re-election); own-words search found nothing"
+      ],
+      "found": 2,
+      "at": "2026-10-27T20:35:55.877Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

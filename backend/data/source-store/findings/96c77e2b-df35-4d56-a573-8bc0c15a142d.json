@@ -72,8 +72,55 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "c0143d6fb333fb52c10f2374bc7be0327971871d93b34243e969912880412ff3",
+      "kind": "own-words",
+      "url": "https://sherman.house.gov/media-center/press-releases/sherman-colleagues-to-introduce-the-john-r-lewis-voting-rights",
+      "date": "2023-09-20",
+      "date_precision": "day",
+      "passage": "In the decade since the Supreme Court gutted the VRA, state legislators have advanced hundreds of new restrictive, discriminatory voting laws targeting minorities, young adults, andthe elderly. Among other restrictions, these laws have closed polling stations, curbed early voting and voting by mail, imposed strict identification requirements, limited multi-lingual voting materials, and made it harder to register to vote.",
+      "note": "Paragraph of his office's press release on introducing H.R. 14. It lists strict identification requirements among state voting laws it describes as restrictive. The release also carries a quoted statement from him on the bill that does not mention ID. The paragraph is release text, not a marked quote from him; the typo 'andthe' is as on the page.",
+      "subjects": [
+        "strict ID requirements as a voting barrier",
+        "voting rights legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:54.510Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e64d637d37644c9d46b2be74812a88932593b810467e0053a859bf87e5e8f44",
+      "kind": "record",
+      "url": "https://sherman.house.gov/media-center/press-releases/sherman-colleagues-to-introduce-the-john-r-lewis-voting-rights",
+      "date": "2023-09-19",
+      "date_precision": "day",
+      "instrument_id": "US-HR-14-2023",
+      "act": "sponsor",
+      "note": "His release says he joined House members in introducing H.R. 14, the John R. Lewis Voting Rights Advancement Act, which would restore Voting Rights Act preclearance protections. The release does not say whether he is an original cosponsor or sponsor; act marked sponsor as joining the introduction. Bill text itself not fetched.",
+      "subjects": [
+        "voting rights legislation",
+        "strict ID requirements as a voting barrier"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:54.510Z",
         "method": "webfetch"
       }
     }
@@ -104,6 +151,33 @@
       "found": 0,
       "at": "2026-10-22T22:08:01.086Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "strict identification laws as a voting barrier",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official site https://sherman.house.gov/ and press release list (confirms him as CA-32 member, releases dated to 2026-10-15)",
+        "official site search page: blocked: https://sherman.house.gov/search?s=voter+ID (403)",
+        "two press releases on his site on voting rights and the electoral process (one saved)",
+        "Congressional Record pages for 2024-07-10 and 2026-02-11 floor days: no remarks by him found",
+        "Congress.gov member page: blocked: https://www.congress.gov/member/brad-sherman/S000344 (403)",
+        "Ballotpedia: page fetched was a name disambiguation page only; not reviewed further",
+        "three news searches on name plus SAVE Act, voter ID, non-citizen voting: no statement by him found",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:30:54.510Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

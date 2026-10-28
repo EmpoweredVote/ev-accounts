@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     }
   ],
@@ -106,6 +110,32 @@
       "found": 0,
       "at": "2026-10-22T22:00:07.203Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "no-ID voters and provisional ballots",
+        "voter-roll checks and non-citizen voting",
+        "federal voting-rights bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned no appearances)",
+        "Ballotpedia (https://ballotpedia.org/Debbie_Dingell: Michigan District 6 member, on the 2026 general-election ballot; confirms scope)",
+        "official House site (https://dingell.house.gov/media/press-releases list: nothing on the subject; site search blocked: https://dingell.house.gov/search?keys=voter+ID returned HTTP 403)",
+        "Congressional Record page for 2024-07-10 (https://www.govinfo.gov/content/pkg/CREC-2024-07-10/html/CREC-2024-07-10-pt1-PgH4556.htm: page does not name her)",
+        "congress.gov bill pages surfaced by search (not fetched as sources for her; votes already on file)",
+        "web search on her name with SAVE Act, voter ID and proof of citizenship words (no statement of her own found)",
+        "web search limited to official and congressional domains (no statement of her own found)",
+        "web search on her name with voting-rights bill cosponsorships (nothing naming her)",
+        "not reviewed: floor-speech or interview video, none located"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:31:09.673Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

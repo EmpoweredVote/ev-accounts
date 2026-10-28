@@ -29,6 +29,35 @@
       "found": 0,
       "at": "2026-10-22T22:48:15.993Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract script run)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/kyle-pierce/ (confirms State Representative, House District 36; full press-release list 2022-2026 reviewed; nothing on the subject; lists seat on Elections and Apportionment committee and a campaign-finance bill only)",
+        "Indiana House caucus press release: 2026 session wrap-up, nothing on the subject",
+        "Wikipedia 2026 Indiana House election page (lead only): shows him as the incumbent in the District 36 2026 race with a single declared primary candidate; in scope",
+        "Ballotpedia: fetched, page returned no usable text on his positions",
+        "one news search on name plus subject words: nothing on the subject",
+        "one search for 2024 and 2026 Indiana election bills: only general coverage of HB 1264 (2024) with no mention of Pierce",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_kyle_pierce_1130 (page loads only as an empty app shell)",
+        "blocked: https://api.iga.in.gov/2024/bills/hb1264 (403, needs API key), so roll-call votes were not read",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (403)",
+        "blocked: https://indianacapitalchronicle.com/?p=9173 (403 on fetch and curl)",
+        "not reviewed: https://www.larryinfishers.com/2024/07/16/podcast-state-representative-kyle-pierce/ (audio podcast, no transcript)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:09.248Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -24,6 +24,29 @@
       "found": 0,
       "at": "2026-10-22T23:15:09.691Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope check: https://www.ballotready.org/people/estela-a-reyes lists her as a candidate for MA House 4th Essex District in the 2026 general election; nothing on the subject",
+        "On the Record (0 appearances; extract-otr run with name search, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Estela_Reyes (fetch returned no page text; curl retry was denied by the permission system)",
+        "blocked: https://malegislature.gov/Legislators/Profile/ECR1 (fetch timed out)",
+        "blocked: https://malegislature.gov/Legislators/Profile/ECR1/Sponsored (fetch timed out)",
+        "web search: name plus voter ID / proof of citizenship / election integrity / mail ballot; nothing on the subject",
+        "not reviewed: official site and campaign site (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.064Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

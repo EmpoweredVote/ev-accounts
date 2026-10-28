@@ -118,6 +118,27 @@
       "found": 4,
       "at": "2026-10-22T21:47:47.448Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "positive control: https://www.fox10phoenix.com/election/2026-arizona-general-election-voter-guide-what-know-about-when-vote-how-register-races lists him as a write-in candidate for U.S. House District 1 on the 2026 general ballot",
+        "two news searches on his name (no campaign site, news story, forum answer or social post found)",
+        "Ballotpedia (empty page returned, nothing usable)",
+        "blocked: https://azsos.gov/sites/default/files/docs/2026-Primary-Write-In-and-Withdrawn-Candidate-List-0602.pdf (returned an HTML page, not a readable PDF)",
+        "no legislature record (not a legislator); nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:11:02.890Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

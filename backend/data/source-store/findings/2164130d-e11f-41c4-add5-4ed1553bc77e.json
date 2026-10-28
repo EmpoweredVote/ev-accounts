@@ -18,6 +18,26 @@
       "found": 0,
       "at": "2026-10-22T21:32:05.477Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; page https://en.wikipedia.org/wiki/Linda_McMahon shows Linda McMahon is U.S. Secretary of Education (executive branch, confirmed 2025-03-03), so no bill or vote record exists",
+        "On the Record (0 appearances)",
+        "one web search on name plus voter ID / SAVE Act: nothing by her on the subject",
+        "blocked: https://ballotpedia.org/Linda_McMahon (fetch returned no usable page text)",
+        "not reviewed: congress.gov (not a member of Congress)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:09:23.313Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

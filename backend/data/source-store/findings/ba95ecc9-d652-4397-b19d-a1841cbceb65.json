@@ -119,6 +119,77 @@
         "fetched_at": "2026-10-23T00:07:20.440Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0c0a7367b8f51734eec09a20070a37690bdd641ce313dddb764c88edbdd3c863",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Voted aye on second reading of HB 958, Election Law Changes, per his member votes page. The bill text (Edition 6, https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v6.html) includes a section deeming certain extended Class C drivers licenses valid and unexpired for photo ID used in voting, a section on voter registration applications indicating lack of citizenship, and a change to voting when drivers license or Social Security numbers do not match.",
+      "subjects": [
+        "photo ID validity for voting",
+        "proof of citizenship to register",
+        "voter registration changes",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae85e6f754eda3bd933d93558ffe3bd1744ee95da7b817e6cee299b4b7747bd1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, House concurrence in Senate committee substitute",
+      "note": "Voted aye on the House concurrence vote on HB 958 (the bill page shows the concurrence passed 62-47 and the bill was later vetoed by the Governor on 2026-08-17).",
+      "subjects": [
+        "election law changes in general",
+        "photo ID validity for voting",
+        "voter registration changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80d8051ea8f6f4dd902788e453189d0e35497a8ee2896a3c7b265eb781ad765d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Amendment 3 (Dahle)",
+      "note": "Voted no on Amendment 3 to HB 958; the bill page shows it failed 47-66. The amendment's content was not read.",
+      "subjects": [
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -150,6 +221,31 @@
       "found": 5,
       "at": "2026-10-23T00:07:20.440Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID validity for voting",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "voter registration changes",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms on the 2026 general-election ballot, District 73)",
+        "NC House member page house.ncleg.gov",
+        "ncleg.gov member votes page (first 100000 characters read; the rest not read)",
+        "ncleg.gov bill page and bill text for HB 958",
+        "one news search on name plus voter ID (nothing tying him to a voter ID statement)",
+        "nothing on the subject: no campaign-site or own-words statement located",
+        "blocked: https://ncnewsline.com/2026/06/25/house-set-to-vote-on-sweeping-election-bill-despite-opposition-to-overseas-voter-restrictions/ (403)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:57:18.927Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

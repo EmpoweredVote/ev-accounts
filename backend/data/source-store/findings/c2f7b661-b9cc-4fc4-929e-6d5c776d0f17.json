@@ -1,6 +1,57 @@
 {
   "politician_id": "c2f7b661-b9cc-4fc4-929e-6d5c776d0f17",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "f41aa59ddded6ab1bb8df0dfc4a7d896b48fd0ffb8cc92720a717365f9a857b6",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/lindauer-indiana-voters-can-now-request-absentee-ballots-online/",
+      "date": "2020-05-11",
+      "date_precision": "day",
+      "passage": "\"It's critical that our primary election process moves forward safely and efficiently despite the pandemic,\" Lindauer said.",
+      "note": "Caucus release on the online application for a mail-in absentee ballot during the 2020 primary. No ID or citizenship requirement is mentioned; saved as related mail-ballot access material.",
+      "subjects": [
+        "mail-ballot application access (no ID mentioned)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:09.441Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +77,28 @@
       "found": 0,
       "at": "2026-10-22T22:51:02.566Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not running for re-election in 2026; still the sitting District 63 member until 2026-11-04 (Ballotpedia, and the caucus page on his retirement honors)",
+        "On the Record (0 appearances)",
+        "Ballotpedia",
+        "the Indiana House caucus member page and press-release list (https://www.indianahouserepublicans.com/members/general/rep.-shane-lindauer/)",
+        "three news searches on his name plus the subject words (nothing naming him on ID or citizenship)",
+        "no campaign site found; Indiana roll calls not searched, already on file"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:29:09.441Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

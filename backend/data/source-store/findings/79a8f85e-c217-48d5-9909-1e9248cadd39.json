@@ -122,6 +122,164 @@
         "fetched_at": "2026-10-22T23:53:53.547Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "8b1818a09997339184bba393cd6911a6350de94aa7dc3171f4b4fe984fc61e04",
+      "kind": "own-words",
+      "url": "https://www.wral.com/story/19181945/",
+      "date": "2020-07-09",
+      "date_precision": "day",
+      "passage": "\"That was the poison pill when they put that in,\" Rep. Marcia Morey, D-Durham, said Thursday.",
+      "note": "WRAL quotes her on the public-assistance ID language added in House Bill 1169 (2020): she says it was a poison pill and that lawmakers had backed off the bill for that reason.",
+      "subjects": [
+        "photo ID at the polls",
+        "public assistance IDs as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff1e4b205d729aeac77ab3113278fc4d5c74c04f24e78557380358b3e100d597",
+      "kind": "own-words",
+      "url": "https://www.wral.com/story/19181945/",
+      "date": "2020-07-09",
+      "date_precision": "day",
+      "passage": "\"We looked into it, and we looked into Social Security cards, Medicaid, food stamps ... none of the cards have a photo,\" she said. \"I think the whole issue is a fallacy.\"",
+      "note": "WRAL quotes her saying public-assistance cards do not carry a photo, so they would not satisfy the photo-ID rule.",
+      "subjects": [
+        "photo ID at the polls",
+        "public assistance IDs as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37fc5d321e1bdf6401427f0573c5ac31d483a8f36a2a83b6b3c7fabd9f5237c2",
+      "kind": "own-words",
+      "url": "https://wsoctv.com/news/local/nc-representative-wants-codify-challenged-election-rule-military-overseas-voters/WQT6R3GTZZEABN7PGD3EFADIIM",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "passage": "“They don’t have time to go looking for a photocopier if they’re out in the field, but they follow what has been explained to them, send in your ballot, send in your registration, and after the fact, retroactively. Now to be challenged after this is the method they’ve been using, I think is totally wrong,” Morey explained.",
+      "note": "WSOC quotes her on her bill to excuse military and overseas voters from sending a photocopy of ID with a ballot, and on challenges to ballots cast under that rule.",
+      "subjects": [
+        "ID with mail or overseas ballots",
+        "photocopy of ID for military and overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f808c8be3bfaf8e7481e39605c65ae163d61a3465238ed2606526f2ed64eda61",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-H-278-2025",
+      "act": "sponsor",
+      "note": "House Bill 278, 'Protect Military Votes.' She is listed first among the sponsors. Per the WSOC report it says military and overseas voters need not include a photocopy of ID with a ballot. The page shows it was referred to the House Rules committee on 2025-03-05.",
+      "subjects": [
+        "ID with mail or overseas ballots",
+        "photocopy of ID for military and overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3927ac9b508578b511318c936f4e6db82fe86a2997fac7c2dbce99eef4d5db91",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/H1115",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1115-2018",
+      "act": "sponsor",
+      "note": "House Bill 1115 (2017-2018 session): she is one of four listed primary sponsors. The page's subject tags include voter registration, ID systems, DMV, drivers licenses and elections. It was referred to the House Rules committee on 2018-12-04. The page does not give a short title.",
+      "subjects": [
+        "voter registration bills",
+        "ID systems and drivers licenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e3e2fd222b9e2b61f769519ce4daa0e217a97d8766884c6d5e0ba57e288b6a6",
+      "kind": "record",
+      "url": "https://www.wfdd.org/story/democratic-lawmakers-say-voter-id-law-was-rushed",
+      "date": "2024-05-09",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Testimony in federal court on the 2018 voter ID law",
+      "note": "WFDD reports she testified in federal court that the 2018 voter ID law was rushed and had little bipartisan support, that she saw student primary voters turned away when using digital college IDs, and that she worries about the effect in November. This is the reporter's account, not her exact words.",
+      "subjects": [
+        "photo ID at the polls",
+        "voters turned away without accepted ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:40:43.198Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -151,6 +309,32 @@
       "found": 3,
       "at": "2026-10-22T23:53:53.547Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID at the polls",
+        "ID with mail or overseas ballots",
+        "public assistance IDs as voter ID",
+        "voter registration expansion bills",
+        "what happens to a voter with no ID"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script, by id and by name)",
+        "Ballotpedia https://ballotpedia.org/Marcia_Morey (confirms sitting District 30 member, on the 2026-11-03 general ballot; the 2026-03-03 primary was cancelled; nothing on the subject)",
+        "official legislature profile https://www.ncleg.gov/Members/Biography/H/732 (confirms office; no statements on the subject)",
+        "legislature bill pages https://www.ncleg.gov/BillLookUp/2025/H278 and https://www.ncleg.gov/BillLookUp/2017/H1115 (sponsorships saved)",
+        "blocked: https://chapelboro.com/news/state-government/local-house-rep-introduces-bill-to-expand-voter-registration-in-north-carolina (403 to curl; a 2018 report of her quotes on a voter registration bill, not read)",
+        "news: WRAL 2020-07-09, WSOC 2025-03-04, WFDD 2024-05-09 read and saved; Carolina Journal 2018-12-06 and ABC11 2018-12-05 reports of the House voter ID debate read, no Morey words in them; WUNC 2018-12-04 read, no Morey words in it",
+        "NC Newsline https://ncnewsline.com/?p=193063 read: no Morey words in it",
+        "campaign site: not reviewed, none found; ontheissues.org and Wikipedia: not used (lead only)",
+        "NC House floor debate video 2018-12-05: not reviewed, no transcript reached",
+        "roll calls not searched (two already on file)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T20:40:43.198Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

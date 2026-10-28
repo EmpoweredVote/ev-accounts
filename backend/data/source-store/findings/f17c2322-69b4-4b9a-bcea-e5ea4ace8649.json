@@ -94,6 +94,35 @@
         "fetched_at": "2026-10-23T00:16:41.200Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -123,6 +152,28 @@
       "found": 4,
       "at": "2026-10-23T00:16:41.200Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "ncleg.gov member profile https://www.ncleg.gov/Members/Biography/H/778 (House District 19, Brunswick and New Hanover, 2025-2026 session)",
+        "Branch voter guide 2026 page (2026 House District 19 candidate; his site has nothing on voting and elections)",
+        "blocked: https://ballotpedia.org/Charlie_Miller_(North_Carolina_politician) (not retrieved; Ballotpedia bot-check)",
+        "web search on name plus voter ID and citizenship (no statement or sponsorship on the subject; only unrelated local bills)",
+        "no campaign site with issue statements found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:20:07.767Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -5,20 +5,21 @@
       "id": "e83306c27095aede3152a0c887d797869c2dc12a24788df3921bc05c5245d920",
       "kind": "own-words",
       "url": "https://ivoterguide.com/candidate/77972/race/31349/election/1464",
-      "date": "2026-10-20",
-      "date_precision": "month",
+      "date": "2026",
+      "date_precision": "year",
       "passage": "People should be able to vote without photo identification. Disagree",
-      "note": "iVoterGuide candidate profile, Elections and Voting section: the statement 'People should be able to vote without photo identification.' is answered 'Disagree' with no explanation. Date is the page version date, not the answer date.",
+      "note": "Candidate questionnaire on iVoterGuide, section Elections and Voting: the statement is 'People should be able to vote without photo identification' and her recorded answer is 'Disagree', with no explanation. Page carries no date; year of the 2026 cycle used.",
       "subjects": [
         "voter ID at the polls",
-        "photo ID"
+        "photo ID",
+        "photo ID to vote"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:38:18.308Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:53.811Z",
         "method": "webfetch"
       }
     },
@@ -92,6 +93,31 @@
       "found": 3,
       "at": "2026-10-22T21:38:18.308Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site devasimmonsforcongress.com (home, issues, meet-deva pages: nothing on the subject)",
+        "Ballotpedia: https://ballotpedia.org/Deva_Simmons (fetch returned empty page; not reviewed)",
+        "The Ballot Brief candidate page (confirms 2026 general ballot, FL-18; nothing on the subject)",
+        "Tampa Bay 28 candidate questionnaire (nothing on the subject)",
+        "iVoterGuide candidate page (one questionnaire answer on photo ID)",
+        "one news search on name plus subject words (nothing from her)",
+        "Congress.gov: not applicable, not a legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:33:53.811Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

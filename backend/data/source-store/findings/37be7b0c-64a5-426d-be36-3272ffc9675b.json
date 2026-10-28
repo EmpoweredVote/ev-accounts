@@ -1,0 +1,78 @@
+{
+  "politician_id": "37be7b0c-64a5-426d-be36-3272ffc9675b",
+  "findings": [
+    {
+      "id": "a48e0737ca6e0b6b2f223ca9a2d8ed207660240a87e295c7a137193eaf4be56f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "other",
+      "motion": "House adoption of SJR 37 (constitutional amendment clarifying that a voter must be a U.S. citizen), Record 2196: marked absent, no vote cast",
+      "note": "The House journal (day 62, page 4129) lists her in the absent group (no vote cast). on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. ",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:50.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96a9dd9276203b2fc2cb7ea633c69f6e280f76a5744ada942e7496a1164023c4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "other",
+      "motion": "House passage of SJR 37 to third reading, Record 1897: marked absent, no vote cast",
+      "note": "The House journal (day 60, page 3737) lists her in the absent group (no vote cast). on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. ",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:50.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (https://ballotpedia.org/Aicha_Davis): confirms she is the District 109 state representative, in office since 2025, and on the 2026 general-election ballot; she has not completed the 2026 candidate survey",
+        "Texas House member page for District 109: nothing on the subject",
+        "Texas Legislature Online bills-authored report for the 89th regular session (member code A4465): 58 bills authored or joint authored, none on voter ID, registration or citizenship (one on phones at polling places, not the subject)",
+        "House journals day 60 and day 62 (journals.house.texas.gov PDFs): she was absent on both SJR 37 votes",
+        "campaign site aichadavis.com: nothing retrievable",
+        "one news search on her name plus the subject words: no statement from her on the subject",
+        "not reviewed: House committee and floor video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:02:50.413Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

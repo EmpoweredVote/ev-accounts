@@ -138,6 +138,29 @@
       "found": 5,
       "at": "2026-10-22T22:12:38.363Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks",
+        "mail or absentee ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot for U.S. Senate in Michigan; survey answers not readable in the fetched page; nothing on the subject)",
+        "campaign site https://lydialynnchristensen.com (fetched, page text is empty without scripts; not reviewed)",
+        "Branch voter-guide page https://www.branch.vote/races/2026-michigan-general-election-mi-state-u.s.-senator-mi-state/candidates/lydia-christensen (fetched; third-party summary of her positions on the SAVE America Act and a Justice Department voter-roll lawsuit, not her own words, so not saved as a finding)",
+        "The Ballot Brief page (fetched, nothing on the subject)",
+        "congress.gov: not applicable, she holds no congressional office",
+        "news search on name plus subject words: no quotes of her found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:07:06.397Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

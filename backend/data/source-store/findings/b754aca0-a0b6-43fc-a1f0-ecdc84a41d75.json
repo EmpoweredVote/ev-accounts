@@ -1,0 +1,29 @@
+{
+  "politician_id": "b754aca0-a0b6-43fc-a1f0-ecdc84a41d75",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voters with no ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Virginia General Assembly bill pages / LIS: not reviewed, lis.virginia.gov known to block",
+        "blocked: legiscan.com and legiplex (known to block, not retried)",
+        "web searches on name plus voter ID, photo ID, SAVE Act: no own words found",
+        "campaign sites martymartinez.com and others: nothing usable",
+        "Ballotpedia https://ballotpedia.org/Marty_Martinez_(Virginia): nothing on the subject",
+        "iVoterGuide 2023 profile https://ivoterguide.com/candidate/76537/race/18956/election/1054: voter ID question marked did not answer"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:03.104Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

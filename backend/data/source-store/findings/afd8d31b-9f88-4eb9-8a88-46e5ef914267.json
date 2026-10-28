@@ -69,6 +69,31 @@
       "found": 2,
       "at": "2026-10-22T21:51:04.876Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act / SAVE America Act",
+        "documentary proof of citizenship to register",
+        "photo ID to vote",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "news report (Fox News) confirming he won the 2026 nomination for the Rhode Island Senate seat",
+        "web searches: name plus SAVE Act, voter ID, proof of citizenship, Senate roll call",
+        "blocked: https://www.reed.senate.gov/news/speeches/reed-delivers-speech-opposing-anti-voter-save-act (403 by fetch tool and by one browser-style curl; a search summary says it is a floor speech against the SAVE Act, so own words exist but could not be copied)",
+        "capitolreleases.com copy of his 2026-03-17 press release on the SAVE America Act: the fetch tool only returned a summary, so no passage copied; not reviewed as verbatim text",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.xml (403); his individual roll-call vote on the Senate SAVE America Act motion could not be confirmed",
+        "blocked: https://ballotpedia.org/Jack_Reed_(Rhode_Island) (fetch returned empty page)",
+        "blocked: https://rhodeislandcurrent.com/?p=33390 (403)",
+        "Congressional Record 2026-03-19 page: first 100,000 characters read, no remarks by him seen; rest not read"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:51:35.584Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

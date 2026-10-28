@@ -23,6 +23,30 @@
       "found": 0,
       "at": "2026-10-22T23:20:57.210Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to register",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Hannah_Bowen shows her as Massachusetts House, 6th Essex District, on the 2026-11-03 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "campaign site https://hannahbowen.com/: home page lists news items (special election, a forum); nothing on the subject",
+        "legislature profile https://malegislature.gov/Legislators/Profile/HLB1/194: her sponsored bills are H.4568 (family self-sufficiency program) and H.5248 (Beverly police chief); no election or voting bill",
+        "Ballotpedia: nothing on the subject",
+        "one web search on her name with voting and election words: nothing on the subject",
+        "not reviewed: her co-sponsorships and House roll-call votes on election bills (the cosponsor page lists no readable entries)",
+        "not reviewed: https://www.instagram.com/bowenforrep/ and her other social media"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:12:53.203Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

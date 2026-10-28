@@ -1,6 +1,60 @@
 {
   "politician_id": "1e3c9273-2989-4511-9763-a431394792de",
-  "findings": [],
+  "findings": [
+    {
+      "id": "088c19c499bffd9e4253bdad9c543e4bbc3526bb4485ad65d19c52e93016de68",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/in/2024/bills/INB00012794",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1265-2024",
+      "act": "yea",
+      "motion": "HB 1265 (various elections matters), House third reading, Roll Call 90 (94 yeas, 0 nays). She is in the yea list. She was also in the yea list for the House vote adopting Conference Committee Report 1 on 2024-03-07, Roll Call 322 (94-0).",
+      "note": "General election-law bill (became Public Law 153). The enrolled text includes updating a voter's registration record with the voter identification number from poll lists and affidavits, and a rule that only US citizens may be in the polls. It is not mainly a voter ID or citizenship bill. Saved as a related election-law vote.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID number in registration records"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:11:52.554Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +81,34 @@
       "found": 0,
       "at": "2026-10-22T22:19:54.957Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "Ballotpedia (confirms sitting House District 31 member, advanced from the 2026 primary, on the 2026 general-election ballot; no survey answers or issue positions)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/lori-goss-reaves/ (nothing on the subject)",
+        "no campaign site found (searched)",
+        "blocked: https://iga.in.gov/legislative/2024/bills/house/1264/details (page loads only a script shell; API needs a key)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (bot check)",
+        "not reviewed: her roll call on 2024 HB 1264 (election security, citizenship checks, first-time voter ID) and 2025 HB 1680 (proof of citizenship for temporary-credential registrants): no member-level roll call page was reachable",
+        "BillTrack50 scorecard https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/29118 (no voter ID, citizenship or mail-ballot bills listed)",
+        "FastDemocracy pages for 2024 HB 1265 (reviewed) and 2025 HB 1689 (not on subject)",
+        "news searches on her name plus voter ID, election security, mail ballot, citizenship (no statements by her found)",
+        "not reviewed: indianacapitalchronicle.com 2026 article (403 forbidden)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:11:52.554Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

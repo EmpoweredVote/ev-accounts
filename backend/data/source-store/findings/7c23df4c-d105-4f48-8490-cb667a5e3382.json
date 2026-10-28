@@ -1,0 +1,77 @@
+{
+  "politician_id": "7c23df4c-d105-4f48-8490-cb667a5e3382",
+  "findings": [
+    {
+      "id": "7b3182cae531a225532e9bef60852db86c553c5bfd9bad5d6863ba52f785f1ad",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Min Senate Third Reading (Assembly floor, passed 57 to 16)",
+      "note": "Voted yes on SB 1174, which bars local governments from requiring voter ID for voting. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:31.586Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd9579b07fac4fcfa44d4e3c171ad9e9e3fff4b18f3f409476407b2b97162c9d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Berman Assembly Third Reading (Assembly floor, passed 60 to 18)",
+      "note": "Voted yes on AB 1116, which lets a person register online without a California driver's license or state ID by giving the last four digits of a Social Security number plus a signature image. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:31.586Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "ID to register to vote",
+        "ID for mail ballots"
+      ],
+      "places": [
+        "Confirmed in office (Assembly District 10) and on the 2026 general-election ballot via Ballotpedia",
+        "On the Record (0 meetings)",
+        "Official site a10.asmdc.org: home, press release list pages 1-2, site search for voter, election, identification, citizenship, ballot returned no results",
+        "Campaign site stephanienguyenforassembly.com (home and meet pages): nothing on the subject",
+        "Ballotpedia: nothing on the subject beyond the profile",
+        "Bill votes read from the Internet Archive copy of the leginfo vote pages for SB 1174, AB 1116 and AB 25 (live leginfo is behind a bot check); this person is not on the AB 25 committee",
+        "blocked: https://calmatters.digitaldemocracy.org bill pages (404 site not found)",
+        "one news search on name plus voter ID, election integrity, SB 1174, proof of citizenship: no own-words statement found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:08:31.586Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

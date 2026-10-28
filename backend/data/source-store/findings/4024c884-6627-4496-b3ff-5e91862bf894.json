@@ -25,6 +25,48 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "eeaa3bf29116f57816cd5004c67d50eaa589ddb081db799b44ab2ab9251bf8f7",
+      "kind": "own-words",
+      "url": "https://jeffreyroy.com/2024/10/17/franklin-observer-online-debate-question-5-voter-id/",
+      "date": "2024-10-17",
+      "date_precision": "day",
+      "passage": "Against this backdrop, I would support voter ID laws that are not designed to suppress the right to vote and if the IDs are easily available and issued free of charge.",
+      "note": "Answer to a Franklin Observer online debate question on voter ID, posted on his campaign site.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:49:11.484Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3a934bfa3da0cda94688cc9aceb06d08124cd0e3171ab153079775b437373ed",
+      "kind": "own-words",
+      "url": "https://jeffreyroy.com/2024/10/17/franklin-observer-online-debate-question-5-voter-id/",
+      "date": "2024-10-17",
+      "date_precision": "day",
+      "passage": "I believe that the current Massachusetts law is adequate and see no basis for making further changes. If presented with evidence of voter fraud, however, I would push for changes.",
+      "note": "Closing of the same debate answer, after listing the ID that Massachusetts already may ask for at check-in.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:49:11.484Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -52,6 +94,27 @@
       "found": 0,
       "at": "2026-10-22T23:07:20.011Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site (jeffreyroy.com, debate answer found)",
+        "legislature profile and sponsored-bills page (nothing on the subject; H.867 is on party-committee campaign contributions)",
+        "BallotReady (confirms 2026 candidacy for 10th Norfolk)",
+        "not reviewed: https://ballotpedia.org/Jeffrey_N._Roy",
+        "news search on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:49:11.484Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -127,6 +127,36 @@
         "fetched_at": "2026-10-22T22:20:15.355Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
     }
   ],
   "searches": [
@@ -155,6 +185,31 @@
       "found": 6,
       "at": "2026-10-22T22:20:15.355Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Gary_Byrne (confirms Indiana State Senate District 47 incumbent, 2026 primary winner, on the 2026-11-03 ballot; nothing on the subject)",
+        "official Senate caucus site https://www.indianasenaterepublicans.com/byrne (news list reviewed, nothing on the subject)",
+        "campaign site: no separate site found",
+        "bill sponsorships: web search found his early-voting bill SB 284 (early voting length, not ID) and no ID or citizenship bill under his name; nothing on the subject",
+        "news search on name plus voter ID, proof of citizenship, election integrity: nothing on the subject",
+        "blocked: https://indianacapitalchronicle.com/2025/02/03/measure-halving-early-voting-period-heads-to-senate-floor/ (bot challenge)",
+        "blocked: https://www.wboi.org/2025-02-03/early-in-person-voting-days-cut-in-half-by-indiana-republican-led-bill (bot challenge)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:32:29.707Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -25,6 +25,28 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "c07bf8e618c0054c09f20a0b730ee03df202e6670fb477ed845a83ae57619d89",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/HouseRollCall132.pdf",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-8-2022",
+      "act": "nay",
+      "motion": "H.4359 On adoption of amendment #8, House Yea and Nay No. 132 (32 yeas, 126 nays)",
+      "note": "Haggerty is recorded N. A Beacon Hill Roll Call article (https://gazettenet.com/2022/02/03/beacon-hill-roll-call-jan-24-to-jan-28-2022-44905014/) says the House that day rejected, 32 to 126, an amendment requiring a federal or Massachusetts picture ID at the polls with a fee waiver. Two roll calls that day (No. 132 on amendment 8, and No. 139 on amendment 7, already on file) have that same 32-126 tally, and I could not confirm from the pages which amendment holds the ID text, so this match to the ID amendment is not confirmed.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:46:02.969Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +71,27 @@
       "found": 0,
       "at": "2026-10-22T23:03:35.539Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID with mail or absentee ballot",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia: confirms he is Massachusetts House 30th Middlesex incumbent on the Nov 3, 2026 ballot; nothing on the subject",
+        "Massachusetts legislature member profile RMH1 (his election bills H.836 and H.837 are about ballot access for school-district votes and ballot design, nothing on ID or citizenship)",
+        "Massachusetts House roll-call PDFs 132 and 139 for H.4359 (Jan 27, 2022)",
+        "one news search on his name plus subject words: nothing in his own words",
+        "campaign site: not reviewed, none located"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:46:02.969Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

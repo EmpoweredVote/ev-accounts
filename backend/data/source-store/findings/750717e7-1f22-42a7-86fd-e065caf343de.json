@@ -87,6 +87,73 @@
         "fetched_at": "2026-10-22T22:10:14.366Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a1a29c543c9857835a33991bc54ad9b4415da70bbb9feaaf8b3c048b50dd80d2",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "The House of Representatives passing the SAVE [America] Act by a very narrow margin is going to cost America,\" said Sen. Cantwell. \"It will cost Washingtonians time and money, and it may even cost them their vote. That is why we are trying to say the Senate should not pass the SAVE [America] Act.",
+      "note": "Says the Senate should not pass the SAVE America Act, at a Seattle event on 2026-02-19. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b05f136fa9b845129c36ab707e08f8ec30d527de1e4a774201dc8acc46bb593",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "This bill would ... force every voter who needs to register or change their registration to go in person to an election office and show a birth certificate or a passport or proof of citizenship,\" said Sen. Cantwell. \"Why are we putting these burdens on Washington voters? About 40% of Washingtonians don't have a passport.",
+      "note": "Describes the bill's document requirement to register and objects to its burden, citing passport ownership in Washington. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents needed to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42132d77394c42eef91385eb3781a78e2f27584bdd31cd87e4376e3fd4b453fd",
+      "kind": "record",
+      "url": "https://www.congress.gov/119/crec/2026/03/17/172/48/CREC-2026-03-17.pdf",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Rollcall Vote No. 57: motion to proceed, Safeguard American Voter Eligibility Act (House message to accompany S. 1383)",
+      "note": "Congressional Record shows Cantwell among the 48 nays on the Senate motion to proceed to the SAVE America Act (S. 1383 House message); the motion carried 51-48. Page text: 'The result was announced--yeas 51, nays 48.' The SAVE America Act is described in her press release as requiring a passport or birth certificate to register.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID at the polls",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -114,6 +181,33 @@
       "found": 4,
       "at": "2026-10-22T22:10:14.366Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "ID with mail ballot",
+        "vote-by-mail",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed identity: Congressional Record page names Sen. Cantwell in the 2026-03-17 roll call; sitting Senator for Washington, not on the 2026 ballot (term runs to 2030)",
+        "On the Record (0 appearances)",
+        "Congressional Record 2026-03-17 (congress.gov) roll call 57",
+        "Congressional Record 2026-03-17 roll call 56 and 2026-03-20 roll call 59 reviewed: not SAVE America Act motions (a nomination and an appropriations bill), not saved",
+        "capitolreleases.com repost of 2026-02-20 office press release",
+        "blocked: https://www.cantwell.senate.gov (Access Denied on press releases and transcripts, including the 2026-03-17 and 2026-02-24 and 2026-02-19 transcripts)",
+        "blocked: https://www.senate.gov roll call pages (unauthorized)",
+        "blocked: https://www.govtrack.us and https://justfacts.votesmart.org (403)",
+        "not reviewed: Ballotpedia and the 2026-06 and 2026-08 office statements on vote-by-mail and the court ruling"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:04:27.548Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

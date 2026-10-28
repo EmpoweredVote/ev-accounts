@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,147 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "b16a5b0d18b9b7213804115f582097ece79020706e502924cd8db5965fc7ee11",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "sponsor",
+      "motion": "House sponsor of SJR 37",
+      "note": "Cortez is listed with Noble, Shaheen, Hunter and Muñoz as a House sponsor of SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The House journal for the final vote names him as a House sponsor. The date he was added is not on the page.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0307ef728b6235d39c357b576ec199721bdfba5fc6f481b383ca1bfb67f27aaa",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY60FINAL.PDF",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Passed to third reading, Record 1897 (98 yeas, 18 nays, 20 present not voting)",
+      "note": "House vote on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. Journal of the House, 60th day.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f9b4bb9b1c40acb6996befddd1b8f47ea3df96206cd135f3a9da50677ab14b0",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "other",
+      "motion": "Marked absent on adoption, Record 2196 (102 yeas, 14 nays, 22 present not voting)",
+      "note": "On the final House vote on SJR 37 he is listed as absent, not as yea or nay. Journal of the House, 62nd day. This is an absence, not a stated position.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1bd008442e75f5a671e093ce5e5882b30962dde55c9028d17f6da9ee6552ae3",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "author",
+      "motion": "author sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as author of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.532Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizenship as a voter qualification",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia page https://ballotpedia.org/Philip_Cortez (confirms sitting Texas House District 117 member on the 2026 general-election ballot)",
+        "Texas House member page https://house.texas.gov/members/member-page?district=117 (no issue statements)",
+        "campaign site https://www.philipcortez.com/ and its issues page (almost no readable text; nothing on the subject)",
+        "Texas Legislature Online bill histories for SJR 37 and HB 5337 (89R); he is not on the HB 5337 list",
+        "Texas House Journal 2025-05-09 and 2025-05-12 (SJR 37 roll calls)",
+        "two web searches on his name plus subject words (no own words found)",
+        "nothing on the subject in his own words"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:30:11.515Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.532Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

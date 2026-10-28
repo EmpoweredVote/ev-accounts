@@ -26,6 +26,26 @@
       "found": 0,
       "at": "2026-10-22T21:32:40.801Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "https://ballotpedia.org/William_Perry_(Arizona) (shows him as a write-in candidate for U.S. House Arizona District 9 in the 2026-11-03 general election; his 2026 survey answers cover the VA, food and rental help, term limits and the electoral college; nothing on the subject)",
+        "https://www.fox10phoenix.com/news/2026-election-arizona-congressional-district-9-explained-what-know-about-western-az-race (candidate explainer; nothing on the subject)",
+        "no campaign site found; no legislative record (never held office)",
+        "web search on his name with the district: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:59:44.846Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

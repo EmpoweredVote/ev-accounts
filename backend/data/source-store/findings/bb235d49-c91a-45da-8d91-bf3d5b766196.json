@@ -49,6 +49,28 @@
       "found": 0,
       "at": "2026-10-22T23:21:21.123Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID or no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and voting laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site kathylanatra.com (nothing on the subject on the home page; the /vote page was not read)",
+        "Ballotpedia Kathleen_LaNatra (confirms she advanced from the primary and is on the 2026 general-election ballot, 12th Plymouth)",
+        "malegislature.gov legislator profile and bill lists for the 191st to 194th sessions (only a local bill on recall of town officials in Pembroke; nothing on ID or citizenship)",
+        "two news searches on name plus voting and election terms (nothing on the subject)",
+        "nothing on the subject: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:00:08.339Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

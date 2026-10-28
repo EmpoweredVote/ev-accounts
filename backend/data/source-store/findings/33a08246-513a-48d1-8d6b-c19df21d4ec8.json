@@ -28,6 +28,29 @@
       "found": 0,
       "at": "2026-10-22T22:09:58.290Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Kailee_Buller (confirms candidate for NY-22, on the 2026 general-election ballot)",
+        "campaign site https://kaileebuller.com/ (issue sections and voting logistics only; nothing on the subject)",
+        "news https://cnycentral.com/news/local/republican-candidate-kailee-buller-ready-to-take-on-democrat-john-mannion-this-november (nothing on the subject)",
+        "web news search (nothing naming her on the subject)",
+        "not applicable: no legislative record (candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:35.657Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

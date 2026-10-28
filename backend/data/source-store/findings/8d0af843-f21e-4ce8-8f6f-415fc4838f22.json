@@ -174,6 +174,125 @@
         "fetched_at": "2026-10-22T22:42:54.229Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "1d99278c93e2360468e2ab64f09fbf3c47b2588317db1abc4ed8367b72934f7f",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/2026-doriot-legislative-update",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "For nearly two decades, Indiana has been a leader in ensuring our elections remain secure by requiring voters to have a valid photo ID when they cast their ballot. In 2025, I authored a bill to strengthen Indiana's voter ID law by prohibiting student IDs issued by state colleges or universities from being recognized as an ID to vote, since college IDs are less secure than other forms of identification and standards vary from school to school.",
+      "note": "In a constituent update on the Senate caucus site, he says he authored a 2025 bill to bar state college and university student IDs as voter ID, and describes Indiana's photo ID requirement as a security measure. The page shows only a 2026 copyright, so the exact date is unknown.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:48.386Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b69bfdb459270cf45b2f560cefcaa30ca73117d90353b871ca81f0dea6d81a5",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/2026-doriot-legislative-update",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported laws: Preventing a state agency or a local government unit from sending an absentee ballot application to an individual unless the application was requested by that individual or a member of their family; and Providing county clerks and election offices with more tools to help identify registered voters who may be ineligible, or hold inaccurate records, and helping clerks take steps to update, confirm or repeal voter registrations.",
+      "note": "Same update: he lists two other election laws he supported, one limiting unrequested absentee ballot applications and one giving clerks tools to check voter-roll eligibility.",
+      "subjects": [
+        "mail-ballot application",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:48.386Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbee267858ad784d5cd9d049a8d2de055401621fc088d40e8783d71dafa6b7d4",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/statement-from-state-sen-blake-doriot-2",
+      "date": "2025-04-25",
+      "date_precision": "day",
+      "passage": "I also authored a bill that ensures Indiana's elections are secure and accurate by prohibiting the use of student IDs as a form of voter identification and requires improved voter list maintenance.",
+      "note": "Session-end statement issued in his name: he says he authored a bill that bars student IDs as voter ID and requires better voter list maintenance.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:48.386Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2462e72206407eff398378b9ef67effc4c91270a85547e0bdc314f173681ba13",
+      "kind": "record",
+      "url": "https://www.inkfreenews.com/2025/01/30/elections-bill-would-remove-student-ids-as-voting-option/",
+      "date": "2025-01-27",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "author",
+      "note": "A news report names him as author of Senate Bill 10 (2025), which bars student IDs as valid voter ID and adds duties for local election offices. Senators voted on Monday, Jan. 27 to move it. The report says he argued student ID cards were not subject to the same rigor as driver's licenses, and that he said the BMV registration question netted non-citizens as well as unregistered voters. The report is a news page, not the legislature's own page.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "non-citizen registration",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:48.386Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -207,6 +326,31 @@
       "found": 8,
       "at": "2026-10-22T22:42:54.229Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot application",
+        "proof of citizenship and non-citizen registration",
+        "voter-roll maintenance",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia page https://ballotpedia.org/Blake_Doriot shows a sitting Indiana Senate District 12 member whose term runs to 2028 (positive control)",
+        "On the Record (0 appearances, extract script run with name)",
+        "official Senate caucus pages: the 2026 constituent update and the 2025 session-end statement",
+        "news report https://www.inkfreenews.com/2025/01/30/elections-bill-would-remove-student-ids-as-voting-option/",
+        "Ballotpedia: nothing on the subject",
+        "web search on name plus voter ID, proof of citizenship, election bills",
+        "votes not searched: roll calls already on file from the legislature feed",
+        "not reviewed: https://www.indianasenaterepublicans.com/get-to-know-sen-blake-doriot, https://www.abc57.com/news/abc57-interview-senator-blake-doriot-on-proposed-bill-covering-partisan-school-board-races (school-board topic, not ID)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T21:30:48.386Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

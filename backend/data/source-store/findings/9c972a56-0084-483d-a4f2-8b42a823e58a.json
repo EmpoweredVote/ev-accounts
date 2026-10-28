@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,11 +79,83 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "458a5c4a38fe9eb924173eede981565a88fd9db5368fc77845c779e2d71e688d",
+      "kind": "own-words",
+      "url": "https://www.dallasnews.com/news/politics/2021/07/20/breakaway-texas-democrat-returns-for-family-reasons-goes-to-austin-to-seek-voting-bill-changes/",
+      "date": "2021-07-20",
+      "date_precision": "day",
+      "passage": "\"The bill constricts access, even though it does it in sort of a benign way,\" he said. \"But the reality is it has a disproportionate impact on Black and brown people.\"",
+      "note": "Quoted by a Dallas newspaper in an interview on House Bill 3, the 2021 special-session election bill. He says the bill narrows access to voting. The quote is not about ID rules specifically.",
+      "subjects": [
+        "election integrity law in general",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:29.550Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "096b292c3add6bb98658f8d79fc2e0152c7711dca1f056b0b65b321edd7611f5",
+      "kind": "own-words",
+      "url": "https://www.dallasnews.com/news/politics/2021/07/20/breakaway-texas-democrat-returns-for-family-reasons-goes-to-austin-to-seek-voting-bill-changes/",
+      "date": "2021-07-20",
+      "date_precision": "day",
+      "passage": "\"It gives more authority on Election Day to a poll watcher than it does to a precinct judge,\" he said.",
+      "note": "Quoted by a Dallas newspaper on what he would ask the bill's author to change: the poll-watcher provisions of the 2021 election bill. Not about ID.",
+      "subjects": [
+        "election integrity law in general",
+        "poll watchers"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:29.550Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity law in general",
+        "poll watchers",
+        "expanded voting hours and drive-through voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://house.texas.gov/members/142 (confirms Rep. Dutton Jr., District 142; nothing on the subject)",
+        "a Dallas newspaper interview story of 2021-07-20 (his own quoted words on the 2021 election bill; saved)",
+        "Ballotpedia (page text had nothing on the subject)",
+        "2011 voter ID House debate coverage from a Texas news site and a public radio station (he is not named; nothing on the subject)",
+        "news searches on his name plus voter ID (nothing further)",
+        "no campaign site found",
+        "not reviewed: the House floor video and House Journal for the 2011, 2017 and 2021 votes"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:12:29.550Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

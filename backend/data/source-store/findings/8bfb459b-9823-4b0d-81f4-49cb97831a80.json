@@ -1,0 +1,76 @@
+{
+  "politician_id": "8bfb459b-9823-4b0d-81f4-49cb97831a80",
+  "findings": [
+    {
+      "id": "7972177a08409ba784cece534311fb47f1bc5f04dd356631d75d64cda1516693",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly floor: third reading, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy, which lists him as Robert Garcia of Assembly District 50. He voted aye.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:12.622Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0d52ef96a3af324d5a9424e3e2e0b38a38229988662e390167ddbbbcab4345d",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly floor: concurrence in Senate amendments, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy, which lists him as Robert Garcia of Assembly District 50. He voted aye.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:12.622Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "ID to register to vote (AB 1116)",
+        "local voter ID rules (SB 1174)",
+        "voter ID and proof of citizenship (AB 25)",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Assembly member roster page for District 50 (confirms Robert Garcia, Assembly District 50; nothing on the subject)",
+        "Ballotpedia Assembly District 50 page (confirms he is the incumbent, advanced from the June 2, 2026 primary, on the November 3, 2026 general-election ballot). Note: the U.S. House member with the same name is a different person and was not used",
+        "CalMatters Digital Democracy bill page for AB 1116 (floor vote lists)",
+        "CalMatters Digital Democracy bill page for AB 25 (committee votes only; he is not on the committee, no floor vote)",
+        "SB 1174 (2024): not applicable, he took office 2024-12-02, after that vote",
+        "blocked: https://garcia.asmdc.org/ (certificate could not be verified)",
+        "web search for his statements on voter ID: nothing from him found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:11:12.622Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -48,9 +48,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
       }
     },
     {
@@ -74,11 +78,218 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "562dd30112cd43bdf12e21584064dcd4dd4b9f5a876c17e5ae8fdd41d9f0f83d",
+      "kind": "own-words",
+      "url": "https://senatorchrishead.com/issues/conservative-leadership/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "As a House Privileges and Elections subcommittee chair, Chris is a leader in election integrity and protecting Virginians’ right to vote. He has worked to advance legislation that enforces voter identification, removes ballot drop boxes, strengthens absentee voting, and ensures regular maintenance of voter registration lists.",
+      "note": "Campaign Senate page describing his election work: voter ID, drop boxes, absentee voting, voter-roll maintenance.",
+      "subjects": [
+        "voter ID at the polls",
+        "absentee voting",
+        "ballot drop boxes",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "463c796229464351fce6a0b657458055205217d66e5ec461fcea3784cebc91b1",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0802ef6d3e9f73903ce5e0ad91c204b102d486c6cb04ac871e32ffcde33dfe30",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc79c84ee1ba77281293311f61c642dfdbd0f85c110c1f82f78c824ffc5f96c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba24aa5b02b338cafa9608cad8c69c2e55cfe64bc3b627a275a6f2dca0b2b42f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ffaf92f61c608e8c0bc575ffb68acc971374107339af50fe2bc99bb97d3b110",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV1975+HB1318",
+      "date": "2015-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "yea",
+      "motion": "House: VOTE: PASSAGE (62-Y 34-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3535ca854b7ddf05c8578babf661b8520f026d600211afd73b764999b0ccec30",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1076+HB1337",
+      "date": "2013-02-19",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "yea",
+      "motion": "House: VOTE: ADOPTION (64-Y 36-N)",
+      "note": "House roll call as printed ('Head'), linked to Christopher T. Head via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "absentee voting",
+        "ballot drop boxes",
+        "voter-roll maintenance"
+      ],
+      "places": [
+        "campaign site https://senatorchrishead.com/issues/conservative-leadership/",
+        "Ballotpedia (nothing on the subject)",
+        "one web search",
+        "blocked: https://theroanokestar.com/2022/02/08/del-rasoul-opposes-election-security-bill-del-head-and-mcnamara-support/ (403)",
+        "blocked/not reviewed: lis.virginia.gov (not fetched per instruction)",
+        "not reviewed: On the Record extract script (repo scripts not run)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:37.989Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T17:53:04.515Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T17:58:27.786Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

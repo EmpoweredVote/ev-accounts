@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,228 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "95339d87cc04e23cab61ece4a580e555ff3efac5f781d5f5bfdf8b2cbefca767",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20110128a",
+      "date": "2011-01-28",
+      "date_precision": "day",
+      "passage": "SB14 will require Texas voters to display a current government-issued photo ID to cast a ballot.",
+      "note": "Op-ed by West on the Senate site about SB 14 (2011). He goes on to say no evidence supports the claim of fake registration cards at polls and that SB 14 does not address mail-in ballot improprieties.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b064eb56c53abb8061419950ca6143d93aecf79f167f19aa76efab426d0aae2",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20110128a",
+      "date": "2011-01-28",
+      "date_precision": "day",
+      "passage": "Evidence does exist that minorities, the elderly and disabled are more likely to be without a driver license or state-issued photo ID.",
+      "note": "Op-ed by West on SB 14 (2011), on who lacks photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e9ed83c0af599eab399dba52869795504ec6e3d22ba103c722fd4cd7df5c4ef",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20110128a",
+      "date": "2011-01-28",
+      "date_precision": "day",
+      "passage": "Democrats support laws that insure the integrity of the ballot. But SB14 does not address known improprieties surrounding mail-in ballots.",
+      "note": "Op-ed by West on SB 14 (2011), on mail ballots versus polling-place ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4da3234f232a3960b4f2a685ce5ba64226c199ced367986a473b0b2bb4c566eb",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20120312a",
+      "date": "2012-03-12",
+      "date_precision": "day",
+      "passage": "We argued that poor people and minorities would be made to pay for the right to vote - a de facto poll tax.",
+      "note": "News release after the US Justice Department refused to clear SB 14; West describes the objections he and other opponents made in 2011. The release also says voters could keep using their voter registration cards as the main ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d36430da41680f955c1d8dabbb86db5a4359d15c28e424cb21f1c24437aa1c82",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20150812a",
+      "date": "2015-08-12",
+      "date_precision": "day",
+      "passage": "Last week's ruling by the U.S. Fifth Circuit Court of Appeals marks a victory for many like myself who have said since 2011, that the Voter ID law passed by the Texas Legislature that year was discriminatory.",
+      "note": "Op-ed by West on the 2015 Fifth Circuit ruling on SB 14. He also says a possible fix is adding more accepted ID types, such as a student photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d3f8588ee4cd0889867de533ebb0c846c21c2a1d876c0ba10921eabea093b73",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20160720a",
+      "date": "2016-07-20",
+      "date_precision": "day",
+      "passage": "Voter ID supporters claim the law was put in place to fight voter fraud. But the rampant fraud they claim has never been documented.",
+      "note": "Statement by West on the Fifth Circuit's 2016 ruling on SB 14.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "382f619931e5da6b4596c95a8edafdd47f1144a2a71722140db67835cd13cefa",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d23/pdf/AustinReport_20250520.pdf",
+      "date": "2025-05-20",
+      "date_precision": "day",
+      "passage": "Is SB 16 truly protecting our elections, or is it creating new barriers to the ballot box?",
+      "note": "West's Austin Report e-newsletter on SB 16, the proof-of-citizenship bill. The PDF text layer has scan errors; the sentence is cleaned of them. He goes on to describe the required documents and the limited federal ballot.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "005c201af3be9ed51574df2357a3a5fc44987c8a776246a864c7a05aee473ecd",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d23/pdf/AustinReport_20250520.pdf",
+      "date": "2025-05-20",
+      "date_precision": "day",
+      "passage": "Requiring individuals to present proof of citizenship may do more harm than good, introducing errors and unnecessary barriers into the voting process.",
+      "note": "West's Austin Report e-newsletter on SB 16. Text layer has scan errors; the sentence is cleaned of them. He also says non-citizen voting is already illegal under state and federal law.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75a6d789645569016c93c2460c05c97b80c939f61f4f66615972a0c66f2bcbf6",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/press.php?id=23-20210709a",
+      "date": "2021-07-09",
+      "date_precision": "day",
+      "passage": "The Texas Attorney General's website says that since 2005, the office has successfully prosecuted 534 offenses related to election fraud involving 155 persons.",
+      "note": "News release on SB 7 and its special-session successor, about claims of widespread voter fraud. He also objects to the planned county voter-roll monitoring by the Secretary of State.",
+      "subjects": [
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:57.361Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "mail-ballot ID",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (extract-otr script, 0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Royce_West (confirms Texas Senate District 23, term to 2029)",
+        "official Senate site member page https://senate.texas.gov/member.php?d=23",
+        "official Senate press room https://senate.texas.gov/pressroom.php?d=23 (all voting-related items from 2011-2021 read; 2022-2025 Austin Report newsletter on SB 16 read)",
+        "campaign site https://roycewest.com/news/latest/texas_state_sen_royce_west_on_voting_rights (a 2021 video link only; not reviewed: the Yahoo News video it points to)",
+        "Texas Legislature Online bill pages for SB 66 (2021), not on the subject",
+        "web searches: 2 (statement and bill searches)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T14:58:57.361Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

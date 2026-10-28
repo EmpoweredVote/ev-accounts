@@ -52,6 +52,30 @@
       "found": 0,
       "at": "2026-10-22T23:08:04.132Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page Joseph_McGonagle shows him on the 2026 general-election ballot; malegislature.gov profile JWM1 lists him as Representative of Everett in the 194th court",
+        "On the Record (0 meetings)",
+        "legislature profile malegislature.gov/Legislators/Profile/JWM1 (his filed bills cover licensing, transit worker assault, land use, retirement and traffic; none on voter ID, proof of citizenship or mail-ballot ID)",
+        "bill pages and cosponsor lists for voter ID bills H833 (2025) and H687 (2023) on malegislature.gov (he is not listed)",
+        "campaign site joemcgonagle.com (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "one web search on his name plus subject words (nothing by him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:51:44.146Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

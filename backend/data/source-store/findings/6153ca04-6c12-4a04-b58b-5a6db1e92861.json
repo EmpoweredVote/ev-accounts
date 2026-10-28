@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,85 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "a26b87c2e57b8a11df9cda85ad95d2c0f103207463fc0439db7f3d011a29c5d8",
+      "kind": "own-words",
+      "url": "https://texasborderbusiness.com/senator-hinojosas-statement-voter-id-law",
+      "date": "2014-10-10",
+      "date_precision": "day",
+      "passage": "Although voter fraud is real and a legitimate concern, it is also very rare. The alleged primary purpose of the Voter ID law is to prevent and deter a single kind of voter fraud — in-person voter impersonation. Yet, no evidence exists to support this type of voter fraud. Our Constitution aims toward improving our representative democracy. A better representative democracy depends on the inclusion and participation of citizens during elections. Creating barriers and turning away eligible voters undermines our democracy. The Voter ID law’s political intent was to suppress voter participation.",
+      "note": "Part of a statement issued in his name after a federal judge struck down the 2011 Texas voter ID law (SB 14) in October 2014. The statement opens with: \"This ruling confirms what we have been saying all along. The Voter ID law is unconstitutional and creates voter suppression against our citizens. The right for our Texas citizens to vote must not be burdened with unnecessary hurdles.\" Text reproduced by Texas Border Business; the original on his site was unreachable. Date is the article's publication date.",
+      "subjects": [
+        "voter ID at the polls",
+        "in-person voter impersonation",
+        "voter fraud rarity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:42.812Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfda2161c11b05451983279a5036f8c5e4043f99de4f87ac475bd918c6d4dcba",
+      "kind": "own-words",
+      "url": "https://kristv.com/news/texas-news/hinojosa-says-he-supports-democrats-who-fled-to-washington",
+      "date": "2021-07-15",
+      "date_precision": "day",
+      "passage": "\"We are working here on the Senate side to try to come up with decent legislation that is acceptable and will address those concerns about voter fraud and provide access to the voting books so legal residents and eligible voters can vote without an excess work on their right to vote,\" Hinojosa said.",
+      "note": "KRIS-TV quoted him during the 2021 House quorum break over the voting bill. The article also says he supports the House members who left Texas to block the bill. Does not name ID rules.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 SB 1 voting bill",
+        "voter fraud concerns"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:42.812Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID law of 2011 (SB 14)",
+        "no-ID voters",
+        "ID with a mail ballot",
+        "proof of citizenship to register (SB 16)",
+        "voter fraud and election integrity laws in general (2021 SB 1)"
+      ],
+      "places": [
+        "in scope: Ballotpedia (Juan Hinojosa (Texas)) shows Texas State Senate District 20, term ends 2029-01-09",
+        "On the Record (0 meetings found)",
+        "official Senate page and his own site senatorhinojosa.com: blocked: https://senatorhinojosa.com/?p=555 (connection refused by both the fetch tool and curl); the statement was read through a news-site copy instead",
+        "Texas Legislature bill pages: SB 16 (89R) bill page checked; his votes are already on file; special-session bills with his coauthor name (SB 57 nonpartisan election watchers, SB 57 mail-ballot depository boxes) are not on the subject, not saved",
+        "Ballotpedia: nothing on the subject",
+        "news searches (1): found the 2014 statement and the 2021 interview",
+        "not reviewed: Texas Tribune 2011-01-24 video interview on voter ID (page has a video and summary, no transcript): https://www.texastribune.org/2011/01/24/republicans-can-still-expect-a-fight-over-voter-id",
+        "not found: his own words on SB 16 (2025) proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:07:42.812Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

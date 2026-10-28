@@ -28,6 +28,29 @@
       "found": 0,
       "at": "2026-10-22T22:42:42.982Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Mike_Speedy: confirms he is the appointed Indiana Commissioner of Labor (since January 2025), served in the Indiana House 2010 to 2024, and lost a 2024 primary for Congress; no 2026 race shown; nothing on the subject",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/73023/ (403)",
+        "blocked: https://www.mikespeedy.com/ and https://www.speedyforindiana.com/ (hosts do not respond)",
+        "not reviewed: WISH-TV 2024 interview podcast https://www.wishtv.com/podcast-episode/mike-speedy-candidate-for-u-s-representative-for-indianas-6th-congressional-district/ (audio)",
+        "not reviewed: his 2010-2024 House roll calls on election bills (legislature bill pages are script-driven and not readable)",
+        "news and web search (2 searches) on name plus voter ID, election security, campaign priorities: no page tied him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:27:05.996Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

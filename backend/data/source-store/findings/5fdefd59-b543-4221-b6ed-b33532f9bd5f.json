@@ -1,6 +1,53 @@
 {
   "politician_id": "5fdefd59-b543-4221-b6ed-b33532f9bd5f",
-  "findings": [],
+  "findings": [
+    {
+      "id": "0a6600f52441c8bf7ef2cd47729bf65bfe55b32e5564cfc86b0578137865ccd7",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-5500-2026",
+      "act": "nay",
+      "motion": "H. 5500 (FY2027 budget), on adoption of amendment #1587, An Act relative to identification to vote (Lombardo), recorded for 'Mr. Speaker'",
+      "note": "Roll call No. 174 lists 'Mr. Speaker' (the Speaker of the House, Ronald Mariano) as N. The amendment would require a valid government-issued photo ID to receive a ballot at the polls, and would have the Secretary of the Commonwealth provide a free photo ID card to any registered voter without one who signs an affidavit. It was rejected 27 yeas to 131 nays. Amendment text: https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content ; report: https://recorder.com/2026/05/08/beacon-hill-roll-call-april-27-to-may-1-2026/ (a No vote is against requiring voters to present an ID).",
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voting",
+        "sworn affidavit for free ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:49:38.534Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5214a3992553b3c6eefd384984913e614741de1147632dd4b71b4181b7f0921",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4000-2025",
+      "act": "nay",
+      "motion": "H. 4000 (FY2026 budget), on adoption of amendment #409, An Act relative to identification to vote (Lombardo), recorded for 'Mr. Speaker'",
+      "note": "Roll call No. 42 lists 'Mr. Speaker' (Ronald Mariano) as N. Amendment #409 to H4000 has the same opening text as the 2026 amendment, rewriting G.L. c. 54 s. 76 on voter check-in at the polls to require photo identification. It was rejected 25 yeas to 131 nays. Amendment text: https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:49:38.534Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +74,29 @@
       "found": 0,
       "at": "2026-10-22T23:09:59.828Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voting",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia (confirms sitting House Speaker for the 3rd Norfolk District and a 2026 general-election candidacy on Nov 3, 2026; no subject statements)",
+        "malegislature.gov House roll calls 42 (2025) and 174 (2026) and amendment texts; the Speaker is shown as 'Mr. Speaker' on roll calls",
+        "Beacon Hill Roll Call via recorder.com and WWLP report on the House budget debate",
+        "web searches on name plus voter ID / ballot question: found him remarking on the number of 2026 ballot petitions in general, but nothing in his own words on ID or citizenship",
+        "malegislature.gov legislator profile page: not reviewed (profile URL not located)",
+        "official Speaker site and campaign site: not separately reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T11:49:38.534Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "id": "TX-HB-4902-2025",
+  "scope": "state:tx",
+  "title": "HB 4902 (89R): Relating to voter registration.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4902",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB4902",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04902I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) SECTION 1 (amends Election Code 13.002(a))\n(quote) (a) A person desiring to register to vote must submit an application and proof of citizenship as required under Subsection (a-1) to the registrar of the county in which the person resides.\n(section) SECTION 1 (adds Election Code 13.002(a-1))\n(quote) (a-1) To the extent permitted by the National Voter Registration Act of 1993 (52 U.S.C. Section 20501 et seq.) and Arizona v. Inter Tribal Council of Arizona, Inc. , 570 U.S. 1 (2013), , 570 U.S. 1 (2013), the secretary of state shall prescribe rules that require a person to submit to the registrar proof of citizenship to determine voter eligibility.\n(section) SECTION 2 (adds Election Code 13.0022(b))\n(quote) (b) On receipt of a registration application, the registrar shall transmit a notice to the applicant of any requirements prescribed by the secretary of state under Section 13.002(a-1) and include instructions to enable the applicant to satisfy those requirements.\n(section) SECTION 5 (federal form request and enforcement)\n(quote) (a) Not later than January 1, 2026, the secretary of state shall request that the federal Election Assistance Commission alter the mail voter registration application form requirements described in the National Voter Registration Act of 1993 (52 U.S.C. Section 20501 et seq.) to include a requirement that applicants submit documented proof of citizenship as a condition to registration in Texas. (b) If the commission fails to comply before the 180th day following the secretary of state's request under this section, the attorney general shall seek enforcement in a court of law.\n(other) Sec 3 (adds 18.014): secretary of state or registrar may use public real estate records and zoning information to check that a voter's residence address corresponds to a residential property; confirmation notice under 15.051 if not.\n(other) Sec 4 (adds 18.0625, 18.0626): secretary of state may contract with private entities for list maintenance (National Change of Address comparison, other-state comparison, movers); the entity mails the registrar information on voters it determines are not citizens, do not live at the address, or are otherwise not qualified; registrar reviews and may send a confirmation notice.\n(other) Sec 6: new 13.0022 applies only to applications submitted on or after the effective date.\n(other) Sec 7: effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Lowe",
+      "role": "author",
+      "version": "Introduced (H.B. No. 4902; no other version exists)",
+      "politician_id": "382d9814-389e-4205-b48c-67f3b9f7b332"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

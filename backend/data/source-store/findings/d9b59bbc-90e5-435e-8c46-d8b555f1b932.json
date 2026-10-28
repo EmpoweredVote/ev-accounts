@@ -49,6 +49,28 @@
       "found": 0,
       "at": "2026-10-22T23:25:23.294Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Michael_Kushmerek (confirms sitting 3rd Worcester representative, on the 2026 general-election ballot, unopposed in the primary)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/MPK1 (sponsored bills: nothing on the subject)",
+        "legislature cosponsored tab https://malegislature.gov/Legislators/Profile/MPK1/Cosponsor (not shown in the fetched page; not reviewed)",
+        "campaign site: blocked: https://www.mikekushmerek.com (domain does not resolve)",
+        "two news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:05:30.905Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

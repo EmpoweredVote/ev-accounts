@@ -25,6 +25,29 @@
       "found": 0,
       "at": "2026-10-22T21:10:18.721Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "scope check: https://www.ktvu.com/news/federal-prisoner-serving-20-year-sentence-new-york-advances-alaska-us-house-primary says he advanced from the 2026 primary; the Wikipedia 2026 Alaska House election page lists him among the general-election candidates; no report found of a ruling removing him",
+        "On the Record (0 appearances)",
+        "campaign site: none found (Ballotpedia lists a personal website link that did not resolve to text)",
+        "Ballotpedia: nothing on the subject in returned text",
+        "https://www.alaskasnewssource.com/2026/06/01/family-affair-federal-inmate-mother-run-alaska-congressional-seats/ : filing story, nothing on the subject",
+        "news searches on name plus voter ID / platform / issues: only 2024 coverage of residency, platform on jobs, housing and health; nothing on the subject",
+        "blocked: https://www.congress.gov (403 earlier in session); he has never held office so no bill record expected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:00:02.354Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

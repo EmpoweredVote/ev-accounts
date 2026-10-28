@@ -27,6 +27,25 @@
       "found": 0,
       "at": "2026-10-22T21:10:26.220Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida Tribune, https://floridatrib.org/2026/08/18/lashonda-holloway-wins-democratic-primary-for-floridas-4th-district/ : Holloway won the primary for Florida's 4th District with over 57 percent; Kirwan was her main challenger and trailed her)",
+        "On the Record (0 appearances)",
+        "Wikipedia page on the 2026 Florida House elections (lists Kirwan as a 4th District candidate with 15,809 votes)",
+        "one news search on his name (nothing on the subject)",
+        "not reviewed: campaign site and other places, because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:03:34.164Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

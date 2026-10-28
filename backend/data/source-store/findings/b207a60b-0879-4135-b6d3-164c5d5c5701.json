@@ -1,0 +1,163 @@
+{
+  "politician_id": "b207a60b-0879-4135-b6d3-164c5d5c5701",
+  "findings": [
+    {
+      "id": "c538b27c637f8596dbdd703598a7c58a66f179b8eae9e633b71ca8c1d1b2c26d",
+      "kind": "own-words",
+      "url": "https://www.sansabanews.com/node/5252",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "passage": "“The Texas Senate will soon head back to Austin to complete our conservative priorities including election integrity. With this task before us, I am launching a campaign to be commissioner of the Texas General Land Office.” - Sen. Buckingham",
+      "note": "Quoted in a Sansaba news article announcing her land commissioner campaign. She names election integrity as unfinished Senate business. No detail on ID or citizenship rules.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1604add68c3508fae5ca8402f9b54d95e5ff97b0ad9662f5260b8b16ea373d0c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-05-17",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "author",
+      "motion": "SB 7, election integrity and security bill: listed among the Senate authors, offered floor amendment FA25, and appointed to the conference committee on 2021-05-17",
+      "note": "The bill history lists her as an author of SB 7, relating to election integrity and security, including preventing fraud in the conduct of elections and creating criminal offenses. It also shows a floor amendment by her (FA25) and her appointment as a Senate conferee.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7629cbde7550938836d4fd41cee771bede270d2a4842cde8a59551ca6953701a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "author",
+      "motion": "SB 1 (87th 2nd called session), election integrity and security: listed as coauthor; appointed Senate conferee on 2021-08-27",
+      "note": "The bill history lists her as a coauthor of SB 1, relating to election integrity and security, and as one of five Senate conferees appointed on 2021-08-27. Her own recorded vote on the conference report was not readable.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c060db1a57a725c95f594ec5f318a542dfd1420b87c6a032a1dc2196ce2653dc",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-01-F.PDF",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "SB 7 (87th regular session) on third reading and final passage in the Senate, passed 18 to 13",
+      "note": "The Senate Journal lists her among the 18 yeas on the motion to take up CSSB 7 on third reading and on passage. The bill is described as relating to elections, including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e11e98e21a3307a4cdaa876c3a4b3777214f23e762c2f18fd5f4ce56d619517",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ05-29-F.PDF",
+      "date": "2021-05-29",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "SB 7 (87th regular session), adoption of the corrected conference committee report in the Senate, 18 to 13",
+      "note": "The Senate Journal for 2021-05-29 (the vote ran into the early hours of 2021-05-30) lists her among the 18 yeas adopting the conference committee report on SB 7.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b53dda0bf6e86400ea84831a9950bc4ba1259e6580cd0b82ead1c7a46b35cfb2",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/872/pdf/87S208-31-F.PDF",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "SB 1 (87th 2nd called session), adoption of the conference committee report in the Senate, 18 to 13",
+      "note": "The Senate Journal lists her among the 18 yeas adopting the conference committee report on SB 1, the election integrity and security bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:14.799Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Dawn_Buckingham (confirms Texas Land Commissioner, term ends 2027, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "Texas Legislature Online bill history pages for SB 1 (87th 2nd called session) and SB 7 (87th regular session)",
+        "campaign site https://dawnbuckingham.com (nothing on the subject)",
+        "official Land Office site https://www.glo.texas.gov (nothing on the subject)",
+        "a Point of View Ministries profile page https://pointofview.net/alternate-users/2447/ (biography only; nothing on the subject)",
+        "one news search on her name plus voter ID and election-integrity words (one lead, a 2021 campaign-launch article, saved)",
+        "Texas Senate Journals (2021-04-01, 2021-05-29, 2021-08-31) read for the recorded votes on SB 7 and SB 1"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:15:14.799Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "e0dc83f8-f72d-4869-8d79-532002408028",
+  "findings": [
+    {
+      "id": "125476f459f1124f196fd571164d0c794e3d09c547704fa4ba4ed406a52974de",
+      "kind": "record",
+      "url": "http://web.archive.org/web/20250311010119/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading SB1174 Min et al. (Senate Floor, passed 30 to 8)",
+      "note": "Voted aye on the Senate floor for SB 1174, which bars cities and charter cities from requiring ID to vote or submit a ballot at a polling place or vote center. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local government voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:08.461Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local bans on voter ID rules",
+        "proof of citizenship to register",
+        "ID number to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site sd15.senate.ca.gov (site search for voter ID, citizenship, election integrity: nothing on the subject)",
+        "Ballotpedia page shows a sitting Senate District 15 member with a term ending 2028",
+        "California leginfo vote page for SB 1174 read through the Internet Archive copy (leginfo is behind a bot check)",
+        "AB 25 (2025): only Assembly committee votes, so no vote by him; AB 1116 (2025) archived vote page shows only Assembly votes, no Senate vote by him",
+        "one web news search on name plus voter ID: nothing by him on the subject",
+        "own-words search (interviews, forums, campaign pages): nothing on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:07:08.461Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

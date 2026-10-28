@@ -29,6 +29,32 @@
       "found": 0,
       "at": "2026-10-22T23:20:57.453Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract script run)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/LMF1 (confirms State Representative, 3rd Bristol District, Taunton; sponsored and co-sponsored tabs and roll-call tab read: three bills in the current session, all on Taunton civil service or sick-leave banks; nothing on the subject)",
+        "Wikipedia 2026 Massachusetts House election page (lead only): shows her as the incumbent in the 3rd Bristol District 2026 race; the state results database (https://electionstats.state.ma.us/elections/view/173243/) lists the 2026-09-01 primary, which she appeared to win by a wide margin; in scope",
+        "campaign site https://www.lisafieldforrep.com/ (home page): nothing on the subject; its Priorities page was not separately read",
+        "Ballotpedia https://ballotpedia.org/Lisa_Field: fetched, returned no usable text",
+        "Wikipedia article on her: nothing on the subject",
+        "third-party scorecard https://ontheissues.org/MassScorecard/Field_Lisa.htm (lead only): lists votes on other topics, none on elections or voter ID",
+        "four searches on name plus subject words, her race and forums: nothing on the subject",
+        "not reviewed: House roll-call votes on any 2025-2026 election bill (the Legislature roll-call pages did not list her votes in readable form)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:15:03.345Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

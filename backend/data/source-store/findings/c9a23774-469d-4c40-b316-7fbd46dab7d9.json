@@ -21,6 +21,71 @@
         "fetched_at": "2026-10-22T23:23:44.184Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5829325c1c858aa86dfddc4614a28f2373114a8aebf97ceed81ebc658d27194d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H720.pdf",
+      "date": "2023-02-14",
+      "date_precision": "day",
+      "instrument_id": "MA-H-720-2023",
+      "act": "other",
+      "motion": "Added as a petitioner (co-signer) of H.720, An Act establishing identification at the voting polls",
+      "note": "Vaughn is one of eight legislators named on the petition for H.720, added 2/14/2023. The bill has the state secretary issue a free photo ID card for voting only, and requires a person voting in a federal, state, local or primary election to show a valid photo ID, MassHealth card or Medicare card to an election officer before voting. The bill went to the Election Laws committee and on 2024-07-15 accompanied a study order (H4733).",
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voter photo ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35e32ad1c470717ee874745e958981798954a32447cf1d561a95aff6b7e6d3a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H878",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-878-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.878, An Act relative to public information requests, a petition relative to the availability of voter lists. Referred to Election Laws 2/27/2025; hearing 6/17/2025; accompanied a study order (H5311) on 4/2/2026.",
+      "subjects": [
+        "voter lists and public access to them"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "016fc49defe9a2f0c548dcfde615bd013f151a67f66dbcf35c906f2a3a093832",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H877",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-877-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.877, An Act relative to how Electoral College votes are delegated, a petition relative to choosing presidential electors and the process which governs them. Referred to Election Laws.",
+      "subjects": [
+        "how presidential electors are chosen"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:14.608Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +114,30 @@
       "found": 1,
       "at": "2026-10-22T23:23:44.184Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voter photo ID card",
+        "voter lists and public access to them",
+        "how presidential electors are chosen",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "malegislature.gov legislator profile (confirms Marcus S. Vaughn, 9th Norfolk)",
+        "malegislature.gov bill pages H.720 (193rd), H.877 and H.878 (194th)",
+        "Ballotpedia (confirms he is on the 2026 general election ballot)",
+        "web news search on name plus voter ID words: no own words found",
+        "campaign site and official site statements: nothing on the subject found",
+        "mail-ballot ID and proof of citizenship: nothing on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:06:14.608Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

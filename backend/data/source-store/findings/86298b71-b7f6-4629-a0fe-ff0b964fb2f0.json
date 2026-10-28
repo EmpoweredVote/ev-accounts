@@ -115,6 +115,60 @@
         "fetched_at": "2026-10-22T23:56:39.299Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "cd83fe7883ce544707c54566e5ffa45fd3110ac95dad18458493925053c0a1ac",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "House roll call 758, HB 958 Election Law Changes, second reading, passed 66-47",
+      "note": "Official House roll call transcript lists him among the Ayes. The version voted on (fifth edition) keeps photo ID for in-person voting and provisional ballots counted only if photo ID is shown to the county board, lengthens the time to show it to five business days, sets a similar ID fix for voters whose driver license or Social Security digits do not match, and treats a missing ID photocopy with an absentee ballot as a curable defect.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when a voter has no photo ID",
+        "ID with a mail or absentee ballot",
+        "ID-number mismatch at registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:38:36.901Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -142,6 +196,32 @@
       "found": 5,
       "at": "2026-10-22T23:56:39.299Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when a voter has no photo ID",
+        "ID with a mail or absentee ballot",
+        "ID-number mismatch at registration",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by the extract script)",
+        "Ballotpedia https://ballotpedia.org/Ed_Goodwin (confirms sitting NC House District 1 member, advanced from the 2026-03-03 primary, on the 2026-11-03 general ballot)",
+        "North Carolina legislature member vote history https://www.ncleg.gov/Members/Votes/H/744 (election-related votes read; HB 958 recorded below; other items such as local board and hunting-voter bills are off the subject)",
+        "North Carolina legislature bill page https://www.ncleg.gov/BillLookUp/2025/H958 and bill text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v5.pdf",
+        "campaign site https://electedgoodwin.com/ (no page text on the subject)",
+        "two web searches on name plus voter ID and the elections bill: nothing in his own words",
+        "final concurrence vote on HB 958 on 2026-08-04: Aye (on the member vote page; not saved as a separate finding because it repeats the same bill)",
+        "not reviewed: Facebook pages and any floor-debate audio"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:38:36.901Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

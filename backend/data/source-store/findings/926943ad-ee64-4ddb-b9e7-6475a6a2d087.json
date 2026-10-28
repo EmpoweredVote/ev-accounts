@@ -1,6 +1,29 @@
 {
   "politician_id": "926943ad-ee64-4ddb-b9e7-6475a6a2d087",
-  "findings": [],
+  "findings": [
+    {
+      "id": "b4a8405a123b99347e5f1671f9e98730c1ffdca710bd0777c23a4be029182233",
+      "kind": "own-words",
+      "url": "https://bradmeyer.org/brads-faqs/",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "passage": "Require mailed notice before a voter is removed from the rolls to prevent wrongful purges from silencing eligible voters, so your vote is never quietly taken off the rolls. Fully restore funding for election security and enforcement agencies so every eligible citizen can cast a ballot safely and freely—and know their vote was counted.",
+      "note": "Campaign FAQ answer to the question 'How will you protect voting rights?'. It names mailed notice before removal from voter rolls and funding for election security agencies. It does not mention ID or proof of citizenship. Date is the page's published-time tag and may be the first-publication date.",
+      "subjects": [
+        "voter-roll removals",
+        "election security funding",
+        "related: voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:42:47.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -29,6 +52,31 @@
       "found": 0,
       "at": "2026-10-22T21:39:57.876Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll removals and election security (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Brad_Meyer: confirms he is the 2026 nominee for IN-9, on the 2026-11-03 general-election ballot, advanced from the 2026-05-05 primary; 2026 Candidate Connection answers read, nothing on ID or citizenship (general talk of democracy only)",
+        "campaign site FAQ page https://bradmeyer.org/brads-faqs/: answer 12 on voting rights saved as a related finding; no photo ID or citizenship-proof answer",
+        "campaign site https://bradmeyer.org/defending-democracy/: general rule-of-law essay, nothing on voter ID, citizenship proof or mail-ballot ID",
+        "campaign site home page https://bradmeyer.org/: nothing on the subject",
+        "one news search on name plus subject words: nothing on the subject",
+        "not reviewed: https://bradmeyer.org/policy-overview/ and other issue pages",
+        "not reviewed: campaign Substack, Bluesky, Facebook, Instagram, YouTube",
+        "congress.gov: not applicable, not a sitting legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:42:47.564Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

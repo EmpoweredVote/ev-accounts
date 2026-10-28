@@ -25,6 +25,28 @@
       "found": 0,
       "at": "2026-10-22T23:16:36.552Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://malegislature.gov/Legislators/Profile/JCE0 (fetched; confirms she is a sitting Massachusetts state senator)",
+        "https://ballotpedia.org/Joanne_Comerford (fetched via curl; 2026 ballot status not readable from the page text, so not confirmed)",
+        "her official site search for voter ID (https://senatorjocomerford.org/?s=voter+ID): only results on early in-person voting (S.2545 amendment 15) and vote-by-mail access, no ID or citizenship item",
+        "one news search on name plus voting bill: nothing on ID or citizenship",
+        "not reviewed: malegislature.gov bill pages for sponsorships (not opened)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:42.396Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

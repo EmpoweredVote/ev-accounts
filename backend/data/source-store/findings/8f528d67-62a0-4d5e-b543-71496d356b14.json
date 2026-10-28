@@ -17,6 +17,23 @@
       "found": 0,
       "at": "2026-10-22T22:16:59.739Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (another candidate, Jim Schwartzel, was declared winner of the FL-19 primary: https://floridianpress.com/2026/08/jim-schwartzel-wins-19th-congressional-district-republican-primary/ ; that page does not name Strand)",
+        "On the Record (0 appearances)",
+        "BallotReady profile (confirms him as a 2026 FL-19 primary candidate): https://www.ballotready.org/people/john-strand-024c6272-b9fa-4436-87c1-9270d5a34a8d",
+        "stopped after scope check: no longer on the general-election ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:38:50.245Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

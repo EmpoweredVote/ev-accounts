@@ -96,6 +96,120 @@
         "fetched_at": "2026-10-23T00:14:34.783Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "889e61c279547d276a1a2f2b42d78a240065cffdf19e47f86fb94b2209698ad3",
+      "kind": "own-words",
+      "url": "https://www.robesonian.com/news/112116/pierce-vote-id-coming",
+      "date": "2018-06-13",
+      "date_precision": "day",
+      "passage": "“I’m think that the party in power is using this to get people to the polls,” he said. “Since I expect it to pass, my real concern is the different kinds of ID that will be accepted and making sure that we do all we can so people can vote and go to vote.”",
+      "note": "Quoted by the Robesonian (Jun 13, 2018) about House Bill 1092, a proposed photo-ID constitutional amendment. He says his concern is which kinds of ID will be accepted. The same article reports, in the reporter's words, that he disagrees voter ID serves as a security measure.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21b8bcbd4ff99b656e0c9e7c309afc576939c7edc3be682fce9c3c23735473d7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1256",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "yea",
+      "motion": "Amendment 1 (Lewis), second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1256, House second reading, amendment 1 adopted 115-0.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b0dba7e16924821a72feafa90b7e54fcb60ffad652cdba712cad1fc95da392c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1257",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "yea",
+      "motion": "Amendment 5 (Ager), second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1257, amendment failed 43-71.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79e85a94255a001c96e1b9bc13c9a7a9837a3962687e2d711090eff985b49f00",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1258",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1258, passed 74-44.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "115c6116277d63ee6298263799d0c15cabe35f4be55fcc07ab566cf72a8d332b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1260",
+      "date": "2018-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Third reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1260, passed House 74-43.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -120,6 +234,31 @@
       "found": 2,
       "at": "2026-10-23T00:14:34.783Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "photo ID constitutional amendment",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "ncleg.gov member profile (District 48, 11 House terms)",
+        "ncleg.gov bill page and roll calls for HB 1092 (2018 photo ID amendment)",
+        "Branch voter guide 2026 page (lists him as a 2026 House District 48 candidate; no site or online information)",
+        "blocked: https://ballotpedia.org/Garland_E._Pierce (bot-check, not retrieved)",
+        "web search on name plus voter ID and election (found the Robesonian 2018 article)",
+        "no campaign site found",
+        "no 2023 sponsorship on the subject found"
+      ],
+      "found": 5,
+      "at": "2026-10-27T22:20:07.766Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

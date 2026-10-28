@@ -27,6 +27,37 @@
       "found": 0,
       "at": "2026-10-22T23:21:42.719Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Massachusetts_State_Senate_Cape_and_Islands_District says incumbent Julian Andre Cyr advanced from the 2026 primary (Sept 1, 2026, 99.6%) and is running in the Nov 3, 2026 general election",
+        "On the Record (0 appearances, 0 candidates; extract-otr.mjs run with --names 'Julian A. Cyr')",
+        "campaign site https://www.juliancyr.com (fetched home page only; no voting or ID content on it, no site search available)",
+        "blocked: https://malegislature.gov/Legislators/Profile/JAC0 (HTTP 503 via curl; WebFetch timed out) so sponsorships not reviewed",
+        "blocked: https://malegislature.gov/Legislators/Profile/JAC0/Biography (empty response)",
+        "Ballotpedia personal page https://ballotpedia.org/Julian_Cyr does not exist (empty article); district and 2026 election pages checked, nothing on the subject",
+        "not reviewed: https://ontheissues.org/MassScorecard/Cyr_Julian.pdf (lead only; search excerpt covered transportation)",
+        "news search: Cyr plus voter ID / photo ID / proof of citizenship / SAVE Act, nothing on the subject naming him",
+        "news search: Cyr plus Senate roll calls on voter ID amendments, nothing found; the 2022 VOTES Act roll-call page (gazettenet.com) covers House votes and does not name him; Senate roll call PDFs not opened",
+        "nepm.org VOTES Act article fetched: quotes other senators, no Cyr statement",
+        "nothing on the subject for this person"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.068Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

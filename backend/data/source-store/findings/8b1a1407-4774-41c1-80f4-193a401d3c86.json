@@ -1,0 +1,267 @@
+{
+  "politician_id": "8b1a1407-4774-41c1-80f4-193a401d3c86",
+  "findings": [
+    {
+      "id": "203699900753d165d45fbbd817a109621264580c95ddbbc2d8b63ffaad83bd72",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor_abbott_statement_on_texas_voter_id_law",
+      "date": "2015-08-05",
+      "date_precision": "day",
+      "passage": "“In light of ongoing voter fraud, it is imperative that Texas has a voter ID law that prevents cheating at the ballot box. Texas will continue to fight for its voter ID requirement to ensure the integrity of elections in the Lone Star State.”",
+      "note": "Governor's statement after a federal appeals court ruling on the state's voter ID law; he says the state will keep defending the ID requirement.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "837358ef8579e92a1a979ef9345edf1cea1bb785dec354e5b5acecc707f54185",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/icymi-governor-greg-abbott-voter-fraud-is-real-and-we-must-stamp-it-out",
+      "date": "2017-07-20",
+      "date_precision": "day",
+      "passage": "Voter fraud is real, and it undermines the integrity of the election process in Texas.",
+      "note": "Opening of his op-ed in a Dallas newspaper (reposted on the governor's site), written to support adding mail-in ballot fraud to a special session call.",
+      "subjects": [
+        "mail-in ballot fraud",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "58b1581103e0df43ffd3c1c1e1d5e30e58aa519b7de33232b3198694ce0fdbcb",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/icymi-governor-greg-abbott-voter-fraud-is-real-and-we-must-stamp-it-out",
+      "date": "2017-07-20",
+      "date_precision": "day",
+      "passage": "But mail-in ballots are susceptible to fraud — beyond simple mailbox theft.",
+      "note": "Same op-ed; he says mail-in ballots are open to fraud and describes cases he links to forged and coerced mail ballots.",
+      "subjects": [
+        "mail-in ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "587256ce05893ba02540316beea602559482989388f43b4bf72aff4954f04cf5",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-legislation-to-crack-down-on-mail-in-ballot-fraud",
+      "date": "2017-08-11",
+      "date_precision": "day",
+      "passage": "“It is a primary function of government to protect a citizen’s right to vote, and I will not allow the integrity of the ballot box to be compromised in Texas,” said Governor Abbott.",
+      "note": "Quoted in the release on his signing of Senate Bill 5 (second called session), which raised penalties for mail-in ballot fraud.",
+      "subjects": [
+        "mail-in ballot fraud",
+        "penalties for illegal voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07d82542aa35dff5ef4b5cc44d74165cc99129365af6c521b22c73c8f3689b30",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-election-integrity-legislation-into-law",
+      "date": "2021-09-07",
+      "date_precision": "day",
+      "passage": "\"Senate Bill 1 ensures trust and confidence in our elections system — and most importantly, it makes it easier to vote and harder to cheat,\" said Governor Abbott.",
+      "note": "Quoted in the release on his signing of Senate Bill 1 (2021); the release lists uniform voting hours, a ban on drive-through voting, poll watcher access and a ban on unsolicited mail-ballot applications.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-in ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40f84d41b1d292bde5f584b92731626f99288fc4f6ca61b91f721ed136364a6c",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-adds-illegal-voting-penalty-increase-to-third-special-session-agenda",
+      "date": "2021-09-30",
+      "date_precision": "day",
+      "passage": "\"By increasing penalties for illegal voting, we will send an even clearer message that voter fraud will not be tolerated in Texas.\"",
+      "note": "Quoted in the release adding higher illegal-voting penalties to the third special session call.",
+      "subjects": [
+        "penalties for illegal voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59180115de974df8ac74e12c17ad641dc99bbc530278568dd6f26fbfec23ecc2",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-announces-over-1-million-ineligible-voters-removed-from-voter-rolls",
+      "date": "2024-08-26",
+      "date_precision": "day",
+      "passage": "“I have signed the strongest election laws in the nation to protect the right to vote and to crackdown on illegal voting.”",
+      "note": "Quoted in his release on voter-roll removals (including over 6,500 listed as noncitizens). The release says Senate Bill 1 of 2021 required ID for mail-in ballots and that he signed House Bill 1243 of 2023 making illegal voting by noncitizens a second-degree felony.",
+      "subjects": [
+        "removing non-citizens from voter rolls",
+        "ID for mail-in ballots",
+        "penalties for illegal voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "397b582145a479557afeccdce6874e3460b52babbb79bb2e825304670e6e4838",
+      "kind": "own-words",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-delivers-2025-state-of-the-state-address",
+      "date": "2025-02-02",
+      "date_precision": "day",
+      "passage": "We must safeguard our elections so that only United States citizens are able to register and cast a vote in Texas.",
+      "note": "From the 2025 State of the State address; he goes on to say he supports a Senate election-integrity bill restoring the attorney general's power to prosecute election violations.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8908598a77d57e3566ab67107baf9d6fc3037d730f87a16789d909cfafd1794",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-election-integrity-legislation-into-law",
+      "date": "2021-09-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "signed",
+      "motion": "Signed Senate Bill 1 (second called session of 2021), election integrity",
+      "note": "Governor signed the 2021 election bill. His 2024 release says it required ID for mail-in ballots, made lying while registering a state jail felony, and banned unsolicited mail-ballot applications.",
+      "subjects": [
+        "ID for mail-in ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e2ec80258e41bee6abbf8abff2a91baa496b799965c13536292130976c616cf",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-signs-legislation-to-crack-down-on-mail-in-ballot-fraud",
+      "date": "2017-08-11",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "Signed Senate Bill 5 (second called session of 2017), higher penalties for mail-in ballot fraud",
+      "note": "Governor signed a bill raising penalties for mail-in ballot fraud, part of his special-session agenda.",
+      "subjects": [
+        "mail-in ballot fraud",
+        "penalties for illegal voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84350fefff93bf97f42fcca2697be455fd74ff73a1c11a1bed462c639f855444",
+      "kind": "record",
+      "url": "https://gov.texas.gov/news/post/governor-abbott-adds-legislation-to-special-session-2-agenda",
+      "date": "2025-08-25",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Added legislation to prohibit same-day voter registration to the Special Session #2 agenda",
+      "note": "Governor widened the special-session call to include a ban on same-day voter registration.",
+      "subjects": [
+        "same-day voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:40.958Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail-in ballots",
+        "mail-in ballot fraud",
+        "proof of citizenship to register or vote",
+        "removing non-citizens from voter rolls",
+        "penalties for illegal voting",
+        "same-day voter registration",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia (confirms he holds the governor's seat and is on the 2026 general-election ballot)",
+        "Governor's office news pages on gov.texas.gov (nine releases and the 2025 State of the State text)",
+        "Governor's office special-session agenda releases of 2021 and 2025",
+        "news search on name plus subject words (4 web searches); found no direct statement by him on Senate Bill 16 of 2025",
+        "not reviewed: campaign site gregabbott.com subject search (only a search-result page was seen, not a subject page)",
+        "not reviewed: speeches, interviews and social media posts (not reachable by this tool)",
+        "nothing on the subject: Texas House or Senate roll-call votes (he is not a legislator)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T15:17:40.958Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

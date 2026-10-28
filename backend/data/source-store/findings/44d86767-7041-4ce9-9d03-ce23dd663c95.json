@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,11 +79,120 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "1ccdf12ec9f587336cad11589d087238c74c20c6cd5edd3157078471ec25d703",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "other",
+      "motion": "co-author of HJR 161",
+      "note": "Listed as a co-author of HJR 161, a proposed constitutional amendment adding people who are not US citizens to the classes of persons not allowed to vote in Texas. Out of the House Elections Committee 7 to 2; last action 2025-05-09 laid on the table subject to call (date shown is that action).",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:26.994Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3aab99e7ad4ce439b033628df4a5cfad946ae155cacab9bbe3360c31d6fe6e02",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=coauthor&LegSess=89R&Code=A2610",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4962-2025",
+      "act": "other",
+      "motion": "co-author of HB 4962",
+      "note": "Co-author of HB 4962, relating to the disclosure of citizenship of a candidate for public office. Referred to House Elections 2025-04-03 (date shown is the referral). Candidate citizenship disclosure, a related election-integrity measure.",
+      "subjects": [
+        "citizenship disclosure by candidates",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:26.994Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.535Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas House official member page (confirms Rep. Tom Craddick, District 82); its media page says no media",
+        "Ballotpedia page (confirms House District 82, term ends 2027; nothing on the subject)",
+        "Texas Legislature Online reports of bills he authored (66; none on the subject) and co-authored (25) in the 2025 regular session, and the bill history for HJR 161",
+        "one news search on name plus voter ID, proof of citizenship, election integrity (nothing quoting him)",
+        "not reviewed: campaign site (none located)",
+        "nothing on the subject: own words, no statement found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:59:26.994Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.535Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

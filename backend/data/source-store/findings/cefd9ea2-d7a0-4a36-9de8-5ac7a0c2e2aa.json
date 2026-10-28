@@ -25,6 +25,30 @@
       "found": 0,
       "at": "2026-10-22T22:08:46.568Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Lowell_Reynolds (in scope: on the 2026 general-election ballot for TN-7; 2026 survey is about constitutional accountability, nothing on the subject)",
+        "campaign site https://www.lowellforcongress.com/ (nothing on the subject)",
+        "BallotReady https://www.ballotready.org/people/lowell-andre-reynolds (one issue stance, government reform; nothing on the subject)",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-7/ (403 bot check)",
+        "congress.gov: not applicable, never held federal office",
+        "one web search on name plus subject words: nothing"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:55.336Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -84,18 +88,19 @@
       "date": "2025-04-10",
       "date_precision": "day",
       "passage": "These extreme voter registration requirements and restrictions on absentee and mail-in voting are nothing more than voter suppression.",
-      "note": "Statement issued in her name on the day of the House vote on H.R. 22 (SAVE Act), posted on her site. She calls the bill's registration requirements and its limits on absentee and mail-in voting voter suppression. The statement's lead-in describes the bill as requiring a birth certificate or passport in person at a polling place.",
+      "note": "Same statement; she describes the bill's registration and absentee/mail-in provisions in these terms.",
       "subjects": [
         "proof of citizenship to register",
         "mail-ballot rules",
-        "SAVE Act"
+        "SAVE Act",
+        "absentee and mail-in voting restrictions"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:45:14.268Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:55:57.138Z",
         "method": "webfetch"
       }
     },
@@ -185,6 +190,30 @@
         "fetched_at": "2026-10-22T21:45:14.268Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f7d739ea9c3ec7fdb667cc25e4e58d68af549e3618d60c8a3828f87b93d2532f",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/10/new-dem-whip-marilyn-strickland-on-save-act-disenfranchising-tens-of-millions-of-american-citizens/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "With this regressive bill, House Republicans aren’t fooling anyone or safeguarding election integrity.",
+      "note": "Statement issued in her name on the day of the House vote on the SAVE Act (H.R. 22). It says the bill's registration requirements and limits on absentee and mail-in voting are voter suppression. It names married women who changed their last name, rural voters and overseas servicemembers as people affected, and calls claims of widespread non-citizen voting a lie.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "absentee and mail-in voting restrictions",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:55:57.138Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -213,6 +242,29 @@
       "found": 5,
       "at": "2026-10-22T21:45:14.268Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "absentee and mail-in voting restrictions",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site strickland.house.gov (media center and voting-rights tag, 5 items)",
+        "Ballotpedia page (confirms she is on the 2026-11-03 general-election ballot for WA-10 after the 2026-08-04 primary)",
+        "one news search on her name plus SAVE Act and voter ID (nothing from her beyond the House-site statement)",
+        "the 2026-05-14 redistricting article on her site (nothing on the subject)",
+        "not reviewed: https://www.congress.gov (sponsorship list; votes already on file)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:55:57.138Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -63,6 +63,140 @@
         "fetched_at": "2026-10-22T23:22:18.390Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "513f722c75b4b7239f51e0a41277cbd00367418ee6b303ad3d8b1d6cfe2fbf0b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/S320.Html",
+      "date": "2011-01-20",
+      "date_precision": "day",
+      "instrument_id": "MA-S-320-2011",
+      "act": "sponsor",
+      "note": "Tarr presented S.320, An Act relative to voter identification. It would require a voter at the polls to show identification, such as a social security card or another pre-printed form that gives the name and either address, signature or photograph.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef1fe1d5bde614ff94fa22b8862d93debf1ed1bac86317fb23d8440b425914b7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S339.Html",
+      "date": "2013-01-18",
+      "date_precision": "day",
+      "instrument_id": "MA-S-339-2013",
+      "act": "sponsor",
+      "note": "Tarr presented S.339, An Act relative to voter identification, with two co-petitioners. Same wording as S.320: the voter shows identification such as a social security card or other pre-printed form with name and address, signature or photograph.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dca78c59cb7a2d227c8f7b7b0fcfe488458ffcbf8b52f1a332aea39dd891fb92",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S335/Cosponsor",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-S-335-2013",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.335, An Act requiring photo identification to receive a ballot (presented by another senator). Date is the Senate docket filing date shown on the bill's HTML page.",
+      "subjects": [
+        "photo ID to receive a ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a502aca06ac9ef16286318c523ddcb0926311b5c236d6a4e78f3a0ec126d5530",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/S378.Html",
+      "date": "2015-01-15",
+      "date_precision": "day",
+      "instrument_id": "MA-S-378-2015",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.378, An Act establishing voter identification procedures. A voter would be told to show a Massachusetts driver's license, state photo ID card, U.S. passport or Social Security card; a person without the required ID would not be permitted to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "no ID means no ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3054a057f926c0fa4c1f9d8bd9fe4330351f2a0b811129bbd9ef962bde905d59",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/S389.Html",
+      "date": "2015-01-16",
+      "date_precision": "day",
+      "instrument_id": "MA-S-389-2015",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.389, An Act requiring photo identification to receive a ballot. Valid photo IDs: Massachusetts driver's license, U.S. passport, student ID or Massachusetts ID card; a Massachusetts ID card would be issued at no cost.",
+      "subjects": [
+        "photo ID to receive a ballot",
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8e14aad73a0588523679e5070d3437fd5482cc5112ac532a4e65ccbbd8df692",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
+      "date": "2022-05",
+      "date_precision": "month",
+      "instrument_id": "MA-S-2545-2022",
+      "act": "other",
+      "motion": "Amendment S2545-44 (filed by Tarr and O'Connor): photo ID at the polls with affidavit option, and free ID process for homeless or indigent people",
+      "note": "Amendment to the 2022 Senate driver's license bill draft. Voters must show government-issued or tribal photo ID; a person without it may sign an affidavit and then receive a ballot. Also requires a process for homeless or indigent people to get a state ID with fees waived. The amendment page shows no date; month taken from the Senate debate week reported by Boston 25 on 2022-05-05.",
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit for voter without ID",
+        "free state ID for homeless or indigent",
+        "non-citizen voting and driver's licenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -91,6 +225,31 @@
       "found": 3,
       "at": "2026-10-22T23:22:18.390Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot",
+        "affidavit for voter without ID",
+        "free state ID for homeless or indigent",
+        "non-citizen voting and driver's licenses",
+        "proof of citizenship (SAVE Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov bill pages (S.320, S.339, S.335, S.378, S.389, S.397, amendment S2545-44)",
+        "Ballotpedia (fetch returned no usable content)",
+        "two news searches on name plus voter ID / election integrity: no 2024-2026 own words found",
+        "news coverage of 2022 driver's license bill (Boston 25 page fetched; Tarr statements only paraphrased by reporter, not saved)",
+        "S.397 petitioner list: not confirmed from fetched page, not saved",
+        "nothing on the subject: no own-words statement on SAVE Act, proof of citizenship, or mail-ballot ID found"
+      ],
+      "found": 6,
+      "at": "2026-10-27T21:55:43.152Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

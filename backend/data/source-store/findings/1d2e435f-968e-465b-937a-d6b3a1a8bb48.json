@@ -8,18 +8,21 @@
       "date": "2026-06-12",
       "date_precision": "day",
       "passage": "“In Congress, I will help lead the fight to secure our elections,” Pino said in a statement this week. “We need mandatory Voter ID nationwide and strict limits on late mail-in voting.\"",
-      "note": "Statement issued in her name after the June 2026 primary, quoted by the Associated Press (carried by WSLS). Date is the story date; the statement was made that week. She calls for a required voter ID rule nationwide and strict limits on late mail-in voting. No detail on which IDs count or what happens to a voter without ID.",
+      "note": "Quoted by AP in its story on her primary win; statement issued in her name after the primary. Calls for a nationwide voter ID requirement and limits on late mail-in voting.",
       "subjects": [
         "voter ID at the polls",
         "mail-ballot rules",
-        "election integrity laws in general"
+        "election integrity laws in general",
+        "voter ID nationwide",
+        "limits on late mail-in voting",
+        "election integrity"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:28:23.220Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:34:03.261Z",
         "method": "webfetch"
       }
     }
@@ -52,6 +55,29 @@
       "found": 1,
       "at": "2026-10-22T21:28:23.220Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot deadlines and ID",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "AP primary-night story on wsls.com (confirms she won the 2026 primary for NJ-9 and is in the November race)",
+        "InsiderNJ candidacy release (nothing on the subject)",
+        "New Jersey Globe primary preview of 2026-05-27 (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rosie_Pino (bot-check page)",
+        "campaign site not reachable: rosiepino.com does not resolve; no other campaign URL found",
+        "congress.gov not applicable, not a sitting member",
+        "two news searches on name plus subject words"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:34:03.261Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

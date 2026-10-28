@@ -29,6 +29,29 @@
       "found": 0,
       "at": "2026-10-22T21:32:59.543Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "positive control: https://ballotpedia.org/Brandon_Wade and https://fox23.com/news/local/josh-breechen-brandon-wade-advance-to-us-house-general-election-06-17-2026 confirm he won the 2026-06-16 primary and is on the 2026-11-03 ballot for Oklahoma District 2",
+        "campaign site brandon4congress.com (home, policies, OK CD2 issues, American Dream Act, press releases, blog, site search for voter ID, SAVE Act, election: nothing on the subject)",
+        "Ballotpedia (Candidate Connection survey: nothing on the subject; one answer on immigration and a path to citizenship, not proof of identity)",
+        "one news search on name plus subject words (nothing on the subject)",
+        "blocked: https://oklahomavoice.com/race-details/u-s-congress-district-2/ (403 challenge page)",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:39:02.251Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

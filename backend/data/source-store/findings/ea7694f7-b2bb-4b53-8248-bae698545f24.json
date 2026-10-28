@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,263 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "f09575743497fbd1d00e453b5345968a18a2f9619a7e4d55fd69d4a37abf127e",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY41FINAL.PDF",
+      "date": "2011-03-24",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "yea",
+      "motion": "SB 14 (relating to requirements to vote) third reading, Record 156 (101 yeas, 48 nays)",
+      "note": "The House passed SB 14, the 2011 bill on requirements to vote. Listed among the yeas (he served in the House at that time).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b49513a6d05b8d3cb554ab08fef85a8766282eca3157a9551d93aca9363cf466",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/85r/pdf/85RSJ03-28-F.PDF",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "CSSB 5 (relating to requiring a voter to present proof of identification) third reading (21 yeas, 10 nays)",
+      "note": "The Senate passed CSSB 5 on proof of identification for voting. Listed among the yeas.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a53948870c09bcb0494c78151040e13ffa74bf6af8758f6093054b2d0f0ee44",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-01-F.PDF",
+      "date": "2021-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "CSSB 7 (elections, including election integrity and security) third reading (18 yeas, 13 nays)",
+      "note": "The Senate passed CSSB 7. Listed among the yeas.",
+      "subjects": [
+        "election integrity laws in general",
+        "vote by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5faf8fd53d1795233b7aa3ec1d7b53b18f50a968a7bcc42cda8e215b5d3aeed",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-12-F.PDF",
+      "date": "2021-04-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1114-2021",
+      "act": "yea",
+      "motion": "CSSB 1114 (verification of citizenship status of certain registered voters) third reading (18 yeas, 13 nays)",
+      "note": "The Senate passed CSSB 1114 on checking the citizenship status of registered voters. Listed among the yeas.",
+      "subjects": [
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1981fa82dd4e009ee910568dbfce689604b0cd6910de193da25ede746e12177d",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/872/pdf/87S208-11-F.PDF",
+      "date": "2021-08-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "CSSB 1 (election integrity and security) third reading (18 yeas, 11 nays), second called session",
+      "note": "The Senate passed CSSB 1. Listed among the yeas. The journal shows the vote taken in the session that adjourned at 9:11 a.m. on August 12, 2021.",
+      "subjects": [
+        "election integrity laws in general",
+        "vote by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d21f0eec5c4f8341b7574fdc0e213b3cb580962b386f88bc18c3bd590140be9b",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ03-12-F.PDF",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "motion": "SB 16 introduced: he is among the senators named with the author (Hughes and 19 others)",
+      "note": "SB 16 requires a person to submit proof of citizenship to register to vote. The journal lists him with the bill when it was introduced and referred.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbe918c79856322fb4e440d7af7a595ceb75b653d56c26b9bf604ce6d91db841",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "yea",
+      "motion": "CSSB 16 on second reading: suspend regular order (20-11) and pass to engrossment (20-11)",
+      "note": "He is listed among the yeas on both roll calls.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2771163a2a39075c36ac9b27795b16671568095cb78ecf422c2498b25e30ce2b",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "yea",
+      "motion": "CSSB 16 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "The Senate passed SB 16. Listed among the yeas.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb7da268669f26e0311d77d29f60ad33d2b199c8297675f352d513e4c6d56254",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "SJR 37 on second reading and third reading and final passage (28 yeas, 3 nays)",
+      "note": "SJR 37 proposes a constitutional amendment clarifying that a voter must be a United States citizen. Listed among the yeas.",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b655c12ed90ddb918e1210b671a20a17b216be36732e73450ec5a3de09e58c18",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-318-2025",
+      "act": "yea",
+      "motion": "SB 318 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "SB 318 sets up an election integrity division in the attorney general's office. Listed among the yeas.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:32:50.012Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "proof of citizenship to vote",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas Senate member page senate.texas.gov/members/d05/ (confirms Senator Charles Schwertner, District 5; press room list has nothing on the subject)",
+        "campaign site: not found (schwertner.org is an unrelated shop, not his)",
+        "Ballotpedia: nothing on the subject",
+        "House Journal 2011-03-24, Senate Journals 2017-03-28, 2021-04-01, 2021-04-12, 2021-08-11/12, 2025-03-12, 2025-04-01 (roll calls and bill introduction lists)",
+        "Texas Legislature Online action pages for SB 16, SB 318, SJR 37, SB 1, SB 7, SB 1114",
+        "two news searches on his name plus subject words: coverage names the bills but gives no quote from him",
+        "own-words statements on the subject: none found"
+      ],
+      "found": 10,
+      "at": "2026-10-28T15:32:50.012Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

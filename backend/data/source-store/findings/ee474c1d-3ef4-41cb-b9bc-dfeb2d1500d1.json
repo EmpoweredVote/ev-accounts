@@ -27,6 +27,30 @@
       "found": 0,
       "at": "2026-10-22T21:10:44.281Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voting rights protections in general",
+        "non-citizen voting and election integrity"
+      ],
+      "places": [
+        "found the person: Post and Courier profile of the 2026 SC-04 candidate (https://www.postandcourier.com/politics/courtney-mcclain-gen-z-congress-sc/article_88e40c3a-7ac8-4167-aa88-89e96aa662c0.html), only a reporter's paraphrase of a voting rights pledge, no direct words",
+        "SC Public Radio profile (2026-03-20), nothing on subject",
+        "FOX Carolina debate pages (2026-10-08) and Hoodline debate preview, previews only, no transcript",
+        "campaign site courtneyforcongress.com is a parked page that redirects to /lander, nothing usable",
+        "blocked: https://bluevoterguide.org/SC/candidate_Courtney_McClain/702242 (403)",
+        "blocked: https://scdailygazette.com/2026/03/26/republican-robert-e-lee-and-25-year-old-democrat-file-to-challenge-rep-timmons-in-upstate/ (403)",
+        "On the Record extract script not present in this workspace, not run",
+        "4 web searches, nothing on voter ID or citizenship proof by this person"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:38:47.018Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

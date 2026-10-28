@@ -48,6 +48,27 @@
       "found": 0,
       "at": "2026-10-22T23:06:03.764Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to H.4359 (VOTES Act, 2022)",
+        "proof of citizenship to register or vote",
+        "election integrity and voting access in general"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Bruce_Ayers (on the 2026 general-election ballot for MA House 1st Norfolk; nothing on the subject)",
+        "MA legislature member profile page (confirms 1st Norfolk): nothing on the subject",
+        "On the Record (0 meetings)",
+        "malegislature.gov H.4359 amendment 7 page: amendment text and sponsor not shown, roll call not shown beyond the vote already on file; nothing from him",
+        "two web searches on his name and the 2022 voting bill: nothing he said or wrote",
+        "campaign site and his own news posts: not reviewed (none found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:58.336Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -5,20 +5,21 @@
       "id": "9f336ec23424b3a7fed78c213cb75fea50e5ceec3291f269d162eafe1782a72c",
       "kind": "own-words",
       "url": "https://jacobanders.org",
-      "date": "2026",
-      "date_precision": "year",
+      "date": "2026-10-27",
+      "date_precision": "day",
       "passage": "I support making Election Day a federal holiday and extending early voting to all states to make participation easier for working Americans. I also back automatic voter registration, Ranked Choice & Approval Voting to eliminate the idea of wasted votes, repealing Citizens United, and banning corporate PAC money to limit the corrosive influence of big money in our elections.",
-      "note": "From the Justice & Reform section of his campaign home page. Lists voting-access and election reforms. It does not mention photo ID, proof of citizenship, mail-ballot ID or voter-roll checks. Page carries no posting date; 2026 is the campaign year.",
+      "note": "Campaign site issue text on voting reforms: supports a federal Election Day holiday, early voting in all states and automatic voter registration. It says nothing about ID or citizenship proof. Page undated; date is when it was read.",
       "subjects": [
         "voting access reforms (related, no ID mention)",
-        "automatic voter registration"
+        "automatic voter registration",
+        "early voting and election-day rules"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:55:11.719Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:46:39.518Z",
         "method": "webfetch"
       }
     }
@@ -52,6 +53,28 @@
       "found": 1,
       "at": "2026-10-22T21:55:11.719Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter registration",
+        "early voting and election-day rules"
+      ],
+      "places": [
+        "On the Record (0 meetings, script returned no appearances)",
+        "campaign site https://jacobanders.org (one passage on voting reforms, saved; nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Jacob_Anders (on the 2026-11-03 general ballot for Tennessee 4th District as an independent; was disqualified from the primary; nothing on the subject)",
+        "The Ballot Brief https://theballotbrief.com/candidate/jacob-kristopher-anders-tn (on ballot for TN-4; priorities list has nothing on the subject)",
+        "two web searches on his name plus voter ID, SAVE Act and citizenship: nothing on the subject",
+        "legislature bill pages: not applicable, he has held no legislative seat"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:46:39.518Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

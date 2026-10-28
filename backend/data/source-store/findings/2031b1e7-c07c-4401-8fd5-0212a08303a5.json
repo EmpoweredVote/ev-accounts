@@ -28,6 +28,32 @@
       "found": 0,
       "at": "2026-10-22T21:38:00.340Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "identity and scope: https://theballotbrief.com/candidate/whitfield-harrington-jr-il (candidate for US Senate in Illinois on the 2026 general-election ballot, listed as certified by the State Board of Elections; Schaumburg; no statements on elections, voter ID or citizenship)",
+        "Ballotpedia: no page found under the name Whitfield Harrington Jr.",
+        "https://ivoterguide.com/voter-guide/eleck/1443 (listed; no answers on the subject in the first 100000 characters; the questionnaire tab was not readable)",
+        "https://capitolnewsillinois.com/news/stratton-tracy-clash-over-trump-affordability-in-lone-u-s-senate-forum/ (tagged with his name; the article text does not report any remarks by him on the subject)",
+        "blocked: https://whit4ilsenate.com (campaign site is a script-built page; only the page title is readable, no issue text)",
+        "no legislative record (not an officeholder)",
+        "news searches on his name plus voter ID, election, citizenship, SAVE Act (nothing found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:16:18.034Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

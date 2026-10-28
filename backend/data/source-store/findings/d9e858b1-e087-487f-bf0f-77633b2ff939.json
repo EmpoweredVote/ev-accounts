@@ -18,6 +18,25 @@
       "found": 0,
       "at": "2026-10-22T21:30:38.572Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida 24th District; eliminated in the primary with 1,272 votes, about 2.1 percent, per https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida; candidacy in the Aug 18 primary also listed at https://www.ballotready.org/people/marshall-l-davis-sr)",
+        "identity check: Marshall Davis Sr., founder of the Marshall L. Davis, Sr. African Heritage Cultural Arts Center, named on the Wikipedia page above",
+        "On the Record (0 meetings)",
+        "stopped as out of scope after the primary loss; no further sources searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:53:12.482Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

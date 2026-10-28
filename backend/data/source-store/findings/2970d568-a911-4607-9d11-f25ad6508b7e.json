@@ -30,6 +30,32 @@
       "found": 0,
       "at": "2026-10-22T22:05:54.317Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Chad_Humphrey_(Colorado) shows him as a candidate for Colorado's 1st U.S. House district, on the 2026 general-election ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia Candidate Connection survey answers: key messages are restore the Constitution, end the Fed and the IRS, stop the wars; nothing on the subject",
+        "state party candidate one-pager https://lpcolorado.org/wp-content/uploads/sites/26/2026/03/Humphrey-CD1.pdf: four key issues, nothing on the subject",
+        "iVoterGuide profile https://ivoterguide.com/candidate/95531/race/32758/election/1475: the question on voting without photo identification is marked 'Did not answer'; no position given",
+        "BallotReady profile: no stated positions on the subject",
+        "no standalone campaign website found; not reviewed: https://x.com/liberty4the1st (page not readable)",
+        "news search on his name: no interview, forum or article on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:22:20.328Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

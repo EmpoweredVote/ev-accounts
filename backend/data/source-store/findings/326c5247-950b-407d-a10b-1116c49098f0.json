@@ -1,6 +1,87 @@
 {
   "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
-  "findings": [],
+  "findings": [
+    {
+      "id": "57fee332afc4c2124d65b4dd128f5f1b7f861ad10a5ad934f9259b816b7aad9b",
+      "kind": "record",
+      "url": "https://billtexts.s3.amazonaws.com/_data/in/https-iga-in-gov-pdf-documents-123-2024-house-bills-HB1264-rollcalls-HB1264-222-S-pdf.pdf",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "yea",
+      "motion": "HB 1264 'Election security', Senate third reading, Roll Call 222, passed 34-13",
+      "note": "Official Senate roll call (mirror of the General Assembly file) lists Carrasco among the 34 Yea votes. The enrolled bill adds a proof-of-residence step for some new voters (photo ID or a utility bill, bank statement, government check, paycheck or government document), and a check of voter rolls against BMV temporary-credential lists, with a 30-day window to prove citizenship by birth certificate, passport or naturalization papers.",
+      "subjects": [
+        "proof of citizenship to register",
+        "proof of residence to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:24:44.245Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d7e2d045ce8c9a1ed301ba5e565cf5c7e55b6431647e03c32161afaa16c8617",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/123/2024/house/bills/HB1264/HB1264.05.ENRS.pdf",
+      "date": "2024-03-11",
+      "date_precision": "month",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "other",
+      "motion": "HEA 1264 enrolled text, new IC 3-7-38.2-7.3 (proof of citizenship) and IC 3-7-33-4.7 (proof of residence)",
+      "note": "Text of the act she voted for. Under IC 3-7-38.2-7.3(c) a registered voter flagged as possibly not a citizen must give proof of citizenship to the county voter registration office within thirty days, and under (d) the office cancels the registration if none is given; (e) allows an appeal. For voters who must show extra identification at the polls the bill lists a current photo ID, utility bill, bank statement, government check, paycheck or government document showing name and address.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID at the polls (non-photo documents accepted for residence)",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:24:44.245Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +108,33 @@
       "found": 0,
       "at": "2026-10-22T22:23:51.666Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "proof of residence to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (1 meeting: Indiana Senate Judiciary Committee, 2026-01-14, she presiding; it covers Senate Bill 256 and other bills, nothing on the subject)",
+        "Ballotpedia (confirms she is the sitting Indiana State Senator for District 36; her term runs to 2028, so she is not on the 2026 ballot)",
+        "Indiana Senate caucus page https://www.indianasenaterepublicans.com/carrasco - nothing on the subject",
+        "campaign site https://cyndicarrasco.com/ - nothing on the subject",
+        "Indiana General Assembly roll-call PDFs for 2024 (via a public mirror of the official files): found the HB 1264 and HB 1265 Senate votes",
+        "Indiana Citizen article on the HB 1264 Senate vote (does not name her)",
+        "web searches on her name with election bills in 2025-2026: found no sponsorship or statement by her on the subject",
+        "not reviewed: HB 1265 (2024, 'Various elections matters') text, so its contents on ID or citizenship are unchecked and it is not saved",
+        "not reviewed: her X, Facebook and Instagram accounts (not readable here)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T01:24:44.245Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

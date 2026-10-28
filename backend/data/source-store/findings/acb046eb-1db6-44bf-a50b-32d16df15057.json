@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -102,10 +106,10 @@
       "id": "3260ef64b28e65dfa8883f4ee68fa32a25a8fd5a07eaab63e914f797f919a54a",
       "kind": "own-words",
       "url": "https://grabien.com/story?id=571848",
-      "date": "2026",
-      "date_precision": "year",
+      "date": "2026-02",
+      "date_precision": "month",
       "passage": "The SAVE Act would make it harder for millions of Americans to get registered to vote by requiring in-person registration at elections offices, government offices with government hours, y’all.",
-      "note": "Same floor remarks (Grabien transcript). She describes the SAVE Act as requiring in-person registration at election offices and says this would make registering harder.",
+      "note": "House floor remarks transcribed by Grabien. The page gives no date; remarks refer to a January FBI action in Fulton County and to the SAVE America Act, which the House took up in February 2026. Speaks on SAVE Act registration rules.",
       "subjects": [
         "proof of citizenship to register",
         "SAVE Act",
@@ -115,8 +119,8 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
         "method": "webfetch"
       }
     },
@@ -127,18 +131,20 @@
       "date": "2025-10-21",
       "date_precision": "day",
       "passage": "DPOC policies would discard this foundational American right by forcing Americans to pay significant financial, administrative, and personal costs simply to participate in democratic elections, creating a modern day poll tax.",
-      "note": "Letter she led, with 31 colleagues, to the Election Assistance Commission, opposing a petition to add documentary proof of citizenship (DPOC) to the national voter registration form. Quoted from her official press release.",
+      "note": "Same press release (the page text sits in the page's embedded data); the sentence's speaker is not shown in the text I copied, so treat it as release text issued by her office.",
       "subjects": [
         "proof of citizenship to register",
         "documentary proof of citizenship",
-        "cost of documents"
+        "cost of documents",
+        "documentary proof of citizenship to register",
+        "costs of proving citizenship"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
         "method": "webfetch"
       }
     },
@@ -270,6 +276,48 @@
         "fetched_at": "2026-10-22T21:43:38.267Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "cc0e183b1cb2dabb5779c08859c8d8647de2f9c2eae9368c5df5e6b74a62e7f2",
+      "kind": "own-words",
+      "url": "https://grabien.com/story?id=571848",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "The SAVE America Act is just another part of a scheme by House Republicans and the Trump Administration to take over our elections.",
+      "note": "Same floor remarks as above, as transcribed by Grabien (undated page).",
+      "subjects": [
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "203795230d0fcfcce6a835929f340ced037a9730609a8e2ab6e329b929716626",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-denounces-attempt-to-undermine-open-fair-and-accessible-elections",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "Congresswoman Nikema Williams (GA-05) led a letter, along with 31 Congressional colleagues, to the General Council of the U.S. Election Assistance Commission to strongly oppose any changes to the national voter registration application that would add documentary proof of citizenship (DPOC) or “show your papers” requirements.",
+      "note": "Press release from her office about a letter to the Election Assistance Commission on adding documentary proof of citizenship to the federal registration form.",
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "federal voter registration form"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -300,6 +348,30 @@
       "found": 9,
       "at": "2026-10-22T21:43:38.267Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "photo ID to vote",
+        "in-person registration",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://nikemawilliams.house.gov/ (voting rights section; press release on proof of citizenship)",
+        "AJC April 2026 article confirming she won the May primary and is on the November 2026 ballot",
+        "Grabien transcript excerpt of House floor remarks",
+        "web searches: name plus SAVE Act, voter ID, proof of citizenship",
+        "blocked: https://ballotpedia.org/Nikema_Williams (fetch returned empty page)",
+        "blocked: https://nikemawilliams.house.gov/media/press-releases (404)",
+        "not reviewed: https://democrats-cha.house.gov/sites/evo-subsites/democrats-cha.house.gov/files/evo-media-document/nikema-williams-witness-statement.pdf (snippet only, topic unclear)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T21:46:59.034Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

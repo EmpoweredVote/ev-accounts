@@ -23,11 +23,125 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "796a9d73cbcdda14633bfbcb967c38bcc0cf90655f6a6ad1cd0c1866f36300b8",
+      "kind": "own-words",
+      "url": "https://oversightdemocrats.house.gov/sites/evo-subsites/democrats-oversight.house.gov/files/Collier%20Testimony%20-7-29-2021.pdf",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "Moreover, Governor Abbott has not been able to point out the prevalence of widespread voter fraud that would necessitate the draconian changes proposed.",
+      "note": "Written testimony to a US House subcommittee on Texas election bills (SB 7 / special session bills). She says the governor has not shown widespread voter fraud to justify the proposed election changes.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:00.202Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53932357af7a5f242634c95e73f5fd9b2e592df1a0b54869f97a7de4e0880ff3",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-117hhrg45425/html/CHRG-117hhrg45425.htm",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "Ms. Collier. I support expanding voter ID to include student IDs that are issued by state schools, yes.",
+      "note": "Asked yes or no by a committee member whether she supports voter ID, she says she supports expanding the accepted IDs to include state-school student IDs. Asked whether she would have voted yes on the 2011 bill, she said she did not know that bill. Official hearing transcript, 'Democracy in Danger: The Assault on Voting Rights in Texas'.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:00.202Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c39cb9a70a14f63bb43c02aa533a13db1d2baa435db8d1e1896e324298d7052a",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-117hhrg45425/html/CHRG-117hhrg45425.htm",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "Ms. Collier. Absolutely. So, the concern, and we are not even raising the issue of strict voter ID in Texas because that has already been determined by the court. That has been resolved. The concern with this one is if I registered to vote 20 years ago, I was required to put down one of those identifications.",
+      "note": "On the ID-number rule for mail ballots in 2021 H.B. 3, she says the concern is a mail ballot being rejected if the driver's license or Social Security number given does not match the one on file, with no chance to fix it. She says she is not raising strict in-person voter ID, which she says the court has settled.",
+      "subjects": [
+        "mail-ballot ID number",
+        "voter ID at the polls",
+        "chance to fix a rejected ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:00.202Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbea638cef110811a4a5399d2f95bcf97742504d901373b5151eb107f8a7ea42",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CHRG-117hhrg45425/html/CHRG-117hhrg45425.htm",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "I have heard people say that we are opposed to voter ID. Well, let me tell you Texas has been found to violate the Voting Rights Act of 1965 every decade since its passage.",
+      "note": "In her opening remarks she answers the claim that she and colleagues oppose voter ID by pointing to Texas's record on the Voting Rights Act. In the same remarks she says the bills would require a mail voter to give the last four digits of a driver's license or Social Security number, and that a ballot with the other number would be rejected with no cure.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID number",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:00.202Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID number with mail ballot",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas House official member page (confirms Rep. Nicole Collier, District 95); its media page says no media",
+        "not reviewed: https://house.texas.gov/members/2360/legislation/R (page loads bill list by script, nothing readable)",
+        "Ballotpedia page (confirms House District 95, term ends 2027; nothing on the subject)",
+        "campaign site: not reviewed (none found)",
+        "news searches on name plus voter ID, proof of citizenship, SB 16 (only the 2021 congressional hearing was on the subject; nothing on SB 16 votes by her)",
+        "2021 House Oversight subcommittee written testimony and hearing transcript (GovInfo)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T14:57:00.202Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

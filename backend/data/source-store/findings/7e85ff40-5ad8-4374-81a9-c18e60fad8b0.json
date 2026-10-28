@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,262 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "73db3d2fa81ff7afd395b4e6a09d43e2208e101799356b3a6a4f25b74f66fa84",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "author",
+      "motion": "author sponsor, as filed (2021-08-06); printed: By: Hughes",
+      "note": "author sponsor of TX-SB-1-2021 (as filed (2021-08-06); printed: By: Hughes): S.B. 1, relating to election integrity and security, including by preventing fraud in the conduct of elections in this state; increasing criminal penalties; creating criminal offenses (Election Integrity Protection Act of 2021).",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "37e0a82a6deb12f16a751b5f156f8048e53d4d3664704d28d59672f653547554",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "motion": "author sponsor, as filed (2025-03-11); printed: By: Hughes, et al.",
+      "note": "author sponsor of TX-SB-16-2025 (as filed (2025-03-11); printed: By: Hughes, et al.): S.B. 16, relating to requiring a person to submit proof of citizenship to register to vote; creating criminal offenses.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "26ebaba6c00c459e9f5d1d357a62bfd1c8bc254f6874fa097385c00be540cda0",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/texas/2025/04/01/senate-bill-16-sb16-proof-of-citizenship-approved-texas-senate",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "“Most Texans have already proven their citizenship when they got their driver’s license, but the feds have not allowed us to do this for voter registration. Senate Bill 16 will address that,” Hughes said Tuesday during a Senate floor debate on the bill.",
+      "note": "Quoted by Votebeat from the Senate floor debate on SB 16, which would require proof of citizenship to register to vote.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17c53a02df7569e2fce763c8937b9e0651a9245a13e6eb84f8d9630b66e1b606",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/texas/2025/04/01/senate-bill-16-sb16-proof-of-citizenship-approved-texas-senate",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "“So we’re talking about a relatively small group of people,” Hughes said.",
+      "note": "Quoted by Votebeat from the same SB 16 floor debate. In the story he says many Texans have already shown proof of citizenship when getting a driver's license and election officials can verify others, so the group needing to act is small.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9025a73d5022e2a4af514c217ea3a3b707efe3a38957f60cf8773e56298339e4",
+      "kind": "own-words",
+      "url": "https://www.kltv.com/2025/03/24/sen-bryan-hughes-files-bill-requiring-proof-citizenship-register-vote/",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "“We know that one non-citizen voting in an election is a problem,” Hughes added. “That cancels out the vote of a citizen.”",
+      "note": "Quoted by a Tyler TV station (KLTV) when he filed SB 16, a bill requiring proof of citizenship to register to vote. The same story quotes him: “We are not waiting on Washington, we can fix this locally.”",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a604a744d43b8e9d9ea92e30840e13df9d96b9e44678b5caf68fd1cf430e2cc8",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/08/09/texas-voting-bill-senate/",
+      "date": "2021-08-09",
+      "date_precision": "day",
+      "passage": "“None of us can deny that we can and should always work toward a better election process — one that is safer and more accessible — and that’s what Senate Bill 1 does,” said state Sen. Bryan Hughes, the Mineola Republican who has authored each version of the legislation.",
+      "note": "Quoted by the Texas Tribune at the Senate committee hearing on SB 1 (2021). SB 1 as passed added ID-number requirements to mail ballot applications and carrier envelopes.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f63b01540869dd6f3fa048a144e0c0fa069119267473d051b463942a616fef74",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/08/09/texas-voting-bill-senate/",
+      "date": "2021-08-09",
+      "date_precision": "day",
+      "passage": "“The security measures in this bill are aimed not at the voters trying to cheat but at ballot harvesters, at folks trying to influence, trying to coerce, trying to steal votes, trying to mislead voters,” Hughes added.",
+      "note": "Quoted by the Texas Tribune at the SB 1 committee hearing, about the bill's rules for people who assist voters.",
+      "subjects": [
+        "ballot harvesting and voter assistance",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8cf92d21f07416b8038eac3f91748ecd064425437bd2d018af14e177616c529",
+      "kind": "own-words",
+      "url": "https://www.kltv.com/2026/08/20/fifth-circuit-rules-texas-bringing-back-mail-in-ballot-id-requirements/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“DPS will issue you a state ID if you don’t have a driver’s license. And then the objectors said, yeah, but you’ve got to pay a fee for that. And that would be like a poll tax,” Hughes explained. “We said, you’re right. So we made that voter ID card free from the state. We removed every possible obstacle and still got opposition.”",
+      "note": "Quoted by KLTV after a Fifth Circuit ruling that reinstated SB 1's mail-ballot ID requirement (last four of a Social Security number or a government ID number). He describes the free state voter ID card for people with no driver's license.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters with no license",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53813acf014d9e6b04f4033c0bdf5980a4b75dd107f04ddd21373beddac49398",
+      "kind": "own-words",
+      "url": "https://www.kltv.com/2026/08/20/fifth-circuit-rules-texas-bringing-back-mail-in-ballot-id-requirements/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“We’re talking about common sense reforms, easy to vote, hard to cheat,” said Hughes.",
+      "note": "Quoted by KLTV about SB 1 (2021), in the same story on the Fifth Circuit ruling restoring mail-ballot ID rules.",
+      "subjects": [
+        "election integrity laws",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "164551edfe8272d9db153a55886af26c233c111718fd717085d07cc5d651fe80",
+      "kind": "own-words",
+      "url": "https://www.bryanhughes.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "He authored and passed landmark legislation including the Heartbeat Bill, the ban on Critical Race Theory in public schools, the historic Election Integrity Bill of 2021, the Social Media Censorship Ban, and the nation’s strongest data privacy law, along with several other groundbreaking laws.",
+      "note": "Campaign-site bio (third person, undated page; the same text is on his official Senate page) naming the 2021 election bill among his authored laws.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:20:32.686Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "free state ID for voters with no license",
+        "no-ID voter options",
+        "non-citizen voting",
+        "election integrity laws",
+        "ballot harvesting and voter assistance"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with name search, nothing found)",
+        "official Senate page https://senate.texas.gov/member.php?d=1 and press room https://senate.texas.gov/pressroom.php?d=1 (three press releases listed, none on the subject)",
+        "campaign site https://www.bryanhughes.com/ (home, about, welcome and news pages; the home page matches the Senate bio; the news page has only 2015 items, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Bryan_Hughes (confirms he is on the 2026 general-election ballot for Senate District 1; nothing on the subject)",
+        "Texas Legislature Online pages for SJR 37 (89th session; he is not its author)",
+        "news pages fetched: Votebeat 2025-04-01, KLTV 2025-03-24, KLTV 2026-08-20, Texas Tribune 2021-08-09 and 2025-03-12 and 2025-05-28, The Texan (2021, SB 1 contents)",
+        "news search on his name plus voter ID, proof of citizenship, SB 1 and SB 16",
+        "not reviewed: Senate floor video and Senate Journal, and House floor records from 2011 and 2017, for his own words"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:20:32.686Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

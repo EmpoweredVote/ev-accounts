@@ -26,6 +26,29 @@
       "found": 0,
       "at": "2026-10-22T23:07:03.537Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "2026 Massachusetts voter ID ballot petition"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity and scope confirmed: https://ballotpedia.org/Homar_Gomez shows him as the 2nd Hampshire District House member on the 2026 general-election ballot after the 2026-09-01 primary",
+        "Ballotpedia: 2026 survey not completed; nothing on the subject",
+        "campaign site https://www.homargomez.com/: home page has nothing on the subject; the on-the-issues path returned not found",
+        "blocked: https://malegislature.gov/Legislators/Profile/HG0M and /HDG1 (not found; legislator search page not usable for his bill list)",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act, 2026 ballot petition: nothing on the subject; only a ranked-choice-voting home rule petition (H.835) turned up, which is off the subject",
+        "not reviewed: House roll-call records on malegislature.gov"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:27.229Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

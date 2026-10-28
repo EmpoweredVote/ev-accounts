@@ -51,6 +51,77 @@
         "fetched_at": "2026-10-22T23:53:58.772Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "97924777000353d99d254c83672f8fdf55e7efb99db277d0dcab1d0288504e1e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "NC-H-825-2025",
+      "act": "sponsor",
+      "note": "HB 825 'Election Improvements', listed with Scott as a primary sponsor alongside Echevarria. The filed text changes what an absentee-ballot request and a reasonable-impediment affidavit must contain: the last four digits of the Social Security number plus one of a driver license number, a non-operator ID number, or date of birth. The bill also bans ranked choice voting and cuts early voting. It was sent to a House committee and did not advance.",
+      "subjects": [
+        "ID with absentee ballot request",
+        "reasonable-impediment affidavit for absentee ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:04.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9658060c4f8d790801b30aa998c19f1934d3c8c950a197bc8423cb5e344a7e3b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (66-47). Scott is listed among the Ayes.",
+      "note": "Legislative staff summary of Part II of the ratified bill: it requires DMV to send full Social Security numbers to the State Board of Elections monthly, requires the State Board to set a process to remove non-citizens from voter rolls using federal database information, and bars processing a registration application unless the applicant affirmatively says they are a U.S. citizen (with a sworn form if the question is left blank). The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship check on voter registration",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:04.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2bce1ca41221bc7a0396f68315d702eae8d16b9f3e7fc9ca7c2dfc275f0280b2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/841",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "other",
+      "motion": "HB 958 Election Law Changes, House concurrence vote on the Senate version (62-47): Scott recorded as Excused Absence.",
+      "note": "On the final House vote to concur in the Senate changes to HB 958, his roll-call record shows an excused absence, not a yea or nay.",
+      "subjects": [
+        "citizenship check on voter registration",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:04.344Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -78,6 +149,34 @@
       "found": 2,
       "at": "2026-10-22T23:53:58.772Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with an absentee or mail ballot request",
+        "reasonable-impediment affidavit for absentee ballot",
+        "proof of citizenship to register",
+        "citizenship check on voter registration applications",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page for Paul Scott (confirms sitting House member for district 111, Cleveland and Rutherford counties): https://www.ncleg.gov/Members/Biography/H/841",
+        "NC General Assembly list of his bills and his roll-call votes (2025-2026 session)",
+        "NC General Assembly bill pages and bill text for HB 825, HB 66 and HB 958",
+        "Wikipedia page (confirms office and 2026 general-election candidacy listing via search; no voter ID content)",
+        "WSOC candidate guide for House district 111: no answers from him posted",
+        "BillTrack50 page: sponsored-bill list did not load",
+        "Ballotpedia: not reviewed, page returned no content to the fetch tool: https://ballotpedia.org/Paul_Scott_(North_Carolina_politician)",
+        "campaign site and personal site: not found in search results, nothing reviewed",
+        "own words (interviews, forums, posts) on the subject: nothing found in the pages reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:36:04.344Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -28,6 +28,28 @@
       "found": 0,
       "at": "2026-10-22T23:17:32.761Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dawne_Shand shows her as the 1st Essex District member, term ending 2027-01-06, with a Nov. 3, 2026 general election listed",
+        "On the Record (0 appearances)",
+        "official site https://www.dawneshand.com (home, about, news pages): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/ (profile URL patterns tried returned 404); bill sponsorships not reviewed",
+        "3 web searches on her name plus voter ID, citizenship, election terms: nothing on the subject; one result notes a 2026 voter ID ballot petition in Massachusetts, not tied to her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:42:47.596Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

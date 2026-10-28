@@ -116,6 +116,29 @@
         "fetched_at": "2026-10-22T22:18:06.597Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "baa256760726ce69587207834ef9cbc6ba8d30267372172e8568fda6f65ab496",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s57",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "Senate roll call 57, motion to proceed to S. 1383 (the vehicle for the SAVE America Act, which requires proof of citizenship to register and photo ID to vote in federal elections)",
+      "note": "Vote tracker data lists Moran as Yea on the motion to proceed, agreed to 51-48. The tracker titles the bill with its original name; press coverage describes this vote as the start of Senate debate on the SAVE America Act. The official senate.gov roll call was blocked (403).",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:15.758Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -147,6 +170,29 @@
       "found": 5,
       "at": "2026-10-22T22:18:06.597Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "Senate floor votes on the SAVE America Act vehicle",
+        "mail-ballot ID",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.moran.senate.gov/public/index.cfm/news-releases (403 access denied)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00057.htm (403)",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/128/cosponsors (empty page)",
+        "vote tracker watch.vote roll calls 57 and 68 (found the person; roll 57 saved)",
+        "three news searches on name plus subject words (no own words found)",
+        "Ballotpedia news (no Moran statement)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:43:15.758Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

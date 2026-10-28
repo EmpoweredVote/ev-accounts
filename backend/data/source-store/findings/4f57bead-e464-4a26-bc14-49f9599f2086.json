@@ -1,6 +1,58 @@
 {
   "politician_id": "4f57bead-e464-4a26-bc14-49f9599f2086",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "8b5e2e3f6ef798bd60cc6dfccd1f595f0314d7cd807d705ef122553689a9e2f6",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/college-ids-voting-parental-rights-100044448.html",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "\"We already have created a system where you need one of these to do everything almost everybody over the age of 18 is doing,\" he said. \"I don't think it's too much to ask if you are going to vote to have one of these.\"",
+      "note": "Quoted by the Indiana Capital Chronicle (Yahoo copy) from his floor remarks in the House debate on SB 10, which would stop students at public institutions from using college IDs as proof of identity at the polls. He held up his driver's license while speaking; the story says non-drivers can also get state ID cards.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:43:22.617Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +76,31 @@
       "found": 0,
       "at": "2026-10-22T22:34:12.914Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia page https://ballotpedia.org/Matthew_Lehman_(Indiana) shows him as the incumbent on the 2026-11-03 general-election ballot for Indiana House District 79",
+        "On the Record (0 meetings)",
+        "Indiana Capital Chronicle story of the 2025-04-01 House debate on SB 10, read through the Yahoo copy https://www.yahoo.com/news/college-ids-voting-parental-rights-100044448.html",
+        "blocked: https://indianacapitalchronicle.com/2025/04/02/college-ids-for-voting-parental-rights-transgender-athletes-these-indiana-bills-are-on-the-move/ (bot check page)",
+        "Ballotpedia (nothing on the subject beyond the ballot listing)",
+        "one news search on name plus voter ID words (found the SB 10 floor remarks); one search on name plus election/citizenship words (nothing on the subject)",
+        "blocked: https://iga.in.gov legislator and bill pages (page loads only a script shell); roll calls already on file",
+        "nothing on the subject: House caucus member page fetch returned no usable page text",
+        "campaign site: none found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T11:43:22.617Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

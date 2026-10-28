@@ -25,6 +25,29 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "8cbbc59d430b3297e4655d80a097c953d24ec2b2968afd0556ea262e0fbfeec4",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "nay",
+      "motion": "On adoption of amendment #1587 (H.5500), recorded vote 27 yeas to 131 nays; amendment rejected",
+      "note": "Amendment 1587 to the FY2027 budget, titled 'An Act relative to identification to vote', would have required valid state or federal photo ID before a voter receives a ballot, with a free state photo ID for registered voters without one who sign an affidavit. Michlewitz is recorded as N on the roll call.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:48.189Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -54,6 +77,31 @@
       "found": 0,
       "at": "2026-10-22T23:19:05.292Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voters without ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election access and registration (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Aaron_Michlewitz (confirms sitting 3rd Suffolk representative, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/AMM1 (no voter ID or citizenship bills shown on the page; full sponsored lists not shown)",
+        "House roll call PDFs for the FY2027 budget (H.5500) amendment votes, Nos. 156-190",
+        "Beacon Hill Times 2018-06-15 (voting-access remarks only, nothing on ID or citizenship)",
+        "web news searches on name plus voter ID, proof of citizenship, SAVE Act, non-citizen voting: nothing in his own words on the subject",
+        "Fall River Reporter 2026-04-30 (lead to the budget amendment vote)",
+        "not reviewed: campaign site (not located); ontheissues.org (lead-only)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:48:48.189Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -21,11 +21,150 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "b24f1e7212b0ce76f14909385d6f816fa279c220b1080a700214d8bfabb056b4",
+      "kind": "own-words",
+      "url": "https://www.mollyfortexas.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We must make it as easy as possible for anyone who is legally permitted to make their voices heard.",
+      "note": "Voting Rights section of her campaign issues page. The same section lists support for online voter registration, 24-hour and drive-through voting where needed, and lifting barriers from the 2021 SB 1.",
+      "subjects": [
+        "voting access in general",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dffc41a5cc553e8f5c9d8a684e5de3d85c2fd98384eb22e9278bfc70816c5eb3",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 on second reading: suspend regular order (20-11) and pass to engrossment (20-11)",
+      "note": "SB 16 requires a person to submit proof of citizenship to register to vote. She is listed among the nays on both roll calls.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9387803678d9d8ec4b3860462bb292897a4d73c1fd75a7b4a22823ab95483c8d",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "The Senate passed SB 16, the proof-of-citizenship-to-register bill. She is listed among the nays.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab0c9d4eea7b4d5316bad917fc8068b79acc90b447db39b62b0c31238f6dfdf7",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "nay",
+      "motion": "SJR 37 on second reading and third reading and final passage (28 yeas, 3 nays)",
+      "note": "SJR 37 proposes a constitutional amendment clarifying that a voter must be a United States citizen. She is one of three senators listed as nay.",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d28be987d03bd2c933bf15a5a9b63a1d565a7c8b4a2b6a3d754dabfde2cf6152",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-318-2025",
+      "act": "nay",
+      "motion": "SB 318 on third reading and final passage (20 yeas, 11 nays)",
+      "note": "SB 318 sets up an election integrity division in the attorney general's office. She is listed among the nays.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "proof of citizenship to vote",
+        "election integrity laws in general",
+        "voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas Senate member page senate.texas.gov/members/d15/ (confirms Senator Molly Cook, District 15; press room list has nothing on the subject)",
+        "campaign site mollyfortexas.com/issues",
+        "Ballotpedia (candidate survey mentions voting rights and voting access only in general terms; nothing on ID or citizenship)",
+        "Senate Journal 2025-04-01 (SB 16, SB 318, SJR 37 roll calls)",
+        "two news searches (Texas Tribune and Votebeat SB 16 coverage checked: no quote from her)",
+        "her electronic voter registration bill SB 255: not reviewed",
+        "her newsletter archive: not reviewed: https://lp.constantcontactpages.com/sl/VIQmZr0/SD15Newsletter"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:29:45.472Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

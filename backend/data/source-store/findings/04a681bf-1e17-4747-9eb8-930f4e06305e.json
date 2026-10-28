@@ -30,6 +30,35 @@
       "found": 0,
       "at": "2026-10-22T22:14:20.438Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.mcgowanforiowa.com (vision, about, snapshots, media, endorsements pages; nothing on the subject in his own words)",
+        "https://www.iowapublicradio.org/political-news/2026-10-01/iowa-4th-congressional-district-debate-2026-election (Oct 2026 debate story names him as a general-election candidate; nothing on the subject)",
+        "https://www.ktiv.com/2025/07/01/sioux-city-native-chris-mcgowan-makes-candidacy-iowas-4th-congressional-district-official/ (launch story; nothing on the subject)",
+        "https://www.ktiv.com/2026/08/11/republican-candidate-outlines-key-issues-november-election-approaches/ (key-issues interview; immigration and border only, nothing on the subject)",
+        "https://www.ktiv.com/2026/02/05/president-trump-endorses-chris-mcgowan-sioux-city-who-is-running-us-house/ (endorsement words belong to the endorser, not saved)",
+        "blocked: https://www.desmoinesregister.com/story/news/politics/elections/2026/08/17/chris-mcgowan-register-political-soapbox-iowa-state-fair-2026/91248320007/ (fetch refused, curl 402)",
+        "blocked: https://ballotpedia.org/Chris_McGowan (page returned empty)",
+        "not reviewed: https://www.pbs.org/newshour/politics/watch-live-candidates-in-race-to-replace-iowa-rep-feenstra-meet-for-debate (debate video)",
+        "not reviewed: https://www.ballotready.org/people/chris-mcgowan",
+        "not applicable: legislator bill pages (he holds no legislative seat)",
+        "web searches on name plus voter ID, SAVE Act, citizenship, election integrity: no statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:05:46.563Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

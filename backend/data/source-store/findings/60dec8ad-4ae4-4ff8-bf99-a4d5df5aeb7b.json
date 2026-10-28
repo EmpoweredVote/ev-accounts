@@ -8,17 +8,18 @@
       "date": "2023-10-04",
       "date_precision": "day",
       "passage": "Baird said to register, Indiana residents must be at least 18 years old on or before the upcoming election, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before the next election, and not currently imprisoned after being convicted of a crime.",
-      "note": "Press release in his name restating Indiana's registration requirements, including an Indiana license or state ID and U.S. citizenship. It describes existing rules and does not say whether he wants them changed.",
+      "note": "Caucus press release issued in his name. It lists the registration rules as they stood, including an Indiana license or state ID and U.S. citizenship. It describes the rules and does not say whether he wants them changed.",
       "subjects": [
         "ID needed to register",
-        "citizenship to register"
+        "citizenship to register",
+        "ID number to register to vote"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T22:36:14.220Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:17:55.193Z",
         "method": "webfetch"
       }
     },
@@ -40,6 +41,58 @@
       "provenance": {
         "fetched_by": "source-collector",
         "fetched_at": "2026-10-22T22:36:14.220Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "82c4ea119128c3d06cc35103fa9dc19b2b8dd8d8450cf41b9418eabbe2adf655",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/baird-don-t-miss-oct.-5-voter-registration-deadline/",
+      "date": "2020-09-29",
+      "date_precision": "day",
+      "passage": "To register, Indiana residents must be at least 18 years old on or before Nov. 3, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before Nov. 3, and not be currently imprisoned after being convicted of a crime. Those who do not have a driver's license or state ID can register to vote in person at county government centers, public assistance offices and when completing a Bureau of Motor Vehicles transaction.",
+      "note": "Caucus press release issued in his name. It lists the registration rules as they stood, including a license or state ID number and U.S. citizenship, and says where a person without either can register in person. It describes the rules and does not say whether he wants them changed.",
+      "subjects": [
+        "ID number to register to vote",
+        "voters with no driver's license or state ID",
+        "citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:17:55.193Z",
         "method": "webfetch"
       }
     }
@@ -68,6 +121,31 @@
       "found": 2,
       "at": "2026-10-22T22:36:14.220Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID number to register to vote",
+        "voters with no driver's license or state ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Beau_Baird shows him as the sitting Indiana House District 44 member, on the 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "Indiana House caucus press releases: two found and saved (2020, 2023); member page https://indianahouserepublicans.com/members/Baird returned an error page",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_beau_baird_1 (page loads no text, so his authored and coauthored bills could not be read; Indiana roll calls were left to the feed on file, as instructed)",
+        "Ballotpedia: no survey answers on the subject; Wikipedia and wtfvote.us used as leads only",
+        "Facebook page https://www.facebook.com/BeauBairdIN/: blocked, error page",
+        "a US House press release about the SAVE America Act is from Rep. Jim Baird, a different person, and was not used",
+        "three news searches on name plus subject words (SB 10, HB 1680, citizenship): no source names him as author, coauthor or speaker on those bills"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:17:55.193Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

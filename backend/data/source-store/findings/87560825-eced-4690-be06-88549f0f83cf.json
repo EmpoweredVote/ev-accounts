@@ -51,6 +51,49 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "b30c65368549ea91b8d156b26d098abbe7223ccb0ae2271be01a8fcd1bca036a",
+      "kind": "own-words",
+      "url": "https://elfreth.house.gov/media/press-releases/elfreth-votes-no-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“Nearly 70 million American women, Democrats and Republicans alike, have an ID with a name on it that does not match their name at birth. My colleagues across the aisle contend that voter fraud is rampant and that non-citizens are voting or intending to vote in elections. The truth of it is that voter fraud occurs 0.0003 percent of the time, which means that you’re more likely to be struck by lightning than for a non-citizen to try to vote in our elections,” said Congresswoman Sarah Elfreth. “This bill is a solution in search of a problem, and by slapping these unnecessary ID laws onto our books, we only disenfranchise millions of Americans and millions of women.”",
+      "note": "Statement issued with her press release on her vote against H.R. 22, the SAVE Act, which requires documents showing proof of citizenship to register. She speaks about name-matching on IDs, how often non-citizens vote, and the effect of ID laws on women.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:37.987Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "13f808db87013111c09020802618a5f5bbc8b90999c0e36239abd1d71c41e768",
+      "kind": "own-words",
+      "url": "https://elfreth.house.gov/media/press-releases/elfreth-votes-no-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Elfreth is a member of the House Armed Services Committee and supports the fundamental right of servicemembers to vote in U.S. elections domestically and abroad.",
+      "note": "Sentence from the same press release issued by her office; it gives her office's reason tied to servicemembers who may be unable to confirm identity in person.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voting by servicemembers"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:37.987Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -76,6 +119,29 @@
       "found": 0,
       "at": "2026-10-22T21:56:30.591Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE Act",
+        "non-citizen voting claims",
+        "voting by servicemembers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release list page 1 and page 10 (nothing on the subject on those pages)",
+        "official site search: blocked: https://elfreth.house.gov/search?query=SAVE+Act (403)",
+        "official press release on H.R. 22 vote",
+        "Ballotpedia: fetch returned no usable text",
+        "Maryland State Archives 2026 general election page (confirms she is listed for District 3)",
+        "news search on name plus SAVE Act / SAVE America Act (no source showing her own words on the 2026 bill)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T20:33:37.987Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

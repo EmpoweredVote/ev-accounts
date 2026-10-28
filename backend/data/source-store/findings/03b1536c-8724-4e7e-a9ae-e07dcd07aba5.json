@@ -22,11 +22,134 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "08d3dc963f554161fbfebfab2a7b6e5ae45e2a203dc2f3cc19de5917a992bd14",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2024/bills/VAB00026802",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voted for HB 26 (voter identification; accepted forms of identification, private entities licensed or certified) on passage; the House passed it 85 to 11 and it later became law. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c09771bb76e291644f0417382899b47159e7383e1140156287ed45b9038b701",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00040317",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-972-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted against HB 972 (voter registration list maintenance, cancellation procedures and required record matches) on third reading; the House passed it 62 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "263aea7e6bd8dfc21cc9b132b66af0492ae6aec0fe8db642a2741d8ef881a341",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039276",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-111-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (61-Y 35-N 0-A)",
+      "note": "Voted against HB 111 (cancellation of voter registration, sources of data) on third reading; the House passed it 61 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "552ee8860f07a3040b9179f8aed051983db5163a3c1c57a9d2344bad7defb89d",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039438",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-215-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted against HB 215 (voter registration list maintenance, third-party data exchanges approved by the State Board of Elections) on third reading; the House passed it 62 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.358Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll list maintenance",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: https://ballotpedia.org/Jason_Ballard shows a sitting Virginia House member for District 42, re-elected 2025-11-04, term to 2028",
+        "official House member page https://house.vga.virginia.gov/members/H0333 (nothing on the subject)",
+        "campaign site https://ballardfordelegate.com/ (nothing on the subject)",
+        "one news search on his name plus voter ID, election integrity, citizenship and photo identification (nothing naming him)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (nothing on the subject)",
+        "bill-tracking pages on fastdemocracy.com for 2026 bills HB 972, HB 111, HB 215, HB 28, HB 966, HB 213, HB 1131 and HB 1213, and the 2024 bill HB 26 (his recorded votes copied where he voted; HB 28 and HB 213 not on the subject; no recorded vote by him on HB 966, HB 1131 or HB 1213)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB972 (page needs JavaScript; cannot be read)",
+        "blocked: https://legiscan.com/VA/bill/HB1131/2026 (403)",
+        "not reviewed: other 2024 and 2025 bills on voter identification or citizenship checks (no list of them reachable without the JavaScript legislature site)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:31:41.358Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

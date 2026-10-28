@@ -42,6 +42,56 @@
         "fetched_at": "2026-10-22T22:51:58.604Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "d7b834a010443e5b91c421a0984a92a39456c99391d8d5846cad9a59d40e7307",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Andrew_Ireland",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "As a Deputy Indiana Attorney General, Andrew scored big wins for conservative causes like the Right to Life, election integrity, and stopping the invasion of our southern border.",
+      "note": "From his own 2024 Ballotpedia Candidate Connection survey answer, written about himself. It names election integrity as one area of his past work but says nothing about ID or citizenship rules.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:11.756Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -67,6 +117,27 @@
       "found": 2,
       "at": "2026-10-22T22:51:58.604Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Andrew_Ireland (confirms sitting Indiana House District 90 member on the 2026 general-election ballot after advancing from the May 5, 2026 primary; his 2024 survey answers mention election integrity)",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/andrew-ireland (nothing on the subject)",
+        "not reviewed: Indiana General Assembly bill pages and roll calls (brief says do not search iga.in.gov or LegiScan; votes already on file)",
+        "two web searches on his name plus voter ID, citizenship and election integrity words (no sponsorship or own-words statement on those found)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:57:11.756Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -25,6 +25,26 @@
       "found": 0,
       "at": "2026-10-22T21:10:21.803Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "withdrew before the 2026-08-18 primary (unofficial withdrawal, still on the primary ballot, not in the general election; Ballotpedia): https://ballotpedia.org/Manuel_Asensio",
+        "On the Record (0 meetings)",
+        "Ballotpedia page and his 2026 survey answers (no mention of ID, citizenship proof or election integrity)",
+        "one web search on his name, found campaign press releases about a debate lawsuit, nothing on the subject",
+        "stopped after scope check: out of scope, not on the 2026 general ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:03:00.231Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

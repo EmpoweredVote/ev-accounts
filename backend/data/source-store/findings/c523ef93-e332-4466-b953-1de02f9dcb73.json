@@ -27,6 +27,23 @@
       "found": 0,
       "at": "2026-10-22T21:11:06.766Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check only (search stopped: out of scope)"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary",
+        "Ballotpedia https://ballotpedia.org/Mark_Kaye (says he ran for Florida's 5th Congressional District and lost the 2026-08-18 primary, so he is not on the 2026 general-election ballot)",
+        "On the Record (0 meetings found for this person)",
+        "stopped after the out-of-scope check, as the brief directs; no subject search run",
+        "not run: the discovered-sources database script (standing rule bars running repo scripts that read the database)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:35:58.029Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

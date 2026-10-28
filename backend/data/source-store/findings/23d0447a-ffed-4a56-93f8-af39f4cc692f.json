@@ -127,6 +127,79 @@
         "fetched_at": "2026-10-22T23:39:30.293Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f4c94b0b77b82c20c827131582be36edbb4aadeaf7654bf9717c40ae9bec3a73",
+      "kind": "own-words",
+      "url": "https://indyweek.com/news/elections/candidate-questionnaire-Gale-Adcock-NC-House/",
+      "date": "2020-10-14",
+      "date_precision": "day",
+      "passage": "Yes. It is totally unnecessary and has a chilling effect on voting rights.",
+      "note": "Answer to INDY Week question 14, which asked whether she would support repealing the state's voter ID law (described in the question as temporarily blocked by the court) after the election. Written while she was a candidate for the state House; page date is the INDY Week post date.",
+      "subjects": [
+        "voter ID at the polls",
+        "repeal of the state voter ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:35:04.256Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf795292bc208821d42e6c1af06f7625ebd5aaf1f35995f500c38814809c597b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2026",
+      "act": "nay",
+      "motion": "Second Reading, HB 958 Election Law Changes, Senate (Roll Call #693, passed 28-13); Adcock is listed among the Noes",
+      "note": "She voted no on Senate second reading of HB 958. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires county boards to process a voter registration only if the applicant states citizenship, sets weekly removal of deceased voters, and sets a process to remove possible non-citizens flagged from a federal database.",
+      "subjects": [
+        "citizenship statement required to register",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:35:04.256Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -158,6 +231,29 @@
       "found": 1,
       "at": "2026-10-22T23:39:30.293Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Gale_Adcock (confirms sitting Senate District 16 member, on the 2026 general-election ballot)",
+        "state legislature roll calls for HB 958 Election Law Changes, Senate votes #686 to #693 (she is listed among the Noes on every one; only the second-reading vote is saved as it is the bill's passage vote)",
+        "INDY Week candidate questionnaire (2020)",
+        "news and web search on her name plus voter ID: no other own words found",
+        "her official and campaign site: not reviewed (no page located)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:35:04.256Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

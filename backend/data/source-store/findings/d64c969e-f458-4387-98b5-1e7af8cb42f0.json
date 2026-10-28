@@ -1,0 +1,96 @@
+{
+  "politician_id": "d64c969e-f458-4387-98b5-1e7af8cb42f0",
+  "findings": [
+    {
+      "id": "a61c7f8282201ac8841c96cf9968198f437e9fd063d2ac13b25751cf3bc5d943",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "abstain",
+      "note": "SB 1174 (Min, 2024) bars local governments from requiring a person to show identification to vote in a local election. She is listed as abstaining on the Assembly floor vote (57-16, with abstentions). Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:00.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2452bcbb0658af22cd7f7578c8ff9d8661d4f7eec0cedbbe9c4a712cbfde0cac",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "note": "AB 1116 (Berman) requires the Secretary of State, by 2029, to build a way to collect an electronic signature image from someone who registers to vote online without a California driver's license or ID card. She voted yes on the Assembly third reading. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "ID or signature for online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:00.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9e320890e5f13d29a8a2eb5014897ac552a5d4e7c251ef124f2b50d67000728",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "note": "AB 1116 (Berman) requires the Secretary of State, by 2029, to build a way to collect an electronic signature image from someone who registers to vote online without a California driver's license or ID card. She voted yes on the Assembly concurrence in Senate amendments. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "ID or signature for online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:00.439Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "ID or signature for online voter registration",
+        "November 2026 photo ID and citizenship ballot measure"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot for State Assembly District 40)",
+        "official Assembly site a40.asmdc.org (site search for voter, press release list: nothing on the subject)",
+        "campaign site pilarforassembly.com (nothing on the subject)",
+        "CalMatters Digital Democracy bill pages for SB 1174, AB 25, AB 1116, SB 405 (used in place of the blocked leginfo vote page)",
+        "AB 25 (2025): failed in the Assembly Elections Committee 2025-04-09; not a member, nothing to record",
+        "web news searches on name plus subject words (two): nothing from her on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:08:00.439Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

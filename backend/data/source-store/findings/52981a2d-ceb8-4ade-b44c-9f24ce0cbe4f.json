@@ -94,6 +94,58 @@
         "fetched_at": "2026-10-22T23:48:30.910Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3701591664b12a28abdb7f28dce5c68118f302f5d70a172fe8f05662b653bd3d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/427",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "note": "Senate second-reading vote on HB 958, Election Law Changes (roll call 2026-07-28, 6:13 PM): Barnes voted Aye, 28 to 13. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, under which a county board processes a registration application only if it affirmatively says the applicant is a U.S. citizen. A blank answer gets a notice, and a statement under penalty of perjury is required within 30 days. It also bars driver-license-office staff from proceeding with a registration unless the applicant says they are a citizen, and it requires a process to remove voters flagged as non-citizens in a federal database. The bill page shows the bill was vetoed 2026-08-17. She also voted Aye on Amendment 1 and Aye on Amendment 5, and Aye on motions to table Amendments 2, 3, 6, 7, 8, 9 and 10.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:21.125Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -124,6 +176,31 @@
       "found": 4,
       "at": "2026-10-22T23:48:30.910Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "NC legislature member page https://www.ncleg.gov/Members/Biography/S/427 (confirms Senate District 11, 2025-2026 session)",
+        "NC legislature introduced-bills list for her (no voter ID or citizenship bill among her primary-sponsored bills)",
+        "NC legislature roll-call votes page for her (fetched in full)",
+        "NC Senate caucus member page https://ncstatesenate.com/?p=104 (nothing on the subject)",
+        "Ballotpedia (empty page returned, nothing usable)",
+        "one news search on her name plus the subject words (no direct quote found)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/962021910216232960?topic=2 (certificate rejected; lead only, a scraped social-media page)",
+        "campaign site not found (https://www.lisabarnesnc.com does not resolve)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:10:21.125Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

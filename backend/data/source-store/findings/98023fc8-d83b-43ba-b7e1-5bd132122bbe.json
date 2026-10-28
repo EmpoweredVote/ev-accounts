@@ -22,11 +22,38 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Irene_Shin (page loads and names the person in office; nothing on the subject)",
+        "blocked: https://www.ireneshin.com (no response; other guessed campaign domains also did not load)",
+        "web news searches on the name plus voter ID, photo ID, citizenship and election integrity (no own-words quote found; results were about other people or general background)",
+        "blocked: LIS, legiscan and legiplex (not retried, per instructions); floor votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:45.852Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

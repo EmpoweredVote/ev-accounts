@@ -79,6 +79,27 @@
       "found": 0,
       "at": "2026-10-22T21:41:33.566Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/John_Garamendi (sitting U.S. House District 8 member, advanced from the 2026-06-02 primary, on the 2026 general-election ballot)",
+        "official site https://garamendi.house.gov (home page and press-release pages reached; the site's search did not return a result list; nothing on voter ID, SAVE Act or proof of citizenship found)",
+        "official press releases on voting rights (H.R. 4 vote, Voting Rights Act restoration, mail-processing closures): about voting-rights access and mail delivery, not ID or citizenship proof; not saved",
+        "news searches on name plus SAVE Act, voter ID, proof of citizenship: nothing naming him",
+        "congress.gov sponsorship pages: not reviewed (votes on H.R. 22 and S. 1383 already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:53.418Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

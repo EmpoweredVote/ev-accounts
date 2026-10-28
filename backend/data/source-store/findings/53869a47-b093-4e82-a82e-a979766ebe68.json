@@ -28,6 +28,27 @@
       "found": 0,
       "at": "2026-10-22T21:53:45.353Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://ballotpedia.org/Nik_Sandman (confirms he is on the 2026 general-election ballot for Nebraska's 1st District; his Candidate Connection survey answers were read, nothing on the subject)",
+        "On the Record (0 appearances)",
+        "campaign site niksandman.com: home, about, priorities and blog pages read, nothing on the subject",
+        "one web search on his name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, never held federal office",
+        "no debate or interview video found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:43:47.293Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

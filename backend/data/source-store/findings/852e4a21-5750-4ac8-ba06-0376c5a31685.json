@@ -54,6 +54,29 @@
       "found": 0,
       "at": "2026-10-22T23:15:03.655Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Jay_Livingstone (fetched with curl; confirms sitting Massachusetts House member, 8th Suffolk District, on the 2026 general-election ballot; nothing on the subject)",
+        "Massachusetts Legislature member page https://malegislature.gov/Legislators/Profile/J_L1 (confirms him; listed bills seen are not on the subject)",
+        "campaign site jaylivingstone.com (home and issues pages): nothing on the subject",
+        "two news searches on name plus subject words (nothing from him)",
+        "his 2022 vote on amendment 7 to H.4359 is already on file and was not collected again"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:38:15.714Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -96,6 +96,54 @@
         "fetched_at": "2026-10-23T00:10:06.717Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d71ba75c898fa7bf469e367ab90b1952362503919b74c11d60208e6493ca2946",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/832",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Helfrich voted No on second reading of HB 958 (Election Law Changes); the vote was 66 Aye to 47 No. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds a rule that a county board processes a voter registration application only if it states the applicant is a U.S. citizen, with a notice and a sworn statement under penalty of perjury if the answer is blank; it also orders a process to remove voters flagged as possible non-citizens by a federal database and sets list-maintenance changes. The vote-history page shows only her vote, not the reason.",
+      "subjects": [
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:08:44.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2a19cef9ef774a54478d60c9b2c0cc3e06cb8d9cd5caa91e45e32e45f58de99",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/832",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, motion to concur in the Senate version (House roll call 801)",
+      "note": "Helfrich voted No on the House concurrence vote on HB 958 (62 Aye to 47 No). The bill was ratified 8/6/2026 and vetoed by the Governor on 8/17/2026 per the ncleg.gov bill page.",
+      "subjects": [
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:08:44.833Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -123,6 +171,30 @@
       "found": 4,
       "at": "2026-10-23T00:10:06.717Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia, page Beth Gardner Helfrich (confirms NC House District 98, on the 2026 general election ballot; her 2026 survey not completed)",
+        "ncleg.gov member vote history 2025-2026 (all election-related roll calls reviewed)",
+        "ncleg.gov list of bills she introduced (election-related ones checked)",
+        "ratified text of H958 (ncleg.gov PDF)",
+        "iVoterGuide profile: the voter-ID question is listed with no answer from her, nothing to save",
+        "web news search on name plus voter ID words: no own words found",
+        "own words on voter ID, citizenship proof or mail-ballot ID: nothing found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:08:44.833Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

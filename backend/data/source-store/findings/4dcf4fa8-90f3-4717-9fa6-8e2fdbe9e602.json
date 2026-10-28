@@ -1,6 +1,37 @@
 {
   "politician_id": "4dcf4fa8-90f3-4717-9fa6-8e2fdbe9e602",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -23,6 +54,32 @@
       "found": 0,
       "at": "2026-10-22T22:32:45.379Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (1 meeting, Senate Judiciary Committee 2026-01-14, https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a: about a court security bill, nothing on the subject)",
+        "https://ballotpedia.org/Scott_Baldwin (confirms sitting Indiana Senate District 20; term runs to 2028, so he is not on the 2026 ballot; nothing on the subject)",
+        "https://www.indianasenaterepublicans.com/baldwin (official page and its news list; no release on the subject)",
+        "https://www.indianasenaterepublicans.com/2026-baldwin-legislative-updates (nothing on the subject)",
+        "https://www.indianasenaterepublicans.com/baldwin-general-assembly-kicks-off-2026-session (nothing on the subject)",
+        "https://www.votebaldwin.com/ (campaign site; no issue text on the subject)",
+        "blocked: site search on indianasenaterepublicans.com (page not found)",
+        "web searches (two) on name plus voter ID, citizenship and election words: no statement by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:59:57.138Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

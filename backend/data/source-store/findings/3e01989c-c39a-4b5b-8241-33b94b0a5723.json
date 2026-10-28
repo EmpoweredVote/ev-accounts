@@ -49,6 +49,30 @@
       "found": 1,
       "at": "2026-10-22T22:12:14.080Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "East Hampton Star 2026-06-23 (confirms he won the NY-1 primary and is the November 2026 nominee)",
+        "campaign site gallantny.com (home, mission plan and mission one to six pages, media page; nothing on the subject; the trust-in-government page covers stock trading and ethics only)",
+        "Ballotpedia: page fetched but showed no usable candidate text",
+        "Shelter Island Reporter 2026-06-02 primary debate story and Kaleidoscope interview (talk about the immigration pathway to citizenship, not proof of citizenship to vote; nothing on the subject)",
+        "Suffolk Times 2026-06 primary story (nothing on the subject)",
+        "news searches (3) on name plus SAVE Act / voter ID / proof of citizenship / election integrity: nothing by him on the subject",
+        "no legislative record (not a current officeholder)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:54:12.659Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

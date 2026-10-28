@@ -1,0 +1,31 @@
+{
+  "politician_id": "3818cfdb-7899-475d-a941-1176961c2534",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "branch.vote 2026 general-election page (confirms she is on the ballot for House District 170, and says her website has no information on voting and elections)",
+        "her campaign site jaclynforgeorgia.com (nothing on the subject)",
+        "Georgia House media office page for Rep. Ford (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jaclyn_Ford_(Georgia) (page returned no readable text)",
+        "open.pluralpolicy.com vote pages for HB 862 and SB 204 (both off the subject, not saved)",
+        "blocked: https://www.legis.ga.gov (loads by script; no roll call for HB 397 reachable)",
+        "web news search on name plus subject words (no roll call of hers on an election bill found)",
+        "SB 202 2021 vote: not applicable, sworn in 2025-01-13"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:47:56.415Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

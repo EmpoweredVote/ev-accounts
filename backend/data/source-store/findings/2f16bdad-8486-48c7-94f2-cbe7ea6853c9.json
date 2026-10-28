@@ -49,11 +49,83 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "4267eb75a8ff4a03c3f07cb738d3916c670d950b3aeb871f8c76cda6f3ac7982",
+      "kind": "own-words",
+      "url": "https://news.yahoo.com/texas-lawmakers-sound-alarm-senate-212636324.html",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "\"For us it's do or die, because Gov. Abbott is going to call another special session as early as Aug. 9,\" Reynolds said. \"We hope the Senate realizes that we're on borrowed time, so we really need federal intervention.\"",
+      "note": "HuffPost (via Yahoo) quotes him in Washington during the 2021 quorum break, speaking about the Texas voting bill under consideration and asking for federal voting-rights legislation. It does not mention voter ID or citizenship by name.",
+      "subjects": [
+        "2021 Texas voting bill",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:13.350Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1004fe8c136779d3a434cb40f93b661afdc58bc45be5517f9a1d540ee1c68677",
+      "kind": "own-words",
+      "url": "https://news.yahoo.com/texas-lawmakers-sound-alarm-senate-212636324.html",
+      "date": "2021-07-29",
+      "date_precision": "day",
+      "passage": "\"There's so many Black and brown people who will be disenfranchised if we don't get this passed,\" Reynolds said.",
+      "note": "Same story. 'This' refers to the federal For the People Act, which the article says would override state voting restrictions. No mention of ID or citizenship.",
+      "subjects": [
+        "2021 Texas voting bill",
+        "federal voting-rights legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:13.350Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws",
+        "2021 Texas voting bill"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Ron_Reynolds_(Texas) (confirms Texas House District 27, term ends 2027, on the 2026-11-03 ballot); nothing on the subject",
+        "official Texas House member page https://house.texas.gov/members/2040 and biography page (nothing on the subject beyond an election results PDF)",
+        "campaign site: none found (ronreynolds.org is an unrelated site; two other guessed addresses were empty)",
+        "Texas Legislature Online SB 16 (89R) history page: he is not listed as author or cosponsor",
+        "Texas Tribune 2011-03-23 voter ID House debate story (does not name him)",
+        "Yahoo/HuffPost story of 2021-07-29 (direct quotes)",
+        "four news searches on his name plus the subject words; no debate or interview video found",
+        "blocked: legiplex.com bill-tracker pages (403 or no text), so his sponsorship list was not read; one tracker snippet seen only in search results is not used"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:02:13.350Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

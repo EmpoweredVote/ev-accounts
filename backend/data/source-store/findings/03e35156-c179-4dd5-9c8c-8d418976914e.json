@@ -24,6 +24,31 @@
       "found": 0,
       "at": "2026-10-22T22:58:32.355Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.capecodchronicle.com/articles/4640/view.html (confirms she seeks re-election Nov 3 2026, no primary challenger; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Hadley_Luddy (office confirmed; nothing on the subject)",
+        "https://ballotpedia.org/Hadley_Luddy (page returned empty)",
+        "blocked: https://malegislature.gov/Bills/194/H833 (timed out)",
+        "web search on name plus voter ID/election/voting: nothing tying her to any such bill",
+        "web search for campaign site: none found; not reviewed: Cape Cod Times Q&A (https://www.yahoo.com/news/issues-does-4th-barnstable-district-090335280.html)",
+        "https://malegislature.gov/Legislators/Profile/H_L1/194/Cosponsor (her co-sponsored bills, fetched later: nothing on the subject)",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills (her sponsored bills, fetched later: nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:04:25.347Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -21,6 +21,23 @@
       "found": 0,
       "at": "2026-10-22T21:57:52.691Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary. Page: https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Virginia (10th District section lists Julie Perry, teacher and 2023 nominee for State Senate District 36, as eliminated in the primary, with 3,758 votes (20.4 percent) against 13,388 (72.6 percent) for the winner)",
+        "Identity confirmed: https://patch.com/virginia/ashburn/julie-perry-running-gop-va-10-primary-candidate-questionnaire (her candidate questionnaire for the 10th District; nothing on the subject in her answers on education, health care, cost of living)",
+        "On the Record (0 meetings)",
+        "stopped per the scope rule; no further sources searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:46:18.366Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

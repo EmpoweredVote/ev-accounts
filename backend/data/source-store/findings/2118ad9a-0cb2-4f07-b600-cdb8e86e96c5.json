@@ -74,6 +74,54 @@
         "fetched_at": "2026-10-22T23:36:53.623Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "058dc5e1d35dbe9ca62151d635a53c3c2c36874570704e6ebc26a697f06b0d7c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1003",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House second reading.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:36.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfe30f97ff52181b8d3ad7fc87958148909151227b604ed750c4ed26275b7937",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1003",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 motion to concur in Senate committee substitute",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House concurrence vote.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:36.874Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -101,6 +149,33 @@
       "found": 3,
       "at": "2026-10-22T23:36:53.623Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed as sitting NC House member for District 119 (appointed April 2026 after a vacancy): https://www.ncleg.gov/Members/Biography/H/1003 and https://theonefeather.com/2026/04/16/ferguson-to-be-first-ebci-tribal-member-to-serve-in-n-c-house-of-representatives/",
+        "On the Record (0 meetings)",
+        "NC General Assembly member roll-call page https://www.ncleg.gov/Members/Votes/H/1003 (only since April 2026; all votes screened for election words)",
+        "NC General Assembly introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/1003 (no bills)",
+        "NC bill page and ratified text for HB 958",
+        "Ballotpedia: the page under this name is a different person in another state, not used",
+        "news pieces on her appointment (One Feather, Highlands News): nothing on the subject",
+        "no campaign or official site with issue statements found",
+        "one news search on name and seat (nothing on the subject)",
+        "not reviewed: text of HB 958 amendments A1, A2 and A3 (votes recorded but content not read)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:36:36.874Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

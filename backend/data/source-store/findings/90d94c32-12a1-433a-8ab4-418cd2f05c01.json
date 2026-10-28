@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,205 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "2aae47d6841809d174554b8736049a462587d378c6fa8eeb7268a67534958146",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB219",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-219-2025",
+      "act": "author",
+      "motion": "HB 219, a person submitting proof of citizenship to verify eligibility to vote in Texas",
+      "note": "Bill filed by Landgraf. An applicant would have to present proof of U.S. citizenship to register: a REAL ID-compliant Texas driver's license or ID card, a birth certificate, a U.S. passport, or a naturalization or citizenship certificate. Referred to the Elections committee 2025-02-27; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register to vote",
+        "documents accepted as proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7161d58c70c10ae3cada64275064fe27396e563be42a07a6a112cf31cc68fe32",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5337, proof of citizenship to register to vote; criminal offenses",
+      "note": "Signed on as a coauthor on 2025-04-15 to a bill requiring proof of citizenship to register to vote and creating criminal offenses. The Elections committee reported it favorably as substituted 2025-04-28; last action 2025-05-07, committee report sent to Calendars.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "206cb80e9240aa90f1c3f568e4d8e8c8989f827f235161d9874003bb9860f495",
+      "kind": "own-words",
+      "url": "https://www.brookslandgraf.com/landgraf_announces_adjournment_of_second_called_session_highlights_passage_of_hb_8_and_other_key_measures",
+      "date": "2025-09-04",
+      "date_precision": "day",
+      "passage": "“From smarter testing and youth-camp safety to flood warnings and election integrity, I was proud to advance legislation to protect families, improve transparency, and uphold our communities’ values.”",
+      "note": "Quote in his campaign-site wrap-up of the second called session of 2025; he lists election integrity among the areas where he advanced legislation but names no bill on it.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7700574813bccaddc73082e14dd0be369ba18157704de6264ad996b0585d4f6f",
+      "kind": "own-words",
+      "url": "https://odessaheadlines.com/2022/01/05/weakening-illegal-voting-laws-becomes-heated-issue-in-state-representative-race/",
+      "date": "2022-01-05",
+      "date_precision": "day",
+      "passage": "“The election integrity bill that I voted for increases penalties for 25 different forms of voter fraud/election tampering. It’s the biggest crackdown on voter fraud in Texas history!”",
+      "note": "His Facebook reply to a constituent, quoted by Odessa Headlines, defending his vote for the 2021 election law; the story says a floor amendment to that law also lowered the penalty for ineligible voting.",
+      "subjects": [
+        "penalties for voter fraud / illegal voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a234b691da2970440103722417f0f120a363a17dd825cd09051bfc9f8e86bbb",
+      "kind": "own-words",
+      "url": "https://odessaheadlines.com/2022/01/05/weakening-illegal-voting-laws-becomes-heated-issue-in-state-representative-race/",
+      "date": "2022-01-05",
+      "date_precision": "day",
+      "passage": "I’m against voter fraud, and that’s why I was proud to vote for the election integrity bill.",
+      "note": "Closing sentence of the same Facebook reply quoted by Odessa Headlines.",
+      "subjects": [
+        "penalties for voter fraud / illegal voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2959b5fc17fabc838eafe5ee1f7c87ea911d9e9d3fbe3589c29b04a2b23e792",
+      "kind": "own-words",
+      "url": "https://odessaheadlines.com/2022/01/05/weakening-illegal-voting-laws-becomes-heated-issue-in-state-representative-race/",
+      "date": "2022-01-05",
+      "date_precision": "day",
+      "passage": "“During tonight’s Ector County town hall meeting, I mistakenly said that language added to the Texas election integrity legislation that reduced the penalty for voter fraud was added in conference committee when it was added as a floor amendment.",
+      "note": "His Facebook retraction, quoted by Odessa Headlines, after he told a town hall the penalty cut was added in conference committee. The story adds that he pledged to fix the penalty change in 2023. (Final punctuation of the passage is editorial; the quote continues in the source.)",
+      "subjects": [
+        "penalties for voter fraud / illegal voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:41.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.527Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register to vote",
+        "documents accepted as proof of citizenship",
+        "voter ID at the polls",
+        "penalties for voter fraud / illegal voting",
+        "election integrity laws in general",
+        "who prosecutes election crimes"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia (confirms House District 81 seat and a place on the 2026 general-election ballot)",
+        "campaign site brookslandgraf.com: home page, issues page (an older page with nothing on the subject), news list and the September 2025 session wrap-up post",
+        "Texas Legislature Online authors page, history and bill text for his 2025 bill HB 219; coauthor lists for 2025 bills HB 5337, HB 1312, HB 1670, HB 2245, HB 3936, HB 989 and HB 5138",
+        "a West Texas local news site (Odessa Headlines), January 2022, which quotes his town-hall and social-media statements on the 2021 election law",
+        "news search on name plus subject words (2 web searches)",
+        "blocked: https://newswest9.com/article/news/local/texas/state-representative-brooks-landgraf-files-the-verified-citizen-voting-act/513-b566624b-ffc0-4345-bd8b-7b1dd33254d1 (Access Denied)",
+        "blocked: https://www.oaoa.com/?p=202554 (bot challenge page)",
+        "not reviewed: social media posts and video (not reachable by this tool)",
+        "not reviewed: his 2021 floor vote on the amendment that changed illegal-voting penalties (reported by a local outlet; House Journal not opened)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:21:41.015Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.527Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

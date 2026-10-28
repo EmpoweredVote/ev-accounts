@@ -1,6 +1,37 @@
 {
   "politician_id": "dfab8491-551f-4a3f-b76c-d220a9f4b23b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,30 @@
       "found": 0,
       "at": "2026-10-22T22:54:43.179Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID with mail ballot",
+        "election integrity laws in general",
+        "immigration remarks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Jim_Tomes (confirms sitting Senate District 49 member, on the 2026-11-03 general ballot; no survey answers on the subject)",
+        "Indiana Senate caucus member page https://indianasenaterepublicans.com/tomes: nothing on the subject",
+        "Indiana Senate caucus statement on the end of the 2026 session: nothing on the subject",
+        "web search on his name with voter ID, election, citizenship and mail ballot words: nothing on the subject",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 (403)",
+        "not reviewed: author and coauthor list of 2025 SB 10 (iga.in.gov page did not load text); votes already on file from the official feed",
+        "not reviewed: campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:08:06.224Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

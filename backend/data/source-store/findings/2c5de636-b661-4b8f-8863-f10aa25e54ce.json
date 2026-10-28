@@ -22,11 +22,163 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "23cd042367588e6b40824f27e1800e6ff7588ef4804a4846090de658ea1423ef",
+      "kind": "own-words",
+      "url": "https://www.sansabanews.com/node/9130",
+      "date": "2022-11-16",
+      "date_precision": "day",
+      "passage": "As the 88th Legislative Session approaches, I am eager to get to work for my constituents. Throughout my visits and conversations in House District 68, the three biggest concerns are the border, property taxes, and election integrity issues. Texans deserve a secure border, lower property taxes, and have more faith in the election process,",
+      "note": "Quote from his bill-filing press release as printed by the San Saba News & Star. He names election integrity as one of three top concerns. The text does not mention voter ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:24.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6fa1562e86a764f06812c7a56ee979108c0ea5e1cd6624d0e451e93e0e1de92",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB52",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-52-2023",
+      "act": "author",
+      "motion": "HB 52 filed; referred to House Elections committee 2023-02-23",
+      "note": "He is the author of HB 52, 'Relating to the penalty for the offense of illegal voting; increasing a criminal penalty.' It stayed in committee. It is about penalties for illegal voting, not ID.",
+      "subjects": [
+        "illegal voting penalties",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:24.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a27e9f5e00f1a2b7cbc88b981fe6c1356b5a80e088680e207df25cc20e23eb9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-05-25",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "House cosponsor of SB 16 (proof of citizenship to register to vote); last action 2025-05-25 committee report sent to Calendars",
+      "note": "He is listed among the House cosponsors of SB 16, 'Relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof...; creating criminal offenses.' Date shown is the bill's last House action, not the date he signed on.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:24.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.531Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws",
+        "illegal voting penalties"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Texas House member page https://house.texas.gov/members/4075 (no voter ID content; only an election results analysis PDF) and biography page (nothing on the subject)",
+        "campaign site: none reachable (davidspiller.com is a parked domain for sale)",
+        "Texas Legislature Online bill history pages for SB 16 (89R) and HB 52 (88R)",
+        "blocked: https://ballotpedia.org/David_Spiller (page came back empty)",
+        "blocked: https://app.legiplex.com/profile/david-spiller-76/tx/legislatures/2025/89r/legislation (403)",
+        "San Saba News & Star article of 2022-11-16 (own words)",
+        "two news searches on his name plus the subject words; no interview or debate video found",
+        "not reviewed: https://www.jacksboronewspapers.com/news/rep-spiller-begins-filing-bills (404)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T14:57:24.850Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.531Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

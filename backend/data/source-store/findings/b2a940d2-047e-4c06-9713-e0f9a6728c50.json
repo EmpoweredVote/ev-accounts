@@ -28,6 +28,36 @@
       "found": 0,
       "at": "2026-10-22T21:36:16.711Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with mail ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Brendan_Gomez shows him on the 2026-11-03 general-election ballot for Idaho's 1st Congressional District (his primary was cancelled and he advanced; nothing on the subject on the page)",
+        "On the Record (0 appearances)",
+        "BallotReady profile https://www.ballotready.org/people/brendan-j-gomez: nothing on the subject",
+        "Ballotpedia: nothing on the subject; he has not filled in the candidate survey",
+        "no campaign site found in two searches or on Ballotpedia",
+        "blocked: https://idahocapitalsun.com/voter-guides/contests/2026-general-1st-congressional-district/ (403; a search summary says he did not answer the questionnaire)",
+        "blocked: https://idahocapitalsun.com/2026/09/17/idaho-congressional-candidate-pleads-guilty-to-possession-of-child-sex-abuse-material/ (403)",
+        "blocked: https://idahonews.com/news/local/idaho-constitution-party-candidate-stays-on-ballot-despite-guilty-plea-in-csam-case (403)",
+        "X profile https://x.com/BrendanJGomez: only the bio loads without login; not reviewed: posts",
+        "not reviewed: https://www.facebook.com/brendanjgomez/ (error page)",
+        "YouTube https://www.youtube.com/@brendangomez2080: no readable content; not reviewed: videos",
+        "congress.gov: not applicable, not a legislator",
+        "two web searches (name; name plus voter ID and election integrity): nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:09:37.472Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

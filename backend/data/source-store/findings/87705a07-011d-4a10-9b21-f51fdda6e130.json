@@ -88,6 +88,35 @@
         "fetched_at": "2026-10-22T23:57:37.356Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -116,6 +145,31 @@
       "found": 4,
       "at": "2026-10-22T23:57:37.356Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly sponsored-bills page https://www3.ncleg.gov/Members/IntroducedBills/H/796 (no voter ID or citizenship bill among her primary sponsorships)",
+        "House caucus member page (nothing on the subject)",
+        "branch.vote 2026 race page (confirms she is on the 2026 general ballot for House District 103, unopposed)",
+        "Wikipedia (confirms office and district)",
+        "qnotescarolinas.com 2024 profile (nothing on the subject)",
+        "campaign site laurabudd.com: blocked: https://www.laurabudd.com (404)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Laura_Budd (fetch returned no text)",
+        "news searches on name plus voter ID and citizenship (nothing on the subject; vote tracker hits did not show the bill subject, so no record saved)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:34:25.695Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

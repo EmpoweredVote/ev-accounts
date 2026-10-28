@@ -1,0 +1,80 @@
+{
+  "politician_id": "7778111f-551f-407f-87c7-e30268ea5e0a",
+  "findings": [
+    {
+      "id": "6f571195daa10b2dd0c6ae3dc2f78e9fd6542b54601692dd3d63796f1917f3f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Min Senate Third Reading (Assembly floor, passed 57 to 16)",
+      "note": "Voted no on the Assembly floor on SB 1174, which bars local governments from requiring voter ID for voting. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:31.586Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3b55a68bca44b687d9895442a1f80e2ed6b51049ed14d9953b7995ce4055d2b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Berman Assembly Third Reading (Assembly floor, passed 60 to 18)",
+      "note": "Voted no on AB 1116, which lets a person register online without a California driver's license or state ID by giving the last four digits of a Social Security number plus a signature image. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:31.586Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register",
+        "local voter-ID rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed in office (Assembly District 74) and on the 2026 general-election ballot via Ballotpedia and the KPBS 2026 candidate guide",
+        "On the Record (0 meetings)",
+        "blocked: https://ad74.asmrc.org/ (official site, 403 on every request, also via the Internet Archive)",
+        "campaign site daviesforca.com (home, issues, legislation pages): nothing on the subject",
+        "Ballotpedia: nothing on the subject beyond the profile",
+        "Bill votes read from the Internet Archive copy of the leginfo vote page for SB 1174 and AB 25 (live leginfo is behind a bot check); AB 25 committee vote does not include this person (not a committee member)",
+        "blocked: https://calmatters.digitaldemocracy.org bill pages (404 site not found)",
+        "news searches on name plus voter ID, election integrity, SB 1174, SAVE Act: no own-words statement found",
+        "2023 newsletter column in the Dana Point Times: nothing on the subject beyond a topic heading",
+        "KPBS 2026 candidate guide: top three priorities do not include the subject",
+        "Internet Archive copy of the leginfo vote page for AB 1116 (floor vote read)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:08:31.586Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

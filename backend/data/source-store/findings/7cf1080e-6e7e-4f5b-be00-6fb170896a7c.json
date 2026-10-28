@@ -29,6 +29,30 @@
       "found": 0,
       "at": "2026-10-22T23:14:47.731Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "news search confirms she is governor and a 2026 candidate (WBUR poll https://wbur.org/news/2026/10/19/massachusetts-governors-race-ballot-question-poll, found by search)",
+        "news search on name plus voter ID / ballot question: nothing on the subject",
+        "news search on name plus SAVE Act / proof of citizenship: nothing on the subject",
+        "NBC Boston article on a voter ID ballot proposal: her only quoted words are about voting restrictions in general, not ID or citizenship proof",
+        "Ballotpedia: nothing usable (page returned empty)",
+        "blocked: https://www.mass.gov/people/governor-maura-t-healey (403)",
+        "official site issue pages and press-release list: not reviewed beyond the blocked page"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:25:15.404Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

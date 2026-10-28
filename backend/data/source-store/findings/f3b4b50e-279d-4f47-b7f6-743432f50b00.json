@@ -50,6 +50,58 @@
         "fetched_at": "2026-10-23T00:16:00.704Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "3ebd3041f34d59e1e4a3de85ac886bf66459af7a1c3338881f05233f282c9a88",
+      "kind": "record",
+      "url": "https://library.ncleg.gov/Members/IntroducedBills/H/794",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1246-2025",
+      "act": "sponsor",
+      "note": "Listed on the member's bill page and named as a cosponsor (G. Brown) on the bill page https://www.ncleg.gov/BillLookUp/2025/H1246 for H1246, Safeguarding Elections Act. Its text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf) makes it a Class 2 misdemeanor to demand citizenship documentation from a voter other than what State law requires during the voting process, and adds privacy protections for voter photo ID records.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "voter ID records privacy",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:17:14.616Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -80,6 +132,30 @@
       "found": 2,
       "at": "2026-10-23T00:16:00.704Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia shows incumbent, House District 8, on the 2026 general-election ballot (primary was cancelled); NC General Assembly biography page https://www.ncleg.gov/Members/Biography/H/794 names her",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC General Assembly bill list for the member (all bills incl. cosponsored): https://library.ncleg.gov/Members/IntroducedBills/H/794",
+        "NC bill page and text for H1246 (2025 session)",
+        "Ballotpedia: nothing on the subject",
+        "two web searches on her name plus voter ID: nothing in her own words",
+        "no official or campaign site statements found on the subject",
+        "not reviewed: campaign site and social media accounts (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:17:14.616Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,184 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "ffc3c07759fb77ac521da25b2490404ac7b7380db37a12f59f5546f6244d7402",
+      "kind": "own-words",
+      "url": "https://dallasnews.com/news/politics/2023/03/31/skipping-elections-could-put-texas-voters-at-risk-of-being-purged-from-rolls-under-bill",
+      "date": "2023-03-31",
+      "date_precision": "day",
+      "passage": "\"This gives the registrar another tool to be able to clean up those voter rolls, which I will just say, gives a lack of confidence,\" Kolkhorst told the Senate State Affairs Committee.",
+      "note": "Dallas Morning News quotes her presenting SB 260 (88R), her bill on voter-registrar address confirmation, in committee. Another story of 2023-04-17 dates the same quote to a hearing 'last month'; the date here is the date of the first story.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "876450b31ffd345c186c7c1404573207e7ae4b0fe1ce4cf450a00274dfb454ee",
+      "kind": "own-words",
+      "url": "https://www.kbtx.com/2026/03/05/senator-lois-kolkhorst-investigating-voter-concerns-following-tuesdays-elections/",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "passage": "There have been some reports concerning voter integrity in some counties. This cannot be tolerated and will not be tolerated. Our team of staff is already looking into every allegation and will work to put even more safeguards in place to ensure that your vote is counted and not discounted by any technocrat or, as my mom used to say, ‘shenanigans!’",
+      "note": "KBTX quotes her social media statement after the March 2026 primary about reports of voting problems in some counties. It does not mention voter ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72ebd0d3d7296d5afb096f1358d726785d15e37ca946d46354bd7574270ed7ed",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB260",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-260-2023",
+      "act": "author",
+      "motion": "Author of SB 260; engrossed version referred to House Elections 2023-04-20",
+      "note": "She is the author of SB 260, 'Relating to confirmation of a voter's residence by a voter registrar.' It passed the Senate and was referred to the House Elections committee. It concerns voter-roll address checks, not ID.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65d6f0ae3a3b4bbe14448f3c63e2f62464de4bf594c5a1ee1c27774f4594f91e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-12",
+      "date_precision": "month",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "Listed as an author (coauthor) of SB 16, proof of citizenship to register to vote",
+      "note": "She is listed among the Senate authors of SB 16, 'Relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof...; creating criminal offenses.' The lead author is Hughes. The date is approximate (bill unveiled in March 2025).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31f5f22e1c6dbee2ea8d6444c7266ef9338aecc1f1878f00f59edc71bf075a6",
+      "kind": "record",
+      "url": "https://www.texasattorneygeneral.gov/es/node/7011",
+      "date": "2017-03-01",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "other",
+      "motion": "Named as co-author of SB 5 (voter ID declaration changes) in the Attorney General's news release",
+      "note": "The release says 'The bill is co-authored by state Senators Paul Bettencourt, Brian Birdwell, Dawn Buckingham, Konni Burton, Donna Campbell, Brandon Creighton, Craig Estes, Bob Hall, Kelly Hancock, Don Huffines, Bryan Hughes, Lois Kolkhorst, Jane Nelson, Robert Nichols, Charles Perry, Charles Schwertner, Kel Seliger, Larry Taylor and Van Taylor.' SB 5 adds a declaration route for voters without photo ID and free birth certificates for ID. The release is undated in the text read; the year is from the 2017 session.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebe852cd17a4116222167f36b42887352d5c0d47a1d09ec89e224b656d445907",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "motion": "author sponsor, as filed (2025-03-11)",
+      "note": "Listed as author of TX-SB-16-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.541Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Lois_Kolkhorst (confirms Texas Senate District 18, term ends 2027); nothing on the subject",
+        "official Senate member page https://senate.texas.gov/member.php?d=18 (recent releases listed are not about the subject)",
+        "campaign/personal site kolkhorst.com (nothing on the subject)",
+        "Texas Legislature Online history pages for SB 16 (89R) and SB 260 (88R)",
+        "Texas Attorney General news release on SB 5 (2017) (co-author list)",
+        "KBTX news report 2026-03-05 and Dallas Morning News 2023-03-31 and 2023-04-17 (direct quotes)",
+        "three news searches on her name plus the subject words; no debate or interview video found",
+        "not reviewed: her social media post of March 2026 (read only as quoted by KBTX); a vote-tracking page (votesmart.org) returned no usable text"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:01:02.631Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.541Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

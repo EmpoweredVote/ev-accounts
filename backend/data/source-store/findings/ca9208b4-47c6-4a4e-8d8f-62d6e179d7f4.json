@@ -51,6 +51,29 @@
       "found": 1,
       "at": "2026-10-22T23:26:35.554Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "malegislature.gov legislator profile LSD1 (confirms Leigh Davis, 3rd Berkshire; sponsored bills reviewed, nothing on the subject)",
+        "malegislature.gov cosponsored-bills list for the 194th Court: nothing on the subject",
+        "Ballotpedia, page Leigh Davis (confirms she is on the 2026 general election ballot; survey text has nothing on the subject)",
+        "web news search on name plus voter ID words: nothing on the subject",
+        "campaign site leighdavis.org: home page, nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:09:34.673Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,315 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "35e0d36fe7020e63b834ef6aadebf66a287d05a32e5b1dfb3a2d2828b706e812",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2007/05/02/house-passes-kings-bill-requiring-proof-of-citizenship-to-vote/",
+      "date": "2007-05-02",
+      "date_precision": "day",
+      "passage": "Under current law, an applicant can check a box which says that they are a citizen, but there is no verification of that claim. H.B. 626 would require that a person’s citizenship actually be verified before they are allowed to vote. Voting is indeed a right, but a right reserved only for U.S. citizens.",
+      "note": "News release on his campaign site about his HB 626 (2007), which would have the Secretary of State verify citizenship from birth or naturalization details given on the registration form.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44da945976907a06fa040d86be318f3b98d28546c516ed4d65e87f49c48c3054",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2007/12/04/king-joins-coalition-asking-secretary-of-state-for-strict-voter-identification-requirements/",
+      "date": "2007-12-04",
+      "date_precision": "day",
+      "passage": "“I thought it was a no-brainer,” King said. “I was called a bigot and called out for trying to limit minority voting rights. There was a bitter fight on the floor of the House.”",
+      "note": "Weatherford newspaper story, republished on his site, quoting King about his HB 626 and about a letter from 13 lawmakers asking the Secretary of State for stronger citizenship checks at registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7beab3e92d45fa0024b04362657db516d567f58f10c7725dc92c86c006c3e80",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2011/05/25/texas-legislative-session-issue-update-election-reform/",
+      "date": "2011-05-25",
+      "date_precision": "day",
+      "passage": "The “Voter ID” bill, which I was proud to co-author, requires that an individual show their photo identification prior to voting. This bill ensures that law-abiding citizens’ votes are not cancelled out by those voting illegally and truly helps prevent major fraud in our election process that has been happening for years.",
+      "note": "His newsletter describing SB 14 (2011), photo ID to vote, and HB 174 (cancel registrations of deceased and non-citizens). Passage is the paragraph headed SB 14.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4097692f68b1f6e8b441e9b4766baad4650e489854d535f216e328e568771ae0",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2011/05/25/texas-legislative-session-issue-update-election-reform/",
+      "date": "2011-05-25",
+      "date_precision": "day",
+      "passage": "This legislation makes it illegal to obtain another person’s ballot to be voted by mail. There is currently a shameful practice being conducted in Texas called “vote harvesting”, whereby individuals collect mail-in ballots and sell them to the highest bidder in elections.",
+      "note": "Same newsletter, describing HB 2449 on mail-ballot harvesting.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcb8c31171a2ac2755d963e9a8c1d6edde56b0f15d0e8775565ca04b3383c96e",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2017/03/03/emergency-cps-foster-care-legislation-and-voter-id/",
+      "date": "2017-03-03",
+      "date_precision": "day",
+      "passage": "On Monday, I filed HB 2481 to preserve Texas’ Voter ID law by providing a declaration for voters who do not and cannot reasonably obtain acceptable photo identification.  These updates are necessary to comply with the 5th Circuit ruling while ensuring the integrity of our voting process.",
+      "note": "His newsletter on HB 2481 (2017): voters with a secondary ID sign a declaration of why they cannot get photo ID; false declaration is a felony.",
+      "subjects": [
+        "voter ID at the polls",
+        "declaration for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3ff7b23c0090b753ab3bb4a20353fc6456928df93395c0128449a2ffa4b1d13",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2017/08/25/preserving-texas-voter-id-law/",
+      "date": "2017-08-25",
+      "date_precision": "day",
+      "passage": "I am confident that our Voter ID law will be upheld and that Texas will preserve this integral tool to maintain election integrity in our state.",
+      "note": "His post after a federal judge's ruling against the Texas voter ID law; says he and Sen. Huffman authored SB 5.",
+      "subjects": [
+        "voter ID at the polls",
+        "declaration for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "605c043b9a621ac54f3ea4067ac505e27f3aa4a305eb2911e4f977544bc11b8e",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2021/05/09/historic-week-election-integrity-pro-life-victories/",
+      "date": "2021-05-09",
+      "date_precision": "day",
+      "passage": "I know many of you have called to express your concerns over the security and validity of the 2020 election.  That’s why I co-authored this benchmark bill, and fought off any attempts by democrats to weaken the bill or include any loopholes.",
+      "note": "His newsletter on co-authoring SB 7 (2021), the election integrity bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e006d2e41bc640de4b651ce2d22c071c8a59f34aeb3b462a3515e3a526916930",
+      "kind": "own-words",
+      "url": "https://www.philking.com/2025/06/23/action-on-iran-new-laws-for-securing-borders-texas-land-our-citizens-and-elections/",
+      "date": "2025-06-23",
+      "date_precision": "day",
+      "passage": "The Texas Legislature passed a measure to make abundantly clear that people who are not citizens of the United States are not allowed to vote in any election in this state.",
+      "note": "His newsletter on SJR 37 (2025), a constitutional amendment on citizen-only voting. The page splits the passage across lines, with SJR 37 before it.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9665f1d30184e035d924e307936be858e79d17de0b01e2ce82c0e8771668d6d9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=HB2481",
+      "date": "2017-02-27",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2481-2017",
+      "act": "author",
+      "note": "HB 2481 by King: voters without photo ID may vote with a secondary ID and a declaration; ends in committee on 2017-04-10. Caption: Relating to requiring a voter to present proof of identification; providing a criminal penalty. Date is the filing date per the Attorney General release.",
+      "subjects": [
+        "voter ID at the polls",
+        "declaration for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42dfcc7315198cb9814773a98ade5171de983bd10335b4806a8ad083d0ae70b4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=80R&Bill=HB626",
+      "date": "2007-05-02",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-626-2007",
+      "act": "author",
+      "note": "HB 626 by King, caption Relating to the procedures for registering to vote; passed the House (per his release of 2007-05-02), left pending in a Senate committee on 2007-05-17.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c38de10239bdf0c448f6825d0084199ac351f69c1c38386f6009c7ae9a7bf999",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "He is one of 20 senators listed as authors of SB 16 (2025): proof of citizenship to register, with a limited federal-only ballot for those who cannot supply it. The date is the Texas Tribune report date when the bill was unveiled, not the filing date.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b506ed1943265c3a935fe6cd433a5c2d0a3d636b6c7a6d179bb0ea0dc3ca3e4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "sponsor",
+      "note": "He is listed as a House co-sponsor of SB 7 (2021), the election integrity and security bill; his 2021-05-09 newsletter calls it a bill he co-authored. Last action on the page is a House point of order overruled on 2021-05-30.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "543794b388ec518743d1419c379962d02a2c65efd346d12e85fb269529ecb015",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB6",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-6-2021",
+      "act": "other",
+      "note": "He is listed as a coauthor of HB 6 (2021), the House election integrity and security bill; last action 2021-05-07, laid on the table subject to call.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:09:20.629Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "declaration for voters without ID",
+        "proof of citizenship to register",
+        "mail-ballot harvesting",
+        "voter-roll cleanup of non-citizens and deceased",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "his official Senate page (confirms he holds Senate District 10; no press items)",
+        "his campaign site philking.com, searched for voter, citizenship, election integrity, photo ID, mail ballot, SB 16 (about 10 posts read)",
+        "Texas Legislature Online bill pages for HB 2481 (2017) and HB 626 (2007)",
+        "Texas Attorney General news release of 2017-02-27",
+        "Ballotpedia: the page for Phil King (Texas) was fetched but read only for scope; nothing on the subject was copied from it",
+        "one web search on his name plus voter ID words",
+        "not reviewed: his own-words statements on SB 16 (2025) or SB 1 (2021) beyond the newsletter passages saved here",
+        "Texas Legislature Online pages for SB 7 and HB 6 (2021) and SB 16 (2025)"
+      ],
+      "found": 13,
+      "at": "2026-10-28T15:09:20.629Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

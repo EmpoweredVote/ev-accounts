@@ -22,11 +22,39 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter registration integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "campaign guesses brianasewell.com and brianaforvirginia.com (no page found)",
+        "not reviewed: VPAP page (needs javascript)",
+        "On the Record (0 meetings found by extract-otr)",
+        "blocked: https://lis.virginia.gov (not retried, usually blocks)",
+        "blocked: legiscan and legiplex (not retried)",
+        "3 web searches by name plus subject words, no own words on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:31.181Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

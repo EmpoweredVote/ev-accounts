@@ -28,6 +28,32 @@
       "found": 0,
       "at": "2026-10-22T23:23:10.803Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: on 2026 general-election ballot (Nov 3, 2026) after advancing from Sept 1, 2026 primary, per https://ballotpedia.org/Paul_Feeney (fetched via curl)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://www.votefeeney.com (fetched; bio page and issues page, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Paul_Feeney (nothing on the subject)",
+        "blocked: https://malegislature.gov/Bills/194/S514 (HTTP 503 on two fetches, plus one timed-out curl); search snippets suggest only a town-meeting bill, not on the subject, not saved",
+        "blocked: https://malegislature.gov/Legislators/Profile/PRF1 (timeout; legislator bill pages not reviewed)",
+        "official Senate page senatorfeeney.com (no result returned; nothing on the subject)",
+        "web search: name plus voter ID / SAVE Act / proof of citizenship / mail ballot / voter rolls (two searches, nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.069Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

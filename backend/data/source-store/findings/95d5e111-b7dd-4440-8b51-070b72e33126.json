@@ -50,6 +50,31 @@
       "found": 0,
       "at": "2026-10-22T23:16:20.993Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JKH1/194/Biography (confirms him as 2nd Bristol representative, 2018 to present)",
+        "legislature sponsored bill lists (194th Court): only an election-day-holiday petition, not on the subject; no voter ID bills",
+        "past-candidate profile https://www.massalliance.org/?p=1215: nothing on the subject",
+        "one news search on name plus voter ID and elections: nothing on the subject",
+        "his campaign site hawkins4rep.com: not reviewed",
+        "Ballotpedia: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:03.933Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

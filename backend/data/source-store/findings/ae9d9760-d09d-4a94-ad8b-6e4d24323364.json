@@ -28,6 +28,31 @@
       "found": 0,
       "at": "2026-10-22T21:29:21.296Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://kuhnforcongress.com/ and issues page: nothing on the subject (only a post pointing to voter registration check)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Heidi_Kuhn (empty page)",
+        "The Ballot Brief https://theballotbrief.com/candidate/heidi-kuhn-tn: confirms she is on the 2026 general ballot for TN-8; nothing on the subject",
+        "Daily Memphian launch article: nothing on the subject",
+        "Tennessee Lookout voter guide: blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-8-u-s-house-of-representatives/ (403, curl returned nothing)",
+        "web search on name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:08:56.310Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

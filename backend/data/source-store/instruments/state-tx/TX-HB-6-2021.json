@@ -1,0 +1,382 @@
+{
+  "id": "TX-HB-6-2021",
+  "scope": "state:tx",
+  "title": "HB 6 (87R): Relating to election integrity and security, including by preventing fraud in the conduct of elections in this state; increasing criminal penalties; creating criminal offenses.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB6",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=87R&Bill=HB6",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/HB00006H.htm",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/HB00006I.htm (introduced; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 3.09 (amends Election Code 86.006(a-1))\n(quote) (a-1) The voter may deliver a marked ballot in person to the early voting clerk's office only while the polls are open on election day. A voter who delivers a marked ballot in person must present an acceptable form of identification described by Section 63.0101.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1.01-1.06: short title Election Integrity Protection Act of 2021, purpose, findings, legislative intent, strict construction, definition of public official.\n(other) Sec 2.01-2.02: death-certificate abstracts to voter registrars; register of spoiled ballots.\n(other) Sec 3.01-3.11: poll watchers and who may be in polling place, ballot board room, counting station.\n(other) Sec 4.01-4.05: assistance to voters; mail ballot assistant disclosures and offenses.\n(other) Sec 5.01-5.04: provisional voting offenses, illegal voting, influencing a vote, paid vote harvesting.\n(other) Sec 6.01-6.04: courts: panels, priority and assignment of election proceedings.\n(other) Sec 7.01-7.04: repeal of 86.0052(b) and 86.0105(b); severability; effective September 1, 2021.",
+  "sponsors": [
+    {
+      "name": "Cain",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Schofield",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Klick",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Clardy",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Jetton",
+      "role": "author",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Allison",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Anderson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Ashby",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Bell, Cecil",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Bell, Keith",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Biedermann",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Bonnen",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Buckley",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Burns",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Burrows",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Button",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Capriglione",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Cason",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Cook",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Cyrier",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Dean",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Ellzey",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Frank",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Frullo",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Goldman",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Harless",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Harris",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Hefner",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Holland",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Hull",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Kacal",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "King, Phil",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Krause",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Kuempel",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Lambert",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Landgraf",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Leach",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Leman",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Lozano",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Metcalf",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Meyer",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Middleton",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Morrison",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Murphy",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Murr",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Noble",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Oliverson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Paddie",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Parker",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Patterson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Paul",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Price",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Rogers",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Sanford",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Schaefer",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Shaheen",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Shine",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Slaton",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Slawson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Smith",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Smithee",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Spiller",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Stephenson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Stucky",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Swanson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Thompson, Ed",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Tinderholt",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Toth",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "VanDeaver",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Vasut",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "White",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    },
+    {
+      "name": "Wilson",
+      "role": "co",
+      "version": "House Committee Report (C.S.H.B. No. 6; no engrossed or enrolled version exists)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

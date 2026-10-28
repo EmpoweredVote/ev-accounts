@@ -73,6 +73,35 @@
         "fetched_at": "2026-10-22T23:41:13.122Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -107,6 +136,27 @@
       "found": 3,
       "at": "2026-10-22T23:41:13.122Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Brian_Biggs (sitting NC House District 70 member, on the 2026 general-election ballot; nothing on the subject)",
+        "NC legislature member page https://ncleg.gov/Members/Biography/h/793 (confirms House District 70; nothing on the subject; the bill-sponsorship page did not load)",
+        "campaign site https://www.brianbiggsnchouse.com and its issues page (religious freedom, property rights, military only; nothing on the subject)",
+        "second campaign domain https://biggsnchouse.com/ (protected blog, nothing readable)",
+        "news searches on name plus voter ID and bill sponsorship: no source ties him to the subject (voter ID results concerned a federal judge with the same surname)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:42:45.311Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

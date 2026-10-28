@@ -42,6 +42,70 @@
         "fetched_at": "2026-10-22T21:38:30.183Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2f4fb76c0338cb44247da497321d1b6452c3f4c9f5b3024befe280f7921d69c5",
+      "kind": "own-words",
+      "url": "https://www.nancymannion.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Nancy supports every citizen's right to take part in fair and free elections. She advocates for voter ID requirements that are inclusive and believes that stricter rules are unnecessary.",
+      "note": "Voting Rights section of her campaign priorities page, written in the third person in the campaign's name. Says she backs voter ID requirements that are inclusive and sees stricter rules as unnecessary. Page is undated; 2026 is the campaign year.",
+      "subjects": [
+        "voter ID at the polls",
+        "inclusive ID requirements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:16.498Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d511698c95d85abb22cc95b62c24a8a3b998c2245f2d43c89baa65e2c81a42f6",
+      "kind": "own-words",
+      "url": "https://www.nancymannion.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Not everyone is able to vote conveniently in person on Election Day. Nancy believes in making voting easier by providing options such as early voting and mail-in voting.",
+      "note": "Same page. Supports early voting and mail-in voting options. Says nothing about ID for mail ballots.",
+      "subjects": [
+        "mail-in voting access",
+        "early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:16.498Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7813d320482e6a62bfea063f547d8fa1d8ae09c31752ef6505f987567827d981",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Nancy_Mannion",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "4. Voting rights - free and fair elections, national standards for redistricting, inclusive vote ID",
+      "note": "Fourth of her three-plus key campaign messages in her 2026 Ballotpedia Candidate Connection survey answers; names inclusive vote ID as part of her voting-rights priority.",
+      "subjects": [
+        "voter ID at the polls",
+        "inclusive ID requirements",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:16.498Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -67,6 +131,30 @@
       "found": 2,
       "at": "2026-10-22T21:38:30.183Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "early and mail-in voting access",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Nancy_Mannion (confirms candidate for PA-11 on the 2026 general-election ballot; her 2026 candidate survey answers)",
+        "campaign site home page https://www.nancymannion.com/",
+        "campaign site priorities page https://www.nancymannion.com/priorities/",
+        "one news search on name plus SAVE Act and voter ID: results were about other people named Mannion; nothing on her",
+        "not reviewed: Pennsylvania Capital-Star 2026 voter guide (linked from her site, not fetched)",
+        "no legislative record (not an office-holder)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:06:16.498Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

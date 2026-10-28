@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -95,6 +99,71 @@
       "provenance": {
         "fetched_by": "source-collector",
         "fetched_at": "2026-10-22T22:11:53.644Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8a97f14965185003045c007fdc2dfe8b545a5bea85a145a8d2afc7ca95a7e03",
+      "kind": "own-words",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Colorado has one of the most accessible and most secure voting systems in the country. I’m disappointed — but not surprised — that Republicans unanimously opposed my amendment to make sure millions aren’t kicked off voter rolls.",
+      "note": "Pettersen's press statement after the House Rules Committee rejected her amendment to the SAVE Act, issued the day the House passed the bill. She describes Colorado's voting system and the amendment's aim of keeping eligible voters on the rolls.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25a948ba07e4fd9db72b4118cab0074ebf2b8d060a66fe097494402b30d74a48",
+      "kind": "own-words",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Requiring in-person voter registration, in addition to more paperwork, will make voting exceptionally hard for working women and women with caregiving responsibilities.",
+      "note": "From the fact list in her office's release on the SAVE Act. It also says about 69 million women have IDs that do not match their birth certificates because of a name change.",
+      "subjects": [
+        "proof of citizenship to register",
+        "in-person registration requirement",
+        "documents that must match a voter's name"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85abe172bd98e77b2e21f634dcdda6024799fda0852db6db2423b1443de334d3",
+      "kind": "record",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Pettersen amendment to the SAVE Act offered in House Rules Committee (rejected)",
+      "note": "Her office's release says the amendment would have delayed the bill's start until all state election officials certify that it will not reduce voting access. The release says Rules Committee members unanimously opposed it.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
         "method": "webfetch"
       }
     }
@@ -126,6 +195,28 @@
       "found": 1,
       "at": "2026-10-22T22:11:53.644Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "voter ID at the polls",
+        "in-person registration requirement",
+        "documents that must match a voter's name",
+        "voter-roll removals"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release DocumentID=1598 (fetched)",
+        "blocked: https://pettersen.house.gov/media/press-releases (empty response)",
+        "capitolreleases.com mirror of the same release",
+        "two news searches on name plus subject words (secondary coverage only; vote on file not repeated)",
+        "Ballotpedia and congress.gov: not reviewed, floor votes already on file"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:45:09.629Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

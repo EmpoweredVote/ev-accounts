@@ -1,6 +1,155 @@
 {
   "politician_id": "248f76d7-e76a-49e5-88b7-dc43a3131329",
-  "findings": [],
+  "findings": [
+    {
+      "id": "c834a1926026cf815265474c92d8ef1abe12b25905d91b107c0da2304f17ac5a",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "passage": "The legislation increases penalties associated with voter fraud. It orders that whoever knowingly provides false information in connection with automatic voter registration shall be punished by a fine of not more than $10,000 or imprisonment for up to 5 years or both.",
+      "note": "Press release on her site about the Senate vote on H.4671 (automatic voter registration with anti-fraud penalties). Statement issued on her site; the quoted line is the release's description of the bill, not a personal quote.",
+      "subjects": [
+        "election integrity law in general",
+        "registration safeguards against fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75e97351799b35887cc212a47b9046f4540eef62674208ff7237d8bdff749b36",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "passage": "We should be making it easier for people to exercise their right to vote, not harder.",
+      "note": "Her quoted statement on the automatic voter registration bill, about registration access.",
+      "subjects": [
+        "voter registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d1d5a703289beca4e76ec57447cc44adfd82491b1135f1927bcfc5d9fd3b3c3",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/massachusetts-senate-passes-automatic-voter-registration/",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "MA-H-4671-2018",
+      "act": "yea",
+      "note": "Her press release says she joined Senate colleagues in voting to pass H.4671, An Act automatically registering eligible voters and enhancing safeguards against fraud.",
+      "subjects": [
+        "automatic voter registration",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcc304d5ad507337d77dbe27eb325d152622c528370c07d0da972053e9970bdc",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2021/10/06/senate-passes-landmark-voting-reform-legislation-2/",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "passage": "The bill would require the Secretary of the Commonwealth to enter into an agreement with ERIC no later than July 1, 2022, which thirty other states have already joined, helping states keep more accurate voting rolls.",
+      "note": "Press release on her site about Senate passage of S.2545 (VOTES Act). Describes the voter-roll accuracy provision.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a45504e2aa3216d40fade5dfe419b53a7894ada9ebbd7353e51fc8aab65e7adf",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/2021/10/06/senate-passes-landmark-voting-reform-legislation-2/",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2545-2021",
+      "act": "yea",
+      "note": "Her release says she joined colleagues to pass S.2545, the VOTES Act (permanent mail-in and early voting, same-day registration, ERIC). No ID requirement is described.",
+      "subjects": [
+        "mail-ballot access",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "416b4b4cf1fb39931184458b5e76ff4891d3b024a5da00724c47c795f6352dc7",
+      "kind": "own-words",
+      "url": "https://cindyfriedman.org/2022/06/23/senate-passes-landmark-voting-reform-legislation%EF%BF%BC/",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "passage": "Allows election officials to pre-process mail-in and early voting ballots (by opening up envelopes and verifying signatures in advance of Election Day).",
+      "note": "Press release on her site about the final VOTES Act (S.2924). Mail ballots are checked by signature; the release lists no photo ID requirement.",
+      "subjects": [
+        "mail-ballot ID or signature check"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f46acaaf39a46e15a80bb3eab704b8d09cddd27765ec943065e9683bb2fcff1",
+      "kind": "record",
+      "url": "https://cindyfriedman.org/2022/06/23/senate-passes-landmark-voting-reform-legislation%EF%BF%BC/",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2924-2022",
+      "act": "yea",
+      "note": "Her release says she joined colleagues to pass S.2924, the VOTES Act conference agreement. It also requires the state to join ERIC to keep voter rolls accurate.",
+      "subjects": [
+        "mail-ballot access",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:23.850Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +173,30 @@
       "found": 0,
       "at": "2026-10-22T23:02:26.867Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail ballot",
+        "proof of citizenship",
+        "voter-roll checks",
+        "registration safeguards against fraud"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site cindyfriedman.org (site search for voter ID found only voting-reform press releases; nothing on photo ID or citizenship proof)",
+        "legislature profile page (malegislature.gov, did not render her bill list)",
+        "Wikipedia (confirms State Senator, 4th Middlesex district, in office since 2017)",
+        "Ballotpedia (blocked: https://ballotpedia.org/Cindy_Friedman returned HTTP 202, no content)",
+        "web search: name plus voter ID (nothing linking her to a voter ID bill)",
+        "not reviewed: her 2026 candidacy status page (not confirmed; she is shown as sitting State Senator)"
+      ],
+      "found": 7,
+      "at": "2026-10-27T01:10:23.850Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -21,6 +21,23 @@
       "found": 0,
       "at": "2026-10-22T22:14:32.313Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: withdrew 2026 (exact date not given; Ballotpedia https://ballotpedia.org/Joshua_Morott lists him as withdrawn from the 2026 U.S. House District 4, District 5 and U.S. Senate primaries and not on the November 3, 2026 ballot; also listed as withdrawn on https://ballotpedia.org/Louisiana%27s_4th_Congressional_District_election,_2026)",
+        "On the Record (0 appearances found)",
+        "web search on name (confirms he ran in 2024 for Louisiana District 4, lost; nothing on the subject)",
+        "not searched further because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:26:18.403Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

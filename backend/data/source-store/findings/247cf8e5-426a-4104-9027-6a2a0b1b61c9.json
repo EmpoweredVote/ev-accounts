@@ -22,6 +22,29 @@
         "fetched_at": "2026-10-22T23:02:15.848Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8fd05a806dc0c5aa1f829700dff83d5e09ea887b97d052cc1eae28e6deee4977",
+      "kind": "record",
+      "url": "https://malegislature.gov/Legislators/Profile/KAD0/194/Sponsor",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-SD-3058-2025",
+      "act": "sponsor",
+      "motion": "By Mrs. Dooner (by request), petition of Larry Quintal for legislation to ensure uniform treatment of vote by mail ballots; referred to Election Laws",
+      "note": "Listed under her name as filed by request of a constituent (Joint Rule 12), which is a courtesy filing for a resident; the listing does not say what the bill requires about ID. The bill number SD.3058 comes from a secondary summary, not the page text.",
+      "subjects": [
+        "vote-by-mail rules",
+        "mail-ballot handling (by request filing)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:32:39.351Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +72,30 @@
       "found": 1,
       "at": "2026-10-22T23:02:15.848Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "vote-by-mail rules",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting state senator, 3rd Bristol and Plymouth, on the 2026-11-03 general-election ballot after winning the 2026-09-01 primary; nothing on the subject)",
+        "Massachusetts legislature profile and sponsored/cosponsored lists for the 194th session (one by-request mail-ballot petition; nothing else on the subject)",
+        "campaign site electkellydooner.com home page (issues list has no voter ID, citizenship or election-law item; its Vote By Mail tab is not a policy page and was not reviewed)",
+        "Wikipedia (lead only; nothing on the subject)",
+        "web search: name plus voter ID, election integrity, proof of citizenship (nothing on the subject)",
+        "not reviewed: https://www.kellydooner.com (does not resolve)",
+        "not reviewed: official Senate issue pages and roll calls (no voter-ID roll call located)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:32:39.351Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

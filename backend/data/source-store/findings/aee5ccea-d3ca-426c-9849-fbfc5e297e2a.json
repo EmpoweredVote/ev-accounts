@@ -29,6 +29,30 @@
       "found": 0,
       "at": "2026-10-22T23:20:59.239Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/BLW1: confirms 11th Hampden district representative; sponsored bills nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/BLW1/194/Cosponsor (cosponsored list did not load; curl search for voting terms found nothing)",
+        "H.833 (voter identification bill) https://malegislature.gov/Bills/194/H833 and its petitioners page: only the lead filer is listed, he is not named",
+        "web search on name plus voter ID words: nothing on the subject",
+        "Ballotpedia: not reviewed, no page fetched",
+        "official or campaign issue pages: not reviewed, none found in search"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:09:29.170Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

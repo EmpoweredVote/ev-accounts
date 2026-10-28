@@ -72,6 +72,31 @@
       "found": 2,
       "at": "2026-10-22T21:58:36.071Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity and voting procedures in general",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "confirmed on the November 2026 general-election ballot for Maryland 8th District (https://ballotpedia.org/Nancy_Wallace, and the Maryland candidate list)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.nancywallace.us (issues page and vote-for-nancy page: nothing on ID or citizenship; the vote-for-nancy page describes only how her own party ran its internal primary, left out as off-subject)",
+        "Ballotpedia (profile, nothing on the subject)",
+        "iVoterGuide profile (candidate did not answer)",
+        "a minor-party elections database page (no statements)",
+        "two news searches on name plus voter ID, election terms (nothing on the subject found)",
+        "congress.gov: not applicable, she holds no seat",
+        "blocked: https://marylandmatters.org/voter-guides/contests/8th-district/ (bot check page; a search summary hinted at a candidate statement there about in-person voting with ID, which I could not read or verify)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:39:02.622Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

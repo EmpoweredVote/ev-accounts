@@ -46,6 +46,68 @@
         "fetched_at": "2026-10-22T23:21:28.174Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9bae78082524fe6e3dca71522786f436b2e33485197617986df37253334fd3b1",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2023/https://thebedfordcitizen.org/2023/02/letter-to-the-editor-your-vote-matters-in-local-elections/",
+      "date": "2023-02",
+      "date_precision": "month",
+      "passage": "Around the country, election results are being questioned, and laws are being passed to make it tougher for people to cast their vote.",
+      "note": "Letter to the editor in the Bedford Citizen signed by Gordon as state representative (month taken from the page address; archive copy). It does not name ID rules.",
+      "subjects": [
+        "laws making it harder to vote",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:18.246Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb3c907bada108ec5f972158c4842cfbcf776e6e43c206e544c502fc65d54185",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2023/https://thebedfordcitizen.org/2023/02/letter-to-the-editor-your-vote-matters-in-local-elections/",
+      "date": "2023-02",
+      "date_precision": "month",
+      "passage": "I am proud that here in Massachusetts, we have expanded mail-in and early voting to include municipal elections, as we work hard to protect your voice in electing your representatives.",
+      "note": "Same letter; speaks about mail-in and early voting access, not ID.",
+      "subjects": [
+        "mail and early voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:18.246Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1883b7ed210c5863ece38a73ad144c07fbc9eb0ec62e40f34f83f23e3184749b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/191/H661",
+      "date": "2019-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-661-2019",
+      "act": "sponsor",
+      "note": "H.661, An Act relative to early voting ballots, filed by Gordon; referred to Election Laws, hearing scheduled for 2019-11-06, and accompanied a study order (H.4403) on 2020-02-10. A search summary says it concerns affidavits for early voting; the fetched page title alone does not show that.",
+      "subjects": [
+        "early voting ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:18.246Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +134,32 @@
       "found": 1,
       "at": "2026-10-22T23:21:28.174Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or affidavit for early or mail ballots",
+        "laws making it harder to vote",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/KIG1 (names him 21st Middlesex representative; no voter ID bills listed)",
+        "malegislature.gov bill page H.661 (2019)",
+        "Massachusetts election results database: he is the only named candidate in the 2026 primary for 21st Middlesex (https://electionstats.state.ma.us/elections/view/173075/); no source fetched shows the November ballot itself",
+        "web search: name plus voter ID, election laws",
+        "Bedford Citizen op-ed (read through an archive copy)",
+        "blocked: https://ballotpedia.org/Kenneth_Gordon (fetch returned empty page)",
+        "blocked: https://thebedfordcitizen.org/2023/02/letter-to-the-editor-your-vote-matters-in-local-elections/ (403 from the site; read via archive copy)",
+        "blocked: https://thebedfordcitizen.org/2026/08/whats-on-the-ballot-a-guide-to-bedfords-state-primary-election/ (403)",
+        "no statement of his own on photo ID, proof of citizenship or the SAVE Act found"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:51:18.246Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,6 +1,49 @@
 {
   "politician_id": "042c79d6-2f15-4e90-b672-ce779a53cae0",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fe2c5c1fdfa58e7757b2072cd6422c8eac9fa23a85fe4698f24d27fa064aa48d",
+      "kind": "own-words",
+      "url": "https://progressivemass.com/rita-mendes-questionnaire-2022",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Another one is same voting day registration. I was holding signs on election day and this Hispanic lady came to me so happy showing me her naturalization certificate and asking me to please help her vote.",
+      "note": "Questionnaire answer naming same-day voter registration as a policy from another state she would like Massachusetts to adopt. She describes a naturalized citizen who showed a naturalization certificate but had missed the registration deadline. Related topic, not about ID rules.",
+      "subjects": [
+        "same-day voter registration",
+        "registration deadline",
+        "naturalized citizen voter"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:04:25.347Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3afac9a99eaae950df19f6eb50fcc7370275393dee5ebd48b3d5c755c5f9a1f",
+      "kind": "own-words",
+      "url": "https://progressivemass.com/rita-mendes-questionnaire-2022",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Would you support legislation to enable municipalities to expand the franchise to legal non-citizens (e.g., Green Card holders) for local elections? YES.",
+      "note": "Question text with her one-word answer YES (supports letting towns allow legal non-citizens to vote in local elections). Related topic, not about ID rules.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:04:25.347Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +67,32 @@
       "found": 0,
       "at": "2026-10-22T22:58:34.295Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "same-day registration",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://en.wikipedia.org/wiki/Rita_Mendes (office confirmed: 11th Plymouth District)",
+        "https://electionstats.state.ma.us/elections/view/173173/ (listed on the 2026 state primary results, unopposed; still in scope for November)",
+        "https://staterepmendes.com (official site; nothing on the subject)",
+        "https://www.staterepmendes.com/projects-6 (nothing on the subject)",
+        "https://progressivemass.com/rita-mendes-questionnaire-2022 (2022 endorsement questionnaire, served as a PDF; two related answers saved)",
+        "https://malegislature.gov/Legislators/Profile/RAM1/194/Cosponsor (co-sponsored bills: nothing on the subject)",
+        "https://malegislature.gov/Legislators/Profile/RAM1/Bills (sponsored bills: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rita_Mendes (page returned empty)",
+        "web search on name plus voter ID/voting/election: nothing"
+      ],
+      "found": 2,
+      "at": "2026-10-27T01:04:25.347Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

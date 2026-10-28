@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,9 +53,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -74,11 +82,215 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "3a151b86c5f9e2359350449d037b2c84fe0956979ce25e69e92835b4cc62926b",
+      "kind": "own-words",
+      "url": "https://paulbettencourt.com/2021/03/08/senator-paul-bettencourt-5-joint-authors-filed-7-important-election-integrity-bills-in-texas-senate/",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "passage": "“The integrity of the voter roll is paramount to the entire electoral process and we must restore confidence in the voter roll for future elections for all Texans,”",
+      "note": "Statement issued in his name when he and five joint authors filed seven election bills, including one on checking citizenship of registered voters.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "41e6d80fd90a2cfaa98ccb3366ecbb1a61af40377c9a1973f8bf6e901edce739",
+      "kind": "own-words",
+      "url": "https://paulbettencourt.com/2021/03/23/senator-bettencourt-response-to-houston-chronicle-editorial-board/",
+      "date": "2021-03-23",
+      "date_precision": "day",
+      "passage": "Why do you believe that those who self-identify as non-citizens should remain on the voter roll?",
+      "note": "His letter answering a newspaper editorial about his seven election bills; it describes SB 1114 as requiring the Secretary of State to cross-reference voter rolls and motor vehicle records where a person indicated they are not a U.S. citizen, and to remove those voters.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92128311a00a71581589bea20cdbce0dafb40860dcb1531488afdd072c309fb2",
+      "kind": "own-words",
+      "url": "https://paulbettencourt.com/2021/03/23/senator-bettencourt-response-to-houston-chronicle-editorial-board/",
+      "date": "2021-03-23",
+      "date_precision": "day",
+      "passage": "SB1112 – prevents local election officials from suspending the requirement of the Early Voting Ballot Board to verify that the signature on the mail ballot application and the signature on the mail ballot are from the voter. (This is a fundamental voter integrity issue in the United States.)",
+      "note": "His description of a bill on signature checks for mail ballots.",
+      "subjects": [
+        "mail-ballot signature verification",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca15f8ba9c9253aeaaae46f408e5aef1378ac1377c250967cea84a485f257efd",
+      "kind": "own-words",
+      "url": "https://paulbettencourt.com/2018/06/13/senator-bettencourt-says-integrity-of-the-texas-voter-roll-is-at-risk/",
+      "date": "2018-06-13",
+      "date_precision": "day",
+      "passage": "The fact is that non-citizens simply cannot vote in our elections.",
+      "note": "Press release on his site, quoting him on a county tax assessor's position about removing non-citizens from voter rolls; the release says he filed SB 1230 in the 85th session and would refile it.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0686076319ffc6e7f1e03c9f4072406ca04619ed2a3404bf34f2b13399df2891",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB1230",
+      "date": "2017-03-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1230-2017",
+      "act": "author",
+      "note": "Author of SB 1230, relating to cancelling a voter's registration when the person acknowledges not being a citizen. The history shows it referred to Senate State Affairs on this date, and no later action. Date is the referral date, not the filing date.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00fdd2244a955a35005e2a45ccdb1c4a22ffd4462c38d9ad9b1aca200d89123a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1114",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1114-2021",
+      "act": "author",
+      "note": "Author of SB 1114, relating to verification of the citizenship status of certain registered voters. Filed with five joint authors; the date is the date of his press release announcing the filing. The bill history shows it placed on the House General State Calendar on 2021-05-25.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "face3268f1679f3f7a24a677ab17ab9119de1e380f4dc9f0339ec09722addded",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "Listed among the Senate authors of SB 16, relating to requiring proof of citizenship to register to vote, with a limited federal ballot for voters who cannot supply the proof. Date he was added is not on the page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal-only ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6220630914ae8598c0457cfd33db6e364a333d56e85436799cb207f69254159d",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Third reading and final passage of SJR 37 (28 yeas, 3 nays)",
+      "note": "Senate vote on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. He is listed among the yeas on the second-reading, suspension and third-reading roll calls of that day.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:30:11.515Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID and signature checks",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia page https://ballotpedia.org/Paul_Bettencourt (confirms sitting Texas Senate District 7 member, term ends 2029; its voter ID excerpt is a 2014 campaign-site quote I could not reach at the original, so not saved)",
+        "official Senate page https://senate.texas.gov/member.php?d=7 (no issue statements)",
+        "his own site paulbettencourt.com: press releases of 2018-06-13, 2021-03-08 and 2021-03-23 reviewed; site search for photo ID returned no readable results",
+        "Texas Legislature Online bill histories for SB 983 (84R), SB 1230 (85R), SB 1114 (87R), SB 16 (89R), SB 1541 (89R, county election audit oversight, not on the subject)",
+        "one web search on his name plus subject words",
+        "no vote re-collected (three roll-call votes already on file)",
+        "Texas Senate Journal 2025-04-01 (SJR 37 roll calls)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:30:11.515Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

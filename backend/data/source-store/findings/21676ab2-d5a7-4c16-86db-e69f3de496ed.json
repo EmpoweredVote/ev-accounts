@@ -1,0 +1,136 @@
+{
+  "politician_id": "21676ab2-d5a7-4c16-86db-e69f3de496ed",
+  "findings": [
+    {
+      "id": "a9885e7d4daf29d86d5b60f27805f9f4581229add3c133432153a0063ae80146",
+      "kind": "own-words",
+      "url": "https://www.ruwaforgeorgia.com/voting-rights",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "It is time for bold leadership in the State House to face these issues head-on. We must protect our most fundamental right to vote.\nThis includes:\nRepealing SB202 to protect local election boards\nIncreasing voting locations to reduce long lines\nExpanding language resources to increase participation\nIncreasing the early voting period to allow for a variety of voting days\nRepealing confusing and inconsistent ID laws that do not make our elections more secure\nAdvocating for the passage of federal voting rights legislation",
+      "note": "Voting rights policy page on her campaign site (undated, written for her earlier campaign). Lists repealing what it calls confusing and inconsistent ID laws among its aims, and repealing SB 202.",
+      "subjects": [
+        "voter ID at the polls",
+        "repeal of Georgia SB 202",
+        "early voting and polling places"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:51:06.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ae13106f2b8a68944d3192aeed6727c9748b1cf6b9b57bdda71908c21a8b718",
+      "kind": "own-words",
+      "url": "https://www.ruwaforgeorgia.com/voting-rights",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In 2021, they passed SB202 allowing more control of local election boards. The law also reduces the number of ballot boxes, shortens early voting, and takes away weekend voting resulting in lower voting participation.",
+      "note": "Same campaign page (undated). Her description of what Georgia SB 202 (2021) does.",
+      "subjects": [
+        "Georgia SB 202",
+        "drop boxes and early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:51:06.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a62ea9dbedaec863f35af2297bdc97f7632948b3a0a62c1a280ff0c6f5fb5f9",
+      "kind": "own-words",
+      "url": "https://www.ruwaforgeorgia.com/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Additionally, we have seen Republicans pass legislation that suppresses voters with surgical precision. As a State Representative Ruwa stopped bills that would make voting harder.",
+      "note": "Campaign home page (undated), written about her in the third person. General statement on election laws, no specific ID or citizenship rule named.",
+      "subjects": [
+        "election laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:51:06.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Romman'), linked to Ruwa Romman (district 97) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "Georgia SB 202",
+        "election integrity laws in general",
+        "voter-roll challenges"
+      ],
+      "places": [
+        "in scope: sitting Georgia House member (District 97); withdrew from the governor race 2026-02-25 (Wikipedia); won the 2026 runoff for the State Senate District 7 nomination, so on the November 2026 ballot (news search result; accessnorthga page returned 403: blocked: https://accessnorthga.com/news/rep-romman-wins-democratic-primary-for-state-senate-district-7)",
+        "Georgia SB 202 (2021) vote: not applicable, she took office in January 2023",
+        "On the Record (0 meetings)",
+        "campaign site ruwaforgeorgia.com: home, /vote, /about and /voting-rights pages read as text",
+        "blocked: https://app.legiplex.com/profile/ruwa-romman-1831/ga/legislatures/2023/2023-r/legislation (403)",
+        "blocked: https://app.legiplex.com/ga/legislature/2023/2023-r/bills/hb1254 (403)",
+        "blocked: https://legiscan.com/GA/bill/HB1254/2023 (403)",
+        "blocked: https://open.pluralpolicy.com/ga/bills/2023_24/HB1254 (404)",
+        "Georgia legislature bill pages: https://www.legis.ga.gov/legislation/70746 returned an empty app shell, so sponsorships could not be read. Search results suggest she is a listed sponsor of HB 1254 (2024, charges for voter-registration challenges) but this was not confirmed on a page I could read, so it is not saved",
+        "news searches (3): no floor speech or interview found on voter ID or proof of citizenship",
+        "Ballotpedia: not fetched separately"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:51:06.715Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

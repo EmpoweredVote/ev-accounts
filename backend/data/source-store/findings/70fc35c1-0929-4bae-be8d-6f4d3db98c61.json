@@ -72,6 +72,138 @@
         "fetched_at": "2026-10-22T23:54:46.464Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bed590b1c3bbd4530e4ab9e5657f6c2bf7e26eb9d552dd181ba68aea29a88ac0",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (final House passage vote, 6/30/2026 6:25 PM; 66 to 47)",
+      "note": "Campbell voted Aye. The bill, per the UNC bill summary, covers photo ID copies for overseas ballots, a later deadline to show ID after a provisional ballot, citizenship statements on registration, and absentee-ballot rules. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c22bc8cc2e328f9a3115fe7042d0674d5d4a64087909a75a971ca8e3a5cd0cd9",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (8/4/2026 6:26 PM; 62 to 47)",
+      "note": "Campbell voted Aye on the House concurring with the Senate changes to HB 958.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2933da83c263408268841d963f78d4cb497e5ff8b89a3003c18c3a7e254c8a4",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, A1 Blackwell amendment, Second Reading (passed 112 to 0)",
+      "note": "Campbell voted Aye on the A1 amendment. The page shows only the title and tally.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eaafaf4c79ed3eb2bfea27c8143b20c999af4a7f27fa415aaac741c3e21799c9",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, A2 Blackwell amendment, Second Reading (passed 69 to 44)",
+      "note": "Campbell voted Aye on the A2 amendment. The page shows only the title and tally.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "066ba09c0ab9678b166150d7a26f97c47e4154477b76cb85b5e6d90781ecde72",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, A3 Dahle amendment, Second Reading (failed 47 to 66)",
+      "note": "Campbell voted No on the A3 amendment, which failed. The page shows only the title and tally.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01eea88a1726c23bfe1dd8ff80127f06c6352ec8a82f7e54c2ea5d46c5e3ba5a",
+      "kind": "record",
+      "url": "https://house.ncleg.gov/Members/Votes/H/830",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur",
+      "note": "Campbell voted Aye on concurring with Senate changes to HB 834. The page shows only the title; its contents on ID or citizenship were not checked.",
+      "subjects": [
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:00:42.116Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -103,6 +235,30 @@
       "found": 3,
       "at": "2026-10-22T23:54:46.464Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID and curing",
+        "voter-roll checks",
+        "election law bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC House roll-call record https://house.ncleg.gov/Members/Votes/H/830",
+        "NC House list of bills he introduced https://library.ncleg.gov/Members/IntroducedBills/H/830 (only local election-timing bills; nothing on the subject)",
+        "NC bill summary for HB 958 (via the UNC bill summary page)",
+        "campaign site https://campbellfornc.com/about and /issues (nothing on the subject)",
+        "WFAE District 83 race guide https://www.wfae.org/2026-10-05/n-c-house-of-representatives-83 (confirms he is the incumbent in the November race; nothing on the subject)",
+        "news search on HB 958 and his name (2 searches): no article quotes him",
+        "blocked: https://ballotpedia.org/Grant_Campbell (fetch returned no page content)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T20:00:42.116Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

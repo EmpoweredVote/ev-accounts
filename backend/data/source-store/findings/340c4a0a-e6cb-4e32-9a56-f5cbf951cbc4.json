@@ -26,6 +26,29 @@
       "found": 0,
       "at": "2026-10-22T22:18:07.103Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Eric_Ching (confirms candidate for CA-31, advanced from the 2026-06-02 primary, on the 2026 general-election ballot; survey text has nothing on the subject)",
+        "campaign site https://www.ericchingforcongress.com/ (nothing on the subject; page text checked)",
+        "blocked: https://ericchingforcongress.com/solutions.html (HTTP 404)",
+        "web news search (nothing naming him on the subject)",
+        "not applicable: no legislative record (candidate, not a sitting federal legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:35.657Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

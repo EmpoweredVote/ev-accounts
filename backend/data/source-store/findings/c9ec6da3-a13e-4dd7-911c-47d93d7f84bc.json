@@ -1,6 +1,37 @@
 {
   "politician_id": "c9ec6da3-a13e-4dd7-911c-47d93d7f84bc",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -20,6 +51,29 @@
       "found": 0,
       "at": "2026-10-22T22:51:40.990Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: no longer a sitting legislator and not on the 2026 ballot: left the Indiana Senate in January 2026 for the state utility commission and left that office on 2026-08-03 (https://ballotpedia.org/Andy_Zay)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "news search on name plus voter ID, citizenship and voter-roll words: nothing on the subject",
+        "not reviewed: Indiana General Assembly bill pages (page loads only by script, no readable text)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:29:37.069Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

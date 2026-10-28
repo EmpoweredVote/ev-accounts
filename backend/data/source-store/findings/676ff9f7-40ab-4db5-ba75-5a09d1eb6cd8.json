@@ -7,7 +7,7 @@
       "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/824",
       "date": "2018-12-18",
       "date_precision": "day",
-      "instrument_id": "NC-SB-824-2017",
+      "instrument_id": "NC-S-824-2018",
       "act": "yea",
       "motion": "Motion 11 Veto Override",
       "note": "Senate roll call 824 on SB 824, Implementation of Voter ID Const. Amendment, veto override vote (33 ayes, 12 noes). Rabon is on the aye list.",
@@ -46,6 +46,35 @@
         "fetched_by": "source-collector",
         "fetched_at": "2026-10-22T23:50:59.343Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
       }
     }
   ],

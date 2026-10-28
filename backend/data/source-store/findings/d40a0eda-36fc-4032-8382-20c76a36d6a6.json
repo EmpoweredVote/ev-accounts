@@ -26,6 +26,29 @@
       "found": 0,
       "at": "2026-10-22T23:27:39.543Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Patricia_Jehlen (confirms she is the Massachusetts state senator for the 2nd Middlesex district, in office since 2005, term ending 2027-01-06, and not running for re-election in 2026; nothing on the subject)",
+        "official state legislature profile https://malegislature.gov/Legislators/Profile/PDJ0 (her filed bills reviewed for election, voting, voter, ballot, citizenship words; none found)",
+        "official site https://www.patjehlen.com/ (landing page only; nothing on the subject)",
+        "news search on name plus voter ID, proof of citizenship, SAVE Act, election (1 search): nothing on the subject names her",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:55:06.650Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

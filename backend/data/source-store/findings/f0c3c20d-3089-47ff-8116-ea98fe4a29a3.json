@@ -16,6 +16,20 @@
       "found": 0,
       "at": "2026-10-22T21:33:15.460Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "out of scope: lost the 2026 primary, subject search not run"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia page https://ballotpedia.org/Nick_Lewis says he ran for Florida's 2nd Congressional District and lost the primary on that date; also confirmed in the Wikipedia page for the 2026 Florida House elections)",
+        "1 web search that identified him as a candidate for Florida's 2nd Congressional District"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:40.258Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

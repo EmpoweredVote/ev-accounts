@@ -28,6 +28,28 @@
       "found": 0,
       "at": "2026-10-22T22:15:20.630Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voting rights and election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: won the 2026-08-11 primary for Minnesota's 2nd District and is on the November ballot (https://www.valleynewslive.com/2026/08/12/matt-little-wins-dfl-primary-minnesotas-2nd-congressional-district-will-face-republican-eric-pratt-november/)",
+        "On the Record (0 meetings)",
+        "campaign site https://littleforcongress.com and https://littleforcongress.com/key-issues/: nothing on the subject",
+        "Minnesota Legislative Reference Library member page https://www.lrl.mn.gov/legdb/fulldetail.aspx?ID=15490: state senator 2017 to 2021, committees not on elections; no bill pages on the subject found",
+        "Ballotpedia https://ballotpedia.org/Matt_Little: blocked: page text did not load",
+        "news search on name plus voter ID, SAVE Act, voting rights: nothing on the subject",
+        "not reviewed: congress.gov (he is not a member of Congress)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:09:52.629Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

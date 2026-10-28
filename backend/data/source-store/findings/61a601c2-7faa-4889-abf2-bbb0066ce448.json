@@ -115,6 +115,28 @@
         "fetched_at": "2026-10-22T21:36:36.519Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bb18291345032671f7617014bc1ff7fc802d97838ac31e05f961ca8bb6be43d4",
+      "kind": "own-words",
+      "url": "https://www.wbal.com/maryland-sen-chris-van-hollen-says-save-act-could-disenfranchise-millions",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“Nobody is going to risk going to prison for six years in order to cast a vote in an election,” Van Hollen said. “I mean that defies common sense and it also defies the facts, which is why Republicans can’t come up with any proof.”",
+      "note": "Quoted by WBAL Baltimore News from his Senate floor remarks on the SAVE America Act. He says there is no evidence of widespread non-citizen voting. WBAL also reports that he said the bill will disenfranchise millions of voters (reporter's words, not his).",
+      "subjects": [
+        "SAVE America Act",
+        "non-citizen voting claims",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:57:18.140Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -143,6 +165,30 @@
       "found": 5,
       "at": "2026-10-22T21:36:36.519Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register",
+        "photo ID to vote",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.vanhollen.senate.gov/news/press-releases (HTTP 403 to the fetch tool; no readable result by curl)",
+        "news search on his name plus SAVE America Act and voter ID",
+        "WBAL Baltimore News article, 2026-03-18 (his floor remarks quoted)",
+        "Congressional Record pages for 2026-03-17, 03-19 and 03-23 (no text by him found in them)",
+        "a news-summary site repeating another quote of his, not used because it is not the original outlet",
+        "not reviewed: https://www.congress.gov (sponsorships and co-sponsorships)",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:57:18.140Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

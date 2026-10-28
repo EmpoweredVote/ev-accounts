@@ -27,6 +27,31 @@
       "found": 0,
       "at": "2026-10-22T22:13:24.523Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Patrick_McCracken (positive control: names him as a candidate for US House Montana District 2 on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "campaign site https://www.mccrackenformontana.com/ (single home page: donate and newsletter signup only; nothing on the subject)",
+        "Montana Free Press 2026 election guide questionnaire https://projects.montanafreepress.org/election-guide-2026/candidates/patrick-mccracken/ (read in full; answers on war powers, price transparency, data centers, meat labeling; nothing on the subject)",
+        "MTPR interview https://www.mtpr.org/montana-news/2026-04-17/patrick-mccracken-interview (cost of living, tariffs, government spending; nothing on the subject)",
+        "not reviewed: https://theballotbrief.com/candidate/patrick-mccracken-1af572d9-e9d5-4bed-a576-63c6a84f6dd2 (AI-written summary, lead only; fetched only for the campaign link)",
+        "web search x3 on his name plus voter ID, citizenship, debate: no 2026 general-election forum found, nothing on the subject",
+        "legislature records: not applicable, he holds no seat in a legislature"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:15:47.095Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

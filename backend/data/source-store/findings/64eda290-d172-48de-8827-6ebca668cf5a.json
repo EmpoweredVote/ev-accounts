@@ -1,0 +1,121 @@
+{
+  "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+  "findings": [
+    {
+      "id": "e9117580f582747910ed06a6afa0d8591696f4e4d66a4f5467fc3a8bf121b6cd",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate floor, Senate 3rd Reading SB 1174",
+      "note": "Senate floor vote on SB 1174 (Min), which bars a local government from requiring a person to show ID to vote or submit a ballot at a polling place or vote center. Source is the CalMatters Digital Democracy vote record (Senate floor 30-8-2); he is listed among the yes votes.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53a2e5825e9a2603688aa3014fe8b6daed528ba2c52408f5787d83f5ea78d183",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Senate floor, Assembly 3rd Reading AB 1116",
+      "note": "Senate floor vote on AB 1116 (voter registration), which lets a person without a California driver's license or state ID register online by giving the last four digits of a Social Security number. Source is the CalMatters Digital Democracy vote record (Senate floor 29-9-2); he is listed among the yes votes. The same page says the governor vetoed the bill.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without driver's license or state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c91d80c24ef65ea371f1e15a4c1cf873c2624a24a70715ebf741357893a06789",
+      "kind": "record",
+      "url": "https://sd13.senate.ca.gov/news/press-release/september-27-2021/governor-signs-voter-equity-bill-senator-josh-becker-to-ensure",
+      "date": "2021-09-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-503-2021",
+      "act": "author",
+      "motion": "SB 503, signed by the governor",
+      "note": "His bill SB 503 set a statewide standard for checking signatures on mail-in ballots, plus timely outreach to voters whose ballots are rejected and periodic reporting. Source is his Senate office press release on the governor signing it.",
+      "subjects": [
+        "mail-ballot signature verification",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8c06a49fc7d1685364ef724c9dac742c2c0fe1836abf707447d3992c2807ec2",
+      "kind": "own-words",
+      "url": "https://sd13.senate.ca.gov/news/press-release/september-27-2021/governor-signs-voter-equity-bill-senator-josh-becker-to-ensure",
+      "date": "2021-09-27",
+      "date_precision": "day",
+      "passage": "“My Senate Bill 503 gives confidence to all Californians that every valid vote is counted and that all our counties follow uniform practices for signature verification of mail-in ballots.”",
+      "note": "Statement issued in his name on his Senate office press release, about his mail-ballot signature-verification bill SB 503. It is about signature checks on mail ballots, not photo ID or proof of citizenship.",
+      "subjects": [
+        "mail-ballot signature verification",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:03.819Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "ID to register to vote",
+        "mail-ballot ID and signature checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia: https://ballotpedia.org/Josh_Becker (confirms State Senate District 13, term to 2028; nothing on voter ID)",
+        "official Senate site https://sd13.senate.ca.gov/ and its press-release search for election and voter topics; found a 2021 press release on his mail-ballot signature bill (SB 503); nothing on photo ID or proof of citizenship",
+        "CalMatters Digital Democracy vote records for SB 1174 (2024), AB 25 (2025) and AB 1116 (2025-26); used instead of leginfo, which is behind a bot check",
+        "AB 25 (2025): Assembly bill that failed in an Assembly committee, so he had no vote",
+        "campaign site: not reviewed, no page found",
+        "news search on name plus subject words (no quoted statement of his on voter ID found)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:09:03.819Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

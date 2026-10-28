@@ -48,11 +48,171 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "dd0e66e8506b12164180440532d60b027a7e7e6018035948b8736d0483dfa5d6",
+      "kind": "own-words",
+      "url": "https://www.burkeconnection.com/news/2012/feb/09/bulova-marsden-present-report-richmond/",
+      "date": "2012-02-04",
+      "date_precision": "day",
+      "passage": "\"We’re trying to fix a problem we just don’t have,\" Marsden said. \"That’s the net effect of all these (voting) bills. When we ask these legislators to cite one example of voter fraud, they just can’t do it.\"",
+      "note": "Direct quote in Burke Connection (published 2012-02-09) from a Feb 4, 2012 town hall, about that year's voter ID bills. The article says he agreed they use voter fraud as a smokescreen.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:08.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17d326a228f85ef0d94a23a2d6c47aa65903504b213662818489d395c35a718b",
+      "kind": "own-words",
+      "url": "https://www.burkeconnection.com/news/2012/may/23/governor-signs-voter-id-bills/",
+      "date": "2012-05-23",
+      "date_precision": "day",
+      "passage": "\"When we’ve asked these legislators [in Virginia] to cite one example of voter fraud, they just can’t do it,\" Marsden said.",
+      "note": "Direct quote in Burke Connection, 2012-05-23 article; quote date itself earlier, not given. Same point about voter ID bills and fraud evidence.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:08.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Marsden'), linked to David W. Marsden via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cd0d4e83cae44f3283b75c4ac660847b0e313cd0a71b8fd7d64d413d0651b02",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Marsden'), linked to David W. Marsden via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b34681954edb0741441741d7cedf52200a9a77cb9a906d6f497944e99f705a21",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Marsden'), linked to David W. Marsden via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee ballots",
+        "affidavit for voters without ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extractor script not run (instructed not to run repo scripts)",
+        "news search on name plus voter ID (two 2012 articles found and fetched)",
+        "personal/campaign site: none reachable (davidmarsden.com returned an empty page)",
+        "blocked: https://lis.virginia.gov (bill pages load by script, no content returned); legiscan, legiplex, legilist, plural policy and vpap also not readable",
+        "his current office/seat in 2026 not confirmed on a page; 2012 articles name him as State Sen. (D-37)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:28:08.094Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.794Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

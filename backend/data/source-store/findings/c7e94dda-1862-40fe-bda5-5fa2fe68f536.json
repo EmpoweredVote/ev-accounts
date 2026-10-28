@@ -75,6 +75,27 @@
       "found": 2,
       "at": "2026-10-22T23:24:25.810Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name search)",
+        "Ballotpedia (fetched with curl; shows him on the 2026 general-election ballot for the Middlesex and Suffolk Senate seat)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/SND0 (confirms Senate member; sponsored bills on elections are campaign-finance, free rides to elections, and a by-request bill on children voting; none on ID or citizenship)",
+        "Senate budget amendment FY2026-S3-303 voter ID text (filed by other senators; no roll call or outcome shown on the page; not reviewed: how he voted)",
+        "two news searches on his name plus the subject words (nothing quoting him on the subject)",
+        "no campaign site found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:28.012Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

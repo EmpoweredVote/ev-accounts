@@ -50,6 +50,31 @@
       "found": 1,
       "at": "2026-10-22T22:41:08.557Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "student ID at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page https://indianahousedemocrats.org/members/mitch-gore (identifies him as the District 89 member; nothing on the subject)",
+        "Wikipedia (confirms office and district; nothing on the subject)",
+        "BallotReady (lists him as a 2026 general election candidate for District 89)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mitch_gore_1 (page returned only a title, no content)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1264/details (page returned only a title, no content)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Mitch_Gore (fetch returned no text)",
+        "campaign site: not reviewed (none found)",
+        "news searches on name plus voter ID, proof of citizenship, mail-ballot ID (no quote or vote by him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:35:01.141Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

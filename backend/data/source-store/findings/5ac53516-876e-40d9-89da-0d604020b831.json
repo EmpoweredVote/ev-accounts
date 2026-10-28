@@ -71,6 +71,28 @@
         "fetched_at": "2026-10-22T23:48:56.089Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b95e970b91427e5256b581c6b5b0a59ac592993ba577be51bcdae4dcdc1b4595",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "note": "He is on the sponsor list of House Bill 691, Voter Protection and Reliance Act (not a primary sponsor). The bill text says every citizen has the right to have a vote counted under the laws and procedures in place on election day, and bars officials and courts from excluding votes under a law or ruling not in effect on election day. It does not set an ID or citizenship rule. Referred to House Rules on 2025-04-03.",
+      "subjects": [
+        "election integrity laws in general",
+        "ballots counted under rules in place on election day"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:19.231Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -99,6 +121,31 @@
       "found": 3,
       "at": "2026-10-22T23:48:56.089Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "ballots counted under rules in place on election day"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "state legislature member page for District 24 (confirms the office): https://www.ncleg.gov/Members/Biography/H/839",
+        "state legislature introduced and co-sponsored bills list for him (two election-related bills seen; one saved)",
+        "campaign site https://www.pittmanfornc.com (voting-info section has no text; nothing on the subject)",
+        "Ballotpedia (page returned empty; nothing usable)",
+        "House caucus member page https://nchousedems.com/our-members/dante-pittman-house-district-24/ (nothing on the subject)",
+        "two news searches on his name plus the subject words (nothing on the subject from him; results mostly about a different legislator with the same surname)",
+        "HB 1240 early-voting constitutional amendment: co-sponsor, no ID content, not saved"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:10:19.231Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

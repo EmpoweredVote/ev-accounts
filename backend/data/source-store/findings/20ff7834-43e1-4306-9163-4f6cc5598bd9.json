@@ -73,6 +73,83 @@
         "fetched_at": "2026-10-22T23:39:26.216Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a322c6c8d777914d088f125cdfe065e77dad0e3bd5df0c00f79764e3208171a9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House second reading.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:13.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe36cabe7f7c35e469d188ec18743248046a058bb8d0a1f4326a2b9d180634ed",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 motion to concur in Senate committee substitute",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House concurrence vote.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:13.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -102,6 +179,34 @@
       "found": 3,
       "at": "2026-10-22T23:39:26.216Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed as sitting NC House member for District 16: https://www.ncleg.gov/Members/Biography/H/755",
+        "On the Record (0 meetings)",
+        "NC General Assembly member roll-call page https://www.ncleg.gov/Members/Votes/H/755 (2025-26 session, all votes screened for election words)",
+        "NC General Assembly introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/755 (no bill on the subject)",
+        "NC bill page and ratified text for HB 958",
+        "Ballotpedia profile (nothing on the subject)",
+        "no campaign or official site with issue statements found; the member page links only a video channel",
+        "news search on name plus voter ID and HB 958 (nothing from him)",
+        "not reviewed: https://www.whqr.org/local/2018-10-25/coastline-candidate-interviews-nc-house-district-16 (2018 audio interview, cannot be read)",
+        "not reviewed: text of HB 958 amendments A1, A2 and A3 (votes recorded but content not read)",
+        "not reviewed: roll calls from sessions before 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:36:13.299Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

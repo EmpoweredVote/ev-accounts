@@ -1,6 +1,61 @@
 {
   "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "06f826cb82b84bab2208bb37311d427d7beda7daf6ad5d0858a66bb85fa0c1fe",
+      "kind": "record",
+      "url": "https://digital-release.fox59.com/indianapolitics/braun-signs-voter-registration-related-bill-that-limits-student-ids-as-proper-identification-to-vote/",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "author",
+      "note": "Fox59 (2025-04-17) names Garten as one of three Senate authors of SB 10. The bill says an ID document 'does not include a document issued by an educational institution', adds voter-list maintenance steps (including notices where proof of citizenship was not provided) and a check with other states for duplicate registration. Passed House 2025-04-01 and Senate 2025-04-07; signed by the governor.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID not accepted",
+        "voter-roll maintenance",
+        "proof of citizenship notice"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:26:13.872Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +79,32 @@
       "found": 0,
       "at": "2026-10-22T22:41:51.522Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voting ID",
+        "voter-roll maintenance",
+        "proof of citizenship notices",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (1 meeting, Senate Judiciary 2026-01-14, on a foreign-influence bill, nothing on the subject)",
+        "Indiana Senate caucus page for Garten and its press-release list (no voting-ID item found)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Senate District 45)",
+        "Fox59 news report on SB 10 signing",
+        "Citizens Action Coalition 2026 bill watch list (Garten listed as author of SEA12 ranked-choice ban only; not on subject)",
+        "web searches for own words on SB 10: none found",
+        "blocked: https://indianacapitalchronicle.com/2025/01/28/elections-bill-would-strike-down-student-ids-as-voting-option/ (403)",
+        "blocked: https://www.aclu-in.org/?p=2810 (404)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/senate/10 (page needs JavaScript, no text)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:26:13.872Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

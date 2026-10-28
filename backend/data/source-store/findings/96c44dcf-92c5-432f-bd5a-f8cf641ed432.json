@@ -22,6 +22,36 @@
         "fetched_at": "2026-10-22T22:45:50.293Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
     }
   ],
   "searches": [
@@ -49,6 +79,32 @@
       "found": 1,
       "at": "2026-10-22T22:45:50.293Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "her Substack newsletter https://repwendydantchesser.substack.com/ (confirms her as House District 71 representative; archive titles show nothing on the subject; post bodies not read)",
+        "House caucus news page https://www.indianahousedemocrats.org/news/dant-chesser-appointed-to-integral-house-committees (committee list has no election committee; nothing on the subject)",
+        "https://lpm.org/news/2024-09-11/indiana-rep-wendy-dant-chesser-reflects-on-90-days-in-office: nothing on the subject",
+        "news coverage of SB 10 (indianacitizen.org, wfyi.org) does not quote her",
+        "legislature votes: not searched, already on file from the official feed",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_wendy_dant_chesser_1 (page returned only a heading)",
+        "Ballotpedia: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:37.442Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

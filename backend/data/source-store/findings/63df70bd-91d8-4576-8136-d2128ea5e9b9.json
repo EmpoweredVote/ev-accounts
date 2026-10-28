@@ -1,6 +1,53 @@
 {
   "politician_id": "63df70bd-91d8-4576-8136-d2128ea5e9b9",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8685617368a1e4ff0a31477e2ed87eded744c4a389901b326f8ade48b79985d6",
+      "kind": "record",
+      "url": "https://malegislature.gov/Journal/House/194/2025/RollCalls",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4000-2025",
+      "act": "nay",
+      "motion": "H.4000 (FY2026 budget), adoption of amendment #409 'An Act relative to identification to vote' (House Roll Call No. 36 of the 2025 journal list entry dated 04/29/2025 8:33 PM, failed 25-131)",
+      "note": "The roll call lists her as voting N. The amendment, filed by Rep. Lombardo, would replace the polling-place check of voter names with a requirement to show valid identification. Text at https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content. Roll-call number in the journal PDF is No. 42.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:58:46.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a50326d85bb3d669d659ce7f937f27a4f2dc4e376bd8ae0bf8e688bf2574ac5b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Journal/House/194/2026/RollCalls",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-5500-2026",
+      "act": "nay",
+      "motion": "H.5500 (FY2027 budget), adoption of amendment #1587 'An Act relative to identification to vote' (House Roll Call No. 174, failed 27-131)",
+      "note": "The roll call lists her as voting N. The amendment, filed by Rep. Lombardo, would require a valid State or Federal photo identification before a voter receives a ballot and lists acceptable photo IDs. Text at https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:58:46.530Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +74,31 @@
       "found": 0,
       "at": "2026-10-22T23:10:17.884Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Massachusetts legislature member page https://malegislature.gov/Legislators/Profile/BMP1 (she represents the 9th Plymouth district; sponsored/co-sponsored bills listed there do not concern voting)",
+        "state election results site: she won the 2026 primary unopposed; aggregator https://theballotbrief.com/state/massachusetts/plymouth-county/massachusetts-house-9th-plymouth-district lists her on the 2026-11-03 general ballot",
+        "Massachusetts House roll-call journals for 2025 and 2026 (PDFs fetched and read with a text extractor)",
+        "amendment text pages for H.4000 amendment 409 and H.5500 amendment 1587",
+        "campaign site: not found; no own-words statement on the subject found in searches",
+        "blocked: https://legiscan.com/MA/votes/H4000/2025 (403)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T13:58:46.530Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -48,6 +48,59 @@
         "fetched_at": "2026-10-22T23:41:16.696Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "843e98c2fd052e6ed9aba24273dffd60c84100501e6d10131cfe4c3f20a16daf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "yea",
+      "motion": "Third Reading, SB 921 Const. Am./Require Photo ID For All Voters (House roll call #810, 73 ayes, 45 noes)",
+      "note": "House third-reading vote on SB 921, a state constitutional amendment requiring photo ID for all voters. The roll call transcript lists Diane Wheatley among the ayes. The bill became SL 2024-58.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for all voters including mail ballots",
+        "state constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:44:00.113Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -75,6 +128,29 @@
       "found": 2,
       "at": "2026-10-22T23:41:16.696Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks and non-citizen voting",
+        "election laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings, script returned no appearances)",
+        "Ballotpedia https://ballotpedia.org/Diane_Wheatley (member of NC House District 43, on the 2026-11-03 general ballot after winning the 2026-03-03 primary; nothing on the subject)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/785 (member page confirms the seat)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/785: no bill on ID, citizenship or voting rules",
+        "campaign site https://www.dianewheatleync.com: nothing on the subject",
+        "ncleg.gov SB 921 bill page https://www.ncleg.gov/BillLookUp/2023/S921 and House roll calls 809 and 810 of 2024-12-11",
+        "web searches on the name plus voter ID and photo ID (one search covering this member, one covering the other two members of this batch): no own words found; legiscan.com was blocked: https://legiscan.com/NC/bill/S921/2023"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:44:00.113Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

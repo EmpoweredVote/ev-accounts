@@ -8,18 +8,19 @@
       "date": "2026",
       "date_precision": "year",
       "passage": "A clear national standard for voter ID with free, accessible verification",
-      "note": "On the Civic and Election Reform section of her campaign policy page, listed under 'I support:'. Page is undated; copied from the page text on 2026-10-22. It is a list item, not a full sentence. Page text does not say which documents count, or what happens to a voter without ID.",
+      "note": "One bullet in the policy plan on her campaign site, in the section on citizen participation and elections. It is a list item with no longer explanation. The page shows no date; the year is inferred from the 2026 race.",
       "subjects": [
         "voter ID at the polls",
         "national voter ID standard",
-        "free ID or free verification"
+        "free ID or free verification",
+        "national standard for voter ID"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:53:27.492Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:56:37.823Z",
         "method": "webfetch"
       }
     },
@@ -69,6 +70,30 @@
       "found": 2,
       "at": "2026-10-22T21:53:27.492Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "national standard for voter ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Angel_Oakley (confirms candidate for U.S. House Illinois District 3, on the 2026 general-election ballot after advancing from the March 17, 2026 primary)",
+        "campaign site https://www.libertyangel.us/policy (policy page, has a voter ID item)",
+        "campaign site home https://angeloakley.com and https://www.libertyangel.us/articles (nothing on the subject)",
+        "blocked: https://angeloakley.com/policy (404)",
+        "not reviewed: https://www.youtube.com/@AngelOakley (video channel, not readable)",
+        "one web search on her name for the 2026 race (nothing further on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:56:37.823Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -46,6 +46,28 @@
         "fetched_at": "2026-10-22T23:01:55.437Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a2e218d153de9de1099caa5efcbbe9c6f2891eb003fa052bf61a7395d0fb1057",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "motion": "Co-petitioner on H.849, An Act relative to inactive voters and municipal census administration",
+      "note": "Listed as co-petitioner (with Rep. LeBoeuf) of a bill on inactive voters and municipal census administration, a voter-roll maintenance topic; the page shows a 2025-02-27 filing date and a hearing on 2025-09-16. It does not address ID or citizenship proof.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:35:39.406Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -75,6 +97,30 @@
       "found": 1,
       "at": "2026-10-22T23:01:55.437Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member profile and bill lists for the 192nd to 194th sessions (one election-law bill, on inactive voters; no voter ID or citizenship bill)",
+        "malegislature.gov bill page H.849 (2025-2026)",
+        "Cambridge Election Commission list of Sept 2026 primary candidates (shows him on the 29th Middlesex line)",
+        "blocked: https://ballotpedia.org/Steven_Owens (bot-check page)",
+        "blocked: https://www.watertownmanews.com/?p=131216 (403)",
+        "no official or campaign site found; not reviewed: Little Local Conversations podcast episode (audio)",
+        "one news search on name plus voter ID (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:35:39.406Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -17,6 +17,24 @@
       "found": 0,
       "at": "2026-10-22T21:31:26.528Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID with mail or absentee ballot",
+        "election security and voter-roll checks"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida 3rd Congressional District); not on the November 3, 2026 ballot (https://ballotpedia.org/Troy_Albers)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: confirms who he is and that he lost the primary; stopped there as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:55:18.674Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

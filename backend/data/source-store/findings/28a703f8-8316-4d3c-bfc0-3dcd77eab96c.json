@@ -21,6 +21,49 @@
         "fetched_at": "2026-10-22T23:03:36.763Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "520835e159283e7cf501fdb8a0f88aec7970838034ba40734e72cfd159b4db71",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "instrument_id": "MA-H-855-2025",
+      "act": "sponsor",
+      "note": "Sole petitioner of H.855, a bill to let noncitizens with legal immigration status vote in municipal elections only. The bill sets up a separate noncitizen registration form with a declaration of residency signed under pains and penalties of perjury, and bars noncitizen voting in federal and state races. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections",
+        "registration form declaration of residency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b289bdc1c5e52184ee118585325649d503ffe491b4262bb6e12ecc96dad508",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H706",
+      "date": "2023-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-706-2023",
+      "act": "sponsor",
+      "note": "Lead petitioner of H.706 (2023-24 session), an earlier version of the bill extending municipal voting rights to noncitizens with legal immigration status. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -50,6 +93,28 @@
       "found": 1,
       "at": "2026-10-22T23:03:36.763Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "non-citizen voting in municipal elections",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Sam_Monta%C3%B1o (sitting 15th Suffolk member, advanced from the 2026-09-01 primary, on the 2026 general-election ballot)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/S_M1/193 (sponsored bills list; one bill on the subject)",
+        "bill pages H.706 (2023-24) and H.855 (2025-26) on malegislature.gov",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act: nothing naming her on those topics",
+        "no campaign or personal issues page found with text on the subject; no statement by her on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:43:53.320Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

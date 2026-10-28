@@ -50,6 +50,28 @@
       "found": 0,
       "at": "2026-10-22T23:23:04.597Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name and city)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/KGH1 (confirms 17th Suffolk member; sponsored bills are on other topics)",
+        "legislature bill search for voter identification (25 bills shown, none filed by him)",
+        "state election results page https://electionstats.state.ma.us/elections/view/173133/ (he is listed in the 2026 primary for his seat)",
+        "Ballotpedia (page text did not load; not reviewed: https://ballotpedia.org/Kevin_G._Honan)",
+        "two news searches on his name plus the subject words (nothing quoting him)",
+        "no campaign site found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:56:43.203Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

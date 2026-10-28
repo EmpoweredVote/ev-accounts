@@ -115,6 +115,131 @@
         "fetched_at": "2026-10-22T23:50:26.981Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3a4f35a1ec663a1b987ef86794311b326ee49c3f5720ab1dbfab4701522130ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #758, Second Reading: passed 66 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:33.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "975898e36475b465cea4f64a3b0107e050eab98e0fc50d9985f6ce0d01b92380",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "M11 Concur",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #801, M11 Concur: passed 62 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:33.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b27f1d0f7528984e7e0660a555c1758cad4d3e724b810f710ab5663908edce92",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "SB 747, Elections Law Changes (2023-2024 session, ratified as SL 2023-140). The ratified text sets same-day registration at early voting sites with a requirement to present photo identification, and lets a voter be challenged for not presenting photo identification. Roll call #542, Second Reading: passed 69 to 47.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration with photo ID",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:33.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7005a176838e21da38acee414db014f69c2218309312fe2eb7b04057ff1712ff",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override",
+      "note": "SB 747, Elections Law Changes (2023-2024 session, ratified as SL 2023-140). The ratified text sets same-day registration at early voting sites with a requirement to present photo identification, and lets a voter be challenged for not presenting photo identification. Roll call #596, Veto Override: passed 72 to 44.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration with photo ID",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:33.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -143,6 +268,31 @@
       "found": 5,
       "at": "2026-10-22T23:50:26.981Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and no-ID voters",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election law overhaul bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://ericager4nc.com (nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/819 (confirms House District 114)",
+        "NC General Assembly bill pages and roll-call transcripts for HB 958 and SB 747",
+        "Ballotpedia https://ballotpedia.org/J._Eric_Ager (confirms on the 2026 general-election ballot)",
+        "web searches on name plus voter ID and election-bill words (no statement of his own found)",
+        "blocked: https://ncnewsline.com/2026/06/25/house-set-to-vote-on-sweeping-election-bill-despite-opposition-to-overseas-voter-restrictions/ (403)",
+        "not reviewed: https://www.wlos.com/topic/Eric%20Ager"
+      ],
+      "found": 4,
+      "at": "2026-10-27T19:58:33.144Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -50,6 +50,28 @@
       "found": 1,
       "at": "2026-10-22T22:09:18.626Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Jason_Pearce (confirms he is on the 2026 general-election ballot for Texas District 4; his candidate survey answers cover term limits, lobbying, housing and affordability, nothing on the subject)",
+        "campaign site https://www.pearcefortexas.com/ (page content loads by script and could not be read: not reviewed: https://www.pearcefortexas.com/)",
+        "https://tx3dnews.com/jason-pearce-candidate-for-u-s-house-tx-04/ (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/es/TX/candidate_Jason_Pearce/710350 (403)",
+        "two web searches on his name plus voter ID words; nothing on the subject",
+        "not a legislator: no sponsorship record to check"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:19:17.979Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

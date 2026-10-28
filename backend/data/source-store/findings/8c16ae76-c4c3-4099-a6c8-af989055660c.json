@@ -29,6 +29,29 @@
       "found": 0,
       "at": "2026-10-22T21:54:56.779Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Phil_Ehr (confirms he is on the 2026 general-election ballot for Florida District 28; he has not filled in its survey)",
+        "campaign site copy saved by the web archive (Meet Phil page and Voter Information page; the voter page covers mail-ballot renewal dates and sites, nothing on ID or citizenship)",
+        "blocked: https://ehrforcongress.us/ (live site would not connect)",
+        "blocked: https://web.archive.org/web/2026/https://ehrforcongress.us/priorities/ (404, no copy)",
+        "2 web searches on name plus subject words: nothing on the subject",
+        "not reviewed: https://www.local10.com/this-week-in-south-florida/2026/09/13/this-week-in-south-florida-phil-ehr/ (TV interview, not opened)",
+        "not reviewed: https://floridianpress.com/?p=71690 (news item, not opened)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:31:07.049Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

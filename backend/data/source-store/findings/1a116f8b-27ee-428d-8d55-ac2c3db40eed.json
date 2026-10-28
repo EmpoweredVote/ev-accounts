@@ -1,0 +1,51 @@
+{
+  "politician_id": "1a116f8b-27ee-428d-8d55-ac2c3db40eed",
+  "findings": [
+    {
+      "id": "5f7bbd094a7fde09fde7c0a024ebc2b1b52ba2bb3e44a8120b69cbf6f4f0796a",
+      "kind": "own-words",
+      "url": "https://patch.com/georgia/across-ga/ballot-set-next-months-special-georgia-house-election-cherokee-county",
+      "date": "2025-11-10",
+      "date_precision": "day",
+      "passage": "I’m strong for law enforcement. I’m strong for election integrity, and I believe in capping the ad valorem tax to protect people so they can stay in their homes.",
+      "note": "Said by phone to the Georgia Recorder during the 2025 special-election race for House District 23; the page is a Patch republication of that story. The same story says he told the reporter his top priorities if elected would include ensuring election integrity. No detail on ID or citizenship rules.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:15.497Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "status check: Ballotpedia shows Georgia House District 23, took office 2026-01-10 after a special election, advanced from the 2026-05-19 primary, and is on the 2026-11-03 general-election ballot (https://ballotpedia.org/Bill_Fincher)",
+        "On the Record (0 meetings found by extract-otr)",
+        "campaign site billfincherforcherokee.com (home and about pages): nothing on the subject; no issues page exists",
+        "Georgia legislature bill pages: not reviewed: legis.ga.gov (loads only through a script); he took office in 2026, so no 2021 SB 202 vote. Bill-tracker pages (billsponsor, fastdemocracy, wtfvote) show no bill list I could read",
+        "Ballotpedia, Wikipedia and Branch voter-guide pages: nothing on the subject; Ballotpedia says he did not complete its candidate survey",
+        "news: Rough Draft Atlanta and Cobb County Courier new-member pieces (nothing on the subject); AJC and Tribune Ledger special-election pages (nothing on the subject); Patch republication of a Georgia Recorder candidate profile: one statement saved",
+        "blocked: https://georgiarecorder.com/2025/11/10/the-ballot-is-set-for-next-months-special-georgia-house-election-in-cherokee-county/ (403; the same text was read on Patch)",
+        "news searches on name plus voter ID, election integrity, citizenship (2 searches)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:41:15.497Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

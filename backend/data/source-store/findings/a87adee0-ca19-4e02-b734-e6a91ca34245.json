@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     }
   ],
@@ -106,6 +110,32 @@
       "found": 0,
       "at": "2026-10-22T22:00:23.484Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "ID with mail or absentee ballots",
+        "non-citizen voting",
+        "election integrity laws",
+        "voter suppression"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site home page (shows sitting member of IL-17; nothing on the subject)",
+        "official House press-release list, first page of about 43 (nothing on the subject; later pages not reviewed)",
+        "blocked: https://sorensen.house.gov/search?keys=voter+ID (403)",
+        "blocked: https://www.congress.gov/member/eric-sorensen/S001224 (403)",
+        "Ballotpedia (page returned empty)",
+        "25newsnow SAVE America Act article (describes his no vote; no quote from him)",
+        "NBC Chicago and ABC7 Chicago SAVE Act articles (no quote from him)",
+        "news searches on name plus SAVE Act and voter ID (no own words found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:47:03.034Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,28 @@
       "found": 0,
       "at": "2026-10-22T23:13:07.027Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Michael_Chaisson shows him as 1st Bristol District incumbent who advanced from the 2026-09-01 primary and is on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Official legislature profile https://malegislature.gov/Legislators/Profile/MSC1 (identity confirmed; sponsored bills are local land, utility, licence and similar matters; nothing on the subject)",
+        "Legislature bill search for 'voter identification': results page loaded without listings (not usable)",
+        "Two news searches on name plus subject words and on House roll calls: nothing on the subject",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:57:00.100Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

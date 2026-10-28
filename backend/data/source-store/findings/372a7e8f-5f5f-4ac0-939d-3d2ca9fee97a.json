@@ -18,6 +18,25 @@
       "found": 0,
       "at": "2026-10-22T21:55:46.431Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (page: https://ballotpedia.org/Ericka_Kopp, which also shows the general-election field for Virginia's 1st District without her)",
+        "On the Record (0 appearances)",
+        "Ballotpedia page confirms the person (candidate for U.S. House, Virginia District 1)",
+        "not searched further: out of scope after the primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:33:29.168Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

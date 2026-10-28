@@ -50,6 +50,35 @@
         "fetched_at": "2026-10-23T00:03:00.834Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -80,6 +109,30 @@
       "found": 2,
       "at": "2026-10-23T00:03:00.834Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SB 921)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/434 and her introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/S/434 (election bills listed: Automatic Voter Registration S457 and Voter Fraud Prevention Act S652; neither sets an ID or citizenship rule; S652 is about legislators who switch party)",
+        "Bill page and text for S652 https://www.ncleg.gov/BillLookUp/2025/S652: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Sydney_Batch (confirms Senate District 17, on the 2026 general-election ballot): nothing on the subject",
+        "campaign site sydneybatch.com: only a footer reachable, nothing on the subject",
+        "news searches on name plus voter ID words and plus the 2026 photo ID amendment; fetched WUNC, WFAE, NC Newsline, WBTV and Ballotpedia News coverage of the amendment: none quotes her",
+        "already on file and not re-collected: NC-S-921-2023 votes"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:48:27.837Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,33 @@
       "found": 0,
       "at": "2026-10-22T21:58:52.244Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Carey_Coleman shows him as a candidate for Ohio's 13th U.S. House district, on the 2026 general-election ballot, who advanced from the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "campaign site https://careycoleman.com/issues/ (five issue sections on costs, law and order, freedom, jobs, infrastructure): nothing on the subject",
+        "campaign site https://careycoleman.com/about/ and home page: nothing on the subject",
+        "Ballotpedia: no survey responses or position statements on the subject",
+        "watch.vote candidate record: filing status only, nothing on the subject",
+        "blocked: https://x.com/colemanforohio (page returned no readable posts)",
+        "not reviewed: campaign Facebook, Instagram, TikTok, YouTube, and WNIR radio shows (no transcripts reachable)",
+        "news searches on his name plus voter ID, SAVE Act and election integrity: nothing about him; results were about a different person named Carey"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:20:51.087Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

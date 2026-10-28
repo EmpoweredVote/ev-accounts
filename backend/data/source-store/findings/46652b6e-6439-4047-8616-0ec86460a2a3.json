@@ -1,6 +1,37 @@
 {
   "politician_id": "46652b6e-6439-4047-8616-0ec86460a2a3",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +59,26 @@
       "found": 0,
       "at": "2026-10-22T22:29:57.645Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (provisional ballot, affidavit, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and election integrity generally"
+      ],
+      "places": [
+        "On the Record (1 meeting, Senate Judiciary 2026-01-14, https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a): nothing on the subject (his remarks are about a different bill)",
+        "Senate caucus member page https://www.indianasenaterepublicans.com/clark (confirms sitting District 24 senator, elected 2024; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Brett_Clark (page fetched; nothing on the subject)",
+        "web search on name plus voter ID, election integrity, proof of citizenship: nothing on the subject; a caucus release on election integrity credits the caucus, not him by name"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:01.638Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

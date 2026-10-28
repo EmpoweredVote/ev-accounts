@@ -1,6 +1,57 @@
 {
   "politician_id": "ca38dc89-dd3d-4a95-9f0f-9b5292a323e6",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "09ebfca889919b06eb45d357abb226dab44499d51751aa283e93a2e0ddb683ae",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/shelby-county-lawmakers-voters-can-use-new-election-text-hotline-to-ask-questions-report-issues/",
+      "date": "2023-11-02",
+      "date_precision": "day",
+      "passage": "\"It's really important to have a plan to vote in the upcoming municipal elections,\" said State Rep. Robb Greene (R-Shelbyville). \"This tool is extremely helpful for voters, whether you need help finding the nearest polling location or asking about election security.\"",
+      "note": "Caucus press release quoting Greene on the state's election text hotline for voter questions. It does not mention ID or citizenship proof. Saved as related election-administration material.",
+      "subjects": [
+        "election security and voter help (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:37.058Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +79,31 @@
       "found": 0,
       "at": "2026-10-22T22:52:19.759Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election security"
+      ],
+      "places": [
+        "In scope: Ballotpedia shows Robb Greene, Indiana House District 47, on the 2026-11-03 general-election ballot after advancing in the 2026-05-05 primary (https://ballotpedia.org/Robb_Greene)",
+        "On the Record (0 appearances)",
+        "Indiana House caucus press release found by news search (election text hotline, 2023)",
+        "Ballotpedia: nothing on the subject",
+        "news search on name plus voter ID, citizenship and election words: nothing on the subject beyond the one press release",
+        "not reviewed: Indiana General Assembly bill pages (page loads only by script, no readable text)",
+        "no campaign site located"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:29:37.058Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

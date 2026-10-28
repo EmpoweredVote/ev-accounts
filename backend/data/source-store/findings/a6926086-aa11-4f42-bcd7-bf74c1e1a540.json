@@ -31,6 +31,31 @@
       "found": 0,
       "at": "2026-10-22T22:46:04.818Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "ballot listing confirming her on the 2026-11-03 ballot for Indiana House District 62: https://theballotbrief.com/state/indiana/brown-county",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/house-district-62/ (HTTP 403 to both fetch tool and curl)",
+        "campaign donation page https://secure.actblue.com/donate/voteforamyoliver (nothing on the subject)",
+        "candidate guide https://ivoterguide.com/candidate/95587/race/30711/election/1456 (nothing on the subject)",
+        "caucus committee candidate page https://www.dlcc.org/candidates/amy-huffman-oliver/ (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign website: not located (guessed addresses did not load)",
+        "news search on name plus voting topics (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:48:20.352Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

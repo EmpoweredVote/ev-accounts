@@ -48,11 +48,223 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "22b699b4825e3e326ba74a0b91c3bdb4fdbfcdc9eea5c2babeb94215965b2a97",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0314SB0065+SB0065",
+      "date": "2020-02-04",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-65-2020",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voter identification; repeal of photo identification requirements, signed statement in lieu of form: removes the photo ID requirement, accepts a wider list of documents such as utility bills, and lets a voter without ID sign a statement or vote a provisional ballot. Senate passage 21-19.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents",
+        "voters with no ID (sworn statement, provisional ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6092efbbee09111b1d515ca8bf01feca74889419adfc4684299decdc0ef4b5b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voter identification; accepted forms of identification (adds photo ID cards from certain licensed private entities to the accepted list). Senate passage vote 21-17 on 2024-02-23.",
+      "subjects": [
+        "photo ID or other ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cf1b17f43cadf89c7c9baf0c7726b5ac9a9e0623ae2b998dd6aff315f7558af",
+      "kind": "own-words",
+      "url": "https://bluevirginia.us/?p=73440",
+      "date": "2020-02-04",
+      "date_precision": "day",
+      "passage": "we don’t know how many people actually never showed up at the polls because of this requirement for photo ID.",
+      "note": "Her floor remark in the SB65 Senate debate, as quoted in a Blue Virginia blog post dated the same day (the blogger, not a transcript, is the source).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8b74dfda2ea913461283d939073f3c88d9baf86b0008981fbbafeadab2321d9",
+      "kind": "own-words",
+      "url": "https://barbarafavola.org/access-to-voting",
+      "date": "2026-10-28",
+      "date_precision": "unknown",
+      "passage": "As part of the Democratic majority in the legislature, Senator Favola supported successful efforts to make voting easier and more accessible, including: implementing no-excuse absentee ballots, secure ballot drop boxes, extended early voting, and same-day registration; eliminating the photo identification requirement; and making Election Day a state holiday.",
+      "note": "Statement on her own site that she supported eliminating the photo ID requirement. The page carries no date; this is the date it was fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Favola'), linked to Barbara A. Favola via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cd0d4e83cae44f3283b75c4ac660847b0e313cd0a71b8fd7d64d413d0651b02",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Favola'), linked to Barbara A. Favola via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b34681954edb0741441741d7cedf52200a9a77cb9a906d6f497944e99f705a21",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Favola'), linked to Barbara A. Favola via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents",
+        "voters with no ID (sworn statement, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed as a sitting Virginia state senator through her site barbarafavola.org and legacylis Senate vote pages",
+        "On the Record (0 appearances found; the extract script was run with the politician id and name)",
+        "https://barbarafavola.org/access-to-voting",
+        "https://bluevirginia.us/?p=73440 (blog post on the 2020-02-04 Senate debate on SB65)",
+        "legacylis.virginia.gov vote pages for SB65 (2020) and HB26 (2024)",
+        "Ballotpedia: not reviewed, page did not load",
+        "web search on name plus voter ID bill",
+        "blocked: https://legiscan.com and https://www.vpap.org and https://legilist.com and https://app.legiplex.com (403 errors, not worked around)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (the new legislature site loads bill data by script, so 2025 and 2026 bill pages could not be read)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:28:37.988Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.793Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

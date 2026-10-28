@@ -1,6 +1,58 @@
 {
   "politician_id": "7ac75846-3990-45d0-b74a-b85d6d672f61",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "33bd7888d4fdcbe1a9971b9727531ae905b97ea4115a6f3c4e42acfbe00824ca",
+      "kind": "own-words",
+      "url": "https://cdn.zephyrcms.com/7453f23d-b254-419b-b47b-04be7c2a1b29/-/inline/yes/isrc-survey-results-2022-freeman.pdf",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "When a person votes at a polling place in Indiana, they must show photo ID. Do you support or oppose requiring people to include an ID number (such as their driver's license number) when they submit an application to vote by mail?",
+      "note": "Question Freeman put to his Senate District 32 constituents in his 2022 mailed and online survey. The results sheet, issued in his name, reports 80% support and 20% oppose for an ID number on mail-in ballot applications. The sheet states no position of his own. Date is the survey year; the PDF is undated.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:12:16.742Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +79,30 @@
       "found": 0,
       "at": "2026-10-22T22:39:33.744Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID number",
+        "proof of citizenship",
+        "election integrity",
+        "student ID at polls"
+      ],
+      "places": [
+        "On the Record (1 meeting, Senate Judiciary 2026-01-14; nothing on the subject)",
+        "Ballotpedia (confirms Indiana Senate District 32, term ends 2028, so sitting official in scope)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/freeman (news list reviewed; nothing on the subject)",
+        "2022 constituent survey PDF on the caucus CDN",
+        "news search on name plus voter ID (no article ties him to a statement on the subject)",
+        "news search on SB 10 2025 (coverage does not mention him; votes already on file)",
+        "not reviewed: iga.in.gov legislator page (page returned no content)",
+        "not reviewed: ontheissues.org, campaign site"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:12:16.742Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

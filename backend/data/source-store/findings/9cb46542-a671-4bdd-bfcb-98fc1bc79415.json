@@ -53,6 +53,29 @@
       "found": 0,
       "at": "2026-10-22T23:17:38.657Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter identification bills",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id; name search with no city also 0)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Hendricks (confirms sitting 11th Bristol representative, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary; nothing on the subject)",
+        "campaign site https://votehendricks.nationbuilder.com (new_leadership, latest_news, meet_candidates pages: nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/C_H1 (sponsored and cosponsored lists show no voter ID or citizenship bills)",
+        "legislature bill search for 'voter identification' https://malegislature.gov/Bills/Search?SearchTerms=voter%20identification (first page, 27 of about 347 results; he is not named as sponsor)",
+        "web news searches on name plus voter ID, proof of citizenship, SAVE Act: nothing on the subject",
+        "not reviewed: https://www.ontheissues.org (lead-only site, not citable)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:45:52.938Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

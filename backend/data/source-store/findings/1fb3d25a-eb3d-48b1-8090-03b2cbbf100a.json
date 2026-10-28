@@ -48,6 +48,79 @@
         "fetched_at": "2026-10-22T23:36:50.170Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1ca0df28ebef205b0c91fa74d9611ee59ea973c9c75686ccf4d122479ff36525",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1324",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "Third Reading, SB 824 Implementation of Voter ID Const. Amendment (House Roll Call 1324, passed 67-40)",
+      "note": "Roll call lists Destin Hall among the Ayes on House passage of the bill carrying out the voter photo ID constitutional amendment.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:38:39.217Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "70b7e43b50a58a100fd10ab77c6302c8016003fc71fc25da376644470d8015b1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1354",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "Veto Override, SB 824 Implementation of Voter ID Const. Amendment (House Roll Call 1354, passed 72-40)",
+      "note": "Roll call lists Destin Hall among the Ayes on the House vote to override the governor's veto of the voter photo ID bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:38:39.217Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -77,6 +150,30 @@
       "found": 2,
       "at": "2026-10-22T23:36:50.170Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Destin_Hall (North Carolina House member and Speaker; 2026 primary winner and incumbent on the 2026-11-03 general ballot; nothing on the subject)",
+        "official and campaign sites https://www.repdestinhall.com/ and https://www.destinhall.org: home pages and issues/news paths show nothing on the subject",
+        "legislature member pages https://www.ncleg.gov/Members/Biography/H/719 and https://library.ncleg.gov/Members/IntroducedBills/H/719 (bills he introduced: none on the subject)",
+        "legislature bill page https://www.ncleg.gov/BillLookUp/2017/S824 and its House roll-call pages (his votes on the 2018 voter ID bill SB 824)",
+        "news searches on name plus voter ID, photo ID, election integrity, citizenship: nothing on the subject in his own words",
+        "2023 and 2025 election bills: not reviewed beyond web search; no ID or citizenship record of his found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:38:39.217Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

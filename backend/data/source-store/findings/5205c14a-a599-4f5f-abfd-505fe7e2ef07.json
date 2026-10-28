@@ -115,6 +115,59 @@
         "fetched_at": "2026-10-22T23:47:37.705Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0e92092d8a7a02954d3f6db2c04aeb31615bd271bd3804aa8540c5d81adbf77f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Senate second reading, H 958 Election Law Changes (28-13)",
+      "note": "Listed among the Noes on the Senate second-reading vote on H 958, the election law changes bill. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a registration application to state that the applicant is a U.S. citizen before it is processed, with a 30-day sworn-statement fix if the answer is blank, and sets up a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows a Governor's veto on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:09.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -142,6 +195,30 @@
       "found": 5,
       "at": "2026-10-22T23:47:37.705Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Julie_Mayfield (Senate District 49; on the 2026 general-election ballot; nothing on the subject)",
+        "Senate roll call pages confirm her as a sitting Senate member",
+        "NC legislature bill page for H 958 and Senate roll calls #684-#693 (records found)",
+        "news search on name plus H 958, voter ID and citizenship terms (no quote of this person on the subject)",
+        "not reviewed: official Senate member page, campaign site and press releases"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:12:09.651Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

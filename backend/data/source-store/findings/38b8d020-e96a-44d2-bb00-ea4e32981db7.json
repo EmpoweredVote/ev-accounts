@@ -1,6 +1,87 @@
 {
   "politician_id": "38b8d020-e96a-44d2-bb00-ea4e32981db7",
-  "findings": [],
+  "findings": [
+    {
+      "id": "3c0532612d90f1825f7d757f22e39cbc7978fb2caf141360f3812e323abeb11d",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Tony_D%27Arrigo",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "I’d focus on legislation that makes our elections secure, simple, and fair—without making it harder for anyone to vote.",
+      "note": "Opening line of his answer to the Ballotpedia survey question 'What legislation would you enact related to election administration in the United States?' (survey completed in 2025). The list that follows has no photo-ID or proof-of-citizenship item.",
+      "subjects": [
+        "election administration in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:35:06.016Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a6fc856238bc1e9deaea60da8bf35bea75d3cbcc6bb778bc3a3298b39bb3b53",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Tony_D%27Arrigo",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Outlaw tactics that target specific communities with long lines, reduced polling places, or confusing ID rules.",
+      "note": "One item under 'End Voter Suppression & Protect Access' in the same survey answer. It mentions ID rules only as a tactic to outlaw when confusing and aimed at specific communities. No position on photo ID or citizenship proof is stated.",
+      "subjects": [
+        "voter ID rules (general mention)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:35:06.016Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e3bfb498860f8b1001d14caccfb768ff821730be2d65e7cc8f9c97c627b8bf0",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Tony_D%27Arrigo",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Ban deliberate voter roll purges without notice and due process.",
+      "note": "Another item under the same heading in the same survey answer.",
+      "subjects": [
+        "voter-roll purges and notice"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:35:06.016Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cec7f667b43011cdfd1b8b6c6663a1d72fe69e307fa6b8efddf4ae822e203f1",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Tony_D%27Arrigo",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "No‑excuse vote‑by‑mail available to every voter.",
+      "note": "Item under 'National Voting Standards' in the same survey answer. It does not mention ID for mail ballots.",
+      "subjects": [
+        "vote by mail access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:35:06.016Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +107,29 @@
       "found": 0,
       "at": "2026-10-22T21:51:43.450Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity and scope confirmed: candidate for U.S. House, Florida District 13, on the 2026 general-election ballot (https://ballotpedia.org/Tony_D%27Arrigo)",
+        "On the Record (0 appearances)",
+        "campaign site https://tonydarrigo.com (home, about, letsgettowork, community, voter-status pages; nothing on the subject)",
+        "Ballotpedia Candidate Connection survey answers 2024 and 2025 (one answer on election administration)",
+        "campaign site feed (nothing on the subject)",
+        "web news search (1): nothing about this person on the subject"
+      ],
+      "found": 4,
+      "at": "2026-10-27T01:35:06.016Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

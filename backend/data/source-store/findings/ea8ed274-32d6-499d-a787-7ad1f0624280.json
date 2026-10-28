@@ -25,6 +25,29 @@
       "found": 0,
       "at": "2026-10-22T23:28:20.343Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in office and on the 2026 general-election ballot: Ballotpedia page for James Arena-DeRosa, Massachusetts House 8th Middlesex (https://ballotpedia.org/James_Arena-DeRosa)",
+        "On the Record (0 appearances)",
+        "state legislature member bill list (https://malegislature.gov/Legislators/Profile/JCD1/Bills): one election bill, H.3943, read in full; it changes registration and early-voting dates only, nothing on ID or citizenship, so not saved",
+        "Ballotpedia: no 2026 survey answers and nothing on the subject",
+        "web news search (1): nothing tying him to voter ID or citizenship proof",
+        "official legislator site and campaign site not separately found; social media not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:05:33.381Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

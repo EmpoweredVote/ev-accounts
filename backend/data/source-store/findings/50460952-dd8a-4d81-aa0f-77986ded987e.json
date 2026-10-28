@@ -71,6 +71,53 @@
         "fetched_at": "2026-10-22T23:47:04.728Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "fdf2250f0b715fa0edc0b50db8343181d208cea428e753aaea5b66ae69d319c5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "House concur in Senate committee substitute, H 958 Election Law Changes (62-47)",
+      "note": "She is listed among the Noes on the final House vote on H 958. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a registration application to state that the applicant is a U.S. citizen before it is processed, with a 30-day sworn-statement fix if the answer is blank, and sets up a process to remove voters flagged as possible non-citizens by a federal database. It was vetoed by the Governor on 2026-08-17 per the bill page.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:58.191Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "538b95ea671ec5a2be7560f6a714b970c7416a2f3df73a5de666c45352707686",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "House second reading, H 958 Election Law Changes (66-47)",
+      "note": "She is listed among the Noes on the House second-reading vote on H 958, the election law changes bill that includes the citizenship statement on voter registration applications.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:58.191Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -99,6 +146,33 @@
       "found": 3,
       "at": "2026-10-22T23:47:04.728Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (https://ballotpedia.org/Monika_Johnson-Hostler: shows her on the 2026 general-election ballot for NC House District 33; nothing on the subject)",
+        "NC legislature member page https://www.ncleg.gov/Members/Biography/h/834 (confirms office; nothing on the subject)",
+        "NC House caucus member page https://nchousedems.com/our-members/monika-johnson-hostler-house-district-33/ (nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "NC legislature bill page and roll calls for H 958 (records found)",
+        "news search on her name plus voter ID and election bill terms (no quote of her on the subject)",
+        "blocked: https://ncnewsline.com/2026/06/17/advocates-say-a-sweeping-elections-bill-moving-through-the-nc-house-undermines-voting-rights/ (403)",
+        "campaign site: no working campaign site found (guessed domain did not resolve)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:10:58.191Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

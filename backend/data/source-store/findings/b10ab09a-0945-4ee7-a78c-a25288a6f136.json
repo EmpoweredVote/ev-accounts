@@ -23,9 +23,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -49,11 +53,138 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "e485f3f980692e40e3ad4732dde6d5839b8ce4b049ead4c1f8ff21df19402bb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-09-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "other",
+      "note": "SB 1 (2021 second called session), election integrity law that, among other things, sets ID-number rules for mail ballots. The Texas Legislature Online page lists this member among the House cosponsors; last action on the page is 09/07/2021.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:36.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7325f8a598addcb83ccdfd9da50f9247f591afe5eebc82b3abe39f4113953ec1",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-05-25",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "note": "SB 16 (2025), requires proof of citizenship to register to vote, with a limited federal ballot for those who cannot supply it. The Texas Legislature Online page lists this member among the House cosponsors; page shows House committee report sent to Calendars 05/25/2025.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:36.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e149ef64bc5f91cc6525673a2bd5864d338d4b9536b544ba35074baa16275982",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4253",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4253-2025",
+      "act": "other",
+      "note": "HB 4253 (2025), by another member, on confirmation of a voter's residence by a voter registrar. The page lists him among the coauthors; last action 05/05/2025, committee report sent to Calendars.",
+      "subjects": [
+        "voter-roll and registration administration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:36.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.525Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Jay_Dean (confirms sitting House District 7 member, on the 2026 general-election ballot)",
+        "Texas House member pages https://house.texas.gov/members/7 and /biography (nothing on the subject)",
+        "campaign sites: blocked: https://www.jaydeantx.com/ and https://www.deanfortexas.com/ (no readable content; real campaign address not found)",
+        "Texas Legislature Online pages for SB 1 (2021), SB 16 (2025), HB 4253 (2025); SB 5 (2017) cosponsor list does not include him",
+        "East Texas TV news pages (2021 reelection announcement, 2024 debate story, 2025-26 primary story): nothing on the subject",
+        "one news search on his name plus voter ID (no own words found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:15:36.458Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.525Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

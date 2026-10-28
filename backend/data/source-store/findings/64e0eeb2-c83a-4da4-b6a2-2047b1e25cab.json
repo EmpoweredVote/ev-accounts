@@ -52,6 +52,31 @@
       "found": 0,
       "at": "2026-10-22T23:11:18.194Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail ballot ID",
+        "election integrity",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "positive control: https://malegislature.gov/Legislators/Profile/C_G1 (state House profile naming Carlos González, 10th Hampden, Springfield)",
+        "Ballotpedia page (names him as a state House member running for re-election in the 10th Hampden District; nothing on the subject)",
+        "legislature profile page for filed petitions (the few shown, on security systems and a Save Our Streets proclamation, are off the subject)",
+        "two news searches on his name plus voter ID, citizenship, mail ballot and voting rights (nothing from him on the subject)",
+        "Boston.com 2026-02-13 roundup of state reactions to the SAVE America Act (page text not readable; no mention of him confirmed)",
+        "not reviewed: his campaign site and social media",
+        "nothing on the subject: his official profile and press coverage found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:00:22.252Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

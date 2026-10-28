@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -118,6 +122,48 @@
         "fetched_at": "2026-10-22T22:05:57.883Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "22c3fad170f045a8f76ebb09a08a78009b087a6748edc4f748ba73d22f5d5bfc",
+      "kind": "own-words",
+      "url": "https://gottheimer.house.gov/posts/release-gottheimer-statement-against-far-right-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I voted against the SAVE Act today — which is just another attempt from far-right extremists to disenfranchise Jersey voters. It could block millions — especially women and our troops serving overseas — from having their voices heard.",
+      "note": "Statement issued in his name on his official site after his April 10, 2025 vote on the SAVE Act. He says the bill could keep millions of people from voting.",
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "photo ID to vote in federal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:55.023Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3f3e8598f95dbcdc3946ebdf1f8814268fac6befa416235aff6099b56edae9e",
+      "kind": "own-words",
+      "url": "https://wrnjradio.com/gottheimer-votes-against-house-defense-bill-despite-securing-national-security-provisions/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "But, I was furious that the far right jammed in unrelated, partisan provisions from the SAVE Act along with anti-LGBTQ+ provisions.",
+      "note": "Quoted by WRNJ Radio (his press statement) after he voted against the House Fiscal Year 2027 defense bill, which had SAVE Act provisions added. He objects to attaching those provisions to the defense bill and says he will work to remove them.",
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:55.023Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -147,6 +193,27 @@
       "found": 2,
       "at": "2026-10-22T22:05:57.883Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Josh_Gottheimer (confirms sitting member, NJ-5, on the 2026 general-election ballot after the June 2, 2026 primary)",
+        "official site press release https://gottheimer.house.gov/posts/release-gottheimer-statement-against-far-right-save-act",
+        "official site search page https://gottheimer.house.gov/search?query=voter+ID (blocked: returned an empty page)",
+        "news: https://wrnjradio.com/gottheimer-votes-against-house-defense-bill-despite-securing-national-security-provisions/",
+        "three web searches on his name plus SAVE Act, voter ID and election integrity words (no own-words statement found on the February 2026 SAVE America Act vote or on mail-ballot ID)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:55:55.023Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

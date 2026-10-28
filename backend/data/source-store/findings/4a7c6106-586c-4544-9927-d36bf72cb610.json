@@ -21,6 +21,33 @@
       "found": 0,
       "at": "2026-10-22T22:09:49.140Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Wikipedia https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Idaho (names Carta Sierra as a nominee for Idaho district 2 in 2026; confirms she is in scope)",
+        "BallotReady https://www.ballotready.org/people/idaho-lorax-carta-1ac774c3-b986-499c-88ad-747f3c2e9d24 (lists the candidacy only; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Carta_Sierra and the 2026 district 2 election page (no readable page content on her; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Idaho_Law (older profile of the same person under another ballot name; nothing on the subject)",
+        "Idaho Secretary of State canvass https://canvass.sos.idaho.gov/candidates/view/19602 (2024 election record only)",
+        "campaign site: none found",
+        "not reviewed: Idaho Capital Sun 2024 candidate answers (the fetched page text had no subject words)",
+        "congress.gov: not applicable, she holds no federal office",
+        "news searches on her names plus voter ID, SAVE Act, citizenship and election integrity (nothing by or quoting her)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:21.752Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

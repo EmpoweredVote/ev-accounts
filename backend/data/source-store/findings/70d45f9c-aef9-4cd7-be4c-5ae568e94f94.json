@@ -22,11 +22,114 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.564Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "4223b91730ea47e55b9c262829f92b6f79e14d20eb69384f5278846035e89d19",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "House passage vote (51-49)",
+      "note": "HB 544 (2022), voter identification, optional restrictive identification requirement: lets a voter choose to be required to show photo identification to vote in person. House passed it 51-49.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b340fd39cff14cc2bb8a0940b2594331378cf5c5faa2d00eb8e3fe904b62c05e",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+vot+S08V0067+HB0026",
+      "date": "2024-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "nay",
+      "motion": "Senate Privileges and Elections committee, motion to report (10-5)",
+      "note": "HB 26 (2024), voter identification, accepted forms of identification, private entities licensed or certified: changes which identification documents are accepted for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "types of ID accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef63b7a4e5ea738b53113e71ecca22fe5dda33716a3d4255af2c4845851c944d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "nay",
+      "motion": "Senate passage vote (21-17)",
+      "note": "HB 26 (2024), voter identification, accepted forms of identification, private entities licensed or certified: changes which identification documents are accepted for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "types of ID accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found (extract-otr.mjs)",
+        "Virginia LIS classic bill and vote pages (2022 and 2024 sessions), fetched",
+        "FastDemocracy HB 26 (2024) page, fetched",
+        "blocked: https://lis.virginia.gov/bill-details/20221/HB544 (page needs JavaScript, no content)",
+        "blocked: https://ballotpedia.org/ (fetch returned no content)",
+        "blocked: https://www.vpap.org/ (403 or handshake failure)",
+        "blocked: https://legiscan.com/VA/bill/HB544/2022 (403)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "not reviewed: 2025 and 2026 session bill pages (LIS classic does not serve those sessions; new LIS needs JavaScript)",
+        "5 news searches on name plus subject words: no own-words statement on the subject found",
+        "Wikipedia page confirming current office",
+        "status note: suspended a 2026 congressional campaign before the primary per Wikipedia; still a sitting state senator",
+        "Fredericksburg Free Press 2025-06-19 campaign launch article, fetched: nothing on the subject",
+        "blocked: http://taradurant.com/ (redirect not followed)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:24:55.188Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

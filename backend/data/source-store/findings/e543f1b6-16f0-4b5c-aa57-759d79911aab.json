@@ -20,6 +20,24 @@
       "found": 0,
       "at": "2026-10-22T22:10:37.699Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "candidate status for the 2026 general election"
+      ],
+      "places": [
+        "status: disqualified from the 2026-08-18 primary for Florida's 11th district and did not appear on the ballot (withdrew) for the 2026-08-18 primary for Florida's 7th district; not on either general-election ballot (https://ballotpedia.org/Mike_Wilnau)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (candidate status page, fetched)",
+        "web search on name plus voter ID (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:01:48.843Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

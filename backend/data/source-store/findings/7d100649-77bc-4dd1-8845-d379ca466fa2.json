@@ -22,9 +22,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -47,11 +51,119 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "180d705cb9c37a8c71cb34235b81cf7723f2b310faa92d8ba4453414645dd436",
+      "kind": "own-words",
+      "url": "https://www.senate.texas.gov/members/d16/press/en/p20230301a.pdf",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "passage": "SB 92 makes it easier to register to vote and saves the state and county election officials time and money.",
+      "note": "Senate news release from his office on his priority bills for the 88th session. It describes his SB 92 (online voter registration), which it says would replace paper forms that it calls slow, outdated and fraud-vulnerable. The release does not mention ID or citizenship proof.",
+      "subjects": [
+        "online voter registration",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:18:35.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b6cdcbdaddb630c73faf6bdf455f1a16d66d0d60538d4f6f295d61a3c6ebf50",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB92",
+      "date": "2023-02-15",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-92-2023",
+      "act": "author",
+      "note": "He is the listed author of SB 92, relating to electronic voter registration. The page's last action is referral to the State Affairs committee on 2023-02-15.",
+      "subjects": [
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:18:35.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1db50ea9c0bae08c3c6cc722baf7ab62f94ef631a8e40100c00ac0b3cb022a6",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB145",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-145-2025",
+      "act": "author",
+      "motion": "author sponsor, Introduced (S.B. No. 145; no other version exists)",
+      "note": "Listed as author of TX-SB-145-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.538Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "no-ID voter options",
+        "election integrity laws",
+        "online voter registration"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with name search, nothing found)",
+        "official Senate District 16 page https://senate.texas.gov/member.php?d=16 and press room https://senate.texas.gov/pressroom.php?d=16 (all 29 listed press releases downloaded and searched for voting words; one on the subject, saved below)",
+        "Ballotpedia https://ballotpedia.org/Nathan_Johnson_(Texas) (shows him as a candidate for Texas Attorney General on the 2026 general ballot, still holding his Senate seat; nothing on the subject)",
+        "campaign site: no working campaign URL found (guessed addresses were empty); https://www.nathanjohnson.org/ is an unrelated personal blog",
+        "Texas Legislature Online bill page for SB 92 (88th session)",
+        "news pages: Texas Tribune 2025-04-01 SB 16 story, an Austin public radio-station story on SB 16, a San Antonio TV station story of 2026-10-08, Fox 4 and a Dallas weekly on his campaign launch (none quote him on the subject)",
+        "not reviewed: https://cbsnews.com/texas/video/texas-sen-nathan-johnson-on-his-opposition-to-ending-countywide-election-day-voting (video, and about countywide Election Day voting places, not ID)",
+        "not reviewed: Senate floor video and Senate Journal for his own words on SB 1 (2021) and SB 16 (2025)",
+        "blocked: https://kcentv.com/article/news/politics/texas-filibuster-sb1-bill-pass-election-voting/269-218b00f5-fd08-450b-820f-dabd1115a2ea (page returned almost no text)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:18:35.603Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.538Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

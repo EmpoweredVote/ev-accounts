@@ -1,6 +1,59 @@
 {
   "politician_id": "9ec5d907-b5d8-4f16-8379-703f748b58e0",
-  "findings": [],
+  "findings": [
+    {
+      "id": "85d310f1a019bcfdce0b9e563c48c3183a38de9aec1beb59749dd86fcbd06690",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/IN-HB1339-2026",
+      "date": "2026-01-06",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1339-2026",
+      "act": "sponsor",
+      "note": "Added as a coauthor of HB 1339 (Voter identification), which says a REAL ID driver's license or identification card meeting certain requirements is enough proof of identification under election law. Page text: 'Coauthored by Representatives Jackson C, Pierce M'. The page shows the bill failed with no roll call votes. Source is a third-party tracker; the official iga.in.gov page could not be read.",
+      "subjects": [
+        "voter ID at the polls",
+        "REAL ID accepted as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.066Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +78,32 @@
       "found": 0,
       "at": "2026-10-22T22:45:28.313Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "REAL ID as proof of identity",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --names)",
+        "Indiana House caucus member page https://indianahousedemocrats.org/members/carolyn-b-jackson (confirms House District 1, ranking member of Elections and Apportionment; nothing on the subject)",
+        "Indiana House caucus press releases https://indianahousedemocrats.org/news/category/Rep.+Carolyn+Jackson (only redistricting HB 1032 items; nothing on the subject)",
+        "BallotReady https://www.ballotready.org/people/carolyn-b-jackson (on Nov 3, 2026 general election ballot for House District 1)",
+        "policyrisk.com bill page for IN-HB-1339-2026 (coauthor record)",
+        "Ballotpedia https://ballotpedia.org/Carolyn_Jackson (page returned empty; blocked)",
+        "blocked: https://iga.in.gov/legislative/2026/bills/house/1339/details (page content not returned)",
+        "not reviewed: floor roll-call votes on 2023 HB 1334 (mail-ballot ID) and 2024 election bills; no official roll-call page reached",
+        "web search: name plus voter ID, proof of citizenship, mail ballot (no own-words found)",
+        "no campaign site found in search results; not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-27T00:57:16.066Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

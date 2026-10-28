@@ -26,6 +26,27 @@
       "found": 0,
       "at": "2026-10-22T23:21:40.318Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://malegislature.gov/Legislators/Profile/CJW1 (confirms 5th Suffolk House member; no election or voter-ID bills listed on the profile)",
+        "https://ballotpedia.org/Christopher_Worrell (confirms he is on the 2026 general-election ballot; nothing on the subject)",
+        "campaign site worrellforboston.com (redirects to a link-hub page, not reviewed: https://worrellforboston-com.l.ink/)",
+        "web search on name plus voter ID words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:27:18.097Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

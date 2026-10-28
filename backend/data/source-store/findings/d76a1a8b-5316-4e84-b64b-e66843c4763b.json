@@ -1,0 +1,172 @@
+{
+  "politician_id": "d76a1a8b-5316-4e84-b64b-e66843c4763b",
+  "findings": [
+    {
+      "id": "58b592bbfd114c75603f9713f713f6d8b95b6b6703abcf4b5a2c45e3eab685a7",
+      "kind": "own-words",
+      "url": "https://gov.georgia.gov/press-releases/2020-11-23/governor-kemp-formalizes-election-certification-calls-signature-audit",
+      "date": "2020-11-23",
+      "date_precision": "day",
+      "passage": "This morning, the Secretary announced his support of strengthened photo ID requirements for absentee balloting. Voters casting their ballots in person must show photo ID, and we should consider applying that same standard to mail-in balloting.",
+      "note": "Remarks by the governor after the 2020 election, saying photo ID for in-person voting should be considered for mail ballots too.",
+      "subjects": [
+        "photo ID for mail ballots",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec681ced52d9d7779a7236f7a2c109553cb70c16bb87258b6f3a86011ea084ef",
+      "kind": "own-words",
+      "url": "https://gov.georgia.gov/press-releases/2021-03-26/governor-kemp-responds-president-bidens-attack-election-integrity",
+      "date": "2021-03-26",
+      "date_precision": "day",
+      "passage": "There is nothing ‘Jim Crow’ about requiring a photo or state-issued ID to vote by absentee ballot – every Georgia voter must already do so when voting in-person.",
+      "note": "Statement issued in his name the day after he signed SB 202, defending the ID rule for absentee ballots.",
+      "subjects": [
+        "photo ID for mail ballots",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fc4560d2111dae7517e09894c16c73b5a62f509e0df84c3cf1f7c6707fb1be5",
+      "kind": "own-words",
+      "url": "https://gov.georgia.gov/press-releases/2021-06-25/gov-kemp-issues-statement-response-us-department-justice-lawsuit",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "I look forward to going three for three to ensure it’s easy to vote and hard to cheat in Georgia.",
+      "note": "Statement on the federal lawsuit against SB 202, the 2021 election law that includes the ID rule for absentee ballots.",
+      "subjects": [
+        "election integrity laws in general",
+        "photo ID for mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b63683d14f42a9b0852a0f1419731a8f61f2c3410a7bba9b59a14a72fb31f2c3",
+      "kind": "record",
+      "url": "https://gov.georgia.gov/press-releases/2021-03-26/governor-kemp-responds-president-bidens-attack-election-integrity",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "signed",
+      "note": "He signed SB 202, the Election Integrity Act of 2021; his own statement of 2021-03-26 says he signed it the day before. The bill adds photo or state ID for absentee ballots.",
+      "subjects": [
+        "photo ID for mail ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86bcf91e111a78130d50a515c941db659f3a0fbe4e4656b52da0ae8c25fffc66",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "yea",
+      "motion": "Senate: Motion to adopt the Conference Committee Report on HB 244 (final vote in the Senate)",
+      "note": "Senate Journal roll call as printed ('Kemp'), linked to Brian Kemp (district 46) via the official 2005 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac1c036716422723e8721b4962280ed63205d5d7ef2bb3c23139f7c9a4e7dcae",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-24",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "yea",
+      "motion": "Senate: Motion to agree to the House substitute to SB 84 as amended by the Senate",
+      "note": "Senate Journal roll call as printed ('Kemp'), linked to Brian Kemp (district 46) via the official 2006 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee or mail ballots",
+        "election integrity laws in general",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "governor's official site press releases (2020-11-23, 2021-03-26, 2021-06-25 reviewed; 2025-03-31 release had no readable text, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Brian_Kemp (empty page)",
+        "web search on SB 202 and SB 189 statements; no press release from his office for SB 189 signing found; news accounts not used",
+        "nothing found on proof of citizenship to register or the SAVE Act",
+        "not reviewed: 2022 debate remarks about SB 202 (no transcript fetched)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:40:31.850Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

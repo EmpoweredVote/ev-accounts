@@ -48,6 +48,56 @@
         "fetched_at": "2026-10-23T00:09:03.580Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "52179deaeb1632a0d3b175f4fbd7e69cc585a7a7436c0691be9c8f62c3805302",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (roll call 758, 66 to 47)",
+      "note": "Carver is listed among the Ayes. The bill (fifth edition text at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v5.pdf) changes the deadline for a voter without photo ID to bring ID after a provisional ballot, ties ID checks to mismatched ID numbers on registration, and adds citizenship-question rules for registration forms.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:58:14.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9426484303055eb44372028419e2b0e19770dd71e8c23b29feab1e22f3f3c93e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, concur in Senate committee substitute (roll call 801, 62 to 47)",
+      "note": "Carver is listed among the Ayes on the final House vote to accept the Senate version. The bill page shows the Governor vetoed it on 8/17/2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:58:14.717Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -75,6 +125,30 @@
       "found": 2,
       "at": "2026-10-23T00:09:03.580Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name search)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/842 (confirms House District 95, Iredell County; no bill list shown)",
+        "legislature member vote list https://www.ncleg.gov/Members/Votes/H/842 (read first 100000 characters only; later part not reviewed)",
+        "Ballotpedia (fetched with curl; shows him on the 2026 general-election ballot, House District 95)",
+        "legislature bill page and roll calls 758 and 801 for HB 958",
+        "HB 958 fifth-edition text from ncleg.gov",
+        "one news search on his name plus the subject words (nothing quoting him)",
+        "no campaign site found; no own-words statement on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:58:14.717Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

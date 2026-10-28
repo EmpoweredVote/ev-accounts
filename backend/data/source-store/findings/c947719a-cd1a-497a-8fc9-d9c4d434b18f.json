@@ -49,6 +49,28 @@
       "found": 0,
       "at": "2026-10-22T23:23:33.460Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name search)",
+        "Ballotpedia (fetched with curl; shows her as a state senator since March 2026 and on the 2026 general-election ballot for the 1st Middlesex seat)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/V_H1/194/Cosponsor (confirms member; sponsored bills show no voter ID or citizenship items; cosponsorships not listed there)",
+        "official legislature profile for the prior session (sponsored election bills are about Cambodia and Lowell vacancies, not ID)",
+        "Boston Globe profile of her swearing-in (nothing on the subject)",
+        "one news search on her name plus the subject words (nothing quoting her)",
+        "no campaign site found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:58:40.075Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

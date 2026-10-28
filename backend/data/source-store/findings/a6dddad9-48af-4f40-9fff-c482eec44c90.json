@@ -73,6 +73,79 @@
         "fetched_at": "2026-10-23T00:04:54.227Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "683e58087a77cbffceaef63d53af4aa7a962fae75c4e4d9b2ae80bb7e577056d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/Senate/PDF/S715v1.pdf",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "NC-S-715-2025",
+      "act": "sponsor",
+      "note": "Senate Bill 715, Student Voter ID Grant Program/CCs. She is a primary sponsor with one other senator. It would give community colleges grants of up to $20,000 to make student ID cards that can be used as photo ID to vote in person, and says it is meant to remove cost barriers to students having valid photo ID for voting. It was referred to committee and the bill page shows no later action.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:27.839Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e09302bfb7fc361427e6f24a46b2158d0bc62d95ee367486564eec1b45f2f0cb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/Senate/PDF/S386v1.pdf",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "NC-S-386-2025",
+      "act": "sponsor",
+      "note": "Senate Bill 386, Whiz Kids/Slow Pokes Voter Registration. She is a co-sponsor (the bill page lists her among the sponsors; two other senators are the primary sponsors). Its same-day registration section requires the person to present photo identification under G.S. 163-166.16 and proof of residence. Co-sponsor status is taken from https://www.ncleg.gov/BillLookUp/2025/S386.",
+      "subjects": [
+        "photo ID with same-day registration",
+        "proof of residence to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:27.839Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -102,6 +175,31 @@
       "found": 3,
       "at": "2026-10-23T00:04:54.227Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as photo ID for voting",
+        "photo ID amendment (SB 921)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "ID with same-day registration",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/422 and her introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/S/422",
+        "Bill pages and text for S715, S386, S392 and S652 on ncleg.gov (S715 and S386 saved; S392 is about threats to voters and observers, S652 is about legislators who switch party: nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Natalie_Murdock (confirms Senate District 20, on the 2026 general-election ballot): nothing on the subject",
+        "news searches on name plus voter ID words and plus the 2026 photo ID amendment; fetched WUNC, WFAE, NC Newsline, WBTV and Ballotpedia News coverage of the amendment: none quotes her",
+        "campaign site: not reviewed (the Branch voter guide says it carries nothing on this issue)",
+        "already on file and not re-collected: NC-S-921-2023 votes"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:48:27.839Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

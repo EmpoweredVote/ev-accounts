@@ -1,0 +1,35 @@
+{
+  "id": "TX-SB-1473-2025",
+  "scope": "state:tx",
+  "title": "SB 1473 (89R): Relating to early voting by mail on the ground of absence from the voter's county of residence.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB1473",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB1473",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01473I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 1 (amends Election Code 84.002(a)); printed without brackets, i.e. existing text carried forward\n(quote) (1-a) the following information: (A) the number of the applicant's driver's license, election identification certificate, or personal identification card issued by the Department of Public Safety; (B) if the applicant has not been issued a number described by Paragraph (A), the last four digits of the applicant's social security number; or (C) a statement by the applicant that the applicant has not been issued a number described by Paragraph (A) or (B);\n(section) SECTION 4 (amends Election Code 87.041(b)); printed without brackets, i.e. existing text carried forward\n(quote) (8) the information required under Section 86.002(g) provided by the voter identifies the same voter identified on the voter's application for voter registration under Section 13.002(c)(8).\n(d_proof_of_citizenship) not stated.\n(other) Sec 1-3: mail ballot application and balloting-material address for a voter absent from the county: ballot may be mailed to the registered address or registered mailing address, not only an address outside the county (84.002(a)(2), 84.011(a)(4)(A), 86.003(c)(1)).\n(other) Sec 4 (87.041(b)(5)): ballot accepted if mailed to the registered address, registered mailing address, or an address outside the county.\n(other) Sec 5: applies only to an election ordered on or after the effective date.\n(other) Sec 6: effective immediately with two-thirds vote of each house; otherwise September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Hall",
+      "role": "author",
+      "version": "Introduced (S.B. No. 1473; no other version exists)",
+      "politician_id": "452cad0a-57e0-48fd-893a-4101fc41cd48"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

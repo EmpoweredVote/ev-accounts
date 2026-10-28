@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -84,17 +88,19 @@
       "date": "2026-07-17",
       "date_precision": "day",
       "passage": "While Americans are paying more for groceries, housing, and health care, President Trump and Republicans are focused on spreading election misinformation and advancing legislation that makes it harder for eligible Americans to vote.",
-      "note": "Press statement in her name responding to a presidential address on elections. She describes election legislation in the House as making it harder for eligible people to vote. No bill or ID type is named. Date is the listing date on her site.",
+      "note": "Press release statement issued in her name responding to a presidential address on elections. She speaks of legislation she says makes it harder for eligible people to vote; it does not name a bill or ID rule. Release date taken from the date shown in her site's news list.",
       "subjects": [
         "election integrity laws in general",
-        "barriers to voting for eligible citizens"
+        "barriers to voting for eligible citizens",
+        "election integrity and the 2020 election",
+        "making it harder for eligible people to vote"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:46:08.101Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:56:46.618Z",
         "method": "webfetch"
       }
     },
@@ -146,6 +152,30 @@
       "found": 2,
       "at": "2026-10-22T21:46:08.101Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity and the 2020 election",
+        "making it harder for eligible people to vote"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her official site: press release list filtered by keyword (fetched), and the July 2026 election statement (fetched)",
+        "Ballotpedia (confirms 2026 general-election candidate for FL-22 per page data; no subject statements)",
+        "two news searches on name plus SAVE Act / voter ID: no own-words statement found",
+        "blocked: https://frankel.house.gov/search?q=SAVE+Act (403)",
+        "blocked: https://www.congress.gov/search (403)",
+        "votes already on file (H.R. 22, H.R. 8281, S. 1383) not collected again",
+        "nothing on the subject: no sponsorships or amendments found on voter ID or proof of citizenship"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:56:46.618Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

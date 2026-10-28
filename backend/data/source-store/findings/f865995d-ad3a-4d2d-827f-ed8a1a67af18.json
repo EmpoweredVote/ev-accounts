@@ -26,6 +26,31 @@
       "found": 0,
       "at": "2026-10-22T23:29:40.051Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed in office: Ballotpedia page shows Massachusetts State Senate 1st Bristol and Plymouth District, won the 2026 primary and is on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/MJR0 (empty response, page needs scripts)",
+        "official Senate site and campaign site: https://www.senatormichaelrodrigues.com could not be fetched (no response)",
+        "malegislature.gov amendment page for H5500 amendment 1587: empty response, not reviewed",
+        "Vote Smart and Westport town pages: seen in search results only, not reviewed",
+        "news searches (4) on name plus voter ID, citizenship, election bills, 2026 voter ID ballot petitions: nothing naming him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:43:35.447Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

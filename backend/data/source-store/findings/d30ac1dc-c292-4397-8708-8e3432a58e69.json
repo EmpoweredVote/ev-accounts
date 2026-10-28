@@ -44,6 +44,58 @@
         "fetched_at": "2026-10-23T00:10:35.834Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "69b6552ec688769687e43c3380c9bf894b44d6161bb008e75f9af58c3ab71302",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-715-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor of SB 715, Student Voter ID Grant Program/CCs (filed 2025-03-25)",
+      "note": "She is listed as a co-sponsor. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/Senate/HTML/S715v1.html) appropriates $500,000 for grants of up to $20,000 to community colleges to upgrade equipment to produce student ID cards usable to vote in person, and directs the State Board of Elections to review community college applications to have student ID cards approved as photo ID. The bill was re-referred to Appropriations on 2025-03-26.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:08:18.105Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -71,6 +123,31 @@
       "found": 2,
       "at": "2026-10-23T00:10:35.834Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted as voter ID",
+        "photo-ID constitutional amendment",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in office: https://www.ncleg.gov/Members/Biography/S/440 names her as the District 19 senator; Ballotpedia and the state legislature's primary results (seen in search results, not fetched) list her on the November 3, 2026 ballot",
+        "On the Record (0 meetings)",
+        "official legislature bill list for her (https://www.ncleg.gov/Members/IntroducedBills/S/440): election titles seen are SB 107, SB 392, SB 398, SB 457, SB 715",
+        "SB 392 (Safeguard Fair Elections) text read: voter-intimidation and observer rules, nothing on voter ID or citizenship proof, so not saved",
+        "blocked: https://ballotpedia.org/Val_Applewhite (page returned almost no content)",
+        "two web searches on name plus voter ID and the photo-ID amendment: no own words of hers found; one result about a different person with the same surname was set aside",
+        "her own official page, campaign site and news statements: no own-words on the subject found",
+        "the vote on SB 921 is already on file and was not collected again"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:08:18.105Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,83 @@
+{
+  "politician_id": "19c4b37d-4552-495c-a18b-d339585e684b",
+  "findings": [
+    {
+      "id": "dbfae4cf2d8eee7f2aa36728b50d82f06a4987f9beec1d2dab3585c4b86b37d5",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1941452",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-544-2026",
+      "act": "sponsor",
+      "motion": "SB544, Voter identification; identification containing a photograph required (chief patron; introduced 2026-01-14)",
+      "note": "Bill would require a photo ID to vote and repeal the option to vote after signing a sworn statement; a voter without photo ID would get a provisional ballot, and the Department of Elections would provide free voter photo ID cards. Passed by indefinitely in Privileges and Elections (8-Y 6-N) on 2026-01-27. Bill text on the tracker page; official LIS page https://lis.virginia.gov/bill-details/20261/SB544 could not be read.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required",
+        "provisional ballot for voter without ID",
+        "free voter ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:22:42.287Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9e3874f7a6f72bae735734dcdd7948a523d82ad2cff3df0f641512ba13f5dc",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1941061",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "instrument_id": "VA-SJ-27-2026",
+      "act": "sponsor",
+      "motion": "SJ27 (SJR27), Constitutional amendment (first reference); qualifications of voters; United States citizenship (chief patron; introduced 2026-01-13)",
+      "note": "Proposed amendment to the Virginia Constitution stating that a person who has not obtained U.S. citizenship at birth or by naturalization is not qualified to vote. Passed by indefinitely in Privileges and Elections (8-Y 6-N) on 2026-01-27.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship as voter qualification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:22:42.287Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter sworn statement or provisional ballot",
+        "free voter ID card",
+        "proof of citizenship to vote",
+        "non-citizen voting constitutional amendment",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia page https://ballotpedia.org/Luther_Cifers (confirms Virginia State Senate District 10, term 2025 to 2028; no survey answers, nothing on the subject)",
+        "billsponsor.com page for him (shows only recent commending resolutions and other bills; nothing on the subject)",
+        "BillTrack50 bill pages for SB544 and SJR27 (record source; the official LIS bill pages https://lis.virginia.gov/bill-details/20261/SB544 load only an empty script shell, so not readable)",
+        "blocked: https://origin.vpap.org/general-assembly/issue/voter-id (SSL handshake failure)",
+        "blocked: https://legiscan.com/VA/bill/SB544/2026 (bot check)",
+        "blocked: legacy LIS bill summary pages (document not available)",
+        "official Senate member page and campaign site: not reviewed: https://apps.senate.virginia.gov/Senator/memberpage.php?id=S132",
+        "news search on name plus voter ID: no direct quotes of his own words found",
+        "not reviewed: SB511 (affirmation statement in lieu of identification) and SB57 (ERIC membership), seen only as search leads"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:22:42.287Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

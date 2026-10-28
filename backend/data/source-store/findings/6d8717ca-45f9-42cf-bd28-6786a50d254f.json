@@ -23,6 +23,27 @@
       "found": 0,
       "at": "2026-10-22T23:11:09.492Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/JBL0 (confirms Senator Joan B. Lovely, Second Essex; nothing on the subject; lists local recall, ranked-choice and Salem election-board bills only)",
+        "campaign site https://www.joanlovely.com (nothing on the subject)",
+        "bill pages https://malegislature.gov/Bills/191/S417 and /S416 (early/absent voting and election ballots bills; S417 text only extends a count-related section to early and absent voting; nothing on ID)",
+        "Ballotpedia (page returned empty, not reviewed: https://ballotpedia.org/Joan_Lovely)",
+        "two web searches on name plus voter ID, photo ID, SAVE Act, proof of citizenship (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:53:54.839Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

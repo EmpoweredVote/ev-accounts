@@ -1,6 +1,59 @@
 {
   "politician_id": "b0862650-00c3-480e-9d92-745fdae38121",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "fb8f988242e4b4e9bbd6a341bca61c07a16337f6ee3931259f729e19b2627276",
+      "kind": "record",
+      "url": "https://news.ballotpedia.org/2023/04/06/election-legislation-roundup-indiana-house-of-representatives/",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1383-2023",
+      "act": "sponsor",
+      "note": "Ballotpedia's roundup lists him as sponsor of HB 1383, Documents and procedures concerning elections. As introduced it updates a voter's registration address when a candidate withdraws, adds electronic sample and provisional ballots to materials given to poll inspectors, and bars giving one person more than one absentee ballot application. The date is the roundup's date, not the bill's filing date. It does not itself set an ID rule.",
+      "subjects": [
+        "absentee ballot application handling",
+        "election procedures in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:11:22.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +81,32 @@
       "found": 0,
       "at": "2026-10-22T22:47:38.183Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "absentee ballot application handling"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/matt-hostettler/: confirms House District 64; only voter-registration reminders, nothing on ID or citizenship",
+        "blocked: https://iga.in.gov (legislator and bill pages load only as an empty script shell; roll-call lists for HB 1334 (2023) and SB 10 (2025) not reachable)",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 and HB1334/2023 (403)",
+        "Ballotpedia news roundup https://news.ballotpedia.org/2023/04/06/election-legislation-roundup-indiana-house-of-representatives/: lists his authorship of HB 1383 (election documents and procedures)",
+        "Democracy Docket and Indiana Capital Chronicle on HB 1334 (2023): no individual vote by him shown",
+        "web searches on name plus voter ID, mail-in, citizenship words: no statement of his own on the subject",
+        "Ballotpedia candidate page and 2026 ballot status: not reviewed, no page fetched; he is a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:11:22.417Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

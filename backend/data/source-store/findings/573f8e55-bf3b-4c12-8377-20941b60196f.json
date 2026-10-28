@@ -166,6 +166,71 @@
         "fetched_at": "2026-10-22T22:33:59.608Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "af5f0ee3aaf2357314b80d01847a09c1a9ff21ef8edeca054238e4c1fe68c213",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/2026-indiana-secretary-of-state-debate-clykbi/",
+      "date": "2026-10-08",
+      "date_precision": "day",
+      "passage": "I would actually, we already know that it's a felony to vote if you're not an American citizen. There's already checks and balances in place. What Mr. Engling is trying to propose is that we have more burdensome rules and regulations for people who are legally allowed to vote, but they now have to prove if you're a divorced woman, if you have married, if you're adopted and you have to produce a birth certificate, it's an undue, burden for them. It's an additional cost that not everyone on this stage would have to do.",
+      "note": "Rebuttal in the Secretary of State debate, answering an opponent's call to verify citizenship of voters. She says non-citizen voting is already a felony and checks exist, and describes the proposal as extra document burden (birth certificates) on eligible voters. Date is the PBS page's publication date; text is the page's auto-generated transcript, with the speaker named by the moderator as Ms. Schillings.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:26.237Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8afc9a922ffca1d1d412b88fd20b5a5b9f88f0419a42f67aba78c37d6ee1e37b",
+      "kind": "own-words",
+      "url": "https://www.pbs.org/video/2026-indiana-secretary-of-state-debate-clykbi/",
+      "date": "2026-10-08",
+      "date_precision": "day",
+      "passage": "Again, we have checks and balances already in place for what we're doing. And I do believe that those are effective. We have caught the individuals and they're very minimal. And I, I think that we're in good shape there.",
+      "note": "Her answer to a moderator question on whether a crackdown on non-citizen voting is needed (she was asked to go first). She says current checks are effective and cases found are few. Auto-generated transcript; date is the PBS page's publication date.",
+      "subjects": [
+        "non-citizen voting",
+        "voter fraud checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:26.237Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66ad3b22920fbf54890e1758e511883b01439b83c4ca9c0ead23123ba987d892",
+      "kind": "own-words",
+      "url": "https://www.wboi.org/2026-03-25/libertarian-party-nominates-lauri-shillings-for-secretary-of-state-race",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "That has a lot of privacy concerns. For me, it has information about each voter, what primary ballots they may have pulled, their location, their driver's license number and part of their social security numbers in there too,\" she said. \"So it's easy to triangulate that information, and it's easy to misuse that kind of data in a government entity type of way.",
+      "note": "Quoted by WFYI/WBOI. She is speaking about the incumbent's handing of Indiana's voter roll data to the federal government, and says it raises privacy concerns. The article also reports she said her platform includes protecting the integrity of elections.",
+      "subjects": [
+        "voter-roll data sharing and checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:26.237Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -195,6 +260,34 @@
       "found": 8,
       "at": "2026-10-22T22:33:59.608Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll data sharing and checks",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "positive control: https://www.wboi.org/2026-03-25/libertarian-party-nominates-lauri-shillings-for-secretary-of-state-race names her as a nominee for Indiana Secretary of State (2026 general ballot)",
+        "PBS Indiana Secretary of State debate transcript https://www.pbs.org/video/2026-indiana-secretary-of-state-debate-clykbi/ (auto-generated transcript read; two passages saved)",
+        "blocked: https://indianacapitalchronicle.com/2026/03/23/indiana-libertarians-nominate-lauri-shillings-for-secretary-of-state/ (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/?p=27489 (HTTP 403)",
+        "Indiana Public Radio nomination story (read through the fetch tool; no statement on the subject)",
+        "Ballotpedia (empty page returned, nothing usable)",
+        "campaign site not found (guessed address does not resolve)",
+        "not reviewed: the earlier Indi Chamber debate video named in the PBS transcript",
+        "two news searches on her name plus the subject words",
+        "no legislature record (not a legislator)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T19:12:26.237Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,215 @@
+{
+  "politician_id": "e92714ed-1596-484b-b53a-7d5d37415787",
+  "findings": [
+    {
+      "id": "cf31bdb2dffda60fe4a468f4dd29dfebe33a8f1eae73f96c7e467903de767332",
+      "kind": "own-words",
+      "url": "https://statesboroherald.com/local/hickman-no-opinion-yet-any-voting-changes-gathering-input",
+      "date": "2021-01-14",
+      "date_precision": "day",
+      "passage": "Right now there’s a lot of people without confidence in the system, and we’ve got to analyze it and see.",
+      "note": "Quoted by the Statesboro Herald in a phone interview three days into his first session, when asked about election changes such as photo ID for mailed absentee ballots. He said he had no opinion yet on absentee-voting requirement changes and was gathering input, including from county election officials.",
+      "subjects": [
+        "election integrity laws in general",
+        "photo ID for mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56a7d7afe5238862c3a7830e35ee2ef23b3d6c0c3aa0156274d2181795e22691",
+      "kind": "own-words",
+      "url": "https://statesboroherald.com/local/hickman-no-opinion-yet-any-voting-changes-gathering-input",
+      "date": "2021-01-14",
+      "date_precision": "day",
+      "passage": "I think we’ve all read about the priorities for the state. One of the priorities is looking at the election laws and maybe election reform, but we really haven’t gotten into that yet,",
+      "note": "Quoted by the Statesboro Herald. He names election-law review as a state priority but says no work had begun. The article date is the publication date (2021-01-15 UTC); the interview was on a Wednesday that week.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "073549895680511f1623bb25b0c72474f3fd59ba7fe2fc37d80c6528f72c7c0f",
+      "kind": "own-words",
+      "url": "https://statesboroherald.com/local/hickman-new-election-law-may-need-tweaking-on-early-voting",
+      "date": "2021-11-05",
+      "date_precision": "day",
+      "passage": "Kentucky took our bill, and basically mirrored our bill, Senate Bill 202 … and they only allowed three days of early voting.",
+      "note": "Quoted by the Statesboro Herald after a district tour stop. He praised SB 202 as a model other states copied and said the 17 early-voting days might be reduced for local elections. The story is about early-voting length, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "SB 202 early voting days"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11f228cfb7c135cfd9cb7012bb03d363ebae04877161712a20cdfac1c6b1540e",
+      "kind": "own-words",
+      "url": "https://statesboroherald.com/local/hickman-new-election-law-may-need-tweaking-on-early-voting",
+      "date": "2021-11-05",
+      "date_precision": "day",
+      "passage": "Then we go right back in January for a long January through March session, and that’s probably when we’ll make some tweaking on the election bill,",
+      "note": "Quoted by the Statesboro Herald. He expects to adjust SB 202 in the 2022 session, mainly the early-voting day count.",
+      "subjects": [
+        "election integrity laws in general",
+        "SB 202 early voting days"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Hickman'), linked to BILLY HICKMAN (district 4) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Hickman'), linked to BILLY HICKMAN (district 4) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Hickman'), linked to BILLY HICKMAN (district 4) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Hickman'), linked to Hickman, Billy (district 4) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record extraction script: not run (session rule bars running repo scripts)",
+        "blocked: https://ballotpedia.org/Billy_Hickman (empty page returned)",
+        "Statesboro Herald, January 2021 interview (fetched, text checked with curl)",
+        "Statesboro Herald, November 2021 hometown-tour story (fetched, text checked with curl)",
+        "web search (2 searches): the two Statesboro Herald stories; no sponsored voter ID or citizenship bill found; Senate District 4 and 2026 candidacy come from search results, not a fetched page",
+        "not reviewed: legis.ga.gov bill pages (login token); Georgia Senate floor votes are linked separately"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:40:31.944Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.411Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

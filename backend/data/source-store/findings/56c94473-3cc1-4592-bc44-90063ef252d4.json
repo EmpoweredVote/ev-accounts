@@ -26,6 +26,27 @@
       "found": 0,
       "at": "2026-10-22T22:16:11.953Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://ballotpedia.org/Steven_Sanders_(Arizona) (names him as a write-in candidate for Arizona's 4th District in the 2026 general election; his 2024 Candidate Connection answers were read, nothing on the subject; he has not filled out the 2026 survey)",
+        "On the Record (0 appearances)",
+        "no campaign website found or linked from Ballotpedia",
+        "one web search on his name and race: found no campaign pages, nothing on the subject",
+        "congress.gov: not applicable, never held federal office",
+        "news debate coverage of the race does not list him (fox10phoenix.com, search snippet only, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:03.519Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,11 +79,103 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "8c5070a63a835b611c9bb55bb66652e0963e943867ef77b09df6937d325166a2",
+      "kind": "own-words",
+      "url": "https://www.austinchronicle.com/news/making-the-best-of-a-bad-voter-id-bill-11750255/",
+      "date": "2011-01-21",
+      "date_precision": "day",
+      "passage": "“You have to have the vote-saving affidavit,” Anchía said of what appears to the Dems’ new bill-improving, rather than bill-killing, tactic.",
+      "note": "Austin Chronicle quotes Anchia on the 2011 photo ID bill. He proposes a sworn affidavit that lets a voter without ID vote, 'the same kind of affidavit in reverse' as the one signed today by voters who lack a registration card. The sentence continues in the article with his full quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:05.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f9e8da34b6bada5d96d48a64ec882e32214d7a12fc8392eb27e50a28788dc17",
+      "kind": "own-words",
+      "url": "https://www.austinchronicle.com/news/making-the-best-of-a-bad-voter-id-bill-11750255/",
+      "date": "2011-01-21",
+      "date_precision": "day",
+      "passage": "“We want to prevent thousands of Texans from being disenfranchised,” said Anchía, “so we’re going to fight to make sure we come up with good policy, not just political fodder.”",
+      "note": "Austin Chronicle quote from Anchia on the 2011 photo ID bill. The article says he added that lying on such an affidavit would be perjury.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:05.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd47b5a4a1b2ad7cdfbd9d28f25f43b4bdafe70d1e7ba3153b004bdadb574791",
+      "kind": "own-words",
+      "url": "https://www.rafaelanchia.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "He led the House Floor debate against photo ID legislation that passed in 2011, as this legislation has the potential to disenfranchise minorities, the elderly, and women in the State of Texas.",
+      "note": "Voting Rights section of his campaign issues page, written in the third person. The page is undated; year is the 2026 campaign.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:05.390Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "mail-ballot ID",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (extract-otr script, 0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Rafael_Anchia (confirms Texas House District 103, term to 2027-01-12, on the 2026-11-03 general ballot)",
+        "Texas House member page https://house.texas.gov/members/member-page/?district=103 (confirms office; nothing on the subject)",
+        "campaign site https://www.rafaelanchia.com (home, issues, news pages; one voting rights paragraph on issues)",
+        "Texas Legislature Online bill pages for HB 5337, SB 16 and other 2025 proof-of-citizenship bills (he is not listed as author or coauthor)",
+        "news: Austin Chronicle 2009 and 2011 pieces, Texas Tribune 2011 video page (caption only; video not reviewed: https://www.texastribune.org/2011/03/21/anchia-fears-voter-id-bill-not-about-fraud)",
+        "web searches: 2 (name and subject searches); found no 2025 statement from him on proof of citizenship"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:02:05.390Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

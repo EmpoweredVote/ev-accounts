@@ -74,18 +74,40 @@
       "date": "2022-01-19",
       "date_precision": "day",
       "passage": "Finally, the bill requires the Commonwealth to start working with the Electronic Registration Information Center and share data with other states to identify people who have moved, remove them from their old addresses, and help them re-register in their new addresses.",
-      "note": "He describes the Senate voting-reform package, including a voter-roll data-sharing provision to find people who have moved. The same post backs permanent no-excuse mail voting with the state mailing ballot applications.",
+      "note": "In his post describing the Senate voting package, he describes its voter-roll data-sharing provision. The post lists mail-in voting, early voting and same-day registration; it does not mention ID.",
       "subjects": [
         "voter-roll checks",
         "mail-voting application",
-        "same-day registration"
+        "same-day registration",
+        "voter-roll maintenance",
+        "election reform package"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T23:16:02.001Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:29:25.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07e82a9699e79aaea20a2d396f8325c88f6e1c5c700754165552cea13732e683",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/voting-rights-in-massachusetts/",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "I actually do not favor allowing non-citizens to vote.  Voting is the core privilege that comes from citizenship — it is available to those who have made a permanent commitment to our country through becoming citizens.",
+      "note": "His reply to a commenter on his post about state voting-rights bills. It is about who may vote, not about proof of citizenship. Some commenters on the same post called for voter ID; he did not answer them on that point.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:29:25.122Z",
         "method": "webfetch"
       }
     }
@@ -119,6 +141,32 @@
       "found": 4,
       "at": "2026-10-22T23:16:02.001Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll maintenance and list checks",
+        "election security and integrity"
+      ],
+      "places": [
+        "scope: on the 2026 general-election ballot for the Suffolk and Middlesex state Senate seat per the Ballotpedia page https://ballotpedia.org/William_N._Brownsberger (won the 2026-09-01 primary)",
+        "On the Record (0 appearances found)",
+        "official site willbrownsberger.com: site searches for photo ID, voter identification, citizenship, SAVE Act; read the posts Voting Rights in Massachusetts, VOTES Act, Election Security, Voting by Mail; nothing in the post text on proof of identity",
+        "Massachusetts legislature profile page (https://malegislature.gov/Legislators/Profile/WNB1): confirmed office only; bill lists not reviewed for voter ID",
+        "Ballotpedia profile: no voter ID material",
+        "one web search on name plus voter ID: nothing by him on the subject",
+        "campaign site: not reviewed separately (official site used)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:29:25.122Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,55 @@
+{
+  "politician_id": "6a36e92b-d953-4309-8423-1e0ba4e68b6f",
+  "findings": [
+    {
+      "id": "f5216f68965021f2f0b0183290e280a3d349cde21ef9bc2fa4b089c534b095ff",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Berman Assembly Third Reading",
+      "note": "AB 1116 (Elections: voter registration) lets a person without a California driver's license or state ID register online by giving the last four digits of their Social Security number, with the Secretary of State checking identity from that number, name and birth date. She voted yes on Assembly third reading (60 yes, 18 no, 1 not voting, passed).",
+      "subjects": [
+        "proof of identity to register",
+        "online voter registration without state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:59.163Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "proof of identity to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://a13.asmdc.org and its press release list (confirms Assemblymember, 13th District; nothing on the subject)",
+        "campaign site https://www.rhodesiaransom.com (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Rhodesia_Ransom (nothing on the subject)",
+        "two news searches on name plus subject words (no statement of hers on the subject)",
+        "her bill AB 1164 (Voter Bill of Rights, new ballot if damaged or missing): checked, not on the subject",
+        "California Assembly vote pages for SB 1174, AB 25 and AB 1116 via the Internet Archive copy of the leginfo vote pages (leginfo itself is behind a bot check)",
+        "SB 1174 (2024): she took office in December 2024, after the vote",
+        "AB 25 (2025): only the Assembly Elections Committee voted and she is not on it; no vote of hers exists"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:08:59.163Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

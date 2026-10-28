@@ -1,6 +1,78 @@
 {
   "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fac21e6eebb4e23b08918ba0ee7e8e7f831c28014d9aef6ba6ac56c2ae5b5c2e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/SenateRollCall165.pdf",
+      "date": "2022-05",
+      "date_precision": "month",
+      "instrument_id": "MA-SB-2851-2022",
+      "act": "nay",
+      "motion": "S.2851 (driver's license for residents without legal presence), question on adoption of amendment 25 (Tarr and Moore), attestation not to use the license for voting, registering to vote or identification",
+      "note": "Roll call No. 165 lists Keenan among the Nays. The amendment would add to the applicant attestation that they will not use the license for voting or registering to vote or for identification. It was rejected 7 yeas to 31 nays. The week and vote count match the report at https://recorder.com/?p=195861 (published 2022-05-12). Amendment text: https://malegislature.gov/Bills/GetAmendmentContent/192/S2851/25/Senate/Content",
+      "subjects": [
+        "voting-related limits on a license issued without legal presence",
+        "proof of identity",
+        "non-citizen voting safeguards"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:49:03.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c3d568323f28e5f67471b4c1ad695912054723fae039c02f4d470cf219c68cd",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/SenateRollCall163.pdf",
+      "date": "2022-05",
+      "date_precision": "month",
+      "instrument_id": "MA-SB-2851-2022",
+      "act": "nay",
+      "motion": "S.2851, question on adoption of amendment 7 (Fattman, Moore, Montigny, Tarr), registry to give town clerks license-holder information to verify identity and eligibility to vote or register to vote",
+      "note": "Roll call No. 163 lists Keenan among the Nays. The amendment would require the registry of motor vehicles to give city or town clerks information on a license holder so the clerk can verify the identity and eligibility of anyone using the license to vote or register. It was rejected 10 yeas to 29 nays. Amendment text: https://malegislature.gov/Bills/GetAmendmentContent/192/S2851/7/Senate/Content",
+      "subjects": [
+        "verifying voter identity and eligibility",
+        "voter-roll checks",
+        "non-citizen voting safeguards"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:49:03.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fce8506235a1555532a8cfbab24a2af32b5999dc704190fa02b7df21777c62d",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/SenateRollCall162.pdf",
+      "date": "2022-05",
+      "date_precision": "month",
+      "instrument_id": "MA-SB-2851-2022",
+      "act": "nay",
+      "motion": "S.2851, question on adoption of amendment 3 (Tarr), license to bear the words 'Not valid for identification'",
+      "note": "Roll call No. 162 lists Keenan among the Nays. The amendment would print 'Not valid for identification' on licenses issued under the bill. It was rejected 7 yeas to 32 nays. This is about the license as a form of identification in general, not voting by name. Amendment text: https://malegislature.gov/Bills/GetAmendmentContent/192/S2851/3/Senate/Content",
+      "subjects": [
+        "proof of identity",
+        "what a license may be used as identification for"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:49:03.419Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +96,31 @@
       "found": 0,
       "at": "2026-10-22T23:10:20.250Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or attestation tied to voting on a driver's license for non-citizens",
+        "election-official verification of voter identity and eligibility",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "malegislature.gov legislator profile JFK0 (confirms Senator John F. Keenan, Norfolk and Plymouth; sponsored S.516 An Act to protect democracy, whose text I read: it is about harassment of election workers, nothing on ID or citizenship; also orders S.2772 and S.3271 about committee reporting dates)",
+        "Ballotpedia Massachusetts State Senate elections 2026 page (lists John Keenan as incumbent in the Norfolk and Plymouth general election); his own Ballotpedia profile page did not show 2026 details",
+        "malegislature.gov Senate roll calls 161-165 on S.2851 (2022) and roll call 88 on S.2545 (2021, amendment text had nothing on ID)",
+        "malegislature.gov Senate FY2026 budget amendments list: a voter ID amendment (S3 amendment #303, Fattman) was rejected as part of a bundle; no recorded individual votes, so nothing saved",
+        "Beacon Hill Roll Call via recorder.com (May 2022)",
+        "senatorjohnkeenan.com home page (no subject statements found)",
+        "web searches on name plus voter ID / election integrity: nothing in his own words"
+      ],
+      "found": 3,
+      "at": "2026-10-27T11:49:03.419Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

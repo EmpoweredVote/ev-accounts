@@ -22,11 +22,250 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "4a3b84109fd862cc912061244b29d6ab85116992922b0ce9ba34da4cb322ea88",
+      "kind": "own-words",
+      "url": "https://kfyo.com/rep-patterson-liberal-texas-media-lying-about-vote-integrity-bill-interview/",
+      "date": "2021-04-14",
+      "date_precision": "day",
+      "passage": "All we're trying to do is make sure that it is easy to vote, but hard to cheat. That's the whole point of House Bill 6.",
+      "note": "Radio interview (The Chad Hasty Show, KFYO, write-up quoting him) on HB 6 (2021): he says it cleans the voter rolls of dead people, stops harvesting of mail-in ballots, and makes counties follow the law.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks",
+        "mail ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba59cb25e31d15afe7aa949aa2cb1e2b21f3897171b9f02103459f5b57c09be9",
+      "kind": "own-words",
+      "url": "https://kfyo.com/rep-patterson-liberal-texas-media-lying-about-vote-integrity-bill-interview/",
+      "date": "2021-04-14",
+      "date_precision": "day",
+      "passage": "Making sure that we don't have voter harvesting of mail-in ballots where an overwhelming majority of fraud actually does happen in the state of Texas.",
+      "note": "Same interview, on mail-ballot harvesting.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8e2e82397ff4b4437eb3fd25ad0dbb32b8b8934569e343a8e1960c6866bc02b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR197",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-197-2025",
+      "act": "author",
+      "note": "HJR 197 (2025), authored by him with Hull: a constitutional amendment clarifying that a voter must be a United States citizen. Referred to the Elections committee 2025-04-03.",
+      "subjects": [
+        "non-citizen voting",
+        "citizen-only voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c373981e825200d062e02748277bc20d27638bc11003c8a690e39ee144a6667",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "note": "He is listed as a coauthor of HB 5337 (2025), by Isaac: proof of citizenship to register to vote, with criminal offenses. Its House committee report went to the calendar 2025-05-07. The date of his listing is not shown.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59c89158e87b282f886bba0abcf6cfc30f1e16b07c8b6be575120ac2eaf0e5fe",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "sponsor",
+      "note": "He is listed as a House co-sponsor of SB 16 (2025): proof of citizenship to register, with a limited federal-only ballot for those who cannot supply it. The date of his listing is not shown.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b506ed1943265c3a935fe6cd433a5c2d0a3d636b6c7a6d179bb0ea0dc3ca3e4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "sponsor",
+      "note": "He is listed as a House co-sponsor of SB 7 (2021), the election integrity and security bill. Last action on the page is a House point of order overruled on 2021-05-30.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "543794b388ec518743d1419c379962d02a2c65efd346d12e85fb269529ecb015",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB6",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-6-2021",
+      "act": "other",
+      "note": "He is listed as a coauthor of HB 6 (2021), the House election integrity and security bill; last action 2021-05-07, laid on the table subject to call.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:10.882Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.529Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "citizen-only voting",
+        "non-citizen voting",
+        "mail-ballot harvesting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "Ballotpedia: he holds House District 106 (term ends 2027-01-12) and advanced from the 2026 primary to the November 2026 ballot; nothing on the subject",
+        "his official House member page and its Texas Legislature Online lists of bills authored, co-authored, sponsored and co-sponsored for the 86th through 89th sessions",
+        "Texas Legislature Online pages for HJR 197, HB 5337 and SB 16 (2025) and SB 7 and HB 6 (2021)",
+        "KFYO radio interview write-up of 2021-04-14",
+        "two web searches on his name plus election integrity and proof-of-citizenship words",
+        "blocked: https://dallasexpress.com/?p=174561 (bot check)",
+        "not reviewed: https://dallasexpress.com/?p=240865 (same site, bot check)",
+        "his campaign site: no working address found (tried several guesses); not reviewed",
+        "not reviewed: his social media posts and floor-debate video"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:03:10.882Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.529Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
 }

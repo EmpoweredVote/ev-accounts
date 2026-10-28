@@ -1,0 +1,70 @@
+{
+  "politician_id": "73ac22e6-fe1a-48ed-acda-be993489ee2d",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Seabaugh'), linked to Devan Seabaugh (district 34) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "blocked: https://ballotpedia.org/Devan_Seabaugh (fetch returned an empty page; a browser-agent curl retry was refused by the permission system, so it was not made)",
+        "news search on name plus subject words (several searches)",
+        "House press site (house-press.com) representative page",
+        "branch.vote 2026 primary page: running unopposed for House District 34, moving to the general election; page says his website had no information on voting issues (note: he is a House member)",
+        "fairfight.com page fetched: does not mention him, so not used",
+        "blocked: https://legiscan.com/GA/bill/HR780/2023 (403); search results suggest he is a sponsor of HR780 (2024, citizens-only voting constitutional amendment) but I could not open a page to confirm, so no record saved",
+        "blocked: https://www.wabe.org/bill-to-ban-noncitizens-from-voting-in-georgia-elections-stalls-at-key-legislative-deadline/ (403)",
+        "blocked: https://open.pluralpolicy.com/ga/bills/2023_24/HR780 (404)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.704Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

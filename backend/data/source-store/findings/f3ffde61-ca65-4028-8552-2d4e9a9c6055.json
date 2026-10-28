@@ -48,11 +48,131 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "22d22d4aa0b8d974e4f305586d460fb928b4968701fe9eda11c9edd63c1e08b2",
+      "kind": "own-words",
+      "url": "https://augustafreepress.com/news/senate-democrats-critical-gop-efforts-limit-voting-access/",
+      "date": "2017-01-30",
+      "date_precision": "day",
+      "passage": "Logistically, not everyone has access to a scanner. This is an unnecessary barrier to participation – including for our active duty military serving abroad. I don’t know how a soldier sitting in a fox hole is supposed to copy his driver’s license.",
+      "note": "Quoted in Augusta Free Press on a bill (appears to be SB 872) requiring a photo ID copy with an absentee ballot application; the article does not name the bill in his paragraph. Sentences are separate quotes joined here.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "photo ID copy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:56.695Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Surovell'), linked to Scott A. Surovell via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11a46b4b843949b3dac551f86358262c5c7b8a78de69e0e964e3e49c781032bf",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1076+HB1337",
+      "date": "2013-02-19",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "House: VOTE: ADOPTION (64-Y 36-N)",
+      "note": "House roll call as printed ('Surovell'), linked to Scott A. Surovell via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "people without ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record extraction script not run (standing rule against running repo scripts)",
+        "web search: name plus voter ID",
+        "Augusta Free Press 2017-01-30",
+        "The Virginia Star 2022-01-19 (no Surovell quote on subject)",
+        "blocked: https://lis.virginia.gov (page loads empty), https://legiscan.com (403)",
+        "blocked: https://virginiamercury.com (403)",
+        "blocked: https://surovell.com (SSL error)",
+        "Ballotpedia not fetched"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:31:56.695Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T17:58:27.794Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

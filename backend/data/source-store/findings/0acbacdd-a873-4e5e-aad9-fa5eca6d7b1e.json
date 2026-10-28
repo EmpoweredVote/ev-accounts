@@ -1,0 +1,34 @@
+{
+  "politician_id": "0acbacdd-a873-4e5e-aad9-fa5eca6d7b1e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ban by local governments (SB 1174 of 2024)",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia https://ballotpedia.org/John_Harabedian shows him as the Assembly District 41 incumbent, in office since 2024-12-02, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings)",
+        "official site https://harabedian.asmdc.org/ (home, press releases): nothing on the subject; the site's own keyword search page returned no readable results",
+        "campaign site https://www.johnharabedian.com/ (home page): nothing on the subject",
+        "Ballotpedia: nothing on the subject; he has not filled in the 2026 candidate survey",
+        "SB 1174 of 2024 vote page (archived copy of leginfo, https://web.archive.org/web/2024/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174): he is not listed; he took office after the 2024-08-27 vote",
+        "blocked: https://leginfo.legislature.ca.gov (live pages return a bot-check 403; only the archived copy was readable)",
+        "blocked: https://legiscan.com (bot-check 403)",
+        "not reviewed: calmatters digital democracy vote tab (page loads votes by script)",
+        "news searches on his name plus voter ID, SAVE Act, proof of citizenship, election integrity: nothing by or about him on the subject",
+        "BillTrack50 legislator page https://www.billtrack50.com/legislatordetail/29327: no election-law bill by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:57:09.033Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

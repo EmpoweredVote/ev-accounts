@@ -1,6 +1,51 @@
 {
   "politician_id": "76e38c6e-12b2-4286-9bfe-22ea0b05c947",
-  "findings": [],
+  "findings": [
+    {
+      "id": "f85f98c9bfaeb87e982da49c6230efed794a794c183884e75fc804053d8b1403",
+      "kind": "own-words",
+      "url": "https://electionacademy.lib.umn.edu/2017/04/25/nd-governor-signs-revamped-voter-id-bill",
+      "date": "2017-04-24",
+      "date_precision": "day",
+      "passage": "“The right to vote is a powerful underpinning of American democracy, and this legislation protects that right while offering eligible citizens multiple and straightforward opportunities to legally cast their ballot,” Burgum said in a statement. “House Bill 1369 strengthens the integrity of our elections by ensuring all voters have proper identification while allowing those without current or complete forms of ID to provide supplemental documents to verify their eligibility.”",
+      "note": "Statement issued by the governor when signing North Dakota HB 1369; quoted in a University of Minnesota Election Academy post that reprints a news report. Says the bill requires proper ID while letting voters with outdated or incomplete ID add other documents.",
+      "subjects": [
+        "voter ID at the polls",
+        "supplemental documents for voters with incomplete ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:15:00.386Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "453b5814176b837f7310e8d78e5a9c3d9e18d68c25599965782f8536eb3130ce",
+      "kind": "record",
+      "url": "https://electionacademy.lib.umn.edu/2017/04/25/nd-governor-signs-revamped-voter-id-bill",
+      "date": "2017-04-24",
+      "date_precision": "day",
+      "instrument_id": "ND-HB-1369-2017",
+      "act": "signed",
+      "note": "As North Dakota governor he signed HB 1369, which amends the state's voter ID law. News coverage says it was signed despite a federal lawsuit and a judge's earlier ruling. Per the same post, a voter with outdated or incomplete ID can add a document such as a utility bill. Official legislature page could not be reached.",
+      "subjects": [
+        "voter ID at the polls",
+        "supplemental documents for voters with incomplete ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:15:00.386Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -19,6 +64,32 @@
       "found": 0,
       "at": "2026-10-22T22:14:35.245Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and supplemental documents",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope note: news results show Doug Burgum was confirmed as US Secretary of the Interior in 2025 (https://www.yahoo.com/news/north-dakota-governor-retired-software-002726001.html, from search result, not fetched); he is not a member of Congress and no 2026 candidacy was found; findings below are from his time as North Dakota governor",
+        "On the Record (0 appearances)",
+        "official site: not reviewed, he holds no campaign or legislative site",
+        "Ballotpedia: blocked: https://ballotpedia.org/Doug_Burgum (empty page)",
+        "North Dakota legislature bill page for HB 1369 (2017): blocked: https://ndlegis.gov/assembly/65-2017/bill-actions/ba1369.html (404)",
+        "congress.gov: not applicable, never a member of Congress",
+        "https://www.inforum.com/news/burgum-signs-voter-id-bill-amid-lawsuit: reviewed through the fetch tool only; the UMN page was used for the copied text",
+        "news search on name plus SAVE America Act: no statement by him found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:15:00.386Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

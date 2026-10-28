@@ -28,6 +28,28 @@
       "found": 0,
       "at": "2026-10-22T22:05:43.605Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "SAVE Act"
+      ],
+      "places": [
+        "https://ballotpedia.org/Hillary_Herzig (confirms she is on the 2026 general-election ballot for New Jersey's 6th District; her Candidate Connection survey answers were read, nothing on the subject)",
+        "On the Record (0 appearances)",
+        "campaign site herzigforcongress.com: home page with its principles and priorities list, and the About page, read; nothing on the subject",
+        "one web search on her name plus subject words: nothing about her",
+        "congress.gov: not applicable, never held federal office",
+        "not reviewed: campaign videos page (https://www.herzigforcongress.com, Watch Videos tab; video only)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:31.666Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

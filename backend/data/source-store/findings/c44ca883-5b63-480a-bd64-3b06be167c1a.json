@@ -1,6 +1,58 @@
 {
   "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
-  "findings": [],
+  "findings": [
+    {
+      "id": "d6699de7af4696ecee405d6c76c6e3d05f94ef0e612bff7626d520998724d98c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Second reading, House Bill 958 (Election Law Changes), roll call 758, passed 66 to 47",
+      "note": "Voted yes on the House passage of the omnibus election bill. The House edition (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v6.pdf) lets a voter with no photo ID cast a provisional ballot and bring ID to the county board by the fifth business day after the election, requires the registration form to affirm US citizenship, and covers matching of ID numbers and ID copies with absentee ballots. Other parts cover ballot counting and campaign finance.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without photo ID",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:52.512Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0e00551c4489b665ad411c39c5cb1fa4c3b3512f364e8cd9ccf2d26d0572eec",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Motion 11, concur in Senate committee substitute, House Bill 958 (Election Law Changes), roll call 801, passed 62 to 47",
+      "note": "Voted yes to accept the Senate version of the omnibus election bill. That edition (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v7.pdf) requires an applicant to affirmatively state US citizenship before a registration is processed, sets a 30-day sworn-citizenship follow-up for blank answers, and directs the State Board to remove voters flagged as possible non-citizens by a federal database. The Governor vetoed the bill on 2026-08-17 (https://www.ncleg.gov/BillLookUp/2025/H958).",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship question on registration forms",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:52.512Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +78,34 @@
       "found": 0,
       "at": "2026-10-23T00:07:03.781Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without photo ID",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "citizenship question on registration forms",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this member)",
+        "Ballotpedia (confirms House District 35 incumbent on the 2026 general-election ballot; survey answers say nothing on the subject)",
+        "campaign site mikeschietzelt.com (issues, about and voter-information pages): nothing on the subject",
+        "https://www.schietzelt.com: nothing (placeholder page)",
+        "NC General Assembly member page, introduced-bills list: no bill on the subject sponsored",
+        "NC General Assembly member page, recorded votes list: one bill on the subject, House Bill 958 (two votes saved)",
+        "NC General Assembly bill page and bill texts for House Bill 958 (editions 6 and 7)",
+        "news searches on his name plus the subject words (4 searches): no own words found",
+        "ontheissues.org and vote411: not used",
+        "not reviewed: House floor debate video for House Bill 958 (no transcript found)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T15:29:52.512Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

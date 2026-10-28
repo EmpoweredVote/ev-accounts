@@ -1,6 +1,37 @@
 {
   "politician_id": "3def4add-c5bb-44df-95af-ea2de6899b6c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +57,27 @@
       "found": 0,
       "at": "2026-10-22T22:27:25.805Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at polls",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: not running for re-election in 2026 (term as Indiana Senate District 46 member ends 2026-11-04); not on the 2026 general-election ballot per https://ballotpedia.org/Andrea_Hunley",
+        "identity confirmed: https://ballotpedia.org/Andrea_Hunley shows her as the Indiana State Senate District 46 member since 2022",
+        "On the Record (0 appearances)",
+        "Ballotpedia 2021 candidate survey: nothing on the subject",
+        "news search on name plus voter ID, student ID, proof of citizenship: nothing naming her",
+        "not reviewed: Senate roll-call pages (iga.in.gov loads only by script; legiscan.com blocked by a bot challenge)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:33.688Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -27,6 +27,32 @@
       "found": 0,
       "at": "2026-10-22T21:48:38.455Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in race: Ballotpedia page shows him advancing in the 2026 top-two primary to the November 3 general election for U.S. House California District 45",
+        "On the Record (0 appearances)",
+        "Ballotpedia (campaign-website passages quoted there are on public safety, cost of living, homelessness): nothing on the subject",
+        "campaign site https://www.vo4congress.com/ (home page, issues anchor): nothing on the subject; only issue text near it is on borders and legal immigration",
+        "https://www.chuongvoforcongress.com: could not be fetched (no response); https://www.chuongvo.com is a different person (a web designer in Germany), not used",
+        "blocked: https://guides.vote/?p=5474 (empty response)",
+        "Wikipedia page (lead only, not cited): nothing on the subject",
+        "Cerritos city site: not reviewed beyond search results; no council record on the subject surfaced",
+        "news searches (3) on name plus voter ID, citizenship, election integrity, council: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:41:51.918Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

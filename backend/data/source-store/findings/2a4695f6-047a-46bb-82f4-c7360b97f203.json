@@ -23,6 +23,59 @@
         "fetched_at": "2026-10-22T22:22:41.149Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "c814870c1c96c6d04b3c79678606d9cb7cb563aac6fd0f203320187b2f3bcdd8",
+      "kind": "record",
+      "url": "https://www.wrtv.com/news/politics/republican-bill-would-restrict-absentee-voting-in-indiana",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1317-2022",
+      "act": "sponsor",
+      "motion": "Co-author of House Bill 1317, Various election law matters (status then: first reading, referred to committee)",
+      "note": "WRTV lists Payne as co-author of HB 1317. As described there, the bill would require an absentee ballot applicant to write in a driver's license number or last four digits of a Social Security number, bar pre-printing those numbers on the form, and bar the Election Commission from expanding vote-by-mail. This is a news description of the bill, not the bill text.",
+      "subjects": [
+        "ID number with absentee ballot application",
+        "vote-by-mail limits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:47.528Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -50,6 +103,29 @@
       "found": 1,
       "at": "2026-10-22T22:22:41.149Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID number with absentee ballot application",
+        "vote-by-mail limits",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia: shows Zach Payne as Indiana House District 66 member on the Nov 3, 2026 ballot; nothing on the subject",
+        "Indiana House caucus press-release page (2021 early-voting release read; it is about early voting hours, not ID, so not saved)",
+        "blocked: http://www.indianahouserepublicans.com/members/zach-payne/ (404 Not Found)",
+        "one news search on his name plus subject words: found one bill co-authorship via WRTV",
+        "not reviewed: iga.in.gov and LegiScan (instructed not to search; floor votes already on file)",
+        "campaign site: not reviewed, none found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:43:47.528Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

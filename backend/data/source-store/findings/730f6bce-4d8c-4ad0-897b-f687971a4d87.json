@@ -53,6 +53,31 @@
       "found": 0,
       "at": "2026-10-22T23:11:56.110Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: on the 2026 general-election ballot for 12th Norfolk District (Ballotpedia https://ballotpedia.org/John_Rogers_(Massachusetts))",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "official legislature profile and sponsored-bills list for the 194th session: no voter ID or citizenship bills",
+        "H.4359 amendment index page and House roll call #139 PDF (voter identification amendment)",
+        "news searches (1 each plus shared): no own words on voter ID found",
+        "not reviewed: floor debate video and any personal or campaign site",
+        "vote on amendment #7 (H.4359, 2022-01-27) already on file; roll call #139 PDF confirms it, not re-collected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:00:20.482Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

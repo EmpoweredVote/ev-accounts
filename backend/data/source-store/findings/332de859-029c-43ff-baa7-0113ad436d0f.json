@@ -72,8 +72,33 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "20b1be01453a5e83b6e419eb284092d5816f754fe20b10872dcff1ff725655df",
+      "kind": "own-words",
+      "url": "https://pallone.house.gov/media/press-releases/pallone-convenes-nj-voting-rights-leaders-trump-escalates-attack-free",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "passage": "For decades, Democrats have been focused on opening the process up and making sure every eligible citizen can participate. What President Trump is proposing moves in the opposite direction by adding new hurdles and making it harder to register and vote. Why? Because Republicans feel they have to cheat to win. Well, I have news for President Trump: we are not going to walk back the progress we've made on voting rights – not now, not ever.",
+      "note": "Quote from his press release on a New Brunswick voting rights roundtable. The release says he outlined how the SAVE America Act and executive actions on mail-in voting would end online and mail-in registration, require proof of citizenship and add federal authority over state-run elections.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "mail and online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:41:43.539Z",
         "method": "webfetch"
       }
     }
@@ -102,6 +127,28 @@
       "found": 0,
       "at": "2026-10-22T21:49:11.606Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act / SAVE America Act)",
+        "voter ID at the polls",
+        "mail and online voter registration",
+        "election integrity and voting access in general"
+      ],
+      "places": [
+        "Ballotpedia (confirms he is on the 2026 general-election ballot, NJ-6, after the June 2, 2026 primary)",
+        "On the Record (0 meetings)",
+        "official site pallone.house.gov: press release on voting rights roundtable (2026-04-02); civil-rights issue page (voting access, nothing on ID or citizenship proof)",
+        "blocked: https://pallone.house.gov/search?keys=voter+ID (403; site search by curl returned nothing)",
+        "blocked: https://www.congress.gov/member/frank-pallone/P000034 (403)",
+        "web search for floor remarks on the SAVE Act: nothing from him found",
+        "campaign site: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:41:43.539Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

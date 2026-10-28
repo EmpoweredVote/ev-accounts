@@ -21,6 +21,59 @@
         "fetched_at": "2026-10-22T22:57:48.749Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "b9e00b54fbc35788fa3d5bda7721f53dfa36a1f0dd8f3f753ef0425f827c3795",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/in/2024/bills/INB00012785",
+      "date": "2024-01-29",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "yea",
+      "motion": "Third reading, House passage, Roll Call 67 (yeas 67, nays 29)",
+      "note": "HB 1264, Election security: the page lists her among the yes votes on House passage. The page shows committee amendment titles on citizenship, the SAVE program and voter registration. She is not listed as author or coauthor.",
+      "subjects": [
+        "election security laws in general",
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:23:32.496Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +102,31 @@
       "found": 1,
       "at": "2026-10-22T22:57:48.749Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election security laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms House District 60 seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "Indiana House caucus member page (404: https://www.indianahouserepublicans.com/members/house-district-60/)",
+        "blocked: https://app.legiplex.com/profile/peggy-mayfield-9513/in/legislatures/2023/2023-r/legislation",
+        "FastDemocracy legislator page (no usable sponsorship list)",
+        "Vote Smart (statement page 404; not usable)",
+        "news searches (3): no direct quotes from her on the subject",
+        "campaign site: none found",
+        "NBC News 2013 story on a student-voting bill she led (off subject: student residency, not ID; not saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:23:32.496Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,32 @@
       "found": 0,
       "at": "2026-10-22T23:17:01.196Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Simon_Cataldo: confirms he is the incumbent, advanced from the 2026-09-01 primary and is on the 2026-11-03 general-election ballot for the 14th Middlesex District; no 2026 Candidate Connection answers; nothing on the subject",
+        "MA Legislature profile and sponsored-bill list https://malegislature.gov/Legislators/Profile/S_C1: all titles scanned; no voter ID, citizenship or mail-ballot ID bill; only off-subject election items (ranked choice voting for Acton and Concord, Governor's Councillor ballot title)",
+        "MA Legislature bill search for voter identification: page loaded but no sponsor-specific results read; nothing on the subject",
+        "campaign site https://simoncataldo.com/: nothing on the subject",
+        "official site page https://www.repcataldo.com/simon: nothing on the subject",
+        "Wikipedia https://en.wikipedia.org/wiki/Simon_Cataldo: nothing on voter ID",
+        "two news searches on name plus voter ID words: nothing on the subject",
+        "not reviewed: https://www.facebook.com/StateRepSimonCataldo",
+        "not reviewed: roll-call votes on any 2026 voter ID ballot question (no House vote on voter ID found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:41:09.794Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

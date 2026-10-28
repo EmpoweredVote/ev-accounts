@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,11 +79,62 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "eeda5b31b34ead7061b5b41a8e7debfcafda2d113745e23a74b52aab434ccf60",
+      "kind": "own-words",
+      "url": "https://msmagazine.com/2021/07/20/texas-democrats-abortion-reproductive-womens-health-voting-rights-donna-howard/",
+      "date": "2021-07-20",
+      "date_precision": "day",
+      "passage": "We denied a quorum using the rules of the House of Representatives to do everything we could to ensure the freedom to vote for all Texans—and in fact, all Americans.",
+      "note": "Interview in a national magazine during the 2021 quorum break over the Texas elections bill (SB 1). She speaks of voting access in general terms and does not name ID rules.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 elections bill and quorum break"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:11:07.977Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House member page https://www.house.texas.gov/members/3310 (confirms District 48; no election items on the page)",
+        "campaign site: not found",
+        "Wikipedia (confirms seat; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Donna_Howard (page came back empty)",
+        "a ballot-guide page confirms she is running for District 48 in the 2026 general election: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-48/candidates/donna-howard",
+        "Texas Tribune people page: nothing on the subject",
+        "news searches on her name with voter ID, proof of citizenship, SB 16: no quotes from her found",
+        "legislature bill pages: not reviewed (no sponsorship found in search)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:11:07.977Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

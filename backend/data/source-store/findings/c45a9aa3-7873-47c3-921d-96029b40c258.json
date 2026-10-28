@@ -1,6 +1,32 @@
 {
   "politician_id": "c45a9aa3-7873-47c3-921d-96029b40c258",
-  "findings": [],
+  "findings": [
+    {
+      "id": "b0e00551c4489b665ad411c39c5cb1fa4c3b3512f364e8cd9ccf2d26d0572eec",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Motion 11, concur in Senate committee substitute, House Bill 958 (Election Law Changes), roll call 801, passed 62 to 47",
+      "note": "Voted yes to accept the Senate version of the omnibus election bill. That edition (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v7.pdf) requires an applicant to affirmatively state US citizenship before a registration is processed, sets a 30-day sworn-citizenship follow-up for blank answers, and directs the State Board to remove voters flagged as possible non-citizens by a federal database. The Governor vetoed the bill on 2026-08-17 (https://www.ncleg.gov/BillLookUp/2025/H958). His votes on the House passage on 2026-06-30 were recorded as excused absences (https://www.ncleg.gov/Members/Votes/H/1001).",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship question on registration forms",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:31:24.695Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +51,33 @@
       "found": 0,
       "at": "2026-10-23T00:07:16.019Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without photo ID",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this member)",
+        "Ballotpedia (confirms House District 47 incumbent, appointed 2025-10-13, on the 2026 general-election ballot)",
+        "NC General Assembly member list and member id 1001 (John L. Lowery; not id 807, which is Jarrod Lowery)",
+        "NC General Assembly introduced-bills list: no bill on the subject sponsored",
+        "NC General Assembly recorded-votes list: House Bill 958 votes (one on-record vote saved; 2026-06-30 votes were excused absences)",
+        "candidate page branch.vote: nothing on the subject (its election section is empty)",
+        "campaign or official own site: none found (tried johnlowery.com, lowery4nc.com, johnlloweryforhouse.com; no response)",
+        "news searches on his name plus the subject words (2 searches): no own words found",
+        "ontheissues.org and vote411: not used",
+        "not reviewed: House floor debate video for House Bill 958 (no transcript found)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:31:24.695Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -30,6 +30,30 @@
       "found": 0,
       "at": "2026-10-22T21:43:00.324Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia page https://ballotpedia.org/Tisha_Benoit (confirms candidate for US House Arizona District 4, on the 2026-11-03 general-election ballot after the 2026-07-21 primary; her Candidate Connection survey answers cover healthcare, water, schools, the economy; nothing on the subject)",
+        "campaign site https://tishabenoit.com and https://tishabenoit.com/issues (sections: economy, water and climate, border security and immigration, healthcare, education, data centers, federal spending, foreign policy; nothing on voter ID, citizenship to vote or election integrity)",
+        "Fox 10 Phoenix report of the 2026 District 4 candidate forum (https://fox10phoenix.com/news/2026-election-arizona-congressional-district-4-candidates-face-off-debate): her reported remarks cover vocational training, healthcare and data centers; nothing on the subject",
+        "congress.gov: not applicable, she holds no office",
+        "web search on name plus voter ID and election integrity: no statement by her found",
+        "not reviewed: video of the forum and any Clean Elections Commission debate recording"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:04:48.374Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

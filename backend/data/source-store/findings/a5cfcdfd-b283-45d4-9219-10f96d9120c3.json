@@ -19,6 +19,22 @@
       "found": 0,
       "at": "2026-10-22T21:50:19.399Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (the incumbent was projected the winner over him and one other candidate): https://www.leelanaunews.com/article/8438,election-results-bergman-barr-set-for-rematch",
+        "On the Record (0 appearances)",
+        "identity confirmed by a local news profile https://www.interlochenpublicradio.org/2026-07-18/matthew-denotter-pitches-healthcare-background-business-mindset-in-1st-dist-republican-primary-bid (search result only, not read for stances because he is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:47:42.091Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

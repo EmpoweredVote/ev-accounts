@@ -25,6 +25,31 @@
       "found": 0,
       "at": "2026-10-22T22:33:02.199Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Robert_Behning (fetched; confirms House District 91 incumbent on the 2026 general-election ballot; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "the House caucus member page https://www.indianahouserepublicans.com/members/general/bob-behning/ (first 100000 characters read; nothing on the subject; the remaining 116078 characters not reviewed)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/4626/bob-behning (403)",
+        "blocked: https://legiscan.com/IN/legislator/robert-behning/people/5629 (403)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_robert_behning_1020 (page needs JavaScript; no bill list could be read)",
+        "no separate campaign site found",
+        "two web searches on name plus subject words: nothing on the subject; one result names a House bill he authored on school referendum timing, which is off the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:02.073Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

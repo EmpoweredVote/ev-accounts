@@ -52,6 +52,31 @@
       "found": 0,
       "at": "2026-10-22T23:09:15.167Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "access to voter registration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "The Ballot Brief candidate page (confirms sitting member, 13th Bristol, on the 2026-11-03 ballot)",
+        "Massachusetts legislature member page and bill page H.637 (191st session: a bill to expand access to voter registration; reviewed, but about registration access, not proof of identity, so not saved)",
+        "Massachusetts legislature member page lists H.5083 on polling place security (bill page text did not load; not saved)",
+        "web search on his name plus voter ID words (no quote of him on the subject)",
+        "blocked: https://www.sec.state.ma.us/divisions/elections/research-and-statistics/2026-state-election-candidates.htm (page text did not load)",
+        "nothing on the subject: no official-site, campaign-site or news statements by him on voter ID or proof of citizenship found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:11:06.594Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,30 @@
       "found": 0,
       "at": "2026-10-22T21:30:52.477Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "scope check: https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas lists her as the nominee for Texas District 27; Ballotpedia says she advanced from her primary",
+        "On the Record (0 appearances)",
+        "campaign site https://www.tanyafortx27.com/ (home, /issues, /platform, /about): home page lists a general 'strengthening democracy' priority; nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Tanya_Lloyd: 2024 campaign-site excerpt has a one-line 'Democracy' item, nothing on the subject",
+        "The Ballot Brief profile: nothing on the subject",
+        "University Star rally article: abortion focus, nothing on the subject",
+        "news search on name plus voter ID / SAVE Act / voting rights / election integrity: nothing on her; only coverage of her opponent's record",
+        "blocked: https://www.congress.gov (403 earlier in session); she has never held office so no bill record expected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:05:18.605Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -25,6 +25,29 @@
       "found": 0,
       "at": "2026-10-22T22:18:12.382Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady https://www.ballotready.org/people/michael-stoddard (confirms 2026 general-election candidate, Utah 3rd Congressional District; lists no positions)",
+        "iVoterGuide https://ivoterguide.com/candidate/74000/race/33687/election/1486 (same race; the voter-ID questionnaire item and all other items are unanswered)",
+        "campaign site https://2amike4congress.org (home page, news, papers and library pages, and the militia paper searched for subject words; nothing on the subject)",
+        "not reviewed: https://x.com/MikeAuditUSGov (social account named on the campaign site; not readable)",
+        "Ballotpedia: page returned no content",
+        "no legislative record: not a sitting official",
+        "one web search on name plus 2026 race (no news coverage found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:54:30.434Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

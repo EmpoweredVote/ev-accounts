@@ -48,6 +48,33 @@
       "found": 1,
       "at": "2026-10-22T22:08:57.420Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope: on the 2026 general-election ballot as an independent for Iowa's 2nd District per https://ballotpedia.org/Dave_Bushaw",
+        "On the Record (0 appearances found)",
+        "campaign site platform page https://www.davebushaw.com/platform: only voting items are a national citizen referendum idea and making Election Day a federal holiday; nothing on proof of identity or citizenship",
+        "campaign site home page and the /issues address (page not found)",
+        "Ballotpedia profile and Candidate Connection survey answers: nothing on the subject",
+        "KCRG 2026-05-06 ballot-access article: fetched, nothing on the subject",
+        "one web search on name plus voter ID: nothing on the subject",
+        "no legislative record (not a sitting official)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:31:12.179Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

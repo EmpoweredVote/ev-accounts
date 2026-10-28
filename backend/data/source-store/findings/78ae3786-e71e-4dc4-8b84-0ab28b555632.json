@@ -25,6 +25,31 @@
       "found": 0,
       "at": "2026-10-22T23:13:31.164Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "Ballotpedia (https://ballotpedia.org/Adam_Gomez): sitting state senator for the Hampden district, advanced from the 2026-09-01 primary, on the 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "malegislature.gov biography (https://malegislature.gov/Legislators/Profile/A_G0/194/Biography): confirms the person; lists him as vice chair of the Joint Committee on Election Laws",
+        "malegislature.gov 194th-session sponsored and co-sponsored bill pages: nothing on the subject (a student-representative voting rights bill, S.367, is off-subject)",
+        "campaign and Senate site (https://www.adamgomezma.com): nothing on the subject",
+        "web search on his name plus voter ID, proof of citizenship and SAVE Act: nothing on the subject",
+        "web search for Massachusetts voter ID roll calls: only House votes found, no Senate roll call on voter ID found",
+        "blocked: https://www.gomezforsenate.com (no response)",
+        "not reviewed: Senate floor remarks and social media"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:14:52.514Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

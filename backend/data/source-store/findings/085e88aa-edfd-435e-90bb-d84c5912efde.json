@@ -27,6 +27,30 @@
       "found": 0,
       "at": "2026-10-22T22:19:18.299Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page (confirms he is the sitting State Treasurer, on the 2026 general-election ballot for the same office)",
+        "Indiana Treasurer's office site: not reviewed (office has no voting-administration role)",
+        "blocked: https://iga.in.gov (bill and roll-call pages load only through a script; no vote or sponsor list could be read)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (bot check)",
+        "blocked: https://indianacapitalchronicle.com (bot check or 403)",
+        "BillTrack50 scorecard and a Citizens Action Coalition 2026 bill list: no voter-ID, mail-ballot ID or citizenship vote or sponsorship tied to this person",
+        "web searches on name plus subject words: nothing tying this person to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:02:28.780Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

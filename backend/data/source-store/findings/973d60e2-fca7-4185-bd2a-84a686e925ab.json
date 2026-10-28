@@ -27,6 +27,27 @@
       "found": 0,
       "at": "2026-10-22T23:16:56.750Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/JCV0 (Senator John C. Velis, Hampden and Hampshire; his sponsored bills include nothing on voter ID or elections)",
+        "blocked: https://ballotpedia.org/John_Velis (page returned no content)",
+        "https://www.johnvelis.com (personal site, no content on the subject, ownership unconfirmed)",
+        "web searches on name plus voter ID, citizenship, SAVE Act, election: nothing on the subject; search results show he is unopposed in the 2026 primary and holds the seat to January 2027",
+        "not reviewed: official Senate press page and campaign site (not located)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:05.638Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

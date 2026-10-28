@@ -72,8 +72,97 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "4b4a2f0ffa283b8d106b5a54d0b0b0f76c6ca8307ed56d14548789407879ec63",
+      "kind": "own-words",
+      "url": "https://amo.house.gov/press-release/amo-statement-on-the-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“The SAVE Act proposed by House Republicans is a terrible piece of legislation. It doesn’t secure our elections; it adds unnecessary barriers that would prevent people from exercising their right to participate in the democratic process,” said Congressman Gabe Amo.",
+      "note": "Official statement issued the day he voted against the SAVE Act (H.R. 22). The same release says existing law already bans noncitizens from voting in federal elections and names veterans abroad, married women who changed names, and people without a passport as groups it would burden.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:19.587Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6f121f64853cb34705d68cb804c643cdfdc37777a251315c08b95ccaa295fa6",
+      "kind": "own-words",
+      "url": "https://amo.house.gov/press-release/amo-statement-on-the-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I strongly oppose this legislation. We will not restore trust in our elections through misguided efforts to exclude eligible American voters. Let’s get back to the business of carrying out America’s values by investing in voter registration and making sure every American can make their voice heard.”",
+      "note": "Closing lines of the same statement, in his words.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:19.587Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "308eac3c303c0fd28af2b3f360104a2f9a1bff02d96a31f595bb7c0e761ebd3f",
+      "kind": "own-words",
+      "url": "https://www.wpri.com/news/elections/amo-magaziner-stand-by-their-votes-against-the-save-act/amp/",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "Democratic Congressman Gabe Amo said in a statement of his own that noncitizens already “cannot vote in federal elections,” and that the bill “is just fearmongering.”",
+      "note": "WPRI (a Rhode Island TV station) quoting his statement the day after the House passed the 2024 SAVE Act (H.R. 8281). The reporter's sentence is given whole; only the quoted pieces are his words. The article also quotes him saying the bill affects \"52% of citizens who do not have a passport by adding red tape and requiring original documents they may not have.\"",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:19.587Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a78eff1ac411b853e259c485b6cd3feb551c033d01aac07b7d1bc9bc6912741",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "On Passage, H.R. 8281 Safeguard American Voter Eligibility Act (Roll Call 345, passed); his vote is listed as No",
+      "note": "He voted no on House passage of the 2024 SAVE Act, which requires documentary proof of citizenship to register to vote in federal elections.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:19.587Z",
         "method": "webfetch"
       }
     }
@@ -106,6 +195,29 @@
       "found": 0,
       "at": "2026-10-22T22:12:38.627Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Gabe_Amo (confirms sitting member for Rhode Island's 1st District, on the 2026 general-election ballot)",
+        "his official site https://amo.house.gov/ (press release on the SAVE Act; the site search returned nothing further on the subject)",
+        "House Clerk roll call 2024 #344 and #345 (H.R. 8281)",
+        "news search on his name plus SAVE America Act: only the 2024 and 2025 statements found; no own-words page for the February 2026 vote located",
+        "blocked: https://www.wpri.com/news/elections/amo-magaziner-stand-by-their-votes-against-the-save-act/ (403; the amp version of the page loaded)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T18:36:19.587Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

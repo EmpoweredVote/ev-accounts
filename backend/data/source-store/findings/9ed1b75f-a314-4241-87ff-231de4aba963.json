@@ -9,7 +9,7 @@
       "date_precision": "day",
       "instrument_id": "MA-S-512-2025",
       "act": "sponsor",
-      "note": "Lead sponsor of S.512, a bill to give non-citizen residents the right to vote in municipal elections. Related to non-citizen voting; says nothing about ID. Date is the first date listed on the bill page (filing); hearing was scheduled 05/06/2025.",
+      "note": "Sponsor of S.512, An Act extending voting rights in municipal elections to noncitizen voters of the commonwealth. The date shown is the referral to the Election Laws committee, the earliest action on the page. The bill got a hearing on 2025-05-06 and was sent to a study order on 2025-07-31.",
       "subjects": [
         "non-citizen voting in local elections"
       ],
@@ -17,8 +17,8 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T23:18:12.604Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:29.714Z",
         "method": "webfetch"
       }
     }
@@ -48,6 +48,29 @@
       "found": 1,
       "at": "2026-10-22T23:18:12.604Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "non-citizen voting in local elections (related)",
+        "mail-ballot ID",
+        "election access and fair elections bills (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/James_Eldridge (confirms sitting State Senate member for Middlesex and Worcester, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JBE0 (sponsored list shows S.511 and S.512 on election topics)",
+        "legislature bill pages for S.511 and S.512 (194th General Court)",
+        "web news searches on name plus voter ID, photo ID, proof of citizenship, Senate budget voter ID amendment: no own words and no voter ID vote found",
+        "not reviewed: S.511 full bill text (page gave only a title); campaign site (not located); ontheissues.org (lead-only)",
+        "unverified lead not used: a Substack post about S.512 (not an official source)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:49:29.714Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

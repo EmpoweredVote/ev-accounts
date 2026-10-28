@@ -23,11 +23,41 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas House member page (confirms Rep. Barbara Gervin-Hawkins, District 120, 89th Legislature; nothing on the subject)",
+        "San Antonio Report 2026 candidate profile (she won her 2026 primary and drew no general-election challenger; none of her answers touch the subject)",
+        "Wikipedia (nothing on the subject)",
+        "Texas Legislature bill actions page for SB 5 (2017): lists a statement of vote in the House Journal on 2017-05-28, page 25, not reviewed: House Journal text for that date",
+        "news searches on her name plus voter ID, proof of citizenship, SB 16 (no article quotes her)",
+        "blocked: https://ballotpedia.org/Barbara_Gervin-Hawkins (page returned no text)",
+        "blocked: https://grassrootspriorities.com/vote_changes.php?1=8129 (404)",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:57:52.514Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

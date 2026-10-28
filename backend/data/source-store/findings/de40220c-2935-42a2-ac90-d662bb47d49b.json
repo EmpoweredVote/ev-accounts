@@ -50,6 +50,29 @@
       "found": 0,
       "at": "2026-10-22T23:27:08.748Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Sally_Kerans (confirms sitting 13th Essex representative, on the 2026 general-election ballot)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/SPK1 (sponsored bills: one Danvers town recall-election petition, H.5539, not about ID or citizenship; nothing else on the subject)",
+        "legislature cosponsored tab: not shown separately in the fetched page; not reviewed",
+        "one news search on name plus subject words: only election-result pages, nothing on the subject",
+        "campaign site: not located"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:09:05.309Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

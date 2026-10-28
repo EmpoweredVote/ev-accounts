@@ -1,0 +1,147 @@
+{
+  "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d",
+  "findings": [
+    {
+      "id": "e14b6afde58fd96485e79bfa0e18beb49d048d48426445ee81b255d49d2e4d24",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250103223149/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "other",
+      "motion": "SB 1174 Senate Third Reading, Assembly floor (no vote recorded)",
+      "note": "No vote recorded on the Assembly floor for SB 1174, which bars local voter-identification requirements; the bill passed 57 to 16. Source is the Internet Archive copy of the leginfo vote page, which lists him as not voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "742c187101968544c22ad8cb09ed371efae12e133ca952b913324c42832aa969",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "other",
+      "motion": "AB 1116 Assembly Third Reading (no vote recorded)",
+      "note": "No vote recorded on the Assembly floor for AB 1116 (online voter registration without a driver's license or state ID, using the last four digits of a Social Security number); the bill passed 60 to 18. Source is the Internet Archive copy of the leginfo vote page, which lists him as not voting.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.878Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2172d3fc521368d9c0180d3d2963c18677b3feece1fbc32ca4c894f0a397af65",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted no on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:13:02.640Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "739d85e03942ceba1102635871a28278cfdc71aaa44cc505678f902f3ce204e1",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted no on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.878Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "voter registration identity check",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 9)",
+        "blocked: https://ad09.asmrc.org/ (bot check)",
+        "campaign site heathflora.com (home, media and contact pages: nothing on the subject)",
+        "California Assembly bill votes via the Internet Archive copy of the leginfo vote pages (SB 1174, AB 25, AB 1116)",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote)",
+        "one news search on his name plus voter ID: nothing in his own words",
+        "not reviewed: social media posts and any floor-speech video"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:13:02.640Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "voter registration identity check",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 9)",
+        "blocked: https://ad09.asmrc.org/ (bot check)",
+        "campaign site heathflora.com (home, media and contact pages: nothing on the subject)",
+        "California Assembly bill votes via the Internet Archive copy of the leginfo vote pages (SB 1174, AB 25, AB 1116)",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote)",
+        "one news search on his name plus voter ID: nothing in his own words",
+        "not reviewed: social media posts and any floor-speech video"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:28:19.878Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

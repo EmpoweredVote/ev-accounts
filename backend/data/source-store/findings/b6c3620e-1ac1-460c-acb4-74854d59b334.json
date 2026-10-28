@@ -43,6 +43,68 @@
         "fetched_at": "2026-10-22T22:10:43.399Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "263c91f4c5ff88f30786756ae8fb050d09cc7af1560b1a34bc77109a7c753177",
+      "kind": "own-words",
+      "url": "https://www.sethformontana.com/issues",
+      "date": "2026-10-04",
+      "date_precision": "day",
+      "passage": "Will Seth Bodnar protect voting rights? Yes. Seth supports: Montana's existing voter ID law and the state's constitutional authority to run its own elections.",
+      "note": "Campaign issues page, accordion section 'Protect voting rights and election security', written in the third person by the campaign. Date is the page data's last-updated stamp for this section, not necessarily the first publication.",
+      "subjects": [
+        "voter ID at the polls",
+        "state authority over elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:59:17.245Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d8edfe5ecb3c5b92ed24436e7e9c58ad36c1c62155ad0e4c48cd55416771e4b",
+      "kind": "own-words",
+      "url": "https://www.sethformontana.com/issues",
+      "date": "2026-10-04",
+      "date_precision": "day",
+      "passage": "Seth will oppose federal mandates that strip states of that authority, from either party.",
+      "note": "Same campaign page section, last line: opposes federal mandates that remove state authority over elections. Same date caveat as above.",
+      "subjects": [
+        "federal election mandates on states",
+        "state authority over elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:59:17.245Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5df5b3a286598797e5a08a13b1662e467d6e1d11c03bf100d7db77531e13aa08",
+      "kind": "own-words",
+      "url": "https://www.sethformontana.com/issues",
+      "date": "2026-10-04",
+      "date_precision": "day",
+      "passage": "Making it easier for legitimate voters, especially in rural counties, to register and vote.",
+      "note": "Same campaign page section, a listed item he supports: easier registration and voting for legitimate voters in rural counties. Same date caveat as above.",
+      "subjects": [
+        "voter registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:59:17.245Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -73,6 +135,31 @@
       "found": 2,
       "at": "2026-10-22T22:10:43.399Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "federal election mandates on states",
+        "mail-ballot ID",
+        "voter registration access",
+        "election security"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site issues page (https://www.sethformontana.com/issues): has a voting rights and election security section, saved",
+        "campaign site home page: dark-money and Citizens United lines, not on the subject",
+        "Daily Montanan article of 2026-08-07: confirms he is on the November 2026 ballot as an independent; no voting statements",
+        "KXLF interview article: nothing on voting or ID",
+        "Ballotpedia: fetched, returned no content",
+        "news search on name plus voter ID and one on campaign issues: no other own words found",
+        "no legislative record (not a sitting legislator per the pages found; brief's 'sitting member' label not confirmed)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:59:17.245Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

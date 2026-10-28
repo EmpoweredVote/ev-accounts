@@ -22,11 +22,119 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.563Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "3861c54b5be5c78ee5cb6260cd1ac3c26ecf69019fb7d6756120e0a84aa691b5",
+      "kind": "own-words",
+      "url": "https://www.nbcwashington.com/news/politics/first-read-dmv/voter-id-bill-passes-senate-on-bolling-tiebreaker/2066440/",
+      "date": "2013-02-06",
+      "date_precision": "day",
+      "passage": "They can use anything short of a pinkie swear or a note from mom,\" Garrett said.",
+      "note": "Quoted by NBC Washington in a Senate floor-debate report on a photo-ID bill; Garrett is describing the affidavit option for voters who arrive at the polls without ID. The fetch tool summarised the page and showed the page date as Feb 6, 2012 while the story concerns the 2013 bill (SB 1256 vote on file is 2013-02-05); date not checked against raw HTML, so verify. Opening quotation mark was cut by the summary.",
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:56.278Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6fee5910b3dac09e06289b639698a165b446e296b2e79877d6c095e3c8493144",
+      "kind": "record",
+      "url": "https://patch.com/virginia/leesburg/senate-panel-oks-more-stringent-voter-id-723f1029",
+      "date": "2013-02-14",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "yea",
+      "motion": "Senate Privileges and Elections committee vote on HB 1337 (photo on voter ID)",
+      "note": "Patch report lists Garrett among the 8 committee yeas: 'YEAS – Obenshain, Martin, Smith, Vogel, McWaters, Carrico, Reeves, Garrett – 8.' Bill requires IDs shown to vote to contain a photograph. Article posted 2013-02-14; committee vote date itself not confirmed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:56.278Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21e2ea04c5fe6eb8d90bb90fdcc89b35c3a7fe03fbb40e05b3df18675f108622",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Garrett'), linked to Thomas A. Garrett via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "affidavit for voters without ID",
+        "mail/absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "Ballotpedia: blocked/empty on fetch (the fetch tool returned no page text); a browser-style curl retry was refused by the permission system and not retried",
+        "LIS, legiscan, legiplex: blocked or not reachable, not retried",
+        "web searches on name plus voter ID / election words: nothing on the subject from this person's own words except as listed",
+        "identity caution: sources found are 2012-2013 news about State Senator Tom Garrett (R-Louisa); I could not confirm from a page that he holds a seat in 2026, so scope needs a check",
+        "Patch 2013 committee report and NBC Washington 2012 report fetched"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:31:56.278Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.795Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

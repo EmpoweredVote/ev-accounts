@@ -23,6 +23,25 @@
       "found": 0,
       "at": "2026-10-22T22:21:54.428Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/David_Ziegner (identifies him as an appointed member of the Indiana Utility Regulatory Commission since 1990, term ending 2027; not a legislator; nothing on the subject)",
+        "Indiana General Assembly legislator list https://iga.in.gov/legislative/2026/legislators (no entry for this name)",
+        "IURC commissioners page https://www.in.gov/iurc/about-the-iurc/commissioners/ (no usable text returned)",
+        "news/web searches on name plus voter ID, proof of citizenship, voting (nothing on the subject; coverage is only about utility rate cases)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:20.835Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

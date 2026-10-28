@@ -1,6 +1,58 @@
 {
   "politician_id": "65534e3a-7ea3-4e85-98f8-57c6c3082ad2",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "cdfd24ee6d8a1665f15e1294b6078d56a77c39ce7ae923a155163d92bca88f7b",
+      "kind": "own-words",
+      "url": "https://www.ibj.com/articles/indiana-panel-drops-contentious-requirement-from-voting-bill",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "passage": "“I think it is proper for the Legislature to choose the time, date, manner of elections,” said Republican Rep. Ethan Manning of Logansport. “While I understand there are emergencies, I still think it’s important for the Legislature to be the primary driver of those policies.”",
+      "note": "Quoted by the Indianapolis Business Journal (article date is the page's publish date) in a House committee hearing on a 2021 voting bill (the same article covers an ID-number-on-mail-ballot-application provision). He was speaking about whether the state election commission or the Legislature should set election dates and rules. He does not speak to ID or citizenship in the quoted words.",
+      "subjects": [
+        "election integrity laws in general",
+        "who sets election rules (Legislature vs. election commission)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:54:43.500Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +79,28 @@
       "found": 0,
       "at": "2026-10-22T22:36:23.346Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and who sets election rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://ballotpedia.org/Ethan_Manning (sitting Indiana House member, on the 2026 general ballot, served on the Elections and Apportionment Committee)",
+        "Ballotpedia: nothing on the subject beyond committee seat",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_ethan_manning_1 (page needs JavaScript; no bill list reachable). Roll calls already on file, not searched.",
+        "not reviewed: https://www.indianahouserepublicans.com/members/general/ethan-manning/ (caucus member page; press-release titles seen in search were not on the subject)",
+        "news search on name plus subject words: one quoted remark found (IBJ 2021)",
+        "congress.gov: not applicable"
+      ],
+      "found": 1,
+      "at": "2026-10-27T13:54:43.500Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

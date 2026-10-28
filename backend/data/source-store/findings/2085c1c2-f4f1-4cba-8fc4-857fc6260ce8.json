@@ -5,10 +5,10 @@
       "id": "a037e321b308954e3930c982029d428d0b444d717086aaa5f6d0187d73807590",
       "kind": "own-words",
       "url": "https://www.juliefortier.org/issues",
-      "date": "2026-10-20",
-      "date_precision": "day",
+      "date": "2026",
+      "date_precision": "year",
       "passage": "In a turbulent time where voting and constitutional rights are being threatened, I will work to ensure that both are kept intact for all of the constituents in District 12.",
-      "note": "Campaign issues page, section 'Democracy & Freedom'. General statement on protecting voting rights. It does not mention ID, citizenship proof, or any specific law. Date is the site publication date shown in the page code (Oct 20, 2026), not the date the words were written.",
+      "note": "Campaign issues page, general statement on protecting voting rights. No mention of ID or citizenship proof.",
       "subjects": [
         "voting rights in general"
       ],
@@ -16,8 +16,50 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:45:58.861Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:32:45.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65b3ea45e4edefa8b0e20d4a91866bc2ce16c798a1890e88527ff2af4f0411ac",
+      "kind": "own-words",
+      "url": "https://will.illinois.edu/transcript/am/democratic-congressional-candidate-julie-fortier-on-economy-gun-laws-and-southern-illinois-politics",
+      "date": "2026-08-18",
+      "date_precision": "day",
+      "passage": "So to me, as long as a postmark exists, the ballot should be counted. I don't know why you would want to limit any votes, because if you're a strong candidate, those votes would be for you, presumably, so it should just add to your count. But it literally will disenfranchise [the] voting [rights] of military personnel.",
+      "note": "On a call-in radio show, she says mail ballots with a postmark should be counted, and that limiting the mail-in window would hurt military voters. Related to mail voting; it does not mention ID.",
+      "subjects": [
+        "mail-ballot receipt deadline (related)",
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:32:45.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d1b95a2ed8eaca134b5b821ff021237899dc4ccd12f3a1bb23dad6ea311509f",
+      "kind": "own-words",
+      "url": "https://dailyegyptian.com/122889/showcase/meet-the-candidates-running-to-represent-illinois-12th-congressional-district/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I think that has come to light with the ballot bill he is trying to put through. He does not want mail-in ballots past election day, which totally impedes military people — especially military people who are deployed.",
+      "note": "Quoted in a Daily Egyptian interview, she criticizes her opponent's ballot bill over mail-ballot deadlines. The article itself separately describes the SAVE ACT, H.R. 22, as requiring documentary proof of citizenship to register; that description is the reporter's, and she does not discuss proof of citizenship herself.",
+      "subjects": [
+        "mail-ballot receipt deadline (related)",
+        "SAVE Act (named by reporter only)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:32:45.674Z",
         "method": "webfetch"
       }
     }
@@ -49,6 +91,33 @@
       "found": 1,
       "at": "2026-10-22T21:45:58.861Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID and mail-ballot receipt deadline",
+        "voting rights in general",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "confirmed on the November 2026 ballot for Illinois 12th District (Daily Egyptian interview, WILL radio transcript)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.juliefortier.org/ (issues page)",
+        "Ballotpedia (profile page, no statement on the subject)",
+        "WILL 21st Show transcript 2026-08-18",
+        "Daily Egyptian candidate interview",
+        "news search on name plus voter ID, SAVE Act, proof of citizenship (nothing on her)",
+        "congress.gov: not applicable, she holds no seat",
+        "not reviewed: https://www.pbs.org/video/illinois-12th-congressional-district-forum-julie-fortier-democrat-candidate-xpw7dq/",
+        "blocked: https://en.wikipedia.org/wiki/Julie_Fortier (404)",
+        "not reviewed: https://irp.cdn-website.com/16e9fcce/files/uploaded/Julie+Fortier+Press+Kit-2.pdf (text could not be read)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:32:45.674Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

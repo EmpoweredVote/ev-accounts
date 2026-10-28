@@ -23,11 +23,43 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting Texas House member and 2026 general-election candidate for governor (Wikipedia page fetched, shows she won the 2026-03-03 primary)",
+        "On the Record (0 meetings)",
+        "campaign site ginafortexas.com: Fort Worth press release 2026-08-26 fetched, covers polling-site closures and a pledge to protect the right to vote, nothing on ID or citizenship",
+        "blocked: https://ginafortexas.com/issues (404)",
+        "blocked: https://ballotpedia.org/Gina_Hinojosa (fetch returned empty; a curl retry was refused by the permission system)",
+        "Texas House member page capitol.texas.gov (member listing only, bill pages not searched)",
+        "teachthevote.atpe.org candidate page: nothing on the subject",
+        "news searches (4): 2021 floor-debate coverage found, but the pages could not be read as text: blocked: https://www.aol.com/news/texas-legislators-spar-over-word-202315409.html (404), blocked: https://www.theroot.com/texas-house-advances-restrictive-voter-laws-despite-dem (empty)",
+        "not reviewed: https://www.keranews.org/politics/2026-08-06/gina-hinojosa-texas-governor-greg-abbott-election-2026-rally-houston (redirected away)",
+        "no own-words passage on voter ID, proof of citizenship or the SAVE Act found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:47:13.099Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

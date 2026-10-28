@@ -28,6 +28,30 @@
       "found": 0,
       "at": "2026-10-22T21:57:05.220Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page https://ballotpedia.org/Alan_Aversa: confirms he is on the 2026-11-03 general-election ballot for AZ-3; no 2026 survey answers; 2024 survey answers say nothing on the subject",
+        "campaign site https://aversa.vote/ and https://aversa.vote/issues.html: nothing on the subject (issues listed are life, education and similar)",
+        "web searches on name plus subject words: nothing on the subject",
+        "not reviewed: https://www.youtube.com/@AlanAversa",
+        "blocked: https://goodparty.org/people/alan-aversa-18256c6e (HTTP 429)",
+        "congress.gov: not applicable, never a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:18.912Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

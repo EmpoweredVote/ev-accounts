@@ -1,6 +1,37 @@
 {
   "politician_id": "3032d172-6b07-4c16-82d3-7e4f31f88375",
-  "findings": [],
+  "findings": [
+    {
+      "id": "eed2f92f25992a82f607b4acaecf10a9606e7dd57dd6267e3fd41b470461926d",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "abstain",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: abstain (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +55,31 @@
       "found": 0,
       "at": "2026-10-22T22:22:24.757Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://indianasenatedemocrats.org/senators/s34 names her as the sitting Indiana Senate District 34 senator, elected 2024; https://ballotpedia.org/La_Keisha_Jackson agrees (term runs past 2026, so not on the 2026 ballot)",
+        "On the Record (0 appearances)",
+        "caucus senator page: no bills or statements on the subject listed; its My Legislation link goes to an external site not reviewed",
+        "caucus first-session reflection page https://indianasenatedemocrats.org/state-sen-la-keisha-jackson-reflects-on-first-session-as-indiana-general-assembly-adjourns-sine-die/ fetched; nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1680/details (site loads by script; no readable text), so sponsorships and roll-call votes (for example the 2025 citizenship-check bill HB 1680 and SB 10) could not be read",
+        "blocked: https://legiscan.com/IN/bill/HB1680/2025 (403)",
+        "Ballotpedia and BallotReady profiles: nothing on the subject",
+        "news searches on her name plus voter ID / voting bills: nothing naming her on the subject",
+        "no campaign or issue page located; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:22:30.599Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

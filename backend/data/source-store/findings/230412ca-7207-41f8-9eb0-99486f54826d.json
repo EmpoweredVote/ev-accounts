@@ -26,7 +26,80 @@
         "fetched_at": "2026-10-21T03:40:10.563Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('McPike'), linked to Jeremy S. McPike via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (sworn statement, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page fetched, nothing on the subject",
+        "VPAP legislator page (blocked or no subject content)",
+        "Virginia LIS legacy bill pages (sessions through 2024) and bill-tracker pages for 2026 voter ID bills HB 1131 and SB 544 (names not among recorded votes)",
+        "web searches on name plus voter ID, photo ID, citizenship, election integrity: nothing own-words found",
+        "official site and campaign site: not reviewed (not reached within allowance)",
+        "blocked: https://legilist.com (Cloudflare), https://www.vpap.org/bills/85470 (403), https://www.wavy.com SAVE America Act story (403), https://lis.virginia.gov (script-only page, 2025-26 bills not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:23:48.141Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.794Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

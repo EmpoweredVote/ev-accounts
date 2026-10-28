@@ -1,0 +1,28 @@
+{
+  "politician_id": "112dd21d-c4ea-4299-91a4-46508b74fdca",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: listed as the incumbent for Texas House District 38 on the 2026 general election list at https://texasaflcio.org/news/2026-general-election-endorsements",
+        "Texas Legislature Online authored and coauthored reports, 88R and 89R, plus the 891, 892 and 893 called sessions (nothing on proof of identity or citizenship; only HB 2785 on website text before online voter registration, coauthor, not on the subject)",
+        "https://www.jejunemagazine.com/home/erin-gamez-texas-house-of-representatives-district-38 (nothing on the subject)",
+        "one news search on name plus subject words (nothing own-words on the subject)",
+        "blocked: https://ballotpedia.org/Erin_Gamez (fetch tool returned empty page)",
+        "not reviewed: official House page and any campaign site; floor-vote records"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:32:43.240Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

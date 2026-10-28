@@ -25,6 +25,32 @@
       "found": 0,
       "at": "2026-10-22T21:57:42.621Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script returned nothing)",
+        "campaign site: none exists (The Ballot Brief reports none found as of 2026-10-20) - nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Stylo_Sapaskis: confirms he is on the 2026-11-03 general-election ballot for NY-15; his primary was cancelled; no survey responses, no positions - nothing on the subject",
+        "https://theballotbrief.com/candidate/stylo-sapaskis-ny: certified for the ballot, no positions or statements - nothing on the subject",
+        "https://www.ballotready.org/people/stylo-a-sapaskis: candidacy list only - nothing on the subject",
+        "https://www.pollsmax.com/2026-us-house/new-york-15/forecast/: forecast listing only - nothing on the subject",
+        "https://www.norwoodnews.org/2137/: 2009 local council-race mention, no positions - nothing on the subject",
+        "https://www.predictionedge.com/elections/profile/stylo-sapaskis/: profile only - nothing on the subject",
+        "congress.gov: not applicable, he has never held office (no votes or sponsorships)",
+        "news searches (3) on name plus voter ID, election integrity: no coverage of his views"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:45:33.667Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

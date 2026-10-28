@@ -44,6 +44,75 @@
         "fetched_at": "2026-10-23T00:16:45.063Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ac0d724338526084c6900c6f71fde48d271ab9ec781cf046fe700938a26373c4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S892",
+      "date": "2024-05-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-892-2023",
+      "act": "sponsor",
+      "note": "Named as a primary sponsor, with Marcus and Meyer, of S892, Student Voter ID Grant Program/CCs. The text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S892v0.pdf) sets aside $500,000 for grants to community colleges to upgrade equipment so their student ID cards can be used as photo ID to vote in person under G.S. 163-166.16, and directs the State Board of Elections to review those colleges' applications for approval of their student ID cards. Referred to committee 2024-05-06.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted for voting",
+        "access to acceptable photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b978721673b793a35fa661094e1e538f02db540012ad59fe4b86ce4d91f63f04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/676",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "other",
+      "motion": "SB 921 Const. Am./Require Photo ID For All Voters, Second Reading, Roll Call #676: listed as an excused absence; did not vote",
+      "note": "The roll call lists her under Excused Absence. The motion passed 30 to 19.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35ff01986b29bbd7dde2ee5bce46fddc0f6cf9f63e5df8c0ab541642462a3da2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "other",
+      "motion": "SB 921 Const. Am./Require Photo ID For All Voters, Third Reading, Roll Call #677: listed as an excused absence; did not vote",
+      "note": "The roll call lists her under Excused Absence. The motion passed 30 to 19.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +141,31 @@
       "found": 2,
       "at": "2026-10-23T00:16:45.063Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "student photo ID for voting",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia shows her as the sitting Lieutenant Governor since 2025 (not on the 2026 ballot); she was a state Senator in the 2023-2024 session",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC Senate roll calls for S921 (photo ID constitutional amendment): https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/676 and https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+        "NC bill page and text for S892 (2023 session)",
+        "official Lieutenant Governor site https://ltgov.nc.gov: front page only, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "two web searches on her name plus voter ID: no statements in her own words found",
+        "not reviewed: campaign site, debate or interview video, social media (not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:21:16.302Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -98,6 +98,126 @@
         "fetched_at": "2026-10-23T00:07:38.850Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "63195bfac751bb889f7845d496ab38c2b65c30a015d52bad0bd608e20ce876cb",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1310",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "A1 Harrison, Second Reading (roll call #1310)",
+      "note": "House roll call on an amendment to SB 824, Implementation of Voter ID Constitutional Amendment. Quick is on the Ayes list. The amendment's text was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID implementation bill amendments"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "384c7ab4e4b84d7c79717461ac195a3907ba5ca1ec79fa34af2ba996a8ae32ad",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1316",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "A6 Warren, Second Reading (roll call #1316)",
+      "note": "House roll call on an amendment to SB 824, Implementation of Voter ID Constitutional Amendment. Quick is on the Noes list. The amendment's text was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID implementation bill amendments"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bf47e889b4f8c00ad214156dac5c99afee1bcd3e76b3cd636b390c7f6d8fc4f",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1317",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "A7 Lewis, Second Reading (roll call #1317)",
+      "note": "House roll call on an amendment to SB 824, Implementation of Voter ID Constitutional Amendment. Quick is on the Noes list; the amendment passed. The amendment's text was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID implementation bill amendments"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75dcf3f9ce2ad6e725b31a01749979f4ba9598448563cdd97bb4d75505db7483",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1323",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "Second Reading of SB 824 (roll call #1323)",
+      "note": "House second-reading vote on SB 824, Implementation of Voter ID Constitutional Amendment. Roll call #1323 passed; Quick is on the Noes list.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -126,6 +246,34 @@
       "found": 2,
       "at": "2026-10-23T00:07:38.850Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "voter ID implementation bill amendments (reasonable impediment, ID types)",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id; no meetings)",
+        "Confirmed in scope: Ballotpedia https://ballotpedia.org/Amos_Quick (NC House District 58, on the 2026 general-election ballot, primary cancelled) and https://house.ncleg.gov/Members/Biography/H/725",
+        "Ballotpedia (fetched with curl; no statements on the subject)",
+        "NC House caucus member page https://nchousedems.com/our-members/amos-l.-quick-iii-house-district-58/ (nothing on the subject)",
+        "NC General Assembly roll-call pages for SB 824 (2017-2018 session)",
+        "NC General Assembly introduced-bills page for member 725 (HB 31, HB 691, HB 1246 reviewed; none is about ID or citizenship)",
+        "ncleg.gov HB 1092 (2017) page: Quick not a sponsor",
+        "news searches on name plus voter ID / photo ID / SB 824 (3 searches; no article quotes him)",
+        "Wikipedia https://en.wikipedia.org/wiki/Amos_Quick (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/NC/candidate_Amos_Quick/1346 (HTTP 403)",
+        "not reviewed: personal campaign site, social media and floor debate audio (not located)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T00:57:16.068Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

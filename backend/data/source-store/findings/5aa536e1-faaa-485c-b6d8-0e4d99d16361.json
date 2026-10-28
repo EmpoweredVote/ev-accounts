@@ -1,6 +1,37 @@
 {
   "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +55,32 @@
       "found": 0,
       "at": "2026-10-22T22:33:38.535Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Shelli_Yoder (fetched; confirms she holds Indiana State Senate District 40, re-elected in 2024; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "the Senate caucus page https://indianasenatedemocrats.org/caucus/yoder/ (first page of releases, Jan to Mar 2026; none on the subject; older pages not reviewed)",
+        "https://indianasenatedemocrats.org/senate-democrats-reflect-on-the-2026-legislative-session/ (nothing on the subject)",
+        "the caucus site search for voter citizenship (no results)",
+        "https://bsquarebulletin.com/wp-content/uploads/2020/04/2020-04-17-Yoder-statement.pdf (April 2020 vote-by-mail statement; text could not be read, only metadata; not reviewed for ID content)",
+        "not reviewed: iga.in.gov and LegiScan sponsorship lists (Indiana roll calls are on file; the iga.in.gov site needs JavaScript)",
+        "no official personal site found beyond the caucus page; campaign site shelliyoder.com not reviewed",
+        "four web searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:46:02.322Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

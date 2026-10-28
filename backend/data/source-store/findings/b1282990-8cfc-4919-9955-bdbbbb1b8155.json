@@ -19,6 +19,24 @@
       "found": 0,
       "at": "2026-10-22T21:39:22.468Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary (Alabama 2nd District); he also lost the 2026-05-19 primary in the 1st District. Source: https://ballotpedia.org/Joshua_McKee (candidate page states both losses with those dates)",
+        "On the Record (0 appearances)",
+        "Spectrum News 2026-07-30 profile of his campaign: nothing on the subject (https://spectrumlocalnews.com/nc/coastal/news/2026/07/30/congressional-candidate-joshua-mckee-outlines-priorities-for-alabama-s-2nd-district)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:15.192Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

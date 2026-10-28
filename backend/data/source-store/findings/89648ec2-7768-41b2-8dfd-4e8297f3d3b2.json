@@ -1,6 +1,37 @@
 {
   "politician_id": "89648ec2-7768-41b2-8dfd-4e8297f3d3b2",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -29,6 +60,30 @@
       "found": 0,
       "at": "2026-10-22T22:41:50.388Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Heath_VanNatter: confirms he is the sitting Indiana House member (in office since 2010), won his 2026 primary, and is on the November 3, 2026 ballot; nothing on the subject",
+        "blocked: https://www.indianahouserepublicans.com/members/district38/ (404)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_heath_vannatter_1 (page loads only a heading; bill list not readable)",
+        "blocked: https://h38.indianahouserepublicans.com/ (host does not resolve)",
+        "news and web search on name plus voter ID, citizenship, election integrity and absentee words (2 searches): no page tied him to the subject",
+        "roll calls for IN-SB-10-2025: already on file, not searched",
+        "campaign site: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:25:36.147Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

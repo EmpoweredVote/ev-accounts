@@ -49,6 +49,30 @@
       "found": 1,
       "at": "2026-10-22T21:54:03.399Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general",
+        "noncitizen voting"
+      ],
+      "places": [
+        "confirmed on the 2026 general-election ballot for Nebraska's 2nd District: https://www.ballotready.org/people/eric-michael-foreman lists the November 3, 2026 general election; a search result from Ballotpedia news also lists him in the general-election field (not fetched)",
+        "On the Record (1 meeting, 2026-07-20 podcast, https://ontherecord.empowered.vote/meetings/f610f66f-8489-4cc5-8371-94da6f343111): full transcript read, nothing on voter ID or proof of citizenship; he speaks of disenfranchised voters and third-option voting only in general terms",
+        "BallotReady profile: stance text on criminal justice, economy and social services only, nothing on the subject",
+        "blocked: https://ballotpedia.org/Eric_Foreman (page returned empty)",
+        "campaign site: not found in search results, not reviewed",
+        "never held office, so no legislative record to check",
+        "debate video pages on wowt.com (2026-10-15, seen in search results): not reviewed, video only",
+        "two web searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:09:46.872Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

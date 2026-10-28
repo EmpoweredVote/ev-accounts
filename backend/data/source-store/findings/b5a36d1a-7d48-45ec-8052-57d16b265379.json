@@ -24,6 +24,35 @@
         "fetched_at": "2026-10-23T00:06:23.095Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -53,6 +82,30 @@
       "found": 1,
       "at": "2026-10-23T00:06:23.095Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "where college students may vote (residency)",
+        "election bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC legislature library page listing the bills he primary-sponsored (https://library.ncleg.gov/Members/IntroducedBills/H/775): confirms NC House District 74 member; no bill on voter ID, ballots or citizenship; election-related titles are HB 31 (election day holiday) and HB 144 (State Board of Elections chair), neither saved as they are not about ID or citizenship",
+        "Wikipedia page (confirms NC House District 74 since 2021; 2026 candidacy not stated)",
+        "news search on name plus voter ID: no own words on ID",
+        "an NC Newsline-based article of 2023-09 had his words on college students voting in local elections; not saved, as it is about residency and not ID",
+        "Ballotpedia: fetched, returned no content",
+        "vote already listed on file for S 921 (2023) not collected again",
+        "nothing on the subject beyond the above"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:58:24.346Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

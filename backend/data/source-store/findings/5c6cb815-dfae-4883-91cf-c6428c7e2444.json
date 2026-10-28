@@ -8,17 +8,18 @@
       "date": "2026",
       "date_precision": "year",
       "passage": "In 2025, I supported Senate Enrolled Act 10, which makes Indiana's already strong voter ID laws even stronger by removing loosely regulated college IDs as a legal form of voter ID to ensure only Indiana residents are voting in our elections.",
-      "note": "Column by the senator on his official site (undated on the page; year inferred from reference to 2025 as an earlier year). He says he supported SEA 10 (2025), which removes student IDs from the accepted voter ID list.",
+      "note": "In his column he describes his support for SEA 10 (2025), which removes college IDs as a valid voter ID. Column is undated; the same column names 2026 bills as 'this year'.",
       "subjects": [
         "voter ID at the polls",
-        "which IDs are accepted"
+        "which IDs are accepted",
+        "college or student ID as voter ID"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:09:35.769Z",
         "method": "webfetch"
       }
     },
@@ -29,17 +30,18 @@
       "date": "2026",
       "date_precision": "year",
       "passage": "That is why I have supported many bills to increase election transparency and crack down on voter fraud.",
-      "note": "Same column. General statement of support for election transparency and voter fraud bills.",
+      "note": "General statement in the same column about backing election-integrity bills; also lists SEA 112, SEA 113 (keeping election materials 34 months) and HEA 1680 (2025, paper trail on voting machines).",
       "subjects": [
         "election integrity laws in general",
-        "voter fraud"
+        "voter fraud",
+        "voter-roll checks"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:09:35.769Z",
         "method": "webfetch"
       }
     },
@@ -105,6 +107,36 @@
         "fetched_at": "2026-10-22T22:34:27.348Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
     }
   ],
   "searches": [
@@ -132,6 +164,30 @@
       "found": 5,
       "at": "2026-10-22T22:34:27.348Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "college or student ID as voter ID",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Indiana Senate caucus site (his Raatz Roundup column on elections; page is undated, nearby items are October 2026)",
+        "Ballotpedia (confirms sitting Senate District 27, won the 2026-05-05 primary, on the 2026-11-03 ballot)",
+        "two web searches on his name plus voter ID words (found only the column above; no quote of him in news on the subject)",
+        "his bill pages and roll calls not searched: Indiana roll calls already on file",
+        "nothing on the subject: no separate campaign-site or interview pages found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:09:35.769Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

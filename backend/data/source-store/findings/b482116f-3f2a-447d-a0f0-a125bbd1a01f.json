@@ -20,6 +20,23 @@
       "found": 0,
       "at": "2026-10-23T00:03:57.528Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (https://ballotpedia.org/Chris_Measmer says he ran for re-election to NC Senate District 34 and lost that primary); stopped as the brief directs",
+        "who he is: https://www.ncleg.gov/Members/Biography/S/455 lists Senator Chris Measmer, District 34; https://ncleg.gov/Members/DistrictRepresentation/S/34 shows him as appointed in April 2025",
+        "On the Record (0 appearances)",
+        "not searched further on the subject because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:31.026Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

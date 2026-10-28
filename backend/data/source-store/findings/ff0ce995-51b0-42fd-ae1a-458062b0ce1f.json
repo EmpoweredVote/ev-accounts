@@ -23,11 +23,85 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "dacd244ff750b58992456bfa0d11c555ae4ebfb5120cea2759967c2fa027f258",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=86R&Bill=HB3313",
+      "date": "2019-03-05",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3313-2019",
+      "act": "author",
+      "note": "Authored HB 3313 (86th session), which would add to a mail-ballot application the applicant's birth date and a Texas driver's license or DPS ID card number, else the last four digits of a Social Security number, else a statement that none was issued. Filed 2019-03-05; referred to the Elections committee 2019-03-18. Bill text: https://capitol.texas.gov/tlodocs/86R/billtext/html/HB03313I.htm",
+      "subjects": [
+        "ID number with a mail ballot application",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:25:47.270Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d4460144516fcce7d728e862416933f88e0c79636a4185d99688a5750b0ddb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=86R&Bill=HB1950",
+      "date": "2019-04-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1950-2019",
+      "act": "other",
+      "note": "Signed on as a coauthor of HB 1950 (86th session, author Zwiener), which would add a photo ID card issued by a Texas public college or university to the list of acceptable photo IDs for voting in person. Bill text: https://capitol.texas.gov/tlodocs/86R/billtext/html/HB01950I.htm",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:25:47.270Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID",
+        "ID number on mail-ballot application",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: https://ballotpedia.org/Ramon_Romero_Jr. shows a sitting Texas House member for District 90 on the 2026 general-election ballot",
+        "On the Record (1 meeting, 2026-08-02, about birthright citizenship and a federal bill; nothing on the subject)",
+        "official House member page https://house.texas.gov/members/member-page?district=90 (links to bill lists only; nothing on the subject)",
+        "campaign site https://www.ramonromero.com (nothing on the subject)",
+        "Ballotpedia (nothing on the subject beyond status)",
+        "Texas Legislature Online author and coauthor lists for sessions 85R, 86R, 87R, 88R, 89R and the called sessions of 87 and 89 (two relevant bills in 86R)",
+        "one news search on his name plus voter ID, proof of citizenship and election integrity (nothing naming him)",
+        "not reviewed: https://journals.house.texas.gov (individual roll-call votes on 2021 SB 1 and 2025 SB 16)",
+        "not reviewed: floor-debate video archive https://house.texas.gov/video-audio/"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:25:47.270Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

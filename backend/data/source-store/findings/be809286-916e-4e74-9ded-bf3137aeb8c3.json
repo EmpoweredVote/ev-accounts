@@ -50,6 +50,30 @@
       "found": 1,
       "at": "2026-10-22T21:55:28.493Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "voting rules and election administration"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Guy Meilleur on the 2026-11-03 general-election ballot for U.S. House NC District 4)",
+        "campaign site https://guy4nc.org (home, priorities, electoral reform pages, immigration survey post, site search for voter ID / photo ID / citizenship / election integrity: nothing stating his view on ID or citizenship proof to vote; the independent-voters page only mentions that election boards decide which photo IDs can be used)",
+        "Branch 2026 candidate profile (nothing on the subject)",
+        "Branch 2024 voter guide response (nothing on the subject)",
+        "blocked: https://goodparty.org/people/guy-meilleur-4c8062e1 (security checkpoint)",
+        "news search on name plus voter ID words (nothing on the subject)",
+        "congress.gov not applicable (never held office)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:00.998Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

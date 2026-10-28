@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -84,18 +88,20 @@
       "date": "2025-04-10",
       "date_precision": "day",
       "passage": "I am compelled to express my strong opposition to the proposed SAVE Act, which seeks to impose stringent voter identification requirements under the guise of election security.",
-      "note": "Official press release statement ahead of the House vote on the SAVE Act. He says he opposes the bill because of its voter identification requirements.",
+      "note": "Opening of his press statement issued ahead of the House vote on the SAVE Act (H.R. 22 per the votes on file).",
       "subjects": [
         "proof of citizenship to register",
         "voter ID requirements",
-        "election integrity laws in general"
+        "election integrity laws in general",
+        "SAVE Act",
+        "election security"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:10:28.234Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:28.122Z",
         "method": "webfetch"
       }
     },
@@ -164,6 +170,92 @@
         "fetched_at": "2026-10-22T21:10:28.234Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8a38cc9f69ba86d87f9e7e8fffefdd6e5ffddd11b889161573548f91e9afb7a5",
+      "kind": "own-words",
+      "url": "https://cleaver.house.gov/media-center/press-releases/rep-cleaver-votes-against-gops-save-act-would-disenfranchise-voters",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "The claim that this legislation is necessary to combat noncitizen voting is not backed by any significant evidence.",
+      "note": "In the same statement he says non-citizen voting is not shown to be a significant problem and cites studies that voter fraud by non-citizens is rare.",
+      "subjects": [
+        "non-citizen voting",
+        "SAVE Act",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:28.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7615609473add908fcec2783e086f84b54a9e86abf40d67b7ece4c477610c58",
+      "kind": "own-words",
+      "url": "https://cleaver.house.gov/media-center/press-releases/rep-cleaver-votes-against-gops-save-act-would-disenfranchise-voters",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I stand in firm opposition to the SAVE Act and any similar legislation that seeks to impose unnecessary barriers to voting.",
+      "note": "Closing line of the same statement.",
+      "subjects": [
+        "SAVE Act",
+        "voter ID requirements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:28.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf2af18b77b16d71476795ffc635702523f28cc596a2accf368eb95ca83663f7",
+      "kind": "own-words",
+      "url": "https://www.krcu.org/politics/2012-10-10/congressman-cleaver-opposes-voter-ids",
+      "date": "2012-10-10",
+      "date_precision": "day",
+      "passage": "We could have a drop off from seniors who believe that they need government issued ID and don’t have it",
+      "note": "Quoted by KCUR reporter Frank Morris (carried by KRCU). He voices concern that voter ID laws elsewhere could keep Missouri seniors home. The story says Missouri voters did not have to show photo ID then and a bank statement, utility bill or paycheck still worked.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID for seniors",
+        "non-photo ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:28.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2aba190335435d4e8f649ece533055bbf629170613d1ccf2b51792b6e32b2b2e",
+      "kind": "own-words",
+      "url": "https://www.krcu.org/politics/2012-10-10/congressman-cleaver-opposes-voter-ids",
+      "date": "2012-10-10",
+      "date_precision": "day",
+      "passage": "If we are unable to get this word out it will do some damage.  I think we will have a lot of seniors who will stay home because they don’t have a voter ID, and believe they cannot vote without it",
+      "note": "Quoted by KCUR / KRCU. He says he explains Missouri's ID rules at campaign stops so voters know existing ID forms still work.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter education on ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:30:28.122Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -189,6 +281,31 @@
       "found": 4,
       "at": "2026-10-22T21:10:28.234Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "non-citizen voting claims",
+        "ID for seniors at the polls",
+        "election security"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official House site press release page (cleaver.house.gov)",
+        "The Kansas City Globe copy of the same April 2025 statement",
+        "KRCU / KCUR 2012 radio story",
+        "two web searches on name plus SAVE Act / SAVE America Act: found no separate statement on the February 2026 vote",
+        "Ballotpedia: page came back empty to the fetch tool, not reviewed: https://ballotpedia.org/Emanuel_Cleaver",
+        "the discovered-sources script was not run (only the On the Record script was permitted)",
+        "congress.gov and House Clerk roll calls: not reviewed; three votes already on file"
+      ],
+      "found": 5,
+      "at": "2026-10-27T21:30:28.122Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -50,6 +50,32 @@
       "found": 0,
       "at": "2026-10-22T23:15:27.426Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks",
+        "voting bills in general"
+      ],
+      "places": [
+        "scope: sitting state Representative for the 4th Plymouth District per his page https://malegislature.gov/Legislators/Profile/PJK1; candidacy not checked (brief names no candidacy)",
+        "On the Record (0 appearances found)",
+        "state legislature amendment list for the 2022 voting bill (https://malegislature.gov/Bills/192/H4359/Amendments): shows amendment 7 is titled Voter Identification and was rejected on roll call 139, and shows Kearney filed amendment 15 on electronic signatures, which was withdrawn; his nay on amendment 7 is already on file, so not collected again",
+        "legislature profile sponsored and co-sponsored bill lists for the 193rd and 194th courts: lists did not load in the fetched pages, not reviewed: https://malegislature.gov/Legislators/Profile/PJK1/194/Cosponsor",
+        "Ballotpedia: no page for this name (page does not exist)",
+        "official campaign or personal site: none found",
+        "two web searches on name plus voter ID / voting bills: no statement by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:33:25.284Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

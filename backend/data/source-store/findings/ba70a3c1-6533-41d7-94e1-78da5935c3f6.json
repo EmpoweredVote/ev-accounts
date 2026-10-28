@@ -7,7 +7,7 @@
       "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1324",
       "date": "2018-12-05",
       "date_precision": "day",
-      "instrument_id": "NC-SB-824-2017",
+      "instrument_id": "NC-S-824-2018",
       "act": "yea",
       "motion": "Third Reading, House Roll Call #1324 (passed 67-40)",
       "note": "Brenden Jones is listed among the House members voting aye on third reading of SB 824, Implementation of Voter ID Constitutional Amendment.",
@@ -29,7 +29,7 @@
       "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1354",
       "date": "2018-12-19",
       "date_precision": "day",
-      "instrument_id": "NC-SB-824-2017",
+      "instrument_id": "NC-S-824-2018",
       "act": "yea",
       "motion": "Veto Override, House Roll Call #1354 (passed 72-40)",
       "note": "Brenden Jones is listed among the House members voting aye on the vote to override the Governor's veto of SB 824, Implementation of Voter ID Constitutional Amendment.",
@@ -52,7 +52,7 @@
       "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1353",
       "date": "2018-12-19",
       "date_precision": "day",
-      "instrument_id": "NC-SB-824-2017",
+      "instrument_id": "NC-S-824-2018",
       "act": "yea",
       "motion": "M4 Previous Question, Veto Override, House Roll Call #1353 (passed 68-43)",
       "note": "Brenden Jones is listed among the House members voting aye on a procedural motion (previous question) tied to the veto override of SB 824.",
@@ -67,6 +67,35 @@
         "fetched_by": "source-collector",
         "fetched_at": "2026-10-23T00:06:01.802Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
       }
     }
   ],

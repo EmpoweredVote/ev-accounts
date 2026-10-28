@@ -22,9 +22,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -47,11 +51,101 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "6605c0b3c67240240f5f11fdc157955609d107ec7405533df56c0e0a587086a9",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d08/press/en/p20210806a.pdf",
+      "date": "2021-08-06",
+      "date_precision": "day",
+      "passage": "Legislation strengthening the integrity of elections in Texas. Senate Bill 1 makes it easier to vote and harder to cheat in Texas elections.",
+      "note": "Her office's legislative update lists the Governor's called special-session topics; this is the entry for SB 1 (2021). The wording describes the governor's topic, issued in her update and not marked as her own opinion.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:01.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c38de10239bdf0c448f6825d0084199ac351f69c1c38386f6009c7ae9a7bf999",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "She is one of 20 senators listed as authors of SB 16 (2025): proof of citizenship to register, with a limited federal-only ballot for those who cannot supply it. The date is the Texas Tribune report date when the bill was unveiled, not the filing date.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:01.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9964b7c2fc79bb4882a4e28e9c939b0edebd78519e7388d4537e7b3694f12de9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-01-01",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "author",
+      "note": "She is one of 13 senators listed as authors of SB 7 (2021): an election integrity and security bill with criminal penalties for election fraud. The date of her listing is not shown.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:03:01.563Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "her official Senate page and press room archive (District 8; read the 2021-08-06 and 2021-09-22 updates)",
+        "her campaign site angelapaxton.com (home, issues page, site searches for voter, citizenship, election): nothing on the subject",
+        "Ballotpedia: term runs to 2029-01-09 (scope only); nothing on the subject copied",
+        "Texas Legislature Online page for SB 16 (2025)",
+        "Texas Tribune story of 2025-03-12 on SB 16: names her only in passing, no quote from her",
+        "two web searches on her name plus voter ID words: no statement of her own found (results mostly about the Attorney General, a different person)",
+        "Texas Legislature Online page for SB 7 (2021): she is listed as an author"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:03:01.563Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

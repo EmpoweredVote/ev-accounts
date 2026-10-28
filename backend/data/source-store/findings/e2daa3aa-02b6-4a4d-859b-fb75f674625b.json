@@ -22,6 +22,50 @@
         "fetched_at": "2026-10-22T23:28:07.349Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e16ddc0fc49c10bc853d17a2719aa39cd7d2bc8286c8536d737a621aa7d0fa24",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4148",
+      "date": "2025-05-19",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4148-2025",
+      "act": "sponsor",
+      "motion": "H.4148, An Act relative to lawful noncitizen permanent resident voting in the town of Shutesbury (joint petition of Saunders and Sen. Comerford)",
+      "note": "Local home-rule petition filed by vote of the town. It concerns lawful permanent residents who are not citizens voting in town elections in Shutesbury. Referred to the Election Laws committee 2025-05-19. Accompanied a study order on 2026-04-02. It says nothing about ID.",
+      "subjects": [
+        "non-citizen voting (local)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:09:05.307Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "450711a8a01ecb95c7d5080306a8ad065d3ae6e0fb9e7d6f0bde0c0c5e5afb35",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H4552",
+      "date": "2024-04-11",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4552-2024",
+      "act": "sponsor",
+      "motion": "H.4552, An Act authorizing extending local voting rights for lawful permanent residents residing in the town of Wendell (joint petition of Saunders and Sen. Comerford)",
+      "note": "Local home-rule petition filed by vote of the town, in the previous session. It would let Wendell extend local voting rights to certain lawful permanent residents. Date shown is the first action on the bill page. It says nothing about ID.",
+      "subjects": [
+        "non-citizen voting (local)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:09:05.307Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -48,6 +92,30 @@
       "found": 1,
       "at": "2026-10-22T23:28:07.349Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Aaron_Saunders (confirms sitting 7th Hampden representative, on the 2026 general-election ballot)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/ALS1 (sponsored bills; two on local non-citizen or resident voting found)",
+        "legislature cosponsored tab: not shown separately in the fetched page; not reviewed",
+        "bill pages https://malegislature.gov/Bills/194/H4148 and https://malegislature.gov/Bills/193/H4552",
+        "one news search on name plus subject words: nothing on voter ID, mail-ballot ID or citizenship proof",
+        "campaign site: not located"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:09:05.307Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

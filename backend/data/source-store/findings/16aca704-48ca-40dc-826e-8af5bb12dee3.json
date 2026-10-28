@@ -22,6 +22,30 @@
       "found": 0,
       "at": "2026-10-22T22:14:58.166Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/James_Duffie) shows him (spelled James Duffie) as a candidate for U.S. House, Georgia District 4, on the 2026 general-election ballot after advancing from the 2026-05-19 primary; BallotReady and the campaign site name him Jim Duffie",
+        "On the Record (0 appearances)",
+        "Ballotpedia 2026 Candidate Connection survey answers: cover taxes, borders, education, safety and immigration; nothing on identity or citizenship proof to vote",
+        "Campaign site jimduffie.com (pages /issues, /meet-jim, /faq): pages return only a script shell with no readable text, so not reviewed: https://jimduffie.com/issues",
+        "blocked: https://jimduffieforga.com (domain does not resolve)",
+        "Branch.vote candidate page: reports no information on the subject on his website as of 2026-07-23",
+        "congress.gov: not applicable, he holds no congressional office",
+        "web searches (2): nothing by him on voter ID, proof of citizenship or the SAVE Act"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:14:14.574Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

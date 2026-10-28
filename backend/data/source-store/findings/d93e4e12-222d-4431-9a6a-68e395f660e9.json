@@ -53,6 +53,30 @@
       "found": 1,
       "at": "2026-10-22T22:13:00.894Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "election integrity in general",
+        "mail-ballot ID",
+        "noncitizen voting"
+      ],
+      "places": [
+        "confirmed on the 2026 general-election ballot for Florida's 9th District: https://fox35orlando.com/news/florida-congressional-district-9-election-results",
+        "On the Record (0 meetings)",
+        "campaign site https://dangreenfl.com/: nothing on the subject on the home page; blocked: https://dangreenfl.com/issues (404)",
+        "https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-us-house-district-9/: nothing on the subject in his answers; the full answers are on a linked voting guide that did not list him",
+        "https://www.aroundosceola.com/election-2026: only headlines returned, nothing on the subject",
+        "https://flvoicenews.com/former-trump-defense-official-dan-green-outlines-congressional-bid-policy-priorities/ (2026-06-26): the reporter says in the reporter's own words that he backs the SAVE America Act and cites his work on the 2000 Florida recount; no direct quote of him, so not saved as his own words",
+        "ballotpedia: not reviewed (never held office; no record to check)",
+        "two web searches on name plus subject words: no direct statement from him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:09:14.667Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

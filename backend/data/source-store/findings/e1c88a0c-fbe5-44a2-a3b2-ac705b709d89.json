@@ -1,0 +1,51 @@
+{
+  "politician_id": "e1c88a0c-fbe5-44a2-a3b2-ac705b709d89",
+  "findings": [
+    {
+      "id": "69aa65e3a9a23ce9d8477fa8e92feceb75e7efa1dd6ee112a178c39f931a9002",
+      "kind": "own-words",
+      "url": "https://tangieforgeorgia.com/priorities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Protect early and absentee voting and ensure fair legislative districts in which voters choose their representatives—not the other way around.",
+      "note": "Campaign priorities page for her 2026 re-election. It names protecting early and absentee voting. It does not mention ID or proof of citizenship.",
+      "subjects": [
+        "absentee and early voting access (not ID)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.914Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: confirmed incumbent and on the 2026 general-election ballot for Georgia House District 145 via https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-145/candidates/tangie-herring",
+        "not reviewed: On the Record extract script (not run in this session; standing rule bars running repo scripts)",
+        "blocked: https://ballotpedia.org/Tangie_Herring (page returned empty)",
+        "campaign site https://tangieforgeorgia.com/ and /priorities (one finding saved); /issues is not a page",
+        "https://en.wikipedia.org/wiki/Tangie_Herring: nothing on the subject",
+        "web search: voter ID, absentee ballot: nothing else on the subject",
+        "legis.ga.gov bill pages not opened (login token needed)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:40:31.914Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "politician_id": "9ced80ef-935e-47a3-ab6c-92f31e31e5e8",
+  "findings": [
+    {
+      "id": "9e91df38a7f21aef708c7ceb678966d1c0b9ab551e3e18f1013dc88530cc96ed",
+      "kind": "own-words",
+      "url": "https://www.angeliaorr.com/reelect",
+      "date": "2025-06-04",
+      "date_precision": "day",
+      "passage": "This session, Orr and her fellow conservative republicans passed a record number of Republican priorities, including: Banning Democrat chairs from committees Cutting property taxes with historic relief totaling $51 billion Securing our elections from fraud Defending children by keeping inappropriate materials out of classrooms",
+      "note": "From her campaign's press release headed 'For Immediate Release June 4, 2025', issued in her name. It lists 'Securing our elections from fraud' among the session's accomplishments. It names no specific ID or citizenship rule.",
+      "subjects": [
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.640Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c299e4259092b23fcff19bd2af10b255c5bb17819f33ae6695d62e0769342c1c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "sponsor",
+      "motion": "Co-author of HB 892, proof of citizenship to register to vote",
+      "note": "HB 892 (89th Legislature, 2025) is titled 'Relating to requiring a person to submit proof of citizenship to register to vote.' The official bill page lists this member among the coauthors. The bill was referred to the House Elections committee on 2025-03-06.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.640Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea21f641d19ed1ab6a0ab0dc1b35910333f40397ac3d9523423aa322f44cc0de",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "sponsor",
+      "motion": "House sponsor list on SB 16, proof of citizenship to register to vote",
+      "note": "SB 16 (89th Legislature, 2025) is titled 'Relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof and the procedures for the counting of those ballots; creating criminal offenses.' The official bill page lists this member among the House sponsors; its last action shown is a House committee report sent to Calendars on 2025-05-25.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal ballot for voters without proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.640Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.529Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://house.texas.gov/members/4340/biography (confirms Rep. Orr, District 13; nothing on the subject)",
+        "campaign site https://www.angeliaorr.com/reelect (a 2025-06-04 press release; one election item saved)",
+        "campaign site https://www.angeliaorr.com/about (biography; mentions past service as an election judge; nothing on policy)",
+        "Texas Legislature Online bill history pages for HB 892 and SB 16 (2025): she is listed on both",
+        "Texas Legislature Online pages for HB 749 and SB 14 (2025): no bill title could be read; not reviewed",
+        "news searches on her name plus election integrity, voter ID and citizenship (a local-news item on a dispute about primary administration; no policy statement)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Angelia_Orr",
+        "blocked: https://app.legiplex.com (403 for tracker pages)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:15:00.640Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.529Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

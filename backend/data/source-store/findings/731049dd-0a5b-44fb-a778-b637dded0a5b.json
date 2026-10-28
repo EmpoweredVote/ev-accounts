@@ -26,7 +26,107 @@
         "fetched_at": "2026-10-21T03:40:10.563Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "4f9c27164ed1b65ed06ae13d0474d66666d8c283d09df5c79abee3d854b621f3",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Senate passage vote (21-17)",
+      "note": "HB 26 (2024), voter identification, accepted forms of identification, private entities licensed or certified: changes which identification documents are accepted for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "types of ID accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Aird'), linked to Lashrecse D. Aird via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found (extract-otr.mjs)",
+        "Virginia LIS classic bill and vote pages (2022 and 2024 sessions), fetched",
+        "FastDemocracy HB 26 (2024) page, fetched",
+        "blocked: https://lis.virginia.gov/bill-details/20221/HB544 (page needs JavaScript, no content)",
+        "blocked: https://ballotpedia.org/ (fetch returned no content)",
+        "blocked: https://www.vpap.org/ (403 or handshake failure)",
+        "blocked: https://legiscan.com/VA/bill/HB544/2022 (403)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "not reviewed: 2025 and 2026 session bill pages (LIS classic does not serve those sessions; new LIS needs JavaScript)",
+        "5 news searches on name plus subject words: no own-words statement on the subject found",
+        "Wikipedia page confirming current office",
+        "official and campaign sites not reached; no own words on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:24:55.188Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.520Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.793Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
 }

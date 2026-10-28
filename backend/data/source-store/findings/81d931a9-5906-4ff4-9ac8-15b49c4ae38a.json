@@ -1,0 +1,52 @@
+{
+  "politician_id": "81d931a9-5906-4ff4-9ac8-15b49c4ae38a",
+  "findings": [
+    {
+      "id": "83847092a53e1db9929d089c744a6b40b9ca0bb13864a7be48d64f3c856452e9",
+      "kind": "own-words",
+      "url": "https://politicsdoneright.com/2021/07/penny-morales-shaw-state-representative-fighting-texas-voter-suppression-in-dc",
+      "date": "2021-07-20",
+      "date_precision": "day",
+      "passage": "“The freedom to vote,” Shaw said. “That is what we are fighting for. Not only for Texans but across America there has been a slew of legislation filed — at least 46 states — to restrict voter access and to have chilling effects on voters.”",
+      "note": "Quoted in an interview write-up on a political web show (published 2021-07-20) about why she left Texas with other House members to deny a quorum on the 2021 election bills (HB 3 and SB 1). The quote is general, not about ID or citizenship rules specifically.",
+      "subjects": [
+        "election bills in general",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:04.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity laws",
+        "voting-access bills in general"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia page confirms Penny Morales Shaw, Texas House District 148, term ends 2027, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (https://house.texas.gov/members/member-page/?district=148): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "campaign site: not reached (guessed address did not respond); the page links her campaign social accounts, which these tools cannot read; not reviewed: https://www.pennyforhouston.com",
+        "news searches on her name plus subject words (two searches): one 2021 interview with a quote on voting-access bills; a 2022 Houston newspaper endorsement was a paper's own words, not hers, so not saved",
+        "no House floor-vote record on the subject was located for her (nothing on file; the 2021 election bills passed after she and others left the state to block a quorum)",
+        "not reviewed: Texas Legislature Online authorship lists (capitol.texas.gov unreliable)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:16:04.236Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

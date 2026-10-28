@@ -1,0 +1,244 @@
+{
+  "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b",
+  "findings": [
+    {
+      "id": "eedf73b3dba642eb8150e8f9c08da7cb95ba08f5d1dd5ff38f269a7f72249812",
+      "kind": "record",
+      "url": "https://senatepress.net/sen-sally-harrell-files-legislation-to-clarify-burden-of-proof-rules-for-voter-challenges.html",
+      "date": "2023-03-21",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-321-2023",
+      "act": "sponsor",
+      "note": "Senate press release says Harrell filed SB 321, which sets grounds and evidence rules, plus a signed affidavit, for challenges to a voter's eligibility. Page read through a summarising tool.",
+      "subjects": [
+        "voter-roll checks and challenges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0067337fa08ebb705d4bf8b6e34f5310191cc9aab0b31be698398476b202e22c",
+      "kind": "record",
+      "url": "https://senatepress.net/?p=100140",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-314-2021",
+      "act": "sponsor",
+      "note": "Senate press release says Harrell filed SB 314, letting counties allow voting at a precinct other than the assigned one on Election Day. Related to SB 202 provisional-ballot rules, not to ID. Page read through a summarising tool.",
+      "subjects": [
+        "election integrity laws in general",
+        "provisional ballot at wrong precinct"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Harrell'), linked to SALLY HARRELL (district 40) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Harrell'), linked to SALLY HARRELL (district 40) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Harrell'), linked to SALLY HARRELL (district 40) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Harrell'), linked to Harrell, Sally (district 40) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Harrell'), linked to SALLY HARRELL (district 40) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9839fbc7b6259ac9f657071c95307886a9c81de58ccef0a99b25ff2e76a7cde9",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/bills-changing-georgia-election-laws-pass-committee-await-final-votes/J4MD2NRWGJCQHIIZEPCB2EI7UI",
+      "date": "2021-03-23",
+      "date_precision": "day",
+      "passage": "Requiring a photo ID for voters who don't have a driver's license is akin, to me, to a poll test for many,",
+      "note": "AJC quotes Sen. Sally Harrell against the photo ID rule for voters without a driver's license in the 2021 election bill. Fetch tool returned the sentence with the trailing comma; attribution 'Harrell said' follows.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-leads-2026-10-28",
+        "fetched_at": "2026-10-28T21:15:26.766Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and challenges",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia (empty page)",
+        "blocked: legis.ga.gov members page (needs login/loads blank)",
+        "blocked: LegiScan and Legiplex pages (403)",
+        "web searches by name plus subject words found no own-words passage on the subject",
+        "not reviewed: news pages that the fetch tool could only summarise, so no passage could be copied word for word",
+        "Senate press office releases confirm Sally Harrell as a Georgia state senator: https://senatepress.net/?p=100140 and https://senatepress.net/sen-sally-harrell-files-legislation-to-clarify-burden-of-proof-rules-for-voter-challenges.html",
+        "not reviewed: https://www.ajc.com/politics/bills-changing-georgia-election-laws-pass-committee-await-final-votes/J4MD2NRWGJCQHIIZEPCB2EI7UI (2021-03-23; summary only says she spoke against absentee ID rules and photo ID for voters without a licence; a direct copy was blocked by a tool permission refusal)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:40:31.810Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.411Z",
+      "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and challenges",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia (empty page)",
+        "blocked: legis.ga.gov members page (needs login/loads blank)",
+        "blocked: LegiScan and Legiplex pages (403)",
+        "web searches by name plus subject words found no own-words passage on the subject",
+        "not reviewed: news pages that the fetch tool could only summarise, so no passage could be copied word for word",
+        "Senate press office releases confirm Sally Harrell as a Georgia state senator: https://senatepress.net/?p=100140 and https://senatepress.net/sen-sally-harrell-files-legislation-to-clarify-burden-of-proof-rules-for-voter-challenges.html",
+        "not reviewed: https://www.ajc.com/politics/bills-changing-georgia-election-laws-pass-committee-await-final-votes/J4MD2NRWGJCQHIIZEPCB2EI7UI (2021-03-23; summary only says she spoke against absentee ID rules and photo ID for voters without a licence; a direct copy was blocked by a tool permission refusal)",
+        "lead check 2026-10-28: https://www.ajc.com/politics/bills-changing-georgia-election-laws-pass-committee-await-final-votes/J4MD2NRWGJCQHIIZEPCB2EI7UI (2021-03-23) opened with a plain fetch; readable"
+      ],
+      "found": 1,
+      "at": "2026-10-28T21:15:26.766Z",
+      "by": "source-collector-leads-2026-10-28"
+    }
+  ]
+}

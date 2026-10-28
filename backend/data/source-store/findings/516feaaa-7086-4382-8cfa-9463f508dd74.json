@@ -28,6 +28,26 @@
       "found": 0,
       "at": "2026-10-22T23:08:55.875Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: withdrew from the 2026 race (declined to seek re-election; not on the 2026 ballot). Page: https://en.wikipedia.org/wiki/2026_Massachusetts_House_of_Representatives_election (1st Barnstable section lists him as declining to run, with two other people in that seat's primary)",
+        "Confirmed identity: https://malegislature.gov/Legislators/Profile/CRF1 names Representative Christopher Richard Flanagan, 1st Barnstable",
+        "https://en.wikipedia.org/wiki/Chris_Flanagan_(politician) (no statement on the subject)",
+        "On the Record (0 meetings)",
+        "one news search on name plus voter ID (nothing tied to him); one search on 2026 status",
+        "blocked: https://ballotpedia.org/Christopher_Flanagan (empty page)",
+        "stopped per the scope rule; no further sources searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:56.154Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

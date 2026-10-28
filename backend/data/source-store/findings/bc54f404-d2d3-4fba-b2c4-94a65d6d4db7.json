@@ -24,6 +24,31 @@
       "found": 0,
       "at": "2026-10-22T22:49:08.316Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: candidate for Indiana state comptroller on the 2026-11-03 general-election ballot (https://theballotbrief.com/candidate/john-schick-in and https://www.ballotready.org/people/john-schick); not a legislative candidate",
+        "On the Record (0 meetings)",
+        "campaign site: none found (the Ballot Brief page says no campaign website was found as of 2026-09-08)",
+        "BallotReady page: nothing on the subject",
+        "The Indiana Citizen 2026 virtual ballot https://indianacitizen.org/vb2026/: his entry did not load in the fetched text; nothing on the subject",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/comptroller-general/ (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2026/03/23/indiana-libertarians-nominate-lauri-shillings-for-secretary-of-state/ (HTTP 403)",
+        "Ballotpedia https://ballotpedia.org/John_Schick: blocked: page text did not load",
+        "news search on name plus voter ID and election: nothing on the subject",
+        "not reviewed: legislature bill pages (he holds no legislative seat in the current period)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:59.030Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

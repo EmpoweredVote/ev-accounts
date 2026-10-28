@@ -21,11 +21,58 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "a34f0d78170d15f8e9db0425c5d79c075232943f46a7a14cc5d3986d1b453cc8",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "Texas Legislature Online lists Sparks among the Senate authors of SB 16 (Hughes), filed 2025-03-11, which requires documentary proof of citizenship to register to vote; he is on the list with a filing date of 03/11/2025. His third-reading yea vote is already on file.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:31:01.534Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas Senate member page https://senate.texas.gov/member.php?d=31 (names him as District 31 senator; press-release list shows nothing on the subject)",
+        "Texas Legislature Online authors page for SB 16 (record saved)",
+        "Ballotpedia: the page at Kevin_Sparks (Texas) does not exist, so no ballot-status page was reached",
+        "one news search on name plus SB 16 words (no statement of his found)",
+        "nothing on the subject: campaign site not located"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:31:01.534Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

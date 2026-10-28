@@ -23,6 +23,29 @@
         "fetched_at": "2026-10-22T21:59:40.423Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5dc01d749cc40c50de590752c5575d118f16f9b74ff6bef11e4b6d053050edc9",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025102",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "note": "Roll call 102, On Passage of H.R. 22, the SAVE Act. The Clerk's page lists her as Nay. The bill passed 220 to 208. The SAVE Act requires documentary proof of citizenship to register and a photo ID to vote in person.",
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "photo ID to vote in person",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:13:45.280Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -53,6 +76,32 @@
       "found": 1,
       "at": "2026-10-22T21:59:40.423Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "photo ID to vote in person",
+        "SAVE Act",
+        "voter ID and mail ballots",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House site https://barragan.house.gov (site search twice; results only on pay equity and food-aid items, nothing on the subject)",
+        "House Clerk roll call page for passage of H.R. 22 (SAVE Act)",
+        "candidate-status page https://www.pollsmax.com/2026-us-house/california-44/ shows her as a 2026 general-election candidate for CA-44",
+        "two news searches on her name plus the subject words (nothing from her on the subject)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/all-actions (403)",
+        "Ballotpedia page returned no readable text",
+        "blocked: https://dp.electionresults.sos.ca.gov/returns/us-rep/district/44 (redirected away from results)",
+        "no own-words statement on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:13:45.280Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

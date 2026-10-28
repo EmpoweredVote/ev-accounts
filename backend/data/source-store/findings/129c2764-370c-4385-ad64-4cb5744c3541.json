@@ -1,6 +1,29 @@
 {
   "politician_id": "129c2764-370c-4385-ad64-4cb5744c3541",
-  "findings": [],
+  "findings": [
+    {
+      "id": "00bc9ad14238e655d4ddde7ab984670ebd3437252919b5c5de127bc7704039c7",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2026/03/09/gop-senators-push-back-against-schumers-jim-crow-2-0-description-of-save-act",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "passage": "“You need an ID to get on a plane, buy a lottery ticket, and drive a car,” Scott said on X. “The SAVE America Act isn’t ‘Jim Crow 2.0,’ it’s commonsense election security. What are the Democrats afraid of?!”",
+      "note": "Quoted by Colorado Politics from his post on X, answering a Senate leader who called the SAVE America Act 'Jim Crow 2.0'. He compares voter ID to ID needed for other everyday activities and calls the bill election security.",
+      "subjects": [
+        "voter ID at the polls",
+        "SAVE America Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:06:13.640Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +47,33 @@
       "found": 0,
       "at": "2026-10-22T22:10:40.119Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "removing non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia page https://ballotpedia.org/Rick_Scott (confirms sitting US Senator from Florida, term ends 2031-01-03; not on the 2026 ballot, still sitting)",
+        "Colorado Politics report of 2026-03-09, reviewed; it quotes his post on X",
+        "the Senate floor log for 2026-03-26 (https://www.dailypress.senate.gov/thursday-march-26-2026/): shows cloture on the photo-ID amendment to the House message on S.1383 (SAVE America Act) failed 53-47; it does not list individual votes, so his vote is not saved",
+        "blocked: https://www.rickscott.senate.gov/press-releases (403)",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/128/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/bills/119/s128 (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.xml (403)",
+        "blocked: https://www.dailysignal.com/2026/01/26/this-senator-wants-to-force-a-vote-on-election-integrity-bill/ (403; a January 2026 report that he called for a standing filibuster to force a vote on the bill; not saved)",
+        "a June 2026 wire-service photo gallery on his urging action on the bill: captions only, no quote by him",
+        "web searches (3) on name plus SAVE Act, voter ID, cosponsor, roll call"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:06:13.640Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

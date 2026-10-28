@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -289,6 +293,70 @@
         "fetched_at": "2026-10-22T22:00:37.007Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a7ceaf644eae331b8843b0584d4c371c8bc42cced8e2528571ad4954b5dc124b",
+      "kind": "own-words",
+      "url": "https://democraticleader.house.gov/media/press-releases/leader-jeffries-statement-republican-voter-suppression-legislation",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "House Resolution 1490 explicitly calls for enactment of the so-called SAVE America Act, which is the top legislative priority of far-right extremists. Accordingly, I will vote No on the latest MAGA effort to rig the midterm elections.",
+      "note": "Statement issued in his name as House minority leader. Says he will vote No on H.Res. 1490, which calls for enactment of the SAVE America Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "470780e98db82377c13707279c45a626bcec04ebc9c5fc431c2655e4ec2e0229",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/jeffries-accuses-republicans-voter-suppression-over-bill-requiring-voter-id-proof-citizenship.print",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "\"Republicans have adopted voter suppression as an electoral strategy. That's what the so-called SAVE Act is all about,\" Jeffries said.",
+      "note": "Quoted by Fox News on the day before the House vote on the SAVE America Act; the outlet is the source, not his own site.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4cfdb0ab34912310d4a0b0cc6affc218862c514ee94204214edf65f16ab0602",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/jeffries-accuses-republicans-voter-suppression-over-bill-requiring-voter-id-proof-citizenship.print",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "\"It's not going to pass. If it squeaks by the House, it's dead on arrival in the Senate. They're wasting time,\" he said.",
+      "note": "Quoted by Fox News on his expectation for the SAVE America Act in the Senate.",
+      "subjects": [
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -319,6 +387,27 @@
       "found": 10,
       "at": "2026-10-22T22:00:37.007Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in federal elections",
+        "documentary proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House minority leader press-release page (identifies him; one statement on the subject)",
+        "one news search on name plus subject words",
+        "Fox News article of 2026-02-09 (quotes him)",
+        "not reviewed: https://www.ballotready.org/people/hakeem-jeffries (returned 404); 2026 ballot status not independently confirmed",
+        "not reviewed: https://ballotpedia.org/Hakeem_Jeffries (page returned no content)",
+        "not reviewed: congress.gov sponsorship lists and his member site"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:51:34.004Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

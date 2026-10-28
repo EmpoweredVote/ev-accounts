@@ -1,0 +1,199 @@
+{
+  "politician_id": "20f36029-8476-41aa-a1b9-f928aab234c3",
+  "findings": [
+    {
+      "id": "1a8b40adbab12cefb1492aa05eaf9cffdfb1927a6e3b62978b1a9dcac365faea",
+      "kind": "own-words",
+      "url": "https://skidawayislandrepublicanclub.wildapricot.org/resources/Documents/Stephens%20weekly%20march20.pdf",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am also a big proponent of having voter identification laws. The need for an ID to travel, drive, buy medicine, etc. should be expanded to voting. Our legislation would require a voter provide a driver’s license or state ID card number to request and submit an absentee ballot. This requirement replaces the subjective signature-match with a clear, objective standard to ensure that absentee ballots have security requirements like in-person voting.",
+      "note": "His weekly legislative column during the 2021 session, as posted by a local club. The file itself carries no printed date; the file name says march20 and its file data says 2021-03-22. It describes the 2021 election bills then pending. Supports a driver's license or state ID number to request and return an absentee ballot, in place of signature matching, and wider ID use for voting.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:33.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c30cc2f49aaadac4c41ae7780b14cce67b97eb9e59ddd106c74214957084a2bb",
+      "kind": "own-words",
+      "url": "https://skidawayislandrepublicanclub.wildapricot.org/resources/Documents/Stephens%20weekly%20march20.pdf",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "One item I saw this last election cycle was private groups funding and establishing vote drop boxes. That, on its own, is a fundamental flaw of free and fair elections.",
+      "note": "Same 2021 column. States his view of privately funded drop boxes; he also describes secure drop boxes open only when a precinct is open and watched by an election official.",
+      "subjects": [
+        "absentee drop boxes",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:33.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d2d7accc967f16dd6333664e2cddb5c862136398f835f48393802cbf7c4ad71",
+      "kind": "own-words",
+      "url": "https://www.bryancountynews.com/opinion/guest-column-voting-measures",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In addition, several more bills have been introduced dealing with the use of photo identification with all submitted ballots. This will require voters to present an official state photo identification, such as a driver’s license or official state identification, including date of birth, to vote by any method including mail-in ballots and voting-in-person. If that is not available, a verifiable photocopy can alternatively be presented.",
+      "note": "Guest column by him in the Bryan County News, written in the seventh week of the 2021 session (the page shows no date). Describes pending bills that would require photo ID for in-person and mail ballots, with a photocopy allowed. He is reporting on the bills; the column does not say outright that he backs them.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:33.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "810c7bdf939c690fc6f9af1f436733b1177ce022863e95a56ba19026daac0c75",
+      "kind": "own-words",
+      "url": "https://www.bryancountynews.com/opinion/guest-column-voting-measures",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "This has been an extremely judicious move by the Speaker in creating this new committee to review existing elections laws and rules.",
+      "note": "Same 2021 column. Comments on the House Speaker's creation of a Special Committee on Election Integrity.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:33.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Stephens, R'), linked to RON STEPHENS (district 164) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Stephens, R'), linked to RON STEPHENS (district 164) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Stephens'), linked to Ron Stephens (district 164) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "absentee drop boxes",
+        "election integrity in general",
+        "SB 202 House vote 2021"
+      ],
+      "places": [
+        "status check: Ballotpedia (https://ballotpedia.org/Ron_Stephens_(Georgia)) shows him as the sitting House District 164 member, advancing from the 2026-05-19 primary and running for re-election to the same seat on the 2026-11-03 general ballot; a WTOC story of 2026-10-18 also covers his race",
+        "On the Record (0 meetings found by extract-otr)",
+        "Ballotpedia: nothing on the subject; 2022 candidate survey page returned empty",
+        "weekly newsletter column posted by a Skidaway Island club (PDF): on the subject, saved",
+        "guest column in Bryan County News: on the subject, saved; page shows no date",
+        "WTOC 2026-10-18 profile: covers tax relief, literacy and mental health; nothing on the subject",
+        "news searches on name plus subject words: nothing further from him; no 2025 or 2026 statement on citizenship or ID found",
+        "SB 202 (2021): he served in 2021, so a final House vote exists, but the official legislature vote page could not be reached (pages load by script or return 401); not saved",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (403)",
+        "blocked: https://app.legiplex.com (403)",
+        "not reviewed: legis.ga.gov member and bill pages for his sponsorships",
+        "not reviewed: his official House page and any campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:40:33.068Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.405Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

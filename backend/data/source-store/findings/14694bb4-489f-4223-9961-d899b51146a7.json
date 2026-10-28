@@ -1,0 +1,26 @@
+{
+  "politician_id": "14694bb4-489f-4223-9961-d899b51146a7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: resigned from the Texas House on 2026-07-02 to become the governor's office adviser on election policy; not on the 2026 ballot (https://www.texastribune.org/2026/07/02/texas-nate-schatzline-appointed-greg-abbott-governors-office-election-adviser/ ; https://www.ksat.com/news/texas/2026/07/02/rep-nate-schatzline-resigns-from-texas-house-to-lead-election-integrity-policy-in-gov-abbotts-office/)",
+        "On the Record (0 meetings)",
+        "Texas Legislature Online authored and coauthored reports (88R, 89R, 891, 892, 893): the lists show bills touching the subject, including HB 4964 (author, early voting by mail eligibility) and HB 2739 (coauthor, address on voter ID documents must match the voter list); not saved because the person is out of scope",
+        "blocked: https://ballotpedia.org/Nate_Schatzline (fetch tool returned empty page)",
+        "not reviewed: official site and campaign site, news search on the subject (stopped because out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:31:56.443Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

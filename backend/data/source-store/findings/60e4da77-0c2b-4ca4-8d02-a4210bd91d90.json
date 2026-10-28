@@ -1,6 +1,30 @@
 {
   "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90",
-  "findings": [],
+  "findings": [
+    {
+      "id": "e10bc0cd65a7e1bb6dde44448af0b9ff7e1c49dfa4efd485a4a746c5e6e80bb1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/S405",
+      "date": "2023-01-19",
+      "date_precision": "day",
+      "instrument_id": "MA-S-405-2023",
+      "act": "sponsor",
+      "note": "Barrett filed S.405, 'An Act mandating the posting of identification requirements at polling places'. Per the docket text, the state secretary must supply a notice for every polling place summarizing why a voter may be asked to show identification at check-in and the acceptable forms of ID under existing law (G.L. c.54 s.76B and 950 CMR 52 and 54). It also goes on the secretary's website, posted at least 8.5 x 11 inches. Referred to Election Laws; hearing held 2023-09-19; on 2024-02-15 it went with a study order (S2655).",
+      "subjects": [
+        "voter ID at the polls",
+        "posting ID rules at polling places",
+        "election administration notice"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:43:29.296Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +52,30 @@
       "found": 0,
       "at": "2026-10-22T23:10:49.968Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "posting of ID rules at polling places",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Massachusetts legislature profile page for Senator Barrett (confirms sitting Third Middlesex senator; lists only a bill on the governor's councillor ballot role on election topics)",
+        "Massachusetts legislature bill pages S405 (193rd) and its docket PDF",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Michael_J._Barrett (page returned empty)",
+        "Wikipedia page for Barrett: nothing on the subject",
+        "news searches on name plus voter ID and 2026 ballot question: nothing quoting him on the subject",
+        "Democracy Docket page on the 2022 VOTES Act Senate passage: no ID provisions, no mention of him",
+        "no campaign site or press-release search done beyond the above searches; no own-words statements found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T11:43:29.296Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

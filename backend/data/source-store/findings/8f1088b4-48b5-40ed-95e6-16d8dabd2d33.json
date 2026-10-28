@@ -1,6 +1,82 @@
 {
   "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "6cf38a795ababc6087c594f776baf53a60e8ca2cde0cec32f528e8a603ef90f2",
+      "kind": "record",
+      "url": "https://news.ballotpedia.org/2023/04/13/election-legislation-roundup-indiana-general-assembly-3/",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1334-2023",
+      "act": "sponsor",
+      "motion": "HB 1334 (2023), absentee voting: Senate sponsor",
+      "note": "Ballotpedia's roundup lists him among the Senate sponsors of HB 1334 (absentee voting). As introduced, it required absentee ballot applications to ask for a driver's license number, ID card number, or voter registration number plus the last four digits of the Social Security number. Secondary source; the official bill page could not be read.",
+      "subjects": [
+        "ID number with a mail ballot application",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:43:45.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5d13a515d896da43898a041447a21211f24a5dd58d404a82bb123050919709e",
+      "kind": "own-words",
+      "url": "https://www.ipm.org/2023-04-04/indiana-senate-backs-gop-bill-tightening-mail-voter-rules",
+      "date": "2023-04-04",
+      "date_precision": "day",
+      "passage": "Bill sponsor Sen. Eric Koch, a Republican from Bedford, said he believes Indiana’s elections are “safe and secure” but cited scattered criminal cases of absentee voting fraud from across the state over the past decade.",
+      "note": "Reporter's sentence; only the words \"safe and secure\" are his direct quote, the rest is the reporter's summary of what he said when the Senate voted 36-12 for HB 1334, which asks for a photocopy of ID or two ID numbers with a paper mail-ballot application.",
+      "subjects": [
+        "ID with a mail ballot application",
+        "absentee voting fraud",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:43:45.074Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +102,30 @@
       "found": 0,
       "at": "2026-10-22T22:42:47.751Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "ID with a mail or absentee ballot application",
+        "proof of citizenship to register or vote",
+        "absentee voting fraud",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Eric_Koch shows him as Indiana Senate District 44 member with a term ending 2028-11-08, so he is not on the 2026 ballot; he is a sitting senator",
+        "On the Record (1 meeting, Senate Judiciary 2026-01-14: questions on a foreign-influence political activity bill, nothing on the subject)",
+        "Indiana Senate caucus member page https://www.indianasenaterepublicans.com/koch: nothing on the subject on the page seen",
+        "Ballotpedia election legislation roundup 2023-04-13 (bill sponsor list; saved as a record)",
+        "IPM and IBJ news reports on HB 1334 (saved)",
+        "blocked: https://iga.in.gov/legislative/2023/bills/house/1334/details (page needs JavaScript); https://legiscan.com/IN/bill/HB1334/2023 (403); official 2025 roll calls already on file, not searched",
+        "3 web searches on his name plus election terms"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:43:45.074Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

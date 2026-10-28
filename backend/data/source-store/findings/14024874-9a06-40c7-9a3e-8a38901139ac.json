@@ -99,6 +99,31 @@
       "found": 3,
       "at": "2026-10-22T23:35:20.569Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site piercefornc.com home and platform pages (nothing on the subject; says only that he works to defend democracy by protecting the right to vote)",
+        "legislature member biography https://www.ncleg.gov/Members/Biography/H/838 (confirms House District 27)",
+        "legislature introduced and co-sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/838 (no bill on ID or citizenship proof; election bills HB 31, HB 691 and HB 1246 are not about proof of identity)",
+        "legislature roll-call list https://www.ncleg.gov/Members/Votes/H/838 (no roll call on an ID or citizenship bill found by title; vote column not readable in page text)",
+        "Ballotpedia https://ballotpedia.org/Rodney_Pierce (on the 2026 general-election ballot, District 27; nothing on the subject)",
+        "news searches (3): nothing by him on the subject; results about voter ID were about a different legislator, Garland Pierce",
+        "not reviewed: Wikipedia and ontheissues (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:01:13.818Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

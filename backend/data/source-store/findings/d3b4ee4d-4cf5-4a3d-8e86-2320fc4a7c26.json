@@ -1,0 +1,75 @@
+{
+  "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26",
+  "findings": [
+    {
+      "id": "4cc2e9bb070eacfe7f3b31af232832d80135da9730d9f4f5f9020a5d2477005a",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "note": "SB 1174 (Min, 2024) bars local governments from requiring a person to show identification to vote in a local election. She voted yes on the Senate floor (30-8-2). Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:27.909Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f435e98d4fdc977dba8e68d47428f7537d88e94e0adb468ba1268d019c9519c8",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "note": "AB 1116 (Berman) requires the Secretary of State, by 2029, to build a way to collect an electronic signature image from someone who registers to vote online without a California driver's license or ID card. She voted yes on the Senate floor. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "ID or signature for online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:27.909Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "ID or signature for online voter registration",
+        "November 2026 photo ID and citizenship ballot measure"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot for State Senate District 16)",
+        "official Senate site sd16.senate.ca.gov (site search for voter ID and news list: nothing on the subject)",
+        "CalMatters Digital Democracy bill pages for SB 1174, AB 25, AB 1116, SB 405 (used in place of the blocked leginfo vote page)",
+        "AB 25 (2025): failed in the Assembly Elections Committee 2025-04-09; not a member, nothing to record",
+        "web news searches on name plus subject words (two): nothing from her on the subject",
+        "not reviewed: campaign site, no URL found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:07:27.909Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

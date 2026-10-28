@@ -46,6 +46,51 @@
         "fetched_at": "2026-10-22T23:30:53.230Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "03c47651224814276f45f0d23bc1f12830b4dbee624abbb2fe6dab66b5cc262b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H866.Html",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-866-2025",
+      "act": "sponsor",
+      "note": "Filed by David M. Rogers. H.866 would let cities and towns that accept it by local ballot question put non-citizens aged 18 or older on a local voter list for municipal elections only. Registration forms would carry a declaration, signed under penalty of perjury, of residence and intent to seek citizenship. It says nothing confers a right to vote in state or federal contests. Similar bill filed in the previous session (House No. 712). Referred to the Election Laws committee.",
+      "subjects": [
+        "non-citizen voting in local elections",
+        "registration declaration for non-citizen voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:25:07.097Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8be95eece8270c56e55c2bfb13b76050fc5f8d9b39d500e79820c498e7a08921",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "nay",
+      "motion": "On adoption of amendment #1587 (H.5500), requiring a valid government-issued photo ID to vote at the polls, with a free state photo ID for registered voters who lack one; Yea and Nay No. 174, failed 27 to 131",
+      "note": "The House roll call lists Rogers, D. as N (nay) on the FY2027 budget amendment that would require photo ID to vote in person.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:25:07.097Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +117,27 @@
       "found": 1,
       "at": "2026-10-22T23:30:53.230Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting in local elections",
+        "registration declaration for non-citizen voters"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "state legislature member page https://malegislature.gov/Legislators/Profile/DMR1 (found the 24th Middlesex member and two Election Laws filings)",
+        "legislature bill pages for H.866 (194th) and prior-session versions H.712, H.828, H.707",
+        "news and web searches on name plus voter ID / non-citizen voting (no own-words statements found)",
+        "not reviewed: official campaign site and Ballotpedia",
+        "House roll call https://malegislature.gov/RollCall/194/HouseRollCall174.pdf and journal https://malegislature.gov/Journal/House/194/hj04282026.pdf"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:25:07.097Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

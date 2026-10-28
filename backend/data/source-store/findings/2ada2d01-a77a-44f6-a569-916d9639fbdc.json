@@ -1,6 +1,30 @@
 {
   "politician_id": "2ada2d01-a77a-44f6-a569-916d9639fbdc",
-  "findings": [],
+  "findings": [
+    {
+      "id": "efaf19cd5544027fd3b47f92705231a91efaca9a21c9d619058ddc4a71325601",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall30.pdf",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4000-2025",
+      "act": "nay",
+      "motion": "H. 4000 on adoption of amendment #556 (roll call No. 30; 25 yeas, 132 nays)",
+      "note": "Roll call page lists Sousa with N (a no vote) on amendment 556, which was rejected. The Beacon Hill Roll Call report for April 28 - May 2, 2025 (https://wcatwakefield.org/4282-2) describes a rejected H 4000 amendment on the same day, 25 yeas, which would require voters to present valid identification such as a driver's license or passport and have the Secretary of State create a free photo ID card program for voting; it reports 131 no votes where the official roll call shows 132, and the roll call page itself does not state the amendment's subject.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:20:55.913Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +49,29 @@
       "found": 0,
       "at": "2026-10-22T23:03:21.932Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voting",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature member page https://malegislature.gov/Legislators/Profile/PSS1 (positive control: Representative, 6th Middlesex district; no sponsored bill on voting)",
+        "Wikipedia https://en.wikipedia.org/wiki/Priscila_Sousa (incumbent since 2023; 2026 candidacy status not stated)",
+        "Ballotpedia https://ballotpedia.org/Priscila_Sousa (nothing on the subject reached)",
+        "House roll call 30 on H.4000 amendment 556 (record saved)",
+        "news search for name plus voter ID or voting rights (nothing on the subject)",
+        "not reviewed: her campaign site and social posts (none found); text of H.4000 amendment 556 (malegislature page returned no text), so the link between amendment 556 and voter ID rests on the Beacon Hill Roll Call report"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:20:55.913Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

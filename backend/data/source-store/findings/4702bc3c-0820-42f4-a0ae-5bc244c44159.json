@@ -48,6 +48,28 @@
       "found": 0,
       "at": "2026-10-22T23:07:45.384Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is the sitting 10th Worcester state representative and on the 2026 general ballot)",
+        "malegislature.gov member profile, sponsored and cosponsored bills (only local town election bills, nothing on the subject)",
+        "malegislature.gov page for the voter-ID bill H833 (sponsored by another member; he is not named)",
+        "two news searches on name plus voter ID (no statement by him found)",
+        "own words: nothing found on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:51:54.017Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

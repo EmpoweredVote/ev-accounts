@@ -49,6 +49,27 @@
       "found": 0,
       "at": "2026-10-22T23:08:15.424Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature bill page for Consalvo (sponsored bills: nothing on the subject)",
+        "BallotReady (confirms 2026 candidacy for 14th Suffolk)",
+        "not reviewed: https://ballotpedia.org/Rob_Consalvo (page returned no content)",
+        "campaign site (https://www.robconsalvo.com is a parked domain; nothing)",
+        "two news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:49:11.481Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

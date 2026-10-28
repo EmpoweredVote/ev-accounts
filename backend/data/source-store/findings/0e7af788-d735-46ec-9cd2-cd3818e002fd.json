@@ -22,9 +22,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.567Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
       }
     },
     {
@@ -48,9 +52,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.567Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
       }
     },
     {
@@ -74,9 +82,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.567Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
       }
     },
     {
@@ -100,9 +112,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.567Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
       }
     },
     {
@@ -129,6 +145,33 @@
         "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d131a80d77188302dc870c73838c9fed9464f78045dd441e11e1faf8fa9ec89",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, as filed (2020-01-07); printed: R. Mills",
+      "note": "prime sponsor of KY-SB-2-2020 (as filed (2020-01-07); printed: R. Mills): AN ACT relating to voter identification and making an appropriation therefor (SB 2, 2020 Regular Session).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T3 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.567Z, webfetch",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/ky_sb2_orig.pdf",
+          "sha256": "3fede52081f5f6e8e563c1c5bbc938c7da208c96d5fb0040ae7a7574f43f43c6"
+        }
       }
     }
   ],

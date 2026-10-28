@@ -62,6 +62,77 @@
         "fetched_at": "2026-10-22T22:35:26.854Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "292bb02e1d19ca9b3d7a6d3f75d8192ea773e10e4e549bf2e27401240eb64bd7",
+      "kind": "own-words",
+      "url": "https://www.indianahousedemocrats.org/news/8o2wxedxsn9ycier4lu3bi6bapq0lu",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "“If the concern is that some of our state institutions don’t have an expiration date on these IDs, the fix is simple. Just require university IDs to have expiration dates. Don’t use this reason to make it harder to vote for thousands of college students.",
+      "note": "Statement issued in her name after she spoke on the House floor against Senate Bill 10, which stops college students using university IDs to vote. She suggests requiring expiration dates on university IDs instead.",
+      "subjects": [
+        "college or student ID as voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:28.303Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce932d720ba6f48d88b20ad05d154498adf6e055c81d60bee37183a776ab2096",
+      "kind": "own-words",
+      "url": "https://www.indianahousedemocrats.org/news/8o2wxedxsn9ycier4lu3bi6bapq0lu",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "“When this bill was heard in committee, I was inspired by the number of students who showed up to testify against this bill and stand up for their right to vote.",
+      "note": "First lines of the same statement, on Senate Bill 10 (college IDs as voter ID).",
+      "subjects": [
+        "college or student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:28.303Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -90,6 +161,31 @@
       "found": 3,
       "at": "2026-10-22T22:35:26.854Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "college or student ID as voter ID",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Indiana House caucus news page (statement on SEA 10 / SB 10, 2025)",
+        "Ballotpedia (confirms sitting House District 94, won the 2026-05-05 primary, on the 2026-11-03 ballot)",
+        "two web searches on her name plus voter ID words",
+        "blocked: https://www.pressreader.com/usa/post-tribune/20210407/281513638961285 (2021 news story a search summary said quotes her on ID costs; page text did not load, so nothing saved)",
+        "nothing on the subject: Indiana Capital Chronicle 2023 mail-ballot ID story, WBAA 2023 story and Indiana Capital Chronicle 2024 election-security story did not mention her",
+        "her bill pages and roll calls not searched: Indiana roll calls already on file"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:10:28.303Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

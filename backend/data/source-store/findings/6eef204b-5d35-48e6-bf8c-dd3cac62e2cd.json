@@ -26,6 +26,27 @@
       "found": 0,
       "at": "2026-10-22T23:11:11.871Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/K_D1 (confirms Representative Kate Donaghue, 19th Worcester; her election bills cover polling-place access for voters with disabilities (H.820), death of a candidate (H.4108) and a Southborough local voting-age request (H.3874); nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Kate_Donaghue (nothing on the subject)",
+        "Patch 2022 candidate profile (nothing on the subject)",
+        "official House site and campaign site not reached",
+        "one web search on name plus voting and elections (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:56:47.198Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

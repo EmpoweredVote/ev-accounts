@@ -26,6 +26,29 @@
       "found": 0,
       "at": "2026-10-22T23:00:16.908Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Karen_Spilka) shows her as Massachusetts State Senate President, Middlesex and Norfolk District, on the 2026 general-election ballot after advancing from the 2026-09-01 primary",
+        "On the Record (0 appearances)",
+        "Legislature profile page malegislature.gov/Legislators/Profile/KES0: nothing on the subject in the bill list shown",
+        "Her site karenspilka.com: news index page returned nothing on the subject; the site search was not run",
+        "blocked: https://www.masenate.gov/Senators/Karen-E-Spilka (connection failed)",
+        "WGBH 2022-01-25 and NBC Boston one-on-one pages: nothing on identity or citizenship proof (WGBH covers same-day registration only)",
+        "web searches (3): nothing by her on voter ID, proof of citizenship or the SAVE Act"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:12:07.178Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

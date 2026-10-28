@@ -49,9 +49,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.560Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
       }
     },
     {
@@ -75,9 +79,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
       }
     },
     {
@@ -100,11 +108,198 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "bd0fe53e2b3eddcde23f629781921f9c6d0e5eb19934d08f73b18eaaf847759b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "author",
+      "motion": "author sponsor, as filed (2017-02-21); printed: By: Huffman, et al.",
+      "note": "author sponsor of TX-SB-5-2017 (as filed (2017-02-21); printed: By: Huffman, et al.): S.B. 5, relating to requiring a voter to present proof of identification; providing a criminal penalty and increasing a criminal penalty.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "50994a66e8c08447ee0a0055eeb9590958626c2edbaa996fe953cad02db8135a",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2017/03/27/texas-senate-tentatively-approves-voter-id-fix/",
+      "date": "2017-03-27",
+      "date_precision": "day",
+      "passage": "“I’m committed to constitutionally sound photo identification at polling places,” Huffman said.",
+      "note": "Quoted by the Texas Tribune while she carried SB 5 on the Senate floor.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcadb4ab20ca5a2bdfc768498ac749dd3f94bfdc0e5985038dbc669660cfdcdb",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2017/03/27/texas-senate-tentatively-approves-voter-id-fix/",
+      "date": "2017-03-27",
+      "date_precision": "day",
+      "passage": "“My intent with the bill is to take the roadmap that the 5th Circuit gave us,” Huffman said.",
+      "note": "Quoted by the Texas Tribune; she describes SB 5 as following the federal appeals court's guidance on the photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: reasonable-impediment affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fca80a25d0a6c5e1a7a2430570f3589284034c0d8edc8429cbdcc6cfa67f637f",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2017/03/27/texas-senate-tentatively-approves-voter-id-fix/",
+      "date": "2017-03-27",
+      "date_precision": "day",
+      "passage": "Huffman said strict penalties were needed to deter such “abuse” of the new process.",
+      "note": "Tribune paraphrase with her one-word quote 'abuse'; she defends the felony penalty for a false reasonable-impediment form. Mostly a reporter's wording.",
+      "subjects": [
+        "voter with no ID: reasonable-impediment affidavit",
+        "penalty for false ID statement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7e6dcfaccfdc8977cc2cda18bd5ffcf80099a7cf8196b4c13aad8cca7b4abb4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "She is listed among the Senate authors of SB 16, which requires proof of citizenship to register to vote (filed 2025-03-11, lead author Hughes).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "563518ae6799ee68c3c0bfac1dcaf01de856ade112ffd28979209c1362984706",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "other",
+      "motion": "Senate passage of SB 5 (she is lead author)",
+      "note": "SB 5 (2017), relating to requiring a voter to present proof of identification, passed the Senate on 2017-03-28; it was signed by the Governor 2017-06-01 and took effect 2018-01-01.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: reasonable-impediment affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b465aef02c420babf8bced457dfac7331508b3e3f04408b373a8f342e4f515e",
+      "kind": "record",
+      "url": "https://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-27-F.PDF",
+      "date": "2021-04-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1509-2021",
+      "act": "yea",
+      "motion": "CSSB 1509 on second reading: motion to suspend the regular order, and passage to engrossment (19 yeas, 12 nays)",
+      "note": "CSSB 1509, relating to identification requirements for early voting by mail, passed second reading 19 to 12. The Senate Journal lists Huffman among the 19 yeas on both the motion and the engrossment vote.",
+      "subjects": [
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:10.415Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit",
+        "proof of citizenship to register",
+        "penalty for false ID statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas Senate member page (confirms Joan Huffman, District 17)",
+        "Texas Senate news page for District 17 (headlines only, none by her)",
+        "Texas Legislature bill history pages for SB 5 (2017) and SB 16 (2025)",
+        "Wikipedia (nothing on the subject)",
+        "Ballotpedia (page returned no usable text)",
+        "news search on Texas Tribune coverage of SB 5 (2017) and SB 16 (2025)",
+        "blocked: https://texasscorecard.com/?p=41578 (403)",
+        "no campaign site reviewed; official Senate page had nothing on the subject",
+        "nothing found of her own words on SB 16 or mail-ballot ID",
+        "Texas Senate Journal of 2021-04-27 (official PDF)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:01:10.415Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

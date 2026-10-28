@@ -1,6 +1,37 @@
 {
   "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +58,25 @@
       "found": 0,
       "at": "2026-10-22T22:44:56.866Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/bray (confirms Sen. Rodric Bray, District 37, Senate President Pro Tem; news list has redistricting statements only, nothing on the subject)",
+        "web searches on name plus voter ID, mail ballot, citizenship, student ID: nothing naming him on the subject; search results say his current term runs to 2028, so he is not on the 2026 ballot",
+        "not reviewed: Ballotpedia and legislature bill pages (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:27.078Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

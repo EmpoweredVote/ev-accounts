@@ -48,6 +48,29 @@
       "found": 1,
       "at": "2026-10-22T21:43:29.631Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "non-citizen voting",
+        "ranked-choice and ballot access"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name)",
+        "Ballotpedia https://ballotpedia.org/Matt_Loesby (confirms candidate for U.S. Senate in Idaho on the 2026-11-03 general ballot, won the 2026-05-19 primary; no survey answers for 2026; nothing on the subject)",
+        "campaign site https://www.loesby.us/ and https://www.loesby.us/platform/ (platform covers immigration and debt; nothing on voter ID, citizenship to vote or election rules)",
+        "news searches (2) on name plus voter ID, citizenship, SAVE Act, election integrity: nothing on the subject",
+        "blocked: https://idahocapitalsun.com/voter-guides/contests/2026-general-u-s-senate/ (HTTP 403 by WebFetch and curl)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:18:29.793Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

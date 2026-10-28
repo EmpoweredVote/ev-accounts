@@ -53,6 +53,30 @@
       "found": 0,
       "at": "2026-10-22T23:14:27.388Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by the extract script)",
+        "Ballotpedia page https://ballotpedia.org/Lindsay_Sabadosa (confirms sitting 1st Hampshire District member, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot; nothing on the subject)",
+        "Massachusetts legislature member profile https://malegislature.gov/Legislators/Profile/L_S1 (sponsored-bill list reviewed: election items are local ranked-choice charter petitions only; nothing on the subject)",
+        "official/campaign site https://www.lindsaysabadosa.com/ (home and /democracy pages: nothing on the subject)",
+        "roll call https://malegislature.gov/RollCall/192/HouseRollCall139.pdf (amendment #7 to H.4359, already on file)",
+        "one news/web search on name plus voter ID and proof of citizenship: nothing about her",
+        "not reviewed: her YouTube and social accounts"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:34:05.966Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

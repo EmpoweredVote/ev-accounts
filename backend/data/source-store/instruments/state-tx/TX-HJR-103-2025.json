@@ -1,0 +1,97 @@
+{
+  "id": "TX-HJR-103-2025",
+  "scope": "state:tx",
+  "title": "HJR 103 (89R): Proposing a constitutional amendment specifying the authority of the attorney general to prosecute a criminal offense prescribed by the election laws of this state.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR103",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR103",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HJ00103I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1: rewrites Texas Constitution Art. IV, Sec. 22 and adds (b): \"The Attorney General shall have concurrent jurisdiction with each county or district attorney of this State to represent this State in the prosecution of a criminal offense prescribed by the election laws of this State.\"\n(other) Sec 2: election date November 4, 2025 and ballot proposition wording.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Leo Wilson",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "edbedc04-f48d-48b9-b229-1f10db22b4f6"
+    },
+    {
+      "name": "Hayes",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Hickland",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Hopper",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Hull",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Kerwin",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "LaHood",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Louderback",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Metcalf",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Money",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Morgan",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Pierson",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Shofner",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Slawson",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Virdell",
+      "role": "co",
+      "version": "Introduced (only version)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     }
   ],
@@ -104,6 +108,30 @@
       "found": 0,
       "at": "2026-10-22T22:08:36.602Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Ritchie_Torres shows him as the sitting NY-15 member, on the 2026 general-election ballot; his official site https://ritchietorres.house.gov names him in that seat",
+        "On the Record (0 meetings)",
+        "official site https://ritchietorres.house.gov: home page and press page fetched; press list showed no press releases and its site search returned nothing on the subject",
+        "Congressional Record index for him, 119th Congress 1st session (congress.gov): nothing on the subject",
+        "Vote Smart political courage test page: nothing on the subject",
+        "Ballotpedia: no statement on the subject",
+        "votes already on file were not re-collected",
+        "four news searches on name plus subject words; the SAVE Act press releases that came up are from Norma Torres (a different member) and were not used"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:13:51.779Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -30,6 +30,34 @@
       "found": 0,
       "at": "2026-10-22T21:52:59.215Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "Ballotpedia: page exists only as a stub with no content (nothing on the subject)",
+        "BallotReady profile: lists her candidacy for Ohio's 2nd Congressional District; nothing on the subject",
+        "WVXU candidate Q&A, 2026-04-03: proves she is a candidate for Ohio's 2nd District; nothing on the subject (she talks about money in politics)",
+        "Marietta Times, 2026-05: candidate profile; nothing on the subject",
+        "Portsmouth Daily Times candidate profile; nothing on the subject",
+        "campaign site https://www.jen4oh2.com (home, /about, /in-the-news): no issue pages; nothing on the subject",
+        "web searches on her name with voter ID, SAVE Act and election integrity: no result names her",
+        "blocked: https://www.newschannel20.com/news/nation-world/jen-mazzuckelli-wins-democratic-nomination-for-u-s-house-in-ohios-2nd-congressional-district/article_771788f4-d29f-5ef2-8f34-20a60d188d09.html (HTTP 429); a search summary said she won the May 5, 2026 primary, so general-election status rests on that unfetched report",
+        "not reviewed: her Facebook, TikTok and a campaign video (not readable here)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:49.152Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

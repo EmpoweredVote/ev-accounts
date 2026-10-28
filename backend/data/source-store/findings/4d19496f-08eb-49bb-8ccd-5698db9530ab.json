@@ -42,6 +42,83 @@
         "fetched_at": "2026-10-22T23:44:41.457Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ce4623d0648de296370d3135932594a71b40ac8bdd182f9bbf6dd1101a041a58",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends, Roll Call #439 (passed 27 to 18)",
+      "note": "Listed among the Noes on the Senate vote to accept the House changes to SB 747, Elections Law Changes. The bill's list of amended statutes includes G.S. 163-166.12 (photo ID) and other voter registration and ballot rules.",
+      "subjects": [
+        "election law changes in general",
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:52:40.494Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fee423fd77524e00dbc62234bf65f7027e102dc24317b6a96b6036a3c59fce47",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override, Roll Call #482 (passed 30 to 19)",
+      "note": "Listed among the Noes on the Senate vote to override the Governor's veto of SB 747, Elections Law Changes.",
+      "subjects": [
+        "election law changes in general",
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:52:40.494Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -68,6 +145,32 @@
       "found": 2,
       "at": "2026-10-22T23:44:41.457Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page Michael_Garrett_(North_Carolina) shows him as State Senate District 27 incumbent on the 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "Senate member page ncleg.gov Biography/S/414 (page did not load, maintenance notice)",
+        "legislature bill page and roll calls for SB 747 (2023)",
+        "Ballotpedia (nothing on the subject)",
+        "Branch profile (third-party summary of election bills such as Election Day holiday and automatic registration; not about ID, not his words)",
+        "bluevoterguide, aol and wfdd pages (nothing on the subject)",
+        "one web search on his name plus subject words (no quote by him on voter ID)",
+        "no personal campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:52:40.494Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -72,6 +72,83 @@
         "fetched_at": "2026-10-23T00:13:06.779Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "e5811a20fc4e9a6b8dfe5f59beb3eb88a0859e3b7e629b77199a06c532d0cd21",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "SB 921, Const. Am./Require Photo ID For All Voters, Third Reading, Roll Call #677",
+      "note": "Senate Roll Call #677 passed 30 to 19. Blue is listed among the Noes. The roll call lists him by surname only, with a total of 19 Noes.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment)",
+        "voter ID at the polls",
+        "ID with mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:34.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5675873fad8d563f537faf5b0696abe9f029829511370655b43d7e946ad5f682",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/676",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "SB 921, Const. Am./Require Photo ID For All Voters, Second Reading, Roll Call #676",
+      "note": "Senate Roll Call #676 passed 30 to 19. Blue is listed among the Noes.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment)",
+        "voter ID at the polls",
+        "ID with mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:34.342Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -99,6 +176,31 @@
       "found": 3,
       "at": "2026-10-23T00:13:06.779Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID for all voters (constitutional amendment)",
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "no-ID fallback for voters",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Dan_Blue (confirms sitting state senator for District 14, on the 2026 general-election ballot)",
+        "NC General Assembly Senate roll calls #676 and #677 for SB 921 (fetched; Blue is listed among the Noes on both)",
+        "three news searches on name plus photo ID amendment: no quote from him on the subject found",
+        "blocked: https://ncnewsline.com/?p=194817 (HTTP 403)",
+        "WRAL story 18026817 fetched: does not mention him",
+        "not reviewed: Senate floor video and journal for 2024-12-02; stateaffairs.com/?p=76357 and ncnewsline.com/?p=157141 (page text had no usable content)",
+        "official Senate member page and a campaign site: not located"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:07:34.342Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,6 +1,27 @@
 {
   "politician_id": "244d3210-4ebc-4c42-a267-4587e4f795de",
-  "findings": [],
+  "findings": [
+    {
+      "id": "d10475c598fd21e4a7df2029d8ba73f5f77a8aa1064d9d7bb05e0024e6b47cd7",
+      "kind": "own-words",
+      "url": "https://cliffjohnsonforcongress.com",
+      "date": "2026-10-26",
+      "date_precision": "year",
+      "passage": "Preserve the core rights promised to all Americans– especially the right to have your vote count",
+      "note": "Campaign site priorities list. Page is undated; the date given is the day it was fetched, and only the year (2026 campaign) is known. A general voting-rights priority; it does not mention ID or citizenship.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:13:56.137Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -30,6 +51,32 @@
       "found": 0,
       "at": "2026-10-22T22:09:48.245Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "voting rights in general"
+      ],
+      "places": [
+        "confirmed candidate: https://mississippifreepress.org/meet-the-candidates-for-mississippis-first-congressional-district-in-the-nov-3-elections/ says Cliff Johnson will be on the 2026-11-03 ballot for Mississippi 1st Congressional District",
+        "On the Record (0 appearances)",
+        "campaign site https://cliffjohnsonforcongress.com: one general voting-rights priority line (saved); nothing on ID or citizenship",
+        "Mississippi Free Press candidate guide: nothing on ID or citizenship",
+        "https://desotocountynews.com/mississippi-news/why-is-democrat-cliff-johnson-challenging-incumbent-republican-rep-trent-kelly/: only a reporter paraphrase of voting rights as a goal; not his own words",
+        "blocked: https://mississippitoday.org/2026/08/25/cliff-johnson-the-other-side-tktktk/ (403 / bot block); this is a podcast page, not reviewed",
+        "not reviewed: Mississippi Today podcast audio",
+        "blocked: https://ballotpedia.org (not fetched for this person)",
+        "three web searches on name plus voter ID / voting rights: nothing on ID or citizenship"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:13:56.137Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,0 +1,315 @@
+{
+  "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66",
+  "findings": [
+    {
+      "id": "780f82b50444712ded89e0e2e68ad13aea74283898dc828b5ab8800e1f35eda3",
+      "kind": "own-words",
+      "url": "https://sr37.senate.ca.gov/content/senate-election-committee-kills-key-election-integrity-bills",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "“We must remain unwavering in our commitment to ensuring that every ballot is legitimate, every voter is properly identified, and our state’s ballot counting process is fast and efficient,” Sen. Choi continued.",
+      "note": "Press release from his Senate office after the 2025-04-01 Senate Elections Committee hearing on SB 405, SB 406 and SB 407; he links voter identification to election integrity.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a860033863f541e9f92db2ba3be26f00fe98f5074b4116bc04ab0c22cbded5c",
+      "kind": "own-words",
+      "url": "https://sr37.senate.ca.gov/content/sen-choi-introduces-election-integrity-package-strengthen-public-trust-and-eliminate-fraud",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "passage": "“This bill package will ensure that California elections are fast, efficient, and secure. It is unacceptable that our state takes more than a month to count ballots while states with a fraction of our resources can project results on Election Night,” stated Senator Choi.",
+      "note": "Release from his Senate office introducing a package of election bills including SB 405, which would repeal SB 1174 (2024) and let local governments require voter ID in local elections.",
+      "subjects": [
+        "local voter-ID rules",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "896ac6757f33f22e9f4b532ce5eae6f523ca94fc0d80edcd90365f0fc2b4288e",
+      "kind": "own-words",
+      "url": "https://sr37.senate.ca.gov/content/choi-give-voters-what-they-want",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "passage": "“Californians have made it clear that they support requiring a government ID to vote,” said Senator Choi.",
+      "note": "Release from his Senate office on SB 405; he says the bill restores local choice on voter ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "806d9631d346f13e70b5566725a2cf7979f170c7b23077fa787c840b3f078339",
+      "kind": "own-words",
+      "url": "https://sr37.senate.ca.gov/content/choi-give-voters-what-they-want",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "passage": "“This is a commonsense measure that protects the constitutional right of local governments to require proof of identification to vote,” Choi concluded.",
+      "note": "Same release; he describes SB 405 and a motion he made to move it out of committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a5359c16ba36ec9fe8d5f99aaa4e4970dce7f0913cf530b1eac026d32e3a8a5",
+      "kind": "own-words",
+      "url": "https://sr37.senate.ca.gov/content/senator-steven-choi-introduces-senate-bill-1310-prospective-jurors-and-voter-registration",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "passage": "“Accurate voter rolls are fundamental to maintaining public trust in our elections,” said Senator Choi.",
+      "note": "Release on SB 1310, which has jury commissioners share information about jurors who say they are ineligible, so counties can update or check voter registration records.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17c595286b69fc2129597ec823b24a4f07405f4ffc557e9556cc88b46bb717b1",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/californians-consider-voter-id-measure-nov-3-ballot",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "“I fully support putting this important measure to the voters so that they can decide if they want secure elections in California,” Choi said.",
+      "note": "Quoted by The Center Square (via Just the News) on Prop 39, the November 2026 voter ID ballot measure; he also says he strongly supports it.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5424c9e36875a11773b5ce34555ed8a8b1dee5790f78e63d6f4446efdaa9bc35",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB405",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-405-2025",
+      "act": "author",
+      "note": "Author of SB 405, Elections: voter identification, which would repeal SB 1174 (2024) and let local governments require voter ID in local elections. Held in the Senate Elections Committee without a vote (per his office's releases). Introduced date from the Internet Archive copy of the leginfo status page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd7931ea3d63ec54a12c18bed9d361112a76d769e5b536f51509914e9017c983",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB1310",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1310-2026",
+      "act": "author",
+      "note": "Author of SB 1310, Voter registration: prospective jurors, on sharing juror-ineligibility information with elections officials to keep voter rolls accurate. Introduced date from the Internet Archive copy of the leginfo status page.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f602b4ed07ef46115a45b134b8e25c017cda426b09eed9bedabc5d72ad4c253",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-06-16",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "nay",
+      "motion": "Senate Elections and Constitutional Amendments Committee: do pass, but first re-refer to Appropriations",
+      "note": "Voted no in the Senate Elections Committee (4 to 1) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:31.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f454ebda3c593d8f0bdc928e8591da3b3e5a3608fbce656e623611d0dfad14b",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "nay",
+      "motion": "AB 1116 Assembly Third Reading, Senate floor",
+      "note": "Voted no on the Senate floor (29 to 9) on AB 1116 (online voter registration without a driver's license or state ID). Source is CalMatters Digital Democracy, which lists the vote under 2026-08-24 and also repeats it under 2026-10-19; the Governor vetoed the bill on 2026-09-27 per that page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:31.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7678ade50ea9bc1cfe78f18c02dd11ca0f316eb74d884b3abb98100b1f2c854a",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-06-16",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Senate Elections and Constitutional Amendments Committee: do pass, but first re-refer to Appropriations",
+      "note": "Voted no in the Senate Elections Committee (4 to 1) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbe46d6679aee2000b4f7250caee838b2e45c54c7744fcbccb2546f20406dd2e",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Assembly Third Reading, Senate floor",
+      "note": "Voted no on the Senate floor (29 to 9) on AB 1116 (online voter registration without a driver's license or state ID). Source is CalMatters Digital Democracy, which lists the vote under 2026-08-24 and also repeats it under 2026-10-19; the Governor vetoed the bill on 2026-09-27 per that page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.888Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "voter ID ballot initiative"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Wikipedia shows him in the State Senate, District 37, since December 2024; term does not end before 2027",
+        "official site sr37.senate.ca.gov (four releases on voter ID, election integrity and voter rolls; site search returned nothing)",
+        "California Senate and Assembly bill pages via the Internet Archive copy of leginfo (SB 405, SB 1310) and CalMatters Digital Democracy (AB 1116, SB 405 pages); leginfo itself not used",
+        "Ballotpedia: not usable (name matched a different person); not reviewed: his page",
+        "two news searches on his name plus voter ID and Prop 39",
+        "blocked: https://calmatters.digitaldemocracy.org/hearings/278219 (page not found); not reviewed: Senate Elections Committee informational hearing on voter ID, reported as 2025-08-26, and the 2025-04-01 hearing video"
+      ],
+      "found": 10,
+      "at": "2026-10-28T16:11:31.428Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "voter ID ballot initiative"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Wikipedia shows him in the State Senate, District 37, since December 2024; term does not end before 2027",
+        "official site sr37.senate.ca.gov (four releases on voter ID, election integrity and voter rolls; site search returned nothing)",
+        "California Senate and Assembly bill pages via the Internet Archive copy of leginfo (SB 405, SB 1310) and CalMatters Digital Democracy (AB 1116, SB 405 pages); leginfo itself not used",
+        "Ballotpedia: not usable (name matched a different person); not reviewed: his page",
+        "two news searches on his name plus voter ID and Prop 39",
+        "blocked: https://calmatters.digitaldemocracy.org/hearings/278219 (page not found); not reviewed: Senate Elections Committee informational hearing on voter ID, reported as 2025-08-26, and the 2025-04-01 hearing video"
+      ],
+      "found": 10,
+      "at": "2026-10-28T16:28:19.888Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -30,6 +30,32 @@
       "found": 0,
       "at": "2026-10-22T21:57:26.935Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE America Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.votebraun.com (home, about, issues, news list; nothing on the subject in his own words)",
+        "https://www.opb.org/article/2026/10/08/marie-gluesenkamp-perez-john-braun-debate/ (Oct 7 2026 debate story; confirms he is a general-election candidate; the reporter says in her own voice that he supports the SAVE America Act, which tightens proof-of-citizenship and photo-ID rules, but gives no quote from him, so not saved as his own words)",
+        "https://www.kuow.org/elections/2026-10-09/gluesenkamp-perez-and-braun-meet-in-first-debate-for-southwest-washingtons-battleground-house-district (same debate story, same reporter paraphrase, no quote)",
+        "https://www.thereflector.com/stories/john-braun-commentary-democrats-are-in-no-rush-to-settle-concerns-about-potential-fraud,400081 (April 2026 commentary is about childcare payment fraud, not elections; nothing on the subject)",
+        "blocked: https://ballotpedia.org/John_Braun (page returned empty)",
+        "not reviewed: debate video or recording of the Oct 7 2026 debate",
+        "not reviewed: Washington legislature sponsor and roll-call pages for Senate Bill 5112 (a voter registration bill; a letter to the editor says he voted no; unverified and not about ID)",
+        "web searches on name plus voter ID, proof of citizenship, election integrity: no direct statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:07:52.996Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

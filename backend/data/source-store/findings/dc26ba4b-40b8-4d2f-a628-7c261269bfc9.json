@@ -1,6 +1,36 @@
 {
   "politician_id": "dc26ba4b-40b8-4d2f-a628-7c261269bfc9",
-  "findings": [],
+  "findings": [
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -17,6 +47,24 @@
       "found": 0,
       "at": "2026-10-23T00:11:09.828Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (page: https://www.witn.com/2026/03/05/beaufort-county-gop-incumbent-defeated-house-primary/, published 2026-03-04, names him as the sitting District 79 member who lost, with no other candidate on the November ballot)",
+        "On the Record (0 meetings found)",
+        "Ballotpedia: page loaded but showed no readable content",
+        "stopped after confirming he is out of scope; official site, bill pages and other steps not searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:02:07.223Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     }
   ],
@@ -96,6 +100,26 @@
       "found": 0,
       "at": "2026-10-22T22:12:46.141Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "status: withdrew 2026-05-15 (ended his re-election campaign for Tennessee's 9th District after a redraw of the map; the Aug 6 2026 primary for that seat was won by another candidate): https://baynews9.com/fl/tampa/politics/2026/05/15/tennessee-rep--steve-cohen-ending-campaign-redistricting",
+        "Daily Memphian, 2026-05-19, says he dropped out of the race: https://dailymemphian.com/article/63030/memphis-morning-podcast-us-rep-steve-cohen-steps-aside",
+        "On the Record (0 meetings)",
+        "not reviewed: Ballotpedia 2026 race page (fetch returned no content): https://ballotpedia.org/Tennessee's_9th_Congressional_District_election,_2026",
+        "official site and own-words search: not done, because he is out of scope for 2026"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:37:29.926Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -27,6 +27,30 @@
       "found": 0,
       "at": "2026-10-22T22:18:16.553Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Adam_Rueda (in scope: on the 2026 general-election ballot for NJ-5; 2025 survey mentions election reform, ballot reform and turnout only, no ID or citizenship content, not saved)",
+        "campaign site https://adamruedafornj5.com/ (nothing on the subject)",
+        "BallotReady https://www.ballotready.org/people/adam-rueda (issue stances: environment, foreign policy, healthcare, immigration; nothing on the subject)",
+        "not reviewed: https://www.instagram.com/reprueda/ (social media, needs login)",
+        "congress.gov: not applicable, never held federal office",
+        "one web search on name plus subject words: nothing"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:48.592Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

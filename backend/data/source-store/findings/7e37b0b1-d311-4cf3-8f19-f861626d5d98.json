@@ -51,6 +51,70 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "4fa1d49743a646708c637c894c9bffd31d11976b9d1b64c792c003aa26bccc02",
+      "kind": "own-words",
+      "url": "https://spectrumlocalnews.com/nys/buffalo/politics/2026/02/18/reps--langworthy--kennedy-offer-different-viewpoints-on-voter-id-bill",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "That bill that they passed last week would allow the vote rolls in state by state to be required to be given to the Department of Homeland Security under Kristi Noem, who has already demonstrated her inability to lead that agency or any agency within government,” Kennedy said.",
+      "note": "Quoted by Spectrum News Buffalo, a week after the House passed the SAVE America Act. He objects to the bill's requirement that states share voter rolls with the Department of Homeland Security. The article describes the bill as requiring a passport or birth certificate to register and a photo ID to vote.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote",
+        "sharing voter rolls with the federal government"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:39:37.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "90c76978b8493918f183951003de7f77b469fb4512b3d17226ffc9b080258249",
+      "kind": "own-words",
+      "url": "https://spectrumlocalnews.com/nys/buffalo/politics/2026/02/18/reps--langworthy--kennedy-offer-different-viewpoints-on-voter-id-bill",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "Rep. Kennedy, who represents the 26th District, said the SAVE America Act “is nothing but a voter suppression bill.”",
+      "note": "Spectrum News Buffalo sentence quoting his words on the SAVE America Act; the quoted part is his. The same article quotes him calling the bill an old tactic to suppress the vote.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:39:37.675Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f640de2a6951281e6204d1691fd406898a54960da38c8218afa82aad8c4c1f91",
+      "kind": "own-words",
+      "url": "https://kennedy.house.gov/news/documentsingle.aspx?DocumentID=2424",
+      "date": "2026-04-29",
+      "date_precision": "day",
+      "passage": "“Our colleagues across the aisle are driving forward an agenda that would restrict voter access,” said Congressman Kennedy.",
+      "note": "Press release from his official site after a House Homeland Security Committee hearing on election integrity. He also describes his work in the New York State Senate on absentee drop boxes, early voting sites and voting by mail. The release does not mention photo ID or the SAVE America Act by name. Saved as related election-integrity talk.",
+      "subjects": [
+        "election integrity and voter access in general",
+        "mail voting and absentee drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:39:37.675Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -78,6 +142,30 @@
       "found": 0,
       "at": "2026-10-22T22:11:35.647Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE America Act)",
+        "sharing voter rolls with the federal government",
+        "ID with mail or absentee ballot",
+        "election integrity and voter access in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia 2026 race page for New York's 26th District: lists him and one challenger as 2026 general-election candidates: https://ballotpedia.org/New_York%27s_26th_Congressional_District_election,_2026",
+        "official House site, press releases list (pages 1-5) and the Upholding Democracy issue list: https://kennedy.house.gov/news/documentquery.aspx?IssueID=15080",
+        "Spectrum News Buffalo, 2026-02-18, direct quotes from him on the SAVE America Act",
+        "House votes: the two on-file votes were not collected again; no roll-call page opened for the House vote on the SAVE America Act, which the earlier search coverage dated 2026-02-11",
+        "Ballotpedia person page and congress.gov: not reviewed, Ballotpedia page returned no content to the fetch tool",
+        "campaign site and debate or forum answers: nothing found; a 2026 USPS postmark letter on his site is about mail-ballot timing, not ID, and was not saved",
+        "state-senate record from his years in Albany: not searched"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:39:37.675Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

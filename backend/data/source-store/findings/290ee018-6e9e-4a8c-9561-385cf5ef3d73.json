@@ -50,6 +50,28 @@
       "found": 0,
       "at": "2026-10-22T23:02:14.387Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Adrian_Madaro (sitting 1st Suffolk member, advanced from the 2026-09-01 primary, on the 2026 general-election ballot; nothing on the subject)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/ACM1/194 and /193 (sponsored-bill lists; no bill on voter ID, mail-ballot ID or proof of citizenship)",
+        "bill H.3735 (2025-26) on state identification cards for people without proof of lawful presence: about state ID access in general, not about voting; not saved",
+        "bill H.683 (2019-20) on absentee and mail ballots: about access, no ID language; not saved",
+        "campaign site https://www.adrianmadaro.com: nothing on the subject",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act: nothing naming him"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:46:30.766Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

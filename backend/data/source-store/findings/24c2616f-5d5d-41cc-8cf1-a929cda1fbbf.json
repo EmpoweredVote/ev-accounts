@@ -1,0 +1,68 @@
+{
+  "politician_id": "24c2616f-5d5d-41cc-8cf1-a929cda1fbbf",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Hilton'), linked to Scott Hilton (district 48) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status confirmed: sitting House District 48 member, on the 2026-11-03 general-election ballot for the same seat (https://ballotpedia.org/Scott_Hilton_(Georgia))",
+        "On the Record (0 appearances)",
+        "campaign site https://scotthiltonga.com/ (home, priorities, meet pages): nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Scott_Hilton_(Georgia): nothing on the subject",
+        "House caucus news site https://house-press.com/representative/Scott-Hilton/ (three pages): nothing on the subject",
+        "2022 profile https://livinginpeachtreecorners.com/2022/elections-and-politics/former-state-rep-scott-hilton-a-known-entity-looking-for-state-house-win/ and 2022 forum answers https://www.gwinnettforum.com/wp-content/uploads/2022/10/Ga.House48_GOP_Scott-Hilton.docx.pdf: nothing on the subject",
+        "blocked: https://www.legis.ga.gov/members/house/4899 (the legislature's member and vote pages load only through a script and its data service refuses requests, so bill and vote records could not be read)",
+        "web news search on his name plus voting words: nothing on ID or citizenship; a tracking site lists him on HB 324 (2025, advance-voting priority), not fetched, so not saved",
+        "not applicable: SB 202 (2021) vote, because he served 2017-2019 and again from 2023"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:39:08.010Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

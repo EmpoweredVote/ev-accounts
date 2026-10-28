@@ -1,0 +1,29 @@
+{
+  "politician_id": "ac78bc55-8fe9-4efb-a0ea-179842b6c44e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "web search on name plus voter ID words: no own-words page found",
+        "Ballotpedia (https://ballotpedia.org/Stacey_Carroll): fetched, nothing on the subject",
+        "news pages on 2020 photo ID repeal and 2025 HB 2434 (whsv, democracydocket, pluralpolicy): fetched, do not name this person",
+        "not reviewed: official House site and campaign site (not reached within a light search)",
+        "not reviewed: On the Record extract script (not run)",
+        "blocked: https://legiscan.com/VA/bill/HB1444/2023 (403)",
+        "blocked: https://lis.virginia.gov (page returned no bill content)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:19.942Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

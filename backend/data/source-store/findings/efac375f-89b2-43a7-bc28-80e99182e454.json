@@ -1,0 +1,216 @@
+{
+  "politician_id": "efac375f-89b2-43a7-bc28-80e99182e454",
+  "findings": [
+    {
+      "id": "5613f342fe4bfc4d1fe979ae19961509aff896db0b1875d098850e56e1ea9908",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2025/04/01/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-16-stopping-non-citizens-from-voting/",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "This issue is not controversial; only citizens should vote in Texas elections.",
+      "note": "Official office statement issued in his name on Senate passage of SB 16 (proof of citizenship to register to vote). The release says the bill would require all voters to provide proof of citizenship to register.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "708960ef5a561c3ef86d3f5fb4bafac24a42acf5bb0ea7622ed8b22f24d9c6fa",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2025/04/01/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-16-stopping-non-citizens-from-voting/",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "SB 16 is a priority because Texans must have confidence in the outcome of every single election in our state.",
+      "note": "Same SB 16 statement; calls the bill a priority and ties it to confidence in election outcomes.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4ba0a949c3c15909e2df2ae3eeecd01e0d5b7c799f3c43124c5a22242083356",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2021/07/13/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-1/",
+      "date": "2021-07-13",
+      "date_precision": "day",
+      "passage": "The opposing party made the same false argument of voter suppression against legislation requiring a photo voter ID to vote, but turnout increased substantially after that legislation passed.",
+      "note": "Statement on Senate passage of SB 1 (2021 election bill). He defends the earlier photo voter ID law and cites turnout figures.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "461282300bce2d34b084742d5b294ba71296db7f3e8f2016a39169ee546b9e1d",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2021/07/13/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-1/",
+      "date": "2021-07-13",
+      "date_precision": "day",
+      "passage": "It will require that signatures on mail-in ballots are verified so we know that ballots cast by mail belong to the people they say they belong to.",
+      "note": "Same SB 1 statement; describes mail-ballot signature verification in the bill.",
+      "subjects": [
+        "mail-ballot ID or verification",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc61bf0b601235b37d82432a449bf031e86564a206ad3fa11144e74a432ddb58",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2021/07/13/lt-gov-dan-patrick-statement-on-the-passage-of-senate-bill-1/",
+      "date": "2021-07-13",
+      "date_precision": "day",
+      "passage": "Importantly, 85% of all Texans, including Democrats and Independents, support photo voter ID.",
+      "note": "Same SB 1 statement; cites public support for photo voter ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0874065bdd0af8072c410d0eb882e91082ca345a4155cf5ce9855f45008a7bff",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2018/04/27/lt-governor-patrick-applauds-5th-circuit-court-affirmation-of-texas-voter-id-law/",
+      "date": "2018-04-27",
+      "date_precision": "day",
+      "passage": "Senate Bill 5, the Texas Voter ID law, was one of my highest priorities in the last legislative session and one of the first bills the Senate passed last year.",
+      "note": "Statement after a federal appeals court ruling upholding SB 5, the Texas voter ID law.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47aa6ecff7903b07cf2491923bf94366489fda12091a287789e4c40f92bfe5fd",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2018/04/27/lt-governor-patrick-applauds-5th-circuit-court-affirmation-of-texas-voter-id-law/",
+      "date": "2018-04-27",
+      "date_precision": "day",
+      "passage": "Today’s ruling by the 5th Circuit confirms this common sense law and safeguards the integrity of our elections.",
+      "note": "Same statement on the voter ID ruling.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f146c3263fb4f1159c0dcc3f2f11378d8ef77adc1aa79c863b74c8582de72d1",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2025/07/30/lt-gov-dan-patrick-statement-on-the-texas-senates-passage-of-senate-bill-11-attorney-general-authority-to-prosecute-election-crimes/",
+      "date": "2025-07-30",
+      "date_precision": "day",
+      "passage": "SB 11 gives the Attorney General the ultimate authority to prosecute election crimes in Texas to ensure that no election crime goes unpunished.",
+      "note": "Statement on Senate passage of SB 11, attorney general authority over election-crime prosecution. Related election-integrity item, not an ID rule.",
+      "subjects": [
+        "election integrity",
+        "attorney general prosecution of election offenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9a6b2ae81e19040c9e3abfc7a9695de1dfa16633c7f8a3646627e0c542e45ca",
+      "kind": "own-words",
+      "url": "https://www.ltgov.texas.gov/2024/08/26/lt-governor-dan-patrick-statement-on-the-secretary-of-states-election-audit-report-of-harris-county/",
+      "date": "2024-08-26",
+      "date_precision": "day",
+      "passage": "The Texas Senate passed 23 election-related bills that did not pass the House.",
+      "note": "Statement on a state election audit of Harris County; he says these Senate bills were a step toward public confidence in elections. The release lists the 23 bills.",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:56.927Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "voter ID at the polls",
+        "mail-ballot ID or verification",
+        "non-citizen voting",
+        "election integrity",
+        "attorney general prosecution of election offenses"
+      ],
+      "places": [
+        "On the Record (1 podcast meeting, 2026-06-25, Paxton interview; nothing on the subject)",
+        "Ballotpedia (confirms sitting Lieutenant Governor, on the 2026 general-election ballot)",
+        "official office site https://www.ltgov.texas.gov (site search for voter ID, citizenship, election integrity; 5 statements fetched)",
+        "campaign site https://danpatrick.com (home page only; nothing on the subject; issues page returned 404)",
+        "web search: name plus SB 16 proof of citizenship",
+        "legislature bill pages: not applicable for votes, as the Lieutenant Governor presides over the Senate and no vote on file; other statements listed in site search (for example the 2023 top-30 priorities and the 2023 SB 2 statement) not reviewed"
+      ],
+      "found": 9,
+      "at": "2026-10-28T15:28:56.927Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

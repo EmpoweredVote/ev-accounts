@@ -21,6 +21,23 @@
       "found": 0,
       "at": "2026-10-22T21:58:06.244Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Ola_Hawatmeh, which names her as a candidate for Florida's 19th District and lists her as defeated in the primary; the general-election list on that page does not include her)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (candidate page and her survey answers; nothing on the subject)",
+        "one web search to confirm identity and race"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:42:41.590Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

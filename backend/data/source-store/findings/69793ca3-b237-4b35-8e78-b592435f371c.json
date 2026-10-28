@@ -1,0 +1,65 @@
+{
+  "politician_id": "69793ca3-b237-4b35-8e78-b592435f371c",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Reese'), linked to Tremaine Teddy Reese (district 140) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Teddy_Reese (sitting House member; advanced from the May 19, 2026 primary and is on the November 3, 2026 general election ballot for Georgia Senate District 15; nothing on the subject)",
+        "Branch candidate page, Georgia Senate 15, 2026 general election (only a one-line summary, not his own wording, so not saved): https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-15/candidates/tremaine-teddy-reese",
+        "Georgia House press site search (https://house-press.com/?s=Reese+voter): one release on a college listening tour; nothing on the subject",
+        "two news searches on his name plus voter ID and SB 202 (nothing attributable to him)",
+        "not reviewed: his official House page and campaign site (not fetched)",
+        "legis.ga.gov bill pages not tried (login token)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.684Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

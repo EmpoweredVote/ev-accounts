@@ -25,6 +25,59 @@
         "fetched_at": "2026-10-23T00:02:56.382Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "d6bac26f0ab91999aa1d4b53fc1555123f9ec8299631b41a4b8c9bca53cd5669",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/448",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Second Reading, Election Law Changes (Senate vote 28 Ayes, 13 Noes)",
+      "note": "Member vote list shows Aye on second reading of HB 958, Election Law Changes. The ratified text adds a rule that a county board processes a registration application only if the applicant affirmatively says they are a U.S. citizen, with a sworn citizenship form for blank answers, and orders a process to remove voters flagged as non-citizens by a federal database. The bill page shows the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "voter-roll checks against federal citizenship data",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:33:19.486Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -54,6 +107,34 @@
       "found": 1,
       "at": "2026-10-23T00:02:56.382Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizenship question on voter registration",
+        "voter-roll checks against federal citizenship data",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned no appearances)",
+        "Ballotpedia (https://ballotpedia.org/Bob_Brinson: current NC Senate District 3 member, running for re-election in 2026; confirms scope)",
+        "NC General Assembly Senate member introduced-bills page (https://www.ncleg.gov/Members/IntroducedBills/S/448): only local election-timing bills, nothing on voter ID or citizenship",
+        "NC General Assembly member vote list (https://www.ncleg.gov/Members/Votes/S/448): one election-law bill found; the ten floor-amendment and table votes on it are not saved because the amendment texts were not reviewed",
+        "NC General Assembly bill page and ratified text for the election-law bill (https://www.ncleg.gov/BillLookup/2025/H958)",
+        "news story on his re-election announcement (https://www.neusenews.com/index/2025/11/21/bob-brinson-announces-campaign-for-re-election-to-the-north-carolina-state-senate): nothing on the subject",
+        "web search on his name with House Bill 958, voter ID and citizenship words (no statement of his own found)",
+        "not reviewed: a personal campaign or official-site issue page, none located",
+        "not reviewed: votes from any earlier session, the member vote list shows only the current session",
+        "not reviewed: debate or interview video, none located"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:33:19.486Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

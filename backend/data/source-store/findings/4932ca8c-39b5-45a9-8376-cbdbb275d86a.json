@@ -5,20 +5,21 @@
       "id": "d75e18e4d56a53d50f6b321fbac0804f81e1e355a5ca51c5b12c8da411598573",
       "kind": "own-words",
       "url": "https://www.derekmerrin.com",
-      "date": "2026-09-10",
-      "date_precision": "day",
+      "date": "2026",
+      "date_precision": "year",
       "passage": "He played key roles in the requirement to show photo-ID to vote and to allow Ohioans the constitutional right to carry .",
-      "note": "Campaign site About section, written in the third person in his campaign's name. Credits him with a role in Ohio's requirement to show photo ID to vote. Date is the site's publication date shown in the page code (Sep 10, 2026).",
+      "note": "From the About section of his campaign site (written in the third person, undated). It describes his work on Ohio's photo-ID-to-vote requirement.",
       "subjects": [
         "voter ID at the polls",
-        "election integrity laws"
+        "election integrity laws",
+        "photo ID"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:55:08.677Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
         "method": "webfetch"
       }
     },
@@ -43,6 +44,52 @@
       "provenance": {
         "fetched_by": "source-collector",
         "fetched_at": "2026-10-22T21:55:08.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e64754c21831bf169887aaae7436cfbace9a9743e889692c8ea9885a64f31395",
+      "kind": "record",
+      "url": "https://legislature.ohio.gov/legislation/134/hb458",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-H-458-2021",
+      "act": "sponsor",
+      "note": "Merrin is listed as a cosponsor of HB 458, whose title says it modifies the law governing voter identification and absent voting and makes changes regarding driver's licenses and state identification cards.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail and absentee ballot rules",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05a0a5c9f54b1fdb526af7738f9f61794fc179c90ede71ac9cb588721964787a",
+      "kind": "record",
+      "url": "https://legislature.ohio.gov/legislation/134/hb458/votes",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-H-458-2021",
+      "act": "yea",
+      "motion": "House vote listed as Passed, 55 yeas to 34 nays (HB 458, voter identification and absent voting changes)",
+      "note": "Merrin is listed among the Yeas on the House vote dated 12-14-2022 on HB 458.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail and absentee ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
         "method": "webfetch"
       }
     }
@@ -76,6 +123,29 @@
       "found": 2,
       "at": "2026-10-22T21:55:08.677Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail and absentee ballot rules",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home page (one on-subject sentence, saved)",
+        "campaign site issues page (blocked from reading: page text did not load; nothing found)",
+        "Ballotpedia (confirms he is on the 2026 general ballot for Ohio's 9th District)",
+        "Ohio legislature bill page and vote page for HB 458 (134th General Assembly)",
+        "two news searches on name plus voter ID, SAVE Act, election integrity (nothing by him found)",
+        "congress.gov: not a member, no record"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:53:15.826Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

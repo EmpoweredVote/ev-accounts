@@ -65,6 +65,49 @@
         "fetched_at": "2026-10-22T22:13:35.305Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e2c5c69f723f8ff8105cc3b511beeeea3339fcabbe62c11d5f484571c759b42e",
+      "kind": "own-words",
+      "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“9% of American citizens don’t have the identification that the SAVE act requires to vote. Almost 1 in 10. This is a voter suppression bill.”",
+      "note": "Her X post on the SAVE America Act, as quoted and fact-checked by PolitiFact on 2026-03-20. She says about 1 in 10 citizens lack the ID the bill requires and calls it a voter suppression bill.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote in person",
+        "voter suppression claims about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5f2deb07edb0d1b7b9d9e3b860949a3c36335b508a34eee870b1b132a536330",
+      "kind": "own-words",
+      "url": "https://www.nbcchicago.com/news/national-international/drivers-licenses-voter-registration-save-act/",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "Under the SAVE Act, you cannot use your driver’s license to register to vote. Republicans want you to buy a passport instead. If you can afford one. This is a modern-day poll tax.",
+      "note": "Her X post on the SAVE America Act, quoted in an AP fact-check carried by NBC Chicago (March 2026, exact day not shown on the page text I read). She says a driver's license would not be enough to register and that a passport costs money.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -91,6 +134,32 @@
       "found": 3,
       "at": "2026-10-22T22:13:35.305Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in person",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents",
+        "voter suppression claims about ID rules"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.duckworth.senate.gov/search?keys=voter+ID (403, also with browser agent)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases (403)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases/duckworth-statement-in-response-to-republicans-blocking-the-freedom-to-vote-act (403)",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm (403), so her own vote on the March 26 2026 cloture vote was not confirmed",
+        "Senate floor log for 2026-03-26 (https://www.dailypress.senate.gov/thursday-march-26-2026/): shows the cloture vote on the photo-ID amendment to the SAVE America Act vehicle but no per-senator tally",
+        "PolitiFact fact-check of her X post",
+        "AP fact-check carried by NBC Chicago",
+        "web search of her official press-release titles (older voting-rights releases found, none fetchable)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:01:00.258Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

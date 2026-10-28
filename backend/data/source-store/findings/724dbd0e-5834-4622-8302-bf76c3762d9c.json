@@ -1,6 +1,108 @@
 {
   "politician_id": "724dbd0e-5834-4622-8302-bf76c3762d9c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "a5c4322fa188dd44efee4adb3654c311c3d1b6108cc0490f14d200297e5a2aee",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "H958 Election Law Changes, second reading, roll call 758 (passed 66 to 47)",
+      "note": "Her vote is listed as Aye on her member vote page (https://www.ncleg.gov/Members/Votes/H/820). The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes a new G.S. 163-83 that says 'the county board shall process the voter registration application in accordance with this Article only if the voter registration application affirmatively indicates that the applicant is a citizen of the United States', a notice with 30 days to answer, and a process to remove voters flagged as possible non-citizens from a federal database. Sections take effect 2027-01-01. The bill page (https://www.ncleg.gov/BillLookUp/2025/H958) lists the governor's veto of H958 received 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removals",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:21:43.297Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a50781c1c4337d7c53e8114d95ef170ab9004bbd8f4cef1c38789014d272b4d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "H958 Election Law Changes, House concurrence in the Senate committee substitute, roll call 801 (passed 62 to 47)",
+      "note": "Her vote is listed as Aye on her member vote page (https://www.ncleg.gov/Members/Votes/H/820). This final House vote sent the bill to be enrolled; the bill page shows it received from the governor 2026-08-17 with a veto document.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removals",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:21:43.297Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59d9afddda8b52f912e30ba6e92f01a389a253cd274548dda5fa563ba2e4a2f4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/800",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "yea",
+      "motion": "H834 State Board of Elections Administrative Changes, House concurrence, roll call 800 (passed 74 to 35)",
+      "note": "Her vote is listed as Aye on her member vote page (https://www.ncleg.gov/Members/Votes/H/820). The enacted text (Session Law 2026-60, https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H834v6.pdf) keeps photo ID for in-person voting and the provisional-ballot fallback for a voter without it, and moves the deadline to bring photo ID to the county board from the third to the fifth business day after the election; it also lets a voter fix a missing signature on a provisional-ballot affidavit.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (provisional ballot)",
+        "photo ID cure deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:21:43.297Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +130,33 @@
       "found": 0,
       "at": "2026-10-22T23:52:09.722Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (provisional ballot and cure deadline)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and removals",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Jennifer_Balkcom (positive control: member of the NC House, District 117, and a candidate for US House NC District 11 on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "NC General Assembly member vote list https://www.ncleg.gov/Members/Votes/H/820 (positive control: lists her votes by name; read in full, 2025 session only; the 2023-24 session list was not reachable)",
+        "NC General Assembly bill pages and ratified text for H958 and H834 (2025 session) plus roll-call transcripts H 755 to 758, 800, 801",
+        "her introduced-bills list https://library.ncleg.gov/Members/IntroducedBills/H/820 (only 'Make Election Day A State Holiday', off the subject; no voter ID or citizenship bill)",
+        "Spectrum News profile 2026-10-16 (nothing on the subject)",
+        "no campaign site or issue page located; no own-words statement on the subject found",
+        "not reviewed: individual roll-call transcripts on House amendments A1 to A3 to H958 (amendment text not retrievable, so not saved)",
+        "web search x3 on her name plus voter ID, election integrity, campaign site: nothing on the subject beyond the legislature pages"
+      ],
+      "found": 3,
+      "at": "2026-10-27T14:21:43.297Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

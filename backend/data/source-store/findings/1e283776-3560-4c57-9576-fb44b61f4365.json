@@ -28,6 +28,28 @@
       "found": 0,
       "at": "2026-10-22T22:12:47.224Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://backnebraska.com/ (home, priorities and latest-news pages): its news page says he issued a statement after winning the primary and lists no item on the subject; nothing on the subject",
+        "web search confirming he is the nominee for Nebraska's 1st District in the Nov. 2026 election; search results only, no page opened for this",
+        "web search on name plus voter ID and citizenship words: nothing on the subject",
+        "blocked: https://nebraskaexaminer.com/briefs/backemeyer-to-face-flood-in-ne-01-smith-advances-in-ne-03/ (HTTP 403, and a bot-check page by curl)",
+        "not reviewed: Ballotpedia, campaign site other pages, debates, interviews, social media"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:12:13.879Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

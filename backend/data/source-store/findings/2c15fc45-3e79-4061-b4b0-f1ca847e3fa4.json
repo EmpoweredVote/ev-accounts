@@ -26,6 +26,33 @@
       "found": 0,
       "at": "2026-10-22T21:58:12.399Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act, H.R. 22)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://radewagen.house.gov/ (positive control: US Representative from American Samoa; homepage shows nothing on the subject)",
+        "official press release list https://radewagen.house.gov/media/press-releases (page text did not load usable content; nothing on the subject found)",
+        "thelobbynews member page https://thelobbynews.com/congress/legislators/aumua-amata-radewagen/R000600 (sponsored bills cover American Samoa nationality, fisheries, and similar; nothing on the subject)",
+        "Congress.gov API member and bill lists (sponsored and cosponsored lists for member R000600; H.R. 22 cosponsor list does not include her): no sponsorship or cosponsorship on the subject found",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (HTTP 403)",
+        "blocked: https://www.govtrack.us/congress/bills/119/hr22 (HTTP 403)",
+        "Ballotpedia: not fetched",
+        "news search for name plus SAVE Act (nothing on the subject)",
+        "not reviewed: her House roll-call votes on the SAVE Act (delegates do not vote on final passage); her video and social posts",
+        "2026 ballot status not confirmed by a page"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:22:19.000Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

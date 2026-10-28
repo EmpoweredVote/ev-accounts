@@ -30,6 +30,31 @@
       "found": 0,
       "at": "2026-10-22T21:32:02.357Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed candidate: https://morrisfocus.com/2026/04/17/analilia-mejia-wins-special-election-for-congress-in-new-jerseys-11th-district/ says he lost the 2026-04-16 NJ-11 special election and is expected to face the winner again in November for the full term; https://www.insidernj.com/randolph-mayor-joe-hathaway-announces-campaign-for-nj-11/ shows his candidacy",
+        "On the Record (0 appearances)",
+        "campaign site https://www.joehathawayforcongress.com and its platform page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Joe_Hathaway (fetch returned no usable page text)",
+        "blocked: https://morristowngreen.com/wp-content/uploads/2026/04/Hathaway-statement-on-election-results.pdf (text could not be read)",
+        "New Jersey Monitor, New Jersey Globe debate and announcement articles, Insider NJ: searched text for voter ID / SAVE / citizenship terms; nothing",
+        "three web searches on name plus voter ID / SAVE Act / citizenship: nothing by him on the subject",
+        "not reviewed: debate video(s) from the April 2026 special election"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:12:12.193Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

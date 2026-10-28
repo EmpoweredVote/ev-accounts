@@ -72,8 +72,79 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "df73b0e013c16a038ceef6a80c6434ebc5a93950544c47ac58d02adfa36858d3",
+      "kind": "own-words",
+      "url": "https://sykes.house.gov/media/press-releases/rep-sykes-votes-no-on-bill-that-would-make-it-harder-for-americans-to-vote",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "“The SAVE America Act doesn’t protect democracy. It shrinks it. It tells millions of women, older Americans, and people with disabilities that their voices do not matter. Every eligible voter deserves a clear, fair path to the ballot, not political games dressed up as security,” Rep. Sykes said.",
+      "note": "Quote in her office's release on her vote against H.R. 7296 (SAVE America Act), which the release says would require proof of citizenship to register and impose stricter photo ID rules.",
+      "subjects": [
+        "SAVE Act",
+        "documentary proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:25.418Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93750f4b209e47268029ef1ca52a484240d70a4ceff239179ec6eda32bc145e5",
+      "kind": "own-words",
+      "url": "https://sykes.house.gov/media/press-releases/rep-sykes-votes-no-on-bill-that-would-make-it-harder-for-americans-to-vote",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Rep. Sykes, vice chair of the Democratic Women’s Caucus, said millions of women could be blocked from voting because their names don’t exactly match their birth certificates or citizenship papers.",
+      "note": "Release states her concern in third person; issued by her office, on H.R. 7296.",
+      "subjects": [
+        "SAVE Act",
+        "documentary proof of citizenship to register",
+        "name-matching problems for women who changed names"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:25.418Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec56af5f602b458752513b0ed8ae0acc8bd8f396ed0b2154797b7fb43bac4025",
+      "kind": "record",
+      "url": "https://sykes.house.gov/media/press-releases/rep-sykes-votes-no-on-bill-that-would-make-it-harder-for-americans-to-vote",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7296-2026",
+      "act": "nay",
+      "note": "Her office's release says she voted no on H.R. 7296 (SAVE America Act); the release says the bill passed the House. Bill number is as shown on the page; official roll call not fetched.",
+      "subjects": [
+        "SAVE Act",
+        "documentary proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:25.418Z",
         "method": "webfetch"
       }
     }
@@ -105,6 +176,33 @@
       "found": 0,
       "at": "2026-10-22T22:01:01.880Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register",
+        "SAVE Act",
+        "changing registration in person",
+        "name-matching problems for women who changed names",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her official House site: press release of 2026-02-11 on H.R. 7296 (SAVE America Act)",
+        "her official House site: video page 'The WTF Show: The SAVE Act' (page shows no date, so not saved as a finding; text says the SAVE Act puts burdens on women whose names differ from birth certificates)",
+        "Ballotpedia (confirms sitting member for Ohio 13th, on the 2026-11-03 ballot)",
+        "one web search on her name plus SAVE Act and voter ID words",
+        "her official-site press-release list page 1 only checked for voting items; nothing further on the subject",
+        "bill pages and roll calls not searched: her House roll calls already on file",
+        "no campaign-site or debate pages reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-27T19:12:25.418Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

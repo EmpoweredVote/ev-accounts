@@ -1,0 +1,226 @@
+{
+  "politician_id": "a9c06c0b-b8a0-4a2c-9762-ab1f4bea97fb",
+  "findings": [
+    {
+      "id": "de0722c8aafa76b95076a2a175e8a4d85497312bf355ac5b4abd3cf251376311",
+      "kind": "own-words",
+      "url": "https://www.fox5atlanta.com/news/georgia-election-voter-primaries-law-legislation",
+      "date": "2026-02-26",
+      "date_precision": "day",
+      "passage": "\"We are looking to put teeth into the voter challenge law,\" said Dolezal, \"So, that people that are registered to vote right now at UPS stores, empty buildings, parking lots, under overpasses, finally get off these voting rolls.\"",
+      "note": "Quoted by FOX 5 Atlanta about his SB 568; he says the bill would strengthen the voter-challenge law so that people registered at non-residential addresses are removed from the rolls. Article date is its publication date.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:33:45.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Dolezal'), linked to GREG DOLEZAL (district 27) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Dolezal'), linked to GREG DOLEZAL (district 27) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Dolezal'), linked to GREG DOLEZAL (district 27) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Dolezal'), linked to Dolezal, Greg (district 27) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Dolezal'), linked to GREG DOLEZAL (district 27) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0f558f7ff8b0d4877bef7206bb9bc5f25539977482795594c64d4417e474d38",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)",
+      "note": "Named as co sponsor ('Dolezal of the 27th') on the official bill text; linked to Dolezal, Greg via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21f0f0a3f0a07afe089d07e0ac9e8d19dfc02b46d219c31aac2988cebe2774c2",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "GA-SR-838-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced (LC 47 4076); a later Senate Rules or committee version was not found.",
+      "note": "Named as prime sponsor ('Dolezal of the 27th') on the official bill text; linked to Greg Dolezal via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record: not run (the standing rules for this session forbid running repo scripts); not reviewed",
+        "Ballotpedia: blocked (https://ballotpedia.org/Greg_Dolezal returned an empty page)",
+        "legiplex.com legislation list: blocked (403)",
+        "legiscan.com bill pages: blocked (403)",
+        "open.pluralpolicy.com bill pages: not found (404)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)",
+        "web searches: name plus subject words, news and press-release sites; no own words on the subject found",
+        "house-press.com / senatepress.net targeted searches: no results on the subject",
+        "Wikipedia: confirms Georgia Senate District 27 and the 2026 general-election race for lieutenant governor",
+        "https://www.atlantanewsfirst.com/2026/04/12/greg-dolezal-goes-record-bid-georgia-lieutenant-governor: hand-marked ballots, nothing on ID or citizenship",
+        "branch.vote profile: third-party summary only, not his words",
+        "campaign site https://www.gregdolezal.com/: election-integrity text seen only through a summarising fetch and a direct download was refused by the session, so not copied; not reviewed",
+        "blocked: https://www.democracydocket.com/news-alerts/greg-dolezal-gop-nominee-georgia-submitted-fake-mail-ballot-applications/ (403)",
+        "https://1819news.com article fetched: about Alabama candidates, not him"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:33:45.879Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.409Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -233,6 +233,111 @@
         "fetched_at": "2026-10-23T00:11:39.773Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "51d81a4fbc9bedec9543441652bc3a706cb8553c0f4fc82892e8b0a9e81c22ab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "House second reading, HB 958 Election Law Changes (RCS H-758, 66 to 47)",
+      "note": "Voted No on second reading in the House. Roll call shown on the official bill page. HB 958, Election Law Changes (2025-26 session). Per the official bill digest it, among other things: requires a statement of US citizenship (under penalty of perjury) on voter registration applications; requires covered military and overseas voters to send a copy of the photo ID used for in-person voting with the ballot; and extends the deadline for a voter to show ID after a provisional ballot to noon on the fifth business day after the election. It was ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID with a military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "early voting and absentee rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.955Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "786bddb03787c4263c6c0e4ae8019c92b35243d31edd62aef8ca0733fdd230ba",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Motion to concur in the Senate committee substitute, HB 958 (RCS H-801, 62 to 47)",
+      "note": "Voted No on the motion to concur. Roll call shown on the official bill page. HB 958, Election Law Changes (2025-26 session). Per the official bill digest it, among other things: requires a statement of US citizenship (under penalty of perjury) on voter registration applications; requires covered military and overseas voters to send a copy of the photo ID used for in-person voting with the ballot; and extends the deadline for a voter to show ID after a provisional ballot to noon on the fifth business day after the election. It was ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID with a military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "early voting and absentee rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.955Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f808c8be3bfaf8e7481e39605c65ae163d61a3465238ed2606526f2ed64eda61",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-H-278-2025",
+      "act": "sponsor",
+      "note": "Listed among the additional (not primary) sponsors of HB 278, Protect Military Votes. The filed text would write into law that a covered military-overseas voter need not include a photocopy of ID or an ID affidavit when sending a ballot. Last action: sent to the House Rules committee on 2025-03-05.",
+      "subjects": [
+        "ID with a military-overseas ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.955Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -264,6 +369,34 @@
       "found": 10,
       "at": "2026-10-23T00:11:39.773Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or military-overseas ballot",
+        "provisional ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/ page and https://www.ncleg.gov/Members/Biography/H/742 show Zack Hawkins as the sitting member for House District 31, on the 2026-11-03 general-election ballot (his primary was cancelled)",
+        "On the Record (0 meetings)",
+        "legislature member pages: https://www.ncleg.gov/Members/IntroducedBills/H/742 (sponsored and co-sponsored bills) and https://www.ncleg.gov/Members/Votes/H/742 (votes), 2025-26 session reviewed; HB 958 bill page and official digest read",
+        "campaign site: nothing found (no working campaign site reached)",
+        "House caucus member page (nchousedems.com): bio only, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "news searches on name plus voter ID words and on HB 958 coverage (NC Newsline, Carolina Journal, WECT, Daily Signal, ACLU of NC page): none of these quote him on the subject",
+        "not reviewed: floor debate video for HB 958"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:11:25.955Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

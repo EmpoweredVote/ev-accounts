@@ -23,6 +23,50 @@
         "fetched_at": "2026-10-22T23:21:40.822Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a69a8c7a9834e27ddd06f3b9aeceee0eb2f7cf3193ffa5c5a065a8ba83b387a9",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S534/PrimarySponsorSummary",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-S-534-2025",
+      "act": "sponsor",
+      "note": "S.534, An Act upgrading elections infrastructure, improving voting access, and reducing municipal burden. Sponsor summary lists: permanent mail voting, a central results website, Secretary of the Commonwealth sending mail ballots, a 7-day registration deadline, a June state primary, early voting hours by population, and a 7-day mail ballot return window. The summary page lists no ID requirement.",
+      "subjects": [
+        "mail voting access",
+        "election law modernization"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:45.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e0c3aace6182685e8aa5b711afa6da9c2754271d502cc3fca7de596f7011a7b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/S484",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-S-484-2021",
+      "act": "sponsor",
+      "note": "S.484, An Act modernizing access and improving laws in voting, filed by Rausch with co-petitioners; referred to the Election Laws committee. The page shows no bill text or ID provision.",
+      "subjects": [
+        "election law modernization",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:45.240Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -49,6 +93,30 @@
       "found": 1,
       "at": "2026-10-22T23:21:40.822Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID or no ID",
+        "mail-ballot ID or application",
+        "proof of citizenship to register",
+        "voter-roll upkeep",
+        "election law modernization"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site beccarausch.com/vote and /issues (mail voting and election reform pages; nothing on ID)",
+        "Ballotpedia (confirms on the 2026 general-election ballot)",
+        "malegislature.gov bill pages S.534 (194th) and S.484 (192nd)",
+        "ballotready.org profile (nothing on ID)",
+        "one news search on name plus voter ID (no voter ID bill found)",
+        "not reviewed: Senate roll call PDFs for the 2022 election-law floor votes (subject of amendments not confirmed)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:55:45.240Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

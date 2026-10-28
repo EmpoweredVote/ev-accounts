@@ -1,6 +1,81 @@
 {
   "politician_id": "6677282e-b4fa-4d2c-ba8e-d29f9eeb2c79",
-  "findings": [],
+  "findings": [
+    {
+      "id": "eedae6cd6345ca9a7aac5355d8e60d88ee5d1e28a6f86f3f1809c9c14d849211",
+      "kind": "own-words",
+      "url": "https://indyweek.com/news/elections/candidate-questionnaire-allison-dahle-ncga-house/",
+      "date": "2020-10-13",
+      "date_precision": "day",
+      "passage": "This law cannot be repealed by the General Assembly because it was passed as a Constitutional Amendment.  I  would like to see it go back on the ballot to be repealed by the people or be struck down by the courts.",
+      "note": "Her written answer to the Indy Week candidate questionnaire (question 15, asking if she would support repealing the state voter ID law after the 2020 election). Page publish date used.",
+      "subjects": [
+        "voter ID at the polls",
+        "repeal of the state photo ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:56:21.630Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "468361eaca74acd8d1fc0c3c110b501521419bd1b4cab8593c142a323d6961d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "HB 1246, Safeguarding Elections Act (listed sponsor; not the primary sponsor)",
+      "note": "She is a listed sponsor of HB 1246, filed 2026-07-30 and sent to the Rules committee 2026-08-04. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf) adds to the list of election offences: \"For any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process.\" It also bars certain observer conduct and protects voters' personal data.",
+      "subjects": [
+        "documentary proof of citizenship",
+        "demanding citizenship documents from voters",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:56:21.630Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +100,30 @@
       "found": 0,
       "at": "2026-10-22T23:49:18.418Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "demanding citizenship documents from voters",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://ballotpedia.org/Allison_Dahle and https://www.ncleg.gov/Members/Biography/H/740 (sitting North Carolina House member, on the 2026 general ballot)",
+        "legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/740: reviewed; one bill on the subject (HB 1246)",
+        "bill page and text for HB 1246 (ncleg.gov); texts of HB 691 and HB 1240 checked: nothing on ID or citizenship proof",
+        "campaign site legislative history https://www.allisonforhouse.com/legislative-history: reviewed; its election bills (HB 605 voter-rights notices; 2020 absentee-request bill) did not touch ID or citizenship proof",
+        "Indy Week 2020 candidate questionnaire: one answer on the voter ID law",
+        "Ballotpedia: nothing on the subject",
+        "congress.gov: not applicable. Roll-call votes page https://www.ncleg.gov/Members/Votes/H/740 not reviewed (no voter-ID vote identified)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T13:56:21.630Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

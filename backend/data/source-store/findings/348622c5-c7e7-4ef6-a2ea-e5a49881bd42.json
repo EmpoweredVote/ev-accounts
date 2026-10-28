@@ -8,17 +8,19 @@
       "date": "2026-08-11",
       "date_precision": "day",
       "passage": "Every eligible citizen should be able to make their voices heard in our elections. In rural communities, that means protecting mail-in voting and fighting back against unnecessary barriers that make it difficult for people to exercise their Constitutional right to vote.",
-      "note": "Campaign issues page, section 'Protect Voting Rights' (under 'Tackling Corruption and Holding Washington Accountable'). Date is the page block's recorded update time, not a dated speech. Says nothing about photo ID, proof of citizenship or a no-ID fallback. Mentions protecting mail-in voting and 'unnecessary barriers'.",
+      "note": "Campaign issues page, Protect Voting Rights section (last updated 2026-08-11 per the page data). Its listed goals are to protect mail-in voting and to ensure election security while standing up to attacks on Arizona's election infrastructure. It does not name voter ID or proof of citizenship.",
       "subjects": [
         "mail-in voting",
-        "barriers to voting in rural communities"
+        "barriers to voting in rural communities",
+        "barriers to voting",
+        "election security"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T21:44:36.739Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:44:21.968Z",
         "method": "webfetch"
       }
     },
@@ -71,6 +73,29 @@
       "found": 2,
       "at": "2026-10-22T21:44:36.739Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act / SAVE America Act)",
+        "voter ID at the polls",
+        "mail-in voting",
+        "election security and election integrity in general",
+        "ID for tribal and rural voters"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Jonathan_Nez (on the 2026 general-election ballot for AZ-2 after the primary)",
+        "On the Record (0 meetings)",
+        "campaign site jonathannezforaz.com: issues page (Protect Voting Rights) and news page",
+        "Navajo Times 2026-07-09: article is cut off at the paywall, and the only Nez words that it shows are on prices, so no quote saved from it",
+        "KJZZ 2019-10-02: reports his testimony on mail access and transport, in a reporter's words, so not saved as his own words",
+        "KNAU 2026-04-03 and KJZZ 2026-04-01 SAVE America Act stories: his name does not appear, nothing on the subject",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:44:21.968Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

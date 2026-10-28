@@ -1,6 +1,37 @@
 {
   "politician_id": "e469d4ca-dcc0-4e2a-8cd2-d8e7bed54a3b",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +59,30 @@
       "found": 0,
       "at": "2026-10-22T22:55:24.359Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: sitting Indiana House District 13 member, advanced from the 2026-05-05 primary and is on the 2026 general ballot (Ballotpedia: https://ballotpedia.org/Matt_Commons)",
+        "On the Record (0 meetings)",
+        "Indiana House caucus member page and its press-release list through October 2026: nothing on the subject (https://www.indianahouserepublicans.com/members/general/matt-commons/)",
+        "caucus release on the 2026 new laws: nothing on the subject",
+        "campaign site home and issues page: nothing on the subject (https://www.commonsforstatehouse.com/issues)",
+        "Ballotpedia: nothing on the subject",
+        "news searches on his name with election, citizenship and ID words: nothing tying him to such a bill",
+        "not reviewed: iga.in.gov bill sponsorship pages (page needs a script to load; roll calls for IN-SB-10-2025 are already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:04:03.487Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

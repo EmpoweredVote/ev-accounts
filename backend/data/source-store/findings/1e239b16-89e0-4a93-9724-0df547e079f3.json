@@ -22,6 +22,36 @@
         "fetched_at": "2026-10-22T22:20:14.103Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
     }
   ],
   "searches": [
@@ -48,6 +78,30 @@
       "found": 1,
       "at": "2026-10-22T22:20:14.103Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter registration requirements",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady page (confirms he is a candidate for Indiana House District 18 in the 2026 general election)",
+        "House caucus press release of 2023-10-04 on the voter registration deadline (describes registration requirements, driver's license or state ID, and citizenship, in his name; not saved as a finding because the only complete quotable sentence carries a party letter in its byline, so the caller may re-read it)",
+        "blocked: https://ballotpedia.org/David_Abbott_(Indiana) (page text came back empty)",
+        "not reviewed: Indiana House member page (404 at the guessed URL), no campaign site found",
+        "Plural Policy page for SB 10 (404), so sponsor list for SB 10 not confirmed",
+        "iga.in.gov not searched, as the brief says votes are on file",
+        "two news searches on name plus subject words (nothing by him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:36:47.186Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

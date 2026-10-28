@@ -1,6 +1,37 @@
 {
   "politician_id": "4a12bdcb-e722-426e-b2e7-338acac23f40",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +56,31 @@
       "found": 0,
       "at": "2026-10-22T22:29:58.319Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Mike_Andrade (confirms he is the District 12 incumbent, on the 2026-11-03 general ballot after the 2026-05-05 primary; nothing on the subject)",
+        "campaign site https://www.mikeandrade.com (nothing on the subject; /issues returns 404)",
+        "blocked: https://indianahousedemocrats.org/members/Mike-Andrade (404)",
+        "not reviewed: https://iga.in.gov (the site is a script-driven app that returned no readable text)",
+        "bluevoterguide.org and ballotready.org candidate pages (nothing on the subject)",
+        "news searches on his name plus voter ID, mail ballot, proof of citizenship and election integrity (nothing by or quoting him)",
+        "news search on his name plus SB 10 student ID ban (nothing by or quoting him)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:56:09.709Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

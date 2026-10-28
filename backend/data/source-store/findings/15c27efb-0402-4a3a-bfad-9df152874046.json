@@ -73,6 +73,32 @@
       "found": 1,
       "at": "2026-10-22T22:59:43.106Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/TFB1 (confirms Representative from Pittsfield; her filed bill H.76 is about deceptive election communications, not proof of identity)",
+        "Ballotpedia https://ballotpedia.org/Tricia_Farley-Bouvier (on the 2026 general-election ballot, 2nd Berkshire District; nothing on the subject)",
+        "legislature bill search for voter identification bills https://malegislature.gov/Bills/Search?SearchTerms=voter+identification (lists voter ID bills; her name was not found as a filer on this results page)",
+        "legislature roll-call page https://malegislature.gov/Bills/192/H4359/RollCall (amendment 7 rejected 32 to 126 on 2022-01-27; page does not say what the amendment is about, and her vote is already on file, so not re-collected)",
+        "news search (1): nothing by her on the subject",
+        "blocked: https://www.triciafb.com/ (no page returned)",
+        "blocked: https://www.nepr.net/tag/tricia-farley-bouvier (connection refused)",
+        "not reviewed: Wikipedia and ontheissues (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:05:53.075Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

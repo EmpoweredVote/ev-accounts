@@ -61,19 +61,179 @@
       "date_precision": "day",
       "instrument_id": "NC-S-715-2025",
       "act": "sponsor",
-      "note": "Listed as a co-sponsor (not primary) of Senate Bill 715, Student Voter ID Grant Program/CCs. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/Senate/HTML/S715v0.html) appropriates $500,000 for grants of up to $20,000 to community colleges to produce student ID cards that can be used to vote in person under G.S. 163-166.16, and directs the State Board of Elections to review community college applications to approve student IDs as photo ID. Referred to the Appropriations/Base Budget committee.",
+      "note": "She is a listed co-sponsor (not primary) of Senate Bill 715, Student Voter ID Grant Program/CCs, which would fund community colleges up to $20,000 each to make student ID cards usable for in-person voting under G.S. 163-166.16. Last action: re-referred to Appropriations/Base Budget on 3/26/2025.",
       "subjects": [
         "voter ID at the polls",
         "student ID accepted as voter photo ID",
-        "help for voters to get acceptable ID"
+        "help for voters to get acceptable ID",
+        "student ID cards used as voter ID",
+        "free or low-cost voter ID"
       ],
       "topic_keys": [
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "source-collector",
-        "fetched_at": "2026-10-22T23:33:53.555Z",
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "422c7517e708ae55bd0c58c78e29b6a605fac59184dce3c5af1881b891a4027d",
+      "kind": "own-words",
+      "url": "https://www.tuesdayforumcharlotte.org/wp-content/uploads/2018/07/180703Waddell1.pdf",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "passage": "Voter ID laws are strategies to prevent communities of color from having access to ballots and participating in this democratic process.",
+      "note": "Senate office press release (sent 2018-06-28) giving her floor comments on House Bill 1092, a constitutional amendment requiring photo ID to vote. She also says it burdens seniors and that more than 300,000 registered voters in North Carolina do not have a photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8de9376b5eb559f7f4b79740da01d1100cea4403eb3bdbc990e076091ef958cc",
+      "kind": "own-words",
+      "url": "https://www.tuesdayforumcharlotte.org/wp-content/uploads/2018/07/180703Waddell1.pdf",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "passage": "Seniors with disabilities find accessibility at polls difficult, and when asked to show their IDs, they feel disenfranchised.",
+      "note": "Same release; she also says retired seniors who stopped driving are unlikely to renew a driver's license and, if their ID is expired, cannot register to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "ID needed to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b114c516b6380630ed14e59c5a04588d341c3f58c9c882b2f09218893061a6d",
+      "kind": "record",
+      "url": "https://www.tuesdayforumcharlotte.org/wp-content/uploads/2018/07/180703Waddell1.pdf",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "note": "Her office's release states: Senator Waddell voted against House Bill 1092, the constitutional amendment requiring photo ID for in-person voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97b2ccd755bf8f847dc2544d7950a501ce4ae1add26b13ca2b5b84b6f90ec413",
+      "kind": "own-words",
+      "url": "https://www.tuesdayforumcharlotte.org/wp-content/uploads/2018/06/180626Waddell1.pdf",
+      "date": "2018-06-22",
+      "date_precision": "day",
+      "passage": "It is important that measures in our voting process remain accessible to all citizens in North Carolina.",
+      "note": "Press release in her name, sent 2018-06-22, on the proposed photo-ID amendment (HB 1092); she says she opposes hindrance to the voting process already in existence.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43a81490064d06a7825ab1b086b94559e60791b6c44486e42492710c1b4a1018",
+      "kind": "own-words",
+      "url": "https://www.carolinajournal.com/voter-id-amendment-closer-to-approval-early-voting-extended/",
+      "date": "2018-06-29",
+      "date_precision": "day",
+      "passage": "Voter ID laws are strategies — that’s what it seems like it is — to prevent communities of color from having access to ballots, and participating in this democratic process,",
+      "note": "Carolina Journal quotes her on the photo-ID amendment; the passage is the outlet's quote of her, ending with a comma before the attribution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbbe22bd6bf368678b350902a98d33c4f498f1a88e5b9f055461539eccb44fdf",
+      "kind": "own-words",
+      "url": "https://www.tuesdayforumcharlotte.org/wp-content/uploads/2018/12/181218Waddell2.pdf",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "passage": "This law does not create adequate fail-safe mechanisms to protect the right of every eligible North Carolinian to vote.",
+      "note": "Senate office release on the Senate vote to override the governor's veto of SB 824 (voter ID implementation); she also says the bill risks keeping voters from exercising their right. The same release says she voted against SB 824.",
+      "subjects": [
+        "voter ID at the polls",
+        "implementation of voter ID law",
+        "voters without ID (fail-safe)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:00.155Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
       }
     }
   ],
@@ -101,6 +261,31 @@
       "found": 1,
       "at": "2026-10-22T23:33:53.555Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "implementation of voter ID law",
+        "student ID cards used as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "https://webservices.ncleg.gov/ViewDocSiteFile/105274 (unofficial Senate candidate list updated 2026-03-25: she is listed as incumbent for District 40 on the 2026 general election ballot)",
+        "her Senate office press releases archived by Tuesday Forum Charlotte (June 2018 and December 2018 releases; 2023 and 2024 newsletters on this site are summaries by staff, not her words, and are not saved)",
+        "Carolina Journal report of 2018-06-29",
+        "NC General Assembly bill page SB 715 (co-sponsor list)",
+        "On the Record (0 appearances)",
+        "not reviewed: her campaign site and her roll-call votes on bills after 2018 (not fetched)",
+        "not reviewed: Ballotpedia (page returned no content to the fetch tool earlier in the session)"
+      ],
+      "found": 7,
+      "at": "2026-10-27T17:07:00.155Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

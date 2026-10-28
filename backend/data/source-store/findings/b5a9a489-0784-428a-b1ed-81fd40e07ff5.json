@@ -1,6 +1,37 @@
 {
   "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +56,33 @@
       "found": 0,
       "at": "2026-10-22T22:48:44.495Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for first-time registrants",
+        "proof of citizenship to register or vote",
+        "voter-roll checks against state records",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Joanna_King shows her as Indiana House District 49, on the 2026-11-03 general-election ballot after advancing from the 2026-05-05 primary",
+        "On the Record (0 appearances)",
+        "campaign site https://votejoannaking.com: nothing on the subject",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/joanna-king: bio and news releases, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "BillTrack50 vote list https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/25540: shows votes on redistricting, ranked-choice voting and immigration bills; none on ID or citizenship to vote; fetch tool summarised the page so nothing was copied",
+        "two web searches on her name with election words and one on HB 1264 (2024): no article names her on the subject",
+        "blocked: https://indianacapitalchronicle.com/2024/01/18/election-security-bill-with-citizenship-credit-agency-data-provisions-moves-to-house-floor/ (bot check)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/joanna_king_49 (page loads no content without scripts); her sponsorships and her House roll-call vote on HB 1264 (2024) were not reachable: not reviewed: https://iga.in.gov/legislative/2024/bills/house/1264",
+        "not reviewed: her social media posts"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:12:27.756Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

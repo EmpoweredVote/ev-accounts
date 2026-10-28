@@ -52,6 +52,30 @@
       "found": 0,
       "at": "2026-10-22T23:00:35.350Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "voting access and election bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings, searched with city Revere)",
+        "Ballotpedia https://ballotpedia.org/Jessica_Giannino (confirms Massachusetts House 16th Suffolk District incumbent who advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot; nothing on the subject)",
+        "legislature bill page https://malegislature.gov/Bills/192/H5328 (her Revere voting-precincts bill, not about ID)",
+        "legislature member profile page https://malegislature.gov/Legislators/Profile/JAG1: nothing on the subject",
+        "bill sponsorships on the subject: none found; the roll-call vote on H.4359 amendment 7 is already on file",
+        "campaign site: no separate site found",
+        "news and web search on name plus voter ID, VOTES Act, voting rights: nothing on the subject in her own words"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:34:48.093Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

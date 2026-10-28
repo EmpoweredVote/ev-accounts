@@ -106,6 +106,49 @@
         "fetched_at": "2026-10-22T22:43:16.737Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ff0906e3db5b21e5234e12e8557090330388b2e7eb2d354ad703a967fa74c83a",
+      "kind": "own-words",
+      "url": "https://gregballard.com/greg-ballards-plan-to-safeguard-indiana-elections/",
+      "date": "2026-09-09",
+      "date_precision": "day",
+      "passage": "The office will produce a professional training curriculum — video modules and printed materials, customized to the specific voting systems used across Indiana's counties — covering the issues that come up over and over: acceptable voter ID, provisional ballots, electioneering rules, chain-of-custody paperwork, and keeping lines moving without cutting corners.",
+      "note": "Campaign plan page for county clerk and poll worker training. It lists acceptable voter ID and provisional ballots as training topics. It does not say what the ID rule should be.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID or provisional ballots",
+        "poll worker training"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:48.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f75f9e5891320f2933f93e41148790a294859f3e63f492c7dd09c31564efcbc",
+      "kind": "own-words",
+      "url": "https://indypolitics.org/?p=20454",
+      "date": "2026-09-04",
+      "date_precision": "day",
+      "passage": "“I’m very open about the fact that I think states should maintain their own data,” Ballard said. “I didn’t like it when our voter data went up to the federal government. I’m not a fan of that at all. I think states should be running their own elections and make sure they do it right.”",
+      "note": "Quoted in an IndyPolitics.Org interview piece, answering questions about a White House executive order and federal involvement in elections. He says states should keep their own voter data. The date is the article date shown on the page.",
+      "subjects": [
+        "voter-roll data sharing with the federal government",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:48.692Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -135,6 +178,29 @@
       "found": 5,
       "at": "2026-10-22T22:43:16.737Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voters without ID or provisional ballots",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "In scope: news reports (search results from Indiana Capital Chronicle and WNDU, WNDU page fetched) show him certified for the 2026 Indiana Secretary of State ballot on a new party label; the WNDU page https://www.wndu.com/2026/08/05/independent-indiana-secretary-state-candidate-greg-ballard-wants-open-up-states-election-system/ confirms he is the former Indianapolis mayor running for that office (positive control)",
+        "On the Record (0 appearances, extract script run with name)",
+        "campaign site https://gregballard.com: home page, plan page, election integrity act page and election-safeguard plan page reviewed",
+        "Ballotpedia https://ballotpedia.org/Greg_Ballard_ returned no usable person page; not reviewed further",
+        "news interview https://indypolitics.org/?p=20454",
+        "blocked: https://indianacapitalchronicle.com/2026/03/04/former-gop-mayor/ (browser check page)",
+        "web search on name plus voter ID, citizenship, mail ballots, voter rolls: no statement of his on voter ID or citizenship requirements found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:31:48.692Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

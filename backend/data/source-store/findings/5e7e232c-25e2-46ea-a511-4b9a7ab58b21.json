@@ -104,6 +104,28 @@
         "fetched_at": "2026-10-22T22:37:29.597Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7ea5d58de022b08cf38ddc5a5c406fb7f351f98051fc86bc3dadd3f80bd7c4a5",
+      "kind": "own-words",
+      "url": "https://www.ipm.org/2025-02-06/senate-republicans-advance-bill-to-ban-use-of-student-ids-when-voting",
+      "date": "2025-02-06",
+      "date_precision": "day",
+      "passage": "“Senate Bill 10 is not about securing elections — it’s about choosing who gets to participate in those elections,” Ford said.",
+      "note": "Direct quote of him in an Indiana Public Media story on the Senate vote on SB 10, which bars student IDs as voter ID. The story also says he called low voter turnout the real problem.",
+      "subjects": [
+        "college or student ID as voter ID",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:11:43.757Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -133,6 +155,33 @@
       "found": 5,
       "at": "2026-10-22T22:37:29.597Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "college or student ID as voter ID",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting Senate District 29 member, term ends 2026, not seeking re-election to it; on the 2026-11-03 ballot for U.S. House, Indiana 5th District)",
+        "Indiana Public Media story of 2025-02-06 on SB 10 (quotes him)",
+        "two web searches on his name plus voter ID, SAVE Act and student ID words",
+        "blocked: campaign site addresses guessed (jdfordforindiana.com, jdfordforcongress.com, jdford.com, fordforindiana.com) returned no page; the real campaign site was not found",
+        "nothing on the subject: Indiana Capital Chronicle stories of 2025-01-28 and 2025-04-08 do not quote him",
+        "no statement on the SAVE Act or proof of citizenship found",
+        "his bill pages and roll calls not searched: Indiana roll calls already on file"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:11:43.757Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

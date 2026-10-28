@@ -21,11 +21,66 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.562Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "5d77a94cdd71e60c3f37b8122250219b2c2b932171a2525c549d5d46279e15aa",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "motion": "Listed among the Senate authors of SB 16 (proof of citizenship to register to vote)",
+      "note": "The bill page lists Adam Hinojosa in the Author field with Hughes and 18 other senators. The bill caption: 'Relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof and the procedures for the counting of those ballots; creating criminal offenses.' The date is the bill's filing date (the page does not show when each author was added). The existing vote on 2025-04-01 is already on file.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited ballot for voters without proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:33:41.662Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: https://senate.texas.gov/member.php?d=27 (Senator Adam Hinojosa, District 27, elected 2024); not up for election in 2026 (seat reported as up in 2028), no primary lost, so kept in scope as a sitting official",
+        "On the Record (0 appearances)",
+        "Senate press room (https://senate.texas.gov/pressroom.php?d=27): release titles cover property tax, school choice, water, Ten Commandments posters; nothing on the subject",
+        "Texas Legislature Online SB 16 (2025) bill history and action pages: saved the author listing; SB 1483 (a search hit) is a hotel-tax bill, not on the subject",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Texas_State_Senate_District_27 (only seen in search results)",
+        "legiplex: blocked: https://app.legiplex.com/profile/adam-hinojosa-3048/tx/legislatures/2025/89r/legislation/page/9 (not fetched, known to return 403)",
+        "news sites on SB 16 (Texas Tribune, Votebeat, KSAT): fetched; no quote of him found",
+        "two news/web searches on his name plus the subject words: no statement of his own on the subject found",
+        "senatorhinojosa.com in search results belongs to a different senator (Juan Hinojosa); not used",
+        "his own Senate floor remarks or interviews on SB 16: not reviewed (no transcript or video found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:33:41.662Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

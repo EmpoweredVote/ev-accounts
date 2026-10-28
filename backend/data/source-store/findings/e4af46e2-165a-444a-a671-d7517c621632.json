@@ -74,6 +74,57 @@
         "fetched_at": "2026-10-23T00:13:25.126Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "f808c8be3bfaf8e7481e39605c65ae163d61a3465238ed2606526f2ed64eda61",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-H-278-2025",
+      "act": "sponsor",
+      "note": "Listed among the co-sponsors of House Bill 278, Protect Military Votes. The bill would write into state law that a military-overseas voter returning a ballot does not have to include a photocopy of photo ID or an ID affidavit.",
+      "subjects": [
+        "photo ID with mail or military-overseas ballots",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:00.432Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -103,6 +154,28 @@
       "found": 3,
       "at": "2026-10-23T00:13:25.126Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or military-overseas ballots",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting House member, on the 2026 general election list; nothing on the subject)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/743 (member page returned no usable text)",
+        "campaign site: not reviewed, none located",
+        "legislature bill pages: H278 (2025) fetched, co-sponsor list and bill text",
+        "news search on name plus voter ID words: no quotes of her found",
+        "Indy Week candidate questionnaires 2020 and 2022: nothing on the subject in the fetched text"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:06:00.432Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

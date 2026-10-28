@@ -1,6 +1,37 @@
 {
   "politician_id": "3b65fd20-b548-4b7a-89b6-49ea5757218c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -30,6 +61,30 @@
       "found": 0,
       "at": "2026-10-22T22:26:04.720Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting and voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: state senator for District 16, term to 2028 (https://ballotpedia.org/Justin_Busch and https://www.indianasenaterepublicans.com/busch)",
+        "On the Record (0 meetings)",
+        "official Senate caucus page: nothing on the subject",
+        "Ballotpedia: nothing on the subject in the profile",
+        "blocked: https://iga.in.gov (bill and vote pages load as an empty app shell; no roll call could be read, so no vote on the 2024 or 2025 citizenship and voter-roll bills was confirmed)",
+        "ACLU Indiana 2024 scorecard: blocked: https://www.aclu-in.org/sites/default/files/field_documents/2024_legislative_scorecard.pdf (returned an HTML page, not a PDF)",
+        "IBJ story on the 2024 bill: does not name him",
+        "BallotReady profile: not reviewed, only seen in search results",
+        "three news searches on name plus subject words: no statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:16.128Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -26,6 +26,30 @@
       "found": 0,
       "at": "2026-10-22T23:04:32.172Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/AMS3 names her as the sitting state representative for the 11th Middlesex district, 194th General Court",
+        "On the Record (0 appearances; extract script found no meetings)",
+        "malegislature.gov profile, sponsored bills list: 18 bills on housing, climate, tree wardens, policing age and similar; nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/AMS3/Cosponsored (cosponsored list loads by script; not readable in static page), so co-sponsorships not reviewed",
+        "Ballotpedia page https://ballotpedia.org/Amy_Mah_Sangiolo fetched; no voter ID or election-integrity positions found in readable text",
+        "Wikipedia (lead only): office and district confirmed; nothing on the subject",
+        "news search on her name plus voting/ID words: nothing naming her on the subject",
+        "no official campaign or issue page located; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:19:21.601Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

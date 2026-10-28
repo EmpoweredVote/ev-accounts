@@ -53,6 +53,27 @@
       "found": 0,
       "at": "2026-10-22T23:06:47.486Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voting-rights bills in general (checked for any ID or citizenship content)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting 2nd Suffolk state senator on the 2026 general-election ballot; nothing on the subject)",
+        "MA Legislature bill pages S7 (2025-2026 voting-rights constitutional amendment), S524 (voting rights restoration), nothing on ID or citizenship",
+        "two news searches on name plus subject words (nothing on the subject)",
+        "campaign site: not reviewed, none found",
+        "official legislator profile: not reviewed, profile URL pattern returned 404"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:09.646Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

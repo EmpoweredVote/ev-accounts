@@ -50,6 +50,35 @@
         "fetched_at": "2026-10-23T00:16:32.458Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
     }
   ],
   "searches": [
@@ -82,6 +111,30 @@
       "found": 2,
       "at": "2026-10-23T00:16:32.458Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "state ID cards",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia shows incumbent, House District 115, on the 2026 general-election ballot; NC General Assembly list https://www.ncleg.gov/Members/MemberList/H names her",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC General Assembly bill list for the member, 2025 session, all bills incl. cosponsored: https://library.ncleg.gov/Members/IntroducedBills/H/809/2025/false",
+        "NC bill page and text for H475 (2025 session), State ID Cards for High School Students: she is a cosponsor, but the text never mentions voting, so not saved",
+        "Ballotpedia: nothing on the subject",
+        "one web search on her name plus voter ID: nothing in her own words",
+        "not reviewed: official House caucus page, campaign site and social media (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:21:16.293Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

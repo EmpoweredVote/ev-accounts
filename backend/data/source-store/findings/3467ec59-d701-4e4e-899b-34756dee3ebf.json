@@ -43,6 +43,27 @@
         "fetched_at": "2026-10-22T22:02:38.486Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0883d3be2fe91d5958e3d9c07dbb0d39031307d17d13c5bb54beaf27f55e20bb",
+      "kind": "own-words",
+      "url": "https://kozyckiforcongress.com/how-to-vote.html",
+      "date": "2026-10-27",
+      "date_precision": "day",
+      "passage": "Georgia requires a valid photo ID to vote in person.",
+      "note": "Voter-information page on his campaign site, listing accepted photo IDs and absentee-ballot steps (no excuse needed). It states the current Georgia rule; it does not say whether he wants the rule kept or changed. Date is the day fetched because the page is undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "absentee ballot request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:36.294Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -71,6 +92,27 @@
       "found": 2,
       "at": "2026-10-22T22:02:38.486Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or request steps for an absentee ballot",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "election integrity and voting access in general"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Tony_Kozycki (on the 2026 general-election ballot for GA-7 after winning the June 16, 2026 primary runoff; the page carries a Candidate Connection survey with nothing on this subject)",
+        "On the Record (0 meetings)",
+        "campaign site kozyckiforcongress.com: home, issues page (nothing on this subject) and how-to-vote page",
+        "Forsyth News launch story: blocked, paywalled (https://www.forsythnews.com/news/politics/immigration-attorney-tony-kozycki-launches-bid-for-georgias-7th-district-seat/)",
+        "two web searches on his name plus voter ID, SAVE Act and election integrity: nothing from him",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:43:36.294Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

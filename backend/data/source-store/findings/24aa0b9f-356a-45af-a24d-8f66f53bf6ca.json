@@ -78,6 +78,29 @@
       "found": 2,
       "at": "2026-10-22T23:39:16.929Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting NC House member, District 107, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "NC House member party caucus page (priorities listed are not about this subject; nothing on the subject)",
+        "NC General Assembly introduced-bills and votes pages (titles scanned; no voter ID, citizenship or mail-ballot ID bill identified; one military-voting bill title was not opened)",
+        "web search: name plus voter ID (nothing on the subject)",
+        "not reviewed: https://www.wunc.org/post/mark-walker-first-out-2022-senate-gate (audio podcast where she was a guest; page text does not say what she said)",
+        "not reviewed: social media accounts and personal campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:33:34.678Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

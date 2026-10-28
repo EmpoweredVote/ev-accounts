@@ -27,6 +27,31 @@
       "found": 0,
       "at": "2026-10-22T23:05:46.747Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identified as the sitting state representative for the Barnstable, Dukes and Nantucket district via https://malegislature.gov/Legislators/Profile/TWM1",
+        "legislature profile and legislation list https://malegislature.gov/Legislators/Profile/TWM1/Legislation: his only elections bill is H.806 (campaign spending disclosure for town meeting articles), not on the subject, so not saved",
+        "official site and campaign site: none found; nothing on the subject",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/Thomas_Moakley",
+        "news search (1): nothing by him on the subject",
+        "recorded floor votes on identity or citizenship bills not reviewed: no vote page surfaced"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:16.201Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

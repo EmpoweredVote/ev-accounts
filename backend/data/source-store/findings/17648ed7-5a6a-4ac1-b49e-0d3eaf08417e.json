@@ -22,11 +22,57 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
-        "fetched_at": "2026-10-21T03:40:10.561Z",
-        "method": "curl"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "901c94e8b95544abc7adb95ef3915f8c95778ea335ba1824ab234253b366eae4",
+      "kind": "own-words",
+      "url": "https://freebeacon.com/?p=1498095",
+      "date": "2021-07-20",
+      "date_precision": "day",
+      "passage": "“I want my daughter to grow up in a world where the US is still a democracy, where every single vote counts and is valued, and every American has the ability to cast that vote,” she said.",
+      "note": "Her statement on the 2021 special-session election bill (which the outlet says includes voter identification provisions), quoted by the Washington Free Beacon while she was in Washington, D.C. Outlet quoted her; original statement not reached.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 election bill SB 1 (voter ID provisions)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:29:40.472Z",
+        "method": "webfetch"
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (in scope: incumbent on the 2026 general-election ballot for Texas House District 45; her survey answers there do not touch the subject)",
+        "campaign site erinzwiener.com (nothing on the subject in fetched text)",
+        "two news searches on name plus voter ID / proof-of-citizenship words",
+        "not reviewed: capitol.texas.gov House roll calls for 2025 SB 16 / SJR 37 (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:29:40.472Z",
+      "by": "source-collector-wave2"
+    }
+  ]
 }

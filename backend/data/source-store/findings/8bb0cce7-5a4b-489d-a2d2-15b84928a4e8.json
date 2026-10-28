@@ -43,6 +43,28 @@
         "fetched_at": "2026-10-22T22:15:16.312Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4d4aeec1d57f649340db7501c78a2213396cc70393f7933a313bf552e3bcfa03",
+      "kind": "own-words",
+      "url": "https://www.kohforcongress.com/issues/issue-2",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I am in favor of the Freedom to Vote Act, which would expand early voting access, mandate mail-in ballots in every state, implement automatic voter registration as well as same-day voter registration and online voter registration, and make sure that voting lines do not last longer than 30 minutes, among many other protections.",
+      "note": "From the Protecting Democracy section of his campaign issues pages. The page has no date; it is the 2026 campaign site. It names no ID or citizenship rule. It is saved as a related voting-access statement. The page also says: We need to make voting easier, not harder in America.",
+      "subjects": [
+        "voting access and registration rules",
+        "mail ballots",
+        "Freedom to Vote Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:32:16.786Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -73,6 +95,33 @@
       "found": 2,
       "at": "2026-10-22T22:15:16.312Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "voter registration rules",
+        "voting access"
+      ],
+      "places": [
+        "scope: on the 2026 general-election ballot for Massachusetts' 6th District and advanced from the 2026-09-01 primary, per https://ballotpedia.org/Dan_Koh",
+        "On the Record (0 appearances found)",
+        "campaign site issues page and its Protecting Democracy page (https://www.kohforcongress.com/issues/issue-2): voting access items only, no ID or citizenship item; the page is undated",
+        "campaign site press list (https://www.kohforcongress.com/news): no release on the subject seen",
+        "Ballotpedia profile and Candidate Connection survey: nothing on proof of identity or citizenship",
+        "the older dankoh.com address is a parked domain, nothing there",
+        "one web search on name plus voter ID / SAVE America Act: nothing on him",
+        "no legislative record (not a sitting official)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:32:16.786Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

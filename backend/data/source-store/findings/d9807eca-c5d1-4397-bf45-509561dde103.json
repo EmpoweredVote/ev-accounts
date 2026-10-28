@@ -35,6 +35,31 @@
       "found": 0,
       "at": "2026-10-22T21:37:34.969Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity check: Paul Nolley is a candidate for Illinois 16th District; the PBS forum page https://www.pbs.org/video/2026-illinois-16th-congressional-district-candidate-forum-oxtg6b/ dated 2026-10-07 shows him as one of two general-election candidates",
+        "On the Record (0 meetings)",
+        "PBS/WTVP and League of Women Voters forum 2026-10-07, full caption transcript read: nothing on the subject",
+        "campaign site https://www.nolleyforcongress.com/ (home and issues page): nothing on the subject",
+        "NPR Illinois 2025-05-12 profile: nothing on the subject",
+        "blocked: https://ballotpedia.org/Paul_Nolley (page returned empty)",
+        "news and web search on name plus voter ID and SAVE Act: nothing on the subject",
+        "congress.gov: not applicable, never held federal office"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:03.771Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

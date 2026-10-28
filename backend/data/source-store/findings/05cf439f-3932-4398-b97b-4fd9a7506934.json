@@ -72,9 +72,13 @@
         "voting-rights"
       ],
       "provenance": {
-        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-        "fetched_at": "2026-10-21T01:52:20.308Z",
-        "method": "webfetch"
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
       }
     },
     {
@@ -119,6 +123,72 @@
         "fetched_at": "2026-10-22T22:19:30.604Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0b8d987f758fc8d45a9d4b9a52cbc998c3c1ceca145d7aa9bdd2e8ba5d114830",
+      "kind": "own-words",
+      "url": "https://casten.house.gov/media/press-releases/casten-bush-introduce-ids-for-an-inclusive-democracy-act-to-create-a-no-cost-and-optional-federal-photo-id-for-americans",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "passage": "“12% of Americans lack a drivers license and 11% Americans lack any form of government issued ID,” said Congressman Casten.",
+      "note": "From his press release introducing the IDs for an Inclusive Democracy Act with a House colleague. He states how many Americans lack a license or any government ID, as the reason for a free federal photo ID. The release also lists 'Vote in 35 states' among things people without ID cannot do.",
+      "subjects": [
+        "federal photo ID free of cost",
+        "cost and access of government ID",
+        "photo ID to vote in person"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:03:40.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "200e73238ba9b422921995ed34ae3f8ea4a7108fe895d0e1f4ea3a23a31ab0c9",
+      "kind": "own-words",
+      "url": "https://casten.house.gov/media/press-releases/casten-bush-introduce-ids-for-an-inclusive-democracy-act-to-create-a-no-cost-and-optional-federal-photo-id-for-americans",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "passage": "The IDs for an Inclusive Democracy Act creates no-cost federal photo IDs accessible to any American over the age of 14, and gives folks that important first step to provide for themselves.",
+      "note": "Casten's quoted description of the bill: a free federal photo ID for anyone over 14.",
+      "subjects": [
+        "federal photo ID free of cost",
+        "cost and access of government ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:03:40.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcd671c09c39d6ea4b36709bd1d1aa63fc1d91ebf4ec25a36cc95233fe1d59b7",
+      "kind": "record",
+      "url": "https://casten.house.gov/media/press-releases/casten-bush-introduce-ids-for-an-inclusive-democracy-act-to-create-a-no-cost-and-optional-federal-photo-id-for-americans",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "IDs for an Inclusive Democracy Act, introduced by Casten and Rep. Cori Bush",
+      "note": "He introduced a bill to create a free, optional federal photo ID card, issued through the Social Security Administration and the Postal Service, usable in all 50 states. Bill number not given on the release page.",
+      "subjects": [
+        "federal photo ID free of cost",
+        "cost and access of government ID",
+        "photo ID to vote in person"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:03:40.838Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -150,6 +220,29 @@
       "found": 2,
       "at": "2026-10-22T22:19:30.604Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "federal photo ID free of cost",
+        "photo ID to vote in person",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "cost and access of government ID",
+        "voter suppression and election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia profile (confirms he is on the 2026 general-election ballot for IL-6)",
+        "Ballotpedia 2026 candidate survey (answers cover other topics; the voting passage I saw is older and does not address ID, so nothing on the subject)",
+        "official House site press releases (list page fetched; the site search page is blocked: https://casten.house.gov/search?keys=SAVE+Act, 403)",
+        "official House site releases on H.R. 1, John Lewis Voting Rights Advancement Act and democracy reform package (nothing on ID or citizenship proof)",
+        "news search for his name with SAVE Act (no statement of his own found)",
+        "blocked: https://www.congress.gov (not fetched, to be checked by the vote on file)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T17:03:40.838Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

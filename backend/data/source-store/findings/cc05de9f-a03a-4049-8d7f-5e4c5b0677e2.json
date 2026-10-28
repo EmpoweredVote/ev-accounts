@@ -1,6 +1,57 @@
 {
   "politician_id": "cc05de9f-a03a-4049-8d7f-5e4c5b0677e2",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "a4eab7f6d325c2ae3b786a5f1ff4625f3e189b444b0771237d3b3a2618a902dc",
+      "kind": "own-words",
+      "url": "https://www.zimmermanforindiana.com/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Making our elections more secure",
+      "note": "Bullet on his campaign site under 'Getting Results for us!' listing election security among his accomplishments. The page is a short list line, not a full sentence, and gives no detail on ID or citizenship rules. The page text refers to voting 'on or before Tuesday, November 5th', so it appears to date from the 2024 campaign.",
+      "subjects": [
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:52:15.980Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +78,29 @@
       "found": 0,
       "at": "2026-10-22T22:52:50.174Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election security and voter-roll checks"
+      ],
+      "places": [
+        "In scope: Indiana House District 67, on the 2026 general-election ballot (https://ballotpedia.org/Alex_Zimmerman)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.zimmermanforindiana.com/ (one line on election security)",
+        "official House caucus member page and press-release list (nothing on voter ID or citizenship; two 2023 election reminders are written in others' words)",
+        "Ballotpedia (no candidate survey, nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_alex_zimmerman_1 (page loads only by script, bill list not readable)",
+        "news search on name plus subject words (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:52:15.980Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

@@ -1,6 +1,37 @@
 {
   "politician_id": "c473defa-6492-4cf7-a7c1-5f9a836ab6ac",
-  "findings": [],
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -29,6 +60,32 @@
       "found": 0,
       "at": "2026-10-22T22:50:55.685Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID and student ID rules",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this member)",
+        "Ballotpedia (confirms Indiana Senate District 43 incumbent on the 2026 general-election ballot; page has nothing on the subject)",
+        "Indiana Senate caucus member page https://www.indianasenaterepublicans.com/maxwell and its news list: nothing on the subject",
+        "campaign site: none found (www.randymaxwellforindiana.com did not respond)",
+        "BallotReady and Vote Smart candidate pages: nothing on the subject",
+        "Indiana roll calls for SB 10 (2025): not searched, already on file per brief",
+        "iga.in.gov bill documents: blocked: https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/SB0010.01.INTR.pdf (returns a small HTML stub, so author list for SB 10 not read)",
+        "news searches on his name plus the subject words (3 searches): no own words found",
+        "ontheissues.org and vote411: not used"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:32:42.489Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

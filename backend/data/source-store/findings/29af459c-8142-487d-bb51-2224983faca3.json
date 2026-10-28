@@ -1,6 +1,30 @@
 {
   "politician_id": "29af459c-8142-487d-bb51-2224983faca3",
-  "findings": [],
+  "findings": [
+    {
+      "id": "efaf19cd5544027fd3b47f92705231a91efaca9a21c9d619058ddc4a71325601",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall30.pdf",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4000-2025",
+      "act": "nay",
+      "motion": "H. 4000 on adoption of amendment #556 (roll call No. 30; 25 yeas, 132 nays)",
+      "note": "Roll call page lists Badger with N (a no vote) on amendment 556, which was rejected. The Beacon Hill Roll Call report for April 28 - May 2, 2025 (https://wcatwakefield.org/4282-2) describes a rejected H 4000 amendment on the same day, 25 yeas, which would require voters to present valid identification such as a driver's license or passport and have the Secretary of State create a free photo ID card program for voting; it reports 131 no votes where the official roll call shows 132, and the roll call page itself does not state the amendment's subject.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:20:32.328Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +50,30 @@
       "found": 0,
       "at": "2026-10-22T23:03:42.112Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voting",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature member page https://malegislature.gov/Legislators/Profile/MLB1 (positive control: Representative, 1st Plymouth district; no sponsored bill on voting)",
+        "Wikipedia https://en.wikipedia.org/wiki/Michelle_Badger (incumbent, elected 2024; 2026 candidacy status not stated)",
+        "Ballotpedia: blocked, page returned empty to the fetch tool",
+        "campaign site https://badgerforplymouth.com/ (script-rendered page, text not readable; nothing on the subject reached)",
+        "House roll call 30 on H.4000 amendment 556 (record saved)",
+        "news and bill searches for name plus voter ID (no own words found)",
+        "not reviewed: text of H.4000 amendment 556 (malegislature page for it returned no text), so the link between amendment 556 and voter ID rests on the Beacon Hill Roll Call report"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:20:32.328Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

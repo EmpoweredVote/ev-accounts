@@ -1,0 +1,352 @@
+{
+  "politician_id": "8925add1-8c61-4d2d-92e8-4314df644187",
+  "findings": [
+    {
+      "id": "06442d47a9495bd9ff652d2c8a6b043191ccb0bcf833fefb6bef0931b5853c2e",
+      "kind": "own-words",
+      "url": "https://virdellfortexas.com/legislative-priorities/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In the 87th legislative session, our representatives voted to reduce voter fraud penalties from a felony to a misdemeanor, Wes will fight to increase penalties for voter fraud. If we can’t trust our elections to be accurate, we can’t trust our government at all.",
+      "note": "Campaign site, Election Reform section (page is undated). He says he would work to raise penalties for voter fraud and ties trust in government to accurate elections.",
+      "subjects": [
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "675e8cb64201bc1b3cdc4c0d853114e9b03d08c18ccdc7fa933b63fd8f5adfe8",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1312, proof of citizenship to verify eligibility to vote",
+      "note": "Signed on as a coauthor on 2025-04-08 to a bill requiring a person to submit proof of citizenship to verify eligibility to vote. Referred to the Elections committee 2025-03-10; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af88ed234ad38e07270038c8a6725b7b161f7abdca630e6b3e5f455facb4945d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1670, proof of citizenship to verify eligibility to vote",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill requiring a person to submit proof of citizenship to verify eligibility to vote. Referred to the Elections committee 2025-03-12; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0656b217ffb711513909fd4963e5c6730db6eafcedf7f2723e22c0aacea43a8",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5337, proof of citizenship to register to vote; criminal offenses",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The Elections committee reported it favorably as substituted 2025-04-28; last action 2025-05-07, committee report sent to Calendars.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6446ed91e8ac4f727493eb3db6e1e2c0d0cf4955da5d1db9be0987de21e94b4e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2245",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2245-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 2245, verification of citizenship status of registered voters",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on verifying the citizenship status of registered voters. Referred to the Elections committee 2025-03-14; no later action shown.",
+      "subjects": [
+        "verifying citizenship of registered voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad915c508c3be3ffb94d2f4c718f62b942825b80858c717f6c2f85f01a4e0738",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3936",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3936-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 3936, cancelling all voter registrations after each presidential election",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill cancelling all voter registrations after each presidential election and changing registration and maintenance procedures. Referred to the Elections committee 2025-03-27; no later action shown.",
+      "subjects": [
+        "cancelling voter registrations"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e32a47a83a98260eabfce957f274c58969967afcc168ce4d69680cb89e786cc",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB989",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-989-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 989, processes to address election irregularities; civil penalty",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on processes to address election irregularities, with a civil penalty. Referred to the Elections committee 2025-03-06; no later action shown.",
+      "subjects": [
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "463958013e7de6c891fc87ca050e1bf189cf99921430ac5a9dc0e353ad57c9bf",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5138",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5138-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5138, attorney general duty to prosecute election-law offenses",
+      "note": "Signed on as a coauthor on 2025-04-23 to a bill on the attorney general's duty to prosecute criminal offenses under the state's election laws. Latest action shown: 2025-05-29, Senate appoints conferees.",
+      "subjects": [
+        "who prosecutes election crimes",
+        "election integrity and voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:21:54.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7a8a3697f5071a8e5f66f1f42e278218d21bf233b2fd8fe3168184467cb701f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-1312-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7d684180fc8b633e2cd604cdc42837e97d594e3375c3e01f630ef7549c66e15",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-1670-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "976ca9d6116b8d50e94e54f6734c073466dcd79b534822c467c9e7620e911d20",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-892-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.517Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register to vote",
+        "verifying citizenship of registered voters",
+        "voter ID at the polls",
+        "election integrity and voter fraud penalties",
+        "cancelling voter registrations",
+        "who prosecutes election crimes"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia (confirms House District 53 seat and a place on the 2026 general-election ballot; his 2026 and 2024 candidate surveys not completed; 2020 survey has nothing on this subject)",
+        "campaign site virdellfortexas.com (home page and legislative priorities page)",
+        "Texas Legislature Online author and coauthor pages and histories for 89th-session bills HB 1312, HB 1670, HB 5337, HB 2245, HB 3936, HB 989, HB 5138",
+        "news and bill-tracker search on name plus subject words (2 web searches); no news story quoting him on the subject found",
+        "not reviewed: his social media posts (not reachable by this tool)",
+        "not reviewed: house.texas.gov member page (member id not found; list page gave no link)",
+        "nothing on the subject: floor votes (none on file; the proof-of-citizenship bills he signed on to never reached a floor vote)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:21:54.166Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:55:41.517Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

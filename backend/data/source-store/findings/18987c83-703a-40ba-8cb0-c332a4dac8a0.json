@@ -1,0 +1,111 @@
+{
+  "politician_id": "18987c83-703a-40ba-8cb0-c332a4dac8a0",
+  "findings": [
+    {
+      "id": "cc859a4769e9793458d742890584a8e62e8076d4c9f2efe70fc07d2bd1dcff13",
+      "kind": "own-words",
+      "url": "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-30/candidates/derrick-mccollum",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "was ashamed to see Georgia bungle the 2020 election",
+      "note": "Quoted on a Branch voter-guide page, which also quotes him: \"will work with my fellow conservatives to restore trust and security in our elections.\" The page gives no date or original source for the words. General election-security statement; no mention of ID or citizenship proof.",
+      "subjects": [
+        "election security and trust in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:36:57.449Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0866a5dc5d3dc61eabf3cf932fd4983f975dad02a51ccd87ebd03d8140acf926",
+      "kind": "record",
+      "url": "https://branch.vote/races/2024-georgia-primary-election-ga-state-state-representative-ga-house-30-r/candidates/derrick-mccollum",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "GA-HR-780-2024",
+      "act": "sponsor",
+      "note": "A Branch voter-guide page says he co-sponsored a state constitutional amendment (\"Only citizens of the United States have right to vote in elections in Georgia; clarify\", HR 780) so that only U.S. citizens can vote, and says it did not get enough votes to reach the ballot. Not confirmed on the official legislature site, which could not be reached; the page does not name the bill number, which comes from a search result.",
+      "subjects": [
+        "citizen-only voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:36:57.449Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('McCollum'), linked to Derrick William McCollum (district 30) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizen-only voting amendment",
+        "election security and trust in general"
+      ],
+      "places": [
+        "status check: Ballotpedia shows Georgia House District 30, in office since 2023, passed the 2026-05-19 primary unopposed in his own primary and is on the 2026-11-03 ballot (https://ballotpedia.org/Derrick_McCollum)",
+        "On the Record (0 meetings found by extract-otr)",
+        "campaign site derrickmccollum.com: blocked: https://derrickmccollum.com/?p=308 (HTTP 403 challenge page); blocked: https://derrickmccollum.com/?p=268; blocked: https://derrickmccollum.com/?s=voter",
+        "Georgia legislature bill pages: blocked: https://www.legis.ga.gov/legislation/67226 (page loads only through a script; API returned 401); did not serve in 2021, so no SB 202 vote",
+        "bill trackers: blocked: https://legiscan.com/GA/bill/HR780/2023 (403); blocked: https://legiscan.com/GA/votes/HR780/2023 (403); blocked: https://app.legiplex.com/profile/derrick-mccollum-1821/ga/legislatures/2025/2025-r/legislation (403); https://www.billsponsor.com/politicians/9327/derrick-mccollum lists no bills",
+        "Ballotpedia page: nothing on the subject",
+        "Branch voter guide pages (2024 and 2026): two statements on the subject, saved",
+        "news: Yahoo/Gainesville Times 2022 candidate Q&A: nothing on the subject; House press page for his committee assignments: nothing on the subject",
+        "news searches on name plus voter ID, citizenship, election bill (3 searches): no own-words statement on voter ID found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:36:57.449Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

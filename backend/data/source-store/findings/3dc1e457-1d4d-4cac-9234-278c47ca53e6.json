@@ -26,6 +26,30 @@
       "found": 0,
       "at": "2026-10-22T22:13:42.090Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: he is on the 2026-11-03 general ballot for Nevada's 3rd District (https://ballotpedia.org/Marty_O%27Donnell_(Nevada))",
+        "On the Record (0 meetings)",
+        "campaign site https://martyforcongress.vote/ pages priorities, about, about-marty: nothing on the subject (priorities cover economy, borders, opportunity, spending)",
+        "Ballotpedia: nothing on the subject",
+        "BallotReady: not reviewed",
+        "Nevada Independent candidate comparison (https://thenevadaindependent.com/article/where-do-the-candidates-for-nevadas-most-competitive-house-seat-stand-on-the-issues/): the only citizenship-proof passage is about another candidate, nothing from him",
+        "blocked: https://www.thedailyreview.com/ap/washington/marty-odonnell-wins-republican-nomination-for-u-s-house-in-nevadas-3rd-congressional-district/article_87d30763-00fc-5a7c-b731-cd6c5d729c41.html (429)",
+        "congress.gov: not applicable, never a member of Congress",
+        "two news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:28.353Z",
+      "by": "source-collector-rerun"
     }
   ]
 }

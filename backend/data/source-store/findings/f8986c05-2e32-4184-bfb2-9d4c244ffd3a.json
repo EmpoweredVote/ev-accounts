@@ -25,6 +25,28 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "69ff090013084b99e14a3b3f17627719d7a7dc4e6aafbf7f8b44777888f54ca8",
+      "kind": "own-words",
+      "url": "https://www.dansenama.com/on-the-issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Massachusetts has fairly regressive voting laws, where we should be a leader in making voting accessible to all voters. Voting is of course critical to a vibrant democracy. I support Same Day Voter Registration and lowering the voting age to 16 or 17 in municipal elections. We need to get big money out of politics, which is why I support legislation to restore publicly-financed elections for Massachusetts elections. I also common sense electoral reforms including Ranked Choice Voting in our primaries, general elections and in municipal elections, voting by mail, and increasing investments in our election systems, to prevent fraud or the hacking of election machines in every Massachusetts community.",
+      "note": "Campaign issues page, Election Reform section (page is undated; it refers to his 2024 win). Says nothing about ID or citizenship. Backs same-day registration, voting by mail, and election-system investment to prevent fraud or hacking.",
+      "subjects": [
+        "same-day registration and voting access",
+        "voting by mail",
+        "election security and fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:27:37.956Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -50,6 +72,27 @@
       "found": 0,
       "at": "2026-10-22T23:29:32.874Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "same-day registration and voting access",
+        "election security and fraud"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms 37th Middlesex District seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "campaign site https://www.dansenama.com/ (home, about, on-the-issues)",
+        "news and bill-sponsor search (2 searches): no bill or quote from him on ID or citizenship",
+        "not reviewed: malegislature.gov sponsor lists (search results gave no cosponsor list for him)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:27:37.956Z",
+      "by": "source-collector-rerun"
     }
   ]
 }
