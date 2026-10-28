@@ -34,12 +34,29 @@
     "full_name": "Cherelle L. Parker",
     "topic_key": "public-safety-approach",
     "value": 4,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 4,
+      "season": 2
+    },
     "verified_sources": [
       "https://www.phila.gov/media/20240411131032/PPD-100-Day-Report.pdf"
     ],
     "failed_urls": []
+  },
+  {
+    "full_name": "Cherelle L. Parker",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://whyy.org/articles/philadelphia-ice-out-legislation/"
+    ],
+    "failed_urls": [
+      "https://phila.legistar.com/ViewReport.ashx?M=R&N=Text&GID=30&ID=6748689&GUID=3EFAB4C4-9042-4E15-A893-C77BAB13F0E9&G=A5947DFE-5A17-435B-A57D-5F0923C2343D&Title=Legislation+Text"
+    ]
   }
 ]
