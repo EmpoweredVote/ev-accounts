@@ -1,0 +1,78 @@
+[
+  {
+    "full_name": "Xavier Becerra",
+    "topic_key": "healthcare",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "value-change"
+    ],
+    "displayed_value": {
+      "value": 0,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://calmatters.org/california-voter-guide-2026/governor/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Xavier Becerra",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "value-change"
+    ],
+    "displayed_value": {
+      "value": 0,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://calmatters.org/california-voter-guide-2026/governor/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "growth-and-development",
+    "value": 5,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "value-change"
+    ],
+    "displayed_value": {
+      "value": 0,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://calmatters.org/california-voter-guide-2026/governor/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "trans-athletes",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "value-change"
+    ],
+    "displayed_value": {
+      "value": 0,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://calmatters.org/california-voter-guide-2026/governor/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  }
+]
