@@ -87,6 +87,13 @@ person sits on the escape's rung, even when it states a stricter act such as a c
 everyone"). C-Q4 and DC1 stay topic-scoped to `voting-rights`. Three annexes carry the furthest-act line (the
 Season 3 `education-library-books`, `education-equity-programs` and `voting-rights`); only `voting-rights` has a
 rung that turns on an escape, and D3 already applied there, so no recorded label changes.
+**Clarified 2026-10-27 (still 0.6 — a topic-scoped reading, no new variable or value; rulings by Chris
+Andrews 2026-10-27, H-P1, H-Q3, H-Q4, DH1–DH3):** on `voting-rights` (Season 3 revision 5, CA_0334, text
+unchanged), a photo-ID requirement whose own text states no sworn-statement path open to any voter sits at rung 4,
+with or without a cure; exceptions left to later law with none named are no escape; an accepted-ID list is read on
+the bill's printed text. A person with a stated-escape record at 3 and a silent photo-ID record at 4 sits at 3. Read
+it in the Season 3 annex ("Draft H lines") and RULINGS.md "Topic-scoped readings". None of the 57 Season 3 rows
+moves. Decision record: `.planning/research/s3-prep-voting-rights/stage3-h/results.md` (workspace root).
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
