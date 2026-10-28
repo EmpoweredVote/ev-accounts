@@ -306,6 +306,22 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Contrast:** the standing furthest-act rule, under which acts from both sides of the middle in one record are BLANK
   `adjacent-chairs`.
 
+### voting-rights — H-P1, H-Q3, H-Q4 (fallback not stated → rung 4)
+- **Reading:** a photo-ID requirement whose own text states no sworn-statement path open to any voter sits at rung 4,
+  with or without a stated cure. Exceptions left to later law with none named ("which may include exceptions") are no
+  escape (H-Q3). A bill that sets the accepted-ID list is read on its own printed text; a sworn statement in a section
+  it neither prints nor restates is not read in (H-Q4; a cross-reference to another law's challenged-voter procedure
+  is not read in either, DH2). A person with a stated-escape record (3) and a silent photo-ID record (4) sits at 3
+  whatever the dates (H-P1, reading B); a stated polls escape beside a mail-ballot ID record sits at 4 (DH3). Own
+  words rejecting voting without photo ID state the rung 4 act (DH1).
+- **Date and source:** H-P1, H-Q3, H-Q4, DH1–DH3, 2026-10-27, Chris Andrews
+  (`.planning/research/s3-prep-voting-rights/stage2/drafts-h.md` §7, `.planning/research/s3-prep-voting-rights/stage3-h/results.md`,
+  `.planning/research/s3-prep-voting-rights/stage3-h/disputes-H.md`); written into the Season 3 annex
+  (`docs/codebook/annex/season3/voting-rights.md`, "Draft H lines").
+- **Scope:** the Season 3 revision 5 of `voting-rights` only (CA_0334; the text is unchanged, so no new revision).
+- **Contrast:** the codebook rule that the newest evidence governs ("superseded-by-later") still applies where a later
+  record states a different rule; H-P1 reads a silent record as not contradicting a stated escape.
+
 ## How to add a ruling
 
 1. A ruling enters this file only when the runner made it, it is dated, and it applies beyond one topic. A reading
