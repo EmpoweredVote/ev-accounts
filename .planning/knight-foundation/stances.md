@@ -37,6 +37,86 @@ verifier files were resolved to master, which is a strict superset. Charlotte’
 were applied to the queue on 2026-10-06 and **approved the same day** — see the slice 3 section for
 why that sentence used to say they were "awaiting human approval" while nothing had been applied.
 
+## ▶️ THE BACKLOG — 17 cities with NO stances (measured in prod 2026-10-28)
+
+**47 of 287 seated Knight-city officials hold a chair. 240 do not.** Measured against production,
+not read off this tracker: seated people via `office_current_holder` from each city government's
+chambers; a "chair" is a `politician_answers` row with `value <> 0` in a non-draft season. The 287
+reconciles exactly with the 2026-10-02 scope table above.
+
+🔴 **The review queue was checked too, not just this file.** Every Knight-city row in
+`inform.stance_research_review` is `resolved` — nothing is sitting unapproved. The gap is
+unresearched work, not unpublished work.
+
+### Done or part-done (8 cities, 47 people)
+
+| City | Seated | With a chair | Note |
+| --- | --- | --- | --- |
+| San José CA | 11 | **11** | predates this programme |
+| Saint Paul MN | 8 | **8** | slice 3 |
+| Long Beach CA | 13 | 12 | predates this programme; 3 of the 12 are Season 1 only, and Season 1 is CLOSED |
+| Duluth MN | 10 | 9 | slice 3 (Clanaugh 0) |
+| Charlotte NC | 12 | 4 | slice 1 |
+| Bradenton FL | 6 | 1 | slice 2 |
+| Miami FL | 6 | 1 | slice 2 |
+| Detroit MI | 18 | 1 | predates this programme |
+
+### ▶️ OPEN — zero chairs, 17 cities, 203 people
+
+🔴 **ELECTION TIMING DECIDES THE ORDER, NOT SIZE OR ALPHABET.** Researching a council five weeks
+before it turns over seats chairs against people who are about to stop holding the seat. Chairs
+attach to the *person*, so the work is not destroyed — but the Knight purpose is a voter looking up
+who represents them now. **Check the city's next municipal election before opening a slice.**
+
+| City | Seated | Next city election | Open? |
+| --- | --- | --- | --- |
+| Lexington KY | 34 | ⚠ verify | |
+| Philadelphia PA | 25 | ⚠ verify (odd-year city) | |
+| Columbus GA | 16 | ⚠ verify | |
+| Macon-Bibb GA | 15 | ⚠ verify | |
+| Akron OH | 14 | ⚠ verify (odd-year city) | |
+| **Boulder CO** | **8** (not 9 — see below) | 🔴 **2026-11-03, SIX DAYS** | 🔴 **DO NOT OPEN NOW** |
+| Gary IN | 12 | ⚠ verify (odd-year city) | |
+| Fort Wayne IN | 11 | ⚠ verify (odd-year city) | |
+| Aberdeen SD | 9 | ⚠ verify | |
+| Grand Forks ND | 9 | ⚠ verify | |
+| State College PA | 8 | ⚠ verify | |
+| Biloxi MS | 8 | ⚠ verify (2025 municipal → 2029) | |
+| Milledgeville GA | 7 | ⚠ verify | |
+| Wichita KS | 7 | ⚠ verify | |
+| Columbia SC | 7 | ⚠ verify | |
+| Myrtle Beach SC | 7 | ⚠ verify | |
+| Tallahassee FL | 5 | ⚠ verify (even-year city) | slice 2 reached it; it scored 0 |
+
+⚠ **Tallahassee is NOT untouched** — slice 2 covered it and found no seatable chair. Re-opening it
+is a re-research, not a first pass. Read the slice 2 batch before pricing it.
+
+### 🔴 BOULDER — WHY IT IS NOT THE PLACE TO START, AND A DATA DEFECT IT EXPOSED
+
+Measured 2026-10-28, before any research:
+
+1. 🔴 **`Mark Wallach` STILL HOLDS A BOULDER SEAT IN PROD AND HAS NOT SINCE JULY.** He resigned
+   **2026-07-23**, effective immediately, as the lone "no" in an 8–1 vote to pursue FAA grants for
+   Boulder Municipal Airport. `office_terms` carries his term open-ended (`term_end IS NULL`) from
+   2021-11-16. Because he resigned **before Aug. 1**, the city charter keeps the seat **vacant until
+   the 2026-11-03 election** — so this is a real vacancy, not a succession. Fix is
+   `essentials.vacate_office(office_id, '2026-07-24', <source>)`.
+   - ▶ The city's own council page is the detector that caught it: eight members appear three times
+     each in the raw HTML; Wallach appears **once**, in the `alt` text of the December 2025 group
+     photo. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE** — it is exactly
+     as old as the photo, and it outlived the membership list beside it.
+   - ⚠ WebFetch's summary said only that he "does not appear in the Members list". The count that
+     settled it came from raw bytes.
+2. 🔴 **SIX OF NINE BOULDER SEATS ARE ON THE 2026-11-03 BALLOT.** The mayoralty (Brockett running,
+   against five including sitting member **Taishya Adams**) plus **five council seats**, 13
+   candidates, top-five-wins, no RCV. Adams is therefore leaving council whatever happens. Only
+   **Benjamin, Speer and Kaplan** are certain to be seated in December. New members seat in early
+   December (Kaplan's precedent: 2025-12-04).
+3. ⚠ **Boulder now elects in EVEN years.** Do not assume the Colorado odd-year municipal pattern
+   here; it is why a 2025 *and* a 2026 city election both exist.
+
+▶ **Re-open Boulder in December 2026**, against the seated council, and re-measure the roster first.
+
 ## Slice 3 — Duluth and Saint Paul, Minnesota (opened 2026-10-04)
 
 - **18 seated people**: Duluth 9 councilors + Mayor Reinert; Saint Paul 7 councilmembers + Mayor Her.
