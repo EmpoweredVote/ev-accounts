@@ -240,6 +240,31 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
     const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
     expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
   });
+  // 🔴 A SIGNED ORDER SHOUTS ITS OWN HEADING. The PDF heads itself "EXECUTIVE ORDER NO. 7-25" while
+  // prose writes "Executive Order No. 7-25", and extraction runs on the RAW snippet — so without the
+  // /i flag the one line that carries the number is invisible and the finding fires on a row citing
+  // the order itself. That happened on Parker/homelessness-response before the flag was added.
+  it.each([
+    ['Executive Order No. 7-25', 'EXECUTIVE ORDER NO. 7-25'],
+    ['Executive Order No. 7-25', 'Executive Order 7-25'],
+    ['Executive Order 3-25', 'executive order no. 3-25'],
+  ])('executive-order reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
+    const row = { ...good, reasoning: `Signed ${reasoningForm}, which orders 1,000 new shelter beds.` };
+    const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('still flags an executive order the snippets do not name', () => {
+    const row = { ...good, reasoning: 'Signed Executive Order No. 7-25, which orders 1,000 new shelter beds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Executive Order No. 5-25') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
+  // ⚠ NOT SOLVED, PINNED SO IT IS NOT MISTAKEN FOR A BUG LATER: leading zeros are different
+  // identifiers. Philadelphia's index lists "07-25" and the signed order says "7-25".
+  it('treats 07-25 and 7-25 as different orders (leading zeros are not normalized)', () => {
+    const row = { ...good, reasoning: 'Signed Executive Order No. 7-25, which orders 1,000 new shelter beds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Executive Order No. 07-25') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
   it('still flags a Philadelphia bill the snippets do not name', () => {
     const row = { ...good, reasoning: 'Signed Bill #250568, authorising $800 million in H.O.M.E. bonds.' };
     const customEv = [{ ...ev[0], snippet: snippetWith('Bill #250999') }];

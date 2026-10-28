@@ -53,6 +53,14 @@ describe('NAMES_INSTRUMENT — what each widening admits', () => {
     expect(NAMES_INSTRUMENT.test('see H. 12 of the report')).toBe(false);
   });
 
+  it('sees an executive order — the tenth widening', () => {
+    // A mayor's primary instrument. Parker's homelessness-response row is seated on EO 7-25.
+    expect(NAMES_INSTRUMENT.test('signed Executive Order No. 7-25 on 19 December 2025')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('created by Executive Order 3-25')).toBe(true);
+    // Refused: the words are required, so the bare number stays out — the R- form below refuses it too.
+    expect(NAMES_INSTRUMENT.test('the order 7-25 took effect')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('between 7-25 and 8-25 of that year')).toBe(false);
+  });
   it('sees a Philadelphia council bill number — the ninth widening', () => {
     // The ordinance Mayor Parker's housing row is seated on, as phlcouncil.com and Legistar each spell it.
     expect(NAMES_INSTRUMENT.test('Council approved Bill #250568, authorising $800 million in H.O.M.E. bonds')).toBe(true);

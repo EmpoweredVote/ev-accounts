@@ -167,6 +167,16 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // snippet names the very bill the reasoning does. Extracting "250568" alone is identical on both
   // sides. The lookbehind still requires the "Bill" marker, so a bare six-digit number never matches.
   /(?<=\bBill (?:No\.\s?|#))\d{6}\b/,
+  // Executive orders (2026-10-28). Lookbehind again, for the same reason as the Philadelphia bill
+  // above: a city writes "Executive Order No. 7-25" and "Executive Order 7-25" interchangeably, and
+  // keeping the words would canonicalize those to "executiveorderno725" and "executiveorder725".
+  // ⚠ This does NOT normalize leading zeros: "07-25" and "7-25" remain different identifiers, so a
+  // row must spell the order the way the snippet it cites spells it.
+  // Case-INSENSITIVE on purpose: extraction runs on the raw snippet, and a signed order heads itself
+  // "EXECUTIVE ORDER NO. 7-25" in capitals while prose writes "Executive Order 7-25". Without the flag the
+  // heading that carries the number is invisible and instrument-not-cited fires on a row citing the
+  // order itself. Measured on Parker/homelessness-response, 2026-10-28.
+  /(?<=\bExecutive Order (?:No\.\s?)?)\d{1,4}-\d{2}\b/i,
 ];
 
 /** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */
