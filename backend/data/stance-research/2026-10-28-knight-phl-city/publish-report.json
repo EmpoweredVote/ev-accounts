@@ -3,31 +3,43 @@
     "full_name": "Cherelle L. Parker",
     "topic_key": "housing",
     "value": 4,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 4,
+      "season": 2
+    },
     "verified_sources": [
       "https://phlcouncil.com/weekly-report-city-council-gave-final-approval-to-the-new-city-budget-and-h-o-m-e-plan-during-june-12-council-session/",
       "https://www.phila.gov/2025-02-19-mayor-parker-signs-housing-opportunities-made-easy-h-o-m-e-initiative-executive-order/"
     ],
-    "failed_urls": [],
-    "admin_queue_visible": true
+    "failed_urls": []
   },
   {
     "full_name": "Cherelle L. Parker",
     "topic_key": "homelessness-response",
     "value": 2,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://www.phila.gov/2025-12-19-mayor-cherelle-l-parker-details-citywide-progress-and-2026-vision-at-2025-state-of-the-city-event/"
     ],
-    "failed_urls": [],
-    "admin_queue_visible": true
+    "failed_urls": []
+  },
+  {
+    "full_name": "Cherelle L. Parker",
+    "topic_key": "public-safety-approach",
+    "value": 4,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.phila.gov/media/20240411131032/PPD-100-Day-Report.pdf"
+    ],
+    "failed_urls": []
   }
 ]
