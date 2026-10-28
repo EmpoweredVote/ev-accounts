@@ -643,6 +643,51 @@ export async function writeVerifiedStance(args: {
 }
 
 /**
+ * Retire any PENDING review row that an --auto-push has just answered.
+ *
+ * 🔴 WHY IT EXISTS (2026-10-28): the auto-push loop wrote the answer, its context and its
+ * snippets and never touched inform.stance_research_review — only the queue loop writes there.
+ * Run `--apply` first and `--apply --auto-push` second (the ordinary shape of "queue it, look at
+ * it, then publish it") and the pair's queue row stays `pending` with its value already live. 17
+ * rows reached that state across three batches and had to be superseded by hand. A reviewer
+ * opening the queue was being asked to approve what was already published, and nothing in the
+ * code said which rows those were.
+ *
+ * 🔑 MATCHED ON THE VALUE, NOT JUST THE PAIR. A pending row proposing a DIFFERENT chair for the
+ * same (politician, topic, season) is a real disagreement with what was just published — it is a
+ * `value-change` proposal now, and a person still has to see it. Only a row proposing exactly
+ * what was written has been answered by the write.
+ *
+ * Idempotent: a second run supersedes nothing, because the rows are no longer `pending`.
+ *
+ * @returns how many rows were superseded.
+ */
+export async function supersedePublishedReviewRows(args: {
+  politicianId: string; topicId: string; value: number; seasonId?: string; resolvedBy: string | null;
+}, db?: Queryable, opts: { seasonColumn?: boolean } = {}): Promise<number> {
+  const runner: Queryable = db ?? (await import('./db.js')).pool;
+  // season_id is CA_0264's and may not exist yet (OPTIONAL_REVIEW_COLUMNS). Without it the match
+  // is (politician, topic, value) — one season narrower than ideal, never wider, so it can only
+  // fail to supersede a row, never supersede one it should have left alone. `seasonColumn` lets a
+  // caller state it instead of probing, the same way upsertReviewRow takes `ladderColumns`.
+  const hasSeason = opts.seasonColumn ?? (await reviewOptionalColumns()).has('season_id');
+  const scoped = hasSeason && args.seasonId !== undefined;
+  const { rowCount } = await runner.query(
+    `UPDATE inform.stance_research_review
+        SET status = 'superseded', resolved_at = now(), resolved_by = $4,
+            notes = COALESCE(notes || ' | ', '')
+                    || 'Superseded: published by verify-stance-research --auto-push with this same value.'
+      WHERE status = 'pending'
+        AND politician_id = $1 AND topic_id = $2 AND proposed_value = $3
+        ${scoped ? 'AND season_id = $5' : ''}`,
+    scoped
+      ? [args.politicianId, args.topicId, args.value, args.resolvedBy, args.seasonId]
+      : [args.politicianId, args.topicId, args.value, args.resolvedBy],
+  );
+  return rowCount ?? 0;
+}
+
+/**
  * Approval input validation (2026-09-23 polish pass), defence in depth: the route already
  * rejects a shape it doesn't like with a 400, but this function is also reachable directly (a
  * script, a future caller), so a blank/whitespace entry (`['']`) or a non-http(s) string

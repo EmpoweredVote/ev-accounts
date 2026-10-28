@@ -90,6 +90,7 @@ import {
   buildReviewRowForInsert,
   accumulateEvidence,
   upsertReviewRow,
+  supersedePublishedReviewRows,
   reviewOptionalColumns,
   writeVerifiedStance,
   ladderMatches,
@@ -668,6 +669,7 @@ if (!APPLY) {
   let snippetsInserted = 0;
   let reviewed = 0;
   let leftDecided = 0;
+  let superseded = 0;
   const errors: string[] = [];
   // Requirement 1: written-<batch>.json in audit-chair-evidence's shape, for the rows THIS run
   // wrote (auto-push only — a queued row is a proposal, not yet a chair; export-written-ledger.ts
@@ -714,6 +716,13 @@ if (!APPLY) {
         ...(NAMED_SEASON ? { seasonId: season.id } : {}),
       }, c);
       const inserted = await accumulateEvidence(evRows, c, NAMED_SEASON ? { seasonId: season.id } : {});
+      // The pair may already carry a PENDING queue row from an earlier review-only --apply of this
+      // same batch. Retire it in the SAME transaction as the write that answered it, or the queue
+      // keeps asking a person to approve what is already published.
+      superseded += await supersedePublishedReviewRows({
+        politicianId: pid, topicId: tid, value: row.stance.value as number,
+        seasonId: NAMED_SEASON ? season.id : openSeasonId, resolvedBy: EDITOR_ID,
+      }, c);
       await c.query('COMMIT');
       pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted;
       writtenLedgerRows.push({
@@ -800,6 +809,7 @@ if (!APPLY) {
 
   console.log(
     `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
+    + `superseded(queue rows this push answered)=${superseded} `
     + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
     + `stamped=${NAMED_SEASON ? 0 : batchPoliticianIds.length} errors=${errors.length}`,
   );

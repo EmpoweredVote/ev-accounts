@@ -922,3 +922,51 @@ describe('review reads for a blank (CA_0303)', () => {
     expect(String(mockQuery.mock.calls[0][0])).toMatch(/shown_ctx\.season_id = shown\.season_id/);
   });
 });
+
+// 2026-10-28: --auto-push wrote the stance and left its own queue row pending, so the reviewer was
+// asked to approve what was already published. 17 rows reached that state before it was caught.
+describe('supersedePublishedReviewRows — an auto-push retires the queue row it answered', () => {
+  beforeEach(() => mockQuery.mockClear());
+
+  it('matches on the value, so a row proposing a DIFFERENT chair stays pending', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    const [sql, params] = client.query.mock.calls[0];
+    expect(String(sql)).toMatch(/proposed_value\s*=\s*\$3/);
+    expect(params).toEqual(['p', 't', 4, 'e', 's']);
+  });
+
+  it('only ever touches a pending row', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 0 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    expect(String(client.query.mock.calls[0][0])).toMatch(/WHERE\s+status\s*=\s*'pending'/);
+  });
+
+  it('drops the season predicate when CA_0264 has not been applied', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: false },
+    );
+    const [sql, params] = client.query.mock.calls[0];
+    expect(String(sql)).not.toMatch(/season_id/);
+    expect(params).toEqual(['p', 't', 4, 'e']);
+  });
+
+  it('reports how many rows it superseded, and runs on the caller\'s transaction client', async () => {
+    const { supersedePublishedReviewRows } = await import('./researchEvidenceService.js');
+    const client = { query: vi.fn().mockResolvedValue({ rows: [], rowCount: 1 }) };
+    const before = mockQuery.mock.calls.length;
+    const n = await supersedePublishedReviewRows(
+      { politicianId: 'p', topicId: 't', value: 4, seasonId: 's', resolvedBy: 'e' }, client, { seasonColumn: true },
+    );
+    expect(n).toBe(1);
+    expect(mockQuery.mock.calls.length).toBe(before);
+  });
+});
