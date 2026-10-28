@@ -118,8 +118,22 @@
 // Amendment #7" failed as "names no instrument". Admitted: `H.` + 3-5 digits, no space, which is the
 // printed form. `S.` + digits was already admitted. Refused: `H. Smith`, `H. 12` (a spaced short
 // number reads as a section or a page as often as a bill).
+// ⚠ NINTH WIDENING (2026-10-28, Knight Philadelphia slice). PHILADELPHIA numbers its council
+// legislation as a six-digit `Bill No. 250568` / `Bill #250568` — a two-digit year followed by a
+// four-digit sequence — and nothing in this pattern saw it. Mayor Parker’s housing row failed
+// `record-no-instrument` while its reasoning named Bill #250568, the ordinance authorising $800
+// million in H.O.M.E. bonds, read at phlcouncil.com.
+// 🔴 THE CHEAP WAY THROUGH THIS GATE WAS ALREADY OPEN, AND IT IS WORSE. A bare `Ordinance`
+// matches below, so a row could pass by DROPPING the number and keeping the generic word — and a
+// bare `Ordinance` is not identifier-bearing, so stanceGate never checks it against the snippets.
+// Admitting the number makes the gate STRICTER for these rows, not looser: `instrument-not-cited`
+// then has something it can look up.
+// One addition, identifier-bearing:
+//   · `Bill No. <6 digits>` / `Bill #<6 digits>` — the word "Bill", a "No." or "#", and exactly six
+//     digits. Refused: a bare six-digit number (an id, a dollar figure or a zip+4 fragment as often
+//     as a bill) and "Bill 250568" with no marker at all.
 export const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 export const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

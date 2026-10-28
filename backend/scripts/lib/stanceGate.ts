@@ -160,6 +160,13 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /(?<![A-Za-z]\.)\bS\.?\s?\d{1,4}\b/,
   /\bBan of (?:19|20)\d{2}\b/,
   /\bR-\d{1,4}-\d{2}\b/,
+  // Philadelphia (2026-10-28). Matched by LOOKBEHIND so only the six digits are extracted: the city
+  // prints the same bill as "Bill #250568" (phlcouncil.com) and "Bill No. 250568" (Legistar), and
+  // canonicalizeInstrumentId keeps letter runs — so matching the whole phrase would canonicalize
+  // those two to "bill250568" and "billno250568" and raise instrument-not-cited on a row whose
+  // snippet names the very bill the reasoning does. Extracting "250568" alone is identical on both
+  // sides. The lookbehind still requires the "Bill" marker, so a bare six-digit number never matches.
+  /(?<=\bBill (?:No\.\s?|#))\d{6}\b/,
 ];
 
 /** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */

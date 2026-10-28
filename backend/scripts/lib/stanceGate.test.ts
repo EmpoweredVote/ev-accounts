@@ -228,6 +228,23 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
     const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
     expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
   });
+  // Philadelphia prints the SAME bill as "Bill #250568" and "Bill No. 250568". Matching the whole
+  // phrase would canonicalize those to "bill250568" and "billno250568" and raise the finding on a row
+  // whose snippet names the very bill its reasoning does, so only the digits are extracted.
+  it.each([
+    ['Bill #250568', 'Bill No. 250568'],
+    ['Bill No. 250568', 'Bill #250568'],
+    ['Bill No.250568', 'Bill #250568'],
+  ])('Philadelphia reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
+    const row = { ...good, reasoning: `Signed ${reasoningForm}, authorising $800 million in H.O.M.E. bonds.` };
+    const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('still flags a Philadelphia bill the snippets do not name', () => {
+    const row = { ...good, reasoning: 'Signed Bill #250568, authorising $800 million in H.O.M.E. bonds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Bill #250999') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
   it('does not apply to a bare "Act" or "voted yes" — no identifier named, nothing to cross-check', () => {
     const row = { ...good, reasoning: 'Voted YES on the Clean Water Act (2025), which expands protections.' };
     expect(ids(row, { evidence: [{ ...ev[0], snippet: snippetWith('the Clean Water Act') }] })).not.toContain('instrument-not-cited');
