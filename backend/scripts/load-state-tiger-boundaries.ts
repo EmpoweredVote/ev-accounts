@@ -807,6 +807,14 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // essentials.geofence_child_county (outside a transaction; see migration 1696).
   IL: new Set(['place']),
   AK: new Set(['place']),
+  // HI. sldu/sldl ONLY, and deliberately no `place`: Hawaii has NO INCORPORATED PLACES AT
+  // ALL — TIGERweb's Incorporated Places layer returns zero features for state 15, against
+  // 483 for California, so a place load here would import nothing and the empty result
+  // would look like a broken fetch. The four county governments and the City and County of
+  // Honolulu are keyed on `county` (G4020), already present from the national TIGER load.
+  // sldu/sldl are the 2022 reapportionment maps and were absent entirely: production held
+  // 0 of 1,178 G5210 and 0 of 3,065 G5220 rows for Hawaii before this.
+  HI: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
