@@ -90,5 +90,53 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anna Brawley",
+    "topic_key": "growth-and-development",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.alaskasnewssource.com/2026/06/13/mayor-says-property-tax-breaks-are-spurring-new-multi-family-construction-anchorage/",
+      "https://www.adn.com/alaska-news/anchorage/2025/04/10/mayor-lafrance-lays-out-policy-measures-to-push-anchorage-toward-building-10000-homes-in-ten-years"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anna Brawley",
+    "topic_key": "homelessness-response",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.muni.org/Departments/Assembly/PressReleases/Pages/Members-Brawley,-Rivera-Propose-Extension-of-Emergency-Cold-Weather-Shelter-Operations.aspx",
+      "https://www.adn.com/alaska-news/anchorage/2023/09/13/anchorage-assembly-directs-millions-to-health-department-for-winter-homeless-sheltering"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anna Brawley",
+    "topic_key": "housing",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.muni.org/Departments/Mayor/PressReleases/Pages/Three-LaFrance-pro-housing-policies-pass-Assembly.aspx",
+      "https://www.alaskasnewssource.com/2026/06/13/mayor-says-property-tax-breaks-are-spurring-new-multi-family-construction-anchorage/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]
