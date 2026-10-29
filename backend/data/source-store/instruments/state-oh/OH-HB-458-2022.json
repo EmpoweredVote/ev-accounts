@@ -1,41 +1,1139 @@
 {
   "id": "OH-HB-458-2022",
   "scope": "state:oh",
-  "title": "HB 458 (134th GA) (2021-2022 (134th GA)) — In-person photo ID for voting; also absentee/early voting and special election changes (per news)",
+  "title": "Sub. H.B. 458 (134th GA, 2021-2022) — photo ID to vote in person; absent-voting and August special election changes (enrolled; signed 2023-01-06, effective 2023-04-07)",
   "urls": [
-    "https://www.legislature.ohio.gov/legislation/134/hb458 (inaccessible: TLS cert)",
-    "https://www.legislature.ohio.gov/legislation/legislation-documents?id=GA134-HB-458 (inaccessible)",
-    "https://www.fox19.com/2023/04/03/new-ohio-voter-id-law-go-into-effect-friday-everything-you-need-know (fetched)"
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/06_EN/html/ (enrolled text, fetched)",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/ (versions, sponsors, dates; fetched)",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/actions/ (roll calls; fetched)",
+    "https://www.legislature.ohio.gov/legislation/134/hb458 (bill page)",
+    "https://www.legislature.ohio.gov/legislation/134/hb458/votes (votes page)",
+    "https://www.fox19.com/2023/04/03/new-ohio-voter-id-law-go-into-effect-friday-everything-you-need-know (news summary, earlier source)"
   ],
   "version": "enrolled",
-  "operative_text": "Photo ID for in-person voting: will require Ohio voters to use a photo ID card for all elections in-person.\nAccepted IDs: [paraphrase only] Ohio driver's license, state ID, certain interim IDs, U.S. passport or passport card, certain military and VA cards; SS cards, birth certificates, out-of-state licences not accepted\nFree state ID for residents 17+: [paraphrase only]\nMail-in application deadline shortened to 7 days before Election Day: [paraphrase only]\nMail-ballot identification: [paraphrase only; wording unclear in source]\nChanges to absentee and early in-person voting; limits on August special elections: [paraphrase only, per search snippets]\nReligious-objection exemption and provisional ballot for voters lacking ID: [paraphrase only, per search snippet of LSC final analysis]",
+  "operative_text": "Note: Verbatim quotes from the enrolled bill (Sub. H.B. 458, 134th GA, file 06_EN). Words struck through in the enrolled copy (old law being removed) are left out; underlined (new) words are kept. Effective 2023-04-07.\nR.C. 3505.18(A) — at the polls: (A)(1) When an elector appears in a polling place to vote, the elector shall announce to the precinct election officials the elector's full name and current address and provide photo identification. (2) If an elector does not have or is unable to provide photo identification to the precinct election officials, the elector may cast a provisional ballot under section 3505.181 of the Revised Code.\nR.C. 3501.01(AA)(1) — IDs accepted: (AA)(1) \"Photo identification\" means one of the following documents that includes the individual's name and photograph and is not expired: (a) An Ohio driver's license, state identification card, or interim identification form issued by the registrar of motor vehicles or a deputy registrar under Chapter 4506. or 4507. of the Revised Code; (b) A United States passport or passport card; (c) A United States military identification card, Ohio national guard identification card, or United States department of veterans affairs identification card.\nOld non-photo list: The old 3505.18 list (utility bill, bank statement, government check, paycheck or other government document) appears in the enrolled copy only as struck-through text: it is repealed, not accepted.\nR.C. 3505.181(A)(2) — provisional ballot: (2) An individual who does not have or is unable to provide photo identification to the election officials;\nR.C. 3505.181(B)(7) — counting a no-ID provisional ballot: (7)(a) For a provisional ballot to be eligible to be counted when it is cast by an individual who does not have photo identification because the individual has a religious objection to being photographed, the individual shall complete an affidavit of religious objection under section 3505.19 of the Revised Code. ... (b) For a provisional ballot to be eligible to be counted when it is cast by any other individual who does not have or is unable to provide photo identification to the election officials, the individual who cast that ballot, within four days after the day of the election, shall appear at the office of the board of elections and provide photo identification.\nR.C. 3505.183(B)(4)(a)(vi) — not counted: (vi) The individual failed to provide photo identification, to provide the individual's driver's license or state identification card number if the individual provided photo identification in the form of an Ohio driver's license or state identification card or an interim identification form, or to complete an affidavit of religious objection.\nR.C. 3505.19 — sworn statement (religious objection only): (A) An elector who does not have photo identification because the elector has a religious objection to being photographed may complete an affidavit of religious objection in lieu of providing photo identification for the purpose of casting a provisional ballot. Form: I, _______________________ (first and last name of elector), declare under penalty of election falsification that I do not have photo identification because I have a sincere religious objection to being photographed. (D) An affidavit of religious objection is not valid if either of the following apply: (1) The last four digits of the elector's social security number, as provided on the affidavit, are different from the last four digits of the elector's social security number in the statewide voter registration database. (2) The registrar of motor vehicles or a deputy registrar has issued a currently unexpired photo identification to the elector.\nSworn path for other voters: None printed. The provisional-ballot affirmation (R.C. 3505.182) swears to citizenship, age, residence, registration and eligibility; it does not replace photo ID. A voter without ID and without a religious objection must show photo ID at the board within four days or the ballot is not counted.\nR.C. 3509.03(B)(5) — mail-ballot application ID: (5) One of the following: (a) The elector's Ohio driver's license or state identification card number; (b) The last four digits of the elector's social security number; (c) A copy of the elector's photo identification.\nR.C. 4507.50(C) — free state ID: (C) A person seventeen years of age or older may apply to the registrar or a deputy registrar for the issuance to that person of an identification card or a temporary identification card under this section without payment of any fee prescribed in division (B) of this section.\nOther parts (not quoted): Absent-voter application and return deadlines, in-person absent-voting hours, and limits on August special elections (title: 'to modify the law governing voter identification and absent voting and other aspects of the Election Law and to make changes regarding driver's licenses and state identification cards').",
+  "sponsors": [
+    {
+      "name": "Thomas Hall",
+      "role": "prime",
+      "version": "as introduced (00_IN, August special elections only)"
+    },
+    {
+      "name": "Cindy Abrams",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Brian Baldridge",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Adam C. Bird",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Sara P. Carruthers",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Sarah Fowler Arthur",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Mark Fraizer",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Haraz N. Ghanbari",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Marilyn S. John",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Don Jones",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Kris Jordan",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "J. Kyle Koehler",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Jeff LaRe",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Brian E. Lampton",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "P. Scott Lipps",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)",
+      "politician_id": "4932ca8c-39b5-45a9-8376-cbdbb275d86a"
+    },
+    {
+      "name": "Phil Plummer",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Sharon A. Ray",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Craig S. Riedel",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Brian Stewart",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Reggie Stoltzfus",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "D. J. Swearingen",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Shane Wilkin",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Andrew O. Brenner",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Jerry C. Cirino",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Bob D. Hackett",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Frank Hoagland",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "George F. Lang",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Rob McColley",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Bob Peterson",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Bill Reineke",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Kristina D. Roegner",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Mark Romanchuk",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Michael A. Rulli",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    },
+    {
+      "name": "Steve Wilson",
+      "role": "co",
+      "version": "cosponsor list on the enrolled bill record; the record does not say when each joined (the photo-ID text was added in the Senate on 2022-12-13)"
+    }
+  ],
   "single_subject": [],
   "higher_law_duty": "not verified",
   "votes": [
     {
-      "date": "unknown",
+      "date": "2021-12-09",
       "body": "OH House",
-      "motion": "passage (per snippet 'passed the Ohio House 55-32', V-Independent; not fetched)",
+      "motion": "passage (House floor, Sub. H.B. 458 as passed by the House)",
       "kind": "roll-call",
-      "yes": 55,
-      "no": 32,
-      "note": "member names not captured; date as printed: undefined",
-      "members": []
+      "yes": 68,
+      "no": 22,
+      "body_size": 99,
+      "note": "Version voted: As Passed by the House (02_PH), titled \"to limit when a political subdivision or taxing authority may hold an August special election\". It has no voter-ID text; the photo-ID text was first added in the Senate substitute reported 2022-12-13. Names from the Ohio Legislature actions API (search-prod.lis.state.oh.us); only Derek Merrin is matched to a politician id.",
+      "members": [
+        {
+          "name": "Cindy Abrams",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Baldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard D. Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Carfagna",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara P. Carruthers",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert R. Cupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dean",
+          "vote": "yea"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Ferguson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Fraizer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tavia Galonski",
+          "vote": "yea"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy E. Ginter",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane V. Grendell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Brett Hudson Hillyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "yea"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Kris Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrell Kick",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "yea"
+        },
+        {
+          "name": "P. Scott Lipps",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Loychik",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Riordan T. McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Merrin",
+          "vote": "yea",
+          "politician_id": "4932ca8c-39b5-45a9-8376-cbdbb275d86a"
+        },
+        {
+          "name": "Joseph A. Miller III",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jena Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon A. Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig S. Riedel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. Skindell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dick Stein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Stephens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Reggie Stoltzfus",
+          "vote": "yea"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel P. Troy",
+          "vote": "yea"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas West",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin Boggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Janine R. Boyd",
+          "vote": "nay"
+        },
+        {
+          "name": "Juanita O. Brent",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey A. Crossman",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie D. Howse",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Brigid Kelly",
+          "vote": "nay"
+        },
+        {
+          "name": "David Leland",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Lightbody",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam C. Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "C. Allison Russo",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Sheehy",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Monique Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa A. Sobecki",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Emilia Strong Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        }
+      ]
     },
     {
-      "date": "unknown",
+      "date": "2022-12-13",
       "body": "OH Senate",
-      "motion": "passage (per snippet 24-6, NBC4; not fetched)",
+      "motion": "passage (Senate floor, Sub. H.B. 458 as passed by the Senate)",
       "kind": "roll-call",
       "yes": 24,
-      "no": 6,
-      "note": "member names not captured; date as printed: undefined",
-      "members": []
+      "no": 7,
+      "body_size": 33,
+      "note": "Version voted: As Passed by the Senate (04_PS), which carries the photo-ID text. Names from the Ohio Legislature actions API (search-prod.lis.state.oh.us); only Derek Merrin is matched to a politician id.",
+      "members": [
+        {
+          "name": "Bob Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob D. Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Hoagland",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen A. Huffman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan H. Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew O. Brenner",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina D. Roegner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael A. Rulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Louis W. Blessing, III",
+          "vote": "yea"
+        },
+        {
+          "name": "George F. Lang",
+          "vote": "yea"
+        },
+        {
+          "name": "Niraj Antani",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry C. Cirino",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "Kenny Yuko",
+          "vote": "nay"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Hearcel F. Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Nickie J. Antonio",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale B. Martin",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-12-14",
+      "body": "OH House",
+      "motion": "concurrence in Senate amendments (House floor; final passage)",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 34,
+      "body_size": 99,
+      "note": "Version voted: the Senate-passed text, enrolled unchanged (06_EN). The legislature records this action at 2022-12-15 05:38 on the 2022-12-14 session day; the bill page lists it as 12-14-2022. Names from the Ohio Legislature actions API (search-prod.lis.state.oh.us); only Derek Merrin is matched to a politician id.",
+      "members": [
+        {
+          "name": "Cindy Abrams",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Baldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam C. Bird",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas E. Brinkman, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara P. Carruthers",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert R. Cupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dean",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Ferguson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Fraizer",
+          "vote": "yea"
+        },
+        {
+          "name": "Haraz N. Ghanbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy E. Ginter",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Brett Hudson Hillyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "James M. Hoops",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn S. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrell Kick",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kyle Koehler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian E. Lampton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff LaRe",
+          "vote": "yea"
+        },
+        {
+          "name": "P. Scott Lipps",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Riordan T. McClain",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Merrin",
+          "vote": "yea",
+          "politician_id": "4932ca8c-39b5-45a9-8376-cbdbb275d86a"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea"
+        },
+        {
+          "name": "Gail K. Pavliga",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jena Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon A. Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy M. Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig S. Riedel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Dick Stein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Stephens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Reggie Stoltzfus",
+          "vote": "yea"
+        },
+        {
+          "name": "D. J. Swearingen",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin D. Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Shawn Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Willis E. Blackshear, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Kristin Boggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Juanita O. Brent",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard D. Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey A. Crossman",
+          "vote": "nay"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jay Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "Tavia Galonski",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine D. Ingram",
+          "vote": "nay"
+        },
+        {
+          "name": "Dontavius L. Jarrells",
+          "vote": "nay"
+        },
+        {
+          "name": "Kris Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Brigid Kelly",
+          "vote": "nay"
+        },
+        {
+          "name": "David Leland",
+          "vote": "nay"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam C. Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph A. Miller III",
+          "vote": "nay"
+        },
+        {
+          "name": "Jessica E. Miranda",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael J. O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillip M. Robinson, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "C. Allison Russo",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Sheehy",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael J. Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Monique Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa A. Sobecki",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Rose Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel P. Troy",
+          "vote": "nay"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas West",
+          "vote": "nay"
+        },
+        {
+          "name": "Latyna M. Humphrey",
+          "vote": "nay"
+        },
+        {
+          "name": "Shayla L. Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Bishara W. Addison",
+          "vote": "nay"
+        },
+        {
+          "name": "Elgin Rogers, Jr.",
+          "vote": "nay"
+        }
+      ]
     }
   ],
   "provenance": {
-    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "oh-hb458 side session (voting-rights Stage 5, 2026-10-29)",
+    "fetched_at": "2026-10-29T22:00:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/oh-hb458/hb458_06_EN.html",
+      "sha256": "d410b7ef257646a9c4e2baa9b99921ce1393ba213105c0ad6f3f5ccf37aff768"
+    }
   }
 }
