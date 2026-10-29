@@ -1,0 +1,335 @@
+{
+  "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+  "findings": [
+    {
+      "id": "af6550c1b7c2e7f03fa3547809870426840ca73e2d6e03c9997191a481cfa9a7",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "I also would agree that asking for valid ID in order to participate in voting is not an unreasonable thing. In fact, my State certainly requires that, and I think most others do.",
+      "note": "Senate floor speech on the SAVE America Act (S. 1383 substitute amendment), as posted on her official site (page date 03.23.26; the speech itself was earlier that month). She says valid ID at the polls is not unreasonable and that Alaska requires it.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d154af0b23f05995569568d38fb1211191ba2b4cdda6ea9e775dad9b837ff1e8",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "So let me move to the next point, and this is with regard to the registration to vote. Requiring proof of citizenship—OK. We can figure this out.",
+      "note": "Same floor speech. She introduces her objection to the in-person documentary proof of citizenship rule for registration, which she goes on to describe as costly and hard to meet in rural Alaska.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a6d08548bd2a07bb9911daf019e841448eedf070b085e0f10ad4b89d054ed72",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "There were about 29,000 new voter registrations in 2024, and under the SAVE America Act, it would have effectively forced about 25,000 of these Alaskans to go to the Alaska Division of Elections offices to provide the documentation in order to certify their citizenship.",
+      "note": "Same floor speech. She says the bill's in-person documentation step would have reached most new Alaska registrants in 2024, since most now register by mail, online or through the permanent fund dividend application.",
+      "subjects": [
+        "proof of citizenship to register",
+        "in-person registration burden in rural areas"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44ebd3ca77224f4a5d69b23c04faf73b344d56ce1afe488fa34ad9278b3a1a1b",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "I have said I support voter ID. Alaska requires ID to vote, as I think they should. But I think what we have here is a very prescriptive approach to it.",
+      "note": "Same floor speech. She says she supports voter ID and objects to the bill's detailed photo-ID terms (a photo and an expiration date), citing Tribal IDs that often lack one or both.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID specifics",
+        "Tribal IDs"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa239f954e9327ab50af1105a51dc4df1959cf03effc68c9b77dbfd47be35a75",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "So there is an exception, and I want to acknowledge that that recognizes that voters would be able to provide the last four digits of their Social Security number and an affidavit attesting that they are unable to obtain a copy of a valid photo ID, but it says, ‘‘after making reasonable efforts to obtain a copy.’’",
+      "note": "Same floor speech. She describes the bill's fallback for a voter without photo ID (last four digits of Social Security number plus a sworn statement) and questions what 'reasonable efforts' means.",
+      "subjects": [
+        "what happens to a voter with no ID",
+        "reasonable-impediment affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b4b86ac74a3b206bda3bda07a7e069df37a84b0a2c8304b910bd26a96401589",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "This version also goes further and sets a new default rule for Federal elections of in-person voting. This contradicts Alaska’s long-allowed, no-excuse absentee voting by mail.",
+      "note": "Same floor speech. She objects to the bill's default of in-person voting for federal elections and its narrow absentee categories.",
+      "subjects": [
+        "mail or absentee ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5a2fba2f196195c3e810991a0a5eac9716daca823aaf427b3afc56335e19fb9",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "I will restate again that the goals of what we are talking about with the SAVE America Act I support. Only U.S. citizens should vote in our elections, and Federal law already—already—makes it a crime for noncitizens to vote in Federal elections. Voters should be required to present identification, which State law requires, and list specific forms of ID that work to provide that identification in the State.",
+      "note": "Same floor speech. She states support for the bill's goals: only citizens vote and voters present ID under state law, with states listing the accepted forms.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "state control of ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b02655b7dcbaa6e6db665a34c8fb9497291769a6a3c382bf2efcf2b4acb93845",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "Over a 10-year period, there have been 70 instances that were flagged in terms of actually following through to determine whether or not it was illegal. But that is, basically, seven a year.",
+      "note": "Same floor speech. She cites Alaska's review of flagged non-citizen voting cases over ten years when weighing the bill's burdens.",
+      "subjects": [
+        "non-citizen voting",
+        "how common non-citizen voting is"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ac819096cc82fae783b488511d8d53094f2752adefa21fdd6cd0448f3db7ac5",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "And one example is the requirement for States to run their voter rolls through a Federal database that was not designed for this. We have already had some legitimate issues in multiple States with regard to that.",
+      "note": "Same floor speech. She objects to the bill's requirement that states check voter rolls against a federal database.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce4655230d88410abbdcd7c9dc5e2df36db711a1becaafa0af0226768b52d6e1",
+      "kind": "own-words",
+      "url": "https://www.murkowski.senate.gov/press/release/murkowski-speaks-out-against-save-america-act-on-senate-floor",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "The States should remain in charge of their own elections. They should set their own requirements based on what works for them because we can’t shift to a system that works for many rightful voters but not all, and particularly so close to election day and with no funding for the States to implement the new mandates.",
+      "note": "Closing argument of the same floor speech: states should set their own election requirements, and the bill has no timeline or funding for them.",
+      "subjects": [
+        "state control of ID rules",
+        "federal versus state control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4bff364963399c48f95ba8745015da019d64e765f9e6b397cb4841816f6567b7",
+      "kind": "own-words",
+      "url": "https://www.nbcnews.com/politics/congress/gop-sen-lisa-murkowski-comes-trumps-election-bill-warning-party-rcna258353",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "“When Democrats attempted to advance sweeping election reform legislation in 2021, Republicans were unanimous in opposition because it would have federalized elections, something we have long opposed,” Murkowski said in a statement. “Now, I’m seeing proposals such as the SAVE Act and MEGA that would effectively do just that. Once again, I do not support these efforts.”",
+      "note": "Her written statement, quoted by NBC News (article dated Feb. 11, 2026, about a statement made the Tuesday before). She says she does not support the SAVE Act and MEGA, citing federal control of elections.",
+      "subjects": [
+        "SAVE Act",
+        "federal versus state control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48ccfba603e187e04aac72009859af5d2e79275760f84e1a20c354333aaf31d2",
+      "kind": "own-words",
+      "url": "https://www.nbcnews.com/politics/congress/gop-sen-lisa-murkowski-comes-trumps-election-bill-warning-party-rcna258353",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "“Not only does the U.S. Constitution clearly provide states the authority to regulate the ‘times, places, and manner’ of holding federal elections, but one-size-fits-all mandates from Washington, D.C., seldom work in places like Alaska,” she added.",
+      "note": "Second part of the same statement, quoted by NBC News. She cites the Constitution's grant of authority to states over federal elections.",
+      "subjects": [
+        "federal versus state control of elections",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23e10050a448139d234b9e44e91428bed861c5845bb946228e6b8d4ead50da97",
+      "kind": "record",
+      "url": "https://www.deseret.com/politics/2026/03/17/marathon-debate-election-bill-underway/",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2025",
+      "act": "nay",
+      "motion": "Motion to proceed to the SAVE America Act (S. 1383), agreed 51-48",
+      "note": "Deseret News reports she was one of the senators who voted against the motion to proceed on the SAVE America Act, a bill that would require proof of citizenship and voter ID in federal elections. The official senate.gov roll-call page could not be reached (site firewall), so the individual vote is taken from this news report.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:57:31.377Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Lisa_Murkowski names her as U.S. Senator from Alaska, term ends January 3, 2029 (not on the 2026 ballot; next election 2028)",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Lisa_Murkowski (nothing on the subject)",
+        "official site https://www.murkowski.senate.gov/press/press-releases (first page only, nothing on the subject; site keyword filter did not narrow results)",
+        "official site https://www.murkowski.senate.gov/issues/voting-record (loads votes from govtrack by script; not readable)",
+        "blocked: https://www.congress.gov/member/lisa-murkowski/M001153 (HTTP 403, also with browser user agent)",
+        "blocked: https://www.govtrack.us/congress/members/lisa_murkowski/300075 (HTTP 403)",
+        "blocked: https://www.govtrack.us/api/v2/vote_voter?person=300075 (HTTP 403)",
+        "not reviewed: web news search on her name plus subject words (session web search budget was used up)",
+        "not reviewed: campaign site, press releases pages beyond page 1, speeches, op-eds, videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:05:57.650Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act (S. 1383)",
+        "ID or mail-in rules for absentee ballots",
+        "reasonable-efforts affidavit for voters without photo ID",
+        "voter-roll checks against a federal database",
+        "non-citizen voting evidence",
+        "federal versus state control of elections"
+      ],
+      "places": [
+        "In scope: sitting U.S. Senator for Alaska, term ends January 3, 2029 (https://ballotpedia.org/Lisa_Murkowski); not on the 2026 ballot",
+        "On the Record (0 appearances)",
+        "official Senate site: floor-speech release (found and used)",
+        "Ballotpedia (nothing on the subject)",
+        "news: NBC News (used), Deseret News (used)",
+        "blocked: https://alaskabeacon.com/2026/03/23/federal-save-act-risks-denying-thousands-of-alaskans-the-ability-to-vote-murkowski-says/ (403 / bot check)",
+        "blocked: https://www.ktoo.org/2026/03/18/murkowski-is-sole-republican-to-vote-to-block-the-save-act/ (bot check)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/ (site firewall refused the roll-call pages)",
+        "not reviewed: congress.gov bill page for S. 1383 and her amendments (her speech says she filed over a dozen)"
+      ],
+      "found": 13,
+      "at": "2026-10-27T15:57:31.377Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

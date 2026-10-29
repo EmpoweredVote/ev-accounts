@@ -1,0 +1,247 @@
+{
+  "politician_id": "3b8c1700-52f7-4694-b795-e093eb57b8f6",
+  "findings": [
+    {
+      "id": "aeaf657664b27a08b5348f180abe3873de8e328baaa99e33737cfa89fd43fdbd",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19983/House-Approves-Election-Reform-Bill-Co-sponsored-by-Flood-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "“Many voters were very upset after the 2020 election and they want lawmakers to take steps to enhance public trust in the electoral system,” Flood said. “People want to know for sure that the person in office is the one who legitimately won the election.”",
+      "note": "Quote in a House caucus release on House passage of House Bill 1300 (election reform bill she co-sponsored). The release describes the bill as requiring ID from voters, and last-four Social Security or driver's licence numbers for mail-in and absentee ballot applications.",
+      "subjects": [
+        "election integrity",
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:53.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb1bee796146e8358f29bd4a39c2c2a5eccd66e2d6847459ef5c1877b0a18e28",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19983/House-Approves-Election-Reform-Bill-Co-sponsored-by-Flood-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "“We want to ensure elections are fair and the outcomes reflect the will of the people who legally cast their ballots,” Flood said. “This has been one of the top issues for people I’ve talked with in our district since I took office back in January.”",
+      "note": "Second quote in the same release, on why she backed the election reform bill.",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:53.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3414a1228104c1a3207fcd62bfbab0c1a4d10ddf86aab0ff5e12e47b4d8dd4b7",
+      "kind": "record",
+      "url": "https://webcms.pahousegop.com/News-Print/19983/House-Approves-Election-Reform-Bill-Co-sponsored-by-Flood-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "note": "House Bill 1300, election reform: release says she co-sponsored it. It would require voters to show one of many acceptable forms of ID (including a free county voter registration card) and require a driver's licence or Social Security digits on mail-in and absentee ballot applications.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:53.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('FLOOD'), linked to Ann L. Flood (district 138) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Flood'), linked to Ann L. Flood (district 138) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('FLOOD') on the official bill page; linked to Ann L. Flood via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Flood'), linked to Ann L. Flood (district 138) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('FLOOD'), linked to Ann L. Flood (district 138) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "voter registration card as ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repannflood.com/ (home page news list: no voter ID release; links to a 2023 Northampton County election report that was not opened: not reviewed)",
+        "the House caucus site (2021 election reform release, fetched)",
+        "blocked: https://ballotpedia.org/Ann_Flood (page returned empty)",
+        "Lehigh Valley News 2022-11-09 and 2024-11-06 election stories (a reporter's paraphrase of her stance, not a direct quote, so not saved)",
+        "news search on name plus voter ID / election: nothing newer than 2022 from her",
+        "bill pages for sponsorships: not reviewed (linked separately)",
+        "2026 ballot status not confirmed on an official page; she is the sitting member for the 138th district"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:06:53.004Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

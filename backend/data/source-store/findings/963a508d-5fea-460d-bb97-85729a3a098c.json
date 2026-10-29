@@ -1,0 +1,31 @@
+{
+  "politician_id": "963a508d-5fea-460d-bb97-85729a3a098c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House caucus member page and news list https://www.pahousegop.com/Margetas/News: nothing on the subject",
+        "swearing-in press release https://www.pahousegop.com/News/38086/Latest-News/Margetas-Sworn-in-as-Representative-of-196th-District: confirms he is the sitting member for the 196th District (sworn in 2026-06-09); nothing on the subject",
+        "blocked: https://www.margetasforpa.com (no response, a guessed campaign address)",
+        "Ballotpedia: page returned empty through the fetch tool, not reviewed: https://ballotpedia.org/George_Margetas",
+        "Wikipedia https://en.wikipedia.org/wiki/George_Margetas: nothing on the subject",
+        "iVoterGuide profile https://ivoterguide.com/candidate/91997/race/26842/election/1404: no subject content in page text",
+        "news search on name plus voter ID, mail ballot, citizenship: nothing by him on the subject (one news item says his November opponent backs photo ID; no Margetas words found)",
+        "legislature bill pages: not searched, sponsorships linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:04:43.503Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

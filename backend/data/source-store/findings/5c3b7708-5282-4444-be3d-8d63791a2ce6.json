@@ -1,0 +1,58 @@
+{
+  "politician_id": "5c3b7708-5282-4444-be3d-8d63791a2ce6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Daniel_Cottam (confirms him as a 2026 candidate for US House UT-2; no issue positions)",
+        "BallotReady profile (no positions)",
+        "Salt Lake Tribune voter guide 2026-10-12 (candidate did not answer)",
+        "iVoterGuide profile (mostly did not answer)",
+        "web search: campaign site (none found)",
+        "blocked: https://www.facebook.com/CottamForCongress (no post text returned)",
+        "not fetched: YouTube channel https://www.youtube.com/@DoctorDanielCottam (video, no text)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:10:33.503Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "https://www.sltrib.com/news/politics/2026/10/12/blake-moore-faces-peter-crosby/ (confirms he is a third-party candidate in the November 2026 race for Utah's U.S. House seat; he did not answer the paper's questionnaire)",
+        "https://ivoterguide.com/candidate/73958 (voter guide; the voter-ID question and the voting-practices question are both marked 'Did not answer')",
+        "https://ballotpedia.org/Daniel_Cottam (fetched; no stated positions on the subject)",
+        "On the Record (0 appearances); the discovered-sources script could not be run (the 'timeout' command is missing on this machine)",
+        "https://www.danielcottam.com (personal portfolio site; no campaign or issue content)",
+        "https://www.facebook.com/CottamForCongress (page shows only its title; no posts readable)",
+        "https://www.hjnews.com/news/local/federal-spending-focus-of-sometimes-heated-congressional-1st-district-debate/article_5b2921ec-866e-11ef-8f3a-1b6bc0389e03.html (2024 debate coverage; no own words from him on the subject)",
+        "not reviewed: League of Women Voters forum video and Alliance Defending Freedom survey linked from the voter guide (not reachable from the page); YouTube channel https://www.youtube.com/@DoctorDanielCottam (video, not reviewed)",
+        "not applicable: congress.gov and legislature bill pages (not a sitting legislator)",
+        "three web searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:46:58.318Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

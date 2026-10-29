@@ -1,0 +1,218 @@
+{
+  "politician_id": "b5f2f8c9-13ab-4e15-82dd-dbecb6466084",
+  "findings": [
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "a6be50acbd0c27fe3de6ad9892ed1fc8a995a54d1c459357703cecba740e8f09",
+      "kind": "own-words",
+      "url": "https://www.kltv.com/2021/01/28/state-rep-keith-bell-prioritizing-election-integrity-house-filing-session",
+      "date": "2021-01-28",
+      "date_precision": "day",
+      "passage": "“It is my belief that election integrity is essential,” Bell said. “Upon someone’s death, the county registrar will be notified to remove that individual from the roll. That process being done quickly will prevent someone from taking on that individual’s identity possibly to commit voter fraud.”",
+      "note": "Quoted by a Tyler TV station when he announced HB 1264 for the filing session. He ties faster removal of deceased voters from the rolls to preventing identity theft and voter fraud.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88bf070153d537ecebc663bf19f2b4dbb76519d024856e596fa9d754ccd7bd6f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB1264",
+      "date": "2021-01-21",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1264-2021",
+      "act": "author",
+      "motion": "HB 1264, time for reporting deceased residents to the voter registrar and the secretary of state (filed 2021-01-21; signed by the Governor 2021-06-04)",
+      "note": "He is the author. The bill sets the time for reporting deceased residents to the voter registrar and the secretary of state. The bill history shows it passed both chambers and was signed on 2021-06-04, effective 2021-09-01.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99f91525f2da71e53f0cf5b1080bc75c771d4fad5022b9cd21da00711cbc3153",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "sponsor",
+      "motion": "SB 7 (87th regular session), election integrity and security: listed as House cosponsor",
+      "note": "The bill history lists him among the House cosponsors of SB 7, relating to elections, including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3a61be196ca4484c6860b99c2431c6fdf332026aea5bcd3975953658498b4c5",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "SB 7 (87th regular session): passed by the House, Record 848, 78 yeas, 64 nays",
+      "note": "The House Journal lists K. Bell among the yeas on passage of SB 7, relating to elections, including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc3b8442c23812ac5c5e0f52b3728db1ebf3bb80498f221c3ce28aa11c5a27b2",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "SB 1 (87th 2nd called session): passed by the House, Record 61, 80 yeas, 41 nays",
+      "note": "The House Journal lists K. Bell among the yeas on passage of SB 1, the election integrity and security bill. This is the passage vote, separate from the conference-report vote already on file.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b09b4b219848a6ef43087e2823474eefd92fd5d07241a26ac41505bf42acd5c9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "HB 5337, proof of citizenship to register to vote: coauthor (committee report sent to Calendars 2025-05-07)",
+      "note": "He is listed as a House coauthor of HB 5337, relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The bill history shows the committee report sent to the calendar on 2025-05-07.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e21596d2b5beec3a4a26d30be56ac425eb1e61e5c99b1fb22d7e1ce0cd335e1",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "SJR 37, constitutional amendment clarifying that a voter must be a United States citizen: adopted by the House, Record 2196, 102 yeas, 14 nays, 22 present not voting",
+      "note": "The House Journal lists K. Bell among the yeas on final House adoption of SJR 37, the proposed amendment clarifying that a voter must be a United States citizen.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:19:00.779Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID showing citizenship",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Keith_Bell (confirms Texas House member since 2019, term ends 2027, next election 2026-11-03; nothing on the subject)",
+        "Texas House member page https://house.texas.gov/members/member-page/?district=4 (nothing on the subject)",
+        "campaign sites keithbell.com, keithbellfortexas.com and keithbelltx.com (could not be reached: no response)",
+        "Texas Legislature Online bill history pages for HB 1264 and SB 7 (87th regular session), SB 1 (87th 2nd called session), HB 5337, SJR 37 and SB 16 (89th)",
+        "Texas House Journals for 2021-05-07, 2021-08-27 and 2025-05-12 read for recorded votes",
+        "a 2021-01-28 East Texas news article quoting him on election integrity",
+        "one news search on his name plus voter ID and citizenship words",
+        "already on file and not re-collected: the 2021-08-31 yea on the SB 1 conference committee report"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:19:00.779Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "politician_id": "c5490995-b962-4b20-ab8d-56ba1ba8d54b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus subject words",
+        "Virginia legislature site vga.virginia.gov (home page only, no member page reached)",
+        "blocked: LIS (lis.virginia.gov), legiscan, legiplex and vpap.org (403), not retried",
+        "no campaign site found",
+        "Royal Examiner interview page (article text not readable)",
+        "lead only, not fetched successfully: 2024 HB 1441 proof of citizenship bill listed under this name; pluralpolicy page 404, vpap 403"
+      ],
+      "found": 0,
+      "at": "2026-10-28T17:41:54.273Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

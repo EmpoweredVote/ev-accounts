@@ -1,0 +1,62 @@
+{
+  "politician_id": "a5c62e89-6cc4-45be-86ed-428d23442c34",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Martinez'), linked to Reynaldo Martinez (district 111) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "blocked: https://ballotpedia.org/Rey_Martinez (empty page)",
+        "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-111/candidates/reynaldo-%22rey%22-martinez shows him on the 2026 general-election ballot for House District 111 (identity confirmed); its voting section has one short line the fetch tool returned, not saved because it could not be verified verbatim",
+        "no voting bill sponsorship found in search results"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.835Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

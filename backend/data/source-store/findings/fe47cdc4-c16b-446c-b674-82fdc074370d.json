@@ -1,0 +1,25 @@
+{
+  "politician_id": "fe47cdc4-c16b-446c-b674-82fdc074370d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "campaign site https://bonitaforva.com/about: names her committee seat, nothing on voter ID",
+        "not reviewed: On the Record extraction script (not run)",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "web searches on name plus subject words: nothing relevant"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:15.028Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

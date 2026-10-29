@@ -1,0 +1,78 @@
+{
+  "politician_id": "3e01989c-c39a-4b5b-8241-33b94b0a5723",
+  "findings": [
+    {
+      "id": "1f39802623ae05025da8b3dcebb4fab4b1685027a3fb85b9510b2f9c9c64ec65",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Christopher_Gallant",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Our democracy and freedoms are under threat from political extremes. I’ll fight to protect voting rights, reproductive freedom, and the rule of law while restoring civility and bipartisanship in Congress.",
+      "note": "From his 2026 Ballotpedia Candidate Connection survey answer on his three key campaign messages. He says he will protect voting rights in general. He does not mention ID, proof of citizenship, or mail-ballot ID.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:14.080Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "voting rights in general"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Christopher_Gallant names Christopher Gallant as candidate, U.S. House New York District 1, on the 2026 general-election ballot after advancing from the June 23, 2026 primary",
+        "On the Record (0 appearances; extract-otr.mjs run with the politician id and name Chris Gallant)",
+        "campaign site https://gallantny.com/ (home, about, mission-one to mission-six, the-mission-plan-2027, media, toolkit pages grepped for voter, voting, ballot, citizen, election, ID, identification: nothing on proof of identity or citizenship; toolkit only mentions checking registration and voting by mail)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Gallant (Candidate Connection survey read in full; one on-subject-adjacent line saved)",
+        "Ballotpedia https://ballotpedia.org/Chris_Gallant (page does not exist; the page is under Christopher_Gallant)",
+        "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_New_York,_2026 (used to confirm ballot status)",
+        "not reviewed: congress.gov (candidate has held no federal office, so no sponsorships or votes exist)",
+        "not reviewed: news search, ontheissues.org, vote411, social media and YouTube (https://www.youtube.com/@GallantNY): the shared web-search budget was used up and no search could be run; this is a gap, not a finding of nothing"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:12:14.080Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "East Hampton Star 2026-06-23 (confirms he won the NY-1 primary and is the November 2026 nominee)",
+        "campaign site gallantny.com (home, mission plan and mission one to six pages, media page; nothing on the subject; the trust-in-government page covers stock trading and ethics only)",
+        "Ballotpedia: page fetched but showed no usable candidate text",
+        "Shelter Island Reporter 2026-06-02 primary debate story and Kaleidoscope interview (talk about the immigration pathway to citizenship, not proof of citizenship to vote; nothing on the subject)",
+        "Suffolk Times 2026-06 primary story (nothing on the subject)",
+        "news searches (3) on name plus SAVE Act / voter ID / proof of citizenship / election integrity: nothing by him on the subject",
+        "no legislative record (not a current officeholder)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:54:12.659Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

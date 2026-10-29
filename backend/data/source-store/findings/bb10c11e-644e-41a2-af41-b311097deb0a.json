@@ -1,0 +1,56 @@
+{
+  "politician_id": "bb10c11e-644e-41a2-af41-b311097deb0a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: California Secretary of State returns page https://api.sos.ca.gov/returns/us-rep/district/13 lists Adam Gray and Kevin Lincoln as the only two candidates in U.S. House District 13 (September 24, 2026 report); Stocktonia https://stocktonia.org/news/politics/2025/11/07/former-stockton-mayor-kevin-lincoln-vs-adam-gray-congress-2026/ places him in the District 13 race",
+        "On the Record (0 appearances, no meetings)",
+        "campaign site https://www.kevinlincolnforcongress.com (home, /issues, /meet-kevin): nothing on the subject",
+        "kevinlincoln.com: personal site, not reviewed in depth, nothing on the subject seen",
+        "Ballotpedia https://ballotpedia.org/Kevin_Lincoln: fetched, no voter ID or election integrity text found",
+        "congress.gov: not applicable, never a legislator",
+        "news searches on name plus voter ID, election integrity, SAVE Act, noncitizen voting: nothing on the subject",
+        "not reviewed: ontheissues.org, Wikipedia (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:28:14.846Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: former Stockton mayor, on the 2026-11-03 general-election ballot for California's 13th District (https://news.ballotpedia.org/2026/07/20/redistricting-adds-stockton-to-ca-13-as-rep-gray-d-and-former-mayor-lincoln-r-face-off-on-nov-3/)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.kevinlincolnforcongress.com and its issues page: nothing on the subject (issues are border, taxes, policing, AI, crypto)",
+        "Stocktonia article on the 2025-12-20 endorsement https://stocktonia.org/news/politics/2025/12/20/former-stockton-mayor-kevin-lincoln-honored-by-president-trumps-endorsement-in-race-against-rep-adam-gray/: nothing on the subject",
+        "CalMatters CD-13 article https://calmatters.org/politics/2026/10/california-election-congressional-district-13-gray/: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Kevin_Lincoln: blocked: page text did not load",
+        "news searches on name plus voter ID, SAVE Act, election integrity, non-citizen voting: nothing on the subject",
+        "not reviewed: congress.gov (he has not served in Congress); Stockton city records for any election resolution as mayor"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:28.607Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

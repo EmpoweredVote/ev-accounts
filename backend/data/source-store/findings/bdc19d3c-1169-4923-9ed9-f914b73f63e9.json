@@ -1,0 +1,50 @@
+{
+  "politician_id": "bdc19d3c-1169-4923-9ed9-f914b73f63e9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voters with no ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/RMH2 (Representative Ryan M. Hamilton, 15th Essex, Methuen)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov member profile and 2025-2026 sponsored bills list (only election-related bill is H.838, a Methuen mayoral special election; nothing on the subject)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Ryan_Hamilton_(Massachusetts_House_of_Representatives) (page does not exist, HTTP 404)",
+        "blocked: https://ballotpedia.org/Ryan_Hamilton_(Massachusetts) (fetch returned empty)",
+        "campaign site: not reviewed: https://www.ryanhamiltonma.com (guessed address, no connection)",
+        "news search: not reviewed (session web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:21:41.790Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://ballotpedia.org/Ryan_Hamilton_(Massachusetts) (confirms 15th Essex House member on the 2026 general-election ballot; nothing on the subject)",
+        "https://malegislature.gov/Bills/GetAmendmentContent/194/H5500/1587/House/Content (a photo-ID budget amendment; the filer and listed co-sponsors do not include him; nothing by him)",
+        "legislature profile page not reviewed: no profile URL reached",
+        "web searches on name plus voter ID words (nothing on the subject; results were about other people)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:28:59.828Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

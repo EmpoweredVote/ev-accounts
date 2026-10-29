@@ -1,0 +1,141 @@
+{
+  "politician_id": "e36f4bc1-4896-48cb-8ae7-39e1f742ace3",
+  "findings": [
+    {
+      "id": "70527f90d4f090102686749f405ece7ed3f0aa6731d7c2da16acdb6724387878",
+      "kind": "own-words",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "passage": "With confidence, on behalf of the residents of House District 104 and the people of Texas, I express my strong and complete opposition to SB 1. I would have voted \"no.\"",
+      "note": "Reason for vote printed in the House Journal after SB 1 (election integrity and security bill) passed 80-41 while she was absent. She describes the bill as making it harder to vote by mail and limiting other voting options.",
+      "subjects": [
+        "election integrity law (SB 1, 2021)",
+        "vote by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06c000d1b724f01423380d7a051c266b104c4c925589ce9c7c77ca899ebe51b4",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "other",
+      "motion": "SB 1 third reading, Record 61: listed as absent; filed a statement that she would have voted no",
+      "note": "SB 1 (election integrity and security) passed the House on third reading, 80 yeas to 41 nays. She was listed absent and her journal statement says she would have voted no.",
+      "subjects": [
+        "election integrity law (SB 1, 2021)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc42b25af98f4ee6e5b26f130532c5a2eef4b788c3da457680173764c6f585f4",
+      "kind": "own-words",
+      "url": "https://dallasvoice.com/legalizing-voter-intimidation/",
+      "date": "2021-05-14",
+      "date_precision": "day",
+      "passage": "“Unfortunately, this disregard for decorum and formal rules is all too common in the House Elections Committee,”",
+      "note": "Quoted by Dallas Voice from her letter to the U.S. Attorney General about how SB 7 (2021 voting bill) was moved through the House Elections Committee.",
+      "subjects": [
+        "election integrity law (SB 7, 2021)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a544c4e6ad9811a35510dcfb7e92ea9600fe68d9363073609d60d7e5c90b53c2",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY60FINAL.PDF",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "nay",
+      "motion": "SJR 37 passed to third reading, Record 1897 (98 yeas, 18 nays)",
+      "note": "SJR 37 proposes a constitutional amendment clarifying that a voter must be a United States citizen. She is listed among the nays.",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f62f31588f3f2fa0d7b1482294c7d67353bd1ce7b463430e1b009aa7913e3b6d",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "other",
+      "motion": "SJR 37 adopted on third reading, Record 2196 (102 yeas, 14 nays): listed absent",
+      "note": "The House adopted SJR 37, the voter-citizenship constitutional amendment. She is listed as absent on the final vote.",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.471Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "vote-by-mail limits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas House member page (house.texas.gov/members/3335/biography): confirms Rep. Jessica Gonzalez, House District 104; nothing on the subject",
+        "Ballotpedia: blocked: https://ballotpedia.org/Jessica_Gonzalez (empty page returned)",
+        "Texas Legislature Online action pages for 87(2) SB 1 and 89(R) SB 16 (SB 16 House committee vote tally not reached; no committee vote page found)",
+        "House Journal 87th 2nd called session day 4 (SB 1 third reading)",
+        "Texas Tribune 2021-06-29 interview: nothing on ID; on the walkout and SB 7",
+        "Texas Tribune 2025 articles on SB 16: no mention of her",
+        "Dallas Voice 2021-05-14",
+        "official campaign site: not reviewed (no URL found)",
+        "one news search on her name plus subject words, one on SB 16 committee action",
+        "House Journal 89th session days 60 and 62 (SJR 37 record votes)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:29:45.471Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

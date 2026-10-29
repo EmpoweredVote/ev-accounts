@@ -1,0 +1,130 @@
+{
+  "politician_id": "38cb6796-1539-48ac-92e6-00068aa5e339",
+  "findings": [
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "0fceca20f81708bdf76859b93fe7f43e8fd9c6c8ae94f3731b5b6c7289d224d3",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voter identification; optional restrictive identification requirement: lets a voter opt in to showing a photo ID to vote in person. House passage vote 51-49 on 2022-02-03.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:31.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79d96a21a87660e17273c212a65d82649a6e8421db93048fd544a68b472c3dec",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV0495+HB0026",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voter identification; accepted forms of identification: adds photo ID cards issued by certain private entities licensed by state health and social services agencies to the list of accepted IDs. Passage vote 2024-02-09 (House, 85-11).",
+      "subjects": [
+        "photo ID or other ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:31.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7672b4e8ad099905752eedf88b2e521fcce6a7e097c1a69a181772aa6d629f4a",
+      "kind": "own-words",
+      "url": "https://theenterprise.net/?p=60942",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "passage": "“A year ago, Election Integrity was a main reason why I decided to run for office,” Williams said. “While I was volunteering in Wisconsin for Trump’s legal team, I saw firsthand how rogue bureaucrats gave a pass to illegal ballot harvesting and committed fraud by illegally curing absentee ballots. Something had to be done, so I ran for office. I promised my constituents that I would fight to stop fraud and safeguard our elections here in Virginia. Passing HB554 in the House is our first big step towards fulfilling that promise.",
+      "note": "Quoted by the Enterprise newspaper after the House passed HB544 (the article writes HB554 in his quote). He ties the bill to election integrity and to absentee ballot handling.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general",
+        "ID with mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:31.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents",
+        "voters with no ID (sworn statement, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed in office via the House of Delegates member listing and the FastDemocracy profile (District 47)",
+        "On the Record (0 appearances found; the extract script was run with the politician id and name)",
+        "https://www.wrenwilliamsva.com (official site; one line on election work in the 2020 election, nothing on voter ID, photo ID or mail ballots)",
+        "https://theenterprise.net/?p=60942 (local news, 2022)",
+        "legacylis.virginia.gov bill and vote pages for HB544 (2022) and HB26 (2024)",
+        "Ballotpedia: not reviewed, page did not load",
+        "web searches: name plus voter ID, proof of citizenship, SAVE Act: found nothing further by him",
+        "blocked: https://legiscan.com and https://www.vpap.org and https://legilist.com and https://app.legiplex.com (403 errors, not worked around)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (the new legislature site loads bill data by script, so 2025 and 2026 bill pages could not be read)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:24:31.811Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

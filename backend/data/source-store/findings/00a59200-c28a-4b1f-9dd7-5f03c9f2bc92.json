@@ -1,0 +1,56 @@
+{
+  "politician_id": "00a59200-c28a-4b1f-9dd7-5f03c9f2bc92",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Christopher_Reichard (Democratic primary winner Aug 4, 2026; on the Nov 3, 2026 general ballot, Missouri 8th District)",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.reichardforrep.com/issues: nothing on the subject",
+        "campaign site https://www.reichardforrep.com/: nothing on the subject",
+        "Ballotpedia page, including quoted campaign site text and Candidate Connection survey section: nothing on the subject",
+        "congress.gov: not reviewed, challenger with no legislative record",
+        "ontheissues.org, Wikipedia: not reviewed, lead-only and no congressional record",
+        "news search: not run, web search budget for the session was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:13:54.753Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "scope check: https://www.krcu.org/news/2026-08-07/dem-chris-reichard-wins-aug-4th-primary-moves-to-challenge-incumbent-jason-smith-for-house-of-representatives names him as winner of the 2026-08-04 primary and a general-election candidate for MO-08",
+        "On the Record (0 appearances)",
+        "campaign site https://reichardforrep.com/ (home and /issues pages): nothing on the subject",
+        "Ballotpedia: no usable text returned; nothing on the subject",
+        "The Ballot Brief and iVoterGuide profiles: nothing on the subject (iVoterGuide answers are blank)",
+        "KRCU 2026-05-16 primary debate article: topics were Citizens United and others, nothing on the subject",
+        "news search on name plus voter ID / SAVE Act: nothing on the subject",
+        "blocked: https://www.congress.gov (403); he has never held office so no bill record expected"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:58:32.308Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

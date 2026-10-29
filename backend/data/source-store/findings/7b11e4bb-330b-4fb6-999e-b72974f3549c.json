@@ -1,0 +1,50 @@
+{
+  "politician_id": "7b11e4bb-330b-4fb6-999e-b72974f3549c",
+  "findings": [
+    {
+      "id": "6e8c2c43684dddc5750adb76e4af5f0d269bfb13d9431a1cae9cb2fa24de63e6",
+      "kind": "own-words",
+      "url": "https://www.davisfordelegate.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "He will fight to restore integrity in Virginia’s elections by requiring photo ID prior to voting and strengthening voter verification through signature matching.",
+      "note": "Campaign issues page: says he would require photo ID before voting and add signature matching.",
+      "subjects": [
+        "voter ID at the polls",
+        "signature matching",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.988Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "signature matching",
+        "election integrity"
+      ],
+      "places": [
+        "campaign issues page https://www.davisfordelegate.com/issues",
+        "campaign home page",
+        "Ballotpedia (nothing on the subject)",
+        "one web search on name plus voter ID (no independent reporting)",
+        "Ballotpedia lists district 39 and Roanoke while the campaign page says Franklin County; identity taken from Ballotpedia's link to this campaign site",
+        "blocked/not reviewed: lis.virginia.gov (not fetched per instruction)",
+        "not reviewed: On the Record extract script (repo scripts not run)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:37.988Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

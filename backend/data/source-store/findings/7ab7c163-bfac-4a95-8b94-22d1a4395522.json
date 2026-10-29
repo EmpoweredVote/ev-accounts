@@ -1,0 +1,311 @@
+{
+  "politician_id": "7ab7c163-bfac-4a95-8b94-22d1a4395522",
+  "findings": [
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district 10) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district 10) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d5e44b430b6e15ec69fa0d8dcf6796810e7555960b3cc2f14df58db5471c128",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=186495&includeVotes=true",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH D. (16)'), linked to David C. Farnsworth (district None) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district 10) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f302ba414881061fd3574b9d59773debb5122ca5c13cda659c3a93c502176a22",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78743",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1141S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('David C. Farnsworth') on the official bill page; linked to David C. Farnsworth via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('FARNSWORTH'), linked to David C. Farnsworth (district 10) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1acbc5e0756de721bd92920028ac959e2d267a2594caaaa9e0b298fe6ad1afe0",
+      "kind": "own-words",
+      "url": "https://www.azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative10",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Rusty campaigns as a conservative, but he blocks important election integrity bills, soft-pedals problems like illegal immigration, and has taken the lead in pushing agendas that place our kids at risk in their schools, against their parent's wishes, apparently, so he can appeal to a liberal media and establishment that is hostile to our founding values.",
+      "note": "Candidate statement in the Arizona Clean Elections voter guide for Legislative District 10 (signed David Christian Farnsworth). He says his opponent blocks election integrity bills. The page text refers to Bowers as running for Senate, which points to his first Senate race, but the page gives no date.",
+      "subjects": [
+        "election integrity laws in general",
+        "illegal immigration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:07:24.391Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found, extract script run with name)",
+        "official Senate caucus page https://www.azsenaterepublicans.gov/farnsworth (biography only, nothing on the subject)",
+        "https://www.azsenaterepublicans.gov/david-farnsworth (404)",
+        "legislature member roster (confirms sitting member, Senate District 10)",
+        "The Ballot Brief (confirms on the 2026-11-03 ballot for Senate District 10; no campaign site found there)",
+        "Arizona Clean Elections voter guide, Legislative District 10 candidate statement",
+        "blocked: https://ballotpedia.org/David_Farnsworth (empty page via fetch and via curl)",
+        "campaign site: none found",
+        "news searches (2): nothing further on the subject from his own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:07:24.391Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "politician_id": "e17d3526-c11f-43d9-ace0-4f30be6a80b1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr.mjs)",
+        "list-discovered-sources.ts (could not run: backend environment variables missing)",
+        "web search (1 query)",
+        "campaign site https://votekirwan.com/ (only a placeholder; no issue content)",
+        "campaign site https://votekirwan.com/press/ (Coming Soon placeholder)",
+        "campaign launch press release PDF, 2025-09-17 (read in full; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/fr/FL/candidate_Michael_Kirwan/689169 (HTTP 403 with WebFetch; curl hit a Cloudflare challenge)",
+        "Ballotpedia https://ballotpedia.org/Michael_Kirwan (fetch returned empty content)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:10:26.220Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida Tribune, https://floridatrib.org/2026/08/18/lashonda-holloway-wins-democratic-primary-for-floridas-4th-district/ : Holloway won the primary for Florida's 4th District with over 57 percent; Kirwan was her main challenger and trailed her)",
+        "On the Record (0 appearances)",
+        "Wikipedia page on the 2026 Florida House elections (lists Kirwan as a 4th District candidate with 15,809 votes)",
+        "one news search on his name (nothing on the subject)",
+        "not reviewed: campaign site and other places, because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:03:34.164Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "politician_id": "619ad301-d993-40b3-94fe-0eb956932dae",
+  "findings": [
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "3f40a200037499a1725335a35a21cf6ceb87f3257b7940e3fba2c9e7b2a0f382",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: nay (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "ID with a mail ballot",
+        "proof of citizenship to register (SB 16)",
+        "election integrity and voting laws in general (2021 quorum break)"
+      ],
+      "places": [
+        "in scope: Ballotpedia shows Texas House District 75, term ends 2027-01-12, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (district 75): no issue statements; no separate campaign site found on her Ballotpedia page",
+        "Ballotpedia: nothing on the subject",
+        "news searches (3): no direct quote from her on ID or citizenship rules; many results were about a different legislator with a similar name",
+        "CBS Austin 2021-07-14 photo gallery: she met the Vice President about the voting bill in Washington; no quote from her in the page text, not saved",
+        "Baruch College border blog 2020-05-26: quotes her on low turnout and past voter suppression, not on ID or citizenship rules, not saved",
+        "blocked: https://app.legiplex.com/profile/mary-gonzalez-42/tx/legislatures/2025/89r/legislation/page/4 (403), so her bill sponsorships for 2025 were not reviewed there",
+        "not found: any sponsorship of her own on ID or citizenship in pages reached; no own-words statement on SB 16 (2025) or SB 1 (2021)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:08:50.288Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

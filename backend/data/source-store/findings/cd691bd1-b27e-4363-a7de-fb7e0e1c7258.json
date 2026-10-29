@@ -1,0 +1,164 @@
+{
+  "politician_id": "cd691bd1-b27e-4363-a7de-fb7e0e1c7258",
+  "findings": [
+    {
+      "id": "a07148148678764fe167baa82228c06ee1592906f2f7729aee671074427a90b4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, Senate Second Reading (28 ayes, 13 noes); Lazzara is listed among the ayes",
+      "note": "Senate vote on a multi-part election bill. The ratified text says a county board may process a voter registration application only if the applicant affirmatively states US citizenship. If the citizenship answer is blank, the applicant gets a notice and must return a citizenship statement under penalty of perjury within 30 days. It also directs the State Board of Elections to remove voters flagged as possible non-citizens by a federal database. The Governor vetoed the bill on 08/17/2026 (per the bill page). The House vote on the concur motion was on 8/4/2026.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:08.524Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "4707fe10ce18648fc12312f94f883669f7ce91e29fb1e8ed74c01704abf8e9bf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Senate second reading, HB 958 Election Law Changes (RCS S-693, 28 to 13)",
+      "note": "Voted Aye on second reading in the Senate. Roll call shown on the official bill page. HB 958, Election Law Changes (2025-26 session). Per the official bill digest it, among other things: requires a statement of US citizenship (under penalty of perjury) on voter registration applications; requires covered military and overseas voters to send a copy of the photo ID used for in-person voting with the ballot; and extends the deadline for a voter to show ID after a provisional ballot to noon on the fifth business day after the election. It was ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID with a military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "early voting and absentee rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.954Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "724702ee06665e503e773b9f0ccd5ecdb75e7abde0188d1dbaaf2e512bd87269",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S356",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-S-356-2023",
+      "act": "sponsor",
+      "note": "Listed as a primary sponsor of S 356 (2023-24 session). The bill was filed as a motor-vehicle-dealer bill; its Edition 3 text, titled Constitutional Amendment/Photo ID, proposes a state constitutional amendment on photographic identification for voters. The page does not show who wrote the Edition 3 change. The bill's last action was referral to a House committee on 2024-06-27.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.954Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Michael_Lazzara (NC Senate District 6, on the Nov 3, 2026 general ballot; primary was canceled) and https://www.ncleg.gov/Members/Biography/S/426",
+        "On the Record (0 meetings found)",
+        "ncleg.gov member votes page https://www.ncleg.gov/Members/Votes/S/426 (2025-2026 session, scanned for election-related bills)",
+        "ncleg.gov introduced bills page https://www.ncleg.gov/Members/IntroducedBills/S/426: nothing on the subject (list loads by script; 2023 and 2025 pages showed no election bills)",
+        "ncleg.gov HB 958 bill page, ratified text and roll call",
+        "Ballotpedia: nothing on the subject (no survey or positions on voter ID)",
+        "not reviewed: official site and campaign site (not found by direct fetch; web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: https://www.facebook.com/SenatorMichaelLazzara (login-gated social page)",
+        "nothing on the subject: no own-words statements found"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:10:08.524Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or military-overseas ballot",
+        "provisional ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/ page and https://www.ncleg.gov/Members/Biography/S/426 show Michael A. Lazzara as the sitting member for Senate District 6, on the 2026-11-03 general-election ballot (his primary was cancelled)",
+        "On the Record (0 meetings)",
+        "legislature member pages: https://www.ncleg.gov/Members/IntroducedBills/S/426 (sponsored and co-sponsored bills) and https://www.ncleg.gov/Members/Votes/S/426 (votes), 2025-26 session reviewed; HB 958 bill page and official digest read",
+        "campaign site: nothing found (no working campaign site reached)",
+        "Ballotpedia: nothing on the subject",
+        "news searches on name plus voter ID words and on HB 958 coverage (NC Newsline, Carolina Journal, WECT, Daily Signal, ACLU of NC page): none of these quote him on the subject",
+        "not reviewed: floor debate video for HB 958"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:11:25.954Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

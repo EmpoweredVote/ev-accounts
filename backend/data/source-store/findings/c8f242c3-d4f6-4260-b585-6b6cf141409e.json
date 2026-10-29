@@ -1,0 +1,185 @@
+{
+  "politician_id": "c8f242c3-d4f6-4260-b585-6b6cf141409e",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9708e594ffed652a9fa6ebae63e0933487abc8931bf006981573542e61549513",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "M11 Concur, HB 589 VIVA/Election Reform (House roll call 1337, passed 73 to 41)",
+      "note": "House vote to concur with the Senate changes to HB 589, the Voter Information Verification Act and election reform bill, which became S.L. 2013-381. Davis is on the aye list.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:09:59.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e648d87af32272605ca1d3c9acf204deb890f3bf38f580c83eaa89983a16bbcb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "NC-H-589-2013",
+      "act": "sponsor",
+      "motion": "Listed among the non-primary sponsors of HB 589, VIVA/Election Reform",
+      "note": "The bill page lists Davis among the sponsors (non-primary) of HB 589, VIVA/Election Reform, Ch. SL 2013-381. The page does not give the date he signed on.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:09:59.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd2096d83523f46d556125b06d53fb4442eb5f73c54ef2cce1810a0afd72d47d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Second Reading, HB 958 Election Law Changes (House roll call 758, passed 66 to 47)",
+      "note": "House second-reading vote on HB 958, Election Law Changes. The seventh edition of the bill text includes a requirement that voter registration applications state citizenship, removal of deceased persons from voter lists, and a process to remove voters flagged as potential non-citizens from a federal database. Davis is on the aye list.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:09:59.015Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "scope: sitting NC House member (House District 20); Ballotpedia says he is not running for re-election in 2026; identity confirmed on https://www.ncleg.gov/Members/MemberList/H (Rep. Ted Davis, Jr., member id H/637)",
+        "On the Record (0 appearances, extract-otr.mjs run)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/637 (no own-words content)",
+        "NC General Assembly vote record https://www.ncleg.gov/Members/Votes/H/637 (reviewed for election bills)",
+        "NC General Assembly bill pages HB 589 (2013) and HB 958 (2025) with roll calls and bill text",
+        "Ballotpedia https://ballotpedia.org/Ted_Davis_Jr. (nothing on the subject)",
+        "campaign site: not reviewed, not located (no direct URL known and web search budget was used up)",
+        "news search on name plus subject words: not run, web search budget used up for the session",
+        "own-words statements (interviews, forums, questionnaires): nothing found in the sources reached"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:09:59.015Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "politician_id": "5d59648a-be0a-4a19-bb3d-344754a559ef",
+  "findings": [
+    {
+      "id": "589963bfaa1ebb7e78bc21fcf376f2b5d86946716f8176bd94dfb19029734fcc",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2025-02-28/benson-others-criticize-proposal-to-require-proof-of-citizenship-to-register-to-vote",
+      "date": "2025-02-28",
+      "date_precision": "day",
+      "passage": "“You don’t have to rewrite and destroy our entire system of elections or impose all these onerous requirements on all of Michigan voters because of these very, very, very rare isolated incidents,\" said Jocelyn Benson, Michigan Secretary of State.",
+      "note": "Quoted by Michigan Public at a news conference against a proof-of-citizenship-to-register proposal; she says rare cases do not justify new requirements on all voters.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fb9070112b5d504e38eb4831801d4c6e52e982ae097f125c9035fdcef7dd5ec",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2025-02-28/benson-others-criticize-proposal-to-require-proof-of-citizenship-to-register-to-vote",
+      "date": "2025-02-28",
+      "date_precision": "day",
+      "passage": "“No matter how many protections you put in a bank you’re going to have people who try to rob it. And sometimes even people get through and successfully do. That doesn’t mean you shut down the bank,” said Benson",
+      "note": "Quoted by Michigan Public at the same news conference; she compares occasional non-citizen voting to bank robberies that do not justify shutting the system down.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec5b2492e8a017e887fcb712a190ff2335296f41cc0d622f0224037cbdb6649f",
+      "kind": "own-words",
+      "url": "https://votebeat.org/michigan/2025/02/27/election-security-act-voter-registration-proof-of-citizenship-jocelyn-benson",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "passage": "“It could be provisional ballots, it could be additional verification or residency requirements in that moment,” she said at a news conference Thursday.",
+      "note": "Quoted by Votebeat: she says she is working on state legislation against non-citizen voting that could involve provisional ballots or added verification at same-day registration.",
+      "subjects": [
+        "non-citizen voting",
+        "provisional ballot",
+        "election security legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96d29353488d74fa7938fe16238639cdb8f6378e1a3787cf7128ba6593b4996c",
+      "kind": "own-words",
+      "url": "https://www.wilx.com/2025/02/28/michigan-officials-speak-out-about-save-act",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "passage": "“We can and we must take every reasonable effort to ensure only U.S. citizens are voting,” Benson said. ”But the SAVE Act is not a reasonable effort. The SAVE Act would stop millions of Americans from registering to vote by requiring voters to register in person with either their birth certificate or a U.S. passport.\"",
+      "note": "Quoted by WILX (story dated 2025-02-27 local time) on the federal SAVE Act; she backs reasonable efforts that only citizens vote and objects to the documents the act requires.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8ff8c1ee4204ad9314356b1c501f3edbb1c049cd08e410df0a5c904acced124",
+      "kind": "own-words",
+      "url": "https://fox17online.com/news/local-news/michigan/sos-benson-decries-bill-requiring-proof-of-citizenship-to-register-to-vote",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "passage": "\"The SAVE Act would make it harder for seniors born in a family home, for victims of house fires, tornadoes or floods, for college students who may not have immediate access to their documents back home, for people who are adopted in the United States or overseas,” says Secretary Benson.",
+      "note": "Quoted by Fox 17 on groups who she says would struggle to document citizenship under the federal SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "046b6084ff2c4d1237563bb4f5365adfbbe6e94ad67fbd240d7a01719c9153fd",
+      "kind": "own-words",
+      "url": "https://www.jocelynbenson.com/news/watch-benson-sounds-the-alarm-on-the-save-act-saying-it-will-cost-citizens-more-time-and-money",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "passage": "The SAVE Act is not going to save America at all. It is actually going to harm our ability to hold our elected officials accountable, including the President, in these midterms, at a time where Republicans, Independents and Democrats desperately want and need to be able to say, “Hey, you're driving up costs of everything from milk to childcare to healthcare to housing. That's not okay.”",
+      "note": "Her words in an MS NOW interview, posted on her campaign site (date shown on the page as Mar 21 2026); she opposes the federal SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:20.628Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (4 meetings: 2026-05-19, 2026-06-18, 2026-07-13, 2026-07-14; candidate forums, nothing on the subject)",
+        "Scope: she won the 2026-08-04 primary for governor (https://www.wmuk.org/2026-08-04/jocelyn-benson-wins-democratic-primary) and is the sitting Secretary of State",
+        "campaign site https://jocelynbenson.com/ (home, /plan, /news, /issues: only the SAVE Act press item saved)",
+        "https://www.jocelynbenson.com/news/watch-benson-sounds-the-alarm-on-the-save-act-saying-it-will-cost-citizens-more-time-and-money",
+        "news coverage of the 2025-02-27 news conference: Michigan Public, Votebeat, WILX, Fox 17; WDET 2025-03-07 interview page (paraphrase only, no direct quote saved)",
+        "blocked: https://www.michigan.gov/sos/resources/news/2025/02/24/statement-of-secretary-benson-opposing-the-save-act",
+        "blocked: https://www.michigan.gov/sos/resources/news/2025/02/27/its-a-trick-secretary-benson-calls-on-congress-to-stop-the-save-act",
+        "blocked: https://www.michigan.gov/sos/resources/news/2025/04/10/secretary-benson-statement-on-us-house-passage-of-bill-to-block-citizens-votes",
+        "blocked: https://ballotpedia.org/Jocelyn_Benson",
+        "blocked: https://michiganadvance.com/2025/02/03/michigan-house-gop-proposes-proof-of-citizenship-requirement-for-all-voters/",
+        "blocked: https://sooleader.com/local-news/benson-issues-statement-on-failed-policy-to-require-proof-of-citizenship-for-voters-10154610",
+        "four web searches on her name plus the subject words",
+        "not reviewed: voter ID / affidavit statements on michigan.gov (blocked); legislature bill pages (not applicable to her office)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:48:20.628Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

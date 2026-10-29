@@ -1,0 +1,30 @@
+{
+  "politician_id": "83f36fc7-cc16-4420-a0c0-5025af823bdf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate guide page https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-131/candidates/robert-solomon-clifton (confirms he is running for Georgia House District 131 in the 2026 general election; nothing on the subject)",
+        "bill-tracker page https://www.billsponsor.com/politicians/11913/rob-clifton (featured sponsored bills; none on the subject)",
+        "news: https://theaugustapress.com/rep-rob-clifton-appointed-to-georgia-house-majority-whip-team/ (quotes on other topics; nothing on the subject)",
+        "two web searches on his name plus the subject words: nothing on the subject",
+        "blocked: https://ballotpedia.org/Rob_Clifton_(Georgia) (fetch returned empty page)",
+        "his official site and campaign site were not found by search",
+        "legis.ga.gov bill pages not tried (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.719Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

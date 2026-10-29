@@ -1,0 +1,133 @@
+{
+  "politician_id": "ab88a2b1-69e0-4287-8126-423c7cfc45f3",
+  "findings": [
+    {
+      "id": "8c27df97592e1d666585f9add1f695275326d216f6d36e7cbbcdac55e5342e56",
+      "kind": "own-words",
+      "url": "https://www.repmikearmanini.com/Audio/LatestAudio",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "The PA House has passed legislation (HB1300) designed to ensure integrity in elections and restore public trust in the process.",
+      "note": "Written blurb on his official site for an audio clip titled 'Rep. Armanini Comments on Passage of Election Reform Legislation'. The audio itself was not reviewed; the blurb is site text, not a verified quote of him.",
+      "subjects": [
+        "election integrity",
+        "voter ID at the polls (HB1300 scannable ID provision, per news)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:01.435Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('ARMANINI'), linked to Michael J. Armanini (district 75) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Armanini'), linked to Michael J. Armanini (district 75) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.325Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('ARMANINI'), linked to Michael J. Armanini (district 75) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.325Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official House site repmikearmanini.com (confirms sitting state representative, district 75); audio page fetched",
+        "blocked: https://www.pahouse.com/Armanini/NewsCenter (404)",
+        "blocked: https://ballotpedia.org/Mike_Armanini (fetch returned an empty page)",
+        "local news: filing for 2026 re-election confirmed at https://gantnews.com/2026/03/10/rep-mike-armanini-files-for-re-election-renewing-commitment-to-the-75th-district/ ; nothing on the subject there",
+        "three web searches on his name plus voter ID, election integrity, mail-in words",
+        "audio clip 2021-06-22 on HB1300: not reviewed (audio not readable); only its written blurb saved",
+        "legislature bill pages: not reviewed (sponsorships and votes linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:09:01.435Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:22:46.325Z",
+      "by": "identity-pa-2026-10-29c"
+    }
+  ]
+}

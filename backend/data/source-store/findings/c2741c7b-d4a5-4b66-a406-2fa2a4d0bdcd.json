@@ -1,0 +1,40 @@
+{
+  "politician_id": "c2741c7b-d4a5-4b66-a406-2fa2a4d0bdcd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: no longer in scope; appointed (not elected) Indiana Utility Regulatory Commission member, left office on 2026-08-14, not a legislator and not on a ballot (https://ballotpedia.org/David_Veleta)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/David_Veleta): identifies him; nothing on the subject",
+        "not reviewed: Indiana General Assembly bill pages (not a legislator; no sponsorships expected)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:49:18.612Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check only (search stopped: out of scope)"
+      ],
+      "places": [
+        "status: left office 2026-08-14 (Ballotpedia page https://ballotpedia.org/David_Veleta shows he served on the Indiana Utility Regulatory Commission from 2022-09-14 to 2026-08-14, not a legislator or a 2026 candidate)",
+        "On the Record (0 appearances)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:35:57.974Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

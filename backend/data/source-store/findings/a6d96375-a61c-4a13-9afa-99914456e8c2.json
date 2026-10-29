@@ -1,0 +1,352 @@
+{
+  "politician_id": "a6d96375-a61c-4a13-9afa-99914456e8c2",
+  "findings": [
+    {
+      "id": "4f92990c070af3f011423a452c2e56e69ff7ad89bcc584e09fa29c80862d97c2",
+      "kind": "own-words",
+      "url": "https://contracosta.news/2025/01/27/demaio-and-essayli-introduce-ca-voter-id-law/",
+      "date": "2025-01-27",
+      "date_precision": "day",
+      "passage": "There is a cancer growing in our democracy where too many California voters do not trust in our elections. California voters will not have the confidence they deserve that we have fraud-free elections — until we enact this common sense voter ID law.",
+      "note": "Statement in his name when AB 25 was announced; reprinted by Contra Costa News from the press release. He ties voter ID to trust in elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb8b622c322a188678bd83c0c8752e6a5d52a99708c394b204ac5d72b377e699",
+      "kind": "own-words",
+      "url": "https://californiaglobe.com/articles/democrats-kill-assemblyman-demaios-voter-id-bill-claiming-it-will-restrict-voting-access/",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "passage": "“AB 25 would bring California in line with 25 other states voter ID requirements.”",
+      "note": "Quoted by the California Globe at the Assembly Elections Committee hearing on AB 25; he compares the bill to other states' rules.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce188b97eeaf85773f5bb3c494f9c7b102629605554eef36f125f19a5f7da80c",
+      "kind": "own-words",
+      "url": "https://californiaglobe.com/articles/democrats-kill-assemblyman-demaios-voter-id-bill-claiming-it-will-restrict-voting-access/",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "passage": "“IT’S BULL****! CA Democrats just killed my Voter ID bill! Well, I’m not backing down — we’re taking it to the ballot box with a citizen’s initiative in 2026!”",
+      "note": "His post on X, quoted by the California Globe, after AB 25 failed in committee; he announces a 2026 ballot initiative.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db6ae026f483897af125193c09f7068f760444877ddd89ba42e0e5b87630cf73",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/ca-democrats-vote-to-kill-voter-id-law----but-the-fight-isnt-over",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "“I firmly believe a Voter ID law is the best way to restore public trust and confidence in our elections in California — and if we can get enough signatures to qualify the measure for a statewide vote we would win,” DeMaio says.",
+      "note": "Statement on his own organization's site after the AB 25 committee vote (page undated; written the week of the 2025-04-09 hearing); he links voter ID to public trust and sets out the signature drive.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ce2a355d3a3a966b01901a16847d4990f5d0c9f578cbbcb80d00c03924c9233",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/ca-voter-id-initiative-officially-qualifies-for-november-ballot",
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "passage": "Our measure simply holds government officials accountable to maintain accurate voter lists and verify the identity of individuals casting ballots in our elections. Other states that have implemented Voter ID programs have seen an increase in participation in their elections, including an increase in minority voting.",
+      "note": "Statement on his organization's site when the initiative qualified for the November 2026 ballot. The release says the measure requires voter ID to cast a ballot, citizenship verification of registered voters, and accurate voter rolls.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86e114072ea41531803a40a65d99b1c10335ca6f0adc45da4c60027b97f27c8",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/carl-demaio-launches-tv-ad-blitz-for-prop-39-calls-it-the-bipartisan-solution-to-voter-id----and-says-opponents-know-it",
+      "date": "2026-09-21",
+      "date_precision": "day",
+      "passage": "“Prop. 39 is the bipartisan solution to Voter ID that improves trust in our democracy through balanced and common-sense reforms — and that's why it is supported by Democratic and Independent voters,” DeMaio said.",
+      "note": "Campaign release on Prop 39. Page text describes the measure as government-issued ID at the polls, last four digits of an ID number for mail ballots, citizenship checks by election officials, and free ID cards on request.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "free state ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74fd780dec9f1c91801545def119692cfb2f4f1232c1f00735af6d26122480e2",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/carl-demaio-launches-tv-ad-blitz-for-prop-39-calls-it-the-bipartisan-solution-to-voter-id----and-says-opponents-know-it",
+      "date": "2026-09-21",
+      "date_precision": "day",
+      "passage": "“Our TV ad directly responds to the grossly dishonest attack ads being run by California politicians who simply want to inject toxic partisanship into this campaign because they thrive on division and can't accept bipartisan solutions being offered through this citizens' initiative,” DeMaio said.",
+      "note": "His reply to opponents' ads against Prop 39, in the same release.",
+      "subjects": [
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "680ccde101f97fb42fc172420d25db883930a0457c31dcba81a711767898b426",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/prop-39-voter-id-statewide-tour-to-hold-71-rallies-through-election-day",
+      "date": "2026-09-24",
+      "date_precision": "day",
+      "passage": "“Over the next 35 days of 71 events, we are looking forward to making our case for Prop 39’s bipartisan solution to Voter ID in every single part of California,” DeMaio said.",
+      "note": "Campaign release announcing a statewide rally tour for Prop 39. The page text says the measure keeps vote-by-mail and requires government ID in person and an ID-number check for mail ballots.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef8846cf64b780b04ae2c1507e22c34945a9142f5c1bd3082fdff0284f3209b2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB25",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "author",
+      "note": "Lead author of AB 25, the California Voter ID and Election Integrity Act of 2025: voter ID for in-person and mail ballots, citizenship verification, county voter-list accuracy audits, ballot-count deadline. Introduced 12/02/24 per the Internet Archive copy of the leginfo status page; it failed in the Assembly Elections Committee on 2025-04-09 (2 to 5).",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f55e837c7fbac3f2c3156fcba451f17c7e2318992620f6ecc1f032a9cab48048",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Assembly Third Reading",
+      "note": "Voted no on the Assembly floor (60 to 18) on AB 1116, which lets a person register online without a driver's license or state ID by giving the last four digits of a Social Security number. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d55deed0263c00e8b3682a4f8ae711abd6d29b4a4a5d704f91ee0c036cb5e829",
+      "kind": "record",
+      "url": "https://www.reformcalifornia.org/news/ca-voter-id-initiative-officially-qualifies-for-november-ballot",
+      "date": "2026-04-24",
+      "date_precision": "day",
+      "instrument_id": "CA-PROP-39-2026",
+      "act": "sponsor",
+      "motion": "California Voter ID Initiative (Prop 39), citizens' initiative",
+      "note": "Co-author and sponsor of the citizens' initiative that qualified for the November 2026 ballot, amending the state constitution to require voter ID to cast a ballot, citizenship verification of registered voters, and accurate voter rolls. Page is his organization's release dated by the California Globe copy of 2026-04-24.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2172d3fc521368d9c0180d3d2963c18677b3feece1fbc32ca4c894f0a397af65",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted no on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID, identity checked with the last four digits of a Social Security number). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:11:41.987Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "739d85e03942ceba1102635871a28278cfdc71aaa44cc505678f902f3ce204e1",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "AB 1116 Concurrence in Senate Amendments, Assembly floor",
+      "note": "Voted no on the Assembly floor (59 to 19) on concurring in the Senate amendments to AB 1116 (online voter registration without a driver's license or state ID, identity checked with the last four digits of a Social Security number). The Governor vetoed the bill on 2026-09-27 per the same page. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.874Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "free state ID",
+        "voter ID ballot initiative",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 75)",
+        "blocked: https://ad75.asmrc.org/?p=7651 (bot check)",
+        "his organization's site reformcalifornia.org (April 2025, April 2026, September 2026 pages)",
+        "California Globe (2025-04-09 hearing report and 2026-04-24 qualification report)",
+        "Contra Costa News reprint of the AB 25 release",
+        "California Assembly bill pages via the Internet Archive copy of the leginfo vote and status pages (AB 25, AB 1116, SB 1174); he was not in office for the SB 1174 vote",
+        "CalMatters Digital Democracy AB 25 page (no transcript text for him found in the fetched page)",
+        "one news search on his voter ID initiative",
+        "not reviewed: Assembly Elections Committee hearing video 2025-04-09",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote and veto)"
+      ],
+      "found": 12,
+      "at": "2026-10-28T16:11:41.987Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "free state ID",
+        "voter ID ballot initiative",
+        "SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Assembly District 75)",
+        "blocked: https://ad75.asmrc.org/?p=7651 (bot check)",
+        "his organization's site reformcalifornia.org (April 2025, April 2026, September 2026 pages)",
+        "California Globe (2025-04-09 hearing report and 2026-04-24 qualification report)",
+        "Contra Costa News reprint of the AB 25 release",
+        "California Assembly bill pages via the Internet Archive copy of the leginfo vote and status pages (AB 25, AB 1116, SB 1174); he was not in office for the SB 1174 vote",
+        "CalMatters Digital Democracy AB 25 page (no transcript text for him found in the fetched page)",
+        "one news search on his voter ID initiative",
+        "not reviewed: Assembly Elections Committee hearing video 2025-04-09",
+        "CalMatters Digital Democracy AB 1116 page (2026 concurrence vote and veto)"
+      ],
+      "found": 12,
+      "at": "2026-10-28T16:28:19.874Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

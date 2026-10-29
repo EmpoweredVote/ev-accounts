@@ -1,0 +1,133 @@
+{
+  "id": "WI-AB-379-2025",
+  "scope": "state:wi",
+  "title": "AB 379 (2025-2026 Wisconsin Legislature, regular session): forms of proof of identification for voting.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB379"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) s. 5.02 (6m) (a) 5. (new): REAL ID licenses and cards from any state\n(quote) An operator’s license or identification card issued by any state, as defined in P.L. 109-13, section 201 (5), that satisfies the requirements of P.L. 109-13, section 202.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.",
+  "sponsors": [
+    {
+      "name": "Kirsch",
+      "role": "prime",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Snodgrass",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Arney",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Bare",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Clancy",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Cruz",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Joers",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Madison",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Miresse",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Phelps",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Sheehan",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Sinicki",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Stroud",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Subeck",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Udell",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Carpenter",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Wirch",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Keyeski",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Larson",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Ratcliff",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    },
+    {
+      "name": "Spreitzer",
+      "role": "co",
+      "version": "As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

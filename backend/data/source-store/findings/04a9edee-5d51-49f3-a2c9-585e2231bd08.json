@@ -1,0 +1,77 @@
+{
+  "politician_id": "04a9edee-5d51-49f3-a2c9-585e2231bd08",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JPL1 names Representative Jack Patrick Lewis, 7th Middlesex (Framingham); 2026 ballot status not confirmed (no search possible)",
+        "On the Record (0 appearances, 0 sources)",
+        "legislature bill pages (profile sponsorship list): only election bills are H.831 age requirements in local elections and H.852 17-year-olds in primaries, both off the subject; nothing on the subject",
+        "blocked: https://ballotpedia.org/Jack_Lewis_(Massachusetts) (page not found by fetch or curl)",
+        "not reviewed: official site and campaign site (not fetched)",
+        "not reviewed: news search (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:58:24.665Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member profile page (confirms 7th Middlesex representative; election bills H.831 and H.852 are about voting age only, not on the subject)",
+        "state election results page for the 2026 September primary for his seat, where his is the only name listed",
+        "TV station interview article from 2024 (nothing on the subject)",
+        "news search on name plus voter ID (nothing from him on the subject)",
+        "Ballotpedia not reviewed",
+        "no campaign or official site statement on the subject found",
+        "nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:09:15.071Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

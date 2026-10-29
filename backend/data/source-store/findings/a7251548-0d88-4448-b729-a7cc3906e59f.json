@@ -1,0 +1,37 @@
+{
+  "politician_id": "a7251548-0d88-4448-b729-a7cc3906e59f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check: 2026 general-election ballot status"
+      ],
+      "places": [
+        "status: lost the June 2026 primary (NY-21; withdrew from any November run on 2026-07-03) - https://www.wcax.com/2026/07/03/smullen-drops-out-ny-21-congressional-race-after-meeting-with-trump/ ('Smullen lost the primary in June to Trump-endorsed candidate Anthony Constantino' per page; also 'Robert Smullen will not run in November for New York's 21st Congressional District after meeting with President Trump.') and https://www.wamc.org/news/2026-07-03/robert-smullen-ends-bid-for-congress-in-ny-21",
+        "On the Record (0 meetings)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:32:44.953Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: withdrew 2026-07-03 (WCAX report dated that day says he will not run in November for NY-21, after losing the June primary): https://www.wcax.com/2026/07/03/smullen-drops-out-ny-21-congressional-race-after-meeting-with-trump/",
+        "On the Record (0 appearances)",
+        "not searched further: out of scope after withdrawal"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:45:21.705Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

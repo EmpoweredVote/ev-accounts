@@ -1,0 +1,30 @@
+{
+  "politician_id": "831ea2bb-f83f-4228-b1f3-00bf660df88b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate guide page https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-139/candidates/carmen-rice (confirms she is running for Georgia House District 139 in 2026; says her website had no information on voting and elections as of 2026-07-23; nothing on the subject)",
+        "news: https://digital-release.wrbl.com/news/politics/race-for-georgia-house-district-139-meet-the-candidates/amp/ (candidate answers are in a video not readable as text; not reviewed: the video)",
+        "news: https://www.ajc.com/politics/georgia-house-runoff-carmen-rice-defeats-sean-knox-for-columbus-seat/TPCPAPZM35HEXM4OQD2KEI2ZFE (no quotes on the subject)",
+        "two web searches on her name plus the subject words: nothing on the subject",
+        "blocked: https://ballotpedia.org/Carmen_Rice (fetch returned empty page)",
+        "blocked: https://app.legiplex.com/profile/carmen-rice-20791/ga/legislatures/2025/2025-r/legislation (HTTP 403)",
+        "not reviewed: https://www.legis.ga.gov/members/house-of-representatives/5064?session=1031 (page only shows a loading screen)",
+        "her official site and campaign site were not found by search"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.718Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

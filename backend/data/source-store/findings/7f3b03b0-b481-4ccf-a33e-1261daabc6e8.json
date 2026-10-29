@@ -1,0 +1,32 @@
+{
+  "politician_id": "7f3b03b0-b481-4ccf-a33e-1261daabc6e8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "ID for mail ballots",
+        "election integrity laws in general",
+        "2026 statewide voter-ID ballot measure"
+      ],
+      "places": [
+        "Confirmed as sitting State Senator for District 23 (term to 2028) via Ballotpedia",
+        "On the Record (0 meetings)",
+        "blocked: https://sd23.senate.ca.gov/ (official site, 503 site under maintenance, retried once)",
+        "Campaign site suzettevalladares.com: home, news and public-safety pages; nothing on the subject",
+        "Ballotpedia: nothing on the subject; she did not complete the candidate survey",
+        "Internet Archive copies of leginfo vote pages for SB 1174 (she was not in the Assembly or Senate for its votes), AB 1116 (Assembly floor only, no Senate vote shown) and SB 851 (election-administration bill; Senate floor votes seen but not about ID, so not saved)",
+        "KPBS July 2025 article on the voter-ID ballot campaign: does not name her",
+        "blocked: https://calmatters.digitaldemocracy.org bill pages (404 site not found)",
+        "two news searches on name plus voter ID, SB 1174, citizenship, election integrity: nothing about her"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:11:17.271Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

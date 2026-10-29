@@ -1,0 +1,29 @@
+{
+  "politician_id": "60c73b5e-8097-48a4-89bd-97681f44b2ce",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official page: https://dir.ca.gov/director.html (confirms she is the governor-appointed Director of the Department of Industrial Relations since 2025-07-16; nothing on the subject)",
+        "Ballotpedia: no page found for this name (404)",
+        "legislature bill pages: not applicable, she is an appointed agency director and not a legislator",
+        "CalMatters Digital Democracy profile: blocked: https://calmatters.digitaldemocracy.org/people/113317 (404 on fetch)",
+        "news search on name plus subject words (nothing on the subject)",
+        "campaign site: none (appointed, not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:05:22.832Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

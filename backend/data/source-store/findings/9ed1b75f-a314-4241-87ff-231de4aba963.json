@@ -1,0 +1,76 @@
+{
+  "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963",
+  "findings": [
+    {
+      "id": "8fb3a3582e090ee15f5ba52e9c937d73a6e8c134994480ed228fddde19769e78",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S512",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-512-2025",
+      "act": "sponsor",
+      "note": "Sponsor of S.512, An Act extending voting rights in municipal elections to noncitizen voters of the commonwealth. The date shown is the referral to the Election Laws committee, the earliest action on the page. The bill got a hearing on 2025-05-06 and was sent to a study order on 2025-07-31.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:29.714Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/James_Eldridge (on 2026 general ballot, Nov 3, 2026, advanced from Sept 1, 2026 primary)",
+        "On the Record (0 appearances)",
+        "official legislature profile and Sponsored tab https://malegislature.gov/Legislators/Profile/JBE0/Sponsored",
+        "malegislature.gov bill search for 'voter identification': no bill by this person found",
+        "campaign/official site https://www.senatoreldridge.com: page text did not load usable content, nothing on the subject seen",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject in own words found"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:18:12.604Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "non-citizen voting in local elections (related)",
+        "mail-ballot ID",
+        "election access and fair elections bills (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/James_Eldridge (confirms sitting State Senate member for Middlesex and Worcester, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JBE0 (sponsored list shows S.511 and S.512 on election topics)",
+        "legislature bill pages for S.511 and S.512 (194th General Court)",
+        "web news searches on name plus voter ID, photo ID, proof of citizenship, Senate budget voter ID amendment: no own words and no voter ID vote found",
+        "not reviewed: S.511 full bill text (page gave only a title); campaign site (not located); ontheissues.org (lead-only)",
+        "unverified lead not used: a Substack post about S.512 (not an official source)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:49:29.714Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

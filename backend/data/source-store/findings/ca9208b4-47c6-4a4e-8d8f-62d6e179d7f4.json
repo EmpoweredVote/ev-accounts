@@ -1,0 +1,79 @@
+{
+  "politician_id": "ca9208b4-47c6-4a4e-8d8f-62d6e179d7f4",
+  "findings": [
+    {
+      "id": "459feac7d8597ef36048345cae7b06ef03a7ed3df63fcee57cc9958a888301a0",
+      "kind": "own-words",
+      "url": "https://www.leighdavis.org/vote",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "You may need to show identification when you check-in at your polling place if:",
+      "note": "Voter information page on her campaign site. It lists four cases when ID may be asked at check-in: first-time voting in Massachusetts, being on the inactive voter list, casting a provisional or challenged ballot, or a poll worker having a practical and legal reason to ask. The page is undated; the year is an estimate from the 2026 election content (registration deadline October 26th).",
+      "subjects": [
+        "ID at the polls",
+        "ID for first-time voters",
+        "provisional ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:26:35.554Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for first-time voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Leigh_Davis says she is the incumbent for MA House 3rd Berkshire and is on the Nov 3, 2026 ballot after advancing from the Sep 1, 2026 primary",
+        "Positive control: https://malegislature.gov/Legislators/Profile/LSD1 (Rep. Leigh Davis, 3rd Berkshire)",
+        "On the Record (0 meetings)",
+        "Campaign site https://www.leighdavis.org (vote page: found; what-i-stand-for page: nothing on the subject; home page: nothing on the subject)",
+        "Legislature member page: sponsored list shows recall elections for Monterey and Dalton (H.3908, H.4242), nothing on voter ID or citizenship proof",
+        "blocked: https://malegislature.gov/Bills/Search (results load by script, so a bill-text search for voter identification could not be read)",
+        "Ballotpedia: nothing on the subject (no survey response, no issue positions)",
+        "Berkshire Edge Commonwealth Connections columns (4 pages linked from her site): nothing on the subject",
+        "not searched: news search on name plus subject words, because the session web-search limit was used up",
+        "not reviewed: Facebook pages https://www.facebook.com/repleighdavis and https://www.facebook.com/leighsusandavis"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:26:35.554Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "malegislature.gov legislator profile LSD1 (confirms Leigh Davis, 3rd Berkshire; sponsored bills reviewed, nothing on the subject)",
+        "malegislature.gov cosponsored-bills list for the 194th Court: nothing on the subject",
+        "Ballotpedia, page Leigh Davis (confirms she is on the 2026 general election ballot; survey text has nothing on the subject)",
+        "web news search on name plus voter ID words: nothing on the subject",
+        "campaign site leighdavis.org: home page, nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:09:34.673Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "politician_id": "b26f9c00-5f78-4989-ab17-7af4d0cde7ee",
+  "findings": [
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('STENDER'), linked to Michael Stender (district 108) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "ID with mail ballot",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "identity check: legislature member page for House District 108 (https://www.palegis.us/house/members/bio/2014/rep-stender)",
+        "scope: https://www.ballotready.org/people/michael-stender lists him as a candidate for District 108 in the 2026 general election",
+        "On the Record (0 appearances)",
+        "House caucus latest-news list: nothing on the subject (https://www.pahousegop.com/NewsGroup/Latest-News)",
+        "House caucus member page: not found (404 or page-not-found at the URL patterns tried)",
+        "official member site pahouse.com/Stender: 404, not reviewed",
+        "Ballotpedia member page: not fetched separately; search listed it, no own words expected there",
+        "two news searches on his name plus voter ID, election integrity, mail-in: nothing in his own words",
+        "bill pages for sponsorships: left to separate record linking",
+        "nothing on the subject for proof of citizenship or the SAVE Act"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:09:47.734Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.864Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "politician_id": "4b0d1306-5004-482c-b5e4-44a6c1d542eb",
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Sheila_Klinker names her as Indiana House District 27 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 ballot (fetched with curl)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia (profile fetched; no voter ID or election-law positions listed; candidate survey not completed)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_sheila_klinker_1 (page needs JavaScript; no text returned)",
+        "blocked: https://iga.in.gov/legislative/2005/bills/senate/483 (page needs JavaScript; no text returned)",
+        "blocked: https://www.indianahousedemocrats.org/members/district-27 (404)",
+        "not reviewed: news search on her name plus voter ID words (session web search budget used up)",
+        "not reviewed: campaign site and bill sponsorship lists (no reachable text version)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:31:24.766Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Sheila_Klinker (confirms she is on the 2026-11-03 general ballot as House District 27 incumbent; nothing on the subject)",
+        "House caucus news archive https://www.indianahousedemocrats.org/news/category/Rep.+Sheila+Klinker (her releases on other subjects; nothing on voter ID, mail ballots or citizenship)",
+        "House caucus release https://www.indianahousedemocrats.org/news/klinker-comments-on-house-passage-of-republicans-new-congressional-map (congressional map statement, not on this subject)",
+        "Indiana Capital Chronicle voter guide for House District 27: no readable content; the guide reportedly records no survey response",
+        "not reviewed: https://iga.in.gov bill pages for sponsorships (script-driven site returned no readable text)",
+        "news searches on her name plus voter ID, student ID, mail ballot, citizenship and SB 10 (nothing by or quoting her)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:55.758Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

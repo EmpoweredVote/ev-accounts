@@ -1,0 +1,112 @@
+{
+  "politician_id": "c3956e15-01f6-46cf-95bd-edd43f0ae8f3",
+  "findings": [
+    {
+      "id": "16b28a093ab2a84e26ceb6f51a6816a383b4b46ba83cf1aa1ed8fb47b9842ead",
+      "kind": "own-words",
+      "url": "https://www.inquirer.com/politics/election/pennsylvania-voting-laws-2022-governor-election-20220125.html",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "passage": "“I am willing to sit down with folks who are operating in good faith to discuss voter ID,” Shapiro said in the interview, stressing that he won’t engage with those “sharing conspiracy theories” and won’t support “any restrictive measure” that disenfranchises people.",
+      "note": "Philadelphia Inquirer quoted him in an interview during his 2022 campaign for governor. The sentence also reports that he did not rule out some form of voter ID requirements provided they do not decrease access to the ballot (reporter's wording). Date is the article's published date.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f44ea6f7ba528e2340b25a59da76d1d41a57c8eac44402bd463b13408f5e698f",
+      "kind": "own-words",
+      "url": "https://www.inquirer.com/politics/election/pennsylvania-voting-laws-2022-governor-election-20220125.html",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "passage": "“Congress has failed to protect voting rights,” Shapiro said in an interview. “Now what’s clear is that the battle is going to be left up to the states.”",
+      "note": "Same Inquirer interview. The article says he pledged to veto nearly all the other caucus ideas on elections, including any attempt to restrict mail voting (reporter's wording).",
+      "subjects": [
+        "election integrity laws (general)",
+        "mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5b01000a887a58eb3ee81a60a2cc1ed85e541ccf0908ad287cf4bae3cd1340",
+      "kind": "own-words",
+      "url": "https://www.democracydocket.com/news-alerts/pennsylvania-governor-republicans-are-on-the-side-of-disenfranchisement/",
+      "date": "2026-04-16",
+      "date_precision": "day",
+      "passage": "“Why do we do that? Because we want to err on the side of enfranchisement,” Shapiro said.",
+      "note": "Democracy Docket quoted him from an interview about letting voters fix mail-ballot errors such as a missing date and about early processing of mail ballots. Not about ID. Saved as related mail-ballot material.",
+      "subjects": [
+        "mail-ballot dating and curing (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7803c543ecf07ff43229f49872ff2bcf8aa69ae4351c671c8855c4511e311c0",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2026/08/pennsylvania-governor-race-elections-voting-shapiro-garrity/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“Governor Shapiro has a long record of protecting our democracy – from standing up to Trump and his allies when they try to undermine it, to implementing commonsense reforms to protect and improve our free, fair, safe, secure elections,” he said in an email.",
+      "note": "Spotlight PA/Votebeat quoted Manuel Bonder, a spokesperson for his campaign, defending his election record. This is a campaign spokesperson's statement, not the governor's own words. The same article says he did not directly answer a question about whether he supported a 2024 House bill.",
+      "subjects": [
+        "election integrity laws (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.547Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "mail-ballot dating and curing",
+        "automatic voter registration"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "official governor newsroom page (pa.gov/governor/newsroom): nothing on the subject (search page empty)",
+        "campaign site joshshapiro.org: home page reached; issues page returned 404; nothing on the subject",
+        "blocked: https://ballotpedia.org/Josh_Shapiro",
+        "blocked: https://penncapital-star.com/government-politics/with-a-softened-stance-from-the-governor-house-gop-to-reintroduce-election-reform-bill/",
+        "news: Inquirer (2022-01-25), Democracy Docket (2026-04-16), Votebeat/Spotlight PA (2026-08-20)",
+        "web search x4 (voter ID, Inquirer interview, SAVE Act, mail ballots)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:43:27.547Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

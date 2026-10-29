@@ -1,0 +1,93 @@
+{
+  "politician_id": "62764b2a-5b54-4edb-9c69-06320cbebbad",
+  "findings": [
+    {
+      "id": "3f471dec967704c8bab0ce0a041b7369c0803f904f1bca6f3293300166567f05",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/S318",
+      "date": "2011-01-20",
+      "date_precision": "day",
+      "instrument_id": "MA-S-318-2011",
+      "act": "sponsor",
+      "note": "Rush filed S.318, 'An Act requiring voters to furnish identification'. Text adds to G.L. c.50 a Section 9: 'All persons voting at a primary or election shall produce valid proof of their identity before so voting.' It lists no accepted documents and no fallback for voters without ID. Referred to Election Laws, hearing scheduled 2011-09-21, and later accompanied a study order (S2364). Docket notes it is similar to House 670 of 2009-2010.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:44:50.086Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3ccb5689e15d23e6b3bab2ac00719fe2bac3599d4f4555fbb2798547ba8485c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/186/H670",
+      "date": "2009-01-20",
+      "date_precision": "day",
+      "instrument_id": "MA-H-670-2009",
+      "act": "sponsor",
+      "note": "Rush (then a House member) was the sponsor of H.670, 'An Act Requiring Voters To Furnish Identification'. It was referred to committee and accompanied a study order. I did not read the bill text.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:44:50.086Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Ballotpedia https://ballotpedia.org/Michael_Rush: \"He lost in the Democratic primary on September 1, 2026.\"; identity confirmed at https://malegislature.gov/Legislators/Profile/MFR0, Senator Michael F. Rush, Norfolk and Suffolk)",
+        "On the Record (0 appearances)",
+        "Ballotpedia",
+        "official legislature profile and bills page (nothing on the subject)",
+        "not reviewed: web news search (search budget used up)",
+        "not reviewed: official campaign site (https://www.michaelrush.org returned no content)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:10:12.747Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Massachusetts legislature profile page https://malegislature.gov/Legislators/Profile/MFR0 (confirms sitting senator, Norfolk and Suffolk; current sponsored list has nothing on the subject)",
+        "Wikipedia page for Mike Rush (confirms House 2002-2011 and Senate since 2011; nothing on the subject)",
+        "Massachusetts legislature bill pages S.318 (2011) and H.670 (2009)",
+        "news search on name plus voter ID: no own-words statements found",
+        "no official-site or campaign-site statements on the subject found; Ballotpedia not fetched; co-sponsored lists not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T11:44:50.086Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "politician_id": "c0019789-2464-47bf-81a5-73fc2867a6c7",
+  "findings": [
+    {
+      "id": "a5bfe2f199f6686ac720ea3ed30b7e4fca5e2b72e701f2d214faa7832c68ae87",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Matt_Morgan_(Texas)",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "passage": "Our elections should be open, honest, and fair.  I want every citizen to have the ability to vote should they choose, but I do not want a single illegal vote cast.  We need to print a readable serial number on every ballot in the State.  We need to ensure that those that have passed do not remain on our voter rolls.",
+      "note": "From his 2024 Ballotpedia Candidate Connection survey answers (page shows it released 2024-02-02), when he was running for the District 26 seat. He says he wants every citizen able to vote and no illegal votes, and calls for readable serial numbers on ballots and for removing deceased people from the voter rolls.",
+      "subjects": [
+        "election integrity laws in general",
+        "non-citizen voting",
+        "voter-roll checks",
+        "ballot serial numbers"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:49.827Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "417eac9f11bc1d169608f4d8389d28c80cc8fb0b0c9763167630f4eedf0341a2",
+      "kind": "own-words",
+      "url": "https://katychristianmagazine.com/?p=75684",
+      "date": "2025-02-13",
+      "date_precision": "day",
+      "passage": "With election integrity at the forefront of public trust, it’s critical that our voter rolls remain current and accurate,",
+      "note": "Quote of Morgan in a Katy-area magazine's report (dated 2025-02-13) on his filing of HB 2272; the magazine is the outlet quoting him. He links voter-roll accuracy to public trust in elections.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:49.827Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bcd163be4c9f71383c2f74626987e0980741b6a51c375cf9d49a156d09fbbdc5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2272",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2272-2025",
+      "act": "author",
+      "note": "Filed HB 2272 on confirmation of a voter's residence by a voter registrar: notices to voters inactive for 25 months, with cancellation possible if they stay inactive through two later general elections. Referred to the Elections Committee 2025-03-14.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:49.827Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "Ballotpedia (confirms sitting Texas House member, District 26, on the 2026-11-03 general-election ballot; his 2024 candidate survey has own-words answers on elections)",
+        "campaign site https://www.morganfortexas.com (home page reviewed; nothing on the subject)",
+        "Texas Legislature Online bill pages for HB 2272 and HB 3367 (his 2025 bills; HB 3367 is about voter residence statements, off the ID subject)",
+        "a Katy-area magazine page carrying his February 2025 news release on HB 2272",
+        "House Journals of the 2025 session and web search for floor votes on ID or citizenship bills (none by him found; SB 16 had no House floor vote in the TLO history; he took office 2025, so the 2011, 2017 and 2021 votes do not apply)",
+        "two web searches on his name plus the subject words",
+        "debate or interview video: none found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:17:49.827Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

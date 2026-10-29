@@ -1,0 +1,206 @@
+{
+  "politician_id": "8cd8842e-5162-4f60-b8bd-d10eca847785",
+  "findings": [
+    {
+      "id": "26ebb42cc951cd432480fb94a439e8ce5f8842e4afe85f4f9c910c50368e6708",
+      "kind": "own-words",
+      "url": "https://gregballard.com/my-plan/",
+      "date": "2026-09-09",
+      "date_precision": "day",
+      "passage": "The office will produce a professional training curriculum — video modules and printed materials, customized to the specific voting systems used across Indiana's counties — covering the issues that come up over and over: acceptable voter ID, provisional ballots, electioneering rules, chain-of-custody paperwork, and keeping lines moving without cutting corners.",
+      "note": "Campaign plan page (same text is in the dated post of 9 Sep 2026 at https://gregballard.com/greg-ballards-plan-to-safeguard-indiana-elections/). Lists acceptable voter ID and provisional ballots as topics for a standard poll worker training course. Does not say what the ID rule should be.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot",
+        "poll worker training on ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:43:16.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bb997e0d26bdee071e3d89136e515af5608e553cbe713431568ca5bc6ec4961",
+      "kind": "own-words",
+      "url": "https://cdn-gregballard-com-aklg.b-cdn.net/Indiana_Voters_Guide_Ballard_Campaign_2026.pdf",
+      "date": "2026-08-19",
+      "date_precision": "day",
+      "passage": "Bring a photo ID. Indiana law requires a photo ID issued by the State of Indiana or the U.S. government.",
+      "note": "Campaign-issued demonstration voters guide (Boone County sample, labelled with a note from Ballard). States the current Indiana photo ID rule as information for voters. Date is the PDF creation date in its file data.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:43:16.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a356b39f5ad941cbebcfae01921cebce2349d5d66a0a50076e2d775f6472805",
+      "kind": "own-words",
+      "url": "https://cdn-gregballard-com-aklg.b-cdn.net/Indiana_Voters_Guide_Ballard_Campaign_2026.pdf",
+      "date": "2026-08-19",
+      "date_precision": "day",
+      "passage": "You must still be offered a provisional ballot. To have it counted, take a valid photo ID to the county election board by noon on Friday, November 13 — ten days after the election. If you have a religious objection to being photographed, or cannot afford an ID, sign an affidavit at that office by the same deadline instead.",
+      "note": "Same campaign voters guide, under 'If your photo ID is refused'. Describes the current provisional ballot and affidavit route for a voter without acceptable ID. Informational text, not a proposal.",
+      "subjects": [
+        "voter with no ID",
+        "provisional ballot",
+        "sworn affidavit instead of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:43:16.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f946ef8e5724d8510a015cf152350e63e9e94189c2e29497755e959175935b9",
+      "kind": "own-words",
+      "url": "https://cdn-gregballard-com-aklg.b-cdn.net/Indiana_Voters_Guide_Ballard_Campaign_2026.pdf",
+      "date": "2026-08-19",
+      "date_precision": "day",
+      "passage": "Voters who registered after January 1, 2006 and have not yet voted in Indiana must give the county one more document proving where they live: a photo ID, or a utility bill, bank statement, government check, paycheck, or other government document showing your name at your registration address.",
+      "note": "Same campaign voters guide. Explains the current document rule for first-time voters, including non-photo documents such as a utility bill. Informational text.",
+      "subjects": [
+        "non-photo documents such as a utility bill",
+        "first-time voter proof of residence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:43:16.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c50371e5543d7562e42c528871ac7cbca428ac8357660ed2496bf7d6603852b5",
+      "kind": "own-words",
+      "url": "https://gregballard.com/ballard-signs-lincoln-party-statement-of-principles/",
+      "date": "2026-10-12",
+      "date_precision": "day",
+      "passage": "I'll only promise what this office can deliver. The Secretary of State runs Indiana's elections, handles business filings, and regulates securities. We will not be asking for federal legislation that interferes with Indiana’s ability to run its own elections, nor will we talk about other issues where the Secretary of State has no control.",
+      "note": "Campaign pledge in a release issued in his name. Related: says he will not ask for federal election legislation and will keep to matters the office controls. Does not name voter ID or the SAVE Act.",
+      "subjects": [
+        "federal election legislation",
+        "scope of the office"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:43:16.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff0906e3db5b21e5234e12e8557090330388b2e7eb2d354ad703a967fa74c83a",
+      "kind": "own-words",
+      "url": "https://gregballard.com/greg-ballards-plan-to-safeguard-indiana-elections/",
+      "date": "2026-09-09",
+      "date_precision": "day",
+      "passage": "The office will produce a professional training curriculum — video modules and printed materials, customized to the specific voting systems used across Indiana's counties — covering the issues that come up over and over: acceptable voter ID, provisional ballots, electioneering rules, chain-of-custody paperwork, and keeping lines moving without cutting corners.",
+      "note": "Campaign plan page for county clerk and poll worker training. It lists acceptable voter ID and provisional ballots as training topics. It does not say what the ID rule should be.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID or provisional ballots",
+        "poll worker training"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:48.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f75f9e5891320f2933f93e41148790a294859f3e63f492c7dd09c31564efcbc",
+      "kind": "own-words",
+      "url": "https://indypolitics.org/?p=20454",
+      "date": "2026-09-04",
+      "date_precision": "day",
+      "passage": "“I’m very open about the fact that I think states should maintain their own data,” Ballard said. “I didn’t like it when our voter data went up to the federal government. I’m not a fan of that at all. I think states should be running their own elections and make sure they do it right.”",
+      "note": "Quoted in an IndyPolitics.Org interview piece, answering questions about a White House executive order and federal involvement in elections. He says states should keep their own voter data. The date is the article date shown on the page.",
+      "subjects": [
+        "voter-roll data sharing with the federal government",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:48.692Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter provisions",
+        "mail or absentee ballot ID",
+        "documentary proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for Indiana Secretary of State (https://ballotpedia.org/Greg_Ballard, former Indianapolis mayor 2008-2016; also his campaign site)",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site gregballard.com: home, my-plan, greg-ballards-plan-to-safeguard-indiana-elections, indiana-election-integrity-act (nothing on the subject beyond saved), the 12 Oct 2026 pledge release, rballard-proposes-nonpartisan-recount-commission (nothing on the subject), guide page and voters guide PDF",
+        "Ballotpedia (no issue positions on the subject; no Candidate Connection answers)",
+        "legislative record: not applicable, he holds no legislative seat",
+        "blocked: https://www.axios.com/local/indianapolis/2026/06/24/indiana-secretary-of-state-race-is-taking-shape-2026-bayh-engling (empty page returned)",
+        "blocked: https://indianacapitalchronicle.com/2026/06/20/republican/ (empty page returned)",
+        "not reviewed: WANE 15 July 2026 interview (URL not known) and campaign YouTube channel https://www.youtube.com/@gregforindiana",
+        "not searched: news search for name plus subject words, because the shared web search budget was used up"
+      ],
+      "found": 5,
+      "at": "2026-10-22T22:43:16.737Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voters without ID or provisional ballots",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "In scope: news reports (search results from Indiana Capital Chronicle and WNDU, WNDU page fetched) show him certified for the 2026 Indiana Secretary of State ballot on a new party label; the WNDU page https://www.wndu.com/2026/08/05/independent-indiana-secretary-state-candidate-greg-ballard-wants-open-up-states-election-system/ confirms he is the former Indianapolis mayor running for that office (positive control)",
+        "On the Record (0 appearances, extract script run with name)",
+        "campaign site https://gregballard.com: home page, plan page, election integrity act page and election-safeguard plan page reviewed",
+        "Ballotpedia https://ballotpedia.org/Greg_Ballard_ returned no usable person page; not reviewed further",
+        "news interview https://indypolitics.org/?p=20454",
+        "blocked: https://indianacapitalchronicle.com/2026/03/04/former-gop-mayor/ (browser check page)",
+        "web search on name plus voter ID, citizenship, mail ballots, voter rolls: no statement of his on voter ID or citizenship requirements found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:31:48.692Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

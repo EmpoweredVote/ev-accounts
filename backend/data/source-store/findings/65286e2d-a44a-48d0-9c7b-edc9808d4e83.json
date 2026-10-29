@@ -1,0 +1,214 @@
+{
+  "politician_id": "65286e2d-a44a-48d0-9c7b-edc9808d4e83",
+  "findings": [
+    {
+      "id": "eb42053620f27a583a791bc36c20bdcbc8ece389febbfc5dc649d9b39d72b5fa",
+      "kind": "own-words",
+      "url": "https://www.staceyevans.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Because voter suppression can happen both at the state and local level, as representative, I will continue my work to establish easy access to the ballot box and fight to overturn restrictive voter ID laws while expanding access to early and absentee voting.",
+      "note": "Issue page of her campaign site (Rep. Stacey Evans, GA House District 57). The page itself is undated. She says she will work to overturn restrictive voter ID laws and expand early and absentee voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dd49653be054aa8da7aabd4d0b64db24680f2cbd1435d877d4e550ad4641b77",
+      "kind": "own-words",
+      "url": "https://www.staceyevans.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I also believe that voter registration should be easy and permanent and that citizens should be able to vote at any precinct within their county lines.",
+      "note": "Same issue page. Says registration should be easy and permanent and voting should be allowed at any precinct in the county.",
+      "subjects": [
+        "voter registration ease"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2c564b3f90ac362065156012edac7e3b6688a1e8af4fcb1c35d0b375151a8c3",
+      "kind": "own-words",
+      "url": "https://www.staceyevans.com/news/2024/04/04/evans-e-bulletin-week-twelve",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "passage": "SB189 is an unnecessary bill that puts more burden on our local elections with new unfunded mandates, and attempts to fix an issue that is not there. This bill would allow for more mass voter challenges and could disqualify more voters.",
+      "note": "Her own legislative newsletter on SB 189 (2024), about voter-eligibility challenges. Related topic, not ID itself.",
+      "subjects": [
+        "voter-roll challenges",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf950e96f717229c47662c37b343c4ba85c1ad0ecdbeb310d09b91478fb2fa3a",
+      "kind": "own-words",
+      "url": "https://www.staceyevans.com/news/2024/04/09/evans-e-bulletin-end-of-session-report-2",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "passage": "In particular, this bill would encourage citizen challenges to voter eligibility, which further strains our election workers.",
+      "note": "End-of-session newsletter on SB 189 (2024). She says it had some positive aspects but the negatives outweighed them.",
+      "subjects": [
+        "voter-roll challenges",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a8b9ee93f4895a58afabb9d82373dfe4098aea6c04bc71419850264baafbc199",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/georgia-election-bill-package-caters-to-conservatives-concerns/2QGDYSNQMRA47AESEPHQJB7SRA",
+      "date": "2024-04",
+      "date_precision": "month",
+      "passage": "Proponents of those pieces of legislation come to this well and say, ‘This is going to secure our elections,’ \" Evans said during a debate in the state House. “Then the next year, we have to come back and open up the code again. So are you lying then or are you lying now? Is it now going to be the most secure?”",
+      "note": "Quoted by the Atlanta Journal-Constitution (April 2024 election-bill package story) from her House floor remarks on repeated election bills.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.667Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Evans, S'), linked to STACEY EVANS (district 57) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Evans, S'), linked to STACEY EVANS (district 57) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Evans, S'), linked to Stacey Evans (district 57) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.400Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Official/campaign site https://www.staceyevans.com (issues page and 2024 e-bulletins reviewed)",
+        "Branch voter-guide page confirming 2026 general-election candidacy for House District 57",
+        "blocked: Ballotpedia (page returned empty to the fetch tool; a browser-agent retry was not attempted because it would get around the site's bot check)",
+        "not reviewed: legis.ga.gov bill pages (need a login token); no ID-bill sponsorship found through news and bill-tracker searches",
+        "news search: AJC 2024 election-bill article",
+        "not reviewed: House floor video of 2021 and 2024 debates"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:28:59.667Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.400Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

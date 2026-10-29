@@ -1,0 +1,202 @@
+{
+  "politician_id": "306db639-9373-48ef-9ba5-5b22d695b425",
+  "findings": [
+    {
+      "id": "1e411bccbe381e7b9f3dab13d18bfc1066af926c3c00ddb307e1658a663b4adf",
+      "kind": "own-words",
+      "url": "https://senatepress.net/sen-majority-whip-randy-robertson-releases-statement-encouraging-cooperation-from-georgias-secretary-of-state.html",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "SR 563 reinforces the basic expectation of public service by urging our Secretary of State to comply with the DOJ. When federal authorities issue lawful subpoenas or requests as part of an investigation, compliance is a duty.",
+      "note": "Statement issued in his name by the Georgia Senate press office, about the Secretary of State handing the state voter registration list to the federal Justice Department. It concerns voter-roll sharing, not ID rules.",
+      "subjects": [
+        "voter-roll sharing with federal government",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:48.918Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c7ab8a22d984417efe0ed137334040abd89078f45e755ddad9e10b462742a5f",
+      "kind": "record",
+      "url": "https://senatepress.net/sen-majority-whip-randy-robertson-releases-statement-encouraging-cooperation-from-georgias-secretary-of-state.html",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-563-2025",
+      "act": "author",
+      "motion": "Senate Resolution 563, urging the Secretary of State to comply with the Justice Department request for the voter registration list",
+      "note": "The release says he wrote SR 563 and that it was sent to the Senate Ethics Committee, where it awaits action.",
+      "subjects": [
+        "voter-roll sharing with federal government",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:48.918Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Robertson'), linked to RANDY ROBERTSON (district 29) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Robertson'), linked to RANDY ROBERTSON (district 29) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Robertson'), linked to RANDY ROBERTSON (district 29) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Robertson'), linked to Robertson, Randy (district 29) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Robertson'), linked to RANDY ROBERTSON (district 29) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "voter fraud and election integrity in general",
+        "SB 202 vote"
+      ],
+      "places": [
+        "scope check: Senate Majority Whip for District 29 (Senate press release 2026-01-16), listed as a candidate for District 29 on the 2026 general ballot (https://branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-29/candidates/wiley-randall-robertson); in scope; served in 2021",
+        "On the Record (0 meetings)",
+        "Georgia Senate press office release of 2026-01-16 (https://senatepress.net/sen-majority-whip-randy-robertson-releases-statement-encouraging-cooperation-from-georgias-secretary-of-state.html): saved",
+        "Branch.vote 2026 profile: no position listed; nothing on the subject",
+        "news search: his 2024 ranked-choice voting bill (SB 355) is off the subject, not saved",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Randy_Robertson (page returned empty)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/S (403); https://legiscan.com roll call pages not fetched; legislature bill pages load by script, so the SB 202 Senate vote of 2021-03-25 was not retrieved",
+        "web searches: 3"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:39:48.918Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.414Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

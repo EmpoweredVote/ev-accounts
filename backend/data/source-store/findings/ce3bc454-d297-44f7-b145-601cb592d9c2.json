@@ -1,0 +1,111 @@
+{
+  "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2",
+  "findings": [
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('McLaurin'), linked to JOSH MCLAURIN (district 51) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('McLaurin'), linked to JOSH MCLAURIN (district 51) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('McLaurin'), linked to McLaurin, Josh (district 14) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting state senator, won the 2026-06-16 runoff for lieutenant governor and is on the November 2026 ballot (https://wrdw.com/2026/06/17/greg-dolezal-josh-mclaurin-win-primaries-ga-lieutenant-governor)",
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site joshforgeorgia.com home, priorities and about pages: nothing on the subject (priorities page has a general voting-rights line, no ID or citizenship content)",
+        "blocked: https://ballotpedia.org/Josh_McLaurin (empty page)",
+        "blocked: https://app.legiplex.com/profile/josh-mclaurin-1149/ga/legislatures/2025/2025-r/legislation/page/2 (HTTP 403)",
+        "legis.ga.gov bill pages not reviewed (login token required)",
+        "three news searches on name plus voter ID, SAVE Act, SB 202 words: no quote from him found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.817Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.402Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

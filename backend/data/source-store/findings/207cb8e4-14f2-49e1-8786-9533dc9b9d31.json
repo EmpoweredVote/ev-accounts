@@ -1,0 +1,110 @@
+{
+  "politician_id": "207cb8e4-14f2-49e1-8786-9533dc9b9d31",
+  "findings": [
+    {
+      "id": "24503a7e889169727a8757e921d953ca97955b0498673d2eafe96be2d8ea11f7",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "HB 5337, proof of citizenship to register to vote: listed as coauthor (author Isaac; filed 2025-03-14; reported favorably from Elections 5-4 on 2025-04-28; never reached the House floor)",
+      "note": "Dorazio is on the coauthor list of HB 5337, which requires a person to submit proof of citizenship to register to vote and creates criminal offenses; it is the identical companion of SB 16. The page does not show the date each coauthor signed on, so the date is given as the year.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:02.211Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.521Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.521Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "mail-ballot ID",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (extract-otr script, 0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Mark_Dorazio (confirms Texas House District 122, term to 2027-01-12, on the 2026-11-03 general ballot)",
+        "Texas House member page https://house.texas.gov/members/4145 (confirms office; nothing on the subject)",
+        "campaign site https://www.markdorazio.com (home, issues and legislative victories pages: nothing on the subject)",
+        "Texas Legislature Online bill pages for HB 5337, SB 16, HB 5034, HB 219, HB 1312, HB 1670, HB 2245, HB 4902, HB 426, HB 2816, HB 295, HB 463 (only HB 5337 lists him on the subject; the others are by other authors or other topics)",
+        "news: web searches (2 of 3 used on Dorazio and bills) found no own words on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:01:02.211Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.521Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

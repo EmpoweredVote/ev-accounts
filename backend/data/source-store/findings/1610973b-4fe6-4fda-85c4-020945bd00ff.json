@@ -1,0 +1,224 @@
+{
+  "politician_id": "1610973b-4fe6-4fda-85c4-020945bd00ff",
+  "findings": [
+    {
+      "id": "c5406ef533f970008f02010debab82134672c46b92810c6ef75e9da1475f9e5e",
+      "kind": "own-words",
+      "url": "https://www.npr.org/transcripts/14324797",
+      "date": "2007-09-11",
+      "date_precision": "day",
+      "passage": "Well, primarily, the law was not needed. We went from one of the better states exercising voter rights to one of the most restrictive. We have not one instance in 12 years - and that was a study done by the previous Secretary of State Cathy Cox - not one instance of voter fraud at the polls.",
+      "note": "NPR interview, as chair of the Georgia Legislative Black Caucus, on why the caucus opposed the 2005 Georgia photo ID law (SB 84). He says the law was not needed and cites no cases of in-person voter fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:47.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95aa8153850b532307c01c2fcbc98eed76fd65ad4d1b8e8f2ce39b171d5ef5f0",
+      "kind": "own-words",
+      "url": "https://www.npr.org/transcripts/14324797",
+      "date": "2007-09-11",
+      "date_precision": "day",
+      "passage": "No. There's definite evidence. I don't know where some of the other facts are found, but I know that 36 percent of senior citizens over 75 years old don't have driver's license and many forms of this identification the secretary of state talks about. Most of the fraud that occurs with voting is with absentee ballots, where only a signature is required. But none of these provisions will even addressed in Senate Bill 84. This is why many feel limiting voter fraud and securing our elections is not the motive with this SB 84 but instead who votes.",
+      "note": "Same NPR interview. He says many older people lack accepted photo ID, says absentee ballots need only a signature and SB 84 does not address them, and questions the motive for the bill.",
+      "subjects": [
+        "voter ID at the polls",
+        "who lacks photo ID",
+        "mail-ballot signature",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:47.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78615bfd9c88a9b3641ad2736f40a9220b6192a2a63ffb1e296c8d5bb0ca428e",
+      "kind": "own-words",
+      "url": "https://www.npr.org/transcripts/14324797",
+      "date": "2007-09-11",
+      "date_precision": "day",
+      "passage": "And it directly affects black people and older folk who traditionally vote Democrat. This was a Republican game to lower the turnout - case closed.",
+      "note": "Same NPR interview. He says the photo ID law affects Black and older voters and says the aim was to lower turnout. Quoted exactly as spoken.",
+      "subjects": [
+        "voter ID at the polls",
+        "effect on turnout"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:47.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williams, A'), linked to AL WILLIAMS (district 168) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williams, A'), linked to AL WILLIAMS (district 168) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59fbc6cfd39d0f6e5bb7da0aeda0e3021dc0b3818a94b8e5ad52ecc82749b77f",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Williams, A'), linked to (Al) Cyril Algernon Williams (district 165) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bee9949bb644c1cf808284a1f1ffce148e610d6c8d54eee1abb40f4f8ded29e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Williams, A'), linked to (Al) Cyril Algernon Williams (district 165) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Williams, A'), linked to Al Williams (district 168) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "SB 202 vote",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia: https://ballotpedia.org/Al_Williams_(Georgia_legislator) (confirms sitting House District 168 member, advanced from the 2026-05-19 primary, on the 2026-11-03 general ballot; nothing on the subject)",
+        "blocked: https://www.legis.ga.gov/legislation/60763 (official bill pages load only through a login-token API that returns 401; SB 202 roll-call votes and sponsorship lists could not be read)",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (403)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/ (403)",
+        "blocked: https://app.legiplex.com/ga/legislature/2023/2023-r/bills/sb202/legislators (403)",
+        "NPR 2007 interview transcript (saved)",
+        "House caucus press site, tag page for him (a 2021 release announcing town halls on elections bills carries no words of his; nothing to save)",
+        "files.constantcontact.com PDF from search (unreadable binary; not reviewed)",
+        "wtfvote.us profile (nothing on the subject)",
+        "two news and web searches on name plus subject words (no 2021 SB 202 statement from him found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:43:47.802Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.406Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "politician_id": "3ca554be-27d6-4d65-a6f4-b7567f73b1a3",
+  "findings": [
+    {
+      "id": "35fe1070a6d05a5b03a523b0bc1022c7b09f1b1ebd490bbb2965e191cee4e41b",
+      "kind": "own-words",
+      "url": "https://votederrickjackson.org/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Voting is the most sacred civil right we possess.",
+      "note": "Campaign site for governor, under a section on protecting the ballot and ending gerrymandering. General statement about voting rights; no mention of voter ID or citizenship proof. Fetch tool summarised the page; the sentence was reported by the tool, not read from raw HTML.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:47:10.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Jackson, D'), linked to DERRICK L. JACKSON (district 64) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Jackson, D'), linked to DERRICK L. JACKSON (district 64) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Jackson, D'), linked to Derrick Jackson (district 68) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 Election Integrity Act",
+        "voting rights in general"
+      ],
+      "places": [
+        "status: sitting state House member (district 68) who ran for governor in 2026 and finished far back in the 2026-05-19 primary; still holds his House seat until January 2027, so searched in full (results page: https://www.news4jax.com/vote-2026/2026/05/14/statewide-multi-county-election-results-2026-georgia-primary/)",
+        "On the Record (0 appearances found, script ran)",
+        "campaign site https://votederrickjackson.org/ (no voter ID or citizenship text; one voting-rights line)",
+        "House press office tag page https://house-press.com/tag/state-representative-derrick-jackson (first page only, nothing on the subject)",
+        "news: WALB campaign launch article (nothing on the subject), South Cobb News forum article (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Derrick_Jackson_(Georgia) (fetch returned empty page)",
+        "blocked: https://www.legis.ga.gov/legislation/60299 and other legis.ga.gov bill pages (page loads by script and returned no content; SB 202 member vote could not be read)",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (HTTP 403)",
+        "not reviewed: legis.ga.gov sponsorship list for this member (site did not render)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:47:10.597Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.401Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

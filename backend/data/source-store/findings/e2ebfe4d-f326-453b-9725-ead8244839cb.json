@@ -1,0 +1,224 @@
+{
+  "politician_id": "e2ebfe4d-f326-453b-9725-ead8244839cb",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bb5b08d9fa8bf75862cfd7890af56dfb9cabb0773f8143cf2f22acd22fca253e",
+      "kind": "own-words",
+      "url": "https://www.senatordanlauwers.com/lauwers-introduces-legislation-to-improve-election-integrity/",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "passage": "“Everyone must have confidence that our elections system is fair, safe and open,” said Lauwers, R-Brockway Township. “The reforms introduced today will increase transparency in the process and ensure people are guaranteed access to secure elections.”",
+      "note": "Quote in his own press release on a 39-bill election package (Senate Bills 273-311). The release lists a photo ID for absentee ballot applications as one of the package's reforms, but that line is the release's description of the package, not a statement by him. His own bill in the package was SB 284, on election-related money and contracts.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot ID (package item, described by the release)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:49:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Dan Lauwers (District 81)') on the official bill page; linked to Dan Lauwers via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1325085004748edd26436ab80fe60535a9608eb57fe3da1e6ff244da20b1b2df",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Lauwers'), linked to Dan Lauwers (district 81) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd95ddee2061d998986ef2d99ef24b31eafcfa281a17f58b157c88e6d3443a8c",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0285",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-285-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 285 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Dan Lauwers (District 25)') on the official bill page; linked to Dan Lauwers via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9077f27a3bf1090cb375a434cfd87abf2d1f22d14d51ec193bcc505232620c1a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators Barrett, Bumstead, Horn, Theis, Stama\"",
+      "note": "Named as co sponsor ('Dan Lauwers (District 25)') on the official bill page; linked to Dan Lauwers via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Lauwers'), linked to Dan Lauwers (district 25) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34da1f291657fe7b1bf04f306ad2c44d27e2528a9bc53ec76dfe94066fe35cbb",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\"",
+      "note": "Named as co sponsor ('Dan Lauwers (District 25)') on the official bill page; linked to Dan Lauwers via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot or application",
+        "proof of citizenship to register",
+        "voter-roll management",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his Senate office site: press release of 2021-03-24 on the election package (fetched with curl)",
+        "his Senate office site: press-release list page 1 (six releases, none on elections)",
+        "blocked: https://www.senatordanlauwers.com/?s=voter+ID (site search page returned placeholder text and no results)",
+        "blocked: https://ballotpedia.org/Dan_Lauwers (page came back empty)",
+        "one news search on his name plus election integrity and voter ID: no own words on voter ID found",
+        "status note: sitting state senator (25th district); a web search says he is term-limited and not seeking re-election to the Senate; not confirmed on any 2026 ballot",
+        "not reviewed: legislature bill pages for sponsorships (votes and sponsorships are linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:49:21.489Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

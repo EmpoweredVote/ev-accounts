@@ -1,0 +1,42 @@
+{
+  "politician_id": "b7dde767-495b-4d62-8e04-9ff27c193ee5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: not in scope, left the U.S. House on 2025-01-20 (resigned to serve as national security advisor) and was confirmed U.S. Ambassador to the United Nations on 2025-09-19; not a sitting member of Congress and not a 2026 candidate (source: https://ballotpedia.org/Michael_Waltz, fetched with curl)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (page fetched; no voter ID or SAVE Act text found)",
+        "blocked: https://www.congress.gov/member/michael-waltz/W000823 (HTTP 403)",
+        "not reviewed: official site, campaign site, news search (stopped after scope check; web search budget was also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:48:19.672Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: not in scope; left the House seat on 2025-01-20 and has been US Ambassador to the United Nations since 2025-09-21, not on a 2026 ballot (https://en.wikipedia.org/wiki/Mike_Waltz)",
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Michael_Waltz (fetch returned empty)",
+        "not reviewed: congress.gov and official site, because the person is no longer a member or candidate"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:08:30.057Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

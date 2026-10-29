@@ -1,0 +1,130 @@
+{
+  "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+  "findings": [
+    {
+      "id": "86a5b1e4a190e56e25a7578799664dae2edb89140ac7d271b883ab7fa736251e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading, Roll Call #758",
+      "note": "House Second Reading vote on HB 958, Election Law Changes. Passed 66 to 47. Lopez is listed among the Noes. The ratified bill requires an applicant at a drivers license office to affirmatively state US citizenship before the registration proceeds, requires a sworn citizenship statement on registration forms, and directs the State Board to set a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.095Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69d35c4bb1cff98f0284e567076d4fcfb4c3d63499dfcd7f9fb7b72c1794d48a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, M11 Concur, Roll Call #801",
+      "note": "House vote to concur in the Senate changes to HB 958, Election Law Changes. Passed 62 to 47. Lopez is listed among the Noes. The bill page lists a Governor's veto of HB 958 and a last action of placed on calendar for 09/02/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.095Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "240645066cadb06524837b3c87f01726f6424d881feabe713962afd2c24e6b05",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor of HB 1246, Safeguarding Elections Act (filed 2026-07-30, referred to House Rules 2026-08-04)",
+      "note": "He is listed among the co-sponsors. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H1246v1.html) adds a misdemeanor for demanding citizenship documentation from a voter beyond what state law requires, and also covers troops at polling places and voter intimidation. The co-sponsor list reads only 'Lopez'.",
+      "subjects": [
+        "demands for citizenship documents at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:20.478Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: https://www.ncleg.gov/Members/Biography/H/835 (Representative Jordan Lopez, District 112, Mecklenburg, 2025-2026 Session) and https://ballotpedia.org/Jordan_Lopez (on the 2026 general election ballot, November 3, 2026)",
+        "Ballotpedia (no survey completed, nothing on the subject)",
+        "campaign site: blocked: https://www.jordanlopeznc.com (domain does not resolve; real campaign site not located)",
+        "ncleg.gov member bills page: blocked: https://www.ncleg.gov/Members/Bills/H/835 (404); sponsorship list not reviewed",
+        "ncleg.gov bill page and roll calls for HB 958 (reviewed)",
+        "web news search: not reviewed: search budget for the session was used up, so no news or own-words search on his name plus subject words was run",
+        "other voter ID bills (for example 2025 session bills beyond HB 958): not reviewed",
+        "own words (interviews, forums, posts): nothing found; not searched beyond Ballotpedia and the legislature"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:10:40.095Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "demands for citizenship documents at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in office: the WFAE 2026 voter guide page names him as running for a second consecutive unopposed term for House District 112",
+        "On the Record (0 meetings)",
+        "official legislature bill list for his primary-sponsored bills (https://house.ncleg.gov/Members/IntroducedBills/H/835): no voter ID or proof-of-citizenship bill by title; election titles seen include HB 20, HB 31, HB 93, HB 129, HB 788, HB 1240; one co-sponsored election bill saved below",
+        "state House caucus member page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Jordan_Lopez (page returned empty)",
+        "one web search on name plus voter ID: nothing on the subject beyond bill lists"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:06:20.478Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

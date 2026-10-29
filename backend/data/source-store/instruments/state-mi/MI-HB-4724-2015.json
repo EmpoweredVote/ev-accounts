@@ -1,0 +1,467 @@
+{
+  "id": "MI-HB-4724-2015",
+  "scope": "state:mi",
+  "title": "HB 4724 (2015-2016 Regular Session, Michigan Legislature (bill page title: \"House Bill 4724 of 2015\")): Elections; absent voters; definition of absent voter; expand to include an elector who applies in person at the clerk's office and who presents photo identification and expand the 100-foot rule to a clerk's office during the 45 days before an election. Amends secs. 758 & 759 of 1954 PA 116 (MCL 168.759 & 168.759) & adds sec. 761b.",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4724",
+    "https://www.legislature.mi.gov/documents/2015-2016/billengrossed/House/htm/2015-HEBH-4724.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 758 (as in the version read)\n(quote) (g) Applies for an absent voter ballot in person with the clerk of the township, city, or village in which he or she is registered, and he or she identifies himself or herself to the clerk by presenting an official state personal identification card issued to that elector under 1972 PA 222, MCL 28.291 to 28.300, an operator's or chauffeur's license issued to that elector under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or another generally recognized picture identification card.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 759: begins \"(1) At any time during the 75 days before a primary or special primary, but not later than 2 p.m. of the Saturday immediately befo\"",
+  "sponsors": [
+    {
+      "name": "Lisa Posthumus Lyons (District 86)",
+      "role": "prime",
+      "version": "Text file header as saved: \"HB-4724, As Passed House, December 9, 2015 HOUSE BILL No. 4724 June 16, 2015, Introduced by Rep. Lyons and referred to t\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2015-12-09",
+      "body": "MI House",
+      "motion": "passed; given immediate effect Roll Call # 467 Yeas 59 Nays 46",
+      "kind": "roll-call",
+      "yes": 59,
+      "no": 46,
+      "absent": 0,
+      "body_size": 105,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | HJ 99 Pg. 2147 | https://www.legislature.mi.gov/documents/2015-2016/journal/House/htm/2015-HJ-12-09-099.htm",
+      "members": [
+        {
+          "name": "Afendoulis",
+          "vote": "yea"
+        },
+        {
+          "name": "Glardon",
+          "vote": "yea"
+        },
+        {
+          "name": "LaFontaine",
+          "vote": "yea"
+        },
+        {
+          "name": "Poleski",
+          "vote": "yea"
+        },
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauwers",
+          "vote": "yea"
+        },
+        {
+          "name": "Price",
+          "vote": "yea"
+        },
+        {
+          "name": "Bizon",
+          "vote": "yea"
+        },
+        {
+          "name": "Goike",
+          "vote": "yea"
+        },
+        {
+          "name": "Leonard",
+          "vote": "yea"
+        },
+        {
+          "name": "Pscholka",
+          "vote": "yea"
+        },
+        {
+          "name": "Bumstead",
+          "vote": "yea"
+        },
+        {
+          "name": "Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Leutheuser",
+          "vote": "yea"
+        },
+        {
+          "name": "Roberts, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Callton",
+          "vote": "yea"
+        },
+        {
+          "name": "Heise",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucido",
+          "vote": "yea"
+        },
+        {
+          "name": "Runestad",
+          "vote": "yea"
+        },
+        {
+          "name": "Canfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Howrylak",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyons",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheppard",
+          "vote": "yea"
+        },
+        {
+          "name": "Chatfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Maturen",
+          "vote": "yea"
+        },
+        {
+          "name": "Somerville",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole",
+          "vote": "yea"
+        },
+        {
+          "name": "Iden",
+          "vote": "yea"
+        },
+        {
+          "name": "McBroom",
+          "vote": "yea"
+        },
+        {
+          "name": "Tedder",
+          "vote": "yea"
+        },
+        {
+          "name": "Cotter",
+          "vote": "yea"
+        },
+        {
+          "name": "Inman",
+          "vote": "yea"
+        },
+        {
+          "name": "McCready",
+          "vote": "yea"
+        },
+        {
+          "name": "Theis",
+          "vote": "yea"
+        },
+        {
+          "name": "Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Irwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Vaupel",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacobsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "VerHeulen",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Nesbitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Victory",
+          "vote": "yea"
+        },
+        {
+          "name": "Forlini",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Webber",
+          "vote": "yea"
+        },
+        {
+          "name": "Franz",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly",
+          "vote": "yea"
+        },
+        {
+          "name": "Pagel",
+          "vote": "yea"
+        },
+        {
+          "name": "Yonker",
+          "vote": "yea"
+        },
+        {
+          "name": "Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Kesto",
+          "vote": "yea"
+        },
+        {
+          "name": "Pettalia",
+          "vote": "yea"
+        },
+        {
+          "name": "Banks",
+          "vote": "nay"
+        },
+        {
+          "name": "Faris",
+          "vote": "nay"
+        },
+        {
+          "name": "Lane",
+          "vote": "nay"
+        },
+        {
+          "name": "Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Brinks",
+          "vote": "nay"
+        },
+        {
+          "name": "Garrett",
+          "vote": "nay"
+        },
+        {
+          "name": "LaVoy",
+          "vote": "nay"
+        },
+        {
+          "name": "Rutledge",
+          "vote": "nay"
+        },
+        {
+          "name": "Brunner",
+          "vote": "nay"
+        },
+        {
+          "name": "Gay-Dagnogo",
+          "vote": "nay"
+        },
+        {
+          "name": "Liberati",
+          "vote": "nay"
+        },
+        {
+          "name": "Santana",
+          "vote": "nay"
+        },
+        {
+          "name": "Byrd",
+          "vote": "nay"
+        },
+        {
+          "name": "Geiss",
+          "vote": "nay"
+        },
+        {
+          "name": "Love",
+          "vote": "nay"
+        },
+        {
+          "name": "Schor",
+          "vote": "nay"
+        },
+        {
+          "name": "Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Greig",
+          "vote": "nay"
+        },
+        {
+          "name": "Moss",
+          "vote": "nay"
+        },
+        {
+          "name": "Singh",
+          "vote": "nay"
+        },
+        {
+          "name": "Chirkun",
+          "vote": "nay"
+        },
+        {
+          "name": "Greimel",
+          "vote": "nay"
+        },
+        {
+          "name": "Neeley",
+          "vote": "nay"
+        },
+        {
+          "name": "Smiley",
+          "vote": "nay"
+        },
+        {
+          "name": "Clemente",
+          "vote": "nay"
+        },
+        {
+          "name": "Guerra",
+          "vote": "nay"
+        },
+        {
+          "name": "Pagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Talabi",
+          "vote": "nay"
+        },
+        {
+          "name": "Cochran",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoadley",
+          "vote": "nay"
+        },
+        {
+          "name": "Phelps",
+          "vote": "nay"
+        },
+        {
+          "name": "Townsend",
+          "vote": "nay"
+        },
+        {
+          "name": "Darany",
+          "vote": "nay"
+        },
+        {
+          "name": "Hooker",
+          "vote": "nay"
+        },
+        {
+          "name": "Plawecki",
+          "vote": "nay"
+        },
+        {
+          "name": "Wittenberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Dianda",
+          "vote": "nay"
+        },
+        {
+          "name": "Hovey-Wright",
+          "vote": "nay"
+        },
+        {
+          "name": "Potvin",
+          "vote": "nay"
+        },
+        {
+          "name": "Yanez",
+          "vote": "nay"
+        },
+        {
+          "name": "Driskell",
+          "vote": "nay"
+        },
+        {
+          "name": "Kivela",
+          "vote": "nay"
+        },
+        {
+          "name": "Roberts, S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Zemke",
+          "vote": "nay"
+        },
+        {
+          "name": "Durhal",
+          "vote": "nay"
+        },
+        {
+          "name": "Kosowski",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c",
+  "findings": [
+    {
+      "id": "ee6a241838130cde9575b42fbad9f17cd3ec50760ac7512d00a36d0aa7942046",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-855-2025",
+      "act": "sponsor",
+      "note": "She is the sole sponsor of H.855, An Act extending voting rights in municipal elections to noncitizen voters of the Commonwealth, referred to the Election Laws committee. Related topic: non-citizen voting. Filing date is the first history date shown on the bill page.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:03:36.763Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520835e159283e7cf501fdb8a0f88aec7970838034ba40734e72cfd159b4db71",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "instrument_id": "MA-H-855-2025",
+      "act": "sponsor",
+      "note": "Sole petitioner of H.855, a bill to let noncitizens with legal immigration status vote in municipal elections only. The bill sets up a separate noncitizen registration form with a declaration of residency signed under pains and penalties of perjury, and bars noncitizen voting in federal and state races. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections",
+        "registration form declaration of residency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39b289bdc1c5e52184ee118585325649d503ffe491b4262bb6e12ecc96dad508",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H706",
+      "date": "2023-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-706-2023",
+      "act": "sponsor",
+      "note": "Lead petitioner of H.706 (2023-24 session), an earlier version of the bill extending municipal voting rights to noncitizens with legal immigration status. Related topic: who is eligible to register and vote.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:53.320Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia district page https://ballotpedia.org/Massachusetts_House_of_Representatives_15th_Suffolk_District lists Sam Montaño running in the general election on November 3, 2026 for 15th Suffolk; MA Legislature profile https://malegislature.gov/Legislators/Profile/S_M1 names her as Representative, 15th Suffolk",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "MA Legislature profile and sponsored-bills list (https://malegislature.gov/Legislators/Profile/S_M1 and /SponsoredLegislation)",
+        "MA Legislature bill page H.855 (194th)",
+        "Ballotpedia personal page https://ballotpedia.org/Samantha_Montaño: no such page (empty)",
+        "campaign site: not reviewed: no campaign site URL found (samanthamontano.com did not connect)",
+        "news search: not reviewed: web search budget used up",
+        "nothing on the subject: no sponsored bill on voter ID, no-ID fallback, mail-ballot ID, or proof of citizenship found in her sponsored list",
+        "nothing on the subject: no own words on voter ID found in reachable pages"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:03:36.763Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "non-citizen voting in municipal elections",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/Sam_Monta%C3%B1o (sitting 15th Suffolk member, advanced from the 2026-09-01 primary, on the 2026 general-election ballot)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/S_M1/193 (sponsored bills list; one bill on the subject)",
+        "bill pages H.706 (2023-24) and H.855 (2025-26) on malegislature.gov",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act: nothing naming her on those topics",
+        "no campaign or personal issues page found with text on the subject; no statement by her on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:43:53.320Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

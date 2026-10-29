@@ -1,0 +1,80 @@
+{
+  "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+  "findings": [
+    {
+      "id": "e3b09858e92509e013a7cdf825a833d654399b0f3bab3afdc7041bd96106565d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S498",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-498-2025",
+      "act": "sponsor",
+      "note": "He filed Senate bill 498, a petition for legislation on Election Day registration at polling places. The text (https://malegislature.gov/Bills/194/S498.html) lets an eligible person register on election day at the polling place by completing a form that meets the identity requirements of the federal Help America Vote Act, showing proof of residency and signing an oath of citizenship.",
+      "subjects": [
+        "proof of identity or residency to register",
+        "oath of citizenship at registration",
+        "same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:57:26.196Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michael_Brady says he is on the Nov 3, 2026 general election ballot for 2nd Plymouth and Norfolk Senate district, advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MDB0 (sponsored bills reviewed; only election-related one is S.498, Election Day registration at polling places, not on identification; nothing on the subject)",
+        "personal site https://senatormikebrady.org (home page only; nothing on the subject; internal pages not reviewed)",
+        "Ballotpedia (nothing on the subject)",
+        "malegislature.gov H.4776 (2022) bill page: no linked roll call on identification; nothing on the subject",
+        "blocked: web search budget used up, so no news search for name plus subject words was run",
+        "not reviewed: Senate roll-call lists and amendments on voter identification (no way to locate them without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:12.987Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship",
+        "mail-ballot ID",
+        "proof of identity or residency to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/MDB0/194/Biography (sitting Massachusetts state senator, Second Plymouth and Norfolk) and https://en.wikipedia.org/wiki/2026_Massachusetts_Senate_election (running for re-election in 2026, no opponent in one primary)",
+        "legislature sponsored-bills list https://malegislature.gov/Legislators/Profile/MDB0/194/Sponsored: reviewed; one bill touches the subject (S498)",
+        "bill text for S498 at malegislature.gov",
+        "Ballotpedia: the name page I reached did not give usable content (name page for the wrong Michael Brady or a disambiguation); nothing on the subject",
+        "news search on name plus subject words: nothing by him on voter ID or proof of citizenship; a scorecard page on ontheissues.org was seen as a lead only and not cited",
+        "own-words search: no campaign or official statement on the subject found",
+        "congress.gov: not applicable"
+      ],
+      "found": 1,
+      "at": "2026-10-27T13:57:26.196Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

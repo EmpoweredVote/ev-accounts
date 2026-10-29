@@ -1,0 +1,417 @@
+{
+  "politician_id": "868b57f4-dbfd-4405-be3a-460d721c2a68",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "1301a6193a46e5209ab1f887aefbe5a0a908f3d01d7b794c65e1c294166eac23",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-14-062.htm",
+      "date": "2012-06-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5061-2011",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 471 Yeas 65 Nays 45",
+      "note": "House roll call as printed ('Nesbitt'), linked to Aric Nesbitt (district 80) via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Nesbitt'), linked to Aric Nesbitt (district 26) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Nesbitt'), linked to Aric Nesbitt (district 20) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Nesbitt'), linked to Aric Nesbitt (district 20) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4afcf35dfb78493234e8ee9e3e986a52c3371682ebbce2a19830000a904f5e59",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-calls-on-senate-to-pass-election-protections-advanced-by-house-one-citizen-one-vote-thats-common-sense/",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "It should be one citizen, one vote.",
+      "note": "From his press release urging the Senate to pass House Bill 4765, which the release says would require proof of U.S. citizenship to register and ID to cast a ballot.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1438444fc156bbb3acc8fac3c9beaa35a7076be904b11ba9eeaa7174e5d06423",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-calls-on-senate-to-pass-election-protections-advanced-by-house-one-citizen-one-vote-thats-common-sense/",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "Unfortunately, we have the worst secretary of state in America right here in Michigan, and we know noncitizens are finding their way onto our voter rolls, compromising the integrity of our free and fair elections.",
+      "note": "Same release; he links non-citizens on voter rolls to the case for the citizenship and ID bill and asks the Senate to act.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37c9dc651493c8ad4760bd19b9173e3e683b66a1c9ccebd8a10f8830d04456ab",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-calls-on-senate-to-pass-election-protections-advanced-by-house-one-citizen-one-vote-thats-common-sense/",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "“This is exactly why I requested that the Justice Department monitor Michigan’s 2026 elections. Jocelyn Benson cannot be trusted to do her most basic job,” Nesbitt said.",
+      "note": "Same release; he cites non-citizen voting as the reason he asked for federal monitoring of the 2026 elections.",
+      "subjects": [
+        "non-citizen voting",
+        "federal oversight of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19348f5fb1efc03071feaeb379f1eb0b1f33cc4913e3c1a807755c1a2ded7c9a",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-applauds-doj-efforts-to-clean-up-state-voter-rolls-ensure-election-integrity-across-u-s/",
+      "date": "2025-12-04",
+      "date_precision": "day",
+      "passage": "“We are blessed to have their leadership in a state where illegal immigrants have obtained driver’s licenses and a Chinese national was among at least 16 noncitizens who were confirmed to have cast ballots in our last general election.”",
+      "note": "Statement welcoming U.S. Justice Department efforts to compel voter-roll clean-ups in many states; he points to non-citizen ballots in the 2024 election. The opening of the quote names the federal officials leading the effort.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fef162e831abcef8ce794948408e0e4e376677da516c5965a8a27c1a6bb16e88",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-applauds-doj-efforts-to-clean-up-state-voter-rolls-ensure-election-integrity-across-u-s/",
+      "date": "2025-12-04",
+      "date_precision": "day",
+      "passage": "“Jocelyn Benson proves over and over again that she is the worst secretary of state in America and cannot be trusted with our voter rolls,” Nesbitt said.",
+      "note": "Same release; on keeping voter rolls accurate (the release cites 25,000 deceased people on the rolls).",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7c6cc8dca2ae91217f4588374803c06c496042674f0adff23e2251b639e0eda",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-michigan-deserves-secure-elections-answers-after-voter-fraud-revealed-days-before-nov-5/",
+      "date": "2024-10-31",
+      "date_precision": "day",
+      "passage": "It would be naive to assume this incident is the only instance of a noncitizen taking advantage of our state’s lax election laws.",
+      "note": "Statement after the report that a foreign national's ballot in Ann Arbor would be counted; he calls for answers from election officials.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad3bd05dc61ad8a97040496662c76792d168599fb2e393f4d3c510cb3a8385f4",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-michigan-deserves-secure-elections-answers-after-voter-fraud-revealed-days-before-nov-5/",
+      "date": "2024-10-31",
+      "date_precision": "day",
+      "passage": "They must assure the people of Michigan that there is more safeguarding the security of our elections than simply hoping criminals will turn themselves in.",
+      "note": "Same statement; he asks for safeguards beyond voters reporting themselves. No specific ID or citizenship-proof rule is named in it.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f15d00313f5b79f53edb014bde2e95b5a00f58ccad6ad2bbc29811a6c0b558ef",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-leads-official-request-to-doj-for-federal-oversight-of-michigans-2026-elections/",
+      "date": "2025-11-13",
+      "date_precision": "day",
+      "passage": "“From issuing driver’s licenses for illegal immigrants to Chinese nationals voting in our elections, all signs lead to the same conclusion: Jocelyn Benson is the worst secretary of state in American history and cannot be trusted to manage our elections,” said Nesbitt, R-Porter Township.",
+      "note": "Release on his letter, signed with 21 other legislators, asking the U.S. Justice Department to oversee Michigan's 2026 primary and general elections; the letter lists non-citizen ballots and voter-roll upkeep among its concerns.",
+      "subjects": [
+        "non-citizen voting",
+        "federal oversight of elections",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6e07ff8dad5082c66ccb43dc848fc35e22edf82506b56e76a90a4915d8426a2",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-affirms-trumps-call-for-election-integrity-in-michigan/",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "passage": "She continues to fight against transparency and accountability, refuses to remove dead people from our state’s voter rolls and is happy to let noncitizens vote in our elections.",
+      "note": "Statement backing federal monitoring of Michigan's 2026 elections; on voter rolls and non-citizen voting.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "federal oversight of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ad29985726f2f810f55e39e60decfc224cffe15fedb93b67a6567cae6fe7f31",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-applauds-doj-probe-into-wayne-county-ballots-renews-demand-for-federal-oversight-of-michigans-2026-elections/",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "passage": "The people of Michigan deserve absolute, unshakable confidence that their votes are legally cast and accurately counted.",
+      "note": "Statement backing a U.S. Justice Department review of Wayne County 2024 ballots; general election-integrity and federal-oversight position. No ID or citizenship rule named.",
+      "subjects": [
+        "election integrity in general",
+        "federal oversight of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aae9947759d32e8a9a5f038d59ff05724f4693c18b4dee90c1dd45d82bf0e94f",
+      "kind": "own-words",
+      "url": "https://www.senatoraricnesbitt.com/nesbitt-issues-statement-on-house-and-senate-oversight-committee-action-on-elections-integrity/",
+      "date": "2020-11-07",
+      "date_precision": "day",
+      "passage": "“There has been a lot of concern surrounding the election.",
+      "note": "2020 statement on House and Senate oversight committees seeking election records; general election-integrity statement, earlier in time than the rest. Next sentence: 'As legislators, we have an obligation to review the state election process, investigate potential fraud and a lack of transparency, and pursue opportunities for improvement.'",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:05:00.664Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: withdrew 2026-06-22 (suspended his campaign for governor and endorsed another candidate; no other 2026 office found). Source: https://www.cbsnews.com/detroit/news/aric-nesbitt-drops-out-of-michigan-gubernatorial-race/ (page dated June 22, 2026). He remains a sitting state senator; the brief's stop rule was applied literally.",
+        "blocked: https://michiganadvance.com/2026/06/22/aric-nesbitt-suspends-campaign-for-michigan-governor-following-trumps-nod-for-john-james/ (403)",
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "official Senate site pages fetched and found on the subject but not saved because of the withdrawal stop rule: https://www.senatoraricnesbitt.com/nesbitt-calls-on-senate-to-pass-election-protections-advanced-by-house-one-citizen-one-vote-thats-common-sense/ (2026-04-15), https://www.senatoraricnesbitt.com/nesbitt-applauds-doj-efforts-to-clean-up-state-voter-rolls-ensure-election-integrity-across-u-s/ (2025-12-04), https://www.senatoraricnesbitt.com/nesbitt-michigan-deserves-secure-elections-answers-after-voter-fraud-revealed-days-before-nov-5/ (2024-10-31)",
+        "web news searches (2)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:46:55.677Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:55:46.335Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "non-citizen voting",
+        "voter-roll maintenance",
+        "federal oversight of elections",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script; nothing on the subject)",
+        "official Senate site https://www.senatoraricnesbitt.com/ (site post search by the WordPress feed for: voter, citizenship, election integrity, ballot, ID, absentee; 8 on-subject press releases read; the 2020-11-16 audit-request release read, nothing usable on ID or citizenship)",
+        "the Senate site list of releases was read through search results, not page by page: not reviewed: https://www.senatoraricnesbitt.com/press-releases/",
+        "blocked: https://ballotpedia.org/Aric_Nesbitt (403)",
+        "legislature bill pages for his own sponsorships: not reviewed: https://www.legislature.mi.gov/ (votes and sponsorships are linked separately; HB 4765 is named in his release)",
+        "news search on his name plus voter ID, proof of citizenship, SAVE Act: nothing in his own words beyond the Senate site; a possible 'rent a car / beer' photo-ID quote could not be traced to him and is not saved",
+        "no campaign site found separate from the Senate site",
+        "note: the Senate site names him as the Senate leader for his office; Senate floor video not reviewed: https://www.senatoraricnesbitt.com/video/"
+      ],
+      "found": 11,
+      "at": "2026-10-28T23:05:00.664Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

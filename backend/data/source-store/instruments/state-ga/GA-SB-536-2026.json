@@ -1,0 +1,46 @@
+{
+  "id": "GA-SB-536-2026",
+  "scope": "state:ga",
+  "title": "SB 536 (2025-2026 Regular Session (filed 2026, second year of the session)): \"Henry McNeal Turner Voting Rights Act\"; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/243265",
+    "https://www.legis.ga.gov/api/document/docs/default-source/house-calendars/20252026/hcomposite8e0ed763e5394e828987c524d59e9ec6.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 1, new 21-3-10(a)\n(quote) (a) No political subdivision or state agency may engage in voter suppression as set forth in this article. No political subdivision or state agency may implement, impose, or enforce any election policy or practice that results in, is likely to result in, or is motivated, in whole or in part, by the intent to result in, voter suppression.\n(section) Section 1, preclearance article: covered policies\n(quote) (c) Covered policies include: (1) Any new or modified election policy or practice; (2) Any change in the powers, duties, responsibilities, jurisdiction, or authority of an elected official, or any action or policy that has the purpose or effect of diminishing, reassigning, or altering the functional role or influence of an elected official; or (3) Any new or modified method of election or maintenance of a method of election following a decennial census.\n(other) Findings; definitions; protected classes\n(other) Article 2: voter suppression and vote dilution standards\n(other) Georgia Voting Rights Commission, nominating committee, staff, attached to the Secretary of State\n(other) Preclearance of covered policies by covered political subdivisions\n(other) Language-minority assistance (translated election materials)\n(other) Georgia Voting and Elections Database and Institute; private right of action and remedies\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Jones II of the 22nd",
+      "role": "prime",
+      "version": "As introduced (LC 47 4056); the only version"
+    },
+    {
+      "name": "Merritt of the 9th",
+      "role": "co",
+      "version": "As introduced (LC 47 4056); the only version"
+    },
+    {
+      "name": "Parent of the 44th",
+      "role": "co",
+      "version": "As introduced (LC 47 4056); the only version"
+    },
+    {
+      "name": "Mangham of the 55th",
+      "role": "co",
+      "version": "As introduced (LC 47 4056); the only version"
+    },
+    {
+      "name": "Orrock of the 36th",
+      "role": "co",
+      "version": "As introduced (LC 47 4056); the only version"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

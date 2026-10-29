@@ -1,0 +1,53 @@
+{
+  "politician_id": "c539c9fa-a531-456f-9125-8d30f1fcedfe",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JRT1 (Representative Jeffrey Rosario Turco, 19th Suffolk, Winthrop); 2026 ballot status not confirmed, page does not state it",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov profile: sponsored and cosponsored bill list on the page showed no voter ID, citizenship or election-integrity bills (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jeffrey_Turco (returned an empty page)",
+        "not reviewed: official site, campaign site, news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:22:34.538Z",
+      "by": "source-collector"
+    }
+  ]
+}

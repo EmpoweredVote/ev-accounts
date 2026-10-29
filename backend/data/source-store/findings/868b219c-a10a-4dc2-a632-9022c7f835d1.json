@@ -1,0 +1,87 @@
+{
+  "politician_id": "868b219c-a10a-4dc2-a632-9022c7f835d1",
+  "findings": [
+    {
+      "id": "8500c9be6e07b8e9f1dbd3dc6c1791fe27da67270ea118a8838f7bcee4681cb1",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=56599&includeVotes=true",
+      "date": "2011-04-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('BIGGS'), linked to Andy Biggs (district None) via the official 2011 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21a2498d56ed4f1916e342f62fb428b5fdfc03cc110978bb03e54c68bdc38b24",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53571&includeVotes=true",
+      "date": "2009-06-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('BIGGS'), linked to Andy Biggs (district None) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "447ab7e7b04b576b0d773c50b6a385a43f353b81cac538b5d8196f94ebd01531",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=20402&billStatusActionId=48424&includeVotes=true",
+      "date": "2005-04-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1218-2005",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('BIGGS'), linked to Andy Biggs (district None) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.885Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:53:15.885Z",
+      "by": "identity-az-2026-10-28"
+    }
+  ]
+}

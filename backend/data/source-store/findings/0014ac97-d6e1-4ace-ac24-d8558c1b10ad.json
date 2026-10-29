@@ -1,0 +1,86 @@
+{
+  "politician_id": "0014ac97-d6e1-4ace-ac24-d8558c1b10ad",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Werkheiser'), linked to WILLIAM \"BILL\" WERKHEISER (district 157) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Werkheiser'), linked to WILLIAM \"BILL\" WERKHEISER (district 157) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary",
+        "Wikipedia page for the 2026 Georgia House election (https://en.wikipedia.org/wiki/2026_Georgia_House_of_Representatives_election): fetched; shows District 157 primary result, Bradley Anderson 5,138 votes (66.2%), Bill Werkheiser (incumbent) 2,618 (33.8%); says he lost renomination",
+        "Wikipedia biography (https://en.wikipedia.org/wiki/Bill_Werkheiser): fetched; says he lost the 2026 primary; his term ends 2027",
+        "Ballotpedia (https://ballotpedia.org/Bill_Werkheiser): fetched; tagged as 2026 primary defeated, last election May 19, 2026, term ends 2027",
+        "On the Record (0 appearances)",
+        "not searched further: he is not on the 2026-11-03 ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:35:25.534Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.406Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

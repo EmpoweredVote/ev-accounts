@@ -1,0 +1,120 @@
+{
+  "politician_id": "1df6d2a2-8b75-43a9-9a05-b8caa9a65894",
+  "findings": [
+    {
+      "id": "2106f0e0de35afe97ad3c6f4c0e7892f74fe8e571b4a1ad1b403e92b640b503b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5034",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5034-2025",
+      "act": "author",
+      "motion": "HB 5034, relating to eligibility requirements for voting (referred to Elections committee 2025-04-03; no hearing)",
+      "note": "Harrison is the author, with Cunningham as coauthor. The introduced text asks a voter-registration applicant for a Texas driver's license or ID card number, else the last four digits of a social security number, else a listed document confirming citizenship. It also adds the citizenship-document list to the registration form and changes the list of accepted photo IDs at the polls. Date is the committee referral date.",
+      "subjects": [
+        "proof of citizenship to register",
+        "ID number on voter registration",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:55.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d274b535e2c392476813b4371cf08d6d540e6c404f822a64a4480cc3109b9ceb",
+      "kind": "own-words",
+      "url": "https://www.elliscountypress.com/node/204412",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Per usual the house chose to do nothing of consequence when it came to election integrity because the democrats do not believe in election integrity and the democrats selected our Speaker (of the House).",
+      "note": "Quoted by the Ellis County Press (reporter Rita Cook) after the 2025 regular session, about the House not passing a proof-of-citizenship bill that had passed the Senate. Article page shows no publication date; date given as the session year.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:55.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf201fa1da950d36d5d13a7f3ac4eac6863a825bf2215e72c3d1c4f9d0e08eb8",
+      "kind": "own-words",
+      "url": "https://www.elliscountypress.com/node/204412",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Before – if you showed up and, forget not having an ID, if you had an ID that literally said on it you were not a citizen – there were instructions given to allow that person to go ahead and vote.",
+      "note": "Quoted by the Ellis County Press about his campaign with Congressman Chip Roy on IDs marked as non-citizen being given regular ballots.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:55.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99cfe8593045b264a00076e0e588558cf98c3e4c5c88fcf3491333b616725cb8",
+      "kind": "own-words",
+      "url": "https://www.texansforbrianharrison.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Helped prevent people with noncitizen IDs from being given regular ballots",
+      "note": "One bullet in his campaign-site list of accomplishments. The page has no date; year is the 2026 campaign.",
+      "subjects": [
+        "non-citizen voting",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:57:55.272Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register or vote",
+        "ID number on voter registration",
+        "non-citizen voting and IDs marked non-citizen",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (extract-otr script, 0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Brian_Harrison_(Texas) (confirms Texas House District 10, term to 2027-01-12, on 2026-11-03 general ballot; no subject positions)",
+        "Texas House member page https://house.texas.gov/members/member-page/?district=10 (confirms office; nothing on the subject)",
+        "campaign site https://www.texansforbrianharrison.com/ (one line on the subject)",
+        "personal domains brianharrison.org/.com (blocked: connection failed)",
+        "Texas Legislature Online bill history pages for HB 5034, HB 5337, SB 16 and other 2025 proof-of-citizenship bills",
+        "Texas Legislature Online bill text HB 5034 introduced",
+        "news: Ellis County Press",
+        "web searches: 3 (news and bill searches on the subject)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T14:57:55.272Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

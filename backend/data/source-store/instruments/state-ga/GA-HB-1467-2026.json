@@ -1,0 +1,46 @@
+{
+  "id": "GA-HB-1467-2026",
+  "scope": "state:ga",
+  "title": "HB 1467 (2025-2026 Regular Session (filed 2026, second year of the session)): Elections; motor-voter applications shall be opt-in instead of opt-out; provide",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/244198",
+    "https://www.legis.ga.gov/api/document/docs/default-source/house-calendars/20252026/hcomposite8e0ed763e5394e828987c524d59e9ec6.pdf"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 1 (21-2-221(a)); struck words (\"shall\") and new words (\"may\") run together in the print\n(quote) \"(a) Each application to obtain, renew, or change the name or address on a driver's license or identification card issued by the Department of Driver Services pursuant to Chapter 5 of Title 40 made by an applicant who is within six months of such applicant's eighteenth birthday or older shall may, if eligible, also serve as an application for voter registration unless the applicant declines to register to vote through specific declination or by failing to sign the voter registration application. The applicant may sign the voter registration application to register to vote or to update the voter's registration if the voter has changed his or her address.\"\n(other) Section 2: repeal of conflicting laws (no other subject)\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Fleming of the 114th",
+      "role": "prime",
+      "version": "As introduced (LC 47 4114); the only version"
+    },
+    {
+      "name": "Gullett of the 19th",
+      "role": "co",
+      "version": "As introduced (LC 47 4114); the only version"
+    },
+    {
+      "name": "Momtahan of the 17th",
+      "role": "co",
+      "version": "As introduced (LC 47 4114); the only version"
+    },
+    {
+      "name": "Scoggins of the 14th",
+      "role": "co",
+      "version": "As introduced (LC 47 4114); the only version"
+    },
+    {
+      "name": "Kelley of the 16th",
+      "role": "co",
+      "version": "As introduced (LC 47 4114); the only version"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

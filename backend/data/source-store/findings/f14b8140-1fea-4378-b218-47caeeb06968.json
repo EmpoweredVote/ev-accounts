@@ -1,0 +1,264 @@
+{
+  "politician_id": "f14b8140-1fea-4378-b218-47caeeb06968",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7139eb4f3475b9238368ba4e6280ce0f70c2bc059a02bb2fc9e82b846ce46cf3",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "Third Reading (Roll Call #350), HB 589 voter ID bill; passed 81-36",
+      "note": "Pierce is listed among the Noes on House third reading of HB 589, the 2013 election law bill that required photo ID to vote in person.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:14:34.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf41122dbbc8682716879f7eabeb4d160a5fd9d34c1ea76e9227d9c9682a8fb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "Motion 11, concur with Senate version (Roll Call #1337), HB 589; passed 73-41",
+      "note": "Pierce is listed among the Noes on the House vote to concur in the Senate's rewritten HB 589, the final House vote on the bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:14:34.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "889e61c279547d276a1a2f2b42d78a240065cffdf19e47f86fb94b2209698ad3",
+      "kind": "own-words",
+      "url": "https://www.robesonian.com/news/112116/pierce-vote-id-coming",
+      "date": "2018-06-13",
+      "date_precision": "day",
+      "passage": "“I’m think that the party in power is using this to get people to the polls,” he said. “Since I expect it to pass, my real concern is the different kinds of ID that will be accepted and making sure that we do all we can so people can vote and go to vote.”",
+      "note": "Quoted by the Robesonian (Jun 13, 2018) about House Bill 1092, a proposed photo-ID constitutional amendment. He says his concern is which kinds of ID will be accepted. The same article reports, in the reporter's words, that he disagrees voter ID serves as a security measure.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21b8bcbd4ff99b656e0c9e7c309afc576939c7edc3be682fce9c3c23735473d7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1256",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "yea",
+      "motion": "Amendment 1 (Lewis), second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1256, House second reading, amendment 1 adopted 115-0.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b0dba7e16924821a72feafa90b7e54fcb60ffad652cdba712cad1fc95da392c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1257",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "yea",
+      "motion": "Amendment 5 (Ager), second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1257, amendment failed 43-71.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79e85a94255a001c96e1b9bc13c9a7a9837a3962687e2d711090eff985b49f00",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1258",
+      "date": "2018-06-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1258, passed 74-44.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "115c6116277d63ee6298263799d0c15cabe35f4be55fcc07ab566cf72a8d332b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1260",
+      "date": "2018-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Third reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #1260, passed House 74-43.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID bill votes 2013",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia says Garland Pierce, NC House District 48, is on the 2026 general-election ballot and the March 3, 2026 primary was canceled (https://ballotpedia.org/Garland_Pierce)",
+        "On the Record (0 meetings)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/444 (HTTP 500; member page not reachable)",
+        "ncleg.gov bill page and roll-call pages for HB 589 (2013)",
+        "Ballotpedia page: nothing on the subject",
+        "not reviewed: official and campaign site, news search, own-words search (web search budget exhausted)"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:14:34.783Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "photo ID constitutional amendment",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "ncleg.gov member profile (District 48, 11 House terms)",
+        "ncleg.gov bill page and roll calls for HB 1092 (2018 photo ID amendment)",
+        "Branch voter guide 2026 page (lists him as a 2026 House District 48 candidate; no site or online information)",
+        "blocked: https://ballotpedia.org/Garland_E._Pierce (bot-check, not retrieved)",
+        "web search on name plus voter ID and election (found the Robesonian 2018 article)",
+        "no campaign site found",
+        "no 2023 sponsorship on the subject found"
+      ],
+      "found": 5,
+      "at": "2026-10-27T22:20:07.766Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

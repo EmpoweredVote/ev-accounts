@@ -1,0 +1,31 @@
+{
+  "politician_id": "489ecb5c-46a0-4b1d-b015-ecb86818a015",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship",
+        "voter no-ID fallback",
+        "non-citizen voting / voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: holds Georgia House District 143 seat since 2025-01-13; on the 2026-11-03 general election ballot (Ballotpedia, fetched)",
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Anissa_Jones (confirms identity and office; no subject content)",
+        "campaign site https://www.electanissajones.com/ , /issues and /meet_anissa (nothing on the subject)",
+        "news: 41NBC 2024 candidate interview and 2025 session preview (nothing on ID or citizenship); blocked: https://www.13wmaz.com/ 2024 candidate Q&A (access denied)",
+        "news and profile search: a candidate-profile page notes her site had no voting-and-elections content; no statement or bill found",
+        "blocked: https://www.legis.ga.gov/members/house/5081?session=1033 (app shell only, no data)",
+        "she took office in 2025, so no 2021 SB 202 vote applies"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:52:12.819Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

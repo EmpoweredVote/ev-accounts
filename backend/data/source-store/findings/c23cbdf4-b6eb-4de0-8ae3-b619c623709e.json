@@ -1,0 +1,188 @@
+{
+  "politician_id": "c23cbdf4-b6eb-4de0-8ae3-b619c623709e",
+  "findings": [
+    {
+      "id": "e436a69d1e310f316aa260ad6f77661e136c2148bbfe95daac93cf6f47317137",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Tarik/InTheNews/NewsRelease/?id=143044",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "passage": "Voting by mail is secure and available to all registered voters.",
+      "note": "House news release in his name encouraging voters to request a mail ballot early for the May primary. Date is the page's published time.",
+      "subjects": [
+        "mail voting",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:25.963Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d755075b9f6fdd34b2a67264f5ca7c7960996e9a9083354ae7975671267b1b7c",
+      "kind": "record",
+      "url": "https://pahouse.com/Tarik/Video/?id=142608",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Question to the Department of State at the House Appropriations budget hearing on voter misinformation and free and fair elections",
+      "note": "House video page says he asked the Department of State what it is doing to curb voter misinformation and how the state can reassure the public that elections are free and fair. The page text is a caption, not his words; the video was not watched. Date is the page's published time.",
+      "subjects": [
+        "voter misinformation",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:25.963Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Khan'), linked to Tarik Khan (district 194) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1508aeb35641e63732a47d869e988a75b06dcd7dd07073659d5011bf2be58b0e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sInd=0&body=H&type=B&bn=1396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1688 (passed House May 13, 2025). Read.",
+      "note": "Named as co sponsor ('Tarik Khan') on the official bill page; linked to Tarik Khan via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Khan'), linked to Tarik Khan (district 194) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KHAN'), linked to Tarik Khan (district 194) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "mail voting",
+        "voter misinformation"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "official House site (pahouse.com/Tarik): news release and video page fetched; confirms Rep. Tarik Khan, Philadelphia, 194th District",
+        "campaign site tarikforpa.com: home page only; its voting-rights page address redirected to the home page, so that page was not readable (not reviewed: https://tarikforpa.com/?p=4349)",
+        "not reviewed: https://ballotpedia.org/Tarik_Khan (not fetched)",
+        "web search x2 (voter ID, mail ballot, election): no voter-ID or proof-of-citizenship statement found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:10:25.963Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

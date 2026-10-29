@@ -1,0 +1,305 @@
+{
+  "politician_id": "179e2cdb-395e-4f7f-a5e1-775ff176ce64",
+  "findings": [
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district 18) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2d40a39f131a87e5e9a3d3fbb430a43d59903c0638a14b987d48c2958c11a86",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district 18) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35da6f70d1f84b2046ea1b4872f6f957fd245a0cb67db40f094de4cd201a5fa7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district 18) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "200d3739128cf559b812e3ba269296b23ff999963b1ebf78a930311346e47ff1",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f5825d386ddc27095e26ef46d0ef5d943f19ead93cad7ed1f921dc969844e92",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('SUNDARESHAN'), linked to Priya Sundareshan (district 18) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.887Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a8be2cfa304740430126bd8af909129d39cb6f723bad7d22c5e90a84763ed752",
+      "kind": "own-words",
+      "url": "https://blogforarizona.net/arizona-secretary-of-state-fontes-and-democratic-legislative-leaders-sundareshan-and-de-los-santos-unveil-the-voters-first-act",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "passage": "“At a time when trust in our institutions matters more than ever, we’re choosing cooperation over conflict, and we’re sending a clear message to Arizonans. We can govern responsibly. We can protect the integrity of our elections and we can expand voter access at the same time…”",
+      "note": "Quoted at a press event introducing SB1262 (Voters First Act) in the Senate. Page date is shown as 2026-01-21 with a later update of 2026-02-02; the page does not say which is the original. The page's description of the bill has nothing on ID or citizenship proof.",
+      "subjects": [
+        "election integrity (general)",
+        "voter access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:40.559Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4446302d22e525a5eb30fd7becfe60adf1dec5ab9a746e3b6993cd25aafca9b3",
+      "kind": "own-words",
+      "url": "https://priyaforarizona.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I'm running for re-election to the State Senate to make Arizona a leader in renewable energy, balance our water resources through conservation and efficiency, fully fund our public schools, safeguard our democracy by making voting easy and accessible to all, and protect reproductive and human rights.",
+      "note": "Campaign site home page. One general line about making voting easy and accessible. Nothing specific on ID or citizenship proof.",
+      "subjects": [
+        "voter access (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:40.559Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b6e8d27dc840422e9ef092d3f0af3d26ebe3b5864ea5b030736df74b530f459",
+      "kind": "own-words",
+      "url": "https://blogforarizona.net/ld-18-state-senator-priya-sundareshan-calls-out-republican-voter-suppression-measures-at-the-state-legislature",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "passage": "80% of all Arizonans, across the political spectrum, use mail-in voting as their preferred way of casting their ballot.",
+      "note": "From her March 2024 press release on HCR2032 (a bill about early voting, vote centers and precinct size), as shown on a partisan blog. It is about mail voting rules, not ID or citizenship proof.",
+      "subjects": [
+        "mail voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:40.559Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T22:53:15.887Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity (general)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://theballotbrief.com/state/arizona/pima-county/arizona-senate-district-18 (shows her on the 2026-11-03 general ballot for Senate District 18)",
+        "campaign site https://priyaforarizona.com/ (one general line on voting access)",
+        "https://azcir.org/news/2025/02/26/did-an-arizona-senator-say-that-she-supported-noncitizen-participation-in-elections-no/ (2025-02-26 fact brief on a citizen-only census amendment; reports her view in the writer's words, not hers, so not saved as own words)",
+        "https://blogforarizona.net/ld-18-state-senator-priya-sundareshan-calls-out-republican-voter-suppression-measures-at-the-state-legislature (no statement on ID or citizenship proof)",
+        "https://blogforarizona.net/arizona-secretary-of-state-fontes-and-democratic-legislative-leaders-sundareshan-and-de-los-santos-unveil-the-voters-first-act",
+        "two news searches on name plus subject words: no own-words on voter ID or documentary proof of citizenship found; floor votes are linked separately",
+        "not reviewed: https://ballotpedia.org/Priya_Sundareshan",
+        "not reviewed: official Senate caucus page and social media posts"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:09:40.559Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

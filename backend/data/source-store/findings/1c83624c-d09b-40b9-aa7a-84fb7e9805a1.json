@@ -1,0 +1,239 @@
+{
+  "politician_id": "1c83624c-d09b-40b9-aa7a-84fb7e9805a1",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "2c576efcc1b6d467692564df26824a4a9a739011c64c056ca901eb70115d192a",
+      "kind": "own-words",
+      "url": "https://fernandez.house.gov/news/documentsingle.aspx?DocumentID=584",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "“The SAVE America Act is voter suppression, plain and simple,” said Leger Fernandez. “It will make it harder and more expensive for American citizens—especially women, Native Americans, service members, and rural voters—to register and vote. You will now have to register in person at your County Clerk's office—instead of online and by mail which is allowed in New Mexico.",
+      "note": "Statement from her office on House passage of S. 1383 (SAVE America Act), which she voted no on; speaks about documentary proof of citizenship and in-person registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "in-person registration requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:39:02.622Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7ca84fd310747e31be97af6ee9d84b5404fe88824b82627a30b272cb06c2fb9",
+      "kind": "own-words",
+      "url": "https://fernandez.house.gov/news/documentsingle.aspx?DocumentID=584",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Under current federal law, it is already illegal for noncitizens to vote in federal elections, with serious criminal penalties. There is no evidence of widespread noncitizen voting. Yet the SAVE America Act will make it more difficult for U.S. citizens to register and vote.",
+      "note": "Same release; speaks to non-citizen voting and says the bill makes registration harder for citizens.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:39:02.622Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5de375bceba85aa5a0919c8a851b9c558c1638c54b86141ae0457d93f0d939a1",
+      "kind": "own-words",
+      "url": "https://fernandez.house.gov/news/documentsingle.aspx?DocumentID=584",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "To register, an individual must provide a passport; identification that shows their place of birth, which excludes New Mexico REAL IDs, tribal IDs and military IDs; or an ID paired with a birth certificate or other specific document that demonstrates citizenship under the SAVE Act. 23 million American citizens don’t have ready access to these documents.",
+      "note": "Same release; describes which documents the bill accepts and which IDs it leaves out.",
+      "subjects": [
+        "proof of citizenship to register",
+        "which documents count as proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:39:02.622Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7446ba81243449f343e73fb8882de86897ddac26dc809d3afea5fc84678ae88b",
+      "kind": "own-words",
+      "url": "https://fernandez.house.gov/news/documentsingle.aspx?DocumentID=456",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Republicans’ requirement to register using a birth certificate or a passport that matches a voter’s current name would make voting harder and more expensive for millions of women.",
+      "note": "Joint statement as a House caucus chair with two vice chairs on House passage of the SAVE Act (H.R. 22); about name-matching documents for registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "name-change mismatch with documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:39:02.622Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "043ebb4d7c469fa719e177ac6b399ce1d751c58cb77cb7c54455f91206d1ecb0",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/a7056404-6244-4e1a-aea6-b86bc0e4ab44",
+      "date": "2026-07-15",
+      "date_precision": "day",
+      "passage": "The SAVE America Act will make it harder to register to vote, especially if you’re a woman, live in a rural community, serve in the military, or are a Tribal voter. If you’re wealthy enough to have a passport, you’re fine. But more than 21 million Americans don’t have one. Under the SAVE America Act, a REAL ID driver’s license in most states or other common forms of ID wouldn’t be enough to register. This isn’t about election security. It’s about making it harder for eligible Americans to vote.",
+      "note": "Statement in her name on House final passage of H.R. 8595 (State and foreign operations appropriations), which carried the SAVE America Act; copy of her office release on a release-archive site.",
+      "subjects": [
+        "proof of citizenship to register",
+        "passport and REAL ID as proof",
+        "election integrity framing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:39:02.622Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity / voter-roll checks / non-citizen voting"
+      ],
+      "places": [
+        "status: in scope, not independently confirmed on the 2026 general ballot (fernandez.house.gov home page names her as Congresswoman for the 3rd district of New Mexico; no ballot or primary-result page was reached)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site fernandez.house.gov: home page, press-release list (15 releases Jul-Oct 2026, none on the subject), press-release search for 'SAVE Act' and 'voter' (no subject hits), Democracy priority page https://fernandez.house.gov/Issues/Issue/?IssueID=14893 (voting-rights statement, nothing on ID or citizenship proof), voting-rights legislation press release (nothing on ID or citizenship proof)",
+        "blocked: https://ballotpedia.org/Teresa_Leger_Fern%C3%A1ndez (bot challenge page, no content)",
+        "blocked: https://www.congress.gov/member/teresa-leger-fernandez/L000597 (403 and Cloudflare challenge)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: ontheissues.org, Wikipedia, govtrack (lead-only sources, not reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:58:33.292Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "in-person registration requirement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site fernandez.house.gov press releases (SAVE Act releases fetched)",
+        "capitolreleases.com copy of her office release",
+        "blocked: https://ballotpedia.org/Teresa_Leger_Fern%C3%A1ndez (bot-check page)",
+        "one news search plus one ballot-status search; ballot status not confirmed on a fetched page, official site shows active press releases through Oct 2026",
+        "congress.gov not reviewed",
+        "no separate campaign-site fetch"
+      ],
+      "found": 5,
+      "at": "2026-10-27T18:39:02.622Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

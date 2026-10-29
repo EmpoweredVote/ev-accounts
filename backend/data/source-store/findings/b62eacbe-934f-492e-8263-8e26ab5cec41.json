@@ -1,0 +1,29 @@
+{
+  "politician_id": "b62eacbe-934f-492e-8263-8e26ab5cec41",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID for mail ballots",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: won the House District 177 special election runoff on 2026-06-09 (https://www.wtxl.com/news/local-news/in-your-neighborhood/lowndes-county/alvin-payton-jr-wins-district-177-special-election-runoff-in-lowndes-county); also listed as a 2026 primary runoff candidate (https://www.ballotready.org/people/alvin-payton-jr); November ballot status not confirmed",
+        "blocked: https://ballotpedia.org/Alvin_Payton_Jr. (empty page)",
+        "campaign site: none (the candidate-guide page says he had no website or online information as of 2026-05-22: https://branch.vote/races/2026-georgia-primary-runoff-ga-state-state-representative-ga-house-177-d/candidates/alvin-payton-jr)",
+        "nothing on the subject: BallotReady, Branch, WTXL pages",
+        "not reviewed: https://fastdemocracy.com/bill-search/ga/legislators/GAL000640 (sponsored-bills list did not load)",
+        "not reviewed: legislature member and bill pages (login token needed)",
+        "one news search on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.954Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

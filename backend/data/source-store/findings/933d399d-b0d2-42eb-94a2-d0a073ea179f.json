@@ -1,0 +1,158 @@
+{
+  "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f",
+  "findings": [
+    {
+      "id": "72a0e00a9c939b775c9d1d5ffee723454f558092a4b1177346ec5ec56abc5700",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "A covered voter voting under this Article shall not be required to include a photocopy of identification described in G.S. 163-166.16(a) or an affidavit as described in G.S. 163-166.16(d)(1), (d)(2), or (d)(3) when submitting a ballot in accordance with this Article.",
+      "instrument_id": "NC-HB-278-2025",
+      "act": "sponsor",
+      "motion": "HB 278, Protect Military Votes",
+      "note": "Crawford is named in the sponsor list of HB 278 and the bill appears on her introduced-bills page (https://www.ncleg.gov/Members/IntroducedBills/H/800). It adds G.S. 163-258.21, so a covered military or overseas voter would not have to include a photocopy of ID, or the listed affidavits, when submitting a ballot. It was referred to the House Rules committee on 03/05/2025 and has no further action listed.",
+      "subjects": [
+        "ID with absentee ballot for military and overseas voters",
+        "voter ID with mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:01:21.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "194a89fb0a43b93dfbcd75dd1a9e3f55c82e47b334c2993f79c570fb14293b91",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/800",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Second Reading, Election Law Changes (66 Ayes, 47 Noes)",
+      "note": "Member vote list shows No on Second Reading, Election Law Changes. The ratified text of HB 958 adds a rule that a county board processes a registration application only if the applicant affirmatively says they are a U.S. citizen, with a sworn citizenship form for blank answers, and orders a process to remove voters flagged as non-citizens by a federal database. The bill page shows the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "voter-roll checks against federal citizenship data",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:32:26.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de21647a8560018d83782211ebdd8ef4a1de43657f29ddf1efa8d902b2d90e30",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/800",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "M11 Concur, Election Law Changes (62 Ayes, 47 Noes)",
+      "note": "Member vote list shows No on M11 Concur, Election Law Changes. The ratified text of HB 958 adds a rule that a county board processes a registration application only if the applicant affirmatively says they are a U.S. citizen, with a sworn citizenship form for blank answers, and orders a process to remove voters flagged as non-citizens by a federal database. The bill page shows the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "voter-roll checks against federal citizenship data",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:32:26.875Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot",
+        "military and overseas voter ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Rep. Sarah Crawford, NC House District 66, on the Nov 3, 2026 general ballot (https://ballotpedia.org/Sarah_Crawford and https://www.ncleg.gov/Members/Biography/H/800)",
+        "On the Record (0 appearances; extract-otr returned nothing)",
+        "ncleg.gov member page and introduced-bills list (4 bills in 2025-26 session; one on the subject)",
+        "ncleg.gov bill pages and text for HB 278, HB 691, HB 1240 (only HB 278 on the subject)",
+        "Ballotpedia (no issue positions on the subject)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/800 (page loads votes dynamically; no vote data readable)",
+        "not reviewed: official site, campaign site, news and interview search (web search budget exhausted)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:01:21.562Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizenship question on voter registration",
+        "voter-roll checks against federal citizenship data",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned no appearances)",
+        "Ballotpedia (https://ballotpedia.org/Sarah_Crawford: current NC House member, on the 2026 general-election ballot; confirms scope)",
+        "NC General Assembly member biography and introduced-bills pages (https://www.ncleg.gov/Members/IntroducedBills/H/800): no bill on voter ID or citizenship",
+        "NC General Assembly member vote list (https://www.ncleg.gov/Members/Votes/H/800): one election-law bill found; the three floor-amendment votes on it are not saved because the amendment texts were not reviewed",
+        "NC General Assembly bill page and ratified text for the election-law bill (https://www.ncleg.gov/BillLookup/2025/H958)",
+        "campaign site https://www.sarahfornc.com (home page): nothing on the subject in the page text; Wix pages may hide content",
+        "web search on the name with voter ID, citizenship and election integrity words (no statement of their own found)",
+        "not reviewed: votes from any earlier session, the member vote list shows only the current session",
+        "not reviewed: debate or interview video, none located"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:32:26.875Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

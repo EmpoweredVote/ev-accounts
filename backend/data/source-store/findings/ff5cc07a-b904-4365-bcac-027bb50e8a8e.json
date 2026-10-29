@@ -1,0 +1,82 @@
+{
+  "politician_id": "ff5cc07a-b904-4365-bcac-027bb50e8a8e",
+  "findings": [
+    {
+      "id": "036ae476fc947f87660d36c588e0bad6d82a832091817f1bf0f0ec03566a0e61",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/HouseRollCall139.pdf",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "note": "Roll call 139 on the House voting bill H.4359: the roll call lists Day as voting N; amendment passed 32 yeas, 126 nays, so it failed. Amendment 7 (filed by Rep. Frost, titled 'Voter Identification' on the bill's amendments page https://malegislature.gov/Bills/192/H4359/Amendments) would require valid state or federal photo ID at the polls, with challenge or provisional ballot and 8-business-day cure for voters without ID, and a free-ID indigency waiver.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to the 2022 voting bill",
+        "provisional ballot for voters without ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:06:09.631Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Michael_Day_(Massachusetts) says he is on the Nov 3, 2026 general-election ballot for MA House 31st Middlesex after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances; run with --names, no meetings found)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MSD1 and /Bills: nothing on the subject (only H.816 on campaign contributions, which is off subject)",
+        "legislature votes tab: lists bills only, no roll calls; nothing on the subject",
+        "campaign site https://electmikeday.com/issues/ (page text has no voter ID, photo ID, citizenship, SAVE Act or election integrity words): nothing on the subject",
+        "Ballotpedia profile: nothing on the subject",
+        "blocked: https://www.repmikeday.com (fetch returned empty page)",
+        "not reviewed: web news search on name plus subject words (the shared 200-search budget was used up)",
+        "not reviewed: legislature roll-call pages for House votes on election bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:02.239Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to the 2022 voting bill",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member profile page and sponsored-bills list (confirms 31st Middlesex representative; only an unrelated campaign-contribution bill H.816 under elections)",
+        "ballot-tracking page confirming he is on the 2026 general-election ballot",
+        "legislature roll call and amendment pages for H.4359",
+        "Ballotpedia (page returned empty)",
+        "news searches on name plus voter ID (nothing from him on the subject)",
+        "no campaign or official site statement on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T17:06:09.631Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "politician_id": "961506eb-3f00-4358-a9a3-1730e7004474",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/JMC0 (confirms Senator Joanne M. Comerford, Hampshire, Franklin and Worcester; no voter-ID bills seen on the profile page text)",
+        "malegislature.gov bill search for 'voter identification' (https://malegislature.gov/Bills/Search?SearchTerms=voter+identification): first page showed H.833, S.510 and S.2567 with other sponsors; none named Comerford; page 2 not reviewed",
+        "Wikipedia https://en.wikipedia.org/wiki/Jo_Comerford (confirms sitting state senator; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Joanne_Comerford: page has no article for her (nothing on the subject)",
+        "not reviewed: 2026 general-election ballot status (no page found that states it; web search budget was used up)",
+        "not reviewed: official Senate site and campaign site keyword search (jocomerford.com returned no text)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:16:36.552Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://malegislature.gov/Legislators/Profile/JCE0 (fetched; confirms she is a sitting Massachusetts state senator)",
+        "https://ballotpedia.org/Joanne_Comerford (fetched via curl; 2026 ballot status not readable from the page text, so not confirmed)",
+        "her official site search for voter ID (https://senatorjocomerford.org/?s=voter+ID): only results on early in-person voting (S.2545 amendment 15) and vote-by-mail access, no ID or citizenship item",
+        "one news search on name plus voting bill: nothing on ID or citizenship",
+        "not reviewed: malegislature.gov bill pages for sponsorships (not opened)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:42.396Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

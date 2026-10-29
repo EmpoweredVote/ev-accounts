@@ -1,0 +1,66 @@
+{
+  "politician_id": "c681f4ce-5c7a-4684-8c9f-d0c5825e0f1d",
+  "findings": [
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Dievendorf'), linked to Emily Dievendorf (district 77) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.340Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House caucus page https://housedems.com/emily-dievendorf (confirms sitting member for the 77th House District; news list shows nothing on the subject)",
+        "official House caucus site search for 'voter', 'election', 'SAVE', 'citizenship': no results",
+        "blocked: https://senatedems.com/dievendorf/ (403; a security firewall page, and she is a House member so this page was a wrong guess)",
+        "blocked: https://ballotpedia.org/Emily_Dievendorf (403)",
+        "three web searches (name plus voter ID, citizenship, SAVE Act words; name plus 2026 statements; name plus House Resolution 244): no own words on the subject found",
+        "legislature bill pages not searched (votes and sponsorships linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:50:13.444Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.340Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

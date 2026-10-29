@@ -1,0 +1,95 @@
+{
+  "politician_id": "32fbb733-d65c-457b-8ef0-f52e1701d284",
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter process",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kyle_Miller_(Indiana) names him as Indiana House District 82 member, advanced from the May 5, 2026 primary and on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 appearances)",
+        "Indiana House caucus member page https://indianahousedemocrats.org/members/kyle-miller (nothing on the subject)",
+        "Indiana House caucus news list for Rep. Kyle Miller, category page (11 releases read by title; fetched 'Miller opposes Senate immigration bill' and 'Miller condemns passage of gerrymandered congressional maps': nothing on the subject)",
+        "Rep. Miller legislative newsletter https://repmiller.substack.com, 11 posts fetched and searched for voter ID, photo ID, citizenship, absentee, mail ballot, voter roll, election integrity: nothing on the subject",
+        "Ballotpedia page: no survey responses (he did not complete the Candidate Connection survey), nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_kyle_miller_1 (page needs JavaScript, returns an empty shell; the API needs a key, 403), so bill sponsorships and votes were not reviewed",
+        "campaign site https://www.millerfor82.com: did not load (no response)",
+        "not reviewed: news search on name plus subject words (web search budget for the session was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:24:15.132Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Kyle_Miller_(Indiana) (confirms House District 82 member, on the 2026 general-election ballot)",
+        "official caucus page https://indianahousedemocrats.org/members/kyle-miller/ (nothing on the subject)",
+        "caucus news list https://www.indianahousedemocrats.org/news/category/Rep.+Kyle+Miller (only redistricting and school-board election items; nothing on the subject)",
+        "newsletter https://repmiller.substack.com/archive (titles only; nothing on the subject)",
+        "BillTrack50 vote page https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/27764 (no voter ID or citizenship bill listed)",
+        "web news searches (nothing naming him on the subject)",
+        "blocked: https://iga.in.gov/legislative/2024/bills/house/1264/details (page loads by script, no roll call text readable)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (HTTP 403)",
+        "blocked: https://legiscan.com/IN/bill/HB1680/2025 (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2026/04/16/civil-rights-advocates-fear-citizenship-verification-law-could-block-many-naturalized-voters/ (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2024/01/18/election-security-bill-with-citizenship-credit-agency-data-provisions-moves-to-house-floor/ (HTTP 403)",
+        "blocked: https://pluralpolicy.com/app/legislative-tracking/bill/details/state-in-2024-hb1264 (no vote table readable)",
+        "not reviewed: individual roll-call votes on HB 1264 (2024) and HB 1680 (2025), the Indiana citizenship-check bills; no readable roll-call page reached"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:32:35.657Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

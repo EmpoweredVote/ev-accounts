@@ -1,0 +1,111 @@
+{
+  "politician_id": "85c6928b-ba33-479d-b0da-11f94d4e4579",
+  "findings": [
+    {
+      "id": "1067cdd38fc174189e8fbb8b0d8c88070b1d455313c3bc05b7843218dc9cbe60",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "nay",
+      "motion": "M11 Concur (House vote to accept the Senate version of HB 589, VIVA/Election Reform; passed 73-41)",
+      "note": "Roll Call 1337 lists Cotham among the Noes on the House concurrence vote for HB 589, the 2013 election reform bill (SL 2013-381). Not verified from this page: the bill's contents.",
+      "subjects": [
+        "election reform omnibus bill (2013 HB 589)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:26:11.661Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Tricia_Cotham names her as incumbent NC House District 105, advanced from the March 3, 2026 primary, on the November 3, 2026 ballot; ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/817 confirms Rep. Tricia Ann Cotham",
+        "On the Record (0 appearances for this politician)",
+        "Ballotpedia https://ballotpedia.org/Tricia_Cotham (nothing on the subject)",
+        "campaign site https://www.triciacotham.net and /issues (nothing on the subject)",
+        "NC General Assembly bill pages: https://www.ncleg.gov/BillLookUp/2023/S747 (Elections Law Changes, roll calls not read; no voter ID content found on page) and https://www.ncleg.gov/BillLookUp/2025/H958 (her name is not among the sponsors); full sponsor and vote search not completed",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: ncleg.gov roll-call transcripts for her individual votes on election bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:55:54.120Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity",
+        "election day / voting access"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Tricia_Cotham shows her as the sitting NC House District 105 member, on the 2026-11-03 general-election ballot after winning the 2026-03-03 primary",
+        "On the Record (0 appearances)",
+        "campaign site https://www.triciacotham.net/ and /issues (nothing on the subject)",
+        "NC General Assembly member page and introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/817 (only election item is HB 31, make Election Day a state holiday, not on identity or citizenship proof; no voter ID or citizenship bill sponsored)",
+        "NC General Assembly bill page and roll calls for 2013 HB 589 (record found, one finding saved)",
+        "NC General Assembly bill page for 2023 SB 747 Elections Law Changes: roll-call list seen, not read for her vote, not judged on the subject of ID or citizenship",
+        "Ballotpedia: no voter ID statements",
+        "news searches on name plus voter ID / election integrity / citizenship (three searches): no own words on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:26:11.661Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

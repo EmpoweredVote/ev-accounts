@@ -1,0 +1,58 @@
+{
+  "politician_id": "aee5ccea-d3ca-426c-9849-fbfc5e297e2a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Bud_Williams names him as 11th Hampden District representative, advanced from the September 1, 2026 primary, on the November 3, 2026 ballot",
+        "On the Record (0 appearances for this politician id; name search with no city returned 0 candidates)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/BLW1 (fetched; confirms Representative Bud L. Williams, 11th Hampden)",
+        "not reviewed: https://malegislature.gov/Legislators/Profile/BLW1/194/Bills/Sponsored?isUpdate=True (page loads its bill list by script; fetched HTML held no bill titles)",
+        "not reviewed: https://malegislature.gov/Legislators/Profile/BLW1/194/Bills/Cosponsored?isUpdate=True (same reason)",
+        "not reviewed: https://malegislature.gov/Bills/Search?SearchTerms=voter+identification (results not rendered in fetched HTML)",
+        "nothing on the subject: Ballotpedia page text (no voter ID or citizenship content)",
+        "blocked: web search budget used up, so no news search and no official or campaign site search was possible",
+        "https://www.budwilliams.com returned an empty page; no campaign site found",
+        "not reviewed: https://www.facebook.com/RepBudLWilliams (login-walled social page)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:59.239Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/BLW1: confirms 11th Hampden district representative; sponsored bills nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/BLW1/194/Cosponsor (cosponsored list did not load; curl search for voting terms found nothing)",
+        "H.833 (voter identification bill) https://malegislature.gov/Bills/194/H833 and its petitioners page: only the lead filer is listed, he is not named",
+        "web search on name plus voter ID words: nothing on the subject",
+        "Ballotpedia: not reviewed, no page fetched",
+        "official or campaign issue pages: not reviewed, none found in search"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:09:29.170Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

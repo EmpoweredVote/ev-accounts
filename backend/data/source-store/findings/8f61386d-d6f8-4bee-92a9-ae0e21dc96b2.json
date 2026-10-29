@@ -1,0 +1,228 @@
+{
+  "politician_id": "8f61386d-d6f8-4bee-92a9-ae0e21dc96b2",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42f5755eaf3ef36ecae2224152bf55307f9fce017f82b60b6f57af28bfbda311",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/930",
+      "date": "2011-06-09",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "nay",
+      "motion": "Third Reading",
+      "note": "House third-reading vote on HB 351, Restore Confidence in Government (photo ID to vote in person). Carney is listed among the members voting no.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:58:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbd4f3f49a98ff8c999ab100c0368768f983302f904323cf55e86fedbf443a80",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/1276",
+      "date": "2011-07-26",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "nay",
+      "motion": "Veto override vote",
+      "note": "House vote to override the governor's veto of HB 351, Restore Confidence in Government. Carney is listed among the members voting no. The vote was 67 to 52.",
+      "subjects": [
+        "voter ID at the polls",
+        "veto override"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:58:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "092280b569bafdfe8ddda11adb76a4da822f08eba9bd005b61ad9a396145ccc2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "Third Reading",
+      "note": "House third-reading vote on HB 589, Voter Information Verification Act (photo ID to vote and other election changes). Carney is listed among the members voting no.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:58:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "644b26a59d1a80fe2920287ca2f4294ec9528409d6d08fbda8c2c6937b3d71bb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "M11 Concur (House concurrence in Senate version)",
+      "note": "House vote to concur in the Senate version of HB 589, Voter Information Verification Act. Carney is listed among the members voting no.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:58:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID",
+        "no-ID voter fallback",
+        "mail/absentee ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks / election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia says Carney (NC House District 102) is on the Nov 3, 2026 general ballot after the Mar 3, 2026 primary was canceled (https://ballotpedia.org/Becky_Carney)",
+        "On the Record (0 appearances)",
+        "ncleg.gov member biography H/322: fetched but page body empty; nothing on the subject",
+        "ncleg.gov bill pages and roll calls for 2011 HB 351 and 2013 HB 589 (votes on file above); no sponsorships found on these bills",
+        "campaign site https://www.beckycarney.com: blocked: page is script-rendered, no readable text",
+        "Ballotpedia: nothing on the subject beyond candidacy status",
+        "not reviewed: official ncleg press releases and news search (web search budget exhausted)",
+        "not reviewed: Facebook https://www.facebook.com/profile.php?id=61587801401633 and Instagram https://www.instagram.com/beckycarneync/",
+        "own-words search: nothing found (no quote located)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:58:50.662Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID bill 2018 override",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Becky_Carney (confirms sitting District 102 member on the 2026-11-03 general election ballot; nothing on the subject)",
+        "legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/322 (titles only; no ID, citizenship or absentee-ballot titles)",
+        "legislature biography via search result https://www.ncleg.gov/Members/Biography/H/322 (not fetched directly)",
+        "two news searches on her name plus voter ID (no own words found)",
+        "campaign site: not reviewed, no URL found",
+        "official 2018 roll calls already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:48.742Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

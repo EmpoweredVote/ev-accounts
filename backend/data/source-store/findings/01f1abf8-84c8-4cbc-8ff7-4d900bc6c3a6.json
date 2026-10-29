@@ -1,0 +1,412 @@
+{
+  "politician_id": "01f1abf8-84c8-4cbc-8ff7-4d900bc6c3a6",
+  "findings": [
+    {
+      "id": "80f316d441bacd17f6c9bced7e4b0cc9d4de694f657c7debfd130ac965388c3f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: nay (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "fd982523f8396aa15a9ebce0c7c17113a7678ceebc9b54223b3521c5144897fb",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2024/bills/VAB00026802",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "nay",
+      "motion": "Reported from Privileges and Elections",
+      "note": "Voted against reporting HB 26 (voter identification; accepted forms of identification, private entities licensed or certified) from the Privileges and Elections Committee, which passed 19 to 3. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08d3dc963f554161fbfebfab2a7b6e5ae45e2a203dc2f3cc19de5917a992bd14",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2024/bills/VAB00026802",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voted for HB 26 (voter identification; accepted forms of identification, private entities licensed or certified) on passage; the House passed it 85 to 11 and it later became law. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b357a1a0ab71ff34bd59b581e8cd39c93332cfe838695e1f91d4f29dcdd0a0ac",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00040544",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1131-2026",
+      "act": "nay",
+      "motion": "Voting Rights Subcommittee recommends laying on the table (6-Y 2-N)",
+      "note": "Voted against the motion to lay HB 1131 (photo identification required to vote, with an excuse required to vote absentee) on the table, at the House Voting Rights Subcommittee. The motion carried 6 to 2 and the bill later stayed in committee. Tracking-page copy of the legislature's vote record.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df53a89da07f277d3e50e94c9af69024beee114aa51739df48aecbc87f8ea22a",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00040317",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-972-2026",
+      "act": "nay",
+      "motion": "Reported from Privileges and Elections with substitute (14-Y 7-N)",
+      "note": "Voted against reporting HB 972 (voter registration list maintenance, cancellation procedures and required record matches) with a substitute from the Privileges and Elections Committee, which passed 14 to 7.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c09771bb76e291644f0417382899b47159e7383e1140156287ed45b9038b701",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00040317",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-972-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted against HB 972 (voter registration list maintenance, cancellation procedures and required record matches) on third reading; the House passed it 62 to 35.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fb78fc9aa3c9810b5bfcd5d7743115fc3509e61951e218f1542d66340fe82cb",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039276",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-111-2026",
+      "act": "nay",
+      "motion": "Reported from Privileges and Elections with substitute (14-Y 7-N)",
+      "note": "Voted against reporting HB 111 (cancellation of voter registration, sources of data) with a substitute from the Privileges and Elections Committee, which passed 14 to 7.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "263aea7e6bd8dfc21cc9b132b66af0492ae6aec0fe8db642a2741d8ef881a341",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039276",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-111-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (61-Y 35-N 0-A)",
+      "note": "Voted against HB 111 (cancellation of voter registration, sources of data) on third reading; the House passed it 61 to 35.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e08ca40bb3eb5a49c1023aa4e94532e9f7a09e7297252217641de47e543cb03",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039438",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-215-2026",
+      "act": "nay",
+      "motion": "Reported from Privileges and Elections (14-Y 7-N)",
+      "note": "Voted against reporting HB 215 (voter registration list maintenance, third-party data exchanges approved by the State Board of Elections) from the Privileges and Elections Committee, which passed 14 to 7.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "552ee8860f07a3040b9179f8aed051983db5163a3c1c57a9d2344bad7defb89d",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039438",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-215-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted against HB 215 (voter registration list maintenance, third-party data exchanges approved by the State Board of Elections) on third reading; the House passed it 62 to 35.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.360Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "463c796229464351fce6a0b657458055205217d66e5ec461fcea3784cebc91b1",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Leftwich'), linked to James A. \"Jay\" Leftwich via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0802ef6d3e9f73903ce5e0ad91c204b102d486c6cb04ac871e32ffcde33dfe30",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Leftwich'), linked to James A. \"Jay\" Leftwich via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc79c84ee1ba77281293311f61c642dfdbd0f85c110c1f82f78c824ffc5f96c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Leftwich'), linked to James A. \"Jay\" Leftwich via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba24aa5b02b338cafa9608cad8c69c2e55cfe64bc3b627a275a6f2dca0b2b42f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Leftwich'), linked to James A. \"Jay\" Leftwich via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.786Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll list maintenance",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: https://ballotpedia.org/Jay_Leftwich shows a sitting Virginia House member for District 90, re-elected 2025-11-04, term to 2028",
+        "On the Record (0 meetings)",
+        "official House member page https://house.vga.virginia.gov/members/H0262 (shows membership of the Privileges and Elections committee; nothing on the subject)",
+        "campaign site https://jayleftwich.com/ (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "bill-tracking pages on fastdemocracy.com for 2026 bills HB 1131, HB 972, HB 111, HB 215, HB 213, HB 28, HB 966 and HB 1213 (votes by name where he voted; no recorded vote by him on HB 966 or HB 1213; HB 213 and HB 28 not on the subject)",
+        "bill-tracking page on fastdemocracy.com for the 2024 bill HB 26 (his committee and passage votes)",
+        "two news searches on his name plus voter ID, photo ID, election integrity and proof of citizenship (nothing naming him on the subject)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (page needs JavaScript; cannot be read)",
+        "blocked: https://legiscan.com/VA/bill/HB1131/2026 (403)",
+        "blocked: https://legilist.com/states/virginia/bill/2026/hb-1131 (security block)",
+        "not reviewed: floor-debate video archive https://virginiageneralassembly.gov/ (video)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T15:31:41.360Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:53:04.515Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:58:27.786Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

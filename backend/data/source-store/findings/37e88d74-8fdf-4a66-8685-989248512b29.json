@@ -1,0 +1,78 @@
+{
+  "politician_id": "37e88d74-8fdf-4a66-8685-989248512b29",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kate_Lipper-Garabedian (sitting 32nd Middlesex House member; on the Nov 3, 2026 general ballot for State Senate 5th Middlesex after the Sept 1, 2026 primary)",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia (fetched via curl; nothing on the subject)",
+        "malegislature.gov legislator page https://malegislature.gov/Legislators/Profile/KLG1 and sponsored-bills page (fetched; only sponsorship on election topics was H.853 on boards of registrars composition, which is not on this subject; nothing on the subject)",
+        "not reviewed: official campaign site (https://www.katelipper.com returned no content)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:06:13.599Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks and non-citizen voting",
+        "election laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings, script returned no appearances)",
+        "malegislature.gov member profile https://malegislature.gov/Legislators/Profile/KLG1 (confirms her seat; only election bills are H.836 regional school district ballot access and H.853 boards of registrars composition, nothing on ID or citizenship)",
+        "malegislature.gov bills list https://malegislature.gov/Legislators/Profile/KLG1/Bills (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Kate_Lipper-Garabedian (on the 2026-11-03 ballot for State Senate 5th Middlesex; nothing on the subject)",
+        "campaign site: not reviewed, no working address found (www.katelipper.com does not resolve)",
+        "two web searches on her name plus voter ID, citizenship and election integrity: nothing on the subject",
+        "H.4000 amendment #294 voter ID page https://malegislature.gov/Bills/GetAmendmentContent/192/H4000/294/House/Content: filed by another member, not her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:41:27.487Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

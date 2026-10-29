@@ -1,0 +1,243 @@
+{
+  "politician_id": "248b06ce-21fc-4a94-b808-5ad3656be0a0",
+  "findings": [
+    {
+      "id": "b0a331342e6b0edd8cc628bdcd69234d529fa3c91383b2750a0be8d1cef72779",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/16/ratcliff/media/4zsh2530/press-release-safeguard-referenda.pdf",
+      "date": "2025-09-25",
+      "date_precision": "day",
+      "passage": "These bills honor that legacy by restoring local voices and protecting the integrity of our elections.",
+      "note": "Press release in her name about co-authoring LRB 0968 (restore advisory referenda) and LRB 0969 (ban foreign nationals from donating to referendum committees). It is not about ID or citizenship to vote; saved only as her wording on election integrity laws in general. Passage copied from the PDF text via pdftotext of the downloaded file.",
+      "subjects": [
+        "election integrity laws in general",
+        "foreign money in referendum campaigns"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:57:49.189Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c88d6080df136f402c3a1d55e9bd199ead4c960e4d2ffd43d2667d18bbaf56",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ab1046",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1046-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/2/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2024 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2026 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1b08054049e32c11c00cbb05b467301903166919d9bf93c68d618cc8309e73b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb938",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-938-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/19/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Ratcliff') on the official bill page; linked to Melissa Ratcliff via the official 2024 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('RATCLIFF'), linked to Melissa Ratcliff (district 16) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('RATCLIFF'), linked to Melissa Ratcliff (district 46) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.774Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope check: her official Senate District 16 site legis.wisconsin.gov/senate/16/ratcliff/ names her as the sitting Senator; the brief lists her as sitting only, not as a 2026 candidate",
+        "official site press releases list pages 0, 1 and 2 (one item on election law, the foreign-donation referendum bills; nothing on photo ID or proof of citizenship)",
+        "official site e-updates list page and past-press-releases page: nothing on the subject",
+        "old Assembly site legis.wisconsin.gov/assembly/46/ratcliff/: about and press-releases pages return 404 now",
+        "blocked: https://ballotpedia.org/Melissa_Ratcliff",
+        "news pages: Daily Cardinal story on the January 2025 voter ID amendment vote, WPR story, WORT radio candidate page, civicmedia voter guide; no quote from her on the subject found",
+        "web search on name plus voter ID (2 searches): no statement of hers on voter ID or proof of citizenship found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:57:49.189Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:15:12.774Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

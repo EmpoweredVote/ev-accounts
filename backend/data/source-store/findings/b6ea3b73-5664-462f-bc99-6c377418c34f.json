@@ -1,0 +1,217 @@
+{
+  "politician_id": "b6ea3b73-5664-462f-bc99-6c377418c34f",
+  "findings": [
+    {
+      "id": "5f8194e0332c20a50e185f2c857f03bb431feb4795737b1a962c63bb1ac00708",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "adoption of conference committee report (Record 1128)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report (Record 1128), 2011-05-16: nay (tally 98–46); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.559Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "d8e0050700c47b464662cfbb0351f0472621b46f6336083d2e9364050128300e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB304",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-304-2025",
+      "act": "author",
+      "note": "Filed HB 304 (89th session). As filed, a voter showing a driver's license or ID card marked 'VALID FOR VOTING ONLY WITH VERIFICATION OF ELIGIBILITY' (issued without proof of citizenship) could be accepted only if also showing proof of U.S. citizenship; otherwise a provisional ballot. House Elections Committee reported a substitute version 2025-04-14 (5 ayes, 3 nays); last action 2025-04-23 sent to Calendars.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "photo ID type accepted at the polls",
+        "provisional ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.066Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "87a3a62a29f917754b099930cfbd4a4e78d4f777377d317a5af347ff0f821b5d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00304H.htm",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-304-2025",
+      "act": "other",
+      "motion": "HB 304 committee bill analysis, background and purpose",
+      "note": "The committee analysis records the author's stated reason: the author told the committee that under current state law people can get a driver's license, commercial license or ID certificate without proving U.S. citizenship. Passage by the full House or Senate was not confirmed.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.066Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5696830e845ad3a8426bbcb721d1eb192ecb885a68e99b8a845bc87463121e29",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB521",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-521-2025",
+      "act": "author",
+      "note": "Filed HB 521 on accommodating voters with a disability, amending the Election Code section on a voter unable to enter the polling place (curbside voting) and creating criminal offenses. History page shows it effective 2025-09-01. A June 2025 news report says he told the House Elections Committee he was concerned about possible misuse of curbside voting (reporter's paraphrase, not saved as his words).",
+      "subjects": [
+        "curbside voting limits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.066Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "182bcc1fbd65860bab6193bfce867d1f922e575073b86cd7baced956e0b6126a",
+      "kind": "record",
+      "url": "https://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "SB 7 passed on third reading (Record 848), 78 yeas, 64 nays",
+      "note": "Voted nay on House passage of SB 7 (2021 regular session), a bill described in its caption as relating to election integrity and security, with new criminal offenses; the House text includes a section on the form of identification presented.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:00.066Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.526Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "driver's license issued without proof of citizenship used as voter ID",
+        "proof of citizenship to vote",
+        "provisional ballot",
+        "curbside voting limits"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "Ballotpedia (confirms sitting Texas House member, District 31, on the 2026-11-03 general-election ballot; nothing on the subject in own words)",
+        "Texas House member biography page https://house.texas.gov/members/3045/biography (nothing on the subject)",
+        "Texas Legislature Online bill history and text pages for HB 304 and HB 521 (2025 session)",
+        "Texas Legislature Online bill history and text for HB 2765 (checked; it is about rural economic development, off subject)",
+        "Texas Tribune tag page and a June 2025 Texas Tribune elections wrap-up",
+        "web searches for own words on voter ID and citizenship (no direct quote by him found)",
+        "campaign site: not reviewed, no URL found",
+        "debate or interview video: none found",
+        "House Journal 87th session day 42 (SB 7 record vote)",
+        "House Journals 87th second called session days 4 and 6 (SB 1 votes; he was recorded absent)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:15:00.066Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.526Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

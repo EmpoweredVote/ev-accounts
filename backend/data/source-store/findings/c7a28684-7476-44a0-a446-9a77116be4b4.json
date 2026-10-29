@@ -1,0 +1,189 @@
+{
+  "politician_id": "c7a28684-7476-44a0-a446-9a77116be4b4",
+  "findings": [
+    {
+      "id": "7ce2fb6f4ceee8fd9805ca4968d3a336c11f2bc894ce384544c777fe4688113c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/823",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (roll call 758, passed 66-47)",
+      "note": "She voted Aye on second reading of HB 958, an act making various changes to election laws. The ratified text requires a voter registration application to affirmatively state US citizenship before it is processed, adds a citizenship question at drivers licence office registration, and sets a process to remove voters flagged as potential non-citizens by a federal database. The ratified text has no photo-ID or in-person ID provisions.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:20.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e86cf8577522d39592603f96e131ffb821d2c0c991ff566876055368d7bb46d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/823",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (roll call 801, passed 62-47)",
+      "note": "She voted Aye on the House motion to concur in the Senate changes to HB 958, the election law changes bill that includes a citizenship statement requirement on voter registration applications and removal of voters flagged as potential non-citizens.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:20.292Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "52179deaeb1632a0d3b175f4fbd7e69cc585a7a7436c0691be9c8f62c3805302",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (roll call 758, 66 to 47)",
+      "note": "Rhyne is listed among the Ayes. The bill (fifth edition text at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v5.pdf) changes the deadline for a voter without photo ID to bring ID after a provisional ballot, ties ID checks to mismatched ID numbers on registration, and adds citizenship-question rules for registration forms.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:56:05.236Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9426484303055eb44372028419e2b0e19770dd71e8c23b29feab1e22f3f3c93e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, concur in Senate committee substitute (roll call 801, 62 to 47)",
+      "note": "Rhyne is listed among the Ayes on the final House vote to accept the Senate version. The bill page shows the Governor vetoed it on 8/17/2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:56:05.236Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot / affidavit",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Heather_Rhyne names her as NC House District 97 member, on the Nov 3, 2026 general ballot (primary canceled, advanced without appearing)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/823 (member ID 823; no subject content)",
+        "NC General Assembly votes page https://www.ncleg.gov/Members/Votes/H/823 (reviewed; HB 958 votes saved; HB 834 Sportsman's Voter Act reviewed, about voter registration offers at licence sales, not ID, not saved)",
+        "NC General Assembly introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/823 (nothing on the subject listed)",
+        "HB 958 ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf (reviewed; no photo-ID provisions found, citizenship and voter-roll provisions found)",
+        "Ballotpedia (no voter ID statements; no Candidate Connection survey)",
+        "blocked: https://heatherrhyne.com (campaign site, bot challenge page; curl also returned 403 on /issues)",
+        "not reviewed: https://x.com/repheatherrhyne, https://x.com/hhrhyne, Facebook, Instagram (social media not readable)",
+        "not reviewed: official ncleg House audio/video of floor debate",
+        "web news search: not run, session search budget exhausted"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:08:20.292Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name search)",
+        "campaign site heatherrhyne.com (nothing on the subject)",
+        "official legislature member page ncleg.gov/Members/Biography/H/823 (confirms House District 97; no bill list shown)",
+        "legislature member vote list ncleg.gov/Members/Votes/H/823 (read first 100000 characters only; later part not reviewed)",
+        "Ballotpedia (confirms on the 2026 general-election ballot, House District 97)",
+        "legislature bill page for HB 958 and its roll calls #758 and #801",
+        "HB 958 fifth-edition text from ncleg.gov",
+        "two news searches on her name plus the subject words (nothing quoting her)",
+        "no own-words statement on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:56:05.236Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

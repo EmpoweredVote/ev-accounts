@@ -1,0 +1,311 @@
+{
+  "politician_id": "4898bc23-98b0-4fc5-963b-2c174eba519f",
+  "findings": [
+    {
+      "id": "8c12418868c2dfa0a943026eb91bf19991ccd6ba71d08347908680fe76cfff4a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19945/Maloney-Supports-Bills-Making-It-Easy-to-Vote-but-Hard-to-Cheat-?SiteID=1",
+      "date": "2021-06-16",
+      "date_precision": "day",
+      "passage": "House Bill 1334 simply puts this requirement into effect by requiring proof of United States citizenship in order to complete the voter registration process.",
+      "note": "Press release in his name on his bill HB 1334. The release says the bill would require a person to show citizenship before registration is complete, lists ways to show it, makes birth certificate copies free, and has state and county election offices try to find the proof for applicants who lack it.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:58.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "096e36623d7af2c0614d37776e07d0624bd2a41f5640dfcf8850063c83b4afc1",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19945/Maloney-Supports-Bills-Making-It-Easy-to-Vote-but-Hard-to-Cheat-?SiteID=1",
+      "date": "2021-06-16",
+      "date_precision": "day",
+      "passage": "To address that issue, I am co-sponsoring House Bill 1596, legislation creating a constitutional amendment allowing The People to vote on whether Pennsylvania should have Voter ID.",
+      "note": "Same release: he says he co-sponsors HB 1596, a constitutional amendment to let voters decide on a voter ID requirement. He says his citizenship bill would not reach people already registered.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:58.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d8182454cec9694fbc75efb86bc610572345bfbf7b664a30e5aa597ee43d489",
+      "kind": "own-words",
+      "url": "https://thestarnewsnetwork.com/2022/04/14/pennsylvania-lawmaker-touts-safe-act-in-light-of-court-ruling-on-illegal-voting/",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "passage": "When the state registers illegal immigrants to vote in U.S. elections and then spends four years in court at taxpayer expense trying to cover it up instead of being forthright suggests to me that a computer ‘glitch’ may not explain the totality of what is going on here,",
+      "note": "Quoted by the Pennsylvania Daily Star (from a statement of his) after a court ruling on records of non-citizens registered to vote. The story says he backs his SAFE Act (proof of citizenship to register) and a constitutional amendment requiring ID to vote.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:58.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Maloney'), linked to David M. Maloney (district 130) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Maloney'), linked to David M. Maloney (district 130) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Maloney'), linked to David M. Maloney Sr. (district 130) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Maloney'), linked to David M. Maloney (district 130) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Maloney'), linked to David M. Maloney Sr. (district 130) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20d724b7ff3986e59f3bff76797c27e6f745295423bceb48a043d03a3454143d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240301174241/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1334",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1334-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1432 (as introduced; only printer's number). Read.",
+      "note": "Named as prime sponsor ('MALONEY') on the official bill page; linked to David M. Maloney Sr. via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('MALONEY') on the official bill page; linked to David M. Maloney Sr. via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MALONEY'), linked to David M. Maloney (district 130) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "voter ID by constitutional amendment",
+        "mail ballots not received",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status: not seeking re-election; Reading Eagle item on Yahoo News dated 2026-03-10 says he will retire when his term ends at the end of 2026 (he is still the sitting 130th District member, so his earlier statements are saved)",
+        "On the Record (0 meetings)",
+        "House caucus mirror of his 2021-06-16 press release",
+        "news: Pennsylvania Daily Star 2022-04-14 (direct quotes of him)",
+        "web search on name plus citizenship and voter ID words (two searches)",
+        "not reviewed: repmaloney.com press list and Ballotpedia (not fetched)",
+        "not reviewed: official bill pages (sponsorships are linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:07:58.553Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.465Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.860Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

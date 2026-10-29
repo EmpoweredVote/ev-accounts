@@ -1,0 +1,95 @@
+{
+  "politician_id": "4d6931ad-75ea-4001-b4e0-fdd8c86ccbd0",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Jenkins'), linked to DAVID JENKINS (district 132) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Jenkins'), linked to David Jenkins (district 136) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "scope check: https://ballotpedia.org/David_Jenkins_(Georgia) shows him on the 2026-11-03 general-election ballot for House District 136 (tenure from 2021)",
+        "campaign site https://votedavidjenkins.com and /issues (nothing on the subject; /meet-david returned 404)",
+        "Ballotpedia: he did not complete the 2024, 2022 or 2026 candidate survey; the 2020 survey has nothing on the subject",
+        "Wikipedia page (names no election bills or statements)",
+        "https://www.times-herald.com 2020 election-night article (nothing on the subject)",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (403)",
+        "blocked: https://www.legis.ga.gov/legislation/55499 (page loads by script only, data API returns 401; his SB 202 roll-call vote could not be read)",
+        "House daily report for 2021-03-25 on dlg.usg.edu gives SB 202 totals only, no names",
+        "blocked: https://justfacts.votesmart.org/bills/GA/1/12/ (403)",
+        "https://open.pluralpolicy.com vote page checked: it shows the Senate engrossment vote, not the House vote",
+        "not reviewed: Times-Herald 2024 article on District 136 candidates and election issues (found only as a citation, no readable copy located)",
+        "news search on his name plus voter ID, election security, SB 202: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:52:21.834Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.401Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

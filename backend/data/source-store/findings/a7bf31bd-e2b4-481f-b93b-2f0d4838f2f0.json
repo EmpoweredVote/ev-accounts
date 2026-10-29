@@ -1,0 +1,180 @@
+{
+  "politician_id": "a7bf31bd-e2b4-481f-b93b-2f0d4838f2f0",
+  "findings": [
+    {
+      "id": "7f7353cfd3ec34348176a5b38f2f12195a1043d2a8afb33211f2b78805dec4b9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/444/2025",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate roll call)",
+      "note": "The Senator's vote list shows Aye on Second Reading of HB 958, Election Law Changes, on 7/28/2026 at 6:13 PM, tally 28 to 13 (9 not voting, per the list), result PASS. The bill text (Fifth Edition, fetched from ncleg.gov) includes: a longer deadline (third to fifth business day after the election) for a voter without photo ID to bring ID to the county board for a provisional ballot to count (Sec. 1.2(c)); the same longer deadline for voters whose ID numbers did not match at registration (Sec. 1.2(b)); a temporary rule treating certain Class C drivers licenses with extended expiration dates as valid photo ID for voting through 2027 (Sec. 2.9); and handling of voter registration applications that indicate lack of citizenship (Sec. 2.10). The bill page says it was passed on Third Reading in the Senate on 7/28/2026 and the House concurred 8/4/2026; I did not find a separate Third Reading line in the Senator's vote list.",
+      "subjects": [
+        "photo ID cure deadline for provisional ballot",
+        "mail-ballot ID photocopy or affidavit cure",
+        "drivers license validity for voting ID",
+        "citizenship on voter registration applications",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:17.146Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b466f365e57c9f7cedf53628bd1f98caa33ea29fae95540be0baef21c44a141",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/444/2025",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment 5 (Senate roll call, adopted)",
+      "note": "The Senator's vote list shows Aye on Amendment 5 to HB 958 on 7/28/2026, tally 28 to 14, PASS. The list also shows Aye on Amendment 1 (31 to 11, PASS) and Aye on motions to table Amendments 2, 3, 6, 7, 8, 9 and 10 (each PASS). The text of these amendments was not read, so their content is not stated here.",
+      "subjects": [
+        "election law omnibus",
+        "amendments to HB 958"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:17.146Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "40fca31533ff15a8887a40fa49aaed8159a1087ad4751fc3626398e368e12dc0",
+      "kind": "own-words",
+      "url": "https://www.ncpoliticalnews.com/news/senate-approves-citizen-only-voting-amendment-for-2024-ballots",
+      "date": "2024-06-28",
+      "date_precision": "day",
+      "passage": "“President Joe Biden has been asleep at the wheel the past four years, letting millions of people illegally cross the border into our country. Now, as voters are fleeing the Democratic party in droves, Democrats are seeking to fill the gap by extending voting rights to noncitizens,” Sens. Brad Overcash (R-Gaston), Buck Newton (R-Wilson), and Warren Daniel (R-Burke) said. “To combat this movement, we are empowering North Carolinians to approve a constitutional amendment to make it crystal clear that our elections are for U.S. citizens only.”",
+      "note": "Joint Senate press release statement from three senators including Overcash, on the Senate passing the citizens-only voting amendment (HB 1074). The same release covers a separate amendment to require photo ID for mail and provisional ballots, quoted from a different senator, not Overcash.",
+      "subjects": [
+        "citizens-only voting amendment",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:26.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e24ecc6f5f36f7d109dc1634e5f47193a52419d5e1d80a39fa269e4e76ba0927",
+      "kind": "own-words",
+      "url": "https://ca.news.yahoo.com/citizens-only-voting-constitutional-amendment-191052321.html",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "We've got an opportunity to empower the people of North Carolina to amend their own constitution and declare that citizens and only citizens of the state of North Carolina are allowed to vote in our elections,",
+      "note": "Direct quote of Overcash in a news story (Yahoo News, reprint) about the citizens-only voting amendment on the November 2024 ballot. Article text on the page is straight quote marks around the sentence; closing comma is part of the quote as printed.",
+      "subjects": [
+        "citizens-only voting amendment",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:26.407Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Brad_Overcash (NC Senate District 43, on 3 Nov 2026 general ballot; 3 Mar 2026 primary was canceled) and ncleg.gov https://www.ncleg.gov/Members/Biography/S/444",
+        "On the Record (0 appearances for this politician; name search also 0)",
+        "campaign site https://bradovercash.com and /meetbradovercash/ (nothing on the subject)",
+        "official legislature member page and vote list https://www.ncleg.gov/Members/Votes/S/444/2025 (reviewed for election bills)",
+        "ncleg.gov bill page for HB 958 (reviewed); sponsor search page https://www.ncleg.gov/Legislation/Bills/Bills?SessionCode=2025&sponsor=444 (not reviewed: results load by script, nothing readable)",
+        "Ballotpedia (no issue positions or survey answers on the subject; he did not complete the Candidate Connection survey)",
+        "not reviewed: news search on name plus subject words (the shared web-search budget was used up)",
+        "not reviewed: any 2023 session vote list (only the 2025 session list was fetched)",
+        "no own-words statement on the subject found in any place reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:04:17.146Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to vote",
+        "citizens-only voting",
+        "non-citizen voting",
+        "election law bills",
+        "post-election audits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page (confirms state senator, District 43, 2025-2026 session)",
+        "NC General Assembly introduced-bills list (no voter ID or proof-of-citizenship bill among 80 primary-sponsored bills; SB 994 early voting at fire stations, SB 1084 early voting period, SB 1087 post-election audits not reviewed in text)",
+        "NC General Assembly votes page (HB 958 election law changes, Senate votes 2026-07-28; text of bill not reviewed; last 9762 characters of the votes page not reviewed)",
+        "NC General Assembly HB 1074 bill page (Overcash not listed as sponsor)",
+        "Ballotpedia (page returned empty)",
+        "blocked: https://www.ncsenate.gov/Senators/Overcash (host not found)",
+        "WFAE 2024 profile (nothing on the subject)",
+        "campaign site not located",
+        "news search on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:46:26.407Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "politician_id": "674b7255-81fa-4586-9566-05dec201c809",
+  "findings": [
+    {
+      "id": "b4d2980230c6474e851ab51c0a3582e3b5c5f1f93fb4f9f1d25775e2b44950c4",
+      "kind": "own-words",
+      "url": "https://www.azvoterguide.com/candidate/us-house/alponte-monica/",
+      "date": "2026-09-29",
+      "date_precision": "day",
+      "passage": "The Constitution of the United States clearly leaves the power to manage elections to the States. This is just another sneaky attempt by tyrants to centralize power in D.C. so they can control the outcome. We already have the Constitution; all we need to do is follow it.",
+      "note": "Her written answer on the Arizona Voter Guide survey to question 8, 'Federalizing election law by removing state authority over elections.' She marked it as opposed. Page last-updated date used as the date. It does not mention ID or citizenship proof, but it bears on who sets election rules such as ID requirements.",
+      "subjects": [
+        "election law in general (federal vs state control)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:01:05.097Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election law in general (federal vs state control)"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Monica_Alponte (on the Nov 3, 2026 general ballot, AZ-1; unopposed in July 21, 2026 primary, 289 votes)",
+        "On the Record (0 appearances; extract-otr run)",
+        "Ballotpedia (page and Candidate Connection survey: nothing on the subject)",
+        "campaign site https://monicaalponteaz.com/ (home: nothing on the subject)",
+        "campaign site policies page https://monicaalponteaz.com/policies (PDFs: AZ voter guide, immigration questionnaire, League of Women Voters/Vote411 answers: only the election-law answer found)",
+        "campaign site newsletters (July-Aug and Sept-Oct 2026 PDFs): nothing on the subject",
+        "https://www.azvoterguide.com/candidate/us-house/alponte-monica/ (one related answer)",
+        "congress.gov: not applicable, never a member of Congress",
+        "web news search: not run, search budget exhausted",
+        "not reviewed: https://www.youtube.com/@MonicaAlponte (video)",
+        "not reviewed: https://x.com/MonicaAlponteAZ (login-walled)",
+        "not reviewed: https://www.instagram.com/monicaalponteaz"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:01:05.097Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and no-ID voters",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Monica_Alponte (confirms on the 2026 general-election ballot for Arizona District 1; her survey answers there do not mention the subject)",
+        "campaign site https://monicaalponteaz.com/ (home page and policies page; nothing on the subject)",
+        "campaign policy PDFs linked from the policies page (voter guide, League of Women Voters answers, immigration survey, foreign policy, others; none on ID or citizenship to vote)",
+        "BallotReady and GoodParty candidate pages (nothing on the subject)",
+        "web search on name plus voter ID and election integrity (nothing)",
+        "not a legislator: no bills or votes to review",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:01:55.565Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

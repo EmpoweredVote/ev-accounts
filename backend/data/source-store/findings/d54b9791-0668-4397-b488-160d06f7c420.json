@@ -1,0 +1,120 @@
+{
+  "politician_id": "d54b9791-0668-4397-b488-160d06f7c420",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "add5fe72a8567e735b28f2e459128438055117a794b25bcfa8cbffd7111763cf",
+      "kind": "own-words",
+      "url": "https://www.rephannahkane.com/uploads/1/7/1/0/17106940/media_advisory_rep_kane_opposes_plan_to_circumvent_committee_process.pdf",
+      "date": "2021-06-10",
+      "date_precision": "day",
+      "passage": "Representative Kane noted that several bills related to mail-in and early voting are currently pending before the Joint Committee on Election Laws, and were the subject of a public hearing less than a month ago, on May 19.",
+      "note": "Press release from her office. She voted against a House amendment (passed 128-32) making mail-in voting permanent from the 2022 elections. The release gives process and timing reasons. It does not mention ID.",
+      "subjects": [
+        "mail-in voting made permanent (related, no ID content)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:29.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d58d0066e67143b6e0e14db524fefec4e7b5237bbdba0a56d781479542bfa7",
+      "kind": "own-words",
+      "url": "https://www.rephannahkane.com/uploads/1/7/1/0/17106940/media_advisory_rep_kane_supports_mail-in_voting_extension.pdf",
+      "date": "2021-03-12",
+      "date_precision": "day",
+      "passage": "While there have been legitimate concerns raised about proposals to permanently extend expanded mail-in voting that must still be addressed, Representative Kane said a temporary extension is warranted, given the continued public health crisis.",
+      "note": "Press release from her office on H.73, a three-month extension of the mail-in voting law. It refers to unspecified concerns about permanent mail-in voting. It does not mention ID.",
+      "subjects": [
+        "mail-in voting extension (related, no ID content)",
+        "election integrity concerns, unspecified (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:29.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43d1bb3c4689fe33425ed319dd3bd8b62e0896a2655392c2bb734917684be46d",
+      "kind": "own-words",
+      "url": "https://www.rephannahkane.com/uploads/1/7/1/0/17106940/20.06.30_kane_supports_expanded_voting_legislation.pdf",
+      "date": "2020-06-30",
+      "date_precision": "day",
+      "passage": "“I am proud to have joined with my colleagues today to support legislation to make the upcoming elections accessible for all voters in the Commonwealth.",
+      "note": "Press release from her office on H.4820, expanded early, absentee and mail-in voting for the 2020 elections. It describes mail-ballot applications and ballot handling. It does not mention ID.",
+      "subjects": [
+        "mail-in voting expansion (related, no ID content)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:29.067Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "mail-in voting rules (related)",
+        "election integrity laws (related)"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Hannah_Kane (on the 2026-11-03 general-election ballot, 11th Worcester District; advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances, extract-otr returned OTR_SOURCES=0)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/HEK1 (194th Court sponsorships reviewed: nothing on the subject)",
+        "malegislature.gov profile pages for the 192nd and 193rd courts: not reviewed: 404",
+        "malegislature.gov bill search for voter identification: not reviewed: 404",
+        "campaign site https://www.rephannahkane.com/ (in-the-news page and press-release PDFs reviewed; /issues and /news are 404)",
+        "Ballotpedia (no issue-position text; she did not complete the Candidate Connection survey)",
+        "web news search: not run, the shared search budget was used up",
+        "shrewsbury.comunicas.org 2021 and 2022 press copies: blocked: https://shrewsbury.comunicas.org/2021/06/10/kane-opposes-house-leadership-plan-to-make-mail-in-voting-permanent/ (403); the original PDF on her site was used instead",
+        "nothing on the subject: no own words or bills found on photo ID, no-ID fallback, ID with mail ballot, or proof of citizenship"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:27:29.067Z",
+      "by": "source-collector"
+    }
+  ]
+}

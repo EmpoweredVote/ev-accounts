@@ -1,0 +1,34 @@
+{
+  "id": "TX-HB-354-2023",
+  "scope": "state:tx",
+  "title": "HB 354 (88R): Relating to acceptable forms of identification for voting.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB354",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB354",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB00354I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 1 (amends Election Code 63.0101(a))\n(quote) (a) The following documentation is an acceptable form of photo identification under this chapter: (1) a driver's license, election identification certificate, or personal identification card issued to the voter [ person ] by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation; (2) a United States military identification card that contains the voter's [ person's ] photograph that has not expired or that expired no earlier than four years before the date of presentation; (3) a United States citizenship certificate issued to the voter [ person ] that contains the voter's [ person's ] photograph; (4) a United States passport book or card issued to the voter [ person ] that has not expired or that expired no earlier than four years before the date of presentation; [ or ] (5) a license to carry a handgun issued to the voter [ person ] by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation ; (6) an official Native American identification card or tribal document that: (A) contains the voter's photograph and address; and (B) is issued by a tribal organization or by a tribe that is federally recognized and located in this state; (7) an identification card issued by a public or private institution of higher education located in this state that contains the voter's photograph; or (8) an identification card issued by a state agency of this state that contains the voter's photograph .\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 2: takes effect immediately with a two-thirds vote of each house; otherwise September 1, 2023.",
+  "sponsors": [
+    {
+      "name": "Bucy",
+      "role": "author",
+      "version": "Introduced (H.B. No. 354; no other version exists)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

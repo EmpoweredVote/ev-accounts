@@ -1,0 +1,52 @@
+{
+  "politician_id": "56c94473-3cc1-4592-bc44-90063ef252d4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Steven_Sanders_(Arizona) names Steven Sanders as a write-in candidate in the November 3, 2026 general election for U.S. House Arizona District 4 (not a primary loser; a write-in)",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "Ballotpedia profile (fetched by curl; 2024 Candidate Connection survey has nothing on voter ID, proof of citizenship or mail ballots; he has not completed the 2026 survey)",
+        "campaign site: not reviewed, no campaign site URL found on Ballotpedia page (only a LinkedIn link and a form link)",
+        "congress.gov sponsorships: nothing on the subject (not a legislator)",
+        "news search: not reviewed, web search budget exhausted for the session",
+        "ontheissues.org / Vote Smart: not reviewed, no page found by direct URL pattern"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:16:11.953Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://ballotpedia.org/Steven_Sanders_(Arizona) (names him as a write-in candidate for Arizona's 4th District in the 2026 general election; his 2024 Candidate Connection answers were read, nothing on the subject; he has not filled out the 2026 survey)",
+        "On the Record (0 appearances)",
+        "no campaign website found or linked from Ballotpedia",
+        "one web search on his name and race: found no campaign pages, nothing on the subject",
+        "congress.gov: not applicable, never held federal office",
+        "news debate coverage of the race does not list him (fox10phoenix.com, search snippet only, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:03.519Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

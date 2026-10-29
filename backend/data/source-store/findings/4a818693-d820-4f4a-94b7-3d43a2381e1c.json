@@ -1,0 +1,81 @@
+{
+  "politician_id": "4a818693-d820-4f4a-94b7-3d43a2381e1c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JWM1 (Representative Joseph W. McGonagle, Jr., 28th Middlesex)",
+        "in scope: https://ballotpedia.org/Joseph_McGonagle_Jr. says he advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot",
+        "On the Record (0 appearances)",
+        "legislature profile and sponsored bills (H.436, H.1877, H.1878, H.2909, H.3738, H.3739): nothing on the subject",
+        "legislature bills subpage: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "official site and campaign site: not reviewed (no URL reached)",
+        "news search: not reviewed, the shared search budget was used up",
+        "ontheissues.org, Wikipedia: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:04.132Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page Joseph_McGonagle shows him on the 2026 general-election ballot; malegislature.gov profile JWM1 lists him as Representative of Everett in the 194th court",
+        "On the Record (0 meetings)",
+        "legislature profile malegislature.gov/Legislators/Profile/JWM1 (his filed bills cover licensing, transit worker assault, land use, retirement and traffic; none on voter ID, proof of citizenship or mail-ballot ID)",
+        "bill pages and cosponsor lists for voter ID bills H833 (2025) and H687 (2023) on malegislature.gov (he is not listed)",
+        "campaign site joemcgonagle.com (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "one web search on his name plus subject words (nothing by him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:51:44.146Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

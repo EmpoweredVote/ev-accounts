@@ -1,0 +1,319 @@
+{
+  "politician_id": "a73cc90f-e257-44e5-bdc2-67a94356e9c8",
+  "findings": [
+    {
+      "id": "8b93686896b692f99c007577ac06ce35704fd9a5d4ee6001f0bba96bee853b41",
+      "kind": "own-words",
+      "url": "https://lebtown.com/release/chris-gebhard-state-senate-candidate-on-voter-id-in-pennsylvania/",
+      "date": "2022-10-13",
+      "date_precision": "day",
+      "passage": "You can’t buy cold medicine, video games or even get into a concert without a valid ID. Certainly, every reasonable person can agree, you should be required to show ID to vote.",
+      "note": "Paid campaign release in his name, published on LebTown. Says a valid ID should be required to vote.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00764594e01f8b8650c4a81b25fdc59f0580b0374b5dd75f02cc413bff681932",
+      "kind": "own-words",
+      "url": "https://lebtown.com/release/chris-gebhard-state-senate-candidate-on-voter-id-in-pennsylvania/",
+      "date": "2022-10-13",
+      "date_precision": "day",
+      "passage": "Those that use the mail in ballot system will need to provide a photocopy of their identification and signature to prove their identity, just as you would if you went to the polls.",
+      "note": "Same release. Says mail-in voters should provide a photocopy of ID and a signature.",
+      "subjects": [
+        "mail-ballot ID",
+        "signature verification on mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6abb572508fbd76de98f3807193518500e830a10287eef0c4d5a416afb7846cf",
+      "kind": "own-words",
+      "url": "https://lebtown.com/release/chris-gebhard-state-senate-candidate-on-voter-id-in-pennsylvania/",
+      "date": "2022-10-13",
+      "date_precision": "day",
+      "passage": "One of the very first bills I co-sponsored last year was Senator Judy Ward’s SB755 calling for a constitutional amendment to implement Voter ID.",
+      "note": "Same release. Says he co-sponsored SB755, a voter ID constitutional amendment. Also says he supports ending Act 77 and has a way to hand a legal ID to anyone who needs one (same release: \"We are at a point where we can easily deliver a legal ID to anyone who requires one.\").",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on voter ID",
+        "free ID for voters without one"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "819ffe1a70d7628aca420fb861e3b9760c15323a84feef6a8fbd662dc0d4a51b",
+      "kind": "own-words",
+      "url": "https://lebtown.com/release/letter-from-chris-gebhard-state-senate-candidate-on-election-reform-in-pennsylvania/",
+      "date": "2021-05-03",
+      "date_precision": "day",
+      "passage": "That’s why I support the reinstitution of Voter ID laws.",
+      "note": "Paid campaign letter on LebTown. Also in the same letter: \"in-person voters and mail-in voters should be treated equally; signature verification is a must.\"",
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification on mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6547bea73f80268c6463d651e137d6e2d72cfabc90e61a5315667cf2aaeed04",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/?p=2470",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "passage": "“For instance, in-person voters and mail-in voters should be treated equally, and signature verification is a must.",
+      "note": "Quote of Gebhard in a joint release from another senator's site announcing constitutional amendment legislation by both senators on election security.",
+      "subjects": [
+        "signature verification on mail ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9562263393a87bde4bb1d97119e2087070f1416f4a6de80bf196ce42be1cc9f4",
+      "kind": "own-words",
+      "url": "https://senatorgebhard.com/enews/072822-2/",
+      "date": "2022-07-28",
+      "date_precision": "day",
+      "passage": "One of these amendments would require all voters to present a valid form of identification prior to voting in person or by mail.",
+      "note": "His official e-newsletter describes a proposed constitutional amendment requiring ID in person or by mail, and says 74 percent of Pennsylvanians support requiring ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:45.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Gebhard'), linked to Christopher M. Gebhard (district 48) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('GEBHARD') on the official bill page; linked to Christopher M. Gebhard via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('GEBHARD'), linked to Christopher M. Gebhard (district 48) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Gebhard'), linked to Christopher M. Gebhard (district 48) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Gebhard'), linked to Christopher M. Gebhard (district 48) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('GEBHARD') on the official bill page; linked to Christopher M. Gebhard via the official 2021 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "constitutional amendment on voter ID",
+        "signature verification on mail ballots",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site senatorgebhard.com: July 2022 e-newsletter read; site search page returned no readable results",
+        "blocked: https://www.abc27.com/pennsylvania-politics/tear-the-whole-system-down-pennsylvania-republicans-want-save-act-of-their-own/amp/ (429)",
+        "co-introducer's Senate site (senatormastriano.com): Feb 2023 joint release read",
+        "LebTown paid releases from his 2021 and 2022 campaigns read",
+        "Ballotpedia: not reviewed (not fetched)",
+        "2 web searches on name plus voter ID, mail ballot, SAVE Act: no 2025-2026 statement found",
+        "scope: sitting state senator for District 48, term runs past 2026"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:08:45.789Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

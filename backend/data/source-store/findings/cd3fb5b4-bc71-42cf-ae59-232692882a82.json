@@ -1,0 +1,223 @@
+{
+  "politician_id": "cd3fb5b4-bc71-42cf-ae59-232692882a82",
+  "findings": [
+    {
+      "id": "b6cd3a2e166068596ac7ffd39bf751a1c67c8cf86bf2106a3257ac73bae64467",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/lindsey-introduces-legislation-requiring-identification-for-all-voters",
+      "date": "2024-10-22",
+      "date_precision": "day",
+      "passage": "“It is paramount that we strengthen voter identification laws and protect our election integrity,” said Lindsey, R-Allen. “This session, Democrats have worked tirelessly to undermine the principles of our democracy and make cheating easier. Confidence in our elections among the public is reaching new lows, and rightfully so. We need to get off of this dangerous path and work on initiatives that help restore the faith of the people in our elections.”",
+      "note": "Senate caucus release in his name on introducing Senate Bill 1034, which would require proof of identity and state residency when signing the affidavit to get a ballot at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed22159c0d7a3e19407eaf0c6631045a9164e67b09ab188bbc2f196f7f103c9b",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/lindsey-introduces-legislation-requiring-identification-for-all-voters",
+      "date": "2024-10-22",
+      "date_precision": "day",
+      "passage": "“We cannot continue to gut election laws and promote systematic change that would destroy fair and free elections in Michigan,” Lindsey said. “This would be an excellent first step toward making Michigan elections more secure.”",
+      "note": "Same release. The bill text it describes: a person who cannot confirm ID and residency gets a provisional ballot that must be cured with approved personal identification.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04effadb87b5c019c4391a6679c1c5a11c0eee7eee63c3e36bbbcd0e06ba49a3",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/lindsey-opposes-drastic-election-reforms-preventing-fraud-claims-from-being-investigated-during-recounts",
+      "date": "2024-05-03",
+      "date_precision": "day",
+      "passage": "“We have a significant increase in mail-in ballots; people don’t need photo identification to vote; our secretary of state has violated the law and repeatedly failed to do her job, including failing to remove 170,000 people from the voting rolls until she was forced to do so; we lack a system to determine if someone votes in multiple states; 102.8% of our state’s voting-age population is registered to vote, and now, we’re prohibiting local election officials from investigating fraud.",
+      "note": "Statement in his name on Senate Bills 603 and 604 (recount rules). Among other points he lists that people do not need photo ID to vote, voter-roll upkeep, and no system to catch voting in multiple states.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "mail-ballot concerns",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "906c8ef1c20f355b4ef645d42bfe5706bc8e84aec4c39105dd5369f998211d29",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/lindsey-restoring-commonsense-absentee-voting-standards-critical-to-security-voter-confidence/",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "“This bill would restore sensible standards to Michigan’s absentee ballot process,” said Lindsey, R-Coldwater. “I believe people should have a sound reason to vote absentee. Universal, no-questions-asked absentee ballots open the door for fraud and errors, undermine our election day process and civic engagement, and make it more difficult for Michiganders to cast their ballots in private or without third-party influence.”",
+      "note": "Senate caucus release in his name on introducing Senate Bill 1054, which would bring back the earlier list of reasons that qualify a voter for an absentee ballot.",
+      "subjects": [
+        "absentee ballot eligibility",
+        "mail-ballot concerns",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.903Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7348df74d8f0075447d02aa3e35ad1a85ea3aba065b81257776f424f5132440",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-1034",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-1034-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"SENATE BILL NO. 1034 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 523, 523a, 813,\"",
+      "note": "Named as prime sponsor ('Jonathan Lindsey (District 17)') on the official bill page; linked to Jonathan Lindsey via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37b840b0efd714e0c2f2995b11c696250abc6830243cc68125792a802e94684f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0120",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-120-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"SENATE BILL NO. 120 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 523, 523a, 813, \"",
+      "note": "Named as prime sponsor ('Jonathan Lindsey (District 17)') on the official bill page; linked to Jonathan Lindsey via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Lindsey'), linked to Jonathan Lindsey (district 17) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Lindsey'), linked to Jonathan Lindsey (district 17) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity and residency for the in-person affidavit",
+        "provisional ballot for voters without ID",
+        "absentee ballot eligibility",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "multi-state voting",
+        "election integrity"
+      ],
+      "places": [
+        "https://theballotbrief.com/state/michigan/jackson-county/michigan-senate-district-17 (confirms he is the the other caucus nominee for Michigan Senate District 17 on the November 3, 2026 ballot)",
+        "https://www.misenategop.com/ Senate caucus site, news list searched for voter ID (three of his releases found and read)",
+        "not reviewed: On the Record extraction script (repo scripts not allowed in this run)",
+        "Ballotpedia: not reviewed (the site returned empty pages for other people in this run)",
+        "official Senate member page and campaign site: not reviewed",
+        "nothing on the subject: the lawsuit release https://www.misenategop.com/lindsey-joins-federal-lawsuit-alleging-state-usurped-legislators-constitutional-authority was not fetched",
+        "two web searches on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:52:01.903Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:55:46.341Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

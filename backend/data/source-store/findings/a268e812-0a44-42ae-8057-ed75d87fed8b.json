@@ -1,0 +1,231 @@
+{
+  "politician_id": "a268e812-0a44-42ae-8057-ed75d87fed8b",
+  "findings": [
+    {
+      "id": "ed92506135119fa9d0987c0ad16316e88eb23294c9ee4fd88a2e9133eb3c4a9f",
+      "kind": "own-words",
+      "url": "https://pahousegop.com/News/34807/Latest-News/Double-Voting-Must-Be-Addressed,-Lawmakers-Say",
+      "date": "2024-10-01",
+      "date_precision": "day",
+      "passage": "“The findings underscore the need for voter identification on a national level, and we should begin by strengthening these measures right here at home.”",
+      "note": "Quoted in a House caucus release on double voting between Ohio and Pennsylvania; says voter identification should be strengthened, nationally and in the state.",
+      "subjects": [
+        "voter ID",
+        "double voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:53.845Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8092007805a7bc27349bf6e0c227c95f976af633a3817c1fb72f73596c12ed72",
+      "kind": "own-words",
+      "url": "https://pahousegop.com/News/34807/Latest-News/Double-Voting-Must-Be-Addressed,-Lawmakers-Say",
+      "date": "2024-10-01",
+      "date_precision": "day",
+      "passage": "“This report involves millions of voting records, and analyzing this data takes time to ensure accuracy. From where we stand today, we can confirm that double voting occurred in previous national elections, but we are committed to thoroughly finalizing this report,” said Flick.",
+      "note": "Same release; his description of his voter-record comparison between two states.",
+      "subjects": [
+        "double voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:53.845Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f367613b435c43f445bbf939a15cbe25883a0fa288936ca396a25e55791379ac",
+      "kind": "own-words",
+      "url": "https://www.repflick.com/News/33434/Press-Releases/Flicks-Reflects-on-First-Year-in-Office",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "passage": "In addition, I support proposed legislation to strengthen voter ID, reduce the size of our state government, reduce property taxes for veterans and senior citizens and create Supreme Court term limits.",
+      "note": "Part of a first-year statement on his site; says he supports proposed legislation to strengthen voter ID. No bill number named.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:53.845Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa2b5754e4c2653c9161e90f8a6565c134b1d6786262ce2ea7a473c984d56993",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/32931/Flick-Statement-on-Automatic-Voter-Registration-Mandate?SiteID=1",
+      "date": "2023-09-22",
+      "date_precision": "day",
+      "passage": "“I oppose the governor’s mandate to automatically register residents to vote when they renew their driver’s licenses or ID cards at PennDOT driver and photo license centers. Why? Three reasons.",
+      "note": "His statement against automatic voter registration at PennDOT; does not address ID to vote.",
+      "subjects": [
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:53.845Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Flick'), linked to Jamie L. Flick (district 83) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('FLICK') on the official bill page; linked to Jamie L. Flick via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('FLICK') on the official bill page; linked to Jamie L. Flick via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('FLICK'), linked to Jamie L. Flick (district 83) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "automatic voter registration",
+        "double voting and voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "official site repflick.com home page (confirms State Rep. Jamie Flick, 83rd District, Lycoming and Union; press release list dated to Oct 2026, no voter-ID headlines; 2026 general-election candidacy not checked)",
+        "On the Record (0 appearances found)",
+        "official site release of 2024-01-18 (first year in office)",
+        "House caucus site releases of 2023-09-22 and 2024-10-01 (fetched); 2024-09-30 media advisory (no quotes)",
+        "blocked: https://delawarevalleyjournal.com/?p=75691 (403)",
+        "web searches on name plus voter ID, double voting: found the 2024 release and 2025 news leads (witf.org 2025-07-05 not fetched)",
+        "Ballotpedia: not reviewed",
+        "not reviewed: https://www.witf.org/2025/07/05/two-republican-pa-legislators-search-for-double-voters-across-ohio-state-line-again/"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:12:53.845Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

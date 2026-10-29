@@ -1,0 +1,146 @@
+{
+  "politician_id": "14bc987d-83de-49e2-ad64-a34949d9f79e",
+  "findings": [
+    {
+      "id": "d6b7ba3cb6f3cccf94e56fcdcff0fd202408dc4351c82cf2ca35c71cc30e19e7",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/state-rep-attacked-for-stolen-vote-story-in-support-of-voter-id",
+      "date": "2012-09-03",
+      "date_precision": "day",
+      "passage": "“You either lied, or you were incompetent to the point that you didn’t have your facts straight,” Munroe said. “I would never lie on the Assembly floor, and would certainly be sure I had my facts straight before I went out there and made any statements.”",
+      "note": "WHYY quoted him, then a challenger for the House seat, criticising the incumbent for a stolen-vote story told in the 2012 floor debate on the voter ID law. He states no view on ID itself.",
+      "subjects": [
+        "voter fraud claims",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:15.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Munroe'), linked to Brian Munroe (district 144) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Munroe'), linked to Brian Munroe (district 144) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MUNROE'), linked to Brian Munroe (district 144) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.861Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://www.pahouse.com/munroe/ names him as the 144th District state representative (2026 footer); 2026 ballot status not confirmed",
+        "official House site home page and site search for voter ID (only a voter registration deadline newsletter; nothing on ID)",
+        "not reviewed: https://www.pahouse.com/files/Documents/Newsletter PDF found by search (fetch returned unreadable PDF data)",
+        "web searches (3) on his name with voter ID, SAVE Act: one 2012 news piece found",
+        "not reviewed: Ballotpedia, House bill pages (sponsorships linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:01:15.647Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.718Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.861Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

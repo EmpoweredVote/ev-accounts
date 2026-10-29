@@ -1,0 +1,273 @@
+{
+  "politician_id": "c1e6a404-33c1-4a0d-9ff8-6e01890024c8",
+  "findings": [
+    {
+      "id": "2348ed889d36563d9febead17eabf8675cfae0d36a7457daa01ac8703e73f40a",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: yea (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "368b7e45fad3486373089a807b42c8974f974f72ef4466ccc184d62d7c61a967",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2013-02-20: nay (tally 65–34); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "72409f23f702420d5ed806eb8f36b804c4dde1a26549bef4bef535a711f66044",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "851ebc4c21105c0052f35d17363b61533538390128a5b8befc022dfc36b3ef32",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25b96690d0a9ac954e239ad21b0b7b18ecfa371e44561bbe5f87dcfec7ba4715",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "163916df42f9459dfbd4d04ba9c447b3286e951ecb88ada78479e6ee51b10ca3",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV1975+HB1318",
+      "date": "2015-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "House: VOTE: PASSAGE (62-Y 34-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11a46b4b843949b3dac551f86358262c5c7b8a78de69e0e964e3e49c781032bf",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+HV1076+HB1337",
+      "date": "2013-02-19",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "House: VOTE: ADOPTION (64-Y 36-N)",
+      "note": "House roll call as printed ('Ward'), linked to Jeion A. Ward via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.792Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "web search on name plus voter ID",
+        "Ballotpedia (page has no own-words on the subject)",
+        "blocked: lis.virginia.gov (not retried)",
+        "not reviewed: On the Record extract script (not run, searcher limited to web tools)",
+        "web search for own statements on voting rights (no quotes found)",
+        "iVoterGuide not checked for Ward"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:35.857Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T17:53:04.520Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T17:58:27.792Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

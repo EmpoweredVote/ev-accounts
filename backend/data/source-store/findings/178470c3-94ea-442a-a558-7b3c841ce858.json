@@ -1,0 +1,475 @@
+{
+  "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district 3) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d5735b3bcabc6e3bd138727798995af2b3c5156c8e4e4e6bccc7e1fcbc4f69",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81696",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2038H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as prime sponsor ('Alexander Kolodin') on the official bill page; linked to Alexander Kolodin via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6decb5bf2d1af9bfd4a2e3f9d99134e34ee9ee1fb680778feb0cef213211b2b8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81400",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2785H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as prime sponsor ('Alexander Kolodin') on the official bill page; linked to Alexander Kolodin via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district 3) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa4dbd58bab15b71d136133ca927ede2765ab8fed34d42705e2cf691690981ca",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83527",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, HCR2001S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as prime sponsor ('Alexander Kolodin') on the official bill page; linked to Alexander Kolodin via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district 3) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "506344b3582975dc87dfc5fc0e15ed46a4f4e6331bfff3e504e16101e2799d27",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/6b255a31-d22d-4368-b9d4-120043d1c13a",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "I think the entire state should use the Save Act database system I think that is something that local elections officials want to do that Adrian Fontes is obstructing them from doing and it hurts Arizona",
+      "note": "Candidate forum transcript (On the Record). He says the state should use the federal SAVE database system and says the current state election chief is blocking local officials who want to.",
+      "subjects": [
+        "SAVE database to check voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8a2573f5a94612d6f6afbd13e9e19346b9943da2780b3349354e2c04b90c909",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/6b255a31-d22d-4368-b9d4-120043d1c13a",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "the voters of this state demand that we only have U .S Citizens on our voter rolls by opponent has opposed the federal save Act she has opposed it because it tells states that we can't have non -citizens on our voter rolls but almost every single person who actually lives in this state wants non -citizens off of our voter rolls",
+      "note": "Candidate forum transcript (On the Record; transcript spelling kept). He says voters want only citizens on the rolls and criticises his primary opponent for opposing the federal SAVE Act.",
+      "subjects": [
+        "non-citizen voting",
+        "federal SAVE Act",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ff5f9b5c60410f5f916aeb65e7a58aa4813eda2ea5ef04be8f30513ac6c58a7",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/6b255a31-d22d-4368-b9d4-120043d1c13a",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "ARIZONA CITIZENS LOVE OUR MAIL -IN VOTING YOU KNOW MOST ARIZONANS USE MAIL -IN VOTING AND NOBODY IS COMING TO TAKE THAT AWAY ALL OF MY EFFORTS IN THE LEGISLATURE HAVE BEEN AIMED TOWARDS MAKING MAIL -IN VOTING MORE SECURE SO THAT VOTERS CAN HAVE CONFIDENCE THAT REGARDLESS OF HOW THEY VOTE THEY'RE GOING TO GET THEIR BALLOT IN THE RIGHT PLACE ON TIME THAT THE RESULTS ARE GOING TO BE TABULATED MORE QUICKLY AND THAT THE VOTING PROCESS WILL BE SAFER FOR ALL ARIZONANS REGARDLESS OF PARTY",
+      "note": "Candidate forum transcript (On the Record; capitals as in transcript). He says he is not trying to end mail voting and describes his work as making it more secure.",
+      "subjects": [
+        "mail voting security",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efdc53d7b1f8799e239146bf4197297371090d4bf9d7ba2918aade45d1972470",
+      "kind": "own-words",
+      "url": "https://www.alexforaz.com/hcr2001/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "In June, Alex delivered where D.C. failed, sponsoring HCR 2001-the Arizona secure elections act. After two years of work, the legislature voted to send it straight to the 2026 ballot, beyond the reach of governor Hobbs’s veto pen. This amendment puts the rules in Arizona’s constitution, where they belong: Only U.S. citizens may vote, every voter must show government-issued id, foreign money is banned from our elections, and election day means election day-with the fast, Florida-style results Arizonans deserve.",
+      "note": "Campaign site page about HCR 2001, written in the third person. It describes the amendment as requiring citizenship to vote and government-issued ID from every voter.",
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship to vote",
+        "constitutional amendment HCR 2001"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "306401f1ef9dea5754a0a730e1c7fc522ddb39d4c3061b4b13d38c0aebb14e41",
+      "kind": "own-words",
+      "url": "https://www.alexforaz.com/hcr2001/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Starting in 2026, voters will also enjoy faster results due to this package requiring elections officials to allow voters who drop-off their mail-in ballots at the polls to show ID and, therefore, bypass the time intensive signature verification process.",
+      "note": "Campaign site page. Describes a mail-ballot drop-off at the polls with ID as a way to skip signature checking.",
+      "subjects": [
+        "ID with mail ballot",
+        "mail-ballot drop-off with ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43ff4ce6613735949074d7db1b10263678c2491f4a06823b6cc2458d3281fbea",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2025-11-17/arizona-republican-secretary-of-state-candidate-pushes-stricter-voting-rules",
+      "date": "2025-11-17",
+      "date_precision": "day",
+      "passage": "“It tightens timelines and options to produce faster, cleaner results,” he said.",
+      "note": "Quoted by KJZZ (Capitol Media Services report) defending changes to early voting in his proposed constitutional amendment.",
+      "subjects": [
+        "mail-ballot rules",
+        "early ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c829c4de1f4f5c27ab46bd485d44d415fd7e90b701612673f2a8fb2a009d2ab",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2025-11-17/arizona-republican-secretary-of-state-candidate-pushes-stricter-voting-rules",
+      "date": "2025-11-17",
+      "date_precision": "day",
+      "passage": "“Regular, affirmative address confirmation ensures that ballots are sent to the right place and reduces undeliverable mail,” he said, saying it “keep records current.”",
+      "note": "Quoted by KJZZ on the requirement that early-voting-list voters re-confirm their addresses.",
+      "subjects": [
+        "voter-roll checks",
+        "early voting list address checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "233daefa94d1560f911438473c200a3dac1a57258929cb1e0c154b8e4d2ca8f9",
+      "kind": "own-words",
+      "url": "https://www.kjzz.org/politics/2025-11-17/arizona-republican-secretary-of-state-candidate-pushes-stricter-voting-rules",
+      "date": "2025-11-17",
+      "date_precision": "day",
+      "passage": "Kolodin acknowledged the court rulings. But he told Capitol Media Services there has never been a final ruling by the U.S. Supreme Court.",
+      "note": "Reporter's wording, not a direct quote of him: he acknowledged court rulings against a proof-of-citizenship law and said the U.S. Supreme Court has not issued a final ruling. Kept as context for his proof-of-citizenship proposal.",
+      "subjects": [
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:27.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('KOLODIN'), linked to Alexander Kolodin (district 3) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T22:53:15.880Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (1 meeting, 2026-05-15 candidate forum)",
+        "https://www.kjzz.org/elections/2026-07-21/alexander-kolodin-wins-republican-primary-for-arizona-secretary-of-state (shows him as nominee for Secretary of State facing the incumbent in the general election)",
+        "campaign site https://www.alexforaz.com/ and https://www.alexforaz.com/hcr2001/ (HCR2001 page used)",
+        "https://www.alexforaz.com/vote/ (nothing on the subject; voting logistics only)",
+        "https://www.kjzz.org/politics/2025-11-17/arizona-republican-secretary-of-state-candidate-pushes-stricter-voting-rules",
+        "https://www.kjzz.org/politics/2025-03-31/far-right-candidate-rep-alexander-kolodin-joins-2026-arizona-secretary-of-state-race (no direct quote on the subject)",
+        "https://www.kjzz.org/politics/2026-07-27/trump-endorses-republican-primary-winner-alexander-kolodin-for-arizona-secretary-of-state (no quote on the subject)",
+        "https://www.kawc.org/news/2025-11-17/arizona-republican-wants-voters-to-provide-proof-of-citizenship (same report as the KJZZ one; not separately used)",
+        "not reviewed: https://ballotpedia.org/Alexander_Kolodin",
+        "not reviewed: https://www.fox10phoenix.com/video/fmc-klukk2wq1gf6vex4 (interview video)",
+        "not reviewed: https://www.kjzz.org/politics/2026-07-07/republican-candidates-for-arizona-secretary-of-state-diverge-on-stolen-election-claims",
+        "two news searches on name plus subject words"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:08:27.388Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

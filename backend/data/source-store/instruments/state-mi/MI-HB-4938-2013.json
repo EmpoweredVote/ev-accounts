@@ -1,0 +1,38 @@
+{
+  "id": "MI-HB-4938-2013",
+  "scope": "state:mi",
+  "title": "HB 4938 (2013-2014 Regular Session, Michigan Legislature (bill page title: \"House Bill 4938 of 2013\")): Elections; voting procedures; list of eligible state identification cards to identify electors when voting; expand. Amends sec. 523 of 1954 PA 116 (MCL 168.523 ).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2013-HB-4938",
+    "https://www.legislature.mi.gov/documents/2013-2014/billintroduced/House/htm/2013-HIB-4938.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 523 (as in the version read)\n(quote) (1) At each election, before being given a ballot, each registered elector offering to vote shall identify himself or herself by presenting an official state identification card issued to that individual or a generally recognized picture identification card and by executing an application, on a form prescribed by the secretary of state, in the presence of an election official which includes all of the following:\n(section) Sec. 523 (as in the version read)\n(quote) If the name appears on the voter registration list, the elector shall provide further identification or other information stated upon the voter registration list.\n(section) Sec. 523 (as in the version read)\n(quote) However, an elector being allowed to vote without the identification required under this section is subject to challenge as provided in section 727.\n(section) Sec. 523 (as in the version read)\n(quote) (3) If, upon a comparison of the signature or other identification as required in this section, it is found that the applicant is entitled to vote, the election officer having charge of the registration list shall approve the application and write his or her initials on the application, after which the number on the ballot issued shall be noted on the application.\n(section) Sec. 523 (as in the version read)\n(quote) (4) As used in this section, \"official state identification card\" means 1 or more of the following:\n(section) Sec. 523 (as in the version read)\n(quote) (a) An official state personal identification card issued under 1972 PA 222, MCL 28.291 to 28.300.\n(section) Sec. 523 (as in the version read)\n(quote) (c) A military identification card.\n(section) Sec. 523 (as in the version read)\n(quote) (i) A current retirement center identification card.\n(section) Sec. 523 (as in the version read)\n(quote) (j) A current neighborhood association identification card.\n(section) Sec. 523 (as in the version read)\n(quote) (k) A current employee identification card.\n(section) Sec. 523 (as in the version read)\n(quote) (l) A current student or school identification card.\n(b_no_id_remedy)\n(section) Sec. 523 (as in the version read)\n(quote) If the elector does not have an official state identification card or a generally recognized picture identification card as required under this section, the individual shall sign an affidavit to that effect before an election inspector and be allowed to vote as otherwise provided in this act.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Only the section(s) quoted above are amended; no other subject.",
+  "sponsors": [
+    {
+      "name": "David Knezek (District 11)",
+      "role": "prime",
+      "version": "Text file header as saved: \"HOUSE BILL No. 4938 September 3, 2013, Introduced by Reps. Knezek and Schor and referred to the Committee on Elections a\""
+    },
+    {
+      "name": "Andy Schor (District 68)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 4938 September 3, 2013, Introduced by Reps. Knezek and Schor and referred to the Committee on Elections a\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

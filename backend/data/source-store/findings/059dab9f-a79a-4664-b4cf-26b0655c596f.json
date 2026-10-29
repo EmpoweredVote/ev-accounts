@@ -1,0 +1,165 @@
+{
+  "politician_id": "059dab9f-a79a-4664-b4cf-26b0655c596f",
+  "findings": [
+    {
+      "id": "707043c5af5b3251beca113cd36a6cee0765b95bac19f4c647625f7facf5e42e",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "Expanded voter purges; increased barriers for voters with disabilities; and harsher voter ID requirements.",
+      "note": "In Senate floor remarks, she lists harsher voter ID requirements among protections she says she is trying to claw back, alongside voter purges and barriers for voters with disabilities. Text is from her office's press release carrying the speech.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d1f5910c012b0aec46aeae84b97d55c825fa22072cea9e9a9c4b012be84f735",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "passage": "Promote Integrity – Fights back against the assault on voting rights by reaffirming Congress’s commitment to restoring the Voting Rights Act, prohibiting voter roll purges like those seen in Ohio, Georgia and elsewhere, and ensuring that discriminatory voter ID laws do not prevent Americans citizens from exercising their rights.",
+      "note": "Press release from her office on introducing the For the People Act. This bill summary says one part of the bill ensures discriminatory voter ID laws do not stop citizens from voting. Statement issued in her name; the bill summary is not a personal quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad15942e7226a6f580e97c0504bbc11bada12c5fb70e0ab5068a9e6b12be7b76",
+      "kind": "record",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "instrument_id": "US-S-S1-2021",
+      "act": "sponsor",
+      "note": "For the People Act (S. 1, 117th Congress): her office's release says she joined colleagues to introduce it. It covers voter registration, mail voting, voter roll purges and voter ID laws. Bill number is from memory of the 117th Congress and not confirmed on congress.gov (blocked); the release does not state it.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot access",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2c5c69f723f8ff8105cc3b511beeeea3339fcabbe62c11d5f484571c759b42e",
+      "kind": "own-words",
+      "url": "https://politifact.com/factchecks/2026/mar/20/tammy-duckworth/save-america-act-voter-id-drivers-licenses-real-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“9% of American citizens don’t have the identification that the SAVE act requires to vote. Almost 1 in 10. This is a voter suppression bill.”",
+      "note": "Her X post on the SAVE America Act, as quoted and fact-checked by PolitiFact on 2026-03-20. She says about 1 in 10 citizens lack the ID the bill requires and calls it a voter suppression bill.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "photo ID to vote in person",
+        "voter suppression claims about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5f2deb07edb0d1b7b9d9e3b860949a3c36335b508a34eee870b1b132a536330",
+      "kind": "own-words",
+      "url": "https://www.nbcchicago.com/news/national-international/drivers-licenses-voter-registration-save-act/",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "Under the SAVE Act, you cannot use your driver’s license to register to vote. Republicans want you to buy a passport instead. If you can afford one. This is a modern-day poll tax.",
+      "note": "Her X post on the SAVE America Act, quoted in an AP fact-check carried by NBC Chicago (March 2026, exact day not shown on the page text I read). She says a driver's license would not be enough to register and that a passport costs money.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:01:00.258Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "discriminatory voter ID laws",
+        "voter roll purges",
+        "mail-ballot access",
+        "proof of citizenship / SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site duckworth.senate.gov: site search 'voter ID' (6 results; 2 press releases fetched and read; senator page confirms Senate office: https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill)",
+        "nothing on the subject: SAVE Act / proof of citizenship (not found on official site search)",
+        "not reviewed: https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-join-entire-senate-democratic-caucus-to-introduce-for-the-people-act",
+        "not reviewed: https://www.duckworth.senate.gov/imo/media/doc/amicus-brief-of-bipartisan-current-and-former-members-of-congress-filed.pdf",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (HTTP 403)",
+        "blocked: https://ballotpedia.org/Tammy_Duckworth (fetch returned empty content)",
+        "not reviewed: ontheissues.org, govtrack, news search (web search budget used up)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:13:35.305Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in person",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "cost and access of citizenship documents",
+        "voter suppression claims about ID rules"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.duckworth.senate.gov/search?keys=voter+ID (403, also with browser agent)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases (403)",
+        "blocked: https://www.duckworth.senate.gov/news/press-releases/duckworth-statement-in-response-to-republicans-blocking-the-freedom-to-vote-act (403)",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm (403), so her own vote on the March 26 2026 cloture vote was not confirmed",
+        "Senate floor log for 2026-03-26 (https://www.dailypress.senate.gov/thursday-march-26-2026/): shows the cloture vote on the photo-ID amendment to the SAVE America Act vehicle but no per-senator tally",
+        "PolitiFact fact-check of her X post",
+        "AP fact-check carried by NBC Chicago",
+        "web search of her official press-release titles (older voting-rights releases found, none fetchable)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:01:00.258Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "politician_id": "7791b390-7a9a-420c-9702-e062daaa4242",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (FL-19; page lists Cawthorn under 'Eliminated in primary' and Jim Schwartzel as nominee): https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida",
+        "On the Record (0 appearances)",
+        "not reviewed: other places (candidate out of scope after primary loss; web search budget also exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:49:40.468Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary for Florida's 19th district (Jim Schwartzel won with ten candidates on the ballot, Cawthorn among them); page: https://news.ballotpedia.org/2026/08/19/jim-schwartzel-r-defeated-nine-other-candidates-in-the-republican-primary-for-floridas-19th-congressional-district-on-august-18-2026/",
+        "On the Record (0 meetings)",
+        "stopped after scope check: no longer on the general-election ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:11:53.049Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

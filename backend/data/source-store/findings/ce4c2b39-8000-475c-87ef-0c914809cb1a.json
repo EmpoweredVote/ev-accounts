@@ -1,0 +1,275 @@
+{
+  "politician_id": "ce4c2b39-8000-475c-87ef-0c914809cb1a",
+  "findings": [
+    {
+      "id": "cdca4b6328de700bce4c062425dbeeb55130d68429d50b383f7433d68c0d516a",
+      "kind": "own-words",
+      "url": "https://senatorpennycuick.com/2025/01/27/pennycuick-to-introduce-voter-id-measure/",
+      "date": "2025-01-27",
+      "date_precision": "day",
+      "passage": "“As a constitutional amendment, it’s the people of Pennsylvania who are going to decide if voter ID is an important component of our election system,” said Pennycuick. “Voters support this commonsense requirement, IDs are not difficult to obtain, and there is no evidence requiring an ID when voting in person negatively effects turnout.”",
+      "note": "News release from her office announcing a constitutional amendment to require ID when voting in person; it also says anyone without a valid ID could receive one at no cost.",
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without one"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:48.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d1f9d7ed61df27054caedf0ee73fba8743662a590133e867438c71e1eb3783b",
+      "kind": "own-words",
+      "url": "https://senatorpennycuick.com/2025/01/27/pennycuick-to-introduce-voter-id-measure/",
+      "date": "2025-01-27",
+      "date_precision": "day",
+      "passage": "Voter ID laws stop multiple types of fraud, such as impersonating another registered voter, preventing noncitizens from voting, and stopping out-of-state residents or someone registered in multiple jurisdictions.",
+      "note": "Same release; ties voter ID to non-citizen voting and double registration.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:48.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ddce098e4e24a0a7bd7c11af945ea42fc0e1c41924319188f833258db0dbdbd5",
+      "kind": "own-words",
+      "url": "https://senatorpennycuick.com/voter-id/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "To help restore voter confidence and improve election integrity, I’m leading an effort to pass a constitutional amendment in the General Assembly to require identification when voting in person.",
+      "note": "Issue page on her site (undated). States her aim of a constitutional amendment requiring ID for in-person voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:48.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4c34f02cd8f843b650a00061060bff35cbb46e3c6fd70712f30ba19808c4239",
+      "kind": "own-words",
+      "url": "https://senatorpennycuick.com/voter-id/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The good news is that IDs are not difficult to obtain. In Pennsylvania, voters have 15 ID options approved by the Pennsylvania Department of State. Any individual who does not possess a valid form of ID could receive one at no cost to ensure no voter is prevented from participating in the election process.",
+      "note": "Issue page (undated). Says there are many accepted IDs and a free ID for anyone without one.",
+      "subjects": [
+        "free ID for voters without one",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:48.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4587582d319ce312a577522be503b3f077210e5999c2f62d4c252e8b2d1f1b4",
+      "kind": "own-words",
+      "url": "https://senatorpennycuick.com/enews/020725-2/",
+      "date": "2025-02-07",
+      "date_precision": "day",
+      "passage": "I’m introducing legislation to strengthen Pennsylvania’s election security by requiring voters to present identification when voting in person.",
+      "note": "E-newsletter item titled Introducing Voter ID Legislation to Secure PA Elections; says the constitutional amendment will provide 15 approved ID options and a free ID for anyone without one.",
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without one"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:48.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('PENNYCUICK'), linked to Tracy Elizabeth Pennycuick (district 147) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Pennycuick'), linked to Tracy E. Pennycuick (district 24) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('PENNYCUICK') on the official bill page; linked to Tracy E. Pennycuick via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Pennycuick'), linked to Tracy Elizabeth Pennycuick (district 147) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Pennycuick'), linked to Tracy Elizabeth Pennycuick (district 147) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.458Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without one",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://senatorpennycuick.com/voter-id/ and news release and e-newsletter",
+        "blocked: https://ballotpedia.org/Tracy_Pennycuick (HTTP 403 if refused)",
+        "gone (404): https://senatorpennycuick.com/2023/02/01/pennsylvania-must-join-the-majority-of-states-and-nations-with-voter-id-laws/ and https://senatorpennycuick.com/enews/020323-2/",
+        "news search: nothing beyond her own site",
+        "legislature bill pages: not reviewed (sponsorships linked separately)",
+        "video not reviewed: https://www.youtube.com/watch?v=ytxOMc6URjM (Voter ID interview, 2025-02-12)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:10:48.440Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.696Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.458Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

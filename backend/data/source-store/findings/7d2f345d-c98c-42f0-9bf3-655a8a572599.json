@@ -1,0 +1,103 @@
+{
+  "politician_id": "7d2f345d-c98c-42f0-9bf3-655a8a572599",
+  "findings": [
+    {
+      "id": "a0031e29c14c350b18dab923460fee2bb254032501ee03dce7b359732de75aa7",
+      "kind": "own-words",
+      "url": "https://www.flemingforga.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Fleming safeguarded voter ID requirements, secured the integrity of Georgia's voter rolls, and worked to ensure Georgians could trust our elections.",
+      "note": "Campaign site biography for his Secretary of State run, stating what he did as deputy secretary of state. Page is undated; read 2026-10-28.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c65e2d912d2626bc275a115303d8c0a86b126cc210568acf5e169ae400370e45",
+      "kind": "own-words",
+      "url": "https://www.flemingforga.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Protect voter ID and champion election transparency",
+      "note": "One of six listed 'Georgia First Priorities' on his campaign home page.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "470ec65c49a3a3d5c4e685d96c91367bd631a9cde010d965a32ece416f3a9a71",
+      "kind": "own-words",
+      "url": "https://www.democracydocket.com/news-alerts/anti-voting-republican-tim-fleming-advances-georgia-secretary-of-state-race/",
+      "date": "2026-06-16",
+      "date_precision": "day",
+      "passage": "His campaign says he would “champion voter ID and election transparency,” “deport any illegals attempting to vote in Georgia” and “make it impossible for the Left to cheat in our elections.”",
+      "note": "Campaign pledges as quoted by Democracy Docket (an outlet critical of him); sentence is the outlet's, the quoted phrases are the campaign's. Original campaign page for these phrases was not found.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.713Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.flemingforga.com/ (home page read; /issues and /about do not exist)",
+        "Fox 5 Atlanta candidate profile (2026-10-12): confirms he is the nominee for Secretary of State on the Nov 2026 ballot; paraphrase only, no direct quote on the subject",
+        "Democracy Docket 2026-06-16: confirms advance to the general election and quotes his campaign",
+        "AP story on the Secretary of State race (katv.com copy): his words on 2020 irregularities only, nothing on ID or citizenship",
+        "blocked: https://georgiarecorder.com/voter-guides/contests/2026-runoff-secretary-of-state-republican/ (HTTP 403)",
+        "blocked: https://georgiarecorder.com/briefs/gop-state-lawmaker-says-he-is-readying-secretary-of-state-campaign/ (HTTP 403)",
+        "blocked: https://www.wabe.org/meet-the-candidates-trying-to-become-georgias-new-secretary-of-state/ (HTTP 403)",
+        "blocked: https://app.legiplex.com/profile/tim-fleming-1812/ga/legislatures/2025/2025-r/legislation (HTTP 403)",
+        "not reviewed: https://feeds.ajc.com/politics/2026/04/amid-ongoing-voting-turmoil-nine-compete-for-georgia-secretary-of-state/ (404)",
+        "not reviewed: Atlanta Press Club debate video https://www.pbs.org/video/georgia-secretary-of-state-republicans-i-atlanta-press-club-debates-sqpf7p/",
+        "The Current GA 2025-07-18 committee story: no quote on ID or citizenship",
+        "one news search on his name plus the subject words",
+        "blocked: https://ballotpedia.org/ (pages returned empty to the fetch tool; a second fetch by another method was not allowed, so not retried)",
+        "legis.ga.gov bill pages: not reviewed (login token needed, not bypassed)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:28:59.713Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

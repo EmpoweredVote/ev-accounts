@@ -1,0 +1,184 @@
+{
+  "politician_id": "c783e709-2cef-460e-af1e-8b4f8e8339b0",
+  "findings": [
+    {
+      "id": "5f8194e0332c20a50e185f2c857f03bb431feb4795737b1a962c63bb1ac00708",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "adoption of conference committee report (Record 1128)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report (Record 1128), 2011-05-16: nay (tally 98–46); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.559Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "3f40a200037499a1725335a35a21cf6ceb87f3257b7940e3fba2c9e7b2a0f382",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: nay (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "1a60161847586fd3a58f62a3b9ae2d8cb69ac3f6d48599b4c37c54e14f32a5b8",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/06/01/texas-voting-bill-democrats/",
+      "date": "2021-06-01",
+      "date_precision": "day",
+      "passage": "“I wanted to share how that bill was an affront to me,” Thompson told The Texas Tribune on Monday.",
+      "note": "Quoted by the Texas Tribune. She describes why she spoke to colleagues against SB 7, a broad 2021 voting-rules bill, ahead of the House walkout. The bill is not only about ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 voting bill SB 7"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:24:50.339Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5175ab28fb433ae5bfa26fafb0c18f94afcf6e9db4fa429a38dfb799167209d9",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/06/01/texas-voting-bill-democrats/",
+      "date": "2021-06-01",
+      "date_precision": "day",
+      "passage": "“We have a responsibility to pass on something,” Thompson said Monday after a meeting at the Capitol with other Black and Hispanic House members. “That’s why we’re here — to protect and preserve those rights and to pass on something for generations to come.”",
+      "note": "Quoted by the Texas Tribune. She speaks of protecting voting rights as a duty to pass on, in the context of the SB 7 walkout.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 voting bill SB 7"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:24:50.339Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bc21004c6f347d34ef0a067942666d7e5fddb817afa5f46f715ea1338b53b92",
+      "kind": "own-words",
+      "url": "https://pjmedia.com/news-and-politics/bryan-preston/2021/07/30/video-watch-fleebagger-texas-democrat-get-destroyed-by-simple-questions-on-voter-id-and-voting-rates-n1465892",
+      "date": "2021-07",
+      "date_precision": "month",
+      "passage": "“I don't think it's a whole lot.”",
+      "note": "PJ Media quoting her at a July 2021 US House hearing. Asked what share of one party's voters support voter ID, she answered that she thought it was not a large share. Only the quoted words are hers; the sentence around them is the outlet's. The date is the article date (30 July 2021); the hearing was the day before, per the article's 'Thursday'.",
+      "subjects": [
+        "voter ID at the polls",
+        "public support for voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:24:50.339Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voting restrictions bill SB 7 (2021)",
+        "support for voter ID",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member page (house.texas.gov district 141): confirms she holds the District 141 seat; nothing on the subject",
+        "blocked: https://ballotpedia.org/Senfronia_Thompson (page came back empty)",
+        "Wikipedia (lead only): points to the Texas Tribune pieces used here",
+        "Texas Tribune 2021-06-01 article: two direct quotes saved",
+        "PJ Media 2021-07-30 article quoting a House hearing exchange: one direct quote saved",
+        "Texas Tribune 2011-03-23 voter ID House debate article: nothing from her",
+        "KUT 2011-03-21 voter ID debate article: nothing from her",
+        "not reviewed: Texas Legislature Online bill pages for her sponsorships (site needs scripts; no voter ID authorship surfaced in search)",
+        "not reviewed: Comer House site page (fetched, but the quote could not be found in its text)",
+        "no campaign site found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:24:50.339Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

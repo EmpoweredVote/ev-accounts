@@ -1,0 +1,75 @@
+{
+  "politician_id": "c1914284-9aee-44f4-8b7f-a833d8f392e7",
+  "findings": [
+    {
+      "id": "182bcc1fbd65860bab6193bfce867d1f922e575073b86cd7baced956e0b6126a",
+      "kind": "record",
+      "url": "https://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "SB 7 passed on third reading (Record 848), 78 yeas, 64 nays",
+      "note": "Voted nay on House passage of SB 7 (2021 regular session), a bill described in its caption as relating to election integrity and security, with new criminal offenses; the House text includes a section on the form of identification presented.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:44.486Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8634e4fa96a99b514e7bf65e06c809b1f60a1c8c6e706317f9e4830a0fca30c7",
+      "kind": "own-words",
+      "url": "https://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "passage": "When Record No. 118 was taken, I was absent. I would have voted no.",
+      "note": "Statement of vote printed in the House Journal after she was absent when the House adopted the conference committee report on SB 1 (second called session, 2021), a bill on election integrity and security that also covers ID numbers on mail ballot applications and envelopes. She states how she would have voted.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:17:44.486Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting rights legislation"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "Ballotpedia (confirms sitting Texas House member, District 119, on the 2026-11-03 general-election ballot; she has no candidate survey on file)",
+        "campaign site https://lizcampos.com (issues page reviewed; nothing on the subject)",
+        "official House pages https://house.texas.gov/members/3925/biography (nothing on the subject)",
+        "Texas Legislature Online: searched for her 2025 election bills; web results showed none on voter ID or citizenship",
+        "House Journals 87th session day 42 (SB 7 record vote) and 87th second called session days 4 and 6 (SB 1 votes)",
+        "one web search on her name plus the subject words (no own-words statement on the subject found)",
+        "debate or interview video: none found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:17:44.486Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

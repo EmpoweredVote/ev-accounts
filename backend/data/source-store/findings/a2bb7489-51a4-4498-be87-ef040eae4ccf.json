@@ -1,0 +1,112 @@
+{
+  "politician_id": "a2bb7489-51a4-4498-be87-ef040eae4ccf",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "54bab466cff6a1cd661798c65ed225787ca49cc2976278e347a9f046133a2b23",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1096/HB1096.01.INTR.pdf",
+      "date": "2026-01-05",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1096-2026",
+      "act": "author",
+      "motion": "HB 1096 Various elections matters, introduced and referred to Elections and Apportionment (first author Prescott)",
+      "note": "Introduced bill on various election matters. Its digest covers party affiliation at registration and primary voting, a provisional-ballot affidavit naming party, a ban on handing out absentee ballot applications unless the voter or certain family members asked for one (with a civil penalty up to $100), and a shorter in-person absentee period. The digest does not add a photo-ID or proof-of-citizenship rule.",
+      "subjects": [
+        "absentee ballot application rules",
+        "mail-ballot request",
+        "provisional ballot affidavit",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:48:19.619Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/John_Prescott names John (J.D.) Prescott, Indiana House District 33, advanced from the 2026 primary on May 5, 2026 and is on the Nov 3, 2026 general ballot",
+        "On the Record (0 meetings)",
+        "campaign site https://votejdprescott.com/ (2024 page; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/John_Prescott (nothing on the subject; lists Elections and Apportionment Committee assignment only)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_john_prescott_1 (page loads only a script shell; bill list unreadable)",
+        "blocked: https://www.indianahouserepublicans.com/members/jd-prescott/ (404, tried three slug variants)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: Indiana General Assembly roll-call votes on voter ID or citizenship bills (no readable bill pages reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:39.630Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "absentee application rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia shows J.D. Prescott is the House District 33 incumbent on the November 3, 2026 ballot, past the May 5, 2026 primary",
+        "On the Record (0 meetings found)",
+        "House caucus member page indianahouserepublicans.com/members/general/j.d.-prescott/: press releases cover school board elections and voter-registration deadline reminders, nothing on ID or citizenship",
+        "legislature bill documents: HB 1096 (2026) introduced text read",
+        "Ballotpedia: sponsored-legislation list not reviewed in detail; nothing on the subject in the profile text",
+        "votes on IN-SB-10-2025 already on file, not searched",
+        "two news searches on name plus subject words: no quote from him on ID or citizenship",
+        "not reviewed: https://iga.in.gov legislator page (page is script-rendered, returned no content)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T14:48:19.619Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

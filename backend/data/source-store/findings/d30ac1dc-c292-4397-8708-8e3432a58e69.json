@@ -1,0 +1,153 @@
+{
+  "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+  "findings": [
+    {
+      "id": "441b5c17143655ebf6aebdeff282255471d79b46f611b48647d774f69caf9504",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (SB 747, Elections Law Changes)",
+      "note": "Senate vote 27 to 18 to concur in the House changes to SB 747, Elections Law Changes. Applewhite is listed among the Noes. The bill page lists subjects including elections, voter registration, ballots and aliens; the specific ID provisions were not checked.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:35.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b94e7c77079442872a0c34abaf8e4793db543694c72477bd29d60c5084493e49",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (SB 747, Elections Law Changes)",
+      "note": "Senate vote 30 to 19 on the motion to override the Governor's veto of SB 747, Elections Law Changes. Applewhite is listed among the Noes. The specific ID provisions were not checked.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:35.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "69b6552ec688769687e43c3380c9bf894b44d6161bb008e75f9af58c3ab71302",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-715-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor of SB 715, Student Voter ID Grant Program/CCs (filed 2025-03-25)",
+      "note": "She is listed as a co-sponsor. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/Senate/HTML/S715v1.html) appropriates $500,000 for grants of up to $20,000 to community colleges to upgrade equipment to produce student ID cards usable to vote in person, and directs the State Board of Elections to review community college applications to have student ID cards approved as photo ID. The bill was re-referred to Appropriations on 2025-03-26.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:08:18.105Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter process",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Val_Applewhite (NC Senate District 19, on the Nov 3, 2026 general-election ballot)",
+        "On the Record (0 meetings, 0 appearances)",
+        "Ballotpedia (no own-words on the subject; no Candidate Connection survey)",
+        "ncleg.gov bill page and two Senate roll calls for SB 747 (2023)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/484 (HTTP 500, member page and sponsored-bill list not reached)",
+        "not reviewed: official Senate site and campaign site issue pages (not reached; web search budget used up, so no news search was run)",
+        "not reviewed: other 2023-2025 election bills (for example 2025 election-law bills) for sponsorships and votes",
+        "nothing on the subject: own words found"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:10:35.834Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted as voter ID",
+        "photo-ID constitutional amendment",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in office: https://www.ncleg.gov/Members/Biography/S/440 names her as the District 19 senator; Ballotpedia and the state legislature's primary results (seen in search results, not fetched) list her on the November 3, 2026 ballot",
+        "On the Record (0 meetings)",
+        "official legislature bill list for her (https://www.ncleg.gov/Members/IntroducedBills/S/440): election titles seen are SB 107, SB 392, SB 398, SB 457, SB 715",
+        "SB 392 (Safeguard Fair Elections) text read: voter-intimidation and observer rules, nothing on voter ID or citizenship proof, so not saved",
+        "blocked: https://ballotpedia.org/Val_Applewhite (page returned almost no content)",
+        "two web searches on name plus voter ID and the photo-ID amendment: no own words of hers found; one result about a different person with the same surname was set aside",
+        "her own official page, campaign site and news statements: no own-words on the subject found",
+        "the vote on SB 921 is already on file and was not collected again"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:08:18.105Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

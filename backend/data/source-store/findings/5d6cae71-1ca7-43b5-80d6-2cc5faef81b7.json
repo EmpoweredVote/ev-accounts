@@ -1,0 +1,28 @@
+{
+  "politician_id": "5d6cae71-1ca7-43b5-80d6-2cc5faef81b7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official page: https://www.cpuc.ca.gov/karendouglas (confirms she is a Public Utilities Commissioner appointed by the governor, term to 2029; nothing on the subject)",
+        "Ballotpedia: https://ballotpedia.org/Karen_Douglas (confirms office; appointed seat, not a legislator; nothing on the subject)",
+        "legislature bill pages: not applicable, she is an appointed commissioner and not a legislator",
+        "news search on name plus subject words (nothing on the subject)",
+        "campaign site: none (appointed, not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:05:03.597Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

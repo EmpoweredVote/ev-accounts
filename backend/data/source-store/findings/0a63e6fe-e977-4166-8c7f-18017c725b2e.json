@@ -1,0 +1,176 @@
+{
+  "politician_id": "0a63e6fe-e977-4166-8c7f-18017c725b2e",
+  "findings": [
+    {
+      "id": "b27f7b5e16271293bf2a5ccbeb1585abc40e113fa38f172cb12d98030ac035c2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/831",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House roll call, 66 aye, 47 no)",
+      "note": "The member's vote record lists a No on second reading of HB 958. The ratified bill (https://www.ncleg.gov/BillLookUp/2025/H958) requires a voter registration application to state that the applicant is a US citizen before the county board processes it, with a 30-day notice to fix a blank answer and a statement under penalty of perjury. It also directs the State Board to set up a process to remove voters flagged as possible non-citizens by a federal database. The bill covers many other election topics.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:10.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "973367e1fe5f8b86259225f28bb3b4f75d62854de29708b7e05d2cb8e867ba7f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/831",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 motion to concur in Senate changes (House roll call, 62 aye, 47 no)",
+      "note": "The member's vote record lists a No on the motion to concur in the Senate version of HB 958, the same omnibus with the citizenship-on-registration requirement and the federal-database voter-roll removal process. The bill page shows it was vetoed on 08/17/2026.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:10.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a42fccc50d2707800708e7a55dad1d540519e0d621cd10709b5731078afcacf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "HB 1246 Safeguarding Elections Act, listed among the bill's sponsors (not the primary sponsor)",
+      "note": "The bill page lists Colvin among the sponsors. The filed text covers voter intimidation, threats and challenges; it has no photo ID or citizenship proof provisions. Saved because it is an election-integrity bill; the sponsor date is the referral date shown on the bill page.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter intimidation protections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:10.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "619ecb6eac63c10cd4c4aff2d285880d3a0fc55b68053c0202157b0145f53dcd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Second Reading (roll call 758)",
+      "note": "Roll call lists him among the Noes on second reading. H 958 (Election Law Changes) includes provisions on photo ID and provisional ballots for voters without ID, ID copies with absentee ballots, matching ID numbers on registrations, and requiring applicants to state whether they are citizens when registering.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "citizenship question on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:09:03.614Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6b04b7dfb5971faa0dd044e53a1967b66590d31e18d3a4cfcd369106672e12d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Motion 11, concur with Senate changes (roll call 801)",
+      "note": "Roll call lists him among the Noes on the final vote to concur. The bill was vetoed 2026-08-17. H 958 (Election Law Changes) includes provisions on photo ID and provisional ballots for voters without ID, ID copies with absentee ballots, matching ID numbers on registrations, and requiring applicants to state whether they are citizens when registering.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "citizenship question on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:09:03.614Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment / no-ID voter",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus bills"
+      ],
+      "places": [
+        "in scope: NC House District 42, on the 2026 general-election ballot (https://ballotpedia.org/Mike_Colvin)",
+        "On the Record (0 appearances, 0 candidates)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/831 (no website listed; nothing on the subject)",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/831 (no voter ID or citizenship bill by title; HB 1246 Safeguarding Elections Act co-sponsor reviewed, about voter intimidation, nothing on ID or citizenship)",
+        "NC General Assembly votes https://www.ncleg.gov/Members/Votes/H/831 (HB 958 votes saved)",
+        "Ballotpedia https://ballotpedia.org/Mike_Colvin (no issue positions; no survey answers)",
+        "campaign site colvinnc.com: not reviewed: https://www.colvinnc.com (page returned no readable text)",
+        "news search and issue-word web search: not reviewed: the shared web-search budget was used up, so no news or own-words search was run",
+        "own words (quotes, forums, questionnaires): none found; web search unavailable"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:34:10.770Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Mike_Colvin (confirms he is on the 2026 general-election ballot)",
+        "On the Record (0 meetings)",
+        "legislature bill and vote pages: https://www.ncleg.gov/BillLookUp/2025/H958 and roll calls H 755-758 and 801 (HB 958)",
+        "member introduced-bills page on ncleg.gov (no ID or citizenship bill sponsored)",
+        "web search on name plus voter ID and HB 958 (no own words found)",
+        "not reviewed: no campaign site or interview on the subject located"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:09:03.614Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

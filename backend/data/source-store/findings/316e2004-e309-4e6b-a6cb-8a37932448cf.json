@@ -1,0 +1,129 @@
+{
+  "politician_id": "316e2004-e309-4e6b-a6cb-8a37932448cf",
+  "findings": [
+    {
+      "id": "33c3a8738bb724d7cb2196d5309bc7d26b7a7bf98013fb73820623f1884a8280",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, House second reading, passed 66-47",
+      "note": "Kiger is listed among the Ayes. The final enrolled bill includes a rule that a voter registration application is processed only if it affirmatively states the applicant is a U.S. citizen, with a notice and sworn-statement step if the citizenship question is left blank. Other parts cover ballot challenges, audits and overseas voters.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:20:12.088Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc60202832b89b45134b939c6a2093126093fd09366910a626370fe6a3689d62",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, House concurrence in Senate committee substitute, 62-47",
+      "note": "Kiger is listed among the Ayes on the final House vote. The Governor vetoed the bill on 8/17/2026; no override vote appears in the bill history as of the page I read.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:20:12.088Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30f044d31e5b5aa2771b7581654023ca172ed89ca4f5823bae0afb7ae369fec2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v9.html",
+      "date": "2026-08-06",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 ratified text, Section 2.4(c), new G.S. 163-83 requirement for citizenship on voter registration applications",
+      "note": "Text of the bill Kiger voted for. Says: the county board processes a registration only if the application affirmatively indicates the applicant is a citizen; if the answer is blank, the board sends a notice and a form to be signed under penalty of perjury, to be returned within 30 days. This ratified text contains no photo-ID section.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:20:12.088Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dan_Kiger names him as appointed member of NC House District 90 on 2026-06-24 and on the 2026-11-03 general-election ballot after winning the 2026-03-03 primary (fetched with curl, browser user agent)",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia: nothing on the subject (no candidate survey completed, no positions listed)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/1004: nothing on the subject",
+        "NC General Assembly votes page https://www.ncleg.gov/Members/Votes/H/1004: nothing on the subject (page reports no votes found)",
+        "NC General Assembly sponsored bills page https://www.ncleg.gov/Members/Bills/H/1004: nothing on the subject (page not found)",
+        "blocked: https://www.facebook.com/kigerdn (HTTP 400 to curl)",
+        "not reviewed: official and campaign websites (no URL located; Ballotpedia lists only Facebook pages)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:40:03.627Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "NC General Assembly member listing for Surry County (confirms Dan Kiger holds House District 90, appointed 6/23/26): https://ncleg.gov/Members/CountyRepresentation/Surry",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for House District 90; page has no position statements; he has not completed the candidate survey)",
+        "BallotReady profile (candidate listing only, nothing on the subject)",
+        "NC legislature bill and roll-call pages for HB 958 (found the votes below)",
+        "No campaign or official issue page with own words found; web searches found no statements from him on the subject",
+        "not reviewed: https://www.elkintribune.com/news/veteran-trooper-former-party-chair-kiger-seeks-house-seat/article_5bfd3f2b-080e-56c8-a3c7-60614cb9ee52.html (blocked, HTTP 429)",
+        "blocked: https://ncnewsline.com/2026/06/25/house-set-to-vote-on-sweeping-election-bill-despite-opposition-to-overseas-voter-restrictions/ (HTTP 403)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T01:20:12.088Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

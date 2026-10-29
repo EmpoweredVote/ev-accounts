@@ -1,0 +1,51 @@
+{
+  "politician_id": "29ab827f-6e34-4579-b3b4-e122c96d308b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a legislator or candidate now; Ballotpedia (https://ballotpedia.org/Bob_Deig, fetched with curl) says he is a member of the Indiana Utility Regulatory Commission, appointed December 12, 2025, term ends December 31, 2029; former Indiana State Senate District 49, 2006 to 2010; no 2026 ballot race listed",
+        "On the Record (0 meetings)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_bob_deig_1 (page returned no legislator content)",
+        "not reviewed: Indiana General Assembly 2006-2010 bill and vote pages (no legislator page reachable)",
+        "not reviewed: news search (web search budget used up for the session)",
+        "not reviewed: official or campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:37.437Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Indiana Utility Regulatory Commission commissioner page https://www.in.gov/iurc/about-us/commission-chairman-and-commissioners/commissioner-bob-deig/ (confirms appointed commissioner since 2026-01-12; nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Bob_Deig (positive control: Indiana Senate District 49 2006-2010, now appointed commissioner; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Bob_Deig (nothing on the subject)",
+        "news search for name plus voter ID (nothing on the subject)",
+        "not reviewed: Indiana General Assembly 2006-2010 roll-call journals (the state voter ID law was enacted in 2005, before his Senate term)",
+        "no campaign site found; he holds an appointed seat, not on a 2026 ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:19:07.686Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

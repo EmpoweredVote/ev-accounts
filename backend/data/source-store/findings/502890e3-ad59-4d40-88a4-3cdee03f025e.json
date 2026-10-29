@@ -1,0 +1,103 @@
+{
+  "politician_id": "502890e3-ad59-4d40-88a4-3cdee03f025e",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "97d519c3b729ef0be25a164ed5b7f218d66976a2716555e4d155132aebfda299",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "nay",
+      "motion": "On adoption of amendment #409 to H.4000 (FY2026 budget), An Act relative to identification to vote; rejected 25 yeas to 131 nays (Yea and Nay No. 42)",
+      "note": "Meschino is recorded N on the roll call sheet. The amendment text (https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content) would require each voter to show valid State or Federal photo identification before receiving a ballot, list acceptable IDs (driver's license, passport, military ID, firearm ID card, other government photo ID), direct the Secretary of the Commonwealth to give a free photo ID to a registered voter without one who signs an affidavit, and take effect January 1, 2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:06.046Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Joan_Meschino (MA House 3rd Plymouth, advanced from the 1 Sept 2026 primary, on the 3 Nov 2026 general ballot)",
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/J_M1 and sponsored-bills tab: only election bill is H.854 voter pre-registration at 17, which is not on the subject; nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Joan_Meschino: nothing on the subject",
+        "campaign site https://www.joanmeschino.com (home page only): nothing on the subject",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: her official legislative site issue pages and YouTube"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:31.555Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID",
+        "ID or ID number with a mail or absentee ballot",
+        "documentary proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page (confirms sitting member, 3rd Plymouth District, on the 2026 general-election ballot after the 2026-09-01 primary)",
+        "Massachusetts Legislature member profile and sponsored-bill list (no voting, ID or citizenship bills as sponsor)",
+        "Massachusetts House roll calls on H.4000 (Yea and Nay Nos. 30, 36, 42 checked) and the amendment texts",
+        "Beacon Hill Roll Call weekly report (lead to the 2025 vote)",
+        "House amendment 1587 to H.5500 (2026 budget): shown as rejected without a recorded vote, so no member vote to cite",
+        "campaign site joanmeschino.com/issues fetched: nothing on the subject",
+        "one news search on the name plus voter ID, voting and election words: no own-words statements found",
+        "Wikipedia and BallotReady: leads only, not cited"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:07:06.046Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

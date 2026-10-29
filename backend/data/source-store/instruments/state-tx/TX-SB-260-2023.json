@@ -1,0 +1,38 @@
+{
+  "id": "TX-SB-260-2023",
+  "scope": "state:tx",
+  "title": "SB 260 (88R): Relating to confirmation of a voter's residence by a voter registrar.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB260",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=SB260",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/SB00260E.htm",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/SB00260I.htm (introduced; not read)",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/SB00260S.htm (Senate committee report; not read)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1 (amends Election Code 15.051(a)): registrar shall deliver a written residence confirmation notice if (1) the residence address is a commercial post office box or similar location that does not correspond to a residence; (2) on November 30 following a general election the voter's name is not on the suspense list and the voter has not voted in any election during the previous 25 months; or (3) the registrar has any other reason to believe the current residence differs from the registration records.\n(other) Sec 2: effective September 1, 2023.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Kolkhorst",
+      "role": "author",
+      "version": "Engrossed (S.B. No. 260, Engrossed version; passed Senate 04/17/2023)"
+    },
+    {
+      "name": "Bettencourt",
+      "role": "co",
+      "version": "Engrossed (S.B. No. 260, Engrossed version; passed Senate 04/17/2023)"
+    },
+    {
+      "name": "Springer",
+      "role": "co",
+      "version": "Engrossed (S.B. No. 260, Engrossed version; passed Senate 04/17/2023)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

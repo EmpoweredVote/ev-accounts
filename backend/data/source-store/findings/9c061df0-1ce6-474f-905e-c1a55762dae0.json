@@ -1,0 +1,28 @@
+{
+  "politician_id": "9c061df0-1ce6-474f-905e-c1a55762dae0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "blocked: https://ballotpedia.org/Robert_Flournoy (fetch returned an empty page)",
+        "blocked: https://app.legiplex.com/profile/robert-flournoy-20741/legislation (HTTP 403)",
+        "web searches on name plus voter ID, citizenship and election terms: no statement or bill on the subject found",
+        "confirmed in office: https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-74/candidates/robert-flournoy-jr (House District 74, listed as unopposed in the 2026 general election; its voting section says his website had no information)",
+        "campaign or official site: not found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.758Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

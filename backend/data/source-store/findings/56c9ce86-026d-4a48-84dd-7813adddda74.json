@@ -1,0 +1,144 @@
+{
+  "politician_id": "56c9ce86-026d-4a48-84dd-7813adddda74",
+  "findings": [
+    {
+      "id": "ad17f306dd1d6dd72475a3ee5c97c1ce4b5831937ab9f317692aa5291d3b55ac",
+      "kind": "own-words",
+      "url": "https://gagedylanthunder.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Proof of citizenship for voting while auditing voter rolls — without a nefarious or harassing agenda.",
+      "note": "Platform card 'Voter Integrity & Election Access' on the campaign site. Names proof of citizenship for voting and voter-roll audits. Names no document type, no photo ID, and no mail-ballot rule.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "voter-roll audits",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:47:47.448Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ced8a2621da3bb4252a6affd1cb057e5df439cea06ad3e555b92f871b16ba05",
+      "kind": "own-words",
+      "url": "https://gagedylanthunder.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Protect every eligible voter's right to participate.",
+      "note": "Same platform card, next sentence. Raised alongside the citizenship-proof line.",
+      "subjects": [
+        "election integrity",
+        "access for eligible voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:47:47.448Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7486921bca761e3f457f02b8a17aa1d7de8f67ac1084da85f6e26db7b8be4edd",
+      "kind": "own-words",
+      "url": "https://gagedylanthunder.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Proof of citizenship for voting — without harassing agenda. Protect every eligible voter. Independent ballot access reform.",
+      "note": "Platform booklet chapter 8 summary 'Election Integrity & Independent Access' on the campaign site. Repeats the citizenship-proof line.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "election integrity",
+        "ballot access for independents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:47:47.448Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76de18a94117154711c6e2ecdc05ef0cc3c037c56912b946e1b1e4d278fced19",
+      "kind": "own-words",
+      "url": "https://gagedylanthunder.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "And I support restoring voting rights for people who have served their time.",
+      "note": "From his criminal-justice section. A related voting-access statement, not about ID.",
+      "subjects": [
+        "restoring voting rights after sentence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:47:47.448Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to vote",
+        "SAVE Act",
+        "voter-roll audits",
+        "election integrity",
+        "restoring voting rights"
+      ],
+      "places": [
+        "scope check: Ballotpedia https://ballotpedia.org/Gage_Thunder lists him as a write-in candidate for U.S. House Arizona District 1 in the Nov 3, 2026 general election (note: the politician record says federal-04, but the page names AZ-1; he does not appear on the AZ-4 race page)",
+        "On the Record (0 appearances)",
+        "campaign site https://gagedylanthunder.com/ (single page, searched for voter ID, photo ID, SAVE Act, citizenship, integrity, mail ballot, absentee, voter roll)",
+        "Ballotpedia (no Candidate Connection survey completed)",
+        "not reviewed: https://www.youtube.com/@ThunderGDT777",
+        "not reviewed: https://x.com/ThunderGDT",
+        "not reviewed: https://www.facebook.com/profile.php?id=61573355084224",
+        "not reviewed: https://www.instagram.com/thundergdt",
+        "not reviewed: https://www.tiktok.com/@ThunderGDT",
+        "not reviewed: https://gagedylanthunder.com/GDT_Platform_Booklet_v2.pdf",
+        "not reviewed: news search (the shared web search budget was used up)",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:47:47.448Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "positive control: https://www.fox10phoenix.com/election/2026-arizona-general-election-voter-guide-what-know-about-when-vote-how-register-races lists him as a write-in candidate for U.S. House District 1 on the 2026 general ballot",
+        "two news searches on his name (no campaign site, news story, forum answer or social post found)",
+        "Ballotpedia (empty page returned, nothing usable)",
+        "blocked: https://azsos.gov/sites/default/files/docs/2026-Primary-Write-In-and-Withdrawn-Candidate-List-0602.pdf (returned an HTML page, not a readable PDF)",
+        "no legislature record (not a legislator); nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:11:02.890Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

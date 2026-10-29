@@ -1,0 +1,28 @@
+{
+  "politician_id": "fefa9dc8-040d-4e7e-9fcf-97ff1c1bb557",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary (opponent declared victory per https://www.wfmz.com/news/area/lehighvalley/lehigh-county/ce-ce-gerlach-announces-her-victory-over-incumbent-ana-tiburcio-in-pa-s-22nd-district/article_3b6e3aeb-5562-4dac-9430-da9fc39646b2.html, dated 2026-05-20)",
+        "On the Record (0 meetings)",
+        "official House page and bio https://www.pahouse.com/22/About/Biography (confirms office; nothing on the subject)",
+        "official House news center https://www.pahouse.com/Tiburcio/NewsCenter/ (only a county delegation statement on a vote-by-mail printing error, not about ID)",
+        "Wikipedia (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Ana_Tiburcio (empty page)",
+        "two web searches on name plus subject words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:12:43.077Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

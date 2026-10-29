@@ -1,0 +1,67 @@
+{
+  "politician_id": "cd6e3f35-1496-416c-b508-be6880ff3b9d",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Ballard'), linked to Bethany Ballard (district 147) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and challenges",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: Ballotpedia (empty page)",
+        "blocked: legis.ga.gov members page (needs login/loads blank)",
+        "blocked: LegiScan and Legiplex pages (403)",
+        "web searches by name plus subject words found no own-words passage on the subject",
+        "not reviewed: news pages that the fetch tool could only summarise, so no passage could be copied word for word",
+        "Wikipedia page confirms Bethany Ballard in the Georgia House, district 147: https://en.wikipedia.org/wiki/Bethany_Ballard",
+        "Branch voter guide confirms her as a district 147 candidate; its only voting item is an audit bill, off the subject: https://branch.vote/races/2024-georgia-general-elections-ga-state-state-representative-ga-house-147/candidates/bethany-ballard"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.802Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

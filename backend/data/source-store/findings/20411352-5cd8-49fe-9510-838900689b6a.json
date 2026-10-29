@@ -1,0 +1,265 @@
+{
+  "politician_id": "20411352-5cd8-49fe-9510-838900689b6a",
+  "findings": [
+    {
+      "id": "168d679d838ecd18d8a75295c5d54a066a7528516dd561a316106ee2be5131fb",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/39/dallman/media/dxxbhbk4/11923-election-reform-press-release.pdf",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "passage": "“It is extremely important to the citizens of Wisconsin that our elections are fair and transparent,” said Representative Dallman. “Voting in the United States is a constitutional right and we must do everything in our power to protect that.”",
+      "note": "Press release issued by his office after the Assembly passed an election bill package. The release says the package includes requiring all indefinitely confined voters to provide identification, and added checks to prevent non-citizens from voting. This quote is his general statement on the package. Passage copied from the PDF text via pdftotext of the downloaded file.",
+      "subjects": [
+        "election integrity laws in general",
+        "ID for indefinitely confined (mail) voters",
+        "non-citizen voting checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:56:09.136Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ebc1d9a63ffd63bae0e37fe66dafabf1004bfd02c721df937637a1b231fe35d",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/39/dallman/media/dxxbhbk4/11923-election-reform-press-release.pdf",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "passage": "“Restoring trust in our elections is of the utmost importance and I am happy to see more progress being made in that area today,” said Representative Dallman.",
+      "note": "Second quote in the same press release, about the same election bill package (including ID for indefinitely confined voters and non-citizen voting checks, and a constitutional amendment limiting voting to citizens).",
+      "subjects": [
+        "election integrity laws in general",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:56:09.136Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc314439e68dbf7428f08b7f9ca399835e9ef77b1fbcd1c4e5d14857964034e8",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab1002",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1002-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; hearing 2/21/2022; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Dallman') on the official bill page; linked to Alex Dallman via the official 2022 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Dallman') on the official bill page; linked to Alex Dallman via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('DALLMAN'), linked to Alex Dallman (district 41) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('DALLMAN'), linked to Alex Dallman (district 41) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('DALLMAN'), linked to Alex Dallman (district 41) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('DALLMAN'), linked to Alex Dallman (district 39) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Dallman') on the official bill page; linked to Alex Dallman via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('DALLMAN'), linked to Alex Dallman (district 41) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.769Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for indefinitely confined voters",
+        "non-citizen voting checks",
+        "citizen-only voting amendment",
+        "ballot curing",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the Assembly member's official site legis.wisconsin.gov/assembly/39/dallman/ (no news or press list on the site; one press-release PDF found and fetched)",
+        "scope check: voter-guide page ivoterguide.com lists him on the 2026-11-03 general ballot for Assembly District 39; a fundraiser listing for 2026-07-23 names him as Representative",
+        "blocked: https://ballotpedia.org/Alex_Dallman",
+        "blocked: https://www.wispolitics.com/?p=365243",
+        "blocked: https://www.wispolitics.com/2025/rep-dallman-votes-to-protect-voter-id-all-democrats-vote-against/",
+        "web search on name plus voter ID (done, 2 searches); statement page on the January 2025 voter ID amendment vote exists but is blocked; the same-subject page for the voter-guide questionnaire shows the voter ID question as not answered",
+        "campaign site: none found in search results; the official site has no search function"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:56:09.136Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:15:12.769Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

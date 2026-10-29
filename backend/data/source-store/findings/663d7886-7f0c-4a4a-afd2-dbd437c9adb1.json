@@ -1,0 +1,27 @@
+{
+  "politician_id": "663d7886-7f0c-4a4a-afd2-dbd437c9adb1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "official page https://www.cpuc.ca.gov/houck (confirms Public Utilities Commission commissioner; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Darcie_Houck (appointed commissioner, term ends 2027-02-09; nothing on the subject)",
+        "one news search on name plus subject words (nothing found about her)",
+        "legislature bill pages: not applicable, she is an appointed commissioner, not a legislator",
+        "not reviewed: CPUC press release list (utility regulator; no voting role)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:04:50.665Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

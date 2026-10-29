@@ -1,0 +1,259 @@
+{
+  "politician_id": "452cad0a-57e0-48fd-893a-4101fc41cd48",
+  "findings": [
+    {
+      "id": "589d2eb50ea05184bca7602c7bee542b5e09debe0484eb94c490080a597e2210",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, adoption of conference committee report on SB 5, 2017-05-27: yea (tally 21–10); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "38990bec58e03ed480bb2459bd7a689e70e30c7221e8e09a000ccc8dd49b927b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, adoption of conference committee report on SB 1, 2021-08-31: yea (tally 18–13); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "f81b318e70befab7499adabc7a395398e8139d96b907d3f86da8959ff19e2416",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "yea",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: yea (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "732aa8152b7fffeae4aa89da81258b47715389313eabcc09733747deb6add05c",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d02/nl/en/CapitolHallReport_20250617a.pdf",
+      "date": "2025-06-17",
+      "date_precision": "day",
+      "passage": "This session, I filed several election integrity bills, including SB 2753, which treats early voting and Election Day voting as one continuous period, removing the gap between the two.",
+      "note": "His own newsletter describes his 2025 election bills. It says the continuous voting period change does not affect mail-in voting timelines. Does not mention ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:41.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f41cad72c2d6978f90999f7851865a057e2f067248b8d2457d510e2c640af02",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d02/nl/en/CapitolHallReport_20250815a.pdf",
+      "date": "2025-08-15",
+      "date_precision": "month",
+      "passage": "During the recent Regular Legislative Session, I authored Senate Bill 2753, which achieved some major wins for the integrity and security of our elections.",
+      "note": "His own newsletter describes SB 2753 (early voting and Election Day merged, tally tapes, single machine set) as an election security measure. Date taken from the newsletter file name.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:41.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66eaafd9f34678efeeec834b164969a26cb7052cc6c166914c36f19ac65db923",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A1050",
+      "date": "2025-02-24",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1076-2025",
+      "act": "author",
+      "note": "Author of SB 1076, relating to permitted forms of identification for the purpose of accepting a voter. Referred to Senate State Affairs 2025-02-24 (date shown is the referral); no later action listed.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:41.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0078e13ecca8b0909b2d3ff5db45a587bba536b41e836357f3b5dfcc8e1d1d5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A1050",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1473-2025",
+      "act": "author",
+      "note": "Author of SB 1473, relating to early voting by mail on the ground of absence from the voter's county of residence. Referred to Senate State Affairs 2025-03-06 (date shown is the referral).",
+      "subjects": [
+        "voting by mail rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:41.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5997fc55fbbd1a2716173c98d22e063c2d9a2ac356dd83314f8eec0ec7baea0f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A1050",
+      "date": "2025-06-22",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-2753-2025",
+      "act": "author",
+      "note": "Author of SB 2753, integrating early voting by personal appearance with Election Day voting and related changes to how returns are processed. Listed as effective 9/1/25 (date shown is the listed action 06/22/2025).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:41.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebe852cd17a4116222167f36b42887352d5c0d47a1d09ec89e224b656d445907",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "motion": "author sponsor, as filed (2025-03-11)",
+      "note": "Listed as author of TX-SB-16-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.536Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted",
+        "mail-ballot rules",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas Senate official member page for District 2 (confirms Sen. Bob Hall) and its press room list (nothing on the subject before 2022)",
+        "five of his Capitol Hall Report newsletters (2024-07 to 2026-02); two mention election integrity, none mention photo ID or citizenship proof",
+        "Ballotpedia page (confirms Texas Senate District 2, term ends January 2027)",
+        "Texas Legislature Online list of 231 bills he authored or joint authored in the 2025 regular session",
+        "not reviewed: campaign site (none fetched)",
+        "no separate news search run; official records covered the subject"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:00:41.835Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.536Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

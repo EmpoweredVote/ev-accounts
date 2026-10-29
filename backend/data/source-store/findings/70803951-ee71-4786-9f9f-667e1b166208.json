@@ -1,0 +1,225 @@
+{
+  "politician_id": "70803951-ee71-4786-9f9f-667e1b166208",
+  "findings": [
+    {
+      "id": "017d09705f852d9d7e224b17d21be74624b5acde169b314cfb2e8c5d90bb3eb2",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/20117/Irvin-Issues-Statement-on-Govs-Veto-of-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-30",
+      "date_precision": "day",
+      "passage": "The Voting Rights Protection Act would have enhanced voter ID requirements, and provided a free ID to ensure everyone could meet the requirement; ensured uniformity in the conduct of elections across counties; provided for early voting and correcting some defects on mail-in ballots; and offered counties more time to process registration applications and count ballots.",
+      "note": "Statement issued in his name after the governor vetoed House Bill 1300. He describes what the bill would have done: stronger voter ID rules with a free ID, uniform county procedures, early voting, fixes for mail-ballot defects and more processing time.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot corrections",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:33.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0ee1432df1200137c2c71708e4d3dcf353d83b6a0c95fbc249d59ef07499f07",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/20117/Irvin-Issues-Statement-on-Govs-Veto-of-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-30",
+      "date_precision": "day",
+      "passage": "This is a definite step back; however, I will continue to work with my colleagues to answer the demands of voters to ensure safe, secure and accessible elections in Pennsylvania.",
+      "note": "Closing line of the same statement on the veto of House Bill 1300.",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:33.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96d3f0ff1164e3ffacd2df91243b40a740bd425a152932feb9b1382644d0d1d1",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/20117/Irvin-Issues-Statement-on-Govs-Veto-of-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-30",
+      "date_precision": "day",
+      "passage": "Furthermore, the governor today also vetoed funding in the budget for a Bureau of Election Audits within the Department of the Auditor General.",
+      "note": "Same statement. He also objects to the veto of budget money for a Bureau of Election Audits.",
+      "subjects": [
+        "election audits",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:33.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('IRVIN'), linked to Richard S. Irvin (district 81) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Irvin'), linked to Richard S. Irvin (district 81) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Irvin'), linked to Richard S. Irvin (district 81) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('IRVIN'), linked to Richard S. Irvin (district 81) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot corrections",
+        "voter-roll checks",
+        "election audits",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repirvin.com home page and press-release list page 1 (about 20 items): nothing on the subject",
+        "official site video list (1 video): nothing on the subject",
+        "House caucus site press release of 2021-06-30 (found, one own-words statement)",
+        "news searches on name plus subject words, 2020 certification letter, and 2026 plans (three): no fetched page with his own words beyond the 2021 statement; 2026 ballot line not confirmed, he is a sitting member",
+        "blocked: Ballotpedia (the site returned a bot-check stub for other pages in this batch; not retried)",
+        "not reviewed: bill pages and roll calls (linked separately by brief)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:07:33.413Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.693Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.456Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

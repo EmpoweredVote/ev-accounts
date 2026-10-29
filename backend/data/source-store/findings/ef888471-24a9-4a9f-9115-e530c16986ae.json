@@ -1,0 +1,56 @@
+{
+  "politician_id": "ef888471-24a9-4a9f-9115-e530c16986ae",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "same day registration"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_J._Cronin names him as MA State Senate, Worcester and Middlesex, on the Nov 3, 2026 general-election ballot after advancing in the Sept 1, 2026 primary",
+        "positive control: https://malegislature.gov/Legislators/Profile/JJC0 (Senator John J. Cronin, Worcester and Middlesex)",
+        "On the Record (0 appearances, 0 sources)",
+        "official legislature page and sponsored-bills list https://malegislature.gov/Legislators/Profile/JJC0/Sponsored: no election, voter ID or citizenship bills among sponsored petitions",
+        "malegislature.gov bill search 'voter identification' (194th Court): H833, S510, H834, S505, S498 reviewed; Cronin is not named as the filer of any (not confirmed for the full co-sponsor lists)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.senatorcronin.com (no response)",
+        "blocked: https://malegislature.gov/Legislators/Profile/JJC0/Votes (no response)",
+        "not reviewed: roll-call vote records on election bills; web news search not run (search budget used up)",
+        "not reviewed: https://www.johncronin.org (loaded, unverified as his site)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:31.462Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voting access and election integrity bills in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/John_J._Cronin) shows him as the sitting state senator for Worcester and Middlesex, on the 2026-11-03 general election ballot after the 2026-09-01 primary",
+        "Wikipedia page, nothing on the subject",
+        "campaign site johnjcronin.com, nothing on the subject",
+        "Groton Herald 2022-06-16 article on the VOTES Act, a news summary of mail-in and early voting expansion with no quote from him and no ID content (paywalled in part)",
+        "blocked: malegislature.gov legislator pages were not fetched; a Senate roll call PDF seen in search was not opened, its topic is unknown",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches on his name plus voter ID terms, nothing tying him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:42:25.161Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

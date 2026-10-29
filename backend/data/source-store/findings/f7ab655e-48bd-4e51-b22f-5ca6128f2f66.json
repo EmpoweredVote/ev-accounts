@@ -1,0 +1,217 @@
+{
+  "politician_id": "f7ab655e-48bd-4e51-b22f-5ca6128f2f66",
+  "findings": [
+    {
+      "id": "5dd5a9b99b86662d8d80bef039ae790c3aa7242b8d9aa7852c69fca2a4d2a968",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Election security: Indiana is a national leader in election security for holding the line on voter ID laws, citizenship verification, and ensuring the security of absentee ballots. I will work to build on this strong foundation and work proactively to give our voters confidence in our elections.",
+      "note": "From his 2026 Ballotpedia Candidate Connection survey, as candidate for Indiana Secretary of State. Lists election security as a campaign message and describes the state's voter ID, citizenship checks and absentee ballot security as a base to build on.",
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship verification",
+        "mail-ballot security",
+        "election integrity laws in general",
+        "citizenship verification of voters",
+        "absentee ballot security",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f1c7394677a9b0f62d4c173bf5ecd8696d635b33571ae1da6778b757ae07420",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As Secretary of State, Max will fight to protect election integrity, reduce government red tape, and uphold Indiana’s conservative values.",
+      "note": "Biography text in his 2026 Ballotpedia Candidate Connection survey, written in the third person for his campaign. He names election integrity as a priority.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:56:27.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80b5abb15737220e108ceafcf8de89e69fe6f4cf23a879aecfe3a49978982b43",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Transparency portal: a direct channel for citizens to report potential election issues themselves.",
+      "note": "From the same 2026 survey. Proposes a public reporting channel for election concerns.",
+      "subjects": [
+        "election integrity laws in general",
+        "citizen reporting of election issues",
+        "election integrity",
+        "reporting election problems"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e7b8c04047f23339c9f17f14ed764802cac097ec936bc343506ef24b3cf8a92",
+      "kind": "own-words",
+      "url": "https://www.wthitv.com/2026/07/10/max-engling-wins-republican-nomination-indiana-secretary-state-unseating-incumbent-diego-morales/",
+      "date": "2026-07-10",
+      "date_precision": "day",
+      "passage": "“Folks have said it’s maybe not a huge issue. They point to a smaller number of non-citizens that are voting,” Engling said. “I think if there is even one person who is voting here illegally, that’s too many.”",
+      "note": "Quoted by WTHI after the state convention. The same article reports he supports voter ID and says only legal citizens will vote under his watch.",
+      "subjects": [
+        "non-citizen voting",
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9aa61e5ba7dbe69c9c5244e8800be13a9532451abe1f9a28047245aabf57ada",
+      "kind": "own-words",
+      "url": "https://hot1009.com/4478993/max-engling-talks-vision-for-indiana-secretary-of-states-office/",
+      "date": "2026-06-26",
+      "date_precision": "day",
+      "passage": "“One of the ways that you can do that is to change the color of the license, the background color of the license,” Engling said. “So, when you see the license like that come in, you know this person’s not eligible to vote.”",
+      "note": "Quoted by FOX59/CBS4 (via the Hot 100.9 site) in an interview. He proposes a different licence background colour so staff can see that a holder is not eligible to vote.",
+      "subjects": [
+        "proof of identity or eligibility at registration",
+        "non-citizen voting",
+        "state ID design"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "90379aeb2ccbd6a276fb637cca7ec943a5001d53fb006e76e49b4488df5d90d5",
+      "kind": "own-words",
+      "url": "https://hot1009.com/4478993/max-engling-talks-vision-for-indiana-secretary-of-states-office/",
+      "date": "2026-06-26",
+      "date_precision": "day",
+      "passage": "“There’s folks that are here illegally that cannot vote in our elections—we have to make sure we preserve that so that they cannot vote, but then also folks that are here legally but not eligible to vote in our elections,” Engling said. “I’m fully in support of following up and auditing after an election. I think you need to do that to say, ‘Did somebody vote?’, and then, ‘Did they vote illegally and should they be prosecuted?’…We need to be much more proactive to make sure that folks that are not eligible to vote are not registering to vote.”",
+      "note": "Quoted by FOX59/CBS4 in an interview. Supports post-election audits and more active checks that ineligible people do not register.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "post-election audits",
+        "proof of eligibility to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "707e4e786752137ea77bc165c76d54e86688c7793e6b478a6040c44205b05e9a",
+      "kind": "own-words",
+      "url": "https://www.ipm.org/news/2026-08-27/indiana-secretary-of-state-hopefuls-clash-over-voting-rules-office-audit",
+      "date": "2026-08-26",
+      "date_precision": "day",
+      "passage": "“It’s also important that we have only eligible citizens voting in our elections,” Engling said. “We have to know who’s voting in our elections. It is sacred, and if you think that it’s something that’s not important, I would say you fundamentally disqualify yourself for Secretary of State.”",
+      "note": "Quoted by the Indiana Capital Chronicle (published by IPM) from the 2026-08-26 debate. The report says he was the only candidate on stage to support the full SAVE America Act.",
+      "subjects": [
+        "SAVE Act / proof of citizenship",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:13.122Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship verification",
+        "absentee ballot security",
+        "non-citizen voting",
+        "ballot harvesting",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page lists him on the Nov 3, 2026 general election ballot for Indiana Secretary of State (https://ballotpedia.org/Max_Engling)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (2026 Candidate Connection survey)",
+        "not reviewed: campaign site (address not found by direct fetch; web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, ivoterguide.com",
+        "nothing on the subject: legislature bill pages (not a legislator; no sponsorships)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:56:27.135Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail and absentee ballot ID",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name)",
+        "Ballotpedia https://ballotpedia.org/Max_Engling (candidate for Indiana Secretary of State, on the 2026-11-03 general ballot, chosen at the 2026-06-20 state convention; 2026 survey answers used)",
+        "news pages fetched: wthitv.com 2026-07-10, hot1009.com 2026-06-26, ipm.org 2026-08-27",
+        "news searches (1) on name plus voter ID, election integrity, citizenship",
+        "blocked: https://indianacapitalchronicle.com/?p=27323 (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/?p=27617 (HTTP 403)",
+        "blocked: https://www.newsfromthestates.com/node/434309 (HTTP 403)",
+        "not reviewed: https://www.facebook.com/maxenglingforindiana and https://x.com/MaxEngling (social pages, not fetched)",
+        "no personal campaign site found (guessed domains did not resolve)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T22:20:13.122Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

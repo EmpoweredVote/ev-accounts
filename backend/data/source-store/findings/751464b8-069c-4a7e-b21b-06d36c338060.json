@@ -1,0 +1,43 @@
+{
+  "politician_id": "751464b8-069c-4a7e-b21b-06d36c338060",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-02-03 primary (special election for Massachusetts State Senate, 1st Middlesex District); not running for re-election to the House in 2026; term as 16th Middlesex District representative ends 2027-01-06 (https://ballotpedia.org/Rodney_Elliott)",
+        "Massachusetts Legislature profile confirming identity (Representative Rodney M. Elliott of Lowell): https://malegislature.gov/Legislators/Profile/RME1",
+        "Massachusetts Legislature sponsored-bills page: nothing on the subject (https://malegislature.gov/Legislators/Profile/RME1/Sponsored)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official site, campaign site, news search (stopped after losing primary; web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:00.846Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-02-03 special primary for Massachusetts State Senate 1st Middlesex District; https://ballotpedia.org/Rodney_Elliott also says he is not running for re-election to House 16th Middlesex District in 2026 (he holds the House seat until 2027-01-06), so he is not on the 2026 general-election ballot",
+        "positive control: Ballotpedia page https://ballotpedia.org/Rodney_Elliott names him as Massachusetts House 16th Middlesex District member",
+        "On the Record (0 appearances)",
+        "stopped after scope check as the brief directs; no web searches or other pages used"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:13:36.645Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "52d3e817-03bf-4dd5-8a16-67b44acf23ac",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms 2026 general-election candidacy for the Assembly): https://ballotpedia.org/Anamarie_Avila_Farias",
+        "official Assembly site https://a15.asmdc.org/ home page and its search pages (search returned the same page for every term; nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "CalMatters Digital Democracy bill page for SB 1174 (used for the vote record instead of leginfo): https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+        "two web searches on name plus subject words (nothing on the subject)",
+        "not in the Assembly at the time of the 2024 SB 1174 votes: no vote record on that bill"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:57:17.767Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "politician_id": "1adb3e54-9f6d-475c-9c4b-9a499f7a9f29",
+  "findings": [
+    {
+      "id": "24fedc821e2df29808dcb975dbdcfb411ee68b22593448afa98c74fb957adb49",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/87/jacobson/media/3upbl1ng/1142025_pr_jacobson_voter_id_passes_assembly.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“I’m proud to join my fellow State Representatives and put this amendment to the voters,” said Rep. Jacobson. “When my constituents go to the polls, they should have the utmost confidence that they are casting their vote in an election that is fair and without fraud. Today’s vote is an important step in enshrining election integrity.”",
+      "note": "Press release from his Assembly office on his vote for SJR 2, the photo ID constitutional amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:49.981Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23781b6fa05cff4528e5d5b668e21afff972a05e7d52c2af6ccb1d10adad210d",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/87/jacobson/media/3upbl1ng/1142025_pr_jacobson_voter_id_passes_assembly.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Wisconsin’s voting ID requirements has been the law of the land since for over a decade. It has withstood thorough legal scrutiny, and the latest polls show an overwhelming majority of Wisconsinites support showing a photo ID to vote. However, we have already seen that an activist court can reverse legally settled decisions. By passing this resolution, we are giving the voters a chance to avoid relitigating this issue.”",
+      "note": "Same release; he cites court history and polling and says the amendment lets voters settle the question.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:49.981Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('B. Jacobson') on the official bill page; linked to Brent Jacobson via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('JACOBSON, B'), linked to Brent Jacobson (district 87) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('B. Jacobson') on the official bill page; linked to Brent Jacobson via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "election integrity",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his Assembly site press release page 1 (the Jan 2025 voter ID release was reached from a search link)",
+        "candidacy: https://www.wsaw.com/2026/03/27/rep-jacobson-announces-re-election-bid-2026 says he will seek a second term for the 87th Assembly District; no official November ballot list reviewed",
+        "https://wausaupilotandreview.com/2024/02/20/jacobson-announces-assembly-run/ (2024 campaign launch; nothing on the subject)",
+        "blocked: https://www.wispolitics.com/?p=365141 (paywalled; only the first sentence shown, full text read from his official PDF instead)",
+        "blocked: https://www.wispolitics.com/2026/dc-wrap-wisconsin-lawmakers-split-on-gop-bill-to-require-proof-of-citizenship-to-register-to-vote/ (403; not about him as a state official in any case)",
+        "not reviewed: https://ballotpedia.org/Brent_Jacobson_(Wisconsin) (Ballotpedia returned empty pages for others in this batch)",
+        "two web searches on name plus voter ID and ballot words",
+        "campaign site: jacobsonforassembly.com not fetched; nothing on proof of citizenship or SAVE Act found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:58:49.981Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.784Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

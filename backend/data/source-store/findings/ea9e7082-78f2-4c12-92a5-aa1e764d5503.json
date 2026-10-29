@@ -1,0 +1,31 @@
+{
+  "politician_id": "ea9e7082-78f2-4c12-92a5-aa1e764d5503",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found by extract-otr.mjs",
+        "web search on name plus voter ID and SB 202 (nothing by him on the subject)",
+        "web search on name plus election and voting rights bill",
+        "https://roughdraftatlanta.com/2025/12/16/howard-defeats-bruce-runoff/ fetched; confirms he won the Senate District 35 runoff 2025-12-16; no statements on the subject",
+        "https://www.billtrack50.com/billdetail/1976167 fetched; he is a listed sponsor of SB 536 (Henry McNeal Turner Voting Rights Act, 2026), which is on voter suppression and vote dilution, not ID or citizenship; nothing on the subject",
+        "blocked: https://ballotpedia.org/Jaha_Howard (403)",
+        "official Senate page and campaign site: not reviewed (no URL reached)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.973Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

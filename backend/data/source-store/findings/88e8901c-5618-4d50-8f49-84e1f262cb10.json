@@ -1,0 +1,32 @@
+{
+  "politician_id": "88e8901c-5618-4d50-8f49-84e1f262cb10",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://senatepress.net/sen-adrienne-white-carden-officially-sworn-in-as-georgia-state-senator.html (sworn in to the Georgia Senate, District 7, on 2026-06-26 after a special election; sitting official, so in scope)",
+        "On the Record (0 appearances; run with her name)",
+        "blocked: https://ballotpedia.org/Adrienne_White_Carden (fetch returned empty page; a browser-agent retry was not attempted)",
+        "https://roughdraftatlanta.com/2026/06/29/adrienne-carden-sworn-in/ (nothing on the subject)",
+        "https://gawinlist.com/adrienne-white/ (endorsing-group profile; one general line about voting rights is the group's wording, not hers; not saved)",
+        "web search for her name with voter ID and proof of citizenship (nothing on the subject)",
+        "web search for her name with special election and voting rights (nothing on the subject)",
+        "official Senate and campaign site: no campaign site found; only press release reviewed",
+        "legis.ga.gov bill pages: not reviewed (login token needed); she took her seat only in June 2026, after the 2026 session"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.734Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "politician_id": "891030da-39e2-496f-8a20-72aeb27093ba",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia 2026 Massachusetts House elections page (https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026) lists David Muradian Jr. (i) for 9th Worcester with no primary opponent filed, and in the general election list; sits in the 9th Worcester district per https://malegislature.gov/Legislators/Profile/DKM1",
+        "On the Record (0 appearances, 0 meetings)",
+        "official legislature profile and sponsored-bills list (https://malegislature.gov/Legislators/Profile/DKM1): only election-related item is H.3394, an election worker appreciation day bill, which is not on the subject",
+        "Ballotpedia personal page https://ballotpedia.org/David_Muradian: page does not exist, nothing on the subject",
+        "campaign site: not reviewed, no campaign site URL found; guessed domains returned forbidden pages",
+        "news search: not reviewed, the shared web search budget was used up",
+        "not reviewed: ontheissues.org, vote411 (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:15:00.231Z",
+      "by": "source-collector"
+    }
+  ]
+}

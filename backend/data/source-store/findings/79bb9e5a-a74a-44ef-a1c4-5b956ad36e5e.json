@@ -1,0 +1,89 @@
+{
+  "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Ed_Soliday (redirects to Edmond Soliday) says he is the Indiana House District 4 member, advanced from the May 5, 2026 primary, and is on the November 3, 2026 general-election ballot",
+        "On the Record (0 meetings; extract-otr returned 0 appearances and 0 candidates)",
+        "campaign site https://www.edsoliday.com/ (home page read; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Ed_Soliday (read; nothing on the subject; lists Elections and Apportionment committee seats in earlier sessions only)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_edmond_soliday_1 (JavaScript-only page; no bill or sponsor text returned)",
+        "blocked: https://legiscan.com/IN/legislators?q=Soliday (HTTP 403)",
+        "not found: https://www.indianahouserepublicans.com/members/soliday/ (HTTP 404)",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources; not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:40:04.374Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "Ballotpedia (https://ballotpedia.org/Edmond_Soliday): sitting Indiana House member for District 4, advanced from the 2026-05-05 primary, on the 2026 general-election ballot; nothing on the subject on the page",
+        "On the Record (0 meetings)",
+        "campaign site (https://www.edsoliday.com): confirms the person; nothing on the subject",
+        "web search on his name plus voter ID, citizenship and absentee ballots: nothing on the subject",
+        "web search on SB 10 (2025) coverage: the Indiana Capital Chronicle quotes him only on a water bill, not on voter ID",
+        "not reviewed: Indiana roll calls for IN-SB-10-2025 (already on file, per the brief)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_edmond_soliday_1 (page needs JavaScript; bill sponsorships not readable)",
+        "blocked: https://www.indianahouserepublicans.com/members/ed-soliday (404)",
+        "not reviewed: floor remarks and social media"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:15:29.704Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

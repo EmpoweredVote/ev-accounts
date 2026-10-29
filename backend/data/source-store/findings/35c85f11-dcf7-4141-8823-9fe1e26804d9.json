@@ -1,0 +1,53 @@
+{
+  "politician_id": "35c85f11-dcf7-4141-8823-9fe1e26804d9",
+  "findings": [
+    {
+      "id": "cf5a9af906918ad5e39973bed08207e1de8d754ecc07ce866127872698f132d9",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34196/Olsommer-Signs-Discharge-Resolution-to-Advance-Voter-ID-?SiteID=1",
+      "date": "2024-05",
+      "date_precision": "month",
+      "passage": "“I’m proud to add my signature to this petition and stand with my colleagues to get this issue before the voters,” Olsommer said. “Trust in our election system is vital to the integrity of the process. It’s time we deliver this commonsense reform to Pennsylvanians.”",
+      "note": "Statement in a House caucus release after he signed the discharge resolution to move House Bill 891 (constitutional amendment requiring ID each time a person votes) out of committee. Release is from his first days in office (sworn in 2024-05-21); exact release day not shown on fetched page. Same quote also printed by The River Reporter on 2024-05-29.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:25.643Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "constitutional amendment on ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House caucus site (press release on discharge resolution, fetched)",
+        "official site https://www.repolsommer.com/ (home page news list and site search: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jeff_Olsommer (page returned empty)",
+        "Wikipedia page (confirms House 139th district, took office 2024-05-21)",
+        "news search on name plus voter ID / election integrity / mail ballot (only the River Reporter story and the House caucus release carry his words)",
+        "one caucus release on ID verification for mail ballots does not mention him: nothing on the subject",
+        "2026 ballot status: one candidate-tracking listing for the 2026-11-03 District 139 race seen in search; not confirmed on an official page; he is the sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:05:25.643Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "politician_id": "982ad606-8fc5-4d99-9275-c24b09c65c0c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (no repo scripts permitted)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "Ballotpedia profile (fetched by curl)",
+        "web searches on name plus voter ID words",
+        "campaign site https://www.hillarykent.com/ (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:05.436Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

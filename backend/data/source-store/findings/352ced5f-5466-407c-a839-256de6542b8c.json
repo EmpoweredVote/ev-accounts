@@ -1,0 +1,350 @@
+{
+  "politician_id": "352ced5f-5466-407c-a839-256de6542b8c",
+  "findings": [
+    {
+      "id": "fa7ad6519186384d469ee3c3e05872bd72e8d5cdab089b02ba51e88ae52f2eb7",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/news/press-release-archive/2023-2024-press-releases/legislative-democrats-release-bill-package-for-voter-confidence-accessibility-residency-and-ease/",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "In a move to foster equal voting rights, the package recognizes college campus IDs as valid voter IDs.",
+      "note": "Joint release by Assembly and Senate members, posted on her official site, describing a bill package (Voter C.A.R.E.) that treats college campus IDs as valid voter IDs. The date comes from the site's press release list; the page itself does not show a named speaker for this sentence.",
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:53.124Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2c1b7d11e6305727c005c62f1fd9bfa79c9f071058b4d72c8e9b5737ea195c9",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/news/press-release-archive/2023-2024-press-releases/legislative-democrats-release-bill-package-for-voter-confidence-accessibility-residency-and-ease/",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "We should be making voting more accessible, not more difficult.",
+      "note": "Closing quote in the same joint caucus release posted on her site; no speaker is named on the page.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:53.124Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55e06d1599c2b6869ce1e0d785d08df0e3a8ee4bd79711415510902d4f42c688",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/news/press-release-archive/2025-2026-press-releases/condemning-doj-s-request-for-state-voter-records/",
+      "date": "2025-07-22",
+      "date_precision": "day",
+      "passage": "Time and time again, the integrity of Wisconsin’s elections have proven to be safe, reliable and secure.",
+      "note": "Statement in her name responding to a federal request to the state elections commission for the voter registration list. She opposes handing over the list and says the state should protect voters' personal information.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:53.124Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5932947fbccda08ced1fc06fb2391192de9aba0b9e5c1f6924aa1cd904e4e2f3",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/news/press-release-archive/2025-2026-press-releases/rivera-wagner-snodgrass-renew-call-for-stronger-election-laws-following-referral-of-complaints-against-elon-musk/",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "passage": "Rivera-Wagner and Snodgrass called on legislative leaders to revisit their proposal and strengthen Wisconsin’s election laws before another election is overshadowed by questions about whether extraordinary wealth can purchase extraordinary political influence.",
+      "note": "Joint release with another representative on a bill against giving money or prizes to influence voting; about election bribery, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "election bribery"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:53.124Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dccf38ffb871dd8986fae982ed8dffc4981f7fc51e86122a027908367c09d0c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-941-2025",
+      "act": "sponsor",
+      "note": "AB 941, student identification used for voting. Snodgrass is among the Assembly members listed in the first history entry (introduced and referred to the Committee on Campaigns and Elections, 1/28/2026).",
+      "subjects": [
+        "student ID as voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:53.124Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Snodgrass') on the official bill page; linked to Lee Snodgrass via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Snodgrass') on the official bill page; linked to Lee Snodgrass via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ff0856102363887c14146ae12f952c4830db92d5a7fe5cdb6078572f5db54dc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "nay",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('SNODGRASS'), linked to Lee Snodgrass (district 57) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('SNODGRASS'), linked to Lee Snodgrass (district 57) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Snodgrass') on the official bill page; linked to Lee Snodgrass via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Snodgrass') on the official bill page; linked to Lee Snodgrass via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d276d5ce64efb2eb6909119f31c4e388580944bb124791374d00949f15781e07",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('SNODGRASS'), linked to Lee Snodgrass (district 57) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('SNODGRASS'), linked to Lee Snodgrass (district 52) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('SNODGRASS'), linked to Lee Snodgrass (district 57) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and federal requests for voter lists",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/52/snodgrass/ (names her as the 52nd District representative)",
+        "official press release list https://legis.wisconsin.gov/assembly/52/snodgrass/news/press-releases/ (2021 to 2026 election-related titles opened: 3 saved, plus V.O.T.E. package release seen on Urban Milwaukee copy, off the five positions)",
+        "candidacy: https://theballotbrief.com/state/wisconsin/outagamie-county/wisconsin-assembly-district-52 shows her on the November 3, 2026 general election ballot",
+        "legislature page for AB 941 https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+        "blocked: https://ballotpedia.org/Lee_Snodgrass (not fetched; Ballotpedia returned 403 for other pages in this batch)",
+        "blocked: https://www.wispolitics.com/2025/lawmakers-tout-competing-gop-dem-election-packages-at-joint-presser/",
+        "not reviewed: a separate personal campaign site (search lists one but the address was not given)",
+        "two news searches on name plus subject words: no own words on photo ID or citizenship proof found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:59:53.124Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T23:15:12.777Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

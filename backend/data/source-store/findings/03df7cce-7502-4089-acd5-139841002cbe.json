@@ -1,0 +1,30 @@
+{
+  "politician_id": "03df7cce-7502-4089-acd5-139841002cbe",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "SAVE Act",
+        "election integrity",
+        "2026 statewide voter ID initiative"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Eleni_Kounalakis (sitting Lieutenant Governor; won the 2026-06-02 primary for Treasurer and is on the 2026 general-election ballot)",
+        "official Lieutenant Governor site https://ltg.ca.gov/ (site search for voter ID, citizenship and election integrity returned only unrelated press releases; nothing on the subject)",
+        "not reviewed: campaign site (https://www.elenikounalakis.com/ only redirects to a placeholder page)",
+        "no legislative votes: the office has no floor votes on bills; CalMatters Digital Democracy pages for SB 1174 of 2024 and AB 25 of 2025 list no vote by this person",
+        "Wikipedia and Ballotpedia pages on the 2026 California voter ID initiative (neither names this person)",
+        "web searches on name plus voter ID, proof of citizenship, and the 2026 initiative (nothing naming this person)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:01:49.166Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

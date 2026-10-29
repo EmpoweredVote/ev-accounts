@@ -1,0 +1,56 @@
+{
+  "politician_id": "44ca0b25-e4b9-4409-8407-f5119568be3e",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Donald_Wong says he is on the 2026 general-election ballot (9th Essex District) after the 2026-09-01 primary",
+        "On the Record (0 appearances for this person; extract-otr returned no sources)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/DHW1 (sponsored list: nothing on the subject)",
+        "malegislature.gov cosponsored page https://malegislature.gov/Legislators/Profile/DHW1/Cosponsored (only a partial list of about 10 bills shown; nothing on the subject; full list not reviewed)",
+        "Ballotpedia (no issue positions; no Candidate Connection survey)",
+        "blocked: https://www.donaldwong.org (domain does not resolve)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: campaign site (not found); other URL-pattern pages"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:07:36.782Z",
+      "by": "source-collector"
+    }
+  ]
+}

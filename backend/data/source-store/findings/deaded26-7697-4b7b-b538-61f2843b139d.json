@@ -1,0 +1,66 @@
+{
+  "politician_id": "deaded26-7697-4b7b-b538-61f2843b139d",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Horner'), linked to Mitchell Horner (district 3) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: confirmed on the 2026 general-election ballot for Georgia House District 3 via https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-3 (lists Edward Mitchell Horner)",
+        "not reviewed: On the Record extract script (not run in this session; standing rule bars running repo scripts)",
+        "blocked: https://ballotpedia.org/Mitchell_Horner (page returned empty)",
+        "https://house-press.com/representative/mitchell-horner/ : page 1 of his press list has nothing on the subject; page 2 not reviewed",
+        "web search: voter ID, election integrity: only ballot QR-code and elections-board bills (HB 998, HB 894, HB 1112) seen in search results, not fetched from an official page, so not saved",
+        "legis.ga.gov bill pages not opened (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.908Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

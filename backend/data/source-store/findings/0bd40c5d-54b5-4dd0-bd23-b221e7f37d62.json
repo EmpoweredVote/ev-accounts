@@ -1,0 +1,66 @@
+{
+  "politician_id": "0bd40c5d-54b5-4dd0-bd23-b221e7f37d62",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Prokopiak'), linked to Jim Prokopiak (district 140) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID",
+        "proof of identity with a mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.pahouse.com/Prokopiak (homepage, news center, in-the-news list: nothing on the subject; only a general reminder to register before the general election)",
+        "positive control: https://www.pahouse.com/Prokopiak names him as the sitting House member",
+        "web searches on his name plus voter ID, photo ID, mail ballot, election integrity, election reform: no statement from him found",
+        "blocked: https://ballotpedia.org/Jim_Prokopiak (empty page, status 202; not retried)",
+        "legislature bill pages: not reviewed (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:49.076Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.716Z",
+      "by": "identity-pa-2026-10-28"
+    }
+  ]
+}

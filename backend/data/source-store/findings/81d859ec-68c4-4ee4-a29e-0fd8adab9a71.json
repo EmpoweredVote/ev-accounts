@@ -1,0 +1,68 @@
+{
+  "politician_id": "81d859ec-68c4-4ee4-a29e-0fd8adab9a71",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Rivera'), linked to Nikki Rivera (district 96) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official House page https://www.pahouse.com/Rivera (confirms sitting member for the 96th District, Lancaster County; nothing on the subject)",
+        "official news list https://www.pahouse.com/Rivera/InTheNews (20 releases Jun to Oct 2026 plus a 2025 column and newsletter, nothing on the subject by title; contents not read in full)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Nikki_Rivera (empty page)",
+        "blocked: https://penncapital-star.com/campaigns-elections/lancaster-dems-school-board-leader-to-replace-rep-mike-sturla-in-96th-house-district-race/ (403)",
+        "one web search on name plus voter ID words (nothing on the subject)",
+        "2026 ballot status: not confirmed from a page",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:08:02.729Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.716Z",
+      "by": "identity-pa-2026-10-28"
+    }
+  ]
+}

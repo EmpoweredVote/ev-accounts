@@ -1,0 +1,365 @@
+{
+  "id": "CA-AB-1116-2025",
+  "scope": "state:ca",
+  "title": "AB 1116 (2025-2026 Regular Session): Elections: voter registration.",
+  "urls": [
+    "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260AB1116 (archive capture 2025-09-19, stale)",
+    "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1116 (archive resolved to https://web.archive.org/web/20250919041535/ ...)",
+    "Versions listed in archive: 06/23/25 Amended Senate; 04/22/25 Amended Assembly; 03/28/25 Amended Assembly; 02/20/25 Introduced (not read)",
+    "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116 (status and summary only)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SEC. 2 (adds Elections Code Section 2196) (a)(1) - 06/23/25 version\n(quote) 2196. (a) (1) Notwithstanding any other law, a person who is qualified to register to vote may submit an affidavit of voter registration electronically on the Secretary of State’s internet website pursuant to this section.\n(section) SEC. 2 (2196)(a)(7)(C)\n(quote) (C) The last four digits of the person’s social security number.\n(section) SEC. 2 (2196)(a)(9)\n(quote) (9) Upon submission of an affidavit pursuant to this section not providing a California driver’s license or state identification number, but providing the last four digits of the applicant’s social security number, the electronic voter registration system shall authenticate the identity of the applicant under a process developed by the Secretary of State that verifies all of the following information using information maintained by the Secretary of State or the federal Social Security Administration:\n(section) SEC. 2 (2196)(d)\n(quote) (d) If an applicant cannot electronically submit the information required pursuant to paragraph (7) of subdivision (a), or if an applicant under paragraph (9) of subdivision (a) is unable to upload provide an electronic image of the applicant’s signature pursuant to paragraph (10) of subdivision (a), the applicant shall nevertheless be able to complete the affidavit of voter registration electronically on the Secretary of State’s internet website, print a hard copy of the completed affidavit, and mail or deliver the hard copy of the completed affidavit to the Secretary of State or the appropriate county elections official.\n(section) Legislative Counsel's Digest (06/23/25)\n(quote) This bill would additionally authorize a person who is qualified to register to vote to submit an affidavit of voter registration on the Secretary of State’s internet website even if the person has not been issued a California driver’s license or state identification card, as long as the person provides the last four digits of their social security number with their affidavit.\n(other) SEC. 1: Amends Elections Code Section 2196 (online voter registration for holders of a California driver’s license or state ID) until it is repealed on September 1, 2027.\n(other) SEC. 2 (2196)(a)(4)-(6),(10): Signature comparison and signature-image collection for online registrants.\n(other) SEC. 2 (2196)(e): Operative date: earlier of January 1, 2027 or five days after the Secretary of State certifies the IT infrastructure is functional (06/23/25 version). CalMatters summary of the enrolled version says operative January 1, 2029.",
+  "sponsors": [
+    {
+      "name": "Berman (A)",
+      "role": "author",
+      "version": "Enrolled 08/27/2026 per CalMatters; text NOT obtained. Text below is the 06/23/25 Amended Senate version, the latest in the Internet Archive copy (captured 2025-09-19), so it may differ from the enrolled bill."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-06-03",
+      "body": "CA Assembly",
+      "motion": "AB 1116 Berman Assembly Third Reading (PASS)",
+      "kind": "roll-call",
+      "yes": 60,
+      "no": 18,
+      "absent": 1,
+      "body_size": 79,
+      "note": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116 (Internet Archive copy, capture 2025-09-19; official roll call, names as printed; NVR count 1)",
+      "members": [
+        {
+          "name": "Addis",
+          "vote": "yea"
+        },
+        {
+          "name": "Aguiar-Curry",
+          "vote": "yea"
+        },
+        {
+          "name": "Ahrens",
+          "vote": "yea"
+        },
+        {
+          "name": "Alvarez",
+          "vote": "yea"
+        },
+        {
+          "name": "Arambula",
+          "vote": "yea"
+        },
+        {
+          "name": "Ávila Farías",
+          "vote": "yea"
+        },
+        {
+          "name": "Bains",
+          "vote": "yea"
+        },
+        {
+          "name": "Bauer-Kahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennett",
+          "vote": "yea"
+        },
+        {
+          "name": "Berman",
+          "vote": "yea"
+        },
+        {
+          "name": "Boerner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bonta",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Caloza",
+          "vote": "yea"
+        },
+        {
+          "name": "Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Connolly",
+          "vote": "yea"
+        },
+        {
+          "name": "Elhawary",
+          "vote": "yea"
+        },
+        {
+          "name": "Fong",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabriel",
+          "vote": "yea"
+        },
+        {
+          "name": "Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Gipson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark González",
+          "vote": "yea"
+        },
+        {
+          "name": "Haney",
+          "vote": "yea"
+        },
+        {
+          "name": "Harabedian",
+          "vote": "yea"
+        },
+        {
+          "name": "Hart",
+          "vote": "yea"
+        },
+        {
+          "name": "Irwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Kalra",
+          "vote": "yea"
+        },
+        {
+          "name": "Krell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowenthal",
+          "vote": "yea"
+        },
+        {
+          "name": "McKinnor",
+          "vote": "yea"
+        },
+        {
+          "name": "Muratsuchi",
+          "vote": "yea"
+        },
+        {
+          "name": "Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "Ortega",
+          "vote": "yea"
+        },
+        {
+          "name": "Pacheco",
+          "vote": "yea"
+        },
+        {
+          "name": "Papan",
+          "vote": "yea"
+        },
+        {
+          "name": "Patel",
+          "vote": "yea"
+        },
+        {
+          "name": "Pellerin",
+          "vote": "yea"
+        },
+        {
+          "name": "Petrie-Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Quirk-Silva",
+          "vote": "yea"
+        },
+        {
+          "name": "Ramos",
+          "vote": "yea"
+        },
+        {
+          "name": "Ransom",
+          "vote": "yea"
+        },
+        {
+          "name": "Celeste Rodriguez",
+          "vote": "yea"
+        },
+        {
+          "name": "Michelle Rodriguez",
+          "vote": "yea"
+        },
+        {
+          "name": "Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea"
+        },
+        {
+          "name": "Schiavo",
+          "vote": "yea"
+        },
+        {
+          "name": "Schultz",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharp-Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Solache",
+          "vote": "yea"
+        },
+        {
+          "name": "Soria",
+          "vote": "yea"
+        },
+        {
+          "name": "Stefani",
+          "vote": "yea"
+        },
+        {
+          "name": "Valencia",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Wicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Zbur",
+          "vote": "yea"
+        },
+        {
+          "name": "Rivas",
+          "vote": "yea"
+        },
+        {
+          "name": "Alanis",
+          "vote": "nay"
+        },
+        {
+          "name": "Castillo",
+          "vote": "nay"
+        },
+        {
+          "name": "Chen",
+          "vote": "nay"
+        },
+        {
+          "name": "Davies",
+          "vote": "nay"
+        },
+        {
+          "name": "DeMaio",
+          "vote": "nay"
+        },
+        {
+          "name": "Dixon",
+          "vote": "nay"
+        },
+        {
+          "name": "Ellis",
+          "vote": "nay"
+        },
+        {
+          "name": "Gallagher",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Gonzalez",
+          "vote": "nay"
+        },
+        {
+          "name": "Hadwick",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoover",
+          "vote": "nay"
+        },
+        {
+          "name": "Lackey",
+          "vote": "nay"
+        },
+        {
+          "name": "Macedo",
+          "vote": "nay"
+        },
+        {
+          "name": "Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sanchez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ta",
+          "vote": "nay"
+        },
+        {
+          "name": "Tangipa",
+          "vote": "nay"
+        },
+        {
+          "name": "Wallis",
+          "vote": "nay"
+        },
+        {
+          "name": "Flora",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T16:00:28.285005Z)",
+    "fetched_at": "2026-10-28T16:00:28.285005Z",
+    "method": "curl"
+  }
+}

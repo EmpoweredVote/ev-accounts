@@ -1,0 +1,33 @@
+{
+  "politician_id": "107f5361-ddf4-4b26-a638-f5582430a0a5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "photo ID",
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "documentary proof of citizenship (SAVE Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://ballotpedia.org/Kimberly_Pope_Adams (confirms sitting delegate for District 82, took office 2026-01-14, term to 2028; nothing on the subject)",
+        "https://law.lis.virginia.gov/vacode/title24.2/chapter6/section24.2-602.1/ (2026 law on ID badges for electoral board members, not voter ID; page does not name a patron)",
+        "https://house.vga.virginia.gov/subcommittees/H18001/agendas/5356 and https://hodspeak.house.virginia.gov/committees/H18/bills/HB234/comments (no patron or own words readable)",
+        "blocked: https://cpo.soar.com (host not found) and https://origin.vpap.org/legislators/441964-kimberly-pope-adams (SSL handshake failure)",
+        "no campaign or official site reached; no site found by search",
+        "search summaries say she is chief patron of 2026 HB 234 (electoral board members wear ID badges); no official page naming her was reachable, and it is not about voter ID, so not saved",
+        "blocked: https://lis.virginia.gov bill pages (page loads its content with JavaScript, nothing readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:27:45.924Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

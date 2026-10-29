@@ -1,0 +1,66 @@
+{
+  "politician_id": "57f9eb3c-0554-43ed-b93b-c1ecfbb269fe",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('TENORIO'), linked to Angelito Tenorio (district 14) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Angelito_Tenorio (empty page)",
+        "official Assembly page for the 14th District (confirms office; nothing on the subject)",
+        "news and updates list on his official site (3 items, June to August 2025; nothing on the subject)",
+        "April 15, 2026 re-election announcement on two sites (confirms 2026 candidacy; no passage on the subject)",
+        "web search on his name with voter ID (no own words found)",
+        "not reviewed: no standalone campaign-site pages fetched",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:59:04.850Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

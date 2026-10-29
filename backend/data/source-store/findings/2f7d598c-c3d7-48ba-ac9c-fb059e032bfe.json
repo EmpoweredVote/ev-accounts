@@ -1,0 +1,79 @@
+{
+  "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Liz_Miranda names her as incumbent, MA Senate 2nd Suffolk, advanced from the Sept 1, 2026 primary and on the Nov 3, 2026 ballot",
+        "On the Record (0 meetings; script returned 0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Liz_Miranda (nothing on the subject)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/L%20M0 (confirms Senator Liz Miranda, Second Suffolk)",
+        "MA Legislature sponsored and cosponsored bill lists, 194th and 193rd sessions (only voting-rights bills on felony-voting restoration, age 16-17 municipal voting, and ballot-related local items; nothing on ID or citizenship proof); 192nd to 190th sessions returned no election-related bills",
+        "nothing on the subject: https://malegislature.gov/Bills/194/S7 and https://malegislature.gov/Bills/194/S524 (voting rights; S524 text is about restoring voting rights to incarcerated citizens)",
+        "not reviewed: https://en.wikipedia.org/wiki/Liz_Miranda (lead only, no ID content)",
+        "blocked: https://lizmiranda.com (HTTP 403, also www.)",
+        "unreachable: https://www.lizforma.com (no response)",
+        "not done: news search and web search on name plus subject words; the session's shared web search budget was used up, so these could not run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:06:47.486Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voting-rights bills in general (checked for any ID or citizenship content)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting 2nd Suffolk state senator on the 2026 general-election ballot; nothing on the subject)",
+        "MA Legislature bill pages S7 (2025-2026 voting-rights constitutional amendment), S524 (voting rights restoration), nothing on ID or citizenship",
+        "two news searches on name plus subject words (nothing on the subject)",
+        "campaign site: not reviewed, none found",
+        "official legislator profile: not reviewed, profile URL pattern returned 404"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:09.646Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

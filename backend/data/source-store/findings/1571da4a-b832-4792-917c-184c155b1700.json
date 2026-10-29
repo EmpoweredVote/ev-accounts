@@ -1,0 +1,56 @@
+{
+  "politician_id": "1571da4a-b832-4792-917c-184c155b1700",
+  "findings": [
+    {
+      "id": "8f83a50249e07bb1c591c6e70aaf5bd40d44b18b0f38ab039c4a5f79ea31354a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Min Senate Third Reading By BERMAN (Assembly floor)",
+      "note": "The Assembly floor roll call for SB 1174 (Elections: voter identification), which bars cities and districts, including charter cities, from requiring ID to vote at a polling place or ballot drop-off, passed 57 to 16 with 6 not voting. The roll call lists members by surname only; the surname Reyes appears in the Ayes list, and the 2024 Assembly had one member of that surname. At that time she served in the Assembly; Ballotpedia shows she took her Senate seat on 2024-12-02. Archived copy of the official leginfo vote page; the live page is blocked. The bill was chaptered 2024-09-29 as Chapter 990, Statutes of 2024.",
+      "subjects": [
+        "local voter-ID rules barred",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:36.896Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ban by local governments (SB 1174 of 2024)",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia https://ballotpedia.org/Eloise_G%C3%B3mez_Reyes shows her as the Senate District 29 member, in office since 2024-12-02, term ending 2028-12-04 (not on the 2026 ballot)",
+        "On the Record (0 meetings)",
+        "official site https://sd29.senate.ca.gov/ (home): nothing on the subject; the news page address tried returned 404",
+        "campaign site: not reviewed, no address found (https://www.eloisereyes.com/ did not load)",
+        "Ballotpedia: nothing on the subject",
+        "SB 1174 of 2024 Assembly floor vote (archived copy of leginfo, see finding)",
+        "blocked: https://leginfo.legislature.ca.gov (live pages return a bot-check 403)",
+        "blocked: https://legiscan.com (bot-check 403)",
+        "news search on her name plus voter ID, SAVE Act, proof of citizenship, election integrity: nothing by or about her on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:59:36.896Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

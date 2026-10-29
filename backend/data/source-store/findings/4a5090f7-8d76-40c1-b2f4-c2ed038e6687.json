@@ -1,0 +1,63 @@
+{
+  "politician_id": "4a5090f7-8d76-40c1-b2f4-c2ed038e6687",
+  "findings": [
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "House member page https://house.vga.virginia.gov/members/H0351 (confirms 12th District delegate, member since 2023; bill list needs JavaScript)",
+        "campaign site hollyseibold.com home page and blog feed: nothing on the subject",
+        "Ballotpedia profile: nothing on the subject",
+        "On the Record (0 meetings)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (page needs JavaScript, no text)",
+        "blocked: https://www.vpap.org (voting record pages need JavaScript, no text)",
+        "blocked: https://legiscan.com (403)",
+        "news search on name plus voter ID: nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:08.564Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -3,10 +3,63 @@
   "scope": "state:mi",
   "title": "SB 304 (2021) — Notice to provisional-ballot voter about burden of proving identity and fee-free state ID (amends MCL 168.523a)",
   "urls": [
-    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304"
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304",
+    "https://www.legislature.mi.gov/documents/2021-2022/billenrolled/Senate/htm/2021-SNB-0304.htm"
   ],
   "version": "other",
   "operative_text": "Provisional-ballot notice about ID burden and free state ID: [bill-page subject line only; enrolled text not fetched]",
+  "sponsors": [
+    {
+      "name": "Curtis VanderWall (District 35)",
+      "role": "prime",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Kimberly LaSata (District 21)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Kenneth Horn (District 32)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Lana Theis (District 22)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Jim Stamas (District 36)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Dale Zorn (District 17)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Tom Barrett (District 24)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Kevin Daley (District 31)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Rick Outman (District 33)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    },
+    {
+      "name": "Dan Lauwers (District 25)",
+      "role": "co",
+      "version": "Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\""
+    }
+  ],
   "single_subject": [
     {
       "season": 3,
@@ -65,11 +118,1219 @@
       "body_size": 110,
       "note": "member names not captured",
       "members": []
+    },
+    {
+      "date": "2021-06-16",
+      "body": "MI Senate",
+      "motion": "PASSED ROLL CALL # 276 YEAS 19 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 16,
+      "absent": 1,
+      "body_size": 36,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | SJ 56 Pg. 987 | https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-06-16-056.htm",
+      "members": [
+        {
+          "name": "Bizon",
+          "vote": "yea"
+        },
+        {
+          "name": "LaSata",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Theis",
+          "vote": "yea"
+        },
+        {
+          "name": "Bumstead",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauwers",
+          "vote": "yea"
+        },
+        {
+          "name": "Runestad",
+          "vote": "yea"
+        },
+        {
+          "name": "VanderWall",
+          "vote": "yea"
+        },
+        {
+          "name": "Daley",
+          "vote": "yea"
+        },
+        {
+          "name": "MacDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Victory",
+          "vote": "yea"
+        },
+        {
+          "name": "Horn",
+          "vote": "yea"
+        },
+        {
+          "name": "McBroom",
+          "vote": "yea"
+        },
+        {
+          "name": "Shirkey",
+          "vote": "yea"
+        },
+        {
+          "name": "Zorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Nesbitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Stamas",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Bullock",
+          "vote": "nay"
+        },
+        {
+          "name": "Hollier",
+          "vote": "nay"
+        },
+        {
+          "name": "Moss",
+          "vote": "nay"
+        },
+        {
+          "name": "Ananich",
+          "vote": "nay"
+        },
+        {
+          "name": "Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Irwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Polehanki",
+          "vote": "nay"
+        },
+        {
+          "name": "Bayer",
+          "vote": "nay"
+        },
+        {
+          "name": "Geiss",
+          "vote": "nay"
+        },
+        {
+          "name": "McCann",
+          "vote": "nay"
+        },
+        {
+          "name": "Santana",
+          "vote": "nay"
+        },
+        {
+          "name": "Brinks",
+          "vote": "nay"
+        },
+        {
+          "name": "Hertel",
+          "vote": "nay"
+        },
+        {
+          "name": "McMorrow",
+          "vote": "nay"
+        },
+        {
+          "name": "Wojno",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrett",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-23",
+      "body": "MI House",
+      "motion": "passed; given immediate effect Roll Call # 369 Yeas 58 Nays 52 Excused 0 Not Voting 0",
+      "kind": "roll-call",
+      "yes": 58,
+      "no": 52,
+      "absent": 0,
+      "body_size": 110,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | HJ 60 Pg. 1207 | https://www.legislature.mi.gov/documents/2021-2022/journal/House/htm/2021-HJ-06-23-060.htm",
+      "members": [
+        {
+          "name": "Albert",
+          "vote": "yea"
+        },
+        {
+          "name": "Eisen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kahle",
+          "vote": "yea"
+        },
+        {
+          "name": "Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "LaFave",
+          "vote": "yea"
+        },
+        {
+          "name": "Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Allor",
+          "vote": "yea"
+        },
+        {
+          "name": "Filler",
+          "vote": "yea"
+        },
+        {
+          "name": "Lightner",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Beeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Fink",
+          "vote": "yea"
+        },
+        {
+          "name": "Lilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Schroeder",
+          "vote": "yea"
+        },
+        {
+          "name": "Bellino",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Maddock",
+          "vote": "yea"
+        },
+        {
+          "name": "Slagh",
+          "vote": "yea"
+        },
+        {
+          "name": "Berman",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Marino",
+          "vote": "yea"
+        },
+        {
+          "name": "Tisdel",
+          "vote": "yea"
+        },
+        {
+          "name": "Beson",
+          "vote": "yea"
+        },
+        {
+          "name": "Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Markkanen",
+          "vote": "yea"
+        },
+        {
+          "name": "VanSingel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bezotte",
+          "vote": "yea"
+        },
+        {
+          "name": "Griffin",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "VanWoerkom",
+          "vote": "yea"
+        },
+        {
+          "name": "Bollin",
+          "vote": "yea"
+        },
+        {
+          "name": "Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Meerman",
+          "vote": "yea"
+        },
+        {
+          "name": "Wakeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Borton",
+          "vote": "yea"
+        },
+        {
+          "name": "Hauck",
+          "vote": "yea"
+        },
+        {
+          "name": "Mueller",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendzel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brann",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoitenga",
+          "vote": "yea"
+        },
+        {
+          "name": "O Malley",
+          "vote": "yea"
+        },
+        {
+          "name": "Wentworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Calley",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Whiteford",
+          "vote": "yea"
+        },
+        {
+          "name": "Carra",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Paquette",
+          "vote": "yea"
+        },
+        {
+          "name": "Wozniak",
+          "vote": "yea"
+        },
+        {
+          "name": "Clements",
+          "vote": "yea"
+        },
+        {
+          "name": "Huizenga",
+          "vote": "yea"
+        },
+        {
+          "name": "Posthumus",
+          "vote": "yea"
+        },
+        {
+          "name": "Yaroch",
+          "vote": "yea"
+        },
+        {
+          "name": "Damoose",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, S",
+          "vote": "yea"
+        },
+        {
+          "name": "Aiyash",
+          "vote": "nay"
+        },
+        {
+          "name": "Coleman",
+          "vote": "nay"
+        },
+        {
+          "name": "Lasinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Shannon",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony",
+          "vote": "nay"
+        },
+        {
+          "name": "Ellison",
+          "vote": "nay"
+        },
+        {
+          "name": "Liberati",
+          "vote": "nay"
+        },
+        {
+          "name": "Sneller",
+          "vote": "nay"
+        },
+        {
+          "name": "Bolden",
+          "vote": "nay"
+        },
+        {
+          "name": "Garza",
+          "vote": "nay"
+        },
+        {
+          "name": "Manoogian",
+          "vote": "nay"
+        },
+        {
+          "name": "Sowerby",
+          "vote": "nay"
+        },
+        {
+          "name": "Brabec",
+          "vote": "nay"
+        },
+        {
+          "name": "Haadsma",
+          "vote": "nay"
+        },
+        {
+          "name": "Morse",
+          "vote": "nay"
+        },
+        {
+          "name": "Steckloff",
+          "vote": "nay"
+        },
+        {
+          "name": "Breen",
+          "vote": "nay"
+        },
+        {
+          "name": "Hammoud",
+          "vote": "nay"
+        },
+        {
+          "name": "Neeley",
+          "vote": "nay"
+        },
+        {
+          "name": "Steenland",
+          "vote": "nay"
+        },
+        {
+          "name": "Brixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Hertel",
+          "vote": "nay"
+        },
+        {
+          "name": "O’Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "Cambensy",
+          "vote": "nay"
+        },
+        {
+          "name": "Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tate",
+          "vote": "nay"
+        },
+        {
+          "name": "Camilleri",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "vote": "nay"
+        },
+        {
+          "name": "Pohutsky",
+          "vote": "nay"
+        },
+        {
+          "name": "Thanedar",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson, C",
+          "vote": "nay"
+        },
+        {
+          "name": "Puri",
+          "vote": "nay"
+        },
+        {
+          "name": "Weiss",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter, T",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Rabhi",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitsett",
+          "vote": "nay"
+        },
+        {
+          "name": "Cavanagh",
+          "vote": "nay"
+        },
+        {
+          "name": "Koleszar",
+          "vote": "nay"
+        },
+        {
+          "name": "Rogers",
+          "vote": "nay"
+        },
+        {
+          "name": "Witwer",
+          "vote": "nay"
+        },
+        {
+          "name": "Cherry",
+          "vote": "nay"
+        },
+        {
+          "name": "Kuppa",
+          "vote": "nay"
+        },
+        {
+          "name": "Sabo",
+          "vote": "nay"
+        },
+        {
+          "name": "Yancey",
+          "vote": "nay"
+        },
+        {
+          "name": "Clemente",
+          "vote": "nay"
+        },
+        {
+          "name": "LaGrand",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-10-07",
+      "body": "MI Senate",
+      "motion": "HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 16,
+      "absent": 0,
+      "body_size": 36,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | SJ 78 Pg. 1679 | https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "members": [
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Nesbitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Stamas",
+          "vote": "yea"
+        },
+        {
+          "name": "Bizon",
+          "vote": "yea"
+        },
+        {
+          "name": "LaSata",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Theis",
+          "vote": "yea"
+        },
+        {
+          "name": "Bumstead",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauwers",
+          "vote": "yea"
+        },
+        {
+          "name": "Runestad",
+          "vote": "yea"
+        },
+        {
+          "name": "VanderWall",
+          "vote": "yea"
+        },
+        {
+          "name": "Daley",
+          "vote": "yea"
+        },
+        {
+          "name": "MacDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Victory",
+          "vote": "yea"
+        },
+        {
+          "name": "Horn",
+          "vote": "yea"
+        },
+        {
+          "name": "McBroom",
+          "vote": "yea"
+        },
+        {
+          "name": "Shirkey",
+          "vote": "yea"
+        },
+        {
+          "name": "Zorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Bullock",
+          "vote": "nay"
+        },
+        {
+          "name": "Hollier",
+          "vote": "nay"
+        },
+        {
+          "name": "Moss",
+          "vote": "nay"
+        },
+        {
+          "name": "Ananich",
+          "vote": "nay"
+        },
+        {
+          "name": "Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Irwin",
+          "vote": "nay"
+        },
+        {
+          "name": "Polehanki",
+          "vote": "nay"
+        },
+        {
+          "name": "Bayer",
+          "vote": "nay"
+        },
+        {
+          "name": "Geiss",
+          "vote": "nay"
+        },
+        {
+          "name": "McCann",
+          "vote": "nay"
+        },
+        {
+          "name": "Santana",
+          "vote": "nay"
+        },
+        {
+          "name": "Brinks",
+          "vote": "nay"
+        },
+        {
+          "name": "Hertel",
+          "vote": "nay"
+        },
+        {
+          "name": "McMorrow",
+          "vote": "nay"
+        },
+        {
+          "name": "Wojno",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-10-14",
+      "body": "MI House",
+      "motion": "roll call Roll Call # 471 Yeas 56 Nays 51 Excused 0 Not Voting 2",
+      "kind": "roll-call",
+      "yes": 56,
+      "no": 51,
+      "absent": 0,
+      "body_size": 107,
+      "note": "absent = Excused as printed; present_not_voting = Not Voting as printed. House journals print Excused/Not Voting counts in the history line only for some votes. | HJ 84 Pg. 1906 | https://www.legislature.mi.gov/documents/2021-2022/journal/House/htm/2021-HJ-10-14-084.htm",
+      "members": [
+        {
+          "name": "Albert",
+          "vote": "yea"
+        },
+        {
+          "name": "Damoose",
+          "vote": "yea"
+        },
+        {
+          "name": "Huizenga",
+          "vote": "yea"
+        },
+        {
+          "name": "Posthumus",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Eisen",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, S",
+          "vote": "yea"
+        },
+        {
+          "name": "Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Allor",
+          "vote": "yea"
+        },
+        {
+          "name": "Farrington",
+          "vote": "yea"
+        },
+        {
+          "name": "Kahle",
+          "vote": "yea"
+        },
+        {
+          "name": "Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Beeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Filler",
+          "vote": "yea"
+        },
+        {
+          "name": "LaFave",
+          "vote": "yea"
+        },
+        {
+          "name": "Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Bellino",
+          "vote": "yea"
+        },
+        {
+          "name": "Fink",
+          "vote": "yea"
+        },
+        {
+          "name": "Lightner",
+          "vote": "yea"
+        },
+        {
+          "name": "Slagh",
+          "vote": "yea"
+        },
+        {
+          "name": "Berman",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Lilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Tisdel",
+          "vote": "yea"
+        },
+        {
+          "name": "Beson",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Maddock",
+          "vote": "yea"
+        },
+        {
+          "name": "VanSingel",
+          "vote": "yea"
+        },
+        {
+          "name": "Bezotte",
+          "vote": "yea"
+        },
+        {
+          "name": "Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Markkanen",
+          "vote": "yea"
+        },
+        {
+          "name": "VanWoerkom",
+          "vote": "yea"
+        },
+        {
+          "name": "Bollin",
+          "vote": "yea"
+        },
+        {
+          "name": "Griffin",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Wakeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Borton",
+          "vote": "yea"
+        },
+        {
+          "name": "Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Meerman",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendzel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brann",
+          "vote": "yea"
+        },
+        {
+          "name": "Hauck",
+          "vote": "yea"
+        },
+        {
+          "name": "Mueller",
+          "vote": "yea"
+        },
+        {
+          "name": "Wentworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Calley",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoitenga",
+          "vote": "yea"
+        },
+        {
+          "name": "O Malley",
+          "vote": "yea"
+        },
+        {
+          "name": "Whiteford",
+          "vote": "yea"
+        },
+        {
+          "name": "Carra",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Outman",
+          "vote": "yea"
+        },
+        {
+          "name": "Wozniak",
+          "vote": "yea"
+        },
+        {
+          "name": "Clements",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Paquette",
+          "vote": "yea"
+        },
+        {
+          "name": "Yaroch",
+          "vote": "yea"
+        },
+        {
+          "name": "Aiyash",
+          "vote": "nay"
+        },
+        {
+          "name": "Coleman",
+          "vote": "nay"
+        },
+        {
+          "name": "Liberati",
+          "vote": "nay"
+        },
+        {
+          "name": "Sneller",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony",
+          "vote": "nay"
+        },
+        {
+          "name": "Ellison",
+          "vote": "nay"
+        },
+        {
+          "name": "Manoogian",
+          "vote": "nay"
+        },
+        {
+          "name": "Sowerby",
+          "vote": "nay"
+        },
+        {
+          "name": "Bolden",
+          "vote": "nay"
+        },
+        {
+          "name": "Garza",
+          "vote": "nay"
+        },
+        {
+          "name": "Morse",
+          "vote": "nay"
+        },
+        {
+          "name": "Steckloff",
+          "vote": "nay"
+        },
+        {
+          "name": "Brabec",
+          "vote": "nay"
+        },
+        {
+          "name": "Haadsma",
+          "vote": "nay"
+        },
+        {
+          "name": "Neeley",
+          "vote": "nay"
+        },
+        {
+          "name": "Steenland",
+          "vote": "nay"
+        },
+        {
+          "name": "Breen",
+          "vote": "nay"
+        },
+        {
+          "name": "Hammoud",
+          "vote": "nay"
+        },
+        {
+          "name": "O’Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "Brixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Hertel",
+          "vote": "nay"
+        },
+        {
+          "name": "Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Tate",
+          "vote": "nay"
+        },
+        {
+          "name": "Cambensy",
+          "vote": "nay"
+        },
+        {
+          "name": "Hood",
+          "vote": "nay"
+        },
+        {
+          "name": "Pohutsky",
+          "vote": "nay"
+        },
+        {
+          "name": "Thanedar",
+          "vote": "nay"
+        },
+        {
+          "name": "Camilleri",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "vote": "nay"
+        },
+        {
+          "name": "Puri",
+          "vote": "nay"
+        },
+        {
+          "name": "Weiss",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson, C",
+          "vote": "nay"
+        },
+        {
+          "name": "Rabhi",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitsett",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter, T",
+          "vote": "nay"
+        },
+        {
+          "name": "Koleszar",
+          "vote": "nay"
+        },
+        {
+          "name": "Rogers",
+          "vote": "nay"
+        },
+        {
+          "name": "Witwer",
+          "vote": "nay"
+        },
+        {
+          "name": "Cavanagh",
+          "vote": "nay"
+        },
+        {
+          "name": "Kuppa",
+          "vote": "nay"
+        },
+        {
+          "name": "Sabo",
+          "vote": "nay"
+        },
+        {
+          "name": "Yancey",
+          "vote": "nay"
+        },
+        {
+          "name": "Cherry",
+          "vote": "nay"
+        },
+        {
+          "name": "LaGrand",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Young",
+          "vote": "nay"
+        },
+        {
+          "name": "Clemente",
+          "vote": "nay"
+        },
+        {
+          "name": "Lasinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Shannon",
+          "vote": "nay"
+        }
+      ]
     }
   ],
   "provenance": {
-    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
   }
 }

@@ -1,0 +1,306 @@
+{
+  "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013",
+  "findings": [
+    {
+      "id": "aa5986aaf464ae8c3e6784df825a27227887a35e162ca65e5c5e8eee9639142e",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/the-parent-press-week-9-of-the-2021-legislative-session",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "The only thing that voter ID rules protect against is voter impersonation, i.e. someone pretending to be someone else.",
+      "note": "From her own legislative newsletter on SB 202 (2021). She states what voter ID rules protect against.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID for absentee ballots",
+        "voter impersonation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a1da26918d32af35d1b2768e3c5a94ee21d7758f612b052321308c1f016e4fb",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/the-parent-press-week-9-of-the-2021-legislative-session",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "The bill would also eliminate the signature-matching process to verify mail ballots and instead require voters to provide their driver's license or state ID number, or a photocopy of another accepted identification if the elector lacks those.",
+      "note": "Her newsletter describes the SB 202 provision that replaces signature matching with an ID number or ID copy on mail ballots.",
+      "subjects": [
+        "ID for absentee ballots",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cdebf161bcb8cabba8b45119e3fc08f633d96084045859b22c4ff56dcb71dd8",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/the-parent-press-week-9-of-the-2021-legislative-session",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "More than 100,000 registered voters may not have a Georgia drivers license or voter ID",
+      "note": "Bullet in her SB 202 newsletter, under the absentee voter ID heading, about voters who may lack ID.",
+      "subjects": [
+        "ID for absentee ballots",
+        "voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d99ff96f147bfda3c72a1d023236d639b9eb1f9cfe35eb601bb238d55eba0910",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/the-parent-press-week-9-of-the-2021-legislative-session",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "A voter ID # is not a reliable way of identifying a voter, as this information is widely available through illicit means",
+      "note": "Bullet in her SB 202 newsletter, on using an ID number to identify an absentee voter.",
+      "subjects": [
+        "ID for absentee ballots",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17702161d5fc35a6f024f6fc40de3c8d319b840a97b554ccdbb6bd53a040d67a",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/the-parent-press-week-9-of-the-2021-legislative-session",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "The GBI did not find a single case of voter impersonation in Cobb County, which saw the greatest partisan shift of any large metro county in 2020.",
+      "note": "Bullet in her SB 202 newsletter, on the extent of voter impersonation.",
+      "subjects": [
+        "voter impersonation",
+        "ID for absentee ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "373397806a382fd1673a25d165e36ef9958fccf4ee01714c2706ec8009998a85",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/parent-press-week-8-of-the-2026-legislative-session",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "passage": "Senator Dolezal’s attempt to court Trump’s endorsement for his campaign for Lieutenant Governor by passing bad election bills went down in flames on Friday. SB 568 and the State Assurance of Voter Eligibility (SAVE)Amendment both failed. SB 568 would make voter lists public before elections, require publication of who voted after elections, shift to hand-marked paper ballots with optical scanners, and impose fines on registrars who fail to remove ineligible voters after successful challenges.",
+      "note": "Her 2026 newsletter on the failed SB 568 and the SAVE constitutional amendment (SR 587), both of which failed in the Senate.",
+      "subjects": [
+        "voter-roll checks",
+        "proof of citizenship (state constitutional amendment)",
+        "election integrity bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53dfaee9aa97311640efa827758c4bc1acb199e37ee694ea5f5a4e18594d8a5a",
+      "kind": "own-words",
+      "url": "https://www.elenaparent.com/parent-press/parent-press-week-8-of-the-2026-legislative-session",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "passage": "legislation would amend the Constitution by requiring eligible voters to be 18 years old, United States citizens, and Georgia residents. Voter ID would also become a constitutional requirement. This resolution failed because the SAVE amendment needed support from ⅔ of members and failed to meet that threshold.",
+      "note": "Her description of SR 587, which would put voter eligibility (age, citizenship, residency) and voter ID into the state constitution; it fell short of the two-thirds vote. The passage begins mid-sentence because the bill number SR 587 is a link in the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (state constitutional amendment)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Parent'), linked to ELENA PARENT (district 42) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Parent'), linked to ELENA PARENT (district 42) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Parent'), linked to ELENA PARENT (district 42) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Parent'), linked to Parent, Elena (district 42) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Parent'), linked to ELENA PARENT (district 42) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for absentee ballots",
+        "voter impersonation",
+        "proof of citizenship / SAVE amendment (state constitution)",
+        "voter-roll eligibility and election bills in general"
+      ],
+      "places": [
+        "status check: still a sitting state senator; announced 2026-03-05 she is not seeking re-election (https://senatepress.net/?p=342306); no 2026 ballot, but in office now so searched fully",
+        "On the Record (0 meetings)",
+        "her official newsletter site https://www.elenaparent.com/parent-press (2021 week 9 post and 2026 weeks 5, 6, 7, 8, 11-12, 9-10 posts reviewed; weeks 5-7, 9-10 and 11-12 had nothing on the subject; weeks 1-4 and the 2025 posts not reviewed)",
+        "news: https://www.beaufortcountynow.com/post/44184/georgia-bill-would-require-id-to-vote-absentee.html (AP story 2021-02-24; her quote there is about another bill, SB 188 ballot totals, so not saved)",
+        "news: https://www.ajc.com/politics/politics-blog/pg-am-state-senator-refutes-voter-suppression-claims-from-primary-foe/JZRYPVUYFBCYFAWPZ3RXJ6RAUI/ (2024-04-09, nothing on the subject)",
+        "two web searches on her name plus the subject words",
+        "blocked: https://m.washingtontimes.com/news/2021/mar/8/georgia-senate-votes-repeal-no-excuse-absentee-vot/ (HTTP 403)",
+        "blocked: https://ballotpedia.org/Elena_Parent (fetch returned empty page)",
+        "not reviewed: Georgia Senate member page (connection refused earlier for another Senate URL; legis.ga.gov bill pages need a login token and were not tried)",
+        "floor votes and sponsorships already linked separately, per the brief"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:28:59.721Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.413Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

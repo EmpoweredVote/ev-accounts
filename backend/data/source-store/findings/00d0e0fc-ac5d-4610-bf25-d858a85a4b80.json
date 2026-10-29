@@ -1,0 +1,136 @@
+{
+  "politician_id": "00d0e0fc-ac5d-4610-bf25-d858a85a4b80",
+  "findings": [
+    {
+      "id": "b5dc21a7249e654ee2623c283ee1b206f5adbf3fc90815583677ce38235706d2",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1766232",
+      "date": "2025-01-06",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "note": "Listed among the 69 sponsors of Assembly Joint Resolution 1 (second consideration), a proposed constitutional amendment requiring photographic identification to vote in any election. The listing shows the bill introduced on this date.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:18.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Tucker') on the official bill page; linked to Duke Tucker via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('TUCKER'), linked to Duke Tucker (district 75) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Tucker') on the official bill page; linked to Duke Tucker via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "wdio.com news story: confirms he won Assembly District 75 in Nov 2024; no statement by him on the subject: https://wdio.com/?p=484284",
+        "WisPolitics campaign release dated 2026-04-26 confirms he is running for re-election in the 75th Assembly District (text beyond the first lines is behind a login): https://www.wispolitics.com/2026/tucker-campaign-duke-tucker-running-for-re-election-in-the-75th-assembly-district/",
+        "campaign site https://dukeforwisconsin.com/ and /the-issues/: nothing on the subject",
+        "official legislature press release page https://legis.wisconsin.gov/assembly/75/tucker/news-updates/press-releases: no articles listed",
+        "Wisconsin Watch 2024 voter guide: no statement by him on the subject",
+        "blocked: https://docs.legis.wisconsin.gov/2025/related/proposals/ajr1 (429)",
+        "blocked: https://docs.legis.wisconsin.gov/2025/legislators/assembly/2711 (404)",
+        "blocked: https://www.branch.vote Assembly 75 page (404)",
+        "blocked: https://ballotpedia.org (not fetched; pages returned empty for another member in same batch)",
+        "two web searches on name plus subject words: no statement of his own found",
+        "legislature bill page via billtrack50.com for AJR 1 (sponsor list)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:58:18.855Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.785Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

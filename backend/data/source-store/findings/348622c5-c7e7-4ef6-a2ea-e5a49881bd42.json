@@ -1,0 +1,101 @@
+{
+  "politician_id": "348622c5-c7e7-4ef6-a2ea-e5a49881bd42",
+  "findings": [
+    {
+      "id": "87b7f406a3b513f773ffbde02d2e812d79b8be1dac0c00429e6f38427cf7c55a",
+      "kind": "own-words",
+      "url": "https://www.jonathannezforaz.com/issues",
+      "date": "2026-08-11",
+      "date_precision": "day",
+      "passage": "Every eligible citizen should be able to make their voices heard in our elections. In rural communities, that means protecting mail-in voting and fighting back against unnecessary barriers that make it difficult for people to exercise their Constitutional right to vote.",
+      "note": "Campaign issues page, Protect Voting Rights section (last updated 2026-08-11 per the page data). Its listed goals are to protect mail-in voting and to ensure election security while standing up to attacks on Arizona's election infrastructure. It does not name voter ID or proof of citizenship.",
+      "subjects": [
+        "mail-in voting",
+        "barriers to voting in rural communities",
+        "barriers to voting",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:44:21.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d0ecff5a1c855c0c9219a151ae0b3f804ede4e94b434fce3bf84e2338a83c1e",
+      "kind": "own-words",
+      "url": "https://www.jonathannezforaz.com/issues",
+      "date": "2026-08-11",
+      "date_precision": "day",
+      "passage": "Ensure election security while standing up to partisan attacks on Arizona’s time-tested election infrastructure.",
+      "note": "Campaign issues page, same section, listed as one of the things he says he will fight for in Congress (a bullet next to 'Protect mail-in voting.'). General statement on election security; names no ID or citizenship requirement.",
+      "subjects": [
+        "election security",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:44:36.739Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "documentary proof of citizenship / SAVE Act",
+        "voter-roll checks and non-citizen voting",
+        "election security and election integrity laws",
+        "mail-in voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Jonathan_Nez says he is on the 2026 general-election ballot (Nov 3, 2026) for Arizona's 2nd Congressional District and advanced from the July 21, 2026 primary; Navajo Times https://navajotimes.com/reznews/nez-crane-set-for-november-rematch-in-arizonas-2nd-district/ also reports he won the primary",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.jonathannezforaz.com/issues (Protect Voting Rights section; saved)",
+        "campaign site pages /about and /news at www.jonathannez.com (same site, nothing on the subject beyond the issues page; /news shows only social posts about early voting and ballot return)",
+        "Ballotpedia https://ballotpedia.org/Jonathan_Nez (nothing on the subject)",
+        "Navajo Times article on the rematch (nothing on the subject)",
+        "congress.gov / legislature bill pages: not applicable, never a member of Congress; no sponsorships to check",
+        "news search on name plus subject words: not reviewed, the shared web search budget was used up",
+        "not reviewed: ontheissues.org, Vote Smart, Navajo Nation Council or presidential records from 2019-2023 (search budget gone)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:44:36.739Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act / SAVE America Act)",
+        "voter ID at the polls",
+        "mail-in voting",
+        "election security and election integrity in general",
+        "ID for tribal and rural voters"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Jonathan_Nez (on the 2026 general-election ballot for AZ-2 after the primary)",
+        "On the Record (0 meetings)",
+        "campaign site jonathannezforaz.com: issues page (Protect Voting Rights) and news page",
+        "Navajo Times 2026-07-09: article is cut off at the paywall, and the only Nez words that it shows are on prices, so no quote saved from it",
+        "KJZZ 2019-10-02: reports his testimony on mail access and transport, in a reporter's words, so not saved as his own words",
+        "KNAU 2026-04-03 and KJZZ 2026-04-01 SAVE America Act stories: his name does not appear, nothing on the subject",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:44:21.968Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

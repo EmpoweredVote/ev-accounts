@@ -1,0 +1,35 @@
+{
+  "politician_id": "08e96b22-0cdc-48bb-b94a-ef4c54491f98",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://house.texas.gov/members/4485 (Rep. Linda Garcia, District 107, Texas House)",
+        "2026 general ballot: branch.vote candidate page lists her unopposed for HD 107 (https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-107/candidates/linda-garcia)",
+        "On the Record (0 appearances)",
+        "official House member page: nothing on the subject; no campaign site link on it",
+        "campaign site: not found (no link on the official page; branch.vote says her website has no information on this issue)",
+        "Texas Legislature Online bill search (https://capitol.texas.gov/Search/BillSearchResults.aspx): blocked, search form returns no results to the fetch tool",
+        "TLO bill history for her 2025 co-authored bill HB 4429 (highway designation): nothing on the subject",
+        "legiplex: blocked: https://app.legiplex.com/profile/linda-garcia-3019/tx/legislatures/2025/89r/legislation/page/4 (HTTP 403)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Linda_Garcia_(Texas) (fetch returned empty page)",
+        "two news/web searches on her name plus the subject words: nothing on the subject",
+        "debate/interview video: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:29:42.552Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

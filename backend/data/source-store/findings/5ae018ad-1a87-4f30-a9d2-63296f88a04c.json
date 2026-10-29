@@ -1,0 +1,159 @@
+{
+  "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c",
+  "findings": [
+    {
+      "id": "1a64cc3b392b021aeecd6b79fa679125e85d43055b69818e6b687674815d0027",
+      "kind": "own-words",
+      "url": "https://www.goodmorningamerica.com/news/story/overcoming-democratic-opposition-georgia-senate-republicans-advance-bill-76326176",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "passage": "\"This bill amounts to walking into your house, seeing a sink full of dirty dishes, loads of laundry to be done, a lawn to be mowed, a refrigerator that's empty, and then deciding that instead of getting to any of that, you're gonna go to the hardware store and start building a deck -- a deck you don't need,\" said state Sen. Sonya Halpern. \"The house is on fire, and you all are building a deck.\"",
+      "note": "Quoted by ABC News (Good Morning America) during Senate debate on SB 241, which would end no-excuse absentee voting and require a driver's license or state ID number to apply for and return an absentee ballot. Article date is the publication date.",
+      "subjects": [
+        "mail-ballot ID",
+        "no-excuse absentee voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:52:35.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Halpern'), linked to SONYA HALPERN (district 39) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Halpern'), linked to SONYA HALPERN (district 39) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Halpern'), linked to SONYA HALPERN (district 39) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Halpern'), linked to Halpern, Sonya (district 39) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 final votes",
+        "no-excuse absentee voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed: Georgia state senator, District 39 (sworn in 2021-01-11), listed on the 2026 general ballot for that seat by Branch (https://branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-39/candidates/sonya-halpern); a search result also says Ballotpedia lists her as a declared 2026 candidate for US House District 6, not confirmed by a page I could read",
+        "Good Morning America / ABC News article 2021-03-08 (https://www.goodmorningamerica.com/news/story/overcoming-democratic-opposition-georgia-senate-republicans-advance-bill-76326176): saved",
+        "Georgia Senate press office searches (Halpern, SB 202, voter ID): nothing on the subject",
+        "Rough Draft Atlanta 2020 voters guide: nothing on the subject",
+        "her campaign site: not found; Branch profile says her website has no voting and elections content",
+        "blocked: https://ballotpedia.org/Sonya_Halpern (page returned no text)",
+        "blocked: https://app.legiplex.com/profile/sonya-halpern-1404/ga/legislatures/2025/2025-r/legislation/page/3 (403; a search summary mentions a 2025 elections bill SB 246 by her, not read)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/626853575 (certificate rejected; archive of her social posts, lead only)",
+        "not reviewed: 11alive and atlantaciviccircle candidate profiles (no readable text)",
+        "official Georgia legislature bill and vote pages: not reachable (page loads by script); SB 202 member votes (Senate, 2021-03-25) not retrieved"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:52:35.082Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.410Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

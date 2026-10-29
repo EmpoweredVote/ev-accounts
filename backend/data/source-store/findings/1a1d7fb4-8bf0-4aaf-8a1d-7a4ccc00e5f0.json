@@ -1,0 +1,32 @@
+{
+  "politician_id": "1a1d7fb4-8bf0-4aaf-8a1d-7a4ccc00e5f0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "voter with no ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Gretchen_Bulova (in office since 2026-01-19, term ends 2028-01-12; no survey answers on the subject)",
+        "https://www.vpap.org/legislators/51956-gretchen-m-bulova/ (confirms House of Delegates District 11, served since 2026)",
+        "campaign site https://www.gretchenbulova.com (nothing on the subject)",
+        "https://m.connectionnewspapers.com/news/2026/jan/20/two-bulovas-are-now-in-virginias-government/ (her election and oath; nothing on the subject)",
+        "blocked: https://lis.virginia.gov 2026 bill and vote pages (empty script shell); her roll-call votes on 2026 election bills could not be read",
+        "blocked: https://www.vpap.org/legislators/51956-gretchen-m-bulova/votes/ (no content returned)",
+        "https://fastdemocracy.com HB 1131 (2026 photo ID bill; she is not listed as sponsor or in its subcommittee vote)",
+        "two news searches on her name plus voter ID: nothing found; results were about a different Bulova"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:28:11.511Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

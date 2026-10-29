@@ -1,0 +1,31 @@
+{
+  "politician_id": "f9cbe210-a840-4924-b4aa-a5de0dc143ba",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "voter ID ban/permission for local governments",
+        "non-citizen voting / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr)",
+        "official legislature member page (confirmed in office)",
+        "official site search page (site search returned nothing on the subject)",
+        "Ballotpedia profile (nothing on the subject)",
+        "web searches on name plus subject words (nothing beyond what is listed)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge); used the CalMatters Digital Democracy copy of the roll calls instead",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "CalMatters Digital Democracy legislator page (no voter-ID bills or votes listed)",
+        "AB 25 (2025, voter ID) committee roll calls: not a member who voted"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:23:17.794Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

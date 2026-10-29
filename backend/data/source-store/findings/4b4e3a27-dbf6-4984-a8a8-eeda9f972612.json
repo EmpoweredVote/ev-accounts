@@ -1,0 +1,32 @@
+{
+  "politician_id": "4b4e3a27-dbf6-4984-a8a8-eeda9f972612",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "House member page https://house.vga.virginia.gov/members/H0401 (confirms 49th District delegate, member since 2026-01-14; bill list needs JavaScript)",
+        "campaign site whittlefordelegate.com home and issues page: nothing on the subject",
+        "Ballotpedia profile: nothing on the subject",
+        "On the Record (0 meetings)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (page needs JavaScript, no text)",
+        "blocked: https://www.vpap.org (voting record pages need JavaScript, no text)",
+        "blocked: https://legiscan.com (403)",
+        "news search on name plus voter ID: nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:08.564Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "politician_id": "946f7bc2-48ed-447e-a9a5-cb99aae00b31",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Gregory_Steuerwald names him as Indiana House District 40 incumbent on the Nov 3, 2026 general-election ballot after the May 5, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_gregory_steuerwald_1 (page loads only a script shell, no bill list readable)",
+        "blocked: https://www.indianahouserepublicans.com/members/steuerwald (404)",
+        "Ballotpedia page fetched; no voter ID or election-law content found on it",
+        "not reviewed: news search on name plus voter ID words (the shared web-search budget was used up)",
+        "not reviewed: IGA bill pages for sponsorships (no readable bill search without search tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:45.982Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ballotpedia.org/Gregory_Steuerwald (fetched via curl; confirms Indiana House District 40 member, won the 2026 primary and is on the 2026 general-election ballot; nothing on the subject)",
+        "blocked: https://www.indianahousegop.org/steuerwald (no readable content)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_gregory_steuerwald_1 (no readable content; votes already on file)",
+        "blocked: https://indianacapitalchronicle.com/2025/01/28/elections-bill-would-strike-down-student-ids-as-voting-option/ (403 via fetch; curl returned no name match)",
+        "news searches on name plus subject words (2 searches): no item naming him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:53.517Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

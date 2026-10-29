@@ -1,0 +1,227 @@
+{
+  "politician_id": "d5663ee3-8182-4bba-89dd-ae57444ee7cc",
+  "findings": [
+    {
+      "id": "ad7772174cfd81f5fe487bf5693d09936b17965bdea83467291756d86cd21131",
+      "kind": "own-words",
+      "url": "https://veronicaklinefelt.com/priorities/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am alarmed by proposals to enact laws that could disenfranchise voters. I believe our communities are stronger when more people participate in government and I look forward to continuing the fight to expand and protect voting access.",
+      "note": "Campaign site Voting Access priority. She says she is alarmed by proposals for laws that could disenfranchise voters and wants to expand and protect voting access. It names no specific ID or citizenship rule. The page itself shows no date (site was last modified 2026-09-10 per page metadata).",
+      "subjects": [
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.368Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "564b86301d701d954f6fc0057aa5fa34db31d568699c9d988431f008ea6efa2a",
+      "kind": "own-words",
+      "url": "https://veronicaklinefelt.com/priorities/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In the State Senate, we have passed many bills to protect voting rights, including the Michigan Voting Rights Act.",
+      "note": "Same campaign page. She cites Senate passage of voting-rights bills, including the Michigan Voting Rights Act, with no mention of ID or citizenship rules.",
+      "subjects": [
+        "voting access",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.368Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Klinefelt'), linked to Veronica Klinefelt (district 11) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Klinefelt'), linked to Veronica Klinefelt (district 11) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://veronicaklinefelt.com/priorities/ (campaign site for Michigan Senate District 11, general election 2026-11-03); https://theballotbrief.com/candidate/veronica-klinefelt-mi lists her as the incumbent on the 2026-11-03 ballot (AI-written site, a lead)",
+        "campaign site pages fetched: /priorities/ (one passage saved), /about/, /, search for 'voting' (nothing further on the subject); sitemap lists only home, get-involved, about, priorities, endorsements",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Veronica_Klinefelt: page came back empty (blocked)",
+        "blocked: https://senatedems.com/klinefelt/",
+        "https://www.detroitchamber.com/beyond-the-bill-sen-veronica-klinefelt/: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-senator-mi-state-senate-11/candidates/veronica-klinefelt: only repeats the campaign site passage",
+        "web searches (2 on her name plus subject words): no other page with her own words; no news page quoting her on voter ID or citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:52:01.905Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://veronicaklinefelt.com/priorities/ (campaign site for Michigan Senate District 11, general election 2026-11-03); https://theballotbrief.com/candidate/veronica-klinefelt-mi lists her as the incumbent on the 2026-11-03 ballot (AI-written site, a lead)",
+        "campaign site pages fetched: /priorities/ (one passage saved), /about/, /, search for 'voting' (nothing further on the subject); sitemap lists only home, get-involved, about, priorities, endorsements",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Veronica_Klinefelt: page came back empty (blocked)",
+        "blocked: https://senatedems.com/klinefelt/",
+        "https://www.detroitchamber.com/beyond-the-bill-sen-veronica-klinefelt/: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-senator-mi-state-senate-11/candidates/veronica-klinefelt: only repeats the campaign site passage",
+        "web searches (2 on her name plus subject words): no other page with her own words; no news page quoting her on voter ID or citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:59:56.323Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://veronicaklinefelt.com/priorities/ (campaign site for Michigan Senate District 11, general election 2026-11-03); https://theballotbrief.com/candidate/veronica-klinefelt-mi lists her as the incumbent on the 2026-11-03 ballot (AI-written site, a lead)",
+        "campaign site pages fetched: /priorities/ (one passage saved), /about/, /, search for 'voting' (nothing further on the subject); sitemap lists only home, get-involved, about, priorities, endorsements",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Veronica_Klinefelt: page came back empty (blocked)",
+        "blocked: https://senatedems.com/klinefelt/",
+        "https://www.detroitchamber.com/beyond-the-bill-sen-veronica-klinefelt/: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-senator-mi-state-senate-11/candidates/veronica-klinefelt: only repeats the campaign site passage",
+        "web searches (2 on her name plus subject words): no other page with her own words; no news page quoting her on voter ID or citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:05:26.551Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://veronicaklinefelt.com/priorities/ (campaign site for Michigan Senate District 11, general election 2026-11-03); https://theballotbrief.com/candidate/veronica-klinefelt-mi lists her as the incumbent on the 2026-11-03 ballot (AI-written site, a lead)",
+        "campaign site pages fetched: /priorities/ (one passage saved), /about/, /, search for 'voting' (nothing further on the subject); sitemap lists only home, get-involved, about, priorities, endorsements",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Veronica_Klinefelt: page came back empty (blocked)",
+        "blocked: https://senatedems.com/klinefelt/",
+        "https://www.detroitchamber.com/beyond-the-bill-sen-veronica-klinefelt/: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-senator-mi-state-senate-11/candidates/veronica-klinefelt: only repeats the campaign site passage",
+        "web searches (2 on her name plus subject words): no other page with her own words; no news page quoting her on voter ID or citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.876Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://veronicaklinefelt.com/priorities/ (campaign site for Michigan Senate District 11, general election 2026-11-03); https://theballotbrief.com/candidate/veronica-klinefelt-mi lists her as the incumbent on the 2026-11-03 ballot (AI-written site, a lead)",
+        "campaign site pages fetched: /priorities/ (one passage saved), /about/, /, search for 'voting' (nothing further on the subject); sitemap lists only home, get-involved, about, priorities, endorsements",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Veronica_Klinefelt: page came back empty (blocked)",
+        "blocked: https://senatedems.com/klinefelt/",
+        "https://www.detroitchamber.com/beyond-the-bill-sen-veronica-klinefelt/: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-senator-mi-state-senate-11/candidates/veronica-klinefelt: only repeats the campaign site passage",
+        "web searches (2 on her name plus subject words): no other page with her own words; no news page quoting her on voter ID or citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.368Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

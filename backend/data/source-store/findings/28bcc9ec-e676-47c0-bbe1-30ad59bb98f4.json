@@ -1,0 +1,253 @@
+{
+  "politician_id": "28bcc9ec-e676-47c0-bbe1-30ad59bb98f4",
+  "findings": [
+    {
+      "id": "2b934f642670d937a48e1ccfa00cd578af5ea094aaba7e80c5b2bcb1167a5ef0",
+      "kind": "own-words",
+      "url": "https://senatorkeefer.com/2026/04/21/keefer-raises-alarm-on-election-audit-deficiencies/",
+      "date": "2026-04-21",
+      "date_precision": "day",
+      "passage": "A voter registration system at the DMV must never serve as a backdoor for ineligible registrations.",
+      "note": "Statement issued in her name on the auditor general's audit of the automatic voter registration system at the driver licensing agency; says the system lacks a mandatory validated citizenship flag.",
+      "subjects": [
+        "non-citizen voter registration",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e26c05d7c0dd521d1f51d59e563f2ca39b57043e03fecc6f3a6190bf8da5b88",
+      "kind": "own-words",
+      "url": "https://senatorkeefer.com/2026/04/21/keefer-raises-alarm-on-election-audit-deficiencies/",
+      "date": "2026-04-21",
+      "date_precision": "day",
+      "passage": "The goal was simple: determine whether non-citizens were being inadvertently registered to vote and restore public confidence that our election system protects the votes of qualified electors.",
+      "note": "Describes why she asked in August 2024 for a comparison of driver-licensing records of non-citizens against the voter registry.",
+      "subjects": [
+        "non-citizen voter registration",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf42316a4db83e971690a23795143c4a4f10d7180cfff063e7ce22ef791bc83e",
+      "kind": "own-words",
+      "url": "https://thestarnewsnetwork.com/2023/02/13/pennsylvania-representative-proposes-election-audit-reforms",
+      "date": "2023-02-13",
+      "date_precision": "day",
+      "passage": "“As I examined the control concerns in the Auditor General’s Audit of the Statewide Uniform Registry of Electors (SURE) system completed in 2019 by then Auditor General, Eugene DePasquale, it became apparent that certain controls were lacking in the system of internal and external controls on voting which helped create confusion in the election reporting,” Keefer wrote in a memorandum describing her measure.",
+      "note": "Quoted by the Star News Network from her co-sponsorship memo for a bill requiring periodic audits of the voter registry.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.206Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('KEEFER'), linked to Dawn Keefer (district 92) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Keefer'), linked to Dawn Keefer (district 92) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Keefer'), linked to Dawn Keefer (district 92) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KEEFER'), linked to Dawn Keefer (district 92) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voter registration",
+        "voter-roll accuracy and audits",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record: not reviewed (the repo extract script was not run under standing rules)",
+        "official Senate site senatorkeefer.com (home page and site search for voter ID, election, citizenship)",
+        "House caucus site pahousegop.com/Keefer: page not found",
+        "Wikipedia (confirms she is a sitting state senator, 31st district; not on the 2026 ballot)",
+        "web search: Keefer voter ID and election integrity (two searches)",
+        "blocked: https://thefederalist.com/2024/04/19/meet-the-pennsylvania-lawmaker-leading-the-united-states-most-important-election-integrity-case/ (403 bot check)",
+        "not reviewed: https://www.ydr.com/story/news/politics/2020/11/10/keefer-other-lawmakers-call-investigation-into-election/ (fetch tool refused the host)",
+        "Ballotpedia: not reviewed",
+        "vote411: not reviewed",
+        "no own-words statement on photo ID at the polls found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:00:37.907Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.693Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voter registration",
+        "voter-roll accuracy and audits",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record: not reviewed (the repo extract script was not run under standing rules)",
+        "official Senate site senatorkeefer.com (home page and site search for voter ID, election, citizenship)",
+        "House caucus site pahouse-caucus.com/Keefer: page not found",
+        "Wikipedia (confirms she is a sitting state senator, 31st district; not on the 2026 ballot)",
+        "web search: Keefer voter ID and election integrity (two searches)",
+        "blocked: https://thefederalist.com/2024/04/19/meet-the-pennsylvania-lawmaker-leading-the-united-states-most-important-election-integrity-case/ (403 bot check)",
+        "not reviewed: https://www.ydr.com/story/news/politics/2020/11/10/keefer-other-lawmakers-call-investigation-into-election/ (fetch tool refused the host)",
+        "Ballotpedia: not reviewed",
+        "vote411: not reviewed",
+        "no own-words statement on photo ID at the polls found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:47:07.206Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.456Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

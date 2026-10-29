@@ -1,0 +1,68 @@
+{
+  "politician_id": "d22a4136-849e-40d8-a046-ed4d14d24c91",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Sampson'), linked to David Sampson (district 153) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting state representative, House District 153, listed as unopposed in the 2026 general election (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-153/candidates/david-sampson)",
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site: none found (Branch says he has no website or online information)",
+        "Branch voting and elections page: nothing on the subject",
+        "blocked: https://ballotpedia.org/David_Sampson_(Georgia) (HTTP 403)",
+        "legis.ga.gov bill pages not reviewed (login token required)",
+        "two news searches on name plus voter ID, absentee, SB 202 words: no quote from him found",
+        "note: the brief's name could also match other people; sources used here are tied to House District 153"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.838Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.415Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

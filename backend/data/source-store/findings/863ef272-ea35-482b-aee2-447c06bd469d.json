@@ -1,0 +1,119 @@
+{
+  "politician_id": "863ef272-ea35-482b-aee2-447c06bd469d",
+  "findings": [
+    {
+      "id": "453701fb6509e94bf20184415e539f10eb75e3a12d6aa4ed18ca5b7bd16bcce9",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/proponents-officially-file-california-voter-id-initiative",
+      "date": "2025-07-16",
+      "date_precision": "day",
+      "passage": "Implementing a Voter ID requirement is critical in securing our elections. This initiative reinstates trust in our democracy and ensures every legal vote is counted.",
+      "note": "Statement attributed to him on the Reform California page about the filing of the California Voter ID initiative. Page date as shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:06.031Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91434054567241d63737fe55158ff4bc4ee54424ab8590ef0f90d9b16e07fb70",
+      "kind": "own-words",
+      "url": "https://www.reformcalifornia.org/news/ca-voter-id-initiative-officially-filed-for-2026",
+      "date": "2025-07-17",
+      "date_precision": "day",
+      "passage": "This initiative bypasses the corrupt politicians and puts this directly in the hands of voters. We’ve drafted it carefully. It’s constitutional. And we’re going to win this fight.",
+      "note": "Quoted on the Reform California page about the filing of the initiative with the Secretary of State. He is named as one of the filers. Page date as shown on the page.",
+      "subjects": [
+        "voter ID ballot initiative",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:06.031Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fa25cee168245c352ec9cf2f5db30ac8aca7c4f05d55a2302ebfe3c729d255d",
+      "kind": "record",
+      "url": "https://www.reformcalifornia.org/news/ca-voter-id-initiative-officially-filed-for-2026",
+      "date": "2025-07-17",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Co-filer of the California Voter ID Initiative with the Secretary of State",
+      "note": "The page says he, with two others, filed the California Voter ID Initiative, which starts the 75-day period to collect 1 million signatures.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:06.031Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a863776a5bae133ed69c6e5030cbfc77a4cedd284b37dae1010f2a7ada01dca",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Senate floor: AB 1116 passed Assembly third reading in the Senate",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. He voted no.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:06.031Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID ballot initiative",
+        "ID to register to vote",
+        "voter-roll maintenance",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms State Senate District 36 seat since 2025-03-11, on the 2026 general-election ballot, advanced from the June 2, 2026 primary; nothing on the subject)",
+        "Reform California news pages on the initiative filing (2 pages)",
+        "North County Daily Star report on the initiative announcement (no Strickland quote)",
+        "CalMatters Digital Democracy bill page for AB 1116 (Senate floor vote list)",
+        "SB 1174 (2024) and AB 25 (2025): not applicable, he was not in the Legislature for SB 1174 and AB 25 was an Assembly bill",
+        "blocked: https://sd36.senate.ca.gov/ (HTTP 403)",
+        "web search for official Senate press releases on the subject: nothing found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:08:06.031Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

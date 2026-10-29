@@ -1,0 +1,107 @@
+{
+  "politician_id": "5d57215a-7a47-4650-9c7b-47ff41d6322b",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "91fa0be3502d9369fa43d0117259413c3fa4b9bd7eb04cadf6a27992eb655c12",
+      "kind": "own-words",
+      "url": "https://cdn.zephyrcms.com/989e69f5-371e-4353-91bf-e376dab0b663/-/inline/yes/isrc-survey-results-2022-buchanan.pdf",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "When a person votes at a polling place in Indiana, they must show photo ID. Do you support or oppose requiring people to include an ID number (such as their driver’s license number) when they submit an application to vote by mail?",
+      "note": "Question 5 in his 2022 constituent survey (headed 'State Senator Brian Buchanan'; 'my mailed and online survey'). The results page shows 84% support and 16% oppose among Senate District 7 respondents. These are constituents' answers, not his own stated position. The survey shows he asked constituents about a mail-ballot ID number.",
+      "subjects": [
+        "ID with a mail or absentee ballot request",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:52:56.012Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: Indiana State Senate District 7, term ends 2028, not on the 2026 ballot (https://ballotpedia.org/Brian_Buchanan; https://www.indianasenaterepublicans.com/buchanan)",
+        "On the Record (0 appearances)",
+        "official Senate site (profile page, 2026 legislative updates page, 2026 session-end statement, 100% voting record release): nothing on the subject",
+        "Ballotpedia: nothing on the subject (did not complete 2020 or 2024 Candidate Connection surveys)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_brian_buchanan_1 (page loads only as a script shell, bill and vote lists not readable)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for election bills",
+        "not reviewed: campaign site (https://www.brianbuchanan.com did not return a readable page)",
+        "blocked: web search (session search budget used up), so no news search was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:34:12.588Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID number with a mail-in ballot application",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia (confirms Brian Buchanan, Indiana State Senate District 7, current term ends 2028, so he is not on the 2026 ballot; no subject statements)",
+        "Indiana Senate caucus page for Buchanan and his three statement pages (2025 session end, 2026 session end, general statement): nothing on the subject",
+        "caucus site search through web search for election, voter ID, mail-in ballot: nothing on the subject",
+        "his 2022 constituent survey results PDF (one question on the subject, saved)",
+        "web searches on name plus voter ID / citizenship: no own words on the subject",
+        "Indiana roll calls: not searched, already on file from the official feed per the brief; sponsorship pages on iga.in.gov: legislator page loaded but not reviewed for authored bills (page is script-driven)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T11:52:56.012Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

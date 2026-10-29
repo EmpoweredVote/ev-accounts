@@ -1,0 +1,80 @@
+{
+  "politician_id": "8c7d04dc-f567-4759-b99b-0ae8f26d6f32",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Dylan_Fernandes names him as incumbent state senator (Plymouth and Barnstable District), advanced from the 2026-09-01 primary, on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://www.dylanfernandes.com/ (home page and ?s=voter; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Dylan_Fernandes (nothing on the subject)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/DAF1 (nothing on the subject; page shows no sponsored bills for this session)",
+        "blocked: https://malegislature.gov/Legislators/Profile/DAF1/Bills (page loaded without bill list)",
+        "blocked: https://malegislature.gov/Bills/GetAmendmentContent/193/H4359/7 (HTTP 404)",
+        "blocked: https://malegislature.gov/Search/Bills?SearchTerms=voter%20identification (HTTP 404)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:15:05.717Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "voters without ID",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia page https://ballotpedia.org/Dylan_Fernandes shows a sitting state senator on the 2026-11-03 general election ballot (positive control)",
+        "On the Record (0 appearances, extract script run with name)",
+        "campaign site https://www.dylanfernandes.com and its issues page: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "legislature profile and cosponsor pages for the 194th court (https://malegislature.gov/Legislators/Profile/DAF1/194/Cosponsor): no sponsored bills listed, nothing on the subject",
+        "web searches on name plus voter ID, SAVE Act, proof of citizenship: only a mandatory-voting bill and municipal election bills found, nothing on ID or citizenship",
+        "not reviewed: https://bdc2020-php8.o0bc.com/news/politics/2026/02/13/massachusetts-politicians-decry-save-america-act-voter-id (fetch denied; unclear whether he is named)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:08.000Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

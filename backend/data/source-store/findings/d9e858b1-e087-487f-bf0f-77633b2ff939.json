@@ -1,0 +1,42 @@
+{
+  "politician_id": "d9e858b1-e087-487f-bf0f-77633b2ff939",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida Division of Elections results page, https://floridaelectionwatch.gov/CompareStateToCounty/140242: Representative in Congress, District 24, August 18, 2026, row 'Marshall L. Davis Sr. DEM 1,272 2.14% 368 (2.27 %)'; the page shows Oliver G. Gilbert III first with 20,445 votes, 34.35%)",
+        "On the Record (0 appearances)",
+        "BallotReady candidate page https://www.ballotready.org/people/marshall-l-davis-sr (candidacy confirmed; issue positions listed cover economy, education, healthcare, taxes; nothing on the subject)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:30:38.572Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida 24th District; eliminated in the primary with 1,272 votes, about 2.1 percent, per https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida; candidacy in the Aug 18 primary also listed at https://www.ballotready.org/people/marshall-l-davis-sr)",
+        "identity check: Marshall Davis Sr., founder of the Marshall L. Davis, Sr. African Heritage Cultural Arts Center, named on the Wikipedia page above",
+        "On the Record (0 meetings)",
+        "stopped as out of scope after the primary loss; no further sources searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:53:12.482Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

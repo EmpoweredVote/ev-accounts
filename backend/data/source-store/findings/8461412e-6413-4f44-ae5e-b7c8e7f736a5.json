@@ -1,0 +1,28 @@
+{
+  "politician_id": "8461412e-6413-4f44-ae5e-b7c8e7f736a5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee ballots",
+        "affidavit for voters without ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extractor script not run (instructed not to run repo scripts)",
+        "campaign site https://adelemcclure.com and /issues (fetched, nothing on the subject; homepage is her 2026 congressional primary site)",
+        "https://history.house.virginia.gov/members/10026 confirms she is a District 2 delegate since 2024-01-10",
+        "LIS: blocked (not retried)",
+        "blocked: https://lis.virginia.gov (bill pages load by script, no content returned); legiscan, legiplex, legilist, plural policy and vpap also not readable",
+        "two news searches: no statement or ID-bill record found; whether she lost the Aug 4 2026 congressional primary was not checked"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:28:08.094Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

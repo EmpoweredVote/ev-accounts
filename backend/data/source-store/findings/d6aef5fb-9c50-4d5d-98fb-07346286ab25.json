@@ -1,0 +1,53 @@
+{
+  "politician_id": "d6aef5fb-9c50-4d5d-98fb-07346286ab25",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Michael_Stoddard lists him on the Nov 3, 2026 general-election ballot for U.S. House Utah District 3 (advanced from convention April 18, 2026); Ballotpedia page itself has no positions and he did not complete its 2026 survey: nothing on the subject",
+        "On the Record (0 appearances; extract-otr.mjs run with --names): nothing on the subject",
+        "campaign site https://2amike4congress.org/ (home, /papers, /library, /news and the five plank papers: health-insurance-scam, open-the-books, restore-sound-money, restore-the-militia, wealthy-again; /news/the-dollar-in-your-wallet; /melting-dollar), searched for voter, photo id, citizenship, ballot, election integrity, SAVE Act, identity, non-citizen: nothing on the subject",
+        "congress.gov: not applicable, never a member of Congress (2022 and 2026 challenger only): nothing on the subject",
+        "not reviewed: https://www.facebook.com/people/The-Committee-to-Elect-Michael-Stoddard-to-Congress/61592288286352/ (social page, not fetched)",
+        "web news search: not run, the shared search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:18:12.382Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "BallotReady https://www.ballotready.org/people/michael-stoddard (confirms 2026 general-election candidate, Utah 3rd Congressional District; lists no positions)",
+        "iVoterGuide https://ivoterguide.com/candidate/74000/race/33687/election/1486 (same race; the voter-ID questionnaire item and all other items are unanswered)",
+        "campaign site https://2amike4congress.org (home page, news, papers and library pages, and the militia paper searched for subject words; nothing on the subject)",
+        "not reviewed: https://x.com/MikeAuditUSGov (social account named on the campaign site; not readable)",
+        "Ballotpedia: page returned no content",
+        "no legislative record: not a sitting official",
+        "one web search on name plus 2026 race (no news coverage found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:54:30.434Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "politician_id": "bb235d49-c91a-45da-8d91-bf3d5b766196",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Kathleen_LaNatra (12th Plymouth, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot)",
+        "On the Record (0 appearances)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/KPL1 (sponsored and co-sponsored lists reviewed: nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: campaign site and official House page keyword search",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:21:21.123Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID or no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and voting laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site kathylanatra.com (nothing on the subject on the home page; the /vote page was not read)",
+        "Ballotpedia Kathleen_LaNatra (confirms she advanced from the primary and is on the 2026 general-election ballot, 12th Plymouth)",
+        "malegislature.gov legislator profile and bill lists for the 191st to 194th sessions (only a local bill on recall of town officials in Pembroke; nothing on ID or citizenship)",
+        "two news searches on name plus voting and election terms (nothing on the subject)",
+        "nothing on the subject: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:00:08.339Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

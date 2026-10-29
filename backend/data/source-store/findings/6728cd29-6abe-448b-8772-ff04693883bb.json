@@ -1,0 +1,274 @@
+{
+  "politician_id": "6728cd29-6abe-448b-8772-ff04693883bb",
+  "findings": [
+    {
+      "id": "37df5113aae75f983db9d79d2f73d901b23d246fc0116c229f234a1041d1f1e9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "sponsor",
+      "note": "Pike is listed as a co-sponsor (not primary) of H825, Election Improvements. Section 4 changes the ID that goes with an absentee ballot request and returned absentee ballot: the State Board must set rules for photocopies of ID; a voter without a photocopy may sign an alternative affidavit giving the last four digits of the Social Security number plus a driver licence number, special ID card number or date of birth; the request form asks for the last four Social Security digits plus a licence or ID card number. The bill also bans ranked choice voting and shortens early voting. Last action on the page: referred to the Rules committee on 4/9/2025. The bill text version v0 was read at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "reasonable-impediment affidavit for absentee voters",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:39.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e34d050dcf7217e2575b7bce9ec21d607de7fbaf94d32debc0ab92d4d65156a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "sponsor",
+      "note": "Pike is listed as a co-sponsor (not primary) of H958, Election Law Changes. The filed text (dated Apr 10, 2025) covers absentee ballots, including rejection when the return envelope lacks a photocopy of ID or an affidavit. The latest edition (v9) adds a citizenship question and citizenship statement on registration applications and covers records of possible non-citizens on voter rolls. Bill page shows eight further editions and a ratified version, and the House calendar listing of 08/31/2026 for the 09/02/2026 session. Date given is the date of the filed text.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:39.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e6cf72168a082bde184279852dfb090e3828e1b8cfc48b38b1237abf3af3f7e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1231-2025",
+      "act": "sponsor",
+      "note": "Pike is listed as a co-sponsor (not primary) of H1231, No Voter Registration Changes At DMV. The bill text (dated May 11, 2026) amends G.S. 163-82.19: a licence or ID card applicant is asked whether they are a US citizen; a person who says no or declines to answer is told it is a felony for a non-citizen to register and is not offered voter registration. Last action: referred to the Rules committee on 5/12/2026.",
+      "subjects": [
+        "proof or statement of citizenship to register",
+        "non-citizen voting and voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:39.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25233591257278642d9c7d23d1dc3bb48766ca97b96e5acc0b55a95689d06087",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "sponsor",
+      "motion": "Filed (listed among the bill's sponsors, not the primary sponsor)",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. The bill page lists Pike among the sponsors after the two primary sponsors; the bill was filed in the House on this date.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57084dfb10c9343452dfeb906fc811dfb50eedacf3cba5d39977e424a0f3d88b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Second Reading",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #758, Second Reading: passed 66 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f3e607794cc20caff0a58ea280ad09d4cae298ed4158348223d2f3a31cd5b446",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur",
+      "note": "HB 958, Election Law Changes (2025-2026 session). The ratified text includes a requirement that the State Board create a process to remove voters flagged as possible non-citizens by a federal database, and requires an applicant to affirmatively state US citizenship on a voter registration application. Roll call #801, M11 Concur: passed 62 to 47.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecd7cccb6195311fcfefd678aee21fc9d870c938a04f526fbcd7adf4c5e971d4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Second Reading",
+      "note": "SB 747, Elections Law Changes (2023-2024 session, ratified as SL 2023-140). The ratified text sets same-day registration at early voting sites with a requirement to present photo identification, and lets a voter be challenged for not presenting photo identification. Roll call #542, Second Reading: passed 69 to 47.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration with photo ID",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4043d8812816d3abe613908a2abe22800124c837d133b46e7ec34c237bf6dfe0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Veto Override",
+      "note": "SB 747, Elections Law Changes (2023-2024 session, ratified as SL 2023-140). The ratified text sets same-day registration at early voting sites with a requirement to present photo identification, and lets a voter be challenged for not presenting photo identification. Roll call #596, Veto Override: passed 72 to 44.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration with photo ID",
+        "election law overhaul"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:55.416Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with absentee ballot or request",
+        "no-ID alternatives (affidavit, reasonable impediment)",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "NC General Assembly member page confirming Representative Joseph Pike, District 6: https://www.ncleg.gov/Members/Biography/H/808",
+        "NC General Assembly introduced-bills list for Pike (2025 session): https://www.ncleg.gov/Members/IntroducedBills/H/808 (lists bills he introduced; the co-sponsored bills below were found on their own bill pages)",
+        "NC bill pages H825, H958, H1231 (sponsor lists and bill text)",
+        "Ballotpedia: https://ballotpedia.org/Joseph_Pike (page returned navigation text only; 2026 ballot status not confirmed from it)",
+        "not confirmed: 2026 general-election ballot status (no page fetched that says so)",
+        "not reviewed: official campaign site, news coverage, debate or interview video (web search budget was used up by the session; direct fetches only)",
+        "own words: none found on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:50:39.137Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and no-ID voters",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election law overhaul bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/808 (confirms House District 6)",
+        "Ballotpedia https://ballotpedia.org/Joe_Pike (confirms on the 2026 general-election ballot)",
+        "NC General Assembly bill pages and roll-call transcripts for HB 958 and SB 747",
+        "NC General Assembly introduced-bills list for 2025 (no bill of his on ID or citizenship)",
+        "web search on name plus voter ID and citizenship words (no statement of his own found)",
+        "not reviewed: his official site and campaign site (not located)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T19:59:55.416Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

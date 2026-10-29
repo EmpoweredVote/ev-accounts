@@ -1,0 +1,199 @@
+{
+  "politician_id": "3c083452-8494-4c47-b6e8-327dc24584c7",
+  "findings": [
+    {
+      "id": "9a427cbf51f5dc956994790c11a842b338a392f1fd06ade114009face8444632",
+      "kind": "own-words",
+      "url": "https://ajlouderback.com/89th-session-accomplishments/",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Representative Louderback voted for SJR 37, which proposed a constitutional amendment clarifying that voters must be US citizens.",
+      "note": "Under the heading ELECTION INTEGRITY on his campaign site's 89th-session accomplishments page (undated; it refers to the amendments on the November 4 ballot, so late 2025). A statement issued by his campaign about his own vote on SJR 37.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "347e9f37859c61795914d746696e078bc33e8886810811050f90c5f8a156f61b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4962",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4962-2025",
+      "act": "author",
+      "note": "Louderback is listed as a joint author (with the lead author) of a bill on disclosure of a candidate's citizenship for public office. Referred to the Elections committee 2025-04-03; no later action shown.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92d9a2defb023835b4f988d5466f2cd4c4c82b89dc2bcaed44b0056cce97c2e2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-03-14",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "coauthor of HB 5337, proof of citizenship to register to vote (filed 2025-03-14; date Louderback was added not shown)",
+      "note": "Louderback is listed as a coauthor of the bill requiring proof of citizenship to register to vote, with criminal offenses. The House Elections committee report was sent to Calendars on 2025-05-07; no floor action is shown.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "117364fddfbd8d331e8fed346adcb06cb27e52e9f9cc26f117adffeb14b6b778",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "House cosponsor of SB 16, proof of citizenship to register to vote (bill filed 2025-03-11; date Louderback was added not shown)",
+      "note": "Louderback is listed as a House cosponsor of the Senate bill requiring proof of citizenship to register to vote, including a limited federal ballot for a voter who cannot supply the proof. The House committee report was sent to Calendars on 2025-05-25.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874115bea613c6b571f3943a82d1c610fba56dcda7d3d0abebd0871f3689c09d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5138",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5138-2025",
+      "act": "other",
+      "motion": "coauthor of HB 5138, attorney general duty to prosecute election-law offenses (filed 2025-03-13; date Louderback was added not shown)",
+      "note": "Louderback is listed as a coauthor of a bill on the attorney general's duty to prosecute criminal offenses under the state's election laws. The last action shown is the Senate appointing conferees on 2025-05-29.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e39246abe8ee1dbf408060fe237b545f63072eb1ed7d3ba6c8580b93d201ff4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR189",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-189-2025",
+      "act": "other",
+      "motion": "coauthor of HJR 189, constitutional amendment on attorney general authority to prosecute election-law offenses (filed 2025-03-12; date Louderback was added not shown)",
+      "note": "Louderback is listed as a coauthor of a proposed constitutional amendment specifying the attorney general's authority to prosecute election-law offenses. Referred to State Affairs 2025-04-02; no later action shown.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.528Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: Ballotpedia (A.J._Louderback page) shows A.J. Louderback, Texas House District 30, term ends 2027, on the 2026-11-03 general election ballot",
+        "On the Record (1 meeting, 2026-07-22 press conference, https://ontherecord.empowered.vote/meetings/50a2e3a4-0cf8-4c65-8612-7fc9c51385bc): nothing on the subject (remarks are about law enforcement)",
+        "campaign site ajlouderback.com (home, issues, meet, endorsements, news list, constitutional-amendments page, 89th-session accomplishments page)",
+        "official House page house.texas.gov/members/30 (member code A4620)",
+        "Texas Legislature Online 89th-session author, coauthor, sponsor and cosponsor lists, plus histories of HB 4962, HB 5337, SB 16, HB 5138, HJR 103, HJR 189",
+        "Ballotpedia (no statements on the subject)",
+        "web search x1 (name plus subject words): bill-tracker pages and hearing coverage, no quotes of him",
+        "not reviewed: House roll call for SJR 37 (2025-05-12); his own site says he voted for it, the official roll call page is script-loaded",
+        "blocked: https://louderbackforcongress.com/issues (no response)",
+        "not reviewed: his X and Facebook accounts (social, not readable)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:07:21.050Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.528Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

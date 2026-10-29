@@ -1,0 +1,54 @@
+{
+  "politician_id": "d468e390-4d5f-4337-a9e6-ba8c04f9e061",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: sitting member of the Arizona Corporation Commission (statewide office, took office January 2025), confirmed by https://www.kawc.org/news/2024-10-14/arizona-corporation-commission-candidates-republican-rachel-walden (candidate profile) and the Wikipedia 2024 Corporation Commission election page; the brief does not call her a 2026 candidate",
+        "On the Record: not run (repo scripts not permitted for this agent), so not reviewed",
+        "Ballotpedia: blocked: https://ballotpedia.org/Rachel_Walden (403)",
+        "official commission page: not found (https://azcc.gov/commissioners/walden returned 404)",
+        "campaign sites: expired (https://www.rachelwalden.com/ and https://rachelwaldenaz.com/ unreachable)",
+        "PolitiQuote page of the 2024-04-04 commission debate: her lines are on utility rates; the one election-related line is about campaign financing, off the subject",
+        "KAWC candidate profile of 2024-10-14: nothing on the subject",
+        "two news searches on name plus subject words: nothing quoting her on the subject",
+        "not reviewed: PBS debate video https://www.pbs.org/video/az-votes-arizona-corporation-commission-debate-sept-26-2024-qtvkjj/"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:14:27.537Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: sitting member of the Arizona Corporation Commission (statewide office, took office January 2025), confirmed by https://www.kawc.org/news/2024-10-14/arizona-corporation-commission-candidates-republican-rachel-walden (candidate profile) and the Wikipedia 2024 Corporation Commission election page; the brief does not call her a 2026 candidate",
+        "On the Record: not run (repo scripts not permitted for this agent), so not reviewed",
+        "Ballotpedia: blocked: https://ballotpedia.org/Rachel_Walden (403)",
+        "official commission page: not found (https://azcc.gov/commissioners/walden returned 404)",
+        "campaign sites: expired (https://www.rachelwalden.com/ and https://rachelwaldenaz.com/ unreachable)",
+        "PolitiQuote page of the 2024-04-04 commission debate: her lines are on utility rates; the one election-related line is about campaign financing, off the subject",
+        "KAWC candidate profile of 2024-10-14: nothing on the subject",
+        "two news searches on name plus subject words: nothing quoting her on the subject",
+        "not reviewed: PBS debate video https://www.pbs.org/video/az-votes-arizona-corporation-commission-debate-sept-26-2024-qtvkjj/"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:31:40.443Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

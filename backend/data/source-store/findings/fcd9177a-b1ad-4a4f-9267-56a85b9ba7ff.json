@@ -1,0 +1,71 @@
+{
+  "politician_id": "fcd9177a-b1ad-4a4f-9267-56a85b9ba7ff",
+  "findings": [
+    {
+      "id": "8a001b0306ced88f940a56a084ef6736761a5d7eb3421733dc854554b63c057e",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/brandon-dukes",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Same Day Registration - register AND vote on the same day",
+      "note": "Listed on the BallotReady candidate profile as one of his positions on elections and voting. The page appears candidate-supplied but the page does not say so outright. Says nothing about ID.",
+      "subjects": [
+        "same-day registration (related election rule)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:47.246Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bd8b3ce32a5d3edbab91882e4d90e534a927979c3b2048622ea7725e071d5c5",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/brandon-dukes",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Change PA primaries from closed to open so ALL registered voters can vote in PA primaries.",
+      "note": "Listed on the same profile as a position on how primaries work. Nothing about ID or citizenship.",
+      "subjects": [
+        "open primaries (related election rule)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:47.246Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "identity confirmed: https://www.pahouse.com/Dukes (state representative for the 12th District, Butler County) and https://www.ballotready.org/people/brandon-dukes (on the 2026-11-03 general ballot)",
+        "On the Record: not run for this person (a rule against running repo scripts applied); not reviewed",
+        "official House site (https://www.pahouse.com/Dukes): nothing on the subject; newsroom page https://www.pahouse.com/dukes/News/ returned 404; recent releases seen are about tax credits, grants and a road project",
+        "campaign site: not located by search",
+        "BallotReady profile: two election-rule items saved, nothing on ID",
+        "https://www.mychesco.com/a/news/government/dukes-win-expands-democrats-pennsylvania-house-majority/: nothing on the subject",
+        "Ballotpedia: not reviewed",
+        "Two web searches on name plus voter ID, elections, campaign issues: nothing on ID by this person"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:43:47.246Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "politician_id": "12f585f8-8bfd-4b91-90e6-c463ecf951cc",
+  "findings": [
+    {
+      "id": "a0f5b3bb11f659db61ce3c720325ab30c0772157eaad6abd25ce54c55a178e4c",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/courts-voter-id-ruling-should-be-end-of-farce-tartaglione-says",
+      "date": "2014-01-17",
+      "date_precision": "day",
+      "passage": "Let us return elections to the generations of registered Pennsylvania voters who have gone to the polls with only their signatures. It is what we expect. It is what should be.",
+      "note": "Press release after the Commonwealth Court struck down the 2012 photo ID law; she says voters should return to signing in at the polls, and says there is very little fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef157360789b72c88e7b617417a44550e783eb182aadee63da0a8b229c599d59",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/courts-voter-id-ruling-should-be-end-of-farce-tartaglione-says",
+      "date": "2014-01-17",
+      "date_precision": "day",
+      "passage": "The petitioners did a great job proving there is very little fraud in Philadelphia and throughout the state.",
+      "note": "Same release; she cites court evidence on the amount of in-person fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53263a7d4cf34e2a3bc20e0ce02be7fb304eb6412dae07ce04901db9481d5e32",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-a-costly-mistake-2",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "I’ve been confident all along that the courts would see the serious flaws and dubious reasoning behind voter ID,",
+      "note": "Statement on the Commonwealth Court order keeping a soft roll-out, where voters are asked for ID but not required to show it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "096f3d70232f90c8ac39a6c3417b44adbc75df3c28de3e95e13f9516018d3f9f",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-a-costly-mistake-2",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "For months I’ve been hearing from frustrated seniors, students and others who didn’t know what the requirements were and the requirements kept changing,",
+      "note": "Same release; she describes voter confusion about ID rules in her district.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter confusion about ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b60a72eeda0e2c49a7ad6b6f469ca96b8207982adc0e8bbae5413e95bdfd0628",
+      "kind": "own-words",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-part-of-a-disturbing-trend-for-the-disabled",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "Creating barriers to prevent the disabled from voicing their grievances with their government, either inside the Capitol or inside the polling place, has become a priority with the legislature’s Republican majority and the current administration,",
+      "note": "Reaction to Senate passage of House Bill 934 (photo ID at polls); the release says her amendment to exempt voters with disabilities was rejected. Quoted text names a party, copied verbatim as her words.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with disabilities"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6377557b5392f3d7dc2c30cfef401addf78ce5eadce774c6bbe73fa583377f0",
+      "kind": "record",
+      "url": "https://senatortartaglione.com/tartaglione-voter-id-part-of-a-disturbing-trend-for-the-disabled",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "other",
+      "motion": "Tartaglione amendment to exempt voters with disabilities from photo ID, rejected on the Senate floor (as reported in her release)",
+      "note": "Her own release says the Senate rejected her amendment to exempt those with disabilities from HB 934, the photo ID bill, before passing it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and voters with disabilities"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T21:59:41.340Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('TARTAGLIONE'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine Tartaglione (district 2) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Tartaglione'), linked to Christine M. Tartaglione (district 2) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter fraud claims",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "official Senate site tag page https://www.senatortartaglione.com/tag/voter-id (4 releases saved; one more release on the bill 934 committee vote had no usable ID-policy passage)",
+        "web search: her name plus voter ID (results were the 2012-2014 releases only)",
+        "nothing on the subject: no 2025-2026 statement found on the SAVE Act or mail-ballot ID",
+        "not reviewed: Ballotpedia, legislature bill pages (floor votes and sponsorships are linked separately)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T21:59:41.340Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

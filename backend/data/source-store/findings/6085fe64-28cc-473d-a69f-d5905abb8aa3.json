@@ -1,0 +1,386 @@
+{
+  "politician_id": "6085fe64-28cc-473d-a69f-d5905abb8aa3",
+  "findings": [
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4fdfe03edfcd07231325de7ec61907e40d4edf7611cf518d479b3ebe3219119",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2011/S352",
+      "date": "2011-03-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-352-2011",
+      "act": "sponsor",
+      "note": "Hise was a primary sponsor of SB 352, Restore Confidence in Government. Part 1 requires every in-person voter to show valid photo ID, lists accepted photo IDs (including a state voter ID card), requires a photocopy of photo ID or a utility bill or similar document with a mail-in absentee ballot for some voters, and lets a voter without the required ID vote a provisional ballot. Bill text at https://www.ncleg.gov/Sessions/2011/Bills/Senate/PDF/S352v0.pdf. Date is the first reading; the bill was then referred to committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "provisional ballot for voter without ID",
+        "state-issued voter ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0f969fbb7ec60cb0bb67435424a19ab14f839cd92c1bde2b40e48ac0ef976a9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S747",
+      "date": "2023-06-01",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "sponsor",
+      "note": "Hise was a primary sponsor of SB 747, Elections Law Changes (filed 2023-06-01; became Session Law 2023-140). The final law text at https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S747v6.pdf has same-day registrants present photo ID, requires a photocopy of ID or an ID affidavit with absentee ballots, lists a driver license, state ID or last four Social Security digits for an absentee request, and has the State Board check the citizenship status of people removed from jury lists as non-citizens.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration photo ID",
+        "mail-ballot ID",
+        "absentee request ID number",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f119474178913da7adc768efbf0d361b8df334006c9d651861028fef620dc67",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override, Roll Call 482",
+      "note": "Hise is listed among the ayes (30 to 19) on the Senate vote to override the governor's veto of SB 747, Elections Law Changes. The roll call lists Hise as the bill's sponsor.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69379cd5e436f78c684e62da9beeeffb0d815e099c6edddd7a734075fe3dbe99",
+      "kind": "own-words",
+      "url": "https://ralphhise.com/",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I have fought to protect our elections from further fraud by passing legislation like SB725 which prohibits big tech from giving money to boards of elections.",
+      "note": "Hise's campaign home page, under the heading PROTECT OUR ELECTIONS. The page is undated; its footer reads Copyright 2022. It names a law on private money for election boards and does not mention ID. Saved as an election-integrity statement.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbf0b6c5f77aa8a89c5af4a690ee40684db61a2f0c6b0a098433e9edc33c36f7",
+      "kind": "own-words",
+      "url": "https://ralphhise.com/",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "During my time there I have fought to lower taxes, secure elections, and end the teaching of Critical Race Theory in schools.",
+      "note": "Quote from Hise on his campaign home page, where he lists securing elections among his priorities. Page undated; footer reads Copyright 2022. It does not mention ID.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9250b25a900ad1ecfb8ecbd5fd1e8b44219668aed26ab527614e21cb5ba3f37",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Ralph_Hise",
+      "date": "2014",
+      "date_precision": "year",
+      "passage": "Senator Hise sponsored a hugely popular measure requiring voters to show photo identification at the polls. Studies show photo ID requirements boost voter confidence and participation. Gov. Perdue later vetoed the voter ID legislation.",
+      "note": "Text from the Voter identification section of Hise's 2014 campaign website, as quoted in the 2014 section of Ballotpedia's page (Ballotpedia says the campaign site highlighted these issues). The original campaign page is now a 404, so this is the Ballotpedia copy. It is third-person campaign wording, not a first-person quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:16.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1124c53437c41445f7bd66b053be693df091cf7b4c8ebadc401f60ee3ffd964",
+      "kind": "own-words",
+      "url": "https://www.carolinajournal.com/voter-id-amendment-closer-to-approval-early-voting-extended/",
+      "date": "2018-06-29",
+      "date_precision": "day",
+      "passage": "“Nothing suppresses the votes of racial minorities more than their votes being canceled by someone who votes illegally,” Hise said. “I am fighting today to protect the vote of every North Carolinian.”",
+      "note": "Quoted by Carolina Journal (Dan Way) during Senate debate on the photo ID constitutional amendment, answering the argument that voter ID suppresses minority votes.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d61e76efac41ddc00d2b9481195856bde2657768ab432d0edb1dc1eb58e0227f",
+      "kind": "own-words",
+      "url": "https://www.carolinajournal.com/voter-id-amendment-closer-to-approval-early-voting-extended/",
+      "date": "2018-06-29",
+      "date_precision": "day",
+      "passage": "“They’ll tell you how elections were stole, how ballots were sold for half pints of liquor, how they used to carry blank ballots out and pay people when they left, and sent marked ballots back in,” Hise said.",
+      "note": "Quoted by Carolina Journal; Hise describes historical stories of vote fraud in his region as a reason for the photo ID amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity",
+        "voter fraud history"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1e4e92fceb4cda8411310f754a516626dc1d5d7664de97e5ea94e46efd88cbc",
+      "kind": "own-words",
+      "url": "https://spectrumlocalnews.com/nc/charlotte/news/2023/06/05/republican-bill-would-change-election-rules.html",
+      "date": "2023-06-05",
+      "date_precision": "day",
+      "passage": "“Our hope is that this will restore some confidence in many citizens in their voting process,” said Mitchell County Republican Sen. Ralph Hise, of Mitchell County, according to The Associated Press.",
+      "note": "Spectrum News 1 quoting Hise (via AP) on the 2023 omnibus election bill, which changed mail-ballot receipt rules and added signature-verification pilots.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "877f758bb5caace52c0f2e78bba2599d058d4f174099f3f3665e6ed42bf2805a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2024",
+      "act": "sponsor",
+      "note": "Hise is first-listed primary sponsor of S921 (SL 2024-58), a constitutional amendment to require photographic identification from all voters, not only in-person voters, put to voters on Nov 3, 2026. Filed Dec 2, 2024; ratified Dec 13, 2024. Bill text fetched from the NC General Assembly PDF.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "photo ID for all voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e71054c334f77f742a456faeda4a623fcfaabe60be62a39e78d8e084e61d4f18",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2024",
+      "act": "yea",
+      "motion": "Third Reading, Senate roll call 677 (passed 30-19)",
+      "note": "Hise is listed among the Ayes on the Senate third reading of S921, the all-voters photo ID constitutional amendment; the roll call lists him as sponsor.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cf41298b345a83eb390f95adc1a383b960d5ecfe1ef85755f3ce7c1bf56646c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/S214",
+      "date": "2019-03-12",
+      "date_precision": "day",
+      "instrument_id": "NC-S-214-2019",
+      "act": "sponsor",
+      "note": "Hise and Daniel are primary sponsors of S214, Ensure Orderly 2019 Elections (SL 2019-4, effective March 14, 2019), which lets any registered voter voting in person in 2019 vote an official ballot whether or not photo ID is presented, and keeps implementation and education work going. Summary text from the NC House summary page.",
+      "subjects": [
+        "voters with no ID",
+        "voter ID at the polls",
+        "ID implementation delay"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "no-ID voter options (provisional ballot, free ID card)",
+        "proof of citizenship",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Ralph_Hise (incumbent, NC Senate District 47, on the Nov 3, 2026 general election ballot; the March 3, 2026 primary was canceled); official bio https://www.ncleg.gov/Members/Biography/S/298 (Senator Ralph Hise, District 47)",
+        "On the Record (0 meetings; extract-otr.mjs returned 0 appearances)",
+        "campaign site https://ralphhise.com/ (home and meet-ralph pages; old issues page http://www.ralphhise.com/issues.html now returns 404)",
+        "Ballotpedia https://ballotpedia.org/Ralph_Hise (campaign-site excerpts)",
+        "NC General Assembly bill pages: SB 352 (2011), SB 747 (2023), SB 824 (2017-18; Hise is not a sponsor), roll call S-482 (2023)",
+        "nothing on the subject: Hise's own words in interviews, debates, press releases (not found; no usable source reached)",
+        "blocked: https://ncnewsline.com/?s=Hise+voter+ID (403)",
+        "blocked: https://www.ncsenate.gov/ (domain not found)",
+        "not reviewed: web news search (the session's shared 200-search budget was used up, so no news search was run)",
+        "not reviewed: https://www.ontheissues.org (lead-only, not used)"
+      ],
+      "found": 6,
+      "at": "2026-10-22T23:51:16.915Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee voters",
+        "voters with no ID (provisional ballot, exceptions)",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "mail-ballot rules (related)"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Ralph_Hise names him as incumbent NC State Senate District 47 on the Nov 3, 2026 general-election ballot (primary canceled)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/380 (HTTP 500)",
+        "blocked: https://www.ncsenate.gov/Senators/Ralph_Hise (no connection); official and campaign sites not reached, nothing on the subject",
+        "NC General Assembly bill pages: S921 (2023), S214 (2019); Senate roll call 677",
+        "Ballotpedia (no voter-ID statements found on page)",
+        "News searches (5): Carolina Journal 2018, Spectrum News 2023 used",
+        "blocked: https://ncnewsline.com/briefs/nc-senate-republicans-propose-sweeping-voting-changes-including-new-rules-for-mail-in-ballots/ (HTTP 403)",
+        "nothing on the subject: proof of citizenship / SAVE Act (no Hise statement found)",
+        "not reviewed: floor debate audio/video of S921 (2024-12-02) and S747 (2023)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T00:57:16.063Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

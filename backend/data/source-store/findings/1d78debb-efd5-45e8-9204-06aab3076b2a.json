@@ -1,0 +1,126 @@
+{
+  "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "0401fc37ae4e86fbe1793162b3e46b574eb054526c6b8873652db99fda044c12",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "note": "Co-petitioner (with Rep. LeBoeuf) on H.849, An Act relative to inactive voters and municipal census administration, referred to the Election Laws committee and later folded into a study order (H5311). Bill title only; the bill text was not read. About voter-roll upkeep, not ID or citizenship proof. Date is the first listed action; the filing date may be earlier.",
+      "subjects": [
+        "voter-roll maintenance (inactive voters)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:01:55.437Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2e218d153de9de1099caa5efcbbe9c6f2891eb003fa052bf61a7395d0fb1057",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "motion": "Co-petitioner on H.849, An Act relative to inactive voters and municipal census administration",
+      "note": "Listed as co-petitioner (with Rep. LeBoeuf) of a bill on inactive voters and municipal census administration, a voter-roll maintenance topic; the page shows a 2025-02-27 filing date and a hearing on 2025-09-16. It does not address ID or citizenship proof.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:35:39.406Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll maintenance (inactive voters)",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Steven_Owens_(Massachusetts)) says he is on the Nov 3, 2026 general-election ballot, 29th Middlesex District, after the Sept 1, 2026 primary",
+        "On the Record (0 appearances for this politician id)",
+        "malegislature.gov member profile SCO1 (sponsorships: one election-related bill found, H.849)",
+        "malegislature.gov bill page H.849",
+        "malegislature.gov H.4359 amendments page (no amendment listed; on-file vote not re-verified)",
+        "Ballotpedia (no survey responses; nothing on the subject)",
+        "blocked: https://www.mahouse.gov/Owens (certificate mismatch)",
+        "not reviewed: campaign site (stevenowens.org does not resolve; no other campaign URL reached)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:01:55.437Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov member profile and bill lists for the 192nd to 194th sessions (one election-law bill, on inactive voters; no voter ID or citizenship bill)",
+        "malegislature.gov bill page H.849 (2025-2026)",
+        "Cambridge Election Commission list of Sept 2026 primary candidates (shows him on the 29th Middlesex line)",
+        "blocked: https://ballotpedia.org/Steven_Owens (bot-check page)",
+        "blocked: https://www.watertownmanews.com/?p=131216 (403)",
+        "no official or campaign site found; not reviewed: Little Local Conversations podcast episode (audio)",
+        "one news search on name plus voter ID (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:35:39.406Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

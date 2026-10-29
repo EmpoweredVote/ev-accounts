@@ -1,0 +1,66 @@
+{
+  "politician_id": "0f77ee29-fb95-46be-a12e-a52e48e620d9",
+  "findings": [
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('REICHARD') on the official bill page; linked to Chad G. Reichard via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID",
+        "proof of identity with a mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repreichard.com/ (homepage and press release list: nothing on the subject)",
+        "positive control: https://www.repreichard.com/ is headed 'PA State Rep. Chad Reichard'",
+        "web searches on his name plus voter ID, photo ID, mail ballot, election integrity: no statement from him found",
+        "blocked: https://ballotpedia.org/Chad_Reichard (empty page, status 202; not retried)",
+        "legislature bill pages: not reviewed (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:49.076Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

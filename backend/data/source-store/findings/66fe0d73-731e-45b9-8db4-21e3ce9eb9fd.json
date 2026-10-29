@@ -1,0 +1,274 @@
+{
+  "politician_id": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd",
+  "findings": [
+    {
+      "id": "438021c25d6f1bbf9fc8921c3ce80c3563636ccc648eca28af8a3707c72eb08c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bd2969d3400da1c6bc17d0e763c94cf999e2123b889ead93e555f24bc431ea00",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "nay",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: nay (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "76de108b46be8ddb209cc0fbfd10034885a69156f8fe37b597cd5b3715dc8b93",
+      "kind": "own-words",
+      "url": "https://augustafreepress.com/news/senate-republicans-vote-for-strict-mail-in-absentee-voting-restrictions/",
+      "date": "2015-02-18",
+      "date_precision": "day",
+      "passage": "“The reason for having photo ID in the first place – whether you agree with it or not – is that when you go to the poll, you hand the poll worker your ID so that they can look you up to make sure that you are the person that is in the ID. When you’ve got someone who’s registering or doing their vote electronically, no one can see that voter. There is no one to compare the ID to and no use for the ID. Furthermore, there is no evidence at all that fraud has occurred anywhere in Virginia in recent history where anybody has voted fraudulently by absentee mail.”",
+      "note": "Quoted by Augusta Free Press (article dated 2015-02-18, about a Senate committee vote on a bill requiring a photocopy of photo ID with a mail-in absentee ballot application). Date is the article date; the remarks were made around the committee vote.",
+      "subjects": [
+        "ID with a mail or absentee ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfd5bbf6e82e78c8996911f0189a51e9d1bba5e423968d11c8c4e57af41fa454",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+S08V0075+HB0544",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "Senate Privileges and Elections committee, motion to pass by indefinitely (9-6)",
+      "note": "HB 544 (2022), optional restrictive photo ID requirement: the committee voted to pass the bill by indefinitely, ending it for the session. Yea is a vote for that motion.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7b1e8ccaa1fabad50e41e5212fe7bffdf42b85c5e0be9defc33ca0cfb4207e2",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+vot+S08V0067+HB0026",
+      "date": "2024-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Senate Privileges and Elections committee, motion to report (10-5)",
+      "note": "HB 26 (2024), voter identification, accepted forms of identification, private entities licensed or certified: changes which identification documents are accepted for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "types of ID accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f9c27164ed1b65ed06ae13d0474d66666d8c283d09df5c79abee3d854b621f3",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Senate passage vote (21-17)",
+      "note": "HB 26 (2024), voter identification, accepted forms of identification, private entities licensed or certified: changes which identification documents are accepted for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "types of ID accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:55.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Deeds'), linked to R. Creigh Deeds via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cd0d4e83cae44f3283b75c4ac660847b0e313cd0a71b8fd7d64d413d0651b02",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Deeds'), linked to R. Creigh Deeds via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b34681954edb0741441741d7cedf52200a9a77cb9a906d6f497944e99f705a21",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Deeds'), linked to R. Creigh Deeds via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found (extract-otr.mjs)",
+        "Virginia LIS classic bill and vote pages (2022 and 2024 sessions), fetched",
+        "FastDemocracy HB 26 (2024) page, fetched",
+        "blocked: https://lis.virginia.gov/bill-details/20221/HB544 (page needs JavaScript, no content)",
+        "blocked: https://ballotpedia.org/ (fetch returned no content)",
+        "blocked: https://www.vpap.org/ (403 or handshake failure)",
+        "blocked: https://legiscan.com/VA/bill/HB544/2022 (403)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "not reviewed: 2025 and 2026 session bill pages (LIS classic does not serve those sessions; new LIS needs JavaScript)",
+        "5 news searches on name plus subject words: no own-words statement on the subject found",
+        "Wikipedia page confirming current office",
+        "blocked: https://www.jurist.org/commentary/2012/04/creigh-deeds-voter-id/ (403 and bot check; Deeds column on voter ID veto, not reviewed)",
+        "not reviewed: https://thenews-gazette.com/article/403,do-you-know-how-sen-deeds-is-voting (connection reset)",
+        "Augusta Free Press 2015 article, fetched"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:24:55.188Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.793Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

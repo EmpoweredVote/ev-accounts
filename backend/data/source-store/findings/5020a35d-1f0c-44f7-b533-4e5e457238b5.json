@@ -1,0 +1,102 @@
+{
+  "politician_id": "5020a35d-1f0c-44f7-b533-4e5e457238b5",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "97d519c3b729ef0be25a164ed5b7f218d66976a2716555e4d155132aebfda299",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "nay",
+      "motion": "On adoption of amendment #409 to H.4000 (FY2026 budget), An Act relative to identification to vote; rejected 25 yeas to 131 nays (Yea and Nay No. 42)",
+      "note": "McMurtry is recorded N on the roll call sheet. The amendment text (https://malegislature.gov/Bills/GetAmendmentContent/194/H4000/409/House/Content) would require each voter to show valid State or Federal photo identification before receiving a ballot, list acceptable IDs (driver's license, passport, military ID, firearm ID card, other government photo ID), direct the Secretary of the Commonwealth to give a free photo ID to a registered voter without one who signs an affidavit, and take effect January 1, 2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:06.046Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Paul_McMurtry (11th Norfolk, on the Nov 3, 2026 general ballot; advanced from the Sept 1, 2026 primary)",
+        "On the Record (0 appearances for this politician; name search returned 0 sources)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/P_M1 (sponsored bills listed; nothing on the subject)",
+        "Ballotpedia (no voter ID or election-law positions found on the page)",
+        "not reviewed: official site and campaign site (no address found; web search budget exhausted, so no news search was run)",
+        "not reviewed: https://malegislature.gov/Bills/194/H4359/RollCall (vote already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:13.193Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID or affidavit for a voter with no ID",
+        "ID or ID number with a mail or absentee ballot",
+        "documentary proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page (confirms sitting member, 11th Norfolk District, on the 2026 general-election ballot after the 2026-09-01 primary)",
+        "Massachusetts Legislature member profile and sponsored-bill list (no voting, ID or citizenship bills as sponsor)",
+        "Massachusetts House roll calls on H.4000 (Yea and Nay Nos. 30, 36, 42 checked) and the amendment texts",
+        "Beacon Hill Roll Call weekly report (lead to the 2025 vote)",
+        "House amendment 1587 to H.5500 (2026 budget): shown as rejected without a recorded vote, so no member vote to cite",
+        "official site: only the legislature profile; no campaign site found; nothing on the subject",
+        "one news search on the name plus voter ID, voting and election words: no own-words statements found",
+        "Wikipedia and BallotReady: leads only, not cited"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:07:06.046Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

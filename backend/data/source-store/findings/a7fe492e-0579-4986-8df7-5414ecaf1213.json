@@ -1,0 +1,70 @@
+{
+  "politician_id": "a7fe492e-0579-4986-8df7-5414ecaf1213",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Jackson, E'), linked to Edna Jackson (district 165) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record: not run (the standing rules for this session forbid running repo scripts); not reviewed",
+        "Ballotpedia: blocked (https://ballotpedia.org/Edna_Jackson returned an empty page)",
+        "legiplex.com legislation list: blocked (403)",
+        "legiscan.com bill pages: blocked (403)",
+        "open.pluralpolicy.com bill pages: not found (404)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)",
+        "web searches: name plus subject words, news and press-release sites; no own words on the subject found",
+        "house-press.com / senatepress.net targeted searches: no results on the subject",
+        "WTOC 2026-03-20 (https://www.wtoc.com/2026/03/20/rep-edna-jackson-delivers-farewell-georgia-house/): she holds House District 165 now and will not run for re-election; searched as a sitting official",
+        "branch.vote profile seen only in a search snippet: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.871Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

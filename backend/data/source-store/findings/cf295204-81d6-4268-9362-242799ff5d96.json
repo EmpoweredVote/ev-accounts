@@ -1,0 +1,350 @@
+{
+  "politician_id": "cf295204-81d6-4268-9362-242799ff5d96",
+  "findings": [
+    {
+      "id": "36c04c8f077ffe5473a97204e757c8d95bba00f0867fc9b39382274251409aec",
+      "kind": "own-words",
+      "url": "https://buckscountybeacon.com/?p=44322",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Capping state spending and capping the rate of government spending growth; passing term limits for politicians, ending taxpayer-funded pensions, and enacting a gift ban; deregulating to attract businesses to Pennsylvania; ensuring education funding follows students rather than systems; requiring voter ID and repealing universal mail-in voting; and protecting constitutional rights and pro-life values with common-sense exemptions.",
+      "note": "Key Issues field of his 2026 Bucks County Beacon candidate profile (candidate-supplied). Lists requiring voter ID and repealing universal mail-in voting among his priorities. Page date not shown; 2026 cycle.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-in voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.475Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dd340e112d3011c099dae668ad1626653d6d35711eb388b0eff65f483f60021",
+      "kind": "own-words",
+      "url": "https://senatorcoleman.com/2024/12/19/coleman-reappointed-to-pa-election-law-advisory-board/",
+      "date": "2024-12-19",
+      "date_precision": "day",
+      "passage": "“The integrity of our elections is critically important. People deserve to be confident in the fairness of the process, and as a member of the board, I want people to be motivated to vote because of that confidence,” Coleman said. “We’ve seen that our elections could be improved, and I look forward to spending more time considering possible changes.”",
+      "note": "Statement in his official release on reappointment to the state Election Law Advisory Board. General election-integrity statement; names no ID rule.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.475Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "263a2ce59f4f8d4ca54959b01d88c9c56aaafbd3a8ac0fde4b0bd8c5ba6babc9",
+      "kind": "own-words",
+      "url": "https://senatorcoleman.com/2024/12/19/coleman-reappointed-to-pa-election-law-advisory-board/",
+      "date": "2024-12-19",
+      "date_precision": "day",
+      "passage": "“I’m focused on ensuring that our election equipment is adequately tested prior to elections and will be reintroducing legislation next session to accomplish that goal. The Election Law Advisory Board is a great resource to find other opportunities for improvement,” Coleman said.",
+      "note": "Same release. He names election equipment testing as his focus. Related topic, not an ID rule.",
+      "subjects": [
+        "election equipment testing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.475Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c434d418ed9e918502bc404372ddeb0159e813630a92814d7fcd59d268657b4",
+      "kind": "record",
+      "url": "https://senatorcoleman.com/legislative-accomplishments/",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "note": "His official accomplishments page lists SB 1 (2023-24 session) as co-sponsored with Sen. Laughlin, status passed Senate with no House passage, described as a joint resolution mandating voter identification through a constitutional amendment.",
+      "subjects": [
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.475Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Coleman'), linked to Jarrett Charles Coleman (district 16) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('COLEMAN') on the official bill page; linked to Jarrett Charles Coleman via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.465Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:43:27.547Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:47:07.244Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.465Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:52:01.963Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:59:56.389Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:05:26.636Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:13:34.965Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "election integrity and election equipment testing",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: site search for voter ID, photo ID, election, mail ballot",
+        "official Senate site: legislative accomplishments page",
+        "official Senate site: Dec 2024 election advisory board release",
+        "official Senate site: Oct 2025 and Oct 2026 newsletters (mail-ballot dates only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jarrett_Coleman (empty page)",
+        "Bucks County Beacon candidate profile (2026)",
+        "Lehigh Valley Public Media 2022 election-night story (voter ID remark is about the opponent, not saved)",
+        "not reviewed: https://senatorcoleman.com/2023/01/11/senator-coleman-votes-to-put-voters-in-charge-of-crucial-reforms/ (404 on fetch)",
+        "no page found on SAVE Act or proof of citizenship",
+        "Confirmed in office: Senator for the 16th District, up for election in 2026 (Bucks County Beacon candidate profile lists him as incumbent seeking the Senate seat)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:18:25.475Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

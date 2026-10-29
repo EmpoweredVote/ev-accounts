@@ -1,0 +1,137 @@
+{
+  "politician_id": "267a7590-9ce3-4151-9d40-d0db381d664c",
+  "findings": [
+    {
+      "id": "7219fd35a3f174cd0c97e8ef98ef567831c4c6ae671a05e2c28e67b406dffc1f",
+      "kind": "own-words",
+      "url": "https://rickwilliamsforgeorgia.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I’ve worked tirelessly to end the left’s voter fraud schemes and reform our elections process to restore integrity and confidence that every vote is legal and counted.",
+      "note": "Election integrity line on his campaign site issues page. It names no voter ID, citizenship or mail-ballot rule. Page is undated.",
+      "subjects": [
+        "election integrity in general",
+        "voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:37:38.831Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williams, R'), linked to RICKY \"RICK\" WILLIAMS (district 145) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williams, R'), linked to RICKY \"RICK\" WILLIAMS (district 145) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Williams'), linked to Williams, Rick (district 25) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud and election integrity in general",
+        "SB 202 vote"
+      ],
+      "places": [
+        "scope check: state senator for District 25, listed as the only candidate for it on the 2026-11-03 general ballot (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-25/candidates/6a627d089bd00661d2e77ea5); in scope; served in the House from 2017 to 2022, so he was a House member in 2021",
+        "On the Record (0 meetings)",
+        "campaign site https://rickwilliamsforgeorgia.com (issues page, one election integrity passage)",
+        "Branch.vote 2026 profile (only a short phrase in quotes, not a full sentence, so not saved; same wording as the campaign site)",
+        "news: Milledgeville area paper 2024-02-21 reelection story (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rick_Williams_(Georgia) (page returned empty)",
+        "blocked: https://www.legis.ga.gov/api/legislation/detail/60772 (401); legislature bill pages load by script and gave no vote list, so the SB 202 House vote of 2021-03-25 was not retrieved",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (403)",
+        "blocked: https://www.legis.ga.gov/api/document/docs/default-source/bios/williams-rick-4905.pdf (image-only PDF)",
+        "blocked: https://www.senate.ga.gov/en-US/SenatorInfo.aspx?Member=4905&Session=40 (connection refused)",
+        "FastDemocracy member page: sponsorship and vote tabs empty, nothing on the subject",
+        "web searches: 3 (no voter ID bill by him found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:37:38.831Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

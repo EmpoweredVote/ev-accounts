@@ -1,0 +1,253 @@
+{
+  "politician_id": "e1c90a85-67db-4a9a-baf0-135cb2aa9d89",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "637d76c167ca377aaa3e635adf512def1d78ba5078e739cfa6b0921d861ca458",
+      "kind": "own-words",
+      "url": "https://www.priceyharrison.org/voter-resources",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "REMINDER: Voter ID is required to vote in North Carolina. Voters will be asked to show photo ID when voting in person or to include a copy of their photo ID if voting by mail. Most voters will simply show their driver’s license, but there are many other acceptable photo IDs. If a voter cannot show an acceptable photo ID when voting in person, they can still vote by filling out an ID Exception Form.",
+      "note": "Voter-information notice on her 2026 campaign site (the page is marked as paid for by her campaign). It describes the current NC rules: photo ID in person, a copy of photo ID with a mail ballot, and an ID Exception Form for a voter without ID. It describes the law and does not say whether she favors it. Exact page date not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail ballot",
+        "voters with no ID (ID exception form)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.070Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef4ebdcda84d73fff2a6cf84f535f89cc23c55c8e7cfe4eee64259243f17231a",
+      "kind": "own-words",
+      "url": "https://www.priceyharrison.org/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "North Carolinians deserve free and fair elections, where voters choose their representatives, not the other way around. I will continue to push for improvements to ensure our elections are run impartially and with transparency, including advocating for a non-partisan independent redistricting committee and expanded access to voting.",
+      "note": "Issues page, Voting Rights & Elections section. General statement on election fairness and wider access to voting; it does not mention ID. Related topic: expanded access to voting. Exact page date not shown.",
+      "subjects": [
+        "expanded access to voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.070Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27d7c818dcfd271c6fe05ec87bb1f708789a483c4e87cc0b8a1d7ba77575c7f4",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1310",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "other",
+      "motion": "A1 Harrison, second reading, SB 824 Implementation of Voter ID Constitutional Amendment (Roll Call #1310; passed 86-14)",
+      "note": "The House roll call is labelled as amendment 'A1 Harrison' to SB 824, the voter ID implementation bill. She is recorded among the Ayes on that amendment vote. The page does not say what the amendment changes. Separate from the third-reading and veto-override votes already on file.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID implementing law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.070Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed6a5c076e9ee06b2e9234d49cdf9c06cb69d245abde8a9deb46ad4b7a0fde0f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "Third reading, HB 589 Voter Information Verification Act (Roll Call #350; passed 81-36)",
+      "note": "House vote on the 2013 voter ID bill in its House form. She is recorded among the Noes.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.070Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bfbf1b3622e62155539676f54325310224f181db8b7faab54e929e47efb06b7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "nay",
+      "motion": "M11 Concur, HB 589 VIVA/Election Reform (Roll Call #1337; passed 73-41)",
+      "note": "Final House vote to accept the Senate version of HB 589, an election bill that includes voter ID. She is recorded among the Noes.",
+      "subjects": [
+        "voter ID at the polls",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.070Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment requiring photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Pricey_Harrison says she is on the 2026 general-election ballot for North Carolina House District 61 (listed there as Mary Harrison, also known as Pricey); the March 3, 2026 primary was canceled",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia page: nothing on the subject",
+        "campaign site https://www.priceyharrison.org: nothing on the subject (blog only has general get-out-the-vote text)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/566 (HTTP 500)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/488 and /Members/Votes/H/488 (HTTP 500)",
+        "ncleg bill page https://www.ncleg.gov/BillLookUp/2017/H1092 (photo ID constitutional amendment, SL 2018-128): she is not listed as a sponsor; her roll-call vote not reviewed",
+        "not reviewed: ncleg roll-call pages for H1092 (2018) and other voter ID bills",
+        "not reviewed: news search on her name plus subject words (web search budget was used up)",
+        "not reviewed: official house page, ontheissues, vote411"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:11:22.233Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail ballot",
+        "voters with no ID (ID exception form)",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "expanded access to voting"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Mary_Harrison, redirected from Pricey_Harrison) says the March 3, 2026 primary for NC House District 61 was canceled and the incumbent advanced; she is on the November 3, 2026 general election ballot",
+        "On the Record (0 appearances, extract-otr run with --names)",
+        "campaign site https://www.priceyharrison.org/voter-resources (one finding)",
+        "campaign site https://www.priceyharrison.org/issues (one related finding)",
+        "campaign site home page (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "NC General Assembly roll-call pages for HB 589 (2013) and SB 824 (2018)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/484 (HTTP 500)",
+        "blocked: https://ncnewsline.com/?p=86460 (bot challenge page; her August 2018 remarks on the amendments could not be read)",
+        "not reviewed: ncleg.gov sponsor and co-sponsor lists for 2023-2026 election bills (member bill list needs a script-driven page; not reached)",
+        "web searches (4): no direct quote of her on voter ID, photo ID or proof of citizenship found in news; no SAVE Act-type statement found (state legislator)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T00:57:16.070Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

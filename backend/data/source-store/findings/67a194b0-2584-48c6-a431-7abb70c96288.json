@@ -1,0 +1,81 @@
+{
+  "politician_id": "67a194b0-2584-48c6-a431-7abb70c96288",
+  "findings": [
+    {
+      "id": "46f0d9474c8283920d68ff235dc16b11b89651cc75b0e7d483ead53e5addf880",
+      "kind": "own-words",
+      "url": "https://jolandajones.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Opposing any unnecessary barriers to voting",
+      "note": "Issue-button text under the heading 'Voting Rights' on her campaign home page. It is a general statement; it names no ID or citizenship rule. The page itself is undated, so the year is the campaign year. (Page undated: date unknown.)",
+      "subjects": [
+        "barriers to voting in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:06.000Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "barriers to voting in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "her Texas House member page https://house.texas.gov/members/member-page?district=147 (District 147; its media and newsletter pages had nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jolanda_Jones (confirms she is the incumbent on the 2026 general-election ballot for House District 147)",
+        "campaign site https://jolandajones.com (one general line on barriers to voting; no mention of ID or citizenship)",
+        "a candidate-guide page on branch.vote (a third-party summary, not her words; not saved)",
+        "a hearing report on the 2025 House companion to the proof-of-citizenship bill (HB 5337): does not mention her",
+        "legislation list on legiplex: only automatic voter registration bills seen, which are off the subject",
+        "two web searches on her name plus subject words: no statement from her on ID or citizenship found",
+        "not reviewed: her bill pages on Texas Legislature Online (no author search done)",
+        "not reviewed: news archives beyond two searches"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:12:15.269Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "barriers to voting in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "her Texas House member page https://house.texas.gov/members/member-page?district=147 (District 147; its media and newsletter pages had nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jolanda_Jones (confirms she is the incumbent on the 2026 general-election ballot for House District 147)",
+        "campaign site https://jolandajones.com (one general line on barriers to voting; no mention of ID or citizenship)",
+        "a candidate-guide page on branch.vote (a third-party summary, not her words; not saved)",
+        "a hearing report on the 2025 House companion to the proof-of-citizenship bill (HB 5337): does not mention her",
+        "legislation list on legiplex: only automatic voter registration bills seen, which are off the subject",
+        "two web searches on her name plus subject words: no statement from her on ID or citizenship found",
+        "not reviewed: her bill pages on Texas Legislature Online (no author search done)",
+        "not reviewed: news archives beyond two searches"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:22:06.000Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

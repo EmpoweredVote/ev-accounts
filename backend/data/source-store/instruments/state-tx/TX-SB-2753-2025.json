@@ -1,0 +1,45 @@
+{
+  "id": "TX-SB-2753-2025",
+  "scope": "state:tx",
+  "title": "SB 2753 (89R): Relating to the integration of early voting by personal appearance and election day voting, including the manner in which election returns are processed and other related changes.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB2753",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=SB2753",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02753F.htm",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02753E.htm (engrossed; not read)",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02753H.htm (House committee report; not read)",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02753S.htm (Senate committee report; not read)",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB02753I.htm (introduced; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1-3: early voting requirement wording (12.004(d)), state funds (19.004(a)), combining certain precincts (42.0051).\n(other) Sec 4: designation of locations (adds 43.0015).\n(other) Sec 5-8: polling place procedures, examining ballot boxes, presiding judge directions, returns contents (61.002, 62.005, 65.002, 65.014).\n(other) Sec 9-13: vote totals and canvass (65.016, 66.0021, 67.004, 67.017).\n(other) Sec 14-20: early voting application timing, early voting period, hours, election order notice, custody and security of ballots and machines, delivery of ballots to main polling place (84.032, 85.001, 85.005, 85.007, 85.032, 85.033, 85.071).\n(other) Sec 21-27: early voting ballot board delivery, counting, returns, mail votes reported by precinct, disposition of certain materials (87.021-87.129).\n(other) Sec 28-30: late ballot applications (102.003), automatic counting (127.131), primary election clerk duties (172.124).\n(other) Sec 31: repeal of Chapter 103, Sections 43.007(i), 85.006 and others listed in the bill.\n(other) Sec 32: secretary of state must adopt rules and publish a report in the Texas Register by August 1, 2027 that the secretary has consulted with county election officials and is confident counties are prepared.\n(other) Sec 33: applies only to an election ordered on or after the date the secretary of state publishes that report.\n(other) Sec 34: effective September 1, 2025.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Hall",
+      "role": "author",
+      "version": "Enrolled (S.B. No. 2753; signed by the Governor and effective 9/1/25 per history page)"
+    },
+    {
+      "name": "Hagenbuch",
+      "role": "co",
+      "version": "Enrolled (S.B. No. 2753; signed by the Governor and effective 9/1/25 per history page)"
+    },
+    {
+      "name": "Parker",
+      "role": "co",
+      "version": "Enrolled (S.B. No. 2753; signed by the Governor and effective 9/1/25 per history page)"
+    },
+    {
+      "name": "Isaac",
+      "role": "prime",
+      "version": "Enrolled (S.B. No. 2753; signed by the Governor and effective 9/1/25 per history page)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

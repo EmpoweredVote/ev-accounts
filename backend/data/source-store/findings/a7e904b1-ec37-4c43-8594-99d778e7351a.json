@@ -1,0 +1,55 @@
+{
+  "politician_id": "a7e904b1-ec37-4c43-8594-99d778e7351a",
+  "findings": [
+    {
+      "id": "14932ba0853250e4ed9bcce2514c350ff131df528d47c3622c776bebbb3fe54d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading, Assembly Floor, result PASS 60 to 18",
+      "note": "Voted aye on the Assembly floor for AB 1116 (online voter registration without a driver's license or state ID, using the last four digits of the Social Security number to verify identity). Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "proof of identity to register to vote",
+        "online voter registration ID alternative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:05:33.918Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of identity to register online",
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot signature and ID checks",
+        "election integrity statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Maggy_Krell (confirms Assembly District 6, on the 2026 general-election ballot after advancing from the 2026-06-02 primary)",
+        "official Assembly site https://a06.asmdc.org/ (home page only; no voter ID or citizenship material)",
+        "campaign site https://maggykrellforassembly.com/media/ (nothing on the subject)",
+        "Internet Archive copy of the leginfo vote page for AB 1116 (leginfo itself is behind a bot check)",
+        "CalMatters Digital Democracy bill page for AB 1116 (no member-level votes shown); blocked: https://calmatters.digitaldemocracy.org/legislators/maggy-krell-14941 (404)",
+        "news search on her name plus voter ID, proof of citizenship and SAVE Act terms: nothing by or about her on the subject",
+        "AB 25 (2025) failed in the Assembly Elections Committee; she is not on that committee, so no vote of hers exists",
+        "SB 1174 (2024) Assembly vote came before she took office (2024-12-02), so not applicable"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:05:33.918Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

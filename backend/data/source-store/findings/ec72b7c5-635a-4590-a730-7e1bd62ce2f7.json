@@ -1,0 +1,48 @@
+{
+  "politician_id": "ec72b7c5-635a-4590-a730-7e1bd62ce2f7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: withdrew (date not stated on the page; Hamilton County Board of Elections candidate profile uploaded Aug 2026 lists 'John Hancock, Jr., Rep to Congress (1st District)' with status 'Candidacy certified; Withdrawn') https://votehamiltoncountyohio.gov/wp-content/uploads/2026/08/November-2026-Candidate-Profile-1-3.pdf",
+        "On the Record (0 appearances)",
+        "goodparty.org profile of John D. Hancock, 1st District candidate: nothing on the subject (issues sections blank) https://goodparty.org/people/john-hancock-d7f32c99",
+        "campaign site hancock4liberty.com: nothing on the subject (page only redirects to an empty parking page)",
+        "state party announcements page https://lpo.org/?p=28700: nothing on the subject (does not mention him)",
+        "Ballotpedia: nothing on the subject (page fetch returned empty)",
+        "not reviewed: Wikipedia 2026 Ohio House elections page (only first 100000 characters read; no mention found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:30:53.491Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: withdrew (date not stated; shown as withdrawn on the Hamilton County Board of Elections November 2026 general-election candidate list printed 2026-08-21, which lists John Hancock, Jr., Ohio 1st District, as certified then withdrawn, with another candidate certified to fill the vacancy) https://votehamiltoncountyohio.gov/wp-content/uploads/2026/08/November-2026-Candidate-Profile-1-3.pdf",
+        "On the Record (0 meetings)",
+        "a state party 2026 candidate announcements page https://lpo.org/?p=28700 (fetched; does not name him; nothing on the subject)",
+        "stopped after confirming withdrawal, as the brief directs; official site, bill pages and Ballotpedia not searched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:43:54.218Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

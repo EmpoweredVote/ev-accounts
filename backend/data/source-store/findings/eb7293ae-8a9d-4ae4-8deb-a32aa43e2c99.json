@@ -1,0 +1,107 @@
+{
+  "politician_id": "eb7293ae-8a9d-4ae4-8deb-a32aa43e2c99",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "541f0b530ae759c5beb3e773825d50e726b30cfe1f7d8963aeb30abe5e09655b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Pillion'), linked to Todd E. Pillion via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "affidavit for voters without ID",
+        "mail/absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "Ballotpedia: blocked/empty on fetch (the fetch tool returned no page text); a browser-style curl retry was refused by the permission system and not retried",
+        "LIS, legiscan, legiplex: blocked or not reachable, not retried",
+        "web searches on name plus voter ID / election words: nothing on the subject from this person's own words except as listed",
+        "campaign site https://www.toddpillion.com/ fetched: nothing on the subject",
+        "Wikipedia page fetched: nothing on the subject",
+        "vote search: only VPAP/other listing pages in results; no Pillion election-ID bill or statement found",
+        "Pillion is Senate District 6 per search results; already on file: VA-HB-19-2020 nay"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:56.279Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.522Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.795Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

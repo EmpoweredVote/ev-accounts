@@ -1,0 +1,241 @@
+{
+  "politician_id": "86106451-e701-496a-b182-468b76a8d3e1",
+  "findings": [
+    {
+      "id": "001e6e577371d4c0c1a48653cdf4b8f239b80cfdcfb370e5dbf9db013d0b9a7a",
+      "kind": "own-words",
+      "url": "https://www.dylanwegela.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Protect and expand civil and voting rights at the state level.",
+      "note": "Campaign site priority under a heading on opposing federal policies; says nothing specific about ID or citizenship rules.",
+      "subjects": [
+        "voting rights in general (no ID or citizenship detail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.316Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Dylan Wegela (District 26)') on the official bill page; linked to Dylan Wegela via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Wegela'), linked to Dylan Wegela (district 26) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:47:07.175Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:52:01.883Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:59:56.298Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:05:26.504Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:13:34.843Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr.mjs)",
+        "in scope: on the 2026 general ballot for House District 26 per https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-26/candidates/dylan-wegela (secondary site)",
+        "campaign site https://www.dylanwegela.com: one general voting-rights sentence saved; nothing on ID or citizenship",
+        "House caucus member page https://housedems.com/dylan-wegela: nothing on the subject",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146072: no bill titles shown; sponsorship list not reviewed (linked page not fetched)",
+        "blocked: https://ballotpedia.org/Dylan_Wegela (not fetched; Ballotpedia returned 403 or empty for other people in this batch)",
+        "web news searches (2): nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.316Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

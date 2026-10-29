@@ -1,0 +1,185 @@
+{
+  "politician_id": "8ea3659e-e18e-4141-9b20-a514f112a756",
+  "findings": [
+    {
+      "id": "daa55d7cfe8b479fd8c9dfa136f48e57324782689e6748f7b98be496985703fa",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Second Reading (House roll call 758, vote 66 to 47)",
+      "note": "He voted aye on the second reading of HB 958, Election Law Changes. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a voter registration application to affirmatively state US citizenship before it is processed (new G.S. 163-83, with a 30-day cure by a statement under penalty of perjury), and requires drivers license offices to proceed only if the applicant affirmatively states citizenship. It also directs the State Board of Elections to create a process to remove voters flagged as possible non-citizens from a federal database, and sets weekly removal of deceased voters. The bill page shows it was vetoed 08/17/2026 and placed on the calendar for 09/02/2026. He is not listed as a sponsor.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voter-roll removal",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:15.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa5ad8a079fdcfc954b4693552c37013f738ed657be176ef3ae130927570c233",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Motion 11, Concur (House roll call 801, vote 62 to 47)",
+      "note": "He voted aye to concur with the Senate changes to HB 958, Election Law Changes, the vote that sent it to the Governor. Contents are the same as the previous entry: citizenship statement required on registration, process to remove possible non-citizens from the rolls, and removal of deceased voters.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voter-roll removal",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:15.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31a9c1e9e02d5df8fdc0b73452b4a3017f2d624e811a418e72afa117572154ab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H834",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "yea",
+      "motion": "Motion 11, Concur (House roll 800, vote 74 to 35), State Board of Elections Administrative Changes; became Session Law 2026-60",
+      "note": "He voted aye to concur on HB 834, later Session Law 2026-60. The text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H834v6.pdf) moves the deadline for a voter without photo ID to bring ID to the county board for a provisional ballot, and for curing absentee ballot ID deficiencies, from the third to the fifth business day after the election. It treats certain Class C drivers licenses as valid unexpired photo ID for voting until 12/31/2027. It also keeps the absentee ballot rule that a photocopy of ID or an ID affidavit must come with the return envelope and can be cured.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID",
+        "deadline to cure missing ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:15.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ead26b630d28fb128dbb6b058406b115e8207bc84d7be38c4386cea5a3702c5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H475",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-475-2025",
+      "act": "sponsor",
+      "note": "HB 475, State ID Cards for High School Students, lists him first among its primary sponsors (with Budd and Biggs). The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H475v1.pdf) lowers the age for a fee-free special identification card from 17 to 16 and sets up a pilot program to issue special ID cards to high school students in Mecklenburg, Randolph, Union and Watauga counties. The text does not mention voting. It was referred to committee on 03/24/2025 and went no further.",
+      "subjects": [
+        "state ID card access",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:15.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "state ID cards access",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: confirmed by https://ballotpedia.org/Ray_Pickett (NC House District 93, on the 2026 general-election ballot; primary was canceled and he advanced) and https://www.ncleg.gov/Members/Biography/H/772",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.raypickett.com (nothing on the subject; only an About page, gallery and contact page)",
+        "Ballotpedia (nothing on the subject; no candidate survey completed in 2024 or 2026)",
+        "NC General Assembly member introduced-bills page (https://www.ncleg.gov/Members/IntroducedBills/H/772): one subject-related sponsorship (HB 475)",
+        "NC General Assembly member votes page (https://www.ncleg.gov/Members/Votes/H/772): HB 958 and HB 834 votes",
+        "NC General Assembly bill pages and ratified texts for HB 958, HB 834, HB 475",
+        "not reviewed: news search on his name plus the subject words (the shared web-search budget was used up)",
+        "not reviewed: Facebook https://www.facebook.com/RayPickettNCHouse/ (not fetched)",
+        "nothing found in his own words on the subject at any place reached"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:59:15.004Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://ncleg.gov/Members/Biography/H/772 (confirms District 93, sitting, 2025-2026 session)",
+        "legislature introduced-bills list https://ncleg.gov/Members/IntroducedBills/H/772 (only an Election Day holiday bill and a House elections-committee item on the subject area, nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Ray_Pickett (confirms on the 2026-11-03 general election ballot; nothing on the subject)",
+        "Carolina Journal profile (nothing on the subject)",
+        "two news searches on his name plus voter ID (no own words found)",
+        "campaign site: not reviewed, no URL found",
+        "official third-reading roll calls on the photo-ID amendment already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:01.005Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

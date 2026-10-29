@@ -1,0 +1,79 @@
+{
+  "politician_id": "30b6b674-509f-46f6-a9aa-aa3dbefc2f42",
+  "findings": [
+    {
+      "id": "66b2ab5f8b85d2a92a175d3c87af9f375a9b15cd606ffd1c03efeddc07ff50ea",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/SenateRollCall188.pdf",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "instrument_id": "MA-S-2924-2022",
+      "act": "yea",
+      "motion": "Question on acceptance of the conference committee report on S.2924, An Act fostering voter opportunities, trust, equity and security (Senate Roll Call #188, 37 yeas to 3 nays)",
+      "note": "She is listed among the senators voting yes on accepting the conference report for the 2022 voting bill. The bill text (https://malegislature.gov/Bills/192/S2924.pdf) sets out mail-ballot applications and ballots signed by hand, by a hand-drawn electronic signature or by a typed name for a voter with a disability. It lists a voter's last 4 digits of a social security or driver's license number only 'if available' in lists of detained people sent to election officials. The text names no photo ID rule for voting in person and no proof-of-citizenship rule.",
+      "subjects": [
+        "mail-ballot application and signature rules",
+        "voter-roll lists and identifiers",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:07:28.967Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity for mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "mail-ballot application and signature rules"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Diana_DiZoglio (incumbent State Auditor, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot)",
+        "On the Record (0 appearances, extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site https://www.dianaforma.com (fetched, nothing on the subject; page is script-built, only partly readable)",
+        "Ballotpedia (page has no voter ID or election integrity content; she has not completed the Candidate Connection survey)",
+        "Wikipedia https://en.wikipedia.org/wiki/Diana_DiZoglio (nothing on the subject)",
+        "malegislature.gov bill search (voter identification, and her name with voter, identification and election): no bill on voter ID or proof of citizenship found with her as sponsor; sponsor facet on the search page could not be read, so her three voter-identification matches stayed unidentified",
+        "malegislature.gov S.2924 (192nd) bill page, text PDF and Senate Roll Call 188",
+        "blocked: https://www.mass.gov/orgs/office-of-the-state-auditor (HTTP 403 on WebFetch and curl)",
+        "blocked: https://www.mass.gov/auditor (HTTP 403)",
+        "blocked: ontheissues.org MA page (HTTP 404, no page for her)",
+        "not reviewed: news, interviews, debates and social posts on voter ID (the shared web search budget was used up, so no news search ran)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:07:28.967Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting state auditor on the 2026 general-election ballot; nothing on the subject)",
+        "one news search on name plus subject words (nothing on the subject; results were about her legislative audit dispute)",
+        "official auditor site and campaign site: not reviewed, no page on the subject found through search",
+        "state-senate record 2019-2023: nothing on ID or citizenship found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:26.483Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

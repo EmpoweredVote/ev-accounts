@@ -1,0 +1,262 @@
+{
+  "politician_id": "0207b7d2-1195-4672-bb1e-767b00d3f6e4",
+  "findings": [
+    {
+      "id": "cdefc830d7c3208042af54978d2af1786713bfb9d9c2b779e970a6125e265dfe",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/representative-clancy-opposes-legislative-republicans-attempt-to-enshrine-voting-barriers-in-wisconsins-constitution/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Many people in Wisconsin want to vote, and are eligible to vote, but have been dissuaded from doing so by our ID requirements, first implemented in 2016.",
+      "note": "Press release statement issued in his name on the day of the Assembly floor debate on the photo-ID constitutional amendment; he says the ID requirement keeps eligible people from voting. Posted by Urban Milwaukee from his office.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:44.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b59464d81d1fa8ad9c4be80e1d904b1b10be491798ae64db5bcb418084bf0eaa",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/representative-clancy-opposes-legislative-republicans-attempt-to-enshrine-voting-barriers-in-wisconsins-constitution/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "While you can technically get a no cost ID in Wisconsin, it’s still practically impossible for people who don’t have access to the proper documents, don’t understand the process, or can’t get where they need to obtain one.",
+      "note": "Same statement; he describes the free state ID as hard to obtain in practice.",
+      "subjects": [
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:44.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "edecc1b1be99b27026e5f96787d1090f5abb760d302fee40cb700ec79493ba58",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/representative-clancy-opposes-legislative-republicans-attempt-to-enshrine-voting-barriers-in-wisconsins-constitution/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Voter fraud is not a widespread problem in the State of Wisconsin and is so infrequent that it’s difficult to count.",
+      "note": "Same statement; he gives his view of how common voter fraud is and cites a figure from a research group.",
+      "subjects": [
+        "voter fraud claims",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:55:44.679Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1b8bcfcdd6d3e4263a4ddc0cbdc722c6c12311bdf679cf046ebba19ff0486a1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab1175",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1175-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, As introduced 3/19/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as prime sponsor ('Clancy') on the official bill page; linked to Ryan Clancy via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Clancy') on the official bill page; linked to Ryan Clancy via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Clancy') on the official bill page; linked to Ryan Clancy via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Clancy') on the official bill page; linked to Ryan Clancy via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Clancy') on the official bill page; linked to Ryan Clancy via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('CLANCY'), linked to Ryan Clancy (district 19) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('CLANCY'), linked to Ryan Clancy (district 19) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID and obtaining documents",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail or absentee ballot ID",
+        "voter fraud and election integrity claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Ryan_Clancy (page came back empty)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/19/clancy/ (confirms Assembly District 19; featured item not on the subject)",
+        "official press release list (2023 to 2025): one release on the subject, nothing on proof of citizenship, the SAVE Act or mail-ballot ID",
+        "status check: https://urbanmilwaukee.com/?p=991096 reports he won the 2026-08-11 primary for his seat",
+        "web searches on name plus voter ID, SAVE Act, proof of citizenship, absentee: only the January 2025 release found",
+        "campaign site: not reviewed, none found in search results"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:44.679Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.775Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "politician_id": "312e77d1-8fc7-4a75-8731-2f252d72e2a4",
+  "findings": [
+    {
+      "id": "c27535fb7054f65ece0b558299039213ed223c8d1a5f25cc61640cc8d61bf5d6",
+      "kind": "own-words",
+      "url": "https://votebeat.org/michigan/2026/03/02/secretary-of-state-candidates-2026-election-security-citizenship-policy-platform-issues",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "passage": "As a process person, I want to make sure that we get that number to zero. I also want to make sure that we are focusing on the right things, and that is again making sure we have a good process,” he said. “But frankly, I want to make sure that more eligible voters in Michigan are doing what they need to do so that they can cast ballots.",
+      "note": "Quoted by Votebeat in its candidate Q&A, answering about non-citizen voting. He is quoted saying very few non-citizens cast ballots, and wants that number at zero while focusing on turnout of eligible voters.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:48.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2ab5d4907d9a98526c5cec5138190be75bdbebd187cdc8489dc963285c0f9c9",
+      "kind": "own-words",
+      "url": "https://votebeat.org/michigan/2026/03/02/secretary-of-state-candidates-2026-election-security-citizenship-policy-platform-issues",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "passage": "Gilchrist said that voting is “reserved for citizens” and that anyone who votes despite not being a citizen needs “to be held accountable for that to the fullest extent of the law.” He also noted that “vanishingly few noncitizens … actually cast ballots.”",
+      "note": "Votebeat's sentence mixing its summary with short direct quotes from him on non-citizen voting. Only the quoted fragments are his own words.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:48.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b03af8f0e0cb98ce9815c29bd0f9e39822eb4540e36e0e3d3474953c701f070",
+      "kind": "own-words",
+      "url": "https://votebeat.org/michigan/2026/03/02/secretary-of-state-candidates-2026-election-security-citizenship-policy-platform-issues",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "passage": "We’re going to continue to make sure that our processes can be safe and secure,” he said. “I want to make sure that we are focused on the right thing. People having confidence in the voting process means that more people will participate in the voting process.",
+      "note": "Quoted by Votebeat on election security generally; no mention of ID.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:48.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4eae93f6fc6224bd032a7955528e5279e3f9075288a221058233a6b484fbf91f",
+      "kind": "own-words",
+      "url": "https://wzmq19.com/?p=368285",
+      "date": "2026-09",
+      "date_precision": "month",
+      "passage": "On the question of non-citizens voting, an issue that gained attention this year after a citizens-only voting ballot petition failed to qualify, Gilchrist pointed to existing law. Addressing concerns about the state’s safeguards, he said, “It is already illegal. When it happens, people are held accountable for it. We have a system in place.”",
+      "note": "WZMQ TV report of an interview; the quoted sentences are his. Reporter text around them is not his. The page's exact date was not in the page text (fetch tool summary said 10 September 2026), so month precision is used.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship ballot petition"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:48.008Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to vote",
+        "non-citizen voting",
+        "voter ID at the polls",
+        "voter-roll accuracy",
+        "protection of voter data from federal access",
+        "election security"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://wzmq19.com/?p=368285 (names him as the Secretary of State nominee for November 2026)",
+        "https://votebeat.org/michigan/2026/03/02/secretary-of-state-candidates-2026-election-security-citizenship-policy-platform-issues (candidate questionnaire interview; nothing on voter ID or affidavits)",
+        "https://bridgemi.com/michigan-government/where-michigan-secretary-of-state-candidates-stand-on-key-election-issues/ (republished copy of the same Votebeat piece)",
+        "https://www.wcmu.org/local-regional-news/2026-06-19/gilchrist-says-voting-rights-modernizing-secretary-of-state-department-is-a-priority (reporter paraphrase of voter-roll answer only; not saved as own words)",
+        "blocked: https://ballotpedia.org/Garlin_Gilchrist (empty page)",
+        "blocked: https://prod.crainsdetroit.com/node/933471 (403)",
+        "campaign site: could not find a working address (https://www.gilchristforsos.com is a domain parking page)",
+        "legislature bill pages: not applicable, statewide executive office; floor votes and sponsorships are linked separately",
+        "web search x3: no statement by him on photo ID found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:44:48.008Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

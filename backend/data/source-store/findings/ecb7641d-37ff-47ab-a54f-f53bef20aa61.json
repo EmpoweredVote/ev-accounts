@@ -1,0 +1,227 @@
+{
+  "politician_id": "ecb7641d-37ff-47ab-a54f-f53bef20aa61",
+  "findings": [
+    {
+      "id": "1c59e53cb2a9c58cafdc3788762362f62006996a9625e01c2bc4a8aaa08a4e07",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "sponsor",
+      "note": "HB 825, Election Improvements, filed with Echevarria and Scott as primary sponsors (bill page lists Echevarria first). Among other things it changes the ID items for absentee ballot requests: the request form would ask for the last four digits of the Social Security number plus one of a driver license number, a special ID card number, or the voter's date of birth. It also lets a voter who cannot attach an ID photocopy to a returned absentee ballot use an alternative affidavit that cites that as a reasonable impediment. It also bans ranked choice voting, shortens early voting, and adjusts rules for election-related activity near polling places. Last action: referred to House Rules on 2025-04-09; no further action shown.",
+      "subjects": [
+        "ID number with mail or absentee ballot request",
+        "ID with returned absentee ballot",
+        "reasonable-impediment affidavit",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:15:23.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48c532670b35bd8962403bae133e9a60440982209d120113679646f543393196",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (member vote record shows Aye, 66 to 47)",
+      "note": "Voted aye on second reading of HB 958, Election Law Changes. The ratified text requires voter registration applications to affirmatively state US citizenship before processing (with a 30-day notice and sworn statement route if the question is left blank), requires the State Board to create a process to remove voters flagged as non-citizens in a federal database, and speeds removal of deceased voters. The text reviewed is the ratified edition (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf); the text voted on at second reading may differ.",
+      "subjects": [
+        "proof of citizenship to register (citizenship statement on registration form)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:15:23.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0384217cc1249bfa418f811c4494daa17c77e26e3cb4cb4ca4d8c899bfe811e0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion to concur in Senate changes (member vote record shows Aye, 62 to 47)",
+      "note": "Voted aye on the motion to concur on HB 958, Election Law Changes, the final House vote before ratification. Ratified text includes a citizenship statement requirement on voter registration applications and a process to remove voters flagged as non-citizens from a federal database.",
+      "subjects": [
+        "proof of citizenship to register (citizenship statement on registration form)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:15:23.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd10d399ea8a91300e86fd7e67013d05233746c9a1739323d4d2b9766b2269e9",
+      "kind": "own-words",
+      "url": "https://brianechevarria.com/",
+      "date": "2026-06-20",
+      "date_precision": "month",
+      "passage": "Good governments protect the homes of their residents from unaffordable unsustainable property tax hikes, give parents the right to direct the healthcare, education, and progress of their children, protect the process and results of elections, don’t infringe on the constitutional rights of their residents, and don’t harass their residents and businesses with things like unnecessary permits and licenses, annual taxes on personal vehicles, and the like.",
+      "note": "Campaign home page, in a list of what he says good governments do, includes protecting the process and results of elections. It does not mention voter ID or citizenship. Date is the page's last-modified stamp.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:15:23.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5875a3a077f94405400ae176242f367ae9f19d9a146350510e23ae65417235ad",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-H-825-2025",
+      "act": "sponsor",
+      "motion": "House Bill 825, Election Improvements, primary sponsor (filed 2025-04-08, referred to Rules 2025-04-09)",
+      "note": "Echevarria is a primary sponsor of House Bill 825, Election Improvements. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf) would bar ranked choice voting, shorten early voting, and change the forms of identification for an absentee ballot request: the request form would ask for the last four digits of the Social Security number plus a driver licence number, special ID card number or date of birth, and a voter who cannot attach a photocopy of ID to a returned absentee ballot could use a reasonable-impediment affidavit with the same identifiers. The bill was referred to the Rules committee and the page shows no later action.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot",
+        "reasonable-impediment affidavit",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc9cfe99483a96f0a4900721e3f9cbd1b53c05fc5c29d10f271eeac5222a6335",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Brian Echevarria voted Aye on second reading of House Bill 958, Election Law Changes (66 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64f74b4d05627a2220ff289ae3385ab12153ac26d3f5adeefbde3219d33b2a7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/828",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Election Law Changes, M11 Concur in Senate committee substitute (House roll call 801)",
+      "note": "Brian Echevarria voted Aye on the House vote to concur in the Senate committee substitute of House Bill 958, Election Law Changes (62 Ayes, 47 Noes). The ratified text requires a voter registration application to affirmatively state citizenship, sets a 30-day notice process with a statement under penalty of perjury when the answer is blank, and sets a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:56.791Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter process / reasonable impediment affidavit",
+        "ID number with absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Brian_Echevarria (NC House District 82, on the Nov 3 2026 general ballot; primary was canceled so he advanced unopposed)",
+        "On the Record (0 appearances, extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://brianechevarria.com/ (home page only; Meet Brian / Our Story not reviewed)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/828",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/828",
+        "ncleg.gov votes https://www.ncleg.gov/Members/Votes/H/828",
+        "ncleg.gov bill pages and texts HB 825, HB 127, HB 1231, HB 958",
+        "Ballotpedia (nothing on the subject; no 2026 survey, 2022 survey has no election questions)",
+        "news search: not run (web search budget used up)",
+        "official legislator page (ncleg.gov): no press releases or issue pages on the subject found",
+        "not reviewed: https://www.youtube.com (floor and committee debate videos on campaign site, feed not connected)"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:15:23.816Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "ID number to request an absentee ballot"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Brian_Echevarria (confirms sitting District 82 representative, on the 2026 general-election ballot)",
+        "ncleg.gov member profile https://www.ncleg.gov/Members/Biography/H/828 (confirms office)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/828 (2025 session; House Bill 825 saved; House Bill 1231 on voter registration at the DMV, House Bill 127 voter registration drive form, House Bill 31 election day holiday and House Bill 144 are co-sponsored only and not on ID or citizenship proof, not saved)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H825 and text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H825v0.pdf",
+        "ncleg.gov member votes https://www.ncleg.gov/Members/Votes/H/828 (roll calls on House Bill 958 saved)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "voter guide https://www.branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-82/candidates/brian-echevarria (guide summary only, says his website had no content on these issues; not own words)",
+        "news voter guides https://www.wfae.org/2026-10-05/n-c-house-of-representatives-82 and WSOC candidate guide (nothing on the subject)",
+        "web search on name plus voting, voter ID (no own words found; no personal campaign site found)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:20:56.791Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

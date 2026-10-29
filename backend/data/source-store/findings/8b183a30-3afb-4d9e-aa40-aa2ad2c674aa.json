@@ -1,0 +1,180 @@
+{
+  "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa",
+  "findings": [
+    {
+      "id": "f711fd1d80c4e5903cb34d839522d7fd03ea19bddf650d3b664fbd87103d6102",
+      "kind": "own-words",
+      "url": "https://www.oag.ca.gov/news/press-releases/attorney-general-bonta-issues-statement-latest-development-regarding-huntington",
+      "date": "2024-11-17",
+      "date_precision": "day",
+      "passage": "Under both existing law and Senate Bill 1174, all local governments — including charter cities like Huntington Beach — are prohibited from disenfranchising voters at the polls by implementing voter ID requirements. Let me be clear: that has not changed. We disagree with the court’s decision that it is too early to bring our lawsuit, and remain confident in the strength of our case.",
+      "note": "Attorney General press release on a court ruling in the state's suit against Huntington Beach's voter ID measure; he cites existing law and SB 1174 on local voter ID rules.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4d31037ab768d54c811004377f04cf7f26157f1d586bf45e716c8524ddf1d7c",
+      "kind": "own-words",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-and-secretary-state-weber-california-supreme-court",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "Today’s victory makes one thing crystal clear: No city in our state, charter and non-charter alike, is above the law. All along, Secretary of State Weber and I have maintained that Huntington Beach’s voter ID policy is illegal, and now, the state’s highest court has weighed in and agreed with us. Measure A won’t be taking effect — ever,",
+      "note": "Attorney General release after the California Supreme Court declined to review the ruling that blocked Huntington Beach's voter ID requirement.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86e2af4ba701e02fe9f956e69849cf6012f7ab23416d75c52afd6cd1e8619a32",
+      "kind": "own-words",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-and-secretary-state-weber-california-supreme-court",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "Huntington Beach’s leaders have been parroting the Trump Administration’s talking points by questioning the integrity of our elections. In court, the City’s allegations were resoundingly rejected. I remain fully committed to protecting the right to vote from baseless attacks.",
+      "note": "Same release; he addresses claims about election integrity that the city made in the case.",
+      "subjects": [
+        "election integrity",
+        "local voter ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "780126b1ec3a89feede92dd5f3522562557a079e786ec4d42da568beb55094d5",
+      "kind": "own-words",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-co-leads-multistate-lawsuit-against-trump-administration",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "passage": "My fellow attorneys general and I are taking him to court because this Executive Order is nothing but a blatantly illegal power grab and an attempt to disenfranchise voters. Neither the Constitution nor Congress authorize the President’s attempted voting restrictions.",
+      "note": "Release announcing a multistate suit over the 2025 federal elections executive order, which includes documentary proof of citizenship for voter registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "federal executive order on voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1de90b266dcfe664798d5043c046c1b723b213098d51d75bf576c94fe9031d0",
+      "kind": "own-words",
+      "url": "https://abc7news.com/post/california-attorney-general-rob-bonta-sues-president-donald-trump-mail-voting-executive-order/18837198/",
+      "date": "2026-04",
+      "date_precision": "month",
+      "passage": "This order is just as illegal as the first one. But the president seems to embrace a philosophy of if at first you don't succeed, break the law again.",
+      "note": "Quoted by ABC7 San Francisco when he filed a suit over the 2026 executive order on mail-in voting and citizenship verification (filed on a Friday in early April 2026, per the report).",
+      "subjects": [
+        "mail ballot rules",
+        "proof of citizenship to vote",
+        "federal executive order on voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "835d77c51a8f1a3fa54a8f0a43717bd965119d16e09ea1e03242e63152504d91",
+      "kind": "record",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-and-secretary-state-weber-california-supreme-court",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "State of California v. City of Huntington Beach, suit against Measure A voter ID requirement, filed April 2024, ended after the California Supreme Court declined review",
+      "note": "As Attorney General he brought, with the Secretary of State, the suit that blocked a city's local voter ID rule. The release says the suit was filed in April 2024.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84f5aec48d754571505e82ec1e47d2ea0249b0c269bc73f545d0ed72be0ab0be",
+      "kind": "record",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-bonta-co-leads-multistate-lawsuit-against-trump-administration",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Co-led multistate lawsuit against the 2025 federal elections executive order (documentary proof of citizenship and related provisions)",
+      "note": "He co-led a coalition of state attorneys general suing over an executive order that would require documentary proof of citizenship to register in federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "federal executive order on voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:20.226Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "local voter ID rules (Huntington Beach Measure A, SB 1174)",
+        "proof of citizenship to register",
+        "federal executive orders on voting and citizenship verification",
+        "mail ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Attorney General of California, on the 2026 general-election ballot, advanced from the June 2, 2026 primary)",
+        "Attorney General press releases on oag.ca.gov (3 pages fetched)",
+        "ABC7 San Francisco news report on the 2026 mail-voting order lawsuit",
+        "web search: Huntington Beach voter ID suit; executive order suits",
+        "AB 25 and AB 1116: not applicable, he is not a legislator",
+        "not reviewed: campaign site; the rest of the oag.ca.gov press release list"
+      ],
+      "found": 7,
+      "at": "2026-10-28T16:09:20.226Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

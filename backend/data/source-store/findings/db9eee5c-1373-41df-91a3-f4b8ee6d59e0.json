@@ -1,0 +1,353 @@
+{
+  "politician_id": "db9eee5c-1373-41df-91a3-f4b8ee6d59e0",
+  "findings": [
+    {
+      "id": "9ac88b99c50881c26b22c1fdac3ad821b398daaecf178c80c2dc637e1da96600",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-senate-democrats-to-file-equal-protection-violation-lawsuit-to-protect-voters-rights",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "The Senate has artificially denied eligible people the franchise based on perceived voter fraud, but no one in the General Assembly could identify the source of the alleged fraud.",
+      "note": "Statement issued after the Senate passed HB 934 (photo ID at the polls) 26-23. He says no source of fraud was identified and calls the bill a mechanism for voter suppression.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af022da57c4148f6054c323fe001c74295069e70186662a3ae74158f82a87086",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-senate-democrats-to-file-equal-protection-violation-lawsuit-to-protect-voters-rights",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "Today’s passage of a voter ID bill sent a clear message to Pennsylvania’s low-income citizens, minorities, seniors and college-age voters that their voices don’t count.",
+      "note": "Same statement; he announces the Senate minority caucus will file an Equal Protection lawsuit.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2852cd63250c0bd5c0af0db6d98f0318545956f8e056b85aca6557b21a47beef",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-battle-is-not-over-on-voter-id-measure",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "passage": "The Constitutional right to vote is too important to institute disingenuous hurdles at the ballot box.",
+      "note": "Statement on House passage of HB 934 (voter ID). He says a lawsuit will follow if the governor signs it.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "02540b610997088d642ac22b20d10ba9070f78b6443b84dc5b793ab5b69f8dc3",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-to-voters-defend-your-right-get-a-photo-id",
+      "date": "2012-03-27",
+      "date_precision": "day",
+      "passage": "“We will take this matter to the courts and continue to fight this outrageous assault on our most fundamental American right, but in the meantime it’s critical that citizens who want to vote are prepared,” Williams said. “Individuals can take steps right now to obtain a free photo ID, and my staff and I are here to help folks through the entire process.”",
+      "note": "After the 2012 voter ID law was enacted he opposed it but urged voters to get a free photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d296fa80e816c2abaee0d96c075d4c82d37fcba00ac243f83819e6d01331ab7e",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/state-sen-anthony-hardy-williams-reacts-to-voter-id-ruling",
+      "date": "2012-08-15",
+      "date_precision": "day",
+      "passage": "To say I’m disappointed, even disgusted, would be a considerable understatement.",
+      "note": "Reaction to the Commonwealth Court ruling that upheld the 2012 voter ID law (Act 18).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b5bd2dac1be2479cfe7706962df74ed8bcb347191e14eb95e64382d14d5930a8",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-supreme-court-ruling-on-voter-id-law-amounts-to-a-step-toward-victory-everywhere",
+      "date": "2012-09-18",
+      "date_precision": "day",
+      "passage": "By its own admission, the state cannot demonstrate that all the people who don’t have voter ID will have it by Election Day.",
+      "note": "Statement on the state Supreme Court ruling; he argues too little time and staff to get IDs to affected voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d41b787c339df55d06065c1a5f35a6cbcea3af414502ba11507b6a3b6a482d9",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-voter-id-court-ruling-a-victory-for-pennsylvanians",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "While we all are committed to maintaining the integrity of the vote, one of our most precious rights, I and others remain convinced that the manner in which Act 18 was enacted and implemented skewed more toward a partisan intent rather than an empowering one.",
+      "note": "Statement on the court ruling that kept the ID requirement from applying in the November 2012 election.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d0732f3e21ce68882e1ce000878a3b269cedc2ba8a893874bad508a0f21a1ae",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/williams-comments-on-voter-id-decision",
+      "date": "2014-01-17",
+      "date_precision": "day",
+      "passage": "Requiring citizens to show certain forms of identification – IDs it knows many poor and elderly do not have – is a deliberate attempt to block our fundamental right to vote.",
+      "note": "Statement on the Commonwealth Court decision striking down the voter ID law.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5143396d2fcae7854de7fa89faad8dff0e4aea27a7277499b2d5a568554cb38e",
+      "kind": "own-words",
+      "url": "https://www.senatoranthonyhwilliams.com/sen-anthony-williams-addresses-voter-fraud-in-letter-to-colleagues",
+      "date": "2022-04-29",
+      "date_precision": "day",
+      "passage": "In the letter, Sen. Williams states, “…there are attempts at voter fraud, that those incidents appear to be few, and most importantly, regardless of how egregious the attempt, the security checks work!”",
+      "note": "Press release on his letter to Senate colleagues on voter fraud; the release text quotes the letter (full letter is a linked attachment not read).",
+      "subjects": [
+        "voter fraud claims",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:26.948Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('WILLIAMS, A.'), linked to Anthony Hardy Williams (district 8) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Williams'), linked to Anthony Hardy Williams (district 8) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Williams,Anthony H.'), linked to Anthony Hardy Williams (district 8) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Williams, Anthony H.'), linked to Anthony Hardy Williams (district 8) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Williams,Anthony H.'), linked to Anthony Hardy Williams (district 8) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter fraud claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: tag page for voter ID and site search results (items 2012-2014, 2017, 2022 read)",
+        "blocked: https://ballotpedia.org/Anthony_H._Williams (empty page)",
+        "blocked: https://penncapital-star.com/government-politics/pa-senate-republicans-advance-late-night-constitutional-amendment-package-on-abortion-voter-id/ (403)",
+        "web search: voter ID statements; web search: 2025 amendment statements (no verified own-words found)",
+        "not reviewed: https://www.senatoranthonyhwilliams.com/sen-williams-joins-the-rachel-maddow-show-to-discuss-voter-protection (2021 TV interview, video)",
+        "legislature bill pages not searched (votes and sponsorships linked separately)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T22:13:26.948Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

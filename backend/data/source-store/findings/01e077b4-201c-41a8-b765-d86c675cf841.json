@@ -1,0 +1,369 @@
+{
+  "politician_id": "01e077b4-201c-41a8-b765-d86c675cf841",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "40349d7e15c117e4e5c2b9c50620d064c02ff070b50fd26f3a95de4561fa5ee3",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/press-releases/fedorchak-lee-introduce-save-america-through-real-id-act-strengthen-election",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "passage": "“Requiring photo ID to vote helps ensure that only American citizens vote in our elections. This is a commonsense safeguard that nearly 9 out of 10 Americans support,”",
+      "note": "Quote issued in her name on introducing the SAVE America Through REAL ID Act, which she co-leads. She describes a photo ID requirement to vote as a safeguard.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "free ID for people without one"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05835a68116dca986052aa02b5292958df82d18e78d78e15eebb62fe5ecd9444",
+      "kind": "record",
+      "url": "https://fedorchak.house.gov/media/press-releases/fedorchak-lee-introduce-save-america-through-real-id-act-strengthen-election",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "SAVE America Through REAL ID Act, introduced (bill number not confirmed; congress.gov blocked)",
+      "note": "She and another House member introduced a bill for a federal grant program, $50 million a year for fiscal years 2027 through 2031, so states can issue REAL ID-compliant cards free to eligible low-income people and help them get supporting documents. The release says it is a companion to the SAVE America Act.",
+      "subjects": [
+        "free ID for people without one",
+        "REAL ID as voting ID",
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7735c7367222aae3d47e4fd07b9ff2c990bd7e8a1631fc11f83aaae0bde91295",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "You need a photo ID to board a plane, open a bank account, buy cold medicine, or check into a hotel. Voting should be no different.",
+      "note": "Opening of her column (published in the Grand Forks Herald, posted on her site) arguing for a photo ID standard to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6fb82ec8bfb505551b98e5708841226fad94ed24415d5fbabdf02e3059180800",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "Last year, I voted for the SAVE Act, which requires proof of U.S. citizenship when registering to vote in federal elections.",
+      "note": "She states her own 2025 vote for the SAVE Act and what it requires.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d47baa7cbccaf571a8496efc5ad673880b59f011de3220aa3fc275fbc2ebbcb",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "That’s why I cosponsored and helped pass the SAVE America Act.",
+      "note": "She says she cosponsored the SAVE America Act and helped pass it. The office summary describes it as requiring photo identification and proof of citizenship to vote in federal elections.",
+      "subjects": [
+        "SAVE America Act",
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72aa42bb271ba229e8a1c78798317ae7aa66808f602689811e97eb77dee28fee",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "The SAVE America Act provides clear, workable options for proving U.S. citizenship. A REAL ID, U.S. passport, military ID with proof of birth, or government-issued photo ID showing U.S. birthplace all qualify. For those without one of these documents, the bill allows an option to show a combination of documents to prove identity and U.S. citizenship.",
+      "note": "She describes which documents the SAVE America Act accepts, including a combination of documents for people without a single qualifying one.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "documents accepted as ID",
+        "voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d80df206e69a731cea1c6e3820ebbbe4213ea4eaa0fc7df9e2a6c31f70ccd2ee",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "North Dakotans will continue voting the same way they always have: using a state-issued driver’s license, a non-driver state-issued identification card, a tribal ID or tribal letter, or a certificate from a long-term care facility.",
+      "note": "She lists the forms of ID North Dakota voters use, including tribal ID or letter and a long-term care certificate.",
+      "subjects": [
+        "voter ID at the polls",
+        "documents accepted as ID",
+        "tribal ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "143d3fd7cb40429b6bfeb066704456f7f8bf5da62d3b7a2ced9e1a776070aa23",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "Opponents claim voter ID requirements suppress participation. The evidence says otherwise.",
+      "note": "She disputes the argument that voter ID lowers turnout.",
+      "subjects": [
+        "voter ID and turnout",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ff0c8ddf37de2c5c1db9e3b4cd34bd144786640e49c324ce452abe7d922532a",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/op-eds-and-speeches/simple-standard-secure-elections",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "passage": "We maintain a unique but effective voting system that does not require voter registration. Instead, the state identifies, confirms, and tracks eligible voters through the North Dakota Department of Transportation and a central voter file.",
+      "note": "She describes North Dakota's system, which has no voter registration and relies on a state transportation department record and a central voter file. Related to voter-roll checks.",
+      "subjects": [
+        "voter-roll checks",
+        "North Dakota voting system",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4e6df285c853e55a2a2ce2ce5fcba24baeb1c706e474867c1858cf6633bad6f",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/in-the-news/fedorchak-fox-business-its-common-sense-requiring-american-voters-have-id-vote",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "And the one thing that every voter in my state will have to do, in order to vote is to show a photo ID—an ID that actually confirms their citizenship.",
+      "note": "From office-posted highlights of her Fox Business interview with Larry Kudlow on the day of North Dakota's primary election. The page is dated June 12; the interview is described as yesterday.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb802423274e25a9f5dcee2c549ec4f59368b6f2937a0896639c860df66f2c74",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/in-the-news/fedorchak-fox-business-its-common-sense-requiring-american-voters-have-id-vote",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "It will provide grants to states to help them pay for real IDs for American citizens who don’t have them, so that they too can have the proper identification to vote in federal elections once we pass the SAVE America Act.",
+      "note": "She explains the grant bill as help for citizens without an ID, to go with the SAVE America Act.",
+      "subjects": [
+        "free ID for people without one",
+        "REAL ID as voting ID",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8400d586d933ae3d077d5bedca8cc70f67ddc2accb894e5d2e8d185250b990b9",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/in-the-news/fedorchak-fox-business-its-common-sense-requiring-american-voters-have-id-vote",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "It’s common sense requiring American voters to have an ID to vote in American elections—voters want this.",
+      "note": "She says a voter ID requirement is common sense and wanted by voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a5f73659d751f6fc1df87e035548818a0261c73a684413c738a0fc23ff75882",
+      "kind": "own-words",
+      "url": "https://fedorchak.house.gov/media/in-the-news/fedorchak-fox-business-its-common-sense-requiring-american-voters-have-id-vote",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "passage": "We’ve had voter ID requirements in place for many years, and it absolutely creates more participation, not less.",
+      "note": "She says North Dakota's long-standing voter ID rules raise participation.",
+      "subjects": [
+        "voter ID and turnout",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:03.758Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SAVE America Act",
+        "free ID for people without one",
+        "REAL ID as voting ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Julie_Fedorchak lists her as incumbent on the Nov 3, 2026 general election ballot (last election June 9, 2026 primary, won)",
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "official site press releases (pages 0-7 scanned for subject titles)",
+        "official site op-eds, in-the-news, house-floor lists",
+        "official site issues/values page (nothing on the subject)",
+        "Ballotpedia (only the SAVE Act H.R. 22 vote, already on file)",
+        "blocked: https://www.congress.gov/member/julie-fedorchak/F000479 (HTTP 403), so sponsorship list and the SAVE America Act bill number were not confirmed",
+        "not reviewed: Fox Business video of the Kudlow interview (only the office's written highlights were read)",
+        "not reviewed: Politico full article (only the excerpts on the official site)",
+        "not run: web news search and Wikipedia-style searches beyond one Wikipedia fetch; the session search budget was used up"
+      ],
+      "found": 13,
+      "at": "2026-10-22T22:14:03.758Z",
+      "by": "source-collector"
+    }
+  ]
+}

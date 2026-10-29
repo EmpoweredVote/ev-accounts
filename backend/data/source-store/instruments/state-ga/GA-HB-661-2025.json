@@ -1,0 +1,45 @@
+{
+  "id": "GA-HB-661-2025",
+  "scope": "state:ga",
+  "title": "HB 661 (2025-2026 Regular Session (first year)): Elections; qualifications for and registration of voters; enhance penalties (House Composite Status). Long title: \"To amend Chapter 2 of Title 21 of the Official Code of Georgia Annotated, relating to elections and primaries generally, so as to enhance penalties related to qualifications for and registration of voters; to provide for related matters; to repeal conflicting laws; and for other purposes.\"",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/234324"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1 preamble (names the section being amended; the bill adds no citizenship rule itself)\n(quote) Chapter 2 of Title 21 of the Official Code of Georgia Annotated, relating to elections and primaries generally, is amended in Code Section 21-2-216, relating to qualifications of electors generally, reregistration of electors purged from list, eligibility of nonresidents who vote in presidential elections, retention of qualification for standing as elector, evidence of citizenship, and check of convicted felons and deceased persons databases, by adding a new subsection to read as follows:\n(e_other_rule)\n(section) Sec. 1, new subsection (i) of 21-2-216\n(quote) \"(i) Violation of this Code section shall constitute a felony, and upon conviction shall be punished as provided for in Code Section 21-2-600.\"\n(other) Sec. 2: repeals conflicting laws\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Byrd of the 20th",
+      "role": "prime",
+      "version": "As introduced (LC 47 3345)"
+    },
+    {
+      "name": "Kahaian of the 81st",
+      "role": "co",
+      "version": "As introduced (LC 47 3345)"
+    },
+    {
+      "name": "Barrett of the 24th",
+      "role": "co",
+      "version": "As introduced (LC 47 3345)"
+    },
+    {
+      "name": "Ridley of the 22nd",
+      "role": "co",
+      "version": "As introduced (LC 47 3345)"
+    },
+    {
+      "name": "Chastain of the 7th",
+      "role": "co",
+      "version": "As introduced (LC 47 3345)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28)",
+    "fetched_at": "2026-10-28",
+    "method": "curl"
+  }
+}

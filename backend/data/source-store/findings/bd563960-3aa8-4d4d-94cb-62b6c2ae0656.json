@@ -1,0 +1,117 @@
+{
+  "politician_id": "bd563960-3aa8-4d4d-94cb-62b6c2ae0656",
+  "findings": [
+    {
+      "id": "182bcc1fbd65860bab6193bfce867d1f922e575073b86cd7baced956e0b6126a",
+      "kind": "record",
+      "url": "https://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "SB 7 passed on third reading (Record 848), 78 yeas, 64 nays",
+      "note": "Voted nay on House passage of SB 7 (2021 regular session), a bill described in its caption as relating to election integrity and security, with new criminal offenses; the House text includes a section on the form of identification presented.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:04.232Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da5d1e2e4e46736c72cf258689c1c59ebd57c4a24f8dd4d88228452e7fd6980d",
+      "kind": "own-words",
+      "url": "https://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "passage": "When Record No. 61 was taken, I was absent because of important business. I would have voted no.",
+      "note": "Statement of vote printed in the House Journal after she was absent for the House passage of SB 1 (second called session, 2021), a bill on election integrity and security that also covers ID numbers on mail ballot applications and envelopes. She states how she would have voted.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:04.232Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2822fc782cd8a0769986ef5322f9be4b1775d8635fb2466694d68dc887684d07",
+      "kind": "own-words",
+      "url": "https://texasstandard.org/stories/as-long-and-as-necessary-richardson-state-rep-one-of-many-to-leave-texas-to-prevent-quorum/",
+      "date": "2021-07-13",
+      "date_precision": "day",
+      "passage": "We brought the fight to D.C. to ensure that we have the backing and the support at the federal level.",
+      "note": "Quoted in a Texas Standard interview after she left the state with other House members to prevent a quorum on a 2021 voting bill; she says they went to Washington to ask for federal voting rights legislation. Nothing in the quoted text is specific to ID or citizenship.",
+      "subjects": [
+        "voting rights legislation",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:04.232Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97aa145891695d680957234e2c746f70e4bc20988e3cc47a339f17815edd0d7c",
+      "kind": "own-words",
+      "url": "https://texasstandard.org/stories/as-long-and-as-necessary-richardson-state-rep-one-of-many-to-leave-texas-to-prevent-quorum/",
+      "date": "2021-07-12",
+      "date_precision": "day",
+      "passage": "I’m joining my colleagues and heading down to DC today to make it clear that we need comprehensive voting rights protections NOW!",
+      "note": "Her social media post of 2021-07-12 (as embedded in the Texas Standard story), about leaving for Washington over the 2021 voting bill. Nothing in it is specific to ID or citizenship.",
+      "subjects": [
+        "voting rights legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:04.232Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting rights legislation"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "Ballotpedia (confirms sitting Texas House member, District 102, on the 2026-11-03 general-election ballot; nothing specific on voter ID)",
+        "official House biography page https://house.texas.gov/members/3735/biography (describes her as an advocate on voting generally; third-person text, not saved)",
+        "campaign site: blocked: https://www.anamariaramos.com (no response)",
+        "Texas Legislature Online: her 2025 election-related bill pages (HB 2281 is a co-authored automatic registration bill, off the ID subject)",
+        "House Journals 87th session day 42 (SB 7 record vote) and 87th second called session days 4 and 6 (SB 1 votes)",
+        "Texas Standard interview page of 2021-07-13",
+        "two web searches on her name plus the subject words",
+        "debate or interview video: none found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:16:04.232Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

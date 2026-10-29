@@ -1,0 +1,67 @@
+{
+  "politician_id": "e136cc8e-2866-4d10-b94d-c56d345da2cc",
+  "findings": [
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Jason Hoskins (District 18)') on the official bill page; linked to Jason Hoskins via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot application",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --politician and --names, nothing found)",
+        "official page on the House caucus site https://www.housedems.com/jason-hoskins/ (first page of news and site-wide search checked; the page-level search URL gave 404); his news items on voting concern the state voting rights act and a court ruling on redistricting, not ID or citizenship, so nothing on the subject",
+        "legislature bill pages: sponsorships and votes are linked separately, not reviewed here",
+        "blocked: https://ballotpedia.org/Jason_Hoskins (empty page)",
+        "news searches on name plus voter ID, proof of citizenship, HB 4765 (2 searches); no quote of him found; coverage fetched (wwmt, civicmedia, yahoo) does not mention him",
+        "blocked: https://www.newsfromthestates.com/article/gop-led-proof-citizenship-voting-bill-advances-despite-concerns-democratic-colleagues (403)",
+        "search results show he filed for the 7th Senate district in 2026",
+        "not reviewed: House floor video"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:52:09.717Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

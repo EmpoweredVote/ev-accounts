@@ -1,0 +1,58 @@
+{
+  "politician_id": "2aa1eeac-938a-4f07-b396-d8e92c13ed50",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "ballot drop box rules",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record: not reviewed (the repo extract script was not run under standing rules)",
+        "official House caucus page: could not locate (pahousegop.com/Weaknecht and /EricWeaknecht return page not found)",
+        "blocked: https://www.pahousegop.com/memberlist (429 rate limit, not retried)",
+        "blocked: https://ballotpedia.org/Eric_Weaknecht (202 with empty page, not retried)",
+        "House caucus oath-of-office release 2025-01-07: nothing on the subject",
+        "re-election announcement on berksweekly.com: nothing on the subject",
+        "Wikipedia: says as county sheriff he stationed deputies at ballot drop boxes in 2020 and 2022; no own words on voter ID",
+        "WITF and WESA 2022 reports on deputies at drop boxes: he did not comment; no own words",
+        "web search: three searches on voter ID, drop boxes, campaign site; nothing from him on voter ID or proof of citizenship",
+        "vote411: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:40.002Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "ballot drop box rules",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record: not reviewed (the repo extract script was not run under standing rules)",
+        "official House caucus page: could not locate (pahouse-caucus.com/Weaknecht and /EricWeaknecht return page not found)",
+        "blocked: https://www.pahousegop.com/memberlist (429 rate limit, not retried)",
+        "blocked: https://ballotpedia.org/Eric_Weaknecht (202 with empty page, not retried)",
+        "House caucus oath-of-office release 2025-01-07: nothing on the subject",
+        "re-election announcement on berksweekly.com: nothing on the subject",
+        "Wikipedia: says as county sheriff he stationed deputies at ballot drop boxes in 2020 and 2022; no own words on voter ID",
+        "WITF and WESA 2022 reports on deputies at drop boxes: he did not comment; no own words",
+        "web search: three searches on voter ID, drop boxes, campaign site; nothing from him on voter ID or proof of citizenship",
+        "vote411: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:47:07.198Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

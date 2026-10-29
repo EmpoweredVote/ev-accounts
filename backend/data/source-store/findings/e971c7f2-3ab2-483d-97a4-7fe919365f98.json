@@ -1,0 +1,132 @@
+{
+  "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+  "findings": [
+    {
+      "id": "dbc11a96f1d326427c350c5e75f2a6c4b97dcef98bb68d1d5611fabf53e547a4",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Dave_Hall_(Indiana)",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I will help strengthen the integrity of our elections by requiring paper ballots be printed to ensure the results of our elections are accurate.",
+      "note": "From his 2022 Ballotpedia Candidate Connection survey answer on key campaign messages. It is about election integrity through printed paper ballots. It does not mention voter ID or proof of citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:57:52.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31294852927918cd854f2c541c5e13f83b771204800e981084e2b291d903707a",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/monroe-county-legislators-remind-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "passage": "\"Our state's election website makes it simple for Hoosiers to register to vote or ensure their registration is accurate,\" Hall said. \"It also has all the information you need to know on where to vote, the candidates on your ballot and even what Indiana is doing to maintain election security.\"",
+      "note": "Quote in a caucus press release about the voter registration deadline, praising the state election website. It mentions election security in general. It does not mention voter ID or proof of citizenship. Another legislator in the same release lists the ID and citizenship needed to register.",
+      "subjects": [
+        "election security in general",
+        "voter registration check"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:57:52.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity and election security",
+        "paper ballots"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Dave_Hall_(Indiana) says he is the sitting member for Indiana House District 62, advanced from the May 5, 2026 primary and is on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances for this politician id; name search returned 0 sources)",
+        "official caucus page https://www.indianahouserepublicans.com/members/leadership/dave-hall/ (nothing on the subject on the profile; one press release found)",
+        "campaign site https://www.votedavehall.com and /issues (nothing on the subject)",
+        "campaign letter PDF https://www.votedavehall.com/_files/ugd/aaa08c_3d98fa2ef9ed4ec982a394b4faa6b618.pdf (data centers only; nothing on the subject)",
+        "Ballotpedia (2022 candidate survey has an election-integrity answer; 2024 and 2026 surveys not completed)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_david_hall_1/ (page loads only a script shell, bill sponsorships not readable)",
+        "blocked: https://api.iga.in.gov/ (403)",
+        "blocked: https://legiscan.com/IN/legislator/dave-hall/id/20164 (403)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: Vote Smart (no usable URL found)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:57:52.491Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Dave_Hall_(Indiana) (confirms incumbent for House District 62 on the 2026 general-election ballot; nothing on the subject)",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/dave-hall/ (bio only; nothing on the subject) and caucus site search for voter ID (nothing)",
+        "campaign site https://www.votedavehall.com/ (nothing on the subject)",
+        "two web searches on his name plus election words; nothing on the subject",
+        "blocked: https://indianacapitalchronicle.com/voter-guides/contests/house-district-62/ (403)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/206923 (403)",
+        "not searched on purpose: iga.in.gov votes (final votes on SB 10 already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:18:31.236Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

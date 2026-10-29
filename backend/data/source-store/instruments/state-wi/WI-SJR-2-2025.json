@@ -5,10 +5,348 @@
   "urls": [
     "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
     "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
-    "https://docs.legis.wisconsin.gov/document/votes/2025/av0004"
+    "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+    "https://docs.legis.wisconsin.gov/document/enrolledbills/2025/REG/SJR2"
   ],
   "version": "enrolled",
-  "operative_text": "Title/subject: To create section 1m of article III of the constitution\nTitle phrase: requiring photographic identification to vote in any election",
+  "operative_text": "(a_in_person_id)\n(section) Art. III, s. 1m (1) (proposed)\n(quote) [Article III] Section 1m (1) No qualified elector may cast a ballot in any election unless the elector presents valid photographic identification that verifies the elector’s identity and that is issued by this state, the federal government, a federally recognized American Indian tribe or band in this state, or a college or university in this state.\n(b_no_id_remedy)\n(section) Art. III, s. 1m (2) (proposed)\n(quote) (2) A qualified elector who is unable to present valid photographic identification on election day shall be permitted to cast a provisional ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Ballot question (Question 1, April 2025)\n(quote) Now, therefore, be it resolved by the senate, the assembly concurring, That the foregoing proposed amendment to the constitution is agreed to by the 2025 legislature; and, be it further Resolved, That the foregoing proposed amendment to the constitution be submitted to a vote of the people at the election to be held on the first Tuesday of April 2025; and, be it further Resolved, That the questions concerning ratification of the foregoing proposed amendment to the constitution be stated on the ballot as follows: Question 1: “Photographic identification for voting.\n(note) Title/subject: To create section 1m of article III of the constitution | Title phrase: requiring photographic identification to vote in any election",
+  "sponsors": [
+    {
+      "name": "Wanggaard",
+      "role": "prime",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Bradley",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Cabral-Guevara",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Felzkowski",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Feyen",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Hutton",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Jacque",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Jagler",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "James",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Kapenga",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Marklein",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Nass",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Quinn",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Stafsholt",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Testin",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Tomczyk",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Wimberger",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "LeMahieu",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Snyder",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Donovan",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Allen",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Armstrong",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "August",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Behnke",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Born",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Brooks",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Callahan",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Dallman",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Dittrich",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Duchow",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Goeben",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Green",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Gundrum",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Gustafson",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Hurd",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "B. Jacobson",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Kitchens",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Knodl",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Kreibich",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Krug",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Maxey",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Melotik",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Moses",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Murphy",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Mursau",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Nedweski",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Neylon",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Novak",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "O'Connor",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Penterman",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Petersen",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Piwowarczyk",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Sortwell",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Spiros",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Steffen",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Summerfield",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Swearingen",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Tittl",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Tucker",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Tusler",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Vos",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Wichgers",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Wittke",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Zimmerman",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Kaufert",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Rodriguez",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    },
+    {
+      "name": "Kurtz",
+      "role": "co",
+      "version": "Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election"
+    }
+  ],
   "single_subject": [
     {
       "season": 3,
@@ -42,11 +380,565 @@
       "body_size": 99,
       "note": "member names not captured",
       "members": []
+    },
+    {
+      "date": "2025-01-08",
+      "body": "WI Senate",
+      "motion": "Read a third time and adopted (PASSAGE) (sv0003)",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 15,
+      "absent": 1,
+      "body_size": 33,
+      "note": "13 | https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "members": [
+        {
+          "name": "BRADLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "JAGLER",
+          "vote": "yea"
+        },
+        {
+          "name": "QUINN",
+          "vote": "yea"
+        },
+        {
+          "name": "CABRAL-GUEVARA",
+          "vote": "yea"
+        },
+        {
+          "name": "JAMES",
+          "vote": "yea"
+        },
+        {
+          "name": "TESTIN",
+          "vote": "yea"
+        },
+        {
+          "name": "FELZKOWSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "KAPENGA",
+          "vote": "yea"
+        },
+        {
+          "name": "TOMCZYK",
+          "vote": "yea"
+        },
+        {
+          "name": "FEYEN",
+          "vote": "yea"
+        },
+        {
+          "name": "LEMAHIEU",
+          "vote": "yea"
+        },
+        {
+          "name": "WANGGAARD",
+          "vote": "yea"
+        },
+        {
+          "name": "HUTTON",
+          "vote": "yea"
+        },
+        {
+          "name": "MARKLEIN",
+          "vote": "yea"
+        },
+        {
+          "name": "WIMBERGER",
+          "vote": "yea"
+        },
+        {
+          "name": "JACQUE",
+          "vote": "yea"
+        },
+        {
+          "name": "NASS",
+          "vote": "yea"
+        },
+        {
+          "name": "CARPENTER",
+          "vote": "nay"
+        },
+        {
+          "name": "JOHNSON",
+          "vote": "nay"
+        },
+        {
+          "name": "ROYS",
+          "vote": "nay"
+        },
+        {
+          "name": "DASSLER-ALFHEI",
+          "vote": "nay"
+        },
+        {
+          "name": "KEYESKI",
+          "vote": "nay"
+        },
+        {
+          "name": "SMITH",
+          "vote": "nay"
+        },
+        {
+          "name": "DRAKE",
+          "vote": "nay"
+        },
+        {
+          "name": "LARSON",
+          "vote": "nay"
+        },
+        {
+          "name": "SPREITZER",
+          "vote": "nay"
+        },
+        {
+          "name": "HABUSH SINYKIN",
+          "vote": "nay"
+        },
+        {
+          "name": "PFAFF",
+          "vote": "nay"
+        },
+        {
+          "name": "WALL",
+          "vote": "nay"
+        },
+        {
+          "name": "HESSELBEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "RATCLIFF",
+          "vote": "nay"
+        },
+        {
+          "name": "WIRCH",
+          "vote": "nay"
+        },
+        {
+          "name": "STAFSHOLT",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-14",
+      "body": "WI Assembly",
+      "motion": "Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 45,
+      "absent": 0,
+      "body_size": 99,
+      "note": "13 | https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "members": [
+        {
+          "name": "ALLEN",
+          "vote": "yea"
+        },
+        {
+          "name": "ANDERSON",
+          "vote": "nay"
+        },
+        {
+          "name": "ANDRACA",
+          "vote": "nay"
+        },
+        {
+          "name": "ARMSTRONG",
+          "vote": "yea"
+        },
+        {
+          "name": "ARNEY",
+          "vote": "nay"
+        },
+        {
+          "name": "AUGUST",
+          "vote": "yea"
+        },
+        {
+          "name": "BARE",
+          "vote": "nay"
+        },
+        {
+          "name": "BEHNKE",
+          "vote": "yea"
+        },
+        {
+          "name": "BILLINGS",
+          "vote": "nay"
+        },
+        {
+          "name": "BORN",
+          "vote": "yea"
+        },
+        {
+          "name": "BRILL",
+          "vote": "yea"
+        },
+        {
+          "name": "BROOKS",
+          "vote": "yea"
+        },
+        {
+          "name": "BROWN",
+          "vote": "nay"
+        },
+        {
+          "name": "CALLAHAN",
+          "vote": "yea"
+        },
+        {
+          "name": "CLANCY",
+          "vote": "nay"
+        },
+        {
+          "name": "CRUZ",
+          "vote": "nay"
+        },
+        {
+          "name": "DALLMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "DESANTO",
+          "vote": "nay"
+        },
+        {
+          "name": "DESMIDT",
+          "vote": "nay"
+        },
+        {
+          "name": "DITTRICH",
+          "vote": "yea"
+        },
+        {
+          "name": "DONOVAN",
+          "vote": "yea"
+        },
+        {
+          "name": "DOYLE",
+          "vote": "nay"
+        },
+        {
+          "name": "DUCHOW",
+          "vote": "yea"
+        },
+        {
+          "name": "EMERSON",
+          "vote": "nay"
+        },
+        {
+          "name": "FITZGERALD",
+          "vote": "nay"
+        },
+        {
+          "name": "FRANKLIN",
+          "vote": "yea"
+        },
+        {
+          "name": "GOEBEN",
+          "vote": "yea"
+        },
+        {
+          "name": "GOODWIN",
+          "vote": "nay"
+        },
+        {
+          "name": "GREEN",
+          "vote": "yea"
+        },
+        {
+          "name": "GUNDRUM",
+          "vote": "yea"
+        },
+        {
+          "name": "GUSTAFSON",
+          "vote": "yea"
+        },
+        {
+          "name": "HAYWOOD",
+          "vote": "nay"
+        },
+        {
+          "name": "HONG",
+          "vote": "nay"
+        },
+        {
+          "name": "HURD",
+          "vote": "yea"
+        },
+        {
+          "name": "HYSELL",
+          "vote": "nay"
+        },
+        {
+          "name": "JACOBSON, B",
+          "vote": "yea"
+        },
+        {
+          "name": "JACOBSON, J",
+          "vote": "nay"
+        },
+        {
+          "name": "JOERS",
+          "vote": "nay"
+        },
+        {
+          "name": "JOHNSON",
+          "vote": "nay"
+        },
+        {
+          "name": "KAUFERT",
+          "vote": "yea"
+        },
+        {
+          "name": "KIRSCH",
+          "vote": "nay"
+        },
+        {
+          "name": "KITCHENS",
+          "vote": "yea"
+        },
+        {
+          "name": "KNODL",
+          "vote": "yea"
+        },
+        {
+          "name": "KREIBICH",
+          "vote": "yea"
+        },
+        {
+          "name": "KRUG",
+          "vote": "yea"
+        },
+        {
+          "name": "KURTZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MADISON",
+          "vote": "nay"
+        },
+        {
+          "name": "MAXEY",
+          "vote": "yea"
+        },
+        {
+          "name": "MAYADEV",
+          "vote": "nay"
+        },
+        {
+          "name": "MCCARVILLE",
+          "vote": "nay"
+        },
+        {
+          "name": "MCGUIRE",
+          "vote": "nay"
+        },
+        {
+          "name": "MELOTIK",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRESSE",
+          "vote": "nay"
+        },
+        {
+          "name": "MOORE OMOKUNDE",
+          "vote": "nay"
+        },
+        {
+          "name": "MOSES",
+          "vote": "yea"
+        },
+        {
+          "name": "MURPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "MURSAU",
+          "vote": "yea"
+        },
+        {
+          "name": "NEDWESKI",
+          "vote": "yea"
+        },
+        {
+          "name": "NEUBAUER",
+          "vote": "nay"
+        },
+        {
+          "name": "NEYLON",
+          "vote": "yea"
+        },
+        {
+          "name": "NOVAK",
+          "vote": "yea"
+        },
+        {
+          "name": "O'CONNOR",
+          "vote": "yea"
+        },
+        {
+          "name": "ORTIZ-VELEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "PALMERI",
+          "vote": "nay"
+        },
+        {
+          "name": "PENTERMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        },
+        {
+          "name": "PHELPS",
+          "vote": "nay"
+        },
+        {
+          "name": "PIWOWARCZYK",
+          "vote": "yea"
+        },
+        {
+          "name": "PRADO",
+          "vote": "nay"
+        },
+        {
+          "name": "PRONSCHINSKE",
+          "vote": "yea"
+        },
+        {
+          "name": "RIVERA-WAGNER",
+          "vote": "nay"
+        },
+        {
+          "name": "RODRIGUEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "ROE",
+          "vote": "nay"
+        },
+        {
+          "name": "SHEEHAN",
+          "vote": "nay"
+        },
+        {
+          "name": "SINICKI",
+          "vote": "nay"
+        },
+        {
+          "name": "SNODGRASS",
+          "vote": "nay"
+        },
+        {
+          "name": "SNYDER",
+          "vote": "yea"
+        },
+        {
+          "name": "SORTWELL",
+          "vote": "yea"
+        },
+        {
+          "name": "SPAUDE",
+          "vote": "nay"
+        },
+        {
+          "name": "SPIROS",
+          "vote": "yea"
+        },
+        {
+          "name": "STEFFEN",
+          "vote": "yea"
+        },
+        {
+          "name": "STROUD",
+          "vote": "nay"
+        },
+        {
+          "name": "STUBBS",
+          "vote": "nay"
+        },
+        {
+          "name": "SUBECK",
+          "vote": "nay"
+        },
+        {
+          "name": "SUMMERFIELD",
+          "vote": "yea"
+        },
+        {
+          "name": "SWEARINGEN",
+          "vote": "yea"
+        },
+        {
+          "name": "TAYLOR",
+          "vote": "nay"
+        },
+        {
+          "name": "TENORIO",
+          "vote": "nay"
+        },
+        {
+          "name": "TITTL",
+          "vote": "yea"
+        },
+        {
+          "name": "TRANEL",
+          "vote": "yea"
+        },
+        {
+          "name": "TUCKER",
+          "vote": "yea"
+        },
+        {
+          "name": "TUSLER",
+          "vote": "yea"
+        },
+        {
+          "name": "UDELL",
+          "vote": "nay"
+        },
+        {
+          "name": "VANDERMEER",
+          "vote": "yea"
+        },
+        {
+          "name": "VINING",
+          "vote": "nay"
+        },
+        {
+          "name": "WICHGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "WITTKE",
+          "vote": "yea"
+        },
+        {
+          "name": "ZIMMERMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SPEAKER",
+          "vote": "yea"
+        }
+      ]
     }
   ],
   "provenance": {
-    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
-    "fetched_at": "2026-10-21T01:52:20.308Z",
-    "method": "webfetch"
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
   }
 }

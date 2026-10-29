@@ -1,0 +1,31 @@
+{
+  "politician_id": "5c4d4194-a7a1-4efa-80cb-af848e338b8d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "ID number on mail ballot envelope",
+        "Proposition 39 (2026 voter ID initiative)",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate site https://sd03.senate.ca.gov (names him as Senator for District 3; home page and newsroom list; nothing on the subject)",
+        "Ballotpedia page (shows he took the seat in 2024; nothing on the subject)",
+        "Proposition 39 Ballotpedia page (his name does not appear)",
+        "CalMatters Digital Democracy pages for SB 1174 (2024) and AB 25 (2025): his name is not in the roll calls; he was not yet in the Senate for the 2024 SB 1174 vote",
+        "web news search on his name plus voter ID / Proposition 39 / SAVE Act / proof of citizenship (nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov (bot challenge page, HTTP 403); his 2025-26 Senate floor votes on this subject could not be checked there"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:00:36.514Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

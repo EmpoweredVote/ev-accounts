@@ -1,0 +1,54 @@
+{
+  "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+  "findings": [
+    {
+      "id": "e652104fd6b6ac9b16fd1894db5d1caa870d1e1ea80b8f43f4d42e4a41b53972",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate floor vote on SB 1174 (Min), 30-8-2",
+      "note": "The Senate roll call printed in the Assembly floor analysis lists Gonzalez among the 30 yes votes for SB 1174, which bars local governments from requiring ID to vote at polling places or other places where ballots are cast. The page gives the surname only; she is the only senator named Gonzalez in 2024. Date of the Senate vote comes from a news report that the bill cleared the Senate floor May 21.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:00:15.016Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site https://sd33.senate.ca.gov/ (confirms Senator Lena A. Gonzalez; site search for voter returned nothing on the subject; a post dated August 21, 2025 titled Senator Lena Gonzalez Presents AB 604 to Empower CA Voters has no body text on the page, so its content is unknown)",
+        "CalMatters Digital Democracy SB 1174 page (Senate roll call lists a senator Gonzalez, the only senator of that surname in 2024)",
+        "CalMatters Digital Democracy SB 405 (2025, bill to repeal the local voter-ID ban; author is another senator; she is not tied to it)",
+        "blocked: https://leginfo.legislature.ca.gov (bot challenge page on bill vote pages)",
+        "not reviewed: https://ballotpedia.org/Lena_Gonzalez",
+        "two news searches on name plus subject words (no statement from her on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:00:15.016Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

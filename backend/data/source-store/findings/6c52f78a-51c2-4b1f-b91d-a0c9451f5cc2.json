@@ -1,0 +1,83 @@
+{
+  "politician_id": "6c52f78a-51c2-4b1f-b91d-a0c9451f5cc2",
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship (SAVE Act)",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Vernon_Smith (state representative, Indiana House District 14, on the Nov 3, 2026 general ballot, advanced from the May 5, 2026 primary); nothing on the subject there (no issue positions, 2026 candidate survey not completed)",
+        "On the Record (0 appearances for this politician id; name search returned nothing)",
+        "official caucus page https://www.indianahousedemocrats.org/members/vernon-smith and Smith news list https://www.indianahousedemocrats.org/news/category/Rep.+Vernon+Smith: nothing on the subject (two HB 1343 statements fetched are about a Guard police force, not ID or citizenship)",
+        "official newsletter https://repvernongsmith.substack.com archive and site search for voter/ID: nothing on the subject (2026 session wrap-up fetched; mentions redistricting and immigration enforcement only)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_vernon_smith_230/ (page loads only by script; bill sponsorship list not readable)",
+        "blocked: https://drvernongsmith.com/ (connection failed)",
+        "not reviewed: https://x.com/vesmith2 (could not be read)",
+        "web news search: not run, the shared search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:39:22.211Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting District 14 member, on the 2026 general-election ballot; nothing on the subject)",
+        "the House caucus member page and its site search (nothing on the subject)",
+        "news search: name plus subject words (two searches; none found naming him on the subject)",
+        "Wikipedia and Gary news profile in search results (background only)",
+        "iga.in.gov bill pages not searched (votes already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:55:36.546Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

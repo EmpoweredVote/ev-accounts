@@ -1,0 +1,198 @@
+{
+  "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+  "findings": [
+    {
+      "id": "468708179c84563e456a34135cd3120431f7e440e491a41da57b049a4d6d9c9e",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H592.Html",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-592-2013",
+      "act": "other",
+      "motion": "Co-petitioner, H.592 photo identification for voting",
+      "note": "Listed as a petitioner (co-sponsor) on H.592, 'An Act requiring photo identification for voting' (188th General Court), added 1/17/2013, the day it was filed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b564ef00af219efc3a3bcca8f03ef1db08823fa8595e200b4c6eae287ed2733",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S335.Html",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-335-2013",
+      "act": "other",
+      "motion": "Co-petitioner, S.335 photo identification to receive a ballot",
+      "note": "Listed as a petitioner on S.335, 'An Act requiring photo identification to receive a ballot' (188th General Court). Text: voter gives name, address and valid photo ID; Massachusetts ID card issued free by the Registry of Motor Vehicles if needed. Date is the bill's filing date; the page shows no separate date added for him.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04c19cadc8789886d68cc5a8495380c11d368d2f72efb7d876ad27ce8d1adb7e",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/S389.Html",
+      "date": "2015-01-16",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-389-2015",
+      "act": "other",
+      "motion": "Co-petitioner, S.389 photo identification to receive a ballot",
+      "note": "Listed as a petitioner on S.389, 'An Act requiring photo identification to receive a ballot' (189th General Court). Same text as S.335: name, address and valid photo ID at the polling place, with a free state ID card from the Registry if needed. Date is the bill's filing date.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59ce0608d0b60d0638e21fbe8143158b6c4d8bad804c28fb949ab0d8191b3cdb",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H762.Html",
+      "date": "2021-07-06",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-762-2021",
+      "act": "other",
+      "motion": "Co-petitioner, H.762 requiring photo IDs to vote",
+      "note": "Added as a petitioner on 7/6/2021 to H.762, 'An Act requiring photo ID's to vote' (192nd General Court): voters would show a current valid photo ID to election officials before voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "144ab8958e3e963d1c6b56e367adfde55075046079c6bab4476720c46c525b0d",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H687.Html",
+      "date": "2023-02-13",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-687-2023",
+      "act": "other",
+      "motion": "Co-petitioner, H.687 election integrity through voter identification",
+      "note": "Added as a petitioner on 2/13/2023 to H.687, 'An Act ensuring the election integrity through voter identification' (193rd General Court). Voters would present one of several listed IDs, and a voter without suitable ID would not be permitted to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e388a942af65247a35d60e135fcfd1e78382b3b6480ffdecb0f20b0543160761",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H658.Html",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-658-2023",
+      "act": "other",
+      "motion": "Co-petitioner, H.658 requiring photo IDs to vote",
+      "note": "Added as a petitioner on 7/11/2023 to H.658, 'An Act requiring photo ID's to vote' (193rd General Court): voters would show a current valid photo ID to election officials before voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:14:03.055Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Ryan_Fattman (fetched by curl) says he is on the Nov 3, 2026 general-election ballot for Worcester and Hampden District, advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances, extract-otr run with --names)",
+        "official Senate profile https://malegislature.gov/Legislators/Profile/RCF0: sponsored list for 194th court reviewed, nothing on the subject (S.513 moves the state primary date; S.1089 is identity theft; S.1313 is employer falsified citizenship documents for employment, not voting)",
+        "cosponsored list for 194th court: page returned the same list as sponsored, nothing on the subject",
+        "malegislature.gov bill search for voter identification: H.833 (194th) checked, sponsor Garry only, no Fattman listed",
+        "official site https://senatorfattman.com/: single JavaScript page, no readable text; /news, /press-releases, /blog return 404; nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget for the session was used up)",
+        "not reviewed: Senate roll-call votes and floor amendments on voter ID (not located without search)",
+        "not reviewed: campaign site, Facebook, Instagram, YouTube, X posts"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:23.222Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "Ballotpedia (https://ballotpedia.org/Ryan_Fattman): sitting state senator for Worcester and Hampden, on the 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "malegislature.gov senator biography and 194th-session bills page (https://malegislature.gov/Legislators/Profile/RCF0/194/Bills): his own bills are on the primary date and employer citizenship paperwork, nothing on voter ID; 194th co-sponsor tab not rendered",
+        "malegislature.gov bill pages H.833, H.802, S.510 (194th session): checked petitioner lists, he is not listed",
+        "malegislature.gov bill pages for earlier sessions (188th, 189th, 192nd, 193rd): listed as petitioner on six photo-ID bills",
+        "official Senate page: nothing on the subject beyond the biography",
+        "blocked: https://www.fattmanforsenate.com (no response)",
+        "nothing on the subject: no own-words statement found in web search; not reviewed: his social media and floor remarks"
+      ],
+      "found": 6,
+      "at": "2026-10-27T14:14:03.055Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

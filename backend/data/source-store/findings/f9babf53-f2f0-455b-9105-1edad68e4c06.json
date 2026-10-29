@@ -1,0 +1,210 @@
+{
+  "politician_id": "f9babf53-f2f0-455b-9105-1edad68e4c06",
+  "findings": [
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('WARREN'), linked to Perry Warren (district 31) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Warren'), linked to Perry S. Warren (district 31) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1508aeb35641e63732a47d869e988a75b06dcd7dd07073659d5011bf2be58b0e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sInd=0&body=H&type=B&bn=1396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1688 (passed House May 13, 2025). Read.",
+      "note": "Named as co sponsor ('Perry Warren') on the official bill page; linked to Perry S. Warren via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Warren'), linked to Perry Sinclair Warren, Jr. (district 31) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a380faa751e7908c5368c8218fe6bd7b94e6ad33e5d07bf5435ea4ae67bd1c60",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Warren/InTheNews/NewsRelease/?id=145355",
+      "date": "2026-09-24",
+      "date_precision": "day",
+      "passage": "“Pennsylvanians have the right to vote, free from interference and intimidation. This bill clarifies and reinforces that right. And clarifies that the provisions of Pennsylvania law ensuring that freedom from interference and intimidation applies to all levels of law enforcement,” Warren added.",
+      "note": "Quoted in his official release about House Bill 2758 (law enforcement kept 100 feet from polling places). It is about voter intimidation, not ID.",
+      "subjects": [
+        "voter intimidation protection at polling places",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:03.581Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "288d748669c673fe25ad4b3cef19e97386422d3e9593697f8618ddd24aa09211",
+      "kind": "record",
+      "url": "https://www.pahouse.com/Warren/InTheNews/NewsRelease/?id=145355",
+      "date": "2026-09-24",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2758-2026",
+      "act": "sponsor",
+      "note": "The release lists him as a co-sponsor of House Bill 2758, which amends the Election Code to bar law enforcement from being within 100 feet of a polling location on Election Day. Not about ID.",
+      "subjects": [
+        "voter intimidation protection at polling places",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:03.581Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('WARREN'), linked to Perry Sinclair Warren, Jr. (district 31) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.706Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "law enforcement at polling places"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site pahouse.com/Warren (confirms 31st District, Bucks County)",
+        "official news center page 1 of 6 (one election item; pages 2-6 not reviewed: https://www.pahouse.com/Warren/NewsCenter/)",
+        "official release 2026-09-24 (fetched with curl; saved)",
+        "blocked: https://www.ballotpedia.org/Perry_Warren (empty page)",
+        "web search x1 (nothing by him on voter ID)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:46:03.581Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

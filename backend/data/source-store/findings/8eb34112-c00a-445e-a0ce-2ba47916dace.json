@@ -1,0 +1,52 @@
+{
+  "politician_id": "8eb34112-c00a-445e-a0ce-2ba47916dace",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Brad_Briner (North Carolina Treasurer since 2025-01-01, term ends 2029-01-01; not on the 2026 ballot; sitting statewide official, in scope)",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia page text (no voter-ID, citizenship or election-law content in profile or Candidate Connection survey text)",
+        "official site https://www.nctreasurer.gov/ (home page, nothing on the subject; no site search run)",
+        "not reviewed: ncleg.gov (statewide executive, not a legislator; member page returned HTTP 500)",
+        "not reviewed: news search (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:57:31.893Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Brad_Briner shows him as State Treasurer since 2025-01-01 with a term ending 2029-01-01, so he is not on the 2026 ballot; he is a sitting official and the office does not run elections",
+        "positive control: https://www.nctreasurer.gov/ (Treasurer Briner welcome text)",
+        "On the Record (0 appearances)",
+        "Treasurer office site search for voter: no relevant results",
+        "WUNC 2024 candidate profile: nothing on the subject",
+        "blocked: https://ncnewsline.com/2024/11/06/republican-brad-briner-elected-next-north-carolina-state-treasurer/ (bot challenge)",
+        "not a legislator: no bill pages to check",
+        "2 web searches on his name plus voter ID, election integrity, citizenship, SAVE Act: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:41:41.613Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

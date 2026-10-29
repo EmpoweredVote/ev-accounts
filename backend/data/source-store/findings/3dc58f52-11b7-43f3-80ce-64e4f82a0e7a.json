@@ -1,0 +1,89 @@
+{
+  "politician_id": "3dc58f52-11b7-43f3-80ce-64e4f82a0e7a",
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Phil_GiaQuinta (name is spelled GiaQuinta; Indiana House District 80; advanced from the May 5, 2026 primary; on the November 3, 2026 general ballot)",
+        "On the Record (0 appearances; extract-otr run with --names Philip Giaquinta)",
+        "Ballotpedia page text: nothing on the subject",
+        "Indiana House Democratic Caucus member page https://www.indianahousedemocrats.org/members/phil-giaquinta: nothing on the subject (fetch tool summary only)",
+        "Indiana House Democratic Caucus site search for voter ID https://www.indianahousedemocrats.org/search?q=voter+ID: nothing on the subject (fetch tool summary only)",
+        "Indiana House Democratic Caucus news list https://www.indianahousedemocrats.org/news?q=GiaQuinta+election: nothing on the subject (first page only, fetch tool summary only)",
+        "Indiana Capital Chronicle site search https://indianacapitalchronicle.com/?s=GiaQuinta+voter: nothing on the subject (fetch tool summary only)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page loads only an empty app shell, so bill sponsorships and votes could not be read)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for voter ID and citizenship bills (could not be read)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: campaign site, Facebook page https://www.facebook.com/phil.giaquinta, ontheissues.org, vote411"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:26:32.247Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "student ID at polls",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed: https://ballotpedia.org/Phil_GiaQuinta shows him as the House District 80 incumbent on the 2026 general-election ballot (name spelled Phil GiaQuinta)",
+        "Ballotpedia: nothing on the subject (2026 candidate survey not completed)",
+        "official House caucus member page https://www.indianahousedemocrats.org/members/phil-giaquinta/: nothing on the subject",
+        "BillTrack50 vote page https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/4611: no voter ID, mail ID or citizenship bill listed",
+        "news searches on name plus voter ID, mail ballot, student ID, proof of citizenship: nothing on the subject",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 (bot challenge page)",
+        "not reviewed: https://iga.in.gov/legislative/2025/bills/senate/10/details (page loads only by script; roll-call names not readable)",
+        "not reviewed: https://indianahousedemocrats.org/news-media (404 on fetch; caucus news list not searched page by page)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:10.079Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

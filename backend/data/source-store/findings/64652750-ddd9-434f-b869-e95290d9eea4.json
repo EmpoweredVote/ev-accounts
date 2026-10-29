@@ -1,0 +1,84 @@
+{
+  "politician_id": "64652750-ddd9-434f-b869-e95290d9eea4",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Bradford_Barrett (Bradford 'Brad' Barrett, Indiana House District 56, in office since 2018, term ends November 4, 2026; page says he did not file to run for re-election in 2026, so he is a sitting member but not on the 2026 ballot)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia: nothing on the subject (https://ballotpedia.org/Bradford_Barrett, https://ballotpedia.org/Indiana_House_of_Representatives_District_56); note https://ballotpedia.org/Brad_Barrett is a different person (Kansas House)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_bradford_barrett_1 (page needs JavaScript; bill list unreadable by fetch)",
+        "blocked: https://www.indianahouserepublicans.com/members/brad-barrett (returns an error page, no member content)",
+        "not reviewed: official and campaign sites and news search (web search budget for the session was used up; no direct URL found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:36:35.983Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID for mail ballots",
+        "voter-roll checks",
+        "election law changes (including SB 10 proof-of-identification rules)"
+      ],
+      "places": [
+        "status: sitting Indiana House member for District 56, not seeking reelection (https://westernwaynenews.com/brad-barrett-not-seek-reelection-2026, 2026-01-07); he serves out his term, so he is not on the 2026 general ballot; still searched as a sitting member",
+        "On the Record (0 meetings)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/brad-barrett/ (bio and press releases: only voter-registration reminders and absentee-in-person voting notices, nothing on ID or citizenship proof)",
+        "caucus press-release search for voter/election words: nothing on the subject",
+        "BallotReady profile: no stance on elections or voter ID",
+        "news (Journal Gazette editorial on 2025 Indiana election bills): does not name him",
+        "not searched by instruction: iga.in.gov and LegiScan votes (IN-SB-10-2025 final votes already on file)",
+        "not reviewed: https://ballotpedia.org/Bradford_Barrett; no own-words statement on the subject found in three searches"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:00:11.149Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

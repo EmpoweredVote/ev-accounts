@@ -1,0 +1,129 @@
+{
+  "politician_id": "ba70a3c1-6533-41d7-94e1-78da5935c3f6",
+  "findings": [
+    {
+      "id": "576c2568e49d362c7900e7e20eb53a308d489d57718ea72c694c6c007693c618",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1324",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "Third Reading, House Roll Call #1324 (passed 67-40)",
+      "note": "Brenden Jones is listed among the House members voting aye on third reading of SB 824, Implementation of Voter ID Constitutional Amendment.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:01.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54cbb467a313f4f47fdb6eba7c985eb8807e57dea351de45039d21a12a157f97",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1354",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "Veto Override, House Roll Call #1354 (passed 72-40)",
+      "note": "Brenden Jones is listed among the House members voting aye on the vote to override the Governor's veto of SB 824, Implementation of Voter ID Constitutional Amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "veto override on voter ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:01.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5718e2f7a628e9fd28149fdfdaf8aabfd5ff9d801df093dd45cf2cd6152fefac",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1353",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "M4 Previous Question, Veto Override, House Roll Call #1353 (passed 68-43)",
+      "note": "Brenden Jones is listed among the House members voting aye on a procedural motion (previous question) tied to the veto override of SB 824.",
+      "subjects": [
+        "voter ID at the polls",
+        "veto override on voter ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:01.802Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "implementing a voter ID constitutional amendment",
+        "veto override on voter ID",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Brenden_Jones says he is on the Nov 3, 2026 general-election ballot for NC House District 46 (his Mar 3, 2026 primary was canceled); NCGA biography https://www.ncleg.gov/Members/Biography/H/723 names him",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://repjonesfornc.com (home, about, accomplishments, leadership): nothing on the subject",
+        "official NCGA page https://www.ncleg.gov/Members/Biography/H/723: no subject material",
+        "Ballotpedia: nothing on the subject",
+        "NCGA bill page and House roll-call transcripts for SB 824 (2017 session)",
+        "not reviewed: bills of the 2019-2025 sessions on voter ID or proof of citizenship (no member sponsor search page reached)",
+        "blocked: web search (session search budget used up), so no news or own-words search was run"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:06:01.802Z",
+      "by": "source-collector"
+    }
+  ]
+}

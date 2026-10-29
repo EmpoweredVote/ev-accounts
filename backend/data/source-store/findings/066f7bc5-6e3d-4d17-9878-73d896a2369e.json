@@ -1,0 +1,135 @@
+{
+  "politician_id": "066f7bc5-6e3d-4d17-9878-73d896a2369e",
+  "findings": [
+    {
+      "id": "1a7590f6dd2f2a2377abfd2ebd6f0e48c311831820de0112e986165e89b5a733",
+      "kind": "own-words",
+      "url": "https://politicspa.com/garrity-calls-on-shapiro-to-secure-elections/145854/",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "Call on the legislature to pass and sign into law a commonsense Voter ID law for the Commonwealth to ensure the promise of one person, one vote is protected in Pennsylvania.",
+      "note": "Statement issued by the Garrity for PA campaign (reported by PoliticsPA, page dated March 11, 2026), after a federal charge against a non-citizen for voting. Calls on the governor to urge the legislature to pass a voter ID law.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:36.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b52239826eb00d14198cbb0d89cd844f3ee1092e434246d51f2dfaef78b1911",
+      "kind": "own-words",
+      "url": "https://politicspa.com/garrity-calls-on-shapiro-to-secure-elections/145854/",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "Institute new protocols to coordinate with federal immigration enforcement to ensure Pennsylvania’s voter rolls do not have illegal immigrants or anyone who otherwise should not qualify to vote. Currently, Pennsylvania requires a driver’s license number or the last four digits of your Social Security number, which the Commonwealth uses to verify voter status. It is clear that this process is flawed.",
+      "note": "Statement issued by the Garrity for PA campaign (reported by PoliticsPA, page dated March 11, 2026), after a federal charge against a non-citizen for voting. Calls for coordination with federal immigration enforcement on voter rolls and says the current license-number or Social Security check is flawed.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:36.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "715b88edd03cc60b4765aa130da43fa5453759e41761b520cde6e9735c836f3e",
+      "kind": "own-words",
+      "url": "https://politicspa.com/garrity-calls-on-shapiro-to-secure-elections/145854/",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "This same Gallup poll found that 83% of Americans support requiring proof of citizen when registering to vote for the first time – something that would have stopped Mr. Sacko from ever casting a ballot.",
+      "note": "Statement issued by the Garrity for PA campaign (reported by PoliticsPA, page dated March 11, 2026), after a federal charge against a non-citizen for voting. Cites a poll on proof of citizenship when first registering. The sentence is the campaign statement's own wording citing the poll.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:36.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dac23b5f8be509e8d380d1924d4a4767298f0b56b0835c5bb1b7c95b5d48c8ac",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2026/08/pennsylvania-governor-race-elections-voting-shapiro-garrity/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“That’s where I would start,” she said. “You have to have an ID to do anything.”",
+      "note": "Quote of Garrity from a Spotlight PA interview, reported by Votebeat/Spotlight PA on Aug. 20, 2026. She said she supports enhanced voter ID requirements; the article says she did not name accepted forms of ID or exceptions.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:36.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56e1607a591f9f7578c2332b6285918fe6bea5400c2e40f4928bdafd932dece5",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2026/08/pennsylvania-governor-race-elections-voting-shapiro-garrity/",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "passage": "“If we think there’s not voter fraud, then why not hand over the rolls and prove him wrong?”",
+      "note": "Quote of Garrity that Spotlight PA says she gave to ABC27, on handing the state voter roll to the federal justice department. Spotlight PA article dated Aug. 20, 2026; original ABC27 date not seen (page blocked).",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:36.411Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "PoliticsPA campaign statement page (saved)",
+        "Spotlight PA / Votebeat Aug. 20, 2026 article (saved)",
+        "campaign site https://www.garrityforpa.com/ home: nothing on the subject; /issues returned 404",
+        "blocked: https://penncapital-star.com/election-2026/how-josh-shapiro-and-stacy-garrity-stack-up-on-election-issues/ (403)",
+        "blocked: https://www.abc27.com/pennsylvania-governor-election/pennsylvania-governors-race-stacy-garrity-pledges-to-work-with-trump-on-snap-pennsylvania-voter-rolls/amp/ (rate-limit 429 on fetch; not retried)",
+        "web searches on her name plus voter ID, SAVE Act",
+        "she is the 2026 nominee for governor per the Spotlight PA article; state treasurer office has no bill record to check",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:01:36.411Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

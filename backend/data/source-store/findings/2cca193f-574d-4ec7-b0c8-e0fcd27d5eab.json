@@ -1,0 +1,53 @@
+{
+  "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab",
+  "findings": [
+    {
+      "id": "89bf80e997ef943cbbce3e6dffbc8538e26430b16b0ebcaa73747042a4deeec7",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate Third Reading, SB 1174 (Min), Assembly floor",
+      "note": "Rebecca Bauer-Kahan is listed as voting aye on SB 1174 (2024), which bars a local government from enacting or enforcing a rule that a person must show identification to vote or submit a ballot, unless state or federal law requires it. Assembly floor vote on the page's own record; the bill passed and was chaptered as Chapter 990, Statutes of 2024.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:38.089Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local government voter ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (403 from the site's bot check; votes taken instead from the CalMatters Digital Democracy bill page)",
+        "https://ballotpedia.org (page confirms the 2026 general-election ballot)",
+        "CalMatters Digital Democracy pages for SB 1174 (2024), AB 25 (2025) and SB 405 (2025); none of the members is listed on the AB 25 or SB 405 votes",
+        "web searches on the name plus voter ID, proof of citizenship, SAVE Act and election integrity",
+        "official site: its search box returned the same page for different keywords, so a site-restricted web search was used instead; nothing on the subject found (https://bauer-kahan.asmdc.org)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:58:38.089Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

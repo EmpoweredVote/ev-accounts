@@ -1,0 +1,101 @@
+{
+  "politician_id": "c7e94dda-1862-40fe-bda5-5fa2fe68f536",
+  "findings": [
+    {
+      "id": "d010d0669a5e1d29e78b19a587a5e5cae8eba3eda1449d265130dd981b0c5cd2",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/press-releases/2021/10/18/didomenico-votes-to-pass-landmark-voting-reform-legislation",
+      "date": "2021-10-18",
+      "date_precision": "day",
+      "passage": "This bill will prove to be critical in expanding voting access across the Commonwealth by making several COVID-era voting provisions permanent, including expansions to early voting, vote-by-mail, and absentee ballot access.",
+      "note": "Statement in his press release on the Senate passing S.2545, the VOTES Act. He describes permanent no-excuse mail voting and same-day registration. The release does not mention ID requirements. Date taken from the page URL.",
+      "subjects": [
+        "mail ballot access (related, no ID mentioned)",
+        "election laws in general",
+        "same-day voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:24:25.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5e74c7eb25770ce470aec5ad0649b95a73231c014a47b57b313db230205af",
+      "kind": "own-words",
+      "url": "https://www.senatordidomenico.com/press-releases/2020/9/8/didomenico-co-sponsors-automatic-voter-registration-bill",
+      "date": "2020-09-08",
+      "date_precision": "day",
+      "passage": "This legislation will not only help to ensure the integrity of our elections, but also help to expand voting opportunities by making the process more fair and accessible for all.",
+      "note": "His quote on a Senate-passed automatic voter registration bill he co-sponsored. The bill title includes enhancing safeguards against fraud and it raises penalties for false information. No ID or citizenship document requirement is described. Date taken from the page URL.",
+      "subjects": [
+        "election integrity (related)",
+        "automatic voter registration",
+        "voter fraud penalties"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:24:25.810Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Sal_N._DiDomenico (state senator, Middlesex and Suffolk; advanced from the Sept 1, 2026 primary; on the Nov 3, 2026 general ballot)",
+        "On the Record (0 meetings)",
+        "official site senatordidomenico.com: sitemap title scan (567 URLs) and tag searches for voter ID, photo ID, election integrity, citizenship; nothing on ID or citizenship; two election-law press releases saved as related",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/SND0: no sponsored bill on voter ID, proof of citizenship or the SAVE Act (election bills seen: S.507 ballot question committee finance reporting, S.508 children's right to vote by request, S.2375 free rides to elections)",
+        "https://malegislature.gov/Bills/194/S507: fetched; campaign finance, not on subject",
+        "Ballotpedia page: nothing on the subject",
+        "campaign site: not found (salfordidomenico.com and sal4senate.com do not resolve)",
+        "not reviewed: news search on name plus subject words (web search budget was used up)",
+        "not reviewed: Senate roll-call pages for 2021 VOTES Act (S.2545) vote and 2020 bills; only press releases saved"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:24:25.810Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script run with name search)",
+        "Ballotpedia (fetched with curl; shows him on the 2026 general-election ballot for the Middlesex and Suffolk Senate seat)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/SND0 (confirms Senate member; sponsored bills on elections are campaign-finance, free rides to elections, and a by-request bill on children voting; none on ID or citizenship)",
+        "Senate budget amendment FY2026-S3-303 voter ID text (filed by other senators; no roll call or outcome shown on the page; not reviewed: how he voted)",
+        "two news searches on his name plus the subject words (nothing quoting him on the subject)",
+        "no campaign site found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:57:28.012Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

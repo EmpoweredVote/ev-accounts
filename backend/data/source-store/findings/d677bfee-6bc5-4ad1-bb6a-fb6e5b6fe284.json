@@ -1,0 +1,263 @@
+{
+  "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284",
+  "findings": [
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('JACQUE'), linked to André Jacque (district 1) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('JACQUE'), linked to Andre Jacque (district 2) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b98afb5fe49daee0ff1776f7b91dce28d5a0ed36d2cccde57c811cfcb255b3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab7",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Enacted (2011 Wisconsin Act 23, approved 5/25/2011; text as enrolled, which is the Assembly substitute amendment 2 version passed 5/11/2011 and concurred by the Senate 5/19/2011)",
+      "note": "Named as co sponsor ('Jacque') on the official bill page; linked to Andre Jacque via the official 2011 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Jacque') on the official bill page; linked to André Jacque via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('JACQUE'), linked to André Jacque (district 1) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54409b9da082533907565bfb094989862349d0f44717a17ee4060665e4c4c916",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb6",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-6-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/14/2011; committee recommended passage as amended 2/22/2011; held on the Senate calendar; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Jacque') on the official bill page; linked to Andre Jacque via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('JACQUE'), linked to André Jacque (district 2) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('JACQUE'), linked to André Jacque (district 1) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097e5be441c78312236748cdf9f0e45bc27901642be1fe8690bad61c835c3d34",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('JACQUE'), linked to André Jacque (district 1) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Jacque') on the official bill page; linked to André Jacque via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('JACQUE'), linked to André Jacque (district 1) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T23:15:12.779Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+  "findings": [
+    {
+      "id": "0b53dd90e8c8727aaf1c20e8f19f18b74e7122ce0ef659535a77ca41f6c6f894",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "Assembly floor, SB 1174 Senate Third Reading",
+      "note": "Assembly floor vote on SB 1174 (Min), which bars a local government from requiring a person to show ID to vote or submit a ballot at a polling place or vote center. Source is the CalMatters Digital Democracy vote record (Assembly floor 57-16-6); she is listed among the no votes.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1f1574a6acb2389373bf8e3b13692fd719a59c38bf668d66a5b1cbe3ceb4511",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-06-19",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "Assembly Local Government Committee, do pass, SB 1174",
+      "note": "Committee vote on SB 1174 (bar on local voter-ID rules). Source is the CalMatters Digital Democracy vote record; she is listed among the two no votes.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "461f75e4e964b07204d88021bc424acd8a6f1f21cad718f2da73f393f0d04bfc",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Assembly floor, AB 1116 Assembly Third Reading",
+      "note": "Assembly floor vote on AB 1116 (voter registration), which lets a person without a California driver's license or state ID register online by giving the last four digits of a Social Security number. Source is the CalMatters Digital Democracy vote record (Assembly floor); she is listed among the no votes.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without driver's license or state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92c9de12f99e36f492f51a0d643edbd831df51bd96c1004b763b6d6de5160fd3",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "nay",
+      "motion": "Assembly floor, AB 1116 Concurrence in Senate Amendments",
+      "note": "Assembly vote to agree to the Senate changes to AB 1116 (voter registration without a driver's license or state ID, using the last four digits of a Social Security number). Source is the CalMatters Digital Democracy vote record; she is listed among the no votes. The same page says the governor vetoed the bill.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without driver's license or state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e139039c491d5dd92d84b2470ea2b4e42399b4e8aee8248c7556e89209cf3693",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-05-23",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "abstain",
+      "motion": "Assembly Appropriations Committee, do pass, AB 1116",
+      "note": "Committee vote on AB 1116 (voter registration without a driver's license or state ID). Source is the CalMatters Digital Democracy vote record; she is listed as abstaining.",
+      "subjects": [
+        "ID to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bcd5f3f3b325a87b5b2be3231bb2bc5033be941d88a7e0c70336bd035efe3aa",
+      "kind": "record",
+      "url": "http://web.archive.org/web/20260507110212/https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1764",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1764-2025",
+      "act": "author",
+      "motion": "AB 1764 (Elections: voter registration), introduced by her",
+      "note": "Her bill AB 1764 would require the Secretary of State or county elections officials to use federal Social Security Administration death data, as well as state health-care data, to cancel voter registrations of deceased persons. Source is the Internet Archive copy of the leginfo bill page (captured 2026-05-07), which shows the bill as introduced by her on 2026-02-09 and as amended.",
+      "subjects": [
+        "voter-roll checks (deceased registrants)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:21.944Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "ID to register to vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia: https://ballotpedia.org/Kate_Sanchez (confirms Assembly District 71, on the 2026-11-03 general ballot; nothing on the subject)",
+        "blocked: https://ad71.asmrc.org/ (official site, 403 on both fetch tools)",
+        "campaign site: not reviewed, no working address found",
+        "CalMatters Digital Democracy vote records for SB 1174 (2024), AB 25 (2025) and AB 1116 (2025-26); used instead of leginfo, which is behind a bot check",
+        "AB 25 (2025): committee votes checked; she is not among the committee members who voted, and she is not listed on the bill, so no record",
+        "Internet Archive copy of leginfo for AB 1764 (her bill)",
+        "CalMatters Digital Democracy page for AB 1764: not found (404)",
+        "news search on name plus subject words (no quoted statement of hers found)",
+        "own words: none found, so no own-words findings"
+      ],
+      "found": 6,
+      "at": "2026-10-28T16:08:21.944Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}
