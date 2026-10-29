@@ -14,6 +14,10 @@
  * blank_reason is carried into stances.csv.
  * Rows, bundle entries and evidence are joined through the verifier's own normalizer
  * (normName / normTopic / stanceKey in src/lib/researchVerifier.ts).
+ * Optional <dir>/survey-sections.json: { "<ballotpedia page URL, no fragment>": "<text of its #Campaign_themes
+ * section>" }, saved from the page (Ballotpedia blocks plain fetches). It lets the Candidate Connection carve-out
+ * (ruling 2026-10-07; scripts/lib/candidate-connection.mjs) apply: a #Campaign_themes source whose snippets are
+ * all inside that text is not "Ballotpedia only". Without the file the carve-out never applies (fails closed).
  *
  *   npx tsx scripts/stance-gate.ts --dir data/stance-research/<batch>
  * Exit: 0 clean, 1 high-severity findings, 2 usage/unreadable.
@@ -79,7 +83,11 @@ const evidence = existsSync(join(DIR, 'evidence.csv'))
 const topics: BundleTopic[] = readOrExit(join(DIR, 'topics.json'), (text) => JSON.parse(text), true);
 const politicians: BundlePolitician[] = readOrExit(join(DIR, 'politicians.json'), (text) => JSON.parse(text), true);
 
-const findings = checkBatch(research, topics, politicians, evidence);
+const surveySections: Record<string, string | null> | undefined = existsSync(join(DIR, 'survey-sections.json'))
+  ? readOrExit(join(DIR, 'survey-sections.json'), (text) => JSON.parse(text) as Record<string, string | null>)
+  : undefined;
+
+const findings = checkBatch(research, topics, politicians, evidence, surveySections);
 const by_check: Record<string, number> = {};
 for (const f of findings) by_check[f.check_id] = (by_check[f.check_id] ?? 0) + 1;
 const summary = {
