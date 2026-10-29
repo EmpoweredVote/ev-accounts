@@ -25,7 +25,7 @@ The extracted text carries five channels, all in prose:
 
 | Channel | What it looks like | Why it matters |
 | --- | --- | --- |
-| `attribution` | `(Councilor Crabb)` after an item title | **Columbus publishes no sponsor list.** This is the sponsorship equivalent — the channel that carried slices 3 and 4 |
+| `attribution` | `(Councilor Crabb)` after an item title | **Columbus publishes no sponsor list.** This is the sponsorship equivalent — the channel that carried slices 3 and 4. ⚠ It has a second, opposite meaning; see below |
 | `motion` | `Councilor X made a motion to adopt the ordinance` | an act, but mostly procedural — read the item first |
 | `second` | `seconded by Councilor Y` | weakest; a second is not a position |
 | `vote` | `with Councilors Chambers, Cook, Huff and Tucker voting yes, and Mayor Pro Tem Allen and Councilors Barnes, Cogle, Davis and Garrett voting no` | a **named divided roll call, in quotable prose** |
@@ -36,6 +36,18 @@ Instruments are numbered `Ordinance No. 26-021` and `Resolution (320-26)`, which
 
 `ccg_member_index.mjs` (this directory) indexes one member's hits across the corpus. It requires
 `--since` and it ships a `--control`; read §4 for why both are not optional.
+
+### 🔴 `(Councilor X)` MEANS TWO OPPOSITE THINGS, AND THE DIFFERENCE IS THE WHOLE CHANNEL
+
+On a policy ordinance or resolution it names the councillor who **brought** the item: *"An Ordinance
+… to abolish the Civic Center Advisory Board … (Councilor Crabb)"*, and Crabb then moves its
+adoption. On a **rezoning** it names the councillor whose **district the parcel is in**: *"8300 /
+8350 Fortson Road … (Councilor Davis)"*, and Councillor Tucker moves it.
+
+Measured for Glenn Davis: of his 96 attributions, **54 are zoning cases and 42 are policy items**.
+Reading a rezoning attribution as sponsorship would have credited him with a position on 54 parcels
+he happened to represent. ▶ **Split on the item type before reading a single one.** The signal is
+reliable: `REZN-`, "Zoning Atlas", `EXCP-`, "special exception", "variance".
 
 ### 🔴 2019 AND 2020 ARE SCANNED IMAGES — 41 MEETINGS WITH ZERO EXTRACTABLE TEXT
 
@@ -172,6 +184,42 @@ SPLOST, courtesy appearances — not governance of it. A council member holds no
 
 ---
 
+## 3a. 🟢 THE FIRST INSTRUMENT, AND IT SEATS SIX OF THE TWELVE AT ONCE
+
+**Ordinance 25-040**, adopted 2025-08-12, repeals and replaces Columbus Code § 14-13 with a new
+section *"that prohibits camping on public property within Columbus, Georgia"*. Sponsored by
+Councillor Crabb. Carried **nine to one**, Councillor Cogle opposed.
+
+**C46 is satisfied without the small-bodies exception.** One vote against out of ten is exactly the
+10% the rule asks for, and it was its own action item — City Attorney's Agenda, Ordinances, item 1 —
+not a consent agenda. Georgia mandates no camping ban, so the provision is the body's own choice.
+
+**The chair is 5, and the penalty clause is what decides it.** Chair 4 prohibits encampments
+*"enforced through graduated warnings and **civil** penalties"*; chair 5 bans public camping and
+sleeping *"with **criminal** penalties"*. Subsection (j) of the adopted text reads: *"Any person
+violating any provision of this section 14-13. shall, upon conviction in the recorder's court, be
+punished as provided in section 1-8 of this Code."* Conviction in a court is criminal. Subsection
+(b) makes it *"unlawful for any person to camp on any public property"*, and the definition of
+camping expressly covers *"sleeping activities, or making preparations to sleep"*.
+
+⚠ **The eight-day notice is chair 4's mechanism and does not carry the chair.** Crabb's amendment
+added written or oral notification and eight days to vacate, which is a graduated warning — but
+chair 4 is compound and its penalty half fails. The council's own record corroborates the reading:
+Crabb's referral of 2025-07-22 asks the Mayor for a discussion that is *"to include the criminal
+aspect of the ordinance"*.
+
+▶ **Seats `homelessness` 5 for Allen, Chambers, Crabb, Davis, Garrett and Tucker** — six of the
+twelve local subjects, off one instrument, exactly as Duluth's 26-0100R seated four. Davis's row
+carries the same evidence and will queue unverified; see the comma-list defect below.
+⚠ Anker, Hickey and Huff also voted for it. Huff is out of scope (District 3, January handover);
+Anker and Hickey have since left the council and were replaced by Barnes and Cook.
+
+🟢 **AND IT GIVES SIMI BARNES HER OWN WORDS, BEFORE SHE HELD THE SEAT.** At the first reading on
+2025-07-22 the minutes record her in public comment: *"Simi Barnes – Stated she believes it is a step
+toward criminalizing homelessness."* Admissible under the 2026-10-06 campaign-statements ruling, and
+it is the opposite pole from the chair her six future colleagues took. ⚠ It is a **direction, not a
+chair** — it rules out 4 and 5 and does not choose among 1, 2 and 3. Blank, and say so.
+
 ## 4. 🔴 TWO DETECTORS CAME BACK BLIND IN THIS SETUP, AND ONE WAS SILENT
 
 Both are the same lesson, and both are the reason §1 ships a `--control`.
@@ -184,6 +232,37 @@ Both are the same lesson, and both are the reason §1 ships a `--control`.
 2. **41 meetings extracted to zero characters** and the extraction run reported `ok=202 fail=0`,
    because an image-only PDF is not an extraction *failure*. ▶ **Count the characters, not the
    exits.**
+
+### 🔴🔴 A COMMA-LIST ROLL CALL CANNOT VERIFY A COMMON SURNAME, AND IT IS REPO-WIDE
+
+Columbus writes a divided vote as one sentence: *"carried by a nine-to-one vote, with Mayor Pro Tem
+Allen and Councilors Anker, Chambers, Crabb, Davis, Garrett, Hickey, Huff and Tucker voting in
+favor, and Councilor Cogle voting in opposition."* That is the ideal citation — quotable, verbatim,
+and it names everyone.
+
+**Measured against the real `checkNameProximity`, on the real page, for the real snippet:**
+
+| Member | Verdict |
+| --- | --- |
+| Gary Allen | `verified` — rescued by the singular title in "Mayor Pro Tem Allen" |
+| Charmaine Crabb · Toyia Tucker · Walker Garrett · Travis L. Chambers | `verified` |
+| **Glenn Davis** | 🔴 **`name_not_present`** |
+
+`davis` and `allen` are the only two Columbus surnames in `COMMON_LAST_NAMES`, and a common surname
+needs a title within 30 characters. **Two independent things defeat it, and fixing either alone
+would not help:**
+
+1. `TITLE_PATTERN` matches `councilor` and **not the plural `councilors`** — the same gap slice 3
+   recorded for "BY COUNCILORS JOHNSON". A tally is always plural.
+2. Even with the plural accepted, **"Councilors Anker, Chambers, Crabb, " is 35 characters**, so the
+   title cannot reach the fourth name. In a ten-member body that excludes most of the list.
+
+▶ **This is the Philadelphia suffix bug's sibling**: the row is correct, the evidence is real, and it
+**fails silently into the review queue** as unverified — which reads like a sourcing problem and
+invites a re-research that cannot possibly fix it. Record it in `editor_note`, never in the
+voter-facing reasoning, and let the reviewer confirm by eye.
+▶ It generalises: **any city whose minutes write tallies as a comma-list of surnames will lose every
+member with a common surname.** Check it before pricing a slice on roll calls.
 
 ### Known defect to work around
 
