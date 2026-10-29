@@ -21,6 +21,27 @@
         "fetched_at": "2026-10-27T16:39:11.011Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "69f3a5438e8985be2a98206f784df2db7d6915fdee3b33ebc4a5866f5d654016",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/20261001043349/https://burke4congress.us/priorities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voting laws should be simple: MUST be a US Citizen Voter ID Required Pass the SAVE America Act. Proof + Clean Rolls = No Fakes",
+      "note": "Candidate's own campaign priorities page (burke4congress.us/priorities, section VOTER INTEGRITY), read from the Internet Archive copy of 2026-10-01; the live page now returns Page Not Found. Same page the Season 1 summary quoted. Undated on the page; archived 2026-08-30 and 2026-10-01 during the 2026 campaign.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "federal-01 review session (Chris Andrews review, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:16:16.287Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

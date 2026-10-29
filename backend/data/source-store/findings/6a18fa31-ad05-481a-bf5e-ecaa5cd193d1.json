@@ -80,6 +80,27 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "2aa986439fc20088ca09968c7e99d831aa6608f4381420f80a9d9149a4581ae3",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/20260216145543/https://www.valleycentral.com/news/local-news/rio-grande-valley-lawmakers-split-as-save-act-passes-house/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Under the guise of blocking noncitizens from participating in our political process, this bill actually makes it harder for tens of millions of American women, service members, senior citizens, and other eligible folks to register to vote and cast a ballot in-person or by mail.",
+      "note": "His written statement on the SAVE America Act (S. 1383, House passage Feb. 2026), quoted word for word by ValleyCentral (KVEO), published 2026-02-13; read from the Internet Archive copy because the live site blocks downloads. Explains his No vote; names no ID rule he would support.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "ID with mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "federal-01 review session (Chris Andrews review, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:16:16.287Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [
