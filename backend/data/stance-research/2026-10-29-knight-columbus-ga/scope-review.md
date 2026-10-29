@@ -115,15 +115,54 @@ subjects, so the detector is not blind.
 
 Every claim here is cited to the statute text as fetched, not to a summary.
 
-### `gun-policy` — no rung is a city lever
+### `gun-policy` — the city cannot regulate, but it has twice taken a position, and that is evidence
 
 **O.C.G.A. § 16-11-173(b)(1)**: *"no county or municipal corporation, by zoning, by ordinance or
 resolution, or by any other means … shall regulate in any manner: (A) Gun shows; (B) The possession,
 ownership, transport, carrying, transfer, sale, purchase, licensing, or registration of firearms…"*
 
-All five rungs are firearms regulation. The 77 mentions in the corpus are gun **violence** —
-policing, curfews, incident reports — not regulation of firearms. **No record can seat this chair at
-this level.** Own words still can (codebook V2, "No-lever level").
+So no Columbus ordinance can seat a chair here.
+
+🔴🔴 **AND THE FIRST VERSION OF THIS SECTION STOPPED THERE, WHICH WAS WRONG.** It read: *"The 77
+mentions in the corpus are gun violence — policing, curfews, incident reports — not regulation of
+firearms."* That sentence was written from a keyword count and never checked against the passages it
+described. The Council has taken a recorded position on gun policy **twice**, both times through its
+legislative agenda:
+
+- **Resolution 340-25, 2025-10-14** — *"requesting the Local Delegation to support H.B. 601 which was
+  introduced in the 2025 session of the Georgia General Assembly."* Carried unanimously by the eight
+  members present; Davis and Hickey absent.
+- **Resolution 322-25, 2025-09-23** — requesting statewide legislation to prohibit carrying weapons
+  in a publicly owned recreation centre, amended on Garrett's suggestion so the prohibition would not
+  reach the surrounding grounds. Carried unanimously by the nine members present; Crabb absent.
+
+**H.B. 601 settles a chair, and only the bill's own text could.** Two search summaries disagreed
+about whether it touches assault weapons, and one of them was openly AI-generated. The official
+document (legis.ga.gov, `api/legislation/document/20252026/233626`) carries new Code Section
+16-11-174: subsection (a) defines an *assault weapon* to include *"a semiautomatic rifle that has an
+overall length of less than 30 inches"* and a semi-automatic centre-fire rifle taking a detachable
+magazine with a listed feature, and subsection (b) provides that *"No purchase or transfer of any
+assault weapon shall be conducted by a licensed importer, licensed manufacturer, licensed dealer, or
+gun show vendor in this state for the period beginning July 1, 2025, through January 1, 2036."*
+
+That is **chair 2** — *ban semi-automatic assault-style weapons, while allowing other firearms* —
+and the other rungs are excluded by text rather than by elimination: chair 1 fails because other
+firearms stay lawful to own, chair 3 fails because the bill does not *allow all types*, and chairs 4
+and 5 fail because the bill adds restrictions rather than loosening them.
+
+⚠ **Recorded as `statement`, not `record`, and deliberately.** A vote to ask the legislature to act
+is the member stating a position, not an exercise of a lever over the rung — the distinction the
+2026-10-06 ruling draws. This follows the Philadelphia precedent of classifying a novel evidence
+class as `statement` so it routes to a person rather than auto-pushing.
+
+⚠ **Resolution 322-25 seats nothing on its own.** A carry restriction inside one class of public
+building is not a rung: chair 4 fails because it *adds* a carry restriction, and chairs 1 to 3 are
+about ownership, weapon types and background checks. It corroborates the direction and no more.
+
+🔴 **The unanimous votes count only through the small-bodies exception** (codebook 0.6 V4.1): the
+Council has ten voting members, each resolution was its own numbered action item with its own motion
+and vote rather than a consent or en bloc item, and nothing in Georgia law obliges a city to endorse
+a state bill. Check all three before leaning on any other unanimous Columbus vote.
 
 ### `minimum-wage` — no rung is a city lever, and the statute names consolidated governments
 
@@ -183,6 +222,37 @@ levers in general, but **Muscogee County School District has its own separately 
 SPLOST, courtesy appearances — not governance of it. A council member holds no rung here.
 
 ---
+
+## 2a. 🟢🟢 THE LEGISLATIVE AGENDA IS A POSITION CHANNEL, AND THE KEYWORD SWEEP HID IT
+
+Columbus adopts an annual **legislative agenda**: a numbered series of resolutions asking the local
+delegation to the Georgia General Assembly to pass, support or amend specific legislation. Each one
+is its own action item with its own motion and vote. **40 such items appear in the readable corpus**,
+clustered in October 2023, October 2024, September and October 2025 and November 2025.
+
+This is where a Columbus councillor states a position on something the city cannot legislate. It is
+the channel that carries every preempted topic, and §3 below had already written three of them off
+before it was found.
+
+| Item | Date | Bears on |
+| --- | --- | --- |
+| SUPPORT OF HOUSE BILL 601 | 2025-10-14 | 🟢 `gun-policy` — seats chair 2, see §3 |
+| WEAPONS IN RECREATION CENTERS | 2025-09-23 | `gun-policy`, direction only |
+| HOUSING AFFORDABILITY (Res 373-23) | 2023-10-10 | 🟢 `rent-regulation` — seats Crabb at 5 |
+| SHORT TERM RENTALS | 2023-10-10, 2024-10-22 | `housing` / `residential-zoning` — unread |
+| ADOPT THE MENTAL HEALTH MODEL · FUNDING FOR BEHAVIORAL HEALTH | 2023-10-10, 2024-10-22 | `healthcare`, which is own-words-only, so a vote cannot seat it |
+| MILITARY RETIREE STATE TAX EXEMPTIONS | 2024-10-22, 2025-09-23 | `taxes`, own-words-only |
+| OUT OF NETWORK AMBULANCE SERVICES · EMS REIMBURSEMENTS | 2025-10-14 | `healthcare`, own-words-only |
+
+▶ **The rest of this table is unread.** Work it before writing another member's blanks.
+
+🔴 **HOW IT WAS NEARLY MISSED, which is the part worth keeping.** The §2 sweep counted 77 firearms
+mentions in 32 meetings, and this document summarised them in one line as *"gun violence —
+policing, curfews, incident reports — not regulation of firearms"*. Nobody read them. That sentence
+then justified writing `gun-policy` off as a dead topic, and a member's blank went into research.csv
+saying nothing in the minutes recorded her acting on it — while she had voted for Resolution 340-25.
+▶ **A keyword count tells you where to read. It is not a reading**, and a one-line characterisation
+of a count is an assumption wearing a measurement's clothes.
 
 ## 3a. 🟢 THE FIRST INSTRUMENT, AND IT SEATS SIX OF THE TWELVE AT ONCE
 

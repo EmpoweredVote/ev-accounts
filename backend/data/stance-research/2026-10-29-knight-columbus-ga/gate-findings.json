@@ -1,9 +1,19 @@
 {
-  "findings": [],
+  "findings": [
+    {
+      "full_name": "Charmaine Crabb",
+      "topic_key": "gun-policy",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
   "summary": {
     "rows": 52,
     "high": 0,
-    "medium": 0,
-    "by_check": {}
+    "medium": 1,
+    "by_check": {
+      "statement-needs-review": 1
+    }
   }
 }
