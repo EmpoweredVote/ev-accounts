@@ -255,12 +255,23 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   state legislator in IN, NC and MA.
 - **Scope:** every topic.
 
-### Quotes that name a party are never shown
-- **Ruling:** the quote check fails any passage that names a political party, or uses a party colour as a label
-  ("red states", "a blue district"), so it is never shown to voters. Quotes are never edited to remove the name or
-  colour. The coder picks another passage, or the person shows no quote.
-- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 pilot (design §8); colours added the same day, Chris
-  Andrews, Phase B review (EmpoweredVote/ev-accounts#1125).
+### Party labels never reach a reader; shown quotes bracket them out
+- **Ruling:** Empowered Vote is anti-partisan: no reader should get a party as a shortcut for whom to agree with. A
+  party label is a party's name or colour used for people or places ("Republicans", "the GOP", "Democratic
+  lawmakers", "R-Idaho", "(D-GA)", "red states"); "democratic process" is not one.
+  1. A quote shown to voters or to Stage 3 test voters (own-words passages, blinded quotes) replaces each party label
+     with a bracketed neutral word ("[some lawmakers]", "Sen. Jim Risch […] wrote"), so the edit is visible and the
+     person's point is kept.
+  2. An evidence snippet (the verifier's verbatim page text) is never edited: the builder picks a stretch with no
+     party label, and drops the snippet when the page has none near the person.
+  3. The quote check fails a passage for a party only when the party is its point (a call to back or oppose a
+     party); a passage that only mentions one passes once the label is bracketed out.
+  Until shown quotes carry a stored bracketed text (they are stored word for word today), the quote check keeps
+  failing any passage with a party label, and nothing is shown with one.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights federal-held batch
+  (`.planning/research/s3-prep-voting-rights/stage5/write/federal-held/PREVIEW.md`). Replaces "Quotes that name a
+  party are never shown" (2026-10-22), which failed every mention and never edited a quote. The same day, 7 draft-season
+  snippets that tagged people with a party were deleted (backup in that folder, `party-snippets-backup.json`).
 - **Scope:** every topic.
 
 ## Topic-scoped readings
