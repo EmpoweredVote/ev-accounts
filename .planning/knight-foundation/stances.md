@@ -26,6 +26,7 @@ programme is for.
 | 1 | Charlotte NC | 12 | 420 | 5 ✅LIVE | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 ✅LIVE | `2026-10-03-knight-fl-cities` (PR #857) |
 | 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅LIVE | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows queued and all 30 approved 2026-10-06 (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
+| 4 | **Philadelphia PA** | 25 | 1,300 | **4** ✅LIVE (Parker) | `2026-10-28-knight-phl-city` — ▶ OPEN: Parker 4 of 52 topics; 17 council + 7 row officers not started |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -116,6 +117,91 @@ Measured 2026-10-28, before any research:
    here; it is why a 2025 *and* a 2026 city election both exist.
 
 ▶ **Re-open Boulder in December 2026**, against the seated council, and re-measure the roster first.
+
+## Slice 4 — Philadelphia (opened 2026-10-28)
+
+**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. 52 local topics
+pinned in Season 2 → **1,300 rows**. Batch `2026-10-28-knight-phl-city`, branch
+`knight/stances-backlog`, lease `place:4260000`.
+
+Chosen over Boulder on **election timing**: Philadelphia's next city election is 2027-11-02, all
+seats, so the roster is stable for 15 months. Boulder's was six days away with six of nine seats on
+the ballot. ▶ The backlog table above now carries that rule.
+
+Roster verified against the city's own pages as RAW BYTES before any research. All 17 council
+members present; Krasner and Brady sworn in for new terms 2026-01-05; Deeley, Sabir, Bluestein on
+philadelphiavotes.com; Sabatina on the Register of Wills page; Bilal in office per Inquirer coverage
+through 2026-09.
+
+### Parker: 4 chairs seated of 52 topics (all auto-pushed, `audit-chair-evidence` clean)
+
+| Topic | Chair | Instrument |
+| --- | --- | --- |
+| `housing` | 4 | Bill #250568, the $800m H.O.M.E. bond ordinance |
+| `homelessness-response` | 2 | Executive Order No. 7-25, 1,000 shelter beds |
+| `public-safety-approach` | 4 | Executive Order No. 1-24 + the PPD 100-Day Report |
+| `local-immigration` | 2 | Chapter 21-3600, Bill 260057 of the ICE Out package |
+
+### 🔴 THE BINDING CONSTRAINT ON A MAYOR: HER INSTRUMENTS ARE SCANNED
+
+**Philadelphia's signed executive orders are images with no text layer.** 1-24, 11-24, 1-25 and
+7-25 all extract to **zero characters** while reporting a clean fetch and robots-allowed. So an
+order can never be cited as its own PDF — the verifier finds nothing and the row goes
+`below-threshold`.
+
+🔴 **AND THE PROSE SOURCES DO NOT CARRY THE NUMBER.** The Year One Report says Parker "established
+the Office of Clean and Green Initiatives by Executive Order in May 2024" and "signed her fourth
+executive order in March 2024". The Clean and Green brochure reproduces the order but its heading
+extracts as `EXECUTIVE ORDER NO. -24` — the digits are part of the image. So `city-sanitation` and
+`transportation-priorities` are **evidenced in substance and uncitable by number**, which is why
+they are not seated here.
+▶ The two that DID seat both had a numbered instrument in verifiable text: a council bill
+(phlcouncil.com) and a press release that quoted the order and named it (`7-25`).
+
+⚠ **The extractor is NOT the problem, and a positive control is what proved it.** Four empty
+extractions look exactly like a broken extractor; the PPD 100-Day Report from the same host returns
+**106,327 characters**. The wrong cause had already been written into a commit message before the
+control was run.
+
+### 🟢 Two unlocks worth reusing
+
+- **Every Philadelphia executive order is a queryable dataset.** The index renders client-side;
+  behind it is `api.phila.gov/phila/document-finder/v1/<postID>` (postID `196492`), which **403s
+  without a `Referer`**. 360 orders, 26 of them Parker's, saved to the batch corpus with numbers,
+  titles and links. ⚠ `admin.phila.gov` 403s for the documents; `www.phila.gov` serves the same paths.
+- 🟢 **`phila.legistar.com/ViewReport.ashx?…&N=Text&…` RETURNS FULL LEGISLATION TEXT AS A
+  TEXT-LAYER PDF**, carrying `File #: 260057` and the chapter number. That is a citable,
+  verifier-readable primary source for any Philadelphia ordinance — and it works although the
+  Legistar **Web API 403s for client `phila`** (500 means no such client; 403 means it exists and is
+  refused, so do not read one as the other).
+
+### ⚠ Banked for the 17 council members, before anyone starts them
+
+🔴 **C46 KILLS MOST OF THE ICE OUT PACKAGE FOR COUNCILMEMBERS.** It passed **16-1** — 5.9% against,
+under the 10% rule — so it cannot seat a councilmember. The mask ban and Safe Community Places
+passed **15-2** (11.8%) and can. Philadelphia's council is **17**, so the small-body exception never
+applies here. The rent price-fixing ban (Bill No. 240823) passed **17-0** and is likewise unusable.
+▶ As in slice 3, **sponsorship is the channel** for a near-unanimous body.
+
+### Rules this slice has paid for so far
+
+1. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE.** It is exactly as old as
+   the photograph. Boulder's council page listed eight members and named a ninth, resigned since
+   July, only in the `alt` text of a December 2025 photo. Counting name occurrences in raw bytes
+   separated them: eight at 3 hits, the departed one at 1.
+2. ⚠ **A FAILED `curl` LEAVES THE PREVIOUS FETCH ON DISK.** The sheriff's site returned HTTP 000 and
+   the grep that followed happily reported the *commissioners'* counts again. Delete the target
+   before fetching, or the second result is the first one wearing a different URL.
+3. 🔴 **A STUDY DIRECTIVE IS STILL A REFUSAL, AND THE SIGNATURE ORDER IS ONE.** EO 3-25, Parker's
+   H.O.M.E. order, convenes stakeholders and reports in 30 days — C47 refuses it. The $800m bond
+   ordinance carries the position instead. ⚠ But EO 1-24 is NOT the same case: it directs a plan
+   **for** increasing officer numbers, an objective already decided, and the 100-Day Report records
+   129 officers actually assigned. **Read whether the plan decides the thing or implements it.**
+4. 🔴 **CHAIR 1 ON `local-immigration` IS EXCLUDED BY THE DOCUMENT**, exactly as in Duluth: Chapter
+   21-3600 preserves 8 U.S.C. §1373, so employees are not barred outright from sharing status
+   information. The chair is 2, and what makes it 2 rather than 3 is the detainer rule — defined so
+   that administrative warrants include detainer requests and exclude judicial warrants.
+   **Do not seat this from the information bill alone.**
 
 ## Slice 3 — Duluth and Saint Paul, Minnesota (opened 2026-10-04)
 
