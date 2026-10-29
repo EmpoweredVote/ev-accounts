@@ -9,6 +9,7 @@
  */
 
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
+import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
 
 /**
  * Decode a page's character references for DISPLAY, and nothing else. See
@@ -521,6 +522,14 @@ export async function verifyEvidence(args: {
         }
       } else {
         for (const ev of snippets) {
+          // Roll-call lane (rollCallEvidence.ts): a canonical vote line on a House roll-call XML is
+          // checked field by field against the record; the line itself is the published span.
+          if (isRollCallXmlUrl(url) && parseRollCallLine(ev.snippet)) {
+            const v = verifyRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
           const matchVerdict = matchSnippet(ev.snippet, fetched.text, match);
           if (matchVerdict.verdict !== 'verified') {
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: matchVerdict });

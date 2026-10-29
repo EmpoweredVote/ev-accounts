@@ -60,6 +60,14 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
   it('snippet-too-short', () => {
     expect(ids(good, { evidence: [{ ...ev[0], snippet: 'Jane Doe voted yes on HB 1001.' }] })).toEqual(['snippet-too-short']);
   });
+  it('a canonical roll-call line on a House roll-call XML is not held to the snippet length', () => {
+    const url = 'https://clerk.house.gov/evs/2025/roll102.xml';
+    const line = 'House roll call 102 (2025), H R 22, On Passage: Doe (IN) voted Yea.';
+    const row = { ...good, reasoning: 'Voted YES on H.R. 22 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    // The same short line on any other page is still too short.
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });
@@ -472,6 +480,14 @@ describe('blank-unexamined-fallback — a blank removes a visible chair only aft
     expect(f).toMatchObject({ check_id: 'blank-unexamined-fallback', severity: 'high' });
     expect(f!.what).toContain('https://s1.gov/vote');
     expect(f!.what).not.toContain('https://a.gov/x ');
+  });
+  it('does not require summary sites, which can never seat a chair (ruling 2026-10-29)', () => {
+    const summary = ['https://www.ontheissues.org/House/Jane_Doe.htm', 'https://en.wikipedia.org/wiki/Jane_Doe',
+      'https://ballotpedia.org/Jane_Doe', 'https://www.lcv.org/congressional-scorecard/moc/jane-doe/', 'https://www.govtrack.us/congress/members/jane_doe/1'];
+    expect(checkBlankExaminedFallback({ row, displayedValue: 2, fallbackSources: summary, fetchable: all })).toBeNull();
+    // Her own site and a record still have to be examined.
+    expect(checkBlankExaminedFallback({ row, displayedValue: 2, fallbackSources: [...summary, 'https://janedoe.com/issues'], fetchable: all })!.what)
+      .toContain('https://janedoe.com/issues');
   });
   it('does not require a fallback source that no longer loads', () => {
     expect(checkBlankExaminedFallback({ row, displayedValue: 3, fallbackSources: ['https://dead.gov/gone'], fetchable: () => false })).toBeNull();
