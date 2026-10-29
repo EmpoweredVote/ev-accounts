@@ -120,7 +120,7 @@ Measured 2026-10-28, before any research:
 
 ## Slice 4 — Philadelphia (opened 2026-10-28)
 
-**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **✅ CITY SWEEP DONE 2026-10-29 — all 25 researched; 22 chairs live, 3 queued, 13 documented blanks.** 52 local topics
+**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **✅ CITY SWEEP DONE 2026-10-29 — all 25 researched, record AND own-words channels; 22 chairs live, 4 queued, 17 documented blanks.** 52 local topics
 pinned in Season 2 → **1,300 rows**. Batch `2026-10-28-knight-phl-city`, branch
 `knight/stances-backlog`, lease `place:4260000`.
 
@@ -161,6 +161,54 @@ rest on sponsorship and only two on a divided vote** — Thomas's Driving Equali
 arena, which seated nobody. Bill 260057 passed 15-1, 250568 passed unanimously, 210633-A passed
 17-0, 250373-A passed 13-0: C46 refuses every one of them. ▶ On a 17-member body that mostly
 agrees, **a slice that only reads roll calls will come back nearly empty.**
+
+### 🔴🔴 THE OWN-WORDS PASS: FIVE FULL MEMBER CORPORA, ONE CHAIR — AND THE REASON IS STRUCTURAL
+
+The record pass seated 7 topics and left 23 of the 52 untouchable, because they are **own-words only
+at the local level**. A second pass swept the own-words channel properly for the five most vocal
+members, through **phlcouncil.com's per-member category archives** — the right tool, and better than
+keyword search: `wp-json/wp/v2/categories` gives a category id per member, and
+`posts?categories=<id>` returns their whole press corpus. **Brooks 217 posts · Gauthier 253 ·
+Johnson 280 · Landau 80 · O'Rourke 66.**
+
+**It produced one chair.** Brooks `taxes` 1, queued as statement evidence.
+
+🔴 **AND THE FAILURE IS NOT EFFORT, IT IS THE SHAPE OF THE QUESTION.** Of the 23 own-words-only
+topics, most are **national**: abortion legality, Medicare and Medicaid, tariffs, Ukraine, defense
+spending, military intervention, Israel aid, school vouchers, border security, social security,
+redistricting. A council press office writes about municipal programmes. So the corpus is full of
+genuine, in-term, quotable statements that **name a direction and never a rung**:
+
+- Brooks secured the first city money for Planned Parenthood and said the city must do everything in
+  its power to keep abortion providers open. Chairs 1, 2 and 3 all sit on that side; the ladder turns
+  on how late abortion stays lawful, and she has not said. **Blank.**
+- Landau led the city's first LGBTQ+ Equity Hearing on housing, healthcare, education and employment
+  disparities. `same-sex-marriage` chair 1 is **compound** — equal marriage *plus* anti-discrimination
+  — and only the second clause is evidenced. Seating it would assert the half she did not state.
+  **Blank.**
+- O'Rourke jointly announced the People's Tax Plan, but the release is the Minority Wing's prose and
+  attributes the wealth tax to his colleague; **his own quoted words cover only the refund**, which
+  fits chairs 1, 2 and 3 alike. **Blank.** ▶ On an own-words-only topic, a press release written
+  *about* someone is not that person's words.
+- Gauthier's Sustainable Business Tax Credit is $8,000 a year against one business tax, on a broad
+  triple-bottom-line test. `climate-change` chair 2 wants *major* subsidies for *clean energy*.
+  **Blank.**
+
+🟢 **THE ONE THAT WORKED SHOWS THE RULE.** `taxes` seated because **a city actually legislates on
+it**, so Brooks has an affirmative instrument in her own voice: the People's Tax Plan, whose
+centrepiece is a revised version of her own 2022 wealth tax — 0.4% on stocks and bonds above
+$100k, projected at **$200m a year** — announced in her words as making billionaires and corporations
+pay their fair share, with a 2023 statement naming the expanded services it would fund. Chair 3 fails
+(a wholly new tax on financial assets is not a targeted adjustment), chairs 4 and 5 fail outright,
+and chair 2 fails on its second half: it funds *existing* services, and her stated purpose is more.
+
+▶ **WHAT THIS MEANS FOR THE PROGRAMME.** Council press archives are the wrong instrument for the
+national own-words topics. Those need **candidate questionnaires, campaign sites and endorsement
+interviews** — and 🔴 **vote411.org and thevoterguide.org are barred outright**, which removes the
+single largest questionnaire corpus. **Price an own-words sweep of national topics as campaign-site
+work, or expect this result again in every city.**
+⚠ Every own-words chair is also a **separate reliability stratum** — a certification measured on
+record rows does not cover it, so these go to review until that stratum has its own blind gold.
 
 ### 🟢🟢 LEGISTAR PUBLISHES PER-MEMBER ROLL CALLS AS PLAIN HTML — THE 403 COST US NOTHING
 
