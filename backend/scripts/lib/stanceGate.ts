@@ -24,6 +24,7 @@ import {
   MIN_SNIPPET_WORDS, normalizeText, normName, normTopic, stanceKey, type EvidenceRow, type StanceRow,
 } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
+import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
 export interface ResearchRow {
@@ -253,6 +254,8 @@ export function checkStanceRow(
     const forUrl = ctx.evidence.filter((e) => e.source_url === url);
     if (forUrl.length === 0) add('source-without-snippet', 'high', `no evidence.csv snippet for ${url}`);
     for (const e of forUrl) {
+      // A canonical roll-call line is checked field by field by the verifier, not by length.
+      if (isRollCallXmlUrl(url) && parseRollCallLine(e.snippet)) continue;
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }
@@ -467,7 +470,22 @@ export function canonicalUrl(url: string): string {
  * displayed chair's context sources; `fetchable` says which of them still load (a dead page cannot
  * be examined, so it is not required). Pure; the verifier supplies both, because only it can read
  * what voters see and fetch the pages. Returns null when the rule is met.
+ *
+ * Summary sites are not required (ruling 2026-10-29, Chris Andrews): a page that only summarises a
+ * person — OnTheIssues, Wikipedia, a Ballotpedia bio, LCV's scorecard, GovTrack — can never seat a
+ * chair under the Season 3 codebook, so reading it cannot turn a blank into a seat. Season 1 chairs
+ * often rest on such pages alone (34 of 50 on the voting-rights federal batch). A Ballotpedia
+ * Candidate Connection survey is the candidate's own answer and is still required.
  */
+export const SUMMARY_SITE = /^(?:[a-z0-9-]+\.)*(ontheissues\.org|wikipedia\.org|lcv\.org|govtrack\.us)$/i;
+const isSummaryOnly = (url: string): boolean => {
+  try {
+    const host = new URL(url.trim()).hostname;
+    if (SUMMARY_SITE.test(host)) return true;
+    return isBallotpediaUrl(url) && !isCandidateConnectionUrl(url);
+  } catch { return false; }
+};
+
 export function checkBlankExaminedFallback(args: {
   row: Pick<ResearchRow, 'full_name' | 'topic_key' | 'source_urls'>;
   displayedValue: number;
@@ -476,7 +494,7 @@ export function checkBlankExaminedFallback(args: {
 }): GateFinding | null {
   const examined = new Set(args.row.source_urls.map(canonicalUrl));
   const missing = [...new Set(args.fallbackSources.map((u) => u.trim()).filter(Boolean))]
-    .filter((u) => !examined.has(canonicalUrl(u)) && args.fetchable(u));
+    .filter((u) => !examined.has(canonicalUrl(u)) && !isSummaryOnly(u) && args.fetchable(u));
   if (missing.length === 0) return null;
   return {
     full_name: args.row.full_name, topic_key: args.row.topic_key, check_id: 'blank-unexamined-fallback', severity: 'high',
