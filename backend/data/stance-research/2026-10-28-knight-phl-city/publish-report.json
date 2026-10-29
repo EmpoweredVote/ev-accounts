@@ -147,9 +147,12 @@
     "full_name": "Jamie Gauthier",
     "topic_key": "housing",
     "value": 3,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 3,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=5217310&GUID=0FC24E00-AF00-4E1F-BD89-C1DEB097CD0E",
       "https://phlcouncil.com/philadelphias-first-large-scale-mandatory-inclusionary-zoning-legislation-receives-final-approval-from-city-council/"
@@ -160,6 +163,53 @@
     "full_name": "Jamie Gauthier",
     "topic_key": "local-immigration",
     "value": 2,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Isaiah Thomas",
+    "topic_key": "civil-rights",
+    "value": 2,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phlcouncil.com/weekly-report-55/"
+    ],
+    "failed_urls": [
+      "https://phlcouncil.com/wp-content/uploads/2021/10/CM-Thomas-Bill-No-210636-Amendment-FINAL.pdf"
+    ]
+  },
+  {
+    "full_name": "Isaiah Thomas",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Nina Ahmad",
+    "topic_key": "local-immigration",
+    "value": 2,
     "action": "auto-push",
     "reasons": [],
     "displayed_value": null,
@@ -167,5 +217,131 @@
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
     "failed_urls": []
+  },
+  {
+    "full_name": "Cindy Bass",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Kendra Brooks",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Katherine Gilmore Richardson",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Jim Harrity",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Quetcy Lozada",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Nicolas O’Rourke",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Anthony Phillips",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Mark Squilla",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Curtis Jones, Jr.",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "re-research",
+    "reasons": [
+      "below-threshold"
+    ],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Jeffery Young, Jr.",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "re-research",
+    "reasons": [
+      "below-threshold"
+    ],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "admin_queue_visible": true
   }
 ]
