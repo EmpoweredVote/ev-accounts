@@ -95,13 +95,13 @@ is a re-research, not a first pass. Read the slice 2 batch before pricing it.
 ### 🔴 LEXINGTON IS THE SECOND BOULDER, AND IT IS THE BIGGEST CITY ON THE BOARD
 
 Verified 2026-10-29, five days out: **Lexington votes 2026-11-03 for the mayor and ALL 15 Urban
-County Council seats.** The twelve district members sit two-year terms, so the whole district
-bench turns over every cycle. Its table row read , and at 34 seated people it is the
-largest slice left — so it is exactly what a session picks when it sorts the backlog by size.
+County Council seats.** The twelve district members sit two-year terms, so the whole district bench
+turns over every cycle. Its table row read `⚠ verify`, and at 34 seated people it is the largest
+slice left — so it is exactly what a session picks when it sorts the backlog by size.
 ▶ **Re-measure the roster after 2026-11-03, then open it.** The same applies to Boulder, whose
-election is the same day and whose stale  row is still waiting on slot .
-⚠ **Two of the three cities anyone would reach for first were about to turn over.** The 
-marks in that table are not decoration; treat an unverified date as a blocker, not a formality.
+election is the same day and whose stale `Mark Wallach` row is still waiting on slot `CC_0308`.
+⚠ **Two of the three cities anyone would reach for first were about to turn over.** The `⚠ verify`
+marks in that table are not decoration — treat an unverified date as a blocker, not a formality.
 
 ### 🔴 BOULDER — WHY IT IS NOT THE PLACE TO START, AND A DATA DEFECT IT EXPOSED
 
