@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { formatRollCallLine, isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
+import { lastNameOf } from './researchVerifier.js';
 import { verifyEvidence, type EvidenceRow, type StanceRow } from './researchVerifier.js';
 
 const URL = 'https://clerk.house.gov/evs/2024/roll345.xml';
@@ -50,6 +51,20 @@ describe('rollCallEvidence', () => {
     const t = 'House roll call 345 (2024), H R 8281, On Passage: Gonzalez, T. (TX) voted No.';
     expect(verifyRollCallLine(t, URL, xml, 'Gonzalez', 'Tony Gonzalez').verdict).toBe('verified');
     expect(verifyRollCallLine(t, URL, xml, 'Gonzalez', 'Vicente Gonzalez').verdict).toBe('name_not_present');
+  });
+  it('matches a two-word surname the clerk prints whole', () => {
+    const xml = XML.replace('</vote-data>', '<recorded-vote> <legislator name-id="L000273" sort-field="Leger Fernandez" unaccented-name="Leger Fernandez" party="D" state="NM" role="legislator">Leger Fernandez</legislator> <vote>No</vote> </recorded-vote> </vote-data>');
+    const v = 'House roll call 345 (2024), H R 8281, On Passage: Leger Fernandez (NM) voted No.';
+    expect(verifyRollCallLine(v, URL, xml, 'Fernandez', 'Teresa Leger Fernandez').verdict).toBe('verified');
+    expect(verifyRollCallLine(v, URL, xml, 'Fernandez', 'Maria Fernandez').verdict).toBe('name_not_present');
+    expect(verifyRollCallLine(v, URL, xml, 'Fernandez').verdict).toBe('name_not_present');
+  });
+  it('takes the last name before a suffix', () => {
+    expect(lastNameOf('Frank Pallone, Jr.')).toBe('Pallone');
+    expect(lastNameOf('Nicholas J. Begich III')).toBe('Begich');
+    expect(lastNameOf('Marshall Davis Sr.')).toBe('Davis');
+    expect(lastNameOf('Brett Guthrie')).toBe('Guthrie');
+    expect(lastNameOf('Jr.')).toBe('Jr.');
   });
   it("refuses a line about someone else's surname", () => {
     expect(verifyRollCallLine(LINE, URL, XML, 'Barr').verdict).toBe('name_not_present');

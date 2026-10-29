@@ -87,7 +87,10 @@ export function verifyRollCallLine(line: string, url: string, xml: string, lastN
   // a first name or initial to tell two members apart ("Gonzalez, Vicente", "Gonzalez, V."), it must
   // fit the politician's first name too.
   const [rollSurname, rollGiven] = want.split(',').map((s) => s.trim());
-  if (rollSurname !== foldName(lastName)) return { verdict: 'name_not_present' };
+  // A two-word surname the clerk prints whole ("Leger Fernandez") must end the politician's full name.
+  const full = foldName(fullName ?? '').replace(/,/g, ' ').replace(/\s+(jr|sr|ii|iii|iv|v)\.?$/, '').trim();
+  const compound = rollSurname.includes(' ') && (full === rollSurname || full.endsWith(` ${rollSurname}`));
+  if (rollSurname !== foldName(lastName) && !compound) return { verdict: 'name_not_present' };
   if (rollGiven) {
     const first = normalizeText(fullName ?? '').split(' ')[0] ?? '';
     const given = rollGiven.replace(/\.$/, '');
