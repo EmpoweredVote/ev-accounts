@@ -156,6 +156,49 @@ so nothing is destroyed — it is simply not what a voter lookup needs.
 ▶ **OWED IN JANUARY 2027: re-seat the Mayor and Districts 3 and 7, then research Hugley.** He is the
 highest-value subject in the city and cannot be researched as an officeholder until he holds office.
 
+### Progress, 2026-10-29 — 1 of 13 done. 🔴 READ `scope-review.md` IN THE BATCH DIR FIRST
+
+| Member | Rows | Chairs |
+| --- | --- | --- |
+| **Charmaine Crabb** ✅ | 52, gate `high=0` | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
+| Allen · Chambers · Davis · Garrett · Tucker | — | `homelessness` 5 and `gun-policy` 2 are already evidenced for them; the rows are not written yet |
+| Barnes · Cook | — | seated May and July 2026; 10 and 7 meetings of record |
+| Forté · Bryan · Britt · Countryman · D'Antonio | — | the five county row officers, not started |
+
+**Three instruments carry most of what has been found so far**, and each reaches several members at once:
+
+- **Ordinance 25-040** (camping on public property, 2025-08-12, nine to one) → `homelessness` **5**
+  for Allen, Chambers, Crabb, Davis, Garrett, Tucker. The chair turns on the penalty clause:
+  conviction in the recorder's court is criminal, and chair 4 requires civil penalties.
+- **Resolution 340-25** (asking the delegation to support H.B. 601, 2025-10-14) → `gun-policy` **2**
+  for Allen, Chambers, Crabb, Garrett, Tucker. Recorded as `statement`, not `record`.
+- **Resolution 373-23** (local anti-displacement authority, 2023-10-10, rescinded 2023-10-24) →
+  `rent-regulation` **5** for Crabb, on her vote plus her own words.
+
+### 🔴 FOUR THINGS THAT WILL COST THE NEXT SESSION IF IT DOES NOT READ THEM
+
+1. 🔴🔴 **THE MINUTES HOST REFUSES OUR OWN USER AGENT.** `EmpoweredVoteBot/1.0` gets the socket
+   closed; no UA and a browser UA both get 200. `fetchViaHttp` has no fallback and
+   `LEGACY_BROWSER_UA` is declared in that file and never used. Rows land `below-threshold` with good
+   evidence behind them. Their `robots.txt` asks `Crawl-delay: 15` and our parser ignores it by
+   design; this batch pulled 202 PDFs back to back. **Agreed fix: archive each cited PDF and keep
+   citing the city URL** — not attempted successfully on the day, Save Page Now returned 520.
+2. 🔴🔴 **A COMMA-LIST ROLL CALL CANNOT VERIFY A COMMON SURNAME.** Measured on the real page with the
+   real checker: five of six verify and **Glenn Davis returns `name_not_present`**. `TITLE_PATTERN`
+   matches `councilor` and not the plural `councilors` every tally uses, and the 30-character window
+   cannot reach past the third surname anyway. The Philadelphia suffix bug's sibling, and it
+   generalises to every city that writes tallies this way.
+3. 🔴🔴 **A KEYWORD COUNT IS NOT A READING.** The sweep found 77 firearms mentions and this programme's
+   own scope review summarised them in one line as "gun violence, not regulation", then wrote
+   `gun-policy` off. The Council has taken a recorded position on it twice. One member's blank shipped
+   saying the minutes held nothing while she had voted for the resolution.
+4. 🔴🔴 **DISTRICT 1 HAS HAD TWO COUNCILLOR BARNESES — FATHER AND DAUGHTER.** Jerry "Pops" Barnes to
+   2024, Simi Barnes from 2026-05-26. Nothing in the pipeline can tell them apart, and the verifier's
+   name check is satisfied by either.
+
+🟢 **The legislative agenda is the channel for every preempted topic** — 40 numbered position
+resolutions in the corpus. The table in `scope-review.md` §2a lists them; **most are still unread.**
+
 ### 🟢 THE CITY'S OWN ELECTIONS PAGE CARRIES A `Term/Term Ends` COLUMN — READ IT FIRST
 
 `columbusga.gov/elections/Elected-Officials/Incumbents` prints a term-end year per office, which
