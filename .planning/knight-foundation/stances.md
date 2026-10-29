@@ -183,6 +183,25 @@ passed **15-2** (11.8%) and can. Philadelphia's council is **17**, so the small-
 applies here. The rent price-fixing ban (Bill No. 240823) passed **17-0** and is likewise unusable.
 ▶ As in slice 3, **sponsorship is the channel** for a near-unanimous body.
 
+### 🟢 THE DIVIDED-VOTE INDEX FOR THE 17 COUNCIL MEMBERS (built 2026-10-28)
+
+, from  +  in the
+batch dir. **160 council weekly reports** pulled through phlcouncil.com’s WordPress API
+(), mined for tallies: **38 divided votes, 33 of which
+clear C46’s 10% bar.** Every current member except O’Neill and O’Rourke is named near at least one.
+
+🔴 **THE SERIES STOPS AT 2025-10-27 AND THE GAP IS REAL.** A control listing the newest posts
+regardless of search term returned plenty of 2026 content and **no weekly reports at all** — council
+stopped publishing them. So 2026 legislation, the ICE Out package included, is NOT in this index.
+
+🔴 **THE FIRST MATCHER FOUND 5 AND THAT WAS A FALSE ABSENCE.** It matched only “vote of 13-3”. A
+phrasing census over the same corpus showed “approved by a 13-3 vote”, “passed 12-4” and “the final
+vote was 14-2”. Requiring a vote word within 40 characters before the tally took it 5 → 38.
+▶ **Census the phrasings before trusting a count of them.**
+
+⚠ **IT IS A LEAD INDEX, NOT EVIDENCE.** The bill number is the nearest  in the context
+window and is sometimes the wrong one (the 13-3 on security deposits reads as ; the bill is
+). “Members named” is proximity, not vote attribution. **Open the report and read it.**
 ### Rules this slice has paid for so far
 
 1. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE.** It is exactly as old as
