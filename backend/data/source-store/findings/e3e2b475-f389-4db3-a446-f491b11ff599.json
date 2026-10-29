@@ -1,0 +1,42 @@
+{
+  "politician_id": "e3e2b475-f389-4db3-a446-f491b11ff599",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia, https://ballotpedia.org/Ronnie_Murchinson-Rivera, says he lost the August 18, 2026 primary for U.S. House Florida District 6; not on the general-election ballot)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; confirms the person and the primary loss)",
+        "not reviewed: web search (search budget used up); stopped after scope check because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:01:23.498Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "lost the 2026-08-18 primary (Ballotpedia candidate page says he lost the primary for Florida's 6th district; Eric Yonce won): https://ballotpedia.org/Ronnie_Murchinson-Rivera",
+        "On the Record (0 meetings)",
+        "one web search on his name, nothing on the subject",
+        "stopped after scope check: out of scope, not on the 2026 general ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:02:27.430Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

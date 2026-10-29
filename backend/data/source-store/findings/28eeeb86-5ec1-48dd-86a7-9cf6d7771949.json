@@ -1,0 +1,105 @@
+{
+  "politician_id": "28eeeb86-5ec1-48dd-86a7-9cf6d7771949",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "voters with no ID",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_Garamendi says he is on the November 3, 2026 general election ballot for California's 8th District and advanced from the June 2, 2026 primary (also Wikipedia John_Garamendi page shows 2026 primary first place)",
+        "On the Record (0 appearances for this politician id)",
+        "official site https://garamendi.house.gov/ (home, /issues, /issues/social-justice, /votes-and-legislation): nothing on the subject",
+        "blocked: https://garamendi.house.gov/search (Access Denied, site firewall)",
+        "not reviewed: https://garamendi.house.gov press release list (the /media/press-releases and /media-center/press-releases paths return Page not found; list URL not found)",
+        "blocked: https://www.garamendiforcongress.com/ (no connection)",
+        "blocked: https://www.congress.gov/member/john-garamendi/G000559 (403 challenge page)",
+        "Ballotpedia: only the SAVE Act H.R. 22 vote, already on file",
+        "web search x3 (name plus SAVE Act, voter ID, election integrity): no statement by this person found"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:41:33.566Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia https://ballotpedia.org/John_Garamendi (sitting U.S. House District 8 member, advanced from the 2026-06-02 primary, on the 2026 general-election ballot)",
+        "official site https://garamendi.house.gov (home page and press-release pages reached; the site's search did not return a result list; nothing on voter ID, SAVE Act or proof of citizenship found)",
+        "official press releases on voting rights (H.R. 4 vote, Voting Rights Act restoration, mail-processing closures): about voting-rights access and mail delivery, not ID or citizenship proof; not saved",
+        "news searches on name plus SAVE Act, voter ID, proof of citizenship: nothing naming him",
+        "congress.gov sponsorship pages: not reviewed (votes on H.R. 22 and S. 1383 already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:53.418Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

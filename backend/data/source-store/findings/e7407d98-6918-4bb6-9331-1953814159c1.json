@@ -1,0 +1,293 @@
+{
+  "politician_id": "e7407d98-6918-4bb6-9331-1953814159c1",
+  "findings": [
+    {
+      "id": "2941faf9991beecd75dfc13bbede4e30bdcdba0fdc6f3fe131ff15eb8c0227aa",
+      "kind": "own-words",
+      "url": "https://www.cityandstatepa.com/politics/2021/09/4-election-reform-bills-lawmakers-could-consider-fall/364474/",
+      "date": "2021-09-03",
+      "date_precision": "day",
+      "passage": "“I’m very confident that once it's placed on the ballot, if we can get a fair wording out of the department of state, the voters will certainly approve it,” Argall said.",
+      "note": "Quoted by City & State PA, speaking as chair of the Senate State Government Committee about the proposed constitutional amendment requiring voters to show ID. He says voters would approve it if it reached the ballot with fair wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:00.865Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('ARGALL'), linked to David G. Argall (district 29) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47d8e7f2702d2aa41662ee6d936224e2a3c928f5d39b0bf232995161a589788c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Argall'), linked to David G. Argall (district 29) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Argall'), linked to David G. Argall (district 29) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('ARGALL') on the official bill page; linked to David G. Argall via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "434b4139f70c2d6406f22f77e50a7da230adac5a174432dea7e0efbc62756160",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as prime sponsor ('ARGALL') on the official bill page; linked to David G. Argall via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Argall'), linked to David G. Argall (district 29) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('ARGALL') on the official bill page; linked to David G. Argall via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Argall'), linked to David G. Argall (district 29) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c2c9a99c55ab7c1db841e304adb07f9217ccb43f7b4256299c424c6decbf04a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as prime sponsor ('ARGALL') on the official bill page; linked to David G. Argall via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "mail-ballot rules",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site senatorargall.com: confirms him as the sitting senator for district 29 in 2026 e-news; site searches for voter ID, photo ID, election integrity, mail ballot; six e-news issues from 2025 to 2026 read, only routine election-date and mail-ballot deadline reminders, nothing on the subject",
+        "senatorargall.com older posts (2021 and 2023 statements and newsletters found by search): page not found, no longer on the site",
+        "blocked: https://ballotpedia.org/David_Argall (fetch returned an empty page)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/116588914?topic=2 (403 Forbidden)",
+        "blocked: https://penncapital-star.com/government-politics/pa-senate-sends-election-law-rewrite-to-wolf-who-promises-veto-over-voter-id-language/ (bot check)",
+        "the Senate majority caucus site search page: no relevant result pages opened",
+        "news: City & State PA (2021-09-03) read, own-words quote saved; Spotlight PA (2021-06-22) read, only reports about him, no direct quote on the subject",
+        "web searches run: 3"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:11:00.865Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:45:58.707Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

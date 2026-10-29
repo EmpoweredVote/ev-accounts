@@ -1,0 +1,37 @@
+{
+  "politician_id": "6a67d2ce-becb-4048-84ac-e8efc77c9294",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida 20th Congressional District; finished second, 22.9 per cent; page: https://jamaica-gleaner.com/article/news/20260819/jamaican-rooted-candidates-fall-short-florida-primaries-except-donalds, which says \"Dale Holness made his third attempt to win a seat in the US House, but again came up short.\")",
+        "On the Record (0 appearances)",
+        "not reviewed: official site, campaign site, congress.gov, Ballotpedia profile (stopped at scope check, person is out of the general election)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:31:20.065Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia page https://ballotpedia.org/Dale_Holness says he lost the 2026-08-18 primary for Florida's 20th Congressional District; the 2026 general-election field on that page does not include him)",
+        "On the Record (0 appearances)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:57:38.105Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

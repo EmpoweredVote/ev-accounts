@@ -1,0 +1,237 @@
+{
+  "politician_id": "32608fd7-5038-4474-bfa9-7392b5e0eb80",
+  "findings": [
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "4ead58da1843b0a071b56d74f5476770bc2d5664db7bf3beca7458f8463c852b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, adoption of conference committee report on SB 1, 2021-08-31: nay (tally 18–13); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "dce07def23c254ed92fdc1700114a1bd9f20545f1cc37549ef16fce72e795a48",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "8731215577a7fcb3481c1ec1ffdfff8773518700cc5f5f104a4e9b2ecf226f24",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB144",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-144-2025",
+      "act": "author",
+      "motion": "Joint author of SB 144, requiring a voter to present proof of identification",
+      "note": "Listed in the author line (with Menendez, Eckhardt, Gutierrez) of SB 144. The introduced text accepts a wider list of photo and non-photo documents, lets a voter without photo ID vote with a reasonable-impediment declaration, and sets provisional-ballot cure by ID or affidavit. Referred to State Affairs on 2025-02-03 and went no further. Date is the bill's filing date.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID documents",
+        "reasonable-impediment declaration",
+        "provisional ballot for voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:47.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "540acfdeface1b6f3c01d7bdeabf3ca5b1d7fa3b343869e32e03181a63174d7a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB145",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-145-2025",
+      "act": "author",
+      "motion": "Joint author of SB 145, early voting by mail by any qualified voter",
+      "note": "Listed in the author line (with Menendez, Eckhardt, Gutierrez, Johnson, Zaffirini) of SB 145, which relates to early voting by mail by any qualified voter and repeals certain offenses about mail-ballot applications. Referred to State Affairs on 2025-02-03. Date is the bill's filing date.",
+      "subjects": [
+        "mail ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:47.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec6057c459f391ab1c130289e9cdbe3a50b09d551489798868b476148ae42dd9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Senate vote to pass SJR 37 (constitutional amendment clarifying that a voter must be a U.S. citizen) on second and third reading, 28 yeas, 3 nays",
+      "note": "The Senate Journal for 2025-04-01 lists him among the yeas.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:47.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05bf869b4e40f6c7465869c34374ecb24d99e86cad36a78b5629776f452b442e",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "Motion to suspend the regular order to take up CSSB 16 (proof of citizenship to register to vote) on second reading, 20 yeas, 11 nays",
+      "note": "The Senate Journal for 2025-04-01 lists him among the nays on taking up CSSB 16.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:47.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2d5ff69105d0a957fd81ca3d504ba5bc3af7306066398e90e80a002065e6a85",
+      "kind": "record",
+      "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F1.PDF",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "CSSB 16 as amended passed to engrossment (second reading), 20 yeas, 11 nays",
+      "note": "The Senate Journal for 2025-04-01 lists him among the nays on passing CSSB 16 to engrossment.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:01:47.531Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (https://ballotpedia.org/Cesar_Blanco): confirms he is the District 29 state senator, term ends 2029; he did not complete the candidate survey; nothing on the subject",
+        "Texas Senate member page for District 29: nothing on the subject",
+        "Texas Legislature Online bills-authored report for the 89th regular session (member code A1330) and history pages for SB 144, SB 145, SJR 37, SB 16",
+        "Senate Journal for 2025-04-01 (journals.senate.texas.gov PDF): his votes on SJR 37 and SB 16",
+        "Texas Tribune and Votebeat coverage of SB 16 (2025-04-01): no statement from him found",
+        "campaign site cesarblanco.com: nothing retrievable on the subject",
+        "three news searches on his name plus the subject words: no direct quotes from him on the subject",
+        "not reviewed: Senate floor and State Affairs committee video for SB 16 and SB 144"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:01:47.531Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

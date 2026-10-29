@@ -1,0 +1,169 @@
+{
+  "politician_id": "00040f08-97cf-46d2-8738-3f6b9c00246b",
+  "findings": [
+    {
+      "id": "6c9e7f3ced818ce75be1bed412a97110ac9fb66b798b950d68dc7850a34ffcce",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Dawkins/InTheNews/NewsRelease/?id=119289",
+      "date": "2021-04-15",
+      "date_precision": "day",
+      "passage": "The Republican majority in Harrisburg intends to push legislation that will suppress voters’ rights by making it harder to vote and intends to continue to force the big lie that the 2020 election was fraudulent while it was not.",
+      "note": "Statement as Philadelphia House delegation chair after a series of State Government Committee hearings on voting. Opposes coming election-law bills as making voting harder; does not name photo ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "making voting harder"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:09.350Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('DAWKINS'), linked to Jason T. Dawkins (district 179) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Dawkins'), linked to Jason Dawkins (district 179) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Dawkins'), linked to Jason T. Dawkins (district 179) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('DAWKINS'), linked to Jason T. Dawkins (district 179) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.856Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "no-ID voter options",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extractor returned none)",
+        "web search (several queries on name plus subject words)",
+        "status check: ballot page lists him on the 2026 general-election ballot (https://ballotpedia.org/Jason_Dawkins)",
+        "official site news list (https://www.pahouse.com/Dawkins/InTheNews/NewsRelease): recent list shows nothing on the subject",
+        "Ballotpedia (identity confirmed)",
+        "bill pages and votes: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:02:09.350Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.702Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.856Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

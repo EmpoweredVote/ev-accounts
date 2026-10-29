@@ -1,0 +1,1254 @@
+{
+  "id": "GA-SB-189-2024",
+  "scope": "state:ga",
+  "title": "SB 189 (2023-2024 Regular Session (2024 votes)): Elections; text portions of ballots shall be counted for vote tabulation and recounts purposes instead of any machine coding",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+    "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf (House Journal 2024, pp. 5155-5170, 28 Mar 2024)",
+    "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf (Senate Journal 2024, passage of the Senate Ethics Committee substitute)"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) House Rules Committee substitute to SB 189 as printed in the House Journal 28 Mar 2024, Section 9 (revising Code Section 21-2-386), 21-2-386(a)(1)(B), first comparison\n(quote) The registrar or clerk shall then compare the number of the elector's Georgia driver's license number or state identification card issued pursuant to Article 5 of Chapter 5 of Title 40 and date of birth entered on the absentee ballot envelope with the same information contained in the elector's voter registration records.\n(section) House Rules Committee substitute to SB 189 as printed in the House Journal 28 Mar 2024, Section 9 (revising Code Section 21-2-386), 21-2-386(a)(1)(B), second comparison (no license: last four digits of social security number)\n(quote) If the elector has affirmed on the envelope that he or she does not have a Georgia driver's license or state identification card issued pursuant to Article 5 of Chapter 5 of Title 40, the registrar or clerk shall compare the last four digits of the elector's social security number and date of birth entered on the envelope with the same information contained in the elector's voter registration records.\n(section) House Rules Committee substitute to SB 189 as printed in the House Journal 28 Mar 2024, Section 9 (revising Code Section 21-2-386), 21-2-386(a)(1)(C) cure by affidavit and copy of ID\n(quote) The elector may cure a failure to sign the oath, nonmatching identifying information, or missing information by submitting an affidavit to the board of registrars or absentee ballot clerk along with a copy of one of the forms of identification enumerated in subsection (c) of Code Section 21-2-417 before the close of such period. The affidavit shall affirm that the ballot was submitted by the elector, is the elector's ballot, and that the elector is registered and qualified to vote in the primary, election, or runoff in question. If the board of registrars or absentee ballot clerk finds the affidavit and identification to be sufficient, the absentee ballot shall be counted.\n(section) House Rules Committee substitute to SB 189 as printed in the House Journal 28 Mar 2024, Section 9 (revising Code Section 21-2-386), 21-2-386(a)(1)(D) first-time absentee voter who registered by mail\n(quote) (D) An elector who registered to vote by mail, but did not comply with subsection (c) of Code Section 21-2-220, and who votes for the first time in this state by absentee ballot shall include with his or her application for an absentee ballot or in the outer oath envelope of his or her absentee ballot either one of the forms of identification listed in subsection (a) of Code Section 21-2-417 or a copy of a current utility bill, bank statement, government check, paycheck, or other government document that shows the name and address of such elector. If such elector does not provide any of the forms of identification listed in this subparagraph with his or her application for an absentee ballot or with the absentee ballot, such absentee ballot shall be deemed to be a provisional ballot\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 5, revising 21-2-230(b) (voter challenges; text breaks off at the page end in the print)\n(quote) \"(b) Upon the filing of such challenge, the board of registrars shall immediately consider such challenge and determine whether probable cause exists to sustain such challenge. If the registrars do not find probable cause, the challenge shall be denied. If the registrars find probable cause, the registrars shall notify the poll officers of the challenged elector's precinct or, if the challenged elector voted by absentee ballot, notify the poll officers at the absentee ballot precinct and, if practical, notify the challenged elector and afford such elector an opportunity to answer. Probable causes shall include, but not be limited to, an elector who is deceased; an elector voting or registering to vote in a different jurisdiction; an elector obtaining a homestead exemption in a different jurisdiction; or an elector being registered at a nonresidential address as confirmed or listed by or in a government office,\n(other) Section 1: remove the Secretary of State from the State Election Board (21-2-30)\n(other) Sections 2-3: conflict-of-interest rules for election officials (new 21-2-19 and related); ballot access for political parties with presidential ballot access in 20 states (21-2-172)\n(other) Section 4: rules for determining residence (21-2-217)\n(other) Section 5: challenges to electors (21-2-230)\n(other) Sections 6-8: text portions or machine marks on ballot-marking-device ballots counted for tabulation and recounts (effective 2026); physical ballots in some cases (21-2-300, 21-2-379.23, 21-2-386)\n(other) Section 9: absentee ballot chain of custody and tabulation timelines (21-2-386)\n(other) Later sections: requests for scanned ballot images; pilot audit of paper ballots using optical character recognition; timing of special elections",
+  "sponsors": [
+    {
+      "name": "Burns of the 23rd",
+      "role": "prime",
+      "version": "House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)"
+    },
+    {
+      "name": "Dolezal of the 27th",
+      "role": "co",
+      "version": "House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)"
+    },
+    {
+      "name": "Brass of the 28th",
+      "role": "co",
+      "version": "House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)"
+    },
+    {
+      "name": "Anavitarte of the 31st",
+      "role": "co",
+      "version": "House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)"
+    },
+    {
+      "name": "Moore of the 53rd",
+      "role": "co",
+      "version": "House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2024-02-06",
+      "body": "GA Senate",
+      "motion": "On the passage of the bill (Senate Ethics Committee substitute)",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 22,
+      "absent": 3,
+      "body_size": 56,
+      "note": "Senate Journal 2024, p. 418 (nearest page number above the roll call) | https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "members": [
+        {
+          "name": "Albers",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbison",
+          "vote": "nay"
+        },
+        {
+          "name": "Parent",
+          "vote": "nay"
+        },
+        {
+          "name": "Anavitarte",
+          "vote": "yea"
+        },
+        {
+          "name": "Harrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahman",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hickman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhett",
+          "vote": "nay"
+        },
+        {
+          "name": "Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brass",
+          "vote": "yea"
+        },
+        {
+          "name": "Hufstetler",
+          "vote": "yea"
+        },
+        {
+          "name": "Seay",
+          "vote": "nay"
+        },
+        {
+          "name": "Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Islam Parkes",
+          "vote": "nay"
+        },
+        {
+          "name": "Setzler",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Cowsert",
+          "vote": "yea"
+        },
+        {
+          "name": "James",
+          "vote": "nay"
+        },
+        {
+          "name": "Still",
+          "vote": "yea"
+        },
+        {
+          "name": "Davenport",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Strickland",
+          "vote": "yea"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolezal",
+          "vote": "absent"
+        },
+        {
+          "name": "Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "absent"
+        },
+        {
+          "name": "Echols",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirkpatrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Tillery",
+          "vote": "yea"
+        },
+        {
+          "name": "Esteves",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Vacant, 30th",
+          "vote": "absent"
+        },
+        {
+          "name": "Ginn",
+          "vote": "yea"
+        },
+        {
+          "name": "Mallow",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "McLaurin",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Merritt",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Halpern",
+          "vote": "nay"
+        },
+        {
+          "name": "Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2024-03-28",
+      "body": "GA House",
+      "motion": "On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "kind": "roll-call",
+      "yes": 101,
+      "no": 73,
+      "absent": 6,
+      "body_size": 180,
+      "note": "House Journal 2024, p. 5170 (roll call), tally on p. 5171 | https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "members": [
+        {
+          "name": "Adesanya",
+          "vote": "nay"
+        },
+        {
+          "name": "Cooper",
+          "vote": "yea"
+        },
+        {
+          "name": "Henderson",
+          "vote": "absent"
+        },
+        {
+          "name": "Mathiak",
+          "vote": "yea"
+        },
+        {
+          "name": "Sampson",
+          "vote": "nay"
+        },
+        {
+          "name": "Adeyina",
+          "vote": "nay"
+        },
+        {
+          "name": "Corbett",
+          "vote": "yea"
+        },
+        {
+          "name": "Hilton",
+          "vote": "yea"
+        },
+        {
+          "name": "Mathis",
+          "vote": "yea"
+        },
+        {
+          "name": "Schofield",
+          "vote": "nay"
+        },
+        {
+          "name": "Alexander",
+          "vote": "nay"
+        },
+        {
+          "name": "Cox",
+          "vote": "yea"
+        },
+        {
+          "name": "Hitchens",
+          "vote": "yea"
+        },
+        {
+          "name": "McClain",
+          "vote": "nay"
+        },
+        {
+          "name": "Scoggins",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Crawford",
+          "vote": "nay"
+        },
+        {
+          "name": "Holcomb",
+          "vote": "nay"
+        },
+        {
+          "name": "McCollum",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott",
+          "vote": "absent"
+        },
+        {
+          "name": "Anulewicz",
+          "vote": "nay"
+        },
+        {
+          "name": "Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Holland",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "yea"
+        },
+        {
+          "name": "Seabaugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Au",
+          "vote": "nay"
+        },
+        {
+          "name": "Cummings",
+          "vote": "nay"
+        },
+        {
+          "name": "Holly",
+          "vote": "nay"
+        },
+        {
+          "name": "Meeks",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharper",
+          "vote": "nay"
+        },
+        {
+          "name": "Ballard",
+          "vote": "yea"
+        },
+        {
+          "name": "Daniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Hong",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Silcox",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Horner",
+          "vote": "yea"
+        },
+        {
+          "name": "Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, L",
+          "vote": "yea"
+        },
+        {
+          "name": "Barnes",
+          "vote": "nay"
+        },
+        {
+          "name": "DeLoach",
+          "vote": "yea"
+        },
+        {
+          "name": "Houston",
+          "vote": "yea"
+        },
+        {
+          "name": "Momtahan",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Dempsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "nay"
+        },
+        {
+          "name": "Moore",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, T.P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Dickey",
+          "vote": "yea"
+        },
+        {
+          "name": "Huddleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Mughal",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith, V",
+          "vote": "yea"
+        },
+        {
+          "name": "Bazemore",
+          "vote": "absent"
+        },
+        {
+          "name": "Douglas",
+          "vote": "nay"
+        },
+        {
+          "name": "Hugley",
+          "vote": "nay"
+        },
+        {
+          "name": "Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephens",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Draper",
+          "vote": "nay"
+        },
+        {
+          "name": "Hutchinson",
+          "vote": "nay"
+        },
+        {
+          "name": "New",
+          "vote": "yea"
+        },
+        {
+          "name": "Stinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Drenner",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson, D",
+          "vote": "nay"
+        },
+        {
+          "name": "Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Stoner",
+          "vote": "nay"
+        },
+        {
+          "name": "Beverly",
+          "vote": "nay"
+        },
+        {
+          "name": "Dubnik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, E",
+          "vote": "nay"
+        },
+        {
+          "name": "Okoye",
+          "vote": "nay"
+        },
+        {
+          "name": "Tarvin",
+          "vote": "yea"
+        },
+        {
+          "name": "Blackmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Dunahoo",
+          "vote": "yea"
+        },
+        {
+          "name": "Jackson, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Olaleye",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor, D",
+          "vote": "yea"
+        },
+        {
+          "name": "Bonner",
+          "vote": "yea"
+        },
+        {
+          "name": "Efstration",
+          "vote": "yea"
+        },
+        {
+          "name": "Jasperse",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "nay"
+        },
+        {
+          "name": "Taylor, R",
+          "vote": "nay"
+        },
+        {
+          "name": "Bruce",
+          "vote": "nay"
+        },
+        {
+          "name": "Ehrhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Panitch",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas, B",
+          "vote": "yea"
+        },
+        {
+          "name": "Buckner",
+          "vote": "nay"
+        },
+        {
+          "name": "Erwin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, J",
+          "vote": "yea"
+        },
+        {
+          "name": "Paris",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas, M",
+          "vote": "nay"
+        },
+        {
+          "name": "Burchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans, B",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, S",
+          "vote": "nay"
+        },
+        {
+          "name": "Park",
+          "vote": "nay"
+        },
+        {
+          "name": "Townsend",
+          "vote": "yea"
+        },
+        {
+          "name": "Burnough",
+          "vote": "nay"
+        },
+        {
+          "name": "Evans, S",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, T",
+          "vote": "yea"
+        },
+        {
+          "name": "Parrish",
+          "vote": "yea"
+        },
+        {
+          "name": "Tran",
+          "vote": "nay"
+        },
+        {
+          "name": "Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Fleming",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Parsons",
+          "vote": "yea"
+        },
+        {
+          "name": "VACANT 139",
+          "vote": "absent"
+        },
+        {
+          "name": "Cameron",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kendrick",
+          "vote": "nay"
+        },
+        {
+          "name": "Persinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Vance",
+          "vote": "yea"
+        },
+        {
+          "name": "Camp",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Kennard",
+          "vote": "nay"
+        },
+        {
+          "name": "Petrea",
+          "vote": "yea"
+        },
+        {
+          "name": "Wade",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, J",
+          "vote": "yea"
+        },
+        {
+          "name": "Frye",
+          "vote": "nay"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "Pirkle",
+          "vote": "yea"
+        },
+        {
+          "name": "Washburn",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, L",
+          "vote": "nay"
+        },
+        {
+          "name": "Gaines",
+          "vote": "yea"
+        },
+        {
+          "name": "LaHood",
+          "vote": "yea"
+        },
+        {
+          "name": "Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Werkheiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Cannon, C",
+          "vote": "yea"
+        },
+        {
+          "name": "Gambill",
+          "vote": "yea"
+        },
+        {
+          "name": "Leverett",
+          "vote": "yea"
+        },
+        {
+          "name": "Prince",
+          "vote": "nay"
+        },
+        {
+          "name": "Westbrook",
+          "vote": "nay"
+        },
+        {
+          "name": "Cannon, P",
+          "vote": "nay"
+        },
+        {
+          "name": "Gilliard",
+          "vote": "nay"
+        },
+        {
+          "name": "Lewis-Ward",
+          "vote": "nay"
+        },
+        {
+          "name": "Reese",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiedower",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Gladney",
+          "vote": "nay"
+        },
+        {
+          "name": "Lim",
+          "vote": "nay"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilkerson",
+          "vote": "nay"
+        },
+        {
+          "name": "Carson",
+          "vote": "yea"
+        },
+        {
+          "name": "Glaize",
+          "vote": "nay"
+        },
+        {
+          "name": "Lott",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhodes",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, A",
+          "vote": "nay"
+        },
+        {
+          "name": "Carter",
+          "vote": "nay"
+        },
+        {
+          "name": "Greene",
+          "vote": "yea"
+        },
+        {
+          "name": "Lumsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, M.F.",
+          "vote": "nay"
+        },
+        {
+          "name": "Chastain",
+          "vote": "yea"
+        },
+        {
+          "name": "Gullett",
+          "vote": "yea"
+        },
+        {
+          "name": "Lupton",
+          "vote": "nay"
+        },
+        {
+          "name": "Ridley, Jas",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams, N",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheokas",
+          "vote": "yea"
+        },
+        {
+          "name": "Gunter",
+          "vote": "yea"
+        },
+        {
+          "name": "Mainor",
+          "vote": "yea"
+        },
+        {
+          "name": "Ridley, Jor",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark, D",
+          "vote": "yea"
+        },
+        {
+          "name": "Hagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Marin",
+          "vote": "absent"
+        },
+        {
+          "name": "Roberts",
+          "vote": "nay"
+        },
+        {
+          "name": "Willis",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark, J",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Romman",
+          "vote": "nay"
+        },
+        {
+          "name": "Yearta",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Martinez",
+          "vote": "yea"
+        },
+        {
+          "name": "Sainz",
+          "vote": "yea"
+        },
+        {
+          "name": "Burns, Speaker",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2024-03-28",
+      "body": "GA Senate",
+      "motion": "Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 22,
+      "absent": 1,
+      "body_size": 56,
+      "note": "Senate Journal 2024, p. 4417 (nearest page header above the roll call) | https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "members": [
+        {
+          "name": "Albers",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        },
+        {
+          "name": "Anavitarte",
+          "vote": "yea"
+        },
+        {
+          "name": "Harbison",
+          "vote": "nay"
+        },
+        {
+          "name": "Parent",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Harrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Payne",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatchett",
+          "vote": "yea"
+        },
+        {
+          "name": "Rahman",
+          "vote": "nay"
+        },
+        {
+          "name": "Beach",
+          "vote": "yea"
+        },
+        {
+          "name": "Hickman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bearden",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brass",
+          "vote": "yea"
+        },
+        {
+          "name": "Hufstetler",
+          "vote": "yea"
+        },
+        {
+          "name": "Seay",
+          "vote": "nay"
+        },
+        {
+          "name": "Burns",
+          "vote": "yea"
+        },
+        {
+          "name": "Islam Parkes",
+          "vote": "nay"
+        },
+        {
+          "name": "Setzler",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Jackson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sims",
+          "vote": "nay"
+        },
+        {
+          "name": "Cowsert",
+          "vote": "yea"
+        },
+        {
+          "name": "James",
+          "vote": "nay"
+        },
+        {
+          "name": "Still",
+          "vote": "yea"
+        },
+        {
+          "name": "Davenport",
+          "vote": "nay"
+        },
+        {
+          "name": "Jones, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Strickland",
+          "vote": "yea"
+        },
+        {
+          "name": "Dixon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones, H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Summers",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolezal",
+          "vote": "yea"
+        },
+        {
+          "name": "Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "vote": "absent"
+        },
+        {
+          "name": "Echols",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirkpatrick",
+          "vote": "yea"
+        },
+        {
+          "name": "Tillery",
+          "vote": "yea"
+        },
+        {
+          "name": "Esteves",
+          "vote": "nay"
+        },
+        {
+          "name": "Lucas",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Ginn",
+          "vote": "yea"
+        },
+        {
+          "name": "Mallow",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "McLaurin",
+          "vote": "nay"
+        },
+        {
+          "name": "Watson, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Merritt",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Halpern",
+          "vote": "nay"
+        },
+        {
+          "name": "Moore",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

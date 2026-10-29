@@ -1,0 +1,56 @@
+{
+  "politician_id": "11074d6c-4c9c-4b9e-9606-42eae7a6537c",
+  "findings": [
+    {
+      "id": "52046d408f93d5edfccc6c1a7daa6affe2296728bd3fd5bf5b7019d7346d0ae0",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/814554/virginia-house-bill-78-session-2026",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-78-2026",
+      "act": "nay",
+      "motion": "Read third time and passed House (92-Y 6-N 0-A)",
+      "note": "HB 78, elections administration: makes certifying results a ministerial duty of local electoral boards, with removal and civil penalty for refusal. She voted no on House passage. Related election-law vote, not a voter ID or citizenship vote.",
+      "subjects": [
+        "election certification (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:25:58.724Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "election certification (related)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House of Delegates member page https://apps.house.virginia.gov/members/H0394 (confirms 62nd District delegate since 2026-01-14; nothing on the subject)",
+        "campaign site https://www.hamiltonforvirginia.com/ (home, meet-karen, priorities pages: nothing on the subject)",
+        "Ballotpedia (confirms office; no survey answers, nothing on the subject)",
+        "blocked: https://legilist.com/states/virginia/legislator/hamilton-karen-fleming--va-house-of-delegates-62-hamilton-k/",
+        "blocked: https://www.vpap.org/general-assembly/issue/voter-id",
+        "not reviewed: https://origin.vpap.org/legislators/525518-karen-hamilton/list-votes/caucus_party/?with=false (vote list did not load without scripts)",
+        "not reviewed: https://lis.virginia.gov/member-details/H394 (script-only page, no bill data returned)",
+        "bill vote pages (billsponsor, fastdemocracy) for 2026 election bills; no 2026 voter ID bill reached a House floor vote in the results found",
+        "news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:25:58.724Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

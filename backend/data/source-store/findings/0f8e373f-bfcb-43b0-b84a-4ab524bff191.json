@@ -1,0 +1,221 @@
+{
+  "politician_id": "0f8e373f-bfcb-43b0-b84a-4ab524bff191",
+  "findings": [
+    {
+      "id": "cface2de32d3213e896aa113b2729519e7c5d8418b681b7fd165fb38c09166d1",
+      "kind": "own-words",
+      "url": "https://senatepress.net/the-georgia-legislative-black-caucus-and-chairwoman-sen-tonya-anderson-oppose-the-passing-of-senate-bill-202.html",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "“Senate Bill 202 is yet another anti-voting omnibus bill. Like House Bill 531 and Senate Bill 241, it represents a blatant attempt to undermine our democracy, our voters, and our electoral process.",
+      "note": "Senate press office statement issued in her name as Legislative Black Caucus chair on the day SB 202 was signed. It does not mention ID rules directly.",
+      "subjects": [
+        "SB 202 election law in general",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:12.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc9c93f7727d0eb30d30b2996b2f81986d820c349a0790af4133d4a2eed8b806",
+      "kind": "own-words",
+      "url": "https://senatepress.net/the-georgia-legislative-black-caucus-and-chairwoman-sen-tonya-anderson-oppose-the-passing-of-senate-bill-202.html",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "passage": "There is no legitimate report, investigation, inquiry, or audit that uncovers any conspiracy to commit voter fraud or rig an election in favor of a candidate.",
+      "note": "Same statement; she says there is no evidence of voter fraud conspiracy. Related to the voter-fraud argument behind ID laws.",
+      "subjects": [
+        "voter fraud claims",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:12.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc01874a59f19023a17716cea5394d429cc727dca8f7413ec386143a2a455398",
+      "kind": "own-words",
+      "url": "https://senatepress.net/statement-by-the-chairwoman-of-the-georgia-legislative-black-caucus-sen-tonya-anderson-on-anti-voting-legislation-package-introduced-in-the-georgia-senate.html",
+      "date": "2021-02-02",
+      "date_precision": "day",
+      "passage": "If successful, members of the Senate will prevent nonprofit organizations from mailing absentee ballot applications to voters, require an excuse for absentee balloting, end automatic voter registration when obtaining a state issued driver’s license or identification card, and end the use of ballot drop boxes, just to name a few.",
+      "note": "Senate press office statement in her name as caucus chair on a package of Senate voting bills; she lists ending automatic registration at the licence or ID card office among them.",
+      "subjects": [
+        "automatic voter registration at licence office",
+        "absentee ballot rules",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:41:12.915Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Anderson, T.'), linked to TONYA P. ANDERSON (district 43) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, T.'), linked to TONYA P. ANDERSON (district 43) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, T.'), linked to TONYA P. ANDERSON (district 43) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Anderson, T.'), linked to Anderson, Tonya P. (district 43) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, T.'), linked to TONYA P. ANDERSON (district 43) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID number with absentee ballot",
+        "automatic registration at the licence office",
+        "voter fraud claims",
+        "SB 202"
+      ],
+      "places": [
+        "status check: https://ballotpedia.org/Tonya_Anderson shows her on the 2026-11-03 general-election ballot for Georgia State Senate District 43 after advancing from the primary (in scope)",
+        "On the Record (0 appearances)",
+        "campaign site https://senatortonyapanderson.com/ (one page, nothing on the subject)",
+        "Ballotpedia",
+        "Georgia Senate press office archive https://senatepress.net (two statements read)",
+        "web searches: 2 run (name plus voter ID, SB 202, election integrity, absentee; SB 202 roll call by member)",
+        "official legislature page https://www.legis.ga.gov/members/senate/807?session=1033: not reviewed (script-rendered); she was a sitting senator in 2021 per the press statements, but her SB 202 vote was not retrieved",
+        "https://covnews.com/news/newton-legislators-vote-along-party-lines-state-elections-overhaul: inaccessible (404)",
+        "SB 271 (2025, permanent absentee list) named in a search result: not reviewed, no official page fetched",
+        "no SAVE Act statement found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:41:12.915Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

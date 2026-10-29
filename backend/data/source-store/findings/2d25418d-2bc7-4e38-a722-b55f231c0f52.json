@@ -1,0 +1,47 @@
+{
+  "politician_id": "2d25418d-2bc7-4e38-a722-b55f231c0f52",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope as appointed official, not a ballot candidate; Ballotpedia (https://ballotpedia.org/David_Ziegner) says: David Ziegner is a member of the Indiana Utility Regulatory Commission. He was appointed by the governor, so he is an appointed utility regulator with no legislative bills or election-law role",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://www.in.gov/iurc/about-the-iurc/commissioners/ (404)",
+        "not reviewed: Indiana General Assembly bill pages (not a legislator; legislator directory page returned no content; API needs a key)",
+        "not reviewed: web news search on name plus subject words (shared search budget exhausted)",
+        "not reviewed: campaign site (none; appointed official)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:54.428Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/David_Ziegner (identifies him as an appointed member of the Indiana Utility Regulatory Commission since 1990, term ending 2027; not a legislator; nothing on the subject)",
+        "Indiana General Assembly legislator list https://iga.in.gov/legislative/2026/legislators (no entry for this name)",
+        "IURC commissioners page https://www.in.gov/iurc/about-the-iurc/commissioners/ (no usable text returned)",
+        "news/web searches on name plus voter ID, proof of citizenship, voting (nothing on the subject; coverage is only about utility rate cases)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:21:20.835Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

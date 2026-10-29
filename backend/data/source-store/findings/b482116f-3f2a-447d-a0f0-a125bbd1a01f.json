@@ -1,0 +1,42 @@
+{
+  "politician_id": "b482116f-3f2a-447d-a0f0-a125bbd1a01f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (Ballotpedia https://ballotpedia.org/Chris_Measmer: lost the primary on March 3, 2026 for North Carolina State Senate District 34, 46.3 percent to 53.7 percent, results certified; not on the 2026 general-election ballot)",
+        "positive control: https://www.ncleg.gov/Members/MemberList/S lists Sen. Chris Measmer (member 455)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched, confirms identity and primary loss)",
+        "official site, campaign site, ncleg bill pages, news search: not reviewed (out of scope after primary loss; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:03:57.528Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (https://ballotpedia.org/Chris_Measmer says he ran for re-election to NC Senate District 34 and lost that primary); stopped as the brief directs",
+        "who he is: https://www.ncleg.gov/Members/Biography/S/455 lists Senator Chris Measmer, District 34; https://ncleg.gov/Members/DistrictRepresentation/S/34 shows him as appointed in April 2025",
+        "On the Record (0 appearances)",
+        "not searched further on the subject because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:11:31.026Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

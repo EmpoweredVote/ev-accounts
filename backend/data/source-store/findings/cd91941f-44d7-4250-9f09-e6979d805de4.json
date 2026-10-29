@@ -1,0 +1,167 @@
+{
+  "politician_id": "cd91941f-44d7-4250-9f09-e6979d805de4",
+  "findings": [
+    {
+      "id": "a724edf4b27a4b9a2963f2a64779f52b62629b20987db7b0bc988debf8c02d36",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors (not a primary sponsor; primary sponsors are Buansi, Dahle, F. Jackson and Clark) of HB 1246, Safeguarding Elections Act, filed 2026-08-04 and referred to the House Rules committee. The bill makes it a Class 2 misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process. It also makes voter photo ID images and photocopies of ID confidential records. Bill text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v1.pdf. The sponsor list on the bill page reads 'T. Brown'.",
+      "subjects": [
+        "proof of citizenship demands at the polls",
+        "voter ID records kept confidential",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.563Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "51d81a4fbc9bedec9543441652bc3a706cb8553c0f4fc82892e8b0a9e81c22ab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "House second reading, HB 958 Election Law Changes (RCS H-758, 66 to 47)",
+      "note": "Voted No on second reading in the House. Roll call shown on the official bill page. HB 958, Election Law Changes (2025-26 session). Per the official bill digest it, among other things: requires a statement of US citizenship (under penalty of perjury) on voter registration applications; requires covered military and overseas voters to send a copy of the photo ID used for in-person voting with the ballot; and extends the deadline for a voter to show ID after a provisional ballot to noon on the fifth business day after the election. It was ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID with a military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "early voting and absentee rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.955Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "786bddb03787c4263c6c0e4ae8019c92b35243d31edd62aef8ca0733fdd230ba",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Motion to concur in the Senate committee substitute, HB 958 (RCS H-801, 62 to 47)",
+      "note": "Voted No on the motion to concur. Roll call shown on the official bill page. HB 958, Election Law Changes (2025-26 session). Per the official bill digest it, among other things: requires a statement of US citizenship (under penalty of perjury) on voter registration applications; requires covered military and overseas voters to send a copy of the photo ID used for in-person voting with the ballot; and extends the deadline for a voter to show ID after a provisional ballot to noon on the fifth business day after the election. It was ratified 2026-08-06 and vetoed by the Governor 2026-08-17.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID with a military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "early voting and absentee rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:11:25.955Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/H/783 (Representative Terry M. Brown Jr., House District 92, Mecklenburg, 2025-2026 session; 2026 ballot status not checked)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov introduced and co-sponsored bills 2021, 2023, 2025 (https://www.ncleg.gov/Members/IntroducedBills/H/783/2025): reviewed; one relevant bill found",
+        "ncleg.gov bill pages and PDFs for H1246 (2025), H293 (2023), H446 (2021): reviewed; H293 and H446 text has no change to photo ID or proof of citizenship rules, so not saved",
+        "ncleg.gov votes page https://www.ncleg.gov/Members/Votes/H/783: not reviewed (page loads its vote list by script; no rows in fetched HTML)",
+        "Ballotpedia https://ballotpedia.org/Terry_Brown_Jr.: blocked (fetch returned empty page)",
+        "official or campaign site: not reviewed (no URL known; web search budget for the session was used up)",
+        "news search on name plus subject words: not reviewed (web search budget used up)",
+        "own words (questionnaires, debates, interviews, posts): nothing found; no search possible"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:10:40.563Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with a mail or military-overseas ballot",
+        "provisional ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in scope: https://www.ncleg.gov/Members/Biography/H/783 shows Terry M. Brown Jr. as the sitting member for House District 92; he is seeking re-election to the 2026-11-03 general election per a news summary; the Ballotpedia page for this name is a list of different people, so the official ballot listing was not read directly",
+        "On the Record (0 meetings)",
+        "legislature member pages: https://www.ncleg.gov/Members/IntroducedBills/H/783 (sponsored and co-sponsored bills) and https://www.ncleg.gov/Members/Votes/H/783 (votes), 2025-26 session reviewed; HB 958 bill page and official digest read",
+        "campaign site: nothing found (no working campaign site reached)",
+        "House caucus member page (nchousedems.com): bio only, nothing on the subject",
+        "Ballotpedia: name page is a list of several people; the right page https://ballotpedia.org/Terry_Brown_Jr._(North_Carolina) was not read",
+        "news searches on name plus voter ID words and on HB 958 coverage (NC Newsline, Carolina Journal, WECT, Daily Signal, ACLU of NC page): none of these quote him on the subject",
+        "not reviewed: floor debate video for HB 958"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:11:25.955Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "politician_id": "270f0efe-6241-44d7-b404-b9af5d3846a7",
+  "findings": [
+    {
+      "id": "58e5063df0be3461269835c634868d68323404c38296932da6183b6d27a8d9d7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/445",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate roll call 693, passed 28-13)",
+      "note": "The Senate member vote list shows Aye for Sawrey on second reading of HB 958. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says a voter registration application is processed only if it affirmatively states the applicant is a US citizen; an applicant who leaves the question blank gets a notice and 30 days to return a statement under penalty of perjury. It also directs the State Board of Elections to set up a process to remove voters flagged as possible non-citizens by a federal database. The Governor vetoed it on 2026-08-17 per the bill page https://www.ncleg.gov/BillLookUp/2025/H958.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voter-roll checks",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:05.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86df7a2701b5b33176b1e795b48ba92de4dcc8cc6e4c4a06b99b6af07fa8d23c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/445",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment 1 (Senate roll call 684, passed 31-11)",
+      "note": "The Senate member vote list shows Aye for Sawrey on Amendment 1 to HB 958, the election law bill described in the other finding. The amendment text was not reviewed.",
+      "subjects": [
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:05.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7adb5ec46a458519304e89324a6ffe18dcc5f8583b44b0da169cc37b7abd5ea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/445",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, Second Reading (Senate vote 28 to 13, 2026-07-28 6:13 PM)",
+      "note": "Member vote page lists his vote as Aye. The ratified text requires a county board to process a registration only if the form states the applicant is a U.S. citizen (with a 30-day notice-and-sworn-statement step), sets a process to remove voters flagged as possible non-citizens from a federal database, and sets weekly removal of deceased voters. The bill was vetoed 2026-08-17 per the NC bill page. The ratified text does not change photo ID at the polls.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voter removal",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:07.848Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter alternatives",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election law changes in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Benton_Sawrey names him as North Carolina State Senate District 10, advanced from the March 3, 2026 primary and on the November 3, 2026 general ballot; https://www.ncleg.gov/Members/Biography/S/445 confirms Senator Benton G. Sawrey, District 10",
+        "On the Record (0 meetings)",
+        "campaign site https://bentonsawrey.com/ (home page reviewed; nothing on the subject; /issues/ returned page not found)",
+        "Ballotpedia (nothing on the subject)",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/445 (no voter ID or citizenship bill by title; SB 556 buffer zones near polling places is off subject)",
+        "NC General Assembly member votes https://www.ncleg.gov/Members/Votes/S/445 (one on-subject bill, HB 958)",
+        "NC bill pages for HB 958, SB 556, SB 153",
+        "web news search: not run, the shared search budget was used up",
+        "own-words statements (interviews, forums, social posts): not found in the pages reviewed; Facebook page https://www.facebook.com/benton.sawrey not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:41:05.229Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting NC Senate member, District 10, on the 2026-11-03 general-election ballot after advancing from the 2026-03-03 primary; nothing on the subject)",
+        "NC General Assembly member vote page https://www.ncleg.gov/Members/Votes/S/445 (read; found the HB 958 election-law votes)",
+        "NC General Assembly introduced-bills page https://library.ncleg.gov/Members/IntroducedBills/S/445 (one buffer-zone election bill; not on the subject)",
+        "NC General Assembly bill page and ratified text for HB 958, https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf (no photo-ID change found in its text; it covers citizenship on registration forms and voter-roll cleanup)",
+        "campaign site bentonsawrey.com home page (nothing on the subject; its /issues/ page does not exist)",
+        "web search: name plus voter ID and elections (nothing naming him)",
+        "not reviewed: his own words on HB 958 (no floor-debate transcript or statement located), social media"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:36:07.848Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

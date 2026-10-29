@@ -1,0 +1,160 @@
+{
+  "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216",
+  "findings": [
+    {
+      "id": "741275ae1898bef6218a5e10f8bf137678d05c331db38862a1c860242c02ef88",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/804",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (House roll call 758, 66-47)",
+      "note": "His roll-call row lists 'Aye' on the second-reading vote for HB 958, the omnibus election bill. The House text of that date (sixth edition, https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v6.pdf) moves the deadline for a voter to bring photo ID after a provisional ballot from the third to the fifth business day after the election, does the same for the absentee-ballot ID photocopy, and requires a statement under penalty of perjury on citizenship on voter registration forms.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "citizenship statement to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:50.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06c08a5de2588d5701aa3eb5ef9e64163eec74f8c1ba0efa7ae9691a7a78cd6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/804",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 amendment A2 (Blackwell), second reading (House roll call 756, 69-44)",
+      "note": "His roll-call row lists 'Aye' on amendment A2 to HB 958. The page does not say what A2 contains; the subject of the amendment is not confirmed.",
+      "subjects": [
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:50.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fce302a92fd2630d3a9ab988b700f25f1cb611f01254d20fec63548e61567c4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/804",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion 11 to concur in the Senate version (House roll call 801, 62-47)",
+      "note": "His roll-call row lists 'Aye' on concurring in the Senate changes. The bill page (https://www.ncleg.gov/BillLookUp/2025/H958) shows it ratified 2026-08-06 and vetoed by the Governor 2026-08-17. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) has a voter-registration part that requires a citizenship statement under penalty of perjury and a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks for non-citizens",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:50.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/MemberList/H and https://www.ncleg.gov/Members/Biography/H/804 (Representative Neal Jackson, House District 78, Moore and Randolph)",
+        "On the Record (0 appearances, 0 candidates)",
+        "NC General Assembly introduced bills, 2025 session: https://www.ncleg.gov/Members/IntroducedBills/H/804 (nothing on the subject; only an Election Day holiday bill, off subject)",
+        "NC General Assembly biography page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Neal_Jackson (fetch returned empty page)",
+        "not reviewed: personal or campaign site (not located; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: roll-call votes on voter ID bills (no direct URL located without search)",
+        "not reviewed: earlier sessions' introduced bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:50:25.915Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment / provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "proof or statement of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Neal_Jackson shows him as District 78 incumbent who won the 2026-03-03 primary and is on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Official legislature member page https://www.ncleg.gov/Members/Biography/H/804 (identity confirmed)",
+        "Legislature introduced-bills lists for 2023 and 2025 sessions (https://www.ncleg.gov/Members/IntroducedBills/H/804): no election-ID bill sponsored by him",
+        "Legislature roll-call list https://www.ncleg.gov/Members/Votes/H/804 (found HB 958 votes)",
+        "HB 958 bill page and ratified/engrossed text on ncleg.gov",
+        "Carolina Journal news article on HB 958 (no quote from him)",
+        "Ballotpedia and two news searches on name plus subject words: no own words from him on the subject",
+        "not reviewed: campaign site (none found in searches)",
+        "Branch candidate page: third-party summary only, not his words, not saved"
+      ],
+      "found": 3,
+      "at": "2026-10-27T13:55:50.929Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

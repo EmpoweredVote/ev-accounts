@@ -1,0 +1,30 @@
+{
+  "politician_id": "ff0c5069-709e-44eb-8459-3ff58ef22a76",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope: confirmed as House District 96 member and the only name listed for the 2026 general race at https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-96",
+        "branch.vote AJC questionnaire (2024-04-30) https://branch.vote/questionnaire-response/663113ae4038c848d256eadd: answer on election security (audits, paper ballot backup), no voter ID text; not saved because not copied verbatim",
+        "a statement on a letter about inactive-voter removals was named in a search snippet; house-press.com pages 97 and category pages 3 and 4 checked, item not found, so not reviewed",
+        "On the Record (extract-otr: 0 appearances, 0 candidates)",
+        "blocked: https://ballotpedia.org (page returned empty to the fetch tool)",
+        "web searches on name plus voter ID, proof of citizenship, election integrity: no own words found",
+        "not reviewed: legis.ga.gov bill pages (login token needed, not attempted)",
+        "note: fetch tool returns summaries only and a plain curl re-read of pages was refused by the permission system, so no passage could be copied verbatim; nothing saved from summaries"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:32.091Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

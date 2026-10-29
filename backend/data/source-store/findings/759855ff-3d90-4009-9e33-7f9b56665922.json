@@ -1,0 +1,60 @@
+{
+  "politician_id": "759855ff-3d90-4009-9e33-7f9b56665922",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Diamant_Hysenaj names him as a candidate for U.S. House New York District 14, on the general-election ballot November 3, 2026",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://www.votefordiamant.com/ home, /diamants-plan-for-ny-14, /my-story, /vote (nothing on the subject; the plan page covers immigration and healthcare only; /vote only has early mail or absentee ballot and polling place links)",
+        "Ballotpedia (no survey responses, nothing on the subject)",
+        "congress.gov / legislature bill pages: not applicable, not a sitting legislator",
+        "not reviewed: news search on name plus subject words (web search budget was used up, search not performed)",
+        "not reviewed: https://x.com/diamanthysenaj (social posts, not fetched)",
+        "not reviewed: https://www.instagram.com/diamanthysenaj_ (not fetched)",
+        "not reviewed: https://www.facebook.com/profile.php?id=61573642144007 (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:04:51.635Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://theballotbrief.com/candidate/diamant-hysenaj-c8d1d464-12de-4f43-8c2b-8865ef96a5bf shows him certified for the 2026-11-03 general ballot in NY-14 (State Board amended certification 2026-09-04)",
+        "On the Record (0 appearances)",
+        "campaign site: not reviewed, could not find or reach a campaign site (guessed domains did not connect)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Diamant_Hysenaj (empty page)",
+        "https://www.ballotready.org/people/diamant-hysenaj: nothing on the subject (immigration text only)",
+        "https://branch.vote/races/2026-new-york-general-election-ny-state-us-representative-ny-congressional-14/candidates/diamant-hysenaj: says his website had nothing on voting and elections as of 2026-09-09; nothing on the subject",
+        "https://www.aol.com/news/diamant-hysenaj-gop-businessman-immigrant-180934733.html: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "news searches on name plus voter ID, SAVE Act, election integrity: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:12:31.239Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

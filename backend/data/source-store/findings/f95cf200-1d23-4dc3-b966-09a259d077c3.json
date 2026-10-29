@@ -1,0 +1,109 @@
+{
+  "politician_id": "f95cf200-1d23-4dc3-b966-09a259d077c3",
+  "findings": [
+    {
+      "id": "0c5c3ce5b496262937d1cf26a3929e5f9ada8b2a5146fad6330f1c314d08260d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/450",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate roll call, 28-13)",
+      "note": "Voted aye on Second Reading of HB 958, Election Law Changes, as rewritten by the Senate Elections committee (Eighth Edition). The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v8.pdf) says a county board processes a voter registration application only if it affirmatively indicates the applicant is a United States citizen. If the question is blank, the board sends a notice and a form and the applicant must give a statement under penalty of perjury within 30 days. The same text bars motor-vehicle office staff from proceeding with a registration unless the applicant affirmatively states citizenship. It also requires the State Board to set a process to remove voters flagged as possible non-citizens by a federal database, and sets weekly removal of deceased voters. The bill does not add a photo ID or documentary proof-of-citizenship requirement in the text reviewed. The same roll-call list shows aye on motions to table amendments 2, 3, 6, 7, 8, 9 and 10, and aye on amendment 5. The bill was ratified 2026-08-06, vetoed 2026-08-17, and returned to the House (placed on calendar 2026-09-02).",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of possible non-citizens from voter rolls",
+        "voter-roll list maintenance",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:35.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5785719e0ca5e33039e646579b55bf9d78d068b0b62b3112c9680b5ce0a5236",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S1084",
+      "date": "2026-05-18",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-1084-2025",
+      "act": "sponsor",
+      "motion": "SB 1084 Reduce Early Voting Period, filed 5/18/2026 (named as a primary sponsor with two others)",
+      "note": "The filed bill text (https://www.ncleg.gov/Sessions/2025/Bills/Senate/HTML/S1084v0.html) names Senators Hollo, Daniel, and Overcash as primary sponsors. It shortens the early voting period. It has no voter ID or citizenship provision in the lines checked. Last action 5/22/2026: re-referred to the Elections committee. Saved as a related election-law item, not as an ID item.",
+      "subjects": [
+        "early voting period (related election law)",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:35.779Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "citizenship question on voter registration",
+        "voter-roll checks and list maintenance",
+        "non-citizen voting",
+        "election law changes in general",
+        "early voting period"
+      ],
+      "places": [
+        "in scope: ncleg.gov biography page https://www.ncleg.gov/Members/Biography/S/450 names Senator Mark Hollo, District 45; Ballotpedia https://ballotpedia.org/Mark_Hollo says he is on the Nov 3, 2026 general-election ballot for NC Senate District 45 (his March 3, 2026 primary was canceled, so he advanced unopposed)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "NC General Assembly member page, introduced and sponsored bills https://www.ncleg.gov/Members/IntroducedBills/S/450 (no voter ID or proof-of-citizenship bill found; two election-related and one border bill reviewed)",
+        "NC General Assembly roll-call votes https://www.ncleg.gov/Members/Votes/S/450 (reviewed all; one voting-rules bill with roll calls: HB 958)",
+        "NC General Assembly bill pages and text for SB 1084, SB 153, HB 958",
+        "Ballotpedia https://ballotpedia.org/Mark_Hollo (no issue statements or campaign themes on the subject)",
+        "official site: the legislature biography page is the only official page; it has no issue statements. No separate campaign site found (guessed domains did not resolve)",
+        "not reviewed: https://www.facebook.com/mark.hollo.1 (social media, login-walled)",
+        "not reviewed: https://www.facebook.com/profile.php?id=61555923449894 (social media, login-walled)",
+        "news search: not done, the shared web-search budget was used up when I tried; own-words search through news is a gap",
+        "own words on the subject: nothing found in the places reached"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:18:35.779Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election security laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms State Senate District 45 seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "NC legislature introduced-bills page https://www3.ncleg.gov/Members/IntroducedBills/S/450 (his only election-related bill is SB 14, a constitutional amendment to repeal the literacy test; it is not about ID or citizenship, so not saved)",
+        "Senate caucus member page https://ncstatesenate.com/members/mark-hollo/ (nothing on the subject)",
+        "news searches (2): nothing from him on the subject",
+        "campaign site: none found",
+        "not reviewed: NC roll calls on other members' election bills (no vote on file given; not searched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:25:17.955Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

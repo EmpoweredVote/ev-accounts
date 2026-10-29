@@ -1,0 +1,101 @@
+{
+  "politician_id": "b9cb31c9-15e0-405d-a8a0-d64850bf0955",
+  "findings": [
+    {
+      "id": "182bcc1fbd65860bab6193bfce867d1f922e575073b86cd7baced956e0b6126a",
+      "kind": "record",
+      "url": "https://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "SB 7 passed on third reading (Record 848), 78 yeas, 64 nays",
+      "note": "Voted nay on House passage of SB 7 (2021 regular session), a bill described in its caption as relating to election integrity and security, with new criminal offenses; the House text includes a section on the form of identification presented.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:14:52.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b513780c2f4c120876da2e20f792de4a9580c5a74397d4d3eb50285465ca682b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB568",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-568-2025",
+      "act": "author",
+      "note": "Filed HB 568 (2025 session) on registering voters at a polling place. As filed, a person could register and vote at the polling place by showing a Texas driver's license or state ID with a current address, or a utility bill together with a license, passport or military photo ID. Referred to the Elections Committee 2025-03-03.",
+      "subjects": [
+        "ID to register at the polling place",
+        "documents accepted as ID",
+        "utility bill as ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:14:52.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "934a920c0845dba27725d4965e836ba624459e42e4d8bf8f108274b49bcc73fa",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB584",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-584-2025",
+      "act": "author",
+      "note": "Filed HB 584 (2025 session) on online voter registration. Applicants with a state driver's license or ID card consent to use of its signature; applicants without one print, sign and submit the application. Referred to the Elections Committee 2025-03-03.",
+      "subjects": [
+        "voter registration identification",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:14:52.693Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documents accepted as ID",
+        "ID for registering at a polling place",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "Ballotpedia (confirms sitting Texas House member, District 105, on the 2026-11-03 general-election ballot; her candidate survey has nothing specific on voter ID)",
+        "official House biography page https://house.texas.gov/members/3455/biography (nothing on the subject)",
+        "campaign site https://terrymeza.com/ (priorities page: nothing on the subject)",
+        "Texas Legislature Online bill pages for her 2025 election bills (HB 522, HB 545, HB 568, HB 584, HB 1406)",
+        "House Journal 87th session day 42 (SB 7 record vote)",
+        "House Journals 87th second called session days 4 and 6 (SB 1 votes; she was recorded absent, no statement of vote by her)",
+        "two web searches on her name plus the subject words (no own-words statement found)",
+        "debate or interview video: none found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:14:52.693Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

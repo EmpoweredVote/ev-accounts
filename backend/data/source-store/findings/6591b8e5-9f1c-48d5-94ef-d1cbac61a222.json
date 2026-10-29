@@ -1,0 +1,67 @@
+{
+  "politician_id": "6591b8e5-9f1c-48d5-94ef-d1cbac61a222",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Willis'), linked to Inga Willis (district 55) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Branch page confirming 2026 general-election candidacy for House District 55",
+        "campaign site ingawillis.com: blocked/unusable (redirects to a domain-for-sale page)",
+        "House press releases page (nothing on the subject)",
+        "blocked: Ballotpedia (page returned empty to the fetch tool; a browser-agent retry was not attempted because it would get around the site's bot check)",
+        "not reviewed: legis.ga.gov bill pages (need a login token); no ID-bill sponsorship found through news and bill-tracker searches",
+        "news searches: nothing on the subject by her; Branch summary line about election integrity is the outlet's wording, not her words, so not saved"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.671Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

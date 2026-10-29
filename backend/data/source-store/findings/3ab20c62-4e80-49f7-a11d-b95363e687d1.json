@@ -1,0 +1,164 @@
+{
+  "politician_id": "3ab20c62-4e80-49f7-a11d-b95363e687d1",
+  "findings": [
+    {
+      "id": "668fefbfd6995d5917e8f6d4d65ffa510fd72616c46706f6df834e3586a893b9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, second reading",
+      "note": "Roll call lists Jeffers among the No votes (66 to 47). The bill digest says the bill extends the time to show ID after a provisional ballot, requires photo ID or an affidavit for overseas military ballots, requires an affirmative citizenship statement on voter registration, limits who may hand-deliver an absentee ballot, and changes removal of non-citizens from voter rolls. Digest: https://webservices.ncleg.gov/BillDigests/2025/H958",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID for military-overseas ballot",
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "absentee ballot delivery",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:42:24.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "02ba828cfcba4edaa6f37c0fa4614bcb8f20ea5c75ba614a13d81f359cf904a8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, motion to concur with the Senate version",
+      "note": "Roll call lists Jeffers among the No votes (62 to 47). Same bill as above; the bill was later vetoed by the Governor on 2026-08-17 per https://www.ncleg.gov/BillLookUp/2025/H958.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "ID for military-overseas ballot",
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "absentee ballot delivery",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:42:24.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08c185b631e911462e4e409e5215edab1f3be96d8f4391e699a73729737c2786",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "nay",
+      "motion": "Third Reading, SB 921 Const. Am./Require Photo ID For All Voters (House roll call #810, 73 ayes, 45 noes)",
+      "note": "House third-reading vote on SB 921, a state constitutional amendment requiring photo ID for all voters. The roll call transcript lists Ray Jeffers among the noes. The bill became SL 2024-58.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for all voters including mail ballots",
+        "state constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:44:00.112Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot ID cure",
+        "ID with absentee or mail ballot",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Ray_Jeffers (NC House District 2, on the Nov 3, 2026 general-election ballot; the March 3, 2026 primary was canceled) and https://www.ncleg.gov/Members/Biography/H/805",
+        "On the Record (0 appearances; script run with --names)",
+        "official site and campaign site: not reviewed (no URL found; search budget used up, so no search was possible)",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/805 (2025 list: no bill on voter ID or citizenship; HB 93 repeal of literacy test not on the subject)",
+        "NC General Assembly votes https://www.ncleg.gov/Members/Votes/H/805 (HB 958 votes saved; page text only partly read by the fetch tool, last 30k characters not read)",
+        "Ballotpedia: nothing on the subject",
+        "news search: not reviewed (web search budget exhausted)",
+        "own words (questionnaires, debates, interviews, posts): nothing found; no source reachable without search"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:42:24.783Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks and non-citizen voting",
+        "election laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings, script returned no appearances)",
+        "Ballotpedia https://ballotpedia.org/Ray_Jeffers (member of NC House District 2, on the 2026-11-03 general ballot; nothing on the subject)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/805 (member page confirms the seat)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/805: no bill on ID, citizenship or voting rules",
+        "campaign site https://rayjeffers.com: nothing on the subject",
+        "ncleg.gov SB 921 bill page https://www.ncleg.gov/BillLookUp/2023/S921 and House roll calls 809 and 810 of 2024-12-11",
+        "web searches on the name plus voter ID and photo ID (one search covering this member, one covering the other two members of this batch): no own words found; legiscan.com was blocked: https://legiscan.com/NC/bill/S921/2023"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:44:00.112Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

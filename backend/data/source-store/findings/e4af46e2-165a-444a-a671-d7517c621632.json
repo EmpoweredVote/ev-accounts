@@ -1,0 +1,181 @@
+{
+  "politician_id": "e4af46e2-165a-444a-a671-d7517c621632",
+  "findings": [
+    {
+      "id": "af98d36f971e4d4364eb2aea2bb4147e36e1117712af248b2689724cc1806cd5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override, Roll Call #596 (Senate Bill 747, Elections Law Changes)",
+      "note": "House roll call on overriding the Governor's veto of SB 747 (passed 72 to 44). The roll call lists von Haefen among the Noes. The ratified bill text (ncleg.gov/Sessions/2023/Bills/Senate/PDF/S747v5.pdf) includes provisions that require photo identification for same-day registration at early voting, a photo ID check as a ground for challenging a voter, and notation of the type of ID proof shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:25.126Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5056faa6d72f858422fa016a229c38f4999839f9c9de91de206ae461ba622703",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading, Roll Call #758 (House Bill 958, Election Law Changes)",
+      "note": "House second-reading vote on HB 958, a broad elections bill. The roll call lists von Haefen among the Noes. The bill text (Eighth Edition) includes a requirement that a voter registration application affirmatively state US citizenship, a sworn citizenship statement when the answer is blank, citizenship questions at drivers license offices, and a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:25.126Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1481cbbce129a2d02bff0441150939e49451575ccb42b47d65ae4a39f6b28c2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Motion 11 Concur, Roll Call #801 (House Bill 958, Election Law Changes)",
+      "note": "House vote to concur in the Senate version of HB 958 (passed 62 to 47). The roll call lists von Haefen among the Noes. The bill was vetoed 08/17/2026 per the bill page. Provisions on citizenship on registration forms and removal of possible non-citizens from voter rolls are described in the second-reading entry.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:25.126Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "f808c8be3bfaf8e7481e39605c65ae163d61a3465238ed2606526f2ed64eda61",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-H-278-2025",
+      "act": "sponsor",
+      "note": "Listed among the co-sponsors of House Bill 278, Protect Military Votes. The bill would write into state law that a military-overseas voter returning a ballot does not have to include a photocopy of photo ID or an ID affidavit.",
+      "subjects": [
+        "photo ID with mail or military-overseas ballots",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:06:00.432Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or no-ID voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Julie_von_Haefen) names her as NC House District 36 incumbent on the Nov 3 2026 general-election ballot; primary was canceled",
+        "On the Record (0 appearances)",
+        "Ballotpedia (no issue positions on subject; she has not completed the 2026 survey; 2020 survey has nothing on subject)",
+        "ncleg.gov bill pages and roll calls for S747 (2023) and H958 (2025)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/662 (HTTP 500); https://www.ncleg.gov/Members/Biography/H/786 (HTTP 522)",
+        "not reviewed: official site and campaign site (juliefornc.com) subject-word search; web search budget was used up so no news search or own-words search was possible",
+        "not reviewed: sponsorship list search for her name on other elections bills",
+        "own words: nothing on the subject found (no search possible)"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:13:25.126Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or military-overseas ballots",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting House member, on the 2026 general election list; nothing on the subject)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/743 (member page returned no usable text)",
+        "campaign site: not reviewed, none located",
+        "legislature bill pages: H278 (2025) fetched, co-sponsor list and bill text",
+        "news search on name plus voter ID words: no quotes of her found",
+        "Indy Week candidate questionnaires 2020 and 2022: nothing on the subject in the fetched text"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:06:00.432Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

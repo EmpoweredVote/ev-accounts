@@ -1,0 +1,187 @@
+{
+  "politician_id": "f6a9e3a7-cf2c-40e5-97b9-3af9b65b838f",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bb81a7ab84c52e1b280b047739cb45d865c32785d587536defda58ae69153ce",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "sponsor",
+      "note": "Listed among the many co-sponsors (not a primary sponsor) of HB 589 (VIVA, Voter Information Verification Act). The filed bill text says it requires voters to provide photo identification before voting and creates a voter information verification advisory board. Date is the date of the filed bill text.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo identification before voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:51.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04f4870871c777d0b1b51bfc371b431519588ddc9a4f947f57aadd59a75c4a93",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/663",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (vote 758)",
+      "note": "Voted aye on second reading. The ratified bill includes a requirement that a voter registration application affirmatively state US citizenship (a missing answer triggers a notice and a sworn statement), and a process to remove voters flagged as possibly non-citizens by a federal database. Passed 66 to 47. Later vetoed by the governor on 2026-08-17.",
+      "subjects": [
+        "non-citizen voting and voter-roll checks",
+        "citizenship statement on voter registration",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:51.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3e63a606c8af9905c5a8b056d1746fab387ad5cdf072fbf10e6c420077cfb89",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/663",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote 801)",
+      "note": "Voted aye on the House concurrence vote with the Senate version of HB 958 (citizenship statement on voter registration; removal process for voters flagged as possibly non-citizens). Passed 62 to 47. Vetoed by the governor on 2026-08-17 per the bill page; no override found on that page.",
+      "subjects": [
+        "non-citizen voting and voter-roll checks",
+        "citizenship statement on voter registration",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:51.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo identification before voting",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election law changes in general",
+        "mail or absentee ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id; name-only search also returned 0)",
+        "Ballotpedia https://ballotpedia.org/Mark_Brody (confirms sitting NC House District 55, term ends 2027, did not file for 2026 re-election; no voter ID content)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/663 (confirms Rep. Mark Brody, District 55)",
+        "ncleg.gov introduced bills 2013 to 2025 https://www.ncleg.gov/Members/IntroducedBills/H/663 (election bills found, none on ID or citizenship)",
+        "ncleg.gov bill pages H589 (2013), H451, H185, H794, H509 (checked text; only H589 is on the subject)",
+        "ncleg.gov member votes 2025-2026 session https://www.ncleg.gov/Members/Votes/H/663 (HB 958 votes found; page shows current session only, so 2013 and 2015 floor votes not reviewed)",
+        "ncleg.gov HB 958 bill page and ratified text",
+        "blocked: https://www.ncleg.gov/Members/ContactMember/H/663 (403)",
+        "blocked: https://x.com/ncrepmarkbrody (404, no readable content)",
+        "blocked: http://markbrody.com/ and http://www.markbrody.com/ (404, campaign site gone)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: official legislator page own-words"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:18:51.412Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "politician_id": "2af8f7d8-79ac-4668-9771-fdfff27ecc6c",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('OLSON'), linked to Justin Olson (district 10) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('OLSON'), linked to Justin Olson (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('OLSON'), linked to Justin Olson (district 10) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88a7da87cd0c8e4c734c60ffcee1ceea7201386d2f7deb27a668b8c889f53e2c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83527",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2001S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Justin Olson') on the official bill page; linked to Justin Olson via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('OLSON'), linked to Justin Olson (district 10) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('OLSON'), linked to Justin Olson (district 10) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:53:15.881Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general",
+        "ballot collection"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/justin-olson shows him as a candidate for Arizona House District 10 on the 2026 general-election ballot; https://en.wikipedia.org/wiki/2026_Arizona_House_of_Representatives_election shows him as the incumbent District 10 primary leader",
+        "blocked: https://ballotpedia.org/Justin_Olson (empty page returned)",
+        "not reachable: https://www.votejustinolson.com (site does not resolve)",
+        "not reachable: https://www.azhouse.gov/members/justin-olson (404)",
+        "not reachable: https://www.azleg.gov/legislator-profile/?legislatorId=2144 (404)",
+        "https://ontheissues.org/Economic/Justin_Olson_Government_Reform.htm and https://ontheissues.org/senate/Justin_Olson.htm: lead only; the originals (a 2022 campaign site and a 2021 newspaper story) could not be reached, so nothing saved from them",
+        "https://ivoterguide.com/candidate/2164/race/1151/election/210: questionnaire item on photo ID and citizenship shown as not answered; nothing on the subject",
+        "https://azfree.org/blog/category/elections/: nothing on the subject",
+        "web searches (5): news and statement searches found no own-words statement by him on the subject outside the bill votes already on file",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:06:29.829Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

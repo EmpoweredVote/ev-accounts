@@ -1,0 +1,31 @@
+{
+  "politician_id": "65a0990b-5a00-4f27-b395-edc42d08ba99",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Branch page confirming 2026 general-election candidacy for House District 126",
+        "Wikipedia page for office confirmation (lead only)",
+        "House press item on HB 40 (does not name him)",
+        "blocked: Ballotpedia (page returned empty to the fetch tool; a browser-agent retry was not attempted because it would get around the site's bot check)",
+        "not reviewed: legis.ga.gov bill pages (need a login token); no ID-bill sponsorship found through news and bill-tracker searches",
+        "news searches: he is listed as sponsor of 2025 bills on the State Election Board (HB 203, HB 403, HB 503) per a bill tracker; these are about board structure, not ID or citizenship, so not saved",
+        "campaign site lcmyles.com: not found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.673Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

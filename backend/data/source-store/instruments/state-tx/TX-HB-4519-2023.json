@@ -1,0 +1,46 @@
+{
+  "id": "TX-HB-4519-2023",
+  "scope": "state:tx",
+  "title": "HB 4519 (88R): Relating to unlawful altering of election procedures.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4519",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB4519",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB04519I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1: rewrites Election Code 276.019: bars public and election officials from altering election standards or procedures not expressly authorized; secretary of state written order to correct; referral to attorney general after two days; civil penalty $1,000 per day after day two, rising to $5,000 per day after day seven; attorney general may sue; penalties go to general revenue; documents not public information until certain determinations.\n(other) Sec 2: effective date September 1, 2023.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Jetton, Jacey",
+      "role": "author",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Bumgarner",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Hayes",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Stucky",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Thimesch",
+      "role": "co",
+      "version": "Introduced (only version)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

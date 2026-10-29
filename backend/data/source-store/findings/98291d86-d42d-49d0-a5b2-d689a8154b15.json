@@ -1,0 +1,103 @@
+{
+  "politician_id": "98291d86-d42d-49d0-a5b2-d689a8154b15",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "0f719f853955efad67919dff725351b07a9b0950c75ba9e5059d7b088c65e3c1",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4033",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4033-2025",
+      "act": "sponsor",
+      "note": "Home rule petition, filed by her and Rep. Mike Connolly, to give non-citizen residents of Somerville the right to vote in municipal elections. Referred to Election Laws on 2025-04-17. Local approval was received, and on 2026-04-02 it went to a study order. The date is the referral date shown on the page.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:31:43.616Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Erika_Uyterhoeven names her as a sitting member of the Massachusetts House (27th Middlesex) and a candidate on the 3 November 2026 general-election ballot for State Senate, 2nd Middlesex District",
+        "Ballotpedia (fetched; nothing on the subject)",
+        "Wikipedia (fetched; nothing on the subject)",
+        "On the Record (extract-otr: 0 appearances, 0 sources)",
+        "blocked: https://malegislature.gov/Legislators/Profile/EAU1 (404; legislator profile URL not found, bill sponsorship list not reached)",
+        "not reviewed: official legislature bill pages for sponsorships on the subject",
+        "not reviewed: official site and campaign site (guessed domains did not connect; could not locate the real address)",
+        "not reviewed: news search on her name plus subject words (web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:16:50.237Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting in local elections",
+        "mail-ballot ID",
+        "election integrity bills",
+        "voting rights of people with felony convictions"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/E_U1/ (confirms her as 27th Middlesex representative; sponsored list read)",
+        "bill page https://malegislature.gov/Bills/194/H4033",
+        "two news searches on name plus voter ID, elections and non-citizen voting: no direct quote from her found",
+        "blocked: https://app.legiplex.com/profile/erika-uyterhoeven-12111/ma/legislatures/2025/2025-r/legislation/page/19 (403)",
+        "cosponsored list: not reviewed (the cosponsor page returned the sponsored tab)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:31:43.616Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

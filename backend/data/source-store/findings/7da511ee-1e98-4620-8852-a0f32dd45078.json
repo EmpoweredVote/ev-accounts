@@ -1,0 +1,47 @@
+{
+  "politician_id": "7da511ee-1e98-4620-8852-a0f32dd45078",
+  "findings": [
+    {
+      "id": "3e72f33fb8fadd3dc1d1b371fac879d523d682c3db1672531e1b1c5118ea05f6",
+      "kind": "own-words",
+      "url": "https://www.ericphillipsforva.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Protecting the integrity of our elections is protecting the foundation of our Republic. As Delegate, Eric is leading the charge in fighting for voter ID laws and will stand up to protect our elections from interference.",
+      "note": "Campaign site election-integrity section, written in the third person in his name.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.989Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "places": [
+        "campaign site https://www.ericphillipsforva.com",
+        "Ballotpedia (nothing on the subject)",
+        "one web search",
+        "blocked/not reviewed: lis.virginia.gov (not fetched per instruction)",
+        "not reviewed: On the Record extract script (repo scripts not run)",
+        "not reviewed: https://vpap.org/legislators/380864-eric-phillips (HB2672, HB1657 seen only in a search summary)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:37.989Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

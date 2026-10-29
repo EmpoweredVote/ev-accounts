@@ -1,0 +1,27 @@
+{
+  "id": "VA-HB-1170-2024",
+  "scope": "state:va",
+  "title": "HB 1170 (2024 Regular Session (LIS session code 241)): Elections; conduct of election, provisional voting procedures, type of identification to be noted.",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1170",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+mbr+HB1170",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+HB1170",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+ful+HB1170+pdf (introduced PDF; not read)"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) § 24.2-653 A (as introduced; new words kept)\n(quote) The officers of election shall note on the green envelope whether or not the voter has presented one of the specified forms of identification or signed the required statement in lieu of presenting one of the specified forms of identification. If the voter has presented one of the specified forms of identification, the officers of election shall note on the green envelope the type of identification presented. The officers of election shall enter the appropriate information for the person in the precinct provisional ballots log in accordance with the instructions of the State Board but shall not enter a consecutive number for the voter on the pollbook nor otherwise mark his name as having voted.\n(other) Only § 24.2-653 is amended; no other subject.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "H. Otto Wachsmann, Jr.",
+      "role": "author",
+      "version": "Introduced (24103878D, 1/10/2024); subcommittee failed to recommend reporting (3-Y 5-N) 1/22/2024; left in House Privileges and Elections 2/13/2024"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

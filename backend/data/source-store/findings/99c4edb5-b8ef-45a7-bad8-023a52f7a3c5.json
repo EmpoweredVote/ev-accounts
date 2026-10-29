@@ -1,0 +1,32 @@
+{
+  "politician_id": "99c4edb5-b8ef-45a7-bad8-023a52f7a3c5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "swearing-in press release https://www.pahousegop.com/News/37828/Latest-News/Verobish-Sworn-In-to-Represent-79th-District-: confirms she is the sitting member for the 79th District (sworn in 2026-04-13 after a March 2026 special election); nothing on the subject",
+        "House caucus member page and news list https://www.pahousegop.com/Verobish/News: returned only generic site text, nothing on the subject",
+        "local newspaper swearing-in story https://www.altoonamirror.com/news/local-news/2026/04/pa-house-79th-verbonish-sworn-in/: nothing on the subject",
+        "letter to the editor backing her, https://www.altoonamirror.com/opinion/2026/02/verobish-will-bring-energy-values-to-post: written by someone else, nothing on the subject",
+        "third-party profile https://thecandidate.com/states/pa/legislature/house/79/andrea-verobish: nothing on the subject",
+        "blocked: https://ballotpedia.org/Andrea_Verobish (HTTP 403)",
+        "campaign site: not found, guessed address https://www.verobishforpa.com gave no response",
+        "news searches on name plus voter ID and election integrity: nothing by her on the subject",
+        "legislature bill pages: not searched, sponsorships linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:06:04.067Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "a3131d21-f3ad-4483-ac6d-13c9c7ecdd74",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/RGW1 (Representative Richard G. Wells, Jr., 7th Norfolk, sitting; 2026 ballot status not confirmed)",
+        "On the Record (0 appearances; extract-otr found nothing for this politician id)",
+        "malegislature.gov profile sponsored bills list: nothing on the subject (sponsored bills are memorials, pill presses, POST Commission, MBTA communities, Milton local petitions)",
+        "malegislature.gov cosponsored bills list: not reviewed: https://malegislature.gov/Legislators/Profile/RGW1/194/Bills/Cosponsored (the fetched page returned the profile with only the sponsored list)",
+        "blocked: https://ballotpedia.org/Richard_Wells (fetch returned empty)",
+        "blocked: https://ballotpedia.org/Richard_G._Wells_Jr. (fetch returned empty)",
+        "not reviewed: official house site, campaign site, news search (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:20.608Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in scope: https://www.ballotready.org/people/richard-gerard-wells-jr lists Richard G. Wells Jr. as a candidate for the 7th Norfolk seat in the November 3, 2026 general election; the Massachusetts legislature profile https://malegislature.gov/Legislators/Profile/RGW1 shows him as the sitting member",
+        "On the Record (0 meetings found)",
+        "Massachusetts legislature sponsored and cosponsored bill lists (194th Court): no election, ID or citizenship bills",
+        "Ballotpedia: blocked: https://ballotpedia.org/Richard_G._Wells_Jr. (no usable profile text returned)",
+        "Wikipedia profile: nothing on the subject",
+        "two news searches on name plus subject words: nothing from him",
+        "no campaign site found",
+        "not reviewed: Massachusetts House roll calls on voter-ID budget amendments"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:49:14.158Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

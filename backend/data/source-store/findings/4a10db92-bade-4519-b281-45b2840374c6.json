@@ -1,0 +1,228 @@
+{
+  "politician_id": "4a10db92-bade-4519-b281-45b2840374c6",
+  "findings": [
+    {
+      "id": "aeba47b2496192e3d78acf83130a197f6dbf5b72fe44b377f9f74809120a4746",
+      "kind": "record",
+      "url": "https://www.wccsradio.com/?p=99787",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "yea",
+      "motion": "House vote on a package of constitutional amendment bills, 2021 session (radio report published 2021-12-18; vote date not stated on the page)",
+      "note": "Local radio report says Struzzi voted for a package of amendments, including one requiring voters to show valid ID each time they vote, by mail or in person, with the state providing an ID to anyone without one, and one requiring audits of every election. Bill numbers are not given on the page. Reporter's account, not his own words.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "free state ID",
+        "election audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:27.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('STRUZZI'), linked to James Bruno Struzzi II (district 62) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('STRUZZI') on the official bill page; linked to James Bruno Struzzi II via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Struzzi'), linked to James Bruno Struzzi II (district 62) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Struzzi'), linked to James Bruno Struzzi II (district 62) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Struzzi'), linked to James Bruno Struzzi II (district 62) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.460Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('STRUZZI'), linked to James Bruno Struzzi II (district 62) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.854Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "free state ID",
+        "election audits",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site repstruzzi.com/about (confirms State Rep., 62nd District, Indiana County); repstruzzi.com/news returned no releases in the fetched text, press release list not reviewed: https://repstruzzi.com/Display/NewsGroup.aspx?ngid=22",
+        "blocked: https://www.pahouse.com/Struzzi/NewsCenter (404)",
+        "blocked: https://ballotpedia.org/James_Struzzi (not fetched; Ballotpedia returned an empty page for another member in this run)",
+        "web search on name plus voter ID: one local radio report found",
+        "WCCS radio 2026-02-12 report that he intends to run for re-election (confirms still in scope)",
+        "legislature bill pages: not reviewed (votes and sponsorships linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:43:27.545Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.699Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.460Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.854Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

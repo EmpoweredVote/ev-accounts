@@ -1,0 +1,190 @@
+{
+  "politician_id": "c6dcdb47-9bbd-4c9b-9169-77e6082f17b1",
+  "findings": [
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "00b492b3f1e76ca9f679ddd1c8e6811fe1ee85c6f8eed2a6201e252202b7fc7a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1670, proof of citizenship to verify eligibility to vote",
+      "note": "Listed as a coauthor of HB 1670 (author Leach), which would require documented proof of citizenship to register to vote. Referred to the Elections committee on 2025-03-12.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08288cca040a52f5843947be644b766e6a88eaa6ded503f6d92d094bd93822d2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 892, proof of citizenship to register to vote",
+      "note": "Listed as a coauthor of HB 892 (author Cain), which would require proof of citizenship to register to vote. Referred to the Elections committee on 2025-03-06.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7967addd265b46394d891856bb620dfe4b384add5ada0d8bfabd24a14382bbd0",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1312, proof of citizenship to verify eligibility to vote",
+      "note": "Listed as a coauthor of HB 1312 (author Hickland), on proof of citizenship to verify eligibility to vote. Referred to the Elections committee on 2025-03-10.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2379a3602821b5ec0c4c9c7ed5f621c7e7672e0b84bf00a1d97c51307cd4a83",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2245",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2245-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 2245, verification of citizenship status of registered voters",
+      "note": "Listed as a coauthor of HB 2245 (author Leo Wilson), which deals with checking the citizenship status of people already registered to vote. Referred to the Elections committee on 2025-03-14.",
+      "subjects": [
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d36cc2fa16d8cc10e8f74ecedcae643045cad0aabac23bb1ca09aa135eb170bf",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5337, proof of citizenship to register to vote",
+      "note": "Listed as a coauthor of HB 5337 (author Isaac), which would require proof of citizenship to register to vote and creates criminal offenses. The committee report was sent to Calendars on 2025-05-07.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b82c8a1ac9bdeeda29291b4a5859640081721369c80fc853fe2902bf2bee25a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "House cosponsor of SB 16, proof of citizenship to register to vote",
+      "note": "Listed as a House cosponsor of SB 16 (Senate author Hughes, House sponsor Isaac), which would require proof of citizenship to register, with a limited federal ballot for voters who cannot supply it. The committee report was sent to Calendars on 2025-05-25.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.678Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for House District 8)",
+        "Texas House member page and Texas Legislature Online bill history pages for HB 1670, HB 892, HB 1312, HB 2245, HB 5337, SB 16, HB 5138 (not on HB 5138)",
+        "campaign site codyharris.com home page: reached, nothing on the subject",
+        "news and web search on his name plus the subject words (no direct quote found; one search summary named a bill he does not author, so it was not used)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:28:23.678Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "politician_id": "5c36a94c-9006-4550-a37e-978a65d2725c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "1da6c9942949b2c01b1ba865c122b81f70655cfb0ecae459edda026bf0ef5b6a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/H565.html",
+      "date": "2015-01-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-565-2015",
+      "act": "author",
+      "note": "He filed H.565, An Act relative to absentee ballots, described as legislation to further regulate absentee voting. The text lets people employed by a city or town on election day, in running a primary or election, apply for and return an absentee ballot as if they were away from town. It sets no ID or citizenship rule. Referred to the Election Laws committee on 2015-01-20.",
+      "subjects": [
+        "absentee voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:15:40.977Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/DJH1 (Representative, 13th Suffolk, 194th General Court)",
+        "On the Record (0 appearances for this politician id)",
+        "malegislature.gov sponsored-bills page https://malegislature.gov/Legislators/Profile/DJH1/Sponsored: nothing on the subject",
+        "blocked: https://ballotpedia.org/Daniel_Hunt (fetch returned empty)",
+        "blocked: https://ballotpedia.org/Daniel_J._Hunt (fetch returned empty)",
+        "blocked: https://electionstats.state.ma.us/candidates/search?candidate_name=Daniel+Hunt (search tool did not load results; 2026 ballot status not confirmed)",
+        "not reviewed: official site and campaign site (not reached)",
+        "not reviewed: news search (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:09:03.269Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment votes",
+        "ID with mail or absentee ballot",
+        "absentee voting rules",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "state legislature member page https://malegislature.gov/Legislators/Profile/DJH1 (confirms the office; 194th-session bill list shows no readable titles, one study-order item for the Election Laws committee)",
+        "BallotReady page for him confirms a 2026 general-election candidacy for 13th Suffolk; no stance text on the subject",
+        "legislature bill page and bill text for H.565 of 2015 (his absentee-ballot bill)",
+        "three news searches on his name plus the subject words and his campaign site (nothing on the subject from him; no campaign site found)",
+        "Ballotpedia page returned no readable text",
+        "not reviewed: https://www.danhuntma.com (address does not exist)",
+        "votes already on file (H.4359 amendment 7, 2022) not collected again"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:15:40.977Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "politician_id": "62b453da-3dea-4177-82ba-9e4b78eb7691",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "b477cf0d4b88227994dde1c2cc4d718ad391391cd68af84e85ac390f913c799f",
+      "kind": "own-words",
+      "url": "https://lynch.house.gov/2026/5/rep-stephen-f-lynch-introduces-legislation-to-protect-mail-in-voting-against-unlawful-trump-interference",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "passage": "“While President Trump continues to propagate false claims about “the mail-in ballot hoax” and how “elections can never be honest with mail-in ballots/voting,” his unlawful executive order will actually undermine election integrity by disenfranchising senior citizens, veterans, overseas service members, disabled voters, and other American citizens who rely on mail-in voting to exercise their fundamental right to vote,” said Congressman Lynch.",
+      "note": "Statement issued in his name with his bill on mail-in voting. He argues an executive order on mail-in voting would harm election integrity and keep eligible citizens from voting by mail. It does not mention voter ID or proof of citizenship.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity",
+        "federal voter lists for mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:52:03.096Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2833cca8c69785c44aeb3599b179888ac570cfcac31fefb0faf2c54d1d2fe695",
+      "kind": "own-words",
+      "url": "https://lynch.house.gov/2026/5/rep-stephen-f-lynch-introduces-legislation-to-protect-mail-in-voting-against-unlawful-trump-interference",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "passage": "The Vote by Mail Protection Act will invalidate this latest illegal action by President Trump to rewrite election rules for political purposes and ensure that eligible Americans can cast their ballots by mail - just like he regularly does,” added Congressman Lynch.",
+      "note": "Quote in his official press release on introducing H.R. 8666. The same release quotes him saying the executive order would undermine election integrity by disenfranchising senior citizens, veterans, overseas service members and disabled voters who rely on mail-in voting.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity",
+        "mail-in voting rules",
+        "federal voter lists for mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:34.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f0ae250d4d1cf98e169120259753e3a74e835e8a22671e20100a51523321894",
+      "kind": "record",
+      "url": "https://lynch.house.gov/2026/5/rep-stephen-f-lynch-introduces-legislation-to-protect-mail-in-voting-against-unlawful-trump-interference",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8666-2026",
+      "act": "sponsor",
+      "note": "He introduced the Vote by Mail Protection Act (H.R. 8666). Per his press release, it would invalidate Executive Order 14399 on mail-in voting and bar the Postal Service and other federal agencies from spending funds to carry the order out. The order, as he describes it, would have the Postal Service refuse ballots from voters not named on newly created federal voter lists.",
+      "subjects": [
+        "mail-ballot rules",
+        "federal voter lists for mail ballots",
+        "election integrity",
+        "mail-in voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:58:34.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c644bee2302edbbd0785703634fa670e0f231f47554427989ffada5d0b6363fb",
+      "kind": "record",
+      "url": "https://lynch.house.gov/2026/5/rep-stephen-f-lynch-introduces-legislation-to-protect-mail-in-voting-against-unlawful-trump-interference",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Member of House Litigation Task Force supporting lawsuits against Executive Order 14399 (mail-in voting) and a 2025 election executive order",
+      "note": "His release says he is working with other Members of Congress to challenge the mail-in voting executive order in federal court, and that he supported earlier litigation against a 2025 executive order on state election procedures.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity",
+        "federal voter lists for mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:52:03.096Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID or request rules",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and federal voter lists",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Stephen_Lynch says he is on the Nov 3, 2026 general-election ballot for MA-08 and advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances for this politician id; name search also 0)",
+        "official site lynch.house.gov: homepage, press-release list page 1 (pages 2 and 3 returned no matching items), civil-rights issue page returned 404; site search page returned no results for voter ID, SAVE Act, proof of citizenship, election integrity",
+        "official press release of 2026-05-11 on mail-in voting (fetched)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/8666 (HTTP 403)",
+        "blocked: https://www.govtrack.us/congress/bills/119/hr8666 (JavaScript challenge page)",
+        "Ballotpedia page fetched (no voter ID or SAVE Act text found on it)",
+        "not searched: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: ontheissues.org, Vote Smart, vote411 (leads only; not fetched)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:52:03.096Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-in voting rules",
+        "federal voter lists for mail ballots",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site lynch.house.gov press-release list (one item on the subject, 2026-05-11)",
+        "Ballotpedia page (confirms he is on the 2026 general-election ballot for MA-8; lists his nay vote on H.R. 22)",
+        "news search on his name plus SAVE America Act (nothing from him found)",
+        "blocked: https://lynch.house.gov/search (access denied)",
+        "nothing on the subject: Boston.com 2026-02-13 roundup of state delegation reactions (page text not readable, no statement by him confirmed)",
+        "not reviewed: https://www.congress.gov (sponsorship list beyond H.R. 8666)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:58:34.567Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

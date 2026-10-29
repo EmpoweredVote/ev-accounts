@@ -1,0 +1,364 @@
+{
+  "politician_id": "ac732037-2172-4899-95c9-ca42ea69c4a0",
+  "findings": [
+    {
+      "id": "3bd534bc07368bc185977d9b36d5ecec6ed8aff80fc7eb1e68b137c72e45f518",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/indiana-attorney-general-and-former-secretary-of-state-todd-rokita-co-leads-22-states-in-calling-on-congress-to-pass-the-safeguard-american-voter-eligibility-save-act",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "“This commonsense piece of legislation is needed to ensure what should be two simple concepts - that our elections are secure and our elections are protected from illegal voters,” Attorney General Rokita said.",
+      "note": "Office release on the 22-state letter he co-led urging the U.S. Senate to pass the SAVE Act. Same release says the Act requires proof of citizenship to register.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e91cd4ace8a6f54c19ae1730bfba35675437d9a050d4120e785b5ca163c06a9",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/indiana-attorney-general-and-former-secretary-of-state-todd-rokita-co-leads-22-states-in-calling-on-congress-to-pass-the-safeguard-american-voter-eligibility-save-act",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "Under the SAVE Act, individuals must provide proof of citizenship when registering to vote.",
+      "note": "Statement issued by his office describing the SAVE Act he asked the Senate to pass; it adds the Act helps states remove non-citizens from voter rolls.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f4a8520acaab9bd08935ab2190d0ff0b1e310b964e56495438ffda07ae2c38e",
+      "kind": "record",
+      "url": "https://events.in.gov/event/indiana-attorney-general-and-former-secretary-of-state-todd-rokita-co-leads-22-states-in-calling-on-congress-to-pass-the-safeguard-american-voter-eligibility-save-act",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Letter to congressional leaders, co-led with Iowa's Attorney General and joined by 22 states, urging passage of the SAVE Act",
+      "note": "Co-led a 22-state attorneys general letter to congressional leaders calling on Congress to pass the SAVE Act (proof of citizenship to register).",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae1bc094978fd6579a889947da15737dea291ea8832b85211b9f903bc96ed7d8",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/secretary-of-state-diego-morales-asks-us-immigration-to-confirm-citizenship-status-of-indiana-voters",
+      "date": "2024-10-17",
+      "date_precision": "day",
+      "passage": "“Hoosiers deserve to know that only eligible voters are participating in our elections and that legitimate ballots are not being diluted by non-citizens,” Todd Rokita, Attorney General.",
+      "note": "Joint release with the Secretary of State on a request to the federal immigration agency to check citizenship of Indiana voters who registered without a state-issued ID, and of some overseas absentee-ballot requesters.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "voters who registered without a state ID",
+        "ID or citizenship with absentee ballot requests",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "41161f2d8371a9acb0b31fcecf5408d0b0e96cf8eec161e9a0c697497a24bb24",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/secretary-of-state-diego-morales-and-attorney-general-todd-rokita-continue-work-to-verify-thatindianavoters-are-us-citizens",
+      "date": "2025-04-21",
+      "date_precision": "day",
+      "passage": "“Following the Biden administration’s obstruction here, I expect that President Trump’s team will resolve this matter,” Attorney General Rokita said. “This lawsuit is another important step in ensuring the integrity of our elections. Hoosiers have a right to know that legitimate ballots are not being diluted by noncitizens. I promised that I would get citizenship information from USICS, and that is exactly what I am doing by filing this suit.”",
+      "note": "Release on the April 2025 lawsuit he and the Secretary of State filed against the federal Department of Homeland Security to get citizenship checks on voters who registered without state-issued ID.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "voters who registered without a state ID",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6882da712a3ff398b9802848ed21f4840d56d69983799c0d93a2d6c871b038c7",
+      "kind": "record",
+      "url": "https://events.in.gov/event/secretary-of-state-diego-morales-and-attorney-general-todd-rokita-continue-work-to-verify-thatindianavoters-are-us-citizens",
+      "date": "2025-04-21",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Lawsuit against the U.S. Department of Homeland Security to compel citizenship verification of Indiana voters who registered without a state-issued ID (filed April 2025 with the Secretary of State)",
+      "note": "He was a plaintiff, with the Secretary of State, in a federal suit seeking citizenship verification of voters who registered without state-issued identification. The release is dated 2025-04-21 and says the suit was filed that month.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "voters who registered without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b91066273c1cacfa18949b0b7f8d1040b0bac263c1463dd0b1ff1260bf43c48",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/attorney-general-todd-rokita-and-secretary-of-state-diego-morales-secure-landmark-settlement-to-safeguard-voter-rolls-identify-illegal-votes",
+      "date": "2025-12-03",
+      "date_precision": "day",
+      "passage": "“From day one, many individuals dismissed our work as a ‘witch hunt’—but the facts speak for themselves: non-citizen voting is real here in our state, and even one illegal ballot undermines the trust we are told to have in our election processes and even the Republic itself,” said Attorney General Rokita.",
+      "note": "Release announcing a settlement with the federal Department of Homeland Security that upgrades its SAVE citizenship-check tool for all states. Claims at least 165 non-citizens registered and 21 voted in Indiana, based on preliminary federal results. Date taken from the page's listed start date.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb511b35581e76fc87f3def5517b483cb733669ddc6be1087e71c25fbd62658d",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/attorney-general-todd-rokita-and-vigo-county-prosecutor-terry-modesitt-file-felony-charges-against-an-alleged-illegal-alien-for-registering-and-voting-multiple-times-in-indiana-elections",
+      "date": "2026-10-21",
+      "date_precision": "day",
+      "passage": "“This case shows exactly why we need the SAVE America Act and why Congress should act immediately to pass this common-sense legislation,” Attorney General Rokita said. “If a simple checkbox is enough for an illegal alien to register and vote in election after election, then others could easily do so as well, and many have across the country. If it’s happening in a state like ours, which has strong photo ID laws, imagine how rampant it is in a state like California, where basically nothing is done to safeguard its elections.”",
+      "note": "Release on felony charges against a man alleged to have registered and voted as a non-citizen. He calls for the SAVE America Act, which the release says would require documentary proof of citizenship such as a birth certificate or passport to register for federal elections.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)",
+        "photo ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd0a7f6c079ed2c92fada1ec212204980871d9377ee69ab3e1d32e2b0cfa0820",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/attorney-general-todd-rokita-and-vigo-county-prosecutor-terry-modesitt-file-felony-charges-against-an-alleged-illegal-alien-for-registering-and-voting-multiple-times-in-indiana-elections",
+      "date": "2026-10-21",
+      "date_precision": "day",
+      "passage": "“This critically important prosecution is just another step in the work I’ve been doing ever since I was Secretary of State, when I led the effort that made Indiana the first state in the nation to enact a photo voter ID law.  It is part of our office’s and the Secretary of State’s office’s ongoing efforts to ensure our elections are safeguarded and sends a clear message that voting by noncitizens will not be tolerated.”",
+      "note": "Same release. He ties the prosecution to his earlier work on Indiana's photo voter ID law. The release also says Indiana recently passed its own proof-of-citizenship law, which is in litigation, and that he has defended it successfully so far.",
+      "subjects": [
+        "photo ID at the polls",
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6458affced9884e5da5d2275b86bfe32a47f559521bbd23c28826f176999d677",
+      "kind": "record",
+      "url": "https://thehill.com/homenews/state-watch/5791320-gop-ags-save-act/amp/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "Letter from five attorneys general to Senate leaders Thune and Schumer backing the SAVE America Act (proof of citizenship for federal elections)",
+      "note": "The Hill reports he was one of five attorneys general who signed. The letter text quoted calls the bill a “critical piece of legislation” that protects the “exclusive right of American citizens to vote in American elections.” The article gives no separate quote from him.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "242cb93c4732538182096b083154ea343bf9e5af6fc6a0ac86302fbec54b5164",
+      "kind": "own-words",
+      "url": "https://events.in.gov/event/attorney_general_todd_rokita_leads_23-state_effort_to_combat_federal_takeover_of_states_elections",
+      "date": "2021-09-14",
+      "date_precision": "day",
+      "passage": "“This legislation is a misguided, clumsy, and heavy-handed effort to circumvent Supreme Court decisions, state sovereignty, and the will of the people,” Attorney General Rokita writes in the letter.",
+      "note": "Release on his letter, joined by 22 other attorneys general, opposing H.R. 4 (John Lewis Voting Rights Advancement Act). The release says the bill would make states get federal preclearance before changes such as voter identification requirements and voter list maintenance.",
+      "subjects": [
+        "federal preclearance of voter ID laws",
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c81ddc2d64fd45fcd0352398b8971fe63c4e6876f0706761c0b83c354e7930",
+      "kind": "own-words",
+      "url": "https://www.in.gov/sos/elections/ied-staff/news/2005-press-releases/for-immediate-release-april-12-2005",
+      "date": "2005-04-12",
+      "date_precision": "day",
+      "passage": "\"With photo ID at the polls, the legislators have worked to ensure that all voters' ballots will count the same on election day,\" Rokita said. \"The photo ID requirement will serve all Hoosiers and allow Indiana to have the most fair and reliable elections possible. Furthermore, the bill requires that no bureaucratic fee will stand in the way of any voter who wants to cast a ballot.\"",
+      "note": "As Secretary of State he praised Senate Enrolled Act 483, which requires photo ID at the polls. The release describes a provisional ballot for voters without ID (13 days to bring ID), a sworn affidavit for those who cannot afford ID or object on religious grounds, and a free state ID card.",
+      "subjects": [
+        "photo ID at the polls",
+        "voters with no ID (provisional ballot, affidavit, free ID)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61d01b431cb629dfdab9ab8b9eacf8469f6c76e0b2e708eca7a02510b170c7c4",
+      "kind": "own-words",
+      "url": "https://www.in.gov/sos/elections/ied-staff/news/2005-press-releases/for-immediate-release-april-12-2005",
+      "date": "2005-04-12",
+      "date_precision": "day",
+      "passage": "\"The legislators and I have worked diligently to educate the public about the absentee process and see to it that this necessary absentee reform be passed to prevent any future attempts at stuffing the ballot box through the mail,\" Rokita said.",
+      "note": "On Senate Enrolled Act 15 (absentee ballots), which the release says requires in-person absentee voters at the clerk's office to show ID like polling-place voters and requires sworn statements on absentee applications.",
+      "subjects": [
+        "ID with absentee ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cafb2961fef4ea6660be805bffa87a17b3070598fad373a2d85d6dc0d5347105",
+      "kind": "record",
+      "url": "https://www.in.gov/sos/elections/ied-staff/news/2005-press-releases/for-immediate-release-april-12-2005",
+      "date": "2005-04-12",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-483-2005",
+      "act": "other",
+      "motion": "Advocated Senate Enrolled Act 483 (photo ID at the polls) as Secretary of State",
+      "note": "The release says the bill was \"Advocated by Secretary Rokita\"; he did not vote on it. Act type is other because he was an executive-branch advocate.",
+      "subjects": [
+        "photo ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:13:41.833Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://www.in.gov/attorneygeneral/about-the-office/about-the-attorney-general/ (Todd Rokita was elected to office on November 3, 2020, having earned the highest number of votes of any state officeholder in Indiana history.) Sitting statewide office holder; not a 2026 candidate check made",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site newsroom https://www.in.gov/attorneygeneral/newsroom/ : not reviewed, list is script-loaded and shows no items to a plain fetch",
+        "Ballotpedia: blocked: https://ballotpedia.org/Todd_Rokita (fetch returned another person's page, Matt Hostettler, and a second try returned a different state senator page; unusable)",
+        "news search: not reviewed, session web search budget exhausted (200 shared searches used)",
+        "campaign site: not reviewed",
+        "legislature bill pages: not applicable (statewide executive office)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:47:37.487Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options (provisional ballot, free ID, affidavit)",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register or vote (SAVE Act, SAVE America Act)",
+        "voter-roll citizenship checks",
+        "non-citizen voting prosecution",
+        "federal preclearance of state election laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract script run)",
+        "Ballotpedia https://ballotpedia.org/Todd_Rokita (confirms Attorney General of Indiana since 2021-01-11, term ends 2029-01-08, re-elected 2024-11-05; sitting official, not on the 2026 ballot)",
+        "Attorney General newsroom https://www.in.gov/attorneygeneral/newsroom/ (list loads dynamically, no items readable; releases read as copies on events.in.gov)",
+        "State of Indiana events.in.gov copies of five Attorney General releases (2021, 2024, 2025, 2025, 2026), all fetched and used",
+        "Secretary of State 2005 release (Rokita as Secretary of State) on photo ID, fetched and used",
+        "Secretary of State DHS agreement release 2025-07-07, fetched: Rokita not quoted; not saved",
+        "The Hill 2026-03-19 on the five-attorney-general SAVE America Act letter, fetched and used",
+        "searches (5 used): SAVE Act statements, Attorney General releases on citizenship checks, 2026 proof-of-citizenship litigation, photo ID history, mail-ballot ID statements",
+        "blocked: https://indianacapitalchronicle.com/2026/09/10/federal-judge-dismisses-complaint-against-indiana-citizenship-verification-voting-law/ (403; also not about his own words)",
+        "blocked: https://www.wfft.com/news/attorney-general-rokita-fronts-save-act-letter-to-congress/article_f0479044-43a5-11ef-aa2e-c77fec94a63e.html (returned no text; the original release was used instead)",
+        "nothing found: his own words on ID with mail or absentee ballots as Attorney General (only the 2005 Secretary of State release)",
+        "not reviewed: his 2008 Supreme Court photo ID case filings (Crawford v. Marion County Election Board) and his years in Congress (2011-2019); not searched in depth",
+        "not reviewed: social media posts (https://twitter.com/agtoddrokita, https://truthsocial.com/@AGToddRokita)"
+      ],
+      "found": 14,
+      "at": "2026-10-27T15:13:41.833Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

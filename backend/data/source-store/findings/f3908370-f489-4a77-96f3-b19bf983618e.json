@@ -1,0 +1,222 @@
+{
+  "politician_id": "f3908370-f489-4a77-96f3-b19bf983618e",
+  "findings": [
+    {
+      "id": "80f316d441bacd17f6c9bced7e4b0cc9d4de694f657c7debfd130ac965388c3f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: nay (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "444484c9971656614944bbb13342df67b43f08cc98abad9828adb96963b51262",
+      "kind": "own-words",
+      "url": "https://augustafreepress.com/news/local-republican-early-voting-goes-on-too-long-pastors-can-vouch-for-you-to-buy-a-gun/",
+      "date": "2022-12-30",
+      "date_precision": "day",
+      "passage": "“A clerk of court shared with me that a pastor can vouch for their identity,” Runion said.",
+      "note": "Direct quote of Runion in an Augusta Free Press column (page updated 2023-04-10). Column also quotes him via an earlier article as saying \"folks in our religious communities don't have them\" about photo IDs. Column is an opinion piece critical of him; only his quoted words are used.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ways to prove identity",
+        "people without ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:56.695Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "463c796229464351fce6a0b657458055205217d66e5ec461fcea3784cebc91b1",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Runion'), linked to Chris S. Runion via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0802ef6d3e9f73903ce5e0ad91c204b102d486c6cb04ac871e32ffcde33dfe30",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Runion'), linked to Chris S. Runion via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc79c84ee1ba77281293311f61c642dfdbd0f85c110c1f82f78c824ffc5f96c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Runion'), linked to Chris S. Runion via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Runion'), linked to Chris S. Runion via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.787Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "people without ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws",
+        "early in-person voting length"
+      ],
+      "places": [
+        "On the Record extraction script not run (standing rule against running repo scripts)",
+        "web search: name plus voter ID (no official site found)",
+        "Augusta Free Press, 2022-12-30",
+        "not reviewed: Runion official House page, campaign site not found (campaign domain did not resolve)",
+        "blocked: https://lis.virginia.gov (page loads empty), https://legiscan.com (403)",
+        "Ballotpedia not fetched"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:31:56.695Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:53:04.516Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:58:27.787Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

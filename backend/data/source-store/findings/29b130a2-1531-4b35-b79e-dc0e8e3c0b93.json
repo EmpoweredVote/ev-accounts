@@ -1,0 +1,230 @@
+{
+  "politician_id": "29b130a2-1531-4b35-b79e-dc0e8e3c0b93",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('WAY'), linked to Michael Way (district 15) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('WAY'), linked to Michael Way (district 15) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('WAY'), linked to Michael Way (district 15) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d48e529891a34fee77018cecbe4efb307828438efa33d682c6983c67161832f8",
+      "kind": "own-words",
+      "url": "https://www.michaelwayforaz.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "If we want to restore trust in our nation, we must first restore trust in our elections.",
+      "note": "From the issues page of his campaign site. General election-integrity statement; no ID or citizenship rule named.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1efe63ea7f5d07967faf558256d07bccce63359375a546d3e6c0ebeb644752f",
+      "kind": "own-words",
+      "url": "https://www.michaelwayforaz.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We must keep our election officials accountable and demand full transparency.",
+      "note": "Same page. General statement on election officials; no ID or citizenship rule named.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54c3ee7c09fc5bc88376a7b2b5413a18d28f9dba8aa7dd31ebb6f1242220f325",
+      "kind": "own-words",
+      "url": "https://www.michaelwayforaz.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Improves standards for mail-in ballot signature matching.",
+      "note": "His campaign site's one-line description of HB2050, the Signature Verification Act. Related: how mail ballots are verified, not an ID rule.",
+      "subjects": [
+        "mail-ballot signature verification",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27e24df20d620dc92b1ca492f25672255a219ce803a5378e907e9656def0252c",
+      "kind": "own-words",
+      "url": "https://www.michaelwayforaz.com/issues/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Requires hand-count verification of ballots.",
+      "note": "His campaign site's one-line description of HB2046, the Verifying Arizona Votes Act. Related: counting, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "ballot counting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:08:25.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('WAY'), linked to Michael Way (district 15) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.883Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://theballotbrief.com/state/arizona/pinal-county/arizona-house-district-15 lists him as an incumbent on the 2026 general-election ballot for House District 15, per the certified candidate list",
+        "blocked: https://ballotpedia.org/Michael_Way (empty page)",
+        "campaign site https://www.michaelwayforaz.com/ (home page: only a scorecard label; issues page saved)",
+        "https://www.arizonaagenda.com/p/new-lawmaker-q-and-a-rep-michael (2025-02-24): nothing on ID or citizenship in his words",
+        "https://azcapitoltimes.com/news/2025/01/19/new-faces-michael-way/: nothing on the subject in his words",
+        "news search on his name plus the subject words (two searches)",
+        "not reviewed: Arizona Legislature bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:08:25.522Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.511Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

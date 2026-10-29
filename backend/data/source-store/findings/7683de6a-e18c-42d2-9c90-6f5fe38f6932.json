@@ -1,0 +1,196 @@
+{
+  "politician_id": "7683de6a-e18c-42d2-9c90-6f5fe38f6932",
+  "findings": [
+    {
+      "id": "fa0843c50492d58bb6eb7918cde41137ac3495f196568df209c76ac127b0ca2c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-sweet-s-bill-would-return-indiana-to-hand-marked-hand-counted-paper-ballots/",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "passage": "\"As I meet and talk with constituents in our area and across our state, election security is top of mind,\" Sweet said.",
+      "note": "Press release from the Indiana House caucus quoting her on why she filed a bill on how ballots are cast and counted. Related election-integrity material, not about ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting machines and paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:40:05.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "833a179d654de6df4182261651152dc237ef7cdad21bbe7aff242350d0864bf4",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-sweet-s-bill-would-return-indiana-to-hand-marked-hand-counted-paper-ballots/",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1286-2024",
+      "act": "author",
+      "note": "House Bill 1286, the Trust and Transparency in Elections Act, would remove electronic voting machines, electronic poll books and ballot marking devices and require hand-marked, hand-counted paper ballots made in Indiana with a watermark and serial numbers. The release says it was assigned to the House Elections and Apportionment Committee. Related election-integrity bill, not about ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting machines and paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:40:05.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "9e5f366dded6144cb22f0f8a5303f5abbf856d00d61d1af2ec9cf5b60e496723",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-sweet-reminds-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "passage": "Sweet said to register, Indiana residents must be at least 18 years old on or before the upcoming election, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before the next election, and not currently imprisoned after being convicted of a crime.",
+      "note": "Caucus press release in her name listing the requirements to register in Indiana, including a state license or state ID card and US citizenship. It describes existing rules and takes no side on changing them.",
+      "subjects": [
+        "ID needed to register to vote",
+        "citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:13.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e09e6d8473bca768e31afe636fcfed2a6752484c55fe0c220703cf78051fdac",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-sweet-reminds-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "passage": "\"IndianaVoters.com is your one-stop-shop when it comes to information about voting and Election Day,\" Sweet said.",
+      "note": "Same release; she points voters to the state site, which she says also explains how Indiana works to keep elections safe and secure.",
+      "subjects": [
+        "election security statements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:13.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1452edb77f9939c2c9a7e4246e5558bfd98ea384adcf3ddc276ce80ecc5fb3fa",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/in/2025/bills/INB00013404",
+      "date": "2025-02-17",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-137-2025",
+      "act": "sponsor",
+      "note": "Senate Bill 137 (2025), titled 'Voter registration.' The bill history lists her as House sponsor, with two other House members as cosponsors. It became Public Law 72 on 2025-04-16. The tracker page does not give the bill text, so what the bill changes is not confirmed here.",
+      "subjects": [
+        "voter registration bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:13.352Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting machines and paper ballots"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Lorissa_Sweet (House District 50, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances for this politician id)",
+        "official caucus member page https://www.indianahouserepublicans.com/members/general/lorissa-sweet (press release list reviewed; one election-integrity item found, nothing on ID or citizenship)",
+        "campaign site https://www.sweet4indiana.com/ (page text did not render without scripts; nothing readable on the subject)",
+        "blog http://lorissasweet.blogspot.com (nothing on the subject in page text)",
+        "Ballotpedia https://ballotpedia.org/Lorissa_Sweet (no candidate survey; nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Lorissa_Sweet (nothing on the subject)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_lorissa_sweet_1 (page needs scripts, no readable bill list)",
+        "blocked: https://legiscan.com/IN/legislator/lorissa-sweet/id/22155 (bot challenge page)",
+        "not reviewed: news search on name plus subject words (session web-search budget used up)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:40:05.898Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID to register to vote",
+        "voter registration bills",
+        "election security statements"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script, by id and by name)",
+        "Ballotpedia https://ballotpedia.org/Lorissa_Sweet (confirms sitting District 50 member, advanced from the 2026-05-05 primary, on the 2026-11-03 general ballot; nothing on the subject)",
+        "official caucus page https://www.indianahouserepublicans.com/members/general/lorissa-sweet/ (confirms office; nothing on the subject)",
+        "caucus press releases: 2023-10-04 voter registration deadline release read and saved; other news list pages not reviewed",
+        "bill sponsorship: SB 137 (2025) House sponsor shown on https://fastdemocracy.com/bill-search/in/2025/bills/INB00013404 (official Indiana legislature site iga.in.gov needs JavaScript and could not be read)",
+        "blocked: https://legiscan.com/IN/sponsors/HB1286/2024 (403); blocked: https://app.legiplex.com/profile/lorissa-sweet-11318/legislation?page=3 (403); blocked: https://open.pluralpolicy.com/in/bills/2025/SB137 (404)",
+        "old personal blog http://lorissasweet.blogspot.com: read, unrelated to the subject",
+        "no campaign site found; two news searches on her name plus voter registration and citizenship: nothing with her own words on the subject",
+        "roll calls not searched (already on file from the official feed)",
+        "ontheissues.org and Wikipedia: not used (lead only)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:37:13.352Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

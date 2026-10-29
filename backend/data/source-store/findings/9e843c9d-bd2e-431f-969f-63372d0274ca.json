@@ -1,0 +1,101 @@
+{
+  "politician_id": "9e843c9d-bd2e-431f-969f-63372d0274ca",
+  "findings": [
+    {
+      "id": "2348ed889d36563d9febead17eabf8675cfae0d36a7457daa01ac8703e73f40a",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: yea (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Askew'), linked to Alex Q. Askew via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.793Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (no repo scripts permitted)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "Ballotpedia profile (fetched by curl)",
+        "web searches on name plus voter ID words",
+        "campaign site https://alexaskew.com/ (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:05.436Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.520Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.793Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

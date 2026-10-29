@@ -1,0 +1,241 @@
+{
+  "politician_id": "1b14b507-4e91-4c97-aefd-1eec5bb072cf",
+  "findings": [
+    {
+      "id": "78d1635c97e1e32bcd662652c1db01b529f6ac5605005723c835aaa77a055545",
+      "kind": "record",
+      "url": "https://capitol-beat.org/?p=3793",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "sponsor",
+      "note": "Capitol Beat reports he sponsored SB 67, which would require absentee voters to give the number of their driver's license or official state ID card, or photocopies of a passport, employee ID card, utility bill or bank statement. The Senate passed it on 2021-02-23 (35-18 per Fox 5 Atlanta and the Georgia Recorder). Official legislature page could not be read.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "non-photo documents such as a utility bill",
+        "ID number to request a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:07.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d85b6f85634888360332b96bb51b37a76da66120efefbec7e53a2b374922ef7c",
+      "kind": "own-words",
+      "url": "https://capitol-beat.org/?p=3793",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "passage": "It’s about efficiency and security and election integrity and allowing the Georgia public to have confidence in the vote.",
+      "note": "Senate floor remarks on his SB 67 (absentee-ballot ID), as quoted by Capitol Beat News Service. Just before it he said, \"It’s not about disenfranchising voters,\" and \"It’s not about overburdening the electorate.\"",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:07.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68270bb62960507a134694e5911f1dfb6ae49cf3de8c86c83b5db8553990b3c4",
+      "kind": "own-words",
+      "url": "https://thecurrentga.org/2021/02/24/georgia-gops-push-to-restrict-ballot-access-flirts-with-worst-national-rank/",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "passage": "This is just a common-sense measure to adjust our current process for requesting an absentee ballot, to reflect the web portal that worked so well and get the board of elections people out of the middle of trying to verify (signatures),",
+      "note": "Senate floor remarks on SB 67, as quoted by the Georgia Recorder in a story republished on The Current GA (dated 2021-02-24). He describes ID at the time of requesting an absentee ballot as a replacement for signature checks by election boards.",
+      "subjects": [
+        "ID number to request a mail ballot",
+        "signature check replaced by ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:07.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64d070b762339a346b616131719330036d157017b567abff0cce8d795b84a24",
+      "kind": "own-words",
+      "url": "https://fox5atlanta.com/news/georgia-senate-approves-four-election-reform-bills",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "passage": "I disagree with his portrayal of what this bill is about. It's not about disenfranchising voters. It's not about overly burdening the electorate. It is about efficiency and security and election integrity.",
+      "note": "Senate floor reply to a colleague's criticism of SB 67, as quoted by Fox 5 Atlanta.",
+      "subjects": [
+        "ID with mail or absentee ballot",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:07.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Walker'), linked to LARRY WALKER III (district 20) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Walker'), linked to LARRY WALKER III (district 20) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Walker'), linked to LARRY WALKER III (district 20) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Walker'), linked to LARRY WALKER III (district 20) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cdf77c4c457877fb297f4ca4a428970349bdd30855f5edac4bb39cf8652fef4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "GA-SR-838-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (LC 47 4076); a later Senate Rules or committee version was not found.",
+      "note": "Named as co sponsor ('Walker III of the 20th') on the official bill text; linked to Larry Walker via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "ID number or ID copy with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status check: Ballotpedia (Larry Walker, Georgia Senate District 20, in office since 2015-12-18, Senate president pro tempore since 2026-01-12) shows him as the only general-election candidate for 2026-11-03 after advancing from the 2026-05-19 primary (https://ballotpedia.org/Larry_Walker_(Georgia))",
+        "On the Record (0 meetings found by extract-otr)",
+        "official Senate press pages (https://senatepress.net/tag/larry-walker): nothing on the subject; no campaign site could be reached from the Ballotpedia links",
+        "Georgia legislature: blocked: https://www.legis.ga.gov/legislation/59216 (SB 67 page loads only through a script; API returned 401); blocked: the official roll calls for SB 67 (2021-02-23) and for SB 202 (2021-03-25), so his own SB 202 votes were not read",
+        "bill trackers: blocked: https://legiscan.com/GA/bill/SB67/2021 and votes pages (403); https://open.pluralpolicy.com/ga/bills/2021_22/SB67 (404); https://justfacts.votesmart.org/bills/GA/2021/12/S (403); https://www.wabe.org/georgia-senators-pass-bill-to-require-id-for-absentee-voting/ (403); https://11alive.com article (403)",
+        "Ballotpedia page: nothing on the subject",
+        "news: Capitol Beat, Georgia Recorder (via The Current GA), Fox 5 Atlanta (2021 Senate floor coverage of SB 67): quotes and sponsorship saved; AJC page text was scrambled so no passage copied from it; the Augusta Press and Dawson News copies of the Capitol Beat story read",
+        "news searches on name plus voter ID, SB 202, citizenship (3 searches); nothing found after 2021 on the subject"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:43:07.301Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.414Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

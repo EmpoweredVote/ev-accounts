@@ -1,0 +1,244 @@
+{
+  "politician_id": "3736286a-44fb-42ad-8cd0-bcb6a4b985ea",
+  "findings": [
+    {
+      "id": "2aaf7ba5f5fa18e91f387c932f59d5ca17b22ed3f026b6b089f69f7791577360",
+      "kind": "own-words",
+      "url": "https://www.wuwm.com/wisconsin-state-assembly-district-23-candidates",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I also support voting reforms such as independent redistricting and rank-choice voting so that people have the power to choose their politicians, not the other way around, and they can vote incumbents out if they are not working on their behalf",
+      "note": "Her answer in the WUWM 2026 candidate questionnaire for Assembly District 23. It names redistricting and rank-choice voting; it does not mention voter ID or citizenship proof. The page shows no publication date.",
+      "subjects": [
+        "voting reforms",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:20.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dccf38ffb871dd8986fae982ed8dffc4981f7fc51e86122a027908367c09d0c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-941-2025",
+      "act": "sponsor",
+      "note": "AB 941, student identification used for voting. Andraca is among the Assembly members listed in the first history entry (introduced and referred to the Committee on Campaigns and Elections, 1/28/2026).",
+      "subjects": [
+        "student ID as voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:20.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Andraca') on the official bill page; linked to Deb Andraca via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ff0856102363887c14146ae12f952c4830db92d5a7fe5cdb6078572f5db54dc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "nay",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('ANDRACA'), linked to Deb Andraca (district 23) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('ANDRACA'), linked to Deb Andraca (district 23) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Andraca') on the official bill page; linked to Deb Andraca via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d276d5ce64efb2eb6909119f31c4e388580944bb124791374d00949f15781e07",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('ANDRACA'), linked to Deb Andraca (district 23) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('ANDRACA'), linked to Deb Andraca (district 23) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('ANDRACA'), linked to Deb Andraca (district 23) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voting reforms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/23/andraca/ (names her as the 23rd District representative; no election text)",
+        "official press release list https://legis.wisconsin.gov/assembly/23/andraca/news-updates/press-releases/ (11 releases, all on schools, guns, budget, health care and similar: nothing on the subject)",
+        "official headlines page (nothing on the subject)",
+        "candidacy: https://theballotbrief.com/state/wisconsin/milwaukee-county/wisconsin-assembly-district-23 and https://www.wuwm.com/wisconsin-state-assembly-district-23-candidates show her on the November 3, 2026 general election ballot",
+        "legislature page for AB 941 https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+        "blocked: https://ballotpedia.org/Deb_Andraca",
+        "blocked: https://bluevoterguide.org/district/WI/Wisconsin_State_Assembly_District_23/49772/589",
+        "campaign site address debandraca.com is a parked domain with nothing on it; no other campaign site found",
+        "two news searches on name plus subject words: no own words on voter ID found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:02:20.741Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

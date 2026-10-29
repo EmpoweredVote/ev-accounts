@@ -1,0 +1,153 @@
+{
+  "politician_id": "3f7bce23-9dbe-49a5-97b5-2ce4cb4a60c2",
+  "findings": [
+    {
+      "id": "97879a666874926cd6d49c103fad907791f82d782a2cb7544592707c118a8665",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=14842",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "passage": "I am grateful to Speaker Burns for naming me to serve in this capacity to help ensure our election systems are fair and secure.",
+      "note": "Statement issued with the House press release announcing his appointment to the House Blue-Ribbon Study Committee on Election Procedures. General election-integrity language; no mention of ID or citizenship. Fetch tool summarised the page and reported the sentence in two parts.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:51:22.891Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b493443be51c8ba2bf5c5de68d8c782c4ded12d59aa40514b374e64f38d6682",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=14842",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "passage": "I look forward to presenting our findings and building a fair, accurate and transparent system for all Georgia voters.",
+      "note": "Same press release and statement. Says he looks forward to the committee's findings; no mention of ID or citizenship. Passage came through the fetch tool's summary.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:51:22.891Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Momtahan'), linked to MARTIN MOMTAHAN (district 17) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Momtahan'), linked to MARTIN MOMTAHAN (district 17) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Momtahan'), linked to Martin Momtahan (district 17) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 Election Integrity Act",
+        "election integrity laws in general",
+        "study committee on election procedures"
+      ],
+      "places": [
+        "status: sitting state House member (district 17, in office since 2019), listed as unopposed in the 2026 primary and a candidate in the 2026 general election per search results; the 2026 general-election page timed out and was not confirmed by fetch (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-17/candidates/martin-momtahan)",
+        "On the Record (0 appearances found, script ran)",
+        "House press office release https://house-press.com/?p=14842 (saved)",
+        "House Blue-Ribbon Study Committee on Election Procedures report, February 2026 (read in full; names him as a member; its three recommendations cover paper ballots, QR codes and a new voting system, nothing on ID or citizenship, so not saved)",
+        "news search on name plus voter ID, citizenship, SB 202, election integrity (nothing further)",
+        "blocked: https://www.legis.ga.gov/ bill pages (load by script, no content; SB 202 member vote on 2021-03-25 could not be read)",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (HTTP 403)",
+        "blocked: https://ballotpedia.org pages (fetches returned empty)",
+        "not reviewed: study committee meeting videos and hearing transcripts, 2025-07-15 to 2025-10-16 (no video text reached)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:51:22.891Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.403Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

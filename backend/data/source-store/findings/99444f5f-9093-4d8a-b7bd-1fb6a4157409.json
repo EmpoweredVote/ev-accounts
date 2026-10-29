@@ -1,0 +1,241 @@
+{
+  "politician_id": "99444f5f-9093-4d8a-b7bd-1fb6a4157409",
+  "findings": [
+    {
+      "id": "44095078a7bd9a735767a4010b9273e77de0ae19c00ecb9fe6a39b4f0368af01",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/49/tranel/media/gzfhxuet/press-release-rep-tranel-supports-photo-id-amendment.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Photo ID is a common-sense safeguard that the people of Southwest Wisconsin appreciate and want to see continue as part of a secure election process in our state,” said Rep. Tranel. “It should be easy to vote but hard to cheat, and that's why this amendment should be adopted by the voters.”",
+      "note": "Official Assembly press release the day the Assembly passed the photo ID constitutional amendment resolution 54-45. He is quoted supporting the amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:53.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dda1a6cd10944cf5c0e665553340c05fba62ce16d91df058dc875d91d3d2a9c",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/49/tranel/media/gzfhxuet/press-release-rep-tranel-supports-photo-id-amendment.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "State Representative Travis Tranel (R-Cuba City), who has supported photo ID legislation during his tenure in office, was happy to cast his vote for the resolution approving the amendment, which passed 54-45.",
+      "note": "Same release (written by his office) states he has backed photo ID legislation throughout his time in office and voted for the amendment resolution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:53.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('TRANEL'), linked to Travis Tranel (district 49) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act / noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting Assembly member (District 49, in office since 2011) listed for the 2026-11-03 ballot (https://www.ballotready.org/people/travis-tranel)",
+        "not reviewed: On the Record extract script (the search agent may not run repo scripts)",
+        "official site https://legis.wisconsin.gov/assembly/49/tranel/ (home page): nothing on the subject; press-release list URL returned 404; one release found by search and fetched (see findings)",
+        "campaign site: not located (two guessed addresses did not load)",
+        "Ballotpedia: not reviewed, returns 403 for the other people in this batch, so not fetched",
+        "legislature bill pages for sponsorships: not reviewed, floor votes and sponsorships are linked separately",
+        "2 web searches on his name plus voter ID, photo ID, SAVE Act, citizenship, absentee: only the January 2025 release found; nothing on proof of citizenship",
+        "not reviewed: interview and forum videos"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:03:53.968Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.782Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "politician_id": "7c2a4bfe-f6e1-406f-ac8c-dfc849036a83",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Victoria_Garcia_Wilburn names her as Indiana House District 32 incumbent, on the Nov 3, 2026 general ballot after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances; extract-otr found nothing for this politician)",
+        "campaign site https://www.wilburnforindiana.com/ (home, about-1, legislation-passed-1, notable-works, faq): nothing on the subject",
+        "Ballotpedia: nothing on the subject (2022 and 2024 survey answers cover health, schools, gun safety)",
+        "not reviewed: Indiana General Assembly legislator and bill pages (https://iga.in.gov/legislative/2026/legislators/legislator_victoria_garcia_wilburn_1 returns only a script shell; blocked)",
+        "not reviewed: Indiana House minority caucus member page (https://www.indianahousedemocrats.org/members/house-district-32/ returned 404)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:40:31.729Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter-roll maintenance"
+      ],
+      "places": [
+        "in scope: caucus member page https://www.indianahousedemocrats.org/members/victoria-garcia-wilburn names her as state representative for Indiana House District 32; Ballotpedia shows her running for re-election on 2026-11-03",
+        "On the Record (0 meetings)",
+        "campaign site https://www.wilburnforindiana.com (home, about, bio, faq, legislation passed, notable works; nothing on the subject)",
+        "caucus news list for Rep. Garcia Wilburn (Medicaid and congressional map items only; nothing on ID)",
+        "Ballotpedia (sponsored-bill table and campaign themes not readable in the fetched text; nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "two news searches on name plus voter ID / SB 10 / HB 1264 (no article names her on the subject)",
+        "blocked: https://indianacapitalchronicle.com/race-details/state-house-district-32/ (403)",
+        "not reviewed: House Judiciary committee video; House floor debate on SB 10; ontheissues.org"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:16:02.573Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

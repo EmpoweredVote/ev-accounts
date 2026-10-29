@@ -1,0 +1,254 @@
+{
+  "politician_id": "55a096c9-54da-4217-8ce3-59ad3b832932",
+  "findings": [
+    {
+      "id": "6cfe20d48738d4d3b48ee42bbe3156aa6e1f1f22a261cd4a074addc0e3dc99e6",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31733/Kutz-Ecker-to-Introduce-Voter-ID-Legislation?SiteID=1",
+      "date": "2023-01-09",
+      "date_precision": "day",
+      "passage": "Every eligible person should have the right to vote and be able to exercise that right freely and with confidence that his or her vote counts. Eligibility needs to be established, however, through identification, which is not unlike the ID cards we need to show at a doctor’s office, a bank, or even a library, Kutz said.",
+      "note": "Caucus release on a proposed constitutional amendment to require voter ID at the polls, co-led with another member. The closing quotation mark is missing in the source text.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:52.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3aba6460533977ae178f8a04b919ae364a2035c78d809301f1f5c00e0decc2f6",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31733/Kutz-Ecker-to-Introduce-Voter-ID-Legislation?SiteID=1",
+      "date": "2023-01-09",
+      "date_precision": "day",
+      "passage": "The proposed amendment would allow for both photo and non-photo options to be on the list of acceptable forms of voter ID.",
+      "note": "Release issued in the names of the two sponsors. It describes the planned amendment as allowing both photo and non-photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo and non-photo ID options"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:52.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b9bc888bf1a45f8271b7adacd8a36adfdeb15b788876c81d44cd2708a15c060",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31733/Kutz-Ecker-to-Introduce-Voter-ID-Legislation?SiteID=1",
+      "date": "2023-01-09",
+      "date_precision": "day",
+      "passage": "Kutz and Ecker said they support making ID cards free to those who cannot otherwise afford them.",
+      "note": "Same release. The sponsors say they back free ID cards for people who cannot afford them.",
+      "subjects": [
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:52.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fe59c93d5b36361fed975a445aad19a931280d097517d6fa5da9329e6f5f786",
+      "kind": "own-words",
+      "url": "https://gantnews.com/2024/03/26/pa-house-republicans-to-use-discharge-resolution-process-to-advance-voter-id-constitutional-amendment/",
+      "date": "2024-03-26",
+      "date_precision": "day",
+      "passage": "“Voter ID is an easy way to encourage participation in elections while ensuring they are free, fair, safe and secure,” Kutz said.",
+      "note": "Direct quote at a press conference on using a discharge resolution to bring the voter ID constitutional amendment to a House vote. Date taken from the article's web address.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:52.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Kutz'), linked to Thomas Holden Kutz (district 87) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('KUTZ') on the official bill page; linked to Thomas H. Kutz via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78c10cf86069c50e4fa5f5fe08cf2b10bd3a06d43542c2a014a829b34baf0ad8",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as prime sponsor ('KUTZ') on the official bill page; linked to Thomas H. Kutz via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "123a25a1de0b20463e89e4ff40f03e528b107ce88dc59b853b64f3a8bcff6866",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as prime sponsor ('KUTZ') on the official bill page; linked to Thomas Holden Kutz via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KUTZ'), linked to Thomas Holden Kutz (district 87) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for those who cannot afford it",
+        "photo and non-photo ID options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://repkutz.com/about (no election content)",
+        "campaign site https://www.thomaskutz.com/ and its 2026 re-election post (nothing on the subject)",
+        "2026 candidacy: re-election announcement of 2026-01-16 (local21news) and The Ballot Brief page listing him on the 2026 District 87 ballot",
+        "caucus press release of 2023-01-09 (saved)",
+        "GantNews report of the 2024-03-26 press conference (saved)",
+        "blocked: https://penncapital-star.com/voting/pa-house-republicans-seek-to-move-voter-id-bill-forward/ (bot check)",
+        "not reviewed: https://therecord-online.com/site/?p=108521 (page not found)",
+        "blocked: https://ballotpedia.org/Thomas_Kutz (page came back empty)",
+        "web searches on name plus voter ID and bill number"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:06:52.690Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-29T14:14:50.850Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

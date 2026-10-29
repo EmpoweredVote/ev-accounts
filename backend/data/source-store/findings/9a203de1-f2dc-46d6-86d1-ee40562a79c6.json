@@ -1,0 +1,86 @@
+{
+  "politician_id": "9a203de1-f2dc-46d6-86d1-ee40562a79c6",
+  "findings": [
+    {
+      "id": "cfdcad1e923ec5f265bf5166321b07d5d028059ca21f2e1c96180f36e4548f41",
+      "kind": "own-words",
+      "url": "https://www.nextgov.com/people/2026/02/gabbards-expanded-role-election-security-draws-scrutiny/411295",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "President Trump's directive to secure our elections was clear, and DNI Gabbard has and will proudly continue to take actions within her authorities, alongside our interagency partners, including the FBI, to support ensuring the integrity of our elections.",
+      "note": "Statement from an ODNI spokesperson (issued for her office, not her own voice), reported by Nextgov. About general election integrity work; says nothing on ID or citizenship.",
+      "subjects": [
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:41:34.756Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6292e66381cb72aafe251e058242eb8526668addbaee96fb73f5bca7ff18485",
+      "kind": "own-words",
+      "url": "https://www.wpxi.com/news/politics/18th-district-race/with-18th-district-special-election-looming-voting-security-under-scrutiny/712497342/",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "passage": "Whether you’re protecting against hackers or those who are just questioning the outcomes of the election, you have a secure, auditable paper record of every single vote that’s cast,” said Gabbard.",
+      "note": "Quoted by WPXI while she was a House member, about her bill to replace paper-less voting machines or add a verified paper backup. Not about ID or citizenship; saved as related election-security material. Publish date taken from the page's metadata.",
+      "subjects": [
+        "voting machines and paper ballots (related)",
+        "election integrity (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:41:34.756Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a 2026 candidate and not a sitting member of Congress. Her House term (Hawaii 2nd district) ended January 3, 2021; she served as Director of National Intelligence from February 12, 2025 and resigned effective June 19, 2026 (page: https://en.wikipedia.org/wiki/Tulsi_Gabbard). Out of scope, so subject search stopped.",
+        "On the Record (0 appearances for this politician id)",
+        "web search: not run, session search budget used up",
+        "not reviewed: official site, congress.gov, Ballotpedia (stopped at scope check)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:15:27.526Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity (general)",
+        "voting machines and paper ballots (related)"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; sources show Tulsi Gabbard as Director of National Intelligence in 2026 (https://www.nextgov.com/people/2026/02/gabbards-expanded-role-election-security-draws-scrutiny/411295); she served in Congress for Hawaii's 2nd District until 2021. Not on any 2026 ballot found.",
+        "On the Record (0 appearances)",
+        "https://gvwire.com/2026/02/05/us-spy-chiefs-office-investigated-voting-machines-in-puerto-rico/ (only statements from her office, nothing from her on ID or citizenship)",
+        "web searches on name plus voter ID, citizenship, election integrity, paper ballots: no statement or bill by her on voter ID or proof of citizenship found",
+        "not reviewed: congress.gov bill list, official ODNI press page, social media posts, April 2025 cabinet meeting transcript"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:41:34.756Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

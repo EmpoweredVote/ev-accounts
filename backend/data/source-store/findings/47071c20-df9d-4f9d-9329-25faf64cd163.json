@@ -1,0 +1,438 @@
+{
+  "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district 29) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21a2498d56ed4f1916e342f62fb428b5fdfc03cc110978bb03e54c68bdc38b24",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53571&includeVotes=true",
+      "date": "2009-06-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2f18f3ee60c7645593ad11495bc6a354d45e63e8cd0f1149349bdce9283b1f5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/26092",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2627S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Steve Montenegro') on the official bill page; linked to Steve Montenegro via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district 29) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district 29) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbb4a77f0b591650cc8436b1ff3e7131c6964e67de99e3ba88af7acb2fe10391",
+      "kind": "own-words",
+      "url": "https://www.azleg.gov/press/house/57LEG/1R/250430MONTENEGRO.pdf",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "“Arizona is proud to stand with Idaho and any state that chooses to enact reasonable protections like voter ID,” said Speaker Montenegro. “Student IDs vary widely in design and security features. States have every right to require more reliable documentation to ensure only eligible voters are casting ballots.”",
+      "note": "Official House news release announcing an amicus brief that supports Idaho's voter ID law, which does not accept student ID cards at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a961574bdfd27c69596371f8b2d3d2351f2807961621fe4d182c46e8672eaad8",
+      "kind": "own-words",
+      "url": "https://www.azleg.gov/press/house/57LEG/1R/250430MONTENEGRO.pdf",
+      "date": "2025-04-30",
+      "date_precision": "day",
+      "passage": "“Arizona’s election laws are under constant attack by activists who want to chip away at basic security measures. If we don’t fight back, we risk undermining public confidence in our elections,” Speaker Montenegro added. “Every eligible voter should be able to vote—and every illegal vote must be prevented.”",
+      "note": "Same release; general statement on election security laws and defending them in court.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44072a68713814d5e5e709fa7b6f84f05445838da58793772e0a3ee9558f9e13",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2024/11/23/exclusive-arizona-speaker-steve-montenegro-arizonans-rejected-democrat-katie-hobbs-agenda-by-expanding-majority",
+      "date": "2024-11",
+      "date_precision": "month",
+      "passage": "“Common-sense measures will better secure our elections, like government-issued photo ID for in-person voting, banning unsupervised ballot drop boxes & more. Hopefully, our Governor respects the will of the people and joins us, but we can always take these improvements directly to the voters if we must.”",
+      "note": "Breitbart quotes a post he wrote on the Friday before its 2024-11-23 report, when he was Speaker-elect. He backs photo ID for in-person voting and sending such measures to voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "ballot drop boxes",
+        "taking election measures to the ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb143b900e8cf55aac2e98ad076eb320ec786d0a9c7b9ace464cfd5993186d0f",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2024/11/23/exclusive-arizona-speaker-steve-montenegro-arizonans-rejected-democrat-katie-hobbs-agenda-by-expanding-majority",
+      "date": "2024-11",
+      "date_precision": "month",
+      "passage": "“Another area of elections we can and should improve deals with signature verification. Stronger Voter ID requirements for absentee ballots can speed and better secure the process. Growing support for this in the State House.”",
+      "note": "Second post quoted in the same Breitbart report; he calls for stronger voter ID requirements for absentee ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "signature verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e2529b7c33d0d7097385de2529cfafc08239c1a9b13ccdce784bfd096acaa65",
+      "kind": "own-words",
+      "url": "https://arizonadailyindependent.com/?p=263427",
+      "date": "2025-09",
+      "date_precision": "month",
+      "passage": "“Arizonans expect elections to be run according to the law, not rewritten to fit the Secretary of State’s partisan agenda,” said Montenegro. “Secretary Fontes’ draft manual again contradicts Arizona statutes, weakens safeguards against non-citizen voting, undermines legislative authority, and even pressures election officers to surrender their constitutional rights. Such abuses erode trust in our elections and will not stand.”",
+      "note": "Statement quoted by the Arizona Daily Independent (page dated 2025-09-06) about his letter objecting to the draft 2025 Elections Procedures Manual, including provisions on registrations without ID numbers and on proof-of-citizenship challenges.",
+      "subjects": [
+        "non-citizen voting",
+        "voter registration ID numbers",
+        "election procedures manual"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('MONTENEGRO'), linked to Steve Montenegro (district 29) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 11,
+      "at": "2026-10-28T22:53:15.883Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot and absentee ID",
+        "student ID at the polls",
+        "non-citizen voting",
+        "election procedures manual"
+      ],
+      "places": [
+        "status check: the Ballot Brief page for House District 29 lists him as a certified candidate on the 2026-11-03 general ballot (https://theballotbrief.com/state/arizona/maricopa-county/arizona-house-district-29)",
+        "On the Record (0 appearances)",
+        "campaign site https://stevemontenegro.com/ (biography only, nothing on the subject)",
+        "legislature member page (his listed bills concern voting equipment, electoral college, ballot-measure circulators, dual citizenship; sponsorships linked separately)",
+        "House news release 2025-04-30 on the Idaho voter ID brief (official PDF)",
+        "Arizona Daily Independent report on his letter about the draft Elections Procedures Manual",
+        "Breitbart interview with the Speaker-elect (Nov 2024)",
+        "Arizona Daily Independent and intellectualconservative pages on the 2026 ballot measure and the U.S. Supreme Court petition (quotes there are from other people, not saved)",
+        "not reviewed: https://ballotpedia.org/Steve_Montenegro (the site blocked every other fetch in this batch)",
+        "web searches on his name plus voter ID, citizenship, election integrity"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:09:11.656Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.511Z",
+      "by": "identity-az-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot and absentee ID",
+        "student ID at the polls",
+        "non-citizen voting",
+        "election procedures manual"
+      ],
+      "places": [
+        "scope check: the Ballot Brief page for House District 29 lists him as a certified candidate on the 2026-11-03 general ballot (https://theballotbrief.com/state/arizona/maricopa-county/arizona-house-district-29)",
+        "On the Record (0 appearances)",
+        "campaign site https://stevemontenegro.com/ (biography only, nothing on the subject)",
+        "legislature member page (his listed bills concern voting equipment, electoral college, ballot-measure circulators, dual citizenship; sponsorships linked separately)",
+        "House news release 2025-04-30 on the Idaho voter ID brief (official PDF)",
+        "Arizona Daily Independent report on his letter about the draft Elections Procedures Manual",
+        "Breitbart interview with the Speaker-elect (Nov 2024)",
+        "Arizona Daily Independent and intellectualconservative pages on the 2026 ballot measure and the U.S. Supreme Court petition (quotes there are from other people, not saved)",
+        "not reviewed: https://ballotpedia.org/Steve_Montenegro (the site blocked every other fetch in this batch)",
+        "web searches on his name plus voter ID, citizenship, election integrity"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:31:40.423Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

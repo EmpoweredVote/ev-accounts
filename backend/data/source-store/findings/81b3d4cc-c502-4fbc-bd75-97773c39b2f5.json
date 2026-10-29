@@ -1,0 +1,217 @@
+{
+  "politician_id": "81b3d4cc-c502-4fbc-bd75-97773c39b2f5",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('PEÑA'), linked to Michele Peña (district 23) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:53:15.881Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found, extract script run with name)",
+        "legislature member roster (confirms sitting House member, District 23)",
+        "The Ballot Brief House District 23 (confirms on the 2026-11-03 ballot; nothing on the subject)",
+        "campaign site http://michelepena.com (nothing on the subject)",
+        "Arizona Clean Elections voter guide, District 23, primary and general (primary statement nothing on the subject; general says no statement submitted)",
+        "KJZZ 2026-10-06 District 23 candidate piece (nothing on the subject from her)",
+        "KAWC 2024-10-02 Yuma town hall piece (no quotes from her on the subject)",
+        "https://www.azhouse.gov/members/michele-pena (404)",
+        "blocked: https://ballotpedia.org/Michele_Pe%C3%B1a (empty page via curl)",
+        "news searches (2): nothing on the subject from her own words"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:08:19.133Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

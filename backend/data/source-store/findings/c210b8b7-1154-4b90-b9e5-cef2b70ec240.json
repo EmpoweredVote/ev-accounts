@@ -1,0 +1,260 @@
+{
+  "politician_id": "c210b8b7-1154-4b90-b9e5-cef2b70ec240",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "713f4b69f12ce5228873986e1857e25699ff8fb8b58d062bc9facdd07226c7bf",
+      "kind": "own-words",
+      "url": "https://www.senatorjonbumstead.com/bumstead-issues-statement-on-house-and-senate-oversight-committee-action-on-elections-integrity/",
+      "date": "2020-11-07",
+      "date_precision": "day",
+      "passage": "We must do all we can to ensure voter ballots remain secure and are accurately counted. We will review concerns about the integrity of our elections, share information and consider changes in policy to help ensure confidence in our elections process.",
+      "note": "Statement issued in his name after the House and Senate oversight committees voted to subpoena the Bureau of Elections. General statement on ballot security and election integrity; names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity in general",
+        "ballot security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:46.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Jon Bumstead (District 100)') on the official bill page; linked to Jon Bumstead via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1301a6193a46e5209ab1f887aefbe5a0a908f3d01d7b794c65e1c294166eac23",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-14-062.htm",
+      "date": "2012-06-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5061-2011",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 471 Yeas 65 Nays 45",
+      "note": "House roll call as printed ('Bumstead'), linked to Jon Bumstead (district 100) via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9077f27a3bf1090cb375a434cfd87abf2d1f22d14d51ec193bcc505232620c1a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators Barrett, Bumstead, Horn, Theis, Stama\"",
+      "note": "Named as co sponsor ('Jon Bumstead (District 34)') on the official bill page; linked to Jon Bumstead via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Bumstead'), linked to Jon Bumstead (district 34) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Bumstead'), linked to Jon C. Bumstead (district 32) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Bumstead'), linked to Jon C. Bumstead (district 32) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "985149e6f186fd5f053ef8278666a3d93b27b813d62a2b1f8596f71704ae470d",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2011-HB-5221",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-5221-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 5221 December 13, 2011, Introduced by Reps. Agema, Franz, O'Brien, Somerville, Heise, Glardon, Opsommer, \"",
+      "note": "Named as co sponsor ('Jon Bumstead (District 100)') on the official bill page; linked to Jon Bumstead via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:57.126Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: Meet Senator page confirms sitting senator for the 32nd District (term-limited, seat ends Jan 2027)",
+        "official Senate site: statement page of 2020-11-07",
+        "official Senate site search for 'voter ID' and 'election': results page showed no readable hits",
+        "blocked: https://ballotpedia.org/Jon_Bumstead (403)",
+        "blocked: https://www.nearnorthnow.com/the-pulse/guest-column-trusting-our-elections (curl returned no response)",
+        "two web searches (name plus voter ID words; name plus citizenship amendment words): no statement by him on photo ID or proof of citizenship surfaced",
+        "legislature bill pages not searched (votes and sponsorships linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:47:46.489Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:57.126Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

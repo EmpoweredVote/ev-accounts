@@ -1,0 +1,61 @@
+{
+  "politician_id": "24017530-e562-4441-9d45-152669ac6c96",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tano_Tijerina names him as candidate for U.S. House Texas District 28, on the Nov 3, 2026 general ballot after winning the Mar 3, 2026 primary",
+        "On the Record (0 meetings)",
+        "campaign site https://www.tanoforcongress.com/issues (nothing on the subject)",
+        "campaign site https://www.tanoforcongress.com/news (nothing on the subject; list of older local news links only)",
+        "Ballotpedia (nothing on the subject; no Candidate Connection survey completed)",
+        "Spectrum News article on the race (nothing on the subject)",
+        "congress.gov: not applicable, not a sitting legislator",
+        "not reviewed: web search for news on his name plus subject words (search budget used up)",
+        "not reviewed: campaign site video pages (debate, podcast interview)",
+        "not reviewed: https://www.facebook.com/judgetanotijerina/ and https://twitter.com/JudgeTano (social feeds not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:17:56.755Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed candidate: https://www.ballotready.org/people/tano-tijerina shows Tano Tijerina as Webb County Judge and a candidate for Texas 28th Congressional District in the 2026 primary and general elections; https://www.texastribune.org/2025/12/02/webb-county-judge-tano-tijerina-congressional-run covers his run",
+        "On the Record (0 appearances)",
+        "campaign site https://www.tanoforcongress.com/ and its Issues page: nothing on the subject",
+        "BallotReady issue list (economy, environment, foreign policy, immigration, taxes): nothing on the subject",
+        "Texas Tribune article on his congressional run: his quotes do not touch the subject",
+        "blocked: https://ballotpedia.org (no Tijerina page reached; not fetched)",
+        "not reviewed: Webb County Commissioners Court minutes and agendas for election-related items",
+        "not reviewed: debate or interview video, if any",
+        "three web searches on name plus voter ID / SAVE Act / non-citizen voting / primary result: nothing by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:13:00.601Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

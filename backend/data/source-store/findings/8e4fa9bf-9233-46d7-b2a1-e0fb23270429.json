@@ -1,0 +1,155 @@
+{
+  "politician_id": "8e4fa9bf-9233-46d7-b2a1-e0fb23270429",
+  "findings": [
+    {
+      "id": "2a63e070ed9f2487a3192fce2576541e27582e6d6dd7338692d1ebe0216a3951",
+      "kind": "own-words",
+      "url": "https://branch.vote/races/2022-primary-elections-state-senator-ga-senate-32-R/candidates/kay-kirkpatrick",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I supported SB 202 which strengthened our law in many ways, especially requiring an objective voter ID method",
+      "note": "Her statement as quoted by the Branch voter guide in its Voting and Elections section for the 2022 primary. The page gives no exact date. It refers to SB 202 (2021), which set ID-number checks for absentee ballots in place of signature matching.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.748Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to Kirkpatrick, Kay (district 32) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what a voter with no ID does",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Ballotpedia page (confirms seat and November 3, 2026 general-election ballot): https://ballotpedia.org/Kay_Kirkpatrick (District 32)",
+        "campaign site https://senatorkaykirkpatrick.com/ and its on-the-issues page: nothing on the subject",
+        "blocked: https://eastcobbnews.com/east-cobb-republicans-vote-for-ga-elections-overhaul-bill/ (bot challenge page, not bypassed; a summary of it says she voted for SB 202 on 2021-03-25, floor vote is linked separately)",
+        "blocked: https://www.ajc.com/politics/georgia-senate-votes-to-eliminate-no-excuse-absentee-voting/NGQOBV6XB5GGDCCNLTAJFQIDJI and pressreader copy (paywalled; not opened). Her reported SB 241 comment about voter ID could not be confirmed from a page I fetched",
+        "Branch candidate profile (2022 primary)",
+        "On the Record extraction script not run (repo scripts are not allowed in this session): not reviewed",
+        "web search (several queries on name plus voter ID, absentee ID, election integrity)",
+        "legis.ga.gov bill pages not opened (login token needed)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:28:59.748Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.413Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

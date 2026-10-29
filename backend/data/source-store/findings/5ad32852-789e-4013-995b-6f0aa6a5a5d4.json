@@ -1,0 +1,32 @@
+{
+  "politician_id": "5ad32852-789e-4013-995b-6f0aa6a5a5d4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID number on mail ballot envelope",
+        "Proposition 39 (2026 voter ID initiative)",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page (confirms he is on the 2026 general-election ballot for Assembly District 36; nothing on the subject)",
+        "CalMatters Digital Democracy page for AB 25 (2025 voter ID and proof-of-citizenship bill; committee roll call has no entry for him; bill never reached a floor vote)",
+        "news pages on the 2025 launch of the voter ID campaign and the 2026 ballot qualification (ABC7, KTLA, CalMatters, state party Prop 39 page): none names him",
+        "web news searches on his name plus voter ID / Proposition 39 / election integrity (nothing on the subject)",
+        "blocked: https://ad36.asmrc.org (official site, HTTP 403 to fetch tool and to curl; not retried with other headers)",
+        "blocked: https://ad36.asmrc.org/news (HTTP 403)",
+        "blocked: https://leginfo.legislature.ca.gov (bot challenge page, HTTP 403); his 2025-26 floor votes on this subject could not be checked there",
+        "not reviewed: his social media accounts (https://www.facebook.com/asmjeffgonzalez)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:00:08.612Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

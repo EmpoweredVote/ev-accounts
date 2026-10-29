@@ -1,0 +1,58 @@
+{
+  "politician_id": "7d57b1de-6690-44fe-a995-e430a3f7748e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Randy_Novak (Indiana House District 9, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "official caucus page https://indianahousedemocrats.org/members/randy-novak and 12 press releases on its Novak news category: nothing on the subject",
+        "official newsletter https://reprandynovak.substack.com/archive (12 posts scanned for subject words): nothing on the subject",
+        "Ballotpedia Candidate Connection survey answers on https://ballotpedia.org/Randy_Novak: nothing on the subject",
+        "https://indianacitizen.org/?s=Randy+Novak (one article, his swearing-in): nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page needs JavaScript; bill, vote and sponsor pages not readable)",
+        "blocked: https://api.iga.in.gov/2026/legislators (needs an API key)",
+        "not reviewed: campaign site and campaign Facebook/Instagram (URL not found on Ballotpedia text)",
+        "not reviewed: news search on name plus subject words (web search budget was used up)",
+        "not reviewed: Indiana House floor votes on 2026-session election bills (no readable vote source)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:41:50.359Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his state House newsletter about page https://reprandynovak.substack.com/about (confirms Indiana House District 9 member sworn in 2025; nothing on the subject)",
+        "state House caucus swearing-in page https://www.indianahousedemocrats.org/news/novak-sworn-in-as-indiana-state-representative-for-district-9 (confirms office; nothing on the subject)",
+        "note: he is a House member, appointed October 2025, so he was not in office for the 2025 session votes on citizenship or mail-ballot ID bills",
+        "Ballotpedia: nothing usable (page returned empty)",
+        "legislature member page https://iga.in.gov: not reviewed (page returned no content)",
+        "news search on name plus subject words: nothing on the subject; one result lists a 2026 election date but I did not fetch it, so ballot status is from search only"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:25:52.117Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

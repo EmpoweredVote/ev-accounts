@@ -1,0 +1,179 @@
+{
+  "politician_id": "197fc72c-7a39-451b-a263-373be76d05fa",
+  "findings": [
+    {
+      "id": "831ed2c361be02e163e2049f427fc4cb48ed8b30b11d0b8e6ddf7d02d602b0c7",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20212022/201498",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "sponsor",
+      "note": "He is one of the named senators on the as-passed text of SB 202 (2021 Election Integrity Act): \"By: Senators Burns of the 23rd, Miller of the 49th, Dugan of the 30th, Ginn of the 47th, Anderson of the 24th and others\". The text, among other changes, has the registrar compare the driver's license or state ID number on an absentee ballot envelope with voter records. His final votes of 2021-03-25 were not reachable.",
+      "subjects": [
+        "ID number with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:38:47.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Ginn'), linked to FRANK GINN (district 47) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Ginn'), linked to FRANK GINN (district 47) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Ginn'), linked to FRANK GINN (district 47) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Ginn'), linked to Ginn, Frank (district 47) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Ginn'), linked to FRANK GINN (district 47) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "ID number on mail-ballot request or envelope",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status check: Ballotpedia shows Georgia Senate District 47, running for re-election, on the 2026-11-03 general-election ballot after advancing from the 2026-05-19 primary (https://ballotpedia.org/Frank_Ginn)",
+        "On the Record (0 meetings found by extract-otr)",
+        "official Senate press pages (https://senatepress.net/tag/frank-ginn, https://senatepress.net/?p=341452, https://senatepress.net/category/senate-press/frank-ginn): nothing on the subject",
+        "Georgia legislature: bill text PDF of SB 202 as passed fetched (https://www.legis.ga.gov/api/legislation/document/20212022/201498); blocked: the legislature's roll-call and bill-history pages (load only through a script) so his final SB 202 votes on 2021-03-25 could not be read",
+        "bill trackers: blocked: https://legiscan.com/GA/text/SB202/id/2348601/Georgia-2021-SB202-Introduced.pdf (403); blocked: https://legiscan.com/GA/bill/HR780/2023 style pages (403); https://billsponsor.com and legiplex pages not reached for his bill list",
+        "Ballotpedia page: nothing on the subject",
+        "Branch voter guide 2024 and Wikipedia pages: nothing on the subject",
+        "campaign site: not found (no site located in four searches)",
+        "news searches on name plus voter ID, SB 202, citizenship (4 searches): no own-words statement found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:38:47.022Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.409Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

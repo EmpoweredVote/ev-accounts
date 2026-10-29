@@ -1,0 +1,123 @@
+{
+  "politician_id": "abccc15b-0814-499e-a3c8-f9552552d253",
+  "findings": [
+    {
+      "id": "097ee6dbb914a2f3bc8a311b27d4ac0fcfda10bd28343529d5dbe0c628984718",
+      "kind": "own-words",
+      "url": "https://politicspa.com/state-government-committee-sends-voter-id-election-omnibus-bills-to-house-floor/141399/",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "passage": "“I would be in opposition to that by voting for something that would deny the right to vote.”",
+      "note": "Quoted by PoliticsPA at the House State Government Committee meeting of 2025-05-06, where she voted no on the voter ID bill (HB 771) and cited her oath to uphold the U.S. Constitution. The quoted sentence is her own; the oath description is the reporter's.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:56.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Boyd'), linked to Heather Boyd (district 163) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BOYD'), linked to Heather Boyd (district 163) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official House site https://www.pahouse.com/Boyd/InTheNews/NewsRelease (confirms sitting state representative, district 163; nothing on the subject)",
+        "blocked: https://penncapital-star.com/campaigns-elections/voter-id-and-vote-by-mail-reform-bills-move-to-pa-house/ (bot check); same story read at levittownnow.com and newtownpanow.com, where her only quote is on election-worker pay (not the subject)",
+        "blocked: https://ballotpedia.org/Heather_Boyd not fetched (Ballotpedia returned empty pages for the other people in this batch)",
+        "two news searches on her name plus voter ID words; PoliticsPA committee story found",
+        "legislature bill pages: not reviewed (sponsorships and votes linked separately)",
+        "2026 ballot status: not confirmed by a fetched page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:09:56.696Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.716Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.860Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

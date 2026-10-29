@@ -1,0 +1,187 @@
+{
+  "politician_id": "b5e9a6f8-e768-402e-aff5-77dc22e68115",
+  "findings": [
+    {
+      "id": "10e7632e45771d0394696d308d4a55412d20fc6795777da4b70a44c830238c72",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/members/3910/biography",
+      "date": "2021",
+      "date_precision": "year",
+      "passage": "During the 87th Legislature, Christina supported public education, worked to expand ethnic studies across the state, passed consumer protection bills, and fought to defend voting rights.",
+      "note": "Official House biography. A general line about voting rights in 2021. It names no ID or citizenship rule. The page carries no date.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9086889c2a656a3fd26165c1ff314241b8e9ba4e017df5a0235c5e88d5224c5b",
+      "kind": "own-words",
+      "url": "https://www.house.texas.gov/pdfs/newsletters/145/2022-Newsletter-03.30.2022.pdf",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "passage": "We fought for voting rights, Medicare expansion, women’s reproductive rights, and the needs of our community.",
+      "note": "From her constituent newsletter, looking back on 2021. A general line about voting rights. It names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a15da1eb49de11c28790837484a2bdead3d6066531417771f53b8423b9e743e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB802",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-802-2021",
+      "act": "author",
+      "motion": "HB 802, early voting by mail by any qualified voter (referred to Elections committee)",
+      "note": "She is the author. The bill removes the reasons a voter must meet to vote by mail, so all registered eligible Texas voters could vote by mail. It was referred to committee on 2021-03-01. Her 2022 newsletter describes it the same way.",
+      "subjects": [
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7831e1567c439db4bb64b9d1bf7d76edb9fd10c57a43ebb8ec1a3805e31c6550",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "SB 7 (87th regular session), election integrity and security: passed by the House, Record 848, 78 yeas, 64 nays",
+      "note": "The House Journal lists C. Morales among the nays on passage of SB 7, relating to elections, including election integrity and security.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b6c364e9f70c891f78f79397b21bb368cd8910471e3c87e19b84d1339c6b392",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "other",
+      "motion": "SB 1 (87th 2nd called session), election integrity and security: passed by the House, Record 61, 80 yeas, 41 nays; she was listed as absent",
+      "note": "The House Journal lists C. Morales as absent (not as excused) on passage of SB 1. No vote was cast.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e39cf37ec53b4f71c28704ed0d5b3cce7f0df12cc17a68d18d5a91ff8ddd5b64",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "other",
+      "motion": "SB 1 (87th 2nd called session): House adoption of the conference committee report, Record 118, 80 yeas, 41 nays; she was listed as absent",
+      "note": "The House Journal lists C. Morales as absent (not as excused) on adoption of the conference committee report on SB 1. No vote was cast.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ea071e545188aad6806a72ffeea935b6fb8fdffcad746c7a7586b544d5c43ef",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "SJR 37, constitutional amendment clarifying that a voter must be a United States citizen: adopted by the House, Record 2196, 102 yeas, 14 nays, 22 present not voting",
+      "note": "The House Journal lists C. Morales among the members recorded as present, not voting, on final House adoption of SJR 37. The same was recorded on 2025-05-09 when SJR 37 passed to third reading (Record 1897).",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:22:13.227Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID showing citizenship",
+        "mail-ballot access and ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "early voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Christina_Morales (confirms Texas House member since 2019, term ends 2027, next election 2026-11-03; nothing on the subject)",
+        "Texas House member page https://house.texas.gov/members/3910/biography (one general sentence on voting rights saved)",
+        "Texas House member page https://house.texas.gov/members/member-page/?district=145 (nothing on the subject)",
+        "her 2022-03-30 constituent newsletter https://www.house.texas.gov/pdfs/newsletters/145/2022-Newsletter-03.30.2022.pdf",
+        "her 2023-12-12 constituent newsletter (nothing on the subject)",
+        "Texas Legislature Online bill history pages for HB 802 (87th), SB 1 and SB 7 (87th), SJR 37, HB 2259, HB 304, HB 5337, SB 16 (89th)",
+        "Texas House Journals for 2021-05-07, 2021-08-27, 2021-08-31 and 2025-05-12 read for recorded votes",
+        "two news searches on her name plus voter ID, citizenship and voting-rights words (no statement by her on ID or citizenship found)",
+        "not reviewed: campaign site (no address found); floor remarks on election bills"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:22:13.227Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

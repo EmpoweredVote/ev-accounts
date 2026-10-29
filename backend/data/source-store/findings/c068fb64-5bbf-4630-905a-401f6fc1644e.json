@@ -1,0 +1,247 @@
+{
+  "politician_id": "c068fb64-5bbf-4630-905a-401f6fc1644e",
+  "findings": [
+    {
+      "id": "23cf57fe3a480a2576e5355ae25e1e81765303470b1911c2eeb218e4d6472497",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "um i personally think that we should be showing voter id uh i have to show my id to buy non-alcoholic beer okay yeah i mean and they were very very adamant that i had to show my license even as an old person with white hair",
+      "note": "Radio interview (WVMT News Talk), transcript posted on her campaign site on 2026-07-24; page address says 07.18.2026 but the host says it is Monday 20 July. Answering a caller question on voter ID, she says people should show voter ID and compares it to showing ID to buy a drink. Transcript is unpunctuated machine text.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bfd3a7b42362bda9799d7f71a567f73c6436a49208147baed19f406c1f944a92",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "You know, I think that’s racist to assume that people can’t get to the polls, you know, based upon those sort of, you know, markers. I personally have not run into anybody who’s had trouble doing that. And, you know, I work right here in Colchester. So I work with a diverse population and certainly have friends within the community. People show up with their license to get tickets to go to concerts. They show up with their license to get alcohol or cigarettes. They definitely have to show a license to get their medical marijuana. So, I mean, why not make it a priority for our voting?",
+      "note": "Answering a host's question about the argument that ID rules suppress turnout, she says she has not met anyone who had trouble getting ID, and says people already show a license for many other things. Same radio interview.",
+      "subjects": [
+        "voter ID at the polls",
+        "claim that ID rules reduce turnout"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:16:13.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e132c912a64eec9842d658ebbf5e0f31b092c9ac73f7802aab953c47578198d9",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "Well, I don’t love them at all. I think, you know, they’re fraught with opportunities for fraud. And I don’t, you know, the mail, the post office is in trouble too. I mean, my friend, I sent somebody a ballot, I mean, a petition, and they haven’t received it yet. It’s been like eight days, right? So, I mean, I’m not a big fan of the government efficiency issue. But when it comes to the mail-in ballots, I think I’m a no. And if you do need one, that should probably be built in there where you could get it if you’re disabled or having hardship or something along that lines. I’d also like to see Election Day as a national holiday so people could go.",
+      "note": "Asked by the host about absentee ballots and a federal bill that would limit them, she says she does not favor mail-in ballots, citing fraud risk and mail delays, but would allow one for disability or hardship. She also wants Election Day to be a national holiday. Same radio interview.",
+      "subjects": [
+        "mail-ballot rules",
+        "reasons allowed for a mail ballot",
+        "election integrity and fraud concern",
+        "Election Day as a holiday"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:16:13.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d7df7480bf841e87a92fabbf0ece991b95a46bcc8ae3ecc23196b03a06c969c",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "Yeah, I think I want voters and I think people in the system should be educated enough to know their rights and to be able to ask for them articulately. That’s part of the problem, you know, because there could be the illusion of improper vote counting. And once there is that, people don’t trust the system. And I’ve seen this happening a lot with young people. They don’t even want to vote.",
+      "note": "Replying to the host's summary that she would limit mail ballots to people with a need, she talks about voter education and public trust in vote counting. Same radio interview.",
+      "subjects": [
+        "election integrity and trust in vote counting",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:16:13.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b2108e48ea2970ca795638d2ce7154996020aea5cfea2d85b4c671ace27a584",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "People show up with their license to get tickets to go to concerts. They show up with their license to get alcohol or cigarettes. They definitely have to show a license to get their medical marijuana. So, I mean, why not make it a priority for our voting?",
+      "note": "Same interview. Reply to the host asking how she answers critics who say ID requirements suppress turnout; she names everyday uses of a license and asks why voting should not also require one.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c570b290c5c528bf85daa57fcaab801cf2c78ee6974901d752982aee16ce8d9",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "I think that’s racist to assume that people can’t get to the polls, you know, based upon those sort of, you know, markers. I personally have not run into anybody who’s had trouble doing that.",
+      "note": "Same interview. Her answer to the argument that voter ID could keep minority voters from voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "access to ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6aa375a0b3a082c18209483463b6454216c8583b4a935b2afb3de852a344d4da",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "Well, I don’t love them at all. I think, you know, they’re fraught with opportunities for fraud.",
+      "note": "Same interview. Asked about absentee and mailed ballots (the host links it to the federal SAVE America Act), she speaks about absentee ballots and fraud risk. Later in the answer she says she would say no to mail-in ballots in general and would keep them for people who are disabled or face hardship.",
+      "subjects": [
+        "mail-ballot access",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "410ba748975407f6c4ab8928d20be5f3679a128424bbd0679d758755bc73a2f0",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "But when it comes to the mail-in ballots, I think I’m a no. And if you do need one, that should probably be built in there where you could get it if you’re disabled or having hardship or something along that lines.",
+      "note": "Same interview. Says she would not support mail-in ballots in general but would allow them for disability or hardship; also says she would like Election Day to be a national holiday.",
+      "subjects": [
+        "mail-ballot access",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0731dc823bac394db90429dc9d814b0b6e8bc13542fbff96c45039a3fb198f8f",
+      "kind": "own-words",
+      "url": "https://ruokvt.com/",
+      "date": "2026-08-01",
+      "date_precision": "month",
+      "passage": "I’ll fight for election integrity, transparent government, and a justice system that keeps our communities safe and fair.",
+      "note": "Campaign home page, Accountability section. General election-integrity line; no specific ID rule named. Page date is approximate (site pages dated July-August 2026).",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:55.299Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID and fairness of ID rules",
+        "mail-in and absentee ballots",
+        "reasons allowed for a mail ballot",
+        "SAVE Act / proof of citizenship",
+        "election integrity and trust in vote counting",
+        "election day as a holiday"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Suzanne_Seymour_(Vermont) (on the 2026 general-election ballot, Vermont at-large U.S. House, Nov 3, 2026)",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://ruokvt.com/ (home, /issues/, /about/, announcement press release): nothing on the subject",
+        "campaign site post https://ruokvt.com/wvmt-news-talk-interview-07-18-2026/ (full transcript, 2 findings)",
+        "not reviewed (audio only, no transcript): https://post.futurimedia.com/wvmt/playlist/listen-2963.html",
+        "not reviewed (audio only): https://ruokvt.com/july-14-2026-alison-despathy-and-elizabeth-brown-welcome-in-suzanne-seymour-independent-candidate-for-u-s-congress/",
+        "Ballotpedia profile: no voter ID or citizenship text; survey responses not on page text",
+        "congress.gov: not applicable, never held legislative office",
+        "web news search: not run, the session search budget was used up before this person's turn; follow-up news search still open",
+        "not reviewed: https://www.facebook.com/Suzforvermont/, https://x.com/suzforvermont, https://www.instagram.com/suzforvermont/, https://www.tiktok.com/@suzforvermont (social posts not read)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T22:16:13.715Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot and absentee ballot access",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "federal SAVE America Act"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Suzanne Seymour on the 2026-11-03 general-election ballot for U.S. House Vermont At-large; no survey answers there)",
+        "campaign site https://ruokvt.com (home, issues, about, announcement, radio interview transcript page)",
+        "news search on name plus voter ID and SAVE Act words (nothing about her)",
+        "congress.gov not applicable (never held office)",
+        "not reviewed: audio recording of the radio interview (the transcript on her site was used)",
+        "not reviewed: https://ruokvt.com/wvmt-radio-chronicle-conversations-w-guy-page/ (not opened)"
+      ],
+      "found": 6,
+      "at": "2026-10-27T21:57:55.299Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

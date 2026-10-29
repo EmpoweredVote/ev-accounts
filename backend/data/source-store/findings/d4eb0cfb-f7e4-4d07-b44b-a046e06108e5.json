@@ -1,0 +1,120 @@
+{
+  "politician_id": "d4eb0cfb-f7e4-4d07-b44b-a046e06108e5",
+  "findings": [
+    {
+      "id": "5f8194e0332c20a50e185f2c857f03bb431feb4795737b1a962c63bb1ac00708",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "adoption of conference committee report (Record 1128)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report (Record 1128), 2011-05-16: nay (tally 98–46); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.559Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e7611d93fa84ddd0ad26f70c8b4e2bcdac1060948e210e201ca4505811eecd2d",
+      "kind": "own-words",
+      "url": "https://www.dallasnews.com/news/politics/2012/07/10/testimony-voter-id-law-rammed-through-will-suppress-minority-votes-says-rep-trey-martinez-fisher",
+      "date": "2012-07-10",
+      "date_precision": "day",
+      "passage": "\"In West Texas, some people would have a 200-mile round-trip drive\" to the nearest DPS office, he said, noting that 70 of 254 counties lack a state office at which to obtain a drivers license or alternative voter ID card.",
+      "note": "Dallas News report of his testimony in the federal trial over Texas's 2011 photo ID law (SB 14). He describes the travel burden of getting an ID. The same story quotes him on the \"integrity\" aim and in-person fraud numbers.",
+      "subjects": [
+        "voter ID at the polls",
+        "cost and distance of getting an ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:26:00.846Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2dc7879cdf6f0533e7431a6870d03c295eb06fab3c2b6270bb45a2e6588407ff",
+      "kind": "own-words",
+      "url": "https://www.dallasnews.com/news/politics/2012/07/10/testimony-voter-id-law-rammed-through-will-suppress-minority-votes-says-rep-trey-martinez-fisher",
+      "date": "2012-07-10",
+      "date_precision": "day",
+      "passage": "But \"we were willing to gamble\" on that, he said, a trace of sarcasm in his voice, \"so that we could bring `integrity' to a system that has only yielded one indictment and two investigations on in-person voter fraud.\"",
+      "note": "Dallas News quotes his trial testimony on the 2011 photo ID law and the rate of in-person voter fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "in-person voter fraud claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:26:00.846Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f64eb6b2e3c78bd091fdda9a1affab33ddef94ec1db6163eb076f023f231e3",
+      "kind": "own-words",
+      "url": "https://www.nbcdfw.com/news/local/texas-lawmaker-voter-id-bill-rushed-to-passage/1923050/",
+      "date": "2012-07-10",
+      "date_precision": "day",
+      "passage": "He said the bill seemed like \"a solution in search of a problem.\"",
+      "note": "AP report (carried by NBC DFW) of his testimony in the federal trial over the 2011 photo ID law. Only the quoted phrase is his; the sentence around it is the reporter's.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:26:00.846Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID effect on poor and rural voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "in-person voter fraud and election integrity claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (house.texas.gov, district 116): confirms Rep. Martinez Fischer; nothing on the subject",
+        "Ballotpedia: lists him as a 2026 incumbent on the general-election ballot; nothing on the subject",
+        "campaign site: not found at guessed addresses (treyforTexas.com, martinezfischer.com, treymf.com returned nothing)",
+        "Texas Legislature Online SB 1 (87th, 2nd called session) history and House Journal day 6 and 7: he was absent for the record vote on the conference report (Record 118) and gave no statement of vote on it",
+        "Texas Tribune and Votebeat stories on 2025 SB 16 (proof of citizenship): no remarks by him found",
+        "Community Impact 2022 panel story: he spoke on voting rights and mail voting in general, not on ID; not saved",
+        "Dallas News 2012 and NBC DFW/AP 2012 stories on his federal court testimony about SB 14",
+        "news search on his name plus voter ID, SB 1, SB 16, citizenship"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:26:00.846Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

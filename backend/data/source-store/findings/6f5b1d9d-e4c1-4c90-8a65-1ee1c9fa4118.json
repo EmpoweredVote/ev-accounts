@@ -1,0 +1,112 @@
+{
+  "politician_id": "6f5b1d9d-e4c1-4c90-8a65-1ee1c9fa4118",
+  "findings": [
+    {
+      "id": "bb8bba2a1b1caeaf755af688e4bda1cd6243c62fdb42a05fda5ee49a176326de",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/32938/Grimm-Krupa-Voices-Concern-Over-Shapiros-Automatic-Voter-Registration?SiteID=1",
+      "date": "2023-09-22",
+      "date_precision": "day",
+      "passage": "We’re not sure if this system can differentiate between those who can be issued state I.D. but are not allowed to vote.",
+      "note": "Statement issued in her name on the governor's plan to register people automatically when they get or renew a driver's license or state ID. She questions whether the system can screen out people who can hold a state ID but may not vote, and mentions possible licenses for undocumented immigrants.",
+      "subjects": [
+        "state ID used for automatic voter registration",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:50.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "236fcec8954ae03b7d87e1c0c873b8068c387314085c3f78e269c7b61f19354d",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/32938/Grimm-Krupa-Voices-Concern-Over-Shapiros-Automatic-Voter-Registration?SiteID=1",
+      "date": "2023-09-22",
+      "date_precision": "day",
+      "passage": "Republicans have supported using state I.D. to prove voters’ identities at the polls.",
+      "note": "Same statement. She says the caucus has backed using state ID to prove identity at the polls, as part of her argument about the automatic-registration plan.",
+      "subjects": [
+        "voter ID at the polls",
+        "state ID used for automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:50.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KRUPA'), linked to Charity Grimm Krupa (district 51) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "state ID and voter registration",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repgrimmkrupa.com home page and press-release list page 1 (about 20 items): nothing on the subject",
+        "official site video list (10 videos): nothing on the subject",
+        "House caucus site press release of 2023-09-22 (found, two own-words passages)",
+        "Herald Standard 2026-01-15 reelection announcement: confirms she is running in 2026; general words only, nothing on the subject",
+        "WESA 2024 voter guide: she did not answer the candidate survey; nothing on the subject",
+        "Wikipedia page: confirms who she is; notes a 2025 judgeship plan, but her site and the 2026 article show her still sitting and seeking reelection",
+        "news searches on name plus subject words (two): nothing further found",
+        "not reviewed: Ballotpedia (not fetched for this person), bill pages and roll calls (linked separately by brief)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:06:50.553Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.864Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

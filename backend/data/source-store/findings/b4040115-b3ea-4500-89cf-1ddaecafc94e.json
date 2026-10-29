@@ -1,0 +1,181 @@
+{
+  "politician_id": "b4040115-b3ea-4500-89cf-1ddaecafc94e",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "9bc1c1d2cbeeac40d44d8fd9874fcdf2f731714e3589b556df56bd20da70588c",
+      "kind": "own-words",
+      "url": "https://frankel.house.gov/news/documentsingle.aspx?DocumentID=5023",
+      "date": "2026-07-17",
+      "date_precision": "day",
+      "passage": "While Americans are paying more for groceries, housing, and health care, President Trump and Republicans are focused on spreading election misinformation and advancing legislation that makes it harder for eligible Americans to vote.",
+      "note": "Press release statement issued in her name responding to a presidential address on elections. She speaks of legislation she says makes it harder for eligible people to vote; it does not name a bill or ID rule. Release date taken from the date shown in her site's news list.",
+      "subjects": [
+        "election integrity laws in general",
+        "barriers to voting for eligible citizens",
+        "election integrity and the 2020 election",
+        "making it harder for eligible people to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:56:46.618Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a234b46097e7313faba9943f30985e9d0a3da6cf89155ef305b88bdd751bc79c",
+      "kind": "own-words",
+      "url": "https://frankel.house.gov/news/documentsingle.aspx?DocumentID=5023",
+      "date": "2026-07-17",
+      "date_precision": "day",
+      "passage": "We stand with the dedicated state and local election officials who protect the integrity of our elections, and we will continue working to ensure every eligible American can cast a ballot freely and confidently.",
+      "note": "Same statement. She voices support for state and local election officials and for every eligible person being able to vote. No mention of photo ID or proof of citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "election officials"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:46:08.101Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity laws in general",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope check: Ballotpedia (https://ballotpedia.org/Lois_Frankel) says she is on the Nov 3, 2026 general ballot after the Aug 18, 2026 primary",
+        "On the Record (0 appearances; extract-otr found nothing)",
+        "official site frankel.house.gov press list (keyword query pages; one relevant statement found, query did not filter results)",
+        "Ballotpedia (no passages on the subject)",
+        "blocked: https://www.congress.gov/member/lois-frankel/F000462 (403)",
+        "blocked: https://www.loisfrankel.com (403)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only; not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:46:08.101Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity and the 2020 election",
+        "making it harder for eligible people to vote"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her official site: press release list filtered by keyword (fetched), and the July 2026 election statement (fetched)",
+        "Ballotpedia (confirms 2026 general-election candidate for FL-22 per page data; no subject statements)",
+        "two news searches on name plus SAVE Act / voter ID: no own-words statement found",
+        "blocked: https://frankel.house.gov/search?q=SAVE+Act (403)",
+        "blocked: https://www.congress.gov/search (403)",
+        "votes already on file (H.R. 22, H.R. 8281, S. 1383) not collected again",
+        "nothing on the subject: no sponsorships or amendments found on voter ID or proof of citizenship"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:56:46.618Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

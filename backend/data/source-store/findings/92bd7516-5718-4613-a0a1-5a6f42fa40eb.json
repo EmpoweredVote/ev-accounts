@@ -1,0 +1,35 @@
+{
+  "politician_id": "92bd7516-5718-4613-a0a1-5a6f42fa40eb",
+  "findings": [
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

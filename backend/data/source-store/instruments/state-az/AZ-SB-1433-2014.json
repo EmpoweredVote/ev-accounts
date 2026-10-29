@@ -1,0 +1,48 @@
+{
+  "id": "AZ-SB-1433-2014",
+  "scope": "state:az",
+  "title": "SB 1433 (2014 - Fifty-first Legislature - Second Regular Session (azleg session id 112)): voter identification; student identification cards",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/33950",
+    "https://www.azleg.gov/legtext/51leg/2R/bills/SB1433P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: voter identification; student identification cards\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (a) A valid form of identification that bears the photograph, name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including an Arizona driver license, an Arizona nonoperating identification license, a tribal enrollment card or other form of tribal identification or a United States federal, state or local government issued identification.\n(b_no_id_remedy)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (c) A valid form of identification that bears the photograph, name and address of the elector except that if the address on the identification does not reasonably appear to be the same as the address in the precinct register or the identification is a valid United States military identification card, a valid university, college or community college student identification card or a valid United States passport and does not bear an address, the identification must be accompanied by one of the items listed in subdivision (b) of this paragraph.\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16‑584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16‑452.\n(c_mail_ballot_id)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (b) Two different items that contain the name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including a utility bill, a bank or credit union statement that is dated within ninety days of the date of the election, a valid Arizona vehicle registration, an Arizona vehicle insurance card, an Indian census card, tribal enrollment card or other form of tribal identification, a property tax statement, a recorder's certificate, a voter registration card, a valid United States federal, state or local government issued identification or any mailing that is labeled as \"official election material\".\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) Identification is deemed valid unless it can be determined on its face that it has expired.\n(other) Sec. 2: Requirements for enactment; three-fourths vote",
+  "sponsors": [
+    {
+      "name": "Steve Gallardo",
+      "role": "prime",
+      "version": "SB1433P: as introduced (printed version)"
+    },
+    {
+      "name": "Anna Tovar",
+      "role": "co",
+      "version": "SB1433P: as introduced (printed version)"
+    },
+    {
+      "name": "Juan Mendez",
+      "role": "co",
+      "version": "SB1433P: as introduced (printed version)"
+    },
+    {
+      "name": "Martín Quezada",
+      "role": "co",
+      "version": "SB1433P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

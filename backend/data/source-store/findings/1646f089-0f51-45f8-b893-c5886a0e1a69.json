@@ -1,0 +1,152 @@
+{
+  "politician_id": "1646f089-0f51-45f8-b893-c5886a0e1a69",
+  "findings": [
+    {
+      "id": "c105afbd8a4c80b20577d462bc493e41cc698bcd52f4e113537fb41f4ad3b24d",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/65/desmidt/media/pdziebok/rep-desmidt-rejects-voter-suppression-focuses-on-real-solutions-for-wisconsin.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Rather than focusing on the real issues that matter to our constituents, Republicans passed a proposal today that disproportionately impacts those already facing systemic barriers to voting. It’s unfortunate many families in Wisconsin are struggling and this is what the majority party decided was important.",
+      "note": "Statement issued in his name on 2025-01-14, the day of the Assembly vote on the photo ID constitutional amendment (SJR 2). The release does not name voter ID or SJR 2 itself, so the link to that vote comes from the date only.",
+      "subjects": [
+        "voting barriers",
+        "photo ID constitutional amendment (not named in release)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:56:38.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d4d97842e3338241436959f223c6a94272e3781983fa0af5441afeb8d49af58",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/65/desmidt/media/pdziebok/rep-desmidt-rejects-voter-suppression-focuses-on-real-solutions-for-wisconsin.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "He stood firmly against efforts by the majority party to disenfranchise marginalized groups from participating in our elections.",
+      "note": "Release text describing his vote that day; written in the third person by his office.",
+      "subjects": [
+        "voting barriers",
+        "photo ID constitutional amendment (not named in release)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:56:38.941Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('DeSmidt') on the official bill page; linked to Ben DeSmidt via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('DeSmidt') on the official bill page; linked to Ben DeSmidt via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('DESMIDT'), linked to Ben DeSmidt (district 65) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "voting barriers",
+        "election integrity",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his Assembly site press release pages 1-2",
+        "candidate Q&A page at https://www.wuwm.com/wisconsin-state-assembly-district-65-candidates (names him as a candidate in the 2026-11-03 general election; nothing on the subject)",
+        "https://www.ballotready.org/people/ben-desmidt (confirms 2026 general election candidacy; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Ben_DeSmidt (empty page)",
+        "two web searches on name plus voter ID and election words",
+        "campaign site: none found; nothing on proof of citizenship, SAVE Act or mail-ballot ID found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:56:38.941Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

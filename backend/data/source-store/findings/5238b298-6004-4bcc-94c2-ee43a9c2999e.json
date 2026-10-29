@@ -1,0 +1,164 @@
+{
+  "politician_id": "5238b298-6004-4bcc-94c2-ee43a9c2999e",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "27a332d41322ec472c7e0a7ce3e62fb7c85f80528a0308379e7abc8582fe9172",
+      "kind": "own-words",
+      "url": "https://chc.house.gov/media-center/press-releases/congressional-hispanic-caucus-endorses-and-unanimously-supports-house",
+      "date": "2021-08-24",
+      "date_precision": "day",
+      "passage": "We have a duty to ensure every eligible voter has access to the ballot box. The CHC is honored to stand with our colleagues Congresswoman Terri Sewell and House Judiciary Chairman Jerrold Nadler to prevent voter suppression, safeguard the integrity of our democratic process, and ensure every American has a voice in our democracy, regardless of their zip code.",
+      "note": "Statement by Ruiz as Congressional Hispanic Caucus chair, endorsing the John R. Lewis Voting Rights Advancement Act of 2021 (H.R. 4) on the day of House passage. It speaks of voting access, voter suppression and election integrity in general. It does not mention ID or proof of citizenship.",
+      "subjects": [
+        "voting access in general",
+        "voter suppression",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:20.705Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID for mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voters with no ID",
+        "voter-roll checks and non-citizen voting",
+        "voting access and election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Raul_Ruiz) names him as a candidate for U.S. House California District 25, advanced from the June 2, 2026 primary, on the November 3, 2026 general-election ballot",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site ruiz.house.gov: home, issues pages list, press-release list page 1, in-the-news, op-eds, site keyword filters (filter ignored by site; same list returned); nothing on the subject",
+        "campaign site drraulruiz.com: home and issues pages; nothing on the subject",
+        "Ballotpedia: nothing on the subject beyond the vote already on file; no 2026 Candidate Connection survey",
+        "blocked: https://www.congress.gov/member/raul-ruiz/R000599 (403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/house-bill/1/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/members/raul_ruiz/412565 (403)",
+        "news searches (SAVE Act, voter ID, proof of citizenship, Ruiz by name): no Ruiz own words found",
+        "not confirmed: a search-result profile lists him as a cosponsor of H.R. 1 (117th Congress); no fetchable official page reached"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:36:20.705Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SAVE America Act",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Raul_Ruiz, fetched with curl) says he is on the ballot in the general election on November 3, 2026, for U.S. House California District 25, and advanced from the June 2, 2026 primary",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site https://ruiz.house.gov/ home page: nothing on the subject",
+        "official site press releases page https://ruiz.house.gov/media/press-releases: nothing on the subject",
+        "official site issues page https://ruiz.house.gov/issues: nothing on the subject",
+        "official site in-the-news page https://ruiz.house.gov/media/in-the-news: nothing on the subject",
+        "official site search pages (search_api_fulltext for SAVE Act, photo ID, election integrity, proof of citizenship): returned no result links",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.congress.gov/member/raul-ruiz/R000599 (HTTP 403), so sponsorships and co-sponsorships not reviewed",
+        "web searches (4): no statement by Ruiz on voter ID, proof of citizenship or the SAVE Act found",
+        "not reviewed: ontheissues.org (lead-only source), vote411, social media posts, campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.063Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

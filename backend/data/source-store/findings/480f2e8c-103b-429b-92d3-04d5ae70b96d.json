@@ -1,0 +1,178 @@
+{
+  "politician_id": "480f2e8c-103b-429b-92d3-04d5ae70b96d",
+  "findings": [
+    {
+      "id": "d95a1b99ec4f22fb80d6100a650b05eee045c433f724c677df751d5a2d645b34",
+      "kind": "own-words",
+      "url": "https://branch.vote/races/2024-nc-primary-election-nc-state-state-representative-nc-state-house-9-r/candidates/timothy-reeder",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "We need common sense election security measures such as voter ID to ensure the integrity at the ballot box. The people of North Carolina passed voter ID... in 2018, only to be overruled by activist judges.",
+      "note": "Candidate profile for the 2024 NC House 9 primary, in the Voting and Elections section, quoting his statement. Exact day not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:12.244Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26603e952be22dfa89f996b46c26b4b1658ee23bf1218a2b9b8db4907171f958",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "Second Reading, HB 958 Election Law Changes (66-47)",
+      "note": "Reeder is listed among the ayes. The bill narrows who may hand-deliver an absentee ballot, requires a statement of US citizenship on voter registration, and requires military-overseas voters to send a copy of photo ID.",
+      "subjects": [
+        "absentee ballot return and ID",
+        "proof of citizenship to register",
+        "photo ID for overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:12.244Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5e219bf4bdd242d3dbffcce75f0ff5174bb58ee3267869e646cded063a5ff17",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur, HB 958 Election Law Changes (62-47)",
+      "note": "Reeder is listed among the ayes on the House vote to concur with the Senate changes. The bill page shows the governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "absentee ballot return and ID",
+        "proof of citizenship to register",
+        "photo ID for overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:12.244Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ccd25b23fc609ef6bcbf18640a845470eb0e5ae6f03d3cf20f67c9b68f204e",
+      "kind": "record",
+      "url": "https://lrs.sog.unc.edu/billsum/h-958-2025-2026-3",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "UNC School of Government summary of HB 958 House committee substitute, as context for the two votes above",
+      "note": "Summary text: \"Now requires, in GS 163-258.10, covered voters to submit the military-overseas ballot with the copy of the identification described in GS 163-166.16(a)(photo identification required to vote in person) instead of the six categories of identification originally listed in the act.\" Also: county boards \"can also only process a voter registration application if the voter affirmatively indicates that they are a US citizen.\" This is a bill summary, not Reeder's words.",
+      "subjects": [
+        "photo ID for overseas voters",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:57:12.244Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Timothy_Reeder (incumbent NC House District 9, on the Nov 3 2026 general-election ballot; the March 3 2026 primary was canceled) and https://www.ncleg.gov/Members/Biography/H/811",
+        "On the Record (0 meetings)",
+        "campaign site https://www.drtimreeder.com (home page only; nothing on the subject; /issues is 404)",
+        "Ballotpedia (candidate survey answers cover education, economy and problem solving; nothing on the subject)",
+        "NC legislature introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/811 (nothing on the subject in the list returned; the session selector was not exercised)",
+        "NC legislature votes page https://www.ncleg.gov/Members/Votes/H/811 (only local election-change bills seen; nothing on the subject)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, social media posts, interviews and forum videos",
+        "blocked: https://ballotpedia.org via WebFetch returned empty; read by curl instead",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:42:46.486Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "absentee ballot return and ID",
+        "voter-roll or non-citizen checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Timothy_Reeder (confirms NC House District 9 member, on the 2026-11-03 general ballot; no issue statements)",
+        "campaign site https://www.drtimreeder.com/ (nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/811 (nothing on the subject)",
+        "NC General Assembly bill page for HB 958 and House roll calls 758 and 801",
+        "UNC School of Government bill summary for HB 958",
+        "Branch candidate profile 2024 (own words quoted)",
+        "news search on name plus subject words (found only a Pitt County school board bill, HB 302, not on the subject)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T02:57:12.244Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

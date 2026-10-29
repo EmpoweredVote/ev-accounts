@@ -1,0 +1,212 @@
+{
+  "politician_id": "20ff7834-43e1-4306-9163-4f6cc5598bd9",
+  "findings": [
+    {
+      "id": "d792dcc1b02bc3f9f1c977c08a85c2483c137a2acbb93fd4a3e2b705a9372185",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading, roll call 758 (passed 66 to 47)",
+      "note": "Voted aye on second reading of an omnibus election bill. Per the legislature's staff analysis (https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8), its voter-registration part would have the DMV send full Social Security numbers to the elections board monthly, create a process to remove registered voters who a federal database shows are not citizens, and bar processing any registration that does not affirmatively say the applicant is a citizen (with a sworn form sent to applicants who left it blank). He is not a listed sponsor.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:26.216Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93bb8a3715cb2406032bf782b24ce2f1cc851451a3178a5c9cdeedc9081f4525",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House concurrence in Senate changes), roll call 801 (passed 62 to 47)",
+      "note": "Voted aye on the final House concurrence vote on the same omnibus election bill (citizenship statement on registration, removal of non-citizens from voter rolls, fewer early-voting days, post-election audits). The bill was ratified August 6, 2026 and vetoed by the Governor August 17, 2026; per the staff analysis it is not current law unless the veto is overridden.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:26.216Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d10dd01ed3b3b708c6911818d17b38544232978e5d3daa5558ac6360b3f1e679",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "yea",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur, roll call 800 (passed 74 to 35)",
+      "note": "Voted aye on House concurrence for the bill that became S.L. 2026-60. Per the legislature's staff analysis (https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H834-SMBK-32(sl)-v-8), it requires an eligibility affidavit when a relative or guardian hand-delivers a voter's mail-in absentee ballot, sets a deadline for curing ballot deficiencies, directs county boards to decide whether to count a provisional ballot when the no-photo-ID affidavit is found likely false, and treats a driver license in a two-year extension as valid photo ID for voting through December 31, 2027. He is not a listed sponsor.",
+      "subjects": [
+        "photo ID affidavit for voters without ID",
+        "provisional ballot for no-ID voter",
+        "absentee ballot delivery affidavit",
+        "driver license as photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:26.216Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a322c6c8d777914d088f125cdfe065e77dad0e3bd5df0c00f79764e3208171a9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House second reading.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:13.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe36cabe7f7c35e469d188ec18743248046a058bb8d0a1f4326a2b9d180634ed",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/755",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 motion to concur in Senate committee substitute",
+      "note": "Roll-call on HB 958, Election Law Changes (bill page https://www.ncleg.gov/BillLookUp/2025/H958; ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf). The ratified bill says a voter registration application, including one taken at a drivers license office, is processed only if the applicant affirmatively states US citizenship; an applicant who leaves the question blank gets a notice and has 30 days to return a statement under penalty of perjury. It also requires the State Board of Elections to set up a process to remove voters flagged as non-citizens in a federal database, and adds cross-state and death-record voter-roll checks. It does not add a photo ID rule or a document requirement. The Governor vetoed it on 2026-08-17; the bill page shows no override vote yet. Stage voted on: House concurrence vote.",
+      "subjects": [
+        "proof of citizenship to register (statement of citizenship on registration form)",
+        "voter-roll checks against federal databases",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:13.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no photo ID (affidavit, provisional ballot)",
+        "ID or ID number with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: NC House District 16 member, confirmed on https://www.ncleg.gov/Members/Biography/H/755 and https://ballotpedia.org/Carson_Smith_Jr. (on the 2026 general-election ballot after winning the March 3, 2026 primary)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/755 (no personal issue pages)",
+        "legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/755 (nothing on the subject; only election-adjacent item is a workplace E-Verify bill, not voting)",
+        "legislature roll-call votes https://www.ncleg.gov/Members/Votes/H/755 (saved HB 958 and HB 834 votes)",
+        "bill pages and legislative-staff bill analyses for HB 958 and HB 834 on ncleg.gov",
+        "Ballotpedia: nothing on the subject (candidate has not completed the 2026 Candidate Connection survey)",
+        "not reviewed: https://www.facebook.com/CarsonSmithForNCHouse/ (campaign page, social media not readable)",
+        "not reviewed: web news search on name plus subject words (shared search budget was used up before this agent could search)",
+        "own-words search: nothing found on the subject in the pages reached; no campaign site address found"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:39:26.216Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "confirmed as sitting NC House member for District 16: https://www.ncleg.gov/Members/Biography/H/755",
+        "On the Record (0 meetings)",
+        "NC General Assembly member roll-call page https://www.ncleg.gov/Members/Votes/H/755 (2025-26 session, all votes screened for election words)",
+        "NC General Assembly introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/755 (no bill on the subject)",
+        "NC bill page and ratified text for HB 958",
+        "Ballotpedia profile (nothing on the subject)",
+        "no campaign or official site with issue statements found; the member page links only a video channel",
+        "news search on name plus voter ID and HB 958 (nothing from him)",
+        "not reviewed: https://www.whqr.org/local/2018-10-25/coastline-candidate-interviews-nc-house-district-16 (2018 audio interview, cannot be read)",
+        "not reviewed: text of HB 958 amendments A1, A2 and A3 (votes recorded but content not read)",
+        "not reviewed: roll calls from sessions before 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:36:13.299Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

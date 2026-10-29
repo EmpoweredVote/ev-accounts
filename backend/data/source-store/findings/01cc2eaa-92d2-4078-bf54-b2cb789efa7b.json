@@ -1,0 +1,248 @@
+{
+  "politician_id": "01cc2eaa-92d2-4078-bf54-b2cb789efa7b",
+  "findings": [
+    {
+      "id": "a7699a96a1a4e5fec24b0366bfd57850014c5347175d0f1b172297bd15e57d7a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19973/Ortitay-Voices-Support-for-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "Third, the bill would require each voter to show identification, which is supported by 74% of those who responded to a recent Franklin and Marshall poll. The identification options would be expanded to include a free scannable and durable voter registration card that would be required to be sent by counties to every registered voter.",
+      "note": "Statement on House passage of HB 1300 (election reform). Describes its voter-ID provision and the free voter card option; also says no one would be kept from casting a vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "free voter ID card",
+        "no-ID voter options"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:09.350Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c089ad12c69d5f3179d730c73ccd1b5545d65bba0f99751f984bf26ca126bd7",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19973/Ortitay-Voices-Support-for-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "The bill also reduces waiting times at polls, clarifies the requirements for number and location of early voting centers, adds the pre-canvassing timeline, provides for a system to clean up voter rolls, creates new penalties for intimidation of election officials and provides for various transparency and public record requirement updates.",
+      "note": "Same statement: lists other HB 1300 provisions including a voter-roll clean-up system.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:09.350Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('ORTITAY'), linked to Jason A. Ortitay (district 46) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('ORTITAY') on the official bill page; linked to Jason A. Ortitay via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Ortitay'), linked to Jason A. Ortitay (district 46) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Ortitay'), linked to Jason A. Ortitay (district 46) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Ortitay'), linked to Jason A. Ortitay (district 46) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('ORTITAY'), linked to Jason A. Ortitay (district 46) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.854Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "no-ID voter options",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extractor returned none)",
+        "web search (several queries on name plus subject words)",
+        "status check: ballot page lists him on the 2026 general-election ballot (https://ballotpedia.org/Jason_Ortitay)",
+        "official site https://www.reportitay.com/News/: news list shows nothing on the subject",
+        "House caucus press release archive via search"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:02:09.350Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.696Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.458Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.854Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

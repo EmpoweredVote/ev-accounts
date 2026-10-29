@@ -1,0 +1,138 @@
+{
+  "politician_id": "8bb786e1-3e47-4ec6-9ffd-5b7138a81460",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0e896ac9e176571afa05edf485eef9f6de7245d389c988b6279bae4773beb01",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-04-10",
+      "date_precision": "year",
+      "instrument_id": "NC-H-958-2025",
+      "act": "sponsor",
+      "note": "The bill page lists Dixon among the sponsors of House Bill 958, Election Law Changes (filed 2025-04-10 with two primary sponsors; the date Dixon was added is not shown on the page, so the date is given as the year). The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says the person taking a voter registration application at a drivers license office shall proceed only if the applicant affirmatively states that the applicant is a citizen of the United States. It adds G.S. 163-83, requiring a citizenship answer on registration forms, with a notice and a statement under penalty of perjury if the answer is blank. It also directs the State Board of Elections to set up a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows the Governor vetoed it on 08/17/2026. Not checked here: whether the bill requires documents as proof of citizenship, and Dixon's roll-call votes on it.",
+      "subjects": [
+        "citizenship statement to register to vote",
+        "non-citizen voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:57:57.509Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof or statement of citizenship to register",
+        "non-citizen voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/James_Dixon_(North_Carolina) says he is on the 2026 general-election ballot (Nov 3, 2026) for NC House District 4 and advanced from the March 3, 2026 primary; https://www.ncleg.gov/Members/Biography/H/613 names Representative Jimmy Dixon, District 4",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia (page has no voter-ID or election-law content found)",
+        "ncleg.gov member page and introduced-bills list (current session only; earlier sessions not reviewed)",
+        "ncleg.gov bill page and bill texts for HB 958 (2025)",
+        "official campaign site: not reviewed, no URL found",
+        "own-words search (news, speeches, interviews, posts): not done, web search budget was used up for the session",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/632 (HTTP 500, wrong member id anyway)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/613 (roll-call votes on HB 958 not read)",
+        "not reviewed: bills sponsored in earlier sessions, news search on name plus subject words"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:57:57.509Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "politician_id": "a7a31331-5804-4826-9565-a44422d5858e",
+  "findings": [
+    {
+      "id": "7de0d9c3c294e53f78678fe07bde7f030637a2bad7831a43fcd384c24aa37df6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: nay (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "703f45d6ced61f4e65a8203c44d04c4a4a3dd01d0dd64bd1bf4b29e885ab361c",
+      "kind": "own-words",
+      "url": "https://housedems.com/koleszar-on-house-elections-and-ethics-committees-hearing-on-republican-voter-suppression-bills/",
+      "date": "2021-09-21",
+      "date_precision": "day",
+      "passage": "Introducing these bills without any evidence of voter fraud to back their claims reeks of partisan ulterior motives.",
+      "note": "Statement issued in his name after a House elections committee hearing on bills about electronic signatures and ballot applications. He says the bills came without evidence of voter fraud. The fetch tool returned the text; the raw page did not load by curl.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot applications",
+        "evidence of voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:58.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd47eaa7335b93365e39c45bbab9fc98297ef888c185367ab28082150535497b",
+      "kind": "own-words",
+      "url": "https://housedems.com/koleszar-on-house-elections-and-ethics-committees-hearing-on-republican-voter-suppression-bills/",
+      "date": "2021-09-21",
+      "date_precision": "day",
+      "passage": "Sending ballot applications to voters is simply common-sense policy that lowers barriers to voting.",
+      "note": "Same statement. He backs mailing ballot applications to voters.",
+      "subjects": [
+        "mail-ballot applications",
+        "barriers to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:58.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8892512fd573051c581eed878ab8f328484314a3ede32dc37f6e46aca422d5",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/voter-registration-amendment-proposal-splits-032707080.html",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "This legislation is a spit in the face to the will of Michigan voters.",
+      "note": "Quoted by WLNS (republished on Yahoo) on House Joint Resolution B, a proposed constitutional amendment to require proof of U.S. citizenship and identification to register to vote.",
+      "subjects": [
+        "proof of citizenship to register",
+        "ID to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:58.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Matt Koleszar (District 22)') on the official bill page; linked to Matt Koleszar via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Koleszar'), linked to Matt Koleszar (district 22) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot applications",
+        "election integrity laws in general",
+        "constitutional amendment on voter registration"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House caucus about page (state representative, 22nd House District; nothing on the subject)",
+        "House caucus press release of 2021-09-21 on the elections committee hearing",
+        "news report (WLNS via Yahoo, 2025-03-12) on House Joint Resolution B",
+        "Yahoo/Michigan Advance report of 2025-04-10 that he is running for state Senate (5th District); 2026 ballot status not independently confirmed",
+        "Wikipedia 2026 Michigan Senate election page: not reviewed past first 100000 characters (lead only)",
+        "blocked: https://michiganadvance.com/?p=105369",
+        "blocked: ballotpedia.org page returned empty content",
+        "web searches: voter ID statement, 2021 press release title, campaign/election-integrity terms, caucus site (no further own words found)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:47:58.392Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

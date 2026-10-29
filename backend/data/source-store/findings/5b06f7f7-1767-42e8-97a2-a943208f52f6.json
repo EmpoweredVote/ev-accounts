@@ -1,0 +1,68 @@
+{
+  "politician_id": "5b06f7f7-1767-42e8-97a2-a943208f52f6",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Olaleye'), linked to Phil Olaleye (district 59) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voting rights",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed: Georgia state representative, District 59 (took office 2023-01-09), on the 2026 general ballot per Branch (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-59/candidates/phil-olaleye)",
+        "House press release archive page 1 (https://house-press.com/representative/phil-olaleye): nothing on the subject; older pages not reviewed",
+        "NewDEAL podcast page (https://newdealleaders.libsyn.com/website/representative-phil-olaleye-on-georgias-next-generation-of-leadership): topic list mentions legislative maps only, not on the subject; audio not reviewed",
+        "campaign and personal site: Branch profile says no voting and elections content; https://philforgeorgia.com/ gave no usable text",
+        "Ballotpedia: not reviewed (fetch tool returns no text)",
+        "news and bill-tracker search on name plus subject words: no election or voter-ID bills or statements found; sponsored bills are on education and housing",
+        "official Georgia legislature bill and vote pages: not reachable (page loads by script)",
+        "SB 202 (2021): not applicable, he took office in 2023"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:53:19.684Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

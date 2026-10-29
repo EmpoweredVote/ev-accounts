@@ -1,0 +1,42 @@
+{
+  "politician_id": "7b655406-115d-4545-830f-7aa29c886d1a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew (date not stated on page); Ballotpedia https://ballotpedia.org/Joshua_Cain says: \"Joshua Cain (independent) ran for election to the U.S. Senate to represent Texas. He will not appear on the ballot for the general election on November 3, 2026.\" and lists him under \"Withdrawn or disqualified candidates\"",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Joshua_Cain (curl, fetched)",
+        "not reviewed: campaign site, congress.gov, news search (stopped after withdrawal; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:53:29.368Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "status: withdrawn or disqualified before the 2026 general election (date not stated); https://ballotpedia.org/Joshua_Cain says he will not appear on the November 3, 2026 ballot for U.S. Senate in Texas and lists him under withdrawn or disqualified candidates",
+        "On the Record (0 meetings)",
+        "Ballotpedia (fetched; shows he did not complete the 2026 candidate survey)",
+        "one news search on name plus 2026 race (found only a different person, Briscoe Cain; not about this person)",
+        "not searched further: out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:12:37.029Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

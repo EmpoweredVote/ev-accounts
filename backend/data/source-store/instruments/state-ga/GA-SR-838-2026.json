@@ -1,0 +1,53 @@
+{
+  "id": "GA-SR-838-2026",
+  "scope": "state:ga",
+  "title": "SR 838 (2025-2026 Regular Session (filed 2026, second year)): \"State Assurance of Voter Eligibility (SAVE) Amendment\" -CA (Composite Status). Long title: Proposing an amendment to the Constitution of the State of Georgia so as to clarify that only citizens of the United States shall have a right to vote in elections in this state; to require electors to present photographic identification prior to casting a ballot; to provide a short title; to provide for related matters; to provide for the submission of this amendment for ratification or rejection; and for other purposes.",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/ (bill detail and vote API answer 401; token needed; not obtained, not bypassed)",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/243655"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2 (amends Art. II, Sec. I, Para. II of the Constitution); journal text merges struck and inserted words\n(quote) \"Paragraph II. Right to register and vote. Every person who is a citizen Only individuals who are citizens of the United States and a resident residents of Georgia as defined by law, who is are at least 18 years of age and not disenfranchised by this article, and who meets meet minimum residency requirements as provided by law shall be entitled to vote at any election by the people; provided, however, that registered electors must present photographic identification, the forms of which the General Assembly shall provide by law, prior to casting a ballot in any election. The General Assembly shall provide by law for the registration of electors.\"\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Title and ballot question (citizenship-only voting; no proof or documentary requirement is stated)\n(quote) Proposing an amendment to the Constitution of the State of Georgia so as to clarify that only citizens of the United States shall have a right to vote in elections in this state; to require electors to present photographic identification prior to casting a ballot\n(e_other_rule)\n(section) Sec. 2 (ballot question)\n(quote) \"( ) YES Shall the Constitution of Georgia be amended so as to clarify that only ( ) NO citizens of the United States shall have a right to vote in elections in the State of Georgia and that voters must present a photo ID before casting a ballot?\"\n(other) Sec. 1: short title\n(other) Sec. 2 (second): ratification vote",
+  "sponsors": [
+    {
+      "name": "Dolezal of the 27th",
+      "role": "prime",
+      "version": "As introduced (LC 47 4076); a later Senate Rules or committee version was not found."
+    },
+    {
+      "name": "Still of the 48th",
+      "role": "co",
+      "version": "As introduced (LC 47 4076); a later Senate Rules or committee version was not found."
+    },
+    {
+      "name": "Albers of the 56th",
+      "role": "co",
+      "version": "As introduced (LC 47 4076); a later Senate Rules or committee version was not found."
+    },
+    {
+      "name": "Echols of the 49th",
+      "role": "co",
+      "version": "As introduced (LC 47 4076); a later Senate Rules or committee version was not found."
+    },
+    {
+      "name": "Walker III of the 20th",
+      "role": "co",
+      "version": "As introduced (LC 47 4076); a later Senate Rules or committee version was not found."
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28)",
+    "fetched_at": "2026-10-28",
+    "method": "curl"
+  }
+}

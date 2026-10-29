@@ -1,0 +1,250 @@
+{
+  "politician_id": "83004c0d-69f2-4b8f-9089-1c5d1fd296cd",
+  "findings": [
+    {
+      "id": "6d55cb8dee07b39e5ea52ead4029838ba84396b08933c954e0d7d6eb915e5fb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: yea (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "0a4bf791076972b47f3463ca3ebfb2172e2054bc83fe3223d9923abe2a812952",
+      "kind": "own-words",
+      "url": "https://tcjlpac.com/?p=9407",
+      "date": "2015-07-23",
+      "date_precision": "day",
+      "passage": "“I am proud of what we were able to accomplish this session. We reduced the tax burden on Texas’ families and businesses, protected Voter ID and the integrity of our elections, slowed the growth of government, enacted public education reform, and passed pro-life, pro-family legislation for Texas.”",
+      "note": "Reelection announcement (2015) quoting Schofield; he lists protecting Voter ID among the session's achievements. Page is a PAC repost of his campaign release.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a87fc30d88b860ae54e8b7673b20489a0d86f0e8a954d263a11db16ca4a22704",
+      "kind": "own-words",
+      "url": "https://tcjlpac.com/?p=9407",
+      "date": "2015-07-23",
+      "date_precision": "day",
+      "passage": "He passed legislation (along with Senator Paul Bettencourt) to make a birth certificate available at no charge to anyone who only needs it to get their voter ID card. This removes one of the phony arguments often made that Voter ID imposes additional costs on people attempting to vote.",
+      "note": "Text of his campaign release (issued in his name, reposted by a PAC) describing a law giving a free birth certificate to people who need it only to get a voter ID card.",
+      "subjects": [
+        "free state ID / birth certificate for voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea03c891483c4c7017ac7b999194bd4f1943b42f9e3e6c8bc84a377c98d65199",
+      "kind": "own-words",
+      "url": "https://communityimpact.com/katy-fulshear/at-the-capitol/5-bills-house-rep-mike-schofield-wants-to-file-this-legislative-session/",
+      "date": "2017-01-05",
+      "date_precision": "day",
+      "passage": "“My view is, if you swore to us you’re not a citizen, off you go,” Schofield said. “We’ll take your word for it.”",
+      "note": "Quoted by Community Impact at a town hall; he describes his bill to remove from the voter rolls anyone who swears in a jury-duty affidavit that they are not a U.S. citizen.",
+      "subjects": [
+        "removing non-citizens from voter rolls",
+        "citizenship and voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9f407de232a61d9e66dc6e3b997070d0c5a746c7b4a4f4bb236c109f9f50e1c",
+      "kind": "own-words",
+      "url": "https://communityimpact.com/houston/katy/at-the-capitol/2017/01/19/qa-state-rep-mike-schofield",
+      "date": "2017-01-19",
+      "date_precision": "day",
+      "passage": "I have asked to remain on the Elections and Judiciary & Civil Jurisprudence committees, so I can protect the fairness of our elections (including our Voter ID law) and defend the tort reform that has enabled our state’s economy to keep growing when other states have stagnated.",
+      "note": "Written answer in a Community Impact Q&A; he says he wants to stay on the Elections committee to protect the state's Voter ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c606eca80014318c32a0b261eef2e82350578b5dcf0d138d6a08b9cb42038ba5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1263",
+      "date": "2024-11-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1263-2025",
+      "act": "author",
+      "motion": "HB 1263, verification of citizenship of an applicant for voter registration",
+      "note": "Bill filed by Schofield. The secretary of state would check an applicant's citizenship with the Department of Public Safety. An applicant the department cannot confirm would have 60 days to give proof (passport, birth certificate with photo ID, or citizenship papers with photo ID). Referred to the Elections committee 2025-03-10; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted as proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7744211f22340bb4830ff52836eef32fc81b0e5839b7bb80605d4f6c733d665",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB4507",
+      "date": "2021-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4507-2021",
+      "act": "author",
+      "motion": "HB 4507, federal election practices and procedures",
+      "note": "Bill filed by Schofield. It would let the secretary of state keep a separate federal-elections-only voter registration system if federal law changes registration rules, with certificates marked as valid for federal elections only. Reported out of the State Affairs committee 7 to 4 and placed on the General State Calendar 2021-05-12.",
+      "subjects": [
+        "voter registration rules, federal versus state",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b519eede42d960d27016f29a653fab7edc0821f5954ec51715818aae732308fc",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB209",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-209-2025",
+      "act": "author",
+      "motion": "HB 209, separation of federal elections from state and local elections",
+      "note": "Bill filed by Schofield on separating federal elections from state and local elections and related practices and procedures. Referred to State Affairs 2025-02-27; no later action shown.",
+      "subjects": [
+        "voter registration rules, federal versus state",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:14.892Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID / birth certificate for voter ID",
+        "proof of citizenship to register",
+        "removing non-citizens from voter rolls",
+        "election integrity / vote fraud law",
+        "separating federal and state elections (voter registration)"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Texas House member page, biography (confirms House District 132 seat; nothing on the subject)",
+        "Texas House member newsletters and media pages (nothing on the subject)",
+        "campaign site mikeschofield.com (nothing usable on the subject)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for House District 132; no subject statements)",
+        "Texas Legislature Online bill histories and texts for his bills HB 4507 (87R), HB 1263 and HB 209 (89R)",
+        "Community Impact Katy-Fulshear coverage (2017 bill preview and Q&A)",
+        "a conservative legal-reform PAC site carrying his 2015 and 2017 releases",
+        "blocked: https://texasscorecard.com/?p=70148 (403 bot block; could not read his reported quote on HB 4507)",
+        "blocked: https://legiscan.com/TX/sponsors/HB1140/2023 (bot challenge)",
+        "not reviewed: vote records beyond the two already on file",
+        "news search on name plus subject words (3 web searches)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T15:12:14.892Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

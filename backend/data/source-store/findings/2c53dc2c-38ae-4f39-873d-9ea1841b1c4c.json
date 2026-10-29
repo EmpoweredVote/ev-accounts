@@ -1,0 +1,53 @@
+{
+  "politician_id": "2c53dc2c-38ae-4f39-873d-9ea1841b1c4c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Nick_Collins says he is on the Nov 3, 2026 general ballot for MA Senate 1st Suffolk and advanced from the Sept 1, 2026 primary; legislature profile https://malegislature.gov/Legislators/Profile/N_C0 names Senator Nick Collins",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "Official legislature profile and sponsored list (52 petitions reviewed): only election-law items are S.500 (specially qualified voters, absentee eligibility wording) and S.501 (annual street listing repeal); neither is about ID or citizenship proof, so not saved",
+        "Legislature bill search 'voter identification' filtered to his sponsorship: no bill by him returned",
+        "blocked: https://www.nickcollins.org (no content returned)",
+        "not reviewed: official Senate site and campaign site issue pages (could not be reached by direct fetch)",
+        "not reviewed: news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:06:09.570Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Nick_Collins (confirms sitting 1st Suffolk state senator on the 2026 general-election ballot; nothing on the subject)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/N_C0 (bill list reviewed; only election-law item is Senate No. 500 on specially qualified voters, not about ID or citizenship proof, so not saved)",
+        "news/web search on name plus voter ID, SAVE Act, proof of citizenship (nothing on the subject; results were about a different person)",
+        "not reviewed: official and campaign sites (could not be reached: no response from guessed domains)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:20:40.373Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

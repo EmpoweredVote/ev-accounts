@@ -1,0 +1,77 @@
+{
+  "politician_id": "20a863f3-f3ca-4af8-9927-9e0d1dc14ce1",
+  "findings": [
+    {
+      "id": "be2ca4cc95226531500115207753eaa3487488c757c6b2ac18a2fa516ee7d44f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "HB 26, Voter identification; accepted forms of identification, private entities licensed or certified, Senate passage (21-Y 17-N); she is listed among the YEAS",
+      "note": "Bill adds to the accepted voter IDs a photo ID card issued by a private entity licensed or certified by certain state health and social services agencies. Vetoed by the Governor 2024-04-08; House sustained the veto 2024-04-17.",
+      "subjects": [
+        "accepted forms of voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:11.507Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa83585737d4ae8864a7a5e4191dd5caa1a9e91970b34e94d030345233df5495",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039119",
+      "date": "2026-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-52-2026",
+      "act": "yea",
+      "motion": "SB 52, Voter registration; regular periodic review of registration records, Senate passage (21-Y 19-N); she is listed among the YES votes",
+      "note": "Bill on regular periodic review of voter registration records (voter-roll upkeep). Passed the Senate on 2026-02-02; last action on the tracker is House, Left in Appropriations, 2026-03-10. Official vote page https://lis.virginia.gov/vote-details/20261/SB52/VSV156 could not be read.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:11.507Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID",
+        "proof of citizenship to register",
+        "citizenship verification of registered voters",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Russet_Perry (confirms Virginia Senate seat, in office since 2024-01-10, term ends 2028-01-12; no survey answers on the subject)",
+        "legacy Virginia LIS roll-call pages for 2024 (HB26 Senate votes); 2025 and 2026 roll calls there are not readable",
+        "blocked: https://lis.virginia.gov bill and vote pages for 2025 and 2026 (empty script shell)",
+        "https://fastdemocracy.com SB 52 page (2026 Senate vote lists)",
+        "billsponsor.com page for her: page did not render usable text",
+        "two news searches on her name plus voter ID / citizenship: nothing in her own words found",
+        "official Senate page and campaign site https://russetperry.com: not reviewed",
+        "not reviewed: her Senate votes on 2025 bills such as SB 1454 (citizenship verification) and HB 2586, whose Senate floor roll calls could not be read"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:28:11.507Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

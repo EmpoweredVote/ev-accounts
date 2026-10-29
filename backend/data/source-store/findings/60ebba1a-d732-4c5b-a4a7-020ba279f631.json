@@ -1,0 +1,133 @@
+{
+  "politician_id": "60ebba1a-d732-4c5b-a4a7-020ba279f631",
+  "findings": [
+    {
+      "id": "76ed09c2d245ebd8dfdf7767b8e2b31d06b71d57a9ee1917339075bee7041023",
+      "kind": "own-words",
+      "url": "https://housedems.com/tsernoglou-condemns-absurd-unnecessary-republican-resolution-requiring-birth-certificate-to-vote/",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "passage": "“One in ten adult citizens do not have citizenship documentation readily available. This resolution would mean that any Michigan resident who does not carry around their passport or birth certificate would not be eligible for voter registration. Requiring what is oftentimes inaccessible documentation will prevent thousands of eligible voters from being able to cast their votes.”",
+      "note": "Quoted in a House caucus press release (issued the day after a joint resolution on documented proof of citizenship to register was introduced). She speaks against requiring documents such as a passport or birth certificate to register.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:21.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e0ebb3e7511608d00c35f222e535ebcb43228d0e62d55c12487f615d04e7d77",
+      "kind": "own-words",
+      "url": "https://housedems.com/tsernoglou-condemns-absurd-unnecessary-republican-resolution-requiring-birth-certificate-to-vote/",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "passage": "“This is a blatant attempt to disenfranchise Michigan voters through enacting unnecessary barriers to the ballot box,”",
+      "note": "Same release; her words about the proposed documentary proof-of-citizenship requirement for registration.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:21.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Penelope Tsernoglou (District 75)') on the official bill page; linked to Penelope Tsernoglou via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Tsernoglou'), linked to Penelope Tsernoglou (district 75) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; script found no appearances)",
+        "House caucus site press releases (fetched 5 pages: registration day, Benson priorities, committee chair, birth-certificate resolution release)",
+        "House caucus site internal search (results not rendered; nothing usable)",
+        "BallotReady profile (shows she is a 2026 general-election candidate for House District 75; fetched)",
+        "blocked: https://ballotpedia.org/Penelope_Tsernoglou",
+        "blocked: https://news.yahoo.com/election-2022-candidates-michigan-representative-163859694.html",
+        "blocked: https://www.yahoo.com/news/voter-registration-amendment-proposal-splits-032707080.html",
+        "WILX 2024 and 2025 news pages (fetched; nothing in her words on the subject)",
+        "Michigan Star news page on early/absentee voting bills (nothing on ID or citizenship)",
+        "two web searches on her name plus voter ID / SAVE Act / proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:44:21.929Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.332Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

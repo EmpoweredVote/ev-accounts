@@ -1,0 +1,213 @@
+{
+  "politician_id": "750717e7-1f22-42a7-86fd-e065caf343de",
+  "findings": [
+    {
+      "id": "97ffe191c8ba3b5bde8cbdd52e7115aa33c265efd413c33580389c038f08ad21",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-joins-state-and-king-county-leaders-to-warn-of-proposed-barriers-to-voting",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "\"The House of Representatives passing the SAVE [America] Act by a very narrow margin is going to cost America,\" said Sen. Cantwell.",
+      "note": "Quoted in her own press release about a Feb. 19, 2026 event in Seattle. She says the Senate should not pass the SAVE America Act, which the release describes as requiring a passport or birth certificate, in person, to register or change a registration. Release posted 2026-02-20; event date used.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c6974abbaf0aa19f97949dcec7bc97dc6471d663c2c8f47d70d6b3588987494",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-statement-on-vote-against-trojan-horse-extreme-voter-id-bill",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "“Yesterday, we voted down yet another bill that would attack voting rights and vote-by-mail. Republicans used a weak, loophole-filled anti-corruption bill as a Trojan Horse in order to shove through extreme new voter ID rules that would interfere with mail-in voting and disenfranchise Americans, particularly tribal members and students.”",
+      "note": "Statement issued in her name after the Senate vote of Sept. 30, 2026 on an ethics and stock-trading bill that carried voter ID provisions. She voted against it and says the voter ID rules would affect mail-in voting, tribal members and students.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "voter ID attached to unrelated bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2320fadd73f37566a9203a54f92a9d9cbe6e150bce0578626992f16db7cc0bc1",
+      "kind": "own-words",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-joins-democratic-colleagues-in-demanding-dhs-and-ssa-uphold-federal-law-rather-than-president-trumps-illegal-executive-order-to-limit-voting",
+      "date": "2026-05-01",
+      "date_precision": "day",
+      "passage": "“The Department should immediately discontinue the SAVE program’s use for these illegal and non-statutory purposes and take no steps pursuant to the Executive Order that violate the law and risk disenfranchising eligible voters,”",
+      "note": "Closing line of a letter to DHS that she joined with 27 other senators. The letter objects to using the federal SAVE citizenship-check database for voter-roll maintenance under a March 31 executive order, citing wrongly flagged citizens. Release dated 2026-05-01; the letter itself is undated on the page.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14c522c563203765a793ad3dbfcf4b81eb046653bc4d780953d1019dac6a824b",
+      "kind": "record",
+      "url": "https://www.cantwell.senate.gov/news/press-releases/cantwell-statement-on-vote-against-trojan-horse-extreme-voter-id-bill",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Senate vote against advancing a partisan stock-trading ethics bill that included voter identification provisions (bill number and roll-call number not given on the page)",
+      "note": "Her press release says the Senate voted against advancing the bill on Sept. 29-30, 2026 ('Yesterday' in a release dated 2026-10-01) and that she voted against it. Bill number not stated on the page; the vote date is inferred from the release.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:14.366Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1a29c543c9857835a33991bc54ad9b4415da70bbb9feaaf8b3c048b50dd80d2",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "The House of Representatives passing the SAVE [America] Act by a very narrow margin is going to cost America,\" said Sen. Cantwell. \"It will cost Washingtonians time and money, and it may even cost them their vote. That is why we are trying to say the Senate should not pass the SAVE [America] Act.",
+      "note": "Says the Senate should not pass the SAVE America Act, at a Seattle event on 2026-02-19. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b05f136fa9b845129c36ab707e08f8ec30d527de1e4a774201dc8acc46bb593",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/de57cf86-3fe2-458f-a44a-815874b74a93",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "This bill would ... force every voter who needs to register or change their registration to go in person to an election office and show a birth certificate or a passport or proof of citizenship,\" said Sen. Cantwell. \"Why are we putting these burdens on Washington voters? About 40% of Washingtonians don't have a passport.",
+      "note": "Describes the bill's document requirement to register and objects to its burden, citing passport ownership in Washington. Quoted in her Senate office press release of 2026-02-20, which I read as a repost on capitolreleases.com because cantwell.senate.gov returned Access Denied.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents needed to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42132d77394c42eef91385eb3781a78e2f27584bdd31cd87e4376e3fd4b453fd",
+      "kind": "record",
+      "url": "https://www.congress.gov/119/crec/2026/03/17/172/48/CREC-2026-03-17.pdf",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Rollcall Vote No. 57: motion to proceed, Safeguard American Voter Eligibility Act (House message to accompany S. 1383)",
+      "note": "Congressional Record shows Cantwell among the 48 nays on the Senate motion to proceed to the SAVE America Act (S. 1383 House message); the motion carried 51-48. Page text: 'The result was announced--yeas 51, nays 48.' The SAVE America Act is described in her press release as requiring a passport or birth certificate to register.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID at the polls",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:04:27.548Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "voter-roll citizenship checks (SAVE database)",
+        "mail-ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting U.S. Senator (WA), confirmed by cantwell.senate.gov pages naming her; not on the 2026 ballot (not reviewed: no page fetched on her term)",
+        "On the Record (0 meetings)",
+        "official site cantwell.senate.gov: site search for 'SAVE Act', 'election integrity', 'voter ID' (result lists read; 4 press releases fetched, 3 cited)",
+        "nothing on the subject: https://www.cantwell.senate.gov/news/press-releases/cantwell-defends-voting-rights-on-the-senate-floor-highlights-success-of-washington-state-vote-by-mail-business-leader-support (2022 floor remarks on voting rights and vote-by-mail; mentions voter ID only as background text of the release)",
+        "blocked: https://ballotpedia.org/Maria_Cantwell (fetch returned blank page)",
+        "not reviewed: https://www.congress.gov (sponsorships and roll-call pages not fetched)",
+        "not reviewed: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.htm (only a tool summary seen, not citable; the Sept. 30, 2026 vote has no roll-call number or bill number from a primary page)",
+        "not reviewed: further cantwell.senate.gov press releases from the search lists (for example 'Response to Trump's Prime Time Speech Attacking Election Integrity'; 'Cantwell Statement on SCOTUS Decision Enabling Trump Admin to Restrict Mail-In Ballots')",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T22:10:14.366Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "ID with mail ballot",
+        "vote-by-mail",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed identity: Congressional Record page names Sen. Cantwell in the 2026-03-17 roll call; sitting Senator for Washington, not on the 2026 ballot (term runs to 2030)",
+        "On the Record (0 appearances)",
+        "Congressional Record 2026-03-17 (congress.gov) roll call 57",
+        "Congressional Record 2026-03-17 roll call 56 and 2026-03-20 roll call 59 reviewed: not SAVE America Act motions (a nomination and an appropriations bill), not saved",
+        "capitolreleases.com repost of 2026-02-20 office press release",
+        "blocked: https://www.cantwell.senate.gov (Access Denied on press releases and transcripts, including the 2026-03-17 and 2026-02-24 and 2026-02-19 transcripts)",
+        "blocked: https://www.senate.gov roll call pages (unauthorized)",
+        "blocked: https://www.govtrack.us and https://justfacts.votesmart.org (403)",
+        "not reviewed: Ballotpedia and the 2026-06 and 2026-08 office statements on vote-by-mail and the court ruling"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:04:27.548Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

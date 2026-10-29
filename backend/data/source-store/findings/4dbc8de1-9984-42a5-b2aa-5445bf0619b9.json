@@ -1,0 +1,153 @@
+{
+  "politician_id": "4dbc8de1-9984-42a5-b2aa-5445bf0619b9",
+  "findings": [
+    {
+      "id": "64843cbf99df0bc23cd1a2938fa334e6f77accd12d2c8558167fcb62a4bd911a",
+      "kind": "own-words",
+      "url": "https://norton.house.gov/media-center/press-releases/norton-introduces-resolution-condemning-voter-suppression-laws-lack-of",
+      "date": "2019-11-18",
+      "date_precision": "day",
+      "passage": "Whereas approximately 11 percent of American citizens lack government-issued photo identification, and a disproportionate number are low-income, elderly, or people of color;",
+      "note": "Text of the House resolution Norton introduced on 2019-11-18, published on her official site. It lists the share of citizens lacking photo ID as a reason for the resolution, which condemns restrictive state voting laws.",
+      "subjects": [
+        "voter ID at the polls",
+        "state voting restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:59:10.145Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4bf830cfec5254b2f492a5a2bf798126bc17b26ee1c0c42190f16881504c9ffd",
+      "kind": "own-words",
+      "url": "https://norton.house.gov/media-center/press-releases/norton-introduces-resolution-condemning-voter-suppression-laws-lack-of",
+      "date": "2019-11-18",
+      "date_precision": "day",
+      "passage": "Whereas many voting-eligible, low-income Latino voters are naturalized United States citizens who lack proof of citizenship and cannot afford a Certificate of Citizenship or a Replacement Certificate of Naturalization, which cost $1,170 and $555, respectively;",
+      "note": "Same resolution text. It raises cost and access problems for naturalized citizens who must show proof of citizenship.",
+      "subjects": [
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:59:10.145Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2383b4abacad66cac7d885477136c39c28f0e98d77d67671776761ee98403f7a",
+      "kind": "own-words",
+      "url": "https://norton.house.gov/media-center/press-releases/norton-announces-congressional-resolution-condemning-state-voting",
+      "date": "2016-08-09",
+      "date_precision": "day",
+      "passage": "Whereas, 15 states will implement new voting restrictions such as burdensome photo identification requirements and reduced early voting hours for the 2016 presidential election for the first time;",
+      "note": "Text of a resolution Norton announced on 2016-08-09, published on her official site. It describes state photo ID requirements as burdensome.",
+      "subjects": [
+        "voter ID at the polls",
+        "state voting restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:59:10.145Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e32b57d69268f8d9cc914fea17e226904d2d3519d4759c95d87f6af370fb832",
+      "kind": "own-words",
+      "url": "https://norton.house.gov/media-center/press-releases/norton-announces-congressional-resolution-condemning-state-voting",
+      "date": "2016-08-09",
+      "date_precision": "day",
+      "passage": "Whereas, more than 21 million Americans lack government-issued photo ID and a disproportionate number of those Americans are low-income, elderly, or people of color;",
+      "note": "Same resolution text, on how many Americans lack a government photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:59:10.145Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc7d63b9fb0877998d352c1baa26a020bf4f6cb657208080f62e966dcad1193a",
+      "kind": "own-words",
+      "url": "https://norton.house.gov/media-center/press-releases/norton-blasts-ogr-republicans-for-focusing-on-non-existent-voter-fraud",
+      "date": "2015-02-12",
+      "date_precision": "day",
+      "passage": "However, voter fraud is practically non-existent in the United States.",
+      "note": "Statement in her official press release, issued as Ranking Member before a House Oversight subcommittee hearing on immigration actions and elections. She calls voter fraud claims unfounded.",
+      "subjects": [
+        "voter fraud claims",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:59:10.145Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew 2026-01-26 (announced she would not seek re-election in 2026; page: https://ballotpedia.org/United_States_House_of_Representatives_election_in_the_District_of_Columbia,_2026 says \"On January 26, 2026, Eleanor Holmes Norton , the incumbent to the non-voting seat, announced she would not seek re-election in 2026.\"; also https://ballotpedia.org/Eleanor_Holmes_Norton says \"Norton is not running for re-election to U.S. House Non-Voting Delegate District of Columbia in 2026.\")",
+        "On the Record (0 appearances)",
+        "Ballotpedia (person page and 2026 race page)",
+        "official site press release page 1 only: nothing on the subject",
+        "not searched after scope check: congress.gov, news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:47:41.828Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter fraud claims",
+        "state voting restrictions"
+      ],
+      "places": [
+        "On the Record (0 appearances; name search also 0)",
+        "https://ballotpedia.org/Eleanor_Holmes_Norton (sitting non-voting Delegate for D.C.; the page says she is not running in 2026; the brief names a sitting member so the search went ahead)",
+        "https://norton.house.gov press-release pages (three releases fetched and saved; the site search page returned no text I could read, so a full site search was not possible)",
+        "https://norton.house.gov/newsletter-thursday-december-18-2025 (nothing on the subject)",
+        "congress.gov: not reviewed (as a Delegate she has no floor vote on the SAVE Act; no sponsorship on the subject found)",
+        "web searches (three) on her name plus SAVE Act, voter ID and citizenship words: no 2025-2026 statement by her on the SAVE Act found"
+      ],
+      "found": 5,
+      "at": "2026-10-27T02:59:10.145Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

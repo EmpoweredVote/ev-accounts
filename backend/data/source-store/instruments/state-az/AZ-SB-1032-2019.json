@@ -1,0 +1,33 @@
+{
+  "id": "AZ-SB-1032-2019",
+  "scope": "state:az",
+  "title": "SB 1032 (2019 - Fifty-fourth Legislature - First Regular Session (azleg session id 121)): on-site early voting; identification required",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/71080",
+    "https://www.azleg.gov/legtext/54leg/1R/bills/SB1032P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1: Section 16-542, Arizona Revised Statutes, is amended to read: (para A)\n(quote) Any on-site early voting location shall require each elector who obtains a ballot at that location to present and confirm identification as prescribed in section 16-579 before receiving a ballot.\n(section) Sec. 1: Section 16-542, Arizona Revised Statutes, is amended to read: (para E)\n(quote) An elector who appears personally no later than 5:00 p.m. on the Friday preceding the election at an on‑site early voting location that is established by the county recorder or other officer in charge of elections shall be given a ballot after presenting and confirming identification as prescribed in section 16-579 and shall be permitted to vote at the on‑site location.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Bill text\n(quote) REFERENCE TITLE: on-site early voting; identification required\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d",
+  "sponsors": [
+    {
+      "name": "Michelle Ugenti-Rita",
+      "role": "prime",
+      "version": "SB1032P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "politician_id": "7c0b6fe8-da1a-45d8-8732-a411915c0d32",
+  "findings": [
+    {
+      "id": "32d074cc516de124b3f51abced1af0c53c7f4e6185f5b6d54f53b2c8fa7c6bca",
+      "kind": "own-words",
+      "url": "https://vinnieforassembly.com/issues/",
+      "date": "2026-10-28",
+      "date_precision": "unknown",
+      "passage": "Our democracy requires strong protections, yet for nearly three decades, legislative actions in Wisconsin have made voting unnecessarily complicated and restrictive. Measures such as gerrymandered maps, confusing voter ID requirements, and prohibitions on ballot drop boxes have created unnecessary barriers for voters.",
+      "note": "Campaign issues page, section 'Protecting OUR Democracy'. Date is the date the page was read; the page itself is undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "ballot drop boxes",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:10.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82f7bb0b1bfe065bea147ce56021dfd2e69178e86a128a4db44829ab9a173175",
+      "kind": "own-words",
+      "url": "https://vinnieforassembly.com/issues/",
+      "date": "2026-10-28",
+      "date_precision": "unknown",
+      "passage": "We must make it easier for citizens to vote, obtain voter IDs, and access the ballot box.",
+      "note": "Same section of the campaign issues page. Page is undated; the date is the read date.",
+      "subjects": [
+        "help getting a voter ID",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:10.289Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b0fd5c8a833de068229f0d905eb73723f1aa11e44b56399953edc1264166f68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab379",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-379-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 7/31/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Miresse') on the official bill page; linked to Vincent Miresse via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Miresse') on the official bill page; linked to Vincent Miresse via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3033a48793490738b7b933b26206e0607e71021cf4b89fa8e0780e904022fe20",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb362",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-362-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 6/27/2025; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Miresse') on the official bill page; linked to Vincent Miresse via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Miresse') on the official bill page; linked to Vincent Miresse via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('MIRESSE'), linked to Vincent Miresse (district 71) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help getting a voter ID",
+        "proof of citizenship",
+        "election integrity",
+        "mail ballot ID",
+        "voting access"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "campaign site vinnieforassembly.com home page (says he is running for re-election in the 71st District, no year stated; nothing on the subject)",
+        "campaign site issues page (one section on the subject)",
+        "blocked: https://ballotpedia.org/Vinnie_Miresse (empty page via fetch tool; 403 via plain curl)",
+        "https://en.wikipedia.org/wiki/Vinnie_Miresse (lead only; nothing on the subject)",
+        "https://civicmedia.us/posts/2024/09/19/2024-wisconsin-state-legislature-voter-guide-assembly-district-71 (nothing on the subject)",
+        "https://docs.legis.wisconsin.gov/2025/proposals/ab379 (bill page seen; sponsorship left to the separate roll-call linking)",
+        "blocked: https://www.aclu-wi.org/sites/default/files/ad71_vincent_miresse.pdf (404)",
+        "web search on name plus voter ID words (twice): no further own-words found",
+        "2026 candidacy not confirmed by an independent page; search results report a Nov 3 2026 general election race"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:00:10.289Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:15:12.777Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

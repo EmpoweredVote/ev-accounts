@@ -1,0 +1,184 @@
+{
+  "politician_id": "58c0d6b4-ee23-451f-88c1-624cb41428be",
+  "findings": [
+    {
+      "id": "6722a7b42723663b1385efc0add8bf02f090130caf939d842657bbc998397e80",
+      "kind": "own-words",
+      "url": "https://www.mcall.com/2020/10/13/qa-meet-the-candidates-who-will-square-off-in-183rd-pa-house-race/",
+      "date": "2020-10-13",
+      "date_precision": "day",
+      "passage": "I believe that the election law changes will have an overall positive impact on voter participation. I do have concerns regarding the timing of many of the changes that are being implemented. To change machines and introduce mail-in ballots so close to a presidential election could add to confusion among voters and potentially allow for fraud without the right checks and balances.",
+      "note": "His written answer in The Morning Call candidate Q&A, asked whether he is comfortable with the state's election process. He says the 2019-20 election law changes may raise participation but worries about their timing and the need for checks. Nothing on voter ID.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:15.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('MAKO'), linked to Zachary Allen Mako (district 183) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.694Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Mako'), linked to Zachary Allen Mako (district 183) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.694Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Mako'), linked to Zachary Allen Mako (district 183) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MAKO'), linked to Zachery Allen Mako (district 183) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "mail ballot rules",
+        "election law changes",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://www.repmako.com/ (home page and its news links: nothing on the subject)",
+        "2026 candidacy: The Ballot Brief page lists him as incumbent on the November 2026 District 183 ballot",
+        "Lehigh Valley candidate Q&A (The Morning Call, 2020-10-13): saved",
+        "Wikipedia page used only as a lead to the original Q&A",
+        "Branch.vote summary page: a profile site's summary, not his own words, so not saved",
+        "not reviewed: https://www.lehighvalleynews.com/elections/election-preview-183rd-district-gop-shell (page text did not load without scripts)",
+        "blocked: https://ballotpedia.org/Zachary_Mako (page came back empty)",
+        "web searches on name plus voter ID, mail ballots: no voter ID statement in his own words found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:10:15.718Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.694Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.457Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

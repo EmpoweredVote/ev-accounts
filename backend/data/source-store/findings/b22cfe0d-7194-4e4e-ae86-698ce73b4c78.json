@@ -1,0 +1,103 @@
+{
+  "politician_id": "b22cfe0d-7194-4e4e-ae86-698ce73b4c78",
+  "findings": [
+    {
+      "id": "c04d3499e17e08053364d3b1465687d32eb5dab87436fceb4580a14ef13cd27f",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll102.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "On Passage, H.R. 22, SAVE Act (Safeguard American Voter Eligibility Act)",
+      "note": "House Clerk roll call 102 records Strong voting Yea on passage. The bill requires documentary proof of citizenship to register to vote in federal elections. It passed the House.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:44:10.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b3671508e5442a28bde6e60cb67cf53b5b1867fae186267220d4f5781390aab",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "On Passage, H.R. 8281, Safeguard American Voter Eligibility Act",
+      "note": "House Clerk roll call 345 records Strong voting Aye on passage of the 2024 SAVE Act bill, which required documentary proof of citizenship to register. The roll call lists the vote as Aye.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:44:10.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b25facca41218de0fa2f0793e424ac8dcf55403a282278e0b97fce32fa5902c",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll344.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "On Motion to Recommit, H.R. 8281, Safeguard American Voter Eligibility Act",
+      "note": "House Clerk roll call 344 records Strong voting Nay on the motion to send the 2024 SAVE Act bill back to committee. The motion failed.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:44:10.075Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "ID with mail or absentee ballot",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot per https://ballotpedia.org/Dale_Strong (May 19, 2026 primary was canceled; general election November 3, 2026)",
+        "On the Record (0 meetings; nothing on the subject)",
+        "official site https://strong.house.gov/ (home page and issue list: nothing on the subject)",
+        "official site press releases https://strong.house.gov/media/press-releases (fetched; no voter ID, SAVE Act or election terms found in page text; site search pages returned nothing)",
+        "Ballotpedia https://ballotpedia.org/Dale_Strong (SAVE Act vote listed)",
+        "House Clerk roll call records 2025 roll 102 and 2024 rolls 344 and 345",
+        "blocked: https://www.congress.gov/member/dale-strong/S001220 (HTTP 403), so sponsorships and co-sponsorships were not checked",
+        "not reviewed: campaign site dalestrongforcongress.com (not fetched)",
+        "not reviewed: news search on name plus subject words (search budget used up; no news search was run)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (leads only; not fetched)",
+        "no own-words statement on the subject found"
+      ],
+      "found": 3,
+      "at": "2026-10-22T21:44:10.075Z",
+      "by": "source-collector"
+    }
+  ]
+}

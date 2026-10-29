@@ -1,0 +1,323 @@
+{
+  "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a",
+  "findings": [
+    {
+      "id": "d0ae134cd4f8e54f1e75427bfcdaed82bd218d8b0f56165ceff267d397a59e65",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "874f15179194819c1335a6025911d7fd717bd49fb25de5ddbb0f672dd54fc1e9",
+      "kind": "own-words",
+      "url": "https://housedems.com/?p=4049",
+      "date": "2017-05-16",
+      "date_precision": "day",
+      "passage": "Michigan law asks for a photo ID in order to cast a vote, so my bill adds these local government-issued ID cards to the acceptable list of voter identification documents.",
+      "note": "Her statement when she introduced a bill to add county and city issued photo IDs to the accepted voter ID list (she was then in the House).",
+      "subjects": [
+        "voter ID at the polls",
+        "which photo IDs count"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:01.069Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ed87c6253a4dd0aac092b6f160566690087aee477489e394fa0afff343b8e5e",
+      "kind": "own-words",
+      "url": "https://housedems.com/?p=4049",
+      "date": "2017-05-16",
+      "date_precision": "day",
+      "passage": "Any government-issued photo ID should be trustworthy and acceptable for voting.",
+      "note": "Same release; she says any government photo ID should be acceptable for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "which photo IDs count"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:01.069Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f82265bde6b8e224032928660524fb81541b288f736fb99e8df0a1249ef869b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2017-HB-4599",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4599-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"HOUSE BILL No. 4599 May 11, 2017, Introduced by Reps. Chang, Hoadley, Pagan, Rabhi, Hammoud, Garrett, Santana, Wittenber\"",
+      "note": "Named as prime sponsor ('Stephanie Chang (District 6)') on the official bill page; linked to Stephanie Chang via the official 2016 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Stephanie Chang (District 6)') on the official bill page; linked to Stephanie Chang via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44d831dfc1eeb3fca116d2ec1f84e8cd7e68d144fad9d08bff5bac9206547e3b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Chang'), linked to Stephanie Chang (district 6) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Chang'), linked to Stephanie Chang (district 1) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Chang'), linked to Stephanie Chang (district 3) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Stephanie Chang (District 3)') on the official bill page; linked to Stephanie Chang via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Chang'), linked to Stephanie Chang (district 3) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5267aff197e741a0e38d902ffd3735d616690933a00f413ab7d9b2f0178ceb1",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as prime sponsor ('Stephanie Chang (District 3)') on the official bill page; linked to Stephanie Chang via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb4edb750a09b18cf7c1a9c4f969d6af5bbc94b322560c222476c7d092f9e88a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2019-SB-0495",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-495-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"SENATE BILL NO. 495 September 05, 2019, Introduced by Senators CHANG, WOJNO, MCCANN, BULLOCK, IRWIN and ALEXANDER and re\"",
+      "note": "Named as prime sponsor ('Stephanie Chang (District 1)') on the official bill page; linked to Stephanie Chang via the official 2019 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:13.241Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "which photo IDs count",
+        "no-ID fallback (affidavit)",
+        "ID with absentee ballot",
+        "proof of citizenship (SAVE Act)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus pages https://housedems.com/?p=4049 and https://housedems.com/chang-legislation-addresses-voting-rights-language-access/ (her 2017 statements on accepted photo IDs saved)",
+        "Senate site https://senatedems.com/chang/?p=5777 (2020 newsletter; ID passage came back only as fragments, not saved; identity confirmed)",
+        "blocked: https://michiganadvance.com/2021/10/07/another-slate-of-voter-suppression-bills-make-it-through-senate/ (403)",
+        "web search x1 (name plus voter ID / absentee ballot); nothing found on the SAVE Act or proof of citizenship in her words",
+        "not reviewed: Ballotpedia, 2026 ballot status, senatedems.com/chang press release list pages"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:46:01.069Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:55:46.332Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:13.241Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

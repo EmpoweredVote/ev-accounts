@@ -1,0 +1,80 @@
+{
+  "politician_id": "074555d9-2806-4f78-bce9-1958d61742c6",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Meghan_Kilcoyne names her as incumbent for MA House 12th Worcester, on the 2026 general-election ballot after the September 1, 2026 primary",
+        "On the Record (0 appearances for this person; nothing on the subject)",
+        "Ballotpedia profile (no voter ID or election-integrity statements; nothing on the subject)",
+        "legislature profile and sponsored bills https://malegislature.gov/Legislators/Profile/M_K1/Bills (current session list: only election item is a Berlin local recall bill, H.3896; nothing on the subject)",
+        "legislature press page https://malegislature.gov/Legislators/Profile/M_K1/Press (nothing on the subject)",
+        "blocked: https://megkilcoyne.com/ (connection failed, no response)",
+        "blocked: https://megkilcoyne.com/meet-meg (connection failed, no response)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: https://www.facebook.com/meg.kilcoyne.9"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:01.296Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Meghan_Kilcoyne (confirms she is on the 2026 general-election ballot, 12th Worcester District; nothing on the subject)",
+        "On the Record (0 meetings)",
+        "campaign and official site https://www.repkilcoyne.com/ (nothing on the subject in the page text)",
+        "blocked: https://malegislature.gov/Legislators/Profile/M_K1 (no readable content returned)",
+        "Wikipedia (nothing on the subject)",
+        "web search on name plus voter ID (nothing on the subject)",
+        "web search on name plus election bills (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:05:39.748Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: sitting Indiana State Senator, District 33, term ends November 8, 2028, so not on the 2026 ballot (https://ballotpedia.org/Greg_Taylor_(Indiana))",
+        "On the Record (1 meeting, Senate Judiciary Committee 2026-01-14, https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a): nothing on the subject (bills on foreign-agent registration and homeless camping only)",
+        "Ballotpedia: fetched, nothing on the subject",
+        "Wikipedia: fetched for identity only, nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_gregory_taylor_1 (page loads by script only, no member or bill data readable)",
+        "not reviewed: Indiana Senate caucus member page (curl returned no content)",
+        "not reviewed: official site and campaign site issue pages, news search, and bill-by-bill sponsorship and roll-call review (web search budget for the session was used up before these could be done)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:37:18.439Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (1 meeting, Senate Judiciary Committee 2026-01-14, https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a): nothing on the subject; his questions concern a foreign-agent registration bill and homelessness",
+        "Ballotpedia page for Greg Taylor (Indiana politician) (identity only; nothing on the subject)",
+        "the Senate caucus member page and site search (empty or unreadable; nothing on the subject)",
+        "news search: name plus subject words (two searches; none found naming him on the subject)",
+        "WFYI tag page for his name (nothing on the subject)",
+        "iga.in.gov bill pages not searched (votes already on file)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:55:14.670Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

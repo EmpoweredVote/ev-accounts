@@ -1,0 +1,176 @@
+{
+  "politician_id": "2f1ccb1c-4c03-4213-b4be-759ff2cad119",
+  "findings": [
+    {
+      "id": "ba23f9f7f15fd57a6b75e665be34c07bdcfc754825c2ab2b4faec2c99471a135",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-715-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors (not the primary sponsors) of SB 715, Student Voter ID Grant Program/CCs, a bill that creates a grant program tied to voter ID for students; it was re-referred to the Senate Appropriations/Base Budget committee. The bill page lists Meyer and Murdock as primary sponsors and Mohammed among the other sponsors.",
+      "subjects": [
+        "voter ID at the polls",
+        "free or grant-funded voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:40:11.997Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9559d118a5d2fdcc31875423984d5a41c55aa4730343a794858a5efc1d75482b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate vote RCS 693, 28 to 13, passed)",
+      "note": "Senate Second Reading vote on HB 958, Election Law Changes. The bill text (ratified version) requires a county board to process a registration application only if it affirmatively states the applicant is a United States citizen, with a sworn citizenship statement when the question is left blank. It also sets a process to remove from the rolls voters flagged as possible non-citizens from a federal database and requires removal of deceased voters. Mohammed's recorded vote on the member vote page is No.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:40:11.997Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44ad235630a7f7d03ce80c4a85782b39e0dc1bae4ef94601b491cbf18a4570c2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (Senate Bill 747, Elections Law Changes)",
+      "note": "Mohammed is listed among the Noes on the Senate vote to concur with the House changes to S747, a broad elections bill whose subject tags include voter registration, ballots and aliens. The roll call lists 27 Ayes and 18 Noes.",
+      "subjects": [
+        "election law changes in general",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:41:50.060Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39d83a5826478c334536b8cf093c8b327b6d97bbd0ad3c0d134201b08e8d7a19",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (Senate Bill 747, Elections Law Changes)",
+      "note": "Mohammed is listed among the Noes on the Senate vote to override the Governor's veto of S747. The roll call lists 30 Ayes and 19 Noes.",
+      "subjects": [
+        "election law changes in general",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:41:50.060Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free or grant-funded voter ID",
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Mujtaba_Mohammed names him as NC State Senate District 38 incumbent on the November 3, 2026 general election ballot (the March 3, 2026 primary was canceled)",
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/417 (positive control: Sen. Mujtaba A. Mohammed)",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/417 (reviewed; 2025 co-sponsorships on voter ID grants, election safeguards, automatic registration noted)",
+        "NC General Assembly vote history https://www.ncleg.gov/Members/Votes/S/417 (reviewed all election-related rows)",
+        "NC General Assembly bill pages for S715, S392, H958, H3, H58, H1035 (2025 session)",
+        "Ballotpedia page: no own words on the subject (candidate survey for 2026 not completed)",
+        "campaign site: blocked or unusable, mohammednc.com returned an unrelated site, not reviewed",
+        "official Senate member site: not reviewed",
+        "news search and own-words search: not performed, the shared web search budget was used up",
+        "ontheissues.org, vote411, questionnaires, debates, interviews, social posts: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:40:11.997Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site mohammednc.com (no issue pages on the subject)",
+        "NC General Assembly bill page and roll calls for S747 (2023)",
+        "Ballotpedia (not reviewed: https://ballotpedia.org/Mujtaba_Mohammed, fetch returned empty)",
+        "two news searches on name plus subject words (no own words found)",
+        "Senate roll-call page used as proof the person is a sitting senator"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:41:50.060Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

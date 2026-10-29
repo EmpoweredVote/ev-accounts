@@ -1,0 +1,158 @@
+{
+  "politician_id": "5068b8f5-fcb9-4412-877e-e65809e1ddc3",
+  "findings": [
+    {
+      "id": "acf1961d09bcee7e5382160a6357964012b095a2b43dfe595f59d57c241c092b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate floor, 6:13 PM); Craven voted Aye; the Senate vote was 28 Aye, 13 No, 9 not voting, passed",
+      "note": "Voted for HB 958 on second reading in the Senate. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says a voter registration application, including one made at a drivers license office, is processed only if the applicant affirmatively states US citizenship; a blank answer gets a notice and a 30-day window to return a citizenship statement under penalty of perjury. It also directs the State Board of Elections to create a process to remove voters flagged as possible non-citizens from a federal database, and to remove deceased voters from the rolls weekly. It has no photo ID provision that I found. The bill page shows 'Vetoed 08/17/2026'. His vote page (https://www.ncleg.gov/Members/Votes/S/423) lists no third-reading or override vote on HB 958.",
+      "subjects": [
+        "citizenship statement required to register",
+        "voter-roll checks against federal data",
+        "non-citizen voting",
+        "removing deceased voters from rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:07.266Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b516119c4e1b4ec280a07957192434684b5a4a328df3b65bb4d2fd09079a65e4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/423",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment 1 adopted (5:06 PM) and Amendment 5 adopted (5:28 PM); motions to table Amendments 2, 3, 6, 7, 8, 9 and 10 (5:11 to 6:04 PM) passed; Craven voted Aye on each",
+      "note": "His votes page shows Aye on each of these floor votes on HB 958 on 7/28/2026. The page does not give the text of the amendments, and I did not read them, so what each one does is not stated here.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:07.266Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d9a2d5c80c05f3143cf9707dc70fcb2e34201cbc0ebc89e2cd1e1e91215920cd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Senate second reading, H 958 Election Law Changes (28-13)",
+      "note": "Listed among the Ayes on the Senate second-reading vote on H 958, the election law changes bill. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a registration application to state that the applicant is a U.S. citizen before it is processed, with a 30-day sworn-statement fix if the answer is blank, and sets up a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows a Governor's veto on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:09.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizenship statement on registration",
+        "voter-roll checks against federal data",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/S/423 (Senator David W. Craven, Jr., District 29, 2025-2026 session); whether he is on the 2026 general-election ballot was not confirmed by a page I fetched",
+        "On the Record (0 appearances, 0 candidates)",
+        "ncleg.gov member page, introduced bills (nothing on the subject; SB 153 North Carolina Border Protection Act checked, no voter-ID or voting provisions found)",
+        "ncleg.gov member votes page (one subject-related bill, HB 958, found)",
+        "ncleg.gov HB 958 bill page and ratified text",
+        "not reviewed: official Senate site, campaign site, Ballotpedia (Ballotpedia page returned empty), news search: web search budget was used up and no search could be run",
+        "no own-words statements found; none searched beyond the pages above"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:47:07.266Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Dave_Craven (Senate District 29; on the 2026 general-election ballot; nothing on the subject)",
+        "Senate roll call pages confirm him as a sitting Senate member",
+        "NC legislature bill page for H 958 and Senate roll calls #684-#693 (records found)",
+        "news search on name plus H 958, voter ID and citizenship terms (no quote of this person on the subject)",
+        "not reviewed: official Senate member page, campaign site and press releases"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:12:09.617Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

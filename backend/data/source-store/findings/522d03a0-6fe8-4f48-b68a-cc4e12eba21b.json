@@ -1,0 +1,32 @@
+{
+  "politician_id": "522d03a0-6fe8-4f48-b68a-cc4e12eba21b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement instead of ID",
+        "proof of identity to vote",
+        "acceptable non-photo ID documents"
+      ],
+      "places": [
+        "On the Record (0 appearances, searched by id and name)",
+        "Ballotpedia https://ballotpedia.org/Stella_Pekarsky: confirms current State Senate district 36 seat; nothing on the subject",
+        "legislature member page: not reviewed for bills (LIS is script-rendered)",
+        "blocked: https://legiscan.com/VA/rollcall/SB81/id/1364389 (403)",
+        "blocked: https://www.virginiamercury.com/blog-va/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://app.legiplex.com/va/legislature/2025/2025-r/bills/hb2434 (403)",
+        "blocked: https://lis.virginia.gov/bill-details/20251/SB764 (script-rendered, no content); open.pluralpolicy.com and legilist.com bill pages gave no per-member votes",
+        "5 web searches on the name plus voter ID words: no own-words found; third-party trackers list only committee tallies, no per-member vote",
+        "official Senate member page https://apps.senate.virginia.gov/Senator/memberpage.php?id=S124: nothing on the subject",
+        "campaign site session-update PDFs (two): nothing on the subject; other pages not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:22:06.364Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

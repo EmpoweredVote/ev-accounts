@@ -1,0 +1,192 @@
+{
+  "politician_id": "0d9c8776-eef3-4671-adb5-a840a25d9939",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to LYNN SMITH (district 70) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to LYNN SMITH (district 70) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1390043220fcaa4f48c5ea9bdd4b445020e211bbd2261a6d53b3b2d1a031fdcd",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "yea",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to Lynn Ratigan Smith (district 70) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37a65aaf35aadc28bde4edfa52035f4a4d7073ba23e9cfdf8711ddb99573616e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "yea",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to Lynn Ratigan Smith (district 70) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d751c81711dbe038f4ddbe59334eaa33fb1290fce8cd2a78ec644eadf36d79d",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to Lynn Ratigan Smith (district 70) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Smith, L'), linked to Lynn Smith (district 70) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4746c3852c08d2fadb7844ea87c49641e47c9a90460ce08714af287cbc1ca658",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 531 detail API answers 401; not bypassed). History from House Journal 2021 index pp. 1025, 1062, 1262, 1463 and Senate Journal 2021 index pp. 1046, 1052, 2102, 2106 (Senate: referred to Ethics, reported Do Pass by substitute, no floor vote).",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, House committee substitute LC 28 0264S as read and adopted and passed by the House 2021-03-01, 97-72. No \"AS PASSED HOUSE\" PDF was located on the document API; the committee substitute is the text the House Journal shows adopted. Never passed by the Senate.",
+      "note": "Named as co sponsor ('Smith of the 70th') on the official bill text; linked to LYNN SMITH via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: not running for re-election in 2026 (Georgia House District 70 seat is open; she remains in office until the term ends 2027-01-11); stopped after status check; sources https://ballotpedia.org/Lynn_Smith_(Georgia) and https://house-press.com/?p=16857 (2026-06-24)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: confirms not on the 2026 ballot",
+        "news search: retirement reports"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:39:42.116Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.404Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

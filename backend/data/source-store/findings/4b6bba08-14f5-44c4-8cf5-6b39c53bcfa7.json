@@ -1,0 +1,28 @@
+{
+  "politician_id": "4b6bba08-14f5-44c4-8cf5-6b39c53bcfa7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House news center (confirms Rep. Jen Mazzocco, 42nd District, Allegheny County): nothing on the subject; one 2026-10-15 email on registration deadlines (https://www.pahouse.com/Mazzocco/EmailArchive/?id=145676) has no ID content",
+        "PublicSource issues guide for her 2026 special election: nothing on ID or elections",
+        "Ballotpedia: not reviewed (search result says she did not complete its 2026 survey)",
+        "web searches on name plus voter ID and election: nothing on the subject",
+        "she took office after a 2026-02-24 special election; in office, so in scope",
+        "legislature bill pages: not reviewed (votes and sponsorships linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:05:40.364Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "politician_id": "882bae87-162c-4a3e-a47a-cb8d21d2b13b",
+  "findings": [
+    {
+      "id": "2ec6351d1c5a5a501ef372e0430d31dd927da21fd91f8127a9d5f8a12961ebc5",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: yea (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Posthumus'), linked to Bryan Posthumus (district 90) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5265a1bed300aa207c8e6ea81db2fddf8f57365a40bfb2ec28ab46eb54f8985",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as prime sponsor ('Bryan Posthumus (District 90)') on the official bill page; linked to Bryan Posthumus via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f116dc0e7cb8889ef00de466a0b8cd9eacb9ee3ebb5517d55f5d6c2ddf1d70e",
+      "kind": "own-words",
+      "url": "https://bridgemi.com/michigan-government/michigan-republicans-push-constitutional-amendment-requiring-id-vote/",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "passage": "“There’s definitely a balancing act between ensuring only Americans vote in American elections and what and the simplicity that comes with the ability to register and the ability to vote,” Posthumus said. “To say that this makes it complicated to do that — frankly, it’s an insult to citizens.”",
+      "note": "Quoted by Bridge Michigan on his planned constitutional amendment requiring proof of citizenship and ID; he says the proof requirement is not a real barrier.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4167f8324edd1491b33a9aebe62cadf1b974211fe3ab7212fde22e9ab4354e4",
+      "kind": "own-words",
+      "url": "https://bridgemi.com/michigan-government/michigan-republicans-push-constitutional-amendment-requiring-id-vote/",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "passage": "“I strongly believe in making our elections accessible, but I also strongly believe in making our elections secure,” Posthumus said.",
+      "note": "Quoted by Bridge Michigan, same story, on balancing access and security.",
+      "subjects": [
+        "election integrity in general",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed7c5c2f11d421db14ede7414a1dc69300ec0613f16da88638fdfb9da1f357b9",
+      "kind": "own-words",
+      "url": "https://bridgemi.com/michigan-government/michigan-republicans-push-constitutional-amendment-requiring-id-vote/",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "passage": "There is no evidence of noncitizens voting beyond isolated incidents, nevertheless, “not one American citizen should have their vote not canceled out by a noncitizen,” Posthumus said.",
+      "note": "Bridge Michigan reporter's sentence with his direct quote; only the quoted phrase is his. On non-citizen voting as the reason for the amendment.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3bd729614a443a270f88776ecedc105d199ebbb6a5752fe3b21641a38855f1d",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2024-12-11/gop-lawmakers-roll-out-plan-to-require-showing-proof-of-citizenship-and-photo-id-to-vote",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "passage": "“It’s real simple, real basic,” he told Michigan Public Radio. “Proof of citizenship to register to vote and voter ID. That’s what we’re doing. That’s what we’re focusing on. It’s a no-brainer.”",
+      "note": "Interview quote in Michigan Public Radio Network story on the planned amendment: proof of citizenship to register, plus voter ID.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e77c3312185e34ad47b5501bdd9bc6ee11ed50c2f37ae532c82b2c0ac5df9ae9",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2024/12/11/election-integrity-mi-state-rep-bryan-posthumus-preps-constitutional-amendment-ensure-only-citizens-vote",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "passage": "“Unfortunately, the current election law and framework are insufficient to safeguard this foundational principle,” he said.",
+      "note": "Breitbart quotes a statement in his press release (also a WILS radio interview) announcing the amendment; the preceding sentence of the statement is 'Only American citizens can vote in American elections.'",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "027228313a46933c5fc0d7ee0d91fbe9d186053ae0c12eb35ea6cbf7033ae8b8",
+      "kind": "own-words",
+      "url": "https://fox17online.com/news/local-news/michigan/proposed-amendment-to-state-constitution-would-require-proof-of-citizenship-to-vote",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "passage": "“Ultimately, what I wanted to make sure that we were doing is making it as easy to vote as possible and as difficult to cheat as possible,” says Representative Posthumus. “And that's where we landed.”",
+      "note": "FOX 17 quotes him on the amendment (HJR B) requiring proof of citizenship to register and ID to vote, with free state ID for those who cannot afford one.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84eeefce7552215f7bb322461e20686cfc5628c85c3a6e5f200574489fdddaed",
+      "kind": "own-words",
+      "url": "https://www.wilx.com/2025/01/30/state-republicans-introduce-legislation-that-would-require-proof-citizenship-vote",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "passage": "Posthumus (R) from Rockford says “this is a no-brainer. Only U.S. Citizens should vote in our elections.”",
+      "note": "WILX quotes him on the day the amendment resolution was introduced; it would require proof of citizenship to register and photo ID to cast a ballot.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e841b7e49ad79f1d1e063264b4f9e0faaea1e009dc440c83ea8c1411a005ae0",
+      "kind": "own-words",
+      "url": "https://www.thealpenanews.com/news/michigan-news-apwire/2025/02/resolution-would-require-voters-to-prove-citizenship",
+      "date": "2025-02",
+      "date_precision": "month",
+      "passage": "The lead sponsor of the resolution, Republican Rep. Bryan Posthumus of Rockford, said, \"Even under this constitutional amendment, it'll still be easier to vote than it is to shop at Costco.\"",
+      "note": "AP story in the Alpena News; the quoted words are his, on how hard the proof and ID rules would be. Exact day not shown in the URL.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbf856ea44738a8345c490d2b859a02ff6a5dd5c9a09edf3f92d31897930308",
+      "kind": "own-words",
+      "url": "https://www.thealpenanews.com/news/michigan-news-apwire/2025/02/resolution-would-require-voters-to-prove-citizenship",
+      "date": "2025-02",
+      "date_precision": "month",
+      "passage": "\"There's just as much evidence showing that there is voter fraud as there is evidence that there's no voter fraud,\" Posthumus said.",
+      "note": "AP quote (Alpena News) on evidence of voter fraud; the next sentence he is quoted as saying is 'The point is we don't know.'",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d1ce9ecd75cc1399bb4a5b009df35d8c39f30800195f4539f084d46bc460e69",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/michigan/2025/03/04/election-integrity-proof-of-citizenship-amendment-posthumus",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "passage": "“The fact that a member of this body would actually assume that I would be, in any way, shape or form, looking to institute a poll tax — and yes, I’m looking at you, because that is extremely offensive,” Rep. Bryan Posthumus, a Republican from Rockford, said to Koleszar.",
+      "note": "Votebeat quotes his answer in the House Election Integrity Committee hearing to a member who raised cost concerns about proof of citizenship.",
+      "subjects": [
+        "proof of citizenship to register",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "33bbce22398a08a6525407bea560df69a3bd4d2f020598901d862abecb2b7ae4",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/michigan/2025/05/01/proof-of-citizenship-ballot-question-michigan-house-vote-hjr-b",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "passage": "The measure’s sponsor, state Rep. Bryan Posthumus, a Republican from Rockford, said the resolution “is a common-sense way to close a massive loophole in our current system.”",
+      "note": "Votebeat quotes him on HJR B the day of the House vote. The same story says he told Votebeat afterward that he intends to get the proposal on the ballot one way or another.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3145c37c84ed56eb89741a2ecbf1448ba7f0718a43a1966bf49e2ddfcb29c9f8",
+      "kind": "own-words",
+      "url": "https://www.theblaze.com/news/16-noncitizens-apparently-voted-in-michigan-in-2024-and-liberals-are-cheering-about-it",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "\"Nearly 85% of the population agrees,\" Posthumus said, \"only U.S. citizens should vote in our elections, and photo ID should be required when you cast your ballot.\"",
+      "note": "Blaze News quotes him on proof of citizenship at registration and photo ID at the ballot, and on the state's finding of non-citizen ballots in 2024.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "62f0936d5c2bc4e1bfa2e4ca800247277c58c70ff5c6f9652e31ba3dfe821426",
+      "kind": "own-words",
+      "url": "https://www.posthumusformichigan.com/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "During his legislative tenure, Bryan has supported over 20 bills aimed at implementing pragmatic reforms to our electoral system. These reforms are designed to bolster public trust in the sanctity of the ballot box. Despite these initiatives facing vetoes from the governor, Bryan remains an advocate for sensible voter ID legislation, underscoring his commitment to upholding the integrity of our elections.",
+      "note": "Election Integrity section of his campaign page (2024 re-election page, House District 90, vote date August 6, 2024); written in the third person in his campaign's name.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "106120fcf6ddc14a63ce92e417847545ec1aa1f7113c6ee4c5a45d2d7d7bbb5f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "note": "Introduced by him as lead sponsor; amends the state constitution (art. II secs. 1 and 4) to require verification of citizenship to register and change voter ID rules. Referred to the Election Integrity committee. Legislature page lists many co-sponsors.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:02:54.716Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: withdrew 2026-01-15 (announced he would not seek another term in the state House in 2026; page: https://home.mirs.news/post/posthumus-not-seeking-re-election-more-election-news)",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Bryan_Posthumus (page came back empty)",
+        "blocked: https://michiganadvance.com/2026/01/15/posthumus-says-he-will-not-seek-reelection-to-michigan-house-seat/ (bot check)",
+        "stopped after scope check as the brief requires; own-words passages seen but not saved: https://bridgemi.com/michigan-government/michigan-republicans-push-constitutional-amendment-requiring-id-vote/ and https://www.michiganpublic.org/politics-government/2024-12-11/gop-lawmakers-roll-out-plan-to-require-showing-proof-of-citizenship-and-photo-id-to-vote"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:46:13.818Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.337Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "photo ID with absentee ballot",
+        "free state ID and provisional ballot for voters without ID",
+        "non-citizen voting",
+        "voter-roll citizenship checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script; nothing on the subject)",
+        "campaign site https://www.posthumusformichigan.com/ (2024 re-election page, Issues section reviewed)",
+        "the House caucus site https://gophouse.org/ (home page only; no page for this member reached, nothing on the subject)",
+        "Michigan Legislature bill page https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B (sponsor and action history reviewed)",
+        "blocked: https://ballotpedia.org/Bryan_Posthumus (403)",
+        "blocked: https://michiganadvance.com/2024/12/11/posthumus-to-propose-constitutional-amendment-requiring-proof-of-citizenship-from-voters/ (bot check)",
+        "blocked: https://michiganadvance.com/2025/03/04/fight-begins-in-michigan-house-over-whether-to-require-voters-to-prove-their-citizenship/ (bot check)",
+        "news: Bridge Michigan, Michigan Public, Votebeat (two stories), WILX, FOX 17, Alpena News (AP wire), Blaze News, Breitbart; WGVU/Michigan Public 2025-03-04 hearing story read, no direct quote usable",
+        "note: the pages name him as a state representative for House District 90, not a senator"
+      ],
+      "found": 14,
+      "at": "2026-10-28T23:02:54.716Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

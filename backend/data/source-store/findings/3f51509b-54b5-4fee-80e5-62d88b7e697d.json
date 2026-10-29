@@ -1,0 +1,226 @@
+{
+  "politician_id": "3f51509b-54b5-4fee-80e5-62d88b7e697d",
+  "findings": [
+    {
+      "id": "67bd8082edb2ac9da2fdab29582b42380f7430ad82e92088c7e01a116f85f40f",
+      "kind": "own-words",
+      "url": "https://www.sungazette.com/news/top-news/2021/06/senate-starts-voter-id-constitutional-amendment-process/",
+      "date": "2021-06",
+      "date_precision": "month",
+      "passage": "“We should not go down the path of amending our constitution every time we may disagree on a particular issue of policy, and certainly there’s disagreement on this particular issue,” said Sen. Steve Santarsiero, D-Bucks.",
+      "note": "Quoted by the Sun Gazette on the Senate's passage of SB 735, a proposed constitutional amendment requiring ID each time a person votes. He objects to using a constitutional amendment for this issue. Exact day of the remark not shown on the page text I read.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:15.113Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac4539e096897cf1e6ba8e166a5e8491640baedbaaf6e23d5e2c9c0645400066",
+      "kind": "own-words",
+      "url": "https://pasenate.com/senator-santarsiero-speaks-out-for-privacy-rights-of-voters/",
+      "date": "2025-09-29",
+      "date_precision": "day",
+      "passage": "“Pennsylvania has successfully administered free and fair elections at the local, state and federal level since the power was first given to the states by the Founding Fathers.",
+      "note": "Statement issued in his name on the federal Justice Department lawsuit over the state's refusal to hand over registered-voter data. Relates to voter-roll data and election integrity, not ID itself.",
+      "subjects": [
+        "voter-roll data requests",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:15.113Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('SANTARSIERO'), linked to Steven J. Santarsiero (district 10) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Santarsiero'), linked to Steven J. Santarsiero (district 10) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Santarsiero'), linked to Steven J. Santarsiero (district 10) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Santarsiero'), linked to Steven J. Santarsiero (district 10) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.463Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('SANTARSIERO') on the official bill page; linked to Steven J. Santarsiero via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on ID",
+        "voter-roll data requests",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "State Senate site pasenate.com: his 2025-09-29 statement read; he is identified there as State Senator for the 10th district (in scope as sitting member)",
+        "Sun Gazette 2021-06 story on the Senate vote: his floor remark quoted",
+        "Epoch Times 2021-06-25 story: same remark, partly quoted; used only to confirm context",
+        "blocked: https://www.abc27.com/pennsylvania-politics/tear-the-whole-system-down-pennsylvania-republicans-want-save-act-of-their-own/amp/ (HTTP 429)",
+        "blocked: https://penncapital-star.com/government-politics/voter-id-audits-regulatory-authority-constitutional-amendments-advance-pa-senate-committee/ (HTTP 403)",
+        "Ballotpedia: not fetched, earlier Ballotpedia pages came back empty",
+        "his personal Senate site: not located by search, not reviewed",
+        "news searches on name plus voter ID: no other own-words sources fetched",
+        "legislature bill pages: not searched, sponsorships linked separately per brief"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:07:15.113Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.714Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.463Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

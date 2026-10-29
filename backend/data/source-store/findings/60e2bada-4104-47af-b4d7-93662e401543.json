@@ -1,0 +1,75 @@
+{
+  "politician_id": "60e2bada-4104-47af-b4d7-93662e401543",
+  "findings": [
+    {
+      "id": "942d0e70efd0d0985e562c3036551ae752692c66533c09f9859c2f4e7388317d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB3691",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3691-2025",
+      "act": "author",
+      "note": "Ward Johnson authored HB 3691, relating to electronic submission of an application for an early voting ballot by mail by certain persons. It was left pending in the Elections Committee on 2025-05-08. Filing date taken from the earliest history entry on the page.",
+      "subjects": [
+        "requesting a mail ballot",
+        "mail-ballot application online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:01.985Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "011077d0b344bdfe8fd3535f3b985e77d870600eb3c6404a0165a078601d1167",
+      "kind": "own-words",
+      "url": "https://www.electcharlene.com/legislative-updates-2",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Would allow eligible voters—particularly seniors and those with mobility challenges—to request a vote-by-mail application through a secure online portal.",
+      "note": "From her campaign site Legislative Updates page describing her HB 3691. The same entry adds: \"Simplifies the voting process for older adults and people with disabilities, reducing paperwork and barriers to civic participation while keeping the process secure and accessible.\" It does not mention ID.",
+      "subjects": [
+        "requesting a mail ballot",
+        "mail-ballot application online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:01.985Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "ID or request for a mail ballot",
+        "proof of citizenship to register (SB 16)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia shows Texas House District 139, term ends 2027-01-12, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (district 139): no issue statements",
+        "campaign site electcharlene.com home and Legislative Updates page: one bill on the subject (HB 3691, mail-ballot application)",
+        "Texas Legislature bill page for HB 3691 (89R)",
+        "Ballotpedia: nothing on the subject",
+        "news search (1): nothing from her on voter ID or proof of citizenship",
+        "Community Impact 2026 candidate Q&A: she is not quoted on the subject; Defender Network and KTVZ profiles: nothing on the subject",
+        "not found: any vote or statement of hers on SB 16 (2025) proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:59:01.985Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

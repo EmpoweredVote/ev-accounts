@@ -1,0 +1,96 @@
+{
+  "politician_id": "8995a410-276d-4a84-87f2-b097c1535f90",
+  "findings": [
+    {
+      "id": "30f692e2656169b8e72d3ab02d7d2485f7a5ac0255f841c0d6d53137ffabec81",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H799",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-799-2025",
+      "act": "sponsor",
+      "note": "Lead petitioner on House bill H.799, An Act decoupling the municipal census from voter registration, described as legislation to further regulate voter registration rolls. The text limits when a voter's name can be removed from the register to listed reasons (for example a written request, death, felony incarceration, registration elsewhere, or moving away, after notice and hearing) and replaces removal for not returning the census with a fine. Referred to the Election Laws committee on 2/27/2025; hearing held 9/16/2025.",
+      "subjects": [
+        "voter-roll maintenance",
+        "removal of voters from registration rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:14:59.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d39db03fdab2643303c73ad31f3adecf80ae478de6b27c726c5dce9ce6b098b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H799",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-799-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor (Representative Shirley B. Arriaga of Chicopee) of H.799, An Act decoupling the municipal census from voter registration. The page describes it as a petition to further regulate voter registration rolls, referred to the Election Laws committee on 2025-02-27. It does not mention ID or proof of citizenship.",
+      "subjects": [
+        "voter-roll maintenance and registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:28.867Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll maintenance",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Shirley_Arriaga names her as MA House 8th Hampden District member, on the Nov 3, 2026 general ballot after the Sept 1, 2026 primary (the legislature lists her as Shirley B. Arriaga)",
+        "On the Record (0 appearances for this person)",
+        "malegislature.gov member profile https://malegislature.gov/Legislators/Profile/SBA1 (sponsored bills reviewed; one on voter-roll maintenance)",
+        "malegislature.gov bill page https://malegislature.gov/Bills/194/H799 and bill text",
+        "Ballotpedia (page has no stance statements on the subject)",
+        "nothing on the subject: no sponsored bill or other record on photo ID, ID with mail ballot, or proof of citizenship found on the legislature profile",
+        "not reviewed: official site and campaign site, news search, roll-call votes (web search budget was used up; no direct URL was fetched for these)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:14:59.855Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll maintenance and registration",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov bill page for H.799 (her sponsorship; about voter registration rolls, not ID)",
+        "blocked: https://malegislature.gov/Legislators/Profile/SAA1 (404)",
+        "The Ballot Brief (confirms she is on the Nov 3, 2026 ballot for 8th Hampden)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Shirley_Arriaga (fetch returned no text)",
+        "news search on name plus voter ID and elections bills (no voter ID or citizenship sponsorship or quote found)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:35:28.867Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "politician_id": "9edc0c37-f213-4aae-9212-c9cb4780d854",
+  "findings": [
+    {
+      "id": "9b6192ff2493ca25feaab7691a27459f3e371fbea70a3686fa4faeba96f7d214",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading, Senate floor",
+      "note": "Voted aye on the Senate floor (29 to 9) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy. The page lists this vote under 2026-08-24 and repeats it under 2026-10-19; the Governor vetoed the bill on 2026-09-27 per that page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:12:10.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c145d0d4fd95029468744987d723b73c8e2004d5c3afedbd62ffb5f11487eb99",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-13",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2026",
+      "act": "yea",
+      "motion": "Senate Appropriations Committee: do pass as amended",
+      "note": "Voted aye in the Senate Appropriations Committee (5 to 2) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:12:10.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b9ec2f0954aa6a0ebb01a96ac04dc6d874ae091dd682239e4b791ba47a7071c",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Assembly Third Reading, Senate floor",
+      "note": "Voted aye on the Senate floor (29 to 9) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy. The page lists this vote under 2026-08-24 and repeats it under 2026-10-19; the Governor vetoed the bill on 2026-09-27 per that page.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebd50e919a1f1f6d0456166de7a2a2e4a1549262a048b459994f1854a65c539f",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-13",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Senate Appropriations Committee: do pass as amended",
+      "note": "Voted aye in the Senate Appropriations Committee (5 to 2) on AB 1116, which lets a person register online without a driver's license or state ID, with identity checked by other data such as the last four digits of a Social Security number. Source is CalMatters Digital Democracy.",
+      "subjects": [
+        "identity check to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.863Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter registration identity check",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Ballotpedia shows her in the State Senate, District 35, term ending 2028",
+        "official site sd35.senate.ca.gov (home page and site searches for voter and election: nothing on the subject)",
+        "CalMatters Digital Democracy AB 1116 page (votes, veto)",
+        "one news search on her name plus voter ID and SAVE Act: nothing about this person",
+        "one news search for a California resolution on the SAVE Act: none found",
+        "not reviewed: her social media and any committee hearing video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:12:10.272Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter registration identity check",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Ballotpedia shows her in the State Senate, District 35, term ending 2028",
+        "official site sd35.senate.ca.gov (home page and site searches for voter and election: nothing on the subject)",
+        "CalMatters Digital Democracy AB 1116 page (votes, veto)",
+        "one news search on her name plus voter ID and SAVE Act: nothing about this person",
+        "one news search for a California resolution on the SAVE Act: none found",
+        "not reviewed: her social media and any committee hearing video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:28:19.863Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

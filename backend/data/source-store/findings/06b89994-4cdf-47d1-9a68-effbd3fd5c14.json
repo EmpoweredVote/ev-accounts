@@ -1,0 +1,228 @@
+{
+  "politician_id": "06b89994-4cdf-47d1-9a68-effbd3fd5c14",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0f969fbb7ec60cb0bb67435424a19ab14f839cd92c1bde2b40e48ac0ef976a9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S747",
+      "date": "2023-06-01",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not primary) of Senate Bill 747, Elections Law Changes (filed 2023-06-01, became SL 2023-140). The ratified text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S747v6.pdf) adds same-day registration at early voting that requires proof of residence and photo identification under G.S. 163-166.16, and lets a registered voter be challenged for not presenting photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "election law changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:02.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e0c2e09d92bf47e467b03effa492f19fdcef78e57eeff93de36b23a704c9aaf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/290",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "yea",
+      "motion": "Amendment 1 (roll call 290, 28 ayes, 19 noes)",
+      "note": "Senate roll call on an amendment to SB 747, Elections Law Changes; Corbin is in the Ayes list.",
+      "subjects": [
+        "election law changes",
+        "photo ID for same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:02.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "414e6bfc77c44ef72a1789dba68114b1407590efb968d6ce80ddd90c479059d2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/291",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "yea",
+      "motion": "Amendment 2 (roll call 291, 47 ayes, 0 noes)",
+      "note": "Senate roll call on a second amendment to SB 747, Elections Law Changes; Corbin is in the Ayes list.",
+      "subjects": [
+        "election law changes",
+        "photo ID for same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:02.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "674ca41e53c829253470b9a9b6f226adaf6cfcdf2cdc62bdde112dfc4adfbeee",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "other",
+      "motion": "Motion 9 To Concur HCS and H Amends (roll call 439): listed under Excused Absence, no vote cast",
+      "note": "Senate vote to concur in House changes to SB 747; Corbin is on the Excused Absence list, so he did not vote.",
+      "subjects": [
+        "election law changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:02.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a90c703c9454d050dc44790fb1037b529f3be61f039cd219d5c81e243e88cd6",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override (roll call 482, 30 ayes, 19 noes)",
+      "note": "Senate vote to override the governor's veto of SB 747, Elections Law Changes; Corbin is in the Ayes list. The bill became SL 2023-140.",
+      "subjects": [
+        "election law changes",
+        "photo ID for same-day registration",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:02.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "voter-roll checks and election law changes",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kevin_Corbin says he is on the 2026 general election ballot for NC Senate District 50 (primary was canceled); legislature member page https://www.ncleg.gov/Members/Biography/S/433 names Senator Kevin Corbin",
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://kevincorbin.com/ (home page only; issue section lists an Elections line with no ID content; in-the-news page nothing on the subject)",
+        "NC General Assembly bill pages: SB 747 (2023), SB 824 (2017) already on file, roll call votes S/290, S/291, S/439, S/482 (2023)",
+        "Ballotpedia (no statements on the subject)",
+        "not reviewed: other 2025-2026 Senate bills on elections (no bill-list page reachable for his sponsorships; member Introduced Bills page not parsed)",
+        "not done: news search on name plus subject words (shared web search budget used up)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/743 (HTTP 500)"
+      ],
+      "found": 5,
+      "at": "2026-10-22T23:33:02.565Z",
+      "by": "source-collector"
+    }
+  ]
+}

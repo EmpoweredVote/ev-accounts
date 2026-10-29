@@ -1,0 +1,251 @@
+{
+  "politician_id": "ba95ecc9-d652-4397-b19d-a1841cbceb65",
+  "findings": [
+    {
+      "id": "4ae371107b19c425e2ba3de6f5ae5e832ce7c471f05aeef529ea55b272bba405",
+      "kind": "own-words",
+      "url": "https://jonathanalmond.com",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "Free and fair elections are essential to ensuring government reflects the will of the people. I support voter ID, limited early voting, rare absentee by‑mail voting, and secure paper ballots on Election Day. I voted for House Bills 958 and 834 to strengthen election rules, give nonpartisan candidates a greater role in the process, and require audits after each general election so every vote is counted with confidence.",
+      "note": "Election Integrity section of his campaign home page. The page was last modified 2026-10-08 per its own metadata; the exact date the text was written is not shown. States support for voter ID, limited early voting, rare mail voting, and says he voted for HB 958 and HB 834.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot limits",
+        "limited early voting",
+        "election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:20.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f46a8193c00033d9a27458b2be6e6c01658c75440af2663078608f76eb9923ae",
+      "kind": "own-words",
+      "url": "https://jonathanalmond.com",
+      "date": "2026-10",
+      "date_precision": "month",
+      "passage": "HB 958 — Election Law Changes — Yea to reform early voting, citizenship verification, expand election audits, voter‑roll maintenance, and observer rules.",
+      "note": "His campaign site's list of bills from his first term describes his Yea vote on HB 958 and names citizenship verification among its subjects. Page last modified 2026-10-08.",
+      "subjects": [
+        "citizenship verification",
+        "voter-roll maintenance",
+        "election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:20.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "abf04b6299dff17f0ab0226b5740b1022d41dd75d3d897d0f14e3d8c6ec47ef7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (House vote 66-47)",
+      "note": "Member's vote is listed as Aye on the House second reading. The bill (Committee Substitute 4) lengthens to the fifth business day after an election the deadline for a voter to bring acceptable photo ID to the county board after casting a provisional ballot without it, and the same deadline for curing ID-number mismatches and for absentee-ballot ID or affidavit deficiencies (G.S. 163-166.16(c), 163-166.12(d), 163-230.1(e1)). Bill text is https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v5.pdf.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without photo ID",
+        "ID with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:20.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1aa24b5274a7d5d32e92cd62c81afccb8775c9f0e1536731fccf9585ee7ccad1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House vote 62-47)",
+      "note": "Member's vote is listed as Aye on the House concurrence vote on the Senate changes to HB 958.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voters without photo ID",
+        "ID with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:20.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ae5de1da53629d73bd29301299dc2003f019ff27a2911fcb1f93c74be03f938",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Amendment A3 Dahle, Second Reading (failed 47-66)",
+      "note": "Member's vote on this floor amendment is listed as No; the amendment failed. The amendment's content was not read, so what it changed is not known from this source.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:20.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c0a7367b8f51734eec09a20070a37690bdd641ce313dddb764c88edbdd3c863",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Voted aye on second reading of HB 958, Election Law Changes, per his member votes page. The bill text (Edition 6, https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v6.html) includes a section deeming certain extended Class C drivers licenses valid and unexpired for photo ID used in voting, a section on voter registration applications indicating lack of citizenship, and a change to voting when drivers license or Social Security numbers do not match.",
+      "subjects": [
+        "photo ID validity for voting",
+        "proof of citizenship to register",
+        "voter registration changes",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae85e6f754eda3bd933d93558ffe3bd1744ee95da7b817e6cee299b4b7747bd1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, House concurrence in Senate committee substitute",
+      "note": "Voted aye on the House concurrence vote on HB 958 (the bill page shows the concurrence passed 62-47 and the bill was later vetoed by the Governor on 2026-08-17).",
+      "subjects": [
+        "election law changes in general",
+        "photo ID validity for voting",
+        "voter registration changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80d8051ea8f6f4dd902788e453189d0e35497a8ee2896a3c7b265eb781ad765d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/843",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Amendment 3 (Dahle)",
+      "note": "Voted no on Amendment 3 to HB 958; the bill page shows it failed 47-66. The amendment's content was not read.",
+      "subjects": [
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:57:18.927Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot / cure period for voters without photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship / citizenship verification",
+        "voter-roll maintenance",
+        "election integrity laws in general",
+        "early voting and absentee-by-mail limits"
+      ],
+      "places": [
+        "In scope: NC House District 73 member (https://www.ncleg.gov/Members/Biography/H/843); on the 2026 general-election ballot per https://ballotpedia.org/Jonathan_Almond",
+        "On the Record (0 appearances, 0 sources)",
+        "official campaign site https://jonathanalmond.com (fetched; Election Integrity section and bill list read)",
+        "ncleg.gov introduced bills list https://www.ncleg.gov/Members/IntroducedBills/H/843 (no bill on voter ID or citizenship by title; only HB 31, 66, 93, 127, 375, 411 on other election topics)",
+        "ncleg.gov member votes https://www.ncleg.gov/Members/Votes/H/843 (HB 958 votes found; page text beyond 100000 characters not read in the fetch summary, but the raw page was searched for voter, ID, citizen, absentee, photo)",
+        "ncleg.gov HB 958 text (fifth edition PDF)",
+        "Ballotpedia https://ballotpedia.org/Jonathan_Almond (candidate survey from 2024 read; nothing on voter ID)",
+        "web news search: not run, the shared search budget was used up",
+        "nothing on the subject: Ballotpedia survey, official-site news list",
+        "not reviewed: Facebook, X and YouTube campaign accounts (https://x.com/JonAlmond4NC73, https://www.youtube.com/@JonathanAlmondforNCHouse)",
+        "not reviewed: ontheissues.org and vote411 (leads only; no search possible)"
+      ],
+      "found": 5,
+      "at": "2026-10-23T00:07:20.440Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID validity for voting",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "voter registration changes",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms on the 2026 general-election ballot, District 73)",
+        "NC House member page house.ncleg.gov",
+        "ncleg.gov member votes page (first 100000 characters read; the rest not read)",
+        "ncleg.gov bill page and bill text for HB 958",
+        "one news search on name plus voter ID (nothing tying him to a voter ID statement)",
+        "nothing on the subject: no campaign-site or own-words statement located",
+        "blocked: https://ncnewsline.com/2026/06/25/house-set-to-vote-on-sweeping-election-bill-despite-opposition-to-overseas-voter-restrictions/ (403)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:57:18.927Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

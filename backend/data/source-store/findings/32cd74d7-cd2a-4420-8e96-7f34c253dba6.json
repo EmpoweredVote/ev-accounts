@@ -1,0 +1,78 @@
+{
+  "politician_id": "32cd74d7-cd2a-4420-8e96-7f34c253dba6",
+  "findings": [
+    {
+      "id": "d21e1efce21f1e2d4d6cf43c70b33ebf5cd829c2350e3fd9c4372ccf759fe304",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "House adoption of SJR 37 (constitutional amendment clarifying that a voter must be a U.S. citizen), Record 2196, 102 yeas, 14 nays, 22 present not voting",
+      "note": "The House journal (day 62, page 4129) lists him under present, not voting. on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. ",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:50.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2daa6dffb3f4891348315e887d15cf7bbf557a22e5353b7ea497c54401e9474",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "House passage of SJR 37 to third reading, Record 1897, 98 yeas, 18 nays, 20 present not voting",
+      "note": "The House journal (day 60, page 3737) lists him under present, not voting. on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. ",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:50.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (https://ballotpedia.org/Salman_Bhojani): confirms he is the District 92 state representative and is on the 2026 general-election ballot; his 2026 candidate survey answers (passions, key messages) say nothing on the subject",
+        "Texas House member page for District 92: nothing on the subject",
+        "Texas Legislature Online bills-authored report for the 89th regular session (member code A4115): no bill on voter ID, registration or citizenship; ballot-reading, primary-format and election-cancellation bills only",
+        "House journals day 60 and day 62 (journals.house.texas.gov PDFs): his votes on SJR 37",
+        "campaign site salmanbhojani.com: nothing retrievable on the subject",
+        "one news search on his name plus the subject words: no statement from him on the subject",
+        "not reviewed: House committee and floor video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:02:50.413Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

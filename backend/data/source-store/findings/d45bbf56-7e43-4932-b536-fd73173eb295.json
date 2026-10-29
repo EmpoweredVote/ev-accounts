@@ -1,0 +1,72 @@
+{
+  "politician_id": "d45bbf56-7e43-4932-b536-fd73173eb295",
+  "findings": [
+    {
+      "id": "c55cf73f4b07af0d3424fbe50a856f4a7c0fa031ba2a573b65ad0f56ecc6dfeb",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2021/11/01/texas-house-el-paso-redistricting/",
+      "date": "2021-11-01",
+      "date_precision": "day",
+      "passage": "“It’s no coincidence that the two women who are being paired against each other are the same two women who refused to waiver in the fight to protect voting rights,” Ordaz Perez said.",
+      "note": "Quoted by the Texas Tribune. She links her new district pairing to her part in the 2021 quorum break over the state elections bill. It speaks of voting rights in general, not ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "2021 elections bill quorum break"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:47.127Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9ddb6eeb9b2e2b3c1ba5226f90c4378bc5003288f7ac7bb50d1dedb9ee0a93f",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/members/4015/biography",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "During her first session, she was named “Freshman Legislator” of the year by the Tejano Democrats for her work in fighting for voting rights.",
+      "note": "Line on her official House biography about her first session. It speaks of voting rights in general and names no ID or citizenship rule. The page carries no date.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting rights"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:47.127Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SB 16)",
+        "mail-ballot ID",
+        "voting rights and the 2021 quorum break"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House member page (house.texas.gov district 79): confirms Rep. Claudia Ordaz holds the District 79 seat; nothing on the subject",
+        "official House biography page: one voting-rights line saved",
+        "Texas Tribune 2021-11-01 article on El Paso redistricting: one direct quote saved (she is named there as Ordaz Perez)",
+        "two news searches on her name plus the subject words: no statement on ID or citizenship rules found",
+        "blocked: Ballotpedia (not fetched; a direct request was refused by the tool permission check)",
+        "no campaign site found",
+        "not reviewed: Texas Legislature Online bill pages for her sponsorships (site needs scripts)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:27:47.127Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "politician_id": "8512ef88-a285-4c6f-89d3-41fb4f8cfd48",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://malegislature.gov/Legislators/Profile/KPS1 (Representative Kenneth P. Sweezey, Duxbury, 194th General Court); campaign site https://www.kensweezey.com says 'Re-Elect Your State Representative'",
+        "On the Record (0 appearances)",
+        "legislature bill pages (profile sponsorship list; H.871 'An Act moving the date of regular primary elections' and H.872 Pembroke recall are election bills but not on this subject): nothing on the subject",
+        "campaign site https://www.kensweezey.com: nothing on the subject",
+        "blocked: https://ballotpedia.org/Kenneth_P._Sweezey (404 / empty)",
+        "not reviewed: web news search (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:07.679Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia https://ballotpedia.org/Kenneth_Sweezey shows a sitting Massachusetts House member for the 6th Plymouth District, on the November 3, 2026 general-election ballot after advancing from the September 1, 2026 primary",
+        "On the Record (0 appearances found)",
+        "campaign/official site https://www.kensweezey.com (home and about pages: nothing on the subject; /issues and /news do not exist)",
+        "Ballotpedia page (Candidate Connection survey not completed; nothing on the subject)",
+        "news search on name plus voter ID words (nothing on him)",
+        "search for 194th General Court voter ID bills (found H.833 by another representative; could not check whether he co-sponsored)",
+        "blocked: https://malegislature.gov/Bills/194/H833/Cosponsor (503)",
+        "blocked: https://malegislature.gov/Bills/194/HD3562 (503)",
+        "blocked: https://malegislature.gov/Bills/194/H833 (empty response)",
+        "not reviewed: his X account https://x.com/RepSweezey",
+        "not reviewed: Massachusetts House roll-call records 2025-2026"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:31:21.658Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

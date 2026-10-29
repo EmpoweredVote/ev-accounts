@@ -1,0 +1,67 @@
+{
+  "politician_id": "e144a205-5a4c-462c-bdda-0ecaddb294d7",
+  "findings": [
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Carter, B.'), linked to Brenda Carter (district 53) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.339Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot application",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --politician and --names, nothing found)",
+        "official page on the House caucus site https://www.housedems.com/brenda-carter/ (first page of news and site-wide search checked; nothing on the subject)",
+        "legislature bill pages: sponsorships and votes are linked separately, not reviewed here",
+        "blocked: https://ballotpedia.org/Brenda_Carter (empty page)",
+        "news searches on name plus proof of citizenship, voter ID, poll tax (2 searches); no quote of her found; coverage fetched (wwmt, civicmedia, yahoo) does not mention her",
+        "blocked: https://www.newsfromthestates.com/article/gop-led-proof-citizenship-voting-bill-advances-despite-concerns-democratic-colleagues (403)",
+        "search results list her on the November 3, 2026 ballot for House district 53 (county candidate list)",
+        "not reviewed: House floor video"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:52:09.717Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.339Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

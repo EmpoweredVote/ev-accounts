@@ -1,0 +1,47 @@
+{
+  "politician_id": "3f39cb5b-31fe-4252-8614-54d5948c9630",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "identity: Ballotpedia (https://ballotpedia.org/Anthony_Swinger) names him as a member of the Indiana Utility Regulatory Commission, appointed December 12, 2025, in office since January 12, 2026, term ends December 31, 2029; this is an appointed utility regulator, not a legislator and not on a ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: web search budget used up (200 shared searches), so no news or own-words search was run",
+        "not reviewed: Indiana Utility Regulatory Commission site and any commission statements (not fetched successfully)",
+        "not reviewed: Indiana General Assembly bill pages (not a legislator; legislators page did not load)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:26:51.292Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed: https://ballotpedia.org/Anthony_Swinger shows him as an appointed member of the Indiana Utility Regulatory Commission since 2026-01-12, term to 2029; not an elected office and not on a 2026 ballot",
+        "official commission page https://www.in.gov/iurc/about-us/commission-chairman-and-commissioners/commissioner-anthony-swinger/ turned up in search only; not fetched",
+        "news search on name and office: coverage is about utility rates only; nothing on the subject",
+        "no legislative record: the office has no votes or bills on elections"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:38.346Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

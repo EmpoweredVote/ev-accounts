@@ -1,0 +1,222 @@
+{
+  "politician_id": "de537ca7-56a1-4cb3-a601-71de5f4e9929",
+  "findings": [
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Natalie Price (District 5)') on the official bill page; linked to Natalie Price via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Price'), linked to Natalie Price (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e1a61f53a228ff53b2ba783ab075a30d31d24a027f468b3c4e8398a6a1483e0",
+      "kind": "own-words",
+      "url": "https://votenatalieprice.com/my-record",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Voted no on Michigan's SAVE Act, Republican legislation that would have imposed proof-of-citizenship requirements on voters.",
+      "note": "Campaign record page, Voting Rights list, describing her own vote on the state proof-of-citizenship bill.",
+      "subjects": [
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb2facacd811e5f7fb8a3e10fb3ef2890af1dffcc4088c814b9715745aece06e",
+      "kind": "own-words",
+      "url": "https://votenatalieprice.com/people-first",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Pass the Michigan Voting Rights Act and protect free and fair elections from partisan interference.",
+      "note": "Campaign Democracy and Accountability page, a stated goal on election protections.",
+      "subjects": [
+        "voting rights protections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.411Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc6bbb338e8cf2594f93b80480e4f34105d1e98b52decdf98e1c0f8bf0e1a2c9",
+      "kind": "own-words",
+      "url": "https://votenatalieprice.com/my-record",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Required all Michigan election audits to be conducted by county clerks who hold no political party positions, strengthening the independence and integrity of our elections.",
+      "note": "Campaign record page, Voting Rights list, on who conducts election audits.",
+      "subjects": [
+        "election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.411Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote or register",
+        "election audits",
+        "voting rights protections",
+        "ballot access"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "official House member page https://housedems.com/natalie-price/ (confirms 6th District; nothing on the subject)",
+        "official House profile page https://housedems.com/?p=206383: nothing on the subject",
+        "campaign site votenatalieprice.com (home, record page, Democracy & Accountability page, news list)",
+        "news list on campaign site: titles reviewed, none on the subject",
+        "candidate summary pages list her as the 2026 Senate District 10 candidate after winning the 2026-08-04 primary (reported by a state business-group newsletter); she is in scope",
+        "blocked: https://ballotpedia.org/Natalie_Price not fetched (empty-page result on other Ballotpedia pages in this run)",
+        "web searches on name plus voter ID, citizenship, floor remarks: no direct quotes found; votes linked separately"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:59:56.350Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote or register",
+        "election audits",
+        "voting rights protections",
+        "ballot access"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "official House member page https://housedems.com/natalie-price/ (confirms 6th District; nothing on the subject)",
+        "official House profile page https://housedems.com/?p=206383: nothing on the subject",
+        "campaign site votenatalieprice.com (home, record page, Democracy & Accountability page, news list)",
+        "news list on campaign site: titles reviewed, none on the subject",
+        "candidate summary pages list her as the 2026 Senate District 10 candidate after winning the 2026-08-04 primary (reported by a state business-group newsletter); she is in scope",
+        "blocked: https://ballotpedia.org/Natalie_Price not fetched (empty-page result on other Ballotpedia pages in this run)",
+        "web searches on name plus voter ID, citizenship, floor remarks: no direct quotes found; votes linked separately"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:05:26.591Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote or register",
+        "election audits",
+        "voting rights protections",
+        "ballot access"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "official House member page https://housedems.com/natalie-price/ (confirms 6th District; nothing on the subject)",
+        "official House profile page https://housedems.com/?p=206383: nothing on the subject",
+        "campaign site votenatalieprice.com (home, record page, Democracy & Accountability page, news list)",
+        "news list on campaign site: titles reviewed, none on the subject",
+        "candidate summary pages list her as the 2026 Senate District 10 candidate after winning the 2026-08-04 primary (reported by a state business-group newsletter); she is in scope",
+        "blocked: https://ballotpedia.org/Natalie_Price not fetched (empty-page result on other Ballotpedia pages in this run)",
+        "web searches on name plus voter ID, citizenship, floor remarks: no direct quotes found; votes linked separately"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:13:34.909Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote or register",
+        "election audits",
+        "voting rights protections",
+        "ballot access"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "official House member page https://housedems.com/natalie-price/ (confirms 6th District; nothing on the subject)",
+        "official House profile page https://housedems.com/?p=206383: nothing on the subject",
+        "campaign site votenatalieprice.com (home, record page, Democracy & Accountability page, news list)",
+        "news list on campaign site: titles reviewed, none on the subject",
+        "candidate summary pages list her as the 2026 Senate District 10 candidate after winning the 2026-08-04 primary (reported by a state business-group newsletter); she is in scope",
+        "blocked: https://ballotpedia.org/Natalie_Price not fetched (empty-page result on other Ballotpedia pages in this run)",
+        "web searches on name plus voter ID, citizenship, floor remarks: no direct quotes found; votes linked separately"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:18:25.411Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

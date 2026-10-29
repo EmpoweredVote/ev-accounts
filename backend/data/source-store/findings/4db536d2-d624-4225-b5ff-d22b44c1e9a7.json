@@ -1,0 +1,135 @@
+{
+  "politician_id": "4db536d2-d624-4225-b5ff-d22b44c1e9a7",
+  "findings": [
+    {
+      "id": "68b58f4bed4343d823c4a307982c29d7c1f8bb20b316ceca2b0e8c5aeb9540ea",
+      "kind": "own-words",
+      "url": "https://sjvsun.com/?p=103462",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "“The California Voter ID initiative is a common sense and bipartisan way to restore the trust and confidence all voters should have in our election system,” Tangipa said. “Our measure simply holds government officials accountable to maintain accurate voter lists and verify the identity of individuals casting ballots in our elections.”",
+      "note": "Quoted by the San Joaquin Valley Sun at a Fresno rally announcing submission of the California Voter ID ballot measure.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll accuracy",
+        "California voter ID ballot initiative 2026"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:39.323Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af9f7c5a1280a36c34f36b9bb0de569c1011b0976773c40684fa858e1df69a9a",
+      "kind": "own-words",
+      "url": "https://mymotherlode.com/news/local/4115165/assemblyman-tangipa-pushing-for-voter-id-ballot-measure.html/amp",
+      "date": "2025-07",
+      "date_precision": "month",
+      "passage": "Tangipa continued, “We think this (proposed CA ballot initiative) brings us up to a modern level of security.”",
+      "note": "Quoted by myMotherLode (published 2025-07-18) from a radio interview on the proposed voter ID ballot measure; the same story reports he compared California with voter ID rules in Mexico, Canada and the European Union, and describes the measure as requiring proof of citizenship checks at registration, ID at the polls, and the last four digits of an ID for mail voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "California voter ID ballot initiative 2026"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:39.323Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30987b04a2e7339e1dc681ad549dbdc420ee228414c13a5e2b0639560d819ecb",
+      "kind": "own-words",
+      "url": "https://www.kalw.org/bay-area-news/2026-07-23/gop-lawmaker-criticizes-ag-bonta-over-language-for-fall-voter-id-initiative",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "It is going from a voter ID and citizenship verification constitutional amendment to now say prohibits citizens from voting,\" says Tangipa. \"This is insane. The highest law enforcement officer is now actively rigging the election in the middle of the election season.”",
+      "note": "KALW/CapRadio report quoting him on the Attorney General's changed ballot title for the November 2026 voter ID and citizenship verification initiative.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "California voter ID ballot initiative 2026"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:58:39.323Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eab7693f7cc27314c9a155ed12fa238727764890109aa150cea4ff5a41c32091",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2026/https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB25 (archive resolved to https://web.archive.org/web/20260605003527/ ...)",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "yea",
+      "motion": "Assembly Elections Committee: Do pass and be re-referred to the Committee on [Judiciary] (FAIL)",
+      "note": "Committee roll call as printed ('Tangipa'), linked to David J. Tangipa as the only Tangipa on the 2025-26 California Assembly roster. AB 25 never reached the floor, so this is its last recorded vote in the Assembly (W2-R7).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ca-committee-2026-10-28",
+        "fetched_at": "2026-10-28T21:11:06.634Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID (last four digits of an ID number)",
+        "voter-roll accuracy",
+        "California voter ID ballot initiative 2026",
+        "SB 1174 of 2024 (local voter-ID ban)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/David_Tangipa (confirms sitting Assembly District 8 member on the 2026 general-election ballot)",
+        "news: https://sjvsun.com/?p=103462 (quoted)",
+        "news: https://mymotherlode.com/news/local/4115165/assemblyman-tangipa-pushing-for-voter-id-ballot-measure.html/amp (quoted)",
+        "news: https://www.kalw.org/bay-area-news/2026-07-23/gop-lawmaker-criticizes-ag-bonta-over-language-for-fall-voter-id-initiative (quoted)",
+        "Digital Democracy page for AB 25 of 2025 (voter ID bill that failed in committee; page does not name authors or individual votes)",
+        "blocked: https://ad08.asmrc.org/press-releases (403)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (page needs scripts; he was not in the Legislature for the 2024 floor votes in any case, assumed office December 2024)",
+        "blocked: https://legiscan.com (403); his own bill sponsorships on the subject not found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:58:39.323Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official California Assembly Elections Committee roll call on AB 25, 2025-04-09 (identity step 2026-10-28, W2-R7)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T21:11:06.634Z",
+      "by": "identity-ca-committee-2026-10-28"
+    }
+  ]
+}

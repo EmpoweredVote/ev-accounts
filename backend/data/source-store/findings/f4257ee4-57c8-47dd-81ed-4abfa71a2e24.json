@@ -1,0 +1,28 @@
+{
+  "politician_id": "f4257ee4-57c8-47dd-81ed-4abfa71a2e24",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "people without ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record extraction script not run (standing rule against running repo scripts)",
+        "web search: name plus voter ID (nothing on subject)",
+        "branch.vote candidate page: nothing on subject",
+        "campaign site lilyfordelegate.com and /priorities/: nothing on subject",
+        "blocked: https://ballotpedia.org/Lily_Franklin (page returned empty)",
+        "blocked: https://lis.virginia.gov (page loads empty), https://legiscan.com (403)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:56.695Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

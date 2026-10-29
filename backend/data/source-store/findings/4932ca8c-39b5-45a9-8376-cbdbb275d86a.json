@@ -1,0 +1,151 @@
+{
+  "politician_id": "4932ca8c-39b5-45a9-8376-cbdbb275d86a",
+  "findings": [
+    {
+      "id": "d75e18e4d56a53d50f6b321fbac0804f81e1e355a5ca51c5b12c8da411598573",
+      "kind": "own-words",
+      "url": "https://www.derekmerrin.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "He played key roles in the requirement to show photo-ID to vote and to allow Ohioans the constitutional right to carry .",
+      "note": "From the About section of his campaign site (written in the third person, undated). It describes his work on Ohio's photo-ID-to-vote requirement.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc8192afe2ad0e4100d4688232381993c21c52a49d6ea064ead8171efc20c02c",
+      "kind": "record",
+      "url": "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/06_EN/",
+      "date": "2023-01-06",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-458-2022",
+      "act": "other",
+      "note": "Listed as a cosponsor of Ohio House Bill 458 (134th General Assembly), as enrolled. The bill changes Ohio voter identification and absentee voting law. Its text asks a voter at the polls for a current and valid photo ID, a military ID, or a copy of a utility bill, bank statement, government check, paycheck or other government document; a voter without one may cast a provisional ballot; a voter with a religious objection to being photographed may use an affidavit. Date shown is the governor's signing date (concurrence 2022-12-14, effective 2023-04-07); the date he signed on as cosponsor was not retrieved.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voter with no ID",
+        "mail-ballot ID",
+        "photo ID and state ID cards"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:08.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e64754c21831bf169887aaae7436cfbace9a9743e889692c8ea9885a64f31395",
+      "kind": "record",
+      "url": "https://legislature.ohio.gov/legislation/134/hb458",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "OH-H-458-2021",
+      "act": "sponsor",
+      "note": "Merrin is listed as a cosponsor of HB 458, whose title says it modifies the law governing voter identification and absent voting and makes changes regarding driver's licenses and state identification cards.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail and absentee ballot rules",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05a0a5c9f54b1fdb526af7738f9f61794fc179c90ede71ac9cb588721964787a",
+      "kind": "record",
+      "url": "https://legislature.ohio.gov/legislation/134/hb458/votes",
+      "date": "2022-12-14",
+      "date_precision": "day",
+      "instrument_id": "OH-H-458-2021",
+      "act": "yea",
+      "motion": "House vote listed as Passed, 55 yeas to 34 nays (HB 458, voter identification and absent voting changes)",
+      "note": "Merrin is listed among the Yeas on the House vote dated 12-14-2022 on HB 458.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail and absentee ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:53:15.826Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "non-photo documents such as utility bill",
+        "provisional ballot for voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship / SAVE Act",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Derek_Merrin names him on the ballot in the Nov 3, 2026 general election for Ohio's 9th Congressional District (advanced from the May 5, 2026 primary)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://www.derekmerrin.com (home page, About text reviewed; one photo ID passage saved; no SAVE Act or citizenship text)",
+        "Ballotpedia https://ballotpedia.org/Derek_Merrin (reviewed for scope; no voter ID or citizenship text found)",
+        "Ohio Legislature HB 458 (134th GA) bill page and API text https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb458/06_EN/html/",
+        "not reviewed: Ohio House member page https://ohiohouse.gov/members/derek-merrin (server error 500)",
+        "not reviewed: Ohio Legislature vote pages for HB 458 (roll-call API not reachable)",
+        "not reviewed: congress.gov (he is not a member of Congress; no federal record)",
+        "blocked: web search (session search budget used up), so no news search was done; ontheissues, Wikipedia, govtrack, vote411 not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:55:08.677Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail and absentee ballot rules",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home page (one on-subject sentence, saved)",
+        "campaign site issues page (blocked from reading: page text did not load; nothing found)",
+        "Ballotpedia (confirms he is on the 2026 general ballot for Ohio's 9th District)",
+        "Ohio legislature bill page and vote page for HB 458 (134th General Assembly)",
+        "two news searches on name plus voter ID, SAVE Act, election integrity (nothing by him found)",
+        "congress.gov: not a member, no record"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:53:15.826Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

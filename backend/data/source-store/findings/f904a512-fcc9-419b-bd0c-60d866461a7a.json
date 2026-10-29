@@ -1,0 +1,420 @@
+{
+  "politician_id": "f904a512-fcc9-419b-bd0c-60d866461a7a",
+  "findings": [
+    {
+      "id": "645405bc5384e501f6c6d151341e90f54c83d7fd5412dde37d19c004373fb4e2",
+      "kind": "own-words",
+      "url": "https://www.repwarner.com/News/35950/Press-Releases/Warner-Leads-PA-Effort-to-Require-Proof-of-Citizenship-for-Registering-to-Vote",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "“We have a responsibility to our citizens to ensure every vote cast is a legitimate, legal vote. If even one person votes illegally, it cancels out a legal voter’s choice to lead our communities, state and nation.”",
+      "note": "Press release on reintroducing his bill (House Bill 1061) to require proof of U.S. citizenship to register to vote; he links it to the federal SAVE Act and to automatic voter registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9ebfcc6d5f0ebe4cd381d4aefd5a88fbdf57cf4da7f8b3a0ad1ffd485d65cf3",
+      "kind": "own-words",
+      "url": "https://www.repwarner.com/News/35950/Press-Releases/Warner-Leads-PA-Effort-to-Require-Proof-of-Citizenship-for-Registering-to-Vote",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "“I, too, want to see every single eligible Pennsylvanian registered to vote and casting ballots in every election,” Warner said. “But we must be thorough in protecting the rights of legal voters and the legitimacy of the ballots they cast.”",
+      "note": "Same release; says he wants all eligible people registered while protecting ballot legitimacy.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ad96fa071b78eb68198a5d90aff732ba20ffef4cebe87216cd2a501cccadcf8",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34895/Warner-Bill-Would-Require-Proof-of-Citizenship-to-Register-to-Vote-in-PA-?SiteID=1",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "“Free and fair elections are the backbone of our republic, and it is paramount we do all we can to protect our elections and secure the integrity of our election administration,” Warner said. “This includes ensuring only qualified electors are registered to vote.”",
+      "note": "Release on introducing House Bill 2629 (proof of citizenship to register), as quoted in a caucus release in his name.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0c6913e2c73704567c45ca0961926412d6e1934823d22c4cb35938d5273896e",
+      "kind": "own-words",
+      "url": "https://repwarner.com/Display/SiteFiles/412/OtherDocuments/Newsletters/Warner%20NL%208-24%20(004).pdf",
+      "date": "2024-08",
+      "date_precision": "month",
+      "passage": "For example, House Bill 891 would give YOU the opportunity to decide whether the state should require voters to present identification each time they cast their ballots. Voter ID has broad, bipartisan support among the majority of Pennsylvanians.",
+      "note": "August 2024 newsletter; describes a bill to put a voter ID requirement to voters as a constitutional question and says voter ID is widely supported. Date is the newsletter's August 2024 edition (day unknown).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b7d49a1c654b6314e3834169ab8db3d4aae0e5bbd0939b40b0337666fc279c1",
+      "kind": "own-words",
+      "url": "https://repwarner.com/Display/SiteFiles/412/OtherDocuments/Newsletters/Warner%20NL%208-24%20(004).pdf",
+      "date": "2024-08",
+      "date_precision": "month",
+      "passage": "I am introducing legislation modeled after the SAVE Act, which would require people to provide proof of citizenship to register to vote.",
+      "note": "Same newsletter; announces proof-of-citizenship bill modeled on the federal SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40696dac0989d18063497bda66bb7ee457e2588d8077a41af0ef532614b3bd0c",
+      "kind": "own-words",
+      "url": "https://repwarner.com/News/36900/Latest-News/No-Room-for-Error-on-Election-Day--Warner-Says",
+      "date": "2025-11-05",
+      "date_precision": "day",
+      "passage": "“I am calling for a prompt investigation into this failure of the Department of State and will be working with other lawmakers to ensure accountability and that voters will not be disenfranchised again.”",
+      "note": "Statement after electronic pollbook problems in Fayette County turned voters away; about voter-roll data, not ID.",
+      "subjects": [
+        "voter-roll accuracy / pollbooks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ff67bf388b7988607ce190f1481864d5483d911abfc42d3666deff307eb9f33",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/18612/Warner-Supports-Resolution-Calling-for-Election-Audit?SiteID=1",
+      "date": "2020-11-19",
+      "date_precision": "day",
+      "passage": "“We owe it to every single voter in Pennsylvania – regardless of their party affiliation – to conduct this audit to help ensure the integrity of this election and all future elections,” Warner said.",
+      "note": "Release praising House Resolution 1100 for an audit of the 2020 election; also cites concerns about mail-in ballots.",
+      "subjects": [
+        "election audit / integrity",
+        "mail-ballot concerns"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:14.950Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('WARNER'), linked to Ryan James Warner (district 52) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.700Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Warner'), linked to Ryan James Warner (district 52) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.700Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Warner'), linked to Ryan James Warner (district 52) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be23ddf883296ad976398782ececb6c2a63dd27d110936d9115e779bdaeed1a8",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as prime sponsor ('WARNER') on the official bill page; linked to Ryan Warner via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('WARNER') on the official bill page; linked to Ryan James Warner via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f70f3f00f394fe52a3f19623afc9d65d981c6f053726eabf09526d1496591399",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as prime sponsor ('WARNER') on the official bill page; linked to Ryan J. Warner via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('WARNER') on the official bill page; linked to Ryan Warner via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('WARNER') on the official bill page; linked to Ryan J. Warner via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('WARNER'), linked to Ryan J. Warner (district 52) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voter-roll accuracy / pollbooks",
+        "election audit / integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member site repwarner.com (press releases list, bio, specific releases)",
+        "House caucus press archive",
+        "blocked: https://ballotpedia.org/Ryan_Warner (403)",
+        "one news search on name plus voter ID / proof of citizenship",
+        "BallotReady page lists him as a candidate for the 2026 general election, District 52 (scope confirmed)",
+        "member newsletter PDF Aug 2024",
+        "Warner Supports Resolution Calling for Election Audit release (2020)",
+        "not reviewed: https://webcms.pahousegop.com/Video/LatestVideo/Page-1423 (video titled Election Integrity and Voter ID, content not readable as text)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:12:14.950Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.700Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-29T14:14:50.849Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

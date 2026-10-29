@@ -1,0 +1,199 @@
+{
+  "politician_id": "2d222946-7125-4c9e-ab59-9ebab94f8301",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "ab97042a76ea2deb7cf3a0bb4bfadd0d4c9dd55eb6e25f8565cba2e0ce347418",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "“It’s crazy that you need an ID for almost everything in life except when it comes to voting,” said Congressman Patronis.",
+      "note": "Quote in his official press release on House passage of the SAVE America Act. He says ID is required for most things but not for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a03e895a52721d45df45011877ff6f6a9f1756ea3a23f30c137afe2d1aa7195",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "This bill is common sense, and I’m proud to support it.",
+      "note": "Closing sentence of his quoted statement in the same release, about the SAVE America Act (voter ID for federal elections and proof of citizenship to register).",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68b8412983347066f54fe379bf4e0bfa42bf429b03875327474fc75bd648b5b7",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "In several states, they can obtain a driver’s license and other identification that can be used to register to vote in federal elections. We must protect the integrity of our elections and keep them in the hands of American citizens.",
+      "note": "Release text issued in his name. Says some states give driver's licenses and other ID that can be used to register, and calls for protecting election integrity and citizen-only elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93f303b90efbcef9f14e9e1d469b009208c62895c393140cc83a406281031901",
+      "kind": "own-words",
+      "url": "https://patronis.house.gov/media/press-releases/patronis-applauds-the-passage-of-the-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Congressman Jimmy Patronis today applauds the passage of the SAVE America Act, which will add Voter ID requirements for voting in federal elections and proof-of-citizenship requirements for voter registration. Congressman Patronis voted in favor of the SAVE America Act.",
+      "note": "Release states he voted yes on the SAVE America Act and lists its terms: eligible photo ID before voting, in-person proof of citizenship to register, and removal of non-citizens from voter rolls.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting",
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12883c161facedd8059bc0502bb87e82c0aae50c8a2f7114279bce25fe6a1a15",
+      "kind": "own-words",
+      "url": "https://flvoicenews.com/jimmy-patronis-and-randy-fine-round-out-first-full-week-in-congress-voting-for-trump-backed-priorities/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“Proud to join my colleagues to co-sponsor & pass the SAVE Act!” Patronis said on Thursday. “The Act preserves the integrity of our federal elections by ensuring ONLY Americans can vote in American elections.",
+      "note": "Quoted by Florida's Voice (article dated April 11, 2025; 'Thursday' is April 10, 2025, the day of the House vote on H.R. 22). He says he co-sponsored and voted for the SAVE Act (proof of citizenship to register for federal elections). The cosponsor claim was not confirmed on congress.gov (blocked).",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:38.666Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID before voting",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "non-citizens on voter rolls",
+        "election integrity",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Jimmy_Patronis (incumbent, FL-1, won the August 18, 2026 primary, on the November 3, 2026 general-election ballot)",
+        "On the Record (0 appearances for this politician id; nothing on the subject)",
+        "official site patronis.house.gov: press-release list page 1 and issues pages (nothing on the subject besides the SAVE America Act release); one SAVE America Act press release fetched",
+        "blocked: https://patronis.house.gov/search?q=SAVE+Act (403)",
+        "campaign site joinjimmy.com (home and page links; nothing on the subject)",
+        "Ballotpedia (lists SAVE Act yea vote only; no own words on the subject)",
+        "blocked: https://www.congress.gov/member/jimmy-patronis/P000622 and congress.gov H.R.22 cosponsors page (403); cosponsor status not confirmed from an official page",
+        "news: Florida's Voice (April 11, 2025), Florida Press (April 11, 2025 vote list)",
+        "news search on name plus voter ID, citizenship, election integrity (no further own words found)",
+        "nothing on the subject: mail-ballot ID, no-ID fallback, non-photo documents",
+        "not reviewed: video clip linked in the February 13, 2026 press release (not fetched)"
+      ],
+      "found": 5,
+      "at": "2026-10-22T21:38:38.666Z",
+      "by": "source-collector"
+    }
+  ]
+}

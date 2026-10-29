@@ -1,0 +1,261 @@
+{
+  "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+  "findings": [
+    {
+      "id": "d55d6268f3a50f22c82844ea9aade7c142e23ca33ef77d65dfcf7aa44b5bbb9a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll102.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "On Passage, H.R. 22, SAVE Act (Safeguard American Voter Eligibility Act)",
+      "note": "Roll call 102. Neal voted Nay on House passage of a bill requiring documentary proof of citizenship to register to vote in federal elections.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "30c3e71b95af189766da26f8a7a6f6fff493322b3996917ef30adee93d721fea",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll101.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "On Motion to Recommit, H.R. 22, SAVE Act",
+      "note": "Roll call 101. Neal voted Yea on the motion to recommit the SAVE Act. The clerk page does not give the motion's text, so what the recommit motion would have changed was not read.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d75c97cf2e3cd7ce5c103063841b2891a3a52952c6cdec1dec8f24b7149652ac",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "On Passage, H.R. 8281, Safeguard American Voter Eligibility Act",
+      "note": "Roll call 345. Neal voted No on House passage of the 2024 SAVE Act, which dealt with documentary proof of citizenship to register to vote.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5101d00b69110d5dd75b6a26d181826779987c2ec84cfd4c33b2c799b51fec8",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll344.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "On Motion to Recommit, H.R. 8281, Safeguard American Voter Eligibility Act",
+      "note": "Roll call 344. Neal voted Yea on the motion to recommit the 2024 SAVE Act. The motion's text was not read.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9971033b528923da6273c7e9bc6039ed06b05b8c4bb8808f0d7b455b331560e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2021/roll062.xml",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2021",
+      "act": "yea",
+      "motion": "On Passage, H.R. 1, For the People Act of 2021",
+      "note": "Roll call 62. Neal voted Yea on House passage of a broad elections bill. The bill's voter ID provisions were not read for this entry, so it is saved only as a general election-law vote.",
+      "subjects": [
+        "election law omnibus",
+        "voting rights generally"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d93857110fc57c3f31cfdbcaa6e886b27ac19959c5f82a561fbc2a19ebfcb9a9",
+      "kind": "own-words",
+      "url": "https://neal.house.gov/2020/08/06/news-documentsingle-aspx-documentid-400/",
+      "date": "2020-08-06",
+      "date_precision": "day",
+      "passage": "“There is just been this trend to make voting rights a partisan issue,”",
+      "note": "Quoted in a news story (reposted on his official site; the outlet name was not shown in the page text read) at a rally marking the 55th anniversary of the Voting Rights Act. He spoke about voting rights and Voting Rights Act re-authorization in general. The story's sentence about state voter ID requirements is the reporter's, not Neal's words, and is not saved.",
+      "subjects": [
+        "voting rights generally"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:34.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "87e74875f0cad5132a044250d118110877d13fa66ffccc89223e1135beebd772",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll102.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "On Passage, H.R. 22 SAVE Act (Roll no. 102, 220 yeas to 208 nays; passed)",
+      "note": "Neal is recorded as Nay on House passage of the SAVE Act, H.R. 22.",
+      "subjects": [
+        "documentary proof of citizenship to register to vote",
+        "SAVE Act and SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:09.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763014bea349f557e8d70969da76caff4d735c3c6d35201f78f5e85c109c5de6",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll101.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "On Motion to Recommit, H.R. 22 SAVE Act (Roll no. 101, 211 yeas to 215 nays; failed)",
+      "note": "Neal is recorded as Yea on the motion to recommit the SAVE Act, which failed.",
+      "subjects": [
+        "documentary proof of citizenship to register to vote",
+        "SAVE Act and SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:09.573Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a20124db8ede575d28ce670a690d9ee1e03bd09eac7e36bb61ca121d60d63336",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2026/roll069.xml",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2025",
+      "act": "nay",
+      "motion": "On Passage, S. 1383 (Roll no. 69, 218 yeas to 213 nays; passed). The Clerk lists the Senate bill's title; the Washington Examiner reports the 218-213 House vote that evening as passage of the SAVE America Act, and Heritage Action describes the SAVE America Act as House amendment text to S.1383.",
+      "note": "Neal is recorded as Nay. Per Heritage Action, the SAVE America Act text would require documentary proof of citizenship to register, photo ID to cast a ballot in federal elections, and a process to remove non-citizens from voter rolls.",
+      "subjects": [
+        "documentary proof of citizenship to register to vote",
+        "photo ID to cast a ballot in federal elections",
+        "voter-roll checks for non-citizens",
+        "SAVE Act and SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:51:09.573Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "voting rights generally",
+        "election law omnibus"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Richard_Neal) says he advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot, MA-1",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site neal.house.gov: home, newsroom, site search for SAVE Act, voting rights, voter ID, photo ID, election integrity, citizenship (results mostly off-subject; one relevant 2020 news item saved)",
+        "campaign site nealforcongress.com home and /issues: nothing on the subject",
+        "Ballotpedia key votes (SAVE Act listed) used as a lead; votes cited from the House Clerk",
+        "House Clerk roll call XML 2025 roll 101/102, 2024 roll 344/345, 2021 roll 62",
+        "blocked: https://www.congress.gov/member/richard-neal/N000015 (Cloudflare 403); sponsorships/co-sponsorships not reviewed",
+        "not reviewed: news search by name plus subject words (web search budget exhausted); ontheissues.org not used",
+        "not reviewed: debate/interview video"
+      ],
+      "found": 6,
+      "at": "2026-10-22T22:00:34.351Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register to vote",
+        "photo ID to cast a ballot in federal elections",
+        "SAVE Act and SAVE America Act",
+        "voter-roll checks for non-citizens",
+        "voter ID at the polls"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Richard_Neal (confirms sitting U.S. House member for Massachusetts' 1st District, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary)",
+        "House Clerk roll call XML for 2025 Nos. 101 and 102 and 2026 No. 69 (his recorded votes)",
+        "Washington Examiner 2026-02-11 and Heritage Action key-vote page (to confirm the 2026-02-11 vote was on the SAVE America Act text)",
+        "web news searches on name plus SAVE Act, voter ID: no statement in his own words found",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/1383/actions (403)",
+        "blocked: https://neal.house.gov/news/documentquery.aspx and https://neal.house.gov/media-center/press-releases (404, official press list not reached)",
+        "not reviewed: a mirrored Massachusetts news article on reactions to the SAVE America Act (could not be opened in this session; unknown whether it quotes him)",
+        "not reviewed: ontheissues.org (lead-only)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:51:09.573Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

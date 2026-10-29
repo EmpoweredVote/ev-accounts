@@ -1,0 +1,32 @@
+{
+  "politician_id": "3084a47b-b7ac-4bd6-921e-07ce18707e7f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud and election integrity in general",
+        "SB 202 vote"
+      ],
+      "places": [
+        "scope check: House District 105 member, listed as a candidate for that seat on the 2026 general ballot (https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-105/candidates/sandy-donatucci); in scope; sworn in 2025-01-13, so not in office in 2021 and no SB 202 vote exists for her",
+        "On the Record (0 meetings)",
+        "campaign site https://www.sandyforhouse.com/ and its working-for-you page: nothing on the subject",
+        "House press site tag page for her (page 1 only; page 2 not reviewed: https://house-press.com/tag/state-representative-sandy-donatucci/page/2/): nothing on the subject",
+        "Branch.vote 2026 profile: no position listed; nothing on the subject",
+        "news search on her name plus election, voter ID, citizenship: no bill on ID or citizenship tied to her; an advance-voting bill listed under her name was not confirmed",
+        "blocked: https://app.legiplex.com/profile/sandy-donatucci-20646/ga/legislatures/2025/2025-r/legislation (403), so her sponsorship list was not reviewed",
+        "not reviewed: https://ballotpedia.org/Sandy_Donatucci (not fetched)",
+        "web searches: 2"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:40:26.486Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "politician_id": "99022a78-79ea-417c-8a7c-0bc5f773e329",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "404ac0370395aa1febb4a1e0ea7a51b331909dd1321068170e99e1f75f1b17a0",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?documentid=415777",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "This embarrassing blunder by New Jersey Democrat administrations exemplifies why the Senate must pass the SAVE America Act. This commonsense and deeply needed legislation would require prospective voters to present valid proof of U.S. citizenship prior to registering to vote in federal elections, as well as to show government-issued photo identification before casting federal ballots.",
+      "note": "Press statement issued in his name after New Jersey disclosed that about 6,600 non-citizens were registered through a state software error. He urges the Senate to pass the SAVE America Act, describing its proof-of-citizenship and photo ID requirements.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE America Act",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3165142f1354d4e55ec065775bebe9dffdb763252205ce1ca462b35b161e3c83",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?documentid=415777",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "Election security is fundamental, and I urge my colleagues in the Senate to immediately take up the SAVE America Act for a vote.",
+      "note": "Same statement; calls for an immediate Senate vote on the bill.",
+      "subjects": [
+        "SAVE America Act",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b87cc4e6c2caf0ff77f6c3fe883033b852d695249c91ecbc1e07867795c458d",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?documentid=415777",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "This disturbing revelation out of Trenton—perhaps only the tip of the iceberg—confirms what Republicans have known all along: that current U.S. voter-registration systems are inadequate, ill-maintained, and putting the integrity and security of our elections at grave risk.",
+      "note": "Same statement; says current voter-registration systems are inadequate. Related: voter-roll maintenance and registration-system integrity.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity in general",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22eb56e4cdf397ee1b9ce6c4339a6f21a83261b13d9d7a905f260260ba7c5bbf",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?DocumentID=413281",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "“As a member of the House Election Integrity Caucus, I am committed to protecting voter identification laws across the country and safeguarding the right to vote that so many brave men and women in uniform have courageously fought—and died—to defend,” Smith said.",
+      "note": "Quoted in his office's release on House passage of the SAVE Act (HR 8281). He says he belongs to the House Election Integrity Caucus and is committed to protecting voter identification laws.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29ed63d099e55be19199867d964e35d2f9bfedad2d7e9124545587c24fbbde6c",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?DocumentID=413281",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "“Noncitizen voting makes our elections vulnerable to foreign interference and violates the constitutional principle that voting is a right reserved for American citizens,” said Smith. “To ensure that Americans can have confidence in our election process and results, we must take additional steps to protect this sacred right and ensure that only United States citizens are able to vote in our elections.”",
+      "note": "Same release; his reasons for backing proof of citizenship to register and for stopping noncitizen voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23d1becc80a1712667a7d0873775159663a88f643abcc07c2cdc6cd96f3c050f",
+      "kind": "record",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?DocumentID=413281",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "sponsor",
+      "note": "His office's release calls him 'a cosponsor of the legislation' (HR 8281, SAVE Act: proof of U.S. citizenship to register in federal elections) and says the House passed it with his vote. The vote itself is already on file; this adds the cosponsorship.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d53dbb58a6b7eaf7b92549ece1368a90dfe1774526e982350a02850e99d0fe8",
+      "kind": "record",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?DocumentID=413281",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "HJ Res 24, block D.C. from letting noncitizens vote in local elections (earlier 2024 vote; release says he voted for it, passed 260-162)",
+      "note": "Release states: 'Earlier this year, Smith also strongly supported and voted for similar legislation (HJ Res 24) that would block the District of Columbia from allowing noncitizen residents—including illegal immigrants and foreign agents—to vote in local elections.' Related topic: noncitizen voting.",
+      "subjects": [
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4155d840d4308f2b06f6ecfbf3975c0d064e712db7de9c6c2b0fc97959ae1f1",
+      "kind": "own-words",
+      "url": "https://chrissmith.house.gov/news/documentsingle.aspx?DocumentID=415799",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "passage": "Secure elections are the bedrock of democracy; we must take all steps necessary to ensure that votes are cast only by those who have a right to vote.",
+      "note": "Quoted by Breitbart News (reposted on his official site) in a story on the reply from New Jersey's governor to a House letter he signed about noncitizen registrations. Calls for transparency and a fix from the state.",
+      "subjects": [
+        "election integrity in general",
+        "noncitizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:05.991Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: WHYY 2026 primary recap (https://whyy.org/articles/election-2026-new-jersey-primary-winners-losers-recap/) says the Democratic nominee 'looks to unseat U.S. Rep. Chris Smith'; his official site names him as NJ-4 member",
+        "On the Record (0 appearances for this politician; nothing on the subject)",
+        "official site chrissmith.house.gov (press releases found via site search; home page and issue-filter page had nothing further)",
+        "official cosponsored-bills page https://chrissmith.house.gov/lawsandresolutions/cosponsoredbills.htm (list not rendered in fetched HTML; nothing readable)",
+        "blocked: https://www.congress.gov/member/christopher-smith/S000522 (HTTP 403)",
+        "Ballotpedia https://ballotpedia.org/Chris_Smith_(New_Jersey) (fetched; nothing on the subject)",
+        "news search on name plus subject words (Fox News and Breitbart pieces, reached through his site's reposts)",
+        "capitolreleases.com mirror of the July 2026 release (lead only; original cited)",
+        "no campaign site or debate/forum video reviewed"
+      ],
+      "found": 8,
+      "at": "2026-10-22T21:38:05.991Z",
+      "by": "source-collector"
+    }
+  ]
+}

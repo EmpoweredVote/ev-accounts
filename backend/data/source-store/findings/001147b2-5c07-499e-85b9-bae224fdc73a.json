@@ -1,0 +1,102 @@
+{
+  "politician_id": "001147b2-5c07-499e-85b9-bae224fdc73a",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "1f80f8dca60b52359e2e6b04d4ac110127d90c8bbeda2baf38377a9d4879b003",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H5008",
+      "date": "2022-07-11",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5008-2022",
+      "act": "sponsor",
+      "note": "H.5008, 'An Act authorizing local voting rights for permanent legal residents residing in Brookline', a joint petition of Rep. Vitolo and Sen. Creem; referred to the Joint Committee on Election Laws on 7/11/2022, with no further action on 1/3/2023. It concerns whether non-citizen permanent residents may vote in local elections, which is related to citizenship requirements to vote.",
+      "subjects": [
+        "non-citizen voting in local elections",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:08:53.403Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tommy_Vitolo names him as member of the Massachusetts House, 15th Norfolk District, with 2026 incumbent and 2026 primary (winner) tags, running for re-election; Election Laws Joint Committee House vice chair",
+        "On the Record (0 appearances for this politician id; name search returned 0 sources)",
+        "official/campaign site https://tommyvitolo.com via its site search for voter ID, photo ID, citizenship, election integrity, mail ballot: nothing on the subject (resources page only links to election information)",
+        "Ballotpedia: nothing on the subject",
+        "legislature bill search https://malegislature.gov/Bills/Search?SearchTerms=voter+identification (page 1 only): no Vitolo-sponsored bill seen",
+        "blocked: https://malegislature.gov/Legislators/Profile/TNV1 (404)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "not reviewed: ontheissues.org, vote411 (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:58:52.441Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "non-citizen voting rights in local elections",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member profile page for the 194th court (confirms 15th Norfolk representative; sponsored bills H.879, H.880, H.881, H.4034, H.5086 have no stated ID or citizenship content on their pages; text of H.880 and H.881 not reviewed)",
+        "state election results page showing he was the only name in the 2026 September primary for his seat",
+        "legislature page for H.5008 (2022 local voting bill)",
+        "news searches on name plus voter ID (nothing from him on voter ID)",
+        "Ballotpedia not reviewed",
+        "no campaign or official site statement on the subject found",
+        "nothing on the subject in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-27T17:08:53.403Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

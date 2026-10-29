@@ -1,0 +1,77 @@
+{
+  "politician_id": "6e1a895d-a956-4806-8938-4977e34cac9a",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026 primary (renomination lost to Jay Starkey, 43.9% to 56.1%), per https://en.wikipedia.org/wiki/Rick_Niemeyer",
+        "On the Record (0 meetings)",
+        "official Senate page https://www.indianasenaterepublicans.com/niemeyer: nothing on the subject",
+        "Ballotpedia: blocked: https://ballotpedia.org/Rick_Niemeyer (fetch returned no page text)",
+        "not reviewed: iga.in.gov bill pages (stopped, out of scope)",
+        "web search: not run, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:37:14.916Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Indiana Senate caucus page https://www.indianasenaterepublicans.com/niemeyer (confirms Rick Niemeyer, state senator for District 6; nothing on the subject)",
+        "Indiana General Assembly legislator page (page did not load content, not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_rick_niemeyer_1); roll calls are on file from the official feed and were not searched",
+        "Ballotpedia (page returned empty, not reviewed: https://ballotpedia.org/Rick_Niemeyer)",
+        "two web searches on name plus voter ID, citizenship, mail ballot (nothing naming him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:54:25.749Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

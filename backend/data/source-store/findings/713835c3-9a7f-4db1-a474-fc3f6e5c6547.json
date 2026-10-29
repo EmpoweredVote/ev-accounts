@@ -1,0 +1,181 @@
+{
+  "politician_id": "713835c3-9a7f-4db1-a474-fc3f6e5c6547",
+  "findings": [
+    {
+      "id": "d81fedf26c1e5c63731db3657ad5164b3c3780b49bba40e031212e2a13f303ea",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/georgia-state-legislature/house-panel-passes-bill-to-allow-inspection-of-georgia-ballots/TE7TNDLVPRDWHHOHLTSSEPCFEY",
+      "date": "2023-03-03",
+      "date_precision": "day",
+      "passage": "“Citizen-run elections are an essential element of self-governance,” Rep. Shaw Blackmon, R-Bonaire, the bill’s sponsor, told the House Governmental Affairs Committee on Friday. “Our ballot casting is meant to be in secret, but the counting is not.”",
+      "note": "Quoted by the AJC in committee on his bill HB 426, which would open paper ballots to public inspection after certification. Not about ID or citizenship; saved as an election-integrity law in general.",
+      "subjects": [
+        "election integrity laws in general",
+        "public inspection of paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "827343353cdc4faffb689d1378635158a1ae84cbf6b23aa52a840f947e304259",
+      "kind": "record",
+      "url": "https://www.ajc.com/politics/georgia-state-legislature/house-panel-passes-bill-to-allow-inspection-of-georgia-ballots/TE7TNDLVPRDWHHOHLTSSEPCFEY",
+      "date": "2023-03-03",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-426-2023",
+      "act": "sponsor",
+      "note": "AJC names him as sponsor of HB 426, which would give the public access to paper ballots after an election is certified. Committee approved it 2023-03-03. Not about ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "public inspection of paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Blackmon'), linked to SHAW BLACKMON (district 146) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Blackmon'), linked to SHAW BLACKMON (district 146) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Blackmon'), linked to Shaw Blackmon (district 146) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4746c3852c08d2fadb7844ea87c49641e47c9a90460ce08714af287cbc1ca658",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 531 detail API answers 401; not bypassed). History from House Journal 2021 index pp. 1025, 1062, 1262, 1463 and Senate Journal 2021 index pp. 1046, 1052, 2102, 2106 (Senate: referred to Ethics, reported Do Pass by substitute, no floor vote).",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, House committee substitute LC 28 0264S as read and adopted and passed by the House 2021-03-01, 97-72. No \"AS PASSED HOUSE\" PDF was located on the document API; the committee substitute is the text the House Journal shows adopted. Never passed by the Senate.",
+      "note": "Named as co sponsor ('Blackmon of the 146th') on the official bill text; linked to SHAW BLACKMON via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.397Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with a mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "blocked: https://ballotpedia.org/Shaw_Blackmon (fetch returned an empty page; a browser-agent curl retry was refused by the permission system, so it was not made)",
+        "news search on name plus subject words (several searches)",
+        "House press site (house-press.com) representative page",
+        "branch.vote 2026 candidate page: running unopposed for House District 146 in the 2026 general election; page says his website had no information on voting issues",
+        "official/campaign site: no site located in search",
+        "blocked: https://www.legiscan.com/GA/sponsors/HB426/2023 (403)",
+        "blocked: https://app.legiplex.com/profile/shaw-blackmon-833/ga/legislatures/2025/2025-r/legislation (403)",
+        "legis.ga.gov bill pages not tried (login token required)",
+        "house-press.com 2020-06-10 statement on primary problems: about election administration, not ID or citizenship, so not saved",
+        "nowgeorgia.com 2021-03-02 article: only a reporter's paraphrase of him, not his words, so not saved"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:28:59.699Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.397Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

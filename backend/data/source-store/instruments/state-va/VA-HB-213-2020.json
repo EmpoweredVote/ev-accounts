@@ -1,0 +1,810 @@
+{
+  "id": "VA-HB-213-2020",
+  "scope": "state:va",
+  "title": "HB 213 (2020 Regular Session (LIS session code 201)): Voter identification; accepted forms of identification, out-of-state student identification card.",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB213",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+mbr+HB213",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+ful+HB213ER",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+ful+CHAP1154 (chapter text; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) § 24.2-643 B (as passed (enrolled; struck words removed, new words kept))\n(quote) The officer shall ask the voter to present any one of the following forms of identification: (i) his valid Virginia driver's license, his valid United States passport, or any other photo identification issued by the Commonwealth, one of its political subdivisions, or the United States; (ii) any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in the Commonwealth or any private school located in the Commonwealth; (iii) any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in any other state or territory of the United States; or (iv) any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer's business.\n(b_no_id_remedy)\n(section) § 24.2-643 B, second paragraph (existing text reprinted, unchanged)\n(quote) Any voter who does not show one of the forms of identification specified in this subsection shall be offered a provisional ballot under the provisions of § 24.2-653. The State Board of Elections shall provide an ID-ONLY provisional ballot envelope that requires no follow-up action by the registrar or electoral board other than matching submitted identification documents from the voter for the electoral board to make a determination on whether to count the ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n\n(other) Only § 24.2-643 is amended; no other subject.",
+  "sponsors": [
+    {
+      "name": "Richard C. \"Rip\" Sullivan, Jr.",
+      "role": "author",
+      "version": "Chaptered: Acts of Assembly Chapter 1154, approved 4/11/2020 (text read as enrolled HB213ER, 2/27/2020; passed both chambers unamended)"
+    },
+    {
+      "name": "Mark H. Levine",
+      "role": "co",
+      "version": "Chaptered: Acts of Assembly Chapter 1154, approved 4/11/2020 (text read as enrolled HB213ER, 2/27/2020; passed both chambers unamended)"
+    },
+    {
+      "name": "Alfonso H. Lopez",
+      "role": "co",
+      "version": "Chaptered: Acts of Assembly Chapter 1154, approved 4/11/2020 (text read as enrolled HB213ER, 2/27/2020; passed both chambers unamended)"
+    },
+    {
+      "name": "Kathleen Murphy",
+      "role": "co",
+      "version": "Chaptered: Acts of Assembly Chapter 1154, approved 4/11/2020 (text read as enrolled HB213ER, 2/27/2020; passed both chambers unamended)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-11",
+      "body": "VA House",
+      "motion": "VOTE: Passage (57-Y 41-N) (HV0876)",
+      "kind": "roll-call",
+      "yes": 57,
+      "no": 41,
+      "absent": 2,
+      "body_size": 100,
+      "note": "Page note: \"Delegate Davis was recorded as yea. Intended to vote nay.\" | https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "members": [
+        {
+          "name": "Adams, D.M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Aird",
+          "vote": "yea"
+        },
+        {
+          "name": "Askew",
+          "vote": "yea"
+        },
+        {
+          "name": "Ayala",
+          "vote": "yea"
+        },
+        {
+          "name": "Bagby",
+          "vote": "yea"
+        },
+        {
+          "name": "Bourne",
+          "vote": "yea"
+        },
+        {
+          "name": "Bulova",
+          "vote": "yea"
+        },
+        {
+          "name": "Carr",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll Foy",
+          "vote": "yea"
+        },
+        {
+          "name": "Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole, J.G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Convirs-Fowler",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Delaney",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooditis",
+          "vote": "yea"
+        },
+        {
+          "name": "Guzman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hayes",
+          "vote": "yea"
+        },
+        {
+          "name": "Helmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Heretick",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring",
+          "vote": "yea"
+        },
+        {
+          "name": "Hope",
+          "vote": "yea"
+        },
+        {
+          "name": "Hudson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hurst",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Keam",
+          "vote": "yea"
+        },
+        {
+          "name": "Kory",
+          "vote": "yea"
+        },
+        {
+          "name": "Krizek",
+          "vote": "yea"
+        },
+        {
+          "name": "Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Lindsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Lopez",
+          "vote": "yea"
+        },
+        {
+          "name": "McQuinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Mugler",
+          "vote": "yea"
+        },
+        {
+          "name": "Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy",
+          "vote": "yea"
+        },
+        {
+          "name": "Plum",
+          "vote": "yea"
+        },
+        {
+          "name": "Price",
+          "vote": "yea"
+        },
+        {
+          "name": "Rasoul",
+          "vote": "yea"
+        },
+        {
+          "name": "Reid",
+          "vote": "yea"
+        },
+        {
+          "name": "Roem",
+          "vote": "yea"
+        },
+        {
+          "name": "Runion",
+          "vote": "yea"
+        },
+        {
+          "name": "Samirah",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "Sickles",
+          "vote": "yea"
+        },
+        {
+          "name": "Simon",
+          "vote": "yea"
+        },
+        {
+          "name": "Simonds",
+          "vote": "yea"
+        },
+        {
+          "name": "Subramanyam",
+          "vote": "yea"
+        },
+        {
+          "name": "Sullivan",
+          "vote": "yea"
+        },
+        {
+          "name": "Torian",
+          "vote": "yea"
+        },
+        {
+          "name": "Tran",
+          "vote": "yea"
+        },
+        {
+          "name": "Tyler",
+          "vote": "yea"
+        },
+        {
+          "name": "VanValkenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward",
+          "vote": "yea"
+        },
+        {
+          "name": "Watts",
+          "vote": "yea"
+        },
+        {
+          "name": "Willett",
+          "vote": "yea"
+        },
+        {
+          "name": "Madam Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Adams, L.R.",
+          "vote": "nay"
+        },
+        {
+          "name": "Austin",
+          "vote": "nay"
+        },
+        {
+          "name": "Avoli",
+          "vote": "nay"
+        },
+        {
+          "name": "Batten",
+          "vote": "nay"
+        },
+        {
+          "name": "Bell",
+          "vote": "nay"
+        },
+        {
+          "name": "Bloxom",
+          "vote": "nay"
+        },
+        {
+          "name": "Brewer",
+          "vote": "nay"
+        },
+        {
+          "name": "Byron",
+          "vote": "nay"
+        },
+        {
+          "name": "Campbell, J.L.",
+          "vote": "nay"
+        },
+        {
+          "name": "Campbell, R.R.",
+          "vote": "nay"
+        },
+        {
+          "name": "Cole, M.L.",
+          "vote": "nay"
+        },
+        {
+          "name": "Cox",
+          "vote": "nay"
+        },
+        {
+          "name": "Coyner",
+          "vote": "nay"
+        },
+        {
+          "name": "Edmunds",
+          "vote": "nay"
+        },
+        {
+          "name": "Fowler",
+          "vote": "nay"
+        },
+        {
+          "name": "Freitas",
+          "vote": "nay"
+        },
+        {
+          "name": "Gilbert",
+          "vote": "nay"
+        },
+        {
+          "name": "Head",
+          "vote": "nay"
+        },
+        {
+          "name": "Hodges",
+          "vote": "nay"
+        },
+        {
+          "name": "Kilgore",
+          "vote": "nay"
+        },
+        {
+          "name": "Knight",
+          "vote": "nay"
+        },
+        {
+          "name": "LaRock",
+          "vote": "nay"
+        },
+        {
+          "name": "Leftwich",
+          "vote": "nay"
+        },
+        {
+          "name": "Marshall",
+          "vote": "nay"
+        },
+        {
+          "name": "McGuire",
+          "vote": "nay"
+        },
+        {
+          "name": "McNamara",
+          "vote": "nay"
+        },
+        {
+          "name": "Miyares",
+          "vote": "nay"
+        },
+        {
+          "name": "Morefield",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Quinn",
+          "vote": "nay"
+        },
+        {
+          "name": "Orrock",
+          "vote": "nay"
+        },
+        {
+          "name": "Poindexter",
+          "vote": "nay"
+        },
+        {
+          "name": "Ransone",
+          "vote": "nay"
+        },
+        {
+          "name": "Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Rush",
+          "vote": "nay"
+        },
+        {
+          "name": "Walker",
+          "vote": "nay"
+        },
+        {
+          "name": "Wampler",
+          "vote": "nay"
+        },
+        {
+          "name": "Ware",
+          "vote": "nay"
+        },
+        {
+          "name": "Webert",
+          "vote": "nay"
+        },
+        {
+          "name": "Wilt",
+          "vote": "nay"
+        },
+        {
+          "name": "Wright",
+          "vote": "nay"
+        },
+        {
+          "name": "Wyatt",
+          "vote": "nay"
+        },
+        {
+          "name": "Fariss",
+          "vote": "absent"
+        },
+        {
+          "name": "Guy",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2020-02-20",
+      "body": "VA Senate",
+      "motion": "Constitutional reading dispensed (40-Y 0-N) (SV0771)",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 0,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0771HB0213+HB0213",
+      "members": [
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Chafin",
+          "vote": "yea"
+        },
+        {
+          "name": "Chase",
+          "vote": "yea"
+        },
+        {
+          "name": "Cosgrove",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "DeSteph",
+          "vote": "yea"
+        },
+        {
+          "name": "Dunnavant",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanger",
+          "vote": "yea"
+        },
+        {
+          "name": "Hashmi",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Kiggans",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Mason",
+          "vote": "yea"
+        },
+        {
+          "name": "McClellan",
+          "vote": "yea"
+        },
+        {
+          "name": "McDougle",
+          "vote": "yea"
+        },
+        {
+          "name": "McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Morrissey",
+          "vote": "yea"
+        },
+        {
+          "name": "Newman",
+          "vote": "yea"
+        },
+        {
+          "name": "Norment",
+          "vote": "yea"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "yea"
+        },
+        {
+          "name": "Peake",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Pillion",
+          "vote": "yea"
+        },
+        {
+          "name": "Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruff",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Spruill",
+          "vote": "yea"
+        },
+        {
+          "name": "Stanley",
+          "vote": "yea"
+        },
+        {
+          "name": "Stuart",
+          "vote": "yea"
+        },
+        {
+          "name": "Suetterlein",
+          "vote": "yea"
+        },
+        {
+          "name": "Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "Vogel",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2020-02-24",
+      "body": "VA Senate",
+      "motion": "Passed Senate (21-Y 18-N) (SV0887)",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 18,
+      "absent": 1,
+      "body_size": 40,
+      "note": "Page note: \"Senator Peake stated that he was recorded as not voting on\" \"the question of the passage of H.B. 213, whereas he intended to vote nay.\" | https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "members": [
+        {
+          "name": "Barker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ebbin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Favola",
+          "vote": "yea"
+        },
+        {
+          "name": "Hashmi",
+          "vote": "yea"
+        },
+        {
+          "name": "Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis",
+          "vote": "yea"
+        },
+        {
+          "name": "Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Mason",
+          "vote": "yea"
+        },
+        {
+          "name": "McClellan",
+          "vote": "yea"
+        },
+        {
+          "name": "McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Morrissey",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Saslaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Spruill",
+          "vote": "yea"
+        },
+        {
+          "name": "Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "Chafin",
+          "vote": "nay"
+        },
+        {
+          "name": "Chase",
+          "vote": "nay"
+        },
+        {
+          "name": "Cosgrove",
+          "vote": "nay"
+        },
+        {
+          "name": "DeSteph",
+          "vote": "nay"
+        },
+        {
+          "name": "Dunnavant",
+          "vote": "nay"
+        },
+        {
+          "name": "Hanger",
+          "vote": "nay"
+        },
+        {
+          "name": "Kiggans",
+          "vote": "nay"
+        },
+        {
+          "name": "McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Norment",
+          "vote": "nay"
+        },
+        {
+          "name": "Obenshain",
+          "vote": "nay"
+        },
+        {
+          "name": "Pillion",
+          "vote": "nay"
+        },
+        {
+          "name": "Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "Ruff",
+          "vote": "nay"
+        },
+        {
+          "name": "Stanley",
+          "vote": "nay"
+        },
+        {
+          "name": "Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "Suetterlein",
+          "vote": "nay"
+        },
+        {
+          "name": "Vogel",
+          "vote": "nay"
+        },
+        {
+          "name": "Peake",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T17:30:00Z)",
+    "fetched_at": "2026-10-28T17:30:00Z",
+    "method": "curl"
+  }
+}

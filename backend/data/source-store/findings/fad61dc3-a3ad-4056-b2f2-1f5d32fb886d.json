@@ -1,0 +1,54 @@
+{
+  "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+  "findings": [
+    {
+      "id": "8a8c446c6302df7ff787abb51aa8a7f0ddd182546caa4276501db1eab3785744",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading, SB 1174 Min et al.",
+      "note": "SB 1174 (Min, 2024) would prohibit a local government from requiring a person to present identification to vote or submit a ballot at a polling place, vote center or other ballot location, as specified; chaptered 2024-09-29. Digital Democracy lists Catherine Blakespear among the 30 'For' votes on the Senate floor (30 for, 8 against).",
+      "subjects": [
+        "local ban on voter ID requirements",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:23:17.794Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "voter ID ban/permission for local governments",
+        "non-citizen voting / election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found by extract-otr)",
+        "official legislature member page (confirmed in office)",
+        "official site search page (site search returned nothing on the subject)",
+        "Ballotpedia profile (nothing on the subject)",
+        "web searches on name plus subject words (nothing beyond what is listed)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge); used the CalMatters Digital Democracy copy of the roll calls instead",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "official Senate District 38 site"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:23:17.794Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "politician_id": "3e91e841-173c-4b60-bff2-a53774334d6a",
+  "findings": [
+    {
+      "id": "8814732e59c1c62f57080439164179639934aa2b0b21e2c3461816dd3c311cc0",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "abstain",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: abstain (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Alex_Burton names him as Indiana House District 77 member, on the Nov 3, 2026 general ballot after advancing in the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "Ballotpedia (profile fetched; no subject material; no 2026 Candidate Connection survey; 2024 survey has no voter ID or citizenship content)",
+        "https://www.indianahousedemocrats.org/members/alex-burton (fetched; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_alex_burton_1 (page loads only a script shell, no bill list readable)",
+        "not reviewed: campaign site (no working URL found; Ballotpedia links not extractable)",
+        "not reviewed: news search on name plus subject words (shared web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:26:36.688Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID at polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity and scope confirmed: https://ballotpedia.org/Alex_Burton shows him as the House District 77 incumbent on the 2026 general-election ballot",
+        "Ballotpedia: 2026 survey not completed; 2024 survey answers have nothing on the subject",
+        "official House caucus member page https://indianahousedemocrats.org/members/alex-burton: nothing on the subject",
+        "BillTrack50 vote page https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/29787: no voter ID, mail ID or citizenship bill listed",
+        "news search on name plus voter ID, student ID, election: nothing on the subject",
+        "not reviewed: House roll-call pages (iga.in.gov loads only by script; legiscan.com blocked by a bot challenge)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:52.540Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

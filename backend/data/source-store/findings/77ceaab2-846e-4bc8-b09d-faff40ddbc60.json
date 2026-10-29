@@ -1,0 +1,41 @@
+{
+  "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Ballotpedia https://ballotpedia.org/Francisco_Paulino: Celina Reyes defeated incumbent Francisco Paulino, 1,196 votes to 619, in the 16th Essex District primary on September 1, 2026)",
+        "On the Record (0 appearances)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/FEP1 (identity confirmed as Representative Francisco E. Paulino, 16th Essex; no election-ID bills seen)",
+        "Ballotpedia",
+        "not searched after scope check: official site, news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:54.435Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary for the Massachusetts House 16th Essex district (Celina Reyes won, 1,196 votes to 619); page: https://ballotpedia.org/Francisco_Paulino",
+        "https://malegislature.gov/Legislators/Profile/FEP1 (confirms he is the 16th Essex representative; sponsored bills list shows nothing on the subject)",
+        "On the Record (0 meetings)",
+        "stopped after scope check: not on the 2026 general-election ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:12:25.918Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

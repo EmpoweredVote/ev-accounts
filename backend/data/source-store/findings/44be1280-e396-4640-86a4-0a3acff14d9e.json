@@ -1,0 +1,255 @@
+{
+  "politician_id": "44be1280-e396-4640-86a4-0a3acff14d9e",
+  "findings": [
+    {
+      "id": "02a57820549313b05846117a5a62e1f5a9d4ccedee28976a0fe6f6cb0984458a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19962/Cook-Supports-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-21",
+      "date_precision": "day",
+      "passage": "However, House Bill 1300 would make our election laws the best in the country and pave the way for a 'hard to cheat, but easy to vote' system for all other states.",
+      "note": "Press release issued in his name backing HB 1300, which the release says would expand the state voter ID law, add scannable voter ID cards used for in-person voting, require signature checks on mail and absentee ballots, and improve voter lists. Source copied from the page HTML; the page uses curly quotation marks and this passage is the same sentence with plain quotes.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot signature verification",
+        "voter-roll checks",
+        "election audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb723ada3067e54f38b14c8a7742961d30bdae5a454c1c45a319ae489e2ca9c5",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19962/Cook-Supports-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-21",
+      "date_precision": "day",
+      "passage": "When we vote on House Bill 1300 next week on the House floor, you can bet that I am voting yes.",
+      "note": "Same release: he states how he will vote on HB 1300 ahead of the floor vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "adfdaf085f4f1baf902a6efb5f82725b96b1d4be582fe832bb079f7b095027e6",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19962/Cook-Supports-Voting-Rights-Protection-Act-?SiteID=1",
+      "date": "2021-06-21",
+      "date_precision": "day",
+      "passage": "I still believe that we should have a full forensic audit of the 2020 election, and I continue to push for it,",
+      "note": "Same release: he calls for a full forensic audit of the 2020 election.",
+      "subjects": [
+        "election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a2f5a994bb608f208aa25bf10ac08689b2c872fbfdae3f0e6551ad1e7cb8f03",
+      "kind": "own-words",
+      "url": "https://www.repbudcook.com/News/31249/Press-Releases/contact",
+      "date": "2022-09-08",
+      "date_precision": "day",
+      "passage": "I am passionate about ensuring fair, secure elections and protecting individual privacy, and I encourage constituents to protect their personal identifying information by communicating directly with their county Bureau of Elections.",
+      "note": "Statement on unsolicited voter-registration and mail-ballot-application mailings sent by two outside groups to Greene County residents; he says he will work to stop the mailings.",
+      "subjects": [
+        "mail-ballot applications",
+        "voter registration mailings",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "260a15214238ad5a121b31ae33db007cc219bcdc018357671c519e76d2dc5e64",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/18580/Actions-Constituents-Can-Take-to-Assist-Cooks-Efforts-to-Address-Election-Irregularities-?SiteID=1",
+      "date": "2020-11-18",
+      "date_precision": "day",
+      "passage": "It is our top priority to ensure the election process was followed legally and that the results are accurate.",
+      "note": "Release after the Nov. 2020 election in which he asks constituents to report suspected fraud; speaks of election integrity in general, with no ID rule named.",
+      "subjects": [
+        "election integrity laws in general",
+        "election audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecd4f6594ca71177d2960cf1416c7cb8f0b3f50b3d7af01b7591a508e14eae0d",
+      "kind": "record",
+      "url": "https://www.monvalleyindependent.com/2021/09/04/cook-part-of-mail-in-voting-lawsuit/",
+      "date": "2021-09-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Private suit in Commonwealth Court to strike down Act 77 (no-excuse mail voting); Mon Valley Independent reports he is one of 14 legislators who filed it",
+      "note": "News report that he joined a suit asking the court to strike down the 2019 law that let any registered voter vote by mail. The page shows only the first paragraph.",
+      "subjects": [
+        "mail voting rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:39.377Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('COOK') on the official bill page; linked to Bud Cook via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('COOK') on the official bill page; linked to Donald Cook via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.324Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('COOK'), linked to Donald Cook (district 50) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.324Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot rules and signature checks",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election audits and election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House caucus press pages for Bud Cook (webcms mirror and repbudcook.com)",
+        "web search on name plus voter ID words (two searches)",
+        "news: Mon Valley Independent 2024-11-06 confirms he won re-election to the 50th District seat; no voting statements",
+        "news: Mon Valley Independent 2021-09-04 on the Act 77 lawsuit (paywalled after first paragraph)",
+        "blocked: https://ballotpedia.org/Bud_Cook (fetch returned an empty page)",
+        "nothing on the subject: no SAVE Act or proof-of-citizenship statements found",
+        "not reviewed: official bill pages on the legislature site (sponsorships are linked separately)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:04:39.377Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.850Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:22:46.324Z",
+      "by": "identity-pa-2026-10-29c"
+    }
+  ]
+}

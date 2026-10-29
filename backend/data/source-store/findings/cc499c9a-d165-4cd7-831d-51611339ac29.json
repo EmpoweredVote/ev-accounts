@@ -1,0 +1,378 @@
+{
+  "politician_id": "cc499c9a-d165-4cd7-831d-51611339ac29",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "365a07ab354bdb280d44bfaf3792f7f4b344b55dd07221eae21efcc9cc408b4e",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-denounces-republican-bill-restrict-voting-rights",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Adding unnecessary and expensive barriers to vote will disenfranchise millions of U.S. citizens and disproportionately impact communities of color. To be clear, it is already illegal under federal law for noncitizens to cast a ballot.",
+      "note": "Statement issued in his name after his vote against H.R. 22 (SAVE Act). Says the bill adds document barriers to voting and that non-citizen voting is already illegal under federal law.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:48:38.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c93a98f85d9902ca34bfefbcffb9a17a94368281feea8567caaa83191b71466",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-denounces-republican-bill-restrict-voting-rights",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "This bill will prevent Americans from using their driver’s license or military ID in order to register to vote.",
+      "note": "Same statement. Describes what H.R. 22 would change about which IDs are accepted to register.",
+      "subjects": [
+        "proof of citizenship to register",
+        "ID accepted to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:48:38.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5405f4cf3ad54fb41676d1307bb6d90524a4235591b49a43f343997810713185",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/house-set-vote-save-act-capac-leaders-denounce-measure-disenfranchise",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "Let’s be clear: there is no evidence of any meaningful amount of voter fraud committed by non-citizens, and requiring all citizens to compile excessive, sometimes expensive, documentation of their citizenship will only serve to disenfranchise many qualified voters.",
+      "note": "Joint statement by Scott and Rep. Judy Chu before the House vote on H.R. 8281 (SAVE Act), issued by the two as caucus and task-force chairs. It is a joint statement, not Scott alone.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76d401c0dbf67d0ad3cd252d1026698bc2637851b71cc71a2702200184b8f9f1",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/house-set-vote-save-act-capac-leaders-denounce-measure-disenfranchise",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "Instead of passing voter suppression bills, the House and Senate should instead take up and pass the Freedom to Vote Act and John R. Lewis Voting Rights Advancement Act, which would work in tandem to protect and strengthen our democracy and our freedom to vote.",
+      "note": "Same joint statement. Names two other bills he wants passed instead.",
+      "subjects": [
+        "election integrity laws in general",
+        "alternative bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:48:38.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf4e2e554edb6faa02106c04f28083fa01b83f0620c9a67e0dc920a9fecb7c48",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/congressional-voting-rights-caucus-condemns-trump-executive-order",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "In no uncertain terms, we believe this order is unconstitutional, illegal, and impractical, could result in millions of voters being disenfranchised, and opens the door for false and misleading accusations of impropriety from your Administration.",
+      "note": "Letter to the President signed by Scott as a co-chair of the Congressional Voting Rights Caucus, with other members, about the March 25, 2025 executive order that directs documentary proof of citizenship for voter registration. A group letter, not Scott alone.",
+      "subjects": [
+        "proof of citizenship to register",
+        "executive order on elections",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "executive order on election rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15c916a64d0484414387a10571ef2adc926f3d672cf260e8021f45833376867f",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-slams-scotus-ruling-greenlighting-youngkin-trump-gop-voter",
+      "date": "2024-10-30",
+      "date_precision": "day",
+      "passage": "This decision also perpetuates the falsehood that noncitizens are voting in meaningful numbers and former President Trump’s plan to undermine confidence in our elections.",
+      "note": "Scott's statement on the Supreme Court order allowing Virginia to continue removing voters from the rolls close to the 2024 election. He says the removals rest on a false claim about non-citizen voting.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "voter-roll checks and removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "980b0fba5c015451ce4d2dcdeed01491f280fcc1fc39a1928c20b6dad6d66f69",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-denounces-republican-bill-restrict-voting-rights",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "This bill will prevent Americans from using their driver’s license or military ID in order to register to vote. It will also eliminate existing voter registration methods, including registering via mail or online.",
+      "note": "Statement issued in Scott's name after his vote against H.R. 22 (SAVE Act). He describes the bill's effect on which IDs can be used to register and on mail and online registration.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "photo ID or other ID to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "123d6c9247ddc556eeaded5cb5f034781005fe1e4cc42e77a6874bdc2dcbc100",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-denounces-republican-bill-restrict-voting-rights",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "To be clear, it is already illegal under federal law for noncitizens to cast a ballot.",
+      "note": "Same statement on H.R. 22. He says federal law already bars non-citizens from voting.",
+      "subjects": [
+        "non-citizen voting",
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7785e9c301a28ccd26d7e76f35a4f3bda96b7a42a4d86031b180eebefc39bef",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/house-set-vote-save-act-capac-leaders-denounce-measure-disenfranchise",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "Online and mail registration would be gutted, and driver’s licenses, REAL IDs, military IDs, and Tribal IDs would no longer be acceptable identification for Americans to use to register to vote.",
+      "note": "Same joint statement on H.R. 8281, describing its effect on accepted IDs and on mail and online registration.",
+      "subjects": [
+        "photo ID or other ID to register or vote",
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75b100d988f3fd2787c6ab02872ad4bf75a5c02f486e8c4a528a3cfa13448ebd",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-votes-against-partisan-defense-bill-0",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "If enacted, Americans could no longer use a driver’s license or military ID alone to register to vote and would instead be required to provide additional forms of identification that roughly 21 million Americans do not possess.",
+      "note": "Scott's statement after voting against the FY2027 defense bill, which carried the SAVE America Act. He describes its ID rules for registering to vote.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "photo ID or other ID to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19131c2b7ca4f74ee35f7fe19e93b2cb3ba1d39632f432bd4d9dd4f46e9ebeb6",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-votes-against-partisan-defense-bill-0",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "The legislation also threatens voting by mail and requires states to submit voter rolls to the Department of Homeland Security, the same agency overseeing ICE brutality in our communities.",
+      "note": "Same statement. He raises mail voting and the bill's requirement that states send voter rolls to a federal agency.",
+      "subjects": [
+        "ID with a mail ballot",
+        "voter-roll checks and removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:10:42.455Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: Ballotpedia VA-3 2026 page lists Robert C. Scott as incumbent in the Nov 3, 2026 general election; primary canceled (https://ballotpedia.org/Virginia%27s_3rd_Congressional_District_election,_2026)",
+        "official site: Voting Rights issue page (https://bobbyscott.house.gov/issues/voting-rights) and press-release list pages 0-8 (Oct 2026 back to Jan 2026): only redistricting items, nothing on ID",
+        "nothing on the subject: voter ID at the polls, photo ID, no-ID fallback, mail-ballot ID (official site)",
+        "blocked: https://bobbyscott.house.gov/search (Access Denied)",
+        "blocked: https://www.congress.gov/member/robert-scott/S000185 (bot challenge)",
+        "blocked: https://www.govtrack.us/congress/members/robert_scott/400375 (403)",
+        "Ballotpedia Bobby_Scott page: fetched, no relevant content",
+        "not reviewed: campaign site",
+        "not reviewed: news search (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411 (lead-only)"
+      ],
+      "found": 6,
+      "at": "2026-10-22T21:48:38.175Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "photo ID or other ID to register or vote",
+        "ID with a mail ballot",
+        "voter-roll checks and removals",
+        "non-citizen voting",
+        "executive order on election rules"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia, page Robert C. Scott (confirms he is on the 2026 general election ballot, VA-3)",
+        "official site bobbyscott.house.gov: Voting Rights issue page list and five press releases fetched",
+        "official site search page: blocked: https://bobbyscott.house.gov/search?keys=voter+ID (403)",
+        "congress.gov bill pages: not reviewed (roll-call votes on H.R. 22, H.R. 8281 and S. 1383 already on file)",
+        "web search on name plus SAVE Act words: no 2026 statement on the stand-alone Senate bill found beyond the July 2026 defense-bill statement"
+      ],
+      "found": 8,
+      "at": "2026-10-27T22:10:42.455Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

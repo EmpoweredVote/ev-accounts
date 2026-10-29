@@ -1,0 +1,172 @@
+{
+  "politician_id": "558dc1d6-0365-4707-8373-4ef188aff71c",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('FINK'), linked to Lisa Fink (district 27) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('FINK'), linked to Lisa Fink (district 27) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('FINK'), linked to Lisa Fink (district 27) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dad1a5aa54ccc1b89fc86f54fe8c34680055dbe86317dcab447b91f136dcb49",
+      "kind": "own-words",
+      "url": "https://lisafinkaz.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "No matter where you stand on the issues surrounding our recent elections, every Arizonan will benefit from reforms that increase transparency, improve accuracy and speed, punish lawbreakers, and allow for verifiable results.",
+      "note": "Election integrity paragraph on her campaign issues page (2026 campaign site). It speaks of election reform in general terms and names no ID or citizenship requirement. The heading 'Election Integrity' follows the paragraph in the page text.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:04.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('FINK'), linked to Lisa Fink (district 27) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.509Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.879Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "ID with mail or early ballots",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://lisafinkaz.com/ (home page, nothing on the subject)",
+        "campaign site issues page https://lisafinkaz.com/issues (election integrity section)",
+        "blocked: https://ballotpedia.org/Lisa_Fink",
+        "House member roster https://www.azleg.gov/memberroster/ (confirms sitting House member, district 27)",
+        "The Ballot Brief https://theballotbrief.com/state/arizona/maricopa-county/arizona-house-district-27 (confirms she is on the 2026-11-03 general ballot)",
+        "news searches on name plus voter ID, proof of citizenship, SAVE Act, early ballot: no statement by her found",
+        "https://coppercourier.com/2026/02/17/arizona-republicans-vote-for-save-act/ (does not name her)",
+        "https://cronkitenews.azpbs.org/2026/03/23/voter-id-amendment/ (does not name her)",
+        "note: https://lisafink.com is a different Lisa Fink (a real estate broker), not used"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:09:04.007Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.509Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

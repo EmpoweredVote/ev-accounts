@@ -1,0 +1,32 @@
+{
+  "politician_id": "cd200e06-d726-4a12-b2e8-0295700d185e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "official Senate page https://apps.senate.virginia.gov/Senator/memberpage.php?id=S112 (confirms Senate District 5; nothing on the subject)",
+        "campaign site: none found",
+        "On the Record (0 appearances)",
+        "blocked: Ballotpedia (fetch returned empty page)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://legilist.com/states/virginia/bill/2026/sb-544 (403)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "news searches on name plus voter ID, citizenship, non-citizen voting: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:20.090Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "politician_id": "9a9d6b64-60b3-40c9-b213-4088d9a51e68",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "a1ba45663a7b7132b1bbd2620407be687781153f8cbb4c92a2f292091025e027",
+      "kind": "own-words",
+      "url": "https://vindman.house.gov/2026/07/22/vindman-releases-statement-after-voting-against-republican-political-games/",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "I cannot vote to undermine the democracy that I and our service members have sworn an oath to support and defend.",
+      "note": "Official statement explaining a vote against a defense bill carrying an added election-law amendment. The statement calls the amendment a voter suppression agenda but does not name photo ID, proof of citizenship or any specific rule. Saved as related election-law material only.",
+      "subjects": [
+        "election laws in general",
+        "amendment to defense bill on voting rules (content not described)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:18:50.074Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks and non-citizen voting",
+        "election laws in general"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for VA-7 (https://ballotpedia.org/Eugene_Vindman)",
+        "On the Record (0 meetings)",
+        "official site vindman.house.gov: home page, searches for SAVE Act, voter, voting, election, citizenship (only the findings below touch the subject)",
+        "official site press release 2026-10-09 (voter intimidation / troop bill): nothing on the subject",
+        "Ballotpedia: lists nay on H.R. 22 (already on file); no own words",
+        "blocked: https://www.congress.gov/member/eugene-vindman/V000137 (HTTP 403)",
+        "campaign site https://www.vindmanforvirginia.com/: blocked, returned no readable text",
+        "news search: not done, the shared web-search budget was used up",
+        "not reviewed: debate and interview videos"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:18:50.074Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://vindman.house.gov/ (confirms sitting member for VA-07; front page lists only an Oct 9 2026 item on troop deployments and voter intimidation, nothing on ID or citizenship proof)",
+        "official site search pages: nothing on the subject",
+        "Ballotpedia: blocked: https://ballotpedia.org/Eugene_Vindman (page returned empty; a direct request was refused)",
+        "congress.gov member page: blocked: https://www.congress.gov/member/eugene-vindman/V000138 (HTTP 403)",
+        "2026 general-election ballot status: not confirmed by a fetched page",
+        "two web searches on name plus SAVE Act and voter ID words: nothing by this person on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:46:37.398Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

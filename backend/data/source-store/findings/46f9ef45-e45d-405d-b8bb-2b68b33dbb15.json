@@ -1,0 +1,210 @@
+{
+  "politician_id": "46f9ef45-e45d-405d-b8bb-2b68b33dbb15",
+  "findings": [
+    {
+      "id": "a1108f9580377cceece2f821fd179d0f1de97833a4a7b51641e40336a51ab1d7",
+      "kind": "own-words",
+      "url": "https://wesa.fm/wesa-voter-guide/2022-09-30/wesa-candidate-survey-emily-kinkead-and-matt-kruth-on-the-issues",
+      "date": "2022-09-30",
+      "date_precision": "day",
+      "passage": "I am opposed to voter ID requirements for the same reasons — it creates barriers to voting with no evidence that it solves any real problem.",
+      "note": "Her written answer in the WESA candidate survey, in reply to a question on no-excuse mail-in voting and other voting-law changes. Date taken from the page URL.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:28.585Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d236ca6abf08033bd71cdab8d531ff8caa5c62386493134e6b62d98cea5ef983",
+      "kind": "own-words",
+      "url": "https://wesa.fm/wesa-voter-guide/2022-09-30/wesa-candidate-survey-emily-kinkead-and-matt-kruth-on-the-issues",
+      "date": "2022-09-30",
+      "date_precision": "day",
+      "passage": "Yes. I support no-excuse mail-in voting because voting needs to keep up with technology and we have the technology to ensure safe, secure, and accurate voting by mail.",
+      "note": "Same survey answer: supports no-excuse mail voting, drop boxes, early in-person voting, and automatic and same-day registration.",
+      "subjects": [
+        "mail voting rules",
+        "voter registration and turnout laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:28.585Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29b18f4ff7d8d600a02725b61210c3cf1580de433d86ddfeef9a803bfaee7235",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/wesa-voter-guide/2024-election/pa-state-house-20-kinkead-kruth",
+      "date": "2024-10-07",
+      "date_precision": "day",
+      "passage": "The issue is not and has never been voter fraud — it is voter disenfranchisement.",
+      "note": "Her answer in the WESA 2024 voter guide to a question that listed mail-in balloting, drop boxes and voter verification requirements; she also names automatic registration, early voting, mail-in pre-canvassing and county funding. Date is the page's publish date.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter verification requirements",
+        "voter registration and turnout laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:28.585Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('KINKEAD'), linked to Emily Deborah Kinkead (district 20) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.704Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Kinkead'), linked to Emily Kinkead (district 20) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.704Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Kinkead'), linked to Emily Kinkead (district 20) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.704Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KINKEAD'), linked to Emily Kinkead (district 20) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.857Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter verification requirements",
+        "mail-in voting",
+        "proof of citizenship to register",
+        "voter registration and turnout laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WESA 2022 candidate survey (own answers)",
+        "WESA 2024 voter guide (own answers)",
+        "web search on name plus voter ID words (two searches); no official press release on voter ID found",
+        "blocked: https://ballotpedia.org/Emily_Kinkead (fetch returned an empty page)",
+        "not found (404): https://thenorthsidechronicle.com/2022/02/10/district-20-news-from-rep-emily-kinkead-feb-2022",
+        "nothing on the subject: no SAVE Act or proof-of-citizenship statements found",
+        "not reviewed: official House member page and bill pages (sponsorships are linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:05:28.585Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.704Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.857Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

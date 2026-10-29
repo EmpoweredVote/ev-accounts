@@ -1,0 +1,103 @@
+{
+  "politician_id": "befd0035-e611-4d14-9da9-227156bb2c10",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "07c18cde2c92f723efe167cf1ac1234079ae9e7f8280836e9c4eb543bced4877",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/olthoff-s-bill-requiring-disclosure-of-ai-use-in-deceptive-election-ads-now-law/",
+      "date": "2024-03-26",
+      "date_precision": "day",
+      "passage": "\"AI-generated content in political ads is a growing concern nationally and here in Indiana,\" Olthoff said. \"Having a disclaimer will help voters more easily identify fake ads, which ultimately helps protect the integrity of our elections.\"",
+      "note": "Press release from the Indiana House caucus quoting her on her law requiring a disclaimer on AI-altered candidate images, audio or video in campaign ads. Not about ID or citizenship; saved as a related election-integrity topic.",
+      "subjects": [
+        "deepfake political ads disclaimer (related election-integrity law)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:29:09.437Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Julie_Olthoff) names her as Indiana House District 19 member, on the Nov 3, 2026 general ballot after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances, extract-otr run with name)",
+        "Ballotpedia: nothing on the subject (no voter-ID or citizenship text on page)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_julie_olthoff_1 (page is a script-built shell, no readable bill list)",
+        "blocked: https://iga.in.gov/api/legislators/julie_olthoff (returns the same empty shell)",
+        "blocked: https://indianahouserepublicans.com/members/view/julie-olthoff (404)",
+        "blocked: https://www.olthoff4indiana.com (no connection)",
+        "not reviewed: news search on name plus subject words (session web-search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:50:26.974Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting District 19 member, on the 2026 general ballot)",
+        "the Indiana House caucus member page and press-release list (https://www.indianahouserepublicans.com/members/leadership/julie-olthoff/)",
+        "two news searches on her name plus the subject words (nothing naming her on ID or citizenship)",
+        "no campaign site found; Indiana roll calls not searched, already on file"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:29:09.437Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

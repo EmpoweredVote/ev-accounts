@@ -1,0 +1,43 @@
+{
+  "politician_id": "e21e17f4-083f-4473-90dd-df52456a14a1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia https://ballotpedia.org/Rudy_Moise: 'He lost in the Democratic primary on August 18, 2026.'; FL-24 primary result 4,439 votes, 7.6 percent)",
+        "On the Record (0 appearances)",
+        "campaign site rudymoise.com: not a campaign page (domain parking page), nothing on the subject",
+        "Ballotpedia (no Candidate Connection survey; nothing on the subject)",
+        "not reviewed: congress.gov, news search (web search budget used up; stopped because out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:52:07.947Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Local 10 News, https://www.local10.com/news/politics/2026/08/19/gilbert-to-run-against-republican-businesswoman-in-floridas-24th-congressional-district-midterm-election/ : Oliver Gilbert won the primary for Florida's 24th District; the page lists Moise among the five other candidates in the crowded race)",
+        "Wikipedia page on Rudy Moise (confirms he moved his run from Florida's 20th District to the 24th in May 2026)",
+        "On the Record (0 appearances)",
+        "one news search on his name (nothing on the subject)",
+        "not reviewed: campaign site and other places, because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:06:48.264Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

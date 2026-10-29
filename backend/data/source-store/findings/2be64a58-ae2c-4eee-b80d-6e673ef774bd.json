@@ -1,0 +1,152 @@
+{
+  "politician_id": "2be64a58-ae2c-4eee-b80d-6e673ef774bd",
+  "findings": [
+    {
+      "id": "3f40a200037499a1725335a35a21cf6ceb87f3257b7940e3fba2c9e7b2a0f382",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: nay (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "b4ca69903c6426b0e339c7fcf3b97d6808e56e2d49b9c7c59ddaca588f663ec0",
+      "kind": "own-words",
+      "url": "https://bucyfortexas.com/press-releases/rep-bucy-announces-initial-legislation-for-88th-session/",
+      "date": "2022-11-14",
+      "date_precision": "day",
+      "passage": "H.B. 354 – would allow college student, tribal, or state employee IDs to be used as Voter IDs",
+      "note": "Bucy's own press release describing a bill he filed for the 88th session. Text taken through the fetch tool (curl was blocked), so it is a fragment of a bullet, not a full sentence.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:12.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f6c28ae0d0155761749ecd58cb8b76159e7d205e1cb5b36a3e490dd20b32ec5",
+      "kind": "own-words",
+      "url": "https://bucyfortexas.com/press-releases/rep-bucy-announces-initial-legislation-for-88th-session/",
+      "date": "2022-11-14",
+      "date_precision": "day",
+      "passage": "We must continue to modernize our elections, while making it easier to register to vote and cast a ballot.",
+      "note": "Quote attributed to Bucy in his own press release on his 88th-session bills. Text taken through the fetch tool (curl was blocked).",
+      "subjects": [
+        "election integrity laws in general",
+        "registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:12.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "107ef55712d568b8b5fd6b0430eab3196efeb2f3805980825259322c2ec9d6b6",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB354",
+      "date": "2022-11-14",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-354-2023",
+      "act": "author",
+      "note": "HB 354, caption 'Relating to acceptable forms of identification for voting.' Filed 2022-11-14; referred to House Elections 2023-02-23; stayed in committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:12.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d155141e951eb83786bd87a9bdc0e380722496749d4432a7f780fd95a4f95131",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2082",
+      "date": "2025-01-24",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2082-2025",
+      "act": "author",
+      "note": "HB 2082, caption 'Relating to ensuring access to the right to vote by all eligible voters.' Per the bill text, it widens the accepted photo IDs (higher-education, state agency, tribal, IDs expired up to four years), widens non-photo documents with a reasonable-impediment declaration, and adds same-day, automatic and online registration with identity checks. Filed 2025-01-24; referred to House Elections 2025-03-14; stayed in committee. Summary of bill text came through the fetch tool.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (reasonable impediment)",
+        "which IDs are accepted",
+        "same-day registration",
+        "online registration identity check"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:12.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (reasonable impediment)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "same-day and automatic registration",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://house.texas.gov/members/member-page?district=136 (confirms Rep. John H. Bucy III, HD136; nothing on the subject)",
+        "campaign site press releases https://bucyfortexas.com/press-releases/ (three voting-related releases; the 2022-11-14 one is on the subject; the 2022-01-14 ballot-by-mail tracker release only describes the existing law and is not saved)",
+        "Texas Legislature Online bill history pages for HB 354 (88R) and HB 2082 (89R)",
+        "https://senate.texas.gov/pressroom.php?d=14 and capitolreleases.com (joint 2025-03-26 release on felony voting rights: off the subject)",
+        "news searches on name plus voter ID, proof of citizenship, SB 16, mail ballot (no quotes from him on SB 16 or proof of citizenship found)",
+        "blocked: https://ballotpedia.org (fetch returns empty page; curl retry denied by the permission system)",
+        "blocked: https://app.legiplex.com/profile/john-bucy-57/... (403)",
+        "not reviewed: House floor debate video on SB 1 (2021) and SB 16 (2025); the unread last 28,352 characters of the HB 2082 bill text"
+      ],
+      "found": 4,
+      "at": "2026-10-28T14:59:12.853Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

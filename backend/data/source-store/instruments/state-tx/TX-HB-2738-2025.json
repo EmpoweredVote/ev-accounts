@@ -1,0 +1,35 @@
+{
+  "id": "TX-HB-2738-2025",
+  "scope": "state:tx",
+  "title": "HB 2738 (89R): Relating to acceptable forms of identification for voting.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2738",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2738",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB02738I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 1 (amends Election Code 63.0101(a))\n(quote) (a) The following documentation is an acceptable form of photo identification under this chapter: (1) a driver's license or an [ , ] election identification certificate[ , or personal identification card ] issued to the person by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation; (2) a United States military identification card that contains the person's photograph that has not expired or that expired no earlier than four years before the date of presentation; (3) a United States citizenship certificate issued to the person that contains the person's photograph; (4) a United States passport book or card issued to the person that has not expired or that expired no earlier than four years before the date of presentation; or (5) a license to carry a handgun issued to the person by the Department of Public Safety that has not expired or that expired no earlier than four years before the date of presentation.\n(b_no_id_remedy)\n(section) SECTION 1 (amends Election Code 63.0101(b))\n(quote) (b) The following documentation is acceptable as proof of identification under this chapter: (1) a government document that shows the name and address of the voter, including the voter's voter registration certificate; (2) [ one of the following documents that shows the name and address of the voter: [ (A) a copy of a current utility bill; [ (B) a bank statement; [ (C) ] a government check[ ; or [ (D) a paycheck ]; or (3) a certified copy of a domestic birth certificate or other document confirming birth that is admissible in a court of law and establishes the person's identity.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 2: effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Isaac",
+      "role": "author",
+      "version": "Introduced (H.B. No. 2738; no other version exists)",
+      "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

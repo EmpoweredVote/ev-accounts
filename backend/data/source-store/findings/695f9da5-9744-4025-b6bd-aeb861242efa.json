@@ -1,0 +1,28 @@
+{
+  "politician_id": "695f9da5-9744-4025-b6bd-aeb861242efa",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Jason_Dickerson_(Georgia) (sitting Senate District 21 member since the September 23, 2025 special runoff; on the 2026 general election ballot; nothing on the subject)",
+        "Branch candidate page, Georgia Senate 21, 2026 general election (only a one-line summary about securing elections, not his own wording, so not saved): https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-21/candidates/jason-t-dickerson",
+        "Georgia House press site search (https://house-press.com/?s=Dickerson+election): results concern a different legislator; nothing on the subject",
+        "two news searches on his name plus voter ID and election integrity (only 2025 special-election coverage; nothing on the subject)",
+        "not reviewed: Georgia Senate member page and campaign site (not located or fetched)",
+        "legis.ga.gov bill pages not tried (login token)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.681Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

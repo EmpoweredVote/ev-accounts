@@ -1,0 +1,177 @@
+{
+  "politician_id": "02e6e5fd-b554-4411-bbe6-e274b24a35a9",
+  "findings": [
+    {
+      "id": "7aa333fc4443ac39762c4ad3e9c6bc277e80c7b4353274fc8e4014b4ad9a4c65",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=14904",
+      "date": "2025-05-20",
+      "date_precision": "day",
+      "passage": "“Georgia voters deserve an election system they can trust – one that is secure, transparent and free from confusion or doubt,” said Rep. Kelley. “We have a responsibility to ensure that our laws and procedures uphold the integrity of every vote cast, and I appreciate Speaker Burns’ confidence in appointing me to this much-needed study committee and look forward to working with my fellow legislators to make our elections even stronger ahead of next November.",
+      "note": "Statement in a House press release on his appointment to the House Blue-Ribbon Study Committee on Election Procedures. General election-integrity language; no ID or citizenship rule is named.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:37:06.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8059df904e4d7cb215444b35d049299a2e504342a4e1daf30583f07bde8a3d8f",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/GA-HB1467-2025-2026",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "GA-HB-1467-2026",
+      "act": "sponsor",
+      "note": "Listed as a sponsor of HB 1467, titled Elections; motor-voter applications shall be opt-in instead of opt-out. Source is a third-party bill tracker (official legislature page could not be loaded); it shows the bill at House first reading in early 2026, exact date not confirmed.",
+      "subjects": [
+        "voter registration process (motor-voter)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:37:06.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Kelley'), linked to TREY KELLEY (district 16) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Kelley'), linked to TREY KELLEY (district 16) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Kelley'), linked to Trey Kelley (district 16) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1946a9da0d39e0d7a9527af905599d499872afece46402da1ec78718ccb7874c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 228 detail API answers 401; not bypassed). History from House Journal 2021 (first reading; referred to the Special Committee on Election Integrity) and 2022 House Journal index \"No Action in 2022\".",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-228-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (LC 41 2783). Never left House Special Committee on Election Integrity.",
+      "note": "Named as co sponsor ('Kelley of the 16th') on the official bill text; linked to TREY KELLEY via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.401Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter registration process",
+        "election integrity in general",
+        "SB 202 vote"
+      ],
+      "places": [
+        "status confirmed: Georgia House District 16 incumbent, advanced unopposed in the 2026-05-19 primary, on the 2026-11-03 general ballot (https://ballotpedia.org/Trey_Kelley)",
+        "On the Record (0 meetings found for this person)",
+        "House press-release site: his representative page, pages 1-3 (one finding)",
+        "Ballotpedia",
+        "bill trackers (policyrisk.com) for sponsorships",
+        "web searches on name plus voter ID, election integrity, citizenship, absentee: nothing further",
+        "blocked: https://www.legis.ga.gov/legislation/59783 (page loads by script, no content for the fetch tool); SB 202 final votes of 2021-03-25 not obtained",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (HTTP 403)",
+        "not reviewed: campaign site and Facebook"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:37:06.692Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.401Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

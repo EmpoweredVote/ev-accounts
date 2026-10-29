@@ -1,0 +1,58 @@
+{
+  "id": "WI-AB-67-2011",
+  "scope": "state:wi",
+  "title": "AB 67 (2011-2012 Wisconsin Legislature, regular session): late voter registration, absentee voting in person, and implementation of a voter identification requirement at elections.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2011/proposals/ab67",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2011/REG/AB67"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2011 AB 67, implementation clause (2)\n(quote) The bill also provides that any elector who votes at an election held prior to the date of the 2012 spring primary shall be requested by the election officials to present proof of identification in the same manner as provided for in 2011 Senate Bill 6, in accordance with the text of the bill as affected by any legislative action on the day this bill becomes law.\n(b_no_id_remedy)\n(section) 2011 AB 67, implementation clause (2)\n(quote) If the elector does not present proof of identification, and the elector is otherwise qualified, the elector's ballot shall be counted without the necessity of presenting proof of identification and without the necessity of casting a provisional ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) LRB analysis (printed with the bill): This bill changes the deadline for late registration in person to 5 p.m. or the close of business, whichever is later, on the Friday before the election and the deadline for voting an absentee ballot in person to 5 p.m. on the Friday before the election.\n(other) LRB analysis (printed with the bill): The bill directs the Government Accountability Board (GAB) to prescribe information to be provided to electors briefly describing the deadline changes.\n(other) LRB analysis (printed with the bill): The bill also provides that any elector who votes at an election held prior to the date of the 2012 spring primary shall be requested by the election officials to present proof of identification in the same manner as provided for in 2011 Senate Bill 6, in accordance with the text of the bill as affected by any legislative action on the day this bill becomes law.\n(other) LRB analysis (printed with the bill): This bill directs GAB to provide to each municipal clerk and board of election commissioners an interactive electronic registration form that may be used by an elector to enter the information that is required to be provided by the elector electronically and to print the completed form for delivery to the clerk or board of election commissioners.",
+  "sponsors": [
+    {
+      "name": "Pridemore",
+      "role": "prime",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    },
+    {
+      "name": "Strachota",
+      "role": "co",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    },
+    {
+      "name": "Thiesfeldt",
+      "role": "co",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    },
+    {
+      "name": "LeMahieu",
+      "role": "co",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    },
+    {
+      "name": "Grothman",
+      "role": "co",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    },
+    {
+      "name": "Darling",
+      "role": "co",
+      "version": "As introduced 3/30/2011; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

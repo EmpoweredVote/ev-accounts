@@ -1,0 +1,276 @@
+{
+  "politician_id": "4e447fd0-7315-42dc-bea0-5d14c41d3c72",
+  "findings": [
+    {
+      "id": "8e267bb763c33c8fca4f22e466a46e673a7f547850ce22bca3f4efa498c734cf",
+      "kind": "own-words",
+      "url": "https://www.sungazette.com/news/top-news/2023/02/voter-id-legislation-to-ensure-more-fairness-accuracy-supported-by-yaw/",
+      "date": "2023-02-08",
+      "date_precision": "day",
+      "passage": "\"I get emails that say, 'you are going to disenfranchise thousands of people,\" he said. \"Tell me who is disenfranchised?\" Yaw asked. \"Who are they? I don't know anybody that does not have an ID.\"",
+      "note": "Quoted by the Williamsport Sun-Gazette after a meeting with its editorial board. He answers the objection that a photo ID rule would block voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:14.576Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7186ee8a1f9a2080ab088a7fdb08d395ce3bffc096009e8ca573e7a0353d65d1",
+      "kind": "own-words",
+      "url": "https://www.sungazette.com/news/top-news/2023/02/voter-id-legislation-to-ensure-more-fairness-accuracy-supported-by-yaw/",
+      "date": "2023-02-08",
+      "date_precision": "day",
+      "passage": "\"If it goes as planned…we could get the (Voter ID) package together for the primary next year.\"",
+      "note": "Quoted by the Sun-Gazette. He describes the timeline for the Senate voter ID package.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:14.576Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01f5d74ecef65bf1514aa6c8ff5eef2c934538b350124cc87b3a060c6d13e6bd",
+      "kind": "own-words",
+      "url": "https://www.wkok.com/583668-2/",
+      "date": "2020-12-30",
+      "date_precision": "day",
+      "passage": "The overwhelming consensus in those decisions is that there is no evidence of widespread fraud or irregularities in the November 3rd election.",
+      "note": "From his published commentary on the 2020 election (carried by WKOK radio). It is general election integrity, not about ID. The same piece raises the Secretary of State's authority to count mailed ballots after Election Day.",
+      "subjects": [
+        "election integrity",
+        "mail ballot deadlines"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:14.576Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('YAW'), linked to Gene Yaw (district 23) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47d8e7f2702d2aa41662ee6d936224e2a3c928f5d39b0bf232995161a589788c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Yaw'), linked to Gene Yaw (district 23) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Yaw'), linked to Gene Yaw (district 23) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('YAW') on the official bill page; linked to Gene Yaw via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Yaw'), linked to Gene Yaw (district 23) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('YAW') on the official bill page; linked to Gene Yaw via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Yaw'), linked to Gene Yaw (district 23) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballot",
+        "proof of citizenship",
+        "election integrity",
+        "mail ballot deadlines"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate site senatorgeneyaw.com: site search for voter ID returned only unrelated newsletters; the 2023 voter ID release URLs returned page-not-found (404)",
+        "blocked: https://www.publicnow.com/view/27B377D152BFC5D5AF1DA98EA473F77807924A36 (bot check, 403)",
+        "not reviewed: https://www.sungazette.com/opinion/editorials/2023/02/yaws-call-for-voter-id-requirements-makes-sense/ (fetch denied by the permission system; it is an editorial, not his own words)",
+        "not reviewed: podcast episodes on voter ID at selinsgrove-seals-football-on-eagle-107.castos.com (audio; page not found)",
+        "Ballotpedia (page came back empty)",
+        "web search x3 on name plus voter ID and mail ballots; nothing found from 2024-2026",
+        "bill pages: not searched, votes and sponsorships are linked separately",
+        "scope: sitting state senator, District 23, seat term runs to 2028 per a search result; not on the 2026 ballot"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:05:14.576Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:45:58.716Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

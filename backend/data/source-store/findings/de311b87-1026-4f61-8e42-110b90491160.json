@@ -1,0 +1,56 @@
+{
+  "politician_id": "de311b87-1026-4f61-8e42-110b90491160",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "Confirmed in scope: Ballotpedia (https://ballotpedia.org/Joshua_Tarsky) names him as sitting Massachusetts House member for the 13th Norfolk District, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://www.joshuatarsky.com/ and /issues and /blog: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no survey completed)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/J_T1 and /Cosponsor page: sponsored bills are education, veterans, labor and similar; nothing on the subject; cosponsor list only partly readable (loads dynamically), so not fully reviewed",
+        "malegislature.gov bill search for voter identification: bills exist, none tied to him in results seen",
+        "not reviewed: YouTube https://www.youtube.com/@RepTarsky (video)",
+        "web search: not performed, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:27:08.065Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID with mail ballot",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia (confirms sitting 13th Norfolk District member, on the 2026-11-03 general ballot; no survey answers, no readable bill list on the subject)",
+        "Progressive Massachusetts 2024 questionnaire page: nothing on the subject",
+        "Needham Observer 2024 candidate Q and A: nothing on the subject",
+        "Wikipedia page: nothing on the subject",
+        "web searches on his name with voter ID, election and ballot words: nothing on the subject",
+        "blocked: https://www.joshtarsky.com (connection refused)",
+        "blocked: https://malegislature.gov/Legislators/Profile/JXT1 (404; member profile URL not found)",
+        "not reviewed: bill pages for 2025-2026 House voter ID bills H.802 and H.833 (sponsor lists not checked)",
+        "not reviewed: https://www.needhamchannel.org/2026/05/rep-josh-tarsky-update-on-beacon-hill/ (video)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:06:42.174Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

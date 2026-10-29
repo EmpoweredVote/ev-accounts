@@ -1,0 +1,56 @@
+{
+  "politician_id": "8e9f0622-a662-4463-a391-4b1219f138d5",
+  "findings": [
+    {
+      "id": "7de0d9c3c294e53f78678fe07bde7f030637a2bad7831a43fcd384c24aa37df6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: nay (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "alternative ID documents",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House page https://housedems.com/whitsett/ (one old statement on a State of the State address; nothing on the subject)",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=144461 (confirms she holds House District 4; no bill titles shown; votes and sponsorships are linked separately)",
+        "status: not seeking re-election in 2026 (announced 2026-03-02 per a news search result); still in office until the term ends. The article itself is blocked: https://michiganadvance.com/2026/03/02/detroits-whitsett-not-seeking-reelection-to-state-house-in-2026-citing-spiritual-reasons/ (403)",
+        "blocked: https://ballotpedia.org/Karen_Whitsett (empty page)",
+        "Michigan Public 2023-09-27 story: her floor remarks there are about paid rides to the polls, not ID, so not saved",
+        "web searches on her name plus voter ID, proof of citizenship, absentee: no own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:46:43.630Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

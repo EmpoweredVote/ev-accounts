@@ -1,0 +1,120 @@
+{
+  "politician_id": "05fb2d53-d21a-4773-a5c9-880acd2d9630",
+  "findings": [
+    {
+      "id": "cd4c74fa0f07e07bd284949c3f65401299b4aeb0e6f4aa68dd98a000016d7d69",
+      "kind": "own-words",
+      "url": "https://www.amgforcongress.com/top-priorities",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "Amanda will fight to restore and strengthen federal voting-rights protections, protect access to vote-by-mail and early voting, support making Election Day a federal holiday, and oppose partisan and racial gerrymandering that allows politicians to choose their voters instead of voters choosing their representatives.",
+      "note": "Campaign priorities page, written in the third person in her name, under the heading Stop Corruption & Protect Our Democracy. Page is undated; date given is the fetch date and the year is the campaign year. It names voting-rights protections, vote-by-mail and early voting access, Election Day as a holiday, and gerrymandering. It does not mention ID or citizenship proof.",
+      "subjects": [
+        "voting rights protections (related)",
+        "vote-by-mail access (related)",
+        "early voting (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:15:06.624Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "535a8e6a458b353c994d5a6d477c9e7d4763df27e1c3ed89e96f7ebc15fead64",
+      "kind": "own-words",
+      "url": "https://www.amgforcongress.com/top-priorities",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "Amanda also believes a healthy democracy encourages voter participation rather than suppresses the vote.",
+      "note": "Same campaign priorities page and section, same date caveat. General statement on voter participation, with no mention of ID or citizenship proof.",
+      "subjects": [
+        "voting access in general (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:15:06.624Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66af32573c634b23b5c55551ea9a8926fa75d039a793522f4a6b7cf96ee91b24",
+      "kind": "own-words",
+      "url": "https://www.amgforcongress.com/top-priorities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Amanda also believes a healthy democracy encourages voter participation rather than suppresses the vote. Amanda will fight to restore and strengthen federal voting-rights protections, protect access to vote-by-mail and early voting, support making Election Day a federal holiday, and oppose partisan and racial gerrymandering that allows politicians to choose their voters instead of voters choosing their representatives.",
+      "note": "From the 'top priorities' page of her campaign site, written in the third person (undated; read in October 2026). It speaks of voter participation, mail voting and voting-rights law, but does not mention photo ID or proof of citizenship.",
+      "subjects": [
+        "vote-by-mail access",
+        "voting rights and voter participation in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:57.208Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voting access and voting rights (related)"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Amanda_Green_(Florida) says she is on the Nov 3, 2026 general ballot for U.S. House Florida District 2 after advancing from the Aug 18, 2026 primary",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://www.amgforcongress.com/ (home, /about, /top-priorities, /media-statements): only the voting-access passage saved; nothing on ID, citizenship or SAVE Act",
+        "Ballotpedia Candidate Connection survey (on her Ballotpedia page): nothing on the subject",
+        "congress.gov: not applicable, she has never held legislative office, no sponsorships or votes",
+        "not reviewed: web search for news on name plus subject words (search budget exhausted for the session)",
+        "not reviewed: https://www.facebook.com/amgforcongress/ , https://www.instagram.com/amgforcongress/ , https://bsky.app/profile/amgforcongress.bsky.social (social posts, not fetched)",
+        "not reviewed: ontheissues.org, vote411 (leads only, not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:15:06.624Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in person",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "vote-by-mail access",
+        "voting rights and voter participation in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "WFSU news report of 2026-08-18 (confirms she won the primary for Florida's 2nd Congressional District and is on the November 2026 ballot)",
+        "campaign site home, about, top priorities and media statements pages (voting passage saved; nothing on photo ID or proof of citizenship)",
+        "iVoterGuide candidate page (the photo-ID question is marked 'Did not answer', so nothing on the subject)",
+        "news search for her name with SAVE Act and voter ID (nothing from her)",
+        "blocked: https://ballotpedia.org/Amanda_Green (returned HTTP 202 with no page body)",
+        "not reviewed: debate coverage from August 2026 (https://www.wjhg.com/2026/08/11/democrats-vying-2nd-congressional-district-seat-face-off-debate-ahead-primary/), not fetched",
+        "not applicable: she holds no legislative office, so no bill pages"
+      ],
+      "found": 1,
+      "at": "2026-10-27T17:04:57.208Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

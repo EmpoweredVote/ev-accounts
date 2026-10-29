@@ -1,0 +1,266 @@
+{
+  "politician_id": "451da69b-17a2-465b-b138-ea27e7906694",
+  "findings": [
+    {
+      "id": "bed19642f8ad4d4011224f2544d2fec66b39494541da35e3f1324334cfa0c2ee",
+      "kind": "own-words",
+      "url": "https://capitol-beat.org/?p=3751",
+      "date": "2021-02-18",
+      "date_precision": "day",
+      "passage": "“We are a nation of laws,” said Senate Majority Whip Steve Gooch, R-Dahlonega. “We’re used to having identification cards on us. “I just can’t understand anybody opposing requiring some kind of identification to present to an elections office to prove who you say you are.”",
+      "note": "Quoted by Capitol Beat in committee on Sen. Larry Walker's bill requiring a driver's license or other ID number to request an absentee ballot. He supports requiring identification for absentee ballot requests and compares it to showing ID in person.",
+      "subjects": [
+        "ID to request a mail or absentee ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:48:17.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76b043b7d34d31580d4a9a20f4986186d8c8cc92e3e212e5f5054e2bc3197a2d",
+      "kind": "own-words",
+      "url": "https://white.fetchyournews.com/tag/senate-bill/",
+      "date": "2021-02-16",
+      "date_precision": "day",
+      "passage": "“We want every legal voter in Georgia to go vote. We’re not trying to suppress the vote. We’re not trying to keep Democrats from coming out to vote,” Gooch added.",
+      "note": "Quoted by Fetch Your News (White County meeting) on the Senate omnibus election bill; says the aim is for every legal voter to vote and not to suppress votes. The same article reports he backs a photo ID for absentee ballots (reporter's words, not saved as his).",
+      "subjects": [
+        "election integrity laws in general",
+        "ID with a mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:48:17.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3bd98b63d6fc65585a4cb5bc26bea7fe60c8f08940931c5f166a63fa069265c",
+      "kind": "own-words",
+      "url": "https://white.fetchyournews.com/tag/senate-bill/",
+      "date": "2021-02-16",
+      "date_precision": "day",
+      "passage": "Gooch stated, “I’m ready to get rid of all the drop boxes that was not allowed in state law, and it’s still not allowed in state law. That was done as an executive order by the Secretary of State under a national emergency powers act, and we’re going to close the loophole.”",
+      "note": "Quoted by Fetch Your News on ending absentee ballot drop boxes in the Senate omnibus election bill. Related election-integrity topic, tagged: drop boxes.",
+      "subjects": [
+        "absentee ballot drop boxes",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:48:17.638Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Gooch'), linked to STEVE GOOCH (district 51) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Gooch'), linked to STEVE GOOCH (district 51) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Gooch'), linked to STEVE GOOCH (district 51) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Gooch'), linked to Gooch, Steve (district 51) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Gooch'), linked to STEVE GOOCH (district 51) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9370965111be57f988e36fca3437998fd46ea914829cfb0fd75a15c36aca99e3",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (SB 67 detail page and API return 401/script only; not bypassed). History from Senate Journal 2021 index pages 201, 790, 821, 844-846, 851; House Journal 2021 index pages 1172, 1173, 1262; 2022 Senate Journal index \"No action in 2022\".",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, AS PASSED SENATE (Senate Ethics Committee substitute LC 28 0201S (SCS), passed Senate 2021-02-23 35-18). Never received a House floor vote.",
+      "note": "Named as co sponsor ('Gooch of the 51st') on the official bill text; linked to STEVE GOOCH via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "718f079c52684f8bcd8dd463d136c7e4d21ac20935cb22e9d6866e9b2812ea6e",
+      "kind": "record",
+      "url": "https://legis.ga.gov/legislation/60009 (the page shell loads; the detail API behind it answers 401 and was not bypassed). History from Senate Journal 2021 index pp. 867, 1053, 1145, 1270, 1272, 1313, 1322, 1323, 1344, 1345 and House Journal 2021 index pp. 2130, 2297, 2304.",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, AS PASSED SENATE (Senate Ethics Committee substitute LC 28 0292S (SCS), passed Senate 2021-03-08 29-20). House: first and second reading only; no House floor vote.",
+      "note": "Named as co sponsor ('Gooch of the 51st') on the official bill text; linked to STEVE GOOCH via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.410Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship",
+        "voter no-ID fallback",
+        "non-citizen voting / voter rolls",
+        "election integrity laws in general",
+        "SB 202 (2021) votes"
+      ],
+      "places": [
+        "status: holds Georgia Senate seat until 2027-01-11 (Ballotpedia, fetched); lost the 2026-05-19 primary for another statewide office; kept in scope as a sitting senator",
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Steve_Gooch (confirms identity; no subject content)",
+        "campaign site: blocked: https://goochforgeorgia.com/ (no page returned)",
+        "official senate press office (senatepress.net) search: nothing on the subject beyond 2020 caucus notices",
+        "news: Capitol Beat 2021-02-18, Fetch Your News 2021-02-16; AJC 2025-06 interview: nothing on the subject; 2025 launch coverage: not on the subject",
+        "blocked: https://www.legis.ga.gov/ (page loads only an app shell, no bill or vote data; SB 202 2021 final votes by Gooch not reached)",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (403)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/S (bot check)",
+        "SR 838 (2026) and SB 189 (2024) sponsorship: not reviewed, no reachable official page"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:48:17.638Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.410Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

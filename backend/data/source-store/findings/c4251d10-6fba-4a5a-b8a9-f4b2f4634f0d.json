@@ -1,0 +1,219 @@
+{
+  "politician_id": "c4251d10-6fba-4a5a-b8a9-f4b2f4634f0d",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "c6c2f1c64e4bbfed5a28d34d1172daa2a291897d12314781f2f9b16213cfaf05",
+      "kind": "own-words",
+      "url": "https://josh4jersey.com/release-gottheimer-releases-plan-to-stop-trumps-chaos-and-protect-our-jersey-values/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "As Governor, Josh will protect our democracy by making it easier for New Jersey residents to register, vote, and have their voice heard.",
+      "note": "Campaign release for his 2025 governor race, issued in his name, on his voting plan. The same section lists same-day registration, longer early voting, universal mail-in voting, automatic registration and mobile voting for overseas military. It does not mention ID or proof of citizenship.",
+      "subjects": [
+        "mail-in voting access",
+        "voting access plan (no ID mention)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:05:57.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebdde8b5095728bccc8422c3eef07ce89cb562c68cdcee08a2bf1081a123dc4e",
+      "kind": "own-words",
+      "url": "https://josh4jersey.com/release-gottheimer-releases-plan-to-stop-trumps-chaos-and-protect-our-jersey-values/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "He’ll implement same-day voter registration, extend in-person early voting, introduce universal mail-in voting, expand automatic voter registration, and implement mobile voting for overseas military members.",
+      "note": "Same release. Lists the voting changes proposed for New Jersey. Mail ballots are named, with no ID step described.",
+      "subjects": [
+        "mail-in voting access",
+        "mail-ballot ID (not addressed)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:05:57.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22c3fad170f045a8f76ebb09a08a78009b087a6748edc4f748ba73d22f5d5bfc",
+      "kind": "own-words",
+      "url": "https://gottheimer.house.gov/posts/release-gottheimer-statement-against-far-right-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I voted against the SAVE Act today — which is just another attempt from far-right extremists to disenfranchise Jersey voters. It could block millions — especially women and our troops serving overseas — from having their voices heard.",
+      "note": "Statement issued in his name on his official site after his April 10, 2025 vote on the SAVE Act. He says the bill could keep millions of people from voting.",
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "photo ID to vote in federal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:55.023Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3f3e8598f95dbcdc3946ebdf1f8814268fac6befa416235aff6099b56edae9e",
+      "kind": "own-words",
+      "url": "https://wrnjradio.com/gottheimer-votes-against-house-defense-bill-despite-securing-national-security-provisions/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "But, I was furious that the far right jammed in unrelated, partisan provisions from the SAVE Act along with anti-LGBTQ+ provisions.",
+      "note": "Quoted by WRNJ Radio (his press statement) after he voted against the House Fiscal Year 2027 defense bill, which had SAVE Act provisions added. He objects to attaching those provisions to the defense bill and says he will work to remove them.",
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:55.023Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting",
+        "election integrity",
+        "mail-in voting access"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned 0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Josh_Gottheimer (confirms on 2026 general ballot, advanced from the June 2, 2026 primary; lists the three votes already on file; nothing else on the subject)",
+        "official site gottheimer.house.gov: press page fetched (latest posts only; nothing on the subject); site search and pagination not usable (search ignored, page param returns same list)",
+        "blocked: https://gottheimer.house.gov/search?query=voter+ID (HTTP 403)",
+        "blocked: https://www.congress.gov/member/josh-gottheimer/G000583 (HTTP 403, so sponsorship list not reviewed)",
+        "blocked: https://www.govtrack.us/congress/members/josh_gottheimer/412668 (HTTP 403)",
+        "campaign site josh4jersey.com (2025 governor campaign site, own WordPress search for voter ID, photo ID, SAVE Act, citizenship, non-citizen, mail ballot, voting): one relevant post",
+        "web search: not performed, session search budget was used up",
+        "ontheissues.org and Wikipedia: not used (lead-only sources)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:05:57.883Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Josh_Gottheimer (confirms sitting member, NJ-5, on the 2026 general-election ballot after the June 2, 2026 primary)",
+        "official site press release https://gottheimer.house.gov/posts/release-gottheimer-statement-against-far-right-save-act",
+        "official site search page https://gottheimer.house.gov/search?query=voter+ID (blocked: returned an empty page)",
+        "news: https://wrnjradio.com/gottheimer-votes-against-house-defense-bill-despite-securing-national-security-provisions/",
+        "three web searches on his name plus SAVE Act, voter ID and election integrity words (no own-words statement found on the February 2026 SAVE America Act vote or on mail-ballot ID)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T21:55:55.023Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

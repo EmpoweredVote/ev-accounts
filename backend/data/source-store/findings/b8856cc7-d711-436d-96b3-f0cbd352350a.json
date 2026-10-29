@@ -1,0 +1,50 @@
+{
+  "politician_id": "b8856cc7-d711-436d-96b3-f0cbd352350a",
+  "findings": [
+    {
+      "id": "4b27d8b4a0db5c40c8db430f3f07584484c37beb3cbe0758b97f96e24f3a5ae0",
+      "kind": "own-words",
+      "url": "https://atoosareaser.com/early-voting-starts-in-eastern-loudoun/",
+      "date": "2026-10-17",
+      "date_precision": "day",
+      "passage": "Before heading out, remember to check your voter registration and bring an acceptable form of identification.",
+      "note": "Voter-information reminder on her campaign site for early voting in Loudoun; says nothing on what ID should be required.",
+      "subjects": [
+        "proof of identity at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:40.181Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign/official site atoosareaser.com (homepage, early-voting post, endorsement post fetched; issues page 404)",
+        "Wikipedia page: nothing on the subject",
+        "Ballotpedia not reviewed",
+        "blocked: lis.virginia.gov (not retried, per instruction)",
+        "news search on name plus voter ID: nothing on the subject; no bills or ID votes found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:26:40.181Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

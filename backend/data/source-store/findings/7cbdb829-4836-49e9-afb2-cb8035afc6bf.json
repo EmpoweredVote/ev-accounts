@@ -1,0 +1,70 @@
+{
+  "politician_id": "7cbdb829-4836-49e9-afb2-cb8035afc6bf",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Massachusetts State Senate, 2nd Middlesex; Ballotpedia https://ballotpedia.org/Christine_Barber says she is not running for re-election to the 34th Middlesex House seat and lost the primary on September 1, 2026, so she is on no 2026 general-election ballot)",
+        "On the Record (0 appearances)",
+        "https://malegislature.gov/Legislators/Profile/CPB2 (confirmed: Representative Christine P. Barber, 34th Middlesex)",
+        "Ballotpedia (fetched, stopped per brief)",
+        "not reviewed: official site, campaign site, news search (web search budget used up; stopped after primary loss)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:36.769Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID with mail ballot",
+        "election integrity and voter-roll bills"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (she ran for the 2nd Middlesex state Senate seat, was second with 10,142 votes to 12,335 for the winner, and conceded that night; her House seat was not on the ballot for her): https://www.tuftsdaily.com/article/2026/09/uyterhoeven-declares-victory-in-state-senate-primary-markey-fends-off-moulton-for-us-senate",
+        "positive control, MA Legislature profile naming her as Representative for the 34th Middlesex district, with one election bill (H.3918, municipal voting at ages 16-17, not on the subject): https://malegislature.gov/Legislators/Profile/CPB2",
+        "Patch, 2026-02-11, her state Senate run: https://patch.com/massachusetts/somerville/amp/33636229/somerville-and-medford-rep-making-run-for-state-senate",
+        "On the Record (0 meetings)",
+        "official site, own-words search and bill record: not searched further, because she is out of scope for 2026"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:38:08.110Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

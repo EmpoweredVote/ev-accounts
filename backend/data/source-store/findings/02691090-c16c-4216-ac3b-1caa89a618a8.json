@@ -1,0 +1,81 @@
+{
+  "politician_id": "02691090-c16c-4216-ac3b-1caa89a618a8",
+  "findings": [
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "647dc5553c7949418dab2e1fdc5c490559f7772153742034646ee83d3f7c30cc",
+      "kind": "own-words",
+      "url": "https://www.terrycanales.com/canales_don_t_vote_party_vote_results",
+      "date": "2026-10-20",
+      "date_precision": "day",
+      "passage": "The peer-reviewed study, published in the Election Law Journal, measures the relative time, effort, and regulatory \"cost\" required for a citizen to register and cast a ballot.",
+      "note": "Campaign news post lists Texas rankings on a cost-of-voting index and describes Texas as among the most restrictive states for voting accessibility. It does not mention ID or citizenship proof.",
+      "subjects": [
+        "related: cost and ease of registering and voting (no ID content)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:29:32.829Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register (SB 16 2025)",
+        "election integrity laws (SB 1 2021)",
+        "cost or ease of voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general-election ballot for Texas House District 40; no survey answers)",
+        "official House page https://house.texas.gov/index.php/members/2340 (nothing on the subject)",
+        "campaign site terrycanales.com: issues, government transparency, press releases and news pages checked; one news post touches voting access",
+        "Texas Legislature Online SB 16 history page: record-vote data loads by script, not readable; no House vote found",
+        "news searches (3): no Canales quote or vote on ID or citizenship found",
+        "not reviewed: Texas House journals for SB 1 (2021) and SB 16 (2025) votes"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:29:32.829Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

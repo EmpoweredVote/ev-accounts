@@ -1,0 +1,22 @@
+{
+  "politician_id": "d90f754e-c3c6-44f9-890d-a8f2a9a00d22",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary (fourth place in the governor's race, per https://en.wikipedia.org/wiki/2026_Georgia_gubernatorial_election)",
+        "On the Record (0 meetings)",
+        "stopped after the status check, as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.863Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

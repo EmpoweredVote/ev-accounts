@@ -1,0 +1,612 @@
+{
+  "politician_id": "9df12eb2-bc9a-4083-8004-1af4167342ea",
+  "findings": [
+    {
+      "id": "f0dc2bbdb9d76dbeecd3c6baa6afecbd82c856574e5c343b80b4ae90c3a00c2e",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-whats-stopping-democrats-from-backing-voter-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "It’s a straightforward bill that requires proof of citizenship to register to vote in our federal elections, along with voter ID and validating mail-in ballots.",
+      "note": "Senate floor remarks, as posted on his Senate site. He describes the SAVE America Act as covering proof of citizenship to register, voter ID, and checking mail-in ballots.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "mail-ballot ID or verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "203ab0d8e1daeec9661b914f148b14fe296ef8b1067d7d459998b37c6d7161a6",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-whats-stopping-democrats-from-backing-voter-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "Why should voting, the most sacred act in our republic, be the only place where we don’t ask for basic proof – that you’re eligible, that you are who you say you are.",
+      "note": "Floor remarks arguing voting should require proof of identity as other activities do.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c072f8e547b0a77e9dadd77cfed623b247572cf804aa41d60abd65ad361b04f6",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-whats-stopping-democrats-from-backing-voter-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "It requires documents like a passport or birth certificate, with ID documents that millions of Americans already have or can easily obtain. It protects our elections without disenfranchising a single eligible citizen.",
+      "note": "Floor remarks describing the documents the SAVE America Act would require and saying it would not block eligible citizens.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "869a159657bb15c7d99056a531a5e5a9adf4603f1866eb7dd58ec51faec71149",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-whats-stopping-democrats-from-backing-voter-id/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "Now we all know that non-citizens aren’t supposed to vote. It’s already illegal, but without proof of citizenship at registration, we have no real safeguard.",
+      "note": "Floor remarks giving his reason for requiring proof of citizenship when registering.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f34544e0cfdf105cdc3b10a106c8447393ff218c6bcee80b537ce262c7676a88",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-democrats-refuse-to-secure-our-elections/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "We want to verify people’s IDs when they send in mail-in ballots.",
+      "note": "From a CNN interview as posted on his Senate site (dated by the post, March 11, 2026; interview was the night before). He supports ID checks on mail-in ballots.",
+      "subjects": [
+        "mail-ballot ID or verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69088f82f183da742bfa87d2932762c27d5c412f92e8d25ff22abf0d4530197e",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-democrats-refuse-to-secure-our-elections/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "We’ve had voter ID for 15 years, and it’s worked just fine.",
+      "note": "Same CNN interview. He speaks about Kansas's existing voter ID requirement.",
+      "subjects": [
+        "voter ID at the polls",
+        "Kansas voter ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91bd770f82d39a434b7fad45a6bf3571e010526c200b99c81b95ddb1a0f507f4",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-democrats-refuse-to-secure-our-elections/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "What the Supreme Court said is, if that’s what Congress wants, they need to put that in law, and that’s exactly what we’re doing.",
+      "note": "Same CNN interview. He explains that a federal law is his route to a proof-of-citizenship requirement.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77120f345017e8b8cf5ffb21ac0cc56696a6e640c8734ec6183b082d12a121c3",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-we-must-trust-but-verify-our-elections/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "Start with proof of citizenship to register, and then an ID when you vote as well. Same thing when you’re doing mail in ballots, you need some type of real ID for that as well. Trust but verify.",
+      "note": "Fox Business interview as posted on his Senate site (post dated March 19, 2026). He lays out proof of citizenship, ID at the polls, and ID for mail ballots.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "mail-ballot ID or verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59e8cef41e14e862b8980255bcfc048edd10b0bef57842be8f9fabd8064c81ec",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-we-must-trust-but-verify-our-elections/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "Look, we have 50 million non-citizens living in this country right now, and that’s why people are concerned about making their vote count.",
+      "note": "Same Fox Business interview. He ties the need for these rules to non-citizen voting concerns.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "583bd910346d6bf5097ddc8c6bce708def0d8c0929795eb698408a2f4896850e",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-why-do-democrats-not-support-voter-id/",
+      "date": "2026-03-10",
+      "date_precision": "day",
+      "passage": "I think we go back to the SAVE Act that we’re talking about, the act that talks about requiring Voter IDs, that requires proof that you’re a citizen, and then some type of limit on mail-in ballots as well.",
+      "note": "NBC Meet the Press NOW interview as posted on his Senate site (post dated March 10, 2026). He describes the three parts of the SAVE America Act.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID or verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11ad28caf0aa38eb27b5d9d66c85e1b4fb5c457a60b9d767b3718f59b7cb1e20",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/?p=81848",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "I would get rid of the filibuster for the SAVE Act.",
+      "note": "Joe Pags Show interview as posted on his Senate site. He says he would end the Senate filibuster rule to pass the SAVE Act.",
+      "subjects": [
+        "SAVE Act passage strategy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b191cba3d4f9794103adbe7ac31d4b0731a081ea8c70d2d9b8b29e967b5886a",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-reconciliation-3-0-doesnt-go-far-enough-on-election-security/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "Well, certainly, in the SAVE Act, it has the proof of citizenship; it has guardrails around the mail-in ballots.",
+      "note": "Fox Business interview as posted on his Senate site (post dated July 20, 2026). He describes parts of the SAVE Act and says he wants to pass them one piece at a time.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot ID or verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea093b141560f107853c836a8e691ed27e69f5b08ba547061c9c17f4096dc7b8",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-reconciliation-3-0-doesnt-go-far-enough-on-election-security/",
+      "date": "2026-07-20",
+      "date_precision": "day",
+      "passage": "We’ll be funding any state that wants to do voter ID — this will fund it.",
+      "note": "Same interview. He describes a reconciliation bill that would pay states that choose to adopt voter ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "federal funding for state voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14d9112adddcd86f9573ac5c155a1b25d4b619cc02fe08225dd22287c40431a2",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-not-one-democrat-voted-for-voter-id/",
+      "date": "2026-08-09",
+      "date_precision": "day",
+      "passage": "And there’s some version of the SAVE Act that we can get with at least 50 votes as well.",
+      "note": "Fox News interview as posted on his Senate site (post dated August 9, 2026), after the August 8 Senate vote on a photo ID bill.",
+      "subjects": [
+        "SAVE Act passage strategy",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91e1aec54a85390c980c7a98314240bc4b5e1ea4603d617e16e0aa715e9fd6b6",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-fights-for-election-integrity-on-the-senate-floor/",
+      "date": "2024-09-25",
+      "date_precision": "day",
+      "passage": "Noncitizen voting is real. This isn’t hypothetical. In Texas, Virginia, and Oregon, noncitizens have been found on the voting rosters.",
+      "note": "Senate floor remarks calling for passage of the SAVE Act (2024).",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35fbf5195ccdd11ca3b0b4474ab1b7229eef496be43c5e28a22c56ac856d4411",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-fights-for-election-integrity-on-the-senate-floor/",
+      "date": "2024-09-25",
+      "date_precision": "day",
+      "passage": "You need an ID to drive, you need an ID to board a plane, you need an ID to get a fishing license.",
+      "note": "Senate floor remarks comparing ID for voting to ID for other activities.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ee820100816b806ed266d346732a63a53138c3a71a4b80eaae4d1d7e3c1183b",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-on-fox-business-we-need-election-integrity/",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "What this bill simply states is that when you go register to vote, you have to show a birth certificate, or else your proof of citizenship.",
+      "note": "Fox Business interview as posted on his Senate site (2024), about the SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd2388811af3f7781973a3bfb980e3771ce4182f1ba274a3bf7a267e87001ae7",
+      "kind": "own-words",
+      "url": "https://www.lee.senate.gov/2024/5/lee-and-roy-partner-on-legislation-to-secure-federal-elections",
+      "date": "2024-05-08",
+      "date_precision": "day",
+      "passage": "While requiring U.S. citizenship for federal elections has long been a requirement, our legislation finally puts pen to paper on the exact documents a person will need to prove they are, in fact, an American citizen and eligible voter.",
+      "note": "Statement attributed to him in Sen. Mike Lee's release introducing the SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc7ab10c4af5b165540e3905394cf6b221061692a8ad9a57fb05d8f666f59ec1",
+      "kind": "own-words",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/sen-marshall-votes-against-pelosis-election-bill-power-grab/",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "Our goal has always been to make it easier to vote and harder to cheat. When you eliminate voter I.D., it makes it easier to cheat.",
+      "note": "Statement issued in his name after he voted against S. 1 (2021).",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcec2d3ced14f0afbe3131a94641cbd3c5de3c55f56d525fbcdd2ae757c54733",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Cloture on S.Amdt. 4732 (photo ID to vote) to S.Amdt. 4420 to S. 1383; roll call vote 73",
+      "note": "Roll call: he voted yea on a motion to end debate on an amendment requiring voters to show photo identification. Result 53-47, rejected (needed three-fifths).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c0d21c19dcc7650f46c8716a06126fdae663248ba9a872d34a224ddf7fb81cd",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00096.htm",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules on S.Amdt. 5414 to S.Con.Res. 33 (reserve funds for registration ID and photo ID requirements); roll call vote 96",
+      "note": "Roll call: he voted yea. The amendment would set up reserve funds for ID requirements to register and photo ID to vote. Result 48-50, rejected.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48519836ab9b91915335d4611216585873859fdfab2ba662e15622c91bbc7423",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00144.htm",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules on S.Amdt. 5779 to S.Amdt. 5453 to S. 2 (only citizens registered, photo ID to vote); roll call vote 144",
+      "note": "Roll call: he voted yea. The amendment aimed to ensure only citizens are registered and to require photo ID to vote. Result 48-50, rejected.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f703d0c9433b908d6f9351f1a2760547d20dabe1ede8a52f20fc2c4bd3a971a",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.htm",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules on S.Amdt. 5804 to S.Amdt. 5453 to S. 2 (only citizens registered, photo ID to vote); roll call vote 151",
+      "note": "Roll call: he voted yea on a second version of the same citizenship and photo ID amendment. Result 50-49, rejected (needed three-fifths).",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73d486fae99bfbe5d2d5496f326660ccfcc0780058ae578f9d15d3d006fbeb03",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00231.htm",
+      "date": "2026-08-08",
+      "date_precision": "day",
+      "instrument_id": "US-S-5271-2026",
+      "act": "yea",
+      "motion": "Cloture on the motion to proceed to S. 5271 (amend the Help America Vote Act of 2002 to require photo identification); roll call vote 231",
+      "note": "Roll call: he voted yea on a motion to take up a bill requiring voters to provide photo identification. Result 52-46, rejected (needed three-fifths).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "baf5d0d2e343b5c1edf7488586e051a6a4ca3de9b5c7a6f9b66ec16bef91e7b1",
+      "kind": "record",
+      "url": "https://www.lee.senate.gov/2024/5/lee-and-roy-partner-on-legislation-to-secure-federal-elections",
+      "date": "2024-05-08",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Cosponsor of the Safeguard American Voter Eligibility (SAVE) Act, Senate version introduced by Sen. Mike Lee",
+      "note": "Sen. Lee's release lists him as a cosponsor of the SAVE Act, which sets proof-of-citizenship document rules for voter registration and voter-roll removal of non-citizens. Bill number not shown on the page; congress.gov blocked.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a00ef669143a9e82d6a544222887f3b796ae54d06740b4ac599e31a830f1a3c",
+      "kind": "record",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/senator-marshall-on-fox-business-we-need-election-integrity/",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Original cosponsor of the SAVE Act (2024)",
+      "note": "His Senate site states he is an original cosponsor of the SAVE Act, which would require proof of American citizenship when registering to vote.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "286c19ba7f410e7d79d41ebbe9cae7281302be4599854b6c93153c55bc2846a5",
+      "kind": "record",
+      "url": "https://www.marshall.senate.gov/newsroom/press-releases/sen-marshall-votes-against-pelosis-election-bill-power-grab/",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Vote against S. 1 (election bill described in his release), per his Senate release",
+      "note": "His release says he issued the statement after voting against S. 1, a bill the release says would prohibit voter ID. Roll call page not fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:31:58.022Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballots",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general",
+        "what happens to a voter with no ID (nothing found)"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Roger_Marshall says he is on the November 3, 2026 general-election ballot and advanced from the August 4, 2026 primary (fetched with curl)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official Senate site press releases (marshall.senate.gov), 9 releases read plus ?p=81848",
+        "campaign site kansansformarshall.com (home, /record, /news, /facts, /voter-info): nothing on the subject in his own words; /voter-info only states the state photo ID rule",
+        "Ballotpedia page: no own-words on the subject",
+        "senate.gov roll call votes 73, 96, 144, 151, 231 (and the 119th Congress 2nd session vote menu)",
+        "Sen. Mike Lee press release May 8, 2024 (cosponsor list)",
+        "Boston Globe 2026-03-24: only a paraphrase of him, not saved",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/3752/cosponsors (browser check page)",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/128/cosponsors",
+        "blocked: https://www.govtrack.us/congress/bills/119/s3752",
+        "not reviewed: Fox News video https://www.foxnews.com/video/6400277729112 (video)",
+        "not reviewed: NBC Meet the Press June 2026 video; video interviews linked from Senate site releases",
+        "not reviewed: ontheissues.org (lead only)"
+      ],
+      "found": 27,
+      "at": "2026-10-22T21:31:58.022Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee",
+  "findings": [
+    {
+      "id": "57d6671bf494e0553163d480e737ab3d5ef2c096be0d759662c95b2c21e483f0",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Samuel_Park_(Georgia)",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "A vote for Sam is a vote for a stronger Democracy. I want to strengthen our Democracy by protecting the people’s right to vote by repealing SB 202 and other anti-voter laws; take money out of politics; and enact an independent redistricting commission.",
+      "note": "His answer to Ballotpedia's candidate survey, which the page says he completed in 2022. He names repeal of SB 202 (the 2021 Georgia election law with ID rules for absentee ballots) as one of his three key messages. Ballotpedia is the only place found for this text.",
+      "subjects": [
+        "repeal of SB 202",
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:42:32.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "869797531070080c05352008f63ba2ae502f30e570dbd20efbe9693d3e41103d",
+      "kind": "own-words",
+      "url": "https://www.samforgeorgia.com/priorities",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "By safeguarding our voting rights and ensuring free, fair, transparent, and accessible elections, we uphold the values of equality and freedom, empowering every individual to actively shape the future of our country and pursue their own version of the American Dream.",
+      "note": "From the priorities page of his campaign site, written in the third person about what he believes. It speaks of voting rights and accessible elections in general and does not mention ID rules. The page shows no date.",
+      "subjects": [
+        "election integrity laws in general",
+        "access to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:42:32.988Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Park'), linked to SAM PARK (district 101) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Park'), linked to SAM PARK (district 101) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Park'), linked to Sam Park (district 107) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "SB 202 repeal"
+      ],
+      "places": [
+        "status: sitting Georgia House member (District 107, he held District 101 until 2023); on the 2026-11-03 general-election ballot for District 107, per https://ballotpedia.org/Samuel_Park_(Georgia)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/Samuel_Park_(Georgia)): candidate survey answer saved",
+        "campaign site https://www.samforgeorgia.com/ (home, /voting, /priorities): one statement saved; the /voting page is only registration help with nothing on ID rules",
+        "blocked: https://www.legis.ga.gov (official bill and vote pages load only through an app whose data calls return 401, so the SB 202 House vote and his sponsorships could not be read)",
+        "blocked: https://www.queerty.com/sam-park-offers-rainbow-hope-making-history-georgia-politics-20210515 (403, bot block)",
+        "news search on name plus SB 202, voter ID, voter suppression: no further citable statement from him",
+        "official House page and House caucus press archive: not reviewed (no statement located)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:42:32.988Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.403Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

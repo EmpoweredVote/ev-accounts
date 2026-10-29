@@ -1,0 +1,198 @@
+{
+  "politician_id": "a637f366-80dc-4154-93ac-d161e2b18121",
+  "findings": [
+    {
+      "id": "f8032be7109da0897095ac142b361346d5ccf183185d3b90ae610443cf92c9d7",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4227",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4227-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"HOUSE BILL NO. 4227 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 509q, 509gg, 509\"",
+      "note": "Named as prime sponsor ('Jay DeBoyer (District 63)') on the official bill page; linked to Jay DeBoyer via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44aeef02a3561d8ee393774620e315e83bcdf826bd30f2b1a0263a98ce9bb0a6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4324-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Jay DeBoyer (District 63)') on the official bill page; linked to Jay DeBoyer via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('DeBoyer'), linked to Jay DeBoyer (district 63) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Jay DeBoyer (District 63)') on the official bill page; linked to Jay DeBoyer via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96d5c08f39c4659a8059f1d6e59340321b0714f04ae1306e4da262587e6d9823",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-deboyer-blasts-denial-of-citizenship-voting-ballot-proposal",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "passage": "Here are the facts: a majority of signatures within the board’s sample were valid. The number of signatures submitted in total went above and beyond what was required. People have been loud and clear that non-citizens voting in our elections is an issue that should be decided on – not one that should be stifled time and again by bureaucratic games.",
+      "note": "Statement issued in his name after the Board of State Canvassers denied a ballot proposal that would require voters to prove they are U.S. citizens. He criticises the denial and says non-citizen voting is an issue voters should decide.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:53:44.432Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29138571582f4b4c9c83a1772016ad5e38e817f70185fc7d5cb25924f5262815",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-deboyer-blasts-denial-of-citizenship-voting-ballot-proposal",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "passage": "More bland assurances that our elections process is fine. More diligent reports that non-citizens had votes count against those who voted freely and fairly. More non-citizens charged for casting votes.",
+      "note": "Same statement. He says that without the citizenship proposal on the ballot, non-citizen votes and charges will continue.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:53:44.432Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6385ed43b1ac7a28430546d26368444a41cae2acb247d97c0e4f17749bacb37",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-deboyer-president-referencing-muskegon-voter-registration-case-shows-need-for-reforms-election-security",
+      "date": "2026-07-17",
+      "date_precision": "day",
+      "passage": "This was an attempt to defraud our elections system with thousands of bogus registration forms, and we need to prosecute these acts and provide clear deterrents when they occur.",
+      "note": "Statement issued in his name on the 2020 Muskegon voter-registration forms case. He calls for prosecution and clear deterrents.",
+      "subjects": [
+        "voter registration fraud",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:53:44.432Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:55:46.330Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter registration fraud",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: https://www.wcmu.org/local-regional-news/2026-08-14/rep-john-james-chooses-rep-deboyer-for-lt-governor says he was named as a running mate for lieutenant governor on 2026-08-14; a state House district-63 member page and news searches show he is the sitting House member for Clay Township",
+        "official House member posts page https://gophouse.org/member/repjaydeboyer/ (first page of posts reviewed; two posts on the subject saved; later pages returned 404)",
+        "blocked: https://ballotpedia.org/Jay_DeBoyer (403)",
+        "blocked: https://www.woodtv.com/news/elections/winnie-brinks-and-jay-deboyer-what-to-know-about-the-two-candidates-for-michigan-lieutenant-governor/amp/ (429)",
+        "two news searches on name plus subject words: no further own-words statement on ID or citizenship found",
+        "campaign site for the lieutenant governor ticket: not reviewed",
+        "legislature bill pages: not reviewed (votes and sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:53:44.432Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

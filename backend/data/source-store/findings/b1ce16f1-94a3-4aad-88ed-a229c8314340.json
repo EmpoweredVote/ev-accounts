@@ -1,0 +1,449 @@
+{
+  "politician_id": "b1ce16f1-94a3-4aad-88ed-a229c8314340",
+  "findings": [
+    {
+      "id": "154c50d5403bb4ac00ea3f524043536efaf58e842458ddc824ae269ee5c4829d",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19989/Causer-Supports-Voter-ID-Election-Reforms?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "“When you talk about election integrity, having a voter ID law is absolutely imperative,” Causer said. “We show ID for most everything we do – except voting, which is one of the most important rights and responsibilities we have as citizens. It’s not asking too much for people to present ID to show they are who they say they are when they exercise their right to vote.”",
+      "note": "Statement issued with a House caucus release on House Bill 1300 (Voting Rights Protection Act) passing the House; he backs an ID requirement to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.373Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afdf23ee78d02953e3d73feb6c06c910ab9cb019035fdfe0c3f93e39069c1776",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19989/Causer-Supports-Voter-ID-Election-Reforms?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "“We already require people to present ID when voting for the first time in a new polling place, so this is an expansion of that policy,” Causer explained. “There is broad, bipartisan support for enacting voter ID requirements in the Commonwealth. It’s a reasonable step to improve the integrity and security of our elections.”",
+      "note": "He describes the bill as an expansion of the existing first-time-voter ID rule. The release (not his quote) says a voter who forgets ID could vote after signing an affidavit, and that the bill upgrades registration cards to ID cards.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.373Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8329d4e7b56cf37685160bf0ca067ffbde4014e7d7328fd3b09064f1d9afebd7",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/20122/Despite-Veto-Causer-Says-Push-for-Voter-ID-Will-Continue-?SiteID=1",
+      "date": "2021-06-30",
+      "date_precision": "day",
+      "passage": "“There is broad bipartisan support for expanded voter ID laws to boost election security,” Causer said. “We already show ID for most everything we do. It is not too much to ask – and will not ‘disenfranchise’ anyone, as the governor claims – to have people present ID when exercising their right to vote. The law even would have required counties and the Department of State to provide an ID to all registered voters to ensure the voter ID requirement could be met.”",
+      "note": "Reaction to the governor's veto of House Bill 1300; he disputes that ID would disenfranchise anyone and points to the free-ID provision. The release adds that lawmakers would look at a constitutional amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.373Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ac551927c5ee3158d9d9cca584da10a8b2b596e17103d6f85f7c9638c5994e3",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/23994/House-Takes-First-Step-Toward-Voter-ID-Constitutional-Amendment-Causer-Says?SiteID=1",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "passage": "“There is broad support among all Pennsylvanians – Republicans, Democrats and Independents – for expanded voter ID laws to boost election security,” Causer said. “We already show ID for most everything we do. It is not too much to ask to have people present ID when exercising their right to vote.”",
+      "note": "Statement on House adoption of the voter ID constitutional amendment in Senate Bill 106. The release says the amendment would require ID each time a ballot is cast by any method, with a free government ID for those without one.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.373Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('CAUSER'), linked to Martin T. Causer (district 67) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('CAUSER') on the official bill page; linked to Martin T. Causer via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Causer'), linked to Martin T. Causer (district 67) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e95b1d1af19803bdf58f2df5cf2904fb3e56a556ff92a4beded39fab15b6fce2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20201203143301/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2011&sind=0&body=H&type=B&bn=934",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3166 (Senate amended; the version that became Act 18 of 2012). Read.",
+      "note": "Named as co sponsor ('CAUSER') on the official bill page; linked to Martin T. Causer via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Causer'), linked to Martin T. Causer (district 67) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Causer'), linked to Martin T. Causer (district 67) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Causer'), linked to Martin T. Causer (district 67) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.453Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Causer'), linked to Martin T. Causer (district 67) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.453Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('CAUSER') on the official bill page; linked to Martin T. Causer via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('CAUSER') on the official bill page; linked to Martin T. Causer via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('CAUSER') on the official bill page; linked to Martin T. Causer via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('CAUSER'), linked to Martin T. Causer (district 67) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID (affidavit, free ID)",
+        "ID with mail ballot",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / audits / voter-roll checks"
+      ],
+      "places": [
+        "status check: on the 2026 ballot for House District 67 (https://www.ballotready.org/people/martin-t-causer-646186e6-9454-4d78-b438-03e5ae0e1e02)",
+        "On the Record (0 appearances)",
+        "official House caucus news pages (three releases fetched)",
+        "House caucus site search page: nothing (page not found)",
+        "Bradford Era news pages (two fetched)",
+        "bill tracker page for HB 437 of 2025 (sponsorship only, left to separate record linking)",
+        "Ballotpedia member page: empty page returned, not reviewed",
+        "news search on name plus voter ID, SAVE Act, mail ballot: nothing after 2021 in his own words",
+        "nothing on the subject for proof of citizenship or the SAVE Act"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:08:17.208Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:45:58.691Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.453Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID (affidavit, free ID)",
+        "ID with mail ballot",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / audits / voter-roll checks"
+      ],
+      "places": [
+        "scope check: on the 2026 ballot for House District 67 (https://www.ballotready.org/people/martin-t-causer-646186e6-9454-4d78-b438-03e5ae0e1e02)",
+        "On the Record (0 appearances)",
+        "official House caucus news pages (three releases fetched)",
+        "House caucus site search page: nothing (page not found)",
+        "Bradford Era news pages (two fetched)",
+        "bill tracker page for HB 437 of 2025 (sponsorship only, left to separate record linking)",
+        "Ballotpedia member page: empty page returned, not reviewed",
+        "news search on name plus voter ID, SAVE Act, mail ballot: nothing after 2021 in his own words",
+        "nothing on the subject for proof of citizenship or the SAVE Act"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:31:40.373Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

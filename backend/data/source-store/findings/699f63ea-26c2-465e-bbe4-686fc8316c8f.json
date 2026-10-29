@@ -1,0 +1,84 @@
+{
+  "politician_id": "699f63ea-26c2-465e-bbe4-686fc8316c8f",
+  "findings": [
+    {
+      "id": "84624f2a66534539b3f805ec7cd3cabbcb061564fbd5644a47fe97530ac19049",
+      "kind": "own-words",
+      "url": "https://drjoeforcongress.com/issues/issue-4",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Speaking of election integrity, the Save America Act is fine, as far as it goes. But it hardly goes far enough. Votes should be cast in person on election day, except in extenuating circumstances, such as the voter is ill or deployed overseas. Proper, physical documentation - including photo ID - should be required to vote.",
+      "note": "Campaign issue page 'The Constitution'. Says the SAVE America Act is fine but not far enough. Wants in-person voting on election day with exceptions for illness or overseas deployment, and physical documentation including photo ID to vote. No date on the page; it refers to the 2026 general election.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship (SAVE America Act)",
+        "mail-ballot limits (in person on election day, with exceptions)",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:39.128Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2bd52b050b574e6806b4c4bc8852ab2dd6f9b7f0f4925cb029e988e6a0af81a9",
+      "kind": "own-words",
+      "url": "https://drjoeforcongress.com/issues/issue-4",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Also, physical, paper ballots should be cast; fully verifiable counting of the vote is essential. We dare not trust in electronic voting.",
+      "note": "Same campaign page, next sentences. Calls for paper ballots and verifiable counting, and distrusts electronic voting. Raised in the same passage as voter ID.",
+      "subjects": [
+        "paper ballots",
+        "electronic voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:39.128Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship (SAVE America Act)",
+        "mail and absentee ballots",
+        "in-person voting on election day",
+        "paper ballots and electronic voting",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Joseph_Arminio (on the 3 Nov 2026 general-election ballot for Delaware At-large; won the 15 Sep 2026 primary)",
+        "On the Record (0 meetings, 0 appearances)",
+        "campaign site https://drjoeforcongress.com (home, /about, /events, /media: nothing on the subject; /issues and issue-5, issue-6: nothing on the subject; /issues/issue-4 The Constitution: 2 findings)",
+        "Ballotpedia: no positions on the subject (no Candidate Connection survey shown)",
+        "congress.gov: not applicable, never held federal office",
+        "news: WHYY 2026-09-15 winner article: nothing on the subject",
+        "news: Fox News primary article: nothing on the subject",
+        "not reviewed: https://www.delawarepublic.org/show/the-green/2026-08-28/candidate-conversations-republican-candidate-for-u-s-house-joseph-arminio (audio only, no transcript)",
+        "not reviewed: Voter Vibes Candidate Forum, Dover Public Library (listed on campaign events page, no recording found)",
+        "blocked: https://swartz.substack.com/p/joe-says-it-aint-so (fetch returned no text; a search snippet mentioned paper ballots, unverified)",
+        "blocked: https://www.ballotready.org/people/joseph-dr-joe-arminio (fetch returned no text)",
+        "ontheissues.org and Wikipedia: lead only, not used"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:43:39.128Z",
+      "by": "source-collector"
+    }
+  ]
+}

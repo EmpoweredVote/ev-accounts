@@ -1,0 +1,148 @@
+{
+  "politician_id": "30784dc9-705e-4d9d-a091-351f3bf46a94",
+  "findings": [
+    {
+      "id": "20453925d79c2a1cf140e2598b8cc955a9ca66a94fa2caaa537982a9c2734905",
+      "kind": "own-words",
+      "url": "https://dougchapinforcongress.substack.com/p/democracy-doesnt-run-itself",
+      "date": "2026-07-09",
+      "date_precision": "day",
+      "passage": "Over the past several weeks, the House has once again turned its attention to the SAVE America Act, legislation that would require documentary proof of citizenship when registering to vote in federal elections. Supporters say it’s necessary to protect election integrity. Critics argue it could make voter registration more difficult for eligible Americans who don’t have immediate access to documents like passports or birth certificates. Reasonable people can disagree about public policy.",
+      "note": "Campaign newsletter issued in his name (written in the third person). Describes the SAVE America Act's citizenship-document rule and the arguments on each side, then moves to the point that election officials are being pressured. Does not say whether he backs the bill.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:25:51.901Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d623e56c0cb16d59a322ae445223ad9ebe4bb508ce9314722fa996a1cffee6b",
+      "kind": "own-words",
+      "url": "https://dougchapinforcongress.substack.com/p/the-power-belongs-to-the-people",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "Accurate voter rolls matter. So does protecting every eligible citizen’s right to vote.",
+      "note": "Campaign newsletter issued in his name. Written after a Supreme Court order let a federal citizenship-verification database keep operating while groups say it has wrongly flagged citizens as noncitizens. Raised in the same breath: voter-roll accuracy and eligible citizens' access.",
+      "subjects": [
+        "voter-roll checks",
+        "federal citizenship verification database",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:25:51.901Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21a91687fe900c9d3fa3b4e41e74fa4bccd1ae5d9908ad1e48389c046cfbfeb4",
+      "kind": "own-words",
+      "url": "https://dougchapinforcongress.substack.com/p/cut-through-the-noise-vote-on-what",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "But do not use the power of the federal government to frighten state officials, revive debunked election narratives, or create the impression that American elections are hopelessly corrupted without producing evidence to support that claim.",
+      "note": "Campaign newsletter issued in his name, under the heading \"Threatening Election Officials Is Not Election Security\", after a federal official warned of prosecuting illegal voting and threatened state officials over voter information and the SAVE system. A short list just before it reads: \"Secure voter information. Protect election workers. Maintain accurate voter rolls.\"",
+      "subjects": [
+        "election integrity laws in general",
+        "non-citizen voting",
+        "voter-roll checks",
+        "federal citizenship verification database"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:25:51.901Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "298089eb57651accc90d469a6633512b56809b47871fb1ec99c4cb3421557574",
+      "kind": "own-words",
+      "url": "https://minnlawyer.com/?p=135288",
+      "date": "2012-06-11",
+      "date_precision": "day",
+      "passage": "Doug Chapin, director of the school’s Program for Excellence in Election Administration, recommends the report “to anyone interested in going behind the partisan rhetoric and focusing instead on what it takes to move voter ID from policy to practice.”",
+      "note": "Minnesota Lawyer quoted him, as a University of Minnesota election-administration director, on a student report about the costs and effects of Minnesota's proposed photo voter ID constitutional amendment. The quoted part is his; the rest of the sentence is the outlet's. Old and not a campaign statement.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:25:51.901Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Doug_Chapin names him as a candidate for U.S. House Minnesota District 6, advanced from the Aug 11, 2026 primary, on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.chapinforcongress.com/issues: nothing on the subject",
+        "campaign site https://www.chapinforcongress.com/about: nothing on the subject (describes election-administration career only, no ID or citizenship-proof position)",
+        "Ballotpedia https://ballotpedia.org/Doug_Chapin (Candidate Connection survey): nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "ontheissues.org: not reviewed, no congressional record",
+        "news search: not reviewed, web search budget was used up for the session",
+        "campaign social media (https://x.com/ChapinForMN6, https://www.facebook.com/ChapinforCongress): not reviewed",
+        "campaign site /media-press-kit: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:21.330Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "voter-roll accuracy and federal citizenship database",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity and scope confirmed: https://dfl.org/doug-chapin-wins-dfl-primary-for-sixth-congressional-district-race/ (2026-08-11) says he won the party nomination for Minnesota's 6th District and will be on the November ballot",
+        "On the Record (0 appearances)",
+        "campaign newsletter https://dougchapinforcongress.substack.com: archive listed (23 posts, 2026-06-01 to 2026-10-22); posts on democracy, elections, mail ballots and the primary read in full for subject words; the posts below carry findings; other posts nothing on the subject",
+        "news site KNSI announcement story: nothing on the subject",
+        "Minnesota Lawyer 2012-06-11 story: one quoted line from him on a voter-ID report",
+        "not reviewed: audio interview https://omny.fm/shows/chewsviews/doug-chapin-wcpt-820-candidate-interview (page gives only a short summary about election administration; no transcript)",
+        "not reviewed: https://omny.fm/shows/chewsviews/doug-chapin-wcpt-820-candidate-interview audio, and the 2026-06-01 video conversation linked from the newsletter",
+        "congress.gov: not applicable, he has not served in Congress",
+        "no separate campaign issues page found beyond the newsletter; https://www.dougchapin.com did not answer in time (not reviewed)",
+        "news search on his name plus SAVE Act / proof of citizenship / voter ID: no statement from him found beyond those saved"
+      ],
+      "found": 4,
+      "at": "2026-10-27T01:25:51.901Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

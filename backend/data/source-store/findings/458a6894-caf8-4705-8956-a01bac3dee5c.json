@@ -1,0 +1,247 @@
+{
+  "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+  "findings": [
+    {
+      "id": "90d57b5218d3832e56a763e1b4d337ea5e7f89018660c6493ae12c4897308dab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Second Reading, Senate Bill 747 Election Law Changes (House roll call 542, passed 69 to 47)",
+      "note": "Voted no on House second reading of S747, a wide election bill. Its text includes photo ID rules for same-day registration, a notation of which ID type each voter used, and a report of jury-duty excusals for non-citizens to the State Board of Elections. His name is in the No list on the roll call.",
+      "subjects": [
+        "election integrity law in general",
+        "photo ID with same-day registration",
+        "non-citizen voting and jury-duty citizenship reports"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94e2ab96b60a913b3dc946ae30e46f6cc0fef44fc255fa2c2c251e0716d12431",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override, Senate Bill 747 Election Law Changes (House roll call 596, 72 to 44, became SL 2023-140)",
+      "note": "Voted no on the House veto override of S747. His name is in the No list on the roll call.",
+      "subjects": [
+        "election integrity law in general",
+        "photo ID with same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "36e0549d0f01a8f665b6b234ef85ef211e60cc520a5a96e2670a0da3784701af",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/534",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "other",
+      "motion": "Amendment A12 (Longest) to S747 on second reading, failed 46 to 71; text at https://webservices.ncleg.gov/ViewBillDocument/2023/7087/0/S747-ACH-38-V-2",
+      "note": "He offered an amendment to S747 that would change a reference on page 5 from the first notice under G.S. 163-82.7(c) to the second notice under G.S. 163-82.7(e). The statute section concerns notices in voter-roll list maintenance. The amendment failed.",
+      "subjects": [
+        "voter-roll checks and list maintenance notices"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1e099dc72314254d04e9d417f6b7c1be58e41c41e3d84d1fd3154edda8a3e48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/536",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "other",
+      "motion": "Amendment A14 (Longest) to S747 on second reading, failed 47 to 69; text at https://webservices.ncleg.gov/ViewBillDocument/2023/7092/0/S747-AST-132-V-1",
+      "note": "He offered an amendment to S747 to add new G.S. 163-212.5, Falsification of electors, making it a Class D felony to create, serve in, or conspire to create a false slate of presidential electors. The amendment failed.",
+      "subjects": [
+        "election integrity law in general",
+        "false slate of presidential electors"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74252948975b1984769a3b959b4e7364f9ac0e5e580bec6b1dd938a61de63f8b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Veto Override (House roll call 596), S747 Elections Law Changes; passed 72-44",
+      "note": "Longest is listed among the Noes on the House vote to override the Governor's veto of S747, an elections-law bill whose subject tags include voter registration and ballots.",
+      "subjects": [
+        "election law changes",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:50:07.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1765e57e8f7fa1b923030c152cb3b2f5b22fdc62c7750da05b9e3a480f054a7e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Second Reading (House roll call 542), S747 Elections Law Changes; passed 69-47",
+      "note": "Longest is listed among the Noes on the House second-reading vote on S747, Elections Law Changes.",
+      "subjects": [
+        "election law changes",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:50:07.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65545ae0c3fb06f7f41bfa8a9d6350dff17a091cf0876c6d292a91c98824be06",
+      "kind": "own-words",
+      "url": "https://indyweek.com/?p=164995",
+      "date": "2022-10-20",
+      "date_precision": "day",
+      "passage": "Second, I bring a demonstrated history of advocacy for civil rights and voting rights through both law and organizing.",
+      "note": "From his 2022 Indy Week candidate questionnaire: he says he worked with a legal group on litigation challenging what he calls discriminatory voting laws. It names no ID rule.",
+      "subjects": [
+        "voting rights",
+        "election law changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:50:07.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID with mail or absentee ballot",
+        "proof of citizenship",
+        "non-citizen voting and jury-duty citizenship reports",
+        "voter-roll list maintenance notices",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tim_Longest names him as NC House District 34 member, on the Nov 3 2026 general-election ballot (primary was cancelled, he advanced unopposed)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/818 (confirms Representative Tim Longest, District 34)",
+        "On the Record (0 meetings; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://timlongest.com (placeholder WordPress page, nothing on the subject)",
+        "official legislature bill page and roll-call votes for S747 (2023 Election Law Changes)",
+        "ncleg.gov member votes page https://www.ncleg.gov/Members/Votes/H/818 (reviewed election-related titles)",
+        "ncleg.gov member introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/818 (no voter ID or citizenship bill sponsored; HB 691 Voter Protection and Reliance Act is not sponsored by him and not on ID)",
+        "Ballotpedia: no candidate survey and no campaign themes on the subject",
+        "not reviewed: https://www.facebook.com/TimLongestNC/, https://x.com/timlongest, https://www.instagram.com/timlongestnc (social media, not fetched)",
+        "blocked: web search budget used up, so no news search and no search for own-words quotes was possible",
+        "blocked: https://www.ncleg.gov/Members/MemberTable/House returned HTTP 500 via fetch tool (reached the same data by curl)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:44:07.849Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election law changes",
+        "voting rights and gerrymandering"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026 general ballot for NC House District 34)",
+        "NC General Assembly bill page for S747 (2023) and two roll-call pages",
+        "Indy Week candidate questionnaire, 2022 (voting rights and redistricting answers only, no ID answers)",
+        "NC House caucus member page (nothing on the subject)",
+        "two news searches on name plus voter ID and S747 (no statement by him found)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:50:07.188Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "politician_id": "732a5a3e-4571-45cf-9c6b-8e0bb5a9ecc9",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "f81ebc3c03cb2f116febc2540ee46057e6ab759c939b866d28440ef397b84985",
+      "kind": "own-words",
+      "url": "https://www.senatorjimrunestad.com/runestad-blasts-governors-veto-of-election-integrity/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "“Gov. Whitmer continues to show her hand as one of the most partisan governors in Michigan history, choosing divisive political soundbites over her duty to implement commonsense public policy,” said Runestad, R-White Lake. “She brazenly vetoes any election-related legislation that reaches her desk under a deceptive claim that any effort to ensure election security aims to lock out residents from this most important civic right and duty. It seems almost as if she has declared a personal war on election integrity.”",
+      "note": "Press release in his name criticising the veto of SB 303, SB 304 and HB 5007, which covered ID to vote in person, ID number on absentee applications, provisional ballots for those without ID, and free state ID cards.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "no-ID provisional ballot",
+        "free state ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:54.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1be67b7c8287e2824c0fa8610ca91743e1e6e56b4ffd8923e5c656d81cbb62f2",
+      "kind": "own-words",
+      "url": "https://www.senatorjimrunestad.com/runestad-blasts-governors-veto-of-election-integrity/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "Additionally, a recent auditor general report found we need to strengthen the security of our state’s voter file, but the governor vetoed a bill — supported by Michigan’s county clerks — to ensure third parties can’t access these sensitive files.",
+      "note": "Raises voter-file security and limits on third-party access to the Qualified Voter File as an election-security point.",
+      "subjects": [
+        "voter-roll security",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:54.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Jim Runestad (District 44)') on the official bill page; linked to Jim Runestad via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1325085004748edd26436ab80fe60535a9608eb57fe3da1e6ff244da20b1b2df",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Runestad'), linked to Jim Runestad (district 44) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "427bd75d5d7eb93697f19e0908365bb747e3503c696ffcec62ada7ba91a65c9b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-1034",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-1034-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE BILL NO. 1034 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 523, 523a, 813,\"",
+      "note": "Named as co sponsor ('Jim Runestad (District 23)') on the official bill page; linked to Jim Runestad via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f30609560bf1bca6b3a3c6868ab1f72cd9db359d0dd2ce07dd7ef24302685412",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0120",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-120-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE BILL NO. 120 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 523, 523a, 813, \"",
+      "note": "Named as co sponsor ('Jim Runestad (District 23)') on the official bill page; linked to Jim Runestad via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Runestad'), linked to Jim Runestad (district 15) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Runestad'), linked to Jim Runestad (district 23) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Runestad'), linked to Jim Runestad (district 23) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll security",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (standing rules bar running repo scripts)",
+        "https://www.senatorjimrunestad.com/ (official site; identity; term runs through 2026-12-31; no 2026 candidacy for this seat shown, status not confirmed)",
+        "https://www.senatorjimrunestad.com/runestad-blasts-governors-veto-of-election-integrity/ (own words, 2021-10-29)",
+        "site search for 'voter ID' on official site: no results",
+        "web searches x3 (voter ID, 2026 status, SAVE Act): no other own-words pages found",
+        "campaign site, Ballotpedia, legislature bill pages: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:43:54.231Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

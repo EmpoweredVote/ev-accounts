@@ -1,0 +1,43 @@
+{
+  "politician_id": "2164130d-e11f-41c4-add5-4ed1553bc77e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: out of scope - not a member of Congress and not on the 2026 ballot; Linda McMahon (WWE co-founder, 2010 and 2012 Connecticut Senate candidate) is the appointed U.S. Secretary of Education, confirmed March 3, 2025 by a 51-45 Senate vote (https://en.wikipedia.org/wiki/Linda_McMahon, fetched)",
+        "On the Record (0 appearances)",
+        "blocked: https://www.ed.gov/about/ed-overview/secretary-linda-mcmahon (HTTP 403)",
+        "not reviewed: official site, congress.gov, Ballotpedia, news search (stopped after scope check; no congressional record exists)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:32:05.477Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "status: not a sitting member of Congress; page https://en.wikipedia.org/wiki/Linda_McMahon shows Linda McMahon is U.S. Secretary of Education (executive branch, confirmed 2025-03-03), so no bill or vote record exists",
+        "On the Record (0 appearances)",
+        "one web search on name plus voter ID / SAVE Act: nothing by her on the subject",
+        "blocked: https://ballotpedia.org/Linda_McMahon (fetch returned no usable page text)",
+        "not reviewed: congress.gov (not a member of Congress)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:09:23.313Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

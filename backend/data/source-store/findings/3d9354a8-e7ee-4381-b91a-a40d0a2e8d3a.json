@@ -1,0 +1,78 @@
+{
+  "politician_id": "3d9354a8-e7ee-4381-b91a-a40d0a2e8d3a",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Danielle_Gregoire says she is on the Nov 3, 2026 general-election ballot for MA House 4th Middlesex after the Sept 1, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/DWG1 (sponsored bills reviewed: H.3342 remote participation in local elections, H.4170 and H.5227 Marlborough council vacancies, H.2854 retirement board elections; nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site: blocked: https://www.daniellegregoire.com and https://www.gregoireforstaterep.com returned no content (guessed URLs)",
+        "news search: not reviewed: web search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:06:36.688Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "malegislature.gov legislator profile DWG1 (confirms 4th Middlesex District; sponsored-bill list has no ID, citizenship or voter-roll bill; nothing on the subject)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot; nothing on the subject)",
+        "campaign site: guessed domains did not load; none found",
+        "Patch 2018 candidate profile (nothing on the subject)",
+        "Wikipedia page (nothing on the subject; lead only)",
+        "news search on name plus voter ID / proof of citizenship / voting rights: nothing on the subject (only local polling-place and council-vacancy bills)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:50:45.941Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

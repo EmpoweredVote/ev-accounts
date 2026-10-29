@@ -1,0 +1,51 @@
+{
+  "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://malegislature.gov/Legislators/Profile/APR1 (Representative Adrianne Pusateri Ramos, North Andover; 2026 general ballot status not confirmed)",
+        "On the Record (0 appearances; extract-otr found none)",
+        "MA Legislature profile sponsored/cosponsored list (first page): nothing on the subject",
+        "MA Legislature bill search for voter identification: page returned no readable results",
+        "blocked: https://ballotpedia.org/Adrianne_Ramos (empty via fetch and curl)",
+        "not reviewed: campaign site, news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:28:22.333Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "found the person: Ballotpedia page (https://ballotpedia.org/Adrianne_Ramos) shows her as the sitting 14th Essex District state representative, on the 2026-11-03 general election ballot after the 2026-09-01 primary",
+        "Wikipedia page for her, nothing on the subject",
+        "blocked: https://malegislature.gov/Legislators/Profile/AR1 (503) and its Sponsored tab, so her bill sponsorships were not reviewed",
+        "official and campaign site adrianneramos.com is a parked page that redirects to /lander, nothing usable",
+        "On the Record extract script not present in this workspace, not run",
+        "3 web searches on her name plus voter ID and citizenship terms, nothing tying her to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:41:37.134Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

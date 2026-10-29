@@ -1,0 +1,191 @@
+{
+  "politician_id": "ed60a0c7-252c-443f-98ff-5926bf9a58a3",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7f4d39714d00a2ffa7c0b168448379ff37948a0a1ca0adcbf6d14d54f345aa74",
+      "kind": "own-words",
+      "url": "https://www.12onyourside.com/2025/01/22/senate-panel-blocks-gop-voting-limits-advances-ballot-reforms/",
+      "date": "2025-01-22",
+      "date_precision": "day",
+      "passage": "Eighty percent of the population supports photo ID, and I’m just trying to help bring the commonwealth into agreement with that 80%,",
+      "note": "Quoted by 12 On Your Side defending his bill to require a photo ID at the polls and end the option to sign a statement affirming identity.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement instead of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:32:10.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0acb7869522f1229a44f70e13ca2af922b7b34b9d7969c112cc57bf65406d12b",
+      "kind": "record",
+      "url": "https://www.12onyourside.com/2025/01/22/senate-panel-blocks-gop-voting-limits-advances-ballot-reforms/",
+      "date": "2025-01-22",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1070-2025",
+      "act": "sponsor",
+      "note": "SB 1070 would have required voters to present a photo ID at the polls and ended the option to sign a statement affirming identity under penalty of perjury; a Senate committee rejected it 8-7 on 2025-01-22 (per the news report).",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement instead of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:32:10.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbadb6671fcd072074eed3003965745d0e0be2d225e7765b6d6fb325501e0cdc",
+      "kind": "record",
+      "url": "https://cardinalnews.org/2024/01/16/senate-panel-kills-sen-peakes-election-bills-to-limit-early-voting-require-photo-id/",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-45-2024",
+      "act": "sponsor",
+      "note": "SB 45 (identical to SB 81 by another senator) would have required voters to show a photo ID at the polls; a Senate committee killed it (per Cardinal News).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:32:10.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44214f4837b1949eb0d156ecfdc7cfdf2b4d95a3488755e37786cd8a5d0539e3",
+      "kind": "own-words",
+      "url": "https://cardinalnews.org/2024/01/16/senate-panel-kills-sen-peakes-election-bills-to-limit-early-voting-require-photo-id/",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "“When people register, I just want them to check their Social Security number to see if it matches their name to see if they are who they say they are,” Peake said to the committee.",
+      "note": "Quoted by Cardinal News explaining his bill to check registrants' Social Security numbers against their names.",
+      "subjects": [
+        "registration verification",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:32:10.711Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "541f0b530ae759c5beb3e773825d50e726b30cfe1f7d8963aeb30abe5e09655b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Peake'), linked to Mark J. Peake via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement instead of ID",
+        "proof of citizenship to register",
+        "registration verification",
+        "mail-ballot rules",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Cardinal News 2024-01-16 (fetched)",
+        "12 On Your Side 2025-01-22 (fetched)",
+        "campaign site https://www.markpeake.com (fetched, empty page, nothing on the subject)",
+        "web searches on name plus subject words",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "not reviewed: official Senate member page"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:32:10.711Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.522Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.795Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

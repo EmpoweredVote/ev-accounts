@@ -1,0 +1,126 @@
+{
+  "politician_id": "da3e15ae-1867-4a4e-bc61-2759d5696118",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Curry'), linked to Gina H. Curry (district 164) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Curry'), linked to Gina H. Curry (district 164) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('CURRY'), linked to Gina H. Curry (district 164) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.861Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.718Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "https://www.pahouse.com/Curry shows Gina H. Curry, 164th district (positive control); headlines through 2026-10-26 show nothing on the subject; one 2026-10-23 e-blast body was not visible",
+        "https://en.wikipedia.org/wiki/Gina_Curry: nothing on the subject; 2026 result not stated",
+        "official news list https://pahouse.com/Curry/InTheNews/News: not reviewed, page returned 404",
+        "blocked: https://ballotpedia.org/Gina_Curry (empty page)",
+        "web search on name plus voter ID / mail-in / election: nothing on the subject",
+        "campaign site: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:44:11.664Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.861Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "politician_id": "611c17c5-3c5f-4685-8c22-3b3fe75482ba",
+  "findings": [
+    {
+      "id": "8bc606e0b039649bcef3da66d6367524701dc84d965eb199c181d2aa503a9e96",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-24",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Senate floor, Assembly 3rd Reading, AB 1116 (voter registration)",
+      "note": "Senate floor vote on AB 1116, Elections: voter registration, which lets a person without a California driver's license or state ID register to vote online by other means (the bill summary describes the last four digits of a Social Security number). Source is the CalMatters Digital Democracy vote record (Senate floor 29-9-2); she is listed among the yes votes. The bill was later vetoed by the governor, per the same page.",
+      "subjects": [
+        "ID to register to vote",
+        "online voter registration without driver's license or state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:06:54.272Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID number to register to vote",
+        "mail-ballot ID",
+        "election integrity",
+        "local voter-ID bans"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia: https://ballotpedia.org/Sasha_Ren%C3%A9e_P%C3%A9rez (confirms State Senate District 25, took office 2024-12-02, term to 2028; nothing on the subject)",
+        "official Senate site: https://sd25.senate.ca.gov/ (nothing on the subject)",
+        "CalMatters Digital Democracy legislator page https://calmatters.digitaldemocracy.org/legislators/sasha-renee-perez-187431 (no votes shown on the subject; her authored bills are not on the subject)",
+        "CalMatters Digital Democracy bill page for SB 1174 (2024): she took office 2024-12-02, after the 2024 floor votes, so no vote by her; individual votes also not shown on that page",
+        "AB 25 (2025): an Assembly bill that failed in an Assembly committee, so she had no vote as a senator",
+        "AB 1116 (2025-26): vote record taken from CalMatters Digital Democracy (not the Internet Archive leginfo copy); the Internet Archive leginfo copy dated 2025-09-19 predates the Senate vote",
+        "leginfo.legislature.ca.gov: blocked by bot check, not used",
+        "news search on name plus subject words (nothing on the subject)",
+        "campaign site: not reviewed, no page found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:06:54.272Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

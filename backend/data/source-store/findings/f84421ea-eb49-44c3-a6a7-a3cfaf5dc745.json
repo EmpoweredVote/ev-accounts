@@ -1,0 +1,132 @@
+{
+  "politician_id": "f84421ea-eb49-44c3-a6a7-a3cfaf5dc745",
+  "findings": [
+    {
+      "id": "3b59fb121762737020cfe8ac5bb3b7ebc66d05571e6c7521d4d339d156d4a028",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/johnson-county-legislators-remind-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-10-06",
+      "date_precision": "day",
+      "passage": "\"Indiana prides itself on making voting in our elections accessible and secure,\" Mayfield said. \"Whether you plan to cast a ballot on or before Election Day, I encourage voters to check their registration status before the Oct. 10 deadline.\"",
+      "note": "Quote in a House caucus press release, with a lead-in line from the same release that lists Indiana registration requirements, including a valid Indiana driver's license or state ID card and US citizenship. Her own words speak of voting being accessible and secure; they do not address ID at the polls.",
+      "subjects": [
+        "voter registration ID requirements",
+        "election security and access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:57:48.749Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "b9e00b54fbc35788fa3d5bda7721f53dfa36a1f0dd8f3f753ef0425f827c3795",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/in/2024/bills/INB00012785",
+      "date": "2024-01-29",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "yea",
+      "motion": "Third reading, House passage, Roll Call 67 (yeas 67, nays 29)",
+      "note": "HB 1264, Election security: the page lists her among the yes votes on House passage. The page shows committee amendment titles on citizenship, the SAVE program and voter registration. She is not listed as author or coauthor.",
+      "subjects": [
+        "election security laws in general",
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:23:32.496Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter registration ID requirements",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia https://ballotpedia.org/Peggy_Mayfield (Indiana House District 60, advanced from the 2026 primary on May 5, 2026, on the Nov 3, 2026 general ballot; still in scope)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site: https://www.indianahouserepublicans.com/members/general/peggy-mayfield (member page, press list, 2026 survey handout PDF: nothing on the subject in the survey)",
+        "House caucus press release on voter registration deadline (one finding)",
+        "House caucus guest column 'It's a republic, if you can keep it' (2023): nothing on the subject",
+        "campaign site https://www.peggymayfield.com/ and issues.html (old 2012-era content): nothing on the subject",
+        "Ballotpedia profile: no voter ID or citizenship positions listed",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_peggy_mayfield_1121/ (JavaScript app, no readable text; bill sponsorships not reviewed)",
+        "not reviewed: web news search on name plus subject words (search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:57:48.749Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll citizenship checks",
+        "election security laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms House District 60 seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "Indiana House caucus member page (404: https://www.indianahouserepublicans.com/members/house-district-60/)",
+        "blocked: https://app.legiplex.com/profile/peggy-mayfield-9513/in/legislatures/2023/2023-r/legislation",
+        "FastDemocracy legislator page (no usable sponsorship list)",
+        "Vote Smart (statement page 404; not usable)",
+        "news searches (3): no direct quotes from her on the subject",
+        "campaign site: none found",
+        "NBC News 2013 story on a student-voting bill she led (off subject: student residency, not ID; not saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:23:32.496Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

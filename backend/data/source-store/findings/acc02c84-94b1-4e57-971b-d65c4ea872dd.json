@@ -1,0 +1,194 @@
+{
+  "politician_id": "acc02c84-94b1-4e57-971b-d65c4ea872dd",
+  "findings": [
+    {
+      "id": "c7d6d8bdf3d53760e54de695d14bec5be3955034a772b5c9a631cd11a0744e35",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/files/Documents/2019-10-04_093651__027%20Fall%20NL%206pg%200919.pdf",
+      "date": "2019-09",
+      "date_precision": "month",
+      "passage": "I have always advocated for voter rights and support election reform legislation.",
+      "note": "Fall 2019 office newsletter (date from the file name 0919). He lists co-sponsored bills: HB 1556 automatic voter registration and HB 1493, which would let all registered voters request an absentee ballot. No mention of ID.",
+      "subjects": [
+        "election reform in general",
+        "mail-ballot access",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:34.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e612571669141a86cdb28cb798862b13bc6eb245484b710c9c60b3463573905",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/files/Documents/Newsletter/2025-11-14_012654__016%20Spring%20NL%200519.pdf",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Voting by mail has numerous advantages over traditional voting, from increasing voter participation and saving taxpayer dollars to reducing the chance of fraud even more.",
+      "note": "Spring office newsletter (file name suggests 0519, year not stated on page text read). He describes introducing HB 1059 (ongoing mail ballots after one request) and HB 765 (paper ballots required because electronic systems are vulnerable to hacking). No mention of ID.",
+      "subjects": [
+        "mail voting",
+        "election security",
+        "voting system security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:08:34.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('DEASY'), linked to Daniel Deasy (district 27) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Deasy'), linked to Daniel J. Deasy (district 27) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Deasy'), linked to Daniel J. Deasy (district 27) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('DEASY'), linked to Daniel J. Deasy (district 27) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.856Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot access and ID",
+        "proof of citizenship",
+        "election integrity",
+        "voting system security"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site, member page https://www.pahouse.com/Deasy (identity confirmed: 27th District, news items dated Sept 2026; nothing on the subject)",
+        "official House site biography page (nothing on the subject)",
+        "official House site news list search, 404 for a query URL: https://www.pahouse.com/Deasy/News/?q=voter+ID",
+        "official site search via web search (found two office newsletters, saved)",
+        "blocked: https://ballotpedia.org/Daniel_Deasy (empty page)",
+        "blocked: https://lwvpgh.org/PAcandidates (403)",
+        "Wikipedia page https://en.wikipedia.org/wiki/Dan_Deasy (confirms incumbent; nothing on 2026 ballot or the subject)",
+        "one news/web search on name plus voter ID (nothing from his own words on voter ID or proof of citizenship)",
+        "not confirmed from a fetched page: 2026 general-election ballot placement (search results indicate he is the listed candidate for District 27, but the page was blocked)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:08:34.295Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.702Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.856Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

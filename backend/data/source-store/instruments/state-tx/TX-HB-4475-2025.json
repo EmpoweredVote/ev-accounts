@@ -1,0 +1,35 @@
+{
+  "id": "TX-HB-4475-2025",
+  "scope": "state:tx",
+  "title": "HB 4475 (89R): Relating to the acceptance of a voter executing a declaration of reasonable impediment; providing a limitation.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4475",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB4475",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04475I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 2 (amends Election Code 63.001(b))\n(quote) (b) Except as provided by Subsection (h), on offering to vote, a voter must present to an election officer at the polling place: (1) one form of photo identification listed in Section 63.0101(a); or (2) if the voter has executed a declaration described by Subsection (i) less than twice, one form of identification listed in Section 63.0101(b) accompanied by the declaration described by Subsection (i).\n(b_no_id_remedy)\n(section) SECTION 2 (amends 63.001(g))\n(quote) (g) If the requirements for identification prescribed by Subsection (b) are not met, the voter may be accepted for provisional voting only under Section 63.011. For a voter who is not accepted for voting under this section, an election officer shall: (1) inform the voter of the voter's right to cast a provisional ballot under Section 63.011; [ and ] (2) provide the voter with written information, in a form prescribed by the secretary of state, that: (A) lists the requirements for identification; (B) states the procedure for presenting identification under Section 65.0541; (C) includes a map showing the location where identification must be presented; and (D) includes notice that if all procedures are followed and the voter is found to be eligible to vote and is voting in the correct precinct, the voter's provisional ballot will be accepted ; and (3) offer the voter an opportunity to provide an address for the purposes of Subsection (l) .\n(section) SECTION 2 (adds 63.001(k))\n(quote) (k) A voter may only execute a declaration described by Subsection (i) twice.\n(section) SECTION 2 (adds 63.001(l))\n(quote) (l) For a voter who executes a declaration described by Subsection (i) or who is accepted for provisional voting under Section 63.011 solely because the voter did not meet the requirements for identification prescribed by Section 63.001(b), the county where the voter is registered shall mail the voter written information, in a manner prescribed by the secretary of state, that: (1) lists the acceptable forms of photo identification under Section 63.0101(a); and (2) provides a detailed and individualized explanation on how to obtain an acceptable form of photo identification under Section 63.0101(a).\n(section) SECTION 3 (amends Election Code 65.0541(a))\n(quote) (a) A voter who is accepted for provisional voting under Section 63.011 because the voter does not meet the identification requirements of Section 63.001(b) may, not later than the sixth day after the date of the election: (1) present a form of identification described by Section 63.0101(a) or, if the voter has executed a declaration described by Section 63.001(i) less than twice, identification described by 63.0101(b) accompanied with a declaration described by Section 63.001(i) [ 63.0101 ] to the voter registrar for examination; or (2) execute an affidavit described by Section 65.054(b)(2)(B) or (C) in the presence of the voter registrar.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1 (adds 15.029): registrar enters a notation on the voter list when a voter has executed a reasonable-impediment declaration and replaces it when a second declaration is executed; notations approved by the secretary of state.\n(other) Sec 2 (63.001(j)): each declaration is indicated beside the voter's name on the poll list and recorded in the registration record.\n(other) Sec 4: effective September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Isaac",
+      "role": "author",
+      "version": "Introduced (H.B. No. 4475; no other version exists)",
+      "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

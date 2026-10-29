@@ -1,0 +1,283 @@
+{
+  "politician_id": "05e88b53-b6f4-4c5d-bcd2-f6b7b20f98d6",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "9c24e3d2e1b7c7292d6c5920f10ddc3e03fb34646b00342214fa2f05405dab0c",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/e-newsletters/catching-quigley-week-april-7",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "The so-called SAVE Act would raise new restrictions on voter registration, threatening voter registration by mail, registration drives, and electronic registration.",
+      "note": "From his e-newsletter for the week of April 7, 2025 (page dated April 14, 2025), under a heading about voting against the bill. He describes the SAVE Act's effect on how people register.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ae977d4dddc5e8f5abc19d146d58598f9c1bdc1258f0e1b91c82dd976f61be7",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/e-newsletters/catching-quigley-week-april-7",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "It has been estimated that, under this proposed law, 69 million women who changed their last name when they got married would not have the documentation to register to vote using their birth certificate.",
+      "note": "Same newsletter. He cites an estimate about women whose birth certificates no longer match their names.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "name changes and birth certificates"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "602899594c92e1de3d830d73c05c691966d0673bd841a6ebc295522aff134958",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/e-newsletters/catching-quigley-week-april-7",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "Conservatives argue that the bill would safeguard elections, but it's already illegal for noncitizens to vote in federal elections or to submit fraudulent information to register to vote.",
+      "note": "Same newsletter. He responds to the argument for the bill by saying non-citizen voting and false registration are already illegal.",
+      "subjects": [
+        "non-citizen voting",
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b026da587e5405c49b2511c23760a0ee6c76708225c83f3b6c51844a6d5ade54",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/press-releases/quigley-statement-gop-failure-avoid-government-shutdown",
+      "date": "2024-09-18",
+      "date_precision": "day",
+      "passage": "In reality, the SAVE Act would make it harder for millions of legal citizens to register to vote. Americans would not be able to use military IDs or Tribal IDs alone when registering to vote.",
+      "note": "His statement on a stopgap funding bill that carried the SAVE Act (page dated September 18, 2024). He says the bill would make registration harder and names military and tribal IDs.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "military and tribal IDs for registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4c408155df5b5ee045fd0a9dc2289644fd6b0bbbd0d8a99fc963ca61ef26dc1",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/press-releases/quigley-statement-gop-failure-avoid-government-shutdown",
+      "date": "2024-09-18",
+      "date_precision": "day",
+      "passage": "The SAVE Act operates under the guise of preventing noncitizens from voting, when in fact, that’s already illegal.",
+      "note": "Same statement. He says non-citizen voting is already against the law.",
+      "subjects": [
+        "non-citizen voting",
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06e540aee78b1cafbf96789549c793e9282fc3c6a61007bf7ba4a4be0c68a20e",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/press-releases/quigley-statement-gop-failure-avoid-government-shutdown",
+      "date": "2024-09-18",
+      "date_precision": "day",
+      "passage": "The SAVE Act is a direct threat to ballot access and for that reason, I was unable to support this CR.",
+      "note": "Same statement. He gives ballot access as his reason for not supporting the funding bill that carried the SAVE Act.",
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5f27eee75f50b653e72ca5bfbd60948262f6b9d874c4d8a18a30d2ca46f3fc0",
+      "kind": "own-words",
+      "url": "https://quigley.house.gov/media-center/press-releases/quigley-statement-illinois-participation-interstate-voter-registration",
+      "date": "2017-08-04",
+      "date_precision": "day",
+      "passage": "Not only are there numerous questions regarding the Crosscheck system's ability to secure the private voter information it collects, but there are deep concerns that the program predominately produces inaccurate or false matches.",
+      "note": "Related, not about ID. His 2017 statement urging Illinois to leave the interstate voter-roll Crosscheck system and to refuse a federal election commission's request for voter data.",
+      "subjects": [
+        "voter-roll checks (interstate crosscheck)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:04:15.272Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Mike_Quigley (fetched by curl; advanced from the March 17, 2026 primary; running in the Nov 3, 2026 general election for Illinois District 5)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site https://quigley.house.gov/ (press releases pages 0-40 scanned by title for subject words; the one voting-rights release, on H.R. 4, covers preclearance and has nothing on ID or citizenship proof; issues page transparency-and-government-reform nothing on the subject)",
+        "blocked: https://quigley.house.gov/search (403 Access Denied, site search unavailable)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22 (403)",
+        "blocked: https://www.congress.gov/member/michael-quigley/Q000023 (403, sponsorships not checked)",
+        "blocked: https://www.govtrack.us/congress/members/michael_quigley/412415 (403)",
+        "Ballotpedia: nothing on the subject beyond the votes already on file",
+        "not reviewed: news search on name plus subject words (session web search budget was used up)",
+        "not reviewed: campaign site, ontheissues.org, vote411 (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:08:45.326Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "photo ID to vote in person",
+        "non-citizen voting",
+        "voter-roll checks (interstate crosscheck)",
+        "military and tribal IDs for registration",
+        "name changes and birth certificates"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia profile (confirms he is on the 2026 general-election ballot for IL-5)",
+        "official House site: e-newsletter for the week of April 7 2025",
+        "official House site: press release on the September 2024 funding bill",
+        "official House site: press release on voter-roll crosscheck (2017)",
+        "official House site press release list (page 1 fetched; site search page is blocked: https://quigley.house.gov/search?keys=SAVE+Act, 403)",
+        "web search limited to his official site for SAVE Act and voter ID",
+        "blocked: https://www.congress.gov (not fetched; his House votes on this subject are already on file)"
+      ],
+      "found": 7,
+      "at": "2026-10-27T17:04:15.272Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

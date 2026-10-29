@@ -1,0 +1,87 @@
+{
+  "politician_id": "96f697c8-8614-4bc3-b796-bcf02a0380a1",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Scott_Alexander_(Indiana) names him as Indiana State Senate District 26 incumbent, on the Nov 3, 2026 general-election ballot, won the May 5, 2026 primary; nothing on the subject there (no candidate survey completed, no scorecards on the subject)",
+        "On the Record (0 meetings)",
+        "official Senate site https://www.indianasenaterepublicans.com/alexander (35 linked statements and news pages fetched, none mention voter ID, citizenship, elections, ballots or absentee voting): nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_scott_alexander_1 (JavaScript app, bill and vote lists not readable without a browser)",
+        "blocked: https://www.billtrack50.com/legislatordetail/27721 (sponsored bills and votes load by script, empty in fetched page)",
+        "blocked: https://legiscan.com/IN/legislator/scott-alexander/id/27721 (Cloudflare challenge)",
+        "not reviewed: campaign site (none found without search)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: ontheissues.org, vote411 (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:42.712Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/alexander (confirms State Sen. Scott Alexander, District 26, Delaware and Randolph counties; news list has nothing on the subject)",
+        "https://www.yahoo.com/news/articles/alexander-announces-run-election-indiana-163202472.html (announces run for a second term, updated 2025-12-24; nothing on the subject)",
+        "Wikipedia page (office and district only)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_scott_alexander_1138 (page returned no content)",
+        "blocked: https://ballotpedia.org/Scott_Alexander_(Indiana) (page returned no content)",
+        "IBJ mail-ballot bill article https://www.ibj.com/articles/indiana-senate-backs-gop-bill-tightening-mail-voter-rules (does not mention him)",
+        "web searches on name plus voter ID, citizenship, election integrity: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:13.500Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

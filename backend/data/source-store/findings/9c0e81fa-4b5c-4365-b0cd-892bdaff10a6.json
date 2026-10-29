@@ -1,0 +1,55 @@
+{
+  "politician_id": "9c0e81fa-4b5c-4365-b0cd-892bdaff10a6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Eric_Jenkins names him as a candidate for U.S. House, Kansas District 3, advanced from the August 4, 2026 primary and on the November 3, 2026 general-election ballot; https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Kansas,_2026 lists him among the general election candidates",
+        "On the Record (0 meetings; extract-otr.mjs returned 0 appearances)",
+        "campaign site https://ericjenkinsforkansas.com/ (single-page site, home/about/platform read in full: nothing on the subject; no separate issues page, /issues and /about return 404)",
+        "Ballotpedia profile (fetched by curl; no survey text on the subject)",
+        "congress.gov: not applicable, not a member of Congress; no bill record",
+        "nothing on the subject: Shawnee City Council record not reviewed for the subject (voter ID is not a city matter); no pages located",
+        "not reviewed: news search on name plus subject words, because the shared web-search budget was used up",
+        "not reviewed: https://ericjenkinsshawnee Facebook page https://www.facebook.com/ericjenkinsshawnee (social media, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:11:48.163Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: https://www.kwch.com/2026/08/05/rep-sharice-davids-eric-jenkins-square-off-november-us-house-seat-kansas/ names him as the nominee in Kansas's 3rd district for November 2026; https://sunflowerstatejournal.com/former-shawnee-city-council-member-files-to-run-for-congress/ (2026-05-28) reports his filing",
+        "county election office listing https://www.jocoelection.org/candidates-elected-officials/eric-jenkins-2: lists the campaign site, nothing on the subject",
+        "blocked: https://erickjenkinsforkansas.com (site did not respond to curl; no connection)",
+        "Ballotpedia https://ballotpedia.org/Eric_Jenkins: covers only an older Kansas House race, not reviewed in depth",
+        "Johnson County Post candidate questionnaire https://johnsoncountypost.com/?p=184400: 2022 race, other candidates, not him",
+        "web searches on name plus subject words: nothing on the subject",
+        "congress.gov: not applicable, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:26.332Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

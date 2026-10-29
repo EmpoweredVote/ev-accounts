@@ -1,0 +1,57 @@
+{
+  "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Members/House (David Robertson, 19th Middlesex) and https://malegislature.gov/Legislators/Profile/D_R1 (Representative David Allen Robertson, 19th Middlesex)",
+        "in scope: https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026 lists him as the incumbent for the 19th Middlesex District in 2026",
+        "On the Record (0 appearances, 0 sources)",
+        "legislature sponsored bills https://malegislature.gov/Legislators/Profile/D_R1/Bills: nothing on the subject",
+        "legislature cosponsored bills https://malegislature.gov/Legislators/Profile/D_R1/Cosponsored: nothing on the subject",
+        "Ballotpedia personal page https://ballotpedia.org/David_Robertson_(Massachusetts): page does not exist, nothing on the subject",
+        "official site / campaign site: not reviewed, no site found (davidrobertson.org did not respond); no web search available, search budget exhausted",
+        "not reviewed: https://malegislature.gov/Bills/194/H4359/Amendments/House/7 (404, vote already on file)",
+        "news search on name plus subject words: not reviewed, search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:30:13.643Z",
+      "by": "source-collector"
+    }
+  ]
+}

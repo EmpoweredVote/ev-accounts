@@ -1,0 +1,87 @@
+{
+  "politician_id": "cd3bc298-9029-4cf7-a17b-0c2f7944956c",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Marlin_Stutzman says he advanced from the May 5, 2026 primary and is on the November 3, 2026 general-election ballot for Indiana District 3",
+        "On the Record (1 meeting, 2026-07-16 House floor one-minute speech about a soccer stadium): nothing on the subject",
+        "Ballotpedia: only the votes already on file (SAVE Act H.R. 22); no own words on the subject",
+        "campaign site https://www.gomarlin.com/ and its issues page: nothing on the subject",
+        "official site https://stutzman.house.gov/: issues menu lists Congress, Economy, Education, Energy, Health, Veterans; no elections page; press releases page 1 of 5 reviewed, nothing on the subject",
+        "not reviewed: https://stutzman.house.gov/media/press-releases pages 2-5",
+        "blocked: https://stutzman.house.gov/news/documentquery.aspx?Keywords=citizenship (403, site search)",
+        "blocked: https://www.congress.gov/member/marlin-stutzman/S000937 (403, sponsorships)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/members/marlin_stutzman/400626 (403)",
+        "not reviewed: news search on name plus subject words (session web-search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:48.230Z",
+      "by": "source-collector"
+    }
+  ]
+}

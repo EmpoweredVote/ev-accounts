@@ -1,0 +1,311 @@
+{
+  "politician_id": "607b22d5-2114-44e4-b0be-cefb1ffe0010",
+  "findings": [
+    {
+      "id": "d72265a5f5444d6edf07bdd86bcaa681c77f17a667292df94ee36cb3c83ee7f2",
+      "kind": "own-words",
+      "url": "https://www.repbarton.com/News/31681/Latest-News/Barton-Takes-Oath-of-Office-",
+      "date": "2023-01-03",
+      "date_precision": "day",
+      "passage": "For the 2023-24 Legislative Session, Barton will work to stimulate the economy; ignite small business; reduce the cost of energy for families and businesses; improve state infrastructure; invest in school students; ensure election integrity across the Commonwealth; and support community safety through law enforcement.",
+      "note": "Goal list in his office's release on his swearing-in. It names election integrity as a session goal but gives no detail on ID, mail ballots or citizenship. It is the office's wording, not a direct quote of him.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4329318497c549e0aec2d9a71aa5249b8f391b45de87654c829a32cc70bc2a0",
+      "kind": "own-words",
+      "url": "https://www.repbarton.com/about",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Rep. Jamie Barton is serving his second term in the Pennsylvania House of Representatives with a focus to stimulate our economy; ignite small business; reduce the cost of energy for families and businesses; improve state infrastructure; invest in our school students; ensure election integrity across the Commonwealth; and support community safety through law enforcement.",
+      "note": "About page on his official site (undated; says he is in his second term, so written during the 2025-26 session). Repeats election integrity as a focus without saying what rules he means.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.388Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('BARTON') on the official bill page; linked to Jamie Barton via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('BARTON') on the official bill page; linked to James A. Barton via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BARTON'), linked to James A. Barton (district 124) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:43:27.546Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:47:07.191Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:52:01.905Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:59:56.322Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:05:26.547Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.875Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.367Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: in scope, a state House member for District 124, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/berks-county/pennsylvania-house-district-124 (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repbarton.com): home page, About page, 2023 oath-of-office release and site search for election: only a one-line goal of election integrity, no detail on ID or citizenship; press release list (2025-04 to 2026-09) has no title on voting or elections; older release pages not reached",
+        "Times News 2023-01-03 copy of the oath-of-office release fetched (same words)",
+        "news searches on name plus voter ID and election integrity: no statement by him found",
+        "blocked: https://ballotpedia.org/Jamie_Barton (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:31:40.388Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.864Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

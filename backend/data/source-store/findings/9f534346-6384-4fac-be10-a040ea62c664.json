@@ -1,0 +1,229 @@
+{
+  "politician_id": "9f534346-6384-4fac-be10-a040ea62c664",
+  "findings": [
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Sortwell') on the official bill page; linked to Shae Sortwell via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('SORTWELL'), linked to Shae Sortwell (district 2) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('SORTWELL'), linked to Shae Sortwell (district 2) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('SORTWELL'), linked to Shae Sortwell (district 2) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('SORTWELL'), linked to Shae Sortwell (district 2) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Sortwell') on the official bill page; linked to Shae Sortwell via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('SORTWELL'), linked to Shae Sortwell (district 2) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "status: listed as incumbent on the November 2026 ballot for Assembly District 2 (https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD02.html)",
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/02/Sortwell/ (no press releases or e-updates listed; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Shae_Sortwell (empty page)",
+        "blocked: https://www.wispolitics.com/2025/assembly-approves-voter-id-amendment-statewide-vote-up-next/ (403)",
+        "blocked: https://wisconsinexaminer.com/2025/01/15/assembly-passes-voter-id-constitutional-amendment-proposal-now-it-goes-to-voters-in-april/ (403)",
+        "blocked: https://app.legiplex.com/profile/shae-sortwell-18695/wi/legislatures/2025/2025-r/legislation/page/4 (403)",
+        "campaign site: no working site found (shaesortwell.com and sortwellforassembly.com did not load)",
+        "https://www.wispolitics.com/2026/saunders-campaign-navy-veteran-and-sanitation-worker-challenges-seven-year-incumbent-this-district-deserves-better/ (opponent release, nothing on the subject)",
+        "https://www.ballotready.org/people/shae-sortwell (profile, no own words on the subject)",
+        "news searches on name plus voter ID, photo ID, citizenship, election integrity (no quote of him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:05:17.769Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.785Z",
+      "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "scope check: listed as incumbent on the November 2026 ballot for Assembly District 2 (https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD02.html)",
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/02/Sortwell/ (no press releases or e-updates listed; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Shae_Sortwell (empty page)",
+        "blocked: https://www.wispolitics.com/2025/assembly-approves-voter-id-amendment-statewide-vote-up-next/ (403)",
+        "blocked: https://wisconsinexaminer.com/2025/01/15/assembly-passes-voter-id-constitutional-amendment-proposal-now-it-goes-to-voters-in-april/ (403)",
+        "blocked: https://app.legiplex.com/profile/shae-sortwell-18695/wi/legislatures/2025/2025-r/legislation/page/4 (403)",
+        "campaign site: no working site found (shaesortwell.com and sortwellforassembly.com did not load)",
+        "https://www.wispolitics.com/2026/saunders-campaign-navy-veteran-and-sanitation-worker-challenges-seven-year-incumbent-this-district-deserves-better/ (opponent release, nothing on the subject)",
+        "https://www.ballotready.org/people/shae-sortwell (profile, no own words on the subject)",
+        "news searches on name plus voter ID, photo ID, citizenship, election integrity (no quote of him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:31:40.409Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

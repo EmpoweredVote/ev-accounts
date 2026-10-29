@@ -1,0 +1,225 @@
+{
+  "politician_id": "9d538855-3510-40ab-a48f-328d9c9bdba4",
+  "findings": [
+    {
+      "id": "d0ae134cd4f8e54f1e75427bfcdaed82bd218d8b0f56165ceff267d397a59e65",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Winnie Brinks (District 76)') on the official bill page; linked to Winnie Brinks via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44d831dfc1eeb3fca116d2ec1f84e8cd7e68d144fad9d08bff5bac9206547e3b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Brinks'), linked to Winnie Brinks (district 76) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Brinks'), linked to Winnie Brinks (district 29) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Brinks'), linked to Winnie Brinks (district 29) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Winnie Brinks (District 29)') on the official bill page; linked to Winnie Brinks via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Brinks'), linked to Winnie Brinks (district 29) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Winnie Brinks (District 29)') on the official bill page; linked to Winnie Brinks via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "news: WOOD-TV candidate guide https://www.woodtv.com/news/elections/winnie-brinks-and-jay-deboyer-what-to-know-about-the-two-candidates-for-michigan-lieutenant-governor/amp/ (names her as a 2026 lieutenant governor running mate and term-limited in the Senate; nothing of her own on the subject)",
+        "news: Yahoo/Detroit voter ID story (she is not named)",
+        "blocked: https://senatedems.com/brinks/ (403)",
+        "blocked: https://senatedems.com/brinks/?p=7552 (403)",
+        "blocked: https://ballotpedia.org/Winnie_Brinks (empty page)",
+        "web search on name plus voter ID and citizenship, and on 2026 status (no statement of her own found)",
+        "not reviewed: campaign site for the governor and lieutenant governor ticket",
+        "not reviewed: legislature bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:50:02.898Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

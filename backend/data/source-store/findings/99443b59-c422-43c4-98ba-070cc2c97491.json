@@ -1,0 +1,176 @@
+{
+  "politician_id": "99443b59-c422-43c4-98ba-070cc2c97491",
+  "findings": [
+    {
+      "id": "881d20cb59f94ef17be4a4ace73a69c72635639eda27b8c79b8bfa2082077980",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/rep-robyn-vining-statement-on-republican-attack-on-voters-and-elections/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Clerks have been asking for changes to elections for years, but instead of listening to the nonpartisan experts and enacting the needed changes, Republicans have put forth a package of bills that makes it harder to vote, and harder to run elections. I stand today on the side of Wisconsin voters, non-partisan clerks, and democracy, and I oppose these bills.",
+      "note": "Press release issued in her name, posted by Urban Milwaukee, after the Assembly passed a package of election bills. The page does not list the bill numbers or a date. Does not mention photo ID or citizenship proof by name.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:10.482Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ff0856102363887c14146ae12f952c4830db92d5a7fe5cdb6078572f5db54dc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "nay",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('VINING'), linked to Robyn Vining (district 14) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('VINING'), linked to Robyn Vining (district 14) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d276d5ce64efb2eb6909119f31c4e388580944bb124791374d00949f15781e07",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('VINING'), linked to Robyn Vining (district 14) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('VINING'), linked to Robyn Vining (district 13) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('VINING'), linked to Robyn Vining (district 14) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: sitting Assembly member (District 13) and nominee for State Senate District 5 on the 2026-11-03 ballot (https://theballotbrief.com/state/wisconsin/milwaukee-county/wisconsin-senate-district-5)",
+        "not reviewed: On the Record extract script (the search agent may not run repo scripts)",
+        "official site https://legis.wisconsin.gov/assembly/13/vining/ (home page): nothing on the subject; press-release list URL returned 404",
+        "campaign site https://www.robynforwi.com/ (home page): nothing on the subject; /issues returned 404",
+        "blocked: https://www.wispolitics.com/2022/rep-vining-statement-on-republican-attack-on-voters-and-elections/ (403)",
+        "Ballotpedia: not reviewed, returns 403 for the other people in this batch, so not fetched",
+        "legislature bill pages for sponsorships: not reviewed, floor votes and sponsorships are linked separately",
+        "3 web searches on her name plus voter ID, photo ID, SAVE Act, voter ID amendment, absentee: no statement on voter ID itself found",
+        "not reviewed: interview and forum videos"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:03:10.482Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:15:12.787Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

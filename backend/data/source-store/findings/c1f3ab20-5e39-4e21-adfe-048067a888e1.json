@@ -1,0 +1,265 @@
+{
+  "politician_id": "c1f3ab20-5e39-4e21-adfe-048067a888e1",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81684417bfa5a1472df5c72a03d53794be4d56ae2015e9dede30eb816b6d753b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2011/H351",
+      "date": "2011-03-01",
+      "date_precision": "year",
+      "instrument_id": "NC-HB-351-2011",
+      "act": "sponsor",
+      "note": "Listed among the additional sponsors of HB 351, Restore Confidence in Government, a bill whose changed statutes include the in-person voter identification sections (163-166.13) and DMV free-ID section (20-37.7). Date given is the session year only; exact filing date not checked.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "873c9b7401d06ddc10a6a866d4e19a030bf5cc4a89057ed58bdc3d48c0afcc29",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/1081",
+      "date": "2011-06-16",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-351-2011",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence with the Senate version of HB 351)",
+      "note": "Roll call 1081. He is listed among the ayes. The motion passed.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5044c992c556b9f822bfa2e8cbc549e5ff009f3498b8f591ffcf971b6ec3ea26",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/1276",
+      "date": "2011-07-26",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-351-2011",
+      "act": "yea",
+      "motion": "Veto Override (House vote to override the governor's veto of HB 351); the motion failed, and a later reconsideration vote (roll call 1278) also lists him among the ayes",
+      "note": "Roll call 1276. He is listed among the ayes on the override vote; the override failed at that vote.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c88e6d0fc49c8f293f7bf5f7238df7b1ede0cd569915a6ae773171386ae2aa32",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013-04-24",
+      "date_precision": "year",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "sponsor",
+      "note": "Listed among the additional sponsors of HB 589, Voter Information Verification Act (VIVA) / Election Reform, which became S.L. 2013-381. Page lists DMV, ID systems and drivers licenses among its subjects. Date is approximate (House action date).",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ef29cdb6e5869afe88f06da93464e03eafb0a6b02482b807713a3e2c0e74de9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "yea",
+      "motion": "Third Reading, HB 589 Voter Information Verification Act",
+      "note": "Roll call 350. He is listed among the ayes; the bill passed the House.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2937e838bbae18a9ee005fdbe580839b176bd8904183ac8002bb645c796adc76",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence with the Senate version of HB 589, VIVA/Election Reform)",
+      "note": "Roll call 1337. He is listed among the ayes; the motion passed 73 to 41.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1dd43a2603c32f47326733514733a0568f0880830dcb76905cabf02f5e9c4fa",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/H1074",
+      "date": "2024-06-26",
+      "date_precision": "year",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "sponsor",
+      "note": "Listed among the additional sponsors of HB 1074, Constitutional Amendment/Citizens-Only Voting (S.L. 2024-18). Date is approximate (House floor action).",
+      "subjects": [
+        "citizens-only voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "58edb80d7df5b9165b8a6ed9e14357ca992f6d1217b589af5ff03fd39ad2cb8b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/769",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "yea",
+      "motion": "Third Reading, HB 1074 Constitutional Amendment/Citizens-Only Voting",
+      "note": "Roll call 769. He is listed among the ayes; the bill passed.",
+      "subjects": [
+        "citizens-only voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:21.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and free state ID",
+        "proof of citizenship to vote",
+        "citizens-only voting",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_Torbett names him as the sitting member for NC House District 108, on the 2026 general-election ballot (primary cancelled)",
+        "On the Record (0 appearances for this politician id)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/606 (names him, District 108)",
+        "campaign site johntorbett.com home, issues, news-blog (nothing on the subject; issues page covers other topics)",
+        "ncleg.gov bill pages and roll-call transcripts: HB 589 (2013), HB 351 (2011), HB 1074 (2023-24), SB 747 (2023, votes reviewed, elections-law bill, not saved as off the ID subject)",
+        "Ballotpedia: nothing on the subject",
+        "not searched: web search budget for the session was used up, so no news search or own-words search by name was possible",
+        "not reviewed: official Facebook https://www.facebook.com/RepTorbett/ and campaign X https://x.com/JohnTorbett (not fetched)"
+      ],
+      "found": 8,
+      "at": "2026-10-23T00:08:21.489Z",
+      "by": "source-collector"
+    }
+  ]
+}

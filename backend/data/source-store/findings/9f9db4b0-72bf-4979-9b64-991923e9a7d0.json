@@ -1,0 +1,209 @@
+{
+  "politician_id": "9f9db4b0-72bf-4979-9b64-991923e9a7d0",
+  "findings": [
+    {
+      "id": "6a1a557eb04d1c8e6642c0cb735d6859d2b6a2dd923bdef3d333bfc57fa8eac2",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=121642",
+      "date": "2021-11-08",
+      "date_precision": "day",
+      "passage": "“I refuse to allow votes to be silenced because of signature variances,” Young said. “Our election officials do a fantastic job – but they are not trained handwriting experts. If two signatures don’t match up, the voter must be notified and allowed to affirm their signature.”",
+      "note": "Release on her plan for a bill that would let a voter whose mail ballot signature does not match be notified and affirm the signature. Related to proving identity on a mail ballot.",
+      "subjects": [
+        "mail-ballot signature and identity cure",
+        "what happens to a voter whose ballot is questioned"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:54.873Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfab8fa9b43aabc78eee00dc6b028d06d962a27c98f7fec88d8783312fbd1f4",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/young/InTheNews/NewsRelease/?id=127120",
+      "date": "2022-12-29",
+      "date_precision": "day",
+      "passage": "“Signatures vary over time. And we should not allow something as mundane as this to disenfranchise voters who want to make their voice heard,” Young said.",
+      "note": "Release announcing a 2023-24 bill that would require county boards of election to notify voters when a ballot signature does not match the one on file, so they can affirm their identity.",
+      "subjects": [
+        "mail-ballot signature and identity cure",
+        "what happens to a voter whose ballot is questioned"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:54.873Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2c7fa4b3e9fcb7229418e38f17b325d19a364dc925f1e47392aea40504e3a45",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=121642",
+      "date": "2021-11-08",
+      "date_precision": "day",
+      "passage": "“As an elected official, it is my duty to continue the fight to eliminate voting barriers and ensure all voices are heard,” Young said.",
+      "note": "Same release; general statement about voting barriers, in the context of her election bill and the voter-ID bill H.B. 1300 that the release says was vetoed.",
+      "subjects": [
+        "election rules in general",
+        "voter ID bill H.B. 1300 (mentioned in the release)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:54.873Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('YOUNG'), linked to Regina Genell Young (district 185) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Young'), linked to Regina G. Young (district 185) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Young'), linked to Regina G. Young (district 185) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('YOUNG'), linked to Regina G. Young (district 185) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proving identity when a mail ballot signature is questioned",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity in general"
+      ],
+      "places": [
+        "official site pahouse.com/Young (confirms House District 185, Delaware and Philadelphia counties; news items dated through Oct 2026 show she is sitting; 2026 general-election candidacy not checked)",
+        "On the Record (0 appearances found)",
+        "House caucus news releases of 2021-11-08 and 2022-12-29 (fetched)",
+        "her Oct 2025 e-newsletter (voter registration reminder only; nothing on ID)",
+        "web searches on name plus voter ID and HB 771: no statement by her found",
+        "Ballotpedia: not reviewed",
+        "campaign site: not found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:10:54.873Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.707Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

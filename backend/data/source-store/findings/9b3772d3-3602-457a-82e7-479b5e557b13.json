@@ -1,0 +1,81 @@
+{
+  "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Angelo_Puppolo_Jr. names him as incumbent, 12th Hampden District, advanced from the Sept 1, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/AJP1: nothing on the subject",
+        "legislature sponsored and cosponsored bill lists (profile page and Cosponsored tab): nothing on the subject",
+        "Ballotpedia page (no voter ID or election statements, no survey text on the subject): nothing on the subject",
+        "district website http://www.puppolo.com: nothing on the subject",
+        "malegislature.gov bill search for voter identification and photo ID: results do not tie him to any bill; not reviewed bill by bill",
+        "news search: not reviewed, shared search budget was used up",
+        "campaign Facebook, Instagram, TikTok, X: not reviewed: https://www.facebook.com/repangelopuppolo"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:17:51.519Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "State legislature profile https://malegislature.gov/Legislators/Profile/AJP1 (confirms 12th Hampden representative; no sponsored bill on voter ID or voting)",
+        "Ballot listing https://theballotbrief.com/state/massachusetts/hampden-county/massachusetts-house-12th-hampden-district (sole name on the Nov 3 2026 ballot; nothing on voter ID)",
+        "NEPM primary article https://www.nepm.org/regional-news/2026-08-28/democratic-primary-in-12th-hampden-district-pits-experience-against-calls-for-change (nothing on voter ID found in page text)",
+        "campaign site: none found",
+        "Ballotpedia: not reviewed",
+        "web search on name plus voter ID words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:45:59.114Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

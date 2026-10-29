@@ -1,0 +1,86 @@
+{
+  "politician_id": "29fcdf7e-e3e2-4463-b461-ffd7a34a8754",
+  "findings": [
+    {
+      "id": "f81b318e70befab7499adabc7a395398e8139d96b907d3f86da8959ff19e2416",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "yea",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: yea (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.562Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V125_SB00016I.htm",
+          "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
+        }
+      }
+    },
+    {
+      "id": "e7e6dcfaccfdc8977cc2cda18bd5ffcf80099a7cf8196b4c13aad8cca7b4abb4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "author",
+      "note": "Flores is listed among the Senate authors (coauthors) of SB 16 by Hughes, which requires proof of citizenship to register to vote and lets voters without it cast only a limited federal ballot. Filed 2025-03-11. His final-passage yea vote is already on file; this is the separate authorship act. List read through the fetch tool.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal ballot for those without proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:00:57.432Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://senate.texas.gov/member.php?d=24 (confirms Sen. Pete Flores, SD24, in office since 2023; nothing on the subject)",
+        "https://senate.texas.gov/pressroom.php?d=24 (no election titles; the 2024-11-12 pre-file release PDF could not be read as text: not reviewed)",
+        "Texas Legislature Online history page for SB 16 (89R): he is on the author list",
+        "Texas Legislature Online history page for SB 1554 (89R): checked a search lead; it is a liquor tax credit bill, not on the subject, not saved",
+        "https://www.hccommunityjournal.com/article_35c94232-90b0-11ef-9e92-c3a25f218915.html (nothing on the subject from him)",
+        "https://index.texastaxpayers.com/legislators/pete-flores/2023-index (third-party list of 2023 Senate votes on bills tagged election integrity; symbols not explained, so not saved; the bill pages on Texas Legislature Online were not checked)",
+        "news searches on name plus voter ID, proof of citizenship, SB 16, election integrity, noncitizen (no words of his own found)",
+        "blocked: https://ballotpedia.org/Peter_P._Flores and /Pete_Flores (fetch returns empty page; curl retry denied by the permission system)",
+        "blocked: campaign site (peteforsenate.com does not resolve; no campaign site found)",
+        "not reviewed: Senate floor debate audio for SB 16"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:00:57.432Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

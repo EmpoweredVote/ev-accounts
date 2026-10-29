@@ -1,0 +1,56 @@
+{
+  "politician_id": "aca1e324-cc09-4492-a2f7-d795beb752ff",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Todd_Smola says he is on the 2026 general-election ballot (Nov 3, 2026) for 1st Hampden District, and advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances for this politician id; name search returned 0)",
+        "Ballotpedia: nothing on the subject (candidate survey not completed)",
+        "Legislature profile https://malegislature.gov/Legislators/Profile/TMS2: sponsored list reviewed, nothing on the subject",
+        "Cosponsored tab https://malegislature.gov/Legislators/Profile/TMS2/Cosponsored: not reviewed (tab content did not load)",
+        "campaign site: not reviewed: https://www.toddsmola.com (domain does not resolve)",
+        "news search on name plus subject words: not reviewed (shared web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:35.979Z",
+      "by": "source-collector"
+    }
+  ]
+}

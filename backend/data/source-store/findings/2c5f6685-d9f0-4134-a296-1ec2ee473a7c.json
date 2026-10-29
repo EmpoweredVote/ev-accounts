@@ -1,0 +1,53 @@
+{
+  "politician_id": "2c5f6685-d9f0-4134-a296-1ec2ee473a7c",
+  "findings": [
+    {
+      "id": "673107aa84e859d4a987d9b236933239e8306c2d05cc11033035973d219a706e",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB1170",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1170-2024",
+      "act": "sponsor",
+      "note": "Wachsmann is the patron of HB 1170, Elections; conduct of election; provisional voting procedures; type of identification to be noted. It would require election officers to note on the provisional-ballot envelope the specific type of identification the voter showed, instead of only whether ID was shown. History: subcommittee failed to recommend reporting 3-Y 5-N on 2024-01-22; left in Privileges and Elections 2024-02-13.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (sworn statement, provisional ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:23:48.141Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (sworn statement, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page fetched, nothing on the subject",
+        "VPAP legislator page (blocked or no subject content)",
+        "Virginia LIS legacy bill pages (sessions through 2024) and bill-tracker pages for 2026 voter ID bills HB 1131 and SB 544 (names not among recorded votes)",
+        "web searches on name plus voter ID, photo ID, citizenship, election integrity: nothing own-words found",
+        "official site and campaign site: not reviewed (not reached within allowance)",
+        "blocked: https://legilist.com (Cloudflare), https://www.vpap.org/bills/85470 (403), https://www.wavy.com SAVE America Act story (403), https://lis.virginia.gov (script-only page, 2025-26 bills not readable)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:23:48.141Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

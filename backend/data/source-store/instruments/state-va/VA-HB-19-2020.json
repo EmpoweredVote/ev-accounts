@@ -161,7 +161,8 @@
         },
         {
           "name": "Jones",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "eef42ac4-5573-47c7-8b41-f2f1e0769aec"
         },
         {
           "name": "Keam",
@@ -389,7 +390,8 @@
         },
         {
           "name": "Hodges",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "95cdc29b-18d1-45e1-84c3-ba601f5bec40"
         },
         {
           "name": "Kilgore",
@@ -472,7 +474,8 @@
         },
         {
           "name": "Ware",
-          "vote": "nay"
+          "vote": "nay",
+          "politician_id": "af619400-b4b0-48f4-ba87-69a5ddd53301"
         },
         {
           "name": "Webert",
@@ -526,7 +529,8 @@
         },
         {
           "name": "Deeds",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "66fe0d73-731e-45b9-8db4-21e3ce9eb9fd"
         },
         {
           "name": "Ebbin",
@@ -543,7 +547,8 @@
         },
         {
           "name": "Hashmi",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "9e3f9d94-ec56-4d9e-811f-8b4672494362"
         },
         {
           "name": "Howell",
@@ -560,7 +565,8 @@
         },
         {
           "name": "Lucas",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "0efec835-12f2-472b-b7a0-7a166ed937a1"
         },
         {
           "name": "Marsden",

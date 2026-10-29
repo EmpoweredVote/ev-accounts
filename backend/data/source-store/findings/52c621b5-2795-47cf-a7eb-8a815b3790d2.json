@@ -1,0 +1,31 @@
+{
+  "politician_id": "52c621b5-2795-47cf-a7eb-8a815b3790d2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement instead of ID",
+        "proof of identity to vote",
+        "acceptable non-photo ID documents"
+      ],
+      "places": [
+        "On the Record (0 appearances, searched by id and name)",
+        "Ballotpedia https://ballotpedia.org/Cliff_Hayes: confirms current House of Delegates district 91 seat; nothing on the subject",
+        "legislature member page: not reviewed for bills (LIS is script-rendered)",
+        "blocked: https://legiscan.com/VA/rollcall/SB81/id/1364389 (403)",
+        "blocked: https://www.virginiamercury.com/blog-va/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://app.legiplex.com/va/legislature/2025/2025-r/bills/hb2434 (403)",
+        "blocked: https://lis.virginia.gov/bill-details/20251/SB764 (script-rendered, no content); open.pluralpolicy.com and legilist.com bill pages gave no per-member votes",
+        "5 web searches on the name plus voter ID words: no own-words found; third-party trackers list only committee tallies, no per-member vote",
+        "official campaign site: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:22:06.364Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

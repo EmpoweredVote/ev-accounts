@@ -1,0 +1,190 @@
+{
+  "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+  "findings": [
+    {
+      "id": "c447b0fb0d1af67196cf692e72af244166c6fbee5a63f82f8f8c07c682de0d61",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "For like 15 or 20 minutes, I led him through every single aspect of this, and he could not give a good reason why they were doing it. And so that makes it harder to vote.",
+      "note": "Said at the LWV candidate forum (transcript from On the Record). He is describing a state law that ended the use of a student ID as a voter ID, and says he questioned the bill's author about it. Text taken from the extracted transcript file, since the OTR page loads by script.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:39:28.975Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7037ad78c66bd9460fbd5b2c6c59b3fcbf86d0bc9b2acedb5c7ea9d0d51672d",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "One of the saddest things that I see, and it happens every election cycle, if you go to the county election board when they meet about 10 days after the election, they go through their provisional ballots.",
+      "note": "In the same forum, Pierce describes provisional ballots cast by students who were not registered in the county. The passage is the start of that answer; the next sentence continues in the same answer.",
+      "subjects": [
+        "provisional ballot",
+        "voter registration education for students",
+        "provisional ballots for unregistered voters",
+        "voter registration deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:02:11.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "9c3188cc5b20bf841d97dc6162dd1cc84086a986dd75233234bc0eb4a282f86c",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "Yeah, I think it's going to take a lot of education, particularly because, you know, over my objections, the Republicans adopted a law which took away the right of the student ID to be used as a voter ID, even though it met every exact. And I made the author of the bill. For like 15 or 20 minutes, I led him through every single aspect of this, and he could not give a good reason why they were doing it. And so that makes it harder to vote. So you've got to educate people about what you need to do to vote.",
+      "note": "In an On the Record forum transcript (League of Women Voters candidate forum), Pierce says he objected when a law ended the use of student IDs as voter ID, and says that makes voting harder. The transcript is automatic, so some wording is garbled.",
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:02:11.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5676ab5b989772bc60c44062fec43058bd3472cfab96fe53d12c90c7e23d73b7",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "Again, as I was saying broadly, it's just this whole basket of issues surrounding preservation of democracy, and that means fighting off voter suppression and these attempts to kind of militarize the law enforcement.",
+      "note": "In the same forum, Pierce lists fighting voter suppression among his main issues. He does not name a specific law in this passage.",
+      "subjects": [
+        "voter suppression",
+        "election law bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:02:11.511Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69e3527c8228594b4019cf358d06e42561f19ebb14c514dfdc509ff1f6c38862",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/news/articles/house-republicans-vote-to-ban-use-of-college-student-ids-at-polling-places",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "\"If we've got the proof of residency covered over here, why do we need to do a currently acceptable form of ID to prove I am who I say I am?\"",
+      "note": "WFYI quoted Pierce in the House debate on SB 10, the bill to bar public-college student IDs as voter ID at polling places. The article is dated 2025-04-01 and says the bill was approved by the House that Tuesday.",
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:02:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "provisional ballot for voters not registered",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Matt_Pierce_(Indiana)) says he is on the Nov 3, 2026 general-election ballot for Indiana House District 61 after winning the May 5, 2026 primary",
+        "On the Record (1 meeting: LWV Candidate Forum, 2026-03-23, read from extracted transcript; the OTR web page itself loads by script and could not be read by fetch)",
+        "Ballotpedia (https://ballotpedia.org/Matt_Pierce_(Indiana)): nothing on the subject",
+        "not reviewed: https://iga.in.gov (legislator and bill pages returned no readable content by fetch)",
+        "not reviewed: official site and campaign site (not fetched; web search budget was exhausted so no URLs were found)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:39:28.975Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "student ID as voter ID at the polls",
+        "voter ID at the polls",
+        "provisional ballots for unregistered voters",
+        "voter suppression",
+        "election law bills in general"
+      ],
+      "places": [
+        "On the Record (1 meeting, 2026-03-23 League of Women Voters forum)",
+        "IPM News primary report https://www.ipm.org/news/2026-05-05/matt-pierce-wins-primary-for-state-house-in-district-61 (confirms he won the nomination and no other party filed)",
+        "IPM candidate guide https://www.ipm.org/news/2026-04-29/meet-the-candidates-for-state-house-district-61 (nothing on voter ID)",
+        "WFYI report on the 2025 House debate on SB 10",
+        "news search on his name and student ID voting (1 search); Indiana roll calls not searched, as already on file",
+        "blocked: the On the Record web page itself only showed Loading meeting when fetched; passage copied from the extract file of the same meeting",
+        "not searched further: campaign site, Ballotpedia (not fetched)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T20:02:11.511Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

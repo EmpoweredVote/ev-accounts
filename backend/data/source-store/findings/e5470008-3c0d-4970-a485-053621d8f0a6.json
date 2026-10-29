@@ -1,0 +1,53 @@
+{
+  "politician_id": "e5470008-3c0d-4970-a485-053621d8f0a6",
+  "findings": [
+    {
+      "id": "2d09f4f9c076ddd32273379b395ccd5aacfb51ddee9c14d617d7af060a147373",
+      "kind": "record",
+      "url": "http://web.archive.org/web/20250311010119/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Min Senate Third Reading By BERMAN (Assembly Floor, passed 57 to 16)",
+      "note": "Voted aye (listed as Weber, then an Assembly member) on the Assembly floor for SB 1174, which bars cities and charter cities from requiring ID to vote or submit a ballot at a polling place or vote center. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "voter ID at the polls",
+        "local government voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:08:14.494Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local bans on voter ID rules",
+        "proof of citizenship to register",
+        "ID number to register to vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site sd39.senate.ca.gov (site search for voter ID, citizenship, election integrity: nothing on the subject)",
+        "Ballotpedia page (listed as Akilah Weber) confirms a sitting Senate District 39 member, term ending 2028, who held Assembly District 79 from 2021 to 2024; the 2024 Assembly roll call lists her as Weber",
+        "California leginfo vote pages for SB 1174, AB 1116 and AB 25 read through the Internet Archive copy (leginfo is behind a bot check)",
+        "AB 25 (2025): only Assembly committee votes, so no vote by her; AB 1116 (2025): archived vote page shows only Assembly votes, not including her",
+        "one web search of Ballotpedia for her office and term; own-words search (interviews, forums, campaign pages): nothing on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:08:14.494Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

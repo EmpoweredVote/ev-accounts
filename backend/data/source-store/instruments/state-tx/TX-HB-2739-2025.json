@@ -1,0 +1,208 @@
+{
+  "id": "TX-HB-2739-2025",
+  "scope": "state:tx",
+  "title": "HB 2739 (89R): Relating to requiring the address on certain identification documents presented by a voter match the address of the voter on the list of registered voters.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2739",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB02739I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 2 (amends Election Code 63.0101(a))\n(quote) (a) The following documentation is an acceptable form of photo identification under this chapter: (1) a driver's license, election identification certificate, or personal identification card issued to the person by the Department of Public Safety that includes an address matching the address of the person on the list of registered voters and that has not expired or that expired no earlier than four years before the date of presentation; (2) a United States military identification card that contains the person's photograph that has not expired or that expired no earlier than four years before the date of presentation; (3) a United States citizenship certificate issued to the person that contains the person's photograph; (4) a United States passport book or card issued to the person that has not expired or that expired no earlier than four years before the date of presentation; or (5) a license to carry a handgun issued to the person by the Department of Public Safety that includes an address matching the address of the person on the list of registered voters and that has not expired or that expired no earlier than four years before the date of presentation.\n(section) SECTION 1 (adds 63.001(c-2))\n(quote) (c-2) Notwithstanding any other provision of this chapter, an election officer may only accept documentation listed in Sections 63.0101(a)(1) and (5) presented to meet the requirements of Subsection (b) if the address on the documentation matches the address on the list of registered voters.\n(section) SECTION 1 (63.001(c-1))\n(quote) (c-1) Except as provided by Subsection (c-2), an [An] election officer may not refuse to accept documentation presented to meet the requirements of Subsection (b) solely because the address on the documentation does not match the address on the list of registered voters.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated (a United States citizenship certificate with photograph appears only in the list of acceptable photo identification in Section 2)\n(other) Sec 1: address-match rule for election officers accepting identification (63.001(c-1), (c-2)).\n(other) Sec 2: list of acceptable photo identification (63.0101(a)).\n(other) Sec 3: effective date September 1, 2025.",
+  "sponsors": [
+    {
+      "name": "Isaac",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929"
+    },
+    {
+      "name": "Swanson",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "7c2c52a2-4047-4090-bc88-e543aaaeba50"
+    },
+    {
+      "name": "Toth",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "579a5a6f-c12e-4f01-af74-ec30f6bfbafe"
+    },
+    {
+      "name": "Lopez, Janie",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "df2b0dba-63d7-4f18-b713-7cc0594ec61d"
+    },
+    {
+      "name": "Alders",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "687ba2dd-c179-4ac6-abb2-3a5ac7ed43bb"
+    },
+    {
+      "name": "Bumgarner",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "586b4b4d-26f1-449c-90ba-55d4aec48066"
+    },
+    {
+      "name": "Cain",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "9d6eae75-9400-46bf-a2f1-34de55db3d49"
+    },
+    {
+      "name": "Cook",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "5249613b-40df-4458-830d-cdbb121961dc"
+    },
+    {
+      "name": "Cunningham",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "032bb339-c63b-4510-93e5-25e72c4f9632"
+    },
+    {
+      "name": "Dorazio",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "207cb8e4-14f2-49e1-8786-9533dc9b9d31"
+    },
+    {
+      "name": "Gerdes",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "002f4446-75be-4860-935e-3cb65ce296fb"
+    },
+    {
+      "name": "Harris",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "c6dcdb47-9bbd-4c9b-9169-77e6082f17b1"
+    },
+    {
+      "name": "Harris Davila",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "9c6b89e7-f71a-4bf7-9a32-d611afe28cb8"
+    },
+    {
+      "name": "Hayes",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "099c7880-e909-4874-a257-cc8ca54ca7bd"
+    },
+    {
+      "name": "Hickland",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "82968d14-f39b-401d-821c-89825a9811ac"
+    },
+    {
+      "name": "Hopper",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9"
+    },
+    {
+      "name": "Kerwin",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "d9dbb8f1-c49a-4a95-8a53-8aaf34809ffe"
+    },
+    {
+      "name": "Little",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "6c1e1764-f093-44e2-9ec0-90b61457fd45"
+    },
+    {
+      "name": "Lozano",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "e0a0c582-de13-4999-88fd-859a4dfba6c2"
+    },
+    {
+      "name": "Metcalf",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "9ce81b97-6e02-4bdb-b9dc-e2592d4ce87c"
+    },
+    {
+      "name": "Money",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "03bd0a2b-4693-477d-90e9-4bc7c10f5978"
+    },
+    {
+      "name": "Oliverson",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "8d339a48-dabd-424c-ac3c-e1e128b68bf8"
+    },
+    {
+      "name": "Richardson",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "f7ff0e3b-1d14-4563-8119-7919a5a9cd14"
+    },
+    {
+      "name": "Schatzline",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Shofner",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "e1b7592e-6f9a-411a-96c3-19f1ccc23435"
+    },
+    {
+      "name": "Slawson",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "ac161830-6b8a-479d-8ef4-c0eb3d93df83"
+    },
+    {
+      "name": "Tepper",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "21d1e18c-f192-4a1a-9dc0-36bd873a3daa"
+    },
+    {
+      "name": "Tinderholt",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "054a67f5-74b5-469b-bba2-0722834bac12"
+    },
+    {
+      "name": "Vasut",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "2f3450e1-7b1c-4ca0-ae62-581bbc2cf606"
+    },
+    {
+      "name": "Virdell",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "8925add1-8c61-4d2d-92e8-4314df644187"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

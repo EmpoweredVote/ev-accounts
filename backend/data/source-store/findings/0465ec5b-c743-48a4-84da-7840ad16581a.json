@@ -1,0 +1,68 @@
+{
+  "politician_id": "0465ec5b-c743-48a4-84da-7840ad16581a",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Bell'), linked to Eric W. Bell II (district 75) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.416Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "status confirmed: Eric Bell II, Georgia House District 75 incumbent, advanced from the 2026-05-19 primary, on the 2026-11-03 general ballot (https://ballotpedia.org/Eric_Bell_II_(Georgia))",
+        "On the Record (0 meetings found for this person)",
+        "candidate guide branch.vote 2026 page: its Voting & Elections entry says his website had no information on the issue",
+        "House press-release site: his representative page, pages 1-3, nothing on the subject",
+        "Ballotpedia",
+        "bill trackers and two web searches on name plus voting, voter ID, election law: nothing on the subject",
+        "blocked: https://bluevoterguide.org/GA/candidate_Eric_Bell_II/400774 (page returned no content)",
+        "not reviewed: campaign site (the guessed addresses ericbellga.com and bellforus.com gave no usable page); he took office in 2023 so no SB 202 vote",
+        "blocked: https://www.legis.ga.gov (sponsorship pages load by script, no content for the fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:41:13.823Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.416Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

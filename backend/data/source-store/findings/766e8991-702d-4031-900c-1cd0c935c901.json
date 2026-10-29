@@ -1,0 +1,291 @@
+{
+  "politician_id": "766e8991-702d-4031-900c-1cd0c935c901",
+  "findings": [
+    {
+      "id": "63307843b64c673934ff8619b9bceee55443ba9c012d6b01ef2228f53c2df93a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31093/Gaydos-Supports-Constitutional-Amendments,?SiteID=1",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "passage": "\"It is imperative that power must be restored back to the people and enable them to make the decision on issues such as how elections should be conducted in Pennsylvania and how their tax dollars should be spent,\" Gaydos said.",
+      "note": "House caucus press release on her vote for Senate Bill 106, whose first proposed constitutional amendment would require all voters to show valid ID each time they vote, by mail or in person. The release text describing the measure is the caucus's; the quoted sentence is hers.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:44.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d3e761fd588e54865b15dc8c2750d021645f7c639d5ef1a1c29133a645f005b",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31093/Gaydos-Supports-Constitutional-Amendments,?SiteID=1",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "passage": "Senate Bill 106 simply gives voters a chance to vote on additional issues. I trust our voters who are perfectly able to decide on these important topics.",
+      "note": "Closing quote in the same release, framing the ID amendment and others as questions for voters to decide.",
+      "subjects": [
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:44.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "687e78046d3ae6e7b9567cae86ed7ff276c5343f213d474e7cd687158a58b0d8",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/19975/Gaydos-Supports-Voting-Rights-Protection-Bill-?SiteID=1",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "We can all agree that the election process must be held to the highest integrity. And that no legal voter should ever be denied the opportunity to cast a legal ballot.",
+      "note": "Her quote on House Bill 1300 (Voting Rights Protection Act), which the release says would expand the voter ID law, with scannable voter registration cards to be used when voting in person, plus audits, signature checks on mail ballots and better voter lists.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "mail-ballot signature checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:44.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c743361a838792c40cf9b8c87dd4d78feffa00d9d3707b6a2dd6855142bd755a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/18421/Gaydos-Pledges-to-Support-Free-and-Fair-Elections---Lawmaker-opposes-questionable-House-election-integrity-legislation?SiteID=1",
+      "date": "2020-10-09",
+      "date_precision": "day",
+      "passage": "While I believe that the use of absentee ballots and the paper ballot option for people who are unable to get to the polls is perfectly safe, fewer steps in the process means fewer errors.  I am a strong advocate for voting at the polls on Election Day, if able, as the best, most efficient way to move toward greater election integrity.",
+      "note": "Statement on House Resolution 1032 (select committee on election integrity), which she said she would vote against as written. Speaks to absentee ballots and voting in person.",
+      "subjects": [
+        "election integrity laws in general",
+        "absentee and mail ballots versus voting in person"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:44.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "371946b97b4b80d4bc440e7ebd375b784e3056a65d5ef407389288d9353bb93a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/18550/Gaydos-Lawmakers-Call-for-Legislative-Led-Election-Audit?SiteID=1",
+      "date": "2020-11-12",
+      "date_precision": "day",
+      "passage": "The establishment of a bipartisan investigatory committee with subpoena power will enable members to gather the facts and work toward making sure our election process is sound and secure.",
+      "note": "Statement joining colleagues who asked to delay certification of the 2020 results until an audit was done; mentions constituent concerns about the mail-in ballot system.",
+      "subjects": [
+        "election audits and election integrity",
+        "mail-ballot concerns"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:44.465Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('GAYDOS'), linked to Valerie Gaydos (district 44) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Gaydos'), linked to Valerie Gaydos (district 44) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Gaydos'), linked to Valerie Gaydos (district 44) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('GAYDOS') on the official bill page; linked to Valerie S. Gaydos via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('GAYDOS'), linked to Valerie S. Gaydos (district 44) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election audits and election integrity",
+        "mail ballots versus voting in person"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "the House caucus press-release site (four releases on the subject, 2020 to 2022; fourth-term release of 2025 has nothing on the subject)",
+        "her official site https://www.repgaydos.com (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Valerie_Gaydos (empty page)",
+        "blocked: https://mirror.triblive.com/local/sewickley/gaydos-haas-weigh-in-on-issues-affecting-the-44th-house-district (bot check)",
+        "one news search on her name plus voter ID; one search on the 2026 ballot",
+        "2026 scope confirmed: https://theballotbrief.com/state/pennsylvania/allegheny-county/pennsylvania-house-district-44 shows her as sitting member on the 3 Nov 2026 ballot",
+        "bill pages and floor votes: left to the separate roll-call linking, per the brief"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:04:44.465Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

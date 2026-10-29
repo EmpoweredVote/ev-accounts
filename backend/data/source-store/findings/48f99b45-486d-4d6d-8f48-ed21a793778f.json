@@ -1,0 +1,130 @@
+{
+  "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "f1a30ad6c84f7fa591c1d14349402b7ab1c442569c02b0a97708dd2579bf8d92",
+      "kind": "own-words",
+      "url": "https://indianacitizen.org/election-security-bill-clears-indiana-house-and-heads-to-senate-dismissing-democrats-concerns/",
+      "date": "2024-01-31",
+      "date_precision": "day",
+      "passage": "“People do inadvertently get registered to vote,” Wesco said. “It’s frankly doing them a favor to make sure that they are taken off the voter registration rolls, because when they apply for citizenship, (the registration) can become a problem for them in that process.”",
+      "note": "Quoted by The Indiana Citizen in its report on the House debate on HB 1264 (2024). Date is the article date; the floor remarks were that week. Defends checking registrations against records to find non-citizens on the voter rolls.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:58:32.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78f20f8e912b2cca814174b47d92e1eef591eebc372223aa7976148c8e473933",
+      "kind": "record",
+      "url": "https://indianacitizen.org/election-security-bill-clears-indiana-house-and-heads-to-senate-dismissing-democrats-concerns/",
+      "date": "2024-01-31",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "author",
+      "note": "The Indiana Citizen (a news report, not the official bill page, which did not load) calls him the author of HB 1264. Per that report the bill compares voter registrations to Bureau of Motor Vehicles records and federal jury forms to identify non-citizens, and lets the Secretary of State verify addresses with commercially available data. The report says he said the bill is not anti-immigrant.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T02:58:32.409Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Timothy_Wesco (fetched with curl) says he is an Indiana House of Representatives District 21 member, advanced from the May 5, 2026 primary, and is on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances; nothing on the subject)",
+        "Ballotpedia: no voter ID, citizenship or election-integrity text on the page; nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_timothy_wesco_1 (page needs JavaScript; bill sponsorships not readable)",
+        "not reviewed: Indiana General Assembly bill search for sponsorships on the subject (no readable page reached)",
+        "blocked: https://indianahouserepublicans.com/members/wesco/ (404; member page URL not found, house caucus search page gave no Wesco results)",
+        "not reviewed: news search on his name plus the subject words (the session web search budget was used up)",
+        "not reviewed: campaign site, questionnaires, debate or forum answers (not located without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:31:28.223Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "absentee ballot ID",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Timothy_Wesco (confirms Indiana House District 21 member, on the 2026-11-03 general ballot)",
+        "https://indianacitizen.org/election-security-bill-clears-indiana-house-and-heads-to-senate-dismissing-democrats-concerns/ (his quoted words on HB 1264)",
+        "blocked: https://indianacapitalchronicle.com/2024/01/18/election-security-bill-with-citizenship-credit-agency-data-provisions-moves-to-house-floor/ (403 to fetch tool and to curl)",
+        "blocked: https://www.ibj.com/articles/indiana-legislation-would-add-extra-verification-steps-to-prove-voters-are-eligible (bot check page)",
+        "blocked: https://iga.in.gov/pdf-documents/123/2024/house/bills/HB1264/HB1264.05.ENRH.pdf (official bill text did not load)",
+        "two news searches on name and bill numbers (HB 1264 of 2024 and HEA 1680 of 2025); the author of HEA 1680 was not found",
+        "not reviewed: iga.in.gov and LegiScan for votes (votes already on file per brief)",
+        "not reviewed: official House caucus member page and campaign site"
+      ],
+      "found": 2,
+      "at": "2026-10-27T02:58:32.409Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

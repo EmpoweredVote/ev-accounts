@@ -1,0 +1,137 @@
+{
+  "politician_id": "606e50d6-7c2d-424e-86f3-e7da3c2d37f7",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Ritchie_Torres (fetched with curl; Ballotpedia says he is the incumbent for NY-15, advanced from the 23 June 2026 primary, and is on the 3 November 2026 general ballot)",
+        "On the Record (0 appearances; script returned OTR_SOURCES=0)",
+        "Ballotpedia page text: nothing on the subject",
+        "blocked: https://torres.house.gov/media/press-releases (HTTP 410 via WebFetch; curl returned a redirect to a 404 page)",
+        "blocked: https://torres.house.gov/search?search_api_fulltext=voter%20ID (Access Denied)",
+        "blocked: https://www.congress.gov/member/ritchie-torres/T000486 (HTTP 403 via WebFetch and curl)",
+        "blocked: https://www.ontheissues.org/House/Ritchie_Torres.htm (HTTP 404; lead-only source anyway)",
+        "blocked: https://ritchietorres.com (campaign site; no response)",
+        "not reviewed: news search on name plus subject words (the 200-search session budget was used up, so no search ran)",
+        "not reviewed: Torres own-words statements on the SAVE Act or voter ID (no reachable source)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:08:36.602Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Ritchie_Torres shows him as the sitting NY-15 member, on the 2026 general-election ballot; his official site https://ritchietorres.house.gov names him in that seat",
+        "On the Record (0 meetings)",
+        "official site https://ritchietorres.house.gov: home page and press page fetched; press list showed no press releases and its site search returned nothing on the subject",
+        "Congressional Record index for him, 119th Congress 1st session (congress.gov): nothing on the subject",
+        "Vote Smart political courage test page: nothing on the subject",
+        "Ballotpedia: no statement on the subject",
+        "votes already on file were not re-collected",
+        "four news searches on name plus subject words; the SAVE Act press releases that came up are from Norma Torres (a different member) and were not used"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:13:51.779Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

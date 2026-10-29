@@ -1,0 +1,428 @@
+{
+  "politician_id": "8a85a630-0c68-498e-8e8f-631451fb59b1",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c8a88e6c7987a7232e06c9d99b7f7e001f22f1600c583cfc0bd0582607741831",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "passage": "“Our democratic system of representative government depends on elections that are fair, honest and accurate,” said Victory, R-Hudsonville. “It is our responsibility to restore the public’s confidence in our elections by protecting everyone’s vote, making it harder to commit fraud and improving the system to ensure indisputable integrity.",
+      "note": "Statement in his name on a Senate package of election bills (SB 273-311, mostly about absentee ballot processes, audits and records), not on ID itself; quoted from the Senate caucus release.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61c63def973cdaa8fead112c92368810509ba053d6ded598d0973bea68d553de",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "passage": "We must make sure the good people of Michigan have their constitutional right to vote protected and have complete trust in the outcome.",
+      "note": "Same release; general statement on protecting the vote and trust in results.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9a33aa4d9b058429b82ef88a3a87e78beb1e378ca5eb18c6e98a3127418ad01",
+      "kind": "record",
+      "url": "https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-295-2021",
+      "act": "sponsor",
+      "note": "SB 295, per the release, would require precinct workers to be trained in best practices for a balanced count, including checks on tabulators. Not an ID bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a1fcfc7b462a7b263a0f142858d9ddd1efc8b43d4586a768990c12f03ad193f",
+      "kind": "record",
+      "url": "https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-306-2021",
+      "act": "sponsor",
+      "note": "SB 306, per the release, would require the secretary of state to report on clerks not current with training and post it online. Not an ID bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ff2057abc5bddfbe0e8f9f0fffe0b2cbc689f4b3302c86f852ba466d8096fdd",
+      "kind": "own-words",
+      "url": "https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "There is strong bipartisan support among Michigan voters to have people verify their identity with an ID when voting. We must remain vigilant to protect the integrity of our elections, and this legislation will help to fix vulnerabilities in the system while also increasing access to IDs.",
+      "note": "From his Senate district newsletter (page shows no date) about Senate passage of bills to strengthen voting ID rules and ease getting a free state ID; the newsletter also describes SB 303 and a provisional-ballot route for voters without ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "what happens to a voter with no ID",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Roger Victory (District 88)') on the official bill page; linked to Roger Victory via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1325085004748edd26436ab80fe60535a9608eb57fe3da1e6ff244da20b1b2df",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Victory'), linked to Roger Victory (district 88) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd95ddee2061d998986ef2d99ef24b31eafcfa281a17f58b157c88e6d3443a8c",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0285",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-285-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 285 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Roger Victory (District 30)') on the official bill page; linked to Roger Victory via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Victory'), linked to Roger Victory (district 30) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Victory'), linked to Roger Victory (district 31) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Victory'), linked to Roger Victory (district 31) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:47:07.185Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:52:01.897Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:59:56.313Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:05:26.523Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:13:34.864Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Roger_Victory (page came back empty)",
+        "scope: https://whtc.com/?p=913950 (2026-03-30) says he is term-limited and is seeking a seat on the Michigan State University Board of Trustees; not a Senate candidate; whether he is on the general ballot for trustee was not confirmed; https://www.ballotready.org/people/roger-victory lists no 2026 candidacy",
+        "official Senate caucus site release: https://www.misenategop.com/victory-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+        "official Senate caucus newsletter: https://newsletters.misenategop.com/w/fnLt3DzRqmrz2QWGWBGrrA (no date shown on page)",
+        "https://www.misenategop.com/category/victory/ returned no release list",
+        "news search on name plus voter ID: no further own words found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:18:25.355Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

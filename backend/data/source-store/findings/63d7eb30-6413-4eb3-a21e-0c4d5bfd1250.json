@@ -1,0 +1,146 @@
+{
+  "politician_id": "63d7eb30-6413-4eb3-a21e-0c4d5bfd1250",
+  "findings": [
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('SAVAL'), linked to Nikil Saval (district 1) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Saval'), linked to Nikil Saval (district 1) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Saval'), linked to Nikil Saval (district 1) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.714Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Saval'), linked to Nikil Saval (district 1) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia (sitting state senator, 1st District, since 2021-01-05)",
+        "campaign site search for voter ID and for election (https://nikilsaval.com/?s=voter+ID): nothing on the subject beyond two voter-turnout project pages",
+        "two web searches on name plus voter ID, voting rights and mail ballots: nothing on the subject (one 2026 report on an ICE-near-polling-places bill, not about ID)",
+        "blocked: https://ballotpedia.org/Nikil_Saval (page returned empty through the fetch tool; not retried)",
+        "not reviewed: Senate caucus personal site (no working address found)",
+        "not reviewed: legislature bill pages (sponsorships linked separately)",
+        "not reviewed: 2026 ballot status (not confirmed; term runs past 2026 per his 2024 re-election)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:07:13.545Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.714Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

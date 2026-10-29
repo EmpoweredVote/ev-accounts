@@ -1,0 +1,342 @@
+{
+  "politician_id": "5e1f33dd-f8d9-494b-a3b4-ba9744e345e7",
+  "findings": [
+    {
+      "id": "5ef3700971acdec922cf3a2165e1cd9d1b785e37562688349c9d6d5cb224d15d",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2022/https://www.senatorstefano.com/2021/06/23/senate-passes-plan-for-voter-verification-constitutional-amendment/",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "passage": "“Voters have voiced their concerns loud and clear, and yet, the governor repeatedly said that he will veto legislation to increase the validity of the Commonwealth’s election process. Unfortunately, he still seems to be ruling without consideration of the majority of state residents, much like how he handled the pandemic for a year,” Sen. Stefano said. “It’s disappointing, but we can’t let that stop us from being responsive to Pennsylvanians’ needs.”",
+      "note": "Quote in his office's press release on Senate passage of SB 735, a proposed constitutional amendment asking voters whether ID should be required each time a ballot is cast. He criticises the governor's stated veto of election-process legislation. The release says he supported the measure. The original page is gone (404), so the archived copy is cited.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "constitutional amendment on voter verification",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59f35d2e754c21a547c841b4e62b9c7d488ad24d3f8cdea537b6862aeb640ca0",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2022/https://www.senatorstefano.com/2021/06/23/senate-passes-plan-for-voter-verification-constitutional-amendment/",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "passage": "The Senate today approved a plan to allow voters to decide if the Pennsylvania Constitution should be amended to require identification each time a voter casts a ballot, according to Sen. Pat Stefano (R-32), who supported the measure.",
+      "note": "Opening line of the same press release from his office. It is the office's description, not a direct quote of him, and says he supported SB 735.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on voter verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c8bf8953580b096d061dad2c4ccc04b8e91fa2548b5766f3788464f5c74f431",
+      "kind": "own-words",
+      "url": "https://www.wesanews.org/wesa-voter-guide/2026-04-20/pa-state-senate-32-stefano-cochran",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "passage": "The COVID-19 pandemic changed the way we handle voting in Pennsylvania, and our social media platforms amplify any issues that arise. Clear communication and minor fixes to the election code will alleviate most of the concerns.",
+      "note": "His written answer in the WESA candidate survey, to a question about discontent with the two major political parties. He mentions voting rules only briefly. No mention of ID or citizenship.",
+      "subjects": [
+        "election code in general",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('STEFANO'), linked to Patrick J. Stefano (district 32) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Stefano'), linked to Patrick J. Stefano (district 32) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('STEFANO') on the official bill page; linked to Patrick J. Stefano via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43b2a92555fb2bda51da147426ba813860daa195cb428422b39760c676a796d3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as co sponsor ('STEFANO') on the official bill page; linked to Patrick J. Stefano via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Stefano'), linked to Patrick J. Stefano (district 32) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('STEFANO') on the official bill page; linked to Patrick J. Stefano via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Stefano'), linked to Patrick J. Stefano (district 32) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('STEFANO') on the official bill page; linked to Patrick J. Stefano via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID every time a ballot is cast, including by mail",
+        "constitutional amendment on voter verification",
+        "election code / election integrity in general",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: in scope, won the 2026-05-19 primary with about 74 percent (https://en.wikipedia.org/wiki/2026_Pennsylvania_Senate_election); on the November 2026 ballot per a voter-guide site that was not fetched",
+        "On the Record (0 appearances for this person)",
+        "official Senate site search for voter ID, election, ID, ballot, voter: only routine e-newsletter reminders (registration deadline, Election Day hours, REAL ID), nothing on ID rules or citizenship",
+        "official Senate site 2021 press release (original page now returns 404; read the Wayback Machine copy of it)",
+        "WESA 2026 voter guide candidate survey",
+        "Herald-Standard 2026-05-09 primary article: nothing on the subject from him",
+        "news search on name plus voter ID: no further direct quotes found (tnonline, sungazette, butlereagle pages fetched, none quote him)",
+        "blocked: https://ballotpedia.org/Patrick_Stefano (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site page on the subject found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:06:10.891Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID every time a ballot is cast, including by mail",
+        "constitutional amendment on voter verification",
+        "election code / election integrity in general",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "scope check: in scope, won the 2026-05-19 primary with about 74 percent (https://en.wikipedia.org/wiki/2026_Pennsylvania_Senate_election); on the November 2026 ballot per a voter-guide site that was not fetched",
+        "On the Record (0 appearances for this person)",
+        "official Senate site search for voter ID, election, ID, ballot, voter: only routine e-newsletter reminders (registration deadline, Election Day hours, REAL ID), nothing on ID rules or citizenship",
+        "official Senate site 2021 press release (original page now returns 404; read the Wayback Machine copy of it)",
+        "WESA 2026 voter guide candidate survey",
+        "Herald-Standard 2026-05-09 primary article: nothing on the subject from him",
+        "news search on name plus voter ID: no further direct quotes found (tnonline, sungazette, butlereagle pages fetched, none quote him)",
+        "blocked: https://ballotpedia.org/Patrick_Stefano (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site page on the subject found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:31:40.409Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.860Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

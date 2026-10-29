@@ -1,0 +1,273 @@
+{
+  "politician_id": "f138d19b-55e1-4f3b-8a44-2802e546435a",
+  "findings": [
+    {
+      "id": "3f4adf14a66813977af26e1cbafed844a4fb972fb3256b46a179c350f1520891",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: nay (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb2fa070467c980ee818935e35c8b563bf90e5dc694d3f0b6294a1d39f20bf88",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/866",
+      "date": "2013-07-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "Senate second-reading vote on HB 589, VIVA/Election Reform. Robinson is listed among the Noes (14 Noes, 32 Ayes).",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:14:40.201Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5889029b78263f92a64daf37908f4951fabcf4d41320d01d85204c4899ea25a4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/882",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "nay",
+      "motion": "Third Reading",
+      "note": "Senate third-reading vote on HB 589, VIVA/Election Reform. Robinson is listed among the Noes (14 Noes, 33 Ayes).",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:14:40.201Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "90b6448fdb0b6d5e24cf8e1f34fee4c6e12562bca25b1e6d34666240517b1327",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/776",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Amendment 1, motion to table, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #776. Motion to table passed 32-15.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d441b9ebdea5b4e4d7da2ad0bdf80cf65d2b565bf804bee25e1b5bd76ef58b5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/777",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Amendment 2, motion to table, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #777. Motion to table passed 33-14.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "147e810f058657741a542b641417dff9974e9e9111920d4c31ea18e75600c8bd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/778",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Amendment 3, motion to table, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #778. Motion to table passed 32-15.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04f8f1e68df3444fa5b252a30e888313e635dd0326beed8b4e79e32ff0310242",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/779",
+      "date": "2018-06-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2018",
+      "act": "nay",
+      "motion": "Second reading, HB 1092 photo ID constitutional amendment",
+      "note": "Roll call #779. Passed 33-14.",
+      "subjects": [
+        "photo ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1d34920d9f08d01e444472074fa76240dca7e8d9d43b6cab283b4c65fb82851",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S226",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "NC-S-226-2023",
+      "act": "sponsor",
+      "motion": "Primary sponsor (with two others) of SB 226, Freedom to Vote",
+      "note": "Omnibus voting bill: extra State Board of Elections funds, online registration, longer early voting hours, list-maintenance changes. Its text carries over the existing in-person photo ID reference (G.S. 163-166.16) in the poll check-in section. Stayed in committee after first reading 2023-03-08.",
+      "subjects": [
+        "voting access bill",
+        "voter-roll list maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:20:07.766Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election reform omnibus",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia https://ballotpedia.org/Gladys_Robinson (confirms NC Senate District 28, on the 2026 general-election ballot; nothing on the subject)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/824 (HTTP 500)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/1 (HTTP 500)",
+        "ncleg.gov bill page and Senate roll-call transcripts for 2013 HB 589 (fetched)",
+        "not reviewed: official and campaign site (no URL reachable; ncsenate.gov does not resolve)",
+        "not reviewed: https://www.facebook.com/gladysarobinson.nc",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ncleg.gov sponsorship lists for other NC voter ID bills beyond HB 589"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:14:40.201Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "photo ID constitutional amendment",
+        "election integrity laws",
+        "voting access and list maintenance"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "ncleg.gov member profile (Senate District 28, Guilford, 8 terms)",
+        "ncleg.gov roll calls for HB 1092 (2018 photo ID amendment); she was excused for the Senate third-reading vote, which is not a position, so it is not saved",
+        "ncleg.gov bill pages and texts for SB 226, SB 313, SB 748 (SB 748 concerns a special election when a legislator changes affiliation, not on the subject; SB 313 text covers election protections, not ID rules)",
+        "her legislative-session page https://gladysarobinson.com/20232024-legislative-session (bill list only, no statements)",
+        "Branch voter guide 2026 page (2026 Senate District 28 candidate; no voting-and-elections statement on her site)",
+        "blocked: https://ballotpedia.org/Gladys_Robinson (bot-check, not retrieved)",
+        "web search on name plus voter ID (no own-words statement found)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T22:20:07.766Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

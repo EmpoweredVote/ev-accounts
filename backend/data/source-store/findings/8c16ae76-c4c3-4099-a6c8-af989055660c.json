@@ -1,0 +1,57 @@
+{
+  "politician_id": "8c16ae76-c4c3-4099-a6c8-af989055660c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Phil_Ehr names him as a candidate for U.S. House Florida District 28, on the Nov 3, 2026 general-election ballot; the Aug 18, 2026 primary was canceled and he advanced",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl; campaign-themes section lists 2024 website priorities, nothing on the subject; 2026 survey section empty)",
+        "blocked: https://ehrforcongress.us/ (campaign site, TLS connection fails from curl and WebFetch)",
+        "blocked: https://ehrforcongress.us/meet-phil/ (same failure)",
+        "blocked: https://www.congress.gov/search (403); no sponsorship check possible, he holds no seat",
+        "blocked: https://en.wikipedia.org/wiki/Phil_Ehr (404)",
+        "not reviewed: https://www.youtube.com/@ehrforcongress and https://x.com/PhilEhr (not fetched)",
+        "not searched: news search for name plus subject words (the shared web search budget was exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:54:56.779Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Phil_Ehr (confirms he is on the 2026 general-election ballot for Florida District 28; he has not filled in its survey)",
+        "campaign site copy saved by the web archive (Meet Phil page and Voter Information page; the voter page covers mail-ballot renewal dates and sites, nothing on ID or citizenship)",
+        "blocked: https://ehrforcongress.us/ (live site would not connect)",
+        "blocked: https://web.archive.org/web/2026/https://ehrforcongress.us/priorities/ (404, no copy)",
+        "2 web searches on name plus subject words: nothing on the subject",
+        "not reviewed: https://www.local10.com/this-week-in-south-florida/2026/09/13/this-week-in-south-florida-phil-ehr/ (TV interview, not opened)",
+        "not reviewed: https://floridianpress.com/?p=71690 (news item, not opened)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:31:07.049Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

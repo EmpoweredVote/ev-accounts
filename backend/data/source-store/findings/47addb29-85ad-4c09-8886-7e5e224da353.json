@@ -1,0 +1,244 @@
+{
+  "politician_id": "47addb29-85ad-4c09-8886-7e5e224da353",
+  "findings": [
+    {
+      "id": "fea4783aca12cefcf4d5c5d9eaa19629ca71650389ac3f092051b8038fc2e181",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/02/wimberger/media/532f23uh/1825-wimberger-votes-to-protect-election-security.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "By passing Senate Joint Resolution 2 today, the Senate did its part to add a constitutional protection to the integrity of Wisconsin’s elections. Voters should be able to take comfort in knowing that only eligible voters are participating in Wisconsin’s elections.",
+      "note": "Statement in his name after he voted for SJR 2, which put a voter ID requirement in the state constitution on the spring ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:52.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d8dba8ec8d676f4a1aa071125329df0b6dde063fb1c84c727a4d1d85b7c35380",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/02/wimberger/media/532f23uh/1825-wimberger-votes-to-protect-election-security.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "For something as critical as protecting the security of our elections, asking someone to verify they are who they are before casting a vote should be a common-sense bipartisan issue.",
+      "note": "Same release. He compares showing ID to vote with ID needs in daily life.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:52.439Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('WIMBERGER'), linked to Eric Wimberger (district 30) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Wimberger') on the official bill page; linked to Eric Wimberger via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('WIMBERGER'), linked to Eric Wimberger (district 30) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('WIMBERGER'), linked to Eric Wimberger (district 30) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097e5be441c78312236748cdf9f0e45bc27901642be1fe8690bad61c835c3d34",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('WIMBERGER'), linked to Eric Wimberger (district 2) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Wimberger') on the official bill page; linked to Eric Wimberger via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('WIMBERGER'), linked to Eric Wimberger (district 30) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.779Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: sitting state senator, 2nd Senate District, named in his Jan. 8, 2025 release https://legis.wisconsin.gov/senate/02/wimberger/media/532f23uh/1825-wimberger-votes-to-protect-election-security.pdf",
+        "official senate press release list https://legis.wisconsin.gov/senate/02/wimberger/news-updates/press-releases : titles seen include election transparency amendment and an out-of-state funding release; those texts were not opened, not reviewed: the two election releases on that page",
+        "blocked: https://www.wispolitics.com/2024/sen-wimberger-statement-on-voters-approving-constitutional-amendment-to-protect-election-integrity/",
+        "blocked: https://ballotpedia.org not fetched (blocked for other searches in this batch)",
+        "not reviewed: Jul. 5, 2024 drop box statement (PDF link returned 404)",
+        "campaign site: none found",
+        "news searches on name plus voter ID, citizenship, election integrity: nothing on proof of citizenship found",
+        "legislature bill pages for sponsorships: not searched here, linked separately"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:58:52.439Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.779Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

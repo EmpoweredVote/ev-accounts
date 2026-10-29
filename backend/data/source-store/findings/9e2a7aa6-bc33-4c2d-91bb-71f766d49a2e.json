@@ -1,0 +1,200 @@
+{
+  "politician_id": "9e2a7aa6-bc33-4c2d-91bb-71f766d49a2e",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "53f66fbfa985ec46f6a37e3b1f94cd93e3ae61c6bc7ab78302981af3411f42c1",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/pressel-hoosiers-can-take-advantage-of-voting-early-in-person-through-nov.-2/",
+      "date": "2020-10-15",
+      "date_precision": "day",
+      "passage": "When voting before or on Election Day, voters must present a valid photo ID.",
+      "note": "Sentence in a House caucus press release issued in his name, urging early in-person voting. It states the existing Indiana photo ID rule as a plain fact and does not call for any change. The same release encourages voters to return mail-in ballots quickly.",
+      "subjects": [
+        "voter ID at the polls",
+        "early voting and mail-ballot return"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:49:44.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c0d0320e431a38c1f30c295a83060f0ef561b053d7e98cddd181cfdd88165db",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/pressel-don-t-miss-oct.-5-voter-registration-deadline/",
+      "date": "2020-10-01",
+      "date_precision": "day",
+      "passage": "To register, Indiana residents must be at least 18 years old on or before Nov. 3, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before Nov. 3, and not be currently imprisoned after being convicted of a crime. Those who do not have a driver's license or state ID can register to vote in person at county government centers, public assistance offices and when completing a Bureau of Motor Vehicles transaction.",
+      "note": "Paragraph in a House caucus press release issued in his name, listing registration requirements (ID number, citizenship) and where people without a license or state ID can register. It describes existing rules and does not call for any change.",
+      "subjects": [
+        "ID to register to vote",
+        "citizenship to register",
+        "registering without a driver's license or state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:49:44.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b494217affc56a214180f62e555c1f4ca9ee51b4625af732f1d6c6629aba553",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/votesheets/signed/SB0010.02.COMS.03.pdf",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "House Committee on Elections and Apportionment, amendment AM#09 (SB0010.02.COMS.AMH09, titled Voter identification)",
+      "note": "Committee vote sheet shows Pressel recorded N on amendment AM#09, titled 'Voter identification'; the amendment passed 4 yes to 8 no. The amendment text was not reviewed, so what it would change is not stated here.",
+      "subjects": [
+        "voter ID at the polls",
+        "committee amendment on voter identification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:49:44.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04a41a3ddd18a44330e5ee485714af0bc103c67baa2b87b31f44f2c09d18a12a",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/votesheets/signed/SB0010.02.COMS.03.pdf",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "other",
+      "motion": "House Committee on Elections and Apportionment, amendment AM#20 (SB0010.02.COMS.AMH20, titled Proof of citizenship), adopted by consent",
+      "note": "Committee vote sheet lists Pressel as a committee member for amendment AM#20, titled 'Proof of citizenship'; the sheet shows 'Consent' with 0 yes and 0 no recorded, so no individual vote is shown. The amendment text was not reviewed.",
+      "subjects": [
+        "proof of citizenship to register",
+        "committee amendment on proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:49:44.395Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea121768a28b7871eae097d9bf1240a60fabba37cd1495aa69205ca0858c7561",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/votesheets/signed/SB0010.02.COMS.03.pdf",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "House Committee on Elections and Apportionment, do pass as amended (DPA) on SB 10 'Voter registration'",
+      "note": "Committee vote sheet shows Pressel recorded Y on the do-pass-as-amended motion for SB 10; 9 yes to 4 no. This is the committee vote, separate from the final chamber votes already on file.",
+      "subjects": [
+        "voter registration law",
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:49:44.395Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jim_Pressel (Indiana House District 20, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (page fetched; no statement or vote on the subject found in the page text)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_jim_pressel_1 (page loads but is built by script; no bill list readable)",
+        "not reviewed: Indiana General Assembly bill and vote pages for 2025-2026 election bills (script-built pages)",
+        "not found: https://www.indianahouserepublicans.com/members/pressel (404)",
+        "not reviewed: official and campaign site issue pages (no working URL found)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:03.373Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity and scope confirmed: https://ballotpedia.org/Jim_Pressel shows him as sitting Indiana House District 20 member since 2016, on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia (candidate surveys not completed; nothing on the subject)",
+        "campaign site https://jimpressel.com/ (jobs, roads, workforce and endorsements; nothing on the subject)",
+        "House caucus press releases by him (two 2020 releases on registration and early voting, saved below)",
+        "House Elections and Apportionment Committee vote sheet for SB 10 (2025-03-26), official legislature PDF",
+        "not reviewed: legislature author and sponsor pages on iga.in.gov (load only as a script shell); amendment texts for the SB 10 committee votes",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/jim-pressel (no election or ID text found)",
+        "three web searches on name plus voter ID, election bills, and SB 10 (no sponsorship by him found)"
+      ],
+      "found": 5,
+      "at": "2026-10-27T14:49:44.395Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

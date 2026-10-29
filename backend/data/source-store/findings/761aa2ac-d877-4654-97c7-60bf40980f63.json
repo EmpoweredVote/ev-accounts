@@ -1,0 +1,242 @@
+{
+  "politician_id": "761aa2ac-d877-4654-97c7-60bf40980f63",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "b0ed13bc8e5f31a6bf5553aef10ee5dffffbce3763188e172cd73125f86bb96e",
+      "kind": "own-words",
+      "url": "https://tokuda.house.gov/media/press-releases/rep-tokuda-responds-to-president-trumps-remarks-on-election-integrity",
+      "date": "2026-07-16",
+      "date_precision": "day",
+      "passage": "While families are wondering how they'll afford groceries, gas, and healthcare, Donald Trump is still obsessed with relitigating an election he lost six years ago. Elections were secure then, and they are secure now. Manufacturing doubt and pushing baseless conspiracies doesn't SAVE America—it weakens our democracy. Real leaders trust the American people. Only cowards try to make it harder for Americans to vote.",
+      "note": "Official press release statement issued in her name, responding to the President's remarks on election integrity and the SAVE America Act. She says elections are secure and criticises efforts that make voting harder. It names no ID or citizenship-document rule.",
+      "subjects": [
+        "election integrity",
+        "proof of citizenship to register (SAVE America Act)",
+        "making voting harder"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:10.641Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65d26bd3c60c051523f4fe6406fbc576286ca69977fdccfa87f90a9bbac3fe0d",
+      "kind": "own-words",
+      "url": "https://alohastatedaily.com/2025/04/10/congress-watch-how-hawaiis-reps-voted-on-the-save-act",
+      "date": "2025-04-11",
+      "date_precision": "day",
+      "passage": "“I voted against the SAVE Act because it’s a blatant act of voter suppression—one of the most egregious in our lifetime,\" read a comment by Tokuda sent via email to the Aloha State Daily. \"It targets women, our service members, and rural Americans by erecting needless barriers to the ballot box. This bill is not about election integrity. It’s about silencing millions of eligible voters and it undermines our democracy. Democracy thrives when more people participate, not fewer, and I will never support legislation that makes it harder for Americans to exercise their right to vote.\"",
+      "note": "Emailed comment to Aloha State Daily on her vote against the SAVE Act (proof of citizenship to register and vote), which she says puts needless barriers in front of voting.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:32.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "885f6a0a92e356ee1e5093f66f7a656a894987d96683b570082be05e0422f3ef",
+      "kind": "own-words",
+      "url": "https://civilbeat.org/2025/04/hawai%ca%bbi-rep-ed-case-angers-democrats-over-proof-of-citizenship-vote/",
+      "date": "2025-04-11",
+      "date_precision": "day",
+      "passage": "The legislation would make it so that having a driver’s license “isn’t enough to vote,” the congresswoman posted on X. “You’d need a birth certificate with your current legal name, or a passport.” Tokuda said in her tweet that that would be a problem, as 70 million women who married and changed their name would not be able to vote and that 48% of Americans lack passports. “That’s voter suppression,” she said. “I voted no.”",
+      "note": "Civil Beat quotes her X post on the SAVE Act: a driver's license would not be enough, and she names married women and people without passports as affected. Words are partly the reporter's summary and partly her quotes.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register or vote",
+        "documents needed to prove identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:32.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c0e593b4d7a22a63caf8dd3e1a917aac3222565e459d9e3cf9938cccce3cf5c",
+      "kind": "own-words",
+      "url": "https://tokuda.house.gov/media/press-releases/rep-tokuda-responds-to-president-trumps-remarks-on-election-integrity",
+      "date": "2026-07-16",
+      "date_precision": "day",
+      "passage": "\"While families are wondering how they'll afford groceries, gas, and healthcare, Donald Trump is still obsessed with relitigating an election he lost six years ago. Elections were secure then, and they are secure now. Manufacturing doubt and pushing baseless conspiracies doesn't SAVE America—it weakens our democracy. Real leaders trust the American people. Only cowards try to make it harder for Americans to vote.\"",
+      "note": "Official press statement responding to the President's remarks on election integrity and the SAVE America Act; she says elections are secure.",
+      "subjects": [
+        "SAVE America Act",
+        "election integrity and election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:32.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3149d1aa36c6e6ce178041e2cbefa1396389279c4327f8393e616857a3dc1530",
+      "kind": "own-words",
+      "url": "https://tokuda.house.gov/media/press-releases/rep-tokuda-votes-no-after-republicans-hijack-annual-defense-bill",
+      "date": "2026-07-24",
+      "date_precision": "day",
+      "passage": "“Worst of all, Republicans attached the SAVE America Act onto this bill, imposing burdensome voter-ID requirements that make it harder for eligible Americans to vote. They hijacked a must-pass defense bill to advance a partisan election agenda that has nothing to do with military readiness.",
+      "note": "Official press statement on her no vote on the FY2027 defense bill, citing the SAVE America Act voter-ID provisions attached to it.",
+      "subjects": [
+        "SAVE America Act",
+        "photo ID at the polls",
+        "voter ID requirements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:35:32.135Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity",
+        "mail-ballot ID",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Jill_Tokuda says she is on the Nov 3, 2026 general-election ballot for HI-02 and advanced from the Aug 8, 2026 primary",
+        "On the Record (0 appearances)",
+        "official site press releases (page 1 of 13 only): https://tokuda.house.gov/media/press-releases",
+        "Ballotpedia (fetched; only the SAVE Act vote, already on file)",
+        "blocked: https://www.congress.gov/member/jill-tokuda/T000487 (403)",
+        "not reviewed: official site press-release pages 2-13, op-eds, videos, campaign site (no search budget left; no site search done)",
+        "not done: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:14:10.641Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act / SAVE America Act",
+        "proof of citizenship to register or vote",
+        "photo ID at the polls",
+        "election integrity and election security statements",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script, by id and by name)",
+        "Ballotpedia https://ballotpedia.org/Jill_Tokuda (confirms sitting member, advanced from the 2026-08-08 primary, on the 2026-11-03 general ballot)",
+        "official site press releases https://tokuda.house.gov/media/press-releases (2 relevant releases read; site search pages blocked: https://tokuda.house.gov/search?s=SAVE+Act and https://tokuda.house.gov/search?s=voter returned 403; list pagination returned the same first page)",
+        "Aloha State Daily 2025-04-11 vote report and Civil Beat 2025-04-11",
+        "Aloha State Daily 2026-03-10 opinion column by another author: not her words, not saved",
+        "two news searches on her name plus SAVE Act: no February 2026 statement of hers found",
+        "ontheissues.org and Wikipedia: not used (lead only)",
+        "congress.gov: not reviewed, three votes already on file"
+      ],
+      "found": 4,
+      "at": "2026-10-27T20:35:32.135Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

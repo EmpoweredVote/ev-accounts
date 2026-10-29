@@ -1,0 +1,330 @@
+{
+  "politician_id": "b7e9d159-b766-445c-b95f-9797b57247d9",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "78bd84913f7341f5b7f5922d799620162f7c731716a854b48ac8784da122b529",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: yea (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "e8db2581b259461fddff35e09ee2b834e9f9174fa5aef384ec6d6e7299d3c549",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013",
+      "date_precision": "year",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "sponsor",
+      "motion": "patron sponsor, as filed (2013-01-10); printed: Patrons-- Obenshain and Ruff",
+      "note": "patron sponsor of VA-SB-1256-2013 (as filed (2013-01-10); printed: Patrons-- Obenshain and Ruff): Voter identification requirements; photo ID (SB 1256), Acts 2013 chapter 725.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "e7743458436d64e19e913e5951720a58b67b5905d9b769f4d3d59792d0c52bcf",
+      "kind": "own-words",
+      "url": "https://www.wtvr.com/2013/02/14/photo-id-bill-advances-in-general-assembly",
+      "date": "2013-02-14",
+      "date_precision": "day",
+      "passage": "\"Under my bill it is simple. All you need is a photo ID. Period,\" Obenshain told CBS 6 reporter Joe St. George.",
+      "note": "Quoted by WTVR (CBS 6) about his SB 1256 photo ID bill; the same story quotes him saying a voter without a photo ID could get one free at the local registrar's office.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06ec4ef0a7be0b852532c316a76e87ea03c20e424aaf04105383f95bc6ffabd8",
+      "kind": "own-words",
+      "url": "https://www.politifact.com/factchecks/2014/sep/09/mark-obenshain/obenshain-says-democrats-exceeded-voter-id-law-rec",
+      "date": "2014-08-13",
+      "date_precision": "day",
+      "passage": "In the Democratic Party-run firehouse primary to choose the party’s state senate nominee in the 16th District special election, Democrats — free to adopt any voter identification standard they wished, or none at all — opted for requirements considerably more stringent than those contained in the state law they denounce, actually going so far as to require that IDs show the address at which the individual is registered.",
+      "note": "From his 2014-08-13 newsletter as quoted by PolitiFact (published 2014-09-09); he argues a private primary used ID rules stricter than state photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID address requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ddf0d2b52b41caad3bc82d9e37462f229711ca0ec6c74b826265bdc6fd5806a",
+      "kind": "own-words",
+      "url": "https://www.markobenshain.com/2020/04/15/newsletter-free-open-and-unfair-elections/",
+      "date": "2020-04-15",
+      "date_precision": "day",
+      "passage": "There is no evidence that photo ID ever suppressed a single vote – except perhaps fraudulent ones.",
+      "note": "His newsletter criticising the 2020 law repealing Virginia's photo ID requirement; it also calls that repeal bill 'particularly troubling'.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eb915118d05d00a5c762137df6ab1757ea335eec6b2341142fb6aeee716e9b0",
+      "kind": "own-words",
+      "url": "https://www.markobenshain.com/2023/01/24/week-2-general-assembly-update/",
+      "date": "2023-01-24",
+      "date_precision": "day",
+      "passage": "Last week, the Privileges and Elections Committee heard multiple election integrity bills. Notwithstanding broad bipartisan support, the Committee refused to reinstate the photo ID mandate.",
+      "note": "His 2023 session newsletter; also says the committee rejected a bill ending same-day registration and one criminalising intentional efforts to register non-citizens to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "same-day registration",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4de10cdb2f1ae662591906e01c588bc9083f16dcdc7644983768a70c1c97cda3",
+      "kind": "own-words",
+      "url": "https://wtop.com/virginia/2022/01/debate-over-photo-id-at-the-polls-returns-to-virginia",
+      "date": "2022-01-18",
+      "date_precision": "day",
+      "passage": "“There are people out there who believe that there are big gaping holes in our system,” Obenshain said. “This just is a common-sense way to address those concerns.”",
+      "note": "Quoted by WTOP at the committee hearing where his bill to require photo ID at the polls failed; story says he said he was not trying to suggest epidemic fraud.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9571647d2ef468ce4276ad972b9e7f7cb31a25e6412066067cf554ea61eab374",
+      "kind": "own-words",
+      "url": "https://thevirginiastar.com/news/senate-committee-kills-republican-election-integrity-reforms-obenshain-chase-conflict-resurfaces-surovell-criticizes-miyares-for-firing-30-attorneys/eburk/2022/01/19/",
+      "date": "2022-01-18",
+      "date_precision": "day",
+      "passage": "“Over the course of this past year, of course, Americans have been asked to show proof of vaccination, even in order to be able to work. So this is simply restoring the requirement of showing the identification.",
+      "note": "Quoted by The Virginia Star at the Senate Privileges and Elections Committee hearing on his 2022 photo ID bill (quote cut at this point in my extraction).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:40.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "541f0b530ae759c5beb3e773825d50e726b30cfe1f7d8963aeb30abe5e09655b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Obenshain'), linked to Mark D. Obenshain via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "831e29dac705d3e8a562d8f6b7d9cfef371af8ec0c144435efdeaa5c0889099b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Obenshain'), linked to Mark D. Obenshain via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21e2ea04c5fe6eb8d90bb90fdcc89b35c3a7fe03fbb40e05b3df18675f108622",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Obenshain'), linked to Mark D. Obenshain via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign/official site markobenshain.com (site search for photo ID; two newsletters fetched)",
+        "Ballotpedia not reviewed",
+        "blocked: lis.virginia.gov (not retried, per instruction)",
+        "news search (WTVR, PolitiFact, WTOP, Virginia Star fetched)",
+        "nothing found from 2024-2026 on the subject"
+      ],
+      "found": 6,
+      "at": "2026-10-28T16:25:40.647Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.522Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.795Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

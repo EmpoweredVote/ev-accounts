@@ -1,0 +1,29 @@
+{
+  "politician_id": "d62f0017-3d27-43f0-8908-781f3c9e5050",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (house.texas.gov/members/146): confirms Rep. Simmons, District 146; nothing on the subject",
+        "Ballotpedia: page returned no readable text; not reviewed: https://ballotpedia.org/Lauren_Ashley_Simmons",
+        "campaign site: not found at guessed addresses; blocked: https://www.laurenashleysimmons.com (no response)",
+        "Texas Legislature Online: her 89th-session bills reviewed (HB 2138 foster care, HB 2493 eviction services); nothing on the subject",
+        "Defender Network profile: only a general remark on voting access, no ID or citizenship content; not saved",
+        "news searches on her name plus voter ID, proof of citizenship, SAVE Act, election integrity: nothing attributable to her"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:29:23.838Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

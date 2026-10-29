@@ -1,0 +1,206 @@
+{
+  "politician_id": "52981a2d-ceb8-4ade-b44c-9f24ce0cbe4f",
+  "findings": [
+    {
+      "id": "0a374eed4f470db2328bab89b682d93e43f40bb6dc177627c460587438e7d68a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S356",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-356-2023",
+      "act": "sponsor",
+      "note": "The bill page lists Barnes among the sponsors of SB 356, titled Constitutional Amendment/Photo ID. Edition 3 (House committee substitute, 6/26/24, text at https://www.ncleg.gov/Sessions/2023/Bills/Senate/HTML/S356v3.html) would amend the State Constitution so that voters must present photographic identification before voting, in the text's words 'NOT JUST THOSE PRESENTING TO VOTE IN PERSON'. The filed edition was a different subject (motor vehicle dealers), so the page's sponsor list is shown as it appears; the date is the last edition date, not the date she signed on. Last action: sent back to House rules committee 6/27/2024.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail ballots",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:30.910Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2bf665d2026713c8ad4dcd0dcb77172367e8f55aaeb09b43b8cd1a12293dfbb9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S88",
+      "date": "2023-02-13",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-88-2023",
+      "act": "sponsor",
+      "note": "SB 88, Various Elections Changes, lists Barnes among its sponsors. Edition 3 (https://www.ncleg.gov/Sessions/2023/Bills/Senate/HTML/S88v3.html) would require county boards to challenge ballots of ineligible voters due to death or felony conviction, and require signature verification for executed absentee ballots, including a signature-matching pilot program.",
+      "subjects": [
+        "mail-ballot identity check (signature verification)",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:30.910Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a068180fb5b846bc6c3725f2a2780b438acb2358b2a73127bb3817a0b60cc20",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/620",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-88-2023",
+      "act": "yea",
+      "motion": "SB 88 Various Elections Changes, Third Reading, roll call S-620, passed 28-19",
+      "note": "Roll-call transcript lists Barnes among the Ayes on third reading of SB 88 (signature verification for absentee ballots, challenges to ineligible voters due to death or felony conviction).",
+      "subjects": [
+        "mail-ballot identity check (signature verification)",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:30.910Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b84bef11905583e52275309b3dc8475a9069e4906be42ebae182bfbc5e694d2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading, roll call S-693, passed 28-13",
+      "note": "Roll-call transcript lists Barnes among the Ayes. Edition 8 of HB 958 (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v8.html) includes a section on the State Board of Elections acting on 'potential non-eligible citizens appearing on the State's voter registration records from a federal database', plus changes to voter list maintenance and drivers-license-office voter registration. Her vote record also shows Aye on Amendment 1 (S-684) and on tabling motions for Amendments 2, 3 and 6 to 10 the same day.",
+      "subjects": [
+        "non-citizen voter-roll checks",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:30.910Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3701591664b12a28abdb7f28dce5c68118f302f5d70a172fe8f05662b653bd3d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/427",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "note": "Senate second-reading vote on HB 958, Election Law Changes (roll call 2026-07-28, 6:13 PM): Barnes voted Aye, 28 to 13. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, under which a county board processes a registration application only if it affirmatively says the applicant is a U.S. citizen. A blank answer gets a notice, and a statement under penalty of perjury is required within 30 days. It also bars driver-license-office staff from proceeding with a registration unless the applicant says they are a citizen, and it requires a process to remove voters flagged as non-citizens in a federal database. The bill page shows the bill was vetoed 2026-08-17. She also voted Aye on Amendment 1 and Aye on Amendment 5, and Aye on motions to table Amendments 2, 3, 6, 7, 8, 9 and 10.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:10:21.125Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional photo ID amendment",
+        "mail-ballot identity checks (signature verification)",
+        "non-citizen voter-roll checks",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Lisa_Barnes (NC Senate District 11, on the 2026 general-election ballot; primary was canceled) and https://www.ncleg.gov/Members/Biography/S/427",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "NC General Assembly member pages: introduced bills 2021, 2023, 2025 sessions; vote history page (2025-2026 session only loaded; the session switch returned the same page for 2021 and 2023)",
+        "NC General Assembly bill pages and roll-call transcripts: S356 (2023), S88 (2023), H958 (2025), S326 (2021)",
+        "Ballotpedia (no voter ID statements on page)",
+        "nothing on the subject: official legislature biography page (no issue statements)",
+        "blocked: https://www.lisabarnesnc.com (guessed campaign URL, no connection)",
+        "blocked: https://lisabarnes.com (guessed campaign URL, no connection)",
+        "not reviewed: campaign site and social media (URL not on the fetched Ballotpedia text; web search budget was used up, so no own-words search could run)",
+        "not reviewed: news search on name plus voter ID words (web search budget used up)",
+        "not reviewed: 2021 and 2023 session roll-call history for SB 747 and veto-override votes (member vote page would not load by session)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:48:30.910Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "NC legislature member page https://www.ncleg.gov/Members/Biography/S/427 (confirms Senate District 11, 2025-2026 session)",
+        "NC legislature introduced-bills list for her (no voter ID or citizenship bill among her primary-sponsored bills)",
+        "NC legislature roll-call votes page for her (fetched in full)",
+        "NC Senate caucus member page https://ncstatesenate.com/?p=104 (nothing on the subject)",
+        "Ballotpedia (empty page returned, nothing usable)",
+        "one news search on her name plus the subject words (no direct quote found)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/962021910216232960?topic=2 (certificate rejected; lead only, a scraped social-media page)",
+        "campaign site not found (https://www.lisabarnesnc.com does not resolve)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:10:21.125Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

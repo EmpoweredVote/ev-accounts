@@ -1,0 +1,99 @@
+{
+  "politician_id": "afd8d31b-9f88-4eb9-8a88-46e5ef914267",
+  "findings": [
+    {
+      "id": "e065e44e65f8791f342b03909fec2b7f4d050ecb2d9f72c80c17b3f5a96715b4",
+      "kind": "own-words",
+      "url": "https://www.reed.senate.gov/news/releases/reed-rejects-gops-bogus-stock-trading-bill-calls-for-real-transparency-reform-and-clear-ban-on-stock-trading-by-members-of-congress",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "passage": "The Republican proposal would also interfere in state elections with a poison pill 'SAVE Act' provision that would disenfranchise eligible voters and erect new barriers to accessing the voting booth.",
+      "note": "Press release issued in his name, about a Senate stock-trading bill that had SAVE Act proof-of-citizenship/voter ID language attached. The release text describes the provision as a barrier to voting. The release's own summary line also refers to 'unrelated voter suppression provisions'.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter ID restrictions attached to other bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:51:04.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bfef49861f96613befe7943bbbacf2a2bb9a1b38d2a9f432ea5447fe92df106d",
+      "kind": "own-words",
+      "url": "https://www.reed.senate.gov/news/releases/reed-rejects-gops-bogus-stock-trading-bill-calls-for-real-transparency-reform-and-clear-ban-on-stock-trading-by-members-of-congress",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "passage": "Even still, to ensure the bill's failure, Republicans are also attaching sweeping poison pill voter ID restriction language to the bill that the U.S. Senate has already rejected six times.",
+      "note": "Same release (issued in his name). Says voter ID language was attached to the stock-trading bill and that the Senate had rejected it six times before.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID restrictions attached to other bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:51:04.876Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "voter suppression / election integrity bills"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/United_States_Senate_election_in_Rhode_Island,_2026 says: \"Incumbent Jack Reed, Raymond McKay, and Michael Bahry are running in the general election for U.S. Senate Rhode Island on November 3, 2026.\"",
+        "On the Record (0 appearances, extract-otr run)",
+        "official site: reed.senate.gov news releases page 1 and site search for SAVE Act (page 1 of 73 only)",
+        "official site: reed.senate.gov/issues/civil-rights (cosponsored For the People Act; undated, not saved)",
+        "blocked: https://ballotpedia.org/Jack_Reed_(Rhode_Island) (bot challenge page returned)",
+        "blocked: https://www.congress.gov/search (403)",
+        "blocked: https://www.govtrack.us/congress/members/jack_reed/300085 (403)",
+        "not reviewed: senate.gov roll call votes on SAVE Act amendments (vote numbers not found)",
+        "not reviewed: news search (web search budget used up)",
+        "campaign site: not found"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:51:04.876Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act / SAVE America Act",
+        "documentary proof of citizenship to register",
+        "photo ID to vote",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "news report (Fox News) confirming he won the 2026 nomination for the Rhode Island Senate seat",
+        "web searches: name plus SAVE Act, voter ID, proof of citizenship, Senate roll call",
+        "blocked: https://www.reed.senate.gov/news/speeches/reed-delivers-speech-opposing-anti-voter-save-act (403 by fetch tool and by one browser-style curl; a search summary says it is a floor speech against the SAVE Act, so own words exist but could not be copied)",
+        "capitolreleases.com copy of his 2026-03-17 press release on the SAVE America Act: the fetch tool only returned a summary, so no passage copied; not reviewed as verbatim text",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_lists/vote_menu_119_2.xml (403); his individual roll-call vote on the Senate SAVE America Act motion could not be confirmed",
+        "blocked: https://ballotpedia.org/Jack_Reed_(Rhode_Island) (fetch returned empty page)",
+        "blocked: https://rhodeislandcurrent.com/?p=33390 (403)",
+        "Congressional Record 2026-03-19 page: first 100,000 characters read, no remarks by him seen; rest not read"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:51:35.584Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

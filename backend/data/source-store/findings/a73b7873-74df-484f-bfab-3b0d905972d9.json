@@ -1,0 +1,80 @@
+{
+  "politician_id": "a73b7873-74df-484f-bfab-3b0d905972d9",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail or absentee ballot ID",
+        "proof of citizenship",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Paul_Donato, page titled Paul Donato Sr.) lists him as 2026 incumbent who advanced from the September 1, 2026 primary to the November 3, 2026 general election for Massachusetts House 35th Middlesex; legislature profile https://malegislature.gov/Legislators/Profile/PJD1 names him Representative, 35th Middlesex",
+        "On the Record (0 appearances)",
+        "official site / legislature profile and sponsored-bills list: only H.822 (absentee voting), H.823 (elections in emergency situations), H.824 (political designations) are election bills; bill text for H.822 not readable on the page, no ID content seen, not saved",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://malegislature.gov/Search/Bills?SearchTerms=voter+identification (404)",
+        "not reviewed: news search on name plus subject words (session web search budget exhausted)",
+        "campaign site: not found, not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:05.296Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to H.4359",
+        "mail and absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/PJD1 with sponsored and co-sponsored bill lists for the 193rd and 194th courts",
+        "House bill 822 text https://malegislature.gov/Bills/194/H822 (absentee voting; it removes the word 'physical' in four places in G.L. c.54 s.86; no ID or citizenship rule, so not saved); House bills 823 and 824 (emergency elections, political designations): not on the subject",
+        "Ballotpedia https://ballotpedia.org/Paul_Donato (on the 2026 general-election ballot, 35th Middlesex): nothing on the subject",
+        "state election results page https://electionstats.state.ma.us/elections/view/173317/ (he is on the 2026 primary ballot)",
+        "two news searches on name plus voter ID words: nothing on the subject",
+        "campaign site: not reviewed",
+        "already on file and not re-collected: nay on amendment 7 to H.4359 (2022-01-27)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:50:11.795Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

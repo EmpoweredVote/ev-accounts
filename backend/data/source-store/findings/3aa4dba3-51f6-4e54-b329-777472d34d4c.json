@@ -1,0 +1,321 @@
+{
+  "politician_id": "3aa4dba3-51f6-4e54-b329-777472d34d4c",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "8909b2a7867cde9a2f2c7d8b67c9848a1b704cc35440b5e1abff29dc9e7fb001",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-calls-on-secretary-of-state-to-explain-seemingly-large-increase-in-noncitizens-applying-to-vote-in-wake-of-um-student-caught-voting-illegally/",
+      "date": "2024-11-04",
+      "date_precision": "day",
+      "passage": "“So far in 2024, there have been 34,535 individuals whose name, date of birth, and Social Security numbers do not match any record found in the Social Security database,” said Johnson, R-Holly. “That is a huge increase from previous years and very alarming to me. Far-left operatives have pushed for changes in our constitution and laws that allow for same-day registration with no ID and our clerks do not have the ability to check or verify citizenship.”",
+      "note": "Her press release, issued in her name, on registrants whose identity details do not match federal records. She links same-day registration without ID and clerks' lack of ability to verify citizenship to the concern.",
+      "subjects": [
+        "proof of citizenship to register",
+        "ID at same-day registration",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8de04fbfaa8283ea2a12a311119b1c7ccec013a46c441f997f72221863e348d3",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-calls-on-secretary-of-state-to-explain-seemingly-large-increase-in-noncitizens-applying-to-vote-in-wake-of-um-student-caught-voting-illegally/",
+      "date": "2024-11-04",
+      "date_precision": "day",
+      "passage": "“With Proposal 3 of 2018, Proposal 2 of 2022 and new election laws pushed by the secretary of state and passed by the Democratic-controlled Legislature, so much integrity has been stripped away from our elections,” Johnson said. “We have no system to check if people are registering or voting who are not eligible. The only way the student at UM was caught is because he requested his ballot back from the clerk.”",
+      "note": "Same release. She says eligibility checks are missing after the 2018 and 2022 ballot measures and later laws.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general",
+        "ID at same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85ead5770edd33c7917adcaac5118101ae0487e2b4e91d2619045c3337c12a2c",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-calls-on-secretary-of-state-to-explain-seemingly-large-increase-in-noncitizens-applying-to-vote-in-wake-of-um-student-caught-voting-illegally/",
+      "date": "2024-11-04",
+      "date_precision": "day",
+      "passage": "“I worked on a law with the Legislature as secretary of state in 2018 that would have prevented this student’s ballot from counting, but Democrats stripped this law away,” said Johnson. “We should all want free and fair elections. When someone is allowed to vote who is not eligible, that disenfranchises another voter. It is very sad that the current secretary of state seems to be more concerned with partisan advantage than with integrity in our elections.”",
+      "note": "Same release. She describes a 2018 law she worked on as secretary of state and says ineligible voting disenfranchises other voters.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c4dc2d0a7c8e8c7ed0d84d2ae1bac0c9092bcd0a8da4f4e1c114ae5447cac8e",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-calls-on-congress-to-pass-legislation-to-ensure-accurate-voter-rolls/",
+      "date": "2024-06-13",
+      "date_precision": "day",
+      "passage": "“Accurate voter rolls are critical to the integrity of the elections process. Maintaining accurate records reduces the risk of fraudulent voting, and it can make the task of election administrators easier,” said Johnson, R-Holly.",
+      "note": "Her press release after a Capitol press conference and her Senate Resolution 130 urging Congress to pass the Voter Registration Efficiency Act (H.R. 2566).",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a057d525c820acee6a17f9076f15adb74b8646330c99649c4ae848fa55bee87",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-calls-on-congress-to-pass-legislation-to-ensure-accurate-voter-rolls/",
+      "date": "2024-06-13",
+      "date_precision": "day",
+      "passage": "“People should only be registered to vote in one state, yet we still have no system in place to ensure people are not voting in more than one state,” Johnson said.",
+      "note": "Same release, on duplicate registration across states.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6ee65adad75153ed016f41e9386abfda973ad207629ef65e2ac6536dad04031",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/johnson-says-early-voting-bills-go-far-beyond-prop-2-and-weaken-the-integrity-of-michigans-elections/",
+      "date": "2023-06-14",
+      "date_precision": "day",
+      "passage": "“I am proud we were able to secure amendments today to ensure that we will not continue to mail absentee ballots to voters we know have moved to another state and to restore existing Michigan law to require video monitoring of absentee ballot drop boxes.",
+      "note": "Statement issued after she voted against Senate Bills 367, 370 and 373. She describes amendments about mailing absentee ballots to voters who moved and about drop-box video monitoring.",
+      "subjects": [
+        "mail-ballot integrity",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa5cc1fb8cb3aba909b171a7e019806c32f33fc40a208c965e98370d958f6d2e",
+      "kind": "own-words",
+      "url": "https://www.senatorruthjohnson.com/senate-approves-election-preprocessing-integrity-measures/",
+      "date": "2022-09-28",
+      "date_precision": "day",
+      "passage": "“We need to do everything we can to help our brave men and women to vote as long as it is secure. I am proud of the other integrity measures we secured to help clean dead people from our voter rolls and ensure the security of absentee ballots.”",
+      "note": "Release about her SB 311 on overseas military ballots, where voters verify identity with a Common Access Card. The release says the Senate vote was on a Wednesday; the release is stamped 2022-09-29 00:23 UTC, so the vote day is 2022-09-28.",
+      "subjects": [
+        "identity check for military mail ballots",
+        "voter-roll maintenance",
+        "mail-ballot integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:25.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "427bd75d5d7eb93697f19e0908365bb747e3503c696ffcec62ada7ba91a65c9b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-1034",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-1034-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE BILL NO. 1034 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 523, 523a, 813,\"",
+      "note": "Named as co sponsor ('Ruth A. Johnson (District 24)') on the official bill page; linked to Ruth A. Johnson via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Johnson'), linked to Ruth Johnson (district 14) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Johnson'), linked to Ruth A. Johnson (district 24) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Johnson'), linked to Ruth A. Johnson (district 24) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "voter-roll maintenance",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://www.senatorruthjohnson.com (home page, site searches for voter, citizenship, voter ID, photo ID, SAVE via the site search feeds; items on the subject saved)",
+        "https://www.senatorruthjohnson.com/media-advisory-sen-johnson-rep-hall-to-hold-june-12-press-conference-on-maintaining-accurate-voter-rolls/ (event notice, no direct quote on the subject beyond the release saved)",
+        "https://progressmichigan.org/?p=45240 (opposing group's release about a March 2026 speech; contains no quote of her, not used)",
+        "not reviewed: https://ballotpedia.org/Ruth_Johnson_(Michigan)",
+        "web search x1: confirmed she is the 24th District senator",
+        "nothing found on photo ID specifically or on the SAVE Act in her own words on her site"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:46:25.428Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:55:46.341Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:13.241Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

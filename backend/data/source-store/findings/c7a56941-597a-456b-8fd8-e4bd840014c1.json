@@ -1,0 +1,147 @@
+{
+  "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1",
+  "findings": [
+    {
+      "id": "c45481678e04a65994f6dbcb70235ef6a51eede04b176896fc0e89bf0336b01b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading SB1174 Min et al., Senate Floor (passed 30-8)",
+      "note": "SB 1174 (2024), Elections: voter identification. The bill bars local governments from requiring voter ID or similar identification to vote. Vote taken from the Internet Archive copy of the California Legislature vote page.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "183eae6d9ca1961ee2057e9e7b7b0ef2f4ecc884183639fd814ad954c0c8ff7d",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08",
+      "date_precision": "month",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Senate Floor vote (29-9-2)",
+      "note": "AB 1116 (2025), Elections: voter registration. The bill lets a person without a California driver license or state ID register online using the last four digits of their Social Security number plus an electronic signature image. This is the Senate floor vote as listed on the CalMatters Digital Democracy bill page; the page lists a Senate Floor hearing of Aug 24, 2026 but gives no vote date, so only the month is recorded.",
+      "subjects": [
+        "proof of identity to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb1bdea1c4d97f9f0b5a6209abedb8fdb46f83012d701da6d60ab0222d3a7cf1",
+      "kind": "own-words",
+      "url": "https://www.calonews.com/elections/top-california-democrats-sue-over-language-in-state-guide-about-voter-id-measure/article_daf3d237-45cb-4127-a218-21a5db9c38f3.html",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "passage": "Proposition 39 is a tool to suppress voter participation, plain and simple.",
+      "note": "Joint statement issued by this person and the Assembly Speaker about Proposition 39, the November 2026 ballot measure on government ID to vote, quoted by CALO News (article dated 2026-07-30). The statement came as they filed a lawsuit over voter guide wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d49f95a75ea33a3fe275cba9747efe28ae2fc5698f09554ba13efe8690b1e421",
+      "kind": "own-words",
+      "url": "https://www.calonews.com/elections/top-california-democrats-sue-over-language-in-state-guide-about-voter-id-measure/article_daf3d237-45cb-4127-a218-21a5db9c38f3.html",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "passage": "The text provided by MAGA proponents of Proposition 39 is misleading and false.",
+      "note": "Joint statement issued by this person and the Assembly Speaker about Proposition 39, the November 2026 ballot measure on government ID to vote, quoted by CALO News (article dated 2026-07-30). The statement came as they filed a lawsuit over voter guide wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity bills in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.571Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "758d75c840061f311f0797892e40d117c2cad3c22104eed3859ff2d56be08e80",
+      "kind": "record",
+      "url": "https://www.calonews.com/elections/top-california-democrats-sue-over-language-in-state-guide-about-voter-id-measure/article_daf3d237-45cb-4127-a218-21a5db9c38f3.html",
+      "date": "2026-07-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined lawsuit in Sacramento Superior Court over Proposition 39 voter guide argument wording",
+      "note": "Reported by CALO News (published 2026-07-30) as filed \"Wednesday\". This person, with the Assembly Speaker, sued over wording in the state voter guide on Proposition 39, the November 2026 measure requiring government ID to vote and verifying citizenship of voters. The article says the filing was on a Wednesday; the date recorded is the Wednesday before publication.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.571Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of identity to register to vote",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity bills in general",
+        "non-citizen voting",
+        "voter-roll checks",
+        "Proposition 39 (2026 voter ID ballot measure)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms California Senate member, term ends 2028; not a 2026 candidate)",
+        "official Senate site sd21.senate.ca.gov (news list and site search; one 2024 press release on a voter-registration bill, not on ID/citizenship rules; nothing else on the subject)",
+        "California Legislature vote page for SB 1174 via Internet Archive copy (leginfo is behind a bot check)",
+        "CalMatters Digital Democracy page for AB 1116 (Senate vote in 2026)",
+        "CALO News article on the Proposition 39 lawsuit",
+        "blocked: Courthouse News article on the Proposition 39 lawsuit (403)",
+        "blocked: https://sbwpc.substack.com/p/interview-with-ca-senate-president (404)",
+        "news searches (2 searches)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T16:10:24.571Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

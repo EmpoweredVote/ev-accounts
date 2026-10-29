@@ -1,0 +1,256 @@
+{
+  "politician_id": "3d66e4ed-8f85-4dcf-9619-58003ae9fb45",
+  "findings": [
+    {
+      "id": "a6b881ae8f4b96a5207bb3839b3a9bba0f1b9b1ade1ef616deb7a15c3ef91944",
+      "kind": "own-words",
+      "url": "https://www.timesleader.com/news/1742516/sen-baker-holds-off-strong-challenge-from-meyers-in-20th-senatorial-district",
+      "date": "2026-05-19",
+      "date_precision": "day",
+      "passage": "“I will also ensure conservative spending levels in the state budget and eliminate waste, fraud, and abuse. I will work to enact further preventative measures to prevent child abuse and neglect and combat human trafficking. And I will continue to protect our Second Amendment rights, demand election integrity through Voter ID, and ensure our veterans receive the benefits they’ve earned.”",
+      "note": "Quoted by the Times Leader after her 2026 primary win, listing her goals for the next term. She names voter ID as the way she wants election integrity delivered.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:34.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47d8e7f2702d2aa41662ee6d936224e2a3c928f5d39b0bf232995161a589788c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Baker'), linked to Lisa Baker (district 20) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('BAKER'), linked to Elisabeth J. Baker (district 20) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Baker'), linked to Elisabeth J. Baker (district 20) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('BAKER') on the official bill page; linked to Elisabeth J. Baker via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Baker'), linked to Elisabeth J. Baker (district 20) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43b2a92555fb2bda51da147426ba813860daa195cb428422b39760c676a796d3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as co sponsor ('BAKER') on the official bill page; linked to Elisabeth J. Baker via the official 2021 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Baker'), linked to Elisabeth J. Baker (district 20) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('BAKER') on the official bill page; linked to Elisabeth J. Baker via the official 2021 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.328Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity",
+        "mail ballots",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Times Leader 2026-05-19 primary-result story confirms she won the 2026 nomination for the 20th Senate District and faces a November opponent (in scope)",
+        "official site senatorbaker.com: site search for voter ID, plus e-news 2026-08-10, 2026-04-20, 2025-11-03, 2025-10-27, 2025-10-20 reviewed: nothing on the subject (voting information and civic-participation items only)",
+        "senatorbaker.com/legislative-initiatives/: returned 404, nothing read",
+        "Times Leader 2026-01-31 reelection-announcement story: its voter-ID sentence is in the reporter's voice, not clearly her own words, so not saved",
+        "Times Leader 2022-03-30 reelection story: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Lisa_Baker: page came back empty, not usable",
+        "news search on name plus voter ID: no further own-words sources found",
+        "legislature bill pages: not searched, sponsorships linked separately per brief"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:04:34.409Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-29T14:22:46.328Z",
+      "by": "identity-pa-2026-10-29c"
+    }
+  ]
+}

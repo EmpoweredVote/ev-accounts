@@ -1,0 +1,131 @@
+{
+  "politician_id": "0940e7cd-6490-42e9-9a51-b2599f7b2f34",
+  "findings": [
+    {
+      "id": "20cee590c784d12af3e8d88e9eace38a73230aa4266b12e042a4ee466dbb509e",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/32932/Fink-Criticizes-Shapiro-for-Unilateral-Action-on-Automatic-Voter-Registration?SiteID=1",
+      "date": "2023-09-22",
+      "date_precision": "day",
+      "passage": "Voter identification is widely supported, and it makes sense now more than ever with this new order.",
+      "note": "Press statement in her name on the governor's order for automatic voter registration. She says people would be registered when they get a state ID but would not need to show that ID at the polls on election day.",
+      "subjects": [
+        "voter ID at the polls",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3f80058693e6348b2d2ede315213ff18c9b7789a0c1257ee065a1a38710675e",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/32932/Fink-Criticizes-Shapiro-for-Unilateral-Action-on-Automatic-Voter-Registration?SiteID=1",
+      "date": "2023-09-22",
+      "date_precision": "day",
+      "passage": "Who is verifying the recipient of the ID is of legal age to vote; is not a convicted felon; is a legal citizen?",
+      "note": "Question in the same press statement about how eligibility, including citizenship, would be checked under automatic voter registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.093Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('FINK') on the official bill page; linked to Wendy Jo Fink via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('FINK'), linked to Wendy Jo Fink (district 94) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Wendy_Fink (empty page)",
+        "official site https://www.repwendyfink.com/ (bio lists election integrity as a focus area; no press release on the subject on the front page)",
+        "House caucus press release (saved)",
+        "web searches on name plus voter ID and election integrity (one press release found, saved)",
+        "not reviewed: floor votes and sponsorships (linked separately)",
+        "note: a full-page copy via curl was not possible; passages below come from the fetch tool's quoted extracts of the page"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:00:24.093Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

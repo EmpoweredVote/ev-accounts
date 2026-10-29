@@ -1,0 +1,209 @@
+{
+  "politician_id": "e8e53eb8-2066-4477-aa1a-ab777ff484af",
+  "findings": [
+    {
+      "id": "d00c2e739108b38d6f008811da245bf768f5b607f82bbe5746713c1cffe673c3",
+      "kind": "own-words",
+      "url": "https://venkatforpa.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Voting should be easy and secure and our elections should reflect the will of the electorate, not ideologues.",
+      "note": "Statement on his 2026 re-election campaign about page. It does not mention ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "ease of voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:30.488Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acce2447343a547af8986df9cc9331ee4aa28a00ae114cc5802a32cbe6386873",
+      "kind": "own-words",
+      "url": "https://venkatforpa.com/about",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As our state representative, I have focused on making health care more affordable and accessible, investing in public education and our first responders, protecting reproductive rights, passing gun safety legislation, and preserving ballot access and respect for our election results regardless of their outcome.",
+      "note": "Campaign about page lists preserving ballot access among his focus areas.",
+      "subjects": [
+        "ballot access",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:30.488Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98850eed9f9e91d724c7183855e39b326c8267927a8678b5dc5d89c0848d4d58",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/wesa-voter-guide/2022-09-30/wesa-candidate-survey-cindy-kirk-and-arvind-venkat-on-the-issues",
+      "date": "2022-09-30",
+      "date_precision": "day",
+      "passage": "Yes. Fundamental to our democracy is that every eligible voter should be able to access the ballot box, accepting that our current elections are free and fair, and that the results of our elections are respected regardless of outcome. I strongly believe no-excuse mail-in voting is critical to meet these tenets. I additionally believe that we should enact early in-person voting, same-day registration, open primaries, pre-registration of those eligible 16-year olds and above so that they are on voter rolls when they turn 18, and independent, non-partisan redistricting.",
+      "note": "His written answer in the WESA candidate survey to the question 'Do you support no-excuse mail-in voting in Pennsylvania — yes/no?'. It supports no-excuse mail voting and other access measures; it does not address ID.",
+      "subjects": [
+        "mail-ballot rules",
+        "same-day registration",
+        "ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:30.488Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Venkat'), linked to Arvind Venkat (district 30) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.719Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1508aeb35641e63732a47d869e988a75b06dcd7dd07073659d5011bf2be58b0e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sInd=0&body=H&type=B&bn=1396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1688 (passed House May 13, 2025). Read.",
+      "note": "Named as co sponsor ('Arvind Venkat') on the official bill page; linked to Arvind Venkat via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.719Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Venkat'), linked to Arvind Venkat (district 30) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.719Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('VENKAT'), linked to Arvind Venkat (district 30) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.861Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot rules",
+        "proof of citizenship to register",
+        "election integrity and ballot access"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope: https://theballotbrief.com/state/pennsylvania/allegheny-county/pennsylvania-house-district-30 lists him on the 2026 general-election ballot; https://venkatforpa.com/about is his campaign site running for re-election",
+        "official House page https://www.pahouse.com/Venkat: home page read, nothing on the subject; news room path returned a 404 error",
+        "campaign site https://venkatforpa.com (home, about, issues and priorities paths): about page has two statements on ballot access and voting, saved; nothing on photo ID or citizenship proof",
+        "WESA 2022 candidate survey and WESA 2024 voter guide: 2022 mail-voting answer saved; 2024 guide page had no answer from him on the voting question",
+        "blocked: https://ballotpedia.org (not fetched; Ballotpedia fetches for other members in this session were blocked)",
+        "web searches run: 1"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:14:30.488Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.719Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.861Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "politician_id": "23cb2fee-97e9-4448-ae4a-0837a3676ab3",
+  "findings": [
+    {
+      "id": "46768626a3b1de7a0fb7bb3ee0fbceec87fb5ed865a20e6fdc08b0256d29943d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2026",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, House second reading, roll call 758 (passed 66-47); the member's vote is listed as Aye on https://www.ncleg.gov/Members/Votes/H/837",
+      "note": "Gable voted yes on the House passage of HB 958. Per the General Assembly's bill summaries, the bill as it later stood covers: photo ID for military and overseas ballots and curing a missing ID copy; a citizenship statement required on voter registration applications at the DMV, other agencies and county boards; checks of voter lists for non-citizens; and a statewide audit of ineligible early and absentee ballots. The House version on this date may differ from the later Senate version.",
+      "subjects": [
+        "voter ID for military and overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:38.967Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d07f225a691cd56968670b5ed83bc0ce6d21136cf382e224b9204b751917d0b8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2026",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, House vote to concur in the Senate committee substitute, roll call 801 (passed 62-47); the member's vote is listed as Aye on https://www.ncleg.gov/Members/Votes/H/837",
+      "note": "Gable voted yes to concur in the Senate version of HB 958. The bill was ratified 2026-08-06 and vetoed by the Governor on 2026-08-17; the bill page shows it placed on the House calendar for 2026-09-02. The final-version summary covers citizenship statements on registration, photo ID rules for overseas ballots, cure of missing ID on cast ballots, voter-list maintenance and an audit of ineligible early and absentee ballots.",
+      "subjects": [
+        "voter ID for military and overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:38.967Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31adde504be2359ada05c113129df9f5189559c746c77da565bd1dedc164d93b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2026",
+      "act": "yea",
+      "motion": "Second Reading, HB 958 Election Law Changes (Roll Call #758, passed 66-47); Gable is listed among the Ayes",
+      "note": "He voted yes on House second reading of HB 958. The ratified bill requires county boards to process a voter registration only if the applicant states citizenship (with a notice and a sworn-statement form if the question is blank), sets weekly removal of deceased voters, and sets a process to remove possible non-citizens flagged from a federal database. The bill is a broad election-law bill, not a polling-place ID bill.",
+      "subjects": [
+        "citizenship statement required to register",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:34:13.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "beb5cc2af2efad536ba0f9714eb65192a2fa4745fef066e6d264380a14690c2f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2026",
+      "act": "yea",
+      "motion": "M11 Concur in Senate committee substitute, HB 958 Election Law Changes (Roll Call #801, passed 62-47); Gable is listed among the Ayes",
+      "note": "He voted yes to concur in the Senate version of HB 958 before it was ratified and sent to the governor. The ratified text is at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf and the bill page https://www.ncleg.gov/BillLookUp/2025/H958 shows a governor veto entry dated 2026-08-17.",
+      "subjects": [
+        "citizenship statement required to register",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:34:13.607Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://www.ncleg.gov/Members/Biography/H/837 (Representative Wyatt Gable, District 14, Onslow, 2025-2026 session) and https://ballotpedia.org/Wyatt_Gable (running in the Nov 3, 2026 general election for NC House District 14)",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site https://www.electwyattgable.com (home page only; nothing on the subject; no issues page found)",
+        "Ballotpedia (nothing on the subject; no 2024 or 2026 Candidate Connection survey)",
+        "NC General Assembly: introduced bills list https://www.ncleg.gov/Members/IntroducedBills/H/837 (no ID or citizenship bill among 51 listed; early-voting and election-day bills are off this subject)",
+        "NC General Assembly: member vote list https://www.ncleg.gov/Members/Votes/H/837 (HB 958 votes found)",
+        "NC General Assembly: HB 958 bill page, bill summaries and digest",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "blocked: https://ballotpedia.org via WebFetch returned empty; read by curl instead",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/Gable and /1138 returned HTTP 500 (wrong URL patterns; /H/837 worked)",
+        "not reviewed: ontheissues.org, Wikipedia, Vote Smart (lead-only sources, no original found)",
+        "nothing on the subject in own words found: no speeches, posts or interviews reached"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:39:38.967Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Wyatt_Gable (confirms sitting District 14 member, on the 2026 general-election ballot)",
+        "state legislature introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/837 (his bills are on election day holiday, early voting length and city council elections; none on ID or citizenship)",
+        "state legislature bill page and roll calls for HB 958 (Election Law Changes)",
+        "HB 958 ratified bill text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "news and web search on his name plus voter ID, citizenship, election integrity: no own words found",
+        "his official and campaign site: not reviewed (no page located)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T18:34:13.607Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

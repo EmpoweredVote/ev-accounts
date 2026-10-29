@@ -1,0 +1,80 @@
+{
+  "politician_id": "890e2fa1-bd19-43ae-b445-c92b80496710",
+  "findings": [
+    {
+      "id": "2ad59a354861ca05474b0dbb0a9640f70f18fc48be1e7f3afb515ec7e287356d",
+      "kind": "own-words",
+      "url": "https://mitchgore.com/issues/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Mitch supports term limits at every level, getting money out of politics, tougher ethics laws, more transparency, and stronger protections for the right to vote.",
+      "note": "Campaign issues page, written in the third person on his campaign site. General statement about protecting the right to vote; it does not mention ID, citizenship or mail ballots.",
+      "subjects": [
+        "right to vote (general, no ID detail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:41:08.557Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity",
+        "right to vote"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Mitch_Gore names him as Indiana House District 89 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "campaign site https://mitchgore.com/issues/ (one related sentence saved)",
+        "Ballotpedia page (no subject positions found)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_mitch_gore_1 (page loads without bill data; no bill list reachable by fetch)",
+        "not reviewed: bill sponsorship search on iga.in.gov (no key/JS-only)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: https://www.indianahousedemocrats.org/members/mitch-gore",
+        "blocked: https://indianahouse.org/members/mitch-gore (no connection)",
+        "blocked: https://h89.indianahousedemocrats.org (no connection)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:41:08.557Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "student ID at the polls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page https://indianahousedemocrats.org/members/mitch-gore (identifies him as the District 89 member; nothing on the subject)",
+        "Wikipedia (confirms office and district; nothing on the subject)",
+        "BallotReady (lists him as a 2026 general election candidate for District 89)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mitch_gore_1 (page returned only a title, no content)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1264/details (page returned only a title, no content)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Mitch_Gore (fetch returned no text)",
+        "campaign site: not reviewed (none found)",
+        "news searches on name plus voter ID, proof of citizenship, mail-ballot ID (no quote or vote by him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T20:35:01.141Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

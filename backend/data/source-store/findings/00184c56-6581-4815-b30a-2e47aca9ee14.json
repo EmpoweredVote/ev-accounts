@@ -1,0 +1,37 @@
+{
+  "politician_id": "00184c56-6581-4815-b30a-2e47aca9ee14",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Mihaela_Plesa (fetched by curl) shows she is the sitting Texas House District 70 member, won her 2026 primary, and is on the 2026 general-election ballot",
+        "On the Record (0 appearances for this politician)",
+        "Texas House member page, media and newsletters tabs (https://house.texas.gov/members/4345/media, /newsletters): empty, nothing on the subject",
+        "campaign site https://plesafortexas.com (home, /news, /issues): only a vote-planning notice, nothing on the subject",
+        "Ballotpedia: nothing on the subject in the page text",
+        "Wikipedia and Dallas Morning News voter guide pages: nothing on the subject",
+        "Texas Tribune 2025-01-03 profile: nothing on the subject",
+        "Texas Legislature Online bill history for 88R SB 1070 and HR 334: fetched; could not tie either to her with a verifiable record",
+        "blocked: https://texasscorecard.com/state/texas-house-suspends-rules-to-honor-group-opposing-voter-id (403 challenge, also via curl)",
+        "blocked: https://texasscorecard.com/state/gop-lawmaker-scuttles-his-own-election-integrity-priority-legislation/ (same site, not fetched)",
+        "blocked: https://app.legiplex.com/profile/mihaela-plesa-147/tx/legislatures/2025/89r/legislation/page/8 (403)",
+        "not reviewed: Texas House floor roll-call journals for election bills (not located within allowance)",
+        "web searches run: 5 of 10 (no direct quote from her on the subject surfaced)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:30:06.123Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

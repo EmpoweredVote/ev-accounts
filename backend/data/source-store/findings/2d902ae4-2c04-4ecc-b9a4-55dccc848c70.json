@@ -1,0 +1,175 @@
+{
+  "politician_id": "2d902ae4-2c04-4ecc-b9a4-55dccc848c70",
+  "findings": [
+    {
+      "id": "ad058c57528537dcdf0471b7e4c26b0c69e210266f2ae57e8a5fa022fdc59811",
+      "kind": "own-words",
+      "url": "https://blueribbonnews.com/?p=123496",
+      "date": "2025-06-02",
+      "date_precision": "day",
+      "passage": "“Voters sent me to Austin with a clear mandate: pass school choice, protect innocent life, and secure our border and elections,” Pierson said. “This session we expanded property-tax relief, safeguarded Texas land from foreign adversaries, strengthened election integrity, fought for the unborn, supported border security, and delivered school choice to thousands of children across Texas.”",
+      "note": "End-of-session press release, quoted directly. She lists strengthened election integrity among the session's results. The release does not name a bill and does not mention voter ID or citizenship. The same release says she sponsored election integrity legislation from the Senate (the release's wording, not hers).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:38.125Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a27e9f5e00f1a2b7cbc88b981fe6c1356b5a80e088680e207df25cc20e23eb9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-05-25",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "House cosponsor of SB 16 (proof of citizenship to register to vote); last action 2025-05-25 committee report sent to Calendars",
+      "note": "She is listed among the House cosponsors of SB 16, 'Relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof...; creating criminal offenses.' Date shown is the bill's last House action, not the date she signed on.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:38.125Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "976ca9d6116b8d50e94e54f6734c073466dcd79b534822c467c9e7620e911d20",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-892-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ca26e2d4c784b7daaee2734fb6ca4331416c935ac9979852f395c7aa3fd7a2d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR197",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-197-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HJR-197-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.530Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia page https://ballotpedia.org/Katrina_Pierson (confirms she is on the 2026-11-03 general-election ballot for Texas House District 33)",
+        "campaign site katrinapierson.com (home page has no text; /issues returns 404)",
+        "Texas Legislature Online SB 16 (89R) history page (she is a House cosponsor)",
+        "blocked: https://app.legiplex.com/profile/katrina-pierson-3015/tx/legislatures/2025/89r/legislation (403, so her 2025 sponsored-bill list was not read)",
+        "not reviewed: https://house.texas.gov member page for district 33 (redirect not followed)",
+        "Blue Ribbon News press release of 2025-06-02 (own words)",
+        "two news searches on her name plus the subject words; no interview or debate video found; the specific Senate election bills she carried in the House were not identified"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:59:38.125Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:55:41.530Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "politician_id": "4892ed26-cdcc-4c88-82a4-b673f0b43bc9",
+  "findings": [
+    {
+      "id": "cfe2b58cc03809c65478217a725ed68f4a8e8dfdc570c506d17180e72e4cec02",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('ZAMARRIPA'), linked to JoCasta Zamarripa (district 8) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e07bda56b70df08dcc4c7e09aa3343d2f3b2b56b93b57d7d342f10dcb2b8c668",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('ZAMARRIPA'), linked to JoCasta Zamarripa (district 8) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

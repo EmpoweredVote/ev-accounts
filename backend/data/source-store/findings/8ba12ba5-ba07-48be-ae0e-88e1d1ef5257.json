@@ -1,0 +1,143 @@
+{
+  "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+  "findings": [
+    {
+      "id": "827c98645b9756eb0c5ed3451f86e595b48315ae9bdda80bb537dcdf5f091be6",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2023",
+      "act": "yea",
+      "motion": "Assembly floor: SB 1174 Senate third reading, passed",
+      "note": "SB 1174 (Min), Elections: voter identification, bars local governments from setting voter ID rules. Source is CalMatters Digital Democracy. She voted aye on Assembly third reading.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:10:24.352Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7972177a08409ba784cece534311fb47f1bc5f04dd356631d75d64cda1516693",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly floor: third reading, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. She voted aye.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0d52ef96a3af324d5a9424e3e2e0b38a38229988662e390167ddbbbcab4345d",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Assembly floor: concurrence in Senate amendments, AB 1116 passed",
+      "note": "AB 1116 (Berman), voter registration, would let people register online without a California driver license or state ID by giving the last four digits of their Social Security number. Source is CalMatters Digital Democracy. She voted aye.",
+      "subjects": [
+        "ID to register to vote",
+        "voter registration without a state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bda98c95c4fa5ffa11443c76b31d4bdd3d45cfc065e1c981370581015c767059",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor: SB 1174 Senate third reading, passed",
+      "note": "SB 1174 (Min), Elections: voter identification, bars local governments from setting voter ID rules. Source is CalMatters Digital Democracy. She voted aye on Assembly third reading.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:19.893Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "local voter ID rules (SB 1174)",
+        "ID to register to vote (AB 1116)",
+        "voter ID and proof of citizenship (AB 25)",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Assembly District 4 seat and Assembly majority leader since 2023-11-21, on the 2026 general-election ballot, advanced from the June 2, 2026 primary; nothing on the subject)",
+        "CalMatters Digital Democracy bill page for SB 1174 (floor vote list)",
+        "CalMatters Digital Democracy bill page for AB 1116 (floor vote lists)",
+        "CalMatters Digital Democracy bill page for AB 25 (committee votes only; she is not on the committee, no floor vote)",
+        "blocked: https://a04.asmdc.org/ (certificate could not be verified)",
+        "web search for her statements on voter ID and local voter ID rules: nothing from her found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:10:24.352Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "local voter ID rules (SB 1174)",
+        "ID to register to vote (AB 1116)",
+        "voter ID and proof of citizenship (AB 25)",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms Assembly District 4 seat and Assembly majority leader since 2023-11-21, on the 2026 general-election ballot, advanced from the June 2, 2026 primary; nothing on the subject)",
+        "CalMatters Digital Democracy bill page for SB 1174 (floor vote list)",
+        "CalMatters Digital Democracy bill page for AB 1116 (floor vote lists)",
+        "CalMatters Digital Democracy bill page for AB 25 (committee votes only; she is not on the committee, no floor vote)",
+        "blocked: https://a04.asmdc.org/ (certificate could not be verified)",
+        "web search for her statements on voter ID and local voter ID rules: nothing from her found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:28:19.893Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

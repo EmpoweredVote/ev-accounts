@@ -1,0 +1,110 @@
+{
+  "politician_id": "0ddfaf89-b056-4909-97c2-c74d08ce508d",
+  "findings": [
+    {
+      "id": "edacc8ae4d9d8486b2e3b74ec40912b0c86c05f472ff489fc22681f997774b83",
+      "kind": "own-words",
+      "url": "https://housedems.com/hoskins-fellow-democrats-call-on-hall-to-take-up-mi-voting-rights-act/",
+      "date": "2026-06-24",
+      "date_precision": "day",
+      "passage": "“Michigan needs its own Voting Rights Act because voting is a fundamental right, not a privilege that can be taken away by political whim. We’ve seen states like Tennessee, Louisiana and Alabama advance policies that make it harder for people to make their voices heard. We have a responsibility to ensure every eligible Michigander can vote freely, fairly and without discrimination,” said state Rep. Veronica Paiz (D-Harper Woods).",
+      "note": "Her statement in a joint release on the Michigan Voting Rights Act bills (House Bills 5969 to 5972). It speaks of voting rights in general and does not name voter ID or proof of citizenship.",
+      "subjects": [
+        "voting rights in general",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:17.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Veronica Paiz (District 11)') on the official bill page; linked to Veronica Paiz via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Paiz'), linked to Veronica Paiz (district 10) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "voting rights"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not permitted in this session)",
+        "House caucus news page https://housedems.com/veronica-paiz/news/ confirms her as a state representative; no release on voter ID or proof of citizenship (her voting-rights, special-election and driver's-license releases are off the five positions)",
+        "Branch voter guide https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-10/candidates/veronica-paiz confirms she is a 2026 general-election candidate for District 10; its voting section is empty",
+        "House caucus releases of 2026-05-14 and 2026-06-24 on the Michigan Voting Rights Act: no mention of voter ID or proof of citizenship",
+        "blocked: https://ballotpedia.org/Veronica_Paiz (403)",
+        "blocked: https://www.paizforstaterep.com (no response)",
+        "nothing on the subject: https://www.michigannewssource.com/?p=58710",
+        "two news searches on name plus subject words: no own-words statement on the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:46:17.175Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

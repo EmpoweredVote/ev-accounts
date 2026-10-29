@@ -1,0 +1,125 @@
+{
+  "politician_id": "08284136-be31-4d86-bf77-73c900026ade",
+  "findings": [
+    {
+      "id": "08d3dc963f554161fbfebfab2a7b6e5ae45e2a203dc2f3cc19de5917a992bd14",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2024/bills/VAB00026802",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "Passage",
+      "note": "Voted for HB 26 (voter identification; accepted forms of identification, private entities licensed or certified) on passage; the House passed it 85 to 11 and it later became law. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter ID at the polls",
+        "acceptable forms of photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.359Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b67e8d1301f6e650b921811a660eecb6efdf68fc9ba1281ca3356f6c3b447e8e",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00040317",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-972-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted for HB 972 (voter registration list maintenance, cancellation procedures and required record matches) on third reading; the House passed it 62 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.359Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0629c2d44dc5bbd90e279c84146b755a90720ad2e5d7176d9fdfabf0c471791",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039276",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-111-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (61-Y 35-N 0-A)",
+      "note": "Voted for HB 111 (cancellation of voter registration, sources of data) on third reading; the House passed it 61 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.359Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c75d347237383ef05995d1162d3624f6f5430b486d8d021cd3002082c725dcb",
+      "kind": "record",
+      "url": "https://fastdemocracy.com/bill-search/va/2026/bills/VAB00039438",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-215-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (62-Y 35-N 0-A)",
+      "note": "Voted for HB 215 (voter registration list maintenance, third-party data exchanges approved by the State Board of Elections) on third reading; the House passed it 62 to 35. Copy of the legislature's vote record on a bill-tracking page.",
+      "subjects": [
+        "voter-roll list maintenance",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:41.359Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll list maintenance",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: https://ballotpedia.org/Debra_Gardner shows a sitting Virginia House member for District 76, re-elected 2025-11-04, term to 2028",
+        "official House member page https://house.vga.virginia.gov/members/H0361 (nothing on the subject)",
+        "campaign site https://debragardnerfordelegate.com/ and its blog post https://debragardnerfordelegate.com/News/b/new-virginia-laws-2025 (nothing on the subject)",
+        "one news search on her name plus voter ID, photo identification, proof of citizenship and voting rights (nothing naming her on the subject)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (nothing on the subject)",
+        "bill-tracking pages on fastdemocracy.com for 2026 bills HB 972, HB 111, HB 215, HB 28, HB 966, HB 213, HB 1131 and HB 1213, and the 2024 bill HB 26 (his recorded votes copied where he voted; HB 28 and HB 213 not on the subject; no recorded vote by him on HB 966, HB 1131 or HB 1213)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB972 (page needs JavaScript; cannot be read)",
+        "blocked: https://legiscan.com/VA/bill/HB1131/2026 (403)",
+        "not reviewed: other 2024 and 2025 bills on voter identification or citizenship checks (no list of them reachable without the JavaScript legislature site)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:31:41.359Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

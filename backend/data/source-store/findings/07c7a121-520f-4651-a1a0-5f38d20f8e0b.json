@@ -1,0 +1,154 @@
+{
+  "politician_id": "07c7a121-520f-4651-a1a0-5f38d20f8e0b",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e0d7391c761da1d112bd40ce9d522c8e050660715dbf83a5adb17a8bf6065065",
+      "kind": "own-words",
+      "url": "https://begich.house.gov/media/press-releases/statement-congressman-nick-begich-house-passage-save-america-act-0",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "“The passage of the SAVE America Act is instrumental in strengthening election integrity and restoring trust in our election process. This legislation reinforces the foundational principle that the United States must be the gold standard for secure and transparent elections. American elections are for American citizens. Additionally, American elections must engender trust by ensuring each vote is cast by a valid voter. These basic principles are broadly supported by Americans from all ideological persuasions and walks of life, and I am proud to see this legislation pass the House.”",
+      "note": "Official press statement after the House passed the SAVE America Act. The release says he co-sponsored the bill. He describes it as strengthening election integrity and says elections are for citizens.",
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:06:59.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98de0ff69df7b030a70197a664a402225f800a647f9d25ad9af46ac1c0bb1eea",
+      "kind": "own-words",
+      "url": "https://begich.house.gov/media/press-releases/statement-congressman-nick-begich-house-passage-save-america-act-0",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Congressman Nick Begich (R-AK) released the following statement following the House passage of the Safeguard American Voter Eligibility (SAVE) America Act, legislation he co-sponsored to strengthen election integrity:",
+      "note": "The introduction to the same release, in his office's words, says he co-sponsored the SAVE America Act. The bill number was not on the page and congress.gov was blocked, so the instrument is not named.",
+      "subjects": [
+        "SAVE America Act",
+        "co-sponsorship",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:06:59.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a19e92aab6beb8bec98ed7bb5b632236628bdecfc339a6c38ba7792fbc07758",
+      "kind": "own-words",
+      "url": "https://begich.house.gov/media/press-releases/congressman-nick-begich-and-abraham-hamadeh-lead-effort-end-ranked-choice",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "passage": "“The nation does not need more uncertainty and confusion injected into the federal election process,” said Congressman Begich. “One person, one vote’ is a proven, tried and true method that is easy to understand, easy to audit, and quick to report. Experiments with our national election systems risk disenfranchisement of voters and lead to outcomes that do not represent the true will of the American people.”",
+      "note": "Quote on the Preventing Ranked Choice Corruption Act, which he co-leads. It bans ranked choice voting in federal elections. Related election-integrity topic, not about ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "ranked choice voting ban in federal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:06:59.727Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "election integrity laws in general",
+        "ranked choice voting ban in federal elections",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Nicholas_Begich) says he is on the November 3, 2026 general election ballot and advanced from the August 18, 2026 primary",
+        "On the Record (0 appearances, 0 candidates)",
+        "official site press releases, pages 1-14 (begich.house.gov/media/press-releases?page=0..13), scanned for subject words",
+        "official site op-eds page: nothing on the subject",
+        "official site in-the-news page: nothing on the subject",
+        "official site issues page: no election page found (begich.house.gov/issues/election-integrity returned 404)",
+        "Ballotpedia: only the on-file House votes on H.R. 22 appear",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (403 bot check)",
+        "blocked: https://www.congress.gov/member/nicholas-begich/B001323 (403 bot check)",
+        "blocked: https://www.govtrack.us/congress/members/nicholas_begich/456958 (403 bot check)",
+        "blocked: https://begich.house.gov/search (403)",
+        "not reviewed: news search, campaign site (begichforalaska.com did not load), debate and interview video; the shared web search budget was used up",
+        "not reviewed: ontheissues.org and Wikipedia (lead-only sites)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:06:59.727Z",
+      "by": "source-collector"
+    }
+  ]
+}

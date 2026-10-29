@@ -1,0 +1,111 @@
+{
+  "politician_id": "7d476b66-eb47-4dcc-9dc0-d4733a8aa60b",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status: sitting NC House member, District 51 (Lee, Moore), confirmed at https://www.ncleg.gov/Members/Biography/H/393 ; term ends 2027 and https://ballotpedia.org/John_Sauls says he did not file for re-election in 2026 (not a lost primary or withdrawal; no 2026 ballot race)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "Ballotpedia (fetched with curl; nothing on the subject)",
+        "ncleg.gov member page (nothing on the subject; sponsorship list not reviewed)",
+        "not reviewed: ncleg.gov bill sponsorship pages for the subject",
+        "not reviewed: official and campaign sites",
+        "not reviewed: news search (the shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:53:14.745Z",
+      "by": "source-collector"
+    }
+  ]
+}

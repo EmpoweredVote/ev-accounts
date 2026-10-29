@@ -1,0 +1,134 @@
+{
+  "politician_id": "a5f74fc0-4809-40e6-b52f-0bd1e2e86fc5",
+  "findings": [
+    {
+      "id": "fcb88bdd8e4d54624a440440556c331216607f840d300e5ce9f67ee570fd1155",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/27/brill/media/yorl10u0/rep-brill-stands-up-for-true-election-integrity.pdf",
+      "date": "2025-10-03",
+      "date_precision": "day",
+      "passage": "“In a time when voter confidence in the integrity of our elections is at an all time low, this is simple legislation to improve security for our elections and confidence from Wisconsin voters. I would like to thank President Trump for his leadership on this issue. Thank you for your attention to this matter.”",
+      "note": "Her own release on a bill she and seven other Assembly members began circulating to bar ballot drop boxes in Wisconsin elections. Related election-security topic, not about ID itself.",
+      "subjects": [
+        "ballot drop boxes",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.434Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Brill') on the official bill page; linked to Lindee Brill via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('BRILL'), linked to Lindee Brill (district 27) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.786Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "ballot drop boxes",
+        "election integrity"
+      ],
+      "places": [
+        "status: listed as incumbent on the November 2026 ballot for Assembly District 27 (https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD27.html)",
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/27/brill/ (nothing on the subject)",
+        "official press release list https://legis.wisconsin.gov/assembly/27/brill/news-updates/press-releases/ pages 1 to 5 (one release on the subject, saved; no voter ID or citizenship release)",
+        "blocked: https://www.wispolitics.com/2025/rep-brill-stands-up-for-true-election-integrity/ (403; the same release was read on her own site instead)",
+        "campaign site: none found in searches",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Lindee_Brill",
+        "news search on name plus voter ID, election integrity, citizenship (no voter ID or citizenship quote found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:07:15.961Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:15:12.786Z",
+      "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "ballot drop boxes",
+        "election integrity"
+      ],
+      "places": [
+        "scope check: listed as incumbent on the November 2026 ballot for Assembly District 27 (https://jdjohn215.github.io/wi-legis-26-preview/State-Assembly/AD27.html)",
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/27/brill/ (nothing on the subject)",
+        "official press release list https://legis.wisconsin.gov/assembly/27/brill/news-updates/press-releases/ pages 1 to 5 (one release on the subject, saved; no voter ID or citizenship release)",
+        "blocked: https://www.wispolitics.com/2025/rep-brill-stands-up-for-true-election-integrity/ (403; the same release was read on her own site instead)",
+        "campaign site: none found in searches",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Lindee_Brill",
+        "news search on name plus voter ID, election integrity, citizenship (no voter ID or citizenship quote found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:31:40.434Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "politician_id": "1cbd3e60-fbd2-4c74-bc2b-9de2f1b99ccb",
+  "findings": [
+    {
+      "id": "656036b18faa8e3db817935cbbb1ffa5bb2f0f7058be145f9c640e0b3a5172f1",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Burns/InTheNews/NewsRelease/?id=137731",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "passage": "It is important to encourage regular and robust voting to protect the very foundation of our constitutional republic,” Mehaffie said. “I feel people would be more likely to vote if they had increased confidence in our electoral system. This legislation offers numerous forms of acceptable ID and an alternative for the voter to affirm his or her identity, so we meet our constitutional obligation to ensure every voter has the right to vote.",
+      "note": "Joint release on the day House Bill 771 was introduced; he describes the bill as offering many acceptable IDs and a written affirmation option for a voter without ID. Passage begins inside the quotation, as the release prints it.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.180Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "faea00181f0083762d2409b687de3f86f7e53866ac2368a2b5dc98bfc678c464",
+      "kind": "own-words",
+      "url": "https://wesa.fm/2025-03-19/voter-id-pennsylvania-election-reform",
+      "date": "2025-03-19",
+      "date_precision": "day",
+      "passage": "I hope this is part of a bigger, more broad election code change,” Mehaffie said. “I think it’s gonna make it better for the voter.",
+      "note": "Quoted by WESA (public radio) on House Bill 771; he says he hopes the bill is part of a wider election code change. Passage begins inside the quotation.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.180Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fc388c968b014557ee14c754da6eb4874136bb6ca790e003d30100622a5b1ae",
+      "kind": "own-words",
+      "url": "https://levittownnow.com/2025/05/09/in-pa-house-voter-id-vote-by-mail-reform-bills-move/",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "passage": "We wanted to make sure that we saw that nobody was disenfranchised,” Mehaffie said, noting that polls nationally and in Pennsylvania have shown strong support for voter ID requirements.",
+      "note": "Quoted by Levittown Now (republished news report dated 2025-05-09) about the committee vote on House Bill 771 held the Tuesday before, 2025-05-06; he says the bill was written so no voter is shut out, and cites polls on support for voter ID. Passage begins inside the quotation.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.180Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('MEHAFFIE'), linked to Thomas L. Mehaffie III (district 106) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.695Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Mehaffie'), linked to Thomas Mehaffie (district 106) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.695Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Mehaffie'), linked to Thomas L. Mehaffie III (district 106) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.695Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Mehaffie'), linked to Thomas L. Mehaffie III (district 106) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "def070ebf542ef8ea23c051f7500b421226e9ca3d449aea40f05cc00b04af235",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as prime sponsor ('MEHAFFIE') on the official bill page; linked to Thomas L. Mehaffie via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MEHAFFIE'), linked to Thomas Mehaffie (district 106) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity when voting in person",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: sitting member (https://www.repmehaffie.com/) and listed for the 2026-11-03 general election ballot (https://theballotbrief.com/state/pennsylvania/dauphin-county/pennsylvania-house-district-106)",
+        "On the Record (0 appearances)",
+        "official site https://www.repmehaffie.com/ press release list and fall 2025 newsletter PDF: nothing on the subject",
+        "the House caucus site pahousegop.com member page: does not exist at the patterns tried (404 page)",
+        "blocked: https://ballotpedia.org/Thomas_L._Mehaffie (empty page or 403)",
+        "blocked: https://penncapital-star.com/campaigns-elections/voter-id-and-vote-by-mail-reform-bills-move-to-pa-house/ (403)",
+        "news: WHYY, WESA, Levittown Now (quotes saved)",
+        "co-sponsor's press release on pahouse.com (joint release with quote saved)",
+        "campaign site: not found separately from the official site",
+        "bill votes and sponsorships: not searched, linked separately per the brief",
+        "web search: name plus voter ID, election integrity, mail ballot, proof of citizenship words (several searches, no first-hand own words beyond those saved)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:05:30.007Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.695Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity when voting in person",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: sitting member (https://www.repmehaffie.com/) and listed for the 2026-11-03 general election ballot (https://theballotbrief.com/state/pennsylvania/dauphin-county/pennsylvania-house-district-106)",
+        "On the Record (0 appearances)",
+        "official site https://www.repmehaffie.com/ press release list and fall 2025 newsletter PDF: nothing on the subject",
+        "the House caucus site pahouse-caucus.com member page: does not exist at the patterns tried (404 page)",
+        "blocked: https://ballotpedia.org/Thomas_L._Mehaffie (empty page or 403)",
+        "blocked: https://penncapital-star.com/campaigns-elections/voter-id-and-vote-by-mail-reform-bills-move-to-pa-house/ (403)",
+        "news: WHYY, WESA, Levittown Now (quotes saved)",
+        "co-sponsor's press release on pahouse.com (joint release with quote saved)",
+        "campaign site: not found separately from the official site",
+        "bill votes and sponsorships: not searched, linked separately per the brief",
+        "web search: name plus voter ID, election integrity, mail ballot, proof of citizenship words (several searches, no first-hand own words beyond those saved)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:47:07.180Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.457Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

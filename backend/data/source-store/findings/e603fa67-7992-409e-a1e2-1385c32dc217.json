@@ -1,0 +1,262 @@
+{
+  "politician_id": "e603fa67-7992-409e-a1e2-1385c32dc217",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "b7586b42d9061d81ff9a82b83f9b8c66bf55d1cb8a288957324d23928db536bb",
+      "kind": "own-words",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-votes-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“The SAVE Act delivers President Trump’s promise to the American people to secure our electoral process, restore trust, and prevent election interference. I was proud to cosponsor and vote for the SAVE Act and protect the ballot box.”",
+      "note": "Official press release quoting him on his vote for H.R. 22, the SAVE Act, and saying he cosponsored it. The release describes the bill as requiring proof of U.S. citizenship to register to vote in federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "877ee7d981ce2eaa85441a05e928afcf22063ba09ada7f6289a1b42c718a8df6",
+      "kind": "own-words",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-votes-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“Elections in America are for Americans, period,”",
+      "note": "Opening line of his quoted statement in the same press release, tied to non-citizen voting.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a034ea834f223afb4c1f04d9da255a509d79379c2cd3f471d43bf3b224268a2",
+      "kind": "record",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-votes-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "sponsor",
+      "note": "His press release states he cosponsored H.R. 22, the SAVE Act, which amends the National Voter Registration Act to require proof of U.S. citizenship to register to vote in federal elections. Cosponsor status is from his own release; congress.gov was blocked.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e002628725f0067c966f9894db48820e6ccc551dbe747c88297f4d5b613a2343",
+      "kind": "own-words",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-celebrates-passage-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "The Save America Act makes sure our elections are fair and secure. By requiring photo ID to vote and proof of citizenship to register, we are taking real measures to retore trust and ensure only U.S. Citizens are casting ballots.",
+      "note": "Statement in his name on House passage of the Save America Act, which he voted for and cosponsored. Spelling \"retore\" is as on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9394fe259c1e7023a990ddeda286ad3db1083ccf9c303ffd0a27538c7807b55a",
+      "kind": "own-words",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-celebrates-passage-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "I urge the Senate to do the same in an expedient manner.",
+      "note": "He urges the Senate to pass the Save America Act, which the release says requires photo ID to cast a ballot, lets mail voters attach a copy of ID, requires documentary proof of citizenship to register, monthly voter-roll checks for noncitizens, and a provisional ballot for voters who lack paperwork on Election Day.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "provisional ballot for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce8a13c160cf62723a9dfc03d18842e31eab4e65fc6c30e6e201de033026b9f4",
+      "kind": "record",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-celebrates-passage-save-america-act",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "House passage of the Save America Act (bill number not stated on the release)",
+      "note": "His release says he voted for the Save America Act and is a cosponsor. Official roll call was not fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe4ca34f31a1a2c0517b2d97d26d4d1bb280c1634c9958be4d379038849ca56f",
+      "kind": "own-words",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-applauds-house-passage-stop-insider-trading-act",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "My ‘yes’ vote today was a vote to secure our elections and return transparency and ethics to our government.",
+      "note": "Statement on voting yes on the Stop Insider Trading Act (H.R. 7008 per the release). He says the bill contains provisions of the SAVE America Act; the release says it would require photo ID to vote in federal elections and a copy of ID with mail-in ballots.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1b138b1a0a4113fdd6d776f83a7b23b5c3eeef11279ce8699753234f678070b9",
+      "kind": "record",
+      "url": "https://mcguire.house.gov/media/press-releases/rep-john-mcguire-applauds-house-passage-stop-insider-trading-act",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7008-2026",
+      "act": "yea",
+      "motion": "House passage of H.R. 7008, Stop Insider Trading Act (carries photo ID and mail-ballot ID provisions per his release)",
+      "note": "His release says he voted yes. The release says the bill also requires photo ID at federal elections and a copy of ID with mail-in ballots. Official roll call was not fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:03.562Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "provisional ballot for voters without ID",
+        "voter-roll checks for noncitizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_McGuire says he is on the ballot in the general election on November 3, 2026 and advanced from the August 4, 2026 primary",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "official site mcguire.house.gov: issues pages (congress, economy) nothing on the subject; press releases pages 0-9 (91 releases) scanned for subject words",
+        "Ballotpedia John McGuire page: nothing on the subject",
+        "blocked: https://www.congress.gov/member/john-mcguire/M001239 (HTTP 403, so sponsorships not checked there)",
+        "blocked: https://mcguire.house.gov/search (HTTP 403)",
+        "not searched: web search budget for the session was used up, so no news search or campaign-site search was run"
+      ],
+      "found": 8,
+      "at": "2026-10-22T21:53:03.562Z",
+      "by": "source-collector"
+    }
+  ]
+}

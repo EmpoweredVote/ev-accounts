@@ -1,0 +1,179 @@
+{
+  "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+  "findings": [
+    {
+      "id": "fa8bd352babae7f326f6831c5fc710e318b92fa4637974887e81a332b3d7d9ee",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "House roll call #801, motion M11 Concur in the Senate committee substitute for HB 958, Election Law Changes (passed 62-47). K. Brown is listed among the Noes.",
+      "note": "She voted no on concurring with the Senate version of HB 958, which the House passed 62-47. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v9.html) requires county boards to process a voter registration application only if it affirmatively states the applicant is a citizen, with a 30-day sworn-statement notice when the citizenship question is left blank; adds the same citizenship question check at motor vehicle offices; allows data-sharing with other states to cross-check voter records; and sends monthly motor vehicle data to the State Board for list maintenance. Per the bill page the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:52:37.153Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cdc0e00a3068d07df2d5ea238844f92e08f304efe971bc608eae703b02c93de3",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (roll call 758)",
+      "note": "HB 958 (Election Law Changes) is an omnibus election bill. The edition read here includes voter-list maintenance, removal of voters flagged as possible non-citizens, and absentee and ballot-challenge changes. The roll call transcript lists this member among the Noes.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:03:36.630Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "17ff1157d7a9326114a15f8801164ab9ca385b533a2ee111bd0349b093f93e8d",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (roll call 801)",
+      "note": "HB 958 (Election Law Changes) is an omnibus election bill. The edition read here includes voter-list maintenance, removal of voters flagged as possible non-citizens, and absentee and ballot-challenge changes. The roll call transcript lists this member among the Noes.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:03:36.630Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eccfac028de66789497ac39390ad7520459fd3d9f00fd37babb0e18684f340f1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/IntroducedBills/H/795",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "other",
+      "motion": "HB 1246 Safeguarding Elections Act, co-sponsor (not primary sponsor)",
+      "note": "Her legislature bills list shows HB 1246, Safeguarding Elections Act, referred to committee on 2026-08-04 with her as a non-primary sponsor. The bill text (draft version 0) makes it a misdemeanor to demand citizenship documentation from a voter beyond what State law requires, and adds rules on poll observers and ballot challenges.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:03:36.630Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "voter-roll list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia and NC General Assembly biography page (https://www.ncleg.gov/Members/Biography/H/795) name her as House District 71 member; Ballotpedia says she is on the Nov 3, 2026 general ballot and her March 3, 2026 primary was canceled",
+        "On the Record (0 appearances; extract-otr returned nothing)",
+        "nothing on the subject: Ballotpedia (https://ballotpedia.org/Kanika_Brown) has no issue positions or survey answers; she has not completed the 2026 Candidate Connection survey",
+        "blocked: https://www.kanikabrown.com (no response from the campaign site)",
+        "NC General Assembly bill page and roll call for HB 958 (reviewed)",
+        "not reviewed: her full NC vote history page (https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/795 loads by script, no readable content); HB 958 House second/third reading roll call of 2026-06-30 (roll call number not found)",
+        "not reviewed: news search and own-words search (the shared web search budget was used up, so no searches were run)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:52:37.153Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page https://ballotpedia.org/Kanika_Brown says she is on the November 3, 2026 general-election ballot for House District 71",
+        "On the Record (0 meetings)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/795 plus her vote list https://www.ncleg.gov/Members/Votes/H/795 and bills list https://www.ncleg.gov/Members/IntroducedBills/H/795: two roll calls on HB 958 and one co-sponsored election bill found",
+        "HB 958 bill page and text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v7.pdf) and HB 1246 text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf) read for contents",
+        "House member page https://nchousedems.com/our-members/kanika-brown-house-district-71/: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-71/candidates/kanika-brown (connection failed)",
+        "one news search on name plus subject words: no statement by her on the subject found"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:03:36.630Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

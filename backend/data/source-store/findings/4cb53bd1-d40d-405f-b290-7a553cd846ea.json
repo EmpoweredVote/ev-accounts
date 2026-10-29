@@ -1,0 +1,154 @@
+{
+  "politician_id": "4cb53bd1-d40d-405f-b290-7a553cd846ea",
+  "findings": [
+    {
+      "id": "7d5433c019bb59136515ad05a5811506cb4146a0cf5653e35db6f17dc27d3e85",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2025-01-31/republican-legislators-introduce-resolution-to-require-proof-of-citizenship-to-vote",
+      "date": "2025-01-31",
+      "date_precision": "day",
+      "passage": "“Almost everywhere you go, you have to sign in (and) show I.D. before you can conduct business in life,” Johnsen told Michigan Public. “So it's not like this is difficult, but it certainly gives people more security in knowing your elections are fair.”",
+      "note": "Quoted by Michigan Public when she introduced the joint resolution on citizenship proof and photo ID; she says showing ID is not difficult and adds security.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:21.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57a9cbe21c02533e28f8465f722537c56ccd451c694de1cdd73ba82595e3afb5",
+      "kind": "own-words",
+      "url": "https://michiganpublic.org/politics-government/2026-08-12/republicans-promote-voter-id-amendment-after-new-allegation-of-noncitizen-voter-registration",
+      "date": "2026-08-12",
+      "date_precision": "day",
+      "passage": "“These allegations must be fully investigated, and Michigan should cooperate with federal authorities to identify and close any gaps in our safeguards,” Johnsen said.",
+      "note": "Quoted by Michigan Public after a video alleging a noncitizen on the voter rolls; she calls for investigation and cooperation with federal authorities.",
+      "subjects": [
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:21.210Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dc2ff44a195725625ea01af5777b7fa04b6ade0c84f0e1b682b1d416a430417",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4227",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4227-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4227 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 509q, 509gg, 509\"",
+      "note": "Named as co sponsor ('Gina Johnsen (District 78)') on the official bill page; linked to Gina Johnsen via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Johnsen'), linked to Gina Johnsen (district 78) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Gina Johnsen (District 78)') on the official bill page; linked to Gina Johnsen via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "official House caucus member list https://gophouse.org/members/ (confirms she is a sitting member)",
+        "official House caucus post list https://gophouse.org/member/RepGinaJohnsen/posts (first page read; nothing on the subject; no way found to page further)",
+        "blocked: https://www.yahoo.com/news/michigan-lawmakers-clash-over-push-212357862.html (429)",
+        "Michigan Public articles of 2025-01-31 and 2026-08-12 fetched",
+        "Bridge Michigan proof-of-citizenship article fetched (no remarks by her)",
+        "three web searches on name plus subject words",
+        "legislature bill pages for sponsorships and votes: not searched, being linked separately"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:46:21.210Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.331Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

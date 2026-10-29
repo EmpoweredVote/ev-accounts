@@ -1,0 +1,31 @@
+{
+  "politician_id": "eaf0ce8c-b937-469f-b3a6-f9b1599610b4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "affidavit for voters without ID",
+        "mail/absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "Ballotpedia: blocked/empty on fetch (the fetch tool returned no page text); a browser-style curl retry was refused by the permission system and not retried",
+        "LIS, legiscan, legiplex: blocked or not reachable, not retried",
+        "web searches on name plus voter ID / election words: nothing on the subject from this person's own words except as listed",
+        "identity: Margaret Angela Franklin won the 2026-01-13 special election for House District 23 per search results (Ballotpedia, Patch); Ballotpedia page itself did not load",
+        "Ballotpedia notes she did not complete its candidate survey (per search summary)",
+        "own-words search: nothing on the subject found; no official or campaign site fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:56.278Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

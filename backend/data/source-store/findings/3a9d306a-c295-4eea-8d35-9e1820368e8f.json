@@ -1,0 +1,80 @@
+{
+  "politician_id": "3a9d306a-c295-4eea-8d35-9e1820368e8f",
+  "findings": [
+    {
+      "id": "9f336ec23424b3a7fed78c213cb75fea50e5ceec3291f269d162eafe1782a72c",
+      "kind": "own-words",
+      "url": "https://jacobanders.org",
+      "date": "2026-10-27",
+      "date_precision": "day",
+      "passage": "I support making Election Day a federal holiday and extending early voting to all states to make participation easier for working Americans. I also back automatic voter registration, Ranked Choice & Approval Voting to eliminate the idea of wasted votes, repealing Citizens United, and banning corporate PAC money to limit the corrosive influence of big money in our elections.",
+      "note": "Campaign site issue text on voting reforms: supports a federal Election Day holiday, early voting in all states and automatic voter registration. It says nothing about ID or citizenship proof. Page undated; date is when it was read.",
+      "subjects": [
+        "voting access reforms (related, no ID mention)",
+        "automatic voter registration",
+        "early voting and election-day rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:46:39.518Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws",
+        "voting access reforms (related)"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Jacob_Anders (fetched by curl) names Jacob Kristopher Anders as a candidate for U.S. House, Tennessee District 4 (page lists him on the general-election ballot, November 3, 2026; he was disqualified from the August 6, 2026 primary and was not on that ballot). Brief file folder says federal-07 but Ballotpedia places him in TN-4",
+        "On the Record (0 appearances; extract-otr.mjs run)",
+        "campaign site https://jacobanders.org (home, /about, /press, /support, /whitepapers, /endorsements fetched): nothing on voter ID, proof of citizenship, SAVE Act, mail-ballot ID; one related voting-access passage saved",
+        "Ballotpedia Candidate Connection survey 2026 and 2020 (on his Ballotpedia page): nothing on the subject",
+        "congress.gov / legislature bill pages: not applicable, never held legislative office; no sponsorships to check",
+        "blocked: https://independentpoliticalreport.com/2026/06/ipr-interview-jacob-anders-discusses-ballot-disqualification-lawsuit-and-independent-campaign-in-tennessees-4th-district/ (HTTP 403 Cloudflare block, not read)",
+        "not reviewed: https://www.youtube.com/@jacob-anders (video channel, content not readable)",
+        "not reviewed: press-page items (Nashville Banner, WSMV, WGNS, Murfreesboro Post, Thunder Radio) linked from jacobanders.org/press, not fetched",
+        "not searched: web search budget for the session was used up, so no news search on his name plus subject words was possible; ontheissues.org and vote411 not checked"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:55:11.719Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter registration",
+        "early voting and election-day rules"
+      ],
+      "places": [
+        "On the Record (0 meetings, script returned no appearances)",
+        "campaign site https://jacobanders.org (one passage on voting reforms, saved; nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Jacob_Anders (on the 2026-11-03 general ballot for Tennessee 4th District as an independent; was disqualified from the primary; nothing on the subject)",
+        "The Ballot Brief https://theballotbrief.com/candidate/jacob-kristopher-anders-tn (on ballot for TN-4; priorities list has nothing on the subject)",
+        "two web searches on his name plus voter ID, SAVE Act and citizenship: nothing on the subject",
+        "legislature bill pages: not applicable, he has held no legislative seat"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:46:39.518Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

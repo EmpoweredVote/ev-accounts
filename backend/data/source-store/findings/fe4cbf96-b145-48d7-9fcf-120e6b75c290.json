@@ -1,0 +1,213 @@
+{
+  "politician_id": "fe4cbf96-b145-48d7-9fcf-120e6b75c290",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district 6) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfb2519c98f83e5598ac6fd0ad9df8c4fe318abd4d5608788b6d5b08e232aa2",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874d8b41974c07ab69831bb20b6331b1899f813251abd335d0c6c41ea2804008",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8986512a76239d1085f23b414056af40ca1776a196aa959bbf7fbba3fcd3db8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('PESHLAKAI'), linked to Mae Peshlakai (district 6) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:53:15.881Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr run, no name matches)",
+        "in scope: https://theballotbrief.com/state/arizona/coconino-county/arizona-house-district-6 lists her on the 2026-11-03 general-election ballot for House District 6; https://navajotimes.com/reznews/ld6-candidates-cite-costs-roads-and-voting-access/ names her as a sitting House member seeking re-election",
+        "blocked: https://ballotpedia.org/Mae_Peshlakai (403)",
+        "official legislature roster https://www.azleg.gov/MemberRoster/ (no statements on the subject)",
+        "campaign and news pages: Navajo Times pages on the District 6 race, nothing on the subject",
+        "https://thecandidate.com/states/az/legislature/house/6/mae-peshlakai nothing on the subject",
+        "web searches on her name plus voter ID, proof of citizenship, election integrity: no own words found",
+        "not reviewed: Clean Elections Commission debate video referenced in Navajo Times (no transcript reachable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:12:37.132Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

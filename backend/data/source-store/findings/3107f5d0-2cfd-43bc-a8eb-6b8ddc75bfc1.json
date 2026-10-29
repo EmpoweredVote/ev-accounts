@@ -1,0 +1,80 @@
+{
+  "politician_id": "3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "46dc8396e2bdea8ea96af2ca91fee48c873773304e81e109e25b29791f04870a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H842",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-842-2025",
+      "act": "sponsor",
+      "note": "Filed by Steven S. Howitt: H.842, An Act to increase the safety and security of unattended ballot boxes. Referred to the Election Laws committee on 2025-02-27, heard 2025-07-08, and on 2026-04-02 accompanied a study order (H5311). Related election-integrity topic, not an ID rule.",
+      "subjects": [
+        "ballot box security",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:05:19.475Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity (ballot box security)",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Steven_Howitt (on the Nov 3 2026 general-election ballot, 4th Bristol; advanced from the Sept 1 2026 primary)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/SSH1 (one election-related bill, H.842)",
+        "malegislature.gov bill page H.842",
+        "Ballotpedia (no voter ID statements found)",
+        "malegislature.gov bill search for voter identification (results not readable via fetch)",
+        "not reviewed: official site and campaign site (not fetched, search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:05:19.475Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "politician_id": "a0dfdf20-b736-4a1c-84c1-194a6625358e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Confirmed identity: Delegate for House District 71 per https://jess4va.com (official/campaign site, nothing on the subject)",
+        "https://samshirazi.substack.com/p/candidate-interview-jessica-anderson (2025 interview; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jessica_Anderson (short page, nothing on the subject)",
+        "note: a search hit for a Heritage Action executive of the same name was excluded as a different person",
+        "On the Record (0 meetings)",
+        "web search on name plus voter ID words (nothing on the subject; results were about other people or general history)",
+        "LIS / legiplex / legiscan bill pages: not reviewed, blocked or not reachable (open.pluralpolicy.com bill pages returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:04.887Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

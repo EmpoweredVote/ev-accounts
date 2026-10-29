@@ -1,0 +1,83 @@
+{
+  "politician_id": "8c4ce29b-84ae-445b-9531-9fdaceb5d420",
+  "findings": [
+    {
+      "id": "8debc04bc516dc0f6290760502b33861f3f8fe3cb029beb48ac71d72173708ee",
+      "kind": "own-words",
+      "url": "https://newschannel9.com/news/local/heres-how-members-of-congress-from-our-viewing-area-reacted-to-trumps-election-speech-save-america-act-election-integrity-bill-hagerty-chuck-fleischmann-clay-fuller-raphael-warnock-marsha-blackburn-chuck-edwards-scott-desjarlais-donald-trump-2020",
+      "date": "2026-07-16",
+      "date_precision": "day",
+      "passage": "According to @DHS, approximately 278,000 non-citizens are registered to vote in federal elections. Hundreds of millions of U.S. voter records are in the hands of foreign governments. Deceased individuals remain active on our voter rolls. Yet we continue to hold elections without requiring voter ID. We must pass the SAVE America Act. It is our last hope for securing our democracy. Election security is national security.",
+      "note": "X post by Fuller, quoted by NewsChannel 9 (WTVC), published 2026-07-17, posted after a Thursday (July 16) presidential address on election security. He raises non-citizen registration, foreign access to voter records, deceased voters on the rolls, the lack of a voter ID requirement in federal elections, and calls for passing the SAVE America Act. The same story says he posted again after midnight calling for its passage.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE America Act)",
+        "non-citizen voting",
+        "voter-roll accuracy",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:35:13.213Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f3470213c27e2c7030aae113e072edd6ba31186c401cbf2e7fecca0a86bdf453",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2026278",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8800-2026",
+      "act": "yea",
+      "motion": "On passage, H.R. 8800, National Defense Authorization Act for Fiscal Year 2027 (Roll Call 278)",
+      "note": "Clerk roll call shows Fuller voting Yea on final passage; the bill passed 216 to 212. The Rules Committee page (https://rules.house.gov/content/vote-no-404) describes the House rule for this bill as providing that in the engrossment of H.R. 8800 the Clerk shall add the text of the SAVE America Act, as passed by the House, which is a documentary proof of citizenship and voter ID bill. Fuller's own press release on this vote does not mention the SAVE America Act. His vote on the rule itself was not found.",
+      "subjects": [
+        "proof of citizenship to register (SAVE America Act)",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:35:13.213Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE America Act)",
+        "non-citizen voting",
+        "voter-roll accuracy (deceased voters, foreign access to voter records)",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)"
+      ],
+      "places": [
+        "status confirmed: sitting U.S. Representative for Georgia's 14th district (sworn in April 14, 2026) and a nominee on the Nov 3, 2026 ballot, per https://www.wsbtv.com/news/local/georgia-general-election-2026-candidates-us-senate-all-14-us-house-seats/TCGX3E477BG7FCEATCR67KRDBQ (page lists Rep. Clay Fuller, incumbent, as a nominee) and https://local12.com/news/nation-world/georgias-clay-fuller-sworn-in-to-take-house-seat-formerly-held-by-marjorie-taylor-greene",
+        "On the Record (0 meetings; extract-otr returned OTR_SOURCES=0)",
+        "official site fuller.house.gov: home, press releases, issues, votes-and-legislation (10 recent votes, Sept 15-16 2026): nothing on the subject",
+        "official site sponsored/co-sponsored legislation page: lists no bills, links out to congress.gov",
+        "blocked: https://www.congress.gov/member/clay-fuller/F000488 (HTTP 403, also by curl)",
+        "blocked: https://ballotpedia.org/Clay_Fuller (returned only a script shell, no article text)",
+        "House Clerk roll call 278 (H.R. 8800): reviewed",
+        "House Rules Committee vote no. 404: reviewed",
+        "news search on name plus SAVE Act, voter ID, election integrity: two outlet stories found with direct quotes",
+        "campaign site: not reviewed (no URL found)",
+        "not reviewed: https://x.com/RepClayFuller (his own X account; not fetchable, quotes taken from the news outlet that reproduced them)",
+        "Aug 2026 and earlier SAVE America Act House floor votes: Fuller took office April 14, 2026; the Feb 11, 2026 House passage was before his term; no other roll call with his vote on the bill was found"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:35:13.213Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "politician_id": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "official House page https://house.vga.virginia.gov/members/H0356: confirms office, nothing on the subject",
+        "campaign site: not found at guessed address",
+        "Ballotpedia: page returned empty",
+        "not reviewed: https://richmondfreepress.com/news/2024/dec/26/cousins-announces-re-election-bid-for-house-of-delegates (404)",
+        "not reviewed: On the Record extraction script (not run)",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "web searches on name plus subject words: nothing relevant"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:15.028Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

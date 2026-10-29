@@ -1,0 +1,123 @@
+{
+  "politician_id": "cacdb3e3-f716-4914-9e32-a95cc632af42",
+  "findings": [
+    {
+      "id": "63bbca51b3c2952b6435e7fcd73f000a9633638c4601c1ad54863b54c23401fc",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2024/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 Min Senate Third Reading, Assembly Floor (passed 57-16)",
+      "note": "SB 1174 (2024), Elections: voter identification. The bill bars local governments from requiring voter ID or similar identification to vote. Vote taken from the Internet Archive copy of the California Legislature vote page.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:48.431Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dee543396d633e41c57089473bf29a3718070f08259d4813a3f85584fcf8728a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-05-23",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Do pass, Assembly Appropriations Committee (11-3)",
+      "note": "AB 1116 (2025), Elections: voter registration. The bill lets a person without a California driver license or state ID register online using the last four digits of their Social Security number plus an electronic signature image. Committee vote taken from the Internet Archive copy of the California Legislature vote page.",
+      "subjects": [
+        "proof of identity to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:48.431Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "473fc6bcdf2f248e02b18d731d7f514cc96dc2b14427c21eedf4f35059247f06",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2025/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Berman Assembly Third Reading, Assembly Floor (passed 60-18)",
+      "note": "AB 1116 (2025), Elections: voter registration. The bill lets a person without a California driver license or state ID register online using the last four digits of their Social Security number plus an electronic signature image. Vote taken from the Internet Archive copy of the California Legislature vote page.",
+      "subjects": [
+        "proof of identity to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:48.431Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48f45fd46078bf0698cfa343c5169b5188a099dbfb3933eb06b2450d37965998",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1116",
+      "date": "2026-08",
+      "date_precision": "month",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "Concurrence in Senate amendments, Assembly Floor (59-19-1)",
+      "note": "AB 1116 (2025), Elections: voter registration, final Assembly vote on the Senate amendments (59 ayes, 19 noes, 1 not voting). Source is the CalMatters Digital Democracy bill page (votes section); that page also lists the Assembly Floor hearing of Aug 25, 2026, but gives no vote date, so only the month is recorded.",
+      "subjects": [
+        "proof of identity to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:09:48.431Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of identity to register to vote",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity bills in general",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page confirms Assembly District 49 member, on the 2026-11-03 general election ballot",
+        "official site a49.asmdc.org (press release list and site search for voter and election words; nothing on the subject)",
+        "California Legislature vote page for SB 1174 via Internet Archive copy (leginfo is behind a bot check)",
+        "California Legislature vote page for AB 1116 via Internet Archive copy, plus CalMatters Digital Democracy page for 2026 votes",
+        "news search (1 search): no own-words statement on the subject found; a 2011 voter-registration bill by a different Fong was ignored",
+        "not reviewed: Assembly hearing video transcripts on Digital Democracy (page needs scripts)",
+        "campaign site: no separate campaign site located"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:09:48.431Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

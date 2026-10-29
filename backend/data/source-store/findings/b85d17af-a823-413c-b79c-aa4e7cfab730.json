@@ -1,0 +1,30 @@
+{
+  "politician_id": "b85d17af-a823-413c-b79c-aa4e7cfab730",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site kirkmcpike.com home and issues pages: nothing on the subject",
+        "local news profile (ALXnow 2026-07-10, confirms he is the 5th District delegate sworn in 2026-02-18, after the bill-introduction deadline): nothing on the subject",
+        "House of Delegates member page apps.house.virginia.gov/members/H0406: confirms office; no bill list reviewed",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/Kirk_McPike",
+        "blocked: lis.virginia.gov (not retried, per instruction)",
+        "news search on name plus voter ID: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:15.081Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "politician_id": "e31e6ebf-91ea-478f-b4dc-6974888bdffa",
+  "findings": [
+    {
+      "id": "85516d12e50071dfeca736461c584e4b36b5d6e162153e8a7407fa47609fed17",
+      "kind": "record",
+      "url": "http://web.archive.org/web/20250919041548/https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202520260AB1116",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1116-2025",
+      "act": "yea",
+      "motion": "AB 1116 Berman Assembly Third Reading (Assembly Floor, passed 60 to 18)",
+      "note": "Voted aye on the Assembly floor for AB 1116, which lets a person without a state driver's license or ID card register online by giving the last four digits of their Social Security number and a digital signature image. Source is the Internet Archive copy of the leginfo vote page.",
+      "subjects": [
+        "ID number to register to vote",
+        "online voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:07:43.191Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID number to register to vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly site a44.asmdc.org (site search for voter ID, election integrity, citizenship: nothing on the subject; a search for voter shows only voter-registration reminder pages, not about ID)",
+        "Ballotpedia page confirms he is a sitting Assembly member for District 44 and is on the 2026-11-03 general-election ballot after advancing from the June 2026 primary; its candidate survey has nothing on the subject",
+        "California leginfo vote page for AB 1116 read through the Internet Archive copy (leginfo is behind a bot check)",
+        "SB 1174 (2024): not in office then, no vote; AB 25 (2025): only committee votes on a committee he is not on, so no vote",
+        "one web news search on name plus voter ID, proof of citizenship, SAVE Act: nothing on the subject",
+        "own-words search (interviews, forums, campaign pages): nothing on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:07:43.191Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

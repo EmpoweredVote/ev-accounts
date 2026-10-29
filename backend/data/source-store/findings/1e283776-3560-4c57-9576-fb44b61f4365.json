@@ -1,0 +1,55 @@
+{
+  "politician_id": "1e283776-3560-4c57-9576-fb44b61f4365",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status: in scope. Candidate site https://backnebraska.com/latest-news/ lists 'Chris Backemeyer Wins Primary, Sets Sights on November' (June 30, 2026) and a Sept 23, 2026 debate post naming him the nominee for Nebraska's First District",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://backnebraska.com (home, priorities, latest news, site search via wp-json for voter ID, photo ID, citizenship, SAVE Act, ballot, election, immigration): nothing on the subject; immigration priorities page mentions a pathway to citizenship for immigration reform only, not proof of citizenship to vote",
+        "campaign site debate post (Sept 23, 2026): nothing on the subject",
+        "blocked: https://ballotpedia.org/Chris_Backemeyer (returned a 404 page / WAF to curl and empty to fetch)",
+        "not reviewed: congress.gov (he is a challenger, not a legislator, so no record)",
+        "not reviewed: web search for news (session search budget used up)",
+        "not reviewed: debate video, interviews, questionnaires"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:12:47.224Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://backnebraska.com/ (home, priorities and latest-news pages): its news page says he issued a statement after winning the primary and lists no item on the subject; nothing on the subject",
+        "web search confirming he is the nominee for Nebraska's 1st District in the Nov. 2026 election; search results only, no page opened for this",
+        "web search on name plus voter ID and citizenship words: nothing on the subject",
+        "blocked: https://nebraskaexaminer.com/briefs/backemeyer-to-face-flood-in-ne-01-smith-advances-in-ne-03/ (HTTP 403, and a bot-check page by curl)",
+        "not reviewed: Ballotpedia, campaign site other pages, debates, interviews, social media"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:12:13.879Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

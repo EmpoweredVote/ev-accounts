@@ -1,0 +1,56 @@
+{
+  "politician_id": "29389f8b-de23-4312-af73-264289dc7774",
+  "findings": [
+    {
+      "id": "d79f99089caab5279801c05e145de014bbefa6bb737d35116d20c7dc23fe6603",
+      "kind": "record",
+      "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor third reading",
+      "note": "He was then in the Assembly; the roll listing for the Assembly floor vote on SB 1174 names him among the ayes.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.812Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Digital Democracy bill page for SB 1174 (2023-24) with vote rolls and hearing transcripts",
+        "Digital Democracy bill page for AB 25 (2025-26 voter ID bill): no vote by this person",
+        "news search on name plus voter ID and SAVE Act: nothing on the subject",
+        "blocked: https://ballotpedia.org/ (fetch tool returned empty; direct fetch not attempted further)",
+        "blocked: https://leginfo.legislature.ca.gov/ (403 bot challenge; legiscan also 403)",
+        "official site sd09.senate.ca.gov (site search for voter ID: no results; press releases and updates lists reviewed)",
+        "Senator's Aug 20 2025 elections update concerns a special election and congressional maps, nothing on the subject",
+        "status: in office as State Senator, District 9; term runs to 2028 and he is not on the 2026 ballot (name not in the 2026 certified candidate list https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:59:21.812Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

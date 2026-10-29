@@ -1,0 +1,103 @@
+{
+  "politician_id": "0649630c-bd6d-40fe-8f66-e026e6f6c83e",
+  "findings": [
+    {
+      "id": "2fbe98405fd871d0b1a64722a625f3de7245b3ffc828d66489646a12c890b937",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, AB 25 (DeMaio), motion 'Do pass and be re-referred to the Committee on [Judiciary]', failed",
+      "note": "AB 25 would require documentary proof of citizenship with a voter registration, require elections officials to count all ballots within 72 hours, and repeal the state rule that bars local voter-ID requirements. The bill page's vote record for the committee hearing on 2025-04-09 lists Stefani among the NO votes on the do-pass motion.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:27.836Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1d312a4ac7d4aae7705426a7232062885f3d10b11cc36c6f8b88fc7c6ddf929",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, AB 25 (DeMaio), motion for reconsideration, failed",
+      "note": "On the same day, on the motion to reconsider AB 25, the bill page's vote record lists Stefani among the NO votes.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:27.836Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7563a40dd37e63b0e9cfb584b8605962204e1d69c2f2f08c308703c08bddeb7c",
+      "kind": "own-words",
+      "url": "https://californiaglobe.com/articles/democrats-kill-assemblyman-demaios-voter-id-bill-claiming-it-will-restrict-voting-access/",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "passage": "“The bill weaponizes voter suppression,” said Assemblywoman Catherine Stefani (D-San Francisco). “The 72 hour deadline is rushing the process.”",
+      "note": "Quoted by the California Globe in its report on the AB 25 committee hearing; she describes the bill and its 72-hour ballot-count deadline.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "72-hour ballot count deadline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:27.836Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity",
+        "local voter-ID rules (SB 1174 of 2024)",
+        "72-hour ballot count deadline"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Catherine_Stefani) shows her as the sitting Assembly District 19 member (since 2024-12-02), running for re-election on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances; extract-otr run with name and city)",
+        "official site a19.asmdc.org (home, press-release list and site-search URL fetched; nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page); used CalMatters Digital Democracy bill pages for votes instead",
+        "SB 1174 of 2024: not applicable, she joined the Assembly after the 2024-08-27 vote",
+        "Ballotpedia (fetched, nothing on the subject)",
+        "web searches: name plus voter ID / proof of citizenship / SAVE Act; AB 25 committee vote; Assembly 2025-26 voter-ID bills",
+        "not reviewed: the 2026 statewide voter-ID and proof-of-citizenship ballot measure; no statement by her found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:59:27.836Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

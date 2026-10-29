@@ -1,0 +1,100 @@
+{
+  "politician_id": "baddd174-93ea-47b6-9cbd-c48fc3acf2f6",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "9821dd503277a9b1612380474bbe5efe98993cdeb78d9adfa3ef90502f6c38d3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H805",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-805-2021",
+      "act": "sponsor",
+      "note": "H.805, An Act fostering voting opportunities, trust, equity, and security, filed by Lawn as first petitioner; referred to the Election Laws committee on 2021-03-29 and sent to a study order on 2022-09-12. The fetched page does not show the bill's provisions, so whether it deals with ID is not known.",
+      "subjects": [
+        "voting access and election security bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:59:22.161Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JJL2 (Representative John J. Lawn, Jr., 10th Middlesex, Watertown); 2026 ballot status not checked",
+        "On the Record (0 appearances)",
+        "legislature bill page (194th Court sponsored list): only campaign finance reform House No. 848 in Election Laws, off subject; nothing on the subject",
+        "Ballotpedia: no page at https://ballotpedia.org/John_J._Lawn (empty)",
+        "official/campaign site: not reviewed: guessed domains repjohnlawn.com, johnlawn.com, lawnforrep.com returned nothing",
+        "not reviewed: web news search (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:21:42.276Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID or no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voting access and election security bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia John_Lawn (on the 2026 general-election ballot, running for re-election)",
+        "state election results page (won the 2026-09-01 primary for 10th Middlesex)",
+        "malegislature.gov bill page and bill-text page for H.805 (text did not load, provisions not readable)",
+        "two news searches on name plus voter ID and VOTES Act (no own words from him found)",
+        "blocked: https://www.watertownmanews.com/?p=130870 (403; a letter praising him, not his own words)",
+        "blocked: https://watertownmanews.com/?p=1059668 (403; candidate Q&A not read)",
+        "nothing on the subject: no official or campaign site statement located"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:59:22.161Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

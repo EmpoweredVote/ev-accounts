@@ -1,0 +1,82 @@
+{
+  "politician_id": "9613e582-652f-43d3-a986-0d941d3d2599",
+  "findings": [
+    {
+      "id": "fc283c2a3c0dd8ca064fd6beeee765668741c0b16f50762a2b572d13eb8f6fcc",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: nay (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_L._Bartlett_(Indiana_House_District_95_representative) names him as District 95 representative on the Nov 3, 2026 general-election ballot after winning the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "Indiana House Caucus member page https://www.indianahousedemocrats.org/members/john-bartlett (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_john_bartlett (page needs scripts, returned no content)",
+        "not reviewed: bill sponsorship and roll-call records on iga.in.gov (not readable without scripts or an API key; api.iga.in.gov returned 403)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:44:34.249Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ballotpedia.org/John_Bartlett_(Indiana) (fetched via curl; confirms current Indiana House member, won the 2026 primary, on the 2026 general-election ballot; nothing on the subject)",
+        "news search on name plus voter ID / student ID bill: coverage names other lawmakers, nothing from this person",
+        "four news pages on SB 10 fetched via curl (ipm.org, wrtv.com, wvpe.org, indianacapitalchronicle.com): no mention of this person",
+        "blocked: iga.in.gov bill pages not searched (votes already on file per brief)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:42.394Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

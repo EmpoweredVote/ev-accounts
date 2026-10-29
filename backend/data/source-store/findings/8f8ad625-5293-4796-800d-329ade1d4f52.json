@@ -1,0 +1,67 @@
+{
+  "politician_id": "8f8ad625-5293-4796-800d-329ade1d4f52",
+  "findings": [
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Carroll'), linked to Andre D. Carroll (district 201) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "mail-ballot deadlines"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House page https://www.pahouse.com/Carroll (confirms him as the member for the 201st District; nothing on the subject)",
+        "official newsletter https://pahouse.com/Carroll/EmailArchive/?id=143624 (May 2026; only mail-ballot deadline reminders, nothing on ID)",
+        "official news search page on pahouse.com: 404",
+        "news page https://www.timesleader.com/?p=817062 (a search lead on his election-process proposals): 404 when fetched, not reviewed",
+        "Ballotpedia: not reviewed",
+        "news search on name plus voter ID, photo ID, mail ballot: nothing on the subject",
+        "legislature bill pages: not reviewed (sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:05:36.387Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.718Z",
+      "by": "identity-pa-2026-10-28"
+    }
+  ]
+}

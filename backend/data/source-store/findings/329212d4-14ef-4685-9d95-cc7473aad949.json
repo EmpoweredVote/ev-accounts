@@ -1,0 +1,75 @@
+{
+  "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "2a09ef021a244342d0c1826614e99b9e73ae31ce91f88052851dc7c1f60b7545",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H802",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-802-2025",
+      "act": "sponsor",
+      "note": "H.802, An Act requiring photo ID's to vote, is a petition filed by Berthiaume to require valid photo identification be shown to election officials before voting. Referred to the committee on Election Laws. Bill text: 'By Representative Berthiaume of Spencer, a petition (accompanied by bill, House, No. 802) of Donald R. Berthiaume, Jr., for legislation to require the showing of valid photo form of identification to election officials prior to voting.'",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:04:54.489Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/Donald_Berthiaume_Jr.): on the 2026 general-election ballot, 5th Worcester District; nothing on the subject in own words",
+        "Massachusetts Legislature profile and bill page (H.802 found)",
+        "not reviewed: official and campaign site (no search budget left to locate them; no direct URL fetched)",
+        "not reviewed: news search (web search budget used up)",
+        "nothing on the subject: citizenship bills on legislature profile"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:04:54.489Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "politician_id": "21265ed4-0d98-4eb4-b9ea-85821a247d2f",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('MCCARVILLE'), linked to Maureen McCarville (district 42) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site legis.wisconsin.gov/assembly/42/mccarville/ (home page has nothing on the subject)",
+        "scope check: voter-guide page ivoterguide.com lists her on the 2026-11-03 general ballot for Assembly District 42; the site shows the voter ID question as not answered",
+        "blocked: https://ballotpedia.org/Maureen_McCarville",
+        "blocked: https://bluevoterguide.org/WI/candidate_Maureen_McCarville/290880",
+        "blocked: https://www.wispolitics.com/?p=331804",
+        "news pages: Capital Times 2024 race story and Lodi Enterprise candidate story, nothing on the subject",
+        "newpolitics.org candidate page: nothing on the subject",
+        "web search on name plus voter ID and on her 2026 campaign (2 searches): no campaign website or statement on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:56:45.930Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

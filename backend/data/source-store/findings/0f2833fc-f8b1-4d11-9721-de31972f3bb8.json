@@ -1,0 +1,271 @@
+{
+  "politician_id": "0f2833fc-f8b1-4d11-9721-de31972f3bb8",
+  "findings": [
+    {
+      "id": "71961ccbc5914df7d5d131d1206e9a63dddb133b3cdd5d9ed75eca6716753de3",
+      "kind": "own-words",
+      "url": "https://house-press.com/rep-charlice-byrd-introduces-legislation-to-secure-georgia-elections/",
+      "date": "2021-02-04",
+      "date_precision": "day",
+      "passage": "“This is common-sense election reform legislation would support our poll workers as they work to keep polling sites secure from election fraud,” said Rep. Byrd.",
+      "note": "Statement in her name in a House press release about HB 228, which would bar certain identification from use for in-person voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "IDs not valid for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:07.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7304bc8bd93ad6cba3597a39c86c2eb5bd02efae9a586a431950fe5d5e9f2ce1",
+      "kind": "record",
+      "url": "https://house-press.com/rep-charlice-byrd-introduces-legislation-to-secure-georgia-elections/",
+      "date": "2021-02-04",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-228-2021",
+      "act": "sponsor",
+      "motion": "HB 228, certain identification not valid for in-person voting",
+      "note": "Press release says she introduced HB 228 to prohibit certain types of identification for in-person voting. A news report (thestarnewsnetwork.com, 2021-02-06) says it would require licenses of non-citizens to read “BEARER NOT A U.S. CITIZEN — NOT VOTER ID”. Date is the release date.",
+      "subjects": [
+        "voter ID at the polls",
+        "IDs not valid for voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:07.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4dbdda129975081b2464af9396aca95f75565fc4ea82c4acdaca7d05e431f8b1",
+      "kind": "own-words",
+      "url": "https://www.charlicebyrd.org/issues/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I will fight for hand-marked paper ballots, strong chain-of-custody safeguards, and a process the public can trust. That also means ending reliance on electronic voting systems and withdrawing from voter data-sharing organizations such as ERIC.",
+      "note": "Campaign issues page, election-integrity section. Page is undated. Related topics: paper ballots, voter-roll data sharing, not ID rules directly.",
+      "subjects": [
+        "election integrity",
+        "hand-marked paper ballots",
+        "voter-roll data sharing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:07.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93dc38119d2a99432f629e67d1f8fa8fc01243a41d4c59cbac8144693aa302fe",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/GA-HB1109-2025-2026",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "GA-HB-1109-2026",
+      "act": "sponsor",
+      "motion": "HB 1109, certain driver's licenses and ID cards not proper identification for a poll worker",
+      "note": "Aggregator page lists her among four sponsors of HB 1109 (2025-2026 session) and shows its status as failed. Official legislature page was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "IDs not valid for voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:07.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Byrd'), linked to CHARLICE BYRD (district 20) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Byrd'), linked to CHARLICE BYRD (district 20) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1390043220fcaa4f48c5ea9bdd4b445020e211bbd2261a6d53b3b2d1a031fdcd",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "yea",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Byrd'), linked to Charlice H. Byrd (district 20) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37a65aaf35aadc28bde4edfa52035f4a4d7073ba23e9cfdf8711ddb99573616e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "yea",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Byrd'), linked to Charlice H. Byrd (district 20) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d751c81711dbe038f4ddbe59334eaa33fb1290fce8cd2a78ec644eadf36d79d",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Byrd'), linked to Charlice H. Byrd (district 20) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Byrd'), linked to Charlice Byrd (district 20) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "IDs not valid for voting (non-citizen licenses)",
+        "election integrity",
+        "hand-marked paper ballots",
+        "voter-roll data sharing"
+      ],
+      "places": [
+        "status check: https://ballotpedia.org/Charlice_Byrd shows her on the 2026-11-03 general-election ballot for Georgia House District 20 after advancing from the primary (in scope)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.charlicebyrd.org/ (home page and issues page read)",
+        "Ballotpedia",
+        "House press release site https://house-press.com (HB 228 release)",
+        "news: thestarnewsnetwork.com 2021-02-06 (read, release text repeated)",
+        "web searches: 2 run (name plus voter ID, election integrity, citizenship, SAVE Act)",
+        "official legislature page https://www.legis.ga.gov/members/house/75?session=1033: not reviewed (script-rendered); SB 202 final vote by member not retrieved",
+        "blocked: https://legilist.com/states/georgia/bill/1033/hb-1109 (403)",
+        "HB 1108 (hand-counted paper ballots) named in a search result: not reviewed, no page fetched",
+        "no SAVE Act statement found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:39:07.332Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T20:51:14.398Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

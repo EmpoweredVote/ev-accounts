@@ -1,0 +1,157 @@
+{
+  "politician_id": "ea673aab-b919-415c-9b1c-1828e6c9ae8f",
+  "findings": [
+    {
+      "id": "389698c7b660c18ed3d40908b341dff1781f2d45d775ae7564f39821382250bc",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/georgia-house-votes-down-constitutional-noncitizen-voting-ban/YVR7IG3RSRADDF7IWLYJVYXXFY/",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "passage": "The right thing to do is make sure we’re clear and unambiguous in our constitution that only citizens should vote.",
+      "note": "Quoted by the AJC (article published 2024-03-01) in the House debate on his resolution to put a ban on non-citizen voting in the state constitution.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.967Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16db4ef7139bb7cec46eda0263ac318fd0c54580b761bc8bb52e6ea9787a2b0c",
+      "kind": "record",
+      "url": "https://www.ajc.com/politics/georgia-house-votes-down-constitutional-noncitizen-voting-ban/YVR7IG3RSRADDF7IWLYJVYXXFY/",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "House resolution to amend the Georgia Constitution to bar non-citizen voting (resolution number not confirmed on a fetched page)",
+      "note": "The AJC photo caption says he sponsored the resolution. The article says it failed to reach the two-thirds House majority a constitutional amendment needs.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.967Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Petrea'), linked to JESSE PETREA (district 166) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Petrea'), linked to JESSE PETREA (district 166) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Petrea'), linked to Jesse Petrea (district 166) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.404Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found by extract-otr.mjs",
+        "web search on name plus voter ID and election integrity (confirmed Jesse Petrea is a Georgia House member for District 166, Savannah, via https://www.ajc.com/politics/georgia-house-votes-down-constitutional-noncitizen-voting-ban/YVR7IG3RSRADDF7IWLYJVYXXFY/ and Wikipedia)",
+        "web search on name plus citizenship and voter rolls",
+        "blocked: https://ballotpedia.org/Jesse_Petrea (empty page)",
+        "blocked: https://app.legiplex.com/profile/jesse-petrea-741/legislation?page=5 (403)",
+        "blocked: https://legiscan.com/GA/bill/HR780/2023 (403)",
+        "blocked: https://georgiarecorder.com/?p=30916 (403)",
+        "blocked: https://www.newsfromthestates.com/node/231324 (403)",
+        "blocked: https://wabe.org/?p=570733 (403)",
+        "https://www.wtoc.com/2026/06/18/proposed-georgia-bill-restricts-voting-us-citizens/ fetched; does not name him; nothing on the subject",
+        "official House page and campaign site: not reviewed (no URL reached within the search)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:40:31.967Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.404Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

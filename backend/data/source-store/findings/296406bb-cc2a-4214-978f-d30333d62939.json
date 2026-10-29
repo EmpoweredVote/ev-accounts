@@ -1,0 +1,75 @@
+{
+  "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "b5284759d2a2277c6cd64ddc6ce116c281a6fc568dac581ef2f156ab99da1ae9",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H859",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-859-2025",
+      "act": "sponsor",
+      "note": "Filed a petition for H.859, An Act to consolidate ballot request notifications, which would further regulate ballot request notifications. Referred to the Election Laws committee, hearing 2025-06-17. The bill text was not read, so how it touches ID is unknown; it concerns the mail-ballot request process.",
+      "subjects": [
+        "mail-ballot request process"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:02:30.329Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter",
+        "mail-ballot ID or request",
+        "proof of citizenship",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Kelly_Pease (4th Hampden, on the 2026-11-03 general ballot, advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances)",
+        "malegislature.gov member profile https://malegislature.gov/Legislators/Profile/KWP1 (one election bill, H.859)",
+        "malegislature.gov bill page https://malegislature.gov/Bills/194/H859",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: official and campaign site, news search (web search budget was used up; no direct URL fetched for these)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:02:30.329Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "929346a2-8037-4b14-af33-4820eb365323",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Lieutenant Governor of Indiana, term 2025 to 2029 (confirmed at https://ballotpedia.org/Micah_Beckwith and https://www.in.gov/lg/); not on the 2026 ballot as a candidate for this office",
+        "On the Record (0 appearances for this politician id)",
+        "official site https://www.in.gov/lg/: nothing on the subject on the home page",
+        "blocked: https://www.in.gov/lg/newsroom/news-releases (list loads dynamically; page text shows no releases, so not reviewed)",
+        "Ballotpedia https://ballotpedia.org/Micah_Beckwith: nothing on the subject",
+        "not reviewed: https://x.com/LGMicahBeckwith, https://www.youtube.com/@LGMicahBeckwith, campaign site, news search (web search budget exhausted for the session)",
+        "legislature bill pages: not reviewed; the lieutenant governor presides over the Senate and does not sponsor bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:37.907Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://en.wikipedia.org/wiki/Micah_Beckwith (confirms he is the sitting Lieutenant Governor, in office since January 2025; nothing on the subject)",
+        "Ballotpedia (fetched via curl; confirms office and 2023 survey; nothing on the subject)",
+        "blocked: https://www.in.gov/ltgov/ (404)",
+        "the legislature bill pages: not applicable, Lieutenant Governor does not sponsor bills",
+        "news searches on name plus subject words (4 searches): nothing on the subject",
+        "https://indianacitizen.org/free-wheeling-conversation-lt-gov-beckwith-spars-with-a-few-as-he-covers-20-plus-topics-during-warsaw-town-hall/ (remarks about paid turnout, not ID or citizenship; not saved)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:39:04.908Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

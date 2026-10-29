@@ -1,0 +1,55 @@
+{
+  "politician_id": "9dd7276b-1c24-466c-a530-d2297607a784",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JJM1 (Representative John J. Marsi, 6th Worcester, 194th General Court)",
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "Ballotpedia: https://ballotpedia.org/John_Marsi (no page exists)",
+        "malegislature.gov bill search 'voter identification' (first page of 347 results; Marsi not among listed sponsors)",
+        "malegislature.gov bill H.833 (194th, voter identification) petitioner list: Marsi not listed",
+        "not reviewed: official site, campaign site and news search (web search budget used up; 2026 ballot status not confirmed by a page)",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:06.614Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JJM1 shows Representative John J. Marsi, 6th Worcester district, sitting member of the 194th General Court",
+        "On the Record (0 appearances)",
+        "legislature sponsored-bills list https://malegislature.gov/Legislators/Profile/JJM1/Sponsored (19 petitions listed; none on voting, elections or ID)",
+        "legislature cosponsor lists for photo-ID bills H.802 and H.833 (https://malegislature.gov/Bills/194/H802/Cosponsor and https://malegislature.gov/Bills/194/H833/Cosponsor): he is not a listed cosponsor",
+        "Ballotpedia (no usable profile page found at the tried URLs)",
+        "Wikipedia stub https://en.wikipedia.org/wiki/John_Marsi (nothing on the subject)",
+        "no personal campaign or official issue page found",
+        "three web searches on name plus voter ID, proof of citizenship, and House roll calls (nothing by him found)",
+        "not reviewed: Massachusetts House roll-call records for election-law amendments (no roll call on the subject located)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:48:12.269Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

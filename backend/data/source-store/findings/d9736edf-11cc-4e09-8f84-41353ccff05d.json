@@ -1,0 +1,179 @@
+{
+  "politician_id": "d9736edf-11cc-4e09-8f84-41353ccff05d",
+  "findings": [
+    {
+      "id": "7de0d9c3c294e53f78678fe07bde7f030637a2bad7831a43fcd384c24aa37df6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: nay (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "cfcf7f33c2744fac06c57dc56e23e0284a490120961774b26c4337890c3625a8",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/election-2022-candidates-michigan-senate-155657514.html",
+      "date": "2022-09-23",
+      "date_precision": "day",
+      "passage": "I believe that our elections are safe and secure here in Michigan, and I accept the results of the 2020 election.",
+      "note": "Her answer in a 2022 Senate candidate questionnaire on election security, as printed by the news outlet. The answer does not mention voter ID.",
+      "subjects": [
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:10.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9645c1780028bc303850453b98dd5263f7bf4354b1117b1f2185a302e7403c57",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/election-2022-candidates-michigan-senate-155657514.html",
+      "date": "2022-09-23",
+      "date_precision": "day",
+      "passage": "However, I think there is much work to be done to ensure that all Michiganders have access to the ballot.",
+      "note": "Same questionnaire answer, on access to the ballot.",
+      "subjects": [
+        "ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:10.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Anthony'), linked to Sarah Anthony (district 21) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Anthony'), linked to Sarah Anthony (district 21) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00bc71bd1db70bc4671e9fcc476135332a3d1605bf81bae505a919c7e788715a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0621",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-621-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Sarah Anthony (District 21)') on the official bill page; linked to Sarah Anthony via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.341Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election security",
+        "ballot access",
+        "mail ballot ID"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "blocked: https://senatedems.com/anthony/ (403)",
+        "blocked: https://senatedems.com/anthony/?s=voter (403)",
+        "blocked: https://senatedems.com/anthony/page/2 (403)",
+        "blocked: https://ballotpedia.org/Sarah_Anthony (page returned empty)",
+        "Wikipedia page (confirms 21st District Senate seat; nothing on the subject)",
+        "House caucus statement page https://housedems.com/?p=5654 (a 2018 statement on ballot-initiative bills; off the subject)",
+        "2022 candidate questionnaire in a news outlet (one answer on election security and ballot access)",
+        "campaign site: none found",
+        "web searches on name plus voter ID, proof of citizenship, and 2026 candidacy: no other own words found; candidate listings show her as the 2026 District 21 candidate"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:10.222Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.341Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

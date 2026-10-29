@@ -1,0 +1,73 @@
+{
+  "politician_id": "e7f351cf-d668-4d09-b8ff-0f8dbd85b33a",
+  "findings": [
+    {
+      "id": "c5b1f00cbcdb03929e41e53996cd30dda78e74bad026d856766bad74bfa84552",
+      "kind": "own-words",
+      "url": "https://www.nccivitas.org/civitas-review/elaine-marshall-sec-of-state-is-working-to-stop-voter-photo-id/",
+      "date": "2012-05-21",
+      "date_precision": "day",
+      "passage": "This law will disproportionately hurt seniors and low-income voters. If this law were to pass, folks like my 92 year old mother would need a photo I.D. in order to practice a basic right. This law will prevent thousands of North Carolinians from voting in November.",
+      "note": "Petition text signed by Elaine Marshall, copied by the Civitas Institute from her campaign website on the date of its post (the petition itself is undated). It concerns the legislature's planned override of the governor's veto of the 2011 voter photo ID law. Civitas wrote the surrounding commentary; only the petition text is hers.",
+      "subjects": [
+        "voter photo ID at the polls",
+        "effect of ID requirement on seniors and low-income voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T16:04:11.519Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Elaine_Marshall (fetched with curl) names her as the sitting NC Secretary of State, won 2024 general, term ends 2029; not on the 2026 ballot",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site https://www.sosnc.gov/ home page fetched; nothing on the subject; the about-page URL tried returned 404; site search page returned nothing on the subject",
+        "Ballotpedia: nothing on the subject in the page text; Candidate Connection page fetch returned empty (not reviewed: https://ballotpedia.org/Elaine_Marshall_Candidate_Connection)",
+        "legislature bill pages: not reviewed (she is a statewide executive, not a legislator; not searched by name)",
+        "campaign site: not reviewed",
+        "news search: blocked: web search budget used up for the session, no searches run"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:12:13.422Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter photo ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity statements"
+      ],
+      "places": [
+        "Ballotpedia (https://ballotpedia.org/Elaine_Marshall): sitting North Carolina Secretary of State, term ends 2029",
+        "On the Record (0 appearances)",
+        "https://www.nccivitas.org/civitas-review/elaine-marshall-sec-of-state-is-working-to-stop-voter-photo-id/ (a think-tank page that reproduces a petition text from her 2012 campaign site)",
+        "news searches on name plus voter ID, amendment, SAVE Act and citizenship (2 searches): no further statement by her found",
+        "nothing on the subject: https://deda.substack.com/p/the-woman-who-stands-between-your (no relevant passage by her found)",
+        "not reviewed: her current official site and the NC legislature bill pages (she is not a legislator now); wcnc video https://wcnc.com/video/news/politics/north-carolina-secretary-of-state-shares-her-thoughts-on-the-importance-of-voter-registration-day/275-20f9ee2b-83cc-4498-9851-124d4049f195 (video)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T16:04:11.519Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}
