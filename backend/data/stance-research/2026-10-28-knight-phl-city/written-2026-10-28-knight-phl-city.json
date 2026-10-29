@@ -2,21 +2,15 @@
   "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
   "rows": [
     {
-      "politician_id": "6a630180-bc54-4cfa-a617-8b953550af5f",
-      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
-      "chair_after": 2,
-      "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194"
-    },
-    {
-      "politician_id": "6a630180-bc54-4cfa-a617-8b953550af5f",
-      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "politician_id": "6f439a77-b573-4a13-b895-d37001e9d417",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
       "chair_after": 3,
       "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194"
     },
     {
-      "politician_id": "6a630180-bc54-4cfa-a617-8b953550af5f",
-      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
-      "chair_after": 4,
+      "politician_id": "6f439a77-b573-4a13-b895-d37001e9d417",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "chair_after": 2,
       "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194"
     }
   ]

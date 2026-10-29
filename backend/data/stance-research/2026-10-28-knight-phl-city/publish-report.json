@@ -66,9 +66,12 @@
     "full_name": "Kenyatta Johnson",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -80,9 +83,12 @@
     "full_name": "Kenyatta Johnson",
     "topic_key": "gun-policy",
     "value": 3,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 3,
+      "season": 2
+    },
     "verified_sources": [
       "https://phlcouncil.com/ghost-guns-are-against-the-law-in-philadelphia-because-of-legislation-sponsored-by-councilmember-kenyatta-johnson/"
     ],
@@ -94,12 +100,71 @@
     "full_name": "Kenyatta Johnson",
     "topic_key": "housing",
     "value": 4,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 4,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7419292&GUID=30EB9ED2-92D4-4849-8B65-74D189300AE2",
+      "https://phlcouncil.com/weekly-report-city-council-gave-final-approval-to-the-new-city-budget-and-h-o-m-e-plan-during-june-12-council-session/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rue Landau",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Rue Landau",
+    "topic_key": "civil-rights",
+    "value": 2,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://phlcouncil.com/weekly-report-resolutions-critical-od-president-donald-trumpesolutions-critical-of-president-donald-trump-highlighted-the-september-25-council-session/",
+      "https://phlcouncil.com/councilmember-rue-landau-leads-passage-of-landmark-fair-chance-hiring-updates/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Jamie Gauthier",
+    "topic_key": "housing",
+    "value": 3,
     "action": "auto-push",
     "reasons": [],
     "displayed_value": null,
     "verified_sources": [
-      "https://phila.legistar.com/LegislationDetail.aspx?ID=7419292&GUID=30EB9ED2-92D4-4849-8B65-74D189300AE2",
-      "https://phlcouncil.com/weekly-report-city-council-gave-final-approval-to-the-new-city-budget-and-h-o-m-e-plan-during-june-12-council-session/"
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=5217310&GUID=0FC24E00-AF00-4E1F-BD89-C1DEB097CD0E",
+      "https://phlcouncil.com/philadelphias-first-large-scale-mandatory-inclusionary-zoning-legislation-receives-final-approval-from-city-council/"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Jamie Gauthier",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
     "failed_urls": []
   }
