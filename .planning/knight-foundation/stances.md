@@ -185,23 +185,32 @@ applies here. The rent price-fixing ban (Bill No. 240823) passed **17-0** and is
 
 ### 🟢 THE DIVIDED-VOTE INDEX FOR THE 17 COUNCIL MEMBERS (built 2026-10-28)
 
-, from  +  in the
-batch dir. **160 council weekly reports** pulled through phlcouncil.com’s WordPress API
-(), mined for tallies: **38 divided votes, 33 of which
-clear C46’s 10% bar.** Every current member except O’Neill and O’Rourke is named near at least one.
+`corpus/phl-divided-votes.json`, from `sweep-weekly-reports.mjs` + `mine-divided-votes.mjs` in the
+batch dir. **160 council weekly reports** pulled through phlcouncil.com's WordPress API
+(`/wp-json/wp/v2/posts?search=weekly report`), mined for tallies: **38 divided votes, 33 of which
+clear C46's 10% bar.** Every current member except O'Neill and O'Rourke is named near at least one.
 
 🔴 **THE SERIES STOPS AT 2025-10-27 AND THE GAP IS REAL.** A control listing the newest posts
 regardless of search term returned plenty of 2026 content and **no weekly reports at all** — council
 stopped publishing them. So 2026 legislation, the ICE Out package included, is NOT in this index.
 
-🔴 **THE FIRST MATCHER FOUND 5 AND THAT WAS A FALSE ABSENCE.** It matched only “vote of 13-3”. A
-phrasing census over the same corpus showed “approved by a 13-3 vote”, “passed 12-4” and “the final
-vote was 14-2”. Requiring a vote word within 40 characters before the tally took it 5 → 38.
-▶ **Census the phrasings before trusting a count of them.**
+🔴 **THE FIRST MATCHER FOUND 5 AND THAT WAS A FALSE ABSENCE.** It matched only "vote of 13-3". A
+phrasing census over the same corpus — counting the words that precede every plausible tally rather
+than assuming one form — showed "approved by a 13-3 vote", "passed 12-4" and "the final vote was
+14-2". Requiring a vote word within 40 characters before the tally took the count 5 → 38, sevenfold.
+▶ **CENSUS THE PHRASINGS BEFORE TRUSTING A COUNT OF THEM.**
 
-⚠ **IT IS A LEAD INDEX, NOT EVIDENCE.** The bill number is the nearest  in the context
-window and is sometimes the wrong one (the 13-3 on security deposits reads as ; the bill is
-). “Members named” is proximity, not vote attribution. **Open the report and read it.**
+⚠ **IT IS A LEAD INDEX, NOT EVIDENCE.** The bill number is the nearest `#NNNNNN` in the context
+window and is sometimes the wrong one: the 13-3 on security deposits reads as `#250488` when the
+bill is `250044-A`. "Members named" is proximity, not vote attribution. **Open the report and read
+it before citing anything.**
+
+⚠ **THE CORRUPTION THAT PUT THIS PARAGRAPH BACK.** The first version of this section was written
+through `node -e "…"` from bash, and every backtick span in it was command-substituted away by the
+shell before node ever saw it — filenames, the API path and both bill numbers vanished, and the
+mangled text was committed. **Write prose through a file, never through a double-quoted shell
+string.**
+
 ### Rules this slice has paid for so far
 
 1. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE.** It is exactly as old as
