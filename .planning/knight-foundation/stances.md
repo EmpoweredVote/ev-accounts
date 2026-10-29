@@ -71,8 +71,8 @@ who represents them now. **Check the city's next municipal election before openi
 
 | City | Seated | Next city election | Open? |
 | --- | --- | --- | --- |
-| Lexington KY | 34 | ⚠ verify | |
-| Philadelphia PA | 25 | ⚠ verify (odd-year city) | |
+| **Lexington KY** | **34** | 🔴 **2026-11-03, FIVE DAYS — all 15 council seats AND the mayor** | 🔴 **DO NOT OPEN NOW** |
+| ~~Philadelphia PA~~ | 25 | 2027-11-02, all seats | ✅ **DONE — slice 4** |
 | Columbus GA | 16 | ⚠ verify | |
 | Macon-Bibb GA | 15 | ⚠ verify | |
 | Akron OH | 14 | ⚠ verify (odd-year city) | |
@@ -91,6 +91,17 @@ who represents them now. **Check the city's next municipal election before openi
 
 ⚠ **Tallahassee is NOT untouched** — slice 2 covered it and found no seatable chair. Re-opening it
 is a re-research, not a first pass. Read the slice 2 batch before pricing it.
+
+### 🔴 LEXINGTON IS THE SECOND BOULDER, AND IT IS THE BIGGEST CITY ON THE BOARD
+
+Verified 2026-10-29, five days out: **Lexington votes 2026-11-03 for the mayor and ALL 15 Urban
+County Council seats.** The twelve district members sit two-year terms, so the whole district
+bench turns over every cycle. Its table row read , and at 34 seated people it is the
+largest slice left — so it is exactly what a session picks when it sorts the backlog by size.
+▶ **Re-measure the roster after 2026-11-03, then open it.** The same applies to Boulder, whose
+election is the same day and whose stale  row is still waiting on slot .
+⚠ **Two of the three cities anyone would reach for first were about to turn over.** The 
+marks in that table are not decoration; treat an unverified date as a blocker, not a formality.
 
 ### 🔴 BOULDER — WHY IT IS NOT THE PLACE TO START, AND A DATA DEFECT IT EXPOSED
 
