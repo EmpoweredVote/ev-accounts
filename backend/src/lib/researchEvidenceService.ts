@@ -7,6 +7,7 @@
 import type { VerifiedRow } from './researchVerifier.js';
 // A value import is safe: researchVerifier imports nothing (no db.js), unlike seasonService below.
 import { normalizeText, MIN_SNIPPET_WORDS } from './researchVerifier.js';
+import { isRollCallXmlUrl, parseRollCallLine } from './rollCallEvidence.js';
 import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
 import type { Queryable } from './seasonService.js';
@@ -753,12 +754,13 @@ export async function resolveResearchReview(
   // and is stored beside the snippet; here it is re-checked against the snippet it came from. A
   // verified snippet with no valid span (a row queued before 2026-09-24) is NOT a citation — its
   // page is not re-fetched on approval, so nothing can say which of its words were on the page.
-  const publishable = (s: ResearchReviewRow['evidence'][number]['snippets'][number]): string | null =>
-    s.verdict === 'verified' ? validStoredSpan(s.snippet, s.matched_span) : null;
+  // A roll-call line (rollCallEvidence.ts) is checked as validStoredSpan's roll-call case.
+  const publishable = (url: string, s: ResearchReviewRow['evidence'][number]['snippets'][number]): string | null =>
+    s.verdict === 'verified' ? validStoredSpan(s.snippet, s.matched_span, url) : null;
 
   // All sources to attach: machine-verified + human-verified (deduped)
   const machineVerifiedUrls = row.evidence
-    .filter((e) => e.snippets.some((s) => publishable(s) !== null))
+    .filter((e) => e.snippets.some((s) => publishable(e.url, s) !== null))
     .map((e) => e.url);
   const allSources = [...new Set([...machineVerifiedUrls, ...cleanedHumanVerifiedUrls])];
   if (allSources.length === 0) {
@@ -775,12 +777,12 @@ export async function resolveResearchReview(
   const topicId = row.topicId;
   const machineVerifiedRows: EvidenceInsertRow[] = row.evidence.flatMap((e) =>
     e.snippets
-      .filter((s) => publishable(s) !== null)
+      .filter((s) => publishable(e.url, s) !== null)
       .map((s) => ({
         politician_id: politicianId,
         topic_id: topicId,
         source_url: e.url,
-        snippet: publishable(s) as string,
+        snippet: publishable(e.url, s) as string,
         snippet_index: s.snippet_index,
         batch_id: row.batchId,
         source_date: e.date ?? null,
@@ -923,10 +925,17 @@ export async function rejectResearchReview(id: string, resolvedBy: string, notes
  * A stored span is publishable only if it is still what matchedSpan guarantees: at least
  * MIN_SNIPPET_WORDS words, and a contiguous run of the snippet it was derived from (normalized).
  * Defence in depth against a hand-edited evidence jsonb. null = not publishable.
+ *
+ * One exception, the roll-call lane (rollCallEvidence.ts): its canonical line is about 14 words
+ * ("House roll call 102 (2025), H R 22, On Passage: Jack (GA) voted Yea."), checked field by field
+ * against the Clerk XML rather than as a run of page text. It is publishable when `url` is a
+ * House roll-call XML URL, the span still parses as a canonical line, and it is the whole snippet —
+ * exactly what the verifier stores for that lane. Every other short span is still refused.
  */
-export function validStoredSpan(snippet: string, span: string | undefined): string | null {
+export function validStoredSpan(snippet: string, span: string | undefined, url?: string): string | null {
   const t = span?.trim();
   if (!t) return null;
+  if (url !== undefined && isRollCallXmlUrl(url) && parseRollCallLine(t) && snippet.trim() === t) return t;
   // Same normalizer as the verifier, padded so the run must sit on whole words.
   const norm = (x: string) => ` ${normalizeText(x)} `;
   const words = normalizeText(t).split(' ').filter(Boolean).length;
