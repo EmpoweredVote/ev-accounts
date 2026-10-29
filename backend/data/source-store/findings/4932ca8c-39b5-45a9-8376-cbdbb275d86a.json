@@ -31,7 +31,7 @@
       "date_precision": "day",
       "instrument_id": "OH-HB-458-2022",
       "act": "other",
-      "note": "Listed as a cosponsor of Ohio House Bill 458 (134th General Assembly), as enrolled. The bill changes Ohio voter identification and absentee voting law. Its text asks a voter at the polls for a current and valid photo ID, a military ID, or a copy of a utility bill, bank statement, government check, paycheck or other government document; a voter without one may cast a provisional ballot; a voter with a religious objection to being photographed may use an affidavit. Date shown is the governor's signing date (concurrence 2022-12-14, effective 2023-04-07); the date he signed on as cosponsor was not retrieved.",
+      "note": "Listed as a cosponsor of Ohio House Bill 458 (134th General Assembly) on the enrolled bill record. The enrolled text requires photo identification at the polls (Ohio driver's license, state ID card or interim form, U.S. passport or passport card, or U.S. military, Ohio national guard or VA ID card); the old list of a utility bill, bank statement, government check, paycheck or other government document is struck out. A voter without photo ID may cast a provisional ballot, counted only if the voter shows photo ID at the board within four days or, for a religious objection to being photographed, signs an affidavit. Date shown is the governor's signing date (concurrence 2022-12-14, effective 2023-04-07); the date he joined as cosponsor is not on the record. Note corrected 2026-10-29: the earlier note listed the struck-out non-photo documents as accepted.",
       "subjects": [
         "voter ID at the polls",
         "provisional ballot for voter with no ID",
@@ -48,14 +48,14 @@
       }
     },
     {
-      "id": "e64754c21831bf169887aaae7436cfbace9a9743e889692c8ea9885a64f31395",
+      "id": "d196878b02f3e92e7309e1b1e782048b735031a912117f514aa398fe6ac5d5cc",
       "kind": "record",
       "url": "https://legislature.ohio.gov/legislation/134/hb458",
       "date": "2022",
       "date_precision": "year",
-      "instrument_id": "OH-H-458-2021",
+      "instrument_id": "OH-HB-458-2022",
       "act": "sponsor",
-      "note": "Merrin is listed as a cosponsor of HB 458, whose title says it modifies the law governing voter identification and absent voting and makes changes regarding driver's licenses and state identification cards.",
+      "note": "Merrin is listed as a cosponsor of Sub. H.B. 458 (134th General Assembly). The bill record does not say when he joined. As introduced (and as passed by the House in 2021) the bill only limited August special elections; the photo-ID text was added by the Senate substitute reported 2022-12-13. So the cosponsorship alone does not show he sponsored the photo-ID text. Instrument id corrected from OH-H-458-2021 (not in the store) on 2026-10-29.",
       "subjects": [
         "voter ID at the polls",
         "mail and absentee ballot rules",
@@ -71,15 +71,15 @@
       }
     },
     {
-      "id": "05a0a5c9f54b1fdb526af7738f9f61794fc179c90ede71ac9cb588721964787a",
+      "id": "33046fbb63a9d360e66808f97f8cf6e88d0ee7d83702142586563f0efc2bafb0",
       "kind": "record",
       "url": "https://legislature.ohio.gov/legislation/134/hb458/votes",
       "date": "2022-12-14",
       "date_precision": "day",
-      "instrument_id": "OH-H-458-2021",
+      "instrument_id": "OH-HB-458-2022",
       "act": "yea",
-      "motion": "House vote listed as Passed, 55 yeas to 34 nays (HB 458, voter identification and absent voting changes)",
-      "note": "Merrin is listed among the Yeas on the House vote dated 12-14-2022 on HB 458.",
+      "motion": "concurrence in Senate amendments (House floor; final passage)",
+      "note": "Merrin is listed among the Yeas (55-34) on the House vote of 12-14-2022 to concur in the Senate amendments, the final passage of the photo-ID text as enrolled. Confirmed on the Ohio Legislature actions API (rep_merrin_derek_1 in yeas). Instrument id corrected from OH-H-458-2021 (not in the store) on 2026-10-29.",
       "subjects": [
         "voter ID at the polls",
         "mail and absentee ballot rules"
