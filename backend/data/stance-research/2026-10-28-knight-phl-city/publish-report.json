@@ -49,14 +49,58 @@
     "full_name": "Cherelle L. Parker",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://whyy.org/articles/philadelphia-ice-out-legislation/"
     ],
     "failed_urls": [
       "https://phila.legistar.com/ViewReport.ashx?M=R&N=Text&GID=30&ID=6748689&GUID=3EFAB4C4-9042-4E15-A893-C77BAB13F0E9&G=A5947DFE-5A17-435B-A57D-5F0923C2343D&Title=Legislation+Text"
     ]
+  },
+  {
+    "full_name": "Kenyatta Johnson",
+    "topic_key": "local-immigration",
+    "value": 2,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
+    ],
+    "failed_urls": [
+      "https://phila.legistar.com/ViewReport.ashx?M=R&N=Text&GID=30&ID=6748689&GUID=3EFAB4C4-9042-4E15-A893-C77BAB13F0E9&G=A5947DFE-5A17-435B-A57D-5F0923C2343D&Title=Legislation+Text"
+    ]
+  },
+  {
+    "full_name": "Kenyatta Johnson",
+    "topic_key": "gun-policy",
+    "value": 3,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phlcouncil.com/ghost-guns-are-against-the-law-in-philadelphia-because-of-legislation-sponsored-by-councilmember-kenyatta-johnson/"
+    ],
+    "failed_urls": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=4681861&GUID=26B871EF-8A9D-4B5A-A515-BA349BEEF4C8"
+    ]
+  },
+  {
+    "full_name": "Kenyatta Johnson",
+    "topic_key": "housing",
+    "value": 4,
+    "action": "auto-push",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phila.legistar.com/LegislationDetail.aspx?ID=7419292&GUID=30EB9ED2-92D4-4849-8B65-74D189300AE2",
+      "https://phlcouncil.com/weekly-report-city-council-gave-final-approval-to-the-new-city-budget-and-h-o-m-e-plan-during-june-12-council-session/"
+    ],
+    "failed_urls": []
   }
 ]
