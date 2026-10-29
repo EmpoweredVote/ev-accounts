@@ -68,6 +68,13 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     // The same short line on any other page is still too short.
     expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
   });
+  it('a canonical LegiScan line on a LegiScan bill URL is not held to the snippet length', () => {
+    const url = 'https://legiscan.com/IN/bill/HB1001/2025';
+    const line = 'LegiScan IN 2025 Regular Session HB1001: Jane Doe is listed as a primary sponsor.';
+    const row = { ...good, reasoning: 'Primary sponsor of HB 1001 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });

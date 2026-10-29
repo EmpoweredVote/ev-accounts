@@ -25,6 +25,7 @@ import {
 } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
 import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine } from '../../src/lib/legiscanEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
 export interface ResearchRow {
@@ -254,8 +255,9 @@ export function checkStanceRow(
     const forUrl = ctx.evidence.filter((e) => e.source_url === url);
     if (forUrl.length === 0) add('source-without-snippet', 'high', `no evidence.csv snippet for ${url}`);
     for (const e of forUrl) {
-      // A canonical roll-call line is checked field by field by the verifier, not by length.
+      // A canonical roll-call or LegiScan line is checked field by field by the verifier, not by length.
       if (isRollCallXmlUrl(url) && parseRollCallLine(e.snippet)) continue;
+      if (isLegiscanUrl(url) && parseLegiscanLine(e.snippet)) continue;
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }

@@ -794,6 +794,18 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();
   });
 
+  it('accepts a LegiScan line only with a LegiScan bill or roll-call URL, as the whole snippet', async () => {
+    const { validStoredSpan } = await import('./researchEvidenceService.js');
+    const url = 'https://legiscan.com/TX/bill/HB5337/2025';
+    const line = 'LegiScan TX 89th Legislature Regular Session HB5337: Gary Gates is listed as a cosponsor.';
+    expect(validStoredSpan(line, line, url)).toBe(line);
+    expect(validStoredSpan(line, line)).toBeNull();                                  // no URL
+    expect(validStoredSpan(line, line, ROLL_URL)).toBeNull();                        // not a LegiScan URL
+    expect(validStoredSpan(`Note: ${line}`, line, url)).toBeNull();                  // not the whole snippet
+    const party = 'LegiScan TX 89th Legislature Regular Session HB5337: Gary Gates (R) is a cosponsor.';
+    expect(validStoredSpan(party, party, url)).toBeNull();                           // not a canonical line
+  });
+
   // The span is now decoded before it is stored, so a voter does not read "&mdash;". The snippet in
   // the review row is still the researcher's copy of the page, entities and all. Both sides fold
   // through normalizeText, so approval must still accept the pair — if it did not, every citation
