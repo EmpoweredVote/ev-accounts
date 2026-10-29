@@ -120,7 +120,7 @@ Measured 2026-10-28, before any research:
 
 ## Slice 4 — Philadelphia (opened 2026-10-28)
 
-**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. 52 local topics
+**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **Done: Parker, Johnson (CP). 16 council + 7 row officers to go.** 52 local topics
 pinned in Season 2 → **1,300 rows**. Batch `2026-10-28-knight-phl-city`, branch
 `knight/stances-backlog`, lease `place:4260000`.
 
@@ -141,6 +141,91 @@ through 2026-09.
 | `homelessness-response` | 2 | Executive Order No. 7-25, 1,000 shelter beds |
 | `public-safety-approach` | 4 | Executive Order No. 1-24 + the PPD 100-Day Report |
 | `local-immigration` | 2 | Chapter 21-3600, Bill 260057 of the ICE Out package |
+
+### Kenyatta Johnson (Council President, 2nd District): 3 chairs seated, 2 deliberate refusals
+
+| Topic | Chair | Instrument | Channel |
+| --- | --- | --- | --- |
+| `local-immigration` | 2 | Bill 260057, Chapter 21-3600 | sponsor |
+| `gun-policy` | 3 | Bill No. 200593, Chapter 10-2000 (ghost guns) | prime sponsor |
+| `housing` | 4 | Bill #250568, the H.O.M.E. bond ordinance | prime sponsor |
+
+🟢 **ALL THREE CAME THROUGH SPONSORSHIP, AND NONE COULD HAVE COME THROUGH A VOTE.** 260057 passed
+15-1 and 250568 passed unanimously — both under C46. This is slice 3's finding holding a second
+time: on a 17-member body that mostly agrees, **stop asking how people voted and ask who wrote it.**
+
+- `gun-policy` 3 is the cleanest row of the slice because **the adjacent chairs are excluded by the
+  sponsor's own sentence.** Johnson says his ghost gun law *does not prohibit the manufacturing of
+  guns, it just requires that it be done by licensed manufacturers* — which kills chair 2 (no class
+  of weapon is banned), while the fact that he wrote a new restriction kills chair 4. The ordinance
+  routes every path to a gun through the licensed channel that carries the background check, and the
+  city's own account says the kits could previously be sold without it. That is chair 3 and only 3.
+- `housing` 4 lands on the **same instrument that seated Parker at 4**, which is the right kind of
+  consistency: the H.O.M.E. bond is subsidy at scale with no binding rule on the private market.
+
+#### 🔴 THE TWO REFUSALS ARE THE MORE USEFUL RESULT
+
+- **`economic-development` is BLANK although the evidence is the strongest in the slice.** Johnson
+  chaired the Committee of the Whole on the 76 Place arena, the report names the four no votes and
+  says *all the other members in attendance voted yes*, and final passage was 12-5 — 29.4%, far past
+  C46. It still names no chair, because **this ladder's axis is how much public money you offer to
+  attract a business, and this deal offered none**: Bills #240963 and #240973 *removed* the site from
+  a tax increment financing district and a neighbourhood improvement district, and the developer paid
+  the city, with Johnson pushing the community benefits payment from $50m to $60m. Conditioning
+  support on a bigger community payment reads as chair 3 or chair 4 and nothing decides between them.
+  ▶ **A vote can be perfectly attributed, well past the threshold, and still seat nobody.**
+- **`rent-regulation` is BLANK** on Bill 250044-A (security deposits, 13-3). Every rung on that
+  ladder turns on rent levels: chair 2 would have him strengthening rent stabilisation and
+  Philadelphia has none, chair 3 would have him maintaining protections when he added one. A tenant
+  protection that leaves rents untouched is off the axis.
+
+#### 🔴 THE VERIFIER MATCHES RAW HTML — A SNIPPET MAY NOT CROSS AN ELEMENT BOUNDARY
+
+`normalizeText` in `src/lib/researchVerifier.js` **does not strip tags**; it lowercases and collapses
+whitespace and nothing else. So a snippet is only verifiable if it lies inside a single text node.
+This is general, not Philadelphian, and it costs real citations:
+
+- Legistar renders `Title:` and `Sponsors:` as **separate `<span>`s in separate `<td>`s**, so a span
+  running from the bill title into the sponsor list **can never verify**. The sponsor list is one
+  text node, but it only reaches the 25-word floor when the bill has roughly 13+ sponsors — 260057's
+  15 sponsors pass at 32 words; 200593's 9 sponsors are **19 words and cannot**.
+- A long bill title verifies only because Legistar repeats it in `<meta name="description">`. **That
+  copy is truncated**, and it is what the published citation is actually cut from.
+- A title carrying quotation marks is served as `&quot;` and will not match a snippet with real
+  quotes. 250568's title has none and verified; 200593's has them and did not.
+- 🔴 **DIAGNOSE THIS BY MEASURING, NOT BY RE-READING THE PAGE.** The snippet was verbatim-correct and
+  present in a fresh fetch under an HTML-stripping reader, and `curl` and `fetch` both returned the
+  page at HTTP 200 — every obvious check said the source was fine. Only running the span against the
+  verifier's own `normalizeText` showed the break, and showed it was at the tag.
+
+#### 🟢 EVERY PHILADELPHIA BILL IS ONE HOP AWAY, AND THE SLICE SHOULD USE THIS
+
+**`phlcouncil.com` weekly reports link `LegislationDetail.aspx?ID=…&GUID=…` for every bill number
+they print**, and WHYY's ICE Out page carries the pair for all seven of those bills. That is the
+bootstrap slice 3 had to walk meeting-by-meeting for. The **minimal `?ID=…&GUID=…` form is enough** —
+no `Options`/`Search` — and it returns the title, the **full sponsor list**, the tally and the
+attachments, including the **as-filed bill PDF**, which is what C37 actually needs. Confirmed on
+200593, 250568 and 260057.
+- The Web API stays shut: `phila` → **403**, with `charlottenc` → 200 as the control in the same run.
+- ⚠ **`ViewReport.ashx` HAS STOPPED VERIFYING** — the URL Parker's `local-immigration` row cites now
+  fails for **her row too**, though it still fetches at 200. Prefer `LegislationDetail` + the
+  as-filed PDF for new rows.
+
+#### Rules this member paid for
+
+1. 🔴 **REBUILDING THE BUNDLE WITH ONE `--politician` TRUNCATES `politicians.json` TO THAT PERSON.**
+   It reported `wrote 60 open-season topics and 1 politician(s)` and silently dropped the other 24,
+   which would have made every finished row in the batch an `unresolved-politician`. **Pass every
+   person in the batch on every rebuild**, not just the one you are researching.
+2. 🔴 **THE DIVIDED-VOTE INDEX MISNUMBERED EXACTLY AS WARNED.** The 13-3 indexes as `#250488`; the
+   bill is `#250044-A`. The index earned its keep anyway — the weekly reports name the no votes in
+   prose, which is real attribution — but **the number must come from the report, never the index.**
+3. ⚠ **THE GATE REFUSES `Bill 250568` WITH NO MARKER, DELIBERATELY.** Write the instrument exactly as
+   the snippet you cite spells it (`Bill #250568`). The other two rows passed only because they also
+   named a `Chapter`.
+4. ⚠ **A NEWS SWEEP FOR A COUNCIL PRESIDENT HITS THE NAV, NOT THE STORY.** Every "Kenyatta Johnson"
+   hit in the three ICE Out pages was `phlcouncil.com`'s member sidebar. His sponsorship came from
+   the Legistar sponsor list, not from the coverage.
 
 ### 🔴 THE BINDING CONSTRAINT ON A MAYOR: HER INSTRUMENTS ARE SCANNED
 
