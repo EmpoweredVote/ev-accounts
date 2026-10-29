@@ -74,6 +74,7 @@ import {
   verifyEvidence,
   createPageFetcher,
   aliasesFrom,
+  lastNameOf,
   normTopic,
   stanceKey,
   type StanceRow,
@@ -351,7 +352,6 @@ for (const p of nameRows) {
   nameMatchesByLower.set(k, [...(nameMatchesByLower.get(k) ?? []), p]);
 }
 
-const lastToken = (name: string) => name.trim().split(/\s+/).filter(Boolean).slice(-1)[0] ?? name;
 
 const politicianNames: PoliticianNames = {};
 const idByName = new Map<string, string | null>(); // csv name -> politician_id (or null if unmatched)
@@ -382,7 +382,7 @@ for (const name of csvNames) {
   // names. An unresolved row has no alternate names to offer.
   politicianNames[name] = {
     fullName: canonical,
-    lastName: lastToken(canonical),
+    lastName: lastNameOf(canonical),
     aliases: aliasesFrom(resolved?.alternate_names),
   };
   idByName.set(name, resolved?.id ?? null);

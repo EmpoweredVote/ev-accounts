@@ -269,6 +269,13 @@ export const MAX_ALIASES = 8;
  * hand that bypass to every page carrying a common first name. Two tokens keeps an alias at least
  * as specific as the full name it stands in for.
  */
+/** The last name in a full name, skipping a trailing suffix ("Frank Pallone, Jr." → "Pallone"). */
+export function lastNameOf(name: string): string {
+  const parts = name.trim().replace(/,/g, ' ').split(/\s+/).filter(Boolean);
+  while (parts.length > 1 && /^(jr|sr|ii|iii|iv|v)\.?$/i.test(parts[parts.length - 1])) parts.pop();
+  return parts[parts.length - 1] ?? name;
+}
+
 export function aliasesFrom(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
   const out: string[] = [];
