@@ -210,9 +210,12 @@
     "full_name": "Nina Ahmad",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -222,9 +225,12 @@
     "full_name": "Cindy Bass",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -234,9 +240,12 @@
     "full_name": "Kendra Brooks",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -246,9 +255,12 @@
     "full_name": "Katherine Gilmore Richardson",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -258,9 +270,12 @@
     "full_name": "Jim Harrity",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -270,9 +285,12 @@
     "full_name": "Quetcy Lozada",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -282,9 +300,12 @@
     "full_name": "Nicolas O’Rourke",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -294,9 +315,12 @@
     "full_name": "Anthony Phillips",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
@@ -306,13 +330,31 @@
     "full_name": "Mark Squilla",
     "topic_key": "local-immigration",
     "value": 2,
-    "action": "auto-push",
+    "action": "unchanged",
     "reasons": [],
-    "displayed_value": null,
+    "displayed_value": {
+      "value": 2,
+      "season": 2
+    },
     "verified_sources": [
       "https://phila.legistar.com/LegislationDetail.aspx?ID=7861986&GUID=4FCDA5F7-894D-4449-A4B4-7A13A4C6272C"
     ],
     "failed_urls": []
+  },
+  {
+    "full_name": "Larry Krasner",
+    "topic_key": "jail-capacity",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phillyda.org/wp-content/uploads/2022/04/DAO-New-Policies-2.15.2018-UPDATED.pdf"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   },
   {
     "full_name": "Curtis Jones, Jr.",

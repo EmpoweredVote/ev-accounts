@@ -1,9 +1,19 @@
 {
-  "findings": [],
+  "findings": [
+    {
+      "full_name": "Larry Krasner",
+      "topic_key": "jail-capacity",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
   "summary": {
-    "rows": 30,
+    "rows": 38,
     "high": 0,
-    "medium": 0,
-    "by_check": {}
+    "medium": 1,
+    "by_check": {
+      "statement-needs-review": 1
+    }
   }
 }
