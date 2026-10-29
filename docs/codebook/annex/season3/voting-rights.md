@@ -1,7 +1,7 @@
-# voting-rights — Season 3 draft, revision 6 (v3 r6, Draft I2, CA_0336; replaces 9429596c… v3 r5, Draft F, CA_0334)
+# voting-rights — Season 3 draft, revision 6 `1ed871b0-fceb-4f8c-ab02-92ea1d6d3e4c` (v3 r6, Draft I2, CA_0336; replaces 9429596c… v3 r5, Draft F, CA_0334)
 
-**Revision 6 (CA_0336, not yet applied):** rejects revision 5 (`9429596c…`), proposes and approves revision 6, pins it
-in the draft Season 3 and carries the 57 draft-season rows unchanged. Only rung 2's words change (Draft I2,
+**Revision 6 applied:** 2026-10-29 by CA_0336, which rejected revision 5 (`9429596c…`), proposed and approved revision 6 (approved and parked), pinned it
+in the draft Season 3 and carried the 57 draft-season rows unchanged. Only rung 2's words change (Draft I2,
 Stage 3 2026-10-29, `stage3-i/`); rulings by Chris Andrews 2026-10-29: "Yes, start it", "Yes, count barrier talk",
 I-Q1 (I2), I-Q2–I-Q4 (reading A each), and the Stage 4 package.
 

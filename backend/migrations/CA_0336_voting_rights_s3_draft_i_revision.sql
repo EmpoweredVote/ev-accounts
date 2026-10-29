@@ -8,7 +8,11 @@
 -- Template: .claude/skills/season-topic-prep/templates/stage4-revision.sql, as adapted in CA_0334 (which rejected an
 -- approved, unpublished revision and carried the draft-season rows). Recipe: STAGE4-RECIPE.md.
 --
--- Drafted 2026-10-29, offline. NOT applied.
+-- Drafted 2026-10-29, offline.
+--
+-- APPLIED: 2026-10-29 on production, on Chris Andrews' yes. New revision 1ed871b0-fceb-4f8c-ab02-92ea1d6d3e4c (v3 r6, approved, parked,
+-- pinned in the draft Season 3); revision 5 rejected; 57 answer + 57 context rows carried; voter answers reworded x6.
+-- Output: research folder s3-prep-voting-rights/stage4-i/apply-output.txt.
 -- Dry run on prod 2026-10-29 (body twice inside BEGIN, forced RAISE): gate OK on both runs; first run rejected
 -- revision 5, proposed + approved revision 6, re-pinned the draft season and carried 57 answer + 57 context rows;
 -- second run skipped every step (0 carried); voter answers: reworded x6; ended on "dry run: forced rollback".
