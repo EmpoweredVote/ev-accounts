@@ -1,6 +1,11 @@
-# voting-rights — Season 3 draft, served revision 9429596c-4727-4a6d-8403-94509ec54466 (v3 r5, Draft F, CA_0334)
+# voting-rights — Season 3 draft, revision 6 `1ed871b0-fceb-4f8c-ab02-92ea1d6d3e4c` (v3 r6, Draft I2, CA_0336; replaces 9429596c… v3 r5, Draft F, CA_0334)
 
-**Applied:** 2026-10-26 by CA_0334, which rejected revision 4 (`08e7026f…`, Draft C, CA_0318, approved
+**Revision 6 applied:** 2026-10-29 by CA_0336, which rejected revision 5 (`9429596c…`), proposed and approved revision 6 (approved and parked), pinned it
+in the draft Season 3 and carried the 57 draft-season rows unchanged. Only rung 2's words change (Draft I2,
+Stage 3 2026-10-29, `stage3-i/`); rulings by Chris Andrews 2026-10-29: "Yes, start it", "Yes, count barrier talk",
+I-Q1 (I2), I-Q2–I-Q4 (reading A each), and the Stage 4 package.
+
+**Revision 5 applied:** 2026-10-26 by CA_0334, which rejected revision 4 (`08e7026f…`, Draft C, CA_0318, approved
 2026-10-21, never published), proposed and approved revision 5 (approved and parked), pinned it in the draft Season 3, and
 carried the 57 draft-season rows from revision 4 to revision 5 unchanged.
 
@@ -34,7 +39,7 @@ at: local.
 
 **Rungs:**
 1. Require no proof of identity to cast a ballot.
-2. Accept non-photo documents, such as a utility bill or bank statement, as ID to cast a ballot.
+2. Do not require photo ID to cast a ballot. Accept other proof, such as a utility bill or a bank statement.
 3. Require photo ID to cast a ballot, with a sworn statement for a voter who has none.
 4. Require ID before a ballot counts: photo ID at the polls, or an ID number or a copy of an ID with each mail ballot.
 5. Require a document that proves citizenship, such as a passport, birth certificate or naturalization papers, to
@@ -80,12 +85,36 @@ elections; ballot design, counting and tabulators; and a law that bars another l
   of any document → 2 (ruling D4). A repeal of a photo-only rule that leaves a list of
   non-photo documents → 2. An all-mail or signature-verification law that says nothing about ID → `adjacent`
   (silence is not a clause, V4.2). A law that bars **local** ID rules → `adjacent` (preemption, V2).
-- **Rung 2** needs a stated list of accepted documents that includes at least one document without a photo,
-  **accepted on its own, without a sworn statement** (ruling D2). Non-photo documents that only cure a provisional
-  ballot after election day are not accepted as voter ID (ruling D5). If the
-  list includes a non-photo document, the rung is 2 even when photo ID is listed first. A law that keeps such a
-  list against a move to photo only → 2. A bill that amends an ID law without setting what ID is accepted →
-  BLANK `no-evidence` (the existing law is not the person's position).
+- **Rung 2 — records (acts unchanged).** A record meets rung 2 when it **states** a list of accepted proof that
+  includes at least one document without a photo, **accepted on its own, without a sworn statement** (ruling D2), or
+  lets any voter vote on a signed statement in place of any document (D4). Non-photo documents that only cure a
+  provisional ballot after election day are not accepted as voter ID (ruling D5). If the list includes a non-photo
+  document, the rung is 2 even when photo ID is listed first. A law that keeps such a list against a move to photo
+  only → 2. A list of "any government-issued ID" with no photo condition and no named non-photo document states
+  neither (D1). **Silence is not "do not require photo ID"** (V4.2; the L5 reading of the rung's negative opening): a
+  bill that amends an ID law without setting what ID is accepted, or that ends or keeps a sworn-statement option
+  without stating what is accepted → BLANK `no-evidence` (the existing law is not the person's position).
+  List-widening and reprint-only bills stay direction-only (W2-R8, W3-R3, W3-R5).
+- **Rung 2 — own words (ruled 2026-10-29: "Yes, count barrier talk").** Own words that reject requiring photo ID (or
+  "voter ID") of every voter sit on 2, including calling photo-ID laws a barrier, harmful or a way to keep voters
+  from the polls ("voters should not need photo ID", "repeal the voter ID law", "I oppose voter ID requirements",
+  "the voter ID law is a failure"). Words that also say no proof at all should be asked ("only their signatures",
+  "no ID or documents at all") → 1. Words asking for a sworn-statement path beside photo ID → 3. Not enough on their
+  own: words about how strict a law is ("strict", "stricter", "restrictive", "harsher"); words about effects with no
+  rejection of the rule; conditional support ("ID is fine if it's free"); undated words. Words backing the state's
+  current law → W3-R8. DH1 unchanged: words rejecting voting **without** photo ID → 4.
+  - **I-Q2 (reading A).** Words against the state's photo-ID law **in force** (or one just struck down) reject the
+    rule → 2. Words against a pending bill, a proposed amendment or a ballot measure are not enough, unless they
+    speak of voter-ID laws as a class ("voter-ID laws like this", "laws like these").
+  - **I-Q3 (reading A).** Words calling photo-ID requirements **in general** harmful, discriminatory, burdensome, a
+    barrier, unnecessary or "a solution in search of a problem", or saying they keep or dissuade voters, count → 2.
+    The same words said only of one pending bill do not (I-Q2).
+  - **I-Q4 (reading A).** A Yes on a bill ruled direction-only for being broad cannot conflict with own words; the
+    seat stands. **But name the conflict:** when that bill's printed ID part points to another rung, the stance
+    summary says so in one plain sentence (for example "She later voted for SB 224 (2023), a broad election bill
+    whose ID part would discard mail ballots sent without ID.").
+- **Synonyms to add (rung 2):** "no photo ID", "repeal voter ID", "voter ID is a barrier", "keeps voters from the
+  polls", "affidavit in place of ID".
 - **Rung 3** needs photo ID **and** a stated sworn-statement path, open to any voter without photo ID, that lets the
   ballot count. A non-photo document accepted only together with that statement is part of this fallback (D2). One law
   usually states both; this is one law-stated condition (L5), and the rung is a single act. A photo-ID law that
