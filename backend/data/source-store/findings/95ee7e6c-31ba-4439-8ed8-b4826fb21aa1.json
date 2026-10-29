@@ -51,6 +51,23 @@
       "found": 1,
       "at": "2026-10-22T22:03:44.942Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE America Act",
+        "voter ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://christyforamerica.us/ (own site: no position on the topic)",
+        "coloradopolitics.com profile of her CD1 race, 2026-07-02 (nothing on topic)",
+        "web search: no source beyond the Ballotpedia survey"
+      ],
+      "found": 0,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
     }
   ]
 }

@@ -133,6 +133,28 @@
         "fetched_at": "2026-10-27T18:36:50.662Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e624a42fb2257fc42451190967ca12caa1ae8d560f3a7ccd93ecf3dd1f034ffd",
+      "kind": "own-words",
+      "url": "https://governor.nc.gov/news/governor-cooper-vetoes-voter-id-bill-signs-two-additional-bills-law",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "Requiring photo IDs for in-person voting is a solution in search of a problem. Instead, the real election problem is votes harvested illegally through absentee ballots, which this proposal fails to fix.",
+      "note": "Governor's office news release of 14 Dec 2018 announcing that Governor Roy Cooper vetoed Senate Bill 824 (implementing the photo-ID constitutional amendment), quoting his veto message. Same words as the scanned signed message; this page is text and names him. Live page now returns 404; the verifier reads it from the web archive.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "absentee ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -188,6 +210,19 @@
       "found": 3,
       "at": "2026-10-27T18:36:50.662Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "veto message on SB 824 in text form"
+      ],
+      "places": [
+        "https://governor.nc.gov/news/governor-cooper-vetoes-voter-id-bill-signs-two-additional-bills-law"
+      ],
+      "found": 1,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
     }
   ]
 }
