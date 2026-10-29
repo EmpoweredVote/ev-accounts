@@ -6,14 +6,42 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Gary Allen",
+      "topic_key": "gun-policy",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Travis L. Chambers",
+      "topic_key": "gun-policy",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Walker Garrett",
+      "topic_key": "gun-policy",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Toyia Tucker",
+      "topic_key": "gun-policy",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 52,
+    "rows": 416,
     "high": 0,
-    "medium": 1,
+    "medium": 5,
     "by_check": {
-      "statement-needs-review": 1
+      "statement-needs-review": 5
     }
   }
 }

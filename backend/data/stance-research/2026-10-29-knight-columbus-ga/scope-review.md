@@ -359,12 +359,34 @@ on a row whose evidence is perfectly good.
 defence we provoked, not a policy refusal.
 
 ▶ **The fix chosen (operator, 2026-10-29) is to archive each cited PDF to the Wayback Machine and
-keep citing the official city URL**, so tier 2 serves it and the citation stays durable. ⚠ **It
-could not be carried out on the day: the Internet Archive's Save Page Now returned HTTP 520 on every
-attempt while its read path stayed up.** The research below is unaffected — it is all cut from the
-local corpus and the snippets were matched offline with the real `matchSnippet` — but the verifier's
-dry-run will keep reporting these rows `below-threshold` until the archiving succeeds or the host
-relents. Re-run it then; it is idempotent.
+keep citing the official city URL**, so tier 2 serves it and the citation stays durable.
+
+🟢🟢 **AND TIER 2 IS ALREADY DOING THAT FOR WHATEVER HAPPENS TO BE ARCHIVED — the block is not
+total, and an earlier version of this section said it was.** Measured against CDX:
+
+| Cited document | Capture | Rows |
+| --- | --- | --- |
+| 2958, minutes of 2025-10-14 | ✅ 2026-08-08 | `gun-policy` **verifies** for Allen, Garrett, Tucker |
+| 2876 / 2877, minutes of 2023-10-10 and 10-24 | ✅ 2025-07-15 | `rent-regulation` **verifies** for Crabb |
+| **2950, minutes of 2025-08-12** | 🔴 **none** | `homelessness` fails for all six |
+
+So the live host being closed to us costs nothing where a capture exists. **One document gates half
+the slice**: the minutes of 12 August 2025, which carry the camping ordinance vote.
+
+🔴 **AND NEW ARCHIVING IS REFUSED.** Save Page Now returned HTTP 520 repeatedly on `GET /save`, and
+the POST form answers **429 with an explicit message** — *"Your request is being blocked because our
+system has flagged it as suspected abusive bot traffic that is degrading the performance of the
+Wayback Machine."* Anonymous archiving is not available; this needs an Internet Archive account with
+S3-style keys, which is an operator decision, not a research one.
+
+⚠ Coverage of this corpus is sparse and unpredictable — of nine sampled meeting documents, four had
+captures and five had none, with no pattern by date. ▶ **Where two meetings could evidence the same
+act, check CDX and cite the archived one.** That is free and it is the difference between a published
+citation and a queued row.
+
+The research is unaffected by any of this: it is cut from the local corpus and every snippet was
+matched offline with the real `matchSnippet`. Re-run the verifier once archiving is possible; it is
+idempotent.
 
 ⚠ **AND AN OFFLINE SERVICE RETURNED AN EMPTY LIST, NOT AN ERROR.** A CDX query for the minutes PDF
 returned `[]` while archive.org was serving "Internet Archive services are temporarily offline" on

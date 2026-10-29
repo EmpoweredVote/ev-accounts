@@ -156,14 +156,28 @@ so nothing is destroyed — it is simply not what a voter lookup needs.
 ▶ **OWED IN JANUARY 2027: re-seat the Mayor and Districts 3 and 7, then research Hugley.** He is the
 highest-value subject in the city and cannot be researched as an officeholder until he holds office.
 
-### Progress, 2026-10-29 — 1 of 13 done. 🔴 READ `scope-review.md` IN THE BATCH DIR FIRST
+### Progress, 2026-10-29 — ✅ ALL 8 COUNCILLORS DONE, 12 chairs. 🔴 READ `scope-review.md` FIRST
 
 | Member | Rows | Chairs |
 | --- | --- | --- |
-| **Charmaine Crabb** ✅ | 52, gate `high=0` | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
-| Allen · Chambers · Davis · Garrett · Tucker | — | `homelessness` 5 and `gun-policy` 2 are already evidenced for them; the rows are not written yet |
-| Barnes · Cook | — | seated May and July 2026; 10 and 7 meetings of record |
-| Forté · Bryan · Britt · Countryman · D'Antonio | — | the five county row officers, not started |
+| **Charmaine Crabb** | 52 | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
+| **Gary Allen** (Mayor Pro Tem) | 52 | `homelessness` 5 · `gun-policy` 2 |
+| **Travis L. Chambers** | 52 | `homelessness` 5 · `gun-policy` 2 |
+| **Walker Garrett** | 52 | `homelessness` 5 · `gun-policy` 2 |
+| **Toyia Tucker** | 52 | `homelessness` 5 · `gun-policy` 2 |
+| **Glenn Davis** | 52 | `homelessness` 5 — `gun-policy` blank, he was absent for that vote |
+| **Simi Barnes** | 52 | documented zero — seated 2026-05-26, both shared instruments predate her |
+| **Cathy Cook** | 52 | documented zero — seated 2026-07-14, same reason |
+
+**416 rows, gate `high=0`, 12 chairs, 0 duplicate pairs.** The five remaining subjects are the
+county row officers: Forté (Clerk of Superior Court), Bryan (Coroner), Britt (Tax Commissioner),
+Countryman (Sheriff) and D’Antonio (Probate Judge, the only one on the judicial ladder).
+
+⚠ **A documented zero is the right answer for Barnes and Cook, not a gap.** Ten and seven meetings
+of record each. Barnes’s `homelessness` blank is the interesting one: she told the Council as a
+member of the public, before she held the seat, that the camping ban was *“a step toward
+criminalizing homelessness”*. That rules out the two prohibitive rungs and chooses among none of the
+three that remain, so it is a blank that says exactly what it rules out.
 
 **Three instruments carry most of what has been found so far**, and each reaches several members at once:
 
@@ -177,12 +191,18 @@ highest-value subject in the city and cannot be researched as an officeholder un
 
 ### 🔴 FOUR THINGS THAT WILL COST THE NEXT SESSION IF IT DOES NOT READ THEM
 
-1. 🔴🔴 **THE MINUTES HOST REFUSES OUR OWN USER AGENT.** `EmpoweredVoteBot/1.0` gets the socket
-   closed; no UA and a browser UA both get 200. `fetchViaHttp` has no fallback and
-   `LEGACY_BROWSER_UA` is declared in that file and never used. Rows land `below-threshold` with good
-   evidence behind them. Their `robots.txt` asks `Crawl-delay: 15` and our parser ignores it by
-   design; this batch pulled 202 PDFs back to back. **Agreed fix: archive each cited PDF and keep
-   citing the city URL** — not attempted successfully on the day, Save Page Now returned 520.
+1. 🔴🔴 **ONE DOCUMENT GATES HALF THE SLICE.** The minutes host closes the connection on
+   `EmpoweredVoteBot/1.0`; no UA and a browser UA both get 200, and `fetchViaHttp` has no fallback
+   (`LEGACY_BROWSER_UA` is declared in that file and never used). **But the Wayback tier rescues
+   whatever is already archived** — meetings 2958 and 2876/2877 have captures, so `gun-policy` and
+   `rent-regulation` verify through it. **The 2025-08-12 minutes have no capture**, which is the only
+   reason all six `homelessness` rows sit `below-threshold` with good evidence behind them.
+   🔴 **New archiving is refused**: Save Page Now answers 429 — suspected abusive bot traffic. An
+   Internet Archive account with S3 keys would clear it, and that is an operator call, not a
+   research one. ⚠ Their `robots.txt` asks `Crawl-delay: 15`, our parser ignores it by design, and
+   this batch pulled 202 PDFs back to back. ▶ **Where two meetings evidence the same act, check CDX
+   and cite the archived one** — free, and it is the difference between a published citation and a
+   queued row.
 2. 🔴🔴 **A COMMA-LIST ROLL CALL CANNOT VERIFY A COMMON SURNAME.** Measured on the real page with the
    real checker: five of six verify and **Glenn Davis returns `name_not_present`**. `TITLE_PATTERN`
    matches `councilor` and not the plural `councilors` every tally uses, and the 30-character window
