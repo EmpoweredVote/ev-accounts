@@ -1,0 +1,246 @@
+{
+  "politician_id": "eeeaccdc-b3a7-457b-94bf-7d426862c618",
+  "findings": [
+    {
+      "id": "b100466d279736a2f94ff788316243195fe0d580f491d060b1d1527e1f8e83a7",
+      "kind": "own-words",
+      "url": "https://www.repkail.com/News/20125/Latest-News/Kail-Criticizes-Gov-Wolf’s-Decision-to-Veto-Voting-Rights-Protection-Act,-Line-Item-Veto-Election-Audit-",
+      "date": "2021-06-30",
+      "date_precision": "day",
+      "passage": "The bill, which included voter ID laws and funding for election audits, was the necessary step to restore trust with the public.",
+      "note": "Statement issued in his name on the governor's veto of House Bill 1300. He describes the bill's voter ID laws and audit funding as needed to restore public trust.",
+      "subjects": [
+        "voter ID at the polls",
+        "election audits",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:03.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a720cd80aad3abdfa2a9834924e0d292620e18a5a357ebde27e5c151f112f3ab",
+      "kind": "own-words",
+      "url": "https://beavercountyradio.com/?p=75763",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "passage": "In order for the public to regain trust in the election system, changes were needed.",
+      "note": "Beaver County Radio quotes a release from him after the House passed an election bill that, per the outlet, would mandate voter IDs. Same article quotes him on all 67 counties operating the same way for election integrity.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls",
+        "uniform county election rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:03.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f47b3e71e18f954400cb89aec51fe2d864e60f003cfa039e83e53254abfee0ca",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31807/Pennsylvanians-Must-Have-Say-in-Shaping-the-Future-of-the-Commonwealth-Says-Kail-?SiteID=1",
+      "date": "2023-01-26",
+      "date_precision": "day",
+      "passage": "We are ready to get to work on these measurers and want the people of Pennsylvania to be able to vote directly on these proposals.",
+      "note": "As policy committee chair he hosted a hearing on a package of constitutional amendments that included requiring voters to present identification when casting a ballot. This quote is about letting voters decide the proposals, not about ID itself; the release's ID text is by the caucus, not quoted from him.",
+      "subjects": [
+        "voter ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:03.927Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('KAIL'), linked to Joshua Daniel Kail (district 15) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Kail'), linked to Joshua Daniel Kail (district 15) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Kail'), linked to Joshua Daniel Kail (district 15) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('KAIL') on the official bill page; linked to Joshua Daniel Kail via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KAIL'), linked to Joshua Daniel Kail (district 15) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "election integrity laws",
+        "audits of elections",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repkail.com (home page confirms him as the 15th District member; two press releases read; site search page returned nothing usable)",
+        "blocked: https://ballotpedia.org/Josh_Kail",
+        "web search x3 on name plus voter ID / constitutional amendment / 2026 candidacy; 2026 ballot status not confirmed by any page found",
+        "nothing on the subject found for proof of citizenship, SAVE Act, mail-ballot ID, or no-ID fallback voting"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:11:03.927Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.693Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.456Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "id": "WI-AJR-133-2022",
+  "scope": "state:wi",
+  "title": "AJR 133 (2021-2022 Wisconsin Legislature, regular session): requiring photographic identification to vote in any election (first consideration).",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2021/proposals/ajr133",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2021/REG/AJR133"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Art. III, s. 1m (1) (proposed)\n(quote) [Article III] Section 1m (1) No qualified elector may cast a ballot in any election unless the elector presents valid photographic identification that verifies the elector's identity and that is issued by this state, the federal government, a federally recognized American Indian tribe or band in this state, or a college or university in this state.\n(b_no_id_remedy)\n(section) Art. III, s. 1m (2) (proposed)\n(quote) (2) A qualified elector who is unable to present valid photographic identification on election day shall be permitted to cast a provisional ballot.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.",
+  "sponsors": [
+    {
+      "name": "Snyder",
+      "role": "prime",
+      "version": "As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)"
+    },
+    {
+      "name": "Gundrum",
+      "role": "co",
+      "version": "As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)"
+    },
+    {
+      "name": "Murphy",
+      "role": "co",
+      "version": "As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)"
+    },
+    {
+      "name": "Rozar",
+      "role": "co",
+      "version": "As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)"
+    },
+    {
+      "name": "Steffen",
+      "role": "co",
+      "version": "As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-24",
+      "body": "WI Assembly",
+      "motion": "Adopted (ADOPTION) (av0252)",
+      "kind": "roll-call",
+      "yes": 59,
+      "no": 36,
+      "absent": 0,
+      "body_size": 99,
+      "note": "858 | https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "members": [
+        {
+          "name": "ALLEN",
+          "vote": "yea"
+        },
+        {
+          "name": "ANDERSON",
+          "vote": "nay"
+        },
+        {
+          "name": "ANDRACA",
+          "vote": "nay"
+        },
+        {
+          "name": "ARMSTRONG",
+          "vote": "yea"
+        },
+        {
+          "name": "AUGUST",
+          "vote": "yea"
+        },
+        {
+          "name": "BALDEH",
+          "vote": "nay"
+        },
+        {
+          "name": "BEHNKE",
+          "vote": "yea"
+        },
+        {
+          "name": "BILLINGS",
+          "vote": "nay"
+        },
+        {
+          "name": "BORN",
+          "vote": "yea"
+        },
+        {
+          "name": "BOWEN",
+          "vote": "nay"
+        },
+        {
+          "name": "BRANDTJEN",
+          "vote": "yea"
+        },
+        {
+          "name": "BROOKS",
+          "vote": "yea"
+        },
+        {
+          "name": "BROSTOFF",
+          "vote": "nay"
+        },
+        {
+          "name": "CABRAL-GUEVA",
+          "vote": "yea"
+        },
+        {
+          "name": "CABRERA",
+          "vote": "nay"
+        },
+        {
+          "name": "CALLAHAN",
+          "vote": "yea"
+        },
+        {
+          "name": "CONLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "CONSIDINE",
+          "vote": "nay"
+        },
+        {
+          "name": "DALLMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "DITTRICH",
+          "vote": "yea"
+        },
+        {
+          "name": "DOYLE",
+          "vote": "nay"
+        },
+        {
+          "name": "DRAKE",
+          "vote": "nay"
+        },
+        {
+          "name": "DUCHOW",
+          "vote": "yea"
+        },
+        {
+          "name": "EDMING",
+          "vote": "yea"
+        },
+        {
+          "name": "EMERSON",
+          "vote": "nay"
+        },
+        {
+          "name": "GOYKE",
+          "vote": "nay"
+        },
+        {
+          "name": "GUNDRUM",
+          "vote": "yea"
+        },
+        {
+          "name": "HAYWOOD",
+          "vote": "nay"
+        },
+        {
+          "name": "HEBL",
+          "vote": "nay"
+        },
+        {
+          "name": "HESSELBEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "HINTZ",
+          "vote": "nay"
+        },
+        {
+          "name": "HONG",
+          "vote": "nay"
+        },
+        {
+          "name": "HORLACHER",
+          "vote": "yea"
+        },
+        {
+          "name": "JAMES",
+          "vote": "yea"
+        },
+        {
+          "name": "KATSMA",
+          "vote": "yea"
+        },
+        {
+          "name": "KERKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "KITCHENS",
+          "vote": "yea"
+        },
+        {
+          "name": "KNODL",
+          "vote": "yea"
+        },
+        {
+          "name": "KRUG",
+          "vote": "yea"
+        },
+        {
+          "name": "KUGLITSCH",
+          "vote": "yea"
+        },
+        {
+          "name": "KURTZ",
+          "vote": "yea"
+        },
+        {
+          "name": "LOUDENBECK",
+          "vote": "yea"
+        },
+        {
+          "name": "MACCO",
+          "vote": "yea"
+        },
+        {
+          "name": "MAGNAFICI",
+          "vote": "yea"
+        },
+        {
+          "name": "MCGUIRE",
+          "vote": "nay"
+        },
+        {
+          "name": "MEYERS",
+          "vote": "nay"
+        },
+        {
+          "name": "MILROY",
+          "vote": "nay"
+        },
+        {
+          "name": "MOORE OMOKUN",
+          "vote": "nay"
+        },
+        {
+          "name": "MOSES",
+          "vote": "yea"
+        },
+        {
+          "name": "MURPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "MURSAU",
+          "vote": "yea"
+        },
+        {
+          "name": "MYERS",
+          "vote": "nay"
+        },
+        {
+          "name": "NEUBAUER",
+          "vote": "nay"
+        },
+        {
+          "name": "NEYLON",
+          "vote": "yea"
+        },
+        {
+          "name": "NOVAK",
+          "vote": "yea"
+        },
+        {
+          "name": "OHNSTAD",
+          "vote": "nay"
+        },
+        {
+          "name": "OLDENBURG",
+          "vote": "yea"
+        },
+        {
+          "name": "ORTIZ-VELEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        },
+        {
+          "name": "PETRYK",
+          "vote": "yea"
+        },
+        {
+          "name": "PLUMER",
+          "vote": "yea"
+        },
+        {
+          "name": "POPE",
+          "vote": "nay"
+        },
+        {
+          "name": "PRONSCHINSKE",
+          "vote": "yea"
+        },
+        {
+          "name": "RAMTHUN",
+          "vote": "yea"
+        },
+        {
+          "name": "RIEMER",
+          "vote": "nay"
+        },
+        {
+          "name": "RODRIGUEZ, J",
+          "vote": "yea"
+        },
+        {
+          "name": "RODRIGUEZ, S",
+          "vote": "nay"
+        },
+        {
+          "name": "ROZAR",
+          "vote": "yea"
+        },
+        {
+          "name": "SANFELIPPO",
+          "vote": "yea"
+        },
+        {
+          "name": "SCHRAA",
+          "vote": "yea"
+        },
+        {
+          "name": "SHELTON",
+          "vote": "nay"
+        },
+        {
+          "name": "SKOWRONSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "SNODGRASS",
+          "vote": "nay"
+        },
+        {
+          "name": "SNYDER",
+          "vote": "yea"
+        },
+        {
+          "name": "SORTWELL",
+          "vote": "yea"
+        },
+        {
+          "name": "SPIROS",
+          "vote": "yea"
+        },
+        {
+          "name": "SPREITZER",
+          "vote": "nay"
+        },
+        {
+          "name": "STEFFEN",
+          "vote": "yea"
+        },
+        {
+          "name": "STEINEKE",
+          "vote": "yea"
+        },
+        {
+          "name": "STUBBS",
+          "vote": "nay"
+        },
+        {
+          "name": "SUBECK",
+          "vote": "nay"
+        },
+        {
+          "name": "SUMMERFIELD",
+          "vote": "yea"
+        },
+        {
+          "name": "SWEARINGEN",
+          "vote": "yea"
+        },
+        {
+          "name": "TAUCHEN",
+          "vote": "yea"
+        },
+        {
+          "name": "THIESFELDT",
+          "vote": "yea"
+        },
+        {
+          "name": "TITTL",
+          "vote": "yea"
+        },
+        {
+          "name": "TRANEL",
+          "vote": "yea"
+        },
+        {
+          "name": "TUSLER",
+          "vote": "yea"
+        },
+        {
+          "name": "VANDERMEER",
+          "vote": "yea"
+        },
+        {
+          "name": "VINING",
+          "vote": "nay"
+        },
+        {
+          "name": "VORPAGEL",
+          "vote": "yea"
+        },
+        {
+          "name": "VRUWINK",
+          "vote": "nay"
+        },
+        {
+          "name": "WICHGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "ZIMMERMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SPEAKER",
+          "vote": "yea"
+        },
+        {
+          "name": "PENTERMAN",
+          "vote": "absent"
+        },
+        {
+          "name": "WITTKE",
+          "vote": "absent"
+        },
+        {
+          "name": "SHANKLAND",
+          "vote": "absent"
+        },
+        {
+          "name": "SINICKI",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

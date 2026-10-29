@@ -1,0 +1,334 @@
+{
+  "politician_id": "b65cf92b-1a7d-401d-8abb-07b9befb7374",
+  "findings": [
+    {
+      "id": "6bf3631d9216b6501b710d13e629ffab2b13967912775daa9126f04fc8cc2b5a",
+      "kind": "own-words",
+      "url": "https://www.repzimmerman.com/News/32915/Press-Releases/Shapiro-s-Automatic-Voter-Registration-Has-More-to-it-than-Convenience--Zimmerman-Says",
+      "date": "2023-09-19",
+      "date_precision": "day",
+      "passage": "It is also curious how Shapiro wants voters registered automatically when they get a state-issued identification but opposes voters having to show that same identification when they vote.",
+      "note": "Statement issued in his name on the governor's automatic voter registration order; he links showing ID at the polls to registration by state ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ec06eb11a27c8ac354831840c68dde49fabd2e5d610eee811f7b1effd8251f8",
+      "kind": "own-words",
+      "url": "https://www.repzimmerman.com/News/32915/Press-Releases/Shapiro-s-Automatic-Voter-Registration-Has-More-to-it-than-Convenience--Zimmerman-Says",
+      "date": "2023-09-19",
+      "date_precision": "day",
+      "passage": "The Constitution says you must be an American citizen to vote.",
+      "note": "Same statement; he raises non-citizens holding state IDs and being registered automatically.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45ea83248ea22d2ab3861b7caec1d7a3401529a2c5eb127ec3c449462b542e71",
+      "kind": "own-words",
+      "url": "https://www.repzimmerman.com/Display/SiteFiles/343/OtherDocuments/2022/Zimmerman%20NL%206-24.pdf",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Requiring ID each time a person casts a ballot would help restore confidence in elections and prevent election fraud, including voting under a fictitious registration, voting multiple times by registered voters in multiple states, impersonating another voter and illegal immigrant voting.",
+      "note": "Newsletter section titled 'Continuing the Fight for Election Integrity'; supports ID each time a ballot is cast. Date from the PDF creation date (June 12, 2024); the file sits in a 2022 folder, so the month is inferred. (Date set to the year only: the month was inferred, not printed.)",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a36ed61ad14412bb991f82c2b6ad138daf5cf2db3089928db75f0fa701285bf",
+      "kind": "own-words",
+      "url": "https://www.repzimmerman.com/Display/SiteFiles/343/OtherDocuments/2022/Zimmerman%20NL%206-24.pdf",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Election integrity is critical to the success of a healthy Republic.",
+      "note": "Same newsletter; he describes a voter ID constitutional amendment effort and a lawsuit over state legislatures' authority over election law. (Date set to the year only: the month was inferred, not printed.)",
+      "subjects": [
+        "election integrity",
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('ZIMMERMAN'), linked to David H. Zimmerman (district 99) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Zimmerman'), linked to David H. Zimmerman (district 99) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Zimmerman'), linked to David H. Zimmerman (district 99) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('ZIMMERMAN') on the official bill page; linked to David H. Zimmerman via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95e5e71fc62d2f20e2a25ca8e1f97134e529be48aa0fa9b7b9a5b14655ee8e29",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240301174241/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1334",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1334-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1432 (as introduced; only printer's number). Read.",
+      "note": "Named as co sponsor ('ZIMMERMAN') on the official bill page; linked to David H. Zimmerman via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('ZIMMERMAN') on the official bill page; linked to David H. Zimmerman via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('ZIMMERMAN') on the official bill page; linked to David H. Zimmerman via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('ZIMMERMAN'), linked to David H. Zimmerman (district 99) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "automatic voter registration",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site repzimmerman.com press release (scope confirmed: sitting state representative, Lancaster/Berks)",
+        "official site newsletter PDF June 2024",
+        "blocked: https://ballotpedia.org/David_Zimmerman_(Pennsylvania) (empty page; 2026 ballot status not confirmed)",
+        "web search: name plus voter ID, and name plus SAVE Act / proof of citizenship / mail ballot (no further own words found)",
+        "legislature bill pages: not reviewed (sponsorships linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:43:00.626Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.701Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

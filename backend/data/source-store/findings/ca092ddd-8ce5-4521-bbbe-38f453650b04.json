@@ -1,0 +1,179 @@
+{
+  "politician_id": "ca092ddd-8ce5-4521-bbbe-38f453650b04",
+  "findings": [
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HOBBS'), linked to Katie Hobbs (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "943f841598c50ea935ffc516f638b97add1cc990186f7fd016af06efef389eeb",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/67175",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1074-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1074P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Katie Hobbs') on the official bill page; linked to Katie Hobbs via the official 2015 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcee61cbc3cb8ed276772172221c6cc1b669d7319668f0bf4d65b056f27bcb45",
+      "kind": "own-words",
+      "url": "https://www.democracydocket.com/analysis/candidate-qa-katie-hobbs-on-her-run-for-governor-of-arizona/",
+      "date": "2022-10-26",
+      "date_precision": "day",
+      "passage": "The law creates new barriers for voters that do nothing to make our elections more secure — like requiring voters to submit additional paperwork like “proof of residence” or identify their place of birth, neither of which election officials will be able to confirm.",
+      "note": "Answer in a Democracy Docket candidate Q&A, given while she was Secretary of State and running for governor, about HB 2492 (2022), the proof-of-citizenship and proof-of-residence law. The same answer says the law violates federal law.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a2bb9973db4174acddd50f85e5ebf0c6bd684a7b8ff6e7b02e969430193a541",
+      "kind": "record",
+      "url": "https://www.azleg.gov/govlettr/57leg/1r/sb1098.pdf",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "vetoed",
+      "note": "SB 1098, early ballot drop off; identification: would have required voters dropping off early ballots to show ID. Governor's veto letter, dated May 12, 2025, says: 'Today, I vetoed Senate Bill 1098. This bill is Detrimental, Ineffective, Nonsensical, and Objectionable.'",
+      "subjects": [
+        "ID with a mail or early ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c6f2f58e73f0bd9e366ce150d23fd02f0b4cad707ba4ee32a0ea163ed8e7b2f",
+      "kind": "record",
+      "url": "https://www.azleg.gov/govlettr/57leg/1r/sb1001.pdf",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "vetoed",
+      "note": "SB 1001, early ballots; identification; tabulation: set an early-ballot return deadline, with voters returning after it required to show ID. Veto letter dated July 1, 2025.",
+      "subjects": [
+        "ID with a mail or early ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.068Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6df379dd29a66a558c65248b92104c12053f065c4b22224821f470730378c9c5",
+      "kind": "own-words",
+      "url": "https://www.azleg.gov/govlettr/57leg/1r/sb1001.pdf",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "passage": "While I recognize the sponsor's desire to speed election results, my commitment is first and foremost to accessibility for every eligible voter to have their voice heard.",
+      "note": "From her veto letter on SB 1001 (early ballots; identification; tabulation). The letter also says election reforms must balance counting speed with accessibility, accuracy and security.",
+      "subjects": [
+        "ID with a mail or early ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:17:05.068Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:53:15.884Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or early ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo script not run under this session's rules)",
+        "https://en.wikipedia.org/wiki/2026_Arizona_gubernatorial_election (nominee in the November 2026 general election; positive control)",
+        "https://www.democracydocket.com/analysis/candidate-qa-katie-hobbs-on-her-run-for-governor-of-arizona/ (Q&A, 2022-10-26)",
+        "https://www.azleg.gov/govlettr/57leg/1r/sb1098.pdf and https://www.azleg.gov/govlettr/57leg/1r/sb1001.pdf (veto letters)",
+        "https://www.kjzz.org/politics/2025-04-01/heres-a-list-of-all-the-arizona-bills-gov-katie-hobbs-vetoed-so-far-in-2025 and https://www.kjzz.org/politics/2026-02-26/arizona-gov-katie-hobbs-vetoed-these-bills-in-2026 (veto lists used to find letters; 2026 list has no voter-ID bill)",
+        "https://www.votebeat.org/arizona/2026/06/13/2026-ballot-measure-voting-changes-republican-voter-id-fast-election-results/ (mentions her only as the official whose veto the referral bypasses; no words from her)",
+        "https://azgovernor.gov/office-arizona-governor/news/2025/04/governor-katie-hobbs-legislative-action-update-4 (no voter-ID or citizenship bills)",
+        "blocked: https://ballotpedia.org/Katie_Hobbs (empty page)",
+        "blocked: https://katiehobbs.org/?p=5469 (404)",
+        "blocked: https://azmirror.com pages (bot check)",
+        "web searches (three): veto letters and statements on voter ID and proof of citizenship"
+      ],
+      "found": 4,
+      "at": "2026-10-28T23:17:05.068Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

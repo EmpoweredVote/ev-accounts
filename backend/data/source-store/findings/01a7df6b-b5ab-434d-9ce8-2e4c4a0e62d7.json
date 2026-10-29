@@ -1,0 +1,220 @@
+{
+  "politician_id": "01a7df6b-b5ab-434d-9ce8-2e4c4a0e62d7",
+  "findings": [
+    {
+      "id": "375ed10870c6f9e9f279a0cf409f1a545518141adf222257e810ecc931fd30e6",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-hoadley-works-with-the-trump-administration-to-promote-election-integrity",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "“This issue should not be controversial,” Hoadley said. “The people I represent want secure elections. In Michigan, I recently voted to stop the foreign funding of ballot initiatives in our state. We should all be in favor of protecting the integrity of our elections here in the United States. It really is a matter of common sense. Only verified U.S. citizens should be allowed to cast a ballot.”",
+      "note": "House caucus release in his name. The release says he supports the federal SAVE Act (proof of citizenship to register, photo ID to vote in federal elections) and that the Michigan House adopted a resolution urging Congress to pass it. He says only verified citizens should vote.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "photo ID to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b29c30455e401edec3120984ad85dc8bbb47c3d1fa65f082585f6ff210d11428",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-hoadley-co-sponsors-plan-to-strengthen-election-integrity",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "passage": "“We need to make it easier for our election officials to administer our elections according to the law,” said Hoadley (R-Au Gres). “With easily accessible proof of citizenship, we can better protect the integrity of the ballot.”",
+      "note": "House caucus release announcing he backs a bill that would put an eagle emblem on state-issued ID given to U.S. citizens, so election officials can see citizenship status when checking ID.",
+      "subjects": [
+        "proof of citizenship on state ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ae420edd9d506b1016cb15b179d1486fe65b80088fa12f6cd2c19b8c23a2ff3",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-hoadley-co-sponsors-plan-to-strengthen-election-integrity",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "passage": "“Every eligible voter in Michigan needs to have confidence that our elections are being held securely,” Hoadley said. “A straightforward, recognizable designation of U.S. citizenship on state-issued identification is a very reasonable and straightforward step toward making those distinctions clearer.”",
+      "note": "Same release. He calls the citizenship marking on state ID a reasonable step.",
+      "subjects": [
+        "proof of citizenship on state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f20525f1df95073325177cfa7778a5efc5671177a0bb452c9cfa3c3a6b82662c",
+      "kind": "own-words",
+      "url": "https://repkesto.gophouse.org/posts/rep-hoadley-introduces-bill-to-bring-accountability-to-voter-rolls",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "passage": "“The inaccuracy of Michigan’s voter rolls is a legitimate concern,” Hoadley said. “Inaccurate information in the QVF can undermine voter confidence in the system. After failed lawsuits to clean up to rolls, my bill simply instructs the Secretary of State to send postage to a voter to verify the most accurate voter information is on file.”",
+      "note": "House caucus release on his House Bill 4356, which would have the state mail return cards to voters who have not voted in 10 years and remove those who do not respond. The release says the bill was referred to the Election Integrity Committee.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b6a8274c19b44207b0bea99d5320203371012d5da3f4e3d455859d6d72f2002",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-hoadley-secures-legislative-approval-for-plan-to-improve-local-election-integrity",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "“Voters must have confidence that every ballot has been counted before their officials assume office. Our plan provides clarity for communities and prevents potential confusion during the certification process. We need these kinds of measures in place to ensure that we can have firm public trust in these outcomes.”",
+      "note": "House caucus release on bills he sponsored setting when local officials are sworn in after an election. Not about ID; saved as a related election-rules item.",
+      "subjects": [
+        "election integrity laws in general",
+        "certification timing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44aeef02a3561d8ee393774620e315e83bcdf826bd30f2b1a0263a98ce9bb0a6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4324-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Mike Hoadley (District 99)') on the official bill page; linked to Mike Hoadley via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Hoadley'), linked to Mike Hoadley (district 99) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Mike Hoadley (District 99)') on the official bill page; linked to Mike Hoadley via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://gophouse.org/posts/rep-hoadley-works-with-the-trump-administration-to-promote-election-integrity (state representative, Au Gres) and https://theballotbrief.com/state/michigan/ogemaw-county/michigan-house-district-99 (on the 2026-11-03 ballot for House District 99)",
+        "On the Record: not run for this person (a rule against running repo scripts applied); not reviewed",
+        "House caucus member page https://gophouse.org/member/RepMikeHoadley/posts (curl 200): all election-related releases read; five passages saved; other releases are about zoning, dams, gun law, office hours, foreign influence and school days (nothing on the subject)",
+        "https://gophouse.org/posts/rep-hoadleys-bill-to-end-foreign-influence-passes-house (2025-05-07): nothing on the subject",
+        "https://mlcmi.com/?p=5463 (2025-10-02 legislator spotlight): lists Election Integrity as a committee assignment, no position statements",
+        "campaign site: not located",
+        "Ballotpedia: not reviewed",
+        "Legislature bill pages: not searched, votes and sponsorships are linked separately",
+        "Two web searches: name plus voter ID, election, proof of citizenship, election integrity statement"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:48:54.181Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.332Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

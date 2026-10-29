@@ -26,7 +26,223 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "d620b658e1acd99c5660d5072291780ef182957e043f151ce517a81e8139831b",
+      "kind": "own-words",
+      "url": "https://whmi.com/news/article/46891",
+      "date": "2024-12-16",
+      "date_precision": "day",
+      "passage": "“These are straightforward, commonsense reforms that will safeguard our elections,” said Bollin, R-Brighton Township. “Requiring proof of citizenship and voter ID simply ensures that only eligible voters are participating in our democratic process. This is about protecting the integrity of our elections.”",
+      "note": "Local radio news story dated 16 Dec 2024 quoting her when she announced support for a proposed constitutional amendment requiring proof of citizenship to register and photo ID to cast a ballot.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7dfeb092c473890a193a5a9d6a8ed3be7c28d10b5cd7ffb937ff53b987302606",
+      "kind": "own-words",
+      "url": "https://thelivingstonpost.com/bollin-calls-for-voters-to-require-proof-of-citizenship-show-id-to-cast-ballots/",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "passage": "“Election integrity starts with voter integrity: Only U.S. citizens should vote in American elections,” said Bollin in a release. “However, Michigan doesn’t require voters to do something as simple as show proof of citizenship. Voters don’t even have to show photo ID at the polls. Michigan voters deserve better election security. By requiring voters to prove their citizenship and present photo ID, this plan will provide commonsense guardrails to protect the integrity of Michigan elections.”",
+      "note": "Statement in a release issued in her name, reported 13 Mar 2025, supporting House Joint Resolution B (proof of citizenship to register and photo ID to vote). She testified on it before the House Election Integrity Committee on 4 Mar 2025.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67523d0098e125fcb6d8c6c22cec1b6c3ee839ab898bba15c709498761c7f48a",
+      "kind": "own-words",
+      "url": "https://thelivingstonpost.com/bollin-calls-for-voters-to-require-proof-of-citizenship-show-id-to-cast-ballots/",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "passage": "“Last year, a Chinese national exploited a gaping loophole in Michigan law to cast a ballot and meddle in our elections,” Bollin said. “He easily voted illegally because he never had to provide proof of citizenship, and his vote counted the same as every legal Michigan voter. It’s clear this loophole is more like a wide-open front door with a welcome mat inviting noncitizens into polling places. We need to close this door and secure our elections so U.S. citizens can vote without illegal ballots canceling theirs out.”",
+      "note": "Her statement, reported 13 Mar 2025, tying proof of citizenship to a case of non-citizen voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a086cc238df1f4411f49d4a749eeabf8ea1f183aee0cbfd873e0ca8ff64a9ba7",
+      "kind": "own-words",
+      "url": "https://whmi.com/news/article/bollin-says-tougher-voting-rules-strengthen-election-integrity",
+      "date": "2021-10-15",
+      "date_precision": "day",
+      "passage": "“As legislators, we have an obligation to the people of this great state to ensure our laws create a strong, election framework,” Bollin said. “This plan will provide us with a path to ensure we have fair and free elections. It will help restore confidence in our elections. It will give people confidence that their vote will count. And that they, and only they, are casting their own ballot.”",
+      "note": "Remarks on the 2021 voter ID and absentee-ballot bills as the legislature finished them, in a story dated 15 Oct 2021 (the vote was the day before). The story says the plan covers ID for in-person and absentee voting and free state photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ca898a791603673ac23d77b45304557330f1c4969e5cf529974305f9ffc8ed9",
+      "kind": "own-words",
+      "url": "https://whmi.com/news/article/bollin-says-tougher-voting-rules-strengthen-election-integrity",
+      "date": "2021-10-15",
+      "date_precision": "day",
+      "passage": "“I can assure you we do have checks and balances in our elections, but I can also stand here and tell you there is room for improvement,” Bollin said.",
+      "note": "Floor remark reported 15 Oct 2021 on the 2021 voter ID and absentee-ballot bills.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7858204c305ff1bfe6368350b91aff2583fc18f95db5e232958f72b45ef2a2d2",
+      "kind": "record",
+      "url": "https://www.michigannewssource.com/?p=71836",
+      "date": "2026-02",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Appeared in a White House video urging passage of the federal SAVE Act",
+      "note": "News story (about 13 Feb 2026) says the video shows her with three other state House members all promoting the SAVE Act, which would require proof of citizenship to vote and a voter ID in federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:00.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Bollin'), linked to Ann Bollin (district 49) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Ann Bollin (District 49)') on the official bill page; linked to Ann Bollin via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "free state ID",
+        "non-citizen voting",
+        "SAVE Act"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not permitted in this session)",
+        "Livingston Post story https://thelivingstonpost.com/bollin-calls-for-voters-to-require-proof-of-citizenship-show-id-to-cast-ballots/ confirms her as a House member from Brighton Township",
+        "radio news stories on whmi.com (2021, 2024, 2025)",
+        "news story https://www.michigannewssource.com/?p=71836 on the White House SAVE Act video",
+        "blocked: https://michiganadvance.com/2026/02/11/michigan-house-leaders-appear-in-white-house-advertisement-pushing-congress-to-pass-save-act/ (403)",
+        "blocked: https://www.newsfromthestates.com/article/gop-led-michigan-house-passes-voter-id-absentee-ballot-restrictions (403)",
+        "not reviewed: her official House page and Ballotpedia (not fetched for this person)",
+        "House Joint Resolution B and 2021 bill sponsorships left to the separate record search",
+        "two news searches on name plus subject words"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:47:00.333Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.337Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

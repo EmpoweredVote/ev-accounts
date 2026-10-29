@@ -1,0 +1,347 @@
+{
+  "politician_id": "112bac0a-74b6-4bc8-b76a-5e41d0d9cd5f",
+  "findings": [
+    {
+      "id": "68773de0627ead8784e21ba8d751446c023b0009a270206ff287e52f6db106a2",
+      "kind": "own-words",
+      "url": "https://senatorlindseywilliams.com/issues/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We need to make voting as accessible as possible for people. We can have elections that are secure while dramatically increasing civic engagement.",
+      "note": "Issues page on elections; it lists reforms she supports (automatic registration, mail-ballot pre-canvassing, drop boxes) and names no ID requirement.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.324Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ae333d40cabbb5137199de8a6f52dfdb86649e8cf06534f668fdc5652d2bb3e",
+      "kind": "own-words",
+      "url": "https://senatorlindseywilliams.com/senator-lindsey-m-williams-to-introduce-election-security-legislation/",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "My legislation will give election officials more flexibility to count ballots faster, expand protections for voters and elections workers, and outline restrictions to safeguard election systems from tampering and unauthorized access.",
+      "note": "Release announcing an election-law package: mail-ballot pre-canvassing, worker protections, voting machine vendor disclosure, a false-information bill. No ID or citizenship item.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot processing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.324Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b7205a1b56638098f24c58ae255836b84959339ba1a98566b7ace4c95064633",
+      "kind": "own-words",
+      "url": "https://senatorlindseywilliams.com/williams-appointed-to-bipartisan-election-integrity-and-reform-committee/",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "These measures should be implemented for security purposes, not to disenfranchise voters.",
+      "note": "Her statement after a Senate special committee hearing, about ballot curing and pre-canvassing; she also says she voted against Act 77 over process. No ID topic.",
+      "subjects": [
+        "election integrity laws in general",
+        "ballot curing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.324Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('WILLIAMS, L.'), linked to Lindsey M. Williams (district 38) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Williams, Lindsey'), linked to Lindsey M. Williams (district 38) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Williams, Lindsey'), linked to Lindsey M. Williams (district 38) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Williams, Lindsey'), linked to Lindsey M. Williams (district 38) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:01:15.647Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:47:07.178Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:52:01.886Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:59:56.302Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:05:26.509Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:13:34.847Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://senatorlindseywilliams.com/ names her as a state senator with a 2026 voting banner; election 2026 ballot status not separately confirmed",
+        "official site: issues page, 2026 election security release, 2021 election committee release",
+        "web searches (3) on her name with voter ID and SAVE Act: no statement on voter ID or proof of citizenship found",
+        "not reviewed: Ballotpedia, Senate bill pages (sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:18:25.324Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

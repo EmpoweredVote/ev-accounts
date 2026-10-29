@@ -26,7 +26,71 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Neeley'), linked to Cynthia Neeley (district 70) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.339Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "House caucus member page https://housedems.com/cynthia-neeley/ (confirms she is a state representative; nothing on the subject)",
+        "House caucus news list https://housedems.com/cynthia-neeley/news/ (first page only; pagination returned the same page; nothing on the subject)",
+        "House caucus site search for her name plus voter: nothing on the subject",
+        "https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-70/candidates/cynthia-r-neeley (confirms 2026 general ballot, district 70; says her website has no information on the issue it lists)",
+        "https://voterguide.planetdetroit.org/candidates/cynthia-neeley (bill-vote list only; votes are linked separately)",
+        "https://mlcmi.com/spotlight-on-representative-cynthia-neeley: nothing on the subject",
+        "blocked: https://ballotpedia.org/Cynthia_Neeley",
+        "two web searches on her name plus the subject words: no statement by her found",
+        "not reviewed: legislature.mi.gov bill pages for sponsorships (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:44:58.226Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.339Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

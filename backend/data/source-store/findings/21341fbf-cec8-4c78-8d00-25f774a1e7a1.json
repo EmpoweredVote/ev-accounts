@@ -1,0 +1,55 @@
+{
+  "politician_id": "21341fbf-cec8-4c78-8d00-25f774a1e7a1",
+  "findings": [
+    {
+      "id": "53e1e5db4b6e08cb19c1298ff09eb45f891d0e99c25d4f44513df7bcdeff5909",
+      "kind": "own-words",
+      "url": "https://www.wvia.org/news/local/2024-10-26/house-candidate-walsh-sues-luzerne-county-over-alleged-ballot-registration-delays",
+      "date": "2024-10-25",
+      "date_precision": "day",
+      "passage": "The voters of Luzerne County have been disenfranchised for far too long,” Walsh wrote in a text message Friday night.",
+      "note": "Quoted by WVIA after he sued Luzerne County over slow processing of voter registrations and mail-ballot applications. About election administration, not ID rules. Passage begins inside the quotation. Article dated 2024-10-26 and says the suit was filed Friday, 2024-10-25.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot application processing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:21.796Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity when voting in person",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: sitting member (https://www.repwalsh.com/) and listed for the 2026-11-03 general election ballot (https://theballotbrief.com/state/pennsylvania/luzerne-county/pennsylvania-house-district-117)",
+        "On the Record (0 appearances)",
+        "official site https://www.repwalsh.com/ press release list: nothing on the subject",
+        "blocked: https://ballotpedia.org/Jamie_Walsh (empty page or 403) (not fetched separately; same site refused other pages)",
+        "news: WVIA (quote saved), HuffPost Oct 2024 drop box meeting quote (https://www.huffpost.com/entry/luzerne-county-pennsylvania-drop-boxes-2024-election_n_670aa149e4b0c2f4a1353bd6) is about mail-ballot drop boxes and cheating claims, not ID; not saved",
+        "Wikipedia says he supports voter ID: lead only, no original source found",
+        "campaign site and candidate questionnaire: none found",
+        "bill votes and sponsorships: not searched, linked separately per the brief",
+        "web search: name plus voter ID, election integrity, mail ballot, proof of citizenship words (several searches, no first-hand own words beyond those saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:05:21.796Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

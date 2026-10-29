@@ -1,0 +1,349 @@
+{
+  "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43498a812a9be84922a4f8ee79bb26af12b6cdbe90981537221256088f2a9ab6",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district 20) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "823ba4e00ea74faa9b6c3ce2a674b42611bc97c56a63c8e16091a81312f7aa00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=188418&includeVotes=true",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2019 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dfb2519c98f83e5598ac6fd0ad9df8c4fe318abd4d5608788b6d5b08e232aa2",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "874d8b41974c07ab69831bb20b6331b1899f813251abd335d0c6c41ea2804008",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8986512a76239d1085f23b414056af40ca1776a196aa959bbf7fbba3fcd3db8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b89a53381c2067609b97be9a1c8ee34d61f116ea26a74027156e7cf66091830d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "nay",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7074ef886c294292431cf748b318835547728ec2c176aea8626cd17af0a464f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('HERNANDEZ A'), linked to Alma Hernandez (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.509Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 13,
+      "at": "2026-10-28T22:53:15.880Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, extract-otr ran with her name)",
+        "in scope: sitting House member running for State Senate District 20 in 2026; https://criticalreport.substack.com/p/2026-az-senate-primaries reports she won the 2026-07-21 primary with no other candidate on the ballot, so she stays a 2026 candidate",
+        "https://www.kold.com/2026/07/20/tucson-now-rep-alma-hernandezs-plan-district-20/: nothing on the subject",
+        "https://www.tucsonspotlight.org/alma-hernandez-on-water-esas-and-housing-in-ld20/: nothing on the subject",
+        "https://apis.azpm.org/s/103563-as-moderate-democrats-wobble-nationwide-a-primary-battle-boils-in-tucson/: nothing on the subject",
+        "legislature member page https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2312: only an elector-allocation compact co-sponsorship; no ID or citizenship bills; no statements",
+        "blocked: https://ballotpedia.org/Alma_Hernandez (empty page)",
+        "blocked: https://ballotpedia.org/Alma_Hernandez_(Arizona) (empty page)",
+        "campaign site not found: guessed domain almahernandezaz.com does not exist; no campaign site surfaced in search",
+        "three web searches on her name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:13:14.138Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.509Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

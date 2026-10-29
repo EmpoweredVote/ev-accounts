@@ -1,0 +1,267 @@
+{
+  "politician_id": "8bb841b4-0c4f-43d9-acc1-492968ceb8ea",
+  "findings": [
+    {
+      "id": "f276b462819875ff4ab899fc69379ff14c2c82a6c7031c188f4d4e560f8e11f8",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=130928",
+      "date": "2023-10-06",
+      "date_precision": "day",
+      "passage": "“Whenever voter ID has been suggested in the past, I broke ranks, stood my ground and voted my belief that voter ID was needed to allay fears of election fraud and guarantee election integrity,” Burns said.",
+      "note": "Statement in his House press release after a 2023 vote for a proposal requiring voters to show ID at the polls; also says he is ready to push his own bipartisan bill.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe44868bc2fcac24be2c00e4b00e8c2e079d51bf9f5e84c5409b908ec69971bd",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=130928",
+      "date": "2023-10-06",
+      "date_precision": "day",
+      "passage": "“Voting is a sacred right, and we should be doing everything to protect it and restore voters’ confidence in the process, especially when so many Pennsylvanians believe ID should be required in order to vote.”",
+      "note": "Same release; his reason for supporting ID at the polls.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbc8fb25b89a8371ee5b2090e8610a582719c9998e51ff3fb2b3da918a128da8",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=137731",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "passage": "“It’s simple; we need to make sure that people who vote are who they say they are.",
+      "note": "Quote in a House release announcing HB 771 (voter ID at the polls, with a written-affirmation alternative for a voter without ID), introduced with two co-sponsors. The sentence continues in the release: 'As elected officials we need to do everything we can to alleviate fears of election fraud and guarantee election integrity'. The release describes HB 771 as letting a voter without acceptable ID affirm identity in writing.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter written affirmation",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54ecdaa7efaa9cbe9ab3d1b39e10bd6fff8f0274141378a2b6dfd17e3a4c6bee",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=120215",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "passage": "We need to make sure that people who vote are who they say they are.",
+      "note": "Quote in a House release on his vote for HB 1300 (voter ID at the polls, signature checks for mail ballots, drop-box option).",
+      "subjects": [
+        "voter ID at the polls",
+        "mail ballot signature verification",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:06:27.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BURNS'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Burns'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Burns'), linked to Frank Burns (district 72) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('BURNS') on the official bill page; linked to Frank Burns via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BURNS'), linked to Frank Burns (district 72) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter affirmation",
+        "mail-ballot ID and signature checks",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House news releases (three on the subject, found via search and fetched)",
+        "official House page https://pahouse.com/Burns/ (names him as member; nothing on the subject on the home page)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Frank_Burns_(Pennsylvania) (403)",
+        "one web search on his name plus voter ID",
+        "legislature bill pages: not reviewed (floor votes and sponsorships linked separately)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:06:27.680Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.701Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.855Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -26,7 +26,203 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "698f98bb1ecbb85371735724def3fd1867b99738477d6aa6366aa02f07280bee",
+      "kind": "own-words",
+      "url": "https://www.clickondetroit.com/news/michigan/2021/10/15/michigan-republicans-ok-tougher-voting-rules-gov-whitmer-to-veto/",
+      "date": "2021-10-15",
+      "date_precision": "day",
+      "passage": "Michigan already has voter ID laws.",
+      "note": "Quoted by the Associated Press (carried by ClickOnDetroit), when he was a state representative, about the 2021 bills adding ID details to absentee ballot applications.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:51.578Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8f2b7d08f7c370bbf936a17431db231966651a9948f54f66d0f02714d43d8e2",
+      "kind": "own-words",
+      "url": "https://www.clickondetroit.com/news/michigan/2021/10/15/michigan-republicans-ok-tougher-voting-rules-gov-whitmer-to-veto/",
+      "date": "2021-10-15",
+      "date_precision": "day",
+      "passage": "Their ballots would not be counted unless they jump through a series of hoops",
+      "note": "Associated Press quote (carried by ClickOnDetroit; the sentence in the article has a comma after 'hoops' before the attribution) about absentee applicants who leave out a license number, state ID number or last four Social Security digits and get a provisional ballot.",
+      "subjects": [
+        "mail-ballot ID",
+        "provisional ballot for no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:51.578Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44d831dfc1eeb3fca116d2ec1f84e8cd7e68d144fad9d08bff5bac9206547e3b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Camilleri'), linked to Darrin Camilleri (district 23) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Camilleri'), linked to Darrin Camilleri (district 4) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Darrin Camilleri (District 4)') on the official bill page; linked to Darrin Camilleri via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Camilleri'), linked to Darrin Camilleri (district 4) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Darrin Camilleri (District 4)') on the official bill page; linked to Darrin Camilleri via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "ID number on absentee ballot applications",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this id)",
+        "confirmed in office: https://www.michiganvotes.org/legislators/2023/senate/district-4 (state senator, district 4, 2023 to present; earlier House member 2017 to 2022)",
+        "AP story carried by https://www.clickondetroit.com/news/michigan/2021/10/15/michigan-republicans-ok-tougher-voting-rules-gov-whitmer-to-veto/ (fetched, two quoted sentences saved)",
+        "blocked: https://senatedems.com/camilleri/?p=1507 (403)",
+        "blocked: https://senatedems.com/camilleri/ (403)",
+        "blocked: https://michiganadvance.com/2025/03/04/fight-begins-in-michigan-house-over-whether-to-require-voters-to-prove-their-citizenship/ (403)",
+        "a 2025 statement on the proof-of-citizenship joint resolution was named by a search summary only; its source page was not found, so it is not saved. Fetched https://www.michiganpublic.org/politics-government/2025-01-31/republican-legislators-introduce-resolution-to-require-proof-of-citizenship-to-vote and https://www.wkar.org/wkar-news/2025-03-04/proposed-amendment-would-require-proof-of-citizenship-to-register-to-vote-in-michigan: no words from him in either",
+        "web search x2 (name plus voter ID words)",
+        "not reviewed: Ballotpedia (not fetched for this person)",
+        "campaign site: none found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:51.578Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:55:46.336Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

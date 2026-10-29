@@ -1,0 +1,137 @@
+{
+  "politician_id": "26902147-6244-4c6e-959b-14a08eb1b56f",
+  "findings": [
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Fitzgerald') on the official bill page; linked to Joan Fitzgerald via the official 2026 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Fitzgerald') on the official bill page; linked to Joan Fitzgerald via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('FITZGERALD'), linked to Joan Fitzgerald (district 46) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope check: BallotReady profile lists her as holding Assembly District 46 until 2027-01-04 and as a candidate in the 2026 general election; a Wisconsin district-preview page lists her as the incumbent on the November ballot",
+        "official site legis.wisconsin.gov/assembly/46/fitzgerald/: home, about, press releases (pages 0 to 3) and e-updates list; nothing on the subject",
+        "four 2026 press-release PDFs and two 2026 e-update newsletters read: nothing on the subject",
+        "news pages: Capital Times 2024 race story and Daily Union election story, nothing on the subject",
+        "not reviewed: https://www.hngnews.com/cambridge_deerfield/news/local/assembly-district-46-candidates-debate-at-jefferson-fairgrounds/article_3a91606e-79b4-11ef-a3a9-3b1e41e39d04.html (page returned no readable text; it is a 2024 candidate debate story)",
+        "blocked: web results for ballotpedia and bluevoterguide were not fetched (not fetched, no access attempted)",
+        "web search on name plus voter ID and election words (2 searches): no statement of hers on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:59:17.185Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope check: BallotReady profile lists her as holding Assembly District 46 until 2027-01-04 and as a candidate in the 2026 general election; a Wisconsin district-preview page lists her as the incumbent on the November ballot",
+        "official site legis.wisconsin.gov/assembly/46/fitzgerald/: home, about, press releases (pages 0 to 3) and e-updates list; nothing on the subject",
+        "four 2026 press-release PDFs and two 2026 e-update newsletters read: nothing on the subject",
+        "news pages: Capital Times 2024 race story and Daily Union election story, nothing on the subject",
+        "not reviewed: https://www.hngnews.com/cambridge_deerfield/news/local/assembly-district-46-candidates-debate-at-jefferson-fairgrounds/article_3a91606e-79b4-11ef-a3a9-3b1e41e39d04.html (page returned no readable text; it is a 2024 candidate debate story)",
+        "not reviewed: https://ballotpedia.org/Joan_Fitzgerald_(politician) (not fetched)",
+        "web search on name plus voter ID and election words (2 searches): no statement of hers on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:00:23.272Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

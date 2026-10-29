@@ -1,0 +1,87 @@
+{
+  "politician_id": "2c8c7755-c1cc-45fc-aa04-a5f9fdeec498",
+  "findings": [
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Schutt') on the official bill page; linked to Ellen Schutt via the official 2023 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.788Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('SCHUTT'), linked to Ellen Schutt (district 31) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.788Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Schutt') on the official bill page; linked to Ellen Schutt via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.788Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.788Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

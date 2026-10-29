@@ -1,0 +1,30 @@
+{
+  "politician_id": "9547b530-f40b-4802-b621-fb64571670e4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: sitting secretary of state, unopposed in the 2026-08-11 primary for lieutenant governor and on the November ticket (https://theballotbrief.com/candidate/sarah-godlewski-wi)",
+        "not reviewed: On the Record extract script (the search agent may not run repo scripts)",
+        "official site https://sos.wi.gov/ (front page): nothing on the subject",
+        "campaign site https://www.sarahforwisconsin.com/ (front page, only meet-sarah, get-involved pages linked): nothing on the subject",
+        "blocked: https://ballotpedia.org/Sarah_Godlewski (403)",
+        "legislature bill pages: not applicable, statewide officer not a legislator",
+        "4 web searches on her name plus voter ID, SAVE Act, proof of citizenship, the April 2025 voter ID amendment: no statement of hers found; the governor's 2026-07-09 SAVE Act letter was fetched and is not signed by her",
+        "not reviewed: interview and forum videos"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:00:57.416Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

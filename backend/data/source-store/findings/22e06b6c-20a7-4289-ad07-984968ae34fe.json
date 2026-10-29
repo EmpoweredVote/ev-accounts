@@ -26,7 +26,300 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "e0ae8ddea27905dfe791292a19c94ac9ea3ea8b1589546b71dc279b1713a41a7",
+      "kind": "own-words",
+      "url": "https://senatorlanatheis.com/senate-votes-to-improve-voter-id-verification",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "passage": "It only makes sense that we should have to show our IDs to participate in one of the most important and influential things we can do as citizens — voting.",
+      "note": "Her statement on her site after the Senate vote on voter ID verification bills; she links showing ID to voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:43.191Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4757cb05158498bd8bd4ed48b200f869c5f4d4ffa2475c5a42ff92b8f0d6dc18",
+      "kind": "own-words",
+      "url": "https://senatorlanatheis.com/senate-votes-to-improve-voter-id-verification",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "passage": "We must ensure every legal vote is counted, while making our elections less susceptible to cheating.",
+      "note": "Same release; her stated aim for the voter ID legislation.",
+      "subjects": [
+        "voter ID verification",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:43.191Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7897e9ed18db39e75959f7f821ba54cf99786b3600a566beb7798be12c15bce",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/theis-votes-to-strengthen-integrity-of-states-elections-system",
+      "date": "2021-09-30",
+      "date_precision": "day",
+      "passage": "\"Michigan voters expect and deserve an elections process that is fair, secure, and accurate,\" said Theis, R-Brighton.",
+      "note": "Caucus release on the Senate's passage of an election bill package; her stated reason for the changes.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:43.191Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a93f2e9bfc342034843f9d18a5e439d9addbb2d4ee4a27467d64b3ec18c0a889",
+      "kind": "own-words",
+      "url": "https://misenategop.com/reforms-introduced-to-improve-states-elections",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "passage": "The reforms introduced today seek to make Michigan's elections more secure, more accurate and trustworthy, while at the same time streamlining participation in the elections process.",
+      "note": "Caucus release on her election bills when introduced. The fetch tool returned this sentence in two parts, joined here.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:43.191Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45a06ba9442aad687fa9423c47a1fd231d4876119c3d6c5131f955e97e681cd0",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2015-HB-4807",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4807-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL No. 4807 August 18, 2015, Introduced by Reps. Hoadley, Lyons, Pscholka, Smiley, Brunner, Hughes, Dianda, Dere\"",
+      "note": "Named as co sponsor ('Lana Theis (District 42)') on the official bill page; linked to Lana Theis via the official 2015 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1325085004748edd26436ab80fe60535a9608eb57fe3da1e6ff244da20b1b2df",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Theis'), linked to Lana Theis (district 42) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76710f71d67b2af26f2c910e3a5c064637815792c5736dabf894b99e28607fd",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0285",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-285-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 285 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as prime sponsor ('Lana Theis (District 22)') on the official bill page; linked to Lana Theis via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9077f27a3bf1090cb375a434cfd87abf2d1f22d14d51ec193bcc505232620c1a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators Barrett, Bumstead, Horn, Theis, Stama\"",
+      "note": "Named as co sponsor ('Lana Theis (District 22)') on the official bill page; linked to Lana Theis via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Theis'), linked to Lana Theis (district 22) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34da1f291657fe7b1bf04f306ad2c44d27e2528a9bc53ec76dfe94066fe35cbb",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\"",
+      "note": "Named as co sponsor ('Lana Theis (District 22)') on the official bill page; linked to Lana Theis via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Theis'), linked to Lana Theis (district 22) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Theis'), linked to Lana Theis (district 22) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot application",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://senatorlanatheis.com/senate-votes-to-improve-voter-id-verification (identity confirmed as the Brighton state senator; statement saved)",
+        "Senate caucus pages https://www.misenategop.com/theis-votes-to-strengthen-integrity-of-states-elections-system and https://misenategop.com/reforms-introduced-to-improve-states-elections (statements saved)",
+        "not reviewed: https://misenategopcdn.s3.amazonaws.com/22/publications/20260507_Theis_VoterGuide.pdf (PDF text not readable through the fetch tool)",
+        "web search x1 (name plus voter ID / election integrity); Ballotpedia and 2026 ballot status not reviewed",
+        "not reviewed: https://ballotpedia.org/Lana_Theis"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:44:43.191Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

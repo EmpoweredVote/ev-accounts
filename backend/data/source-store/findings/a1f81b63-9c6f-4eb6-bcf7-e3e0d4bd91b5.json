@@ -1,0 +1,87 @@
+{
+  "politician_id": "a1f81b63-9c6f-4eb6-bcf7-e3e0d4bd91b5",
+  "findings": [
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('SEVERSON'), linked to Erik Severson (district 28) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b98afb5fe49daee0ff1776f7b91dce28d5a0ed36d2cccde57c811cfcb255b3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab7",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Enacted (2011 Wisconsin Act 23, approved 5/25/2011; text as enrolled, which is the Assembly substitute amendment 2 version passed 5/11/2011 and concurred by the Senate 5/19/2011)",
+      "note": "Named as co sponsor ('Severson') on the official bill page; linked to Erik Severson via the official 2011 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54409b9da082533907565bfb094989862349d0f44717a17ee4060665e4c4c916",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb6",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-6-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/14/2011; committee recommended passage as amended 2/22/2011; held on the Senate calendar; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Severson') on the official bill page; linked to Erik Severson via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.782Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:15:12.782Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

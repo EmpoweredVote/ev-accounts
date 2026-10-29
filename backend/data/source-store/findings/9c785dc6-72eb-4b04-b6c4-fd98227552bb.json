@@ -1,0 +1,377 @@
+{
+  "politician_id": "9c785dc6-72eb-4b04-b6c4-fd98227552bb",
+  "findings": [
+    {
+      "id": "721c0881909173c1016c4b77749c7ba734ab7219b14662b1343d6542c6534eec",
+      "kind": "own-words",
+      "url": "https://www.repgleim.com/News/32929/Press-Releases/Executive-Decision-Subverts-Input-of-PA-Citizens",
+      "date": "2023-09-21",
+      "date_precision": "day",
+      "passage": "Furthermore, if the government is automatically registering people to vote and providing proof of the ability to vote, then individuals should be required to show that same proof of identification when they go to the polls. Voter ID should be required.",
+      "note": "Editorial by Rep. Gleim on the governor's automatic voter registration announcement; says voter ID should be required at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "821eb09a327d677519bf86052c186f51bfa3b601235bca0d6eced3aa6b002932",
+      "kind": "own-words",
+      "url": "https://www.repgleim.com/News/32929/Press-Releases/Executive-Decision-Subverts-Input-of-PA-Citizens",
+      "date": "2023-09-21",
+      "date_precision": "day",
+      "passage": "With these individuals not eligible to vote, if such legislation were to pass, how would PennDOT and the Department of State prevent them from being improperly and illegally registered to vote?",
+      "note": "Same editorial; raises the risk of people not eligible to vote (undocumented workers with licenses) being registered through automatic registration.",
+      "subjects": [
+        "non-citizen voting",
+        "automatic voter registration",
+        "voter eligibility checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d92bab9e4ea2d1f2dffa7fe923c763d50fd9cb9a80a9790c79fb4c0139f5a6e",
+      "kind": "own-words",
+      "url": "https://www.repgleim.com/News/32929/Press-Releases/Executive-Decision-Subverts-Input-of-PA-Citizens",
+      "date": "2023-09-21",
+      "date_precision": "day",
+      "passage": "Many in our state still have trust issues related to election integrity that have not been resolved.",
+      "note": "Same editorial; general election-integrity concern.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c6cb696d770baead366c7dbfb17dfd304fee0555dc3f69c42c3a8dc97aff00c",
+      "kind": "own-words",
+      "url": "https://pahousegop.com/News/32623/Latest-News/Gleim-Joins-Colleagues-in-Appeal-of-Act-77-to-the-State-Courts-",
+      "date": "2023-07-05",
+      "date_precision": "day",
+      "passage": "“Because a part of the law was deemed to be in violation of our civil rights by the courts, then the entire law should be invalid,” said Gleim. “Yet, the courts are continuing to allow the law to stand.",
+      "note": "Quoted in a caucus release about a court petition to strike down Act 77 (no-excuse mail voting) over the mail-ballot dating rule. Related to mail ballots; not about ID itself.",
+      "subjects": [
+        "mail ballot rules (related)",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e1c306306c2f18a2d8c12fdf4efa975c00fa00c022b79584a18b97a1552a1b3",
+      "kind": "own-words",
+      "url": "https://www.repgleim.com/News/34890/The-Barb-Wire/The-Barb-Wire-10-11-2024",
+      "date": "2024-10-11",
+      "date_precision": "day",
+      "passage": "Applicants must provide a driver’s license or PennDOT identification number, if you have one. If not, you must provide the last four digits of your Social Security number and upload your signature (if applying online).",
+      "note": "Her newsletter explains to voters the ID needed to apply for a mail-in ballot. Informational, not an argument.",
+      "subjects": [
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "23a3d74afd6dd6fbe4ea0f5e6c2a89c75fc3e4e7eab5dd2bfda91770b33aa063",
+      "kind": "own-words",
+      "url": "https://www.repgleim.com/News/34707/The-Barb-Wire/The-Barb-Wire-9-13-2024",
+      "date": "2024-09-13",
+      "date_precision": "day",
+      "passage": "At least one person a day (and often more) is coming into the office concerned about receiving their mail-in ballot, so I decided to go down to the Cumberland County Elections Bureau (CCEB) in person last week to get some answers.",
+      "note": "Her newsletter on constituent mail-ballot application problems; date taken from the page title. Related to mail ballots, not ID.",
+      "subjects": [
+        "mail ballot handling (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.240Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('GLEIM'), linked to Barbara J. Gleim (district 199) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Gleim'), linked to Barbara J. Gleim (district 199) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Gleim'), linked to Barbara J. Gleim (district 199) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('GLEIM') on the official bill page; linked to Barbara J. Gleim via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('GLEIM') on the official bill page; linked to Barbara Gleim via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('GLEIM') on the official bill page; linked to Barbara Gleim via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('GLEIM'), linked to Barbara Gleim (district 199) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "automatic voter registration and ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official legislature page palegis.us (confirms House District 199, Cumberland, 2025-2026 session)",
+        "official site repgleim.com (press release list of 20 items, no voter-ID headlines; Barb Wire newsletter pages; editorial)",
+        "House caucus site pahousegop.com (Act 77 release)",
+        "Wikipedia (current member of District 199; no 2026 candidacy info)",
+        "blocked: https://ballotpedia.org/Barbara_Gleim (403)",
+        "Ballotpedia district page returned empty",
+        "web searches on name plus voter ID, election integrity, mail ballot, SAVE Act: no further own-words found",
+        "not reviewed: RepGleim.com video and livestream pages"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:08:26.516Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "automatic voter registration and ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "official legislature page palegis.us (confirms House District 199, Cumberland, 2025-2026 session)",
+        "official site repgleim.com (press release list of 20 items, no voter-ID headlines; Barb Wire newsletter pages; editorial)",
+        "House caucus site pahouse-caucus.com (Act 77 release)",
+        "Wikipedia (current member of District 199; no 2026 candidacy info)",
+        "blocked: https://ballotpedia.org/Barbara_Gleim (403)",
+        "Ballotpedia district page returned empty",
+        "web searches on name plus voter ID, election integrity, mail ballot, SAVE Act: no further own-words found",
+        "not reviewed: RepGleim.com video and livestream pages"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:47:07.240Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

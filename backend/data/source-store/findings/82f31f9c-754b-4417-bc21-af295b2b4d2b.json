@@ -1,0 +1,377 @@
+{
+  "politician_id": "82f31f9c-754b-4417-bc21-af295b2b4d2b",
+  "findings": [
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebeafdd0af19f7e356a18391e74602f1304254d9dd691be6614a83e20e7ae4a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=210697&includeVotes=true",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0da3aed2455336057e100fde82e9f576a3cc98862d9e034d6b51c98802207615",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district 20) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c70787c18c066547be5e7f2b555ce00b2e8a02383f8c0d6e8182ffca1244b56a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=186495&includeVotes=true",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35da6f70d1f84b2046ea1b4872f6f957fd245a0cb67db40f094de4cd201a5fa7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district 20) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "200d3739128cf559b812e3ba269296b23ff999963b1ebf78a930311346e47ff1",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae0440fb9848e30516e8e63fc8db54a9d62585b2d9290e9990233b40d5f47e98",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=210449&includeVotes=true",
+      "date": "2022-03-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f5825d386ddc27095e26ef46d0ef5d943f19ead93cad7ed1f921dc969844e92",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "619833fd123fbc3b42d7bdd713be448dc9c45601c819401e27d7ccc667578151",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=202926&includeVotes=true",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03a16c0951629bf6162b4a4641ce199c48f3f00694fca3d54826952415a18d7f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district 20) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7afbb1feabb8f5e1c786beccd40e7d538eb24160e257264c9f3a03eac617461e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209313&includeVotes=true",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "nay",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GONZALES'), linked to Sally Ann Gonzales (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92a8d7acbe9fdee14a1286bd08a50b7679b0b66566490d958976ae66ebe6cf49",
+      "kind": "own-words",
+      "url": "https://skagitrepublicans.com/node/2188",
+      "date": "2022-05-26",
+      "date_precision": "day",
+      "passage": "“This is absurd, illogical and discriminatory,” Sen. Sally Ann Gonzales, D-Tucson, said.",
+      "note": "Quoted by The Center Square (Cole Lauterbach), republished on the Skagit County site, in a story on the Arizona Legislature approving a bill to check every voter for citizenship (HB 2492). Date is the article date; the date she spoke is not stated.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "proof of citizenship to register or vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:24.776Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0332fe6fe9ae655cdb243cb2a52145db116e0ecf01ed836139be347a97c1034d",
+      "kind": "own-words",
+      "url": "https://azcleanelections.gov/arizona-elections/voter-education-guide/primary-text-legislative20",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "PROTECTING OUR VOTING RIGHTS IS FUNDAMENTAL!",
+      "note": "Closing line of her Arizona Clean Elections voter guide statement for the District 20 primary (the statement asks for support on July 30, 2024). It does not name voter ID or citizenship rules.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:09:24.776Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 13,
+      "at": "2026-10-28T22:53:15.884Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found, extract script run with name)",
+        "legislature member roster (sitting Senate member, District 20)",
+        "The Ballot Brief Senate District 20 (she is not on the November Senate ballot) and House District 20 (she is listed as a candidate for the 2026-11-03 House ballot, District 20; no campaign site or statement there)",
+        "Arizona Clean Elections voter guide, District 20 primary (candidate statement)",
+        "The Center Square article of 2022-05-26 republished on the Skagit County site",
+        "blocked: https://ballotpedia.org/Sally_Ann_Gonzales (empty page via curl)",
+        "blocked: https://cpo.soar.com/articles/7681460/Arizona/Senate-committee-advances-electionreferral-after-intense-debate-over-mailballot-ID-onsite-tabulation-and-tribal-voter-impacts (host did not resolve)",
+        "blocked: https://cpo.soar.com/articles/7681720/Arizona/Committee-approves-referral-to-ballot-for-broad-election-reforms-including-citizen-only-voting-and-ID-requirement-critics-say-it-will-disenfranchise-vulnerable (host did not resolve)",
+        "not reviewed: Senate caucus page (host did not resolve)",
+        "campaign site: none found",
+        "news searches (2)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:09:24.776Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

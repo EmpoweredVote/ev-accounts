@@ -1,0 +1,153 @@
+{
+  "politician_id": "480ea00a-4cc4-4a4a-8117-607f7136c25e",
+  "findings": [
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Wortz'), linked to Jennifer Wortz (district 35) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.338Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Jennifer Wortz (District 35)') on the official bill page; linked to Jennifer Wortz via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.338Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e8ab6aabd5e2876c89c188bf1176bd984e9c74bd425555322cfcee795494638",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-wortz-calls-to-strengthen-michigans-election-integrity-efforts",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "Along with this, a constituent reached out to show me an absentee ballot that had been issued to his son, who has not been registered to vote in Michigan for several years.",
+      "note": "Statement issued in her name on her caucus site, responding to a presidential address on election integrity. She raises voter-file upkeep and how absentee ballots are issued.",
+      "subjects": [
+        "voter-roll accuracy",
+        "mail or absentee ballot issuance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:17.668Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2092bd39a138e79cf72443720d086f8a1cc2a9e08c3bb413b8ac48fdcb3cbcd1",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-wortz-calls-to-strengthen-michigans-election-integrity-efforts",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "We need to review how absentee ballots are being issued to see whether voter registration records are being properly updated when people move to another state.",
+      "note": "Same statement. She calls for review of absentee ballot issuance and registration record updates.",
+      "subjects": [
+        "mail or absentee ballot issuance",
+        "voter-roll accuracy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:17.668Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43211c06a01a5243ce4f6774a117271277cdbc25420cde7f644a787aebe2fef7",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-wortz-calls-to-strengthen-michigans-election-integrity-efforts",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "Local clerks are seeing names added back to the qualified voter file after they have been removed due to death or non-residency.",
+      "note": "Same statement. She cites reports of removed names reappearing in the qualified voter file and asks for review.",
+      "subjects": [
+        "voter-roll accuracy",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:59:17.668Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.338Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "voter-roll accuracy",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official caucus site https://gophouse.org/member/RepJenniferWortz/about (identity confirmed)",
+        "official posts list https://gophouse.org/member/RepJenniferWortz/posts (first page only; paging links did not load further items)",
+        "one news search on name plus voter ID (nothing by her on ID)",
+        "news search on HB 5717 statement (about contracted election administrators, nothing on ID)",
+        "Aug 19 2026 release on HB 5845 poll-book record retention: nothing on ID or citizenship, not saved",
+        "blocked: https://ballotpedia.org/Jennifer_Wortz (not fetched; Ballotpedia returned 403 on other pages)",
+        "blocked: https://www.yahoo.com/news/michigan-lawmakers-clash-over-push-212357862.html",
+        "blocked: https://michiganadvance.com (403)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:59:17.668Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

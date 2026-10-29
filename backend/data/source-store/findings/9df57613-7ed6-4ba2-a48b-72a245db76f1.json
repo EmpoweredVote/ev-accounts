@@ -26,7 +26,154 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "6427c5083879e99ec82e7b463cf84640c2c1ade7ce51274c502e35699f02d51a",
+      "kind": "own-words",
+      "url": "https://www.abc12.com/news/state/michigan-house-approves-tougher-voter-id-requirements/article_d30f2b7f-166c-54c2-b4a2-b0ada8cf9cd8.html",
+      "date": "2021-06-24",
+      "date_precision": "day",
+      "passage": "“This is not a partisan or political issue. Voter ID laws are overwhelmingly popular, and for good reason,” Martin said. “Requiring voters to prove who they are before they cast their ballot is one of the most effective ways to reduce fraud, strengthen the integrity of our elections and instill more confidence in the system.”",
+      "note": "Quoted by ABC12 (WJRT) after the House passed Senate Bills 303 and 304, which require a photo ID at the polls, with a provisional ballot cured by showing ID to the clerk within six days. Date is the page's published date.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.601Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f79d1f27ab6aa3bbb6ea18a14a61a5635fe7d4d898f26f17ea905cece0000e69",
+      "kind": "own-words",
+      "url": "https://www.abc12.com/news/state/michigan-house-approves-tougher-voter-id-requirements/article_d30f2b7f-166c-54c2-b4a2-b0ada8cf9cd8.html",
+      "date": "2021-06-24",
+      "date_precision": "day",
+      "passage": "“Making it completely free to get a state ID card will eliminate any possibility that cost or access to identification would prevent someone from voting,” Martin said. “Every single Michigander will still be able to exercise their right and have their voice heard at the ballot box.”",
+      "note": "Quoted by ABC12 (WJRT) on House Bill 5007, which waives the $10 state ID fee for eligible people.",
+      "subjects": [
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.601Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6dcc032167f441f89f7cf7a4e6965cbac5badb169e54f7cddfdaa61b04f52a65",
+      "kind": "own-words",
+      "url": "https://news.ballotpedia.org/2022/10/19/all-candidates-for-michigan-house-of-representatives-district-68-complete-ballotpedias-candidate-connection-survey",
+      "date": "2022-10-19",
+      "date_precision": "day",
+      "passage": "“Our vote is our voice, and ensuring our vote counts is a crucial part of having confidence in our elections. That’s why Dave voted for strengthening ID requirements when voting in-person or by absentee ballot (SB 285). Dave supported legislation to prohibit the Secretary of State from sending unrequested absentee ballots applications (SB 310) and voted for legislation to require a physical signature when requesting an absentee ballot (HB 5288).”",
+      "note": "His answer in Ballotpedia's candidate survey, as excerpted by Ballotpedia news (written in the third person). Covers ID for in-person and absentee voting, unrequested absentee applications, and a signature to request an absentee ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "absentee ballot request rules",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:54.601Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Martin'), linked to David Martin (district 68) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('David Martin (District 68)') on the official bill page; linked to David Martin via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot or request",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: candidate profile page https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-68/candidates/david-w-martin lists him in the 2026 general race for House District 68",
+        "official House member page https://gophouse.org/member/repdavidmartin/ (post list reviewed; nothing on the subject; the site search could not be read as a list)",
+        "former campaign/office site http://repmartin.com/ (redirects to the House member page; nothing on the subject)",
+        "blocked: https://ballotpedia.org/David_Martin_(Michigan) (403 on plain curl; fetch tool returned no text)",
+        "Ballotpedia news candidate survey 2022 (own words found)",
+        "news search on name plus subject words (ABC12 story found)",
+        "legislature bill pages: not reviewed (votes and sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:48:54.601Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.336Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

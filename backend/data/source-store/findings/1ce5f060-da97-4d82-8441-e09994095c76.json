@@ -1,0 +1,75 @@
+{
+  "politician_id": "1ce5f060-da97-4d82-8441-e09994095c76",
+  "findings": [
+    {
+      "id": "28d9ea766f0faec469fc13a9d97ce300e01fe6f572758076f0b129fc5fa96e98",
+      "kind": "own-words",
+      "url": "https://hoodline.com/2026/02/michigan-ag-dana-nessel-leads-coalition-opposing-save-america-act-as-a-threat-to-voter-rights/",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "passage": "The SAVE America Act is clearly an attempt to disenfranchise voters, based on false claims of ‘stolen’ or ‘rigged’ elections.",
+      "note": "Quoted by Hoodline (article date, statement likely from her office's release of about 2026-02-19). She is speaking about the federal SAVE America Act, which sets proof-of-citizenship and ID rules for voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "federal SAVE America Act",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:04.447Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b8fac76510c9ab786824f953401007be6a9d6087e5f8a81668b14a6cd8404e2",
+      "kind": "own-words",
+      "url": "https://www.wkar.org/post/gop-led-senate-panel-holds-hearing-election-bills-blasted-nessell-benson",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "passage": "If some of this gets through —certainly if all of this gets through—there will be some very valid constitutional challenges,",
+      "note": "Quoted by WKAR at a news conference with the Secretary of State about the Senate's package of election bills (which included ID for absentee ballot requests). She says parts of it could face constitutional challenges.",
+      "subjects": [
+        "election integrity bills in general",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:04.447Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "photo ID in person (federal bill)",
+        "mail-ballot ID",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.michigan.gov/ag/news/press-releases/2026/02/19/ag-nessel-urges-senate-to-reject-save-america-act (403)",
+        "blocked: https://www.michigan.gov/ag/news/press-releases/2025/04/01/attorney-general-nessel-opposes (403)",
+        "blocked: https://michiganadvance.com/2021/05/27/ag-warns-gop-bill-absentee-voting-bill-could-increase-identity-theft/ (403)",
+        "blocked: https://www.michigan.gov/sos/resources/news/2021/05/26/benson-nessel-denounce-effort-to-restrict-voting-rights-and-burden-election-officials (403)",
+        "blocked: https://legalnewsline.com/stories/670745828-nessel-and-coalition-oppose-voter-registration-changes-under-the-save-act (429)",
+        "https://www.wilx.com/2025/04/01/attorneys-general-send-letter-congressional-leadership-opposing-save-act (coalition letter; no standalone quote, not saved)",
+        "https://fox17online.com/news/politics/live-at-1-30-p-m-benson-nessel-hold-news-conference-on-election-reform-bills (undated, general quote about fraud, not saved)",
+        "web search x2; Ballotpedia and campaign site not reviewed (search budget used on press coverage; the AG is a sitting statewide official, identity confirmed by the pages saved)",
+        "not reviewed: https://ballotpedia.org/Dana_Nessel"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:44:04.447Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

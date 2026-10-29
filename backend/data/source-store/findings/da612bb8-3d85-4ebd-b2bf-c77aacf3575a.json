@@ -1,0 +1,112 @@
+{
+  "politician_id": "da612bb8-3d85-4ebd-b2bf-c77aacf3575a",
+  "findings": [
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Miller'), linked to Nicholas P. Miller (district 14) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "600c768f84705f5781e5d3e86fc9701ee0912f112e8da215e8320133fd0f590d",
+      "kind": "own-words",
+      "url": "https://pahouse.com/McNeill/InTheNews/NewsRelease/?id=143569",
+      "date": "2026-05-05",
+      "date_precision": "day",
+      "passage": "This mistake must be fixed immediately. Voters who applied to vote-by-mail in the May primary election must get their correct ballots as quickly as possible, and it is our sincere hope that the county will take every possible action to do just that.",
+      "note": "Joint statement issued in the names of six Lehigh County legislators including Sen. Nick Miller, on a county error sending wrong vote-by-mail ballots for the May 19 primary. It is about ballot delivery, not ID. Hosted on a House member's site.",
+      "subjects": [
+        "mail ballots (county error, not ID)",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:05.962Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08e9495f9701e3368e933241a0ea3224120294003302de4d3f8c18dcadf468fe",
+      "kind": "own-words",
+      "url": "https://pahouse.com/McNeill/InTheNews/NewsRelease/?id=143569",
+      "date": "2026-05-05",
+      "date_precision": "day",
+      "passage": "At a time when the integrity of our elections is under constant attack from extremists who want to end vote-by-mail the last thing we need to do is hand them more rhetorical ammunition courtesy of this careless error by our county leadership.",
+      "note": "Same joint statement; speaks of election integrity and vote-by-mail in general terms. No mention of ID.",
+      "subjects": [
+        "election integrity in general",
+        "vote-by-mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:05.962Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "vote-by-mail"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "https://pasenatormiller.com home page shows State Senator Nick Miller, 14th district, news through 2026-10-27 (positive control); nothing on the subject in headlines",
+        "https://pasenatormiller.com/?s=ballot and https://pasenatormiller.com/vote/: voting-information page with mail-ballot steps; no ID wording, so nothing saved",
+        "https://nickmillerforpa.com/: nothing on the subject",
+        "https://en.wikipedia.org/wiki/Nick_Miller_(politician): confirms the 14th district seat since 2023-01-03; nothing on the subject",
+        "blocked: https://ballotpedia.org/Nick_Miller_(Pennsylvania) (empty page)",
+        "web search on name plus voter ID / mail-in / election: found one joint statement on vote-by-mail, saved; no voter ID statement found",
+        "not reviewed: https://nickmillerforpa.com/priorities/"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:05.962Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

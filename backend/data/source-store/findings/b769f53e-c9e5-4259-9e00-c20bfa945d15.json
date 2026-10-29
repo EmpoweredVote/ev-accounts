@@ -1,0 +1,132 @@
+{
+  "politician_id": "b769f53e-c9e5-4259-9e00-c20bfa945d15",
+  "findings": [
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('WERNER'), linked to Carine Werner (district 4) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('WERNER'), linked to Carine Werner (district 4) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('WERNER'), linked to Carine Werner (district 4) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('WERNER'), linked to Carine Werner (district 4) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.888Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:53:15.888Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: named as a candidate for Arizona Senate District 4 on the 2026 general-election ballot at https://theballotbrief.com/state/arizona/maricopa-county/arizona-senate-district-4",
+        "campaign site https://carinewerner.com (home page: priorities are schools, safety, economy; nothing on the subject; its priorities, accomplishments and news subpages returned 404)",
+        "the Senate caucus member page https://www.azsenaterepublicans.gov/werner (nothing on the subject)",
+        "KJZZ 2026-10-06 District 4 candidate profile (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Carine_Werner (403)",
+        "news searches on her name plus voter ID, proof of citizenship, SCR1001, SB1001 (2 searches; nothing from her found)",
+        "not reviewed: floor and committee video, no transcript reachable"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:15:38.534Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

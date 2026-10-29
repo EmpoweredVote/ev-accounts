@@ -1,0 +1,26 @@
+{
+  "politician_id": "5a3a96fd-1424-45d4-aac4-cf3c8c2c2cbd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "official site https://www.repmihalek.com/ home page: nothing on the subject",
+        "web search on name plus voter ID: nothing on the subject",
+        "On the Record: not reviewed (extraction script was not run in this session)",
+        "not reviewed: legislature bill pages for sponsorships (linked separately)",
+        "not reviewed: Ballotpedia (not reached for this person)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:04:49.008Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

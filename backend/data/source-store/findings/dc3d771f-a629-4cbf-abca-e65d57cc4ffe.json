@@ -1,0 +1,325 @@
+{
+  "politician_id": "dc3d771f-a629-4cbf-abca-e65d57cc4ffe",
+  "findings": [
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('WARD, K.'), linked to Kim L. Ward (district 39) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47d8e7f2702d2aa41662ee6d936224e2a3c928f5d39b0bf232995161a589788c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Ward'), linked to Kim L. Ward (district 39) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Ward, Kim'), linked to Kim L. Ward (district 39) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('K. WARD') on the official bill page; linked to Kim L. Ward via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Ward, Kim'), linked to Kim L. Ward (district 39) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba371fd7d779845e9b19d8930e66f59d0b76ed9365b4800a5810924bebaa0369",
+      "kind": "own-words",
+      "url": "https://senatorward.com/2023/01/11/senate-sends-constitutional-amendments-to-the-house/",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "passage": "Today, with passage of Senate Bill 1, the Senate has fulfilled and completed our commitment to provide voters with a direct voice on voter identification, legislative review of regulations and opening the statute of limitations for child sexual abuse survivors through constitutional amendments.",
+      "note": "Joint statement by Sen. Kim Ward and the Senate Majority Leader on Senate passage of SB 1, which sends a voter-identification constitutional amendment to voters.",
+      "subjects": [
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "388c91ca7a6a9ccd9309c6ebcc74f6f3f3dec7f280434969e58d3666f1db6614",
+      "kind": "own-words",
+      "url": "https://senatorward.com/2023/01/10/senate-rules-executive-nominations-committee-advances-senate-bill-1/",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "passage": "Today, the Senate Rules and Executive Nominations Committee amended and reported out Senate Bill 1 to advance constitutional amendments for voter identification, legislative review of regulations and statute of limitations for child sexual abuse survivors.",
+      "note": "Joint statement by Sen. Kim Ward and the Senate Majority Leader when SB 1 left committee.",
+      "subjects": [
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9e67dfa7d482120aef5b04d5999f67e574d80ce7c61b0083fc6f34781051bda",
+      "kind": "own-words",
+      "url": "https://senatorward.com/2023/01/06/senate-leaders-respond-to-governor-wolfs-call-for-special-session/",
+      "date": "2023-01-06",
+      "date_precision": "day",
+      "passage": "It is imperative that we work together to ensure constitutional amendments for voter identification, legislative review of regulations, election audits and statute of limitations for child sexual abuse survivors, can all be presented to voters.",
+      "note": "Joint statement by Sen. Kim Ward and the Senate Majority Leader on why voter identification should go to voters as a constitutional amendment.",
+      "subjects": [
+        "voter ID constitutional amendment",
+        "post-election audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "205bb2124ba61649504d815a03ab0497d7059d909f4d85c3de70cb3a92a92ebb",
+      "kind": "own-words",
+      "url": "https://senatorward.com/2022/08/02/senate-majority-leader-kim-ward-issues-statement-on-pa-supreme-court-ruling-act-77/",
+      "date": "2022-08-02",
+      "date_precision": "day",
+      "passage": "If anything, today's decision reinforces matters related to ensuring integrity in our elections should remain with the people.",
+      "note": "Ward's statement on a state Supreme Court ruling about Act 77 (mail voting law). Same statement goes on to list voter ID and post-election audit amendments among election safeguards.",
+      "subjects": [
+        "election integrity in general",
+        "mail voting law",
+        "voter ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91d3eec89a497fcf3fb226cef9ef27f5c0d68bb066088c5105c9360bf8b1fe3c",
+      "kind": "own-words",
+      "url": "https://senatorward.com/2022/04/08/senate-republicans-announce-bill-to-eliminate-election-drop-boxes-citing-evidence-of-misuse/",
+      "date": "2022-04-08",
+      "date_precision": "day",
+      "passage": "Lack of security, transparency, and consistency with drop boxes prove they are a threat to election integrity",
+      "note": "Subheading of a Senate caucus release announcing SB 1200, which Ward is listed as a sponsor of; it would end ballot drop boxes. This is a release headline, not a personal quote.",
+      "subjects": [
+        "ballot drop boxes",
+        "mail-ballot return",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "013fd1c4c47ffffbe0d06dee5f5ded553305b0f1b4daa8f310221f012dc3c47c",
+      "kind": "record",
+      "url": "https://senatorward.com/2022/04/08/senate-republicans-announce-bill-to-eliminate-election-drop-boxes-citing-evidence-of-misuse/",
+      "date": "2022-04-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1200-2022",
+      "act": "sponsor",
+      "note": "Release names Ward among the sponsors of SB 1200, which would require non-mailed mail-in ballots to be returned only to the county election office, ending drop boxes.",
+      "subjects": [
+        "ballot drop boxes",
+        "mail-ballot return"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.179Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Ward, Kim'), linked to Kim L. Ward (district 39) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "ballot drop boxes",
+        "automatic voter registration"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "official site https://senatorward.com (press releases name Kim Ward, R-39, Senate President Pro Tempore; positive control); site search for voter ID returned about ten items, five fetched and read",
+        "https://senatorward.com/2024/11/12/pennsylvania-voters-return-republican-majority-to-state-senate/: nothing on the subject",
+        "not reviewed: https://senatorward.com/enews/050226-2/ and https://senatorward.com/enews/110125-2/ (only voting-date reminders in the search excerpt)",
+        "not reviewed: https://senatorward.com/2022/07/28/senate-republican-leaders-issue-statement-on-gov-wolfs-lawsuit-sb-106/ and the 2022-08-01 intervention release",
+        "blocked: https://penncapital-star.com/government-politics/despite-questions-on-process-senate-committee-advances-proposed-constitutional-change/ (403)",
+        "blocked: https://ballotpedia.org/Kim_Ward (empty page)",
+        "not reviewed: https://senatorjudyward.com/2023/09/19/ward-troubled-by-shapiro-administration-decision-to-implement-automatic-voter-registration/ (404; also a different site name, may be another person)",
+        "web search on name plus voter ID statement: leads to the pages above",
+        "web search on name plus voter ID 2026: found only a 2025/2026 news quote via the blocked page and a 2025 leadership remark by snippet; neither fetched, so not saved",
+        "campaign site: none found"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:47:07.179Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

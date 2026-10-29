@@ -1,0 +1,527 @@
+{
+  "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b",
+  "findings": [
+    {
+      "id": "0920e2530883eff8d4eec932a20b68d830ed1386dc660a05b8f46505aada347b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab201",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-201-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 3/25/2021; committee recommended passage as amended 6/16/2021; laid on the table 6/22/2021; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Stephen Nass via the official 2021 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('NASS'), linked to Steve Nass (district 11) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3817afdabfc7901315ceef39f3a4defd80f43d159f450efdb29d5fbe80937fd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20050503/_149",
+      "date": "2005-05-03",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-63-2005",
+      "act": "yea",
+      "motion": "Assembly: Shall Assembly Bill 63 pass notwithstanding the objections of the governor?",
+      "note": "Assembly roll call as printed ('Nass'), linked to Steve Nass (district 31) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8fb8f1fb67a25d541bef02874f1f1d7d87f7e89128daeba5e19e46849205934",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/proposals/ab63",
+      "date": "2005",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-63-2005",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2005 Assembly Bill 63, vetoed 2005); passed Assembly 2/24/2005, concurred by Senate 4/13/2005, Assembly override attempt failed 5/3/2005",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2005 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77df6e09e55f5ed1592ffb5005d4ac9df122c3ed401c58f46c529b061c25d39b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2011/av0330",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed (PASSAGE) (av0330)",
+      "note": "Assembly roll call as printed ('NASS'), linked to Stephen Nass (district 31) via the official 2011 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b98afb5fe49daee0ff1776f7b91dce28d5a0ed36d2cccde57c811cfcb255b3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/ab7",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-7-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, Enacted (2011 Wisconsin Act 23, approved 5/25/2011; text as enrolled, which is the Assembly substitute amendment 2 version passed 5/11/2011 and concurred by the Senate 5/19/2011)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Stephen Nass via the official 2011 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b049321bbb761aed848202ac58c12c9da37c0d23c62289f92056b0b802c12a7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2015/proposals/ab723",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-723-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/15/2016; committee recommended passage as amended 2/11/2016; laid on the table 2/16/2016; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/13/2016)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Stephen Nass via the official 2016 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3bf127b1b76281b4b80fc19c99fd31eb013e3e9cabdbcde585c96b33a72497a1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2007/related/journals/assembly/20070417/_231",
+      "date": "2007-04-17",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-17-2007",
+      "act": "yea",
+      "motion": "Assembly: Assembly Joint Resolution 17 having been read three times, shall the joint resolution be adopted?",
+      "note": "Assembly roll call as printed ('Nass'), linked to Steve Nass (district 31) via the official 2007 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "beccd1b57b2bb3d93c941e656f3beb4bf9dc69786a2a69889479217676f0efae",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2007/proposals/ajr17",
+      "date": "2007",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-17-2007",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/15/2007 (second consideration); adopted by Assembly 4/17/2007; not taken up by Senate (died, Failed to concur in pursuant to Senate Joint Resolution 1, 3/21/2008)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2007 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8ea521a42d32b988de38994313f3ef4e20ceec33b8b7f9edbde7758959b1ca7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20051101/_101",
+      "date": "2005-11-01",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-36-2005",
+      "act": "yea",
+      "motion": "Assembly: Assembly Joint Resolution 36 having been read three times, shall the joint resolution be adopted?",
+      "note": "Assembly roll call as printed ('Nass'), linked to Steve Nass (district 31) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('NASS'), linked to Stephen Nass (district 11) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b319d313df39958fd1385f38fe6719f965c4ebd72f3d2261d707f416105bc3d3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/sb204",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2021 Senate Bill 204, vetoed 8/10/2021, enrolled from Senate Substitute Amendment 1); passed Senate 6/9/2021, concurred by Assembly 6/22/2021; override failed (Joint Rule 82, 5/17/2022)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Stephen Nass via the official 2021 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c797e730345449389c32d08ce972da297c8bfbcbe2c50b070916694f695814fe",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/related/journals/assembly/20050623/_220",
+      "date": "2005-06-23",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-42-2005",
+      "act": "yea",
+      "motion": "Assembly: Senate Bill 42 having been read three times, shall the bill be concurred in?",
+      "note": "Assembly roll call as printed ('Nass'), linked to Steve Nass (district 31) via the official 2005 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "351a2ecea6275c46b57f4a48a3a0c9a87d40f4332e26ef61e043187577722932",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2005/proposals/sb42",
+      "date": "2005",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-42-2005",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled bill as vetoed by the Governor (2005 Senate Bill 42, vetoed 8/12/2005); passed Senate 6/15/2005, concurred by Assembly 6/23/2005, Senate override attempt failed 9/20/2005",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2005 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54409b9da082533907565bfb094989862349d0f44717a17ee4060665e4c4c916",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2011/proposals/sb6",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-6-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/14/2011; committee recommended passage as amended 2/22/2011; held on the Senate calendar; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2012)",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Stephen Nass via the official 2011 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e92c3b1e1100135c7e6512463e4f3c227c4151069b959ef47dfa5264ab9ad27",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/sv0291",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0291)",
+      "note": "Senate roll call as printed ('NASS'), linked to Stephen Nass (district 11) via the official 2017 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('NASS'), linked to Stephen Nass (district 11) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097e5be441c78312236748cdf9f0e45bc27901642be1fe8690bad61c835c3d34",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('NASS'), linked to Steve Nass (district 11) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('NASS'), linked to Steve Nass (district 11) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Nass') on the official bill page; linked to Steve Nass via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.777Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 23,
+      "at": "2026-10-28T23:15:12.777Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

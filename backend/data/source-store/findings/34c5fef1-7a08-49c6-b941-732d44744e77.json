@@ -1,0 +1,253 @@
+{
+  "politician_id": "34c5fef1-7a08-49c6-b941-732d44744e77",
+  "findings": [
+    {
+      "id": "0e938eb01aeaebdc2fc2b28717326850be3472d2ae212f5e6f6f27162c1e40b9",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "passage": "Currently the number one threat to our republic's foundation is the security and integrity of elections. Federal law and Article VII of the Pennsylvania Constitution call for an election day, not an election season. To protect against fraud early voting should be limited to absentee ballots, which should be issued to those who cannot physically make it to the polls. A picture ID should be required to vote at the polling place. Non-secure elections undermine the most basic and foundational element of our republic. Our election process MUST be trustworthy and accurately record the will of the electorate.",
+      "note": "His written answer in the York Daily Record candidate Q&A (published on Yahoo) for the 92nd District primary. Covers photo ID at the polling place, limits on early voting, and election security.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general",
+        "limits on early and absentee voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "008d03f85eaa55977372c7d196c3e3564d8f0bb97891dc13fd6bed01bd3a4ad4",
+      "kind": "own-words",
+      "url": "https://repmarcanderson.com/about",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Aside from education, Marc’s priorities include protecting personal rights and liberties, improving the economy, increasing government transparency and accountability, and ensuring election integrity.",
+      "note": "Biography page on his own site lists election integrity among his priorities. Page is undated.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('ANDERSON') on the official bill page; linked to Marc S. Anderson via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.849Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:01:51.287Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:47:07.236Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:52:01.955Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:59:56.379Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:05:26.624Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:13:34.948Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign and official site https://repmarcanderson.com/about (election integrity listed as a priority)",
+        "candidate Q&A in the York Daily Record, via https://www.yahoo.com/news/5-republicans-seeking-92nd-state-080108301.html",
+        "blocked: https://ballotpedia.org/Marc_Anderson_(Pennsylvania) (empty page)",
+        "news and web searches on his name plus voter ID and election integrity",
+        "third-party profile https://branch.vote/... is a lead only, not cited",
+        "bill pages for sponsorships: not reviewed, linked separately",
+        "2026 ballot status: not confirmed on a page; he took office in 2025"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:18:25.457Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.849Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

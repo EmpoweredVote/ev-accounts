@@ -1,0 +1,194 @@
+{
+  "politician_id": "dfa7be6f-c195-4744-b044-25171abeb1fb",
+  "findings": [
+    {
+      "id": "ae51fd54aed66daa92392062f615818e8adbe349653effd6a86bddef9b322e84",
+      "kind": "own-words",
+      "url": "https://www.skagitrepublicans.com/node/1918",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "But just because you can say we caught this amount of fraud isn’t somehow compelling proof that there wasn’t more that wasn’t caught.",
+      "note": "Quoted by the Epoch Times (reprinted on a county site) in a story dated June 16 about the Senate passing three bills adding ID requirements for in-person and absentee voters; the page does not print the year. He says the small amount of fraud found does not show nothing else is needed.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot application"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:09.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2e42c2294dec8d09a0fc9d821c48a4b55a971096f99dae811a04aa883c251dd",
+      "kind": "own-words",
+      "url": "https://www.skagitrepublicans.com/node/1918",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We hear a lot about how ‘There’s only this little bit of fraud,’ and therefore nothing else is needed.",
+      "note": "Same Epoch Times story (June 16, year not printed), a Senate floor remark on the ID bills package; he argues against the view that little detected fraud means no new rules are needed.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:09.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e195fec203172f838f827c42f943206237436cd4792eb581095cffcb79d77f2",
+      "kind": "own-words",
+      "url": "https://www.bridgemi.com/michigan-government/senator-stood-trump-his-career-may-suffer-his-cows-dont-care",
+      "date": "2021-07-01",
+      "date_precision": "day",
+      "passage": "“The law is not perfect, and the system is not perfect,” he told Bridge from the floor of his milking barn.",
+      "note": "Bridge Michigan profile about his oversight committee report on the 2020 election; he says election law has imperfections but should not be thrown out. Not specific to ID.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:09.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0dce992e9ed3fe115e04bd8e41f438c7134cb443d30f14a8d888e21c8f5d022f",
+      "kind": "own-words",
+      "url": "https://www.nbcnews.com/politics/2024-election/ed-mcbroom-trump-voter-fraud-2024-rcna143942",
+      "date": "2024-03-20",
+      "date_precision": "day",
+      "passage": "As for his message to voters in his home state this fall about the legitimacy of elections there, McBroom said that despite changes he feels have made the vote “less secure,” there “are still significant safeguards and processes in place that if somebody does something bad it will immediately just show.”",
+      "note": "NBC News interview. He says recent changes to voting rules made voting less secure but that safeguards remain; the story does not say which changes.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:09.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McBroom'), linked to Edward W. McBroom (district 38) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McBroom'), linked to Edward W. McBroom (district 38) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Edward W. McBroom (District 38)') on the official bill page; linked to Edward W. McBroom via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot application",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --politician and --names, nothing found)",
+        "official site https://www.senatoredmcbroom.com/ (site search for voter ID returned no results; home page and press list checked; nothing on the subject; note: https://www.senatormcbroom.com does not resolve)",
+        "legislature bill pages: sponsorships and votes are linked separately, not reviewed here",
+        "blocked: https://ballotpedia.org/Ed_McBroom (empty page)",
+        "blocked: https://michiganadvance.com/blog/gop-senator-doubles-down-on-voter-id-measure/ (403)",
+        "news searches on name plus voter ID, proof of citizenship, election integrity (3 searches); fetched Bridge, NBC, Epoch Times reprint",
+        "local TV page https://www.uppermichiganssource.com/2026/06/03/meet-candidates-michigans-38th-state-senate-district/ shows he leaves office at the end of the term because of term limits; nothing on the subject",
+        "not reviewed: Senate floor video and the 2021 oversight committee report"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:52:09.716Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "politician_id": "59538da9-a7ca-4e7d-a57b-e576c7d66621",
+  "findings": [
+    {
+      "id": "c7f9006427e3389f522a72ca4aecc1478b419ac2d73dac96c27652f59f1efd75",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/29/Pronschinske/media/g12flf4u/constitutional-amendment.pdf",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "passage": "I believe it is important to point out that democratic forms of government rely on citizens having faith in the electoral process, and in my opinion this legislation will ensure that the people of Wisconsin have full confidence in the security and integrity of Wisconsin elections.",
+      "note": "January 13, 2025 press release from his office on the photo ID constitutional amendment (April 1, 2025 ballot question). He says the amendment would support confidence in election security.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:37.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68c88528a62b9f7e735fcc382221c42e419afe444a19f728466063b7c2ceff29",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/29/Pronschinske/media/g12flf4u/constitutional-amendment.pdf",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "passage": "It is clear that there is a large majority of Americans from all walks of life support voter ID requirements and we want to make sure that we are up with the times in our state.",
+      "note": "Same press release. He cites a 2024 Pew poll and says voter ID requirements have broad public support.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:37.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e0a0185195ca8c5303ff2dbd98ef87cd586cdc191ebfbbc2e0c2c8f9be68a41",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/29/Pronschinske/media/g12flf4u/constitutional-amendment.pdf",
+      "date": "2025-01-13",
+      "date_precision": "day",
+      "passage": "For clarification sake; this is already required according to Wisconsin State Statute but this amendment would put it in the Wisconsin Constitution so a court couldn’t find it unconstitutional.",
+      "note": "Same press release. He explains that photo ID is already in state law and the amendment would move it into the constitution.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:37.830Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc314439e68dbf7428f08b7f9ca399835e9ef77b1fbcd1c4e5d14857964034e8",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ab1002",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1002-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022; hearing 2/21/2022; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Pronschinske') on the official bill page; linked to Treig Pronschinske via the official 2022 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 92) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 92) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 92) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 92) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 29) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('PRONSCHINSKE'), linked to Treig Pronschinske (district 92) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.770Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Treig_Pronschinske (empty page)",
+        "official Assembly page for the 29th District (confirms office)",
+        "press releases list on his official site (11 titles, no dates; one titled Constitutional Amendment read in full and saved; one on redistricting not reviewed)",
+        "BallotReady profile (lists him as a 2026 general-election candidate; no stated positions)",
+        "web search on his name with voter ID"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:00:37.830Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.770Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

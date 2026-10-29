@@ -26,7 +26,219 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "8a3f642b2c755ca9a29ac1e2a8f0f38c64814dd7f0265d7d7aff0f055c388169",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2026/08/20/democrat-mi-candidate-sean-mccann-believes-nonsensical-question-voting-systems/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Our elections are safe, secure and valid,” he said months later. “The latest attempts in the Michigan Senate to suggest otherwise seek to perpetuate The Big Lie. I voted No because these bills would add unnecessary complications and burdens to Michigan’s existing Voter ID law.”",
+      "note": "Quoted by Breitbart (article dated 2026-08-20) as McCann's words about his 2021 vote against the Senate voter ID and absentee ID bills; the date of the original statement is not given and the original was not found.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:10.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf497fbd0b3fe5acebc0b5ba08564eb63856d2c06a71ff8a8c591b12c3a54ff8",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2026/08/20/democrat-mi-candidate-sean-mccann-believes-nonsensical-question-voting-systems/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“I pushed forward independent redistricting efforts and will always fight against extremist attempts to undermine our elections,”",
+      "note": "Quoted by Breitbart (article dated 2026-08-20) from McCann; general election-integrity statement, with no ID detail; original date and source not given.",
+      "subjects": [
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:46:10.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2fcee1a1294b540331046b0355fd9b3353ff06553377b120962c3af6cba55c97",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-14-062.htm",
+      "date": "2012-06-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5061-2011",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 471 Yeas 65 Nays 45",
+      "note": "House roll call as printed ('McCann'), linked to Sean McCann (district 60) via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McCann'), linked to Sean McCann (district 20) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McCann'), linked to Sean McCann (district 19) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Sean McCann (District 19)') on the official bill page; linked to Sean McCann via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McCann'), linked to Sean McCann (district 19) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Sean McCann (District 19)') on the official bill page; linked to Sean McCann via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll security",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (standing rules bar running repo scripts)",
+        "https://wwmt.com/news/local/exclusive-governor-whitmer-endorses-southwest-michigan-senator-sean-mccann-congress-fourth-district-primary-general-election-democrat-republican-candidate-vote-wwmt (confirms he is running for Michigan's Fourth Congressional District in 2026)",
+        "https://www.breitbart.com/politics/2026/08/20/democrat-mi-candidate-sean-mccann-believes-nonsensical-question-voting-systems/ (outlet quoting his words; original post not located)",
+        "https://senatedems.com/mccann/ (official site; searches for 'voter ID', 'Big Lie', 'elections safe': original statement not found; only a 2021 H.R. 1 resolution release and election newsletters)",
+        "Ballotpedia page returned empty (blocked: https://ballotpedia.org/Sean_McCann)",
+        "campaign site: not located (guessed domains returned unrelated pages); legislature bill pages: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:46:10.495Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:55:46.335Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

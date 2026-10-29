@@ -26,7 +26,158 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "22342613bd29a7a0a62614e31837725853d50888e80168da214414d918c77f3f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/49041/race/8591/election/898",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "First we need to ensure everyone has access to photo identification free of charge. Republicans in the Legislature have proposed this and Governor Whitmer has opposed it.",
+      "note": "His explanation, on a 2022 State Rep. District 59 primary voter-guide questionnaire, for answering Disagree to the statement 'People should be able to vote without photo identification.' The questionnaire gives no exact date. Wording as returned by the fetch tool, not re-checked by curl.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dbca5466be2d53a2ed6e6ccb360d290afbb9baba33ef17e45855ff63744f737",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/49041/race/8591/election/898",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Ensure everyone has access to a free photo identification and that is presented when voting to reduce voter fraud and secure our elections to ensure that one person has one vote.",
+      "note": "His answer on the same questionnaire to 'What laws would you propose to change present voting practices?' Wording as returned by the fetch tool, not re-checked by curl.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0dd37a815110d2c184e47d2c8da3ef501ddd1b10c38a47e1776f3726b4c4d35",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-HB-4923",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4923-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4923 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Douglas Wozniak (District 0)') on the official bill page; linked to Douglas Wozniak via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Wozniak'), linked to Douglas Wozniak (district 59) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Douglas Wozniak (District 59)') on the official bill page; linked to Douglas Wozniak via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.334Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election audits and election security"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Doug_Wozniak (Douglas Chester Wozniak, member of the Michigan House for the 59th district since 2023) and https://voterguide.planetdetroit.org/candidates/doug-wozniak (candidate for State Senate District 24 in 2026); Ballot Brief and Branch search results also list him in the Senate District 24 general election, not fetched",
+        "On the Record: not run for this person (a rule against running repo scripts applied); not reviewed",
+        "Voter guide https://ivoterguide.com/candidate/49041/race/8591/election/898 (2022 House primary questionnaire): two answers saved",
+        "Planet Detroit voter guide: no statements by him on the subject",
+        "blocked: https://www.detroitnews.com/story/news/politics/2021/07/24/michigan-trump-territory-driving-senate-primary-race/8015729002/ (402 payment required); a search snippet says he spoke about wanting a full audit of the 2020 election there, not saved because not fetched",
+        "Deadline Detroit article on the 2026 Senate run: fetch failed (certificate error on origin host, 404 on the main host), not reviewed",
+        "campaign site and Michigan House caucus site: not located or not reachable (house-caucus.com host not found)",
+        "Ballotpedia: not reviewed",
+        "Legislature bill pages: not searched, votes and sponsorships are linked separately",
+        "Five web searches: name plus voter ID, proof of citizenship, election, forensic audit"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:47:07.219Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.334Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

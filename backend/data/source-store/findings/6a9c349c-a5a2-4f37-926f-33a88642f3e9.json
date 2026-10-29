@@ -1,0 +1,67 @@
+{
+  "politician_id": "6a9c349c-a5a2-4f37-926f-33a88642f3e9",
+  "findings": [
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('RASEL') on the official bill page; linked to Brian C. Rasel via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://reprasel.com/about (confirms 56th District member; nothing on the subject)",
+        "official site home https://reprasel.com/ (nothing on the subject)",
+        "blocked: https://reprasel.com/NewsGroup/Press-Releases (429 too many requests; a second fetch by another tool was denied, so the press release list was not read)",
+        "blocked: https://ballotpedia.org/Brian_Rasel (empty page)",
+        "blocked: https://penncapital-star.com/government-politics/state-rep-elect-brian-rasel-wants-to-stop-the-population-bleed/ (403)",
+        "https://pahouse.com/Rasel returned 404; no campaign site found",
+        "2 web searches on name plus voter ID, election integrity, citizenship: nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:07:05.617Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

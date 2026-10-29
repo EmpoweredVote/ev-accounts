@@ -1,0 +1,89 @@
+{
+  "politician_id": "ad8c25f3-538c-48f3-b8db-1d72d7d6d4ca",
+  "findings": [
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('YEE'), linked to Kimberly Yee (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50c4bdf5ceb7f68f2e0f990ee9d17eb47277f96812e3cdd8f525900fba7a526c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/28748",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2303S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as co sponsor ('Kimberly Yee') on the official bill page; linked to Kimberly Yee via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.885Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:53:15.885Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: won the 2026-07-21 primary for Superintendent of Public Instruction and is on the November ballot, per https://www.kjzz.org/elections/2026-07-22/kimberly-yee-wins-gop-primary-for-arizona-superintendent-of-public-instruction-ousting-tom-horne",
+        "campaign site https://kimberlyyee.com/ and its Meet Kimberly page (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kimberly_Yee (403)",
+        "blocked: https://azmirror.com/?p=10368 (403)",
+        "news searches on her name plus voter ID, citizenship, election integrity (3 searches; nothing from her on the subject found)",
+        "KTAR podcast summary page (nothing on the subject; summary only, audio not reviewed)",
+        "not reviewed: https://www.azleg.gov Senate-era floor remarks and committee video (no transcript reachable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:13:55.080Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

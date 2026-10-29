@@ -1,0 +1,228 @@
+{
+  "politician_id": "540458fd-aede-402a-8f27-0518b632acdc",
+  "findings": [
+    {
+      "id": "b74083593814fed1b772282d9c43a173a480b6de5b798e471f10fa71da1f4b5f",
+      "kind": "own-words",
+      "url": "https://columbiaspy.com/2024/09/30/lnp-lancasteronline-republican-state-rep-brett-miller-faces-progressive-challenger-in-41st-district-voters-guide",
+      "date": "2024-09-30",
+      "date_precision": "day",
+      "passage": "On the 2020 election, Miller said it was “the most unusual” in history. He cited a common GOP skepticism surrounding its results, including that the Pennsylvania Supreme Court made “unilateral changes” to Pennsylvania’s universal mail-in ballot law.",
+      "note": "Reporter's text with short direct quotes from his emailed answers to LNP LancasterOnline (reposted by Columbia Spy). He criticises court changes to the mail-in ballot law. The outlet's words around the quotes are not his own.",
+      "subjects": [
+        "mail ballot rules",
+        "election integrity in general",
+        "2020 election"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:46.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eace3e59d39e37f333151698d0a73d4a067ed99a330d20185de7f97f50da7c09",
+      "kind": "own-words",
+      "url": "https://columbiaspy.com/2024/09/30/lnp-lancasteronline-republican-state-rep-brett-miller-faces-progressive-challenger-in-41st-district-voters-guide",
+      "date": "2024-09-30",
+      "date_precision": "day",
+      "passage": "Miller also said that there were “unexplained data discrepancies” that worried some of his constituents; he didn’t specifically cite any of those discrepancies and didn’t provide evidence they existed.",
+      "note": "Reporter's text with a short direct quote from his emailed answers; says this concern is why he signed a 2020 election letter. Nothing on voter ID itself.",
+      "subjects": [
+        "election integrity in general",
+        "2020 election"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:46.198Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('MILLER, B.'), linked to Brett R. Miller (district 41) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Miller, B.'), linked to Brett R. Miller (district 41) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Miller, B.'), linked to Brett R. Miller (district 41) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Miller, B.'), linked to Brett R. Miller (district 41) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MILLER, B.'), linked to Brett R. Miller (district 41) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity in general",
+        "2020 election review"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House bio page (https://www.palegis.us/house/members/bio/1699/rep-b-miller) confirms House District 41, Lancaster County, current member",
+        "personal site https://repmiller.com/ (home page shows nothing on the subject)",
+        "caucus site search page (not found)",
+        "caucus press release of 2020-12-04 on election letters: nothing from this member",
+        "blocked: https://ballotpedia.org/Brett_Miller_(Pennsylvania) (page came back empty)",
+        "blocked: https://ballotpedia.org/Brett_Miller (page came back empty)",
+        "news voters guide (LNP via columbiaspy) 2024",
+        "The Ballot Brief page: no statements from him, lists him on the 2026 ballot for District 41",
+        "web searches on name plus voter ID, election integrity: no voter ID statements found"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:04:46.198Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.696Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.457Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "politician_id": "ae8ab48a-c5eb-4acc-a9cf-8b6fad8c2f98",
+  "findings": [
+    {
+      "id": "67e1af5c9ecd069885f60f7f35afc52a49e9dc9c86ba2e6e85a0575482f0c8e0",
+      "kind": "own-words",
+      "url": "https://lebtown.com/2021/11/11/diamond-toss-voter-rolls-and-delay-may-primary-so-everyone-can-re-register/",
+      "date": "2021-11-11",
+      "date_precision": "day",
+      "passage": "the only voters I would expect to not re-register are those currently in the system who are dead, have moved out of state, or are not actually eligible citizens.",
+      "note": "Quoted by LebTown (article date) in a story on his plan to cancel all voter registrations and have everyone re-register. Speaks to who he expects would be removed, including people not eligible as citizens.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "re-registration of all voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:56.574Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f9af7ee561416b1cf5317ffa9c56ea8a03e75e03f6875df5edb0c89b6debe3f",
+      "kind": "own-words",
+      "url": "https://lebtown.com/2021/11/11/diamond-toss-voter-rolls-and-delay-may-primary-so-everyone-can-re-register/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "honest Pennsylvanians, with plenty of notice, and a months-long window to do it, would absolutely be willing to re-register to vote.",
+      "note": "His Oct. 29 Facebook post as quoted by LebTown in the 2021-11-11 article (year from the article date). About asking all voters to re-register.",
+      "subjects": [
+        "re-registration of all voters",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:56.574Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96f8571f2ce381f66ebf9d164844bba704ccf0e001f618f1d761b3fa55b1fcba",
+      "kind": "own-words",
+      "url": "https://lebtown.com/2021/11/11/diamond-toss-voter-rolls-and-delay-may-primary-so-everyone-can-re-register/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "I also envision counties setting up remote registration teams to accomodate the elderly, disabled, and infirmed.",
+      "note": "From the same quoted Facebook post (LebTown). In the same post he says the effort could extend to helping people without birth certificates get one.",
+      "subjects": [
+        "re-registration of all voters",
+        "help for people lacking documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:56.574Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eab27a3139c18d68d2d954fdcccadef2a6a301154e091da93a453425676e0bc2",
+      "kind": "own-words",
+      "url": "https://lebtown.com/2023/10/02/column-save-the-primary-date/",
+      "date": "2023-10-02",
+      "date_precision": "day",
+      "passage": "The General Assembly should reject this midnight effort to move Pennsylvania’s primary date, and instead focus on making improvements to our electoral system that will restore confidence and enhance voting security.",
+      "note": "His LebTown guest column (date from the URL) on election-date change. General call for election-security improvements; no ID detail.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:56.574Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('DIAMOND'), linked to Russ Diamond (district 102) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Diamond'), linked to Russ Diamond (district 102) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Diamond'), linked to Russ Diamond (district 102) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('DIAMOND') on the official bill page; linked to Russ Diamond via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('DIAMOND') on the official bill page; linked to Russ Diamond via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('DIAMOND'), linked to Russell H. Diamond (district 102) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.russdiamond.vote/about.php (identity confirmed; election-law advisory board mention only)",
+        "campaign news list https://russdiamond.vote/updates.php (listed items; two own-words items followed up)",
+        "House caucus page https://www.pahousegop.com/Diamond (page not found, nothing)",
+        "https://www.pahouse.com/Diamond (404)",
+        "blocked: https://triblive.com/opinion/rep-russ-diamond-pa-republicans-need-a-3-point-game/ (bot check)",
+        "blocked: https://ballotpedia.org/Russell_Diamond (empty page)",
+        "LebTown articles of 2021-11-11 and 2026-01-07 and column of 2023-10-02 (fetched; the 2026 article says he is seeking re-election in 2026)",
+        "BallotReady profile (lists him as a 2026 general-election candidate for District 102)",
+        "four web searches on name plus voter ID, proof of citizenship, election integrity, 2026 primary: no own words on photo ID, no-ID voters or proof of citizenship found",
+        "not confirmed: the 2026 primary result for District 102 (no page found showing it; no page shows a loss or withdrawal)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:10:56.574Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

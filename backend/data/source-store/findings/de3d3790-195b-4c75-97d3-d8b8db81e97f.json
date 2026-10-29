@@ -1,0 +1,116 @@
+{
+  "politician_id": "de3d3790-195b-4c75-97d3-d8b8db81e97f",
+  "findings": [
+    {
+      "id": "ed506c78dfedd149bdd905da79609f3636229e7b78d3798a09005403e9dc8d5e",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "But without that, if we could convince our friends on the other side to go along with something like a meaningful voter ID law would be would be helpful.",
+      "note": "In a radio interview during his 2024 primary run, he says a meaningful voter ID law is something people in his district are looking for.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "191791c1f1862aa8f498590dfa06b74fa969179a94c49d335e23873fb0e389bd",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "To me, it's needed because there is a lack of confidence.",
+      "note": "Asked why voter ID is needed given no evidence of widespread fraud, he answers that it is needed because of low public confidence.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter confidence in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b42f58fb7bae14c08400b870c768a249f0e26321b9f309b20218965fc49625b",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "I think representatives should listen to that and offer sensible solutions that restores voters confidence in the system.",
+      "note": "Says lawmakers should respond to voters' doubts about vote counting with inexpensive, simple measures.",
+      "subjects": [
+        "voter confidence in elections",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7cd155b5697ab0ee763a48986ce6ce13c7c05b5a8a41d6a534fb1b5589ed9f2c",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/2024-04-17/election-2024-republican-scott-barger-race-pennsylvania-house-80th-district",
+      "date": "2024-04-17",
+      "date_precision": "day",
+      "passage": "Number 1, I think that it completely scuttled efforts for meaningful voter ID legislation that was kicked over from the Senate.",
+      "note": "Explains an objection to his primary opponent's 2023 leadership vote: he says it stopped voter ID legislation sent over from the Senate.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID legislation in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:06.942Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter confidence in elections",
+        "mail ballots",
+        "proof of citizenship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repbarger.com (home page and press release list: nothing on the subject; site search page returned nothing)",
+        "caucus site https://www.pahousegop.com/Barger (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Scott_Barger",
+        "blocked: https://ballotpedia.org/Pennsylvania_House_of_Representatives_District_80",
+        "https://www.pahouse.com/Barger returned 404",
+        "https://vote.wpsu.org/candidates/394/ redirected away, not reviewed",
+        "WPSU 2024 primary interview (own words found)",
+        "Altoona Mirror 2024-04 primary result (reporter text only) and 2026-01 reelection launch (nothing on the subject)",
+        "Morrisons Cove Herald 2024-02 candidate profile (nothing on the subject)",
+        "two web searches; a Blair County 2026 primary notice appears to list him as a candidate, still in office per his site"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:10:06.942Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

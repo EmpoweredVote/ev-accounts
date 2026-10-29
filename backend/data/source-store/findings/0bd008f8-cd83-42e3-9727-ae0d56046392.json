@@ -1,0 +1,267 @@
+{
+  "politician_id": "0bd008f8-cd83-42e3-9727-ae0d56046392",
+  "findings": [
+    {
+      "id": "6614393a59990d5c1ba9fd3c44353dc1c0b79d8a1e68f1911ca144d12f20e123",
+      "kind": "own-words",
+      "url": "https://www.theepochtimes.com/two-us-senate-candidates-in-pennsylvania-weigh-in-on-voting-legislation_4211301.html",
+      "date": "2022-01-14",
+      "date_precision": "day",
+      "passage": "But when you look at in practice, the (state) bill, as written in House Bill 1300 was so restrictive on the type of ID that could have been used, that it wouldn’t have even allowed my Senate ID to count as a state ID.",
+      "note": "Quoted by The Epoch Times (reporter Beth Brelje) while he was a U.S. Senate candidate: on the kinds of ID accepted under House Bill 1300 (2021).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32d519cc8fcd7b74874edd26c9d8720b9cacea6943fb863888c887450f8ed2ed",
+      "kind": "own-words",
+      "url": "https://www.theepochtimes.com/two-us-senate-candidates-in-pennsylvania-weigh-in-on-voting-legislation_4211301.html",
+      "date": "2022-01-14",
+      "date_precision": "day",
+      "passage": "Do I think you could craft a fairer version of a voter ID bill? Probably could. But 1300 just doesn’t do that. Secondly, I think it’s a solution in search of a problem. We don’t have a problem of people showing up in person and impersonating someone else to vote. That just is not really a systemic problem. There’s no evidence that is a systemic problem anywhere.",
+      "note": "Quoted by The Epoch Times: says a fairer voter ID bill could be written, says HB 1300 is not it, and says in-person impersonation is not a systemic problem.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b957c2f88642e1dccb7038dee204f8c12c2299654aaf692d8443d44d2bf77a2",
+      "kind": "own-words",
+      "url": "https://senatorsharifstreet.com/gov-wolf-delaware-co-officials-denounce-house-gop-attack-on-freedom-to-vote-disguised-as-election-reform/",
+      "date": "2021-06-17",
+      "date_precision": "day",
+      "passage": "We have seen efforts to disenfranchise voters by advancing burdensome and duplicative Voter ID requirements before. This is Jim Crow 2.0.",
+      "note": "Quote credited to him in a 2021 press release on his own site, issued at an event about House Bill 1300 (which includes voter ID and mail-ballot ID rules).",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('STREET'), linked to Sharif T. Street (district 3) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Street'), linked to Sharif T. Street (district 3) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43b2a92555fb2bda51da147426ba813860daa195cb428422b39760c676a796d3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as co sponsor ('STREET') on the official bill page; linked to Sharif T. Street via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Street'), linked to Sharif T. Street (district 3) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Street'), linked to Sharif T. Street (district 3) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('STREET') on the official bill page; linked to Sharif T. Street via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.860Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID",
+        "proof of identity with a mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "note: he is a sitting state senator; he lost a 2026-05-19 congressional primary (seen only in a search result, not fetched); his state Senate seat was not on that ballot",
+        "On the Record (0 meetings)",
+        "official site https://senatorsharifstreet.com/ (homepage; site search for 'voter id' page 1 reviewed; press release pages fetched); positive control: homepage names him as Senator for the 3rd Senatorial District",
+        "senatorsharifstreet.com search results page 2 and the 2021 press release on voter suppression (title not repeated here): not reviewed beyond a title (the fetched page had no body text)",
+        "web searches on his name plus voter ID, SAVE Act, proof of citizenship: only the 2021 and 2022 items found",
+        "blocked: https://ballotpedia.org/Sharif_Street (empty page, status 202; not retried)",
+        "legislature bill pages: not reviewed (votes and sponsorships are linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:02:00.628Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.860Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

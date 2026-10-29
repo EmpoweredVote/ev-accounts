@@ -1,0 +1,241 @@
+{
+  "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4",
+  "findings": [
+    {
+      "id": "a1661eb6e9d8a4ccf59c1d61642b4cb64bb76e7032bb5bbfc5fb5101a2059549",
+      "kind": "own-words",
+      "url": "https://www.tmj4.com/news/state-capitol/wisconsin-senate-passes-voter-photo-id-amendment",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "“Senate Joint Resolution 2 being on the floor today is tone-deaf. It’s a disgrace,” Sen. LaTonya Johnson said. “You should be ashamed. We owe those families apologies.”",
+      "note": "Quoted by TMJ4 from the Senate session on the voter photo ID constitutional amendment (SJR 2); she ties her objection to a recent school shooting and to timing and priorities.",
+      "subjects": [
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:26.596Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d35f8b6ee7ba6b2af600ce7251200aed0e9eda256113cea0b7d9de585073d71",
+      "kind": "own-words",
+      "url": "https://wisconsinwatch.org/2025/01/wisconsin-republican-voter-id-constitution-democrat-ballot/",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "passage": "“I’m irritated,” Democratic Sen. LaTonya Johnson said at the hearing Tuesday, held less than 24 hours after lawmakers were sworn into office. “There are definitely more important issues than this.”",
+      "note": "Quoted by Wisconsin Watch (story published with the AP) at the committee hearing on the voter ID constitutional amendment; she says other issues matter more.",
+      "subjects": [
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:00:26.596Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27c88d6080df136f402c3a1d55e9bd199ead4c960e4d2ffd43d2667d18bbaf56",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ab1046",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-1046-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/2/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('L. Johnson') on the official bill page; linked to LaTonya Johnson via the official 2024 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f3ef3a2d280038fbee51dc62a66f6e4534d8027fec2e9bc990dcb1bb0609813",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('JOHNSON'), linked to LaTonya Johnson (district 6) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bc467088f936f1409c3c4816d66e8cf56c78c7b11688f863b1ab9caef48c94f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('JOHNSON'), linked to LaTonya Johnson (district 6) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4cefd30d97173ce36c76f86da73172cc38fc558343bb8b589c1b434226b0c582",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/sv0291",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0291)",
+      "note": "Senate roll call as printed ('JOHNSON'), linked to LaTonya Johnson (district 6) via the official 2017 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1b08054049e32c11c00cbb05b467301903166919d9bf93c68d618cc8309e73b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sb938",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-938-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/19/2024; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('L. Johnson') on the official bill page; linked to LaTonya Johnson via the official 2024 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6576877349bee88f9291d10a5621c787e680b1be63a222ed5e3fd5f93834d6dd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('JOHNSON'), linked to LaTonya Johnson (district 6) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('JOHNSON'), linked to LaTonya Johnson (district 6) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.775Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "voter ID and who is affected",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail or absentee ballot ID",
+        "what a voter with no ID can do",
+        "election integrity and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (page came back empty), no retry",
+        "official legislature site: press-release list https://legis.wisconsin.gov/senate/06/johnson/news-updates/press-releases/ reviewed (12 titles, none on the subject); office confirmed by that page",
+        "2026 status: not applicable to a seat not shown as on the 2026 ballot in the brief; not checked further",
+        "blocked: https://www.wispolitics.com/2018/sen-johnson-weekly-democratic-radio-address-photo-id-for-voting-law-reminder/ (403; 2018 radio address on photo ID, search listing only)",
+        "blocked: https://wisconsinexaminer.com/2025/01/09/senate-quickly-passes-voter-id-amendment-tuesday-as-assembly-begins-consideration/ (403)",
+        "campaign site: none found",
+        "news pages read: TMJ4, Wisconsin Watch (AP partnership) on the January 2025 amendment debate"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:00:26.596Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.775Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

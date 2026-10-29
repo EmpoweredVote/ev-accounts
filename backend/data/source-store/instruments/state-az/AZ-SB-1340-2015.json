@@ -1,0 +1,159 @@
+{
+  "id": "AZ-SB-1340-2015",
+  "scope": "state:az",
+  "title": "SB 1340 (2015 - Fifty-second Legislature - First Regular Session (azleg session id 114)): voted early ballots; delivery; identification",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/66691",
+    "https://www.azleg.gov/legtext/52leg/1R/bills/SB1340S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Sec. 1: Section 16-1005, Arizona Revised Statutes, is amended to read: (para G)\n(quote) If the person delivering the ballots does not provide a copy of the person's photo identification, the election official shall record the information from the person's photo identification and retain the information as a part of the records of the voting location as prescribed in procedures established by the secretary of state in the instructions and procedures manual adopted pursuant to section 16‑452.\n(c_mail_ballot_id)\n(section) Sec. 1: Section 16-1005, Arizona Revised Statutes, is amended to read: (para G)\n(quote) G. Any person who delivers more than ten early ballots to an election official for tallying shall also provide to the election official a copy of the person's photo identification.\n(section) Sec. 1: Section 16-1005, Arizona Revised Statutes, is amended to read: (para G)\n(quote) Within sixty days after the election, the officer in charge of that election shall submit to the secretary of state the photocopies or other electronic facsimiles or other information submitted by the persons delivering the early ballots.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) 0: n\n(other) 1: o\n(other) 2: t\n(other) 3:  \n(other) 4: s\n(other) 5: t\n(other) 6: a\n(other) 7: t\n(other) 8: e\n(other) 9: d\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Don Shooter",
+      "role": "prime",
+      "version": "SB1340S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2015-03-06",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 12,
+      "absent": 2,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=66691&billStatusActionId=163437&includeVotes=true",
+      "members": [
+        {
+          "name": "ABLESER",
+          "vote": "absent"
+        },
+        {
+          "name": "ALLEN S",
+          "vote": "yea"
+        },
+        {
+          "name": "BARTO",
+          "vote": "yea"
+        },
+        {
+          "name": "BEGAY",
+          "vote": "nay"
+        },
+        {
+          "name": "BRADLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "CAJERO BEDFORD",
+          "vote": "nay"
+        },
+        {
+          "name": "CONTRERAS",
+          "vote": "nay"
+        },
+        {
+          "name": "DALESSANDRO",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAL",
+          "vote": "absent"
+        },
+        {
+          "name": "DRIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "FARLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "FARNSWORTH D",
+          "vote": "yea"
+        },
+        {
+          "name": "GRIFFIN",
+          "vote": "yea"
+        },
+        {
+          "name": "HOBBS",
+          "vote": "nay"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "LESKO",
+          "vote": "yea"
+        },
+        {
+          "name": "MCGUIRE",
+          "vote": "nay"
+        },
+        {
+          "name": "MEZA",
+          "vote": "nay"
+        },
+        {
+          "name": "MIRANDA",
+          "vote": "nay"
+        },
+        {
+          "name": "PANCRAZI",
+          "vote": "nay"
+        },
+        {
+          "name": "PIERCE",
+          "vote": "yea"
+        },
+        {
+          "name": "QUEZADA",
+          "vote": "nay"
+        },
+        {
+          "name": "SHOOTER",
+          "vote": "yea"
+        },
+        {
+          "name": "SMITH",
+          "vote": "yea"
+        },
+        {
+          "name": "WARD",
+          "vote": "yea"
+        },
+        {
+          "name": "WORSLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "YARBROUGH",
+          "vote": "yea"
+        },
+        {
+          "name": "YEE",
+          "vote": "yea"
+        },
+        {
+          "name": "BIGGS",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

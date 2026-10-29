@@ -1,0 +1,312 @@
+{
+  "politician_id": "ffe5826b-e194-4c54-a044-5db1b2f7b90d",
+  "findings": [
+    {
+      "id": "c618074bb58f612dd6d6381e54cd206fc489fd99a96c099461a46eef3940f127",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34626/Bernstine-Introduces-Legislation-to-Secure-PAs-Election-Process?SiteID=1",
+      "date": "2024-08-29",
+      "date_precision": "day",
+      "passage": "“Even four years after the administrative failures of the 2020 General Election, Pennsylvania has not taken the necessary steps to reform or improve our election laws comprehensively,” said Bernstine.",
+      "note": "Press release announcing his election bill package; he says state election laws need broad reform.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:35.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7745c53343361e5ea223ae5a5274aeec655264fd85267487334ee91f3b673afc",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34626/Bernstine-Introduces-Legislation-to-Secure-PAs-Election-Process?SiteID=1",
+      "date": "2024-08-29",
+      "date_precision": "day",
+      "passage": "Verification would include the last four digits of the applicant’s Social Security number and their Pennsylvania Department of Transportation driver’s license or identification card number, ensuring only qualified electors participate in elections.",
+      "note": "Release text issued in his name describing his bill to have counties check a registration applicant's Social Security digits and driver's license or state ID number within 96 hours.",
+      "subjects": [
+        "ID number to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:35.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e6938d9aad61524e22a82b9fabc241c8825938387d1deb991dd7f0dfca4b0be",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34626/Bernstine-Introduces-Legislation-to-Secure-PAs-Election-Process?SiteID=1",
+      "date": "2024-08-29",
+      "date_precision": "day",
+      "passage": "“We need to send a clear message to everyone! If you jeopardize or cast doubt on our elections, you will face justice,” said Bernstine.",
+      "note": "Quote supporting his bill for a $50,000 fine and 30-day minimum jail term for each fraudulent vote.",
+      "subjects": [
+        "election integrity laws in general",
+        "penalties for fraudulent voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:35.317Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BERNSTINE'), linked to Aaron Joseph Bernstine (district 10) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('BERNSTINE') on the official bill page; linked to Aaron Joseph Bernstine via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Bernstine'), linked to Aaron Joseph Bernstine (district 10) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Bernstine'), linked to Aaron Joseph Bernstine (district 10) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.453Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95e5e71fc62d2f20e2a25ca8e1f97134e529be48aa0fa9b7b9a5b14655ee8e29",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240301174241/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1334",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1334-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1432 (as introduced; only printer's number). Read.",
+      "note": "Named as co sponsor ('BERNSTINE') on the official bill page; linked to Aaron Joseph Bernstine via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('BERNSTINE') on the official bill page; linked to Aaron Joseph Bernstine via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('BERNSTINE') on the official bill page; linked to Aaron Joseph Bernstine via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BERNSTINE'), linked to Aaron Joseph Bernstine (district 8) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "ID number to register",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repbernstine.com/ (confirms sitting 8th District member; homepage has nothing on the subject)",
+        "House caucus press release https://webcms.pahousegop.com/News-Print/34626/Bernstine-Introduces-Legislation-to-Secure-PAs-Election-Process?SiteID=1 (used)",
+        "Wikipedia https://en.wikipedia.org/wiki/Aaron_Bernstine (nothing on voter ID; 2026 ballot status not stated)",
+        "blocked: https://ballotpedia.org/Aaron_Bernstine (empty page)",
+        "not reviewed: 2026 general-ballot confirmation (a search result says he is running; the page I fetched was a 2022 article, so not used)",
+        "House member pages pahouse.com/Bernstine returned 404",
+        "two web searches on name plus subject words"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:13:35.317Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.691Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.453Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "politician_id": "31542340-858b-49de-8f46-f3054f00709d",
+  "findings": [
+    {
+      "id": "c398b951a734a7dcdb44b106de3a6a7db48e6b57d544c890cbc380fe5e3bbcf0",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0177",
+      "date": "2023-11-14",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-494-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and concurred in (CONCURRENCE) (sv0177)",
+      "note": "Senate roll call as printed ('STAFSHOLT'), linked to Rob Stafsholt (district 10) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Stafsholt') on the official bill page; linked to Rob Stafsholt via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afa5598b3a1af4be7e19017a800bf635b25b6b582646a110e688d2f5407df51c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0085",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0085)",
+      "note": "Senate roll call as printed ('STAFSHOLT'), linked to Rob Stafsholt (district 10) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('STAFSHOLT'), linked to Rob Stafsholt (district 29) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d13c5034d8852f39633cb03add59315b6842cac4346e989cc3d46f2f34a0fb1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0260",
+      "date": "2022-02-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Senate: Read a third time and passed (PASSAGE) (sv0260)",
+      "note": "Senate roll call as printed ('STAFSHOLT'), linked to Rob Stafsholt (district 10) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Stafsholt') on the official bill page; linked to Rob Stafsholt via the official 2025 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f242b6244d66e708c0a0080ce690b279166ec537853c0cc236e406ae40cc7622",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0139",
+      "date": "2023-11-07",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Senate: Read a third time and adopted (ADOPTION) (sv0139)",
+      "note": "Senate roll call as printed ('STAFSHOLT'), linked to Rob Stafsholt (district 10) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.778Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page https://legis.wisconsin.gov/senate/10/stafsholt/ (names him as the 10th District senator; nothing on the subject)",
+        "official press release list https://legis.wisconsin.gov/senate/10/stafsholt/news-updates/press-releases/ (two 2025 releases, on a fish and wildlife audit and the state budget: nothing on the subject)",
+        "official e-updates page (no articles listed)",
+        "campaign site https://stafsholt4senate.com/ (nothing on the subject; shows 2024 general election only)",
+        "status: his Senate seat was not on the 2026 ballot; term runs to 2029 per a news search result; he is a sitting senator, not a 2026 candidate",
+        "blocked: https://ballotpedia.org/Rob_Stafsholt",
+        "blocked: https://www.wispolitics.com/2021/sen-stafsholt-supports-senate-election-investigation/ (a 2021 release on election integrity legislation; a third-party PDF copy of it was found by search but not used, because the original was blocked)",
+        "two news searches on name plus subject words: no own words on voter ID found",
+        "not reviewed: the two 2025 release PDFs on the official site (titles show they are off subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:58:38.171Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.778Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "politician_id": "a4a239ad-98ab-4fa9-9d56-7781f46821a4",
+  "findings": [
+    {
+      "id": "1595de67d6e7b0a7d586c6ef55f8cea8738da6c1fbb6e9c5356b202448e5334e",
+      "kind": "own-words",
+      "url": "https://bridgemi.com/michigan-government/whitmer-vetoes-michigan-election-bills-gop-petitions-bypass-her/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "“There is no evidence that use of affidavit ballots is related to voter fraud,” Whitmer said. “Yet this voting restriction would disenfranchise the more than 18,000 voters who relied on the affidavit ballot in recent elections.”",
+      "note": "Quoted by Bridge Michigan from her veto letter to lawmakers on the bills that would end the affidavit option for in-person voters without ID.",
+      "subjects": [
+        "affidavit option for voters with no ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:13.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "785e8e3790de4564910aa58e39df80986909d4739389b281ec703d8063745ac9",
+      "kind": "own-words",
+      "url": "https://bridgemi.com/michigan-government/whitmer-vetoes-michigan-election-bills-gop-petitions-bypass-her/",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "“Voting restrictions that produce such a racially disparate impact must never become law in this state,” she said.",
+      "note": "Quoted by Bridge Michigan from her veto letter on the voter ID and absentee ID bills.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:13.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb24146ba0bb979173dbe54aa76014a06bf93773eb11c8129688b16a2ecb86e1",
+      "kind": "own-words",
+      "url": "https://www.michiganpublic.org/politics-government/2021-10-29/whitmer-vetoes-voting-restrictions-adopted-by-gop-legislature",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "passage": "“To be clear,” she wrote, “there is no evidence that use of affidavit ballots is related to voter fraud.”",
+      "note": "Quoted by Michigan Public from her veto letter. The same page says she called the current system, which lets voters without an ID sign an affidavit of identity, one that works.",
+      "subjects": [
+        "affidavit option for voters with no ID",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:13.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb7b946ca7313422b9037253f508784a509ef9f36ef663fddfb8ff4c1ab19169",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-29",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "vetoed",
+      "note": "The bill history on the legislature's page shows 'VETOED BY GOVERNOR 10/29/2021' for SB 303, a photo ID at the polls bill that ended the affidavit option.",
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit option for voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:13.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1ea0075943c24ae32234e667ea2f00473fc28f0accbb5fbfb4ff6f2d9b234a5",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2005-2006/journal/House/htm/2005-HJ-07-13-064.htm",
+      "date": "2005-07-13",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-513-2005",
+      "act": "yea",
+      "motion": "House: Senate amendment(s) to House substitute H-1 concurred in Roll Call # 339 Yeas 105 Nays 0",
+      "note": "House roll call as printed ('Whitmer'), linked to Gretchen Whitmer (district 69) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit option for voters with no ID",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: Bridge Michigan and Michigan Public pages of 2021-10-29 name her as the sitting governor who issued the veto letter",
+        "blocked: https://ballotpedia.org/Gretchen_Whitmer (403)",
+        "blocked: https://www.michigan.gov/whitmer/news/press-releases (403)",
+        "blocked: https://michiganadvance.com/2021/10/29/whitmer-vetoes-another-round-of-voter-suppression-bills/ (403)",
+        "blocked: https://www.abc12.com/news/whitmer-vetoes-three-michigan-republican-voter-id-bills/article_9c0197d9-d84a-5031-b1dc-a981a6a4122a.html (429)",
+        "blocked: https://www.detroitnews.com/story/news/politics/2021/10/03/naacp-dinner-whitmer-vetoes-election-bills-big-lie/5984993001/ (402)",
+        "legislature bill page for SB 303 (veto date recorded)",
+        "veto letter itself is a shared file link in the Bridge Michigan story: not reviewed: https://drive.google.com/file/d/1AGoKMVAf5Dxcqk-DmYahQ5t4-V2Jy2aJ/view?usp=sharing",
+        "news searches on name plus the 2026 proof-of-citizenship amendment and the SAVE Act: no statement of hers found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:51:13.490Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

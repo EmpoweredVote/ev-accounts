@@ -26,7 +26,197 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "7e9677a628873d5c998a7f520821184c2659f8f4ac8b3e4e44c8bbae60074ec5",
+      "kind": "own-words",
+      "url": "https://senatedems.com/wojno/2022/05/27/a-guide-on-michigan-elections/",
+      "date": "2022-05-27",
+      "date_precision": "day",
+      "passage": "When you arrive at your polling place to vote, state law requires you to either show a picture ID or sign an affidavit attesting that you are not in possession of a picture ID.",
+      "note": "From an elections guide posted on his Senate page and written in his name. It describes the in-person rule as it stood in 2022: show picture ID or sign an affidavit. The same page adds that a voter with no picture ID can vote like any other voter by signing an affidavit provided at the polls. It describes the law and does not say whether he wants it changed.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: sworn affidavit"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:31.273Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16adca6f39ba038f1dbb6df1ed0b74f4088ddc3aed969cb45cc3c933e834e1f2",
+      "kind": "own-words",
+      "url": "https://senatedems.com/wojno/2023/04/19/senate-passes-wojno-bill-to-make-av-voting-easier-for-military-members-begins-work-on-implementing-proposal-2-election-reforms/",
+      "date": "2023-04-19",
+      "date_precision": "day",
+      "passage": "This is the flexibility and consideration our servicemembers have been asking for, and this is a direct execution of the will of the Michigan people this past November.",
+      "note": "Quote in his Senate press release about SB 259 (absentee ballots of military voters counted if received up to six days after the election), which the release calls the first bill implementing the 2022 ballot measure. The release lists that measure's photo-ID-or-affidavit rule for in-person voting and for applying for an absentee ballot; that list is the release's text, not a quote of him.",
+      "subjects": [
+        "absentee ballot rules",
+        "voter ID or affidavit under the 2022 ballot measure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:31.273Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Wojno'), linked to Paul Wojno (district 9) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Wojno'), linked to Paul Wojno (district 10) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Paul Wojno (District 10)') on the official bill page; linked to Paul Wojno via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Wojno'), linked to Paul Wojno (district 10) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Paul Wojno (District 10)') on the official bill page; linked to Paul Wojno via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID (affidavit)",
+        "ID with absentee ballots",
+        "proof of citizenship",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site senatedems.com/wojno: home page, 2020 report post, 2022 elections guide, press-release page 3 (2023 release on absentee ballots for military voters), and recent update list (the 2026 updates were not individually opened: not reviewed: https://senatedems.com/wojno/2026/10/02/district-10-news-and-updates-47/)",
+        "blocked: https://ballotpedia.org/Paul_Wojno (empty page)",
+        "blocked: https://michiganadvance.com/2021/06/16/amid-democratic-opposition-gop-led-senate-adopts-first-round-of-voter-restriction-bills/ (403)",
+        "Michigan Public 2021 committee story: reporter's words only, no own words from him on the subject",
+        "no campaign site: sitting senator who is term-limited, so the District 10 seat is open in 2026 (per a news search); still in office until the term ends",
+        "news searches on his name plus voter ID, absentee, statement: no own words on ID beyond the 2022 guide"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:31.273Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }

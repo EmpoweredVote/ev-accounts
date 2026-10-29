@@ -1,0 +1,135 @@
+{
+  "politician_id": "6cedb096-6638-4f3d-906f-1731c06d4ca4",
+  "findings": [
+    {
+      "id": "2eba6f2a24207fb98e1e99d1ff1cd1280c9b707923365e462812ee9d4529952a",
+      "kind": "own-words",
+      "url": "https://www.wvia.org/news/local/2024-04-20/041924col-109thhouse",
+      "date": "2024-04-20",
+      "date_precision": "day",
+      "passage": "“It's something that is not only common sense, but we know that it works,” he said.",
+      "note": "WVIA's candidate-comparison story, under the heading Election Reform/Term Limits, lists Leadbeter as favoring requiring identification each time someone votes and quotes him with these words. The outlet quoted him; the story's paraphrase around it also says he favors more frequent voter-roll purges so only eligible voters vote. The 'Sudafed' quote in the same story belongs to his opponent, not to him.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:10.278Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('LEADBETER') on the official bill page; linked to Robert Leadbeter via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('LEADBETER') on the official bill page; linked to Robert Leadbeter via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('LEADBETER'), linked to Robert Leadbeter (district 109) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repleadbeter.com home page and press-release list page 1 (about 20 items): nothing on the subject",
+        "official site video list (3 videos): nothing on the subject",
+        "official site search page: page not found, nothing on the subject",
+        "blocked: https://ballotpedia.org/Robert_Leadbeter",
+        "blocked: https://ballotpedia.org/Pennsylvania_House_of_Representatives_District_109",
+        "Wikipedia page confirms he is the sitting member for the 109th district (elected 2022); could not confirm a 2026 ballot line from any fetched page",
+        "WVIA 2024-04-20 primary story (found, one own-words quote)",
+        "PoliticsPA 2024 primary preview: fetched, its voter ID text for this race sits under other candidates, not saved",
+        "news searches on name plus subject words: nothing further found",
+        "not reviewed: bill pages and roll calls (linked separately by brief)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:05:10.278Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

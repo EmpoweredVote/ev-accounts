@@ -1,0 +1,50 @@
+{
+  "politician_id": "e787b1a7-9263-46bc-987d-8ff50b1d7c49",
+  "findings": [
+    {
+      "id": "75690cb02dfb48bd2f61215662de4f2b5e8721ef518a6dc55a86405a35903484",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Goughnour/EmailArchive/?id=145420",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "passage": "Mail-in voting in PA is simple, safe, and secure.",
+      "note": "From his official constituent newsletter; he describes mail-in voting as safe and secure and points readers to vote.pa.gov. No mention of ID.",
+      "subjects": [
+        "mail-in voting security",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:44.755Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "mail-in voting security"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site pahouse.com/Goughnour (confirms 35th District, Allegheny County)",
+        "official newsletter 2026-09-30 (fetched with curl; one passage on mail-in voting saved)",
+        "official newsletter 2026-10-28 (fetched with curl; voting logistics only, nothing on ID)",
+        "web search x1 (nothing by him on voter ID; roll call and sponsorships linked separately)",
+        "Ballotpedia for Goughnour: not reviewed: https://www.ballotpedia.org/Dan_Goughnour"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:44.755Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

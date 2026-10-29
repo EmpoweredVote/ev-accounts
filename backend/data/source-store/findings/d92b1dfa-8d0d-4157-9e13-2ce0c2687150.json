@@ -1,0 +1,51 @@
+{
+  "politician_id": "d92b1dfa-8d0d-4157-9e13-2ce0c2687150",
+  "findings": [
+    {
+      "id": "fc6835a8e634de8f21f7df05cad58f2884c769942031ca6cc0415d0ed9ca41a9",
+      "kind": "own-words",
+      "url": "http://enews.senatormalone.com/common/mailings/index.cfm?id=54",
+      "date": "2026-10-14",
+      "date_precision": "day",
+      "passage": "Pennsylvania law requires voters casting their ballot for the first time at a polling place to present an approved form of identification.",
+      "note": "Official Senate e-newsletter titled 'Important Election Information' (listed on the newsletter index as October 14, 2026), a voter reminder before the November 3, 2026 general election. It states the current first-time ID rule and links to the approved-ID list. It does not say whether he wants the rule changed.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:21.376Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and election code changes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://www.senatormalone.com (home page, site search for voter ID and election, newsletters list; one newsletter on the subject)",
+        "official caucus page https://www.pasenate.com/senators/malone/ (nothing on the subject)",
+        "news report https://www.spotlightpa.org/news/2026/09/james-malone-tom-jones-lancaster-pennsylvania-senate-democratic-trifecta-elections/ confirms he is on the 2026 ballot in the 36th District; nothing on voter ID",
+        "blocked: https://ballotpedia.org/James_Malone",
+        "campaign site https://www.malone4pa.com did not load (no response)",
+        "two web searches on name plus voter ID words (nothing on the subject in his own words)",
+        "not reviewed: Capital-Star reelection launch article (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:12:21.376Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

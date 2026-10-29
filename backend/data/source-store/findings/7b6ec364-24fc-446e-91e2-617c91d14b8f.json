@@ -1,0 +1,217 @@
+{
+  "politician_id": "7b6ec364-24fc-446e-91e2-617c91d14b8f",
+  "findings": [
+    {
+      "id": "aaa8411e22a571a3f4ea450f06b19b91b31349ac6c3fd3b22743e9336ec0b94c",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/95/billings/media/dtbpueg3/february-24-2022-billings-assembly-session-statement.pdf",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "passage": "“Today, the Assembly passed a number of bills that create barriers and make it more difficult for eligible voters to cast their ballots.",
+      "note": "Official press release on the day the Assembly passed several election bills. Does not name voter ID or any specific bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:09.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c9198318d0b914839b005553baa5d4454111e32585d91aef4370547fb105dbb",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/95/billings/media/dtbpueg3/february-24-2022-billings-assembly-session-statement.pdf",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "passage": "“I have long believed that we should empower and encourage every eligible voter to take part in our democracy by casting their ballot.",
+      "note": "Same press release; general statement on voter participation.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:03:09.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ff0856102363887c14146ae12f952c4830db92d5a7fe5cdb6078572f5db54dc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "nay",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e07bda56b70df08dcc4c7e09aa3343d2f3b2b56b93b57d7d342f10dcb2b8c668",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d276d5ce64efb2eb6909119f31c4e388580944bb124791374d00949f15781e07",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('BILLINGS'), linked to Jill Billings (district 95) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.787Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: on the 2026 general-election ballot for Assembly District 95 per https://theballotbrief.com/state/wisconsin/la-crosse-county/wisconsin-assembly-district-95",
+        "On the Record: not run (the extract script is a repo script this search agent may not run)",
+        "legislature page https://legis.wisconsin.gov/assembly/95/billings/ (found her)",
+        "legislature press releases (one 2022 election-bills statement saved; others nothing on the subject)",
+        "legislature e-updates and about pages (nothing on the subject)",
+        "campaign site https://www.jillbillings.com (home page nothing on the subject; /issues and /priorities return 404)",
+        "blocked or empty: https://ballotpedia.org/Jill_Billings: not fetched",
+        "bill pages for sponsorships: not reviewed (linked separately)",
+        "news search on name plus voter ID (nothing further from her)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:03:09.538Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T23:15:12.787Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

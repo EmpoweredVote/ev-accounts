@@ -1,0 +1,50 @@
+{
+  "politician_id": "bb4221b6-59a8-4646-99aa-a2b0d006f414",
+  "findings": [
+    {
+      "id": "a27416bb8c8d9d1010faabaef522d530a23db7ed66bfff897d9e920c6d551a7f",
+      "kind": "own-words",
+      "url": "https://www.pahousegop.com/News/35383/Latest-News/Pugh-Takes-Oath-of-Office-for-First-Term-",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "Backing Real Reforms: Supporting Voter ID and ending automatic cost-of-living adjustments and unaccountable per diems without receipts for politicians.",
+      "note": "Bullet in a swearing-in release issued for her, listing her priorities for the term. It names voter ID support; no detail on what kind of ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.489Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "House caucus release confirming office (https://www.pahousegop.com/News/35383/Latest-News/Pugh-Takes-Oath-of-Office-for-First-Term-)",
+        "House caucus member news page https://www.pahousegop.com/Pugh/News (nothing on the subject)",
+        "blocked: https://penncapital-star.com/campaigns-elections/state-rep-elect-brenda-pugh-says-her-focus-will-be-on-lowering-taxes-and-fighting-addiction/ (bot check)",
+        "House caucus release on HB 931 public-benefit citizenship check (off the subject: benefits, not voting)",
+        "bill pages for sponsorships not searched (linked separately)",
+        "web search (standard, several queries on name plus subject words)",
+        "not reviewed: On the Record extract script (standing rules forbid running repo scripts)",
+        "blocked: https://ballotpedia.org (403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:10:26.489Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

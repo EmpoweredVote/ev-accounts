@@ -1,0 +1,86 @@
+{
+  "politician_id": "8bd4e2e7-cf6d-4029-9eaa-b05aa2f753e5",
+  "findings": [
+    {
+      "id": "c47cc12b6719106f4748d8928eadf1b56718c18dfe0de4a68f52cfc9dd33b585",
+      "kind": "own-words",
+      "url": "https://www.electmikeharris.com/post/your-title-what-s-your-blog-about",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "passage": "Whatever side of the fence you are on regarding elections, it is obvious that the people's belief in election integrity has been damaged. We need to restore voter's faith in one of the most fundamental aspects of our country. Voter ID and stopping the mass mailing of absentee ballot applications is a great start.",
+      "note": "From the issues post on his 2022 campaign site (post date from page metadata). Names voter ID and an end to mass mailing of absentee ballot applications as steps to restore trust in elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot applications",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.204Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Harris'), linked to Mike Harris (district 52) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and absentee ballot applications",
+        "proof of citizenship",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site news list (13 posts, 2021-2023) and its issues post",
+        "blocked: https://ballotpedia.org/Mike_Harris_(Michigan) (empty page; the search showed the right page is Mike_R._Harris_(Michigan_state_representative), not fetched)",
+        "confirmed in office and on the 2026 general-election ballot for House District 52 via https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-52/candidates/mike-harris-1",
+        "web searches on his name plus voter ID, absentee, election integrity: nothing on the subject beyond the campaign issues post",
+        "official house page: house-caucus.com/harris returned 404 (that is the wrong caucus site); not reviewed: the House caucus site for this member"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:47:07.204Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.337Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

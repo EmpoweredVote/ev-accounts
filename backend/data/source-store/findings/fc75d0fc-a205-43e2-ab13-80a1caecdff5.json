@@ -1,0 +1,66 @@
+{
+  "politician_id": "fc75d0fc-a205-43e2-ab13-80a1caecdff5",
+  "findings": [
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('DAVIS, A.'), linked to Austin A. Davis (district 35) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "identity confirmed: https://hoodline.com/2026/05/mon-valley-s-austin-davis-kicks-off-2026-reelection-push-with-statewide-tour/ (sitting Lieutenant Governor, running for a second term in 2026, unopposed in the May 19 primary)",
+        "On the Record (0 appearances, no linked or name-matched meetings)",
+        "blocked: https://ballotpedia.org/Austin_Davis (403 on plain curl; fetch tool returned empty)",
+        "Lieutenant Governor office newsroom (https://www.pa.gov/agencies/ltgov/newsroom returned 404)",
+        "campaign site: not reviewed, not located by search",
+        "Four web searches on name plus voter ID, election integrity, mail ballots, constitutional amendment: nothing on the subject by this person",
+        "CNN transcript 2024-10-24 (https://prod.transcripts.cnn.com/show/ctmo/date/2024-10-24/segment/04): not reviewed, only a search-result lead, general voting remarks"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:43:12.130Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.702Z",
+      "by": "identity-pa-2026-10-28"
+    }
+  ]
+}

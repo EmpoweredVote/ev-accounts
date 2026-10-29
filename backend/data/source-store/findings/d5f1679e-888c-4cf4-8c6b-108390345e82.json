@@ -1,0 +1,110 @@
+{
+  "politician_id": "d5f1679e-888c-4cf4-8c6b-108390345e82",
+  "findings": [
+    {
+      "id": "44aeef02a3561d8ee393774620e315e83bcdf826bd30f2b1a0263a98ce9bb0a6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4324-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Joseph Fox (District 101)') on the official bill page; linked to Joseph Fox via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Fox'), linked to Joseph Fox (district 101) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Joseph Fox (District 101)') on the official bill page; linked to Joseph Fox via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.332Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.332Z",
+      "by": "identity-mi-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (Michigan Senate District 33). https://www.clickondetroit.com/news/local/2026/08/03/2026-michigan-state-senate-primary-election-results/ shows him third with 7,719 votes (21%) behind Gina Johnsen (11,904) and Katie DeBoer (10,434); https://theballotbrief.com/state/michigan/montcalm-county (AI-written site) lists the general-election candidates for District 33 and he is not among them. He is not running for the House seat either (open 101st District per search results). Search stopped here per the brief.",
+        "identity confirmed: https://josephdfox.substack.com/about names him as State Representative of Michigan's 101st House District; https://www.branch.vote/races/2026-michigan-primary-election-mi-state-state-senator-mi-state-senate-33-r/candidates/joseph-d-fox shows him in the District 33 primary",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Michigan_State_Senate_District_33: page came back empty (blocked)",
+        "https://josephdfox.substack.com/about and /archive: nothing on the subject (two posts, 2023, energy and a placeholder)",
+        "branch.vote page: only a general line about election integrity with no source link seen, not saved as own words",
+        "https://whmi.com/news/article/47442: nothing on the subject from him (he is not quoted)",
+        "web searches (3 on his name plus subject words)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:52:53.555Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

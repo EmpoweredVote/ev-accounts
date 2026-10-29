@@ -1,0 +1,38 @@
+{
+  "id": "AZ-HB-2577-2022",
+  "scope": "state:az",
+  "title": "HB 2577 (2022 - Fifty-fifth Legislature - Second Regular Session (azleg session id 125)): voter identification; ballots; delivery; process",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/77084",
+    "https://www.azleg.gov/legtext/55leg/2R/bills/HB2577P.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Bill text\n(quote) REFERENCE TITLE: voter identification; ballots; delivery; process\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (a) A voter identification card.\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (b) Any two of the following methods to verify that the elector is the person named on the voter identification card:\n(section) Sec. 3: Title 16, chapter 4, article 9, Arizona Revised Statutes, is amended by adding section 16-579.01, to read:\n(quote) Voter identification card\n(section) Sec. 3: Title 16, chapter 4, article 9, Arizona Revised Statutes, is amended by adding section 16-579.01, to read:\n(quote) NOTWITHSTANDING any other law, county recorders shall issue voter identification cards to all registered voters.\n(section) Sec. 3: Title 16, chapter 4, article 9, Arizona Revised Statutes, is amended by adding section 16-579.01, to read:\n(quote) A county recorder may issue a voter identification card only if presented with the following by a qualified elector:\n(b_no_id_remedy)\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16-584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16-452.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 3: Title 16, chapter 4, article 9, Arizona Revised Statutes, is amended by adding section 16-579.01, to read: (para 1)\n(quote) 1. Proof of citizenship by a united States birth CERTIFICATE, a United States naturalized citizenship document or a current United States passport.\n(e_other_rule) not stated.\n(other) Sec. 1: Title 16, chapter 4, article 8, Arizona Revised Statutes, is amended by adding sections 16-546 and 16-553, to \n(other) Sec. 4: Section 16-1005, Arizona Revised Statutes, is amended to read:\n(other) Sec. 5: Conforming legislation\n(other) Sec. 6: Requirements for enactment; three-fourths vote",
+  "sponsors": [
+    {
+      "name": "Walter \"Walt\" Blackman",
+      "role": "prime",
+      "version": "HB2577P: as introduced (printed version)"
+    },
+    {
+      "name": "Kevin Payne",
+      "role": "co",
+      "version": "HB2577P: as introduced (printed version)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "politician_id": "d85f8be7-dcef-4e91-a754-6a34fcce8c25",
+  "findings": [
+    {
+      "id": "3fd918cb695bd0d1ef38f1d4469dc04805786c457c04a70048e819ca737ee482",
+      "kind": "own-words",
+      "url": "https://www.inquirer.com/politics/election/pennsylvania-voter-reforms-identification-democrats-republicans-20250306.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "“If there’s a will, there’s a way,” McClinton told a collection of election officials, advocates, and experts at Dickinson College. “What we lack in Harrisburg, just a few miles from here, is a willingness. We had a way.”",
+      "note": "Quoted by the Philadelphia Inquirer (published 2025-03-06) at a Carlisle election event on the day the Speaker listed voter ID among policies for an election reform package. The same article says she told the event that pre-canvassing, early voting and voter ID were top priorities, but that sentence is the reporter's, so only her quote is saved.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity and election code changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:02.745Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('MCCLINTON'), linked to Joanna McClinton (district 191) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('McClinton'), linked to Joanna E. McClinton (district 191) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d075755caae72eef56f5f024b0b7a9193ff2acfac08ab16c6cb90a486e043a90",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2025&sInd=0&body=H&type=B&bn=1396",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 1688 (passed House May 13, 2025). Read.",
+      "note": "Named as prime sponsor ('Joanna McClinton') on the official bill page; linked to Joanna E. McClinton via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('McClinton, Speaker'), linked to Joanna E. McClinton (district 191) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MCCLINTON'), linked to Joanna E. McClinton (district 191) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.857Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and election code changes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site https://www.pahouse.com/McClinton (home page, nothing on the subject)",
+        "official news room URL returned 404: https://www.pahouse.com/McClinton/NewsRoom",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/Joanna_McClinton",
+        "three web searches on name plus voter ID words",
+        "news report from the Philadelphia Inquirer, fetched",
+        "news report from WHYY 2025-05-14, fetched: only reporter's paraphrase of her bill, not saved",
+        "Wikipedia (lead only): nothing on voter ID"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:10:02.745Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.705Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.857Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

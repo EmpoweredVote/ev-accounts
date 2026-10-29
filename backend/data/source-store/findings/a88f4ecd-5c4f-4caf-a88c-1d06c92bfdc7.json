@@ -1,0 +1,482 @@
+{
+  "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walt Blackman (district 7) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1244edab908f33c03e28fc0aac00de80a171fc1b2c9853d2f0ac929bd410c0e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/76696",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2241-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2241P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walter \"Walt\" Blackman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f93846c1105ccda7a86e8e550ba1636fcbbc6405c70fba1df98bffb3f7fea0e",
+      "kind": "record",
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2492H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "629397ccaf43cb1c8b861c8bc09ea9990310503e57ee8e59e72dee08eabfa4b0",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77084",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2577-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2577P: as introduced (printed version)",
+      "note": "Named as prime sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07beb22391c4a87027116d0de8b5fc744a95f4fe4b0aa8071a98ee581de3d18a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77219",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2596-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2596P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a810ed19591229f554eef2f6db590c35b90e8f987e27a63a70327a44ea56f46f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77809",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2743-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2743P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walt Blackman (district 7) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67f1f8f7181db16165b8d24d99732ae95bfcc41434ceb827fc653bb873e6c692",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2025-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2025P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Walter \"Walt\" Blackman') on the official bill page; linked to Walter \"Walt\" Blackman via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b714a91dbebc4fc5a84abb54b8a12c9e6fc1a76bf56608b1c785862bc0a9b256",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=188418&includeVotes=true",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walter Blackman (district None) via the official 2019 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walt Blackman (district 7) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walter \"Walt\" Blackman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walter \"Walt\" Blackman (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walter \"Walt\" Blackman (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.877Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55a7c1f1c1e8371ee4e3fb305333374247f6d3b01d639c620a9d73e1a2fd7dbe",
+      "kind": "own-words",
+      "url": "https://kjzz.org/content/1760333/voter-id-measure-heads-ballot-arizonans-decide",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "passage": "\"I don’t see what’s wrong with this. I really don’t,\" fellow Republican Walter Blackman said. He too voted in favor of the measure. \"All it’s doing is protecting our elections and the process.\"",
+      "note": "KJZZ quotes him on the House floor in support of the 2022 measure adding ID-number requirements to early and mail voting. Article dated 2022-03-01 says it was Monday; words quoted by the outlet.",
+      "subjects": [
+        "mail-ballot ID",
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7f35d733e9fc4b3a41702befd608d76a65d5e792c9209163932b6cce1182a5c",
+      "kind": "own-words",
+      "url": "https://www.votewaltb.com/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "He supports parental rights, strong borders, a thriving economy, and secure elections to ensure freedom, safety, and opportunities for all Arizonans.",
+      "note": "Campaign site vision text, written in the third person; names secure elections as a priority without naming any ID rule.",
+      "subjects": [
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c17e6293953ead35008d33189242d283e6dcd33f1dfd8a5468d9e6a1eaf5944",
+      "kind": "own-words",
+      "url": "https://www.votewaltb.com/walt-s-policy",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Moreover, Walt is firmly committed to safeguarding the sanctity of life in the womb, enhancing election security, allocating funding for law enforcement, and protecting our children from the deadly drug epidemic originating from our southern border.",
+      "note": "Campaign policy page lists election security among his commitments; no specific ID or citizenship rule named.",
+      "subjects": [
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('BLACKMAN'), linked to Walt Blackman (district 7) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.508Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 15,
+      "at": "2026-10-28T22:53:15.877Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election security in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: listed as a 2026 general-election candidate for Arizona House District 7 at https://theballotbrief.com/state/arizona/gila-county",
+        "campaign site https://www.votewaltb.com/ and its policy page (two short statements on secure elections)",
+        "blocked: https://ballotpedia.org/Walt_Blackman (403, empty page)",
+        "blocked: https://news.yahoo.com/still-think-voter-suppression-myth-231417155.html (429)",
+        "blocked: https://www.phoenixnewtimes.com/news/arizona-gop-lawmaker-blasts-far-right-state-sen-wendy-rogers-21466840/ (403)",
+        "blocked: https://waltblackman.com and https://www.walterblackman.com (no connection)",
+        "news search on name plus subject words (KJZZ 2022 report found; others had nothing on the subject)",
+        "the House caucus site https://www.azhousegop.com (fetched; nothing on the subject)",
+        "Arizona Globe https://arizonaglobe.com/?p=59623 (nothing on the subject)",
+        "KOLD 2025 election integrity bill story (does not name him)",
+        "not reviewed: branch.vote candidate page is an aggregator, lead only"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:13:34.933Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election security in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: listed as a 2026 general-election candidate for Arizona House District 7 at https://theballotbrief.com/state/arizona/gila-county",
+        "campaign site https://www.votewaltb.com/ and its policy page (two short statements on secure elections)",
+        "blocked: https://ballotpedia.org/Walt_Blackman (403, empty page)",
+        "blocked: https://news.yahoo.com/still-think-voter-suppression-myth-231417155.html (429)",
+        "blocked: https://www.phoenixnewtimes.com/news/arizona-gop-lawmaker-blasts-far-right-state-sen-wendy-rogers-21466840/ (403)",
+        "blocked: https://waltblackman.com and https://www.walterblackman.com (no connection)",
+        "news search on name plus subject words (KJZZ 2022 report found; others had nothing on the subject)",
+        "the House caucus site https://www.azhousegop.com (fetched; nothing on the subject)",
+        "Arizona Globe https://arizonaglobe.com/?p=59623 (nothing on the subject)",
+        "KOLD 2025 election integrity bill story (does not name him)",
+        "not reviewed: branch.vote candidate page is an aggregator, lead only"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:18:25.440Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.508Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

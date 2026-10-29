@@ -1,0 +1,237 @@
+{
+  "politician_id": "f3b30125-0144-47c2-a791-e51df4efc0a1",
+  "findings": [
+    {
+      "id": "266d85c8a5746810b8679a00c36e6c62b3a18f30bc5f6ba76f5704747fbc6171",
+      "kind": "own-words",
+      "url": "https://senatorjudyward.com/understanding-pa-elections/",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "Returning voters: You  DO NOT  have to show any identification at the polls. The only person(s) that shall show photo/non-photo identification are first-time voters.",
+      "note": "From the voter FAQ page on her official Senate site (page first published 2024-10-15, last modified 2026-08-12, so the wording may have changed). It describes current state rules on ID at the polls for returning and first-time voters. It is explanatory, not a call for change.",
+      "subjects": [
+        "voter ID at the polls",
+        "first-time voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:13.979Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61aa2adcbf9c0e7a8044e3eb192cd727de81cb0444863b4f5641e5fdf0e25391",
+      "kind": "own-words",
+      "url": "https://senatorjudyward.com/understanding-pa-elections/",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "The legislature has initiated the process to amend the Pennsylvania Constitution.",
+      "note": "Closing sentence of the FAQ paragraph on stricter 'Voter ID' laws in other states and the 2012 Pennsylvania photo ID law that a court struck down. Same page and date caveat as above. The page itself says the amendment process has begun, without saying what the amendment would require.",
+      "subjects": [
+        "voter ID constitutional amendment",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:13.979Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('WARD, J.'), linked to Judy Ward (district 30) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Ward, Judy'), linked to Judith F. Ward (district 30) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('J. WARD') on the official bill page; linked to Judith F. Ward via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Ward, Judy'), linked to Judy Ward (district 30) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3cfa1c4f1ea98d3581293b2a1aa3a6c9fd99bff59bba5dbea924a40d1865cd1",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as prime sponsor ('J. WARD') on the official bill page; linked to Judy Ward via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Ward, Judy'), linked to Judy Ward (district 30) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID constitutional amendment",
+        "automatic voter registration",
+        "ID with mail ballot",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site senatorjudyward.com (voter FAQ page read; older press-release pages found by search now return page-not-found: https://senatorjudyward.com/2022/07/11/ward-issues-statement-on-senate-bill-106/ , /2021/06/15/..., /2023/01/11/..., /2023/09/19/...)",
+        "blocked: https://penncapital-star.com/government-politics/gop-lawmakers-want-to-change-pa-s-voter-id-requirements-heres-how/",
+        "blocked: https://penncapital-star.com/government-politics/despite-questions-on-process-senate-committee-advances-proposed-constitutional-change/",
+        "https://www.pasenategop.com/news/senate-approves-judy-wards-voter-verification-constitutional-amendment/ returned 404",
+        "blocked or empty: https://www.audacy.com/kywnewsradio/news/local/pennsylvania-republicans-push-for-voter-id-requirements (page reads, but it only describes her bill in the reporter's words, no quote from her)",
+        "not reviewed: Ballotpedia page for Judy Ward (not fetched)",
+        "web search x4 on name plus voter ID and her own site",
+        "search results suggest she issued statements on SB 735, SB 106, SB 1 and automatic voter registration, but the pages could not be fetched, so none are saved",
+        "2026 ballot status not confirmed by any page found",
+        "nothing on the subject found for SAVE Act or proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:14:13.979Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

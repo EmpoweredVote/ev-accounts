@@ -26,7 +26,116 @@
         "fetched_at": "2026-10-21T03:40:10.562Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "6576f63415008a2a6d33ba2ee301ff31890887078abddc3e7b2c80e7f18c9d37",
+      "kind": "own-words",
+      "url": "https://wbckfm.com/rep-matt-halls-voting-integrity-ideas-advancing-at-the-capitol/",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "Hall says testimony before his committee shows people over 120 years of age remained on voter rolls. That leaves a wide-open gap for fraud to occur. Hall says, “Verification helps establish trust in the process.”",
+      "note": "Radio story paraphrases his claim about old names on the voter rolls and quotes him in support of his House Bill 4127, which removes voters with unknown birth dates from the voter file and requires age verification when voting. Only the quoted words in the last sentence are verbatim his; the rest is the station's summary.",
+      "subjects": [
+        "voter-roll checks",
+        "age verification when voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:45.119Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7858204c305ff1bfe6368350b91aff2583fc18f95db5e232958f72b45ef2a2d2",
+      "kind": "record",
+      "url": "https://www.michigannewssource.com/?p=71836",
+      "date": "2026-02",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Appeared in a White House video urging passage of the federal SAVE Act",
+      "note": "News story says the video shows him with three other state House members all promoting the SAVE Act, which would require proof of citizenship to vote and a voter ID in federal elections. The story is dated around 13 Feb 2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:44:45.119Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Hall'), linked to Matt Hall (district 42) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.337Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not permitted in this session)",
+        "radio station story https://wbckfm.com/rep-matt-halls-voting-integrity-ideas-advancing-at-the-capitol/ confirms him as a Michigan House member in 2021",
+        "news story https://www.michigannewssource.com/?p=71836 names him as House Speaker in 2026",
+        "not reviewed: https://www.pbs.org/video/july-17-2026-rep-matt-hall-off-the-record-yuxgme/ (video interview, no readable transcript)",
+        "blocked: https://michiganadvance.com/2026/02/11/michigan-house-leaders-appear-in-white-house-advertisement-pushing-congress-to-pass-save-act/ (403)",
+        "blocked: https://michiganadvance.com/2026/04/15/michigan-house-passes-controversial-voter-id-bill-along-party-lines/ (403)",
+        "blocked: https://www.newsfromthestates.com/article/gop-led-michigan-house-passes-voter-id-absentee-ballot-restrictions (403)",
+        "nothing on the subject: https://civicmedia.us/news/2026/04/15/michigan-house-passes-controversial-voter-id-bill-along-party-lines and https://www.michiganvotes.org/legislation/2026/house/resolution-244 (no passage naming him)",
+        "House caucus site search page https://gophouse.org/?s=voter+ID: nothing returned",
+        "not reviewed: Ballotpedia (not fetched for this person)",
+        "three news searches on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:44:45.119Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.337Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
 }
