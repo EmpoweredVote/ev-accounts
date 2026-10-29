@@ -384,6 +384,24 @@ captures and five had none, with no pattern by date. ▶ **Where two meetings co
 act, check CDX and cite the archived one.** That is free and it is the difference between a published
 citation and a queued row.
 
+🔴🔴 **AND THE VERIFIER'S RESULT IS NOT STABLE RUN TO RUN, SO DO NOT READ ONE RUN AS A VERDICT.**
+Two dry-runs twenty minutes apart over the same unchanged CSVs:
+
+| Run | REVIEW | RE-RESEARCH |
+| --- | ---: | ---: |
+| first | 4 | 8 |
+| second | **1** | **11** |
+
+Nothing in the batch changed. Allen, Garrett and Tucker's `gun-policy` rows verified through the
+Wayback capture of meeting 2958 in the first run and failed in the second, because archive.org was
+degraded while the second ran — the same outage that is refusing new captures. Only Crabb's
+`rent-regulation`, on the two 2023 meetings archived in July 2025, verified both times.
+
+▶ **Do not run `--apply` against this batch until two consecutive dry-runs agree.** A row queued as
+`below-threshold` during an archive outage looks exactly like a row with bad sourcing, and it invites
+a re-research that cannot fix anything. The committed `publish-report.json` is a snapshot of one run,
+not a judgement on the evidence.
+
 The research is unaffected by any of this: it is cut from the local corpus and every snippet was
 matched offline with the real `matchSnippet`. Re-run the verifier once archiving is possible; it is
 idempotent.
