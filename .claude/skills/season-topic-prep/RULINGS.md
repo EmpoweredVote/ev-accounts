@@ -255,6 +255,17 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   state legislator in IN, NC and MA.
 - **Scope:** every topic.
 
+### A Candidate Connection survey answer is the candidate's own words
+- **Ruling:** a candidate's own answer to Ballotpedia's Candidate Connection survey counts as their own words and
+  may seat them, even when it is their only source. Every other Ballotpedia page (editorial bio, measure page)
+  still cannot seat anyone alone. The source must link the survey section (`#Campaign_themes`) and the quoted
+  words must sit inside that section (`backend/scripts/lib/candidate-connection.mjs`). The verifier cannot open
+  Ballotpedia, so such a seat always goes to a person for review; the batch keeps a saved copy of the section
+  (`survey-sections.json`) for the gate.
+- **Date and source:** 2026-10-07, Chris Andrews (Season 2 pilot); confirmed 2026-10-29, Chris Andrews, voting-rights
+  federal-held batch (Christy Peterson).
+- **Scope:** every topic.
+
 ### Party labels never reach a reader; shown quotes bracket them out
 - **Ruling:** Empowered Vote is anti-partisan: no reader should get a party as a shortcut for whom to agree with. A
   party label is a party's name or colour used for people or places ("Republicans", "the GOP", "Democratic
