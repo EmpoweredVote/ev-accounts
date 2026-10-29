@@ -357,6 +357,22 @@
     "admin_queue_visible": true
   },
   {
+    "full_name": "Kendra Brooks",
+    "topic_key": "taxes",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://phlcouncil.com/city-councils-minority-wing-presents-tax-plan-to-benefit-small-businesses-and-working-families/",
+      "https://phlcouncil.com/councilmembers-brooks-and-gauthier-oppose-tax-cuts-that-threaten-city-services/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
     "full_name": "Curtis Jones, Jr.",
     "topic_key": "local-immigration",
     "value": 2,
