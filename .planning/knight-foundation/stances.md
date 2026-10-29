@@ -73,7 +73,7 @@ who represents them now. **Check the city's next municipal election before openi
 | --- | --- | --- | --- |
 | **Lexington KY** | **34** | 🔴 **2026-11-03, FIVE DAYS — all 15 council seats AND the mayor** | 🔴 **DO NOT OPEN NOW** |
 | ~~Philadelphia PA~~ | 25 | 2027-11-02, all seats | ✅ **DONE — slice 4** |
-| Columbus GA | 16 | ⚠ verify | |
+| Columbus GA | 16 | May/June even years — 2026 PAST, winners seat Jan 2027 | ▶ **OPEN — slice 5, scoped to 13** |
 | Macon-Bibb GA | 15 | ⚠ verify | |
 | Akron OH | 14 | ⚠ verify (odd-year city) | |
 | **Boulder CO** | **8** (not 9 — see below) | 🔴 **2026-11-03, SIX DAYS** | 🔴 **DO NOT OPEN NOW** |
@@ -128,6 +128,56 @@ Measured 2026-10-28, before any research:
    here; it is why a 2025 *and* a 2026 city election both exist.
 
 ▶ **Re-open Boulder in December 2026**, against the seated council, and re-measure the roster first.
+
+## Slice 5 — Columbus, Georgia (opened 2026-10-29)
+
+**16 seated officials in the Columbus Consolidated Government** (`geo_id` 1319000, `mtfcc` G4110).
+Batch `2026-10-29-knight-columbus-ga`, branch `knight/stances-columbus-ga`, lease `place:1319000`.
+Bundle built: **12 people at `local` (52 topics, 23 of them own-words only) and 1 at `judicial`** —
+Probate Judge Marc D'Antonio, who takes the 8 judicial topics and only those.
+
+### 🔴 THE SLICE IS SCOPED TO 13 OF 16, AND THE REASON IS A JANUARY HANDOVER
+
+Columbus votes in **even years, in May, with June runoffs** — not in November, and not in odd years.
+The 2026 election is therefore **already past**, which is why this city passed the election-timing
+rule where Lexington and Boulder failed it. But the winners **take office in January 2027**, nine
+weeks out, so three of the sixteen seats are about to change hands:
+
+| Office | Holder in prod now | What happens in January |
+| --- | --- | --- |
+| **Mayor** | B.H. "Skip" Henderson III | 🔴 Term-limited. **Isaiah Hugley won the 2026-06-16 runoff**, 16,309 to 15,312, and becomes the city's first elected Black mayor |
+| **Council D7** | JoAnne Cogle | 🔴 Ran for mayor and lost; the seat changes |
+| **Council D3** | Bruce Huff | 🔴 Term ends 2026 |
+
+**Excluded from research for now**, because seating a chair on an officeholder who stops representing
+anyone in nine weeks is the thing the timing rule exists to prevent. Chairs attach to the *person*,
+so nothing is destroyed — it is simply not what a voter lookup needs.
+
+▶ **OWED IN JANUARY 2027: re-seat the Mayor and Districts 3 and 7, then research Hugley.** He is the
+highest-value subject in the city and cannot be researched as an officeholder until he holds office.
+
+### 🟢 THE CITY'S OWN ELECTIONS PAGE CARRIES A `Term/Term Ends` COLUMN — READ IT FIRST
+
+`columbusga.gov/elections/Elected-Officials/Incumbents` prints a term-end year per office, which
+answered in one fetch what three news searches had left ambiguous: Mayor, D3, D5 and D7 end **2026**;
+D2, D4, D6, D8, the Sheriff, Clerk of Superior Court, Tax Commissioner, Coroner and Probate Judge end
+**2028**. ▶ **Look for that column in any consolidated-government city before pricing a slice.**
+
+🔴 **BUT THAT PAGE IS STALE AND THE COUNCIL PAGE IS NOT — THEY DISAGREE, AND BOTH ARE OFFICIAL.**
+The Incumbents page has no Simi Barnes and no Cathy Cook, both seated by 2026 special elections;
+`columbusga.gov/council/` lists them and matches prod exactly. So the elections page is right about
+*terms* and wrong about *people*, while the council page is right about people and silent on terms.
+**Take the term column from one and the roster from the other; do not trust either alone.**
+
+⚠ **D5 LOOKS LIKE A FOURTH CASUALTY AND IS NOT.** Charmaine Crabb's term also ends 2026, but she won
+re-election in May, so she continues without a gap. A term-end year is not by itself a departure —
+check whether the incumbent won.
+
+✅ **PROD'S ROSTER IS IN GOOD SHAPE AND SOMEBODY HAS BEEN HERE.** Sources read
+`ccg-council-roster-2026-09-01`, `gasos-certified-2026-05-19-special-council-district-1` (Barnes,
+seated 2026-05-26) and `gasos-certified-2026-06-16-special-council-post-9-runoff` (Cook, seated
+2026-07-14). The occupancy work this slice would normally start with is already done — the January
+re-seat is the only gap.
 
 ## Slice 4 — Philadelphia (opened 2026-10-28)
 
