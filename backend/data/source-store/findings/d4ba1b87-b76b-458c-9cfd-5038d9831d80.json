@@ -42,6 +42,48 @@
         "fetched_at": "2026-10-22T21:33:43.523Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b26807cb6e15a90202748199ad4def9fbeee7fdaa31c8f59cc63c05429afb73f",
+      "kind": "own-words",
+      "url": "https://www.thedartmouth.com/article/2026/04/2nd-congressional-district-candidate-lily-tang-williams-calls-for-balanced-budget-amendment-national-constitutional-carry-in-rematch",
+      "date": "2026-04-01",
+      "date_precision": "month",
+      "passage": "I support the SAVE Act — citizenship required to register, and photo ID to vote.",
+      "note": "The Dartmouth interview (April 2026, current campaign), her answer marked LTW. She backs the SAVE Act and names its rules: citizenship required to register and photo ID to vote.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c74fa8574782690dde03cce4e2afc031badf7f5895bced4cad222ee81403eeaa",
+      "kind": "own-words",
+      "url": "https://www.citizenscount.org/candidate/lily-tang-williams/running/2026-primary-us-house",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "I support the SAVE Act — citizenship required to register, and photo ID to vote.",
+      "note": "Citizens Count candidate profile, issue 'Proof of citizenship to vote: For', quoting her (source marked 'Other, 2026'; same words as The Dartmouth interview). The page names her in full next to the quote.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -69,6 +111,25 @@
       "found": 2,
       "at": "2026-10-22T21:33:43.523Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "SAVE Act",
+        "voter ID",
+        "proof of citizenship"
+      ],
+      "places": [
+        "https://www.thedartmouth.com/article/2026/04/2nd-congressional-district-candidate-lily-tang-williams-calls-for-balanced-budget-amendment-national-constitutional-carry-in-rematch",
+        "https://www.citizenscount.org/candidate/lily-tang-williams/running/2026-primary-us-house",
+        "https://www.concordmonitor.com/2026/09/09/goodlander-williams-congressional-race/ (nothing on topic)",
+        "https://www.collaborativenh.org/know-your-vote-articles/2024/10/21/lily-tang-williams-on-the-issues-where-the-2nd-cd-gop-candidate-stands (nothing on topic)",
+        "https://www.lilytangwilliams.com/ (no issues text)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
     }
   ]
 }

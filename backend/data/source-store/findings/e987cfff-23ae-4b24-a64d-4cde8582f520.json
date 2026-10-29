@@ -72,6 +72,22 @@
       "found": 0,
       "at": "2026-10-27T22:19:17.979Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID",
+        "proof of citizenship"
+      ],
+      "places": [
+        "https://tx3dnews.com/jason-pearce-candidate-for-u-s-house-tx-04/ (his submitted statement: nothing on ID)",
+        "https://branch.vote/races/2026-texas-general-election-tx-state-us-representative-tx-congressional-4/candidates/jason-pearce (Voting & Elections: term limits, retirement age)",
+        "https://pearcefortexas.com/ (read in a browser 2026-10-29: nothing on ID or citizenship proof)"
+      ],
+      "found": 0,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
     }
   ]
 }
