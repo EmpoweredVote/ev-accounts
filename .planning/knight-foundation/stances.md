@@ -120,7 +120,7 @@ Measured 2026-10-28, before any research:
 
 ## Slice 4 — Philadelphia (opened 2026-10-28)
 
-**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **Done: Parker, Johnson (CP). 16 council + 7 row officers to go.** 52 local topics
+**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **✅ CITY SWEEP DONE 2026-10-29 — all 25 researched; 22 chairs live, 3 queued, 13 documented blanks.** 52 local topics
 pinned in Season 2 → **1,300 rows**. Batch `2026-10-28-knight-phl-city`, branch
 `knight/stances-backlog`, lease `place:4260000`.
 
@@ -141,6 +141,93 @@ through 2026-09.
 | `homelessness-response` | 2 | Executive Order No. 7-25, 1,000 shelter beds |
 | `public-safety-approach` | 4 | Executive Order No. 1-24 + the PPD 100-Day Report |
 | `local-immigration` | 2 | Chapter 21-3600, Bill 260057 of the ICE Out package |
+
+### ✅ SLICE 4 CITY SWEEP COMPLETE — 25 people, 22 chairs live, 3 queued, 13 documented blanks
+
+| Who | Chairs seated |
+| --- | --- |
+| Parker (Mayor) | housing 4 · homelessness-response 2 · public-safety-approach 4 · local-immigration 2 |
+| Johnson (Council President) | local-immigration 2 · gun-policy 3 · housing 4 |
+| Landau | local-immigration 2 · civil-rights 2 |
+| Gauthier | housing 3 · local-immigration 2 |
+| Thomas | civil-rights 2 · local-immigration 2 |
+| Ahmad · Bass · Brooks · Gilmore Richardson · Harrity · Lozada · O'Rourke · Phillips · Squilla | local-immigration 2 |
+
+**Queued, not published:** Krasner `jail-capacity` 2 (statement evidence), Jones and Young
+`local-immigration` 2 (below threshold — see the suffix defect). **Documented blanks:** 13.
+
+🟢 **THE SPONSORSHIP CHANNEL CARRIED THIS WHOLE SLICE.** Of the 18 chairs seated on council, **16
+rest on sponsorship and only two on a divided vote** — Thomas's Driving Equality (14-2) and the
+arena, which seated nobody. Bill 260057 passed 15-1, 250568 passed unanimously, 210633-A passed
+17-0, 250373-A passed 13-0: C46 refuses every one of them. ▶ On a 17-member body that mostly
+agrees, **a slice that only reads roll calls will come back nearly empty.**
+
+### 🟢🟢 LEGISTAR PUBLISHES PER-MEMBER ROLL CALLS AS PLAIN HTML — THE 403 COST US NOTHING
+
+`HistoryDetail.aspx?ID=…&GUID=…` returns **`Councilmember Driscoll Nays`, by name, for every
+member**, no key, for the action that carries the tally. The pairs are on the bill's own
+`LegislationDetail` page. This is the per-member attribution the Web API 403 was assumed to have
+denied us, and it **replaces reading tallies out of weekly-report prose** — which is proximity, not
+attribution.
+- ⚠ **IT IS AUTHORITATIVE BUT UNQUOTABLE.** The roll call is a table, so no contiguous span of it
+  exists in the raw HTML the verifier matches. Establish the vote from it; cite something else.
+- ▶ This is how Driscoll and O'Neill were settled: both recorded **Nays** on 260060.
+
+### 🔴🔴 A NAME SUFFIX DEFEATS SNIPPET VERIFICATION, AND IT IS REPO-WIDE
+
+`verify-stance-research.ts` passes `lastName: lastToken(canonical)`. For **`Curtis Jones, Jr.` that
+token is `Jr.`** — so `checkNameProximity` hunts for "jr" in the window, a page printing
+`Councilmember Jones` fails `name_not_present`, and the row goes `below-threshold` **however good the
+evidence is**. Jones and Young are the only two sponsors of 260057 not published, and that is the
+only reason.
+- **Measured 2026-10-29: 226 active politicians carry a suffix, 105 of them with a comma.** Every one
+  is exposed on any source that prints the surname alone — which is most official records.
+- 🔴 **IT FAILS SILENTLY INTO A QUEUE, NOT INTO AN ERROR.** Nothing says "the name check could not
+  match"; the row simply reads as unverified, which looks like a sourcing problem and invites
+  re-research that cannot possibly fix it.
+- ▶ The fix is a surname that skips the suffix, or an alias. Until then, **a suffixed politician needs
+  a source that prints the full name in prose near the snippet** — and note the roster sidebar does
+  not count: `Councilmember Curtis Jones, Jr. | District 4` appears on every phlcouncil page and in
+  WHYY's sponsor list, but only inside per-member tags, so no 25-word span contains it.
+
+### 🔴 A PROSECUTOR'S INSTRUMENT IS A POLICY, AND THE GATE HAS NO FORM FOR ONE
+
+Krasner's strongest chair rests on the **DAO New Policies memo of 15 February 2018**, which states
+its own purpose as an effort to end mass incarceration, charges retail theft at the summary level
+**because summary gradation greatly reduces pre-trial incarceration rates as no bail is required**,
+and directs attorneys to divert more. That is `jail-capacity` 2 almost word for word. But the memo
+carries no bill, act, ordinance or vote, so `NAMES_INSTRUMENT` cannot see it — the same class of gap
+as the executive-order gap that forced the tenth widening, and **general to every district attorney
+and sheriff in the corpus**.
+- 🔴 **DO NOT CLOSE IT WITH A BARE `Act`.** The pattern admits a bare `Act`/`Ordinance`, so a row can
+  pass by dropping the identifier — the cheap route the pattern file already warns is worse than
+  failing. A charging policy has no number to admit, so an eleventh widening is **not** obviously
+  right; this one wants a decision, not a regex.
+- ▶ **Recorded as `statement` instead, deliberately.** It is his own written words, it cannot name an
+  instrument by definition, and `statement` routes it to human review rather than auto-push — which
+  is the correct destination for a novel evidence class. The memo PDF **verified**.
+
+### ⚠ THE ROW OFFICERS MOSTLY HOLD NO LEVER, AND THAT IS THE ANSWER
+
+Five of the seven are documented zeros: the three **City Commissioners** administer elections but do
+not set who may vote or what identification is required — Pennsylvania law does; the **Register of
+Wills** issues marriage licences as a ministerial duty; the **City Controller** audits spending
+rather than setting it. Each is recorded as a blank naming the office's actual lever.
+- **Sheriff Bilal is a blank for a different and sharper reason.** Her office says it does not
+  cooperate with ICE; immigrant-rights groups say she lets arrests happen outside the Criminal
+  Justice Center; a congressional committee says her policies obstruct federal warrants. **Her own
+  site carries no immigration or detainer policy at all** — checked directly, and the page returned a
+  full 32,000-character copy with no such section, so the absence is real and not a failed fetch. On
+  a contested question with no instrument and no own words, every account is second-hand and the two
+  sides describe opposite policies. Blank.
+
+### ⚠ JOHNSON'S `housing` 4 CARRIES A KNOWN TENSION (ruling 2026-10-29, operator)
+
+He is the third-named sponsor of **210633-A**, Gauthier's mandatory inclusionary-zoning overlay —
+a binding rule on private developers, which is the one thing chair 4 says its holder does not do.
+His own flagship housing act is the **$800m H.O.M.E. bond he prime-sponsored**, which is subsidy
+with no mandate, and the overlay binds the 3rd and 7th districts rather than his own.
+**Ruled: keep 4 and record the tension.** ▶ Anyone re-auditing Philadelphia housing should start here.
 
 ### Kenyatta Johnson (Council President, 2nd District): 3 chairs seated, 2 deliberate refusals
 
