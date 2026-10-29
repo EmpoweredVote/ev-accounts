@@ -156,28 +156,22 @@ so nothing is destroyed — it is simply not what a voter lookup needs.
 ▶ **OWED IN JANUARY 2027: re-seat the Mayor and Districts 3 and 7, then research Hugley.** He is the
 highest-value subject in the city and cannot be researched as an officeholder until he holds office.
 
-### Progress, 2026-10-29 — ✅ ALL 8 COUNCILLORS DONE, 12 chairs. 🔴 READ `scope-review.md` FIRST
+### ✅ COMPLETE, 2026-10-29 — all 13 researched, 13 chairs. 🔴 READ `scope-review.md` FIRST
 
-| Member | Rows | Chairs |
-| --- | --- | --- |
-| **Charmaine Crabb** | 52 | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
-| **Gary Allen** (Mayor Pro Tem) | 52 | `homelessness` 5 · `gun-policy` 2 |
-| **Travis L. Chambers** | 52 | `homelessness` 5 · `gun-policy` 2 |
-| **Walker Garrett** | 52 | `homelessness` 5 · `gun-policy` 2 |
-| **Toyia Tucker** | 52 | `homelessness` 5 · `gun-policy` 2 |
-| **Glenn Davis** | 52 | `homelessness` 5 — `gun-policy` blank, he was absent for that vote |
-| **Simi Barnes** | 52 | documented zero — seated 2026-05-26, both shared instruments predate her |
-| **Cathy Cook** | 52 | documented zero — seated 2026-07-14, same reason |
+| Who | Chairs |
+| --- | --- |
+| **Charmaine Crabb** | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
+| **Gary Allen** (Mayor Pro Tem) | `homelessness` 5 · `gun-policy` 2 |
+| **Travis L. Chambers** | `homelessness` 5 · `gun-policy` 2 |
+| **Walker Garrett** | `homelessness` 5 · `gun-policy` 2 |
+| **Toyia Tucker** | `homelessness` 5 · `gun-policy` 2 |
+| **Glenn Davis** | `homelessness` 5 — absent for the gun vote |
+| **Greg Countryman** (Sheriff) | `jail-capacity` 4 — the only row-officer chair |
+| Simi Barnes · Cathy Cook | documented zeros — seated 2026, both shared instruments predate them |
+| Britt · Forté · Bryan · D’Antonio | documented zeros — administrative offices, see §5 of the review |
 
-**416 rows, gate `high=0`, 12 chairs, 0 duplicate pairs.** The five remaining subjects are the
-county row officers: Forté (Clerk of Superior Court), Bryan (Coroner), Britt (Tax Commissioner),
-Countryman (Sheriff) and D’Antonio (Probate Judge, the only one on the judicial ladder).
-
-⚠ **A documented zero is the right answer for Barnes and Cook, not a gap.** Ten and seven meetings
-of record each. Barnes’s `homelessness` blank is the interesting one: she told the Council as a
-member of the public, before she held the seat, that the camping ban was *“a step toward
-criminalizing homelessness”*. That rules out the two prohibitive rungs and chooses among none of the
-three that remain, so it is a blank that says exactly what it rules out.
+**✅ SLICE COMPLETE: all 13 subjects, 632 rows, gate `high=0`, 13 chairs, 0 duplicate pairs.**
+12 people × 52 local topics + D’Antonio × 8 judicial = 632, and every bundled person is covered.
 
 **Three instruments carry most of what has been found so far**, and each reaches several members at once:
 

@@ -16,6 +16,74 @@
     "admin_queue_visible": true
   },
   {
+    "full_name": "Gary Allen",
+    "topic_key": "gun-policy",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf"
+    ],
+    "failed_urls": [
+      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Walker Garrett",
+    "topic_key": "gun-policy",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf"
+    ],
+    "failed_urls": [
+      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Toyia Tucker",
+    "topic_key": "gun-policy",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf"
+    ],
+    "failed_urls": [
+      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Greg Countryman",
+    "topic_key": "jail-capacity",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2908/cg_meeting_minutes._06-04-2024.pdf"
+    ],
+    "failed_urls": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2973/cg_meeting_minutes._04-28-2026.pdf"
+    ],
+    "admin_queue_visible": true
+  },
+  {
     "full_name": "Charmaine Crabb",
     "topic_key": "homelessness",
     "value": 5,
@@ -60,22 +128,6 @@
     "failed_urls": [
       "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2950/cg_meeting_minutes._08-12-2025.pdf",
       "https://mccmeetingspublic.blob.core.usgovcloudapi.net/columga-meet-efaba4b6ff6a44dfb6ddb16b4696da5a/ITEM-Attachment-001-044e756307484ab298df3cc4c98fc083.pdf"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Gary Allen",
-    "topic_key": "gun-policy",
-    "value": 2,
-    "action": "re-research",
-    "reasons": [
-      "below-threshold"
-    ],
-    "displayed_value": null,
-    "verified_sources": [],
-    "failed_urls": [
-      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf",
-      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
     ],
     "admin_queue_visible": true
   },
@@ -128,22 +180,6 @@
     "admin_queue_visible": true
   },
   {
-    "full_name": "Walker Garrett",
-    "topic_key": "gun-policy",
-    "value": 2,
-    "action": "re-research",
-    "reasons": [
-      "below-threshold"
-    ],
-    "displayed_value": null,
-    "verified_sources": [],
-    "failed_urls": [
-      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf",
-      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
-    ],
-    "admin_queue_visible": true
-  },
-  {
     "full_name": "Toyia Tucker",
     "topic_key": "homelessness",
     "value": 5,
@@ -156,22 +192,6 @@
     "failed_urls": [
       "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2950/cg_meeting_minutes._08-12-2025.pdf",
       "https://mccmeetingspublic.blob.core.usgovcloudapi.net/columga-meet-efaba4b6ff6a44dfb6ddb16b4696da5a/ITEM-Attachment-001-044e756307484ab298df3cc4c98fc083.pdf"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Toyia Tucker",
-    "topic_key": "gun-policy",
-    "value": 2,
-    "action": "re-research",
-    "reasons": [
-      "below-threshold"
-    ],
-    "displayed_value": null,
-    "verified_sources": [],
-    "failed_urls": [
-      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2958/cg_meeting_minutes._10-14-2025.pdf",
-      "https://www.legis.ga.gov/api/legislation/document/20252026/233626"
     ],
     "admin_queue_visible": true
   },

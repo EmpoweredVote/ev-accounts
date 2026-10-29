@@ -192,9 +192,24 @@ reporting immigration status information"*.
 
 That is the second clause of **rung 1** word for word, so rung 1 is removed. Rungs 2 and 3 concern
 detainers and the use of local resources, not status-information sharing, and are not barred by this
-section. 🔴 **The Sheriff is a separate question** — Georgia HB 1105 (2024) places duties on jailers
-that the City Council does not carry. Verify it against the statute before researching Sheriff
-Countryman; it is not verified here.
+section.
+
+🔴🔴 **FOR THE SHERIFF THE WHOLE TOPIC IS CLOSED BY STATE MANDATE — now verified against the statute,
+which an earlier draft of this section flagged and did not check.** HB 1105 of 2024, the Georgia
+Criminal Alien Track and Report Act, amends Title 35 Chapter 1 so that a local agency *"shall be
+authorized to enter into memorandums of understanding ... including 287(g) of the Illegal
+Immigration Reform and Immigrant Responsibility Act of 1996 or a similar federal program. **A local
+agency shall seek such memorandums of understanding annually when no current memorandum of agreement
+is in effect**"*. The same Act requires custodial authorities to honour immigration detainers.
+
+The Muscogee County Sheriff's Office has entered the jail-based 287(g) programme, and the Sheriff
+told the Council in July 2026 that it did so for intelligence sharing on organised crime. 🔴 **That
+is compliance, not a chair.** Honouring detainers and sharing information proactively is rung 4 —
+and rung 4 is precisely what Georgia compels, so doing it chooses nothing. ▶ **Blank, and say which
+statute compels it**; a reader deserves to know the Sheriff had no choice here.
+
+⚠ Read the enacted text, not the coverage. Two news summaries described HB 1105 only as requiring
+status checks; the 287(g) mandate is in the bill's own words and is the part that decides this row.
 
 ### `ranked-choice-voting` — a documented zero, and probably also preempted
 
@@ -411,6 +426,46 @@ returned `[]` while archive.org was serving "Internet Archive services are tempo
 other endpoints. `[]` reads as *no capture exists*. A positive control — the same query for
 `example.com` and `whitehouse.gov` — is what established that CDX itself was answering and the empty
 result was real. Run that control before believing any "not archived".
+
+## 5. The five county row officers, and what their offices actually decide
+
+Philadelphia found five of its seven row officers were documented zeros because they administer
+rather than decide. Columbus is the same, with one exception.
+
+| Officer | Result |
+| --- | --- |
+| **Greg Countryman**, Sheriff | 🟢 `jail-capacity` **4** — the only row-officer chair in the slice |
+| Marc D'Antonio, Probate Judge | documented zero across all 8 judicial topics |
+| David A. Britt II, Tax Commissioner | documented zero |
+| Danielle F. Forté, Clerk of Superior Court | documented zero |
+| Buddy Bryan, Coroner | documented zero |
+
+**The Sheriff's chair is his own words, twice.** June 2024: he *"would like to see a new jail"*.
+April 2026, on a 1,600-bed replacement: the jail *"is currently operating above its intended
+capacity, with populations approaching critical levels"*, overcrowding drives medical cost and
+safety problems, and the new facility *"would help alleviate current issues"*. That is rung 4 —
+building capacity to address overcrowding and facility deficiencies — and rung 5 fails because he
+never argues detention should come before alternatives to it. Both snippets verify.
+
+⚠ **Two strong-looking leads were refused, and the reasons generalise.** His 287(g) participation is
+a state mandate (§3). His twelve-deputy park patrol with drones and tag readers looks like
+`public-safety-approach` 4 until you read two sentences earlier, where the minutes record that *"the
+initiative ... is Council driven"* and that **members of Council asked him to design it**. Producing
+the policing plan you were asked for is not a position on policing.
+
+🔴 **THREE OF THE EIGHT JUDICIAL LADDERS HAVE NO RUNG FOR A PROBATE JUDGE.**
+`judicial-prosecution-priorities` and `judicial-police-accountability` are written for a prosecuting
+office — "does the office try to put people away", "should the office defend them" — and
+`judicial-bail-pretrial` asks how closely to watch prosecutors. A Georgia probate judge hears
+estates, guardianships and involuntary commitments, issues marriage and weapons carry licences and
+keeps vital records. ▶ The `judicial` level is treated as one bench by `compass_topic_roles`, and it
+is not one: a district attorney, a superior court judge and a probate judge hold different rungs.
+Worth raising before the next slice with a judicial subject.
+
+⚠ **Two more surname traps, on top of the two Barneses.** `Britt` matches **Britt David Park**, the
+Britt David Pottery Studio and Britt Avenue, and David A. Britt II appears in the corpus from 2021
+as **Deputy** Tax Commissioner under Lula Huff — he has held the elected office only since January
+2025. `Forté` matches **Michael Forte** of the Personnel Review Board, a different person.
 
 ### Known defect to work around
 

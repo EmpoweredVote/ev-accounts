@@ -34,14 +34,21 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Greg Countryman",
+      "topic_key": "jail-capacity",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 416,
+    "rows": 632,
     "high": 0,
-    "medium": 5,
+    "medium": 6,
     "by_check": {
-      "statement-needs-review": 5
+      "statement-needs-review": 6
     }
   }
 }
