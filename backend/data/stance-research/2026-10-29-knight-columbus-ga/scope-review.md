@@ -264,6 +264,44 @@ voter-facing reasoning, and let the reviewer confirm by eye.
 ▶ It generalises: **any city whose minutes write tallies as a comma-list of surnames will lose every
 member with a common surname.** Check it before pricing a slice on roll calls.
 
+### 🔴🔴 THE MINUTES HOST REFUSES OUR OWN USER AGENT, AND THE FETCH LADDER HAS NO SECOND ONE
+
+`columbus-ga.municodemeetings.com` closes the connection on `EmpoweredVoteBot/1.0`. Isolated by
+holding everything else constant — same URL, same minute:
+
+| Request | Result |
+| --- | --- |
+| no user agent | **HTTP 200**, 481,977 bytes |
+| `accept` header only | **HTTP 200** |
+| browser user agent + `accept` | **HTTP 200** |
+| **`EmpoweredVoteBot/1.0`** | 🔴 **connection closed** |
+| `EmpoweredVoteBot/1.0` + `accept` | 🔴 **connection closed** |
+
+It is not TLS fingerprinting and not general rate limiting: plain `node fetch` works.
+`fetchViaHttp` always sends that user agent and has no fallback — **`LEGACY_BROWSER_UA` is declared
+in the same file and never used anywhere.** Tier 2 is Wayback, and these PDFs have no capture, so
+the ladder ends. The symptom a researcher sees is `all fetch tiers failed`, then `below-threshold`
+on a row whose evidence is perfectly good.
+
+**Part of the cause is ours.** Their `robots.txt` asks for `Crawl-delay: 15`, and this batch pulled
+202 PDFs back to back. 🔴 **Our robots parser ignores `Crawl-delay` by design** — a comment in
+`verificationFetch.ts` says so. Their robots file **allows** the minutes path, so this is a rate
+defence we provoked, not a policy refusal.
+
+▶ **The fix chosen (operator, 2026-10-29) is to archive each cited PDF to the Wayback Machine and
+keep citing the official city URL**, so tier 2 serves it and the citation stays durable. ⚠ **It
+could not be carried out on the day: the Internet Archive's Save Page Now returned HTTP 520 on every
+attempt while its read path stayed up.** The research below is unaffected — it is all cut from the
+local corpus and the snippets were matched offline with the real `matchSnippet` — but the verifier's
+dry-run will keep reporting these rows `below-threshold` until the archiving succeeds or the host
+relents. Re-run it then; it is idempotent.
+
+⚠ **AND AN OFFLINE SERVICE RETURNED AN EMPTY LIST, NOT AN ERROR.** A CDX query for the minutes PDF
+returned `[]` while archive.org was serving "Internet Archive services are temporarily offline" on
+other endpoints. `[]` reads as *no capture exists*. A positive control — the same query for
+`example.com` and `whitehouse.gov` — is what established that CDX itself was answering and the empty
+result was real. Run that control before believing any "not archived".
+
 ### Known defect to work around
 
 🔴 **`David A. Britt II` will fail snippet verification on the suffix bug** (slice 4, repo-wide):

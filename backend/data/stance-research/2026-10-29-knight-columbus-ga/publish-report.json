@@ -1,0 +1,34 @@
+[
+  {
+    "full_name": "Charmaine Crabb",
+    "topic_key": "rent-regulation",
+    "value": 5,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2876/cg_meeting_minutes._10-10-2023.pdf",
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2877/cg_meeting_minutes._10-24-2023.pdf"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Charmaine Crabb",
+    "topic_key": "homelessness",
+    "value": 5,
+    "action": "re-research",
+    "reasons": [
+      "below-threshold"
+    ],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2950/cg_meeting_minutes._08-12-2025.pdf",
+      "https://mccmeetingspublic.blob.core.usgovcloudapi.net/columga-meet-efaba4b6ff6a44dfb6ddb16b4696da5a/ITEM-Attachment-001-044e756307484ab298df3cc4c98fc083.pdf"
+    ],
+    "admin_queue_visible": true
+  }
+]
