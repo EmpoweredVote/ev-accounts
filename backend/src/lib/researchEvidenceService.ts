@@ -8,6 +8,7 @@ import type { VerifiedRow } from './researchVerifier.js';
 // A value import is safe: researchVerifier imports nothing (no db.js), unlike seasonService below.
 import { normalizeText, MIN_SNIPPET_WORDS } from './researchVerifier.js';
 import { isRollCallXmlUrl, parseRollCallLine } from './rollCallEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine } from './legiscanEvidence.js';
 import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
 import type { Queryable } from './seasonService.js';
@@ -754,7 +755,7 @@ export async function resolveResearchReview(
   // and is stored beside the snippet; here it is re-checked against the snippet it came from. A
   // verified snippet with no valid span (a row queued before 2026-09-24) is NOT a citation — its
   // page is not re-fetched on approval, so nothing can say which of its words were on the page.
-  // A roll-call line (rollCallEvidence.ts) is checked as validStoredSpan's roll-call case.
+  // A roll-call or LegiScan line is checked as validStoredSpan's canonical-line case.
   const publishable = (url: string, s: ResearchReviewRow['evidence'][number]['snippets'][number]): string | null =>
     s.verdict === 'verified' ? validStoredSpan(s.snippet, s.matched_span, url) : null;
 
@@ -930,12 +931,15 @@ export async function rejectResearchReview(id: string, resolvedBy: string, notes
  * ("House roll call 102 (2025), H R 22, On Passage: Jack (GA) voted Yea."), checked field by field
  * against the Clerk XML rather than as a run of page text. It is publishable when `url` is a
  * House roll-call XML URL, the span still parses as a canonical line, and it is the whole snippet —
- * exactly what the verifier stores for that lane. Every other short span is still refused.
+ * exactly what the verifier stores for that lane. The LegiScan lane (legiscanEvidence.ts) is the
+ * same case for a LegiScan bill or roll-call URL and its canonical line. Every other short span is
+ * still refused.
  */
 export function validStoredSpan(snippet: string, span: string | undefined, url?: string): string | null {
   const t = span?.trim();
   if (!t) return null;
   if (url !== undefined && isRollCallXmlUrl(url) && parseRollCallLine(t) && snippet.trim() === t) return t;
+  if (url !== undefined && isLegiscanUrl(url) && parseLegiscanLine(t) && snippet.trim() === t) return t;
   // Same normalizer as the verifier, padded so the run must sit on whole words.
   const norm = (x: string) => ` ${normalizeText(x)} `;
   const words = normalizeText(t).split(' ').filter(Boolean).length;

@@ -10,6 +10,7 @@
 
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine } from './legiscanEvidence.js';
 
 /**
  * Decode a page's character references for DISPLAY, and nothing else. See
@@ -533,6 +534,14 @@ export async function verifyEvidence(args: {
           // checked field by field against the record; the line itself is the published span.
           if (isRollCallXmlUrl(url) && parseRollCallLine(ev.snippet)) {
             const v = verifyRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
+          // LegiScan lane (legiscanEvidence.ts): a canonical sponsor or vote line on a LegiScan bill or
+          // roll-call URL, checked against the party-free record the API returned.
+          if (isLegiscanUrl(url) && parseLegiscanLine(ev.snippet)) {
+            const v = verifyLegiscanLine(ev.snippet, url, fetched.text, names);
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
               ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
             continue;
