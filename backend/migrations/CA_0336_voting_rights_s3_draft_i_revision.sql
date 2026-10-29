@@ -8,7 +8,11 @@
 -- Template: .claude/skills/season-topic-prep/templates/stage4-revision.sql, as adapted in CA_0334 (which rejected an
 -- approved, unpublished revision and carried the draft-season rows). Recipe: STAGE4-RECIPE.md.
 --
--- Drafted 2026-10-29, offline. NOT dry-run, NOT applied. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
+-- Drafted 2026-10-29, offline. NOT applied.
+-- Dry run on prod 2026-10-29 (body twice inside BEGIN, forced RAISE): gate OK on both runs; first run rejected
+-- revision 5, proposed + approved revision 6, re-pinned the draft season and carried 57 answer + 57 context rows;
+-- second run skipped every step (0 carried); voter answers: reworded x6; ended on "dry run: forced rollback".
+-- Confirmed in a new session that nothing persisted. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
 -- WHAT THIS DOES
 --   0. REJECTS revision 5 (9429596c-4727-4a6d-8403-94509ec54466, Draft F, CA_0334), approved and pinned, never published.
