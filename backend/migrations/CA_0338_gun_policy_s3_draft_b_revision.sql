@@ -14,8 +14,10 @@
 -- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
 -- APPLIED: (fill in on apply — date, who said yes, revision id)
--- Dry run on prod (not yet run) (body twice inside BEGIN, forced RAISE): (fill in — gate OK,
--- second run skipped propose/approve, voter-answer dispositions, rollback confirmed)
+-- Dry run on prod 2026-10-30, attempt 1 (body twice inside BEGIN, forced RAISE): run 1 proposed + approved
+-- 99bbeeb4… (rolled back) and the gate FAILED on the open-season pin: Season 2 pins revision 2 (1a72d5df…), not
+-- the control. Gate fixed to expect 1a72d5df…; rollback confirmed (3 revisions, 0 open, draft pin 44615418…).
+-- Attempt 2: (fill in)
 --
 -- WHAT THIS DOES
 --   1. Proposes revision 4 of gun-policy: change_class substantive, version 3.
@@ -213,7 +215,9 @@ BEGIN
 
   -- The open season still pins the previous revision; the draft season pins the new one.
   SELECT topic_revision_id INTO v_pin FROM inform.season_questions WHERE season_id = v_openS AND topic_id = v_topic;
-  IF v_pin IS DISTINCT FROM v_prev THEN RAISE EXCEPTION 'CA_0338 verify: open-season pin is % (expected the previous revision)', v_pin; END IF;
+  -- gun-policy: the open Season 2 pins revision 2 (1a72d5df…, version 2) and is served revision 3's text by
+  -- version; it never pinned revision 3. The open-season pin must stay exactly where it was.
+  IF v_pin IS DISTINCT FROM '1a72d5df-746f-4469-ab9b-1d3e8bc33b8d'::uuid THEN RAISE EXCEPTION 'CA_0338 verify: open-season pin is % (expected 1a72d5df…, unchanged)', v_pin; END IF;
   SELECT topic_revision_id INTO v_pin FROM inform.season_questions WHERE season_id = v_draft AND topic_id = v_topic;
   IF v_pin IS DISTINCT FROM v_new THEN RAISE EXCEPTION 'CA_0338 verify: draft-season pin is % (expected %)', v_pin, v_new; END IF;
 
