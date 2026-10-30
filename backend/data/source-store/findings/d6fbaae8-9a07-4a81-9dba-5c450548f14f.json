@@ -80,7 +80,99 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "060256420ed55b9b61a09b262082e0268c6aeec9330f6b6ca93aca1b1aa8d0c1",
+      "kind": "own-words",
+      "url": "https://davids.house.gov/media/press-releases/davids-applauds-house-passage-gun-violence-prevention-bills",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "I was proud to join my colleagues today in passing two landmark and bipartisan gun violence prevention bills that will help keep our communities safe,” said Davids.",
+      "note": "Her quoted statement on House passage of H.R. 8 (universal background checks) and the Enhanced Background Checks Act (Charleston loophole).",
+      "subjects": [
+        "background checks on private sales",
+        "universal background checks",
+        "Charleston loophole"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5923c08b3c17a8edd19f76edc461cae72d0b4c5f3023afc1f17c1655e2dea0eb",
+      "kind": "own-words",
+      "url": "https://davids.house.gov/media/press-releases/davids-votes-pass-bipartisan-gun-violence-prevention-legislation",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "This bipartisan bill is a historic step toward curbing the epidemic of gun violence in this country and it will, quite simply, save lives.",
+      "note": "Her quoted statement on voting for the Safer Communities Act (enhanced checks under 21, straw purchasing offenses, boyfriend loophole).",
+      "subjects": [
+        "enhanced background checks under 21",
+        "straw purchasing",
+        "boyfriend loophole"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fdce7efc85e9c9289dcc2f7213c3df46898365644444850a6a44891d6bf549a",
+      "kind": "own-words",
+      "url": "https://davids.house.gov/media/in-the-news/rep-davids-advocates-common-sense-gun-safety-mental-health-support-following",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I stand with every parent, educator, student and Kansan, who has come together to call for common sense gun safety.",
+      "note": "House floor remarks after the Olathe East High shooting, as quoted by a news outlet on her site; the page text shows no date. The article also reports the shooter allegedly brought a ghost gun (no serial number) into the school.",
+      "subjects": [
+        "gun safety laws general",
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "Charleston loophole",
+        "gun safety laws general",
+        "ghost guns",
+        "red-flag orders",
+        "assault-style weapons",
+        "minimum age 21 enhanced checks",
+        "straw purchasing"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release March 11 2021",
+        "official site press release June 24 2022",
+        "official site in-the-news page on Olathe East shooting",
+        "web search (two queries): no own-words found on assault weapons bans or red-flag orders",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

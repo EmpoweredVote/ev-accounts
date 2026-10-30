@@ -80,7 +80,95 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "be751d2ee3c1056df80c744e34395b6bfa338cadce1ef2b454db3cc7875dd838",
+      "kind": "own-words",
+      "url": "https://www.wokv.com/news/local/aaron-bean-talks-gun-control-stand-your-ground/BMGuvoCE71cK9S857K7OgP",
+      "date": "2013-01-15",
+      "date_precision": "day",
+      "passage": "“The one thing I’m sure of that will not make our schools safer is taking guns out of the hands of the good guys,” says State Senator Aaron Bean, whose district includes Duval and Nassau counties. “Good guys with guns can protect against bad guys with guns,” he says.",
+      "note": "Radio interview as a Florida state senator after the 2012 school shooting debate; quoted by WOKV. Same story says he agrees with a review of Florida's gun laws before changes and that he co-sponsored Stand Your Ground.",
+      "subjects": [
+        "gun control debate after school shootings",
+        "guns in schools",
+        "Stand Your Ground"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d884a6046ae06db2de93625c54b7b24b94df683b73bb7b631c5c3481ed169c30",
+      "kind": "own-words",
+      "url": "https://www.wokv.com/news/local/aaron-bean-talks-gun-control-stand-your-ground/BMGuvoCE71cK9S857K7OgP",
+      "date": "2013-01-15",
+      "date_precision": "day",
+      "passage": "Nothing would break your heart than to hear of somebody defending their life, their liberty, their property and their own home, and then getting charged with a crime,",
+      "note": "Quoted by WOKV on why Stand Your Ground, which he co-sponsored as a state senator, would stay.",
+      "subjects": [
+        "Stand Your Ground",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d724979f98976c9d24c219d2db6ae70642a9d534dce7bb3803b378e2555da8b7",
+      "kind": "own-words",
+      "url": "https://bean.house.gov/media/press-releases/bean-statement-caring-our-veterans-rebuilding-our-military-and-investing-our",
+      "date": "2025-06-27",
+      "date_precision": "day",
+      "passage": "Protecting the 2nd Amendment rights of veterans, preventing the VA from sending information to the FBI about veterans without a judge’s consent.",
+      "note": "Bullet in the 'KEY BACKGROUND' list of his office's statement on House passage of H.R. 3944 (MilCon-VA appropriations 2026); the bullet is office text under his statement, not the quoted paragraph. It is about the VA sharing records with the FBI background check system.",
+      "subjects": [
+        "veterans and background check records",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "school safety and guns",
+        "Stand Your Ground",
+        "veterans and firearms",
+        "ATF rules"
+      ],
+      "places": [
+        "status check: News4JAX 2026-08-17 primary roundup says 'in District 4, Republican incumbent Aaron Bean faced no primary challengers' and the Democratic winner 'will face the Republican incumbent Aaron Bean' in November (in scope)",
+        "On the Record (0 meetings)",
+        "official site bean.house.gov (press release search; one release found on the subject; its site search page returned nothing)",
+        "WOKV radio story, January 2013 (state senate years)",
+        "one general web search and one official-site search",
+        "not reviewed: congress.gov sponsor list (not fetched)",
+        "not reviewed: Ballotpedia (not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

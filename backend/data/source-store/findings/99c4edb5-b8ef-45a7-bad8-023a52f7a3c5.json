@@ -1,6 +1,52 @@
 {
   "politician_id": "99c4edb5-b8ef-45a7-bad8-023a52f7a3c5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "fdab6a5c2e3f93a829ddfa05ea00d4692f0852ef8cf950d9119a0a3df2d53576",
+      "kind": "own-words",
+      "url": "https://pahousegop.com/News/38069/Latest-News/Verobish-Introduces-Bill-Removing-Concealed-Carry-Permit-Requirement-for-Carrying-Firearm-in-Vehicle",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "passage": "“The right to own and bear arms is a fundamental constitutional right,” Verobish said. “Law-abiding citizens should not be required to obtain government permission before exercising that right while on the road.”",
+      "note": "Her statement in a House caucus release announcing her bill to end the concealed carry permit requirement for carrying a firearm in a vehicle.",
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a526734ae2a428da6b4245b15a7faa47abc51c37d65f30c026e0a3759553212b",
+      "kind": "record",
+      "url": "https://pahousegop.com/News/38069/Latest-News/Verobish-Introduces-Bill-Removing-Concealed-Carry-Permit-Requirement-for-Carrying-Firearm-in-Vehicle",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2599-2025",
+      "act": "sponsor",
+      "note": "Release says she introduced House Bill 2599 to remove the requirement that a person first obtain a concealed carry permit before carrying a firearm in a vehicle. Release date is the announcement date; the filing date was not checked on palegis.us.",
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "permitless carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +73,26 @@
       "found": 0,
       "at": "2026-10-28T22:06:04.067Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits",
+        "concealed carry in vehicles",
+        "Second Amendment general statements",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official caucus site pahousegop.com (June 5, 2026 release)",
+        "bearingarms.com commentary (lead only, not saved)",
+        "news search (two searches)",
+        "not reviewed: Ballotpedia, RepVerobish.com, palegis.us HB 2599 page, 2026 ballot status not confirmed on a page"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

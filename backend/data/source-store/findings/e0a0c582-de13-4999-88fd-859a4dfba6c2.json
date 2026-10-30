@@ -392,6 +392,30 @@
       "found": 2,
       "at": "2026-10-28T15:55:41.522Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "carry permits and permitless carry",
+        "red-flag orders",
+        "Second Amendment statements",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed: https://house.texas.gov/members/2065/biography (State Representative, House District 43, 89th Legislature); nothing on the subject",
+        "Texas House member page https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2065; nothing on the subject",
+        "Texas Legislature authored-bills report 89R https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A2065; no firearm/gun/handgun/weapon/carry terms in the list; other sessions not reviewed",
+        "blocked: https://ballotpedia.org/J.M._Lozano (empty response)",
+        "news/web search on name plus gun words; nothing on the subject",
+        "no official campaign site found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

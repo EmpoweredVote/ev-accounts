@@ -51,7 +51,99 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "48e622b2d8a5a26a73a1b13616ac9d991cc373ff27b7866724ecfa99306c8b92",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2025/04/02/colorados-republican-us-house-members-urge-polis-to-veto-bill-requiring-safety-training-for-gun-sales-b67dfebf-f00d-4db3-984b-0ffd25ac61bb/",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "passage": "The Republicans maintain that despite “some amendments to the legislation to appear less restrictive,” the bill is still “one of the most restrictive gun ownership laws in the United States — on par with California and Illinois’ gun laws.”",
+      "note": "Colorado Politics quotes a joint letter to the governor, organized by Rep. Jeff Crank and signed by Gabe Evans and two others. The letter is a group statement, not his words alone. The article gives April 2, 2025 as the day (letter sent 'on Wednesday').",
+      "subjects": [
+        "state gun safety training requirement",
+        "gun registry",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbef65d6a5d7a97e0d140c3fd024de4d6f413eeca9e2bcccdd5b46879ed09a8a",
+      "kind": "own-words",
+      "url": "https://www.coloradopolitics.com/2025/04/02/colorados-republican-us-house-members-urge-polis-to-veto-bill-requiring-safety-training-for-gun-sales-b67dfebf-f00d-4db3-984b-0ffd25ac61bb/",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "passage": "The GOP lawmakers said in a letter to the Democratic governor that Senate Bill 003 “blatantly infringes upon the Second Amendment rights of law-abiding citizens,” while creating a “de facto gun owner registry” maintained by a state agency.",
+      "note": "Same joint letter, as reported by Colorado Politics.",
+      "subjects": [
+        "state gun safety training requirement",
+        "gun registry",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34b18c16e98a60b5ae8685bc534ce2d8b6588d23c48e1535cca5d6c9d8e74577",
+      "kind": "record",
+      "url": "https://www.coloradopolitics.com/2025/04/02/colorados-republican-us-house-members-urge-polis-to-veto-bill-requiring-safety-training-for-gun-sales-b67dfebf-f00d-4db3-984b-0ffd25ac61bb/",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "CO-SB-25-003-2025",
+      "act": "other",
+      "motion": "Signed joint letter urging the governor to veto Colorado SB25-003 (gun safety training for purchases of certain firearms)",
+      "note": "Signed, with three other members of the state's U.S. House delegation, a letter asking the governor to veto the state bill.",
+      "subjects": [
+        "state gun safety training requirement",
+        "gun registry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "state gun safety training requirement for purchases (CO SB25-003)",
+        "concealed carry",
+        "gun registry",
+        "assault weapons"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site gabeevans.house.gov home page and /issues/public-safety (200; nothing on guns found in page text)",
+        "official press release list, search for second amendment (nothing on the subject)",
+        "one news search on name plus Second Amendment",
+        "Colorado Politics article of 2025-04-02 (names him as a signer of the letter)",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia",
+        "not reviewed: ontheissues.org (lead only)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

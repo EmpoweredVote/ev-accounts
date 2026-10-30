@@ -151,6 +151,46 @@
         "fetched_at": "2026-10-29T14:14:50.855Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "78ed05623ca02ae0984715a90aa7601cb5af050b4800628340e79962ec2d733e",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-gun-safety-laws-legislature/",
+      "date": "2023-08-14",
+      "date_precision": "day",
+      "passage": "“We haven’t seen meaningful gun safety legislation until what we passed in the House for the better part of a decade now,” Bradford said.",
+      "note": "Quoted by WHYY from a Villanova University town hall on gun violence prevention held Monday night (article published 2023-08-15).",
+      "subjects": [
+        "gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44299fa5610872fda4515b4e88f08dd9b8f61212dce8b62032a7a9fc7eeb29e5",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-gun-safety-laws-legislature/",
+      "date": "2023-08-14",
+      "date_precision": "day",
+      "passage": "“That reality will weigh heavily on those who sat on their hands,” he said.",
+      "note": "Quoted by WHYY from the same town hall, about House-passed gun bills stalled in the Senate and rising gun deaths.",
+      "subjects": [
+        "gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -206,6 +246,23 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.855Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety legislation",
+        "firearms regulation general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WHYY article on Villanova town hall (via curl)",
+        "web search on name plus gun terms",
+        "not reviewed: pahouse.com member page, campaign site, Ballotpedia, palegis.us sponsorships (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

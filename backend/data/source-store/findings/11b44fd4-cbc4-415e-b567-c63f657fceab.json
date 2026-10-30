@@ -100,6 +100,28 @@
       "found": 3,
       "at": "2026-10-28T15:28:01.855Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "assault-style weapons and magazines",
+        "background checks",
+        "carry permits",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site deloresoates.com home and issues-1 pages (nothing on the subject)",
+        "billsponsor.com page appeared in search; not used",
+        "Ballotpedia page (only a generic note that legislators are scored on Second Amendment votes; nothing about her)",
+        "blocked: https://lis.virginia.gov (JavaScript app; sponsorships not read)",
+        "news search: one search, no statement from her on firearms found. VA House seats are not on the 2026 ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

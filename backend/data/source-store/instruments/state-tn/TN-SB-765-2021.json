@@ -1,0 +1,75 @@
+{
+  "id": "TN-SB-765-2021",
+  "scope": "state:tn",
+  "title": "SB 765 / HB 786 (Public Chapter 108) (112th General Assembly, 2021) — Exception to the handgun-carry offense for persons 21+ (or 18+ veterans/service members) carrying openly or concealed; also firearm theft penalties and sentencing",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB0765&GA=112",
+    "https://publications.tnsosfiles.com/acts/112/pub/pc0108.pdf",
+    "https://capitol.tn.gov/Bills/112/Bill/SB0765.pdf (listed, not opened)"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 1 adds 39-17-1307(g): exception for carrying a handgun openly or concealed: It is an exception to the application of subsection (a) that a person is carrying, whether openly or concealed, a handgun and:\nSecs. 2-5 amend 39-17-1313 vehicle storage so it applies to a person who carries lawfully under 39-17-1307: a person who lawfully carries a handgun pursuant to § 39-17-1307(9) may, unless expressly prohibited by federal law, transport and store a firearm\nSecs. 6-7 amend 39-17-1351(n)(1) and 39-17-1366(e): permit holder must carry permit when carrying where otherwise prohibited: shall display the permit on demand of a law enforcement officer under such circumstances.\nSecs. 8-10 amend 39-14-105 theft grading and penalty for theft of a firearm: Theft of a firearm shall be punished by confinement for not less than one hundred eighty (180) days in addition to any other penalty authorized by law.\nSec. 11 adds 40-35-114(29) enhancement factor: The offense involved the theft of a firearm from a motor vehicle, as defined in § 55-1-103;\nSec. 12 adds 40-35-501(x): release eligibility: there shall be no release eligibility until the person has served eighty-five percent (85%) of the sentence imposed by the court\nSec. 13 new offense for carrying a firearm while convicted of stalking, DUI, adjudicated mental defective, or federally prohibited: A person commits an offense who carries, with the intent to go armed, a firearm and:\nSec. 14 effective date: This act takes effect July 1, 2021, the public welfare requiring it, and applies to criminal offenses committed on or after that date.",
+  "sponsors": [
+    {
+      "name": "Johnson",
+      "role": "co",
+      "version": "filed"
+    },
+    {
+      "name": "Bell; Lundberg; Powers; Bowling; Stevens",
+      "role": "co",
+      "version": "filed"
+    },
+    {
+      "name": "Lamberth",
+      "role": "co",
+      "version": "filed"
+    },
+    {
+      "name": "Gant; Sexton J; Terry; Griffey; Grills; Faison; Russell; Halford; Sherrell; Rudd; Sparks; Howell; Powers; Hall; Eldridge; Cepicky; Todd; Littleton; Lynn; Carr; Campbell S; Doggett; Garrett",
+      "role": "co",
+      "version": "filed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "s.8-12 theft-of-firearm sentence, release eligibility (Q1 kind 2)"
+      ]
+    }
+  ],
+  "higher_law_duty": "Sec. 13 refers to federal law (\"Is otherwise prohibited from possessing a firearm by 18 U.S.C. 922(9) as it existed on January 1, 2021.\"); no duty on local bodies except the preemption clause in Sec. 2.",
+  "votes": [
+    {
+      "date": "2021-03-18",
+      "body": "TN Senate",
+      "motion": "Passed as amended (SB 765)",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 9,
+      "body_size": 33,
+      "note": "names from: reader summary; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2021-03-29",
+      "body": "TN House",
+      "motion": "Passed (HB 786 substituted for SB 765, conformed)",
+      "kind": "roll-call",
+      "yes": 64,
+      "no": 29,
+      "body_size": 99,
+      "note": "names from: reader summary; member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "B (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:15:37.091Z",
+    "method": "webfetch"
+  }
+}

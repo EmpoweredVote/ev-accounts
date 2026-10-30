@@ -33,5 +33,21 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "2026 ballot status"
+      ],
+      "places": [
+        "status: withdrew 2025-08-21 (announced he would not seek re-election; retiring, not on the 2026 ballot). Page: https://en.wikipedia.org/wiki/2026_Texas_House_of_Representatives_election says: \"District 21 : Dade Phelan is retiring.\" and \"Incumbent Republican former Speaker of the House Dade Phelan is retiring.\"",
+        "On the Record (0 meetings)",
+        "https://ballotpedia.org/Dade_Phelan (fetch returned empty page)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

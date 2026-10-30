@@ -172,6 +172,67 @@
         "fetched_at": "2026-10-22T21:52:03.096Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ce9eb4c47f15781135b2e4e72257dd5b31f039d1f31f10730961e79959fc4048",
+      "kind": "own-words",
+      "url": "https://lynch.house.gov/2013/3/mass-delegation-unanimous-support-universal-gun-background-checks",
+      "date": "2013-03-28",
+      "date_precision": "day",
+      "passage": "I am proud to stand with my Massachusetts colleagues in support of universal background checks and I applaud Mayor Menino's leadership on this issue.",
+      "note": "Statement in a Massachusetts delegation release on universal background checks.",
+      "subjects": [
+        "universal background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a88ff25aaf7adfcc41e729c039b19507252b21863ccd2dd071c7ccfaa80031",
+      "kind": "own-words",
+      "url": "https://www.stephenflynch.com/common-sense-gun-laws",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Stephen supports universal background checks to cover all firearms purchases",
+      "note": "Campaign issue page (undated; latest dated item on the site is 2020-09-02). Page also says he co-sponsored the Extreme Risk Protection Order Act.",
+      "subjects": [
+        "universal background checks",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a1ba25b8fb2f9b8215ca009deaea9f5678f06dc1d69cdeafc6ac8d5ee093a625",
+      "kind": "own-words",
+      "url": "https://www.stephenflynch.com/common-sense-gun-laws",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Stephen has co-sponsored the Extreme Risk Protection Order Act.",
+      "note": "Campaign issue page statement about his co-sponsorship of the extreme risk (red-flag) order bill.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -225,6 +286,27 @@
       "found": 2,
       "at": "2026-10-27T19:58:34.567Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "universal background checks",
+        "assault weapons ban",
+        "extreme risk protection orders",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site stephenflynch.com/common-sense-gun-laws (issue page, undated; fetch tool returned extracts, not full-page text)",
+        "official site lynch.house.gov (2013 release)",
+        "blocked: https://www.congress.gov (not attempted after Cloudflare block on another member page; sponsorships not reviewed)",
+        "one news search on name plus subject words (leads only)",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -88,6 +88,110 @@
         "fetched_at": "2026-10-29T14:14:50.858Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "825a3b3c3698b71b3e14b2f67e733081d8aedbf40ac2819e8df1bb311374776d",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=125326",
+      "date": "2022-07-06",
+      "date_precision": "day",
+      "passage": "“I introduced legislation that would raise the minimum age to purchase and possess a firearm from 18 to 21 in Pennsylvania,” Parker said.",
+      "note": "From her House press release announcing two bills on gun violence.",
+      "subjects": [
+        "minimum age to buy guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd655371b58b5e24d2974a0be18a060bf4b0070660500df584f88d3629daa1a2",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=125326",
+      "date": "2022-07-06",
+      "date_precision": "day",
+      "passage": "“I am introducing this first bill in order to address current shortcomings and to improve our background check process so that we are doing all we can to protect our residents,” Parker said.",
+      "note": "From the same release, on her bill to improve the Pennsylvania Instant Check System.",
+      "subjects": [
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82f7337be78f323fb408bddea57487805ca2cbf301a7e0ccf36f6368e1923c0b",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=125326",
+      "date": "2022-07-06",
+      "date_precision": "day",
+      "passage": "My goal is not to remove firearms from the hands of legal gun owners, but to reduce rates of firearm violence and self-harm among our young people.",
+      "note": "From the same release, on the minimum-age bill, which exempts people who already possessed a firearm.",
+      "subjects": [
+        "minimum age to buy guns",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e4f98613c5d876e912d3d7e06093456194a39dcbae2de114b2064d0f033179e0",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2021/hb2435",
+      "date": "2022-03-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2435-2021",
+      "act": "sponsor",
+      "note": "Prime sponsor of HB 2435, which further provides for locking devices for firearms. Date is referral to House Judiciary.",
+      "subjects": [
+        "safe storage",
+        "locking devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db2c017d0dc2dfbba581dd1e91bb7f0fbe5063c621a8375c82306b1b99d4b765",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb338",
+      "date": "2023-03-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-338-2023",
+      "act": "sponsor",
+      "note": "Cosponsor (prime sponsor is another member) of HB 338, which provides for reporting the theft or loss of a firearm and imposes penalties. Date is referral to Judiciary.",
+      "subjects": [
+        "lost or stolen firearm reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -142,6 +246,27 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.858Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy guns",
+        "background check system",
+        "safe storage and locking devices",
+        "lost or stolen firearm reporting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "pahouse.com press release 125326 (via curl)",
+        "palegis.us HB 338 (2023)",
+        "palegis.us HB 2435 (2021-22)",
+        "blocked: legiplex.com listings (not fetched, search lead only)",
+        "not reviewed: campaign site, Ballotpedia, full palegis.us sponsorship list (budget)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

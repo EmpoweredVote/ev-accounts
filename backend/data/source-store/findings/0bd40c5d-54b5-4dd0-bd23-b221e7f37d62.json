@@ -22,6 +22,71 @@
         "fetched_at": "2026-10-28T22:45:58.716Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1c08c9ee489a02b263380360150a99b90651aaa355e330ea0ebd92cbfd6be408",
+      "kind": "record",
+      "url": "https://buckscountybeacon.com/?p=37946",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-1099-2025",
+      "act": "yea",
+      "note": "Bucks County Beacon article (published 2025-10-03) lists him among Bucks County representatives who voted yea on HB 1099, which bans ghost guns (homemade, unserialized or undetectable firearms); the bill failed 101-102. Vote date is not given in the page text; the official roll call was not checked.",
+      "subjects": [
+        "ghost guns",
+        "unserialized firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d579ddc80588543b93ea94a045cdf2b7948c02d8e10c4b05a7d175e7563871a4",
+      "kind": "record",
+      "url": "https://buckscountybeacon.com/?p=37946",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-1859-2025",
+      "act": "yea",
+      "note": "Same article lists him among those voting yea on HB 1859, an Extreme Risk Law letting police and family members seek removal of firearms from people in crisis; the bill failed 101-102. Official roll call not checked.",
+      "subjects": [
+        "red-flag orders",
+        "extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f54f9229f824f24ed2c435f29cd39a629835416931305329b5ca35a45f8e20a5",
+      "kind": "record",
+      "url": "https://buckscountybeacon.com/?p=37946",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-1593-2025",
+      "act": "yea",
+      "note": "Same article lists him among those voting yea on HB 1593, which requires background checks on sales or transfers of all firearms regardless of barrel length; the bill passed 104-99. Official roll call not checked.",
+      "subjects": [
+        "background checks on all firearm sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -61,6 +126,27 @@
       "found": 1,
       "at": "2026-10-28T22:45:58.716Z",
       "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "red-flag orders",
+        "background checks on all firearm sales",
+        "gun safety bills",
+        "firearm regulation general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site pahouse.com/Prokopiak (nothing on the subject in the page text returned)",
+        "news search (one search)",
+        "Bucks County Beacon vote report (news article, not an official roll call)",
+        "not reviewed: Ballotpedia, campaign site, palegis.us bill pages and official roll calls (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -80,7 +80,50 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "91ae63a64ca632466e8d140f972197765550389c332c1e4492e4acc4d0e1e1ec",
+      "kind": "own-words",
+      "url": "https://floridianpress.com/2023/04/donalds-reaffirms-his-position-on-red-flag-laws-in-cnn-interview/",
+      "date": "2023-04-14",
+      "date_precision": "day",
+      "passage": "That’s always been my disagreement with red flag laws. It’s my disagreement today, and for the children who lost their lives in that [school], that is horrific. But what you’re dealing with there is somebody who knowingly went about breaking the law. And so, the law is designed to protect us all if somebody, an assailant chooses to break the law. That’s what the criminal proceeding is for. The Constitution is to protect the law to protect the rights of all law-abiding citizens.",
+      "note": "Quoted by The Floridian from his CNN interview (date is the article date) after the Nashville school shooting; he says he disagrees with red flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "Second Amendment",
+        "gun control",
+        "firearm regulation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://donalds.house.gov/search?q=second+amendment",
+        "Ballotpedia (fetch returned empty page)",
+        "congress.gov sponsorships: not reviewed",
+        "web search: Byron Donalds Second Amendment guns statement",
+        "https://floridianpress.com/2023/04/donalds-reaffirms-his-position-on-red-flag-laws-in-cnn-interview/",
+        "https://bearingarms.com/tomknighton/2025/06/18/byron-donalds-blasts-david-jolly-embrace-gun-control-n1228973 (only a campaign strategist's statement, not saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

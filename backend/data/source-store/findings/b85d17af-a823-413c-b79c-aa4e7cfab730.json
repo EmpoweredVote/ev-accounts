@@ -25,6 +25,27 @@
       "found": 0,
       "at": "2026-10-28T16:26:15.081Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "assault weapons",
+        "background checks",
+        "gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia https://en.wikipedia.org/wiki/R._Kirk_McPike (confirms Delegate HD5, sworn in 2026-02-18; nothing on the subject)",
+        "not reviewed: LIS bill pages (page loads by script, no patron data readable)",
+        "web search on name plus gun words (nothing on the subject)",
+        "Alexandria council records: not reviewed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

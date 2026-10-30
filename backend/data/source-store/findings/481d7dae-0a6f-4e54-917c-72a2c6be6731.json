@@ -43,6 +43,48 @@
         "fetched_at": "2026-10-28T15:55:41.529Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "89864de4bbf3e8a6708bea0e197234af17c830ecf148c0cc3f320ff0fea29aeb",
+      "kind": "own-words",
+      "url": "https://www.ksat.com/news/local/2022/05/25/uvalde-mayor-says-focus-should-be-on-mental-health-not-gun-control-in-wake-of-school-shooting",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "“Everybody comes in and talks about immediately, ‘We want to do gun control. We want to sanction the gun lobbyist. We want to sanction this and want to sanction that,’” McLaughlin said. “But you know what? Why don’t you politicians get off your butts and let’s talk about mental health and let’s do something.”",
+      "note": "Quoted by KSAT from his Good Morning America interview, when he was mayor of Uvalde, days after the Robb Elementary shooting. Article date used; interview date is as reported.",
+      "subjects": [
+        "gun control",
+        "mental health versus gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5ff44423829e463285392d09aef926fad184da5fc0fb80c2736b59d95482682",
+      "kind": "own-words",
+      "url": "https://www.ksat.com/news/local/2022/05/25/uvalde-mayor-says-focus-should-be-on-mental-health-not-gun-control-in-wake-of-school-shooting",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "McLaughlin said he wasn’t against expanded background checks but wasn’t for adding any gun restrictions, saying “if a bad guy was going to get a gun, he’s going to get a gun.”",
+      "note": "KSAT's sentence summarising his remarks, with a direct quote inside it; only the part in quotation marks is his exact wording. Same GMA interview, when he was Uvalde mayor.",
+      "subjects": [
+        "background checks",
+        "gun restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -84,6 +126,29 @@
       "found": 1,
       "at": "2026-10-28T15:55:41.529Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun control",
+        "background checks",
+        "Second Amendment",
+        "gun sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branch 2026 candidate page (confirms 2026 general race for HD 80; nothing on guns: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-80/candidates/don-mclaughlin-jr)",
+        "KSAT 2023-07-26 announcement article (nothing from him on the subject)",
+        "KSAT 2022-05-25 article (used)",
+        "blocked: https://www.kvue.com/article/news/local/texas/uvalde-mayor-running-texas-house-election-mclaughlin-robb-school-shooting/273-102b3fdd-a221-49c9-a6c9-68851cccc362 (403)",
+        "web search x2: name plus gun bill / interviews",
+        "not reviewed: Texas Tribune 2025-03-10 profile, Texas Legislature Online authored-bill list, Ballotpedia (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

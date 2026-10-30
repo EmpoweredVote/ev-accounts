@@ -134,6 +134,26 @@
         "fetched_at": "2026-10-28T15:55:41.521Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "07a5033d9c4a84af197afe30fa3988d84e890e7c545901307eb7e762f66afc51",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/index.php/members/4130/biography",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Charles is staunchly pro-life, pro-God, and pro-Second Amendment.",
+      "note": "Official Texas House biography page of Rep. Cunningham describes him as pro-Second Amendment; page is undated (text mentions the 89th Legislative Session, 2025).",
+      "subjects": [
+        "Second Amendment, general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -174,6 +194,29 @@
       "found": 3,
       "at": "2026-10-28T15:55:41.521Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "short-barrel firearms",
+        "carry permits"
+      ],
+      "places": [
+        "scope: https://branch.vote/races/2026-texas-primary-election-tx-state-state-representative-tx-state-house-127-r (page says he ran unopposed and will move on to the general election)",
+        "On the Record (0 appearances)",
+        "house.texas.gov biography (one statement saved)",
+        "capitol.texas.gov HB 2674 (89R) checked: it is about home school programs, not firearms, so not saved",
+        "blocked: https://justfacts.votesmart.org/public-statement/1297897/issue-position-defending-the-2nd-amendment",
+        "blocked: https://app.legiplex.com (403 on Venton Jones page; Cunningham pages not fetched)",
+        "not reviewed: Ballotpedia, campaign site (not found by search)",
+        "news searches x1 (nothing further on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

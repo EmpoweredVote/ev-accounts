@@ -88,6 +88,29 @@
         "fetched_at": "2026-10-28T15:26:00.846Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "68582a8ad6ee61de01a55d9def6258f46d8afa9fa1afb629510e5cec81955147",
+      "kind": "own-words",
+      "url": "https://www.sacurrent.com/news/texas-democrats-urge-gov-abbott-to-call-emergency-session-on-gun-violence-21917662/",
+      "date": "2019-09-04",
+      "date_precision": "day",
+      "passage": "“When someone says they’re going to hurt people based on the color of their skin something needs to be done,” Rep. Trey Martinez Fischer said during the San Antonio news conference.",
+      "note": "Quoted by San Antonio Current at a news conference where 63 House caucus members asked the governor to call an emergency session on gun violence. The caucus plan listed in the article covers risk protective orders, closing background check loopholes, banning high-capacity magazine sales, limiting open carry of certain semi-automatic long guns, and a stolen-gun reporting requirement.",
+      "subjects": [
+        "call for special session on gun violence",
+        "red-flag orders",
+        "background checks",
+        "high-capacity magazine ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -115,6 +138,28 @@
       "found": 3,
       "at": "2026-10-28T15:26:00.846Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "background checks",
+        "red-flag orders",
+        "high-capacity magazines",
+        "open carry",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun terms (one search)",
+        "San Antonio Current 2019-09-04 article",
+        "Texas legislature bill pages: not reviewed (capitol.texas.gov links from search did not load; no sponsorship confirmed)",
+        "official site, Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

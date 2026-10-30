@@ -82,5 +82,28 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun bill sponsorship",
+        "red flag orders",
+        "concealed carry reciprocity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press kit luna.house.gov/press-kit (fetched; identifies her as U.S. Representative; only a caucus membership line on the subject, no own-words passage saved)",
+        "official site luna.house.gov/issues/second-amendment (404)",
+        "campaign site voteannapaulina.com endorsement post (page did not yield readable text)",
+        "one news search on name plus Second Amendment (leads only: H.R. 293 listing on a third-party tracker)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-resolution/293 (fetch was denied by the permission system; not retried)",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

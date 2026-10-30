@@ -216,6 +216,70 @@
         "fetched_at": "2026-10-22T21:57:38.663Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e76b32c68caa10bfb4558d9f4454270cbd449c72810ce9656c8dc25352f70824",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=585",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "“The bill we voted on today is an attack on our Second Amendment rights; it targets law-abiding citizens and takes away their right to due process.",
+      "note": "Press release quote after his vote on the June 2022 gun bill (red flag funding); he also says he will fight to protect Second Amendment rights.",
+      "subjects": [
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c6ded354efa69dd4c1d81f13e8dac531a496823cfcb0a588a8bff386ede14a3",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=309",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "We all believe that background checks are important, that we need to keep firearms out of the hands of criminals and people who pose a threat to their communities.",
+      "note": "Press release on his votes against H.R. 8 and H.R. 1446; the release lists objections to extra checks on private transfers and to the longer transfer window.",
+      "subjects": [
+        "background checks on gun sales",
+        "background checks on private sales",
+        "waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22890a3846f0d43d6085eb29064f7d2148bb52b85a41621a904289cb48cae299",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=225",
+      "date": "2020-05-07",
+      "date_precision": "day",
+      "passage": "With H.R. 5717, the Gun Violence Prevention and Community Safety Act, Democrats want to leave Americans defenseless at our most vulnerable moment.",
+      "note": "His op-ed opposing H.R. 5717, which he says dictates gun-ownership and storage rules; also says the Second Amendment's “shall not be infringed” has no exceptions.",
+      "subjects": [
+        "Second Amendment",
+        "safe storage rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -248,6 +312,27 @@
       "found": 6,
       "at": "2026-10-22T21:57:38.663Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "red-flag orders",
+        "gun registry",
+        "gun transfers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (hern.house.gov)",
+        "web search (official site)",
+        "not reviewed: ballotpedia",
+        "not reviewed: congress.gov sponsorships"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

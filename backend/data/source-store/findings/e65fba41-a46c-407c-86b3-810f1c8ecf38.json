@@ -171,6 +171,31 @@
       "found": 4,
       "at": "2026-10-28T17:58:27.789Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault weapons",
+        "background checks",
+        "extreme risk orders",
+        "gun storage",
+        "carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://giffords.org/candidates/kelly-convirs-fowler/ (identifies her as State House Virginia HD-96, incumbent; third-party page, not her own words)",
+        "blocked: https://elections.bradyunited.org/candidates/kelly-convirs-fowler",
+        "blocked: https://ballotpedia.org/Kelly_Convirs-Fowler",
+        "blocked: https://www.vpap.org/legislators/289417-kelly-fowler/",
+        "not reviewed: https://lis.virginia.gov/member-detail/H0394/sponsored-bills (page needs JavaScript, no text returned)",
+        "official/campaign site: not reached",
+        "nothing on the subject in own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

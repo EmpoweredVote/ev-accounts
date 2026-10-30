@@ -1,6 +1,32 @@
 {
   "politician_id": "cd200e06-d726-4a12-b2e8-0295700d185e",
-  "findings": [],
+  "findings": [
+    {
+      "id": "f216aecd1f026130f873bb45b1c2067fb2994e2fabdcf7edfe3367601e3d9eea",
+      "kind": "record",
+      "url": "https://www.law.georgetown.edu/icap/wp-content/uploads/sites/32/2020/01/Tazewell-County.pdf",
+      "date": "2019-12-03",
+      "date_precision": "day",
+      "passage": "NOW THEREFORE, be it RESOLVED by the Tazewell County Board of Supervisors that the Board expresses its intent to vigorously uphold the Second Amendment rights of the law-abiding citizens of Tazewell County, Virginia.",
+      "act": "yea",
+      "motion": "Tazewell County Resolution 19-008, promoting the order of militia pursuant to the Second Amendment",
+      "local_record": true,
+      "note": "He was Chairman of the Board of Supervisors. The recorded vote lists him among the ayes (5 ayes, no nays) and he signed as Chairman. The resolution also states the Board's intent to fund concealed weapons training, to stop funding enforcement of laws it sees as infringing the right to keep and bear arms, and to oppose unconstitutional restrictions through legal means. Read from the scanned PDF.",
+      "subjects": [
+        "Second Amendment sanctuary resolution",
+        "general statement on gun rights",
+        "concealed carry training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +53,31 @@
       "found": 0,
       "at": "2026-10-28T16:31:20.090Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans and large-capacity magazines",
+        "background checks",
+        "ghost guns",
+        "carry permits",
+        "general gun-rights statements",
+        "county Second Amendment resolutions"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "State Senate member listing via search (apps.senate.virginia.gov member page S112 lists T. Travis Hackworth, District 5; Senate seat was not on the 2026 ballot); positive control: Tazewell County resolution page naming him as Chair",
+        "https://www.law.georgetown.edu/icap/wp-content/uploads/sites/32/2020/01/Tazewell-County.pdf (record found)",
+        "blocked: https://ballotpedia.org/Travis_Hackworth (empty on fetch)",
+        "blocked: https://virginiamercury.com/briefs/republicans-easily-hold-chafins-seat-in-southwest-virginia-northam-to-sign-law-ending-death-penalty-a-wallet-lost-for-70-years-in-poquoson-returned-and-more-headlines/ (403)",
+        "not reviewed: https://lis.virginia.gov (bill pages load by script; no state sponsorships found in search)",
+        "not reviewed: https://origin.vpap.org/legislators/370308-travis-hackworth/list-votes/did_not_vote/?page=4 (a search summary says Not Voting on HB201 on 2026-02-20; not verified)",
+        "web searches on name plus guns: no own statements from his Senate years"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

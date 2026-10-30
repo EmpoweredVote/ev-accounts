@@ -80,7 +80,112 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "e436e972772d129c69eb8744add561725c98de9fc383aedfe06c20eb89f84cf0",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/1/fischbach-vows-protect-2nd-amendment-congress",
+      "date": "2021-01",
+      "date_precision": "month",
+      "passage": "It is enshrined in the United States Constitution that Americans shall have the right to bear arms, but we’ve seen growing attempts from radical Democrats to infringe upon the 2nd Amendment. This is against the very foundation of our country, and I will not allow the far left to encroach on the God-given rights of law-abiding gun owners.",
+      "note": "Statement ahead of her swearing-in, vowing to protect the 2nd Amendment.",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc977f9a584dd53b27aad6096a2fdb3bcc2c935147e84ce71a80b0ae697cd121",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/3/rep-fischbach-opposes-unconstitutional-gun-restrictions",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "Universal background checks criminalize the private transfer of firearms, making it nearly impossible for law-abiding gun owners to acquire, or even borrow or lend, firearms.",
+      "note": "Statement on House passage of H.R. 8 and H.R. 1446 (background check bills), opposing them and describing their effect on private transfers.",
+      "subjects": [
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "086fccad7dc2bdcbdc1f388c1374a7060c5d4a7a1b6335992ccb93cd068d76a9",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/3/rep-fischbach-opposes-unconstitutional-gun-restrictions",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "These bills do not stop criminals from getting guns, but they do undermine the ability of my constituents – many of whom are hunters and sportsmen – to exercise their Second Amendment rights.",
+      "note": "Same statement: says the background check bills do not stop criminals and undermine constituents' Second Amendment rights.",
+      "subjects": [
+        "background checks on private sales",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8eda459cda2ab9a1fba97189097f1dea295757ef5fede307852d8bcdad1bf477",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2022/7/rep-fischbach-defends-2nd-amendment-rights",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "Democrats are no longer disguising their radical agenda to ban guns and do away with the Constitution's Second Amendment.",
+      "note": "Floor remarks quoted on her site about a gun bill in July 2022 (the page names no bill number); says she sees the bill as a step toward banning guns.",
+      "subjects": [
+        "gun bans",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statements",
+        "universal background checks",
+        "gun bans",
+        "concealed carry reciprocity",
+        "suppressors",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (3 pages)",
+        "web search for sponsorships: only third-party tracker listings with no role shown, so none saved",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

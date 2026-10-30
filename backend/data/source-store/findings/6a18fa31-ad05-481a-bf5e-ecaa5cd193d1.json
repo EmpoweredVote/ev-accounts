@@ -101,6 +101,96 @@
         "fetched_at": "2026-10-29T23:16:16.287Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "c8eec1d18e4b328ab97b09e02eacb8847eb7b61947e54662eeb72afd04c236fb",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "It is critical that we act to reduce gun violence to keep our families safe. That's why I strongly support expanded background checks, waiting periods, red flag laws and a ban on high-capacity magazines that allow for the massacres we've seen in Uvalde, El Paso and Buffalo. But there are tens of millions of assault rifles already in circulation across America, many of them are used by responsible gun owners for hunting in South Texas.  And a ban on some of those models will do nothing to reduce overall risks. Our focus should be on keeping guns out of the hands of people who are a danger to themselves or others.",
+      "note": "Statement issued with his vote on H.R. 1808 (2022 assault weapons ban bill). Names the measures he supports and gives his reason on the assault rifle ban.",
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting periods",
+        "red-flag orders",
+        "high-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d1418933f5d9550d7d0eeb72bade080f4216d2fc932ae9700acc2a51d99e7a2",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "The Bipartisan Safer Communities Act was a critical first step. Now the Senate needs to stop sitting on its hands and take up House-passed legislation to ban high-capacity magazines, close the gun show loophole, and enhance background checks.",
+      "note": "Same release; calls on the Senate to act on House-passed magazine, gun show loophole and background check bills.",
+      "subjects": [
+        "high-capacity magazines",
+        "gun show loophole",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d17f8b53fd204c98a25e5fdb7ce4d79d499401f3a87a01f68973cf611208b99",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-bipartisan-safer-communities-act-keep-our-children",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "Time and time again, guns have fallen into the wrong hands and have cost countless innocent lives\", said Congressman Gonzalez. \"I am proud to vote for this commonsense measure that will keep guns out of dangerous hands, protect our children, and bolster mental health programs. This bill does not punish responsible gun ownership.",
+      "note": "Statement on his vote for the Bipartisan Safer Communities Act. The release also lists the bill's contents: state crisis intervention order funding, boyfriend loophole closure, straw purchase penalties, and enhanced background checks for buyers under 21.",
+      "subjects": [
+        "Bipartisan Safer Communities Act",
+        "background checks for buyers under 21",
+        "red-flag orders",
+        "straw purchasing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb73966ed59b823baac0c322078fce01e4b1856fdee808d0eb0f05a54c7d130b",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-statement-members-carrying-firearms-capitol-grounds",
+      "date": "2020-12-17",
+      "date_precision": "day",
+      "passage": "I trust and respect their decisions allowing Members of Congress who choose to carry firearms on the Capitol Grounds. There is a clear history of Members of Congress being targeted with violence. And if we want to carry for an added layer of protection, we should be able to do so.",
+      "note": "Statement on Members of Congress carrying firearms on Capitol grounds.",
+      "subjects": [
+        "carrying firearms on Capitol grounds",
+        "carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -155,6 +245,29 @@
       "found": 0,
       "at": "2026-10-27T19:58:25.941Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting periods",
+        "red-flag orders",
+        "high-capacity magazines",
+        "gun show loophole",
+        "carrying firearms on Capitol grounds"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (gonzalez.house.gov), three releases fetched; they name him as Congressman Vicente Gonzalez (TX-15 at the time)",
+        "one news search on name plus gun subject words (results mixed with a different member with a similar surname; not used)",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

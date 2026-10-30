@@ -68,6 +68,50 @@
         "fetched_at": "2026-10-28T15:14:52.693Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9d20371bce06c88b8f689df53c4b8d84eee0b26f0f1807b3baec21264e43811c",
+      "kind": "own-words",
+      "url": "https://www.politifact.com/factchecks/2020/dec/10/facebook-posts/comments-about-texas-castle-doctrine-law-were-sati",
+      "date": "2020-11-20",
+      "date_precision": "day",
+      "passage": "Her tweet said the bill “does not repeal the Castle Doctrine, and it does not restrict homeowners from using firearms in self-defense as applicable to current Texas stand your ground laws.”",
+      "note": "Her tweet about HB 196 as quoted by PolitiFact (published 2020-12-10); the tweet is dated Nov. 20 per the article. Concerns use of deadly force in self-defense, adjacent to firearms law.",
+      "subjects": [
+        "deadly force in defense of property",
+        "castle doctrine",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "342b34830ef9adca903a70c77f324f08f6ef3666c92327605fbf05494155fd24",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB196",
+      "date": "2020-11-09",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-196-2021",
+      "act": "author",
+      "note": "HB 196, relating to the use of deadly force in defense of a person or property; she is the author. Filed 11/09/2020.",
+      "subjects": [
+        "deadly force in defense of property",
+        "castle doctrine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -96,6 +140,26 @@
       "found": 3,
       "at": "2026-10-28T15:14:52.693Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "deadly force / castle doctrine",
+        "gun sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branch (2026 ballot confirmed: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-105/candidates/terry-meza)",
+        "Texas Legislature Online HB 196 (87R) bill history",
+        "PolitiFact fact-check Dec 2020",
+        "web search: name plus firearms",
+        "not reviewed: official house.texas.gov page and Ballotpedia (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

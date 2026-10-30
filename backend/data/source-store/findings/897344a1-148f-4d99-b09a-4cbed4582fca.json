@@ -87,6 +87,50 @@
         "fetched_at": "2026-10-29T14:14:50.861Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f22e56f971bb5849b042ee9ff7873ab91098de0aa4cc4a4e4906d1a216a653ea",
+      "kind": "own-words",
+      "url": "https://www.steeleforpa.com/platform",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The right to own firearms is protected, and with that right comes responsibility. Law-abiding gun owners and hunters are an important part of our outdoor heritage and play a key role in wildlife conservation. As a representative, I will support responsible gun ownership and policies that promote public safety, including background checks and reasonable waiting periods.",
+      "note": "Campaign platform text under Gun Ownership; page carries no date.",
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "waiting periods",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a041e5c3ed79f2a09e9ff2ea9f395542fd426b9b33483da61749111dbd6eff7f",
+      "kind": "own-words",
+      "url": "https://www.lpallegheny.org/post/mandy-steele-s-gun-control-distraction-the-real-culprits-behind-chief-mcintyre-s-murder",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "A no vote is you knowingly sending our police out there to face down machine guns.",
+      "note": "Closing line of her House floor speech on 1 October 2025 as quoted by a critic's blog (LP Allegheny). The speech cited a police chief's killing with a pistol altered to fire automatically (a Glock switch). The post says the bill was rejected 101-102. Original transcript not reached.",
+      "subjects": [
+        "converted automatic pistols (Glock switches)",
+        "gun bill floor debate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -140,6 +184,31 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.861Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "background checks",
+        "waiting periods",
+        "converted automatic pistols (Glock switches)",
+        "3D-printed firearms",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.steeleforpa.com/platform",
+        "https://www.lpallegheny.org/post/mandy-steele-s-gun-control-distraction-the-real-culprits-behind-chief-mcintyre-s-murder (a critic's blog post that quotes her floor speech)",
+        "https://www.palegis.us/legislation/bills/2025/hb1324 (names her as a cosponsor; but the fetch tool's two summaries disagreed on the bill's subject, one saying bullying, so not recorded as a finding)",
+        "official site search https://www.pahouse.com/Steele/News?q=gun (nothing returned)",
+        "Ballotpedia: not reviewed",
+        "branch.vote candidate page: not reviewed",
+        "web search (1)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

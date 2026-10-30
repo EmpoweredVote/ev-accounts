@@ -218,6 +218,28 @@
         "fetched_at": "2026-10-28T17:58:27.788Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "45912080a5b21b9836c9453bcafaa89891b79ed058890b62c2cadedb7fd06b90",
+      "kind": "record",
+      "url": "https://betsycarr.org/news/2016/4/1/house-passes-delegate-carrs-bill-on-celebratory-gunfire",
+      "date": "2014-03",
+      "date_precision": "month",
+      "instrument_id": "VA-HB-810-2014",
+      "act": "sponsor",
+      "note": "Report on her own site that she sponsored HB 810, 'Brendon's Law': it makes celebratory gunfire within 2 miles of an occupied building a Class 6 felony if it causes serious bodily injury to a bystander. The House passed it unanimously after a subcommittee cut it back to the felony provision. Source is a news staff report, not her own words.",
+      "subjects": [
+        "celebratory gunfire",
+        "criminal penalty for reckless gun discharge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -270,6 +292,28 @@
       "found": 6,
       "at": "2026-10-28T17:58:27.788Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "celebratory gunfire",
+        "large-capacity magazines",
+        "guns near schools and libraries",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://betsycarr.org/news/2016/4/1/house-passes-delegate-carrs-bill-on-celebratory-gunfire (her own site, republishing a 2014 Richmond Times-Dispatch staff report; names her as Del. Betsy B. Carr, D-Richmond)",
+        "https://giffords.org/candidates/betsy-carr: not fetched",
+        "not reviewed: Virginia LIS sponsor list (JavaScript app)",
+        "Ballotpedia: not reached",
+        "nothing else found in own words"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -106,6 +106,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
 - **Scope:** every topic.
 
+### Own words that back your own jurisdiction's current law
+- **Ruling:** own words that back the person's own jurisdiction's current law on the topic place them on the rung of
+  the furthest act that law states, read from the law in force at the statement's date. Describing the law, or citing
+  it only to oppose a new bill, does not count. Where the law in force states no rung act, or states acts from both
+  sides of the middle, the record stays `direction-only` / `adjacent-chairs`.
+- **Date and source:** Stage 2 Q2, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage2/drafts.md`
+  §7); the same reading as voting-rights W3-R8 (Stage 5).
+- **Scope:** every topic.
+
 ### Exposure
 - **Ruling:** an instrument the live ladder or its annex names is exposed. Its items stay in the test set and are
   scored apart from T1 and T3.
@@ -124,10 +133,13 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 ### Census — what one record is
 - **Ruling:** one record per instrument per chamber: its final vote (final passage, concurrence or conference
-  report; where a veto was overridden, the override vote). A recorded floor-amendment vote that is itself a provision
+  report; where a veto was overridden, the override vote; where a veto override failed, the chamber's last passage or
+  concurrence vote). A recorded floor-amendment vote that is itself a provision
   of the topic is its own record. Procedural votes and earlier readings do not count.
 - **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #26, a law with nine roll calls;
   `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
+  Failed override: J6, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage1/rulings.md`; VA SB 2
+  2024 Senate).
 - **Scope:** every census.
 
 ### Census — private funding of election offices
@@ -141,6 +153,12 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   read. A title or summary is a lead, not a record.
 - **Date and source:** 2026-10-21, Chris Andrews, from the KY HB 574 HFA 3 correction
   (`.planning/research/s3-prep-voting-rights/stage0/census.md`; `.planning/research/s3-prep-voting-rights/stage4/README.md`).
+- **Scope:** every census.
+
+### Census — a law's own penalty is not a second subject
+- **Ruling:** a penalty for breaking the bill's own rule is part of that rule and is not a second subject. A separate
+  sentence change for another crime makes the bill multi-subject while `judicial-criminal-justice` is served.
+- **Date and source:** census Q1, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage0/census.md`).
 - **Scope:** every census.
 
 ### Stage 1 sampling
@@ -351,6 +369,25 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Scope:** the Season 3 revision 5 of `voting-rights` only (CA_0334; the text is unchanged, so no new revision).
 - **Contrast:** the codebook rule that the newest evidence governs ("superseded-by-later") still applies where a later
   record states a different rule; H-P1 reads a silent record as not contradicting a stated escape.
+
+### gun-policy — Q5 (a federal bar on state carry permits)
+- **Reading:** a federal bill that bars states from requiring a carry permit is on-question and sits on rung 5: it
+  states the carry rule, not only which level decides.
+- **Date and source:** Q5, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage2/drafts.md` §7);
+  written into the codebook "Clarified 2026-10-30" header line and the Season 3 annex
+  (`docs/codebook/annex/season3/gun-policy.md`).
+- **Scope:** the Season 3 revision 4 of `gun-policy` only (CA_0338).
+- **Contrast:** codebook V2 / H12: a law that only decides which level may act is `adjacent`.
+
+### gun-policy — J7, D4 (single-subject scope)
+- **Reading:** a self-defense part (no duty to retreat, a justifiable-homicide line) is not `judicial-criminal-justice`
+  evidence; a background-check notice to immigration enforcement is not `deportation` evidence. Neither makes a gun
+  law multi-subject.
+- **Date and source:** J7, 2026-10-29 (`.planning/research/s3-prep-gun-policy/stage1/rulings.md`); D4, 2026-10-30
+  (`.planning/research/s3-prep-gun-policy/stage3/disputes.md`); Chris Andrews. Written into the codebook "Clarified
+  2026-10-30" header line and the Season 3 annex.
+- **Scope:** the Season 3 revision 4 of `gun-policy` only (CA_0338).
+- **Contrast:** the strict single-subject test (codebook V4.1).
 
 ## How to add a ruling
 

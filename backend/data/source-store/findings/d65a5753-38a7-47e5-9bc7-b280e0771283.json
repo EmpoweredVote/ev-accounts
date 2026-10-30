@@ -212,6 +212,30 @@
       "found": 2,
       "at": "2026-10-28T22:51:16.455Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "preemption of local gun rules",
+        "gun rights and Second Amendment statements",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Official site https://staterepgaryday.com/about (confirms Gary Day, 187th District): says he is a member of Ontelaunee Rod and Gun Club; membership only, not a policy statement",
+        "Third-party bill list https://foac-pac.org/PA-Legislator-Details/294 lists firearm bills (HB357, HB1066, HB1303) under his name, but no session or date per bill; the official page https://www.palegis.us/legislation/bills/2025/hb357 does not list him and is a different bill, so sponsorship is not confirmed",
+        "Ballotpedia: not reviewed (not fetched)",
+        "News search on name plus firearms: nothing in his own words",
+        "not reviewed: palegis.us sponsorship lists for earlier sessions"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

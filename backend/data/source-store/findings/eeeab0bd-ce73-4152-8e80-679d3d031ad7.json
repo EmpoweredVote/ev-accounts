@@ -80,7 +80,96 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "08dc3c7ed57900854fbcdce3e33ae9af5a0262d42150b9be0aaf59b6045f0fe1",
+      "kind": "own-words",
+      "url": "https://frost.house.gov/media/press-releases/following-the-attempted-assassination-of-former-president-trump-reps-frost-and-mcbath-call-on-house-speaker-mike-johnson-to-bring-a-vote-on-assault-weapons-ban",
+      "date": "2024-07-19",
+      "date_precision": "day",
+      "passage": "Political violence like the attempted assassination of former President Donald Trump with an AR-15 assault rifle will continue unless we curb the means of political violence. The House of Representatives must take decisive and resolute action to bring H.R. 698, the Assault Weapons Ban of 2023 and H.R. 8600, the Gas-Operated Semi-Automatic Firearms Exclusion (GOSAFE) Act to a vote.",
+      "note": "Joint letter with another member to the Speaker asking for House votes on H.R. 698 and H.R. 8600. Date taken from the page title in search results.",
+      "subjects": [
+        "assault weapons ban",
+        "gas-operated semi-automatic firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14ad4b9779ff1a51340001e37c86179b8f7e748daf040b298a4154218edd3114",
+      "kind": "own-words",
+      "url": "https://frost.house.gov/media/press-releases/congressman-maxwell-frost-joins-house-leadership-and-gun-violence-prevention",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "passage": "There is no reason why someone should be able to buy an assault weapon in this country after we’ve seen mass shooting after mass shooting come to fruition at the hands of a semiautomatic weapon. There’s no reason that we should not ensure enough time for a background check to take place before a firearm is sold in order to protect innocent lives.",
+      "note": "Statement on signing discharge petitions for H.R. 698, H.R. 2403 and H.R. 715. Date taken from the page title in search results.",
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting period for gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91fecaaec2c772988fa3a607ad6b4ab4c214ae8c13d78e05b3725e31708ef206",
+      "kind": "record",
+      "url": "https://frost.house.gov/media/press-releases/congressman-maxwell-frost-joins-house-leadership-and-gun-violence-prevention",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HR-698-2023",
+      "act": "other",
+      "motion": "Signed discharge petition to force a House vote on H.R. 698, Assault Weapons Ban",
+      "note": "Signed discharge petitions for H.R. 698 (assault weapons ban), H.R. 2403 (Enhanced Background Checks Act) and H.R. 715 (background checks on firearm sales).",
+      "subjects": [
+        "assault weapons ban",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting period for gun sales",
+        "gas-operated semi-automatic firearms",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (frost.house.gov)",
+        "blocked: https://frost.house.gov/issues/gun-violence-prevention (HTTP 410)",
+        "one news search on name plus gun subject words",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

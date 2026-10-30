@@ -245,6 +245,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.859Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "concealed carry",
+        "firearm preemption"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.pasenategop.com/phillips-hill/ (names her as a Senate member; no gun content)",
+        "official site search https://www.pasenategop.com/?s=firearm+phillips-hill (nothing on the subject)",
+        "blocked: https://www.palegis.us/legislation/bills/2025/sb802",
+        "blocked: https://app.legiplex.com/profile/kristin-phillips-hill-16499/pa/legislatures/2025/2025-r/legislation/page/9",
+        "not reviewed: https://www.palegis.us/senate/members/bio/1/Kristin-Phillips-Hill (redirected to an unrelated page)",
+        "Ballotpedia https://ballotpedia.org/Kristin_Phillips-Hill (fetch returned empty)",
+        "web search (2): a search aggregator lead named SB 802 and SB 244 in the 2025 session; not verified, role unknown"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

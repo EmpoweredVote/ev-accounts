@@ -1,6 +1,30 @@
 {
   "politician_id": "107f5361-ddf4-4b26-a638-f5582430a0a5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "f7484195b17fd75a90ed52349a7c18a4b96765f4bd567692efe6264dbe707265",
+      "kind": "record",
+      "url": "https://www.vcdl.org/va-alert-2-4-2026-vcdl-urgent-legislative-action-alert",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "VA-HB-871-2026",
+      "act": "other",
+      "motion": "House Public Safety Firearms subcommittee vote on reporting HB 871 (firearms locked and unloaded when a minor or prohibited person is in the home); she voted against reporting it, in a 3-3 tie and again in a 4-3 reconsideration vote",
+      "note": "Reported by a gun-rights group's alert dated 2026-02-04, which says the vote was the week before. Exact vote date not stated on the page. Source is not an official record. Official LIS record not checked.",
+      "subjects": [
+        "safe storage of firearms",
+        "locked storage requirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +52,28 @@
       "found": 0,
       "at": "2026-10-28T15:27:45.924Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "safe storage",
+        "gun bills sponsored",
+        "committee votes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun words",
+        "VCDL alert page fetched (advocacy group's account of a subcommittee vote, not an official record)",
+        "not reviewed: https://www.smithfieldtimes.com/?p=20322 (page returned no text)",
+        "not reviewed: https://giffords.org/candidates/kimberly-pope-adams",
+        "not reviewed: LIS bill pages (script-loaded)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

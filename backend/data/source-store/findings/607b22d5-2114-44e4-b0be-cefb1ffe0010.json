@@ -306,6 +306,31 @@
       "found": 3,
       "at": "2026-10-29T14:14:50.864Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repbarton.com (nothing on the subject on the page fetched)",
+        "pahouse.com/Barton news search (not a valid page for this member: 404)",
+        "blocked: https://www.legis.state.pa.us/cfdocs/legis/home/member_information/House_bio.cfm?id=1968",
+        "blocked: https://legiscan.com/PA/rollcall/HB777/id/1143613",
+        "not reviewed: https://justfacts.votesmart.org/candidate/150702 (page text had no vote content when fetched)",
+        "web search: one news search on name plus gun words (leads only, no own words found)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

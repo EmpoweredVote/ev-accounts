@@ -27,6 +27,28 @@
       "found": 0,
       "at": "2026-10-28T14:56:50.753Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "red-flag orders",
+        "constitutional carry"
+      ],
+      "places": [
+        "scope: https://www.click2houston.com/news/texas/2026/05/03/republican-brett-ligon-former-montgomery-county-da-wins-special-election-for-open-texas-senate-seat/ (won May 2, 2026 special election; search results say November 2026 general vs. Angeletti; page itself not fetched)",
+        "On the Record (0 appearances)",
+        "campaign site https://ligonfortexas.com (nothing on the subject)",
+        "campaign site https://ligonfortexas.com/priorities (nothing on the subject)",
+        "Wikipedia and Ballotpedia via curl (no gun text)",
+        "not reviewed: capitol.texas.gov (in office only since May 2026; no bill identified)",
+        "news searches x2 (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

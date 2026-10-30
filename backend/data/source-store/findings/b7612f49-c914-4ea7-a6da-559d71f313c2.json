@@ -51,7 +51,70 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "a77a2597937fb130024efe230c32d69b15237a6a011316b97716074565ba65f2",
+      "kind": "own-words",
+      "url": "https://www.derektranforcongress.com/news/moms-demand-action-awards-congressman-derek-tran-2026-gun-sense-candidate-distinction",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“As an Army Veteran and a father of three kids, I have advocated for gun violence prevention measures to keep our communities safe. These common-sense strategies, including universal background checks and secure firearm storage, have strong bipartisan support among voters and in Congress. I’m proud to be in this fight with Moms Demand Action, and I’m committed to making sure we all feel safe in our communities.”",
+      "note": "Quote in a 2026 campaign release on receiving a gun violence prevention group's candidate distinction; release date not shown on the page text.",
+      "subjects": [
+        "background checks",
+        "secure firearm storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5df607dd7b7757753e6bc7c13fa01861f1d21c0c3e7302f1a64bf1659fdab95",
+      "kind": "own-words",
+      "url": "https://www.derektranforcongress.com/news/derek-responds-to-georgia-school-shooting",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "In Congress, I will fight every day for common-sense solutions to end the epidemic of gun violence.",
+      "note": "Statement as a candidate after the Apalachee High School shooting (page says 'today'; shooting was 4 Sept 2024). No specific policy named in his quote.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "universal background checks",
+        "secure firearm storage",
+        "gun violence prevention",
+        "minimum age for semi-automatic weapons"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site news list https://www.derektranforcongress.com/news/ (names him Congressman, Democratic nominee for CA-45 2026 re-election)",
+        "not reviewed: https://tran.house.gov/media/press-releases (search page returned no list)",
+        "blocked: https://derektran.house.gov (host not found)",
+        "news search: one search",
+        "not reviewed: congress.gov, Ballotpedia (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

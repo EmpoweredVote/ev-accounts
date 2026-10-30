@@ -1,6 +1,51 @@
 {
   "politician_id": "7639d181-586e-40a4-8d95-204c56ede118",
-  "findings": [],
+  "findings": [
+    {
+      "id": "64812f1f3f014b3e81cc0dd417fda884dd59fab9bac12b021a887093c9b1f2ae",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?151+mbr+HB1666",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "VA-HB-1666-2015",
+      "act": "sponsor",
+      "note": "Chief patron of HB 1666, which lets a person who lives outside Virginia and lost firearm rights over a felony conviction or certain juvenile findings petition a Virginia circuit court to restore those rights.",
+      "subjects": [
+        "restoration of firearm rights",
+        "firearm possession by people with prior convictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09716c23844a8107ad4b0c9610e3ffb78e349f90e5fbb7c0654447226a5f2b10",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?231+mbr+HB1420",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "VA-HB-1420-2023",
+      "act": "sponsor",
+      "note": "Listed as a House co-patron (not chief patron) of HB 1420, 'Carrying a concealed handgun; permit not required,' which allows anyone otherwise eligible for a concealed handgun permit to carry a concealed handgun without a permit anywhere he may lawfully carry a handgun openly in Virginia (summary as introduced: https://lis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1420).",
+      "subjects": [
+        "permitless carry",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -24,6 +69,28 @@
       "found": 0,
       "at": "2026-10-28T16:26:31.181Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "permitless carry",
+        "restoration of firearm rights",
+        "assault-style weapons",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia https://en.wikipedia.org/wiki/Buddy_Fowler (located him as District 59 delegate; not fetched for gun content)",
+        "Virginia LIS legacy bill pages (2015 HB 1666, 2023 HB 1420: fetched, patrons confirmed)",
+        "NRA-ILA 2015 legislative report (fetched; names HB 1666 sponsor; wording includes party label so not quoted)",
+        "one web search on name plus gun words (no own-words statement found)",
+        "not reviewed: campaign site, Ballotpedia, 2024-2026 sessions bill lists (LIS list pages not readable)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

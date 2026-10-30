@@ -80,7 +80,120 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "be838b0317c70df0d6f9ab642cd7d3d9319258064985a32f03a824c9da87ecbd",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "I also voted for H.R. 5427 to codify President Trump’s Order banning bump stocks and devices that turn legal weapons into machine guns. Finally, I voted for H.R. 3015 to require purchasers of a specific group of semi-automatic firearms, including AR-15s, to be 21 years of age, as they are already required to be in my district.",
+      "note": "Her statement on the June 2022 House gun package: says she voted for a bump-stock ban and a minimum age of 21 to buy certain semi-automatic firearms including AR-15s.",
+      "subjects": [
+        "bump stocks",
+        "minimum age for semi-automatic rifles",
+        "assault-style weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc60a63f73079b1ee382f1216edb5f5949ddac0da0cd48cf7712ea437ea0b1ee",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "Unfortunately, the Democrats passed, over my objection, legislation that I believe unduly burdens the rights of law-abiding gun owners and impedes their ability to protect themselves and their families with so-called safe storage laws.",
+      "note": "Says she objected to the safe storage bill in the June 2022 package, on the ground that it burdens law-abiding gun owners.",
+      "subjects": [
+        "safe storage laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "305eee6bc687d83dff974bbc9c9a2d16ef70b615b8a2b26b4784881a2136c162",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "I also voted against H.R. 2510 because it would make almost every handgun illegal in the United States.",
+      "note": "Explains her vote against H.R. 2510 in June 2022, saying it would make almost every handgun illegal.",
+      "subjects": [
+        "handgun ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a24015f83d2d48bb1802f3fd89cfceb0fa0c877358855895c490827f113c771",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "Taken together, H.R. 2280 and H.R. 3088 would assist the NYPD in dealing with the flow of guns from other states as the NYPD has seen a 300% increase in ghost gun interceptions.",
+      "note": "Says she voted for bills on gun trafficking, straw purchases and ghost guns, citing NYPD ghost gun interceptions.",
+      "subjects": [
+        "ghost guns",
+        "gun trafficking and straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / semi-automatic rifle age",
+        "background checks",
+        "ghost guns",
+        "bump stocks",
+        "safe storage",
+        "handgun ban bill",
+        "concealed carry / reciprocity",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release June 9 2022",
+        "official site in-the-news page June 9 2022",
+        "blocked: https://malliotakis.house.gov/search?q=second+amendment",
+        "blocked: https://www.congress.gov/member/nicole-malliotakis/M001204",
+        "web search (two queries): no sponsorship of concealed-carry reciprocity, red-flag or suppressor bill found",
+        "not reviewed: Ballotpedia, campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

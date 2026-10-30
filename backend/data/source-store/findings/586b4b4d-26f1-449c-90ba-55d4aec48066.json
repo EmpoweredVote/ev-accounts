@@ -131,6 +131,27 @@
         "fetched_at": "2026-10-28T15:55:41.520Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "433267647c738ac4c159fbd06d7caa40214754d6639b60490aa68634089e1f01",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB920",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-920-2025",
+      "act": "author",
+      "note": "Filed as author: HB 920, relating to an exemption from sales and use taxes for firearms, ammunition, and other related items.",
+      "subjects": [
+        "firearm sales tax exemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -171,6 +192,29 @@
       "found": 3,
       "at": "2026-10-28T15:55:41.520Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm sales tax exemption",
+        "short-barrel firearms",
+        "Second Amendment",
+        "carry",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "capitol.texas.gov bill pages (HB 920 89R; HB 2954 88R is an election-hours bill, not on subject)",
+        "NRA-ILA pre-filed bills article",
+        "web search on name plus Second Amendment",
+        "official site house.texas.gov: not reviewed",
+        "Ballotpedia: not reviewed",
+        "NRA-ILA page describes HB 920 but is not his own words; not saved"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

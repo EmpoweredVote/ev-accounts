@@ -51,6 +51,27 @@
         "fetched_at": "2026-10-28T14:29:40.472Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8e2d90da45c68fbc4a14c67881f06a95c5fc1243aaffb0ca9e08bd97788bc8e6",
+      "kind": "own-words",
+      "url": "https://smcorridornews.com/?p=116232",
+      "date": "2019-09-05",
+      "date_precision": "day",
+      "passage": "\"I refuse to accept it as normal that we lose dozens of people every year in Texas to these incidents of mass public hate,\" said Rep. Zwiener.",
+      "note": "From the story on House Democratic Caucus members repeating their call for a special session on gun violence (2019). The same page also quotes her as saying: \"I want to call on my fellow colleagues and the Governor to be courageous.\" The page's narration (not her quote) says she is a gun owner and that most gun owners support closing background check loopholes and extreme-risk protection orders.",
+      "subjects": [
+        "special session on gun violence",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -73,6 +94,28 @@
       "found": 1,
       "at": "2026-10-28T14:29:40.472Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence special session",
+        "background checks",
+        "extreme-risk orders",
+        "firearms regulation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://smcorridornews.com/?p=116232 (2019 article; quotes copied via fetch tool asked for exact sentences; plain curl returned nothing)",
+        "blocked: https://haysfreepress.com/2019/08/21/driftwood-lawmaker-joins-call-for-gun-reform-special-session (HTTP 404)",
+        "https://www.wimberleyview.com/node/196101 (plain curl returned nothing; not reviewed)",
+        "not reviewed: bill sponsorship pages on capitol.texas.gov (dynamic search, not reached)",
+        "Ballotpedia and 2026 ballot status not checked (not confirmed)",
+        "one web search"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

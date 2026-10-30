@@ -202,6 +202,26 @@
       "found": 6,
       "at": "2026-10-28T16:26:43.481Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus firearms words (only snippets, no fetched page on the subject)",
+        "blocked: https://votesmart.org/public-statement/1454855/issue-position-2nd-amendment (empty response; speaker not confirmed)",
+        "blocked: https://ballotpedia.org/Phillip_Scott_(Virginia) (empty response)",
+        "not reviewed: LIS bill pages (script-loaded)",
+        "not reviewed: https://app.legiplex.com/profile/phillip-scott-7816/va/legislatures/2025/2025-r/legislation"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

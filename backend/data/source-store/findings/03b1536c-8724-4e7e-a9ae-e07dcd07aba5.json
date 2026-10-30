@@ -122,6 +122,111 @@
         "fetched_at": "2026-10-28T15:31:41.358Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0a4b9a582e28f3ef46c4bff28ed51a979f78847919ccc00b95bff0abb33acb04",
+      "kind": "own-words",
+      "url": "https://pcpatriot.com/?p=60498",
+      "date": "2023-04-19",
+      "date_precision": "day",
+      "passage": "I am grateful for the continued support of the NRA and gun owners throughout the New River Valley,” said Delegate Jason Ballard. “As a Veteran and avid hunter, I understand the importance of defending our right to bear arms.",
+      "note": "Quoted in his own campaign release, printed by PCPatriot, on receiving the NRA endorsement. He speaks of defending the right to bear arms.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "46f86bda4945783e0a0daa9676a6f6cc1d94b953195b4857ff349e43277630ec",
+      "kind": "own-words",
+      "url": "https://pcpatriot.com/?p=60498",
+      "date": "2023-04-19",
+      "date_precision": "day",
+      "passage": "I have always been – and will continue to be – the Second Amendment’s strongest advocate in Richmond.",
+      "note": "Same release. He calls himself the strongest advocate for the Second Amendment in the legislature.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2de28ce662b995a3fa2a5262d7d8668d8dc4dac937ef7371e57c5d80516e85ff",
+      "kind": "own-words",
+      "url": "https://radfordnewsjournal.com/?p=104701",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "The law, which takes effect in July, prohibits the purchase, import, or sale of common rifles such as the AR-15.",
+      "note": "From his column, signed as Delegate for the 42nd District, on HB 217 (assault firearms ban), which the Governor signed. He describes what the law does.",
+      "subjects": [
+        "assault weapons ban",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe54a57b8f041d2d8aa656b9c879a6b81987e17aa339d3a950749b651a9eb087",
+      "kind": "own-words",
+      "url": "https://radfordnewsjournal.com/?p=104701",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "This act by Governor Spanberger sets the stage for millions more to be spent by the Commonwealth to defend a law that may be found unconstitutional.",
+      "note": "Same column. He says the signed assault firearms ban may be found unconstitutional and will cost the state to defend.",
+      "subjects": [
+        "assault weapons ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b33abc31ce35e74d8c9ed90c8329880cd0a033b6134cea3a1664959f5949e298",
+      "kind": "own-words",
+      "url": "https://radfordnewsjournal.com/?p=104701",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "passage": "The U.S Supreme Court has ruled in the Bruen and Heller cases that firearms in common use for lawful purposes are protected by the Second Amendment.",
+      "note": "Same column. He cites Supreme Court cases as the legal basis against the ban.",
+      "subjects": [
+        "assault weapons ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -150,6 +255,29 @@
       "found": 4,
       "at": "2026-10-28T15:31:41.358Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans and large-capacity magazines",
+        "background checks",
+        "ghost guns",
+        "carry permits",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House of Delegates member list https://house.vga.virginia.gov/members (confirms Ballard, Jason S., District 42; House seats were not on the 2026 ballot)",
+        "https://pcpatriot.com/?p=60498 (own words found)",
+        "https://radfordnewsjournal.com/?p=104701 (own-words column found)",
+        "blocked: https://origin.vpap.org/legislators/374412-jason-ballard/list-votes/did_not_vote/?issue=43 (SSL handshake failure)",
+        "blocked: https://ballotpedia.org/ (403 for the other Virginia delegates; not retried)",
+        "not reviewed: https://lis.virginia.gov (bill pages load by script; sponsorships not checked). A search summary says VPAP shows him not voting on 2026-02-05 on HB21, HB40, HB93, HB110, HB217; not verified by me"
+      ],
+      "found": 5,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

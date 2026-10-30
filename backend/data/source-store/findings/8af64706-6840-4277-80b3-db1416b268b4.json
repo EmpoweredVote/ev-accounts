@@ -140,6 +140,27 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.857Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun bills sponsored",
+        "gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official page https://www.pahouse.com/Markosek (home page news list; nothing on the subject)",
+        "blocked: https://www.repmarkosek.com (403)",
+        "blocked: palegis.us bill and member pages (not reachable)",
+        "Ballotpedia (not reviewed)",
+        "one news search (no statement or confirmed sponsorship found; Legiplex lead on a firearms co-sponsorship could not be confirmed so not saved)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

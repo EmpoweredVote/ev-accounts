@@ -79,6 +79,21 @@
       "found": 0,
       "at": "2026-10-28T14:31:28.762Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (https://en.wikipedia.org/wiki/Cecil_Bell_Jr.: \"Bell was defeated in the March 3, 2026, Republican primary election by Kristen Plaisance by a 55.1% to 44.9% margin.\")",
+        "On the Record (0 appearances)",
+        "stopped after scope check: no longer on the 2026 general-election ballot"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -88,6 +88,69 @@
         "fetched_at": "2026-10-29T14:14:50.855Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4abd2dde9190889022afa3ef3b3de4f67d8a45b50161a60e4696306ec917c3c0",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "“It is my job to do everything I can to fight for and protect my community,” Brown said.",
+      "note": "News release from his House office announcing an agreement he negotiated with a gun show promoter and the Attorney General's office to end sales of 80% receiver (ghost gun) kits at its shows. Quote is in his name in that release.",
+      "subjects": [
+        "ghost guns",
+        "gun show sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e01ed8c0cca4bcb8412b382dcecdbcd6f257fc8d5a695440dfa7d6741012b516",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "“While we work with businesses like Eagle Arms to reduce the number of guns coming to our streets, we also must make it known to those committing crime and assembling these guns and murdering innocent people that they will be held accountable for their actions and will not have a fast release,” Brown said.",
+      "note": "Same release. He ties limits on ghost gun kit sales to tougher sentences for people who commit gun crimes.",
+      "subjects": [
+        "ghost guns",
+        "penalties for illegal gun possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56ef8e707a78664db926eac494ec7ec156f6ce1fceedde1a155a32945a11bded",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "Brown said he is preparing legislation to bring an end to violent crime in the state. He is proposing that any previously convicted felon who is found to be in possession of an illegal firearm would be subject to progressively stronger sentences and a minimum term of incarceration.",
+      "note": "Release text (written in the third person from his office) describing his planned bill on felons in possession of illegal firearms.",
+      "subjects": [
+        "felon in possession penalties",
+        "mandatory minimum sentences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -144,6 +207,26 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.855Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "gun show ID requirement",
+        "felon in possession penalties",
+        "firearm regulation general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site pahouse.com RepAmen NewsCenter page 4 (gun items listed; undated pieces not saved)",
+        "pahouse.com news release id=118872",
+        "news search (one search)",
+        "not reviewed: Ballotpedia, campaign site, palegis.us bill pages (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -144,6 +144,48 @@
         "fetched_at": "2026-10-28T17:58:27.792Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d55271573785e648094576a978f901adefd331279281e46b3c2715e563c82e17",
+      "kind": "own-words",
+      "url": "https://vadogwood.com/2023/03/22/opinion-finding-common-ground-on-gun-safety/",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "passage": "I joined Angelia and several of my House Democratic colleagues in introducing or co-patroning bills this session to try to address the gun safety crisis. From assault weapons bans, to safe storage, to studying the impacts of gun violence on our communities. These were common sense pieces of legislation that could save lives.",
+      "note": "Op-ed published under his name in Dogwood. He says he introduced or co-patroned 2023 bills including assault weapons bans and safe storage.",
+      "subjects": [
+        "assault weapons ban",
+        "safe storage of firearms",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a367b2ecf750387e02c97100816d4f9274c657fd0cbec4ae915c04288c843d79",
+      "kind": "own-words",
+      "url": "https://vadogwood.com/2023/03/22/opinion-finding-common-ground-on-gun-safety/",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "passage": "I remain steadfast to find common ground on gun safety measures. Our childrens' lives depend on it.",
+      "note": "Closing line of the same op-ed. Passage uses the straight apostrophe form of the page's curly apostrophe.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -195,6 +237,30 @@
       "found": 4,
       "at": "2026-10-28T17:58:27.792Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "assault weapons ban",
+        "safe storage",
+        "gun violence",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun words",
+        "Dogwood op-ed fetched",
+        "blocked: none",
+        "Giffords candidate page fetched (third-party description, not used as own words)",
+        "not reviewed: LIS bill pages (script-loaded)",
+        "not reviewed: https://www.whro.org/2024-01-16/virginia-democrats-file-dozens-of-gun-bills-as-opponents-gather-for-lobby-day",
+        "not reviewed: rodwillett.com"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

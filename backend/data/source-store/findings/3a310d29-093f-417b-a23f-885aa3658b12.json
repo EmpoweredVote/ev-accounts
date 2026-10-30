@@ -104,6 +104,48 @@
         "fetched_at": "2026-10-28T15:04:07.003Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5037cc3addc3e0fd221da559b07d1377b3c109e3ce4a938c578dde392523f258",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB106",
+      "date": "2022-11-14",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-106-2023",
+      "act": "author",
+      "note": "Author of HB 106, captioned \"Relating to the required reporting of multiple sales of certain firearms to law enforcement.\" Filed 11/14/2022; last action 04/18/2023: left pending in committee.",
+      "subjects": [
+        "reporting of multiple firearm sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32c7fb728fc8a1643cb745111f31a8192fa972b284cab50bd694ae7850905cc3",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB479",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-479-2025",
+      "act": "author",
+      "note": "Author of HB 479, captioned \"Relating to requiring a licensed firearms dealer to report certain sales or transfers of multiple rifles to law enforcement; creating a criminal offense.\" Filed 11/12/2024; last action 02/28/2025: referred to committee.",
+      "subjects": [
+        "reporting of multiple rifle sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -132,6 +174,25 @@
       "found": 2,
       "at": "2026-10-28T15:04:07.003Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "multiple rifle sales reporting",
+        "gun safety bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one web search on name plus gun safety",
+        "capitol.texas.gov HB 106 (88R) and HB 479 (89R) bill histories",
+        "capitol.texas.gov HB 22 (88R) (author is Moody, not him; not saved)",
+        "not reviewed: official site, campaign site, Ballotpedia, her/his 2026 ballot listing"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

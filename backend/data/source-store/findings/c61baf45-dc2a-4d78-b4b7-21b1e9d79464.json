@@ -80,7 +80,77 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "98349f315f9942b927c5e13a4643416fe87b521456163ebbc3b894dc67ffc6b3",
+      "kind": "own-words",
+      "url": "https://pressley.house.gov/2022/06/09/pressley-statement-on-house-passage-of-gun-violence-prevention-legislation/",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "This week, the House took action to pass a series of gun violence prevention measures, including banning large capacity magazines, creating comprehensive red flag laws, cracking down on gun trafficking, and raising the age to purchase semi-automatic weapons. These commonsense measures will help save lives and address this epidemic. But, let me be clear, I will not stop fighting until we reinstate the assault weapons ban to finally remove these weapons of war from our streets, and invest in mental health and trauma supports so communities terrorized by this violence can get the resources necessary to heal.",
+      "note": "Statement issued in her name after House passage of the Protect Our Kids Act and the Federal Extreme Risk Protection Order Act; she names magazine limits, red flag laws, trafficking, minimum age, and reinstating the assault weapons ban.",
+      "subjects": [
+        "large-capacity magazines",
+        "red-flag orders",
+        "minimum age for semi-automatic weapons",
+        "assault weapons ban",
+        "gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d846db3d461ae49572d657c8f7ec6aa2a38849d2cca0239c117721bf0a06177",
+      "kind": "own-words",
+      "url": "https://pressley.house.gov/2024/06/14/pressley-re-introduces-bill-promoting-massachusetts-gun-safety-laws-as-national-model/",
+      "date": "2024-06-14",
+      "date_precision": "day",
+      "passage": "Massachusetts is national leader in gun violence prevention and our bill would help save lives by promoting the Commonwealth’s gun laws as a model for states to adopt nationwide.",
+      "note": "Her quote on re-introducing the MASS Act, which encourages states to adopt gun-licensing standards like those of Massachusetts.",
+      "subjects": [
+        "gun licensing",
+        "state gun-licensing standards"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "large-capacity magazines",
+        "red-flag orders",
+        "background checks",
+        "gun licensing",
+        "age to buy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site search 'gun violence' (https://pressley.house.gov/?s=gun+violence, page 1 of results only)",
+        "https://pressley.house.gov/2022/06/09/pressley-statement-on-house-passage-of-gun-violence-prevention-legislation/",
+        "https://pressley.house.gov/2024/06/14/pressley-re-introduces-bill-promoting-massachusetts-gun-safety-laws-as-national-model/",
+        "https://pressley.house.gov/2026/05/14/video-after-memorial-drive-shooting-pressley-slams-trump-admin-for-fueling-gun-violence-weakening-accountability-for-gun-dealers/ (video page, only excerpt reviewed)",
+        "not reviewed: https://pressley.house.gov/2022/06/08/at-hearing-pressley-blasts-gop-efforts-to-arm-teachers-and-militarize-schools-calls-for-bold-action-to-combat-gun-violence/",
+        "not reviewed: congress.gov, Ballotpedia (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

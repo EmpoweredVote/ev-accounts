@@ -214,6 +214,69 @@
         "fetched_at": "2026-10-28T22:51:16.462Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "08313599ed6cb4e49e8912c6dd2c58fd8277675d0dc0d538425230c8acc73715",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "“These military-grade weapons have no legitimate place in civilian life,” Fontana said. “With poor accuracy, they have no useful purpose for hunting or self-defense. These rapid-fire weapons are specifically designed to spray bullets and kill many people quickly.”",
+      "note": "Press release announcing a bill to ban sale and use of 150 models of semi-automatic assault weapons and magazines over 10 rounds; quote is from the release on his own site.",
+      "subjects": [
+        "assault weapons ban",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ff643143cc0666e039be75e3e40bf9b52f57716b4c871fd4403e7ac368ef388",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "“By enacting this ERPO process, our state would empower loved ones, who are closest to someone who is exhibiting dangerous behaviors, to temporarily take away their access to guns,” Fontana said.",
+      "note": "Same release, on his announced extreme risk protection order bill, which would let family members ask a court to suspend someone's access to firearms for up to one year.",
+      "subjects": [
+        "red-flag orders",
+        "extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47743a9d2e892212a2dcd9a50d3c44357ad730aa461d1f715acafcec237a4f2e",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "Fontana said it’s time for people on both sides of the gun issue to “seek common ground and workable solutions that protect second amendment rights while preventing the epidemic of mass shootings that have become endemic to America.”",
+      "note": "General statement on gun laws and the Second Amendment in the same release.",
+      "subjects": [
+        "Second Amendment",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -266,6 +329,28 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.462Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons and large-capacity magazines",
+        "red-flag / extreme risk protection orders",
+        "Second Amendment",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings (names him as Senator; press release dated 2018-02-21)",
+        "https://senatorfontana.com/?p=4634 (same press release)",
+        "web search (1): leads to pasenate.com and legiplex pages naming later bills (SB57, SB350, SB769) not fetched",
+        "not reviewed: https://pasenate.com/hatred-and-gun-violence-have-no-place-in-pennsylvania-we-must-act/",
+        "not reviewed: legislature bill pages for 2025-26 sponsorships (palegis.us blocks scripted fetches)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

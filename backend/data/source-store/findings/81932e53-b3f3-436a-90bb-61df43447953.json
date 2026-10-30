@@ -84,6 +84,26 @@
         "fetched_at": "2026-10-28T15:55:41.531Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8452811875ffd8d47ae142f799842b39773dd5b18d1b9eec537de75f7e3066c4",
+      "kind": "own-words",
+      "url": "https://whartonfortexas.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Support law enforcement and our 2nd Amendment rights.",
+      "note": "Line from his campaign site's list of priorities.",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -126,6 +146,30 @@
       "found": 1,
       "at": "2026-10-28T15:55:41.531Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun sponsorships",
+        "carry",
+        "firearm bans",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site whartonfortexas.com",
+        "Branch candidate profile",
+        "web search on name plus Second Amendment (no gun bill by him confirmed)",
+        "KWHI re-election announcement: nothing on the subject",
+        "Texas Gun Rights survey pages: advocacy group's rating, not his words, not saved",
+        "capitol.texas.gov bill pages: not reviewed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

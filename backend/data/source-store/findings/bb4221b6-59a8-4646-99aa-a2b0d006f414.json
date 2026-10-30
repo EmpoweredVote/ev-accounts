@@ -20,6 +20,28 @@
         "fetched_at": "2026-10-28T22:10:26.489Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "12e70b4ceafd7322ed1fceb36c28caa5b8252be5fd955a1fe777c07e416e4d6a",
+      "kind": "record",
+      "url": "https://pennsylvania.gunowners.org/?p=3157",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-1909-2025",
+      "act": "yea",
+      "motion": "House passage of HB 1909 (104-94), as reported by an advocacy group",
+      "note": "An advocacy group post (secondary source, not official) says HB 1909, which it describes as using Protection From Abuse orders to affect firearm rights, passed the House 104-94, and names Pugh among five members who voted with the majority. The page does not give the vote date, and the official roll call could not be reached.",
+      "subjects": [
+        "firearms and protection from abuse orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -45,6 +67,28 @@
       "found": 1,
       "at": "2026-10-28T22:10:26.489Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "firearms and protection from abuse orders",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House caucus release https://webcms.pahousegop.com/News-Print/35383/Pugh-Takes-Oath-of-Office-for-First-Term-?SiteID=1 (nothing on the subject)",
+        "https://pennsylvania.gunowners.org/?p=3157 (advocacy group post on a House vote; secondary source, not her words)",
+        "blocked: https://legiscan.com/PA/bill/HB1909/2025 (403)",
+        "blocked: palegis.us bill pages (not reachable)",
+        "Ballotpedia (not reviewed)",
+        "one news search (no statement from her on the subject found)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

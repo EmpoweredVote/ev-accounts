@@ -141,6 +141,30 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.857Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun violence legislation",
+        "background checks",
+        "ghost guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official page https://www.pahouse.com/Malagari (nothing on the subject in the text reviewed; confirms he is active in 2026)",
+        "campaign site https://www.malagari.com (nothing on the subject; no usable page)",
+        "https://branch.vote/races/2026-pennsylvania-general-election--pa-state-state-representative-pa-state-house-53/candidates/steven-r-malagari (lists him as a 2026 candidate for House District 53; says his website had no information on this issue)",
+        "blocked: https://app.legiplex.com/profile/steven-malagari-17623/pa/legislatures/2025/2025-r/legislation",
+        "blocked: https://www.palegis.us (sponsorship pages, 403 seen for palegis.us on another bill page)",
+        "Ballotpedia (not reviewed)",
+        "one news search (leads only: Legiplex bill list that could not be fetched; no statement found)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

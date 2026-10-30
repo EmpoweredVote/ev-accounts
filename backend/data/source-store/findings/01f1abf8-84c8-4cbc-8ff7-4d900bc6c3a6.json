@@ -407,6 +407,26 @@
       "found": 4,
       "at": "2026-10-28T17:58:27.786Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Jay_Leftwich (confirms Delegate, 90th district, in office since 2014; nothing on the subject)",
+        "web search on name plus gun words (nothing on the subject)",
+        "not reviewed: LIS bill pages (script-loaded)",
+        "not reviewed: https://apps.house.virginia.gov/members/H0262",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

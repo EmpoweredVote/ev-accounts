@@ -88,6 +88,51 @@
         "fetched_at": "2026-10-29T14:14:50.858Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "082e023a301204c2febf8445b68d68e88daa644b79f71dc83607f0133732c2ea",
+      "kind": "own-words",
+      "url": "https://downingtowntimes.com/?p=19044",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“We can go into session right now and pass legislation that would make it more difficult to put guns in these people’s hands.”",
+      "note": "Quoted in the Downingtown Times after the El Paso and Dayton shootings (2019; the page prints no date). The article says she called for a special session on bills covering access to guns for people at risk of violence to themselves or others, closing the gap in gun background checks, and banning assault weapons.",
+      "subjects": [
+        "special session on gun violence",
+        "red-flag orders",
+        "background checks loophole",
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffb7ffe3532eeeed4ed57ea6ab88300c94efba05e758b922f4ff8eea4b64ad10",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb1176",
+      "date": "2023-05-18",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1176-2023",
+      "act": "sponsor",
+      "note": "Prime sponsor of HB 1176, amending Title 18 on firearms: limit on handgun purchases and a Violence Prevention Account; memo subject 'Ending Illegal Firearm Trafficking in Pennsylvania'. Referred to House Judiciary on this date.",
+      "subjects": [
+        "limit on handgun purchases",
+        "firearm trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -142,6 +187,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.858Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns / 3-D printed guns",
+        "handgun purchase limits",
+        "gun violence prevention general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site pahouse.com/Shusterman: reached only as a search lead, not fetched",
+        "palegis.us bill page HB 1176 of 2023 (prime sponsor)",
+        "news: Downingtown Times article on special-session call",
+        "legiplex list: lead only (HB 830 of 2025 not checked)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

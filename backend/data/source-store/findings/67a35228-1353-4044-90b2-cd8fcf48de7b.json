@@ -116,6 +116,49 @@
           "sha256": "bbed58b857c8e5f6b4709c07b60255b713a68300fa9fcaf79b22daee0d8820b9"
         }
       }
+    },
+    {
+      "id": "6cd3bf66282682cc15f5c5803c96cfc88d540306bb8b5ed501824b1ada5fb484",
+      "kind": "own-words",
+      "url": "https://www.senate.texas.gov/members/d13/press/en/p20180518a.pdf",
+      "date": "2018-05-18",
+      "date_precision": "day",
+      "passage": "Enough is enough. It is obvious 'thoughts and prayers' aren't producing the change we need to keep our kids safe.",
+      "note": "Official statement after the Santa Fe High School shooting (page text read from the PDF). Continues: \"We have been talking about gun violence and common sense gun legislation for years. We need action and bold leadership to change our laws to prevent another tragedy at our schools.\" Names no specific measure.",
+      "subjects": [
+        "gun violence",
+        "common sense gun legislation",
+        "school shootings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8e2c076cf5dbe1c42500237a081d3e8a3776f751fdd52c048969086c785e1ae",
+      "kind": "own-words",
+      "url": "https://www.senate.texas.gov/members/d13/press/en/p20190804a.pdf",
+      "date": "2019-08-04",
+      "date_precision": "day",
+      "passage": "The number of mass shootings grows each year and the President and our state's leadership do nothing to stop guns from getting into the wrong hands.",
+      "note": "Official statement on the El Paso and Dayton mass shootings (page text read from the PDF; the apostrophe in \"state's\" is a curly mark in the original). Ends by calling for \"action to truly end this epidemic of mass shootings\". Names no specific measure.",
+      "subjects": [
+        "keeping guns from the wrong hands",
+        "mass shootings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -145,6 +188,25 @@
       "found": 0,
       "at": "2026-10-28T15:13:13.137Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "common sense gun legislation",
+        "mass shootings",
+        "gun bills authored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas Senate District 13 press releases (two fetched, both name him as State Senator District 13)",
+        "web search: name plus gun words (one search)",
+        "not reviewed: Ballotpedia, campaign site, capitol.texas.gov sponsor lists, 2026 ballot status (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

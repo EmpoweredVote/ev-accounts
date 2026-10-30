@@ -80,7 +80,159 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "015507a88e8f904883486109d7fdf84cb3183a08b8f3164cbcb05225495dcfdf",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-01-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-38-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 38 lets States provide reciprocal treatment for carrying certain concealed firearms by nonresidents. Date is the Record index date.",
+      "subjects": [
+        "carry permit reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d143a0197718c4943ef7451d8fa977bfc1ff9fd670a2d0393467c20719680af",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-01-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-404-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 404 removes silencers from the definition of firearms for taxation, registration and transfer laws. Date is the Record index date.",
+      "subjects": [
+        "suppressors",
+        "National Firearms Act repeal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc1e488dd520497c1d3abc259475e83a9eb03943b18142ffb07333160421bd6d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "US-HR-3034-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 3034 removes short-barreled shotguns from the definition of firearms for National Firearms Act purposes. Date is the Record index date.",
+      "subjects": [
+        "National Firearms Act repeal",
+        "short-barreled firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "186bd4b70d3497be2a019a7b7e62d785a7283edf58c36745f5834c69f3394bb6",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-04-28",
+      "date_precision": "day",
+      "instrument_id": "US-HR-3033-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 3033 protects and enhances interstate shipment of firearms, ammunition and components. Date is the Record index date.",
+      "subjects": [
+        "interstate firearms shipment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8232e80da8e56756c64144c66baabaf4453bc249a0f6dfcdd3e0d27875ec6160",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-01-20",
+      "date_precision": "day",
+      "instrument_id": "US-HR-563-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 563 discontinues federal collection of firearm transaction records of discontinued firearms businesses and requires their destruction. Date is the Record index date.",
+      "subjects": [
+        "firearm transaction records"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fac0cd630b13c522b25330bf9a17b36d001950f19496b84aee33c4e23e2ebe59",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/CRI-2025/html/CRI-2025-TIMMONS-WILLIAM-R-IV-7456F.htm",
+      "date": "2025-06-05",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1773-2025",
+      "act": "other",
+      "note": "Listed under Bills and resolutions cosponsored in the 2025 Congressional Record index (cosponsor). H.R. 1773 enhances penalties for certain thefts of firearms from federal firearms licensees. Date is the Record index date.",
+      "subjects": [
+        "firearm theft penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "concealed carry reciprocity",
+        "suppressors and NFA",
+        "background checks",
+        "assault weapons"
+      ],
+      "places": [
+        "status: won the 2026-06-09 Republican primary (https://www.postandcourier.com/greenville/politics/timmons-atchley-district-four-congress-winner-election/article_01957fa5-02f8-4481-94a0-0daab607bdcc.html)",
+        "On the Record (0 meetings)",
+        "official site timmons.house.gov (home and issues page; nothing on the subject found)",
+        "Congressional Record cosponsor index (govinfo)",
+        "blocked: https://ballotpedia.org/South_Carolina%27s_4th_Congressional_District_election,_2026_(June_9_Republican_primary)",
+        "not reviewed: congress.gov (blocked for the prior person, not retried)",
+        "web search (one); no own-words passage found"
+      ],
+      "found": 6,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

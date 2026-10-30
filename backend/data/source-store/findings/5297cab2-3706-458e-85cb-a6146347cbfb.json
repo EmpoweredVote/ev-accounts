@@ -102,6 +102,28 @@
         "fetched_at": "2026-10-22T21:37:12.258Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a089f2a28a460a1b6f08d1074c3701af204fe1ab6010215dfe03330834de3da2",
+      "kind": "record",
+      "url": "https://www.breitbart.com/2nd-amendment/2025/05/07/exclusive-rep-clyde-introduces-bill-remove-unconstitutional-taxation-registration-suppressors",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Cosponsor of the Constitutional Hearing Protection Act (CHPA), a bill to remove taxation and registration of suppressors, introduced by Rep. Clyde",
+      "note": "Breitbart's article of this date lists him among the House cosponsors of the Constitutional Hearing Protection Act. Date is the article date, not the date he signed on. Bill number not stated; congress.gov not checked.",
+      "subjects": [
+        "suppressors",
+        "National Firearms Act repeal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -129,6 +151,31 @@
       "found": 1,
       "at": "2026-10-22T21:37:12.258Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general",
+        "suppressors and National Firearms Act",
+        "ATF rules",
+        "background checks",
+        "red-flag orders",
+        "carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: https://brecheen.house.gov/news/documentquery.aspx?DocumentTypeID=27&Keyword=gun fetched; first page of ten releases had nothing on the subject; older pages not reviewed",
+        "blocked: https://www.congress.gov (not tried; brief step for sponsorships unmet, bill number for the cosponsored bill not found)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed",
+        "one news search on name plus gun words",
+        "Breitbart 2025-05-07 (fetched with curl)",
+        "scope: Breitbart names him as Rep. Josh Brecheen of Oklahoma; 2026 ballot status not checked on a separate page"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

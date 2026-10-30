@@ -59,5 +59,26 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "permitless carry",
+        "gun reform"
+      ],
+      "places": [
+        "status: withdrew 2025-09-02 (announced she would not seek reelection; page: https://www.click2houston.com/news/texas/2025/09/02/rep-alma-allen-longtime-houston-democratic-lawmaker-to-retire-from-texas-house/ : \"Rep. Alma Allen, D-Houston, announced on Tuesday she would not seek reelection after 20 years in the Texas House and endorsed her son, former State Board of Education member Lawrence Allen, Jr., to succeed her.\")",
+        "On the Record (0 meetings)",
+        "Texas House member page http://house.texas.gov/members/member-page?district=131 (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Alma_Allen (empty page)",
+        "blocked: https://khou.com/article/news/crime/houston-mayor-turner-chief-finner-gun-law-refom/285-6ba738be-1e54-43ef-bc34-386840c8fe56",
+        "one web search (nothing quotable on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

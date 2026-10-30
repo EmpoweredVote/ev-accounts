@@ -80,7 +80,73 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "f45f52acb9236070117070712284ef36b1174dd78bb8663c5ecbfe367d1b58e8",
+      "kind": "own-words",
+      "url": "https://robmenendez.com/2022/10/06/everytown-for-gun-safety-endorses-rob-menendez-for-congress",
+      "date": "2022-10-06",
+      "date_precision": "day",
+      "passage": "We cannot allow gun violence to define our lives as we should not fear sending our kids to school, going to the grocery store, or attending our places of worship. We have to get weapons of war off of our streets and enact measures like a federal assault weapons ban to keep our cities and towns safe. I am greatly honored to have earned Everytown's support and I look forward to working with their team to protect our communities from the devastating effects of gun violence.",
+      "note": "Campaign press release statement (the page shows curly apostrophes) on an advocacy group's endorsement; mentions a federal assault weapons ban.",
+      "subjects": [
+        "assault weapons ban",
+        "gun violence general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81e0b2cb00204593ca4c6abc7698a89fcd1c66f7aad244a5736836859163caa1",
+      "kind": "own-words",
+      "url": "https://robmenendez.com/2022/10/06/everytown-for-gun-safety-endorses-rob-menendez-for-congress",
+      "date": "2022-10-06",
+      "date_precision": "day",
+      "passage": "Everytown for Gun Safety has had a profound impact in the fight against gun violence, including the successful enactment of the Bipartisan Safer Communities Act,",
+      "note": "Campaign press release statement crediting an advocacy group with passage of the Bipartisan Safer Communities Act.",
+      "subjects": [
+        "gun safety laws general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "gun violence general",
+        "ghost guns",
+        "background checks",
+        "red-flag orders",
+        "carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site robmenendez.com 2022-10-06 release (fetched with curl)",
+        "official site: https://menendez.house.gov/issues/gun-violence-prevention returned 410 Gone; not reviewed",
+        "congress.gov: not reviewed (blocked for other members in this batch; not tried for him)",
+        "Ballotpedia: not reviewed",
+        "two news searches on name plus gun words; results mostly concerned his father, a different person, and no House sponsorship by him was confirmed, so none is saved",
+        "scope: the 2022 release names him as the NJ congressional candidate; 2026 ballot status not checked on a separate page"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

@@ -88,6 +88,49 @@
         "fetched_at": "2026-10-29T14:14:50.857Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "159493e851e245aac93735ea525bed4b499e0820893fc0c1fc3cf139e1939347",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb777",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-777-2023",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 777 (prime sponsor Morgan Cephas), which would create the offense of selling a firearm or firearm parts without serial numbers and would address privately made firearms. Referred to Judiciary March 30, 2023.",
+      "subjects": [
+        "unserialised guns",
+        "privately made firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcbebe51ee1abf5002f9d96a12efa756fe7cb780f3f87a9dc575fc10afb8dc77",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb776",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-776-2023",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 776 (prime sponsor Morgan Cephas), which would create the offense of undetectable firearms. Referred to Judiciary March 30, 2023.",
+      "subjects": [
+        "undetectable firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -140,6 +183,26 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.857Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "unserialised and privately made guns",
+        "undetectable firearms",
+        "firearm regulation bills",
+        "gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "palegis.us bill pages HB 777 and HB 776 of 2023 (sponsorship); HB 300 and HB 339 of 2023 checked and are not firearm bills",
+        "web search for statements: nothing on the subject",
+        "Ballotpedia: not reviewed",
+        "official/campaign site: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

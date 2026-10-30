@@ -48,6 +48,27 @@
         "fetched_at": "2026-10-28T17:58:27.793Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "20a4c32d9827d99aa26cbe616db085a05fda3f59accbcc7d3503f545a5a6d176",
+      "kind": "own-words",
+      "url": "https://alexaskew.com",
+      "date": "2023-02-02",
+      "date_precision": "unknown",
+      "passage": "It’s time to stand up to the corporate gun lobby, once and for all, and end the epidemic of gun violence that plagues our community.",
+      "note": "Line on his campaign homepage (Alex Askew for Delegate). The page metadata shows the site was first published 2023-02-02; the line's own date is not given.",
+      "subjects": [
+        "gun violence",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -96,6 +117,31 @@
       "found": 1,
       "at": "2026-10-28T17:58:27.793Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site alexaskew.com (homepage fetched; one gun line)",
+        "Wikipedia page confirms Delegate, District 95, took office 2024-01-10; no gun statements. Note: VA House seats are not on the 2026 ballot; not a 2026 candidate by that page",
+        "blocked: https://lis.virginia.gov/member-profile/H311/legislation (page needs JavaScript, no content)",
+        "billsponsor.com politician page (no firearm bills in featured list)",
+        "Giffords endorsement page (text written by the group, not his words; not saved)",
+        "Ballotpedia: not reviewed",
+        "news search: one search; HB 40 (2026, unserialized firearms) patron is another delegate per a search summary; his vote not verified from a page"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

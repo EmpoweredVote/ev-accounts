@@ -80,7 +80,115 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "5f09cd0e60e6a478a08a6871e24f6da290a388a64d7d465ef9cb8fb59ec5e916",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/media/press-releases/congresswoman-tenney-releases-2026-second-amendment-plan",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "passage": "The Second Amendment is a fundamental Constitutional right that protects every law-abiding American's ability to defend themselves, their families, and their freedoms.",
+      "note": "Quote in her release announcing her 2026 Second Amendment plan. Fetch tool returned an extract of the page.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c139b2727e36b32ba4667171864569c0c12073b5b5c4c673057985774b75eeff",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/media/press-releases/congresswoman-tenneys-statement-houses-passage-senate-gun-control-bill",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "This overreaching gun control legislation will not stop the violent shootings taking place across our country",
+      "note": "Statement on House passage of the Senate gun bill. Same statement (extracts, not full sentences) says the bill expands support for red flag laws at the federal level and makes young buyers wait longer to purchase a firearm. Passage is an extract that stops mid-sentence.",
+      "subjects": [
+        "gun control legislation",
+        "red-flag orders",
+        "minimum age to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "989c4aef337bb63bcf2095ba7f503c5a3d9ea6ac00e701dff9e79dad74be698a",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/issues/second-amendment-plan",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I opposed the onerous NY SAFE Act and was the first to introduce formal legislation to repeal this law",
+      "note": "Issue page on her Second Amendment plan (undated). Extract; passage stops mid-sentence. Same page lists H.R. 38 Concealed Carry Reciprocity Act: anyone eligible to carry a concealed firearm in one state may do so in any other state.",
+      "subjects": [
+        "repeal of state gun law (NY SAFE Act)",
+        "carry permit reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a4f6bce678b1b2323c26624746b8f9255f3d140e3689897832c76c98fd8aace",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/issues/second-amendment-plan",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This bill would ensure that anyone eligible to carry a concealed firearm in one state may do so in any other state",
+      "note": "Her issue page description of H.R. 38, Concealed Carry Reciprocity Act. Extract; undated.",
+      "subjects": [
+        "carry permit reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "concealed carry reciprocity",
+        "NY SAFE Act repeal",
+        "gun control bills",
+        "red-flag laws",
+        "minimum age to buy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site tenney.house.gov (2026 Second Amendment plan release, 2022 statement, issues/second-amendment-plan page)",
+        "blocked: https://www.congress.gov (not attempted after Cloudflare block on another member page; sponsorships not reviewed, only as named on her own site)",
+        "one news search on name plus subject words (leads only)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

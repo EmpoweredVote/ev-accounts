@@ -1,0 +1,79 @@
+{
+  "id": "HI-SB-401-2025",
+  "scope": "state:hi",
+  "title": "SB 401 (S.D. 2, H.D. 1, C.D. 1) (2025 Regular (33rd Legislature)) — Ban on sale/transfer of assault rifles, assault shotguns and .50 caliber firearms; expanded detachable-magazine ban",
+  "urls": [
+    "https://data.capitol.hawaii.gov/sessions/session2025/bills/SB401_CD1_.HTM",
+    "https://data.capitol.hawaii.gov/sessions/session2025/commreports/SB401_CD1_CCR85_.HTM",
+    "https://www.hawaiinewsnow.com/2025/05/01/hawaii-senators-narrowly-kill-firearms-bill",
+    "https://policyrisk.com/state-bill/HI-SB401-2026"
+  ],
+  "version": "other",
+  "operative_text": "Sec 1 definitions (HRS 134-1): seven new definitions; amends 'assault pistol': By adding seven new definitions to be appropriately inserted and to read:\nSec 2 (HRS 134-4) bar on sale or transfer: No assault rifle, assault shotgun, or .50 caliber firearm shall be sold or transferred on or after January 1, 2026\nSec 3 (HRS 134-8) prohibited items and magazines: The manufacture, possession, sale, barter, trade, gift, transfer, or acquisition of any of the following shall be prohibited:\nSec 3 definition of assault rifle: \"Assault rifle\" means a semiautomatic rifle:\nSec 3 penalty: Any person violating subsection (a) or (b) shall be guilty of a class C felony\nSec 4 (HRS 134-15(b)) exemptions: This section shall not apply to any pistol or revolver duly registered\nSec 5 savings clause: This Act does not affect rights and duties that matured, penalties that were incurred\nSec 6 severability: Every provision in this Act and every application of each provision in this Act is severable from each other.\nSec 7 formatting note: Statutory material to be repealed is bracketed and stricken. New statutory material is underscored.\nSec 8 effective date: This Act shall take effect on January 1, 2026.",
+  "sponsors": [
+    {
+      "name": "Karl Rhoads",
+      "role": "co",
+      "version": "unknown"
+    },
+    {
+      "name": "Stanley Chang",
+      "role": "co",
+      "version": "unknown"
+    },
+    {
+      "name": "Glenn Wakai",
+      "role": "co",
+      "version": "unknown"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-04",
+      "body": "HI Senate",
+      "motion": "Senate floor vote (third reading, S.D.2) - counts from policyrisk.com tracker and a news summary",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 5,
+      "body_size": 25,
+      "note": "names from: news; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2025-04-04",
+      "body": "HI House",
+      "motion": "House floor vote (third reading, H.D.1) - tracker; page also lists 4/2/2025 House floor vote 42-8",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 8,
+      "body_size": 51,
+      "note": "names from: news; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2025-04-30",
+      "body": "HI Senate",
+      "motion": "Floor amendment (DeCoite) adopted; bill then returned to committee - per Hawaii News Now: 'tied at 12-12' then President voted aye, '13-ayes, 12 nos. Amendment passes.'",
+      "kind": "roll-call",
+      "yes": 13,
+      "no": 12,
+      "body_size": 25,
+      "note": "names from: news; member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:15:37.091Z",
+    "method": "webfetch"
+  }
+}

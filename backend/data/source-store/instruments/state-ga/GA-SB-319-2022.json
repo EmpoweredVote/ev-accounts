@@ -1,0 +1,78 @@
+{
+  "id": "GA-SB-319-2022",
+  "scope": "state:ga",
+  "title": "SB 319 (Chairman John Meadows Act, as signed; Act 596; also called Georgia Constitutional Carry Act of 2021) (2021-2022 session (2022 Regular)) — Ends the license requirement to carry a handgun for people eligible for a license; term \"lawful weapons carrier\"",
+  "urls": [
+    "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+    "https://www.legis.ga.gov/api/document/docs/default-source/house-budget-and-research-office-document-library/newsandhighlights/2022/2022_policy_brief_constitutional_carry.pdf?sfvrsn=194fdfde_2",
+    "https://legiscan.com/GA/votes/SB319/2021 (listed by search, not opened: Cloudflare 403 on the LegiScan bill page)",
+    "https://www.legis.ga.gov/legislation/60797"
+  ],
+  "version": "enrolled",
+  "operative_text": "bill text not read: text not read",
+  "sponsors": [
+    {
+      "name": "Jason Anavitarte",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Mandi Ballinger",
+      "role": "co",
+      "version": "House"
+    }
+  ],
+  "single_subject": [],
+  "higher_law_duty": "text not read",
+  "votes": [
+    {
+      "date": "2022-02-28",
+      "body": "GA Senate",
+      "motion": "Passage (third reading)",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 22,
+      "body_size": 56,
+      "note": "names from: news; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2022-03-30",
+      "body": "GA House",
+      "motion": "Passage as amended/substituted",
+      "kind": "roll-call",
+      "yes": 100,
+      "no": 67,
+      "body_size": 180,
+      "note": "names from: news; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2022-04-01",
+      "body": "GA Senate",
+      "motion": "Final passage / agree to House version",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 22,
+      "body_size": 56,
+      "note": "names from: news; member names not captured",
+      "members": []
+    },
+    {
+      "date": "2022-03-30",
+      "body": "GA House",
+      "motion": "three unlabelled tallies on the official page: 66-101, 100-67, 65-101",
+      "kind": "roll-call",
+      "yes": 0,
+      "no": 0,
+      "body_size": 180,
+      "note": "names from: none; member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "B, F (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:15:37.091Z",
+    "method": "webfetch"
+  }
+}

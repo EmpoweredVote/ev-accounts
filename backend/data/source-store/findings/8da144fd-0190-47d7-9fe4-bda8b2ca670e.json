@@ -66,6 +66,71 @@
         "fetched_at": "2026-10-28T22:51:16.463Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "70c90ea7b4c776baa179030ce5e52baf36e0c6ec7cbcf6253b0bc6fc6c0bd9ec",
+      "kind": "own-words",
+      "url": "https://pasenate.com/sen-tim-kearney-calls-for-special-session-on-gun-violence-extremism/",
+      "date": "2019-08-06",
+      "date_precision": "day",
+      "passage": "“We must use this special session to pass common-sense gun reforms that will save lives.”",
+      "note": "Quoted in a Senate release calling for a special session on gun violence. The release also lists bills he co-sponsored: SB 292 (assault weapons ban), SB 88 (universal background checks), SB 90 (extreme risk protection orders), SB 195 (firearms training course for a concealed carry permit), SB 625 (municipalities decide whether firearms are allowed in their buildings).",
+      "subjects": [
+        "general statement on gun safety",
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f227b38dc629713e4562624fee8f341262e7eee5d186d8660d80df436c3c4e57",
+      "kind": "own-words",
+      "url": "https://pasenate.com/delco-leaders-want-funding-for-red-flag-laws-urge-harrisburg-to-act/",
+      "date": "2022-07-11",
+      "date_precision": "day",
+      "passage": "“Now that Congress has achieved bipartisan efforts to address the gun epidemic…it’s time the Pennsylvania legislature follows suit and uses the money offered in this legislation to pass and enact red flag laws,” said Senator Tim Kearney.",
+      "note": "Quoted in a Senate release; date taken from the page's publication data.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ff9cfc29724e7487eada6b864189068b378c3538e399f277d2a141f68ec20e1",
+      "kind": "record",
+      "url": "https://pasenate.com/sen-tim-kearney-calls-for-special-session-on-gun-violence-extremism/",
+      "date": "2019-08-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-292-2019",
+      "act": "sponsor",
+      "note": "Release says he co-sponsored SB 292, a bill to enact an assault weapons ban in Pennsylvania. Bill page itself not fetched.",
+      "subjects": [
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -119,6 +184,28 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.463Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pasenate.com (two Kearney releases)",
+        "web search: one search (leads only)",
+        "Ballotpedia not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

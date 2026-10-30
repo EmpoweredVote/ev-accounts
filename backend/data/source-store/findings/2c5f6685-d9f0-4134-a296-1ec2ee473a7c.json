@@ -48,6 +48,28 @@
       "found": 1,
       "at": "2026-10-28T16:23:48.141Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans and large-capacity magazines",
+        "background checks",
+        "ghost guns",
+        "carry permits",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House of Delegates member list https://house.vga.virginia.gov/members (confirms Wachsmann, Howard Otto, Jr., District 83; House seats were not on the 2026 ballot)",
+        "blocked: https://ballotpedia.org/Howard_Otto_Wachsmann_Jr. (403 on curl, empty on fetch)",
+        "not reviewed: https://www.billsponsor.com/politicians/8473/h-otto-wachsmann-jr (page loads by script, no vote text readable; a search summary named HB 19 and HB 40 votes on 2026-03-04, not verified by me)",
+        "not reviewed: https://lis.virginia.gov (bill pages load by script, no text readable)",
+        "web search on name plus firearms: nothing on the subject in his own words"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }
