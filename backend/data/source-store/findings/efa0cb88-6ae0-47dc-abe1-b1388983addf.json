@@ -80,7 +80,92 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "e1ce232c3bdba752245f30c1fbbfdc6cbc386e8b23fc76535cf21aee6fea11ef",
+      "kind": "own-words",
+      "url": "https://clarke.house.gov/gunviolencestatementjuly2020/",
+      "date": "2020-07-16",
+      "date_precision": "day",
+      "passage": "We must continue to pressure the Senate to put lives above gun lobbies by passing critical legislation like HR8, that would require universal background checks, and has already passed the House of Representatives, but has been sitting in Mitch McConnell’s legislative graveyard.",
+      "note": "Press release statement issued in her name (page published 2020-07-16); urges Senate passage of H.R. 8, universal background checks.",
+      "subjects": [
+        "universal background checks",
+        "H.R. 8 background checks bill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a012201d7dcd180db2492e65d4340829d39b7efb7904308948bcbaa0f2add556",
+      "kind": "own-words",
+      "url": "https://clarke.house.gov/gunviolencestatementjuly2020/",
+      "date": "2020-07-16",
+      "date_precision": "day",
+      "passage": "Too many of our young people have been deprived of the chance to grow old and to lead the lives they deserve.",
+      "note": "Same press release, on rising gun violence in Brooklyn and nationally; also says: These tragic shootings must come to an end.",
+      "subjects": [
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af9c9f2a233afc5fbcd19b25215d228d8c42be22a9844e3f259ea53109308c07",
+      "kind": "own-words",
+      "url": "https://clarke.house.gov/legislation/issue-areas/gun-violence-prevention/",
+      "date": "2025-07-01",
+      "date_precision": "day",
+      "passage": "As an advocate for gun safety and the strengthening of gun laws,  I will continue to advocate for common sense gun legislation to make our communities safer.",
+      "note": "Official issue page on gun violence prevention. Date is the page's last-modified time (2025-07-01), so the words may be older.",
+      "subjects": [
+        "gun safety laws",
+        "strengthening gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "universal background checks",
+        "assault weapons ban",
+        "gun safety laws",
+        "red-flag orders",
+        "carry laws"
+      ],
+      "places": [
+        "status: scope not fully confirmed. NYC Board of Elections 2026-06-23 NY-9 recap PDF shows Clarke leading in the district tallies it lists; no citywide total or loss found (https://vote.nyc/sites/default/files/pdf/election_results/2026/20260623Primary%20Election/01301600009Kings%20Democratic%20Representative%20in%20Congress%209th%20Congressional%20District%20Recap.pdf)",
+        "On the Record (0 meetings)",
+        "official site clarke.house.gov gun violence prevention issue page and 2020 press release",
+        "blocked: https://ballotpedia.org/New_York's_9th_Congressional_District_election,_2026 (empty page)",
+        "not reviewed: congress.gov (blocked earlier, not retried)",
+        "web search (one); sponsorships not searched further"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

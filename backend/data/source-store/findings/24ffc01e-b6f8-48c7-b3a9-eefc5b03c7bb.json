@@ -80,7 +80,52 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "866c3d1ca53f01b526289621d37c517bff8072b893c119710a578e80037ebb11",
+      "kind": "own-words",
+      "url": "https://alford.house.gov/issues/issue/?IssueID=15043",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I proudly stand strong with the Second Amendment, our God-given right. The Second Amendment recognizes the intrinsic value of personal autonomy, security, and self-reliance. America is one of only three countries in the world with the right to bear arms, and it's a key reason we remain a free society today.",
+      "note": "Official-site issue page on the Second Amendment. Page is undated. Also says: As long as I am in Congress, I won't stop fighting to ensure America's 2nd Amendment rights stay intact.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "concealed carry reciprocity",
+        "suppressors",
+        "assault weapons",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (1 meeting, 2026-07-16 House floor; nothing on the subject)",
+        "official site alford.house.gov issue page Second Amendment",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/38/cosponsors",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/404/cosponsors",
+        "web search (one; third-party listing hints at H.R. 38 and H.R. 404 but role unconfirmed, not saved)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

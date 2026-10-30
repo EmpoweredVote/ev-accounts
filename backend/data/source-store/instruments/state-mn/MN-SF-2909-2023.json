@@ -1,0 +1,1657 @@
+{
+  "id": "MN-SF-2909-2023",
+  "scope": "state:mn",
+  "title": "HF 2890 (companion; law = SF 2909, Ch. 52) (2023) — Omnibus judiciary/public safety finance and policy bill with Article 13 (firearms background checks, private-party transfers) and Article 14 (extreme risk protection orders), plus 18 other articles",
+  "urls": [
+    "https://www.revisor.mn.gov/bills/bill.php?b=house&f=HF2890&ssn=0&y=2023",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/2909/",
+    "https://www.revisor.mn.gov/bills/93/2023/0/SF/2909/versions/ccr/0/",
+    "https://www.house.mn.gov/votes/Details?BillNumber=SF2909&SessionKey=300"
+  ],
+  "version": "enrolled",
+  "operative_text": "Art 1 Judiciary appropriations: JUDICIARY APPROPRIATIONS\nArt 2 Public safety appropriations: PUBLIC SAFETY APPROPRIATIONS\nArt 3 Judiciary policy: JUDICIARY POLICY\nArt 4 General crimes: GENERAL CRIMES\nArt 5 Public safety and crime victims: PUBLIC SAFETY AND CRIME VICTIMS\nArt 6 Sentencing: SENTENCING\nArt 7 Expungement: EXPUNGEMENT\nArt 8 Clemency reform: CLEMENCY REFORM\nArt 9 Evidence gathering and reporting: EVIDENCE GATHERING AND REPORTING\nArt 10 Policing and private security: POLICING AND PRIVATE SECURITY\nArt 11 Corrections policy: CORRECTIONS POLICY\nArt 12 Minnesota Rehabilitation and Reinvestment Act: MINNESOTA REHABILITATION AND REINVESTMENT ACT\nArt 13 Firearms background checks: FIREARMS BACKGROUND CHECKS\nArt 14 Extreme risk protection orders: EXTREME RISK PROTECTION ORDERS\nArt 15 Controlled substances policy: CONTROLLED SUBSTANCES POLICY\nArt 16 Controlled substances schedules: CONTROLLED SUBSTANCES SCHEDULES\nArt 17 Community supervision reform: COMMUNITY SUPERVISION REFORM\nArt 18 Supervised release board; life sentences: SUPERVISED RELEASE BOARD; LIFE SENTENCES FOR CERTAIN OFFENDERS\nArt 19 Civil law: CIVIL LAW\nArt 20 Carjacking; conforming changes: CARJACKING; CONFORMING CHANGES\nArt 13 sec 3 private-party transfers background check (new section 624.7134, read from rendered page 284, all underlined = new): An unlicensed person is prohibited from transferring a pistol or semiautomatic military-style assault weapon to any other unlicensed person, unless: (1) the transfer is made through a firearms dealer as provided for in subdivision 3; or (2) the transferee presents a valid transferee permit\nArt 13 sec 1 transferee permit (624.7131 amended): Any person may apply for a transferee permit by providing the following information in writing to the chief of police\nArt 13 sec 2 (624.7132 amended, transfer reports): Sec. 2. Minnesota Statutes 2022, section 624.7132, is amended to read:\nArt 14 sec 6 red-flag transfer of firearms (624.7175): upon issuance of an extreme risk protection order, the court shall direct the respondent to transfer any firearms the person possesses as soon as reasonably practicable, but in no case later than 24 hours\nArt 14 sec 11 federal Byrne grant: Sec. 11. FEDERAL BYRNE STATE CRISIS INTERVENTION PROGRAM.\nArt 2 firearm storage grants (appropriation): $250,000 the first year is for grants to local or state law enforcement agencies to support the safe and secure storage of firearms owned by persons subject to extreme risk protection orders.\nArt 2 firearm eligibility check funding: $70,000 the first year is to purchase and integrate information technology hardware and software necessary to process additional firearms eligibility background checks.\nArt 4 sec 15 machine gun definitions (609.67): \"Machine gun\" means any firearm designed to discharge, or capable of discharging automatically more than once by a single function of the trigger.",
+  "sponsors": [
+    {
+      "name": "Moller",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Becker-Finn",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Curran",
+      "role": "co",
+      "version": "1st engrossment"
+    },
+    {
+      "name": "Latz",
+      "role": "co",
+      "version": "introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "omnibus: sentencing, clemency, supervision"
+      ]
+    }
+  ],
+  "higher_law_duty": "Art 14 sec 11 'FEDERAL BYRNE STATE CRISIS INTERVENTION PROGRAM' - appropriation text says commissioner must apply for the federal grant; no other federal or state mandate cited in the parts read",
+  "votes": [
+    {
+      "date": "2023-05-16",
+      "body": "MN House",
+      "motion": "SF 2909 repassage, as amended by Conference (journal p. 8025)",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 63,
+      "body_size": 134,
+      "note": "names from: page text",
+      "members": [
+        {
+          "name": "Acomb",
+          "vote": "yea"
+        },
+        {
+          "name": "Agbaje",
+          "vote": "yea"
+        },
+        {
+          "name": "Bahner",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker-Finn",
+          "vote": "yea"
+        },
+        {
+          "name": "Berg",
+          "vote": "yea"
+        },
+        {
+          "name": "Bierman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brand",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Cha",
+          "vote": "yea"
+        },
+        {
+          "name": "Clardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Coulter",
+          "vote": "yea"
+        },
+        {
+          "name": "Curran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Elkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Feist",
+          "vote": "yea"
+        },
+        {
+          "name": "Finke",
+          "vote": "yea"
+        },
+        {
+          "name": "Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Freiberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Gomez",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hansen, R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanson, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hassan",
+          "vote": "yea"
+        },
+        {
+          "name": "Hemmingsen-Jaeger",
+          "vote": "yea"
+        },
+        {
+          "name": "Her",
+          "vote": "yea"
+        },
+        {
+          "name": "Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hollins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Hortman",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "yea"
+        },
+        {
+          "name": "Huot",
+          "vote": "yea"
+        },
+        {
+          "name": "Hussein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Keeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Klevorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Koegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Kotyza-Witthuhn",
+          "vote": "yea"
+        },
+        {
+          "name": "Kozlowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Kraft",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, F.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Liebling",
+          "vote": "yea"
+        },
+        {
+          "name": "Lillie",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "Moller",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Noor",
+          "vote": "yea"
+        },
+        {
+          "name": "Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Pelowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Pérez-Vega",
+          "vote": "yea"
+        },
+        {
+          "name": "Pinto",
+          "vote": "yea"
+        },
+        {
+          "name": "Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Pursell",
+          "vote": "yea"
+        },
+        {
+          "name": "Rehm",
+          "vote": "yea"
+        },
+        {
+          "name": "Reyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sencer-Mura",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephenson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tabke",
+          "vote": "yea"
+        },
+        {
+          "name": "Vang",
+          "vote": "yea"
+        },
+        {
+          "name": "Wolgamott",
+          "vote": "yea"
+        },
+        {
+          "name": "Xiong",
+          "vote": "yea"
+        },
+        {
+          "name": "Youakim",
+          "vote": "yea"
+        },
+        {
+          "name": "Altendorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, P. E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Backer",
+          "vote": "nay"
+        },
+        {
+          "name": "Bakeberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bliss",
+          "vote": "nay"
+        },
+        {
+          "name": "Burkel",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniels",
+          "vote": "nay"
+        },
+        {
+          "name": "Daudt",
+          "vote": "nay"
+        },
+        {
+          "name": "Davids",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Demuth",
+          "vote": "nay"
+        },
+        {
+          "name": "Dotseth",
+          "vote": "nay"
+        },
+        {
+          "name": "Engen",
+          "vote": "nay"
+        },
+        {
+          "name": "Fogelman",
+          "vote": "nay"
+        },
+        {
+          "name": "Franson",
+          "vote": "nay"
+        },
+        {
+          "name": "Garofalo",
+          "vote": "nay"
+        },
+        {
+          "name": "Gillman",
+          "vote": "nay"
+        },
+        {
+          "name": "Grossell",
+          "vote": "nay"
+        },
+        {
+          "name": "Harder",
+          "vote": "nay"
+        },
+        {
+          "name": "Heintzeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudella",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Igo",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacob",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Joy",
+          "vote": "nay"
+        },
+        {
+          "name": "Knudsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Koznick",
+          "vote": "nay"
+        },
+        {
+          "name": "Kresha",
+          "vote": "nay"
+        },
+        {
+          "name": "Lislegard",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Mekeland",
+          "vote": "nay"
+        },
+        {
+          "name": "Mueller",
+          "vote": "nay"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay"
+        },
+        {
+          "name": "Myers",
+          "vote": "nay"
+        },
+        {
+          "name": "Nadeau",
+          "vote": "nay"
+        },
+        {
+          "name": "Nash",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson, N.",
+          "vote": "nay"
+        },
+        {
+          "name": "Neu Brindley",
+          "vote": "nay"
+        },
+        {
+          "name": "Niska",
+          "vote": "nay"
+        },
+        {
+          "name": "Novotny",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Driscoll",
+          "vote": "nay"
+        },
+        {
+          "name": "Olson, B.",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Perryman",
+          "vote": "nay"
+        },
+        {
+          "name": "Petersburg",
+          "vote": "nay"
+        },
+        {
+          "name": "Pfarr",
+          "vote": "nay"
+        },
+        {
+          "name": "Quam",
+          "vote": "nay"
+        },
+        {
+          "name": "Robbins",
+          "vote": "nay"
+        },
+        {
+          "name": "Schomacker",
+          "vote": "nay"
+        },
+        {
+          "name": "Schultz",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Skraba",
+          "vote": "nay"
+        },
+        {
+          "name": "Swedzinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Torkelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Urdahl",
+          "vote": "nay"
+        },
+        {
+          "name": "West",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiener",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiens",
+          "vote": "nay"
+        },
+        {
+          "name": "Witte",
+          "vote": "nay"
+        },
+        {
+          "name": "Zeleznikar",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2023-05-15",
+      "body": "MN House",
+      "motion": "Moller motion to adopt conference report (68-60); not the final passage but names kept",
+      "kind": "roll-call",
+      "yes": 68,
+      "no": 60,
+      "body_size": 134,
+      "note": "names from: page text",
+      "members": [
+        {
+          "name": "Acomb",
+          "vote": "yea"
+        },
+        {
+          "name": "Agbaje",
+          "vote": "yea"
+        },
+        {
+          "name": "Bahner",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker-Finn",
+          "vote": "yea"
+        },
+        {
+          "name": "Berg",
+          "vote": "yea"
+        },
+        {
+          "name": "Bierman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brand",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Cha",
+          "vote": "yea"
+        },
+        {
+          "name": "Clardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Coulter",
+          "vote": "yea"
+        },
+        {
+          "name": "Curran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Elkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Feist",
+          "vote": "yea"
+        },
+        {
+          "name": "Finke",
+          "vote": "yea"
+        },
+        {
+          "name": "Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Freiberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hansen, R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanson, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hassan",
+          "vote": "yea"
+        },
+        {
+          "name": "Hemmingsen-Jaeger",
+          "vote": "yea"
+        },
+        {
+          "name": "Her",
+          "vote": "yea"
+        },
+        {
+          "name": "Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hollins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Hortman",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "yea"
+        },
+        {
+          "name": "Huot",
+          "vote": "yea"
+        },
+        {
+          "name": "Hussein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Keeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Klevorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Koegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Kotyza-Witthuhn",
+          "vote": "yea"
+        },
+        {
+          "name": "Kozlowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Kraft",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, F.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Liebling",
+          "vote": "yea"
+        },
+        {
+          "name": "Lillie",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "Moller",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Noor",
+          "vote": "yea"
+        },
+        {
+          "name": "Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Pelowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Pérez-Vega",
+          "vote": "yea"
+        },
+        {
+          "name": "Pinto",
+          "vote": "yea"
+        },
+        {
+          "name": "Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Pursell",
+          "vote": "yea"
+        },
+        {
+          "name": "Rehm",
+          "vote": "yea"
+        },
+        {
+          "name": "Reyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sencer-Mura",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephenson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tabke",
+          "vote": "yea"
+        },
+        {
+          "name": "Vang",
+          "vote": "yea"
+        },
+        {
+          "name": "Wolgamott",
+          "vote": "yea"
+        },
+        {
+          "name": "Xiong",
+          "vote": "yea"
+        },
+        {
+          "name": "Youakim",
+          "vote": "yea"
+        },
+        {
+          "name": "Altendorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, P. E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Backer",
+          "vote": "nay"
+        },
+        {
+          "name": "Bakeberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bliss",
+          "vote": "nay"
+        },
+        {
+          "name": "Burkel",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniels",
+          "vote": "nay"
+        },
+        {
+          "name": "Daudt",
+          "vote": "nay"
+        },
+        {
+          "name": "Davids",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Demuth",
+          "vote": "nay"
+        },
+        {
+          "name": "Dotseth",
+          "vote": "nay"
+        },
+        {
+          "name": "Engen",
+          "vote": "nay"
+        },
+        {
+          "name": "Fogelman",
+          "vote": "nay"
+        },
+        {
+          "name": "Franson",
+          "vote": "nay"
+        },
+        {
+          "name": "Gillman",
+          "vote": "nay"
+        },
+        {
+          "name": "Grossell",
+          "vote": "nay"
+        },
+        {
+          "name": "Harder",
+          "vote": "nay"
+        },
+        {
+          "name": "Heintzeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudella",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Igo",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacob",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Joy",
+          "vote": "nay"
+        },
+        {
+          "name": "Knudsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Koznick",
+          "vote": "nay"
+        },
+        {
+          "name": "Kresha",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Mekeland",
+          "vote": "nay"
+        },
+        {
+          "name": "Mueller",
+          "vote": "nay"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay"
+        },
+        {
+          "name": "Myers",
+          "vote": "nay"
+        },
+        {
+          "name": "Nadeau",
+          "vote": "nay"
+        },
+        {
+          "name": "Nash",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson, N.",
+          "vote": "nay"
+        },
+        {
+          "name": "Neu Brindley",
+          "vote": "nay"
+        },
+        {
+          "name": "Niska",
+          "vote": "nay"
+        },
+        {
+          "name": "Novotny",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Driscoll",
+          "vote": "nay"
+        },
+        {
+          "name": "Olson, B.",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Perryman",
+          "vote": "nay"
+        },
+        {
+          "name": "Petersburg",
+          "vote": "nay"
+        },
+        {
+          "name": "Pfarr",
+          "vote": "nay"
+        },
+        {
+          "name": "Quam",
+          "vote": "nay"
+        },
+        {
+          "name": "Robbins",
+          "vote": "nay"
+        },
+        {
+          "name": "Schomacker",
+          "vote": "nay"
+        },
+        {
+          "name": "Schultz",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Skraba",
+          "vote": "nay"
+        },
+        {
+          "name": "Swedzinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Torkelson",
+          "vote": "nay"
+        },
+        {
+          "name": "West",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiener",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiens",
+          "vote": "nay"
+        },
+        {
+          "name": "Witte",
+          "vote": "nay"
+        },
+        {
+          "name": "Zeleznikar",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2023-04-26",
+      "body": "MN House",
+      "motion": "SF 2909 passage as amended (earlier House version)",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 60,
+      "body_size": 134,
+      "note": "names from: page text",
+      "members": [
+        {
+          "name": "Acomb",
+          "vote": "yea"
+        },
+        {
+          "name": "Agbaje",
+          "vote": "yea"
+        },
+        {
+          "name": "Bahner",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker-Finn",
+          "vote": "yea"
+        },
+        {
+          "name": "Berg",
+          "vote": "yea"
+        },
+        {
+          "name": "Bierman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brand",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Cha",
+          "vote": "yea"
+        },
+        {
+          "name": "Clardy",
+          "vote": "yea"
+        },
+        {
+          "name": "Coulter",
+          "vote": "yea"
+        },
+        {
+          "name": "Curran",
+          "vote": "yea"
+        },
+        {
+          "name": "Edelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Elkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Feist",
+          "vote": "yea"
+        },
+        {
+          "name": "Finke",
+          "vote": "yea"
+        },
+        {
+          "name": "Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Freiberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Gomez",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenman",
+          "vote": "yea"
+        },
+        {
+          "name": "Hansen, R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hanson, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hassan",
+          "vote": "yea"
+        },
+        {
+          "name": "Hemmingsen-Jaeger",
+          "vote": "yea"
+        },
+        {
+          "name": "Her",
+          "vote": "yea"
+        },
+        {
+          "name": "Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Hollins",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Hortman",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "yea"
+        },
+        {
+          "name": "Huot",
+          "vote": "yea"
+        },
+        {
+          "name": "Hussein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Keeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Klevorn",
+          "vote": "yea"
+        },
+        {
+          "name": "Koegel",
+          "vote": "yea"
+        },
+        {
+          "name": "Kotyza-Witthuhn",
+          "vote": "yea"
+        },
+        {
+          "name": "Kozlowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Kraft",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, F.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Liebling",
+          "vote": "yea"
+        },
+        {
+          "name": "Lillie",
+          "vote": "yea"
+        },
+        {
+          "name": "Long",
+          "vote": "yea"
+        },
+        {
+          "name": "Moller",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Newton",
+          "vote": "yea"
+        },
+        {
+          "name": "Noor",
+          "vote": "yea"
+        },
+        {
+          "name": "Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson, L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Pelowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Pérez-Vega",
+          "vote": "yea"
+        },
+        {
+          "name": "Pinto",
+          "vote": "yea"
+        },
+        {
+          "name": "Pryor",
+          "vote": "yea"
+        },
+        {
+          "name": "Pursell",
+          "vote": "yea"
+        },
+        {
+          "name": "Rehm",
+          "vote": "yea"
+        },
+        {
+          "name": "Reyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sencer-Mura",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephenson",
+          "vote": "yea"
+        },
+        {
+          "name": "Tabke",
+          "vote": "yea"
+        },
+        {
+          "name": "Vang",
+          "vote": "yea"
+        },
+        {
+          "name": "Wolgamott",
+          "vote": "yea"
+        },
+        {
+          "name": "Xiong",
+          "vote": "yea"
+        },
+        {
+          "name": "Youakim",
+          "vote": "yea"
+        },
+        {
+          "name": "Altendorf",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, P. E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Anderson, P. H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Backer",
+          "vote": "nay"
+        },
+        {
+          "name": "Bakeberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bliss",
+          "vote": "nay"
+        },
+        {
+          "name": "Burkel",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniels",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Demuth",
+          "vote": "nay"
+        },
+        {
+          "name": "Dotseth",
+          "vote": "nay"
+        },
+        {
+          "name": "Engen",
+          "vote": "nay"
+        },
+        {
+          "name": "Fogelman",
+          "vote": "nay"
+        },
+        {
+          "name": "Franson",
+          "vote": "nay"
+        },
+        {
+          "name": "Garofalo",
+          "vote": "nay"
+        },
+        {
+          "name": "Gillman",
+          "vote": "nay"
+        },
+        {
+          "name": "Grossell",
+          "vote": "nay"
+        },
+        {
+          "name": "Harder",
+          "vote": "nay"
+        },
+        {
+          "name": "Heintzeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudella",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Igo",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacob",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Joy",
+          "vote": "nay"
+        },
+        {
+          "name": "Knudsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Koznick",
+          "vote": "nay"
+        },
+        {
+          "name": "Kresha",
+          "vote": "nay"
+        },
+        {
+          "name": "Lislegard",
+          "vote": "nay"
+        },
+        {
+          "name": "McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Mekeland",
+          "vote": "nay"
+        },
+        {
+          "name": "Mueller",
+          "vote": "nay"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay"
+        },
+        {
+          "name": "Myers",
+          "vote": "nay"
+        },
+        {
+          "name": "Nash",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson, N.",
+          "vote": "nay"
+        },
+        {
+          "name": "Neu Brindley",
+          "vote": "nay"
+        },
+        {
+          "name": "Niska",
+          "vote": "nay"
+        },
+        {
+          "name": "Novotny",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Driscoll",
+          "vote": "nay"
+        },
+        {
+          "name": "Olson, B.",
+          "vote": "nay"
+        },
+        {
+          "name": "O'Neill",
+          "vote": "nay"
+        },
+        {
+          "name": "Perryman",
+          "vote": "nay"
+        },
+        {
+          "name": "Petersburg",
+          "vote": "nay"
+        },
+        {
+          "name": "Pfarr",
+          "vote": "nay"
+        },
+        {
+          "name": "Quam",
+          "vote": "nay"
+        },
+        {
+          "name": "Robbins",
+          "vote": "nay"
+        },
+        {
+          "name": "Schomacker",
+          "vote": "nay"
+        },
+        {
+          "name": "Schultz",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Skraba",
+          "vote": "nay"
+        },
+        {
+          "name": "Swedzinski",
+          "vote": "nay"
+        },
+        {
+          "name": "Urdahl",
+          "vote": "nay"
+        },
+        {
+          "name": "West",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiener",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiens",
+          "vote": "nay"
+        },
+        {
+          "name": "Witte",
+          "vote": "nay"
+        },
+        {
+          "name": "Zeleznikar",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2023-05-12",
+      "body": "MN Senate",
+      "motion": "Adopt conference report and repass SF 2909 (Senate journal p. 7871; third reading p. 7872)",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 33,
+      "body_size": 67,
+      "note": "names from: none - counts only; member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:15:37.091Z",
+    "method": "webfetch"
+  }
+}

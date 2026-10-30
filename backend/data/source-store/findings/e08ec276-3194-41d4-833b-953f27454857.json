@@ -82,5 +82,27 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://mrvan.house.gov/search?term=gun",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/3115/cosponsors",
+        "blocked: https://app.legiplex.com/profile/frank-mrvan-4083/legislation?page=9",
+        "Ballotpedia: page returned empty to fetch tool, not reviewed: https://ballotpedia.org/Frank_Mrvan",
+        "https://giffords.org/candidates/frank-mrvan-2/ names him as Indiana 1st District representative (identity only; third-party endorser, not own words)",
+        "news search: one search, no direct own-words statement found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

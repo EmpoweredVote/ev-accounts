@@ -25,6 +25,27 @@
       "found": 0,
       "at": "2026-10-28T16:27:44.466Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun safety laws",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Andrew_Rice_(Virginia) (office confirmed: assumed office 2026-03-17 after special election; nothing on the subject)",
+        "WHRO 2026-03-17 (special election result; nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "two web searches on name plus gun words (no statement or bill found)",
+        "not reviewed: iVoterGuide profile (seen only in a search summary), campaign site, Virginia LIS 2026 bill pages (not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

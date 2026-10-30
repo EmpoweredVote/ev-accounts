@@ -268,6 +268,29 @@
       "found": 6,
       "at": "2026-10-28T17:58:27.786Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun storage bills",
+        "assault weapons",
+        "Second Amendment",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign / House site: not reviewed",
+        "Ballotpedia: not reviewed",
+        "Virginia LIS bill pages: not reviewed",
+        "billsponsor.com Kilgore page: nothing on the subject (only commendation resolutions listed)",
+        "blocked: https://virginiamercury.com/?p=34328 (HTTP 403 via fetch tool; not retried another way; a search summary attributes a 2023 gun-storage quote to him there, unverified so not saved)",
+        "Virginia Mercury 2024-03-18 gun bills article: fetched by curl, no Kilgore text returned",
+        "NRA pages found by search concern a different person (Jerry Kilgore)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

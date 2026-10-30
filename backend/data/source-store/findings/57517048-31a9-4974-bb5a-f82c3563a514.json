@@ -154,6 +154,26 @@
       "found": 4,
       "at": "2026-10-28T16:26:43.481Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons",
+        "safe storage",
+        "gun violence prevention",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "New Journal and Guide article on 2024 advocacy day (fetched; names Delegate Jackie Hope Glass in a page description only, no words of hers; nothing on the subject in her own words)",
+        "one web search on name plus gun words (leads only: billsponsor.com cosponsor listings of 2025 HB1607 and HB1716, VPAP 2026 votes; not verified on an official page, not saved)",
+        "not reviewed: LIS 2025 and 2026 bill pages (legacy summary URLs return nothing for 2025)",
+        "not reviewed: her official House page and campaign site; Ballotpedia"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

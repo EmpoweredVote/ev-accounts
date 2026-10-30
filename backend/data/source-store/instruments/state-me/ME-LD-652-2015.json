@@ -1,0 +1,844 @@
+{
+  "id": "ME-LD-652-2015",
+  "scope": "state:me",
+  "title": "An Act To Authorize the Carrying of Concealed Handguns without a Permit (S.P. 245, L.D. 652), Public Law 2015, chapter 327",
+  "urls": [
+    "https://legislature.maine.gov/legis/bills/display_ps.asp?LD=652&snum=127",
+    "https://legislature.maine.gov/LawMakerWeb/summary.asp?paper=SP0245&SessionID=11",
+    "https://legislature.maine.gov/LawMakerWeb/rollcalls.asp?ID=280055116",
+    "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=SP0245&item=1&snum=127",
+    "https://legislature.maine.gov/legis/bills/bills_127th/chapters/PUBLIC327.asp",
+    "https://legislature.maine.gov/legis/bills/getPDF.asp?paper=SP0245&item=19&snum=127"
+  ],
+  "version": "enrolled",
+  "operative_text": "Title: An Act To Authorize the Carrying of Concealed Handguns without a Permit\nSec. 2, 25 MRSA 2001-A, sub-2, para. A-1 (new): A-1. A handgun carried by a person who is 21 years of age or older and is not otherwise prohibited from carrying a firearm or is 18 years of age or older and under 21 years of age and is on active duty in the Armed Forces of the United States or the National Guard or is an honorably discharged veteran of the Armed Forces of the United States or the National Guard and is not otherwise prohibited from carrying a firearm;\nSec. 4, 25 MRSA 2003-A (new): When an individual who is carrying a concealed handgun pursuant to the authority of this chapter and who does not have a valid permit to carry a concealed handgun that has been issued as provided in this chapter first comes into contact with any law enforcement officer of this State or its political subdivisions or a federal law enforcement officer during the course of any arrest, detainment or routine traffic stop, that individual shall immediately inform that law enforcement officer of the fact that the individual is carrying a concealed handgun.\nSec. 5, 25 MRSA 2004, sub-5 (new): A person who fails to comply with section 2003-A commits a civil violation for which a fine of not more than $100 may be adjudged.\nSec. 3, 25 MRSA 2001-A, sub-3 (new, part): Upon purchase of a handgun, a person exempt under subsection 2, paragraph A-1 shall sign in the presence of the firearm dealer an acknowledgment that the person was provided a basic firearm safety brochure in accordance with section 2012, subsection 2, paragraph A.",
+  "sponsors": [
+    {
+      "name": "Senator BRAKEY of Androscoggin",
+      "role": "co",
+      "version": "original"
+    },
+    {
+      "name": "Representative LONG of Sherman, Representative SHAW of Standish, Senators BURNS of Washington, COLLINS of York, CUSHING of Penobscot, DAVIS of Piscataquis, DUTREMBLE of York, EDGECOMB of Aroostook, LANGLEY of Hancock, MASON of Androscoggin, McCORMICK of Kennebec, PATRICK of Oxford, ROSEN of Hancock, SAVIELLO of Franklin, President THIBODEAU of Waldo, WHITTEMORE of Somerset, WILLETTE of Aroostook, WOODSOME of York, and about 70 further Representatives (full list printed in the LD 652 original PDF me-ld652-orig.pdf)",
+      "role": "co",
+      "version": "original"
+    },
+    {
+      "name": "Senator Brakey of Androscoggin (\"Presented by Senator BRAKEY of Androscoggin.\")",
+      "role": "prime"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2015-06-04",
+      "body": "ME House",
+      "motion": "concur (House Journal/Maine roll-call #152; page prints motion as \"concur\")",
+      "kind": "roll-call",
+      "yes": 87,
+      "no": 60,
+      "body_size": 151,
+      "note": "names from: page text (Maine Legislature LawMakerWeb roll-call page; names as 'SURNAME of Town'; party column not recorded)",
+      "members": [
+        {
+          "name": "ALLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "AUSTIN",
+          "vote": "yea"
+        },
+        {
+          "name": "BATTLE",
+          "vote": "yea"
+        },
+        {
+          "name": "BICKFORD",
+          "politician_id": "f1b5eb73-bc60-4e7a-a6b4-2702e8c40238",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACK",
+          "politician_id": "81db75c5-8c48-40f3-8cb1-7220def31e72",
+          "vote": "yea"
+        },
+        {
+          "name": "BRYANT",
+          "vote": "yea"
+        },
+        {
+          "name": "BUCKLAND",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL",
+          "vote": "yea"
+        },
+        {
+          "name": "CHACE",
+          "vote": "yea"
+        },
+        {
+          "name": "COREY",
+          "vote": "yea"
+        },
+        {
+          "name": "CRAFTS",
+          "vote": "yea"
+        },
+        {
+          "name": "DILLINGHAM",
+          "vote": "yea"
+        },
+        {
+          "name": "DUCHESNE",
+          "vote": "yea"
+        },
+        {
+          "name": "DUNPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "DUNPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "EDGECOMB",
+          "vote": "yea"
+        },
+        {
+          "name": "ESPLING",
+          "vote": "yea"
+        },
+        {
+          "name": "EVANGELOS",
+          "vote": "yea"
+        },
+        {
+          "name": "FARRIN",
+          "politician_id": "a49f9cab-2681-4003-a4a7-398c569cbaf5",
+          "vote": "yea"
+        },
+        {
+          "name": "FOLEY",
+          "politician_id": "4025a524-5e29-4c04-9026-009ba23878e5",
+          "vote": "yea"
+        },
+        {
+          "name": "FREDETTE",
+          "politician_id": "2c454f77-c706-491c-87d5-0796b59371d4",
+          "vote": "yea"
+        },
+        {
+          "name": "GERRISH",
+          "vote": "yea"
+        },
+        {
+          "name": "GILBERT",
+          "vote": "yea"
+        },
+        {
+          "name": "GILLWAY",
+          "vote": "yea"
+        },
+        {
+          "name": "GINZLER",
+          "vote": "yea"
+        },
+        {
+          "name": "GREENWOOD",
+          "politician_id": "85a1ae07-3743-4192-b516-b04f6035440a",
+          "vote": "yea"
+        },
+        {
+          "name": "GROHMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "GUERIN",
+          "politician_id": "d435e628-4145-41c3-9dc4-4ff2b91b9acf",
+          "vote": "yea"
+        },
+        {
+          "name": "HAMANN",
+          "vote": "yea"
+        },
+        {
+          "name": "HANINGTON",
+          "vote": "yea"
+        },
+        {
+          "name": "HANLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "HAWKE",
+          "vote": "yea"
+        },
+        {
+          "name": "HEAD",
+          "vote": "yea"
+        },
+        {
+          "name": "HERRICK",
+          "vote": "yea"
+        },
+        {
+          "name": "HICKMAN",
+          "politician_id": "838be693-3b76-413d-a37a-f1da2f3f1286",
+          "vote": "yea"
+        },
+        {
+          "name": "HIGGINS",
+          "vote": "yea"
+        },
+        {
+          "name": "HILLIARD",
+          "vote": "yea"
+        },
+        {
+          "name": "HOBART",
+          "vote": "yea"
+        },
+        {
+          "name": "KINNEY",
+          "vote": "yea"
+        },
+        {
+          "name": "KINNEY",
+          "vote": "yea"
+        },
+        {
+          "name": "LOCKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "LONG",
+          "vote": "yea"
+        },
+        {
+          "name": "LUCHINI",
+          "vote": "yea"
+        },
+        {
+          "name": "LYFORD",
+          "vote": "yea"
+        },
+        {
+          "name": "MAKER",
+          "vote": "yea"
+        },
+        {
+          "name": "MALABY",
+          "vote": "yea"
+        },
+        {
+          "name": "MAREAN",
+          "vote": "yea"
+        },
+        {
+          "name": "MARTIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MARTIN",
+          "vote": "yea"
+        },
+        {
+          "name": "McCABE",
+          "vote": "yea"
+        },
+        {
+          "name": "McCLELLAN",
+          "vote": "yea"
+        },
+        {
+          "name": "McELWEE",
+          "vote": "yea"
+        },
+        {
+          "name": "NUTTING",
+          "politician_id": "7a0017bb-cd74-43bb-9719-842aaa1bd383",
+          "vote": "yea"
+        },
+        {
+          "name": "O'CONNOR",
+          "vote": "yea"
+        },
+        {
+          "name": "PARRY",
+          "politician_id": "6a008bbb-a2dd-4128-87cf-f2fe0278738b",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PICCHIOTTI",
+          "vote": "yea"
+        },
+        {
+          "name": "PICKETT",
+          "vote": "yea"
+        },
+        {
+          "name": "PIERCE",
+          "vote": "yea"
+        },
+        {
+          "name": "PRESCOTT",
+          "vote": "yea"
+        },
+        {
+          "name": "REED",
+          "vote": "yea"
+        },
+        {
+          "name": "SANDERSON",
+          "vote": "yea"
+        },
+        {
+          "name": "SAWICKI",
+          "vote": "yea"
+        },
+        {
+          "name": "SEAVEY",
+          "vote": "yea"
+        },
+        {
+          "name": "SHAW",
+          "vote": "yea"
+        },
+        {
+          "name": "SHERMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SHORT",
+          "vote": "yea"
+        },
+        {
+          "name": "SIROCKI",
+          "vote": "yea"
+        },
+        {
+          "name": "SKOLFIELD",
+          "vote": "yea"
+        },
+        {
+          "name": "STANLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "STEARNS",
+          "vote": "yea"
+        },
+        {
+          "name": "STETKIS",
+          "vote": "yea"
+        },
+        {
+          "name": "SUKEFORTH",
+          "vote": "yea"
+        },
+        {
+          "name": "THERIAULT",
+          "vote": "yea"
+        },
+        {
+          "name": "TIMBERLAKE",
+          "politician_id": "f6c4c795-fac0-4b57-8b6e-0ae57515f941",
+          "vote": "yea"
+        },
+        {
+          "name": "TIMMONS",
+          "vote": "yea"
+        },
+        {
+          "name": "TIPPING",
+          "vote": "yea"
+        },
+        {
+          "name": "TUELL",
+          "politician_id": "e6155a4a-4fcf-4195-85c1-509f5d4c016d",
+          "vote": "yea"
+        },
+        {
+          "name": "TURNER",
+          "vote": "yea"
+        },
+        {
+          "name": "VACHON",
+          "vote": "yea"
+        },
+        {
+          "name": "WADSWORTH",
+          "politician_id": "7e248174-dd02-4fc2-8995-943206641385",
+          "vote": "yea"
+        },
+        {
+          "name": "WALLACE",
+          "vote": "yea"
+        },
+        {
+          "name": "WARD",
+          "vote": "yea"
+        },
+        {
+          "name": "WHITE",
+          "vote": "yea"
+        },
+        {
+          "name": "WINSOR",
+          "vote": "yea"
+        },
+        {
+          "name": "WOOD",
+          "politician_id": "2640d53c-bcdc-4335-a4a8-04442babe033",
+          "vote": "yea"
+        },
+        {
+          "name": "BABBIDGE",
+          "vote": "nay"
+        },
+        {
+          "name": "BATES",
+          "vote": "nay"
+        },
+        {
+          "name": "BEAVERS",
+          "vote": "nay"
+        },
+        {
+          "name": "BECK",
+          "vote": "nay"
+        },
+        {
+          "name": "BEEBE-CENTER",
+          "politician_id": "f0e9d708-32bf-4333-b696-d14707dcf468",
+          "vote": "nay"
+        },
+        {
+          "name": "BLUME",
+          "vote": "nay"
+        },
+        {
+          "name": "BROOKS",
+          "vote": "nay"
+        },
+        {
+          "name": "BURSTEIN",
+          "vote": "nay"
+        },
+        {
+          "name": "CHAPMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "CHENETTE",
+          "vote": "nay"
+        },
+        {
+          "name": "CHIPMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "COOPER",
+          "vote": "nay"
+        },
+        {
+          "name": "DAUGHTRY",
+          "politician_id": "0ed25b30-633f-45f5-99f1-a32009b134f5",
+          "vote": "nay"
+        },
+        {
+          "name": "DAVITT",
+          "vote": "nay"
+        },
+        {
+          "name": "DeCHANT",
+          "vote": "nay"
+        },
+        {
+          "name": "DEVIN",
+          "vote": "nay"
+        },
+        {
+          "name": "DION",
+          "vote": "nay"
+        },
+        {
+          "name": "DOORE",
+          "vote": "nay"
+        },
+        {
+          "name": "EVES",
+          "vote": "nay"
+        },
+        {
+          "name": "FARNSWORTH",
+          "vote": "nay"
+        },
+        {
+          "name": "FECTEAU",
+          "politician_id": "5b45bee6-4cdd-4800-83db-66e4e5b74c1d",
+          "vote": "nay"
+        },
+        {
+          "name": "FOWLE",
+          "vote": "nay"
+        },
+        {
+          "name": "GIDEON",
+          "vote": "nay"
+        },
+        {
+          "name": "GOLDEN",
+          "politician_id": "c420f946-332c-46ed-be88-4cd11aa47543",
+          "vote": "nay"
+        },
+        {
+          "name": "GOODE",
+          "vote": "nay"
+        },
+        {
+          "name": "GRANT",
+          "vote": "nay"
+        },
+        {
+          "name": "HARLOW",
+          "vote": "nay"
+        },
+        {
+          "name": "HERBIG",
+          "vote": "nay"
+        },
+        {
+          "name": "HOGAN",
+          "vote": "nay"
+        },
+        {
+          "name": "HUBBELL",
+          "vote": "nay"
+        },
+        {
+          "name": "HYMANSON",
+          "vote": "nay"
+        },
+        {
+          "name": "JORGENSEN",
+          "vote": "nay"
+        },
+        {
+          "name": "KORNFIELD",
+          "vote": "nay"
+        },
+        {
+          "name": "KRUGER",
+          "vote": "nay"
+        },
+        {
+          "name": "KUMIEGA",
+          "vote": "nay"
+        },
+        {
+          "name": "LAJOIE",
+          "politician_id": "1e8bac4b-6d4d-4425-8628-bdfdddf46058",
+          "vote": "nay"
+        },
+        {
+          "name": "LONGSTAFF",
+          "vote": "nay"
+        },
+        {
+          "name": "MASTRACCIO",
+          "politician_id": "ec48f5a7-1efd-4942-8e13-65584102df0d",
+          "vote": "nay"
+        },
+        {
+          "name": "McCREIGHT",
+          "vote": "nay"
+        },
+        {
+          "name": "McLEAN",
+          "vote": "nay"
+        },
+        {
+          "name": "MELARAGNO",
+          "vote": "nay"
+        },
+        {
+          "name": "MONAGHAN",
+          "vote": "nay"
+        },
+        {
+          "name": "MOONEN",
+          "politician_id": "0705d7cf-7e28-4543-9852-298bcafe4e66",
+          "vote": "nay"
+        },
+        {
+          "name": "MORRISON",
+          "vote": "nay"
+        },
+        {
+          "name": "NADEAU",
+          "vote": "nay"
+        },
+        {
+          "name": "NOON",
+          "vote": "nay"
+        },
+        {
+          "name": "PIERCE",
+          "vote": "nay"
+        },
+        {
+          "name": "POWERS",
+          "vote": "nay"
+        },
+        {
+          "name": "ROTUNDO",
+          "vote": "nay"
+        },
+        {
+          "name": "RUSSELL",
+          "vote": "nay"
+        },
+        {
+          "name": "RYKERSON",
+          "vote": "nay"
+        },
+        {
+          "name": "SANBORN",
+          "vote": "nay"
+        },
+        {
+          "name": "SAUCIER",
+          "vote": "nay"
+        },
+        {
+          "name": "SCHNECK",
+          "vote": "nay"
+        },
+        {
+          "name": "STUCKEY",
+          "vote": "nay"
+        },
+        {
+          "name": "TEPLER",
+          "politician_id": "71522fd3-94ba-442a-b52e-50b5f77adfcd",
+          "vote": "nay"
+        },
+        {
+          "name": "TUCKER",
+          "vote": "nay"
+        },
+        {
+          "name": "VEROW",
+          "vote": "nay"
+        },
+        {
+          "name": "WARREN",
+          "vote": "nay"
+        },
+        {
+          "name": "WELSH",
+          "vote": "nay"
+        },
+        {
+          "name": "FREY",
+          "vote": "absent"
+        },
+        {
+          "name": "GATTINE",
+          "vote": "absent"
+        },
+        {
+          "name": "HOBBINS",
+          "vote": "absent"
+        },
+        {
+          "name": "POULIOT",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2015-06-30",
+      "body": "ME Senate",
+      "motion": "ENACTMENT",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 12,
+      "body_size": 35,
+      "note": "names from: page text (Maine Legislature LawMakerWeb roll-call page; names as 'SURNAME of Town'; party column not recorded)",
+      "members": [
+        {
+          "name": "BAKER",
+          "vote": "yea"
+        },
+        {
+          "name": "BRAKEY",
+          "vote": "yea"
+        },
+        {
+          "name": "BURNS",
+          "vote": "yea"
+        },
+        {
+          "name": "COLLINS",
+          "vote": "yea"
+        },
+        {
+          "name": "CUSHING",
+          "vote": "yea"
+        },
+        {
+          "name": "CYRWAY",
+          "politician_id": "dc583785-9207-41b7-a790-1bc87e0685de",
+          "vote": "yea"
+        },
+        {
+          "name": "DAVIS",
+          "vote": "yea"
+        },
+        {
+          "name": "DIAMOND",
+          "vote": "yea"
+        },
+        {
+          "name": "DILL",
+          "politician_id": "c0b96558-d6b2-4029-b680-40c5cc815688",
+          "vote": "yea"
+        },
+        {
+          "name": "DUTREMBLE",
+          "vote": "yea"
+        },
+        {
+          "name": "EDGECOMB",
+          "vote": "yea"
+        },
+        {
+          "name": "HAMPER",
+          "vote": "yea"
+        },
+        {
+          "name": "KATZ",
+          "vote": "yea"
+        },
+        {
+          "name": "LANGLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "MASON",
+          "vote": "yea"
+        },
+        {
+          "name": "McCORMICK",
+          "vote": "yea"
+        },
+        {
+          "name": "ROSEN",
+          "vote": "yea"
+        },
+        {
+          "name": "SAVIELLO",
+          "vote": "yea"
+        },
+        {
+          "name": "THIBODEAU",
+          "vote": "yea"
+        },
+        {
+          "name": "VOLK",
+          "vote": "yea"
+        },
+        {
+          "name": "WHITTEMORE",
+          "vote": "yea"
+        },
+        {
+          "name": "WILLETTE",
+          "vote": "yea"
+        },
+        {
+          "name": "WOODSOME",
+          "politician_id": "bc4404a1-c75b-437e-a084-f261ebe82838",
+          "vote": "yea"
+        },
+        {
+          "name": "ALFOND",
+          "vote": "nay"
+        },
+        {
+          "name": "BREEN",
+          "vote": "nay"
+        },
+        {
+          "name": "GERZOFSKY",
+          "vote": "nay"
+        },
+        {
+          "name": "GRATWICK",
+          "vote": "nay"
+        },
+        {
+          "name": "HASKELL",
+          "vote": "nay"
+        },
+        {
+          "name": "HILL",
+          "vote": "nay"
+        },
+        {
+          "name": "JOHNSON",
+          "vote": "nay"
+        },
+        {
+          "name": "LIBBY",
+          "vote": "nay"
+        },
+        {
+          "name": "MILLETT",
+          "vote": "nay"
+        },
+        {
+          "name": "MIRAMANT",
+          "vote": "nay"
+        },
+        {
+          "name": "PATRICK",
+          "vote": "nay"
+        },
+        {
+          "name": "VALENTINO",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ME_LD652_item19.pdf",
+      "sha256": "fba3b06cb25aba0d489b98593deeb7afc3746986105e17024896f5f1daadf6c7"
+    }
+  }
+}

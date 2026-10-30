@@ -64,6 +64,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.864Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "gun rights and Second Amendment statements",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Official site https://www.repstender.com/ (confirms Michael Stender represents the 108th Legislative District): site search and legislation page, nothing on the subject",
+        "News: Daily Item via Yahoo, 2024-02-21, https://www.yahoo.com/news/state-rep-stender-announces-reelection-045900251.html says in the reporter's own voice that he has sought to defend Second Amendment rights; reporter words, not his own, so not saved",
+        "not reviewed: https://theballotbrief.com/candidate/michael-stender-7f2a59f9-951c-4fe6-8feb-a68483267a6f (no gun text found in page HTML)",
+        "Ballotpedia: not reviewed (not fetched)",
+        "not reviewed: palegis.us sponsorship lists"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

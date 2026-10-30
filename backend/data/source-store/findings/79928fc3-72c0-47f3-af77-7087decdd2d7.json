@@ -110,6 +110,28 @@
         "fetched_at": "2026-10-28T22:51:16.463Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ac64c44e9e3adda7f6c41eb72b1476ab34d6c35445ba8784b8121814db6051fc",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/sb822",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-SB-822-2025",
+      "act": "sponsor",
+      "note": "Listed as one of 21 cosponsors of SB 822 (2025-26 session), which amends Titles 18 and 53 to further limit regulation of firearms and ammunition and adds preemption provisions. Bill history shows referral to Local Government on 2025-06-03; his cosponsor date is not stated. Details come from the fetch tool's reading of the official page, not copied page text.",
+      "subjects": [
+        "firearm preemption",
+        "limits on local firearm regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -165,6 +187,28 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.463Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "firearm preemption",
+        "Second Amendment",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.palegis.us/legislation/bills/2025/sb822 (via fetch tool summary; lists him as a cosponsor of SB 822)",
+        "https://foac-pac.org/PA-Legislator-Details/613 (names him as Senator Devlin Robinson; no gun passage captured)",
+        "official site search https://www.senatorrobinson.com/?s=firearm (nothing returned)",
+        "web search (1): lead naming SB 822 and an unauthorized-access-to-firearms bill; second bill not verified",
+        "Ballotpedia: not reviewed",
+        "no own-words on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

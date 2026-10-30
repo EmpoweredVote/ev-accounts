@@ -66,6 +66,26 @@
         "fetched_at": "2026-10-29T14:14:50.861Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3ba3cc655ad4bcfd6298f780dc730419f40066405204e206be6f4bf29c0808db",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Smith-Wade-El/InTheNews/NewsRelease/?id=127006",
+      "date": "2022-12-13",
+      "date_precision": "day",
+      "passage": "“We deserve representatives who will take action to get guns out of our community. That requires passing meaningful legislation on firearm safety and possession, the kind of legislation that out-of-touch lawmakers in thrall of the gun lobby have not passed in over two decades.",
+      "note": "Statement as representative-elect after shootings in Lancaster; he also says his office will prioritize gun safety.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -120,6 +140,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.861Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pahouse.com/Smith-Wade-El news release",
+        "web search: one search (leads only)",
+        "Ballotpedia not reviewed",
+        "sponsorships not confirmed on a bill page"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

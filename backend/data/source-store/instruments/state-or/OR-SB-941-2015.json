@@ -1,0 +1,571 @@
+{
+  "id": "OR-SB-941-2015",
+  "scope": "state:or",
+  "title": "Senate Bill 941 (Oregon Firearms Safety Act), Relating to firearms",
+  "urls": [
+    "https://olis.oregonlegislature.gov/liz/2015R1/Measures/Overview/SB941",
+    "https://olis.oregonlegislature.gov/liz/2015R1/Downloads/MeasureDocument/SB941/Enrolled",
+    "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureVotes"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 2(2): (2) Except as provided in ORS 166.436 and 166.438 and subsection (4) of this section, a transferor may not transfer a firearm to a transferee unless the transfer is completed through a gun dealer as described in subsection (3) of this section.\nSec. 2(1)(a): (a) \"Transfer\" means the delivery of a firearm from a transferor to a transferee, including, but not limited to, the sale, gift, loan or lease of the firearm. \"Transfer\" does not include the temporary provision of a firearm to a transferee if the transferor has no reason to believe the transferee is prohibited from possessing a firearm or intends to use the firearm in the commission of a crime, and the provision occurs: (A) At a shooting range, shooting gallery or other area designed for the purpose of target shooting, for use during target practice, a firearms safety or training course or class or a similar lawful activity; (B) For the purpose of hunting, trapping or target shooting, during the time in which the transferee is engaged in activities related to hunting, trapping or target shooting;\nSec. 2(3)(a): (3)(a) A transferor may transfer a firearm to a transferee only as provided in this section. Except as provided in paragraph (b) of this subsection, prior to the transfer both the transferor and the transferee must appear in person before a gun dealer, with the firearm, and request that the gun dealer perform a criminal background check on the transferee.\nSec. 2(4)(c)(A)-(C): (c) The transfer of a firearm to: (A) A transferor's spouse or domestic partner; (B) A transferor's parent or stepparent; (C) A transferor's child or stepchild;\nSec. 2(5)(a): (5)(a) A transferor who fails to comply with the requirements of this section commits a Class A misdemeanor.",
+  "sponsors": [
+    {
+      "name": "Sen Prozanski",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Burdick",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Williamson",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Hoyle",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Bates",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Dembrow",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Hass",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Monnes Anderson",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Monroe",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Riley",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Rosenbaum",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Sen Steiner Hayward",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Barnhart",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Buckley",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Doherty",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Fagan",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Frederick",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Gorsek",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Greenlick",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Holvey",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Keny-Guyer",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Lininger",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep McLain",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Smith Warner",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Vega Pederson",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "Rep Taylor",
+      "role": "co",
+      "version": "introduced / as printed on enrolled"
+    },
+    {
+      "name": "No single prime sponsor is printed. The enrolled bill prints 'Sponsored by Senators PROZANSKI, BURDICK, Representatives WILLIAMSON, HOYLE; Senators BATES, DEMBROW, ...'. First-named: Senator Prozanski; the first four names (Prozanski, Burdick, Williamson, Hoyle) are the census 'chief' sponsors.",
+      "role": "author"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "Sec 2(3)(c) refers to federal law: 'shall comply with all requirements of federal law' (dealer duty); no statement that the act carries out a federal requirement",
+  "votes": [
+    {
+      "date": "2015-04-14",
+      "body": "OR Senate",
+      "motion": "Senate passage (third reading) 4/14/2015",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 13,
+      "body_size": 30,
+      "note": "names from: reader summary (OLIS OData API, official legislature API; names as 'Sen X' / 'Rep X')",
+      "members": [
+        {
+          "name": "Bates",
+          "vote": "yea"
+        },
+        {
+          "name": "Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Devlin",
+          "vote": "yea"
+        },
+        {
+          "name": "Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Gelser",
+          "vote": "yea"
+        },
+        {
+          "name": "Hass",
+          "vote": "yea"
+        },
+        {
+          "name": "Monnes Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "President Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "Prozanski",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+          "vote": "yea"
+        },
+        {
+          "name": "Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Roblan",
+          "vote": "yea"
+        },
+        {
+          "name": "Rosenbaum",
+          "vote": "yea"
+        },
+        {
+          "name": "Shields",
+          "vote": "yea"
+        },
+        {
+          "name": "Steiner Hayward",
+          "vote": "yea"
+        },
+        {
+          "name": "Baertschiger Jr",
+          "vote": "nay"
+        },
+        {
+          "name": "Boquist",
+          "vote": "nay"
+        },
+        {
+          "name": "Ferrioli",
+          "vote": "nay"
+        },
+        {
+          "name": "Girod",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda",
+          "vote": "nay"
+        },
+        {
+          "name": "Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Knopp",
+          "vote": "nay"
+        },
+        {
+          "name": "Kruse",
+          "vote": "nay"
+        },
+        {
+          "name": "Olsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Thatcher",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitsett",
+          "vote": "nay"
+        },
+        {
+          "name": "Winters",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2015-05-04",
+      "body": "OR House",
+      "motion": "House passage (third reading) 5/4/2015",
+      "kind": "roll-call",
+      "yes": 32,
+      "no": 28,
+      "body_size": 60,
+      "note": "names from: reader summary (OLIS OData API, official legislature API; names as 'Sen X' / 'Rep X')",
+      "members": [
+        {
+          "name": "Barnhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Barton",
+          "vote": "yea"
+        },
+        {
+          "name": "Boone",
+          "vote": "yea"
+        },
+        {
+          "name": "Buckley",
+          "vote": "yea"
+        },
+        {
+          "name": "Clem",
+          "vote": "yea"
+        },
+        {
+          "name": "Doherty",
+          "vote": "yea"
+        },
+        {
+          "name": "Evans",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49",
+          "vote": "yea"
+        },
+        {
+          "name": "Fagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+          "vote": "yea"
+        },
+        {
+          "name": "Gallegos",
+          "vote": "yea"
+        },
+        {
+          "name": "Gomberg",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32",
+          "vote": "yea"
+        },
+        {
+          "name": "Gorsek",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenlick",
+          "vote": "yea"
+        },
+        {
+          "name": "Helm",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a",
+          "vote": "yea"
+        },
+        {
+          "name": "Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoyle",
+          "politician_id": "f6202cef-4e46-4db5-a9c0-c69ac9a8eccd",
+          "vote": "yea"
+        },
+        {
+          "name": "Keny-Guyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Komp",
+          "vote": "yea"
+        },
+        {
+          "name": "Lininger",
+          "vote": "yea"
+        },
+        {
+          "name": "Lively",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d",
+          "vote": "yea"
+        },
+        {
+          "name": "McLain",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathanson",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7",
+          "vote": "yea"
+        },
+        {
+          "name": "Nosse",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426",
+          "vote": "yea"
+        },
+        {
+          "name": "Piluso",
+          "vote": "yea"
+        },
+        {
+          "name": "Rayfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Read",
+          "vote": "yea"
+        },
+        {
+          "name": "Reardon",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Speaker Kotek",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+          "vote": "yea"
+        },
+        {
+          "name": "Vega Pederson",
+          "vote": "yea"
+        },
+        {
+          "name": "Williamson",
+          "vote": "yea"
+        },
+        {
+          "name": "Barker",
+          "vote": "nay"
+        },
+        {
+          "name": "Barreto",
+          "vote": "nay"
+        },
+        {
+          "name": "Bentz",
+          "politician_id": "fb00c887-11f5-46f2-b822-f9848368bbd2",
+          "vote": "nay"
+        },
+        {
+          "name": "Buehler",
+          "vote": "nay"
+        },
+        {
+          "name": "Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Esquivel",
+          "vote": "nay"
+        },
+        {
+          "name": "Gilliam",
+          "vote": "nay"
+        },
+        {
+          "name": "Hack",
+          "vote": "nay"
+        },
+        {
+          "name": "Hayden",
+          "politician_id": "d3dedaa7-bda5-4e3d-af18-6214719d6e1e",
+          "vote": "nay"
+        },
+        {
+          "name": "Heard",
+          "vote": "nay"
+        },
+        {
+          "name": "Huffman",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kennemer",
+          "vote": "nay"
+        },
+        {
+          "name": "Krieger",
+          "vote": "nay"
+        },
+        {
+          "name": "McKeown",
+          "vote": "nay"
+        },
+        {
+          "name": "McLane",
+          "politician_id": "252a2adf-68a5-4b5a-9024-d5635e2fbd88",
+          "vote": "nay"
+        },
+        {
+          "name": "Nearman",
+          "vote": "nay"
+        },
+        {
+          "name": "Olson",
+          "vote": "nay"
+        },
+        {
+          "name": "Parrish",
+          "vote": "nay"
+        },
+        {
+          "name": "Post",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28",
+          "vote": "nay"
+        },
+        {
+          "name": "Sprenger",
+          "vote": "nay"
+        },
+        {
+          "name": "Stark",
+          "vote": "nay"
+        },
+        {
+          "name": "Weidner",
+          "vote": "nay"
+        },
+        {
+          "name": "Whisnant",
+          "vote": "nay"
+        },
+        {
+          "name": "Whitsett",
+          "vote": "nay"
+        },
+        {
+          "name": "Wilson",
+          "vote": "nay"
+        },
+        {
+          "name": "Witt",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/OR-SB941-enrolled.pdf",
+      "sha256": "60a0a530252fa303431ccd57c9d8e642de29fad5c20d98d85654aa418e913f3b"
+    }
+  }
+}

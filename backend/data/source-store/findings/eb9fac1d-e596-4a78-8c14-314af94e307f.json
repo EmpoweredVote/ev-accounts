@@ -82,5 +82,23 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "pistol brace rule",
+        "gun control bills"
+      ],
+      "places": [
+        "status: withdrew 2026-03-02 (announced he will not seek re-election to the U.S. House in 2026). Ballotpedia News, March 3 2026: https://news.ballotpedia.org/2026/03/03/rep-ryan-zinke-becomes-the-52nd-u-s-house-member-who-is-not-seeking-re-election-in-2026/ says he 'announced on March 2, 2026, that he will not seek re-election to the U.S. House of Representatives in 2026.' Out of scope, so no findings saved.",
+        "On the Record (0 meetings)",
+        "official site press release https://zinke.house.gov/media/press-releases/congressman-zinke-votes-protect-second-amendment-rights (seen; not saved because out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

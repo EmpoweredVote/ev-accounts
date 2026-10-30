@@ -1,0 +1,748 @@
+{
+  "id": "ND-HB-1169-2017",
+  "scope": "state:nd",
+  "title": "House Bill No. 1169, relating to carrying a handgun; carrying concealed firearms or dangerous weapons",
+  "urls": [
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-actions/ba1169.html",
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-overview/bo1169.html",
+    "https://ndlegis.gov/assembly/65-2017/regular/bill-index/bi1169.html",
+    "https://ndlegis.gov/assembly/65-2017/regular/documents/17-0086-06000.pdf",
+    "https://ndlegis.gov/assembly/65-2017/regular/documents/17-0086-04000.pdf",
+    "https://ndlegis.gov/assembly/65-2017/regular/journals/hr-dailyjnl-34.pdf",
+    "https://ndlegis.gov/assembly/65-2017/regular/journals/sr-dailyjnl-51.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "Title: AN ACT to create and enact a new subdivision to subsection 2 of section 62.1-03-01 of the North Dakota Century Code, relating to carrying a handgun; to amend and reenact sections 62.1-04-02 and 62.1-04-04 of the North Dakota Century Code, relating to carrying concealed firearms or dangerous weapons; and to provide a penalty.\nSec. 2, 62.1-04-02(1) (struck words omitted; read from rendered image): An individual, other than a law enforcement officer, may not carry a firearm or dangerous weapon concealed unless the individual is licensed to do so or exempted under this chapter.\nSec. 2, 62.1-04-02(2) (new): An individual who is not otherwise precluded from possessing a class 2 firearm and dangerous weapon license under this chapter and who has possessed for at least one year a valid driver's license or nondriver identification card issued by the department of transportation may carry a firearm concealed under this chapter.\nSec. 3, 62.1-04-04(2) (new; read from rendered image): Every individual carrying a concealed firearm under the authority granted in subsection 2 of section 62.1-04-02 shall inform a law enforcement officer of the individual's possession of a concealed weapon upon the initiation of a traffic stop or any other in-person contact initiated by a law enforcement officer.\nSec. 3, 62.1-04-04(3) (new): Every individual carrying a concealed firearm under the authority granted in subsection 2 of section 62.1-04-02 must have on one's person a valid driver's license or nondriver identification card issued by the department of transportation or a digital image of one's valid driver's license or nondriver identification card on a mobile device and shall provide the license or card to any law enforcement officer for inspection upon demand by the officer.",
+  "sponsors": [
+    {
+      "name": "Representatives Rick C. Becker",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "B. Koppelman",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Magrum",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Olson",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Paur",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Porter",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Simons",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Senator O. Larsen",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Luick",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Myrdal",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Vedaa",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Rep. Rick C. Becker (first-named of \"Introduced by Rep. R. C. Becker, Rep. B. Koppelman, Rep. Magrum, Rep. Olson, Rep. Paur, Rep. Porter, Rep. Simons, Sen. O. Larsen, Sen. Luick, Sen. Myrdal, Sen. Vedaa\"; no single prime marker printed)",
+      "role": "author"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-20",
+      "body": "ND House",
+      "motion": "final passage of the amended bill (second reading)",
+      "kind": "roll-call",
+      "yes": 83,
+      "no": 9,
+      "body_size": 94,
+      "note": "names from: pdf text (House Journal; surnames as printed, 'Speaker Bellew' printed in yeas; 'absent and not voting' printed as one group, listed under absent_names)",
+      "members": [
+        {
+          "name": "Anderson, B.",
+          "politician_id": "ea06c0ba-be67-439e-93df-b25284bea656",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, D.",
+          "politician_id": "64e14d8c-d65c-45e2-9a6e-25d423707fc5",
+          "vote": "yea"
+        },
+        {
+          "name": "Beadle",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker, Rich S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Becker, Rick C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Blum",
+          "vote": "yea"
+        },
+        {
+          "name": "Boe",
+          "vote": "yea"
+        },
+        {
+          "name": "Boehning",
+          "vote": "yea"
+        },
+        {
+          "name": "Bosch",
+          "politician_id": "087c749b-67c5-48eb-98cc-811036128c34",
+          "vote": "yea"
+        },
+        {
+          "name": "Brabandt",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandenburg",
+          "politician_id": "a39f03d4-4da3-49c0-941c-687394fccd01",
+          "vote": "yea"
+        },
+        {
+          "name": "Carlson",
+          "vote": "yea"
+        },
+        {
+          "name": "Damschen",
+          "vote": "yea"
+        },
+        {
+          "name": "Delmore",
+          "vote": "yea"
+        },
+        {
+          "name": "Delzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Devlin",
+          "vote": "yea"
+        },
+        {
+          "name": "Dockter",
+          "politician_id": "478592de-9cfd-4a7a-9d72-1c1421ff51c9",
+          "vote": "yea"
+        },
+        {
+          "name": "Ertelt",
+          "vote": "yea"
+        },
+        {
+          "name": "Grueneich",
+          "politician_id": "225dd24d-0f40-4d0b-8066-9491654e57cc",
+          "vote": "yea"
+        },
+        {
+          "name": "Guggisberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatlestad",
+          "politician_id": "86cc5bea-73ac-4a86-9a0e-7206328d61a7",
+          "vote": "yea"
+        },
+        {
+          "name": "Headland",
+          "politician_id": "37424611-ae81-40f1-928f-7882bd378911",
+          "vote": "yea"
+        },
+        {
+          "name": "Heinert",
+          "politician_id": "3f212c6d-5576-4038-b017-31921c659043",
+          "vote": "yea"
+        },
+        {
+          "name": "Howe",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnston",
+          "politician_id": "80fb8f00-c674-4311-8bc0-e911643d959e",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Kading",
+          "vote": "yea"
+        },
+        {
+          "name": "Karls",
+          "politician_id": "78dedad0-be8f-460a-b338-adbf53734c71",
+          "vote": "yea"
+        },
+        {
+          "name": "Kasper",
+          "politician_id": "3583ad4f-442a-4760-8ca6-dd987fedf327",
+          "vote": "yea"
+        },
+        {
+          "name": "Keiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Kempenich",
+          "politician_id": "b00f2e88-3507-47fc-a3e0-b60383f952d6",
+          "vote": "yea"
+        },
+        {
+          "name": "Kiefert",
+          "politician_id": "a5bd4150-4e4b-4ba4-9d17-361cb39580c9",
+          "vote": "yea"
+        },
+        {
+          "name": "Klemin",
+          "politician_id": "ecf68fbf-2bff-494b-a119-e05d22dc874e",
+          "vote": "yea"
+        },
+        {
+          "name": "Koppelman, B.",
+          "politician_id": "d7484405-ab05-4276-b6d0-c65b44cf03e8",
+          "vote": "yea"
+        },
+        {
+          "name": "Koppelman, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lefor",
+          "politician_id": "09834609-b681-45f1-b1da-5021a7570cdf",
+          "vote": "yea"
+        },
+        {
+          "name": "Longmuir",
+          "politician_id": "1974a2aa-134a-435f-9c4b-2be5b6dd7b12",
+          "vote": "yea"
+        },
+        {
+          "name": "Louser",
+          "politician_id": "58bdda83-1546-43b3-97cc-0198f8231690",
+          "vote": "yea"
+        },
+        {
+          "name": "Magrum",
+          "politician_id": "507424fa-e790-4f7e-8149-44e04a2f0496",
+          "vote": "yea"
+        },
+        {
+          "name": "Maragos",
+          "vote": "yea"
+        },
+        {
+          "name": "Marschall",
+          "politician_id": "cb62dd21-a2f1-4e63-bfd4-aab0ecb8b18c",
+          "vote": "yea"
+        },
+        {
+          "name": "Martinson",
+          "politician_id": "c17f6d27-3dca-463e-8e3a-f9d50238b099",
+          "vote": "yea"
+        },
+        {
+          "name": "McWilliams",
+          "vote": "yea"
+        },
+        {
+          "name": "Meier",
+          "politician_id": "c41a48e5-9cc0-43a8-984f-29a59669f9f9",
+          "vote": "yea"
+        },
+        {
+          "name": "Mitskog",
+          "politician_id": "05760550-5a24-459d-b636-abe5bdb67045",
+          "vote": "yea"
+        },
+        {
+          "name": "Mock",
+          "vote": "yea"
+        },
+        {
+          "name": "Monson",
+          "politician_id": "488983e4-688a-4fd5-952a-be7ab38ea01d",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathe",
+          "politician_id": "46fcdb96-8f33-4477-a0f3-53a963a96d61",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson, J.",
+          "politician_id": "b47086f1-3612-43de-9a22-62392b3cdc6e",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Oliver",
+          "vote": "yea"
+        },
+        {
+          "name": "Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Paur",
+          "vote": "yea"
+        },
+        {
+          "name": "Pollert",
+          "vote": "yea"
+        },
+        {
+          "name": "Porter",
+          "politician_id": "e02408d5-94a9-483b-97bc-56841afa3b36",
+          "vote": "yea"
+        },
+        {
+          "name": "Pyle",
+          "politician_id": "a50b3764-2df5-43d8-a67c-15bbffc23d69",
+          "vote": "yea"
+        },
+        {
+          "name": "Roers Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Rohr",
+          "politician_id": "f980db05-e77d-475f-a16c-eea72fa46113",
+          "vote": "yea"
+        },
+        {
+          "name": "Ruby, D.",
+          "politician_id": "01dbb780-df98-4439-a648-d12da73deb7f",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanford",
+          "politician_id": "3402fd58-16d4-4108-958d-1b1c91bc435b",
+          "vote": "yea"
+        },
+        {
+          "name": "Satrom",
+          "politician_id": "defce6cc-36fe-4edc-bf24-b558ebaa0dd3",
+          "vote": "yea"
+        },
+        {
+          "name": "Schatz",
+          "politician_id": "b21e26e7-e3b9-4f9a-812d-019dec842713",
+          "vote": "yea"
+        },
+        {
+          "name": "Schmidt",
+          "vote": "yea"
+        },
+        {
+          "name": "Schobinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Schreiber-Beck",
+          "vote": "yea"
+        },
+        {
+          "name": "Seibel",
+          "vote": "yea"
+        },
+        {
+          "name": "Simons",
+          "vote": "yea"
+        },
+        {
+          "name": "Skroch",
+          "politician_id": "05c730ee-4acd-4597-98f7-fee2924580b0",
+          "vote": "yea"
+        },
+        {
+          "name": "Steiner",
+          "politician_id": "fc69d6d7-68fb-46ea-8ea4-726a8fe5580f",
+          "vote": "yea"
+        },
+        {
+          "name": "Streyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Sukut",
+          "vote": "yea"
+        },
+        {
+          "name": "Toman",
+          "politician_id": "d01c0aba-3636-4e8d-aa57-74a87a8cdf9b",
+          "vote": "yea"
+        },
+        {
+          "name": "Trottier",
+          "vote": "yea"
+        },
+        {
+          "name": "Vetter",
+          "politician_id": "ba65d53e-6b63-4eed-a906-bb146feb947e",
+          "vote": "yea"
+        },
+        {
+          "name": "Vigesaa",
+          "politician_id": "c836649f-de3a-4c64-83d2-30e1a9b00a3b",
+          "vote": "yea"
+        },
+        {
+          "name": "Weisz",
+          "politician_id": "bce9369d-59c4-4dd4-846f-edaba626b2a9",
+          "vote": "yea"
+        },
+        {
+          "name": "Zubke",
+          "vote": "yea"
+        },
+        {
+          "name": "Speaker Bellew",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, P.",
+          "vote": "nay"
+        },
+        {
+          "name": "Boschee",
+          "vote": "nay"
+        },
+        {
+          "name": "Dobervich",
+          "politician_id": "ba55ea6f-f70b-4970-a9e5-65ee463a3c46",
+          "vote": "nay"
+        },
+        {
+          "name": "Hanson",
+          "politician_id": "b162fcbb-1867-489a-9fec-78dc4fe55284",
+          "vote": "nay"
+        },
+        {
+          "name": "Hogan",
+          "politician_id": "c3d3194d-204c-43fa-a3d3-c167db41039d",
+          "vote": "nay"
+        },
+        {
+          "name": "Holman",
+          "vote": "nay"
+        },
+        {
+          "name": "Laning",
+          "vote": "nay"
+        },
+        {
+          "name": "Schneider",
+          "politician_id": "f688caa7-8ae7-420f-b7f2-333125752ea9",
+          "vote": "nay"
+        },
+        {
+          "name": "Westlind",
+          "vote": "nay"
+        },
+        {
+          "name": "Kreidt",
+          "vote": "absent"
+        },
+        {
+          "name": "Ruby, M.",
+          "politician_id": "d5729332-6e6b-4efc-9ff6-a4e11a18dfe1",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2017-03-20",
+      "body": "ND Senate",
+      "motion": "final passage of the bill (second reading)",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 13,
+      "body_size": 47,
+      "note": "names from: pdf text (Senate Journal; surnames as printed)",
+      "members": [
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Armstrong",
+          "vote": "yea"
+        },
+        {
+          "name": "Bekkedahl",
+          "politician_id": "24e26907-d7a9-4be5-af51-c10e00628171",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowman",
+          "vote": "yea"
+        },
+        {
+          "name": "Burckhard",
+          "politician_id": "bdda4ce8-9bf9-41ad-a2fc-6440f05fe31c",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Casper",
+          "vote": "yea"
+        },
+        {
+          "name": "Clemens",
+          "politician_id": "5220cad5-2991-4a73-89cb-68c854d700eb",
+          "vote": "yea"
+        },
+        {
+          "name": "Cook",
+          "vote": "yea"
+        },
+        {
+          "name": "Davison",
+          "politician_id": "f4c4f0ef-4d52-473a-9b66-d532de4db8c9",
+          "vote": "yea"
+        },
+        {
+          "name": "Dever",
+          "politician_id": "f4069b41-a104-44a7-a055-587f094b04cf",
+          "vote": "yea"
+        },
+        {
+          "name": "Erbele",
+          "politician_id": "32bd0472-00a6-407c-a44f-75a89beed85d",
+          "vote": "yea"
+        },
+        {
+          "name": "Hogue",
+          "politician_id": "428c61e6-9b2f-4cfb-af39-a4060c1f13f1",
+          "vote": "yea"
+        },
+        {
+          "name": "Holmberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Kannianen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kilzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Klein",
+          "politician_id": "28ec6c73-d550-4b59-b5f8-61166be65f4e",
+          "vote": "yea"
+        },
+        {
+          "name": "Kreun",
+          "vote": "yea"
+        },
+        {
+          "name": "Laffen",
+          "vote": "yea"
+        },
+        {
+          "name": "Larsen, O.",
+          "vote": "yea"
+        },
+        {
+          "name": "Larson, D.",
+          "politician_id": "ad6ab7cf-a53c-4fb8-8fa9-f52e449bc318",
+          "vote": "yea"
+        },
+        {
+          "name": "Luick",
+          "politician_id": "6dd24c19-e89b-43a3-b487-b642693ef701",
+          "vote": "yea"
+        },
+        {
+          "name": "Meyer",
+          "politician_id": "bff0c814-b710-4eb1-9d99-53ed31402272",
+          "vote": "yea"
+        },
+        {
+          "name": "Myrdal",
+          "politician_id": "070953d8-cc4a-449f-b6e7-7c5861c9f260",
+          "vote": "yea"
+        },
+        {
+          "name": "Oehlke",
+          "vote": "yea"
+        },
+        {
+          "name": "Poolman",
+          "vote": "yea"
+        },
+        {
+          "name": "Roers",
+          "vote": "yea"
+        },
+        {
+          "name": "Rust",
+          "vote": "yea"
+        },
+        {
+          "name": "Schaible",
+          "politician_id": "d464ccad-ef49-4c08-8ae6-e15fc49a80d7",
+          "vote": "yea"
+        },
+        {
+          "name": "Sorvaag",
+          "politician_id": "bb95ddd0-16c5-4d92-b821-9cced7b4a835",
+          "vote": "yea"
+        },
+        {
+          "name": "Unruh",
+          "vote": "yea"
+        },
+        {
+          "name": "Vedaa",
+          "vote": "yea"
+        },
+        {
+          "name": "Wanzek",
+          "politician_id": "cf367c3d-f926-4354-8534-94f15f74f0fb",
+          "vote": "yea"
+        },
+        {
+          "name": "Wardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Dotzenrod",
+          "vote": "nay"
+        },
+        {
+          "name": "Grabinger",
+          "vote": "nay"
+        },
+        {
+          "name": "Heckaman",
+          "vote": "nay"
+        },
+        {
+          "name": "Krebsbach",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee, G.",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee, J.",
+          "politician_id": "d6c31d37-8da8-45f7-adcd-89be2d60f346",
+          "vote": "nay"
+        },
+        {
+          "name": "Marcellais",
+          "politician_id": "d9ae942b-9797-450e-b381-b43c31f2495e",
+          "vote": "nay"
+        },
+        {
+          "name": "Mathern",
+          "politician_id": "76e1837f-348e-4799-8b35-045f98d55ec0",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson",
+          "vote": "nay"
+        },
+        {
+          "name": "Oban",
+          "vote": "nay"
+        },
+        {
+          "name": "Osland",
+          "vote": "nay"
+        },
+        {
+          "name": "Piepkorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Robinson",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/ND_HB1169_enrolled.pdf",
+      "sha256": "40d815ae7b94d5894a9c24cfc4b886a240f156f24849d51cd380be6977fdf8fd"
+    }
+  }
+}

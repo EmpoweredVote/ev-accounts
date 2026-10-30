@@ -80,6 +80,90 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "d119b95683ba209e218dcc17b36d77ff17f0ec5eac1bc325ab88897201b47a09",
+      "kind": "own-words",
+      "url": "https://barr.house.gov/2022/6/barr-opposes-murphy-cornyn-bill",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "However, I remain opposed to and deeply concerned about provisions in this proposal that would authorize grants for red flag laws without sufficient due process.",
+      "note": "His statement on the 2022 Murphy/Cornyn bill; he objects to the red-flag grant provisions on due process grounds.",
+      "subjects": [
+        "red-flag orders",
+        "due process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d94b98c8dd19131d2a936452a906974366f76d95b7dc26d52aba3f0ec686aeb4",
+      "kind": "own-words",
+      "url": "https://barr.house.gov/2024/2/barr-introduces-protecting-privacy-in-purchases-act-to-stop-unconstitutional-tracking-of-gun-sales",
+      "date": "2024-02",
+      "date_precision": "month",
+      "passage": "I am proud to join Conference Chair Stefanik in standing against unnecessary and discriminatory surveillance. This bill would ensure the freedom and privacy of all Americans, guaranteeing that our Second Amendment rights are respected and protected.",
+      "note": "His quote on the Protecting Privacy in Purchases Act, which would bar use of a merchant category code to track gun-store sales.",
+      "subjects": [
+        "privacy of gun purchases",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffb3216b6c5b7ccec1d93670fef3cd75cae8194a133a8a40132527b89c2affba",
+      "kind": "record",
+      "url": "https://barr.house.gov/2024/2/barr-introduces-protecting-privacy-in-purchases-act-to-stop-unconstitutional-tracking-of-gun-sales",
+      "date": "2024-02",
+      "date_precision": "month",
+      "act": "sponsor",
+      "motion": "Protecting Privacy in Purchases Act (introduced with two other members)",
+      "note": "Bill to prohibit financial institutions from using a merchant category code to track purchases at gun stores.",
+      "subjects": [
+        "privacy of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9f7126c60c0dc0e141caf6d287d112f61718bc79a810007800a2de540f825630",
+      "kind": "record",
+      "url": "https://barr.house.gov/2026/7/house-passes-barr-led-bill-protecting-second-amendment-privacy",
+      "date": "2026-07",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "House passage of Protecting Privacy in Purchases Act; his office says he helped lead it",
+      "note": "Office press release says the House passed the bill, which bars banks and card companies from using a new merchant category code to track firearm and ammunition purchases.",
+      "subjects": [
+        "privacy of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -110,6 +194,28 @@
       "found": 0,
       "at": "2026-10-22T22:14:10.493Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "red-flag orders",
+        "gun purchase tracking",
+        "concealed carry reciprocity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (3 pages)",
+        "nothing on the subject: https://barr.house.gov/issues (404)",
+        "blocked: https://barr.house.gov/search (403)",
+        "blocked: https://www.congress.gov (not fetched)",
+        "concealed carry reciprocity cosponsorship: not confirmed, no page naming him found",
+        "web search on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

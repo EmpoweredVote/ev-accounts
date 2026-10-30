@@ -80,7 +80,51 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "479e04d9b2fee87f642ddd954d4e15007112a9cdce30511b12b25d4390c35148",
+      "kind": "own-words",
+      "url": "https://ipmnewsroom.org/recapping-illinois-13th-democratic-district-debate/",
+      "date": "2022-06-02",
+      "date_precision": "day",
+      "passage": "“I support universal background checks, I support red flag laws,” Budzinski said. “I think those are things that haven’t yet been accomplished, and I think in Congress those are the things I would be very focused on.”",
+      "note": "Quoted by IPM Newsroom after a primary debate (date is the article date). The same article says she did not answer directly about an assault weapons ban at the post-debate news conference.",
+      "subjects": [
+        "background checks",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "red-flag orders",
+        "assault weapons ban",
+        "gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: Rep. Nikki Budzinski gun safety statement assault weapons background checks",
+        "https://ipmnewsroom.org/recapping-illinois-13th-democratic-district-debate/",
+        "blocked: https://www.wcia.com/news/budzinski-reflects-on-first-100-days-talks-gun-control-reforms/amp/ (HTTP 429)",
+        "budzinski.house.gov: not reviewed",
+        "congress.gov: not reviewed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

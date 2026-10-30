@@ -195,6 +195,48 @@
         "fetched_at": "2026-10-28T22:51:16.462Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1270be44fe0ee716a70335701e366e01988b85939ba586c8e6042713b93bcb4a",
+      "kind": "own-words",
+      "url": "https://senatorboscola.com/members-of-pa-senate-democratic-caucus-request-disaster-declaration-on-gun-violence/",
+      "date": "2019-06-24",
+      "date_precision": "day",
+      "passage": "“We believe it is necessary to raise the public’s awareness of the massive loss of human life and the suffering inflicted on affected family, friends and neighbors where this tragedy is unfolding daily,” they wrote.",
+      "note": "Joint letter to the Governor from members of the Senate caucus (Boscola is listed among them on her site's release) asking for a disaster declaration on gun violence. The release lists asks: a health-department task force, more funding for the joint local-state firearm taskforce to take illegal guns off the street, and more law enforcement presence in high-violence areas. Statement is group-issued, not an individual quote.",
+      "subjects": [
+        "gun violence prevention",
+        "illegal guns enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d975fb65093c90efd328f5bbad221e3385dfbf05a451e6e9e9031c83aac84f3",
+      "kind": "record",
+      "url": "https://senatorboscola.com/senator-boscola-hosts-policy-hearing-on-gun-violence-prevention/",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Policy committee hearing on gun violence prevention hosted by Boscola (video page title only)",
+      "note": "Her site lists a video titled 'Senator Boscola Hosts Policy Hearing on Gun Violence Prevention'. Content of the video was not read.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -250,6 +292,29 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.462Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun violence prevention general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site senatorboscola.com (site search 'gun': 4 results, all Feb-Jun 2019)",
+        "senatorboscola.com video pages (Feb 14 2019 remarks and hearing): video only, not reviewed: https://senatorboscola.com/sen-boscola-reducing-gun-violence-february-14-2019-2/",
+        "not reviewed: https://senatorboscola.com/senate-democratic-policy-committee-hearing-on-reducing-gun-violence/",
+        "legiplex bill lists and PA legislature bill pages: search leads only, no sponsorship on the subject confirmed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

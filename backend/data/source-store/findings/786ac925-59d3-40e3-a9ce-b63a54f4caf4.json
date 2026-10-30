@@ -129,6 +129,27 @@
       "found": 2,
       "at": "2026-10-28T15:55:41.527Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "red-flag orders",
+        "gun bills authored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page https://house.texas.gov/members/4595 (nothing on the subject)",
+        "https://www.tpr.org/news/2026-03-04/freshman-state-rep-marc-lahood-prevails-in-expensive-gop-primary-to-represent-hd-121 (in scope: won the March 2026 primary, faces a general-election opponent)",
+        "blocked: https://texasscorecard.com/state/gun-owners-rally-at-texas-capitol/",
+        "blocked: https://dallasexpress.com/state/texas-gun-owners-make-their-voices-heard-at-the-capitol/",
+        "not reviewed: Ballotpedia, campaign site, capitol.texas.gov bill-by-bill sponsor lists (budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

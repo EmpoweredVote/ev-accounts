@@ -125,6 +125,48 @@
         "fetched_at": "2026-10-22T22:16:07.472Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "120df30a741d5ccd2e96c1f67a164ba02d41dab7b4060cfc30f60b5d0e45ea2a",
+      "kind": "own-words",
+      "url": "https://trentkelly.house.gov/issues/issue/?IssueID=15021",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The Second Amendment to the United States Constitution clearly states that “the right of the people to keep and bear Arms, shall not be infringed.” We must stand firm in protecting the rights of law-abiding gun owners. Under President Trump’s leadership, I will fight tirelessly to defend our Second Amendment freedoms and ensure they remain protected for generations to come.",
+      "note": "Issue page text on the Second Amendment. The page shows no date; it refers to the current President, so it is from 2025 or later.",
+      "subjects": [
+        "Second Amendment",
+        "gun owners rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c131c33b68d9f220989045b1b596c4200d1dae9b5cf1da9e1c29bade2ea00aef",
+      "kind": "own-words",
+      "url": "https://trentkelly.house.gov/issues/issue/?IssueID=14937",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "No matter how hard the Obama Administration tries, the Second Amendment is not up for debate. I want to see an end to acts of hate and violence as much as everyone else, but I do not think you accomplish that goal by restricting the rights of legal gun owners. I will not support any legislation that infringes on the rights of legal gun owners and gives more power and authority to the federal government.",
+      "note": "Older issue page text. The page shows no date; the wording refers to the Obama Administration.",
+      "subjects": [
+        "Second Amendment",
+        "restricting legal gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -151,6 +193,27 @@
       "found": 2,
       "at": "2026-10-22T22:16:07.472Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun owners rights",
+        "restricting legal gun ownership",
+        "concealed carry reciprocity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site home page, trentkelly.house.gov (confirms him as U.S. Representative; positive control)",
+        "official site issue pages trentkelly.house.gov Second Amendment (IssueID 14937 and 15021)",
+        "one news search on name plus Second Amendment (results mostly about a different member with the same surname; not used)",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

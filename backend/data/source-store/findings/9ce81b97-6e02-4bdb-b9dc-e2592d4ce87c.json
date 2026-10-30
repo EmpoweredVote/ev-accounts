@@ -240,6 +240,28 @@
         "fetched_at": "2026-10-28T15:55:41.514Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c07ca86421fd5ae9224d6bef56a85d1c18584e3ad70f84f3144aa490f9e0532d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=HB2112",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2112-2021",
+      "act": "author",
+      "note": "Filed as author: HB 2112, relating to the carrying of holstered handguns by handgun license holders. Page shows it was signed by the Governor and effective 9/1/21.",
+      "subjects": [
+        "carry of holstered handguns",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -283,6 +305,28 @@
       "found": 4,
       "at": "2026-10-28T15:55:41.514Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry of holstered handguns",
+        "permitless carry",
+        "firearm businesses in emergencies",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "capitol.texas.gov bill pages (HB 2112, HB 1927, HB 1500 in 87R)",
+        "web search on name plus Second Amendment",
+        "campaign site willmetcalf.com: only a third-party endorsement quote on the subject, not saved",
+        "blocked: https://justfacts.votesmart.org/public-statement/1294282/issue-position-defend-the-second-amendment",
+        "NRA-ILA thank-you pages: not his words, not saved",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

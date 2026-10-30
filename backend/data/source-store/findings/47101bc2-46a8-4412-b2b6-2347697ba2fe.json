@@ -30,7 +30,71 @@
           "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
         }
       }
+    },
+    {
+      "id": "07a7cda2c6967ceb4f5c44c089a16afb47958577bd7e33c0064ac1b38d8f1d52",
+      "kind": "own-words",
+      "url": "https://www.ksat.com/news/national/2023/05/09/rare-gop-votes-in-texas-for-gun-bill-after-mass-shootings/",
+      "date": "2023-05-09",
+      "date_precision": "day",
+      "passage": "“I just voted my heart and my constituents are likely not the gun groups,” Harless said.",
+      "note": "Quoted by the AP (via KSAT) after his committee vote on a bill to raise the purchase age for certain semiautomatic weapons from 18 to 21. Date is the article date. The same article quotes him: “Every kid has a right to go to school and feel safe, and every parent has a right for the kid to feel safe at school,” Harless said in an interview.",
+      "subjects": [
+        "minimum age to buy semiautomatic rifles",
+        "school safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "555bd9992bd83fe9a72c7833769a0c56fe67fb6fd8aadfc5e3a24670cdd16eef",
+      "kind": "record",
+      "url": "https://www.ksat.com/news/national/2023/05/09/rare-gop-votes-in-texas-for-gun-bill-after-mass-shootings/",
+      "date": "2023-05-08",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2744-2023",
+      "act": "yea",
+      "motion": "House Select Committee on Community Safety vote to report the bill favorably as substituted (8-5)",
+      "note": "AP says Harless voted in favor of the measure that would raise the purchase age of certain semiautomatic weapons from 18 to 21, in an 8-5 committee vote on Monday May 8, 2023. The bill number and the 8-5 vote on 05/08/2023 come from the Texas Legislature bill history page https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2744 (author Tracy O. King); that page lists no individual votes, so his vote rests on the AP story.",
+      "subjects": [
+        "minimum age to buy semiautomatic rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "minimum age to buy semiautomatic rifles",
+        "Second Amendment",
+        "gun bills authored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "AP story on ksat.com (names him as Texas state Rep. for the Houston suburbs; fetched by page and by one curl)",
+        "capitol.texas.gov bill history for HB 2744 (88th session)",
+        "web search: name plus gun words (one search)",
+        "not reviewed: Ballotpedia, official and campaign sites, other bill sponsorships, 2026 ballot status (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

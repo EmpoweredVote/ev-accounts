@@ -1,0 +1,69 @@
+{
+  "politician_id": "7e434dbf-80d1-4813-9b43-af30429c8290",
+  "findings": [
+    {
+      "id": "11102c60ed3bc51e260a23c7ff98257943a7c3dd26779a8d8b3ce27a88ad22a0",
+      "kind": "own-words",
+      "url": "https://www.justice.senate.gov/about/issues/second-amendment/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "Senator Justice will continue to work against bureaucrats, activist judges, and lawmakers who try to strip away law-abiding Americans’ right to bear arms.",
+      "note": "Issue page on his Senate site (page metadata: published 2026-02-04, modified 2026-04-08); issued in his name.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d1a3a165bc4af77024ca1efea6d22c9018b9f4238672610a628b02812ab3727",
+      "kind": "own-words",
+      "url": "https://www.justice.senate.gov/about/issues/second-amendment/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "He deeply values the Second Amendment and the traditions and responsibility of firearm ownership.",
+      "note": "Same issue page; general statement on gun ownership.",
+      "subjects": [
+        "Second Amendment",
+        "firearm ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "campus carry",
+        "federal red-flag laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://www.justice.senate.gov/about/issues/second-amendment/",
+        "not reviewed: governor-era signing pages (NRA-ILA, PBS) surfaced in search but not copied",
+        "blocked: https://www.congress.gov (not fetched)",
+        "web search on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

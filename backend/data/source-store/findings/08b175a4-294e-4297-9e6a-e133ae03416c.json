@@ -108,6 +108,48 @@
         "fetched_at": "2026-10-29T14:14:50.862Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "01b49f3c811cbb5fe19ff288f99e3800816338bfdaa6564a69f083c35ad11407",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb837",
+      "date": "2025-03-10",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-837-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 837 (prime sponsor Melissa Shusterman), which would create a limit on handgun purchases and a Violence Prevention Account. Referred to Judiciary March 10, 2025.",
+      "subjects": [
+        "limit on handgun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15898fd12129d7f6a769bbf29218160b22f6d6872ff47da742a074b5167bca43",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb887",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-887-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 887 (prime sponsor MaryLouise Isaacson), which would change the state limit on local regulation of firearms and ammunition and repeal the home-rule limit on municipal powers. Referred to Judiciary March 13, 2025.",
+      "subjects": [
+        "local regulation of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -160,6 +202,26 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.862Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation bills",
+        "handgun purchase limits",
+        "local regulation of firearms",
+        "gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "palegis.us bill pages HB 837, HB 887 (sponsorship)",
+        "web search for pahouse.com statements: nothing on the subject",
+        "Ballotpedia: not reviewed",
+        "official/campaign site: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -145,6 +145,28 @@
       "found": 4,
       "at": "2026-10-28T15:16:40.259Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "background checks",
+        "gun safety",
+        "open carry on campuses"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas House member page https://www.house.texas.gov/members/46 (confirms Rep. Cole, Sheryl - District 46; nothing on the subject)",
+        "branch.vote candidate page https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-46/candidates/sheryl-cole (confirms 2026 general-election candidate, unopposed; its gun text is the site's own summary of her, not her words, so not saved)",
+        "https://www.fox7austin.com/news/texas-house-democrats-want-to-protect-texans-from-gun-violence (2019 press conference lists 'Cole' among speakers; no words of hers quoted; nothing saved)",
+        "not reviewed: bill sponsorship pages on capitol.texas.gov (dynamic search, not reached)",
+        "Ballotpedia (not fetched)",
+        "one web search"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

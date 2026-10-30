@@ -115,6 +115,89 @@
         "fetched_at": "2026-10-27T20:39:37.675Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3483e1aeb913dea2fe752085f7940e99cee9a9478405dd4295518b37f6f15916",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/html/CREC-2026-05-14-pt1-PgH3512-2.htm",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "We must enact a permanent assault weapons ban and make sure that military-grade body armor is only in the hands of our Armed Forces and law enforcement.",
+      "note": "House floor remarks on the fourth anniversary of the Tops supermarket shooting in Buffalo; he lists the measures he calls for.",
+      "subjects": [
+        "assault weapons ban",
+        "body armor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d1e7a4c78cebb80fefb470906255601ece8e6b2e9edf7f36d43bab22d00d8a9",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/html/CREC-2026-05-14-pt1-PgH3512-2.htm",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "We must crack down on ghost guns, straw purchasing, and deadly accessories that turn handguns into semiautomatic weapons.",
+      "note": "Same floor remarks; he calls for action on ghost guns, straw purchases and conversion accessories.",
+      "subjects": [
+        "ghost guns",
+        "straw purchasing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a5fad855bda816b3d2eb01c6d0bfead08c6109e557bebda6bcc239ee09e72a3",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/html/CREC-2026-05-14-pt1-PgH3512-2.htm",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "We must close the Charleston loophole.",
+      "note": "Same floor remarks; he calls for ending the rule that lets a sale go ahead when a background check is unfinished after three days.",
+      "subjects": [
+        "Charleston loophole",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9b3fc58eb937bc7312e3de65fb538a0c3c410e085b438a1fdbf7aa226b9b37c",
+      "kind": "own-words",
+      "url": "https://www.govinfo.gov/content/pkg/CREC-2026-05-14/html/CREC-2026-05-14-pt1-PgH3512-2.htm",
+      "date": "2026-05-14",
+      "date_precision": "day",
+      "passage": "We must expand red flag laws.",
+      "note": "Same floor remarks; he calls for wider red-flag (extreme-risk) laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -166,6 +249,29 @@
       "found": 3,
       "at": "2026-10-27T20:39:37.675Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "red-flag laws",
+        "ghost guns",
+        "straw purchasing",
+        "Charleston loophole",
+        "safe storage",
+        "body armor"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Congressional Record 2026-05-14 floor speech (govinfo)",
+        "not reviewed: https://www.btpm.org/local/2025-09-14/tim-kennedy-congress-charlie-kirk-gun-control-buffalo-niagara-falls (page not retrievable by curl)",
+        "blocked: https://www.congress.gov (not fetched)",
+        "web search on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

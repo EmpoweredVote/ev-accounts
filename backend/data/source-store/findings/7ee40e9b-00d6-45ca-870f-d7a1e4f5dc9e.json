@@ -61,6 +61,48 @@
           "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
         }
       }
+    },
+    {
+      "id": "b53cbf0d48ce26bbe39b4d9c65845638a8105f96198f605ac50e224ace88d4f1",
+      "kind": "own-words",
+      "url": "https://www.house.texas.gov/index.php/members/2455/biography",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Ken King is a lifetime member of the National Rifle Association, a member of the Texas State Rifle Association, a member of Texas and Southwestern Cattle Raisers Association as well as a member of the Texas Farm Bureau.",
+      "note": "Official House biography page, written in the third person; lists gun-group memberships.",
+      "subjects": [
+        "gun rights group membership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eeab4a6bc10b7535c5ca7e7814e6b6e9126ec5b117458a086d7ad802a486d9dd",
+      "kind": "own-words",
+      "url": "https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-88/candidates/ken-king",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Co-authored Texas’ first statewide “Open Carry” law, supported allowing firearms on college campuses, and voted to cut the License-to-Carry fee by $100.",
+      "note": "Line from his 2026 candidate profile on Branch. Not confirmed here that he wrote it; the claims were not checked against bill pages.",
+      "subjects": [
+        "open carry",
+        "guns on college campuses",
+        "carry license fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -88,6 +130,30 @@
       "found": 0,
       "at": "2026-10-28T15:11:26.562Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "open carry",
+        "carry license fee",
+        "guns on college campuses",
+        "NRA membership",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: won the 2026-03-03 primary (53 percent), per https://thetexan.news/elections/state-rep-ken-king-secures-republican-vote-in-primary-re-election-bid-against-john-browning/article_6635c93a-41bd-4ef8-baa0-d5730d7ec2ba.html; still in scope",
+        "On the Record (0 meetings)",
+        "house.texas.gov biography",
+        "Branch candidate profile",
+        "capitol.texas.gov bill search by author: returned no usable results",
+        "Gun Owners of America Texas page: names him as a chairman to lobby, not his words, not saved",
+        "Ballotpedia: not reviewed",
+        "own campaign site: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

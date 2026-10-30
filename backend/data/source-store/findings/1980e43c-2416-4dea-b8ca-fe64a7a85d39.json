@@ -88,6 +88,29 @@
         "fetched_at": "2026-10-29T14:14:50.855Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c51ceffaba7fbcbda273733fa766422c91c00b43b9cb306b5a9e2b7811877784",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Cephas/InTheNews/NewsRelease/?id=112613",
+      "date": "2020-02-14",
+      "date_precision": "day",
+      "passage": "“There isn’t just a single answer that can solve gun violence,” Cephas explained. “Protecting Pennsylvanians requires a multipronged approach, which includes investing in mental health programs, fully funding our schools, teaching our children the difference between right and wrong from the beginning, and passing commonsense gun safety laws.”",
+      "note": "Her statement at a town hall (release dated Feb. 14, 2020 on her House page). The same release lists the bills she is pushing: universal background checks (H.B. 673), extreme risk protection orders (H.B. 1075), reporting lost or stolen firearms within 72 hours (H.B. 1288), and keeping guns from children (H.B. 525).",
+      "subjects": [
+        "general statement on gun safety",
+        "background checks",
+        "red-flag orders",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -140,6 +163,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.855Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pahouse.com/Cephas news release",
+        "pahouse.com sponsorship pages (not reviewed)",
+        "web search: one news search (leads only)",
+        "Ballotpedia not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

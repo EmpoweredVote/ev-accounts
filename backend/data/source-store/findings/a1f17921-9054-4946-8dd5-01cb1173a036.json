@@ -80,7 +80,71 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "6da0e36e23e9b9ea2970ca224cd2c46d1ec28a1b076c1887f63c1d6056b30a7a",
+      "kind": "own-words",
+      "url": "https://troycarter.house.gov/media/press-releases/congressman-troy-carter-vows-keep-working-prevent-gun-violence",
+      "date": "2022-09-07",
+      "date_precision": "day",
+      "passage": "I am proud to work for Safer Communities, putting People Over Politics with commonsense reforms to keep guns out of the hands of dangerous people.",
+      "note": "Press release from his office. He describes his work on gun reforms; the release also lists the Bipartisan Background Checks Act (private-party transfers) and the Enhanced Background Checks Act (the 3-day default-proceed rule) as laws he supports.",
+      "subjects": [
+        "background checks on private sales",
+        "closing the 3-day background check loophole",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35417512e8eccb54081e717252113bd18fed41207990ea816797a6738749eaed",
+      "kind": "own-words",
+      "url": "https://troycarter.house.gov/media/press-releases/congressman-troy-carter-votes-historic-gun-safety-package",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "Louisianians are horrified by the epidemic of gun violence that continues to steal away lives, devastate families and shatter communities across the country.",
+      "note": "Press release on his vote for the 2022 bipartisan gun package, which adds longer checks for buyers under 21, straw purchasing and trafficking offenses, and the boyfriend loophole change.",
+      "subjects": [
+        "background checks for buyers under 21",
+        "straw purchasing and trafficking",
+        "gun safety package"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "gun violence prevention",
+        "Second Amendment",
+        "gun safety package"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (2 pages fetched)",
+        "blocked: https://www.congress.gov (not fetched)",
+        "web search on name plus subject words"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

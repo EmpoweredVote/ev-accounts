@@ -26,6 +26,28 @@
       "found": 0,
       "at": "2026-10-28T22:04:43.503Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation bills",
+        "Second Amendment and gun rights statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://theballotbrief.com/state/pennsylvania/york-county/pennsylvania-house-district-196 (confirms him on the Nov 3 2026 ballot; nothing on the subject)",
+        "web searches for statements and bills: nothing in his own words; he took office June 9 2026 after a May 19 2026 special election, so no bill sponsorships were found",
+        "https://www.abc27.com/pennsylvania-politics/republican-george-margetas-wins-york-county-special-election/amp/ (reporter's words about him, not his own; not saved)",
+        "blocked: https://ivoterguide.com/candidate/91997/race/26842/election/1404 (fetch timed out)",
+        "Ballotpedia: not reviewed",
+        "palegis.us member page: not reviewed",
+        "campaign site: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "politician_id": "93874414-6d14-4c12-87b2-d254b3855570",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons",
+        "background checks",
+        "ghost guns",
+        "gun violence",
+        "Second Amendment",
+        "firearm sponsorships"
+      ],
+      "places": [
+        "status: in office. News12 (2026-04-21, fetched) says 'Congresswoman Analilia Mejia was sworn into office this week, formally taking the seat previously held by Mikie Sherrill.' A search summary says she faces a November 2026 race; no fetched page confirmed the ballot line.",
+        "On the Record (0 meetings)",
+        "official site mejia.house.gov (press release list and keyword page: nothing on the subject; issues page: nothing on the subject)",
+        "campaign site analiliafornj.com (home and issues page: nothing on the subject)",
+        "Giffords endorsement page https://giffords.org/candidates/analilia-mejia/ (fetched; advocacy group's description, not her words, so not saved)",
+        "blocked: https://newjerseymonitor.com/2026/07/28/analilia-mejia-100-days-in-office/ (403)",
+        "not reviewed: congress.gov sponsor list (not fetched)",
+        "not reviewed: Ballotpedia (not fetched)",
+        "two general web searches: nothing in her own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

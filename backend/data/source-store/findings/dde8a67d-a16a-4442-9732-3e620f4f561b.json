@@ -51,7 +51,94 @@
         "fetched_at": "2026-10-21T03:40:10.558Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "9f3b9e453635bf6bec8661d6688c62734658f6a98e0585692539be40fd43d34f",
+      "kind": "own-words",
+      "url": "https://ansari.house.gov/media/press-releases/ansari-mourns-lives-lost-in-glendale-shooting",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "passage": "Commonsense policy reform to regulate guns has broad, bipartisan support. It’s long past time we stand up and do something.",
+      "note": "Statement issued in her name after a deadly shooting in Glendale, Arizona.",
+      "subjects": [
+        "gun regulation",
+        "commonsense gun policy reform"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f902b4503ca2510c836cf3582e8ee5cab4d7fe7f099f48aec3e76dfdd4b75aaa",
+      "kind": "own-words",
+      "url": "https://ansari.house.gov/media/press-releases/ansari-mourns-lives-lost-in-glendale-shooting",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "passage": "Ansari is an original cosponsor of the Federal Firearm Licensee Act, as well as legislation that would codify the Office of Gun Violence Prevention, and sent an official letter registering deep concern over the pausing of grants under the Community-Based Violence Intervention and Prevention Initiative (CVIPI).",
+      "note": "Closing line of her press release (written in the third person by her office) naming two cosponsorships and a letter. Bill numbers not given on the page.",
+      "subjects": [
+        "Federal Firearm Licensee Act cosponsor",
+        "Office of Gun Violence Prevention",
+        "violence intervention grants"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd4ff5019b07ca4bf0c8c56e6af423798f21e107859e88ef3b0fcd71ca70f801",
+      "kind": "own-words",
+      "url": "https://ansari.house.gov/media/in-the-news/ansari-statement-14th-anniversary-tucson-shooting",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "As I begin my work in Congress to protect our communities and prevent gun violence, I strive to do so with Gabby’s light, and to carry the memory of those Arizonans lost in my heart.",
+      "note": "Statement on the 14th anniversary of the Tucson shooting; general commitment to preventing gun violence.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "background checks",
+        "assault weapons",
+        "purchase age",
+        "Federal Firearm Licensee Act"
+      ],
+      "places": [
+        "status: on the Nov 3 2026 general ballot (https://www.fox10phoenix.com/election/2026-election-arizona-congressional-district-3-explained-what-know-about-phoenix-area-race)",
+        "On the Record (0 meetings)",
+        "official site ansari.house.gov (issues page, site search, two press releases)",
+        "blocked: ansari.house.gov site search returned nothing usable",
+        "not reviewed: congress.gov (blocked earlier, not retried)",
+        "not reviewed: Ballotpedia",
+        "web search (two); outside-group endorsement pages (Giffords, Brady) seen only in results, not saved"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

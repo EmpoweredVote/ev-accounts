@@ -54,6 +54,33 @@
       "found": 0,
       "at": "2026-10-28T16:25:45.852Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans and large-capacity magazines",
+        "background checks",
+        "ghost guns",
+        "safe storage and locking devices",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House of Delegates member list https://house.vga.virginia.gov/members (confirms Shin, Irene, District 8; House seats were not on the 2026 ballot)",
+        "https://patch.com/virginia/reston/finding-answers-one-our-greatest-challenges (nothing in her words; she is only named in a photo credit)",
+        "https://virginiapoliticalnewsletter.substack.com/p/firearm-violence-prevention-bill (does not mention her)",
+        "https://vpm.org/news/articles/32449/gridlocked-on-guns-virginia-lawmakers-debate-other-ways-to-address-violence (does not mention her)",
+        "https://www.branch.vote/races/2025-virginia-general-election-state-delegate-va-state-house-8/candidates/irene-shin (secondary summary, not her words; not reviewed further)",
+        "blocked: https://app.legiplex.com/profile/irene-shin-7830/va/legislatures/2025/2025-r/legislation/page/3",
+        "blocked: https://bradyunited.org/resources/podcast/virginia-is-for-gun-violence-prevention-lovers",
+        "not reviewed: https://lis.virginia.gov (bill pages load by script). A search summary lists her as sponsor of 2025 HB 351 (locking device) and HB 585 (home-based dealers near schools); not verified on an official page",
+        "campaign site not found (ireneshin.com does not resolve)",
+        "Ballotpedia not fetched (blocked for the other Virginia delegates in this batch)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -45,6 +45,28 @@
         "fetched_at": "2026-10-28T16:28:11.507Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1242cc3736a36b4f72885836076c58b5301c17b82db4932c45d6a09539929a21",
+      "kind": "record",
+      "url": "https://cardinalnews.org/2026/02/19/where-bills-stand-at-the-midpoint-of-the-general-assembly-2/",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "VA-SB-160-2026",
+      "act": "sponsor",
+      "note": "Cardinal News lists SB 160 by Sen. Russet Perry with companion HB 19. Passage: \"These bills would close a loophole that had previously allowed a person to purchase a firearm after being convicted within the previous 12 months of assault and battery of a family or household member or intimate partner.\" Status given: \"Passed House 61-35 and passed Senate 22-18\". Introduction date not shown on this page; official LIS page could not be read.",
+      "subjects": [
+        "firearm purchase after domestic violence conviction",
+        "intimate partner firearm prohibitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +94,31 @@
       "found": 2,
       "at": "2026-10-28T16:28:11.507Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "domestic abuser firearm purchase ban",
+        "assault weapons / magazine limits",
+        "auto sears",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign / Senate site: not reviewed",
+        "Ballotpedia: not reviewed",
+        "blocked: https://lis.virginia.gov/bill-details/20261/SB160 (JavaScript-only page, no text)",
+        "blocked: https://apiorigin.vpap.org/legislators/447053-russet-perry/?page=3 (HTTP 403)",
+        "blocked: https://legiscan.com/VA/bill/SB160/2026 (no content returned)",
+        "Giffords page https://giffords.org/candidates/russet-perry/ (advocacy group's wording, no direct Perry quote; not saved)",
+        "Virginia Scope Feb 2024 teaser (full text not available; not saved)",
+        "Virginia Mercury 2026-04-10 article: not confirmed as to Perry text via curl",
+        "Cardinal News 2026-02-19 midpoint list (SB 160 sponsorship saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

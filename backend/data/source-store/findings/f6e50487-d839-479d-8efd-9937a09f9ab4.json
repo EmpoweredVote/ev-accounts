@@ -158,6 +158,28 @@
       "found": 1,
       "at": "2026-10-28T15:55:41.524Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "lawful gun purchases",
+        "short-barrel firearms",
+        "right to keep and bear arms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun terms (two searches)",
+        "blocked: https://texasscorecard.com/?p=98141 (Cloudflare challenge page; a 2024 runoff piece the search snippet says quotes him on gun rights)",
+        "Texas Legislature Online bill histories HB 259 and HB 3934 (89R): not listed as author or coauthor",
+        "nothing on the subject in own words reached",
+        "not reviewed: official site, Ballotpedia, other bill pages"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

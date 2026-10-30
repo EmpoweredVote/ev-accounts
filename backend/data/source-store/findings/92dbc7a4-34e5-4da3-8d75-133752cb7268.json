@@ -108,6 +108,71 @@
         "fetched_at": "2026-10-28T15:11:07.977Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "956a4ed79ed3ada17d65d38dcdddfa5d8ac626b42a856c0707a6943e18d2e6ea",
+      "kind": "own-words",
+      "url": "https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-48/candidates/donna-howard",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Secured $1 million for a Department of Public Safety campaign promoting safe firearm storage.",
+      "note": "Accomplishment line on her 2026 candidate profile page (Branch); the page text does not say who wrote it or when, so it may be a candidate-supplied statement.",
+      "subjects": [
+        "safe firearm storage",
+        "gun safety campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78fa69c2ce4152b0b439400f69b78ba6ee67f750af53ee5db033e0f80ebc7100",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB2242",
+      "date": "2023-02-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2242-2023",
+      "act": "author",
+      "note": "HB 2242, relating to the use of dynamic message signs for the Keep 'Em Safe Texas Gun Storage Campaign. Filed 02/13/2023.",
+      "subjects": [
+        "safe firearm storage",
+        "gun safety campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8457baa2b51d7040fa655e5785d4ff2e060e9956ca049a7338d4f47e4da730b2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB737",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-737-2025",
+      "act": "author",
+      "note": "HB 737, relating to the use of dynamic message signs for the Keep 'Em Safe Texas Gun Storage Campaign. Filed 11/12/2024.",
+      "subjects": [
+        "safe firearm storage",
+        "gun safety campaign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -135,6 +200,27 @@
       "found": 1,
       "at": "2026-10-28T15:11:07.977Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun safety",
+        "safe firearm storage",
+        "gun sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Branch candidate page (2026 general race listing, page does not say official ballot status: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-48/candidates/donna-howard)",
+        "Texas Legislature Online bill history HB 2242 (88R) and HB 737 (89R)",
+        "web search x2: name plus gun safety",
+        "blocked: https://www.donnahoward.org/ (domain not found)",
+        "not reviewed: Ballotpedia, house.texas.gov (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

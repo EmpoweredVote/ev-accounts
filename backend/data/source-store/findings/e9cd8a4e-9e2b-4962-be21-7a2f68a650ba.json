@@ -48,6 +48,30 @@
       "found": 1,
       "at": "2026-10-28T16:31:56.278Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "weapons in hospitals",
+        "gun safety general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign bio https://philforvirginia.com/bio/ (nothing on the subject; a search-result quote about 'common sense gun safety reforms' could not be found on the pages I could read)",
+        "Giffords endorsement https://giffords.org/candidates/phil-hernandez (group's description only, no quotes of him)",
+        "blocked: https://www.vpap.org/legislators/338205-phil-hernandez/ (403)",
+        "blocked: https://origin.vpap.org/legislators/338205-phil-hernandez (TLS handshake failure)",
+        "not reviewed: Virginia LIS pages (script-rendered); lead only: a search summary listed him as chief patron of HB229 (weapons possession in hospitals providing mental health services), year and status unverified",
+        "Ballotpedia not reached"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

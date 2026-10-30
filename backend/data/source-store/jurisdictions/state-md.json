@@ -18,6 +18,15 @@
       }
     }
   ],
-  "rosters": [],
+  "rosters": [
+    {
+      "url": "https://2013mdmanual.msa.maryland.gov/msa/mdmanual/06hse/html/hsedist.html",
+      "note": "house member list, 2013 session (official); gun-policy identity check 2026-10-29"
+    },
+    {
+      "url": "https://2013mdmanual.msa.maryland.gov/msa/mdmanual/05sen/html/sendist.html",
+      "note": "senate member list, 2013 session (official); gun-policy identity check 2026-10-29"
+    }
+  ],
   "higher_law_duties": []
 }

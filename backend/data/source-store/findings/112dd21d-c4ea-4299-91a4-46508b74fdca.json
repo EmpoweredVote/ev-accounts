@@ -23,6 +23,28 @@
       "found": 0,
       "at": "2026-10-28T14:32:43.240Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun safety",
+        "gun sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "house.texas.gov member page (confirms Representative, District 38, 89th Legislature; nothing on the subject: https://house.texas.gov/members/4095)",
+        "Wikipedia (nothing on the subject)",
+        "Giffords endorsement list names her under HD-38 (an endorsement by a group, not her own words, so not saved)",
+        "web search: name plus guns",
+        "blocked: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-38/candidates/erin-gamez (404), so 2026 ballot status not confirmed by a page",
+        "not reviewed: her authored-bill list, Ballotpedia (budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

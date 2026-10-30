@@ -1,0 +1,29 @@
+{
+  "politician_id": "abbe5ec0-94fb-4230-bc7c-4b890e4e6387",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun control bills",
+        "background checks",
+        "firearm sponsorships"
+      ],
+      "places": [
+        "status: appointed to the Senate seat in March 2026 to serve through the end of the year; under Oklahoma law he agreed not to run for a full term in the 2026 election (KTAR: 'who under Oklahoma law must agree to not run for a full term this fall'). Not on the 2026 ballot, per a search summary and the KTAR page via fetch tool.",
+        "On the Record (0 meetings)",
+        "one web search: nothing on the subject",
+        "blocked: https://www.armstrong.senate.gov/ (Unauthorized)",
+        "blocked: https://www.congress.gov/member/alan-armstrong/A000403 (403)",
+        "blocked: https://oklahomavoice.com/2026/03/24/stitt-appoints-tulsa-businessman-as-oklahomas-next-us-senator/ (403)",
+        "blocked: https://floridaphoenix.com/2026/03/24/repub/new-us-senator-for-oklahoma-sworn-in-replacing-markwayne-mullin/ (403)",
+        "https://ktar.com/national-news/oklahomas-governor-picks-energy-executive-alan-armstrong-to-fill-us-senate-seat-through-end-of-year (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

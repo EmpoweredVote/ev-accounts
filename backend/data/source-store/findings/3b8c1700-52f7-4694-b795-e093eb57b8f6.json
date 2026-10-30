@@ -174,6 +174,72 @@
         "fetched_at": "2026-10-29T14:14:50.852Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0ac80985020c9afdd33532dcd1bf7681a11999adeeee2b280568e11ca937694a",
+      "kind": "record",
+      "url": "https://armchairlehighvalley.substack.com/p/in-138th-democratic-newcomer-seeks",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-770-2021",
+      "act": "nay",
+      "motion": "procedural vote on House Bill 770 (vote to allow it)",
+      "note": "A voter guide (secondary source, not official) says in 2021 she voted against allowing a procedural vote on House Bill 770, which it describes as banning owning, selling or making high-capacity, semi-automatic weapons.",
+      "subjects": [
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c246390d07e1fe19ae79b68c3827c63ac7f1e550bf50addd7dc9b2d02b942f7",
+      "kind": "record",
+      "url": "https://armchairlehighvalley.substack.com/p/in-138th-democratic-newcomer-seeks",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-979-2021",
+      "act": "yea",
+      "motion": "House Bill 979 vote (as described by voter guide)",
+      "note": "A voter guide (secondary source, not official) says she voted yes on House Bill 979, which it describes as restricting municipalities from regulating firearms and letting aggrieved parties sue municipalities.",
+      "subjects": [
+        "local regulation of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8fa752ef07d82b4c5417ee65d303f9b2da0dc0a89fadf9419da8b41566973bec",
+      "kind": "record",
+      "url": "https://armchairlehighvalley.substack.com/p/in-138th-democratic-newcomer-seeks",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-777-2022",
+      "act": "nay",
+      "motion": "House Bill 777 vote (as described by voter guide, 'In March')",
+      "note": "A voter guide (secondary source, not official) says she voted against House Bill 777, which it describes as banning the purchase, sale and production of untraceable gun parts (ghost guns).",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -242,6 +308,28 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.852Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons ban",
+        "permitless carry",
+        "ghost guns",
+        "local regulation of firearms",
+        "gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://repannflood.com/ (nothing on the subject)",
+        "Ballotpedia (not reviewed)",
+        "palegis.us sponsorship pages (not reviewed)",
+        "one news search; reviewed https://armchairlehighvalley.substack.com/p/in-138th-democratic-newcomer-seeks (voter guide describing votes; not her own words)",
+        "https://www.lehighvalleynews.com/elections/state-rep-ann-flood-wins-3rd-term-representing-138th-house-district (nothing on the subject)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

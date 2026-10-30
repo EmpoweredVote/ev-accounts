@@ -318,6 +318,47 @@
         "fetched_at": "2026-10-27T22:10:42.455Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9652e98c621e54d016773b5b42264d040f73b97e65157c4efebc2dc1e874ad98",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-votes-assault-weapons-ban",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "There is no constructive use for these weapons and they should be banned.",
+      "note": "Press release on his vote for the assault weapons ban bill; he says these weapons are made to kill many people quickly. Fetch tool returned the sentences as extracts.",
+      "subjects": [
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78b5a14e57542a4fa5ac9d121eaa6a96b3b58c513f379fd7a7411a3e0d5c8ac0",
+      "kind": "own-words",
+      "url": "https://bobbyscott.house.gov/media-center/press-releases/scott-statement-house-passage-bills-address-gun-violence",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "The Senate must swiftly pass both of these pieces of legislation and send them to President Biden's desk for signature.",
+      "note": "Statement on House passage of H.R. 8 and H.R. 1446 (background check bills). Fetch tool returned extracts.",
+      "subjects": [
+        "background checks",
+        "gun show and internet sale loopholes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -373,6 +414,26 @@
       "found": 8,
       "at": "2026-10-27T22:10:42.455Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "gun show and internet sale loopholes",
+        "gun violence prevention"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site bobbyscott.house.gov (press releases of 2022-07-29 and 2021-03-11; issue page /issue/gun-safety not paged through)",
+        "blocked: https://www.congress.gov (not attempted after Cloudflare block on another member page; sponsorships not reviewed)",
+        "one news search on name plus subject words (leads only)",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

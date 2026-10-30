@@ -245,6 +245,49 @@
         "fetched_at": "2026-10-28T15:55:41.515Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "14a6b876cefdb65b7c3b3a3919fbd54744a4ced2cdaa52bf4d2f89c2dadbc9df",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB162",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-162-2025",
+      "act": "sponsor",
+      "note": "Listed as a coauthor of HB 162, which would bar recognition, service and enforcement of extreme risk protective orders and create a criminal offense. The bill's author is another member. The page shows the bill last referred to the State Affairs committee on 2025-02-27; the date Money was added as coauthor is not shown.",
+      "subjects": [
+        "red-flag orders",
+        "extreme risk protective orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6939be461bc4be65e6b7bdfe86b06f878477d722d39ea71a798a203f005b5d77",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB259",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-259-2025",
+      "act": "sponsor",
+      "note": "Listed as a coauthor of HB 259, captioned 'Relating to the prohibition of short-barrel firearms.' Other members are the authors. The caption does not say which direction the bill goes; check the bill text. The date Money was added is not shown.",
+      "subjects": [
+        "short-barrel firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -287,6 +330,27 @@
       "found": 6,
       "at": "2026-10-28T15:55:41.515Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "red-flag orders",
+        "constitutional carry",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun terms (two searches)",
+        "Texas Legislature Online bill history HB 162 (89R)",
+        "Texas Legislature Online bill history HB 259 (89R)",
+        "nothing found in own words",
+        "not reviewed: official site, Ballotpedia, other bill pages"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

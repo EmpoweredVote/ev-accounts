@@ -80,7 +80,116 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "1bfdce6fba8ac06e8ce2b25eb09a7d7d10dfeba3dff62a736bfce20f182d1586",
+      "kind": "own-words",
+      "url": "https://pelosi.house.gov/news/press-releases/pelosi-statement-on-the-one-year-anniversary-of-the-bipartisan-safer-communities",
+      "date": "2023-06-25",
+      "date_precision": "day",
+      "passage": "To protect our children and future generations, Republicans must join Democrats in passing legislation to reinstate the Assault Weapons Ban, enact universal background checks for all gun purchases and require gun owners to safely and securely store their firearms.",
+      "note": "Statement on the Bipartisan Safer Communities Act anniversary, calling for an assault weapons ban, universal background checks and safe storage.",
+      "subjects": [
+        "assault weapons ban",
+        "universal background checks",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78ca6b23bc0f3a564b07e26ac6cd05052895443b1166be5ca60ea826a49fab70",
+      "kind": "own-words",
+      "url": "https://pelosi.house.gov/news/press-releases/pelosi-statement-on-president-biden-s-gun-violence-prevention-executive-orders",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "passage": "The gun violence crisis demands immediate, effective and strong action – which is why, as House Speaker, I strongly support the gun violence prevention actions taken today by President Biden.",
+      "note": "Statement backing President Biden's executive orders, which she says include stopping the spread of so-called ghost guns.",
+      "subjects": [
+        "ghost guns",
+        "gun violence prevention executive orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "162f2f13631d653d08eb212bd44aa20804bd64a23ea942c32b6fab9b70df8c7a",
+      "kind": "own-words",
+      "url": "https://pelosi.house.gov/news/press-releases/pelosi-statement-on-the-ten-year-anniversary-of-the-aurora-tragedy",
+      "date": "2022-07-20",
+      "date_precision": "day",
+      "passage": "We have twice passed widely-popular legislation to secure universal background checks for all gun purchases.",
+      "note": "Statement on Aurora anniversary; same release says the Judiciary Committee was moving forward with an assault weapons ban.",
+      "subjects": [
+        "universal background checks",
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c656f89830a5df158678e3039a3963ee00107e728177ff5d55e8caa80803039",
+      "kind": "own-words",
+      "url": "https://pelosi.house.gov/news/press-releases/pelosi-statement-on-president-obamas-gun-violence-prevention-proposals",
+      "date": "2013-01-16",
+      "date_precision": "day",
+      "passage": "Congress must do its part, without further delay, to strengthen background checks and take the most dangerous weapons and assault magazines out of the hands of those in greatest danger of doing harm to themselves and to others.",
+      "note": "Statement on President Obama's gun proposals.",
+      "subjects": [
+        "background checks",
+        "assault weapons",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "universal background checks",
+        "ghost guns",
+        "safe storage",
+        "gun violence prevention statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pelosi.house.gov (press release list page 1: nothing on the subject; Gun Violence Prevention issue releases fetched)",
+        "blocked: https://www.congress.gov/member/nancy-pelosi/P000197 (Cloudflare 403; sponsorships not reviewed)",
+        "one news search on name plus subject words (leads only)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

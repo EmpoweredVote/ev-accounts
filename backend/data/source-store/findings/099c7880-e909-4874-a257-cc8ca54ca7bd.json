@@ -286,6 +286,50 @@
         "fetched_at": "2026-10-28T15:55:41.513Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7371ec3abd3f5197421beda9eb3ad76ddcc49b6b781a665423278d3fab28806e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB259",
+      "date": "2024-11-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-259-2025",
+      "act": "author",
+      "note": "HB 259, caption \"Relating to the prohibition of short-barrel firearms.\" Authors listed: Hayes, Bumgarner, Virdell, and Pierson. An NRA-ILA article says it removes short-barreled rifles and short-barreled shotguns from the list of prohibited weapons in Texas. Filed 11/12/2024, referred to committee 02/27/2025, last action 04/14/2025 left pending in committee.",
+      "subjects": [
+        "short-barrelled rifles and shotguns",
+        "repealing gun prohibitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4ed8696b641372954ba9e0762bbd28748470041184291466523dcc78ae7e74a",
+      "kind": "record",
+      "url": "https://dentonrc.com/news/politics/denton-county-lawmakers-sign-letter-asking-state-fair-of-texas-to-rescind-gun-ban/article_1c9d35bc-598c-11ef-8655-671dd8e26c69.html",
+      "date": "2024-08-12",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed a legislators' letter asking the State Fair of Texas board to reverse its firearms ban",
+      "note": "Denton Record-Chronicle (dated Aug 13, 2024) lists Rep. Richard Hayes of District 57 among the Denton County signers of a letter signed \"Monday\" by about 71 legislators; the article does not quote him. Date is the Monday before the article, inferred from the report.",
+      "subjects": [
+        "carrying guns in public venues",
+        "State Fair firearms ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -332,6 +376,29 @@
       "found": 6,
       "at": "2026-10-28T15:55:41.513Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "short-barrelled rifles and shotguns",
+        "Second Amendment",
+        "gun bills authored",
+        "State Fair weapons ban letter"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member biography https://house.texas.gov/members/4165/biography (confirms Richard Hayes, District 57; no gun sentence found on the page, also checked by curl)",
+        "capitol.texas.gov bill history for HB 259 (89th session)",
+        "NRA-ILA article on 2025 pre-filed bills (names him as sponsor of HB 259)",
+        "Denton Record-Chronicle, Aug 13 2024 (letter; behind a paywall to curl, read by fetch tool only)",
+        "web search: name plus gun words (one search)",
+        "not reviewed: Ballotpedia, campaign site, other sponsorships, 2026 ballot status (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -82,5 +82,29 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "red-flag orders",
+        "assault weapons",
+        "suppressors"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site issues list (no gun or Second Amendment page)",
+        "web search of official press releases: nothing on the subject",
+        "web search general: only advocacy-group statements about him and reporter paraphrase (cronkitenews.azpbs.org 2022), neither is his own words",
+        "blocked: https://12news.com/article/news/politics/elections/decision-2024/arizona-congressional-district-6-republican-incumbent-juan-ciscomani-democratic-challenger-kirsten-engel/75-cbe6bb14-29e9-453b-aa2d-45b3263e41ad",
+        "not reviewed: ballotpedia",
+        "not reviewed: congress.gov sponsorships"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

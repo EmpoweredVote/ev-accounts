@@ -80,6 +80,71 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "f576536475a13672e1f0858e0f21ee65fdcc00575888228cc68e4a54b790365c",
+      "kind": "own-words",
+      "url": "https://wdet.org/2018/02/22/rep-debbie-dingell-lets-not-have-the-same-old-discussion-on-guns/",
+      "date": "2018-02-22",
+      "date_precision": "day",
+      "passage": "“My father shouldn’t have had access to guns,” she says. “I don’t think any child should have to hide in a closet, afraid they’re going to die.”",
+      "note": "Radio interview quote. The same article reports (in the host's words, not hers) that she was working with a colleague on a proposal including a bump stock ban and expanded background checks.",
+      "subjects": [
+        "gun safety laws general",
+        "bump stocks",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b78fc468556b76fde33b2c9318e52fd28e62f8532c36276bbda4bc7549d1db8a",
+      "kind": "own-words",
+      "url": "https://debbiedingell.house.gov/media-center/in-the-news/mlive-dingell-touts-legislation-keep-guns-out-hands-abusers-stalkers-during",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Emotions in volatile and mentally unstable situations are unpredictable and far too often have disastrous outcomes,” Dingell wrote in a letter to Michigan Gov. Rick Snyder earlier this year.",
+      "note": "MLive story on her site quotes her letter to the Michigan governor about a state bill on concealed-weapons permits for people with a history of violence; the story says the governor then vetoed that bill. Page date not clear from its text.",
+      "subjects": [
+        "carry permits",
+        "concealed weapons permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb98ba66a56e98e6352fde908e9422472da0eac6180dfe8b82cb8d66f2a939c5",
+      "kind": "record",
+      "url": "https://debbiedingell.house.gov/media-center/in-the-news/mlive-dingell-touts-legislation-keep-guns-out-hands-abusers-stalkers-during",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "sponsor",
+      "motion": "Zero Tolerance for Domestic Abusers Act (introduced by her, per MLive; bill number not on page)",
+      "note": "The story says she introduced a bill to bar people who abused dating partners from buying or owning guns, closing a gap in the federal ban.",
+      "subjects": [
+        "domestic abusers and guns",
+        "boyfriend loophole"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -136,6 +201,30 @@
       "found": 0,
       "at": "2026-10-27T21:31:09.673Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "bump stocks",
+        "domestic abusers and guns (boyfriend loophole)",
+        "concealed weapons permits",
+        "assault-style weapons",
+        "gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WDET interview Feb 22 2018",
+        "MLive story hosted on her official site (page shows several dates, none clearly its own)",
+        "web search (one query)",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site, Brady page (advocacy group, search lead only), WILX June 2026 report",
+        "nothing found in own words on an assault weapons ban"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

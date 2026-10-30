@@ -86,6 +86,49 @@
         "fetched_at": "2026-10-29T14:14:50.862Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e7e6b83bc04da9f57e3e9a11382660fe4c230232b0161ac98d01231448c41546",
+      "kind": "own-words",
+      "url": "https://www.repwendyfink.com/News/33768/Press-Releases/Fink-to-Host-Concealed-Carry-Seminar",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "passage": "“The right to bear arms is clearly spelled out in the Constitution of the Commonwealth of Pennsylvania and the Constitution of the United States of America.”",
+      "note": "Quote in her own press release announcing a concealed carry seminar for constituents covering the permit process and the Second Amendment. She also says it is a chance to learn about getting a permit and state laws.",
+      "subjects": [
+        "Second Amendment",
+        "right to bear arms",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b98cda1823541c3a1a4bd79a49a79011c593b40cc8e781837fd5aa4ed7f3814",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb706",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-706-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 706, amending Title 18 on firearms licenses; memo subject 'Concealed Firearms License Fee Waiver'. Bill was referred to House Judiciary on 2025-02-24; the date she signed on is not shown on the page.",
+      "subjects": [
+        "concealed carry license fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -126,6 +169,29 @@
       "found": 2,
       "at": "2026-10-29T14:14:50.862Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site repwendyfink.com (press release on concealed carry seminar)",
+        "palegis.us bill pages: HB 706 of 2025 (co-sponsor); HB 36 of 2023 checked, an election-code bill, nothing on the subject",
+        "legiplex list: lead only",
+        "Ballotpedia: not reviewed",
+        "news search: no further direct statements found"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

@@ -66,6 +66,26 @@
         "fetched_at": "2026-10-29T14:14:50.861Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "254b4ba4b5e961ca5c64a895a46f179be76928ece5997ea6fe0fa16bc7e6873a",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/takac/InTheNews/NewsRelease/?id=128439",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "passage": "“No one, especially a child, should have to deal with the fear and trauma of a potential active shooter in their school – or anywhere else for that matter,” Takac said.",
+      "note": "Statement supporting a student walkout against gun violence, issued on his House page. He also says it is an urgent duty to address guns, education and mental health.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -120,6 +140,29 @@
       "found": 1,
       "at": "2026-10-29T14:14:50.861Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pahouse.com/takac news release",
+        "campaign site https://www.paultakac.com/policy (page is script-rendered; no text readable by fetch)",
+        "web search: one search (leads only)",
+        "Ballotpedia not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

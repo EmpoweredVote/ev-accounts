@@ -178,6 +178,49 @@
         "fetched_at": "2026-10-28T15:55:41.523Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c271ea7cb0419992348b4309cbeac56f8199101edf476ced538433da3074412c",
+      "kind": "own-words",
+      "url": "https://ballotready.org/people/keresa-richardson",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Keresa will oppose backdoor gun registries, so called red flag schemes that violate due process, and federal attempts to punish lawful gun ownership. She will work to ensure that Texas remains a national leader in defending the Second Amendment, cracking down on violent criminals instead of targeting law abiding citizens.",
+      "note": "Statement on the Guns issue in her 2026 BallotReady candidate profile; page undated.",
+      "subjects": [
+        "gun registries",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4db63ff55b026c4b2083a05fca39d9880819e4ce42dc63c722a8ddc9a925a576",
+      "kind": "own-words",
+      "url": "https://ballotready.org/people/keresa-richardson",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Keresa believes the Second Amendment is a fundamental right that government must never water down. She stands firmly with responsible gun owners and supports constitutional carry, the right to self defense, and strong protections for law abiding Texans who choose to own and carry firearms.",
+      "note": "Statement on the Guns issue in her 2026 BallotReady candidate profile; page undated.",
+      "subjects": [
+        "Second Amendment",
+        "permitless carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -220,6 +263,30 @@
       "found": 3,
       "at": "2026-10-28T15:55:41.523Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "red-flag orders",
+        "constitutional carry",
+        "gun registries"
+      ],
+      "places": [
+        "scope: https://ballotready.org/people/keresa-richardson (lists Texas General Election November 3, 2026, HD61 candidate; also https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-61/candidates/keresa-richardson)",
+        "On the Record (0 appearances)",
+        "BallotReady candidate profile (two passages saved)",
+        "Ballotpedia https://ballotpedia.org/Keresa_Richardson (no gun text returned)",
+        "house.texas.gov member page (nothing on the subject)",
+        "blocked: https://ivoterguide.com/candidate/77989/race/32436/election/1471 (no text returned)",
+        "not reviewed: capitol.texas.gov author list (no gun bill identified by search)",
+        "news search x1"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

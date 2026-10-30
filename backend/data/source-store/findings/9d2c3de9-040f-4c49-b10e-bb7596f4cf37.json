@@ -86,6 +86,48 @@
         "fetched_at": "2026-10-29T14:22:46.325Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f50cd5f506ff21c2030e230391c91a90050fe4fc8af7b35249ac70f6e9a4649a",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31716/Jones-Takes-Oath-of-Office-as-State-Representative?SiteID=1",
+      "date": "2023-01-04",
+      "date_precision": "day",
+      "passage": "Jones' priorities during the 2023-24 legislative session include:\n- upholding the sanctity of life;\n- protecting Second Amendment rights;",
+      "note": "House caucus press release about his swearing-in lists protecting Second Amendment rights among his priorities for the 2023-24 session. It is written in the third person by the caucus, not a direct quote of him.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd18e4650d8597d28c5373cc3cce2087a74e745f9065894f007b756854f4ec4c",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/35339/Jones-Sworn-in-to-Second-Term-in-Office?SiteID=1",
+      "date": "2025-01-07",
+      "date_precision": "day",
+      "passage": "Jones will continue to work to uphold the sanctity of life, protect Second Amendment rights, give parents strong influence regarding their children's education and fight to ensure hard-working Pennsylvanians can keep more of their own money by voting to keep government spending in check.",
+      "note": "House caucus press release on his second-term swearing-in says he will continue to work to protect Second Amendment rights. Third-person caucus text, not a direct quote of him.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -168,6 +210,26 @@
       "found": 2,
       "at": "2026-10-29T14:22:46.325Z",
       "by": "identity-pa-2026-10-29c"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "firearms bills",
+        "carry permits",
+        "gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House caucus press releases webcms.pahousegop.com (2 pages reviewed)",
+        "blocked: https://www.palegis.us/legislation/bills/2023/hb566",
+        "Ballotpedia (not reviewed)",
+        "one news search (results did not tie a firearms bill to him; Legiplex lead on HB 566 unconfirmed so not saved)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

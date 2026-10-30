@@ -80,7 +80,116 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "800db4d12c87d5579bf2f6415f96f187c3206e729e211349d904f48505f09a15",
+      "kind": "own-words",
+      "url": "https://fulcher.house.gov/2025/06/02/id-53488a33-32a9-473a-80e8-acd102c7c3d1/",
+      "date": "2025-06-02",
+      "date_precision": "day",
+      "passage": "“The National Firearms Act (NFA) of 1934 has long imposed burdensome taxes and bureaucratic registration requirements that infringe on Idahoans’ constitutional right to keep and bear arms. I am proud to co-sponsor H.R. 335 to abolish the NFA and strip the ATF’s ability to enforce this gross infringement on our Second Amendment rights.”",
+      "note": "His quote on cosponsoring H.R. 335, which would abolish the National Firearms Act.",
+      "subjects": [
+        "repeal of National Firearms Act",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6fdc6db685181c2110b44e3b6d8d2ecd1aaab7578292382aec06222bb957ace1",
+      "kind": "record",
+      "url": "https://fulcher.house.gov/2025/06/02/id-53488a33-32a9-473a-80e8-acd102c7c3d1/",
+      "date": "2025-06-02",
+      "date_precision": "day",
+      "instrument_id": "US-HR-335-2025",
+      "act": "sponsor",
+      "note": "Cosponsor of H.R. 335, a bill to abolish the National Firearms Act. The page also says he cosponsors the Hearing Protection Act (suppressors) and H.R. 221 (abolish the ATF). Date is that of the press release.",
+      "subjects": [
+        "repeal of National Firearms Act",
+        "suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "954ddce45e58b34e9c7a67fbd10601ab82705b3b02b26354ef0a2c6f993ad545",
+      "kind": "own-words",
+      "url": "https://fulcher.house.gov/2022/03/15/id-ff786fd7-1fba-465a-8409-e3a2a36c8757/",
+      "date": "2022-03-15",
+      "date_precision": "day",
+      "passage": "“Under the current administration, preserving our constitutional rights and our personal freedoms is more important now than ever before. Thank you to Congressman Cloud for identifying this dangerous new rule and leading the fight to combat it. I am proud to cosponsor the REGISTRY Rights Act to protect the rights of my constituents back home and all Americans.”",
+      "note": "His quote on cosponsoring the No REGISTRY Rights Act, which would make ATF delete firearm transaction records and bar a federal gun registry.",
+      "subjects": [
+        "firearm registry",
+        "firearm dealer records"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dbc88cbc8eff3b35088d5e3a66ec28ba424b2031cea344d5fcf4adf6f83b46e",
+      "kind": "record",
+      "url": "https://fulcher.house.gov/2025/05/06/id-e0352101-2314-434d-bba6-6b861e64eb3e/",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1041-2025",
+      "act": "sponsor",
+      "note": "Page says he is a cosponsor of H.R. 1041, a bill protecting gun rights for veterans. Date is that of the post.",
+      "subjects": [
+        "veterans and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "National Firearms Act repeal",
+        "firearm records registry",
+        "veterans and gun rights",
+        "suppressors",
+        "concealed carry reciprocity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site search 'gun' (https://fulcher.house.gov/?s=gun, page 1)",
+        "https://fulcher.house.gov/2025/06/02/id-53488a33-32a9-473a-80e8-acd102c7c3d1/",
+        "https://fulcher.house.gov/2025/05/06/id-e0352101-2314-434d-bba6-6b861e64eb3e/ (staff-written repost; no direct quote)",
+        "https://fulcher.house.gov/2022/03/15/id-ff786fd7-1fba-465a-8409-e3a2a36c8757/",
+        "not reviewed: other press releases on the list (2023 ATF Transparency Act, 2022 suppressor letter, 2023 exporters letter)",
+        "not reviewed: congress.gov, Ballotpedia, news (budget)"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }

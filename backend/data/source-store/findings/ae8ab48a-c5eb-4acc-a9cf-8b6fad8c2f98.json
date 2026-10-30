@@ -216,6 +216,48 @@
         "fetched_at": "2026-10-29T14:14:50.852Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b3789f569a98e053a10209b6055db119cce6f135e4a95d2aeadb5d4ac8be126a",
+      "kind": "own-words",
+      "url": "https://lebtown.com/2024/01/03/state-rep-russ-diamond-announces-bid-for-re-election-to-102nd-state-house-seat/",
+      "date": "2024-01-03",
+      "date_precision": "day",
+      "passage": "The release also touted Diamond’s “solid legislative record on issues such as life, firearms rights, and fiscal responsibility.”",
+      "note": "LebTown quotes his re-election announcement release (issued in his name) describing his record as including firearms rights. The sentence is the outlet's; the quoted phrase is from the release.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df9e372eed9623bfc0c2e146a308f10af8b5b7f26d4caa65b11de41a7155f5e4",
+      "kind": "record",
+      "url": "https://ns2.foac-pac.org/Proposed-Pennsylvania-House-Legislation-HB1696/State-Law/4678",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "instrument_id": "PA-HB-1696-2021",
+      "act": "sponsor",
+      "note": "Listed among 30 sponsors of HB 1696 (2021-2022 session), the Second Amendment Preservation Act, which limits federal law and creates a private cause of action. Tracker shows last action as referred to Judiciary on 2021-06-24. Source is a third-party bill tracker; the official page was not reachable.",
+      "subjects": [
+        "Second Amendment Preservation Act",
+        "limiting federal firearm law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -289,6 +331,29 @@
       "found": 3,
       "at": "2026-10-29T14:14:50.852Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "concealed carry",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://lebtown.com/2026/01/07/rep-russ-diamond-asks-lebanon-county-voters-for-two-more-years-in-harrisburg/ (confirms he is seeking re-election in 2026 for House District 102; nothing on the subject)",
+        "https://lebtown.com/2024/01/03/state-rep-russ-diamond-announces-bid-for-re-election-to-102nd-state-house-seat/",
+        "https://ns2.foac-pac.org/Proposed-Pennsylvania-House-Legislation-HB1696/State-Law/4678 (sponsor list)",
+        "official site search https://www.pahouse.com/Diamond/NewsRoom?q=gun (nothing returned)",
+        "blocked: https://www.palegis.us (403 on bill pages)",
+        "Ballotpedia: not reviewed",
+        "web search (1)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

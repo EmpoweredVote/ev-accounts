@@ -1,6 +1,70 @@
 {
   "politician_id": "52c621b5-2795-47cf-a7eb-8a815b3790d2",
-  "findings": [],
+  "findings": [
+    {
+      "id": "d2ee046c1c31477bcbbb5e78c3056160839a43852b3f0f0b0d8fa72115b1ac78",
+      "kind": "own-words",
+      "url": "https://www.wtkr.com/news/del-hayes-discusses-gun-legislation-after-deadly-2022-chesapeake-walmart-shooting",
+      "date": "2023-11-22",
+      "date_precision": "day",
+      "passage": "“There needs to be a change in how quickly individuals can run out, get a weapon, and then return right back,” Del. Hayes said.",
+      "note": "Quoted by WTKR (News 3) a year after the Chesapeake Walmart shooting, on buying guns quickly. Date is the article's publish date.",
+      "subjects": [
+        "waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "721ce8afc630171907c9c26b8c45152b48509ff1af905af3952d4bbe53f4a02c",
+      "kind": "own-words",
+      "url": "https://www.wtkr.com/news/del-hayes-discusses-gun-legislation-after-deadly-2022-chesapeake-walmart-shooting",
+      "date": "2023-11-22",
+      "date_precision": "day",
+      "passage": "“We have got to be courageous enough to do the things that are going to be necessary for us to bring about a change in this trajectory.”",
+      "note": "Quoted by WTKR (News 3) with the reporter's line that he has proposed a three day waiting period to buy a gun before and plans to introduce it again. Text on page reads: Hayes said that he vows to keep fighting for a change, adding the quote.",
+      "subjects": [
+        "waiting periods",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "422be77347fb6eef0bab2a8b90c9e9c4b70fcb412f4abe03d87205433b7c9474",
+      "kind": "own-words",
+      "url": "https://potomaclocal.com/2019/01/10/democratic-legislators-on-gun-violence-its-common-sense-2",
+      "date": "2019-01-10",
+      "date_precision": "day",
+      "passage": "“None of this is anti-Second Amendment; it’s a common-sense legislation,” said Del. Cliff Hayes, D-Chesapeake, co-sponsor of House Bill 1644 , which requires reporting lost or stolen firearms.",
+      "note": "Quoted by Potomac Local at a press conference on gun safety proposals. URL date taken from the address; the outlet names him co-sponsor of HB1644 (reporting lost or stolen firearms). The LIS page lists a different patron, so co-sponsorship is the outlet's statement only.",
+      "subjects": [
+        "lost or stolen firearm reporting",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +90,27 @@
       "found": 0,
       "at": "2026-10-28T16:22:06.364Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "waiting periods",
+        "lost or stolen firearm reporting",
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WTKR news article (fetched, confirms Del. Cliff Hayes of Chesapeake)",
+        "Potomac Local news article (fetched)",
+        "LIS HB1644 (2019) summary page (patron listed is another member; Hayes cited as co-sponsor only by the news outlet)",
+        "one web search on name plus gun words (leads: Giffords and Brady candidate pages, not saved)",
+        "not reviewed: his own legislator page and sponsor list on LIS; Ballotpedia"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

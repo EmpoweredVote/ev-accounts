@@ -166,6 +166,29 @@
         "fetched_at": "2026-10-28T17:58:27.791Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0b8bf3415dec617dd526df0d1b6443a8818718996e100484d5d6e248594deb82",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20240201/virginia-assembly-public-safety-firearms-subcommittee-to-hear-multiple-firearms-related-bills",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-270-2024",
+      "act": "sponsor",
+      "note": "Date is the date of the article, not of the filing. The article says: \"HB 270\" by \"Del. David Reid, creates a Class 6 felony for any person to import, sell, transfer, manufacture, or purchase a restricted rifle or large-capacity firearm magazines. HB 270 imposes civil liability for the acts of third parties, if a restricted firearm or magazine was transferred in violation of this legislation. Additionally, HB 270 implements a 3-day waiting period for firearm purchases and creates the Virginia Firearm Buy-Back Program.\" The source is a gun-rights group's summary, not the bill text.",
+      "subjects": [
+        "assault weapons and large-capacity magazine restrictions",
+        "waiting period",
+        "firearm buy-back program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -221,6 +244,29 @@
       "found": 4,
       "at": "2026-10-28T17:58:27.791Z",
       "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and magazines",
+        "waiting periods",
+        "firearm buy-back",
+        "background checks",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "billsponsor.com politician page (confirms Delegate, District 28; featured bills are not about firearms)",
+        "NRA-ILA article on the 2024 firearms subcommittee agenda (names him as patron of HB 270; the text is the group's description)",
+        "blocked: https://lis.virginia.gov (JavaScript app; official bill page not read)",
+        "campaign site: none found (davidreidva.com gave no page; reidforvirginia.com is an unrelated spam site, discarded)",
+        "Ballotpedia: not reviewed",
+        "news search: one search, no direct statement from him on guns found. VA House seats are not on the 2026 ballot"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

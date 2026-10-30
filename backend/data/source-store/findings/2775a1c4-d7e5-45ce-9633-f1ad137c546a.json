@@ -103,6 +103,70 @@
         "fetched_at": "2026-10-28T15:55:41.537Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4682c6a695936c43d4a2b861be300272f7add586cceaf176abaac2f185fb090c",
+      "kind": "own-words",
+      "url": "https://senate.texas.gov/members/d14/press/en/p20250512a.pdf",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "passage": "From the tragic number of suicides in our state to violent mass shooting incidents, this bill represents an extreme position on gun safety. This bill inhibits the ability of agencies to make informed decisions, puts vulnerable children at greater risk, and tips the scales further in favor of lawless gun owners. Texas should be moving toward more accountability in child welfare, not less—and that starts with ensuring we know whether a home is safe.",
+      "note": "Statement in her name on the Senate passage of SB 1524, which bars the child welfare agency from asking about guns in potential foster homes. Release says she voted against it.",
+      "subjects": [
+        "gun safety",
+        "guns in foster homes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a02808d1fe42898bac56d0abd0d045728f359a8d527a31166c1ddc1ff01cdfd1",
+      "kind": "own-words",
+      "url": "https://thedailytexan.com/2023/04/03/democratic-senators-seek-to-strengthen-gun-safety-laws-in-texas/",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "“Gun violence is now the leading cause of death for Texas children,” Eckhardt said in an email. “As elected officials, we have a duty to answer to Texans who overwhelmingly want common sense gun reforms, who want to feel safe again going to worship or school or the grocery store.”",
+      "note": "Quoted by the Daily Texan, from an email, in a story on Senate bills on gun laws.",
+      "subjects": [
+        "gun safety laws",
+        "common sense gun reforms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5aabbe34bf67d4c54eb5141f09e0884d02a967b91ca5aef87b5c9c8dd0c1af0",
+      "kind": "record",
+      "url": "https://thedailytexan.com/2023/04/03/democratic-senators-seek-to-strengthen-gun-safety-laws-in-texas/",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-1274-2023",
+      "act": "author",
+      "note": "Daily Texan says she co-authored SB 1274, which would raise the minimum age to buy a long gun from 18 to 21 and require background checks on all private firearm transfers, with exceptions for family members, police officers and military members. Official bill page did not load, so the exact filing date is not confirmed.",
+      "subjects": [
+        "minimum age to buy long guns",
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -145,6 +209,30 @@
       "found": 2,
       "at": "2026-10-28T15:55:41.537Z",
       "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks on private sales",
+        "minimum age to buy",
+        "foster-home gun questions",
+        "gun safety statements",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity: https://senate.texas.gov/members/d14/press/en/p20250512a.pdf (Senator, District 14 press release)",
+        "Senate press releases (d14) via search; one release reviewed",
+        "news search: Daily Texan 2023-04-03 reviewed",
+        "blocked: https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=SB1274 (page content did not load, author list not shown)",
+        "Ballotpedia not reviewed",
+        "campaign site not reviewed; not on the 2026 ballot as far as known (four-year term), not checked"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

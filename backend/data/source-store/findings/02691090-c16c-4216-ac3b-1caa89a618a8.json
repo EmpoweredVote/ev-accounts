@@ -51,6 +51,257 @@
         "fetched_at": "2026-10-28T14:29:32.829Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "cba5a26c37c29a1f9d1124b74f9503e3f4767373ec1b5ee915cd338c9199f4b2",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2017/05/16/bill-criminalizing-celebratory-gunfire-appears-dead-house/",
+      "date": "2017-05-16",
+      "date_precision": "day",
+      "passage": "“I wish most people would understand the concept of ‘what comes up, must come down,’ but they don’t,” Canales told The Texas Tribune Monday. “Unfortunately, one of our own representatives had to be the victim of that celebratory gunfire in order for this to hit the House floor.”",
+      "note": "Quoted by the Texas Tribune on a bill making celebratory gunfire a crime; date is the article date from its address.",
+      "subjects": [
+        "celebratory gunfire"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef6c6e7f633905285f7088f0c6978702476e28e731e18aacde766ca1aba08107",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A2340",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1696-2025",
+      "act": "author",
+      "note": "Primary author of HB 1696, which adds a marking on a driver's license showing the holder is licensed to carry a handgun. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "handgun licence marking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2e531aee3a410f87be5a168c4ae455854575819d6a99671317dddd2f8727193",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A2340",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1923-2025",
+      "act": "sponsor",
+      "note": "Joint author (listed among authors, not first) of HB 1923, which removes the fingerprint requirement for applicants for or holders of a licence to carry a handgun. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "601e4636dc6da6c249b0715c7596b347ac4079dea073c71f0d29cad078273bf4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=88R&ID=author&Code=A2340",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-3443-2023",
+      "act": "author",
+      "note": "Primary author of HB 3443, which adds a marking on a driver's license showing the holder is licensed to carry a handgun. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "handgun licence marking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bfa9493795ec5c4d765de0dd03c15337235b62ed7e2bb18c6c0bd96d71a15be",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=88R&ID=author&Code=A2340",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-4827-2023",
+      "act": "sponsor",
+      "note": "Joint author of HB 4827, on how the offense of possessing or carrying a weapon in prohibited places tied to schools and educational institutions is prosecuted. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "guns near schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1413c7241bafdce93a16c6b1305d546064a374973959a36dccc186635d2b7b91",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=87R&ID=author&Code=A2340",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1911-2021",
+      "act": "sponsor",
+      "note": "Joint author of HB 1911, on carrying a handgun by certain unlicensed persons and related rules on carrying, possessing, transporting or storing a firearm. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "permitless carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74a35d88857dff8d63c17c937aa65bdc0c6dbf2eda2aa77553ec8daf2ece0a82",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=87R&ID=author&Code=A2340",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1927-2021",
+      "act": "sponsor",
+      "note": "Joint author of HB 1927, on carrying a firearm by a person 21 or older who is not otherwise barred from possessing it, and related carry, possession and storage rules. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "permitless carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6f7f77da992bfbf388038d725f0de0fab027580d73672a9dea7fd9ae38d898c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=87R&ID=author&Code=A2340",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2622-2021",
+      "act": "sponsor",
+      "note": "Joint author of HB 2622, on enforcement of certain federal laws regulating firearms, firearm accessories and ammunition within Texas. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "state enforcement of federal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "71feae190e618e107f5b934927702121cda4162c8e2d10f18504036e49084bab",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=87R&ID=author&Code=A2340",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2967-2021",
+      "act": "sponsor",
+      "note": "Joint author of HB 2967, on unlawful carrying of a handgun in a motor vehicle or watercraft. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "carrying handguns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efab58bd9f1a6a6e33172b1a5a4cb51e0ac69378fa3cbfa561ded6b3c58c2bba",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=86R&ID=author&Code=A2340",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-38-2019",
+      "act": "author",
+      "note": "Sole author of HB 38, which would prohibit the manufacture, assembly or ownership of unmarked firearms, create a criminal offense and authorize a fee. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "unserialised firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00898b0d375856bfe338b77b062e7d45734831d0ab429e031b060072be6d0113",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=86R&ID=author&Code=A2340",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2363-2019",
+      "act": "sponsor",
+      "note": "Joint author of HB 2363, which lets certain foster homes store firearms and ammunition in the same locked location. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc6b74d86aecf416923848db70a5c88ed5e262e0989c6800cc3f135b92b67d4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=85R&ID=author&Code=A2340",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1819-2017",
+      "act": "sponsor",
+      "note": "Joint author of HB 1819, on the criminal consequences of certain conduct involving a firearm silencer. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "suppressors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -76,6 +327,32 @@
       "found": 1,
       "at": "2026-10-28T14:29:32.829Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "carry permits and permitless carry",
+        "unserialised guns",
+        "suppressors",
+        "Second Amendment statements",
+        "gun bill authorship"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity: Texas Legislature authored-bills report for Canales (code A2340), all five sessions listed 85R-89R",
+        "https://capitol.texas.gov/Members/Members.aspx?Chamber=H (member code)",
+        "Texas Tribune article 2017-05-16 reviewed",
+        "Austin Chronicle news ticker 2013 reviewed: no direct quote, nothing saved",
+        "Ballotpedia not reviewed",
+        "official and campaign site not reviewed",
+        "gun bill list is filtered by firearm/handgun/weapon/silencer words in captions; other sessions before 85R not reviewed"
+      ],
+      "found": 12,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

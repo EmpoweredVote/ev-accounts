@@ -131,6 +131,68 @@
         "fetched_at": "2026-10-29T14:14:50.854Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "57fb258d6fa8a14cd46505a813f5e06e39f5cdaa44d39fac13d5eebdd00e115b",
+      "kind": "own-words",
+      "url": "https://lowerbuckssource.net/health-bensalem-township/rep-tomlinson-explains-yes-vote-on-long-gun-background-checks-bill/amp/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "People who sell long guns to others without knowing whether they are prohibited from having guns expose themselves to criminal prosecution. Ignorance of that fact is not a defense. Every new gun purchaser completes a criminal background check, and the same should be true for private transactions,",
+      "note": "Quoted by Lower Bucks Source from her constituent email digest, explaining her vote on HB 1593 (universal background checks for private long-gun transfers). Article year not confirmed; the bill passed the House 104 to 99 on September 30.",
+      "subjects": [
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf60ea30bba833899121277c5e46cec42ba0b5ac739c4796593f7e422ec471fe",
+      "kind": "own-words",
+      "url": "https://lowerbuckssource.net/health-bensalem-township/rep-tomlinson-explains-yes-vote-on-long-gun-background-checks-bill/amp/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Those who claim this creates a gun registry are just blatantly misinformed.",
+      "note": "Quoted by Lower Bucks Source from her email digest, on the private long-gun background check bill.",
+      "subjects": [
+        "background checks on private sales",
+        "gun registry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc0a56487ba241d1773bf4f2b681c679e054e27dd07120b87ee2e076753ab010",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb1592",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1592-2023",
+      "act": "sponsor",
+      "note": "Prime sponsor of HB 1592, which sets sentencing rules for persons not to possess, use, manufacture, control, sell or transfer firearms. Date is the referral to Judiciary (Printer's Number 1872).",
+      "subjects": [
+        "prohibited persons firearm sentencing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -185,6 +247,25 @@
       "found": 2,
       "at": "2026-10-29T14:14:50.854Z",
       "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks on private sales",
+        "firearms sentencing for prohibited persons",
+        "general gun statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "palegis.us HB 1592 page",
+        "Lower Bucks Source article (via curl)",
+        "blocked: https://app.legiplex.com/profile/kathleen-tomlinson-17514/pa/legislatures/2023/2023-r/legislation",
+        "not reviewed: official house site, campaign site, Ballotpedia (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

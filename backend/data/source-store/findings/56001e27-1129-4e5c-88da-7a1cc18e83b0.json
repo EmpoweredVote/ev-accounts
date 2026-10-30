@@ -33,6 +33,29 @@
       "found": 0,
       "at": "2026-10-28T16:26:43.481Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault-style weapons",
+        "gun safety laws",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia https://en.wikipedia.org/wiki/Lindsey_Dougherty (confirms 75th District delegate since 2026-01-14; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Lindsey_Dougherty (page returned empty)",
+        "billsponsor.com politician page (only budget votes and commemorations visible; no gun bill sponsorship readable)",
+        "not reviewed: Virginia LIS bill pages (JavaScript only; legacy page not available)",
+        "ivoterguide 2019 profile (her gun answers listed as 'Did not answer')",
+        "third-party summaries only (Patch, Branch, Progressive Voters Guide): reporter wording, not her own words, not saved",
+        "campaign site: not found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
     }
   ]
 }

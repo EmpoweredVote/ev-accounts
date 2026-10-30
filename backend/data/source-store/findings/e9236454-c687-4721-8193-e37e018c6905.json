@@ -80,7 +80,122 @@
           "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
         }
       }
+    },
+    {
+      "id": "b38f2fa66167e58bbc20c6b26ba3e03f1f84da4492356e62e2ca9c8bc6a0a89f",
+      "kind": "own-words",
+      "url": "https://moran.house.gov/media/press-releases/congressman-moran-signs-amicus-brief-support-second-amendment-rights",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "passage": "As a proud advocate for second amendment rights, I will fight for the right of every law-abiding American citizen to freely carry arms.",
+      "note": "Statement on signing a Senate-led amicus brief against the ATF rule that classed braced pistols as short-barreled rifles under the National Firearms Act; also says the rule violates the Second Amendment and that ATF lacks authority to regulate pistol braces.",
+      "subjects": [
+        "short-barreled rifles",
+        "pistol braces",
+        "National Firearms Act",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b77629c6879f71e09eae2de1118b1aef6e15aaf379f1eb772f3e2edd40e9369d",
+      "kind": "record",
+      "url": "https://moran.house.gov/media/press-releases/congressman-moran-signs-amicus-brief-support-second-amendment-rights",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed onto amicus brief supporting lawsuit against ATF stabilizing-brace rule",
+      "note": "He signed a court brief led by a senator that supports a lawsuit challenging the ATF's January 31, 2023 rule reclassifying braced pistols as short-barreled rifles.",
+      "subjects": [
+        "short-barreled rifles",
+        "pistol braces",
+        "National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7555fcb83c37a1edf7b567cea5bfe14fb898ce4bafe11644fbcb5a908796fc94",
+      "kind": "own-words",
+      "url": "https://capitolreleases.com/releases/61da7a7d-e167-447a-b2bc-935875ef3c92",
+      "date": "2025-01-10",
+      "date_precision": "day",
+      "passage": "“The Second Amendment rights of law-abiding citizens should not end at the state line,” said Congressman Moran. “I am proud to cosponsor Congressman Hudson’s legislation to streamline the patchwork of state laws on concealed carry and ensure law-abiding citizens don’t become criminals just by crossing a state line.",
+      "note": "His quote in his office's release (mirrored on capitolreleases.com; original on moran.house.gov was not fetched) on cosponsoring the Constitutional Concealed Carry Reciprocity Act.",
+      "subjects": [
+        "carry permit reciprocity",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5fb170f9c973ef8b8ac8a3d1956d787eb1b7051182f11005e40aad4b1040c7b4",
+      "kind": "record",
+      "url": "https://capitolreleases.com/releases/61da7a7d-e167-447a-b2bc-935875ef3c92",
+      "date": "2025-01-10",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Cosponsor, Constitutional Concealed Carry Reciprocity Act",
+      "note": "He joined the introduction of a bill that would let holders of state concealed carry licenses carry in other states, and let residents of constitutional carry states carry in other states. Bill number not given on the page; role is cosponsor per the release.",
+      "subjects": [
+        "carry permit reciprocity",
+        "permitless carry",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statements",
+        "short-barreled rifles / pistol braces (National Firearms Act)",
+        "concealed carry reciprocity",
+        "background checks",
+        "assault-style weapons",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release March 1 2023",
+        "capitolreleases.com mirror of official release Jan 10 2025",
+        "web search (two queries)",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site",
+        "not reviewed: https://fastdemocracy.com listing of H.R. 2930 (search lead only)"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
 }
