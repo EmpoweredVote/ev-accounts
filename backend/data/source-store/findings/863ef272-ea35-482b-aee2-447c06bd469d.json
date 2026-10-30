@@ -88,6 +88,29 @@
         "fetched_at": "2026-10-28T16:08:06.031Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7e0a186ab6da8456bb85f5f06460dcedfad1830043ada6edaeef1f5dbc9fa4b4",
+      "kind": "record",
+      "url": "https://oag.ca.gov/initiatives/active-measures",
+      "date": "2025-08-08",
+      "date_precision": "day",
+      "instrument_id": "CA-PROP-39-2026",
+      "act": "author",
+      "note": "Listed by the Attorney General as a proponent of initiative 25-0007A1 (Proponent(s): Carl DeMaio, Tony Strickland and Donald J. DiConstanzo), which is Proposition 39 on the 2026-11-03 ballot; the filed text of 2025-08-08 carries a cover letter he signed as \"Proponent of Enclosed Initiative\".",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "voter ID ballot initiative"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ca-01 runner (Prop 39 proponents)",
+        "fetched_at": "2026-10-30T20:48:03.229Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [
