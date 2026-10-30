@@ -122,6 +122,28 @@
         "fetched_at": "2026-10-28T17:58:27.794Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b550d4c51c5ca8eab9483c89eb80fcec344cf595eb64aa48782aff8a21420724",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB900",
+      "date": "2023-01-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-900-2023",
+      "act": "sponsor",
+      "note": "Listed as a patron of SB 900 (2023) as filed (\"Patrons-- McDougle, Cosgrove, DeSteph, Dunnavant, Hackworth, Hanger, Newman, Norment, Obenshain, Peake, Pillion, Reeves, Ruff, Stanley, Stuart, Suetterlein and Vogel\"). The bill was left in the Senate Privileges and Elections Committee on 2023-02-08; it had no floor vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 va-01 (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-30T22:36:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [
