@@ -24,6 +24,7 @@ import {
   MIN_SNIPPET_WORDS, normalizeText, normName, normTopic, stanceKey, type EvidenceRow, type StanceRow,
 } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
+import { namesPartyTagOrColour } from '../../src/lib/partyLabels.js';
 import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
@@ -329,7 +330,8 @@ export function checkStanceRow(
       + (row.evidence_type === 'blank' ? ' — blank is only for value 0 with a blank_reason' : ''));
   }
 
-  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)) {
+  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)
+    || namesPartyTagOrColour(row.reasoning)) {
     add('party-inference', 'high', 'reasoning names a party or partisan frame — party is never evidence');
   }
 

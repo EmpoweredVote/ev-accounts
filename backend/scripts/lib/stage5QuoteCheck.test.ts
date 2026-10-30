@@ -110,3 +110,12 @@ describe('pageText', () => {
     expect(t).toContain('& more');
   });
 });
+
+describe('QuoteCheckSchema shown_text (CA_0337)', () => {
+  it('accepts a passed check that brackets a label out', () => {
+    expect(QuoteCheckSchema.safeParse(check({ shown_text: '[Some lawmakers] want this.' })).success).toBe(true);
+  });
+  it('refuses an empty shown_text', () => {
+    expect(QuoteCheckSchema.safeParse(check({ shown_text: '' })).success).toBe(false);
+  });
+});

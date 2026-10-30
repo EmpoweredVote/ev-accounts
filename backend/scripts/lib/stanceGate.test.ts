@@ -158,6 +158,12 @@ describe('refusals still refuse', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); Democratic nominee for the seat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong democrat.' })).toContain('party-inference');
+    // Party tags and colours (RULINGS.md "Party labels never reach a reader", 2026-10-29).
+    for (const t of ['Voted YES on HB 1001 (2025), as did Sen. Risch (R-Idaho).', 'Voted YES on HB 1001 (2025) (D-GA).',
+      'Voted YES on HB 1001 (2025) like Smith (R).', 'Voted YES on HB 1001 (2025), as red states did.']) {
+      expect(ids({ ...good, reasoning: t }), t).toContain('party-inference');
+    }
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) on D-Day.' })).not.toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), citing the Federalist view of republican government.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to describe the republican government of the state.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025): under republican government, taxes fell.' })).toContain('party-inference');

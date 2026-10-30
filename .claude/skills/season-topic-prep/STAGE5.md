@@ -134,11 +134,16 @@ and appends one line per finding to `stage5/quote-checks.jsonl`. A passage **pas
 - it is on the page word for word (only whitespace, quote marks and long dashes may differ);
 - it is the person's own words (codebook V1);
 - it is on the topic;
-- it names no party and uses no party colour as a label;
+- a party is not its point (it does not call on voters to back or oppose a party);
 - for a local record, the plain-words note voters see is a fair summary of the act.
 
-Each check also records the sha256 of the exact text it checked, so a passage or note edited later has no check.
-A passage that names a party fails and is never edited (RULINGS.md "Quotes that name a party are never shown").
+A passage that only mentions a party passes with each party label bracketed out: the check writes `shown_text`, the
+passage with each label replaced by a word from the fixed list ("[…]", "[some lawmakers]", "[some officials]",
+"[some voters]", "[some states]", "[others]"). The exact words stay stored; voters see `shown_text`, with the source
+link under it. The writer refuses a `shown_text` that changes anything but party labels (`bracketEditProblem`,
+`backend/src/lib/partyLabels.ts`) or still has a label (RULINGS.md "Party labels never reach a reader").
+Each check also records the sha256 of the exact text voters will see (`shown_text` when there is one), so text
+edited later has no check.
 Run the check again every time you write a batch. The newest check for a finding wins, and a check made before
 the code was made never counts. Each line's `at` is an ISO timestamp with a time zone.
 
@@ -155,7 +160,8 @@ not load keeps the quote check's word and is listed under **not re-checked on th
 - the outcome rows by type, and the passages it would store;
 - **not in research.csv**: blanks whose detail fits no single codebook V6 reason. Add those rows by hand.
 - **refused**: codes that fail `checkCode` (`code`), and passages kept off the page (`passage`): no passed check,
-  text changed since its check, a party name, or a local record with none of their own words beside it. The
+  text changed since its check, a party label left in what voters would see (or a `shown_text` that is not a
+  clean bracket edit), or a local record with none of their own words beside it. The
   person's outcome row is still written for a refused passage.
 
 It also writes `research.csv` for the seats and blanks. Run that file through the research-stances pipeline with

@@ -123,6 +123,19 @@ describe('accumulateEvidence', () => {
 
   // I9 (partial): report what was really inserted — the season-less unique index drops a snippet
   // already stored for the pair, and that must not be counted as written.
+  // RULINGS.md "Party labels never reach a reader": a snippet is never edited, so one with a label is dropped.
+  it('skips a snippet with a party label, writes the rest, and counts only what was inserted', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    const r = { politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 'He voted for the bill.', snippet_index: 0, batch_id: 'b' };
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => undefined);
+    const n = await accumulateEvidence([r, { ...r, snippet: 'Sen. Jim Risch (R-Idaho) voted for the bill.', snippet_index: 1 }]);
+    expect(n).toBe(1);
+    expect(mockQuery.mock.calls.filter((c: any[]) => /INSERT INTO inform\.politician_context_evidence/.test(String(c[0])))).toHaveLength(1);
+    expect(warn).toHaveBeenCalledWith(expect.stringMatching(/party label/));
+    warn.mockRestore();
+  });
+
   it('returns the number of rows actually inserted (sum of rowCount), not the number attempted', async () => {
     const { accumulateEvidence } = await import('./researchEvidenceService.js');
     const r = { politician_id: 'p', topic_id: 't', source_url: 'u', snippet: 's', snippet_index: 0, batch_id: 'b' };
