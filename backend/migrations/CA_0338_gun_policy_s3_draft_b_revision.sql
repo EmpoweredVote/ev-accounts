@@ -17,7 +17,10 @@
 -- Dry run on prod 2026-10-30, attempt 1 (body twice inside BEGIN, forced RAISE): run 1 proposed + approved
 -- 99bbeeb4… (rolled back) and the gate FAILED on the open-season pin: Season 2 pins revision 2 (1a72d5df…), not
 -- the control. Gate fixed to expect 1a72d5df…; rollback confirmed (3 revisions, 0 open, draft pin 44615418…).
--- Attempt 2: (fill in)
+-- Attempt 2, 2026-10-30 (run by Chris Andrews): gate OK on run 1 (proposed + approved/parked 6dae711c…, rolled
+-- back); run 2 printed "already present — skipping propose/approve" and passed the gate; voter answers reworded x2
+-- as expected; ended with "dry run: forced rollback". Confirmed in a new session: 3 revisions, 0 open, draft pin
+-- 44615418…, counts 60/60, 0 draft answers.
 --
 -- WHAT THIS DOES
 --   1. Proposes revision 4 of gun-policy: change_class substantive, version 3.
