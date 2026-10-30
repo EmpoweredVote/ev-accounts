@@ -67,6 +67,14 @@ BEGIN
                  WHERE id = '{{SEASON_OPEN_ID}}' AND status = 'open') THEN
     RAISE EXCEPTION '{{SLOT}} precondition: {{SEASON_OPEN_ID}} is not the open season';
   END IF;
+  -- The open season's pin for this topic. It is usually {{REV_PREV_ID}}, but not when a clarifying
+  -- revision was published after the open season locked its pins (the season keeps the older pin and
+  -- is served the newer text by version). Fill {{OPEN_PIN_ID}} from the facts query's 'pin' row.
+  IF NOT EXISTS (SELECT 1 FROM inform.season_questions
+                 WHERE season_id = '{{SEASON_OPEN_ID}}' AND topic_id = '{{TOPIC_ID}}'
+                   AND topic_revision_id = '{{OPEN_PIN_ID}}') THEN
+    RAISE EXCEPTION '{{SLOT}} precondition: the open season does not pin {{OPEN_PIN_ID}} for this topic';
+  END IF;
   IF NOT EXISTS (SELECT 1 FROM inform.compass_topic_revisions
                  WHERE id = '{{REV_PREV_ID}}' AND is_current AND status = 'published') THEN
     RAISE EXCEPTION '{{SLOT}} precondition: {{REV_PREV_ID}} is not the current published revision';
@@ -148,6 +156,7 @@ DECLARE
   v_openS CONSTANT uuid := '{{SEASON_OPEN_ID}}';
   v_draft CONSTANT uuid := '{{SEASON_DRAFT_ID}}';
   v_prev  CONSTANT uuid := '{{REV_PREV_ID}}';
+  v_openPin CONSTANT uuid := '{{OPEN_PIN_ID}}';
   v_rungs CONSTANT jsonb := jsonb_build_array(
     jsonb_build_object('value', 1, 'text', $r1${{RUNG_1}}$r1$),
     jsonb_build_object('value', 2, 'text', $r2${{RUNG_2}}$r2$),
@@ -203,9 +212,9 @@ BEGIN
     RAISE EXCEPTION '{{SLOT}} verify: {{REV_PREV_ID}} is no longer current/published';
   END IF;
 
-  -- The open season still pins the previous revision; the draft season pins the new one.
+  -- The open season's pin is unchanged ({{OPEN_PIN_ID}}); the draft season pins the new one.
   SELECT topic_revision_id INTO v_pin FROM inform.season_questions WHERE season_id = v_openS AND topic_id = v_topic;
-  IF v_pin IS DISTINCT FROM v_prev THEN RAISE EXCEPTION '{{SLOT}} verify: open-season pin is % (expected the previous revision)', v_pin; END IF;
+  IF v_pin IS DISTINCT FROM v_openPin THEN RAISE EXCEPTION '{{SLOT}} verify: open-season pin is % (expected {{OPEN_PIN_ID}}, unchanged)', v_pin; END IF;
   SELECT topic_revision_id INTO v_pin FROM inform.season_questions WHERE season_id = v_draft AND topic_id = v_topic;
   IF v_pin IS DISTINCT FROM v_new THEN RAISE EXCEPTION '{{SLOT}} verify: draft-season pin is % (expected %)', v_pin, v_new; END IF;
 
