@@ -10,6 +10,7 @@ import { normalizeText, MIN_SNIPPET_WORDS } from './researchVerifier.js';
 import { isRollCallXmlUrl, parseRollCallLine } from './rollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine } from './legiscanEvidence.js';
 import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
+import { namesParty } from './partyLabels.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
 import type { Queryable } from './seasonService.js';
 
@@ -165,6 +166,10 @@ export function buildReviewRowForInsert(args: {
  * pair (from any earlier batch or season) is skipped by ON CONFLICT DO NOTHING.
  *
  * Pass `db` (a transaction client) to write inside the caller's transaction; defaults to pool.
+ *
+ * A snippet carrying a party label is skipped, never edited, and never reaches voters (RULINGS.md "Party labels
+ * never reach a reader": the builder picks a label-free stretch of the page, or the snippet is dropped). Each
+ * skip is logged, and is not counted as inserted.
  */
 export async function accumulateEvidence(
   rows: EvidenceInsertRow[], db?: Queryable, opts: { seasonId?: string } = {},
@@ -178,6 +183,10 @@ export async function accumulateEvidence(
   const { SEASON_IS_PUBLISHED } = await import('./seasonService.js');
   let inserted = 0;
   for (const r of rows) {
+    if (namesParty(r.snippet)) {
+      console.warn(`accumulateEvidence: skipped a snippet with a party label (${r.politician_id}, ${r.source_url} #${r.snippet_index}); pick a label-free stretch`);
+      continue;
+    }
     // CA_0301's columns are named only when the row carries a date, so a row without one writes
     // the same SQL as before that migration.
     const dated = r.source_date ? { cols: ', source_date, source_date_precision', vals: ', $7::date, $8' } : { cols: '', vals: '' };

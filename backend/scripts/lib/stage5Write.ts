@@ -5,7 +5,9 @@
  *   - `outcomes` — one inform.topic_research_outcomes row per code: the "we researched" marker (spec §8).
  *   - `passages` — one inform.own_words_passages row per shown passage: a doesnt-fit code's cited own words,
  *     and its cited local records described in plain words (the finding's note). Only a passage whose newest
- *     quote check, for this person and topic, passed. A passage that names a party is refused even then.
+ *     quote check, for this person and topic, passed. A party label never reaches a voter (RULINGS.md "Party
+ *     labels never reach a reader"): own words carry it bracketed out in `shown_text`, which must change
+ *     nothing but the labels (bracketEditProblem); a note or shown text that still has one is refused.
  *   - `researchCsv` — seats and blanks for the existing pipeline (stance-gate.ts → verify-stance-research.ts
  *     --season draft), so stanceGate, decidePublish and the pre-write audit still run. An own-words seat is
  *     `statement` evidence, so it keeps the `statement-evidence` hold (RULINGS.md "Stage 5 rulings").
@@ -22,7 +24,7 @@
 import { stringify } from 'csv-stringify/sync';
 import type { BlankReason } from '../../src/lib/blankReasons.js';
 import { checkCode, type Stage5Code } from './stage5Code.js';
-import { namesParty, pageText, passageOnPage, shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
+import { bracketEditProblem, namesParty, pageText, passageOnPage, shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
 import type { SeasonTarget } from './seasonTarget.js';
 import type { Finding, PersonFindings } from './sourceStore.js';
 
@@ -41,7 +43,10 @@ export type PassageRow = {
   season_id: string;
   finding_id: string;
   kind: 'own-words' | 'local-record';
+  /** Own words: the exact words, never edited. Local record: the plain-words note. */
   passage: string;
+  /** Own words with each party label bracketed out (CA_0337); null when the passage has none. Voters see this. */
+  shown_text: string | null;
   source_url: string;
   source_date: string | null;
   source_date_precision: Finding['date_precision'];
@@ -139,19 +144,27 @@ export function planBatch(
       for (const f of cited) {
         const kind = shownKind(f);
         if (!kind) continue;
-        const shown = kind === 'own-words' ? f.passage! : f.note;
+        const stored = kind === 'own-words' ? f.passage! : f.note;
         const c = newestCheck(checks, f, code);
         const label = `finding ${f.id.slice(0, 12)}…`;
         if (!c) { keepOff(`${label}: no quote check since this code was made; kept off the page`); continue; }
         if (c.verdict !== 'passed') { keepOff(`${label}: quote check failed (${c.reason}); kept off the page`); continue; }
-        if (c.shown_sha256 !== shownSha256(shown)) { keepOff(`${label}: text changed since its quote check; check it again`); continue; }
+        const shownText = c.shown_text ?? null;
+        if (shownText !== null && kind !== 'own-words') { keepOff(`${label}: only own words carry a bracketed shown text; a local record's note is ours and names no party`); continue; }
+        // What voters see: the bracketed text when the check wrote one, else the stored words.
+        const seen = shownText ?? stored;
+        if (c.shown_sha256 !== shownSha256(seen)) { keepOff(`${label}: text changed since its quote check; check it again`); continue; }
         if (kind === 'local-record' && c.fair_summary !== true) { keepOff(`${label}: a local record needs its check to confirm the note is a fair summary`); continue; }
-        if (namesParty(shown) || (f.passage && namesParty(f.passage))) { keepOff(`${label}: names a party; never shown, never edited`); continue; }
+        if (shownText !== null) {
+          const problem = bracketEditProblem(stored, shownText);
+          if (problem) { keepOff(`${label}: shown text is not a clean bracket edit (${problem}); check it again`); continue; }
+        }
+        if (namesParty(seen)) { keepOff(`${label}: a party label would reach voters; bracket it out in shown_text, or leave it off`); continue; }
         shownHere.push({
           checker: c.checker,
           row: {
             politician_id: pid, topic_key: code.topic_key, season_id: code.season_id, finding_id: f.id, kind,
-            passage: shown, source_url: f.url, source_date: isDate(f.date) ? f.date : null,
+            passage: stored, shown_text: shownText, source_url: f.url, source_date: isDate(f.date) ? f.date : null,
             source_date_precision: f.date_precision, quote_check: 'passed', quote_checked_at: c.at, quote_checker: c.checker,
           },
         });
@@ -237,13 +250,17 @@ export async function applyBatch(q: Query, plan: BatchPlan, seasonId: string): P
       );
     }
     for (const p of plan.passages) {
+      // CA_0337's column is named only when the row carries a bracketed text, so a batch without one writes the
+      // same SQL as before that migration.
+      const bracketed = p.shown_text !== null ? { col: ', shown_text', val: ', $13' } : { col: '', val: '' };
       await q(
         `INSERT INTO inform.own_words_passages
            (politician_id, topic_id, season_id, finding_id, kind, passage, source_url, source_date, source_date_precision,
-            quote_check, quote_checked_at, quote_checker)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+            quote_check, quote_checked_at, quote_checker${bracketed.col})
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12${bracketed.val})`,
         [p.politician_id, topicId.get(p.topic_key), p.season_id, p.finding_id, p.kind, p.passage, p.source_url,
-          p.source_date, p.source_date_precision, p.quote_check, p.quote_checked_at, p.quote_checker],
+          p.source_date, p.source_date_precision, p.quote_check, p.quote_checked_at, p.quote_checker,
+          ...(p.shown_text !== null ? [p.shown_text] : [])],
       );
     }
     await q('COMMIT');

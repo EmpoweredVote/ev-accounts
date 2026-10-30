@@ -596,3 +596,26 @@ describe('getResearchStates before CA_0322 is applied', () => {
     await expect(getResearchStates('p1')).rejects.toThrow('boom');
   });
 });
+
+// CA_0337: voters see the passage with party labels bracketed out (RULINGS.md "Party labels never reach a reader").
+describe('getResearchStates and shown_text (CA_0337)', () => {
+  it('serves shown_text when there is one, else the exact words', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getResearchStates('p1');
+    const sql = mockQuery.mock.calls.at(-1)![0] as string;
+    expect(sql).toContain("'passage', COALESCE(w.shown_text, w.passage)");
+  });
+  it('before CA_0337 is applied, falls back to the exact words on that missing column only', async () => {
+    mockQuery
+      .mockRejectedValueOnce(Object.assign(new Error('column w.shown_text does not exist'), { code: '42703' }))
+      .mockResolvedValueOnce({ rows: [] });
+    expect(await getResearchStates('p1')).toEqual([]);
+    const sql = mockQuery.mock.calls.at(-1)![0] as string;
+    expect(sql).toContain("'passage', w.passage,");
+    expect(sql).not.toContain('shown_text');
+  });
+  it('does not mask another missing column', async () => {
+    mockQuery.mockRejectedValueOnce(Object.assign(new Error('column w.other does not exist'), { code: '42703' }));
+    await expect(getResearchStates('p1')).rejects.toThrow('w.other');
+  });
+});
