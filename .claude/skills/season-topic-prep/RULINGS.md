@@ -280,14 +280,13 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   The bracket words are a fixed list, so no slanted word can be slipped in; it grows only by ruling: "[…]", "[some
   lawmakers]", "[some officials]", "[some voters]", "[some states]", "[others]". No note explains the brackets: the
   source link under every shown quote is where a reader sees the full words.
-- **Built (CA_0337, `feat/party-label-brackets`):** `own_words_passages.shown_text` holds the bracketed text and the
+- **Built (CA_0337, applied 2026-10-29; PR #1219):** `own_words_passages.shown_text` holds the bracketed text and the
   public profile serves it; `passage` keeps the exact words. The quote checker writes `shown_text`; the writer
   stores it only when `bracketEditProblem` (`backend/src/lib/partyLabels.ts`) finds nothing changed but labels into
   listed words, and the check's `shown_sha256` covers it. `accumulateEvidence` skips a snippet with a label. One
   detector (`namesParty`) serves quotes, notes and snippets, and adds party-state tags ("R-Idaho", "(D-GA)",
   "D-N.Y.") and "Smith (R)"; the stance gate reads those tags and colours too. Stage 3 blinded quotes have no code
-  path: whoever builds them brackets labels by hand with the same list. Apply CA_0337 before writing a batch with
-  a bracketed quote: until then that write stops on the missing column and writes nothing.
+  path: whoever builds them brackets labels by hand with the same list.
 - **Date and source:** 2026-10-29, Chris Andrews, voting-rights federal-held batch
   (`.planning/research/s3-prep-voting-rights/stage5/write/federal-held/PREVIEW.md`). Replaces "Quotes that name a
   party are never shown" (2026-10-22), which failed every mention and never edited a quote. The same day, 7 draft-season

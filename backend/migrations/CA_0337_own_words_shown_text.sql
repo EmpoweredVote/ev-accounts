@@ -1,7 +1,9 @@
 -- CA_0337_own_words_shown_text.sql
 -- Author: Chris Andrews (CA_ namespace). Slot reserved from the steward allocator 2026-10-29.
 --
--- ⚠ NOT APPLIED until Chris Andrews says so.
+-- APPLIED: 2026-10-29 on production, on Chris Andrews' yes (scripts/apply-migration-file.mjs). Dry run first
+-- (scripts/dry-run-migration.mjs): assertions passed, rolled back. After: column and CHECK present; 43 existing
+-- rows, all shown_text NULL.
 -- =============================================================================
 -- CA_0337: inform.own_words_passages.shown_text — party labels bracketed out
 -- =============================================================================
