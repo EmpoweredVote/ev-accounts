@@ -28,6 +28,10 @@ function fakeApi(): { query: LegiscanQuery; calls: string[] } {
         { ...person(5848, 'Gary', 'Gates'), sponsor_type_id: 2, sponsor_order: 2, committee_sponsor: 0 },
         { ...person(9001, 'Terri', 'Leo-Wilson'), sponsor_type_id: 2, sponsor_order: 3, committee_sponsor: 0 },
         { ...person(9002, 'John', 'Bucy', { suffix: 'III' }), sponsor_type_id: 2, sponsor_order: 4, committee_sponsor: 0 },
+        // NC records, 2026-10-30: a two-word last_name printed as one ("Jennifer Balkcom"), and a member
+        // listed under the given name he goes by ("A. Reece Pyrtle, Jr." in our roster).
+        { ...person(24196, 'Jennifer', 'Capps Balkcom', { name: 'Jennifer Balkcom' }), sponsor_type_id: 2, sponsor_order: 5, committee_sponsor: 0 },
+        { ...person(22946, 'Reece', 'Pyrtle'), sponsor_type_id: 2, sponsor_order: 6, committee_sponsor: 0 },
       ] },
     2000102: { bill_id: 2000102, state: 'TX', bill_number: 'SB16', session: SESSION, url: 'https://legiscan.com/TX/bill/SB16/2025', sponsors: [] },
     2100001: { bill_id: 2100001, state: 'TX', bill_number: 'HB5337', session: special, url: SPECIAL_URL, sponsors: [
@@ -159,6 +163,21 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(bucy, BILL_URL, rec, { fullName: 'John Bucy III', lastName: 'Bucy' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(bucy, BILL_URL, rec, { fullName: 'Jack Bucy III', lastName: 'Bucy' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(bucy, BILL_URL, rec, { fullName: 'Mark Bucy', lastName: 'Bucy' }).verdict).toBe('name_not_present');
+  });
+  it('accepts the surname the record prints when its last_name holds two words', async () => {
+    const rec = await record(BILL_URL);
+    const line = 'LegiScan TX 89th Legislature Regular Session HB5337: Jennifer Balkcom is listed as a cosponsor.';
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Jennifer Balkcom', lastName: 'Balkcom' }).verdict).toBe('verified');
+    // The other word of the two is not her printed surname, and another first name still fails.
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Jennifer Capps', lastName: 'Capps' }).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Janet Balkcom', lastName: 'Balkcom' }).verdict).toBe('name_not_present');
+  });
+  it('reads past a leading initial to the given name the person goes by', async () => {
+    const rec = await record(BILL_URL);
+    const line = 'LegiScan TX 89th Legislature Regular Session HB5337: Reece Pyrtle is listed as a cosponsor.';
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'A. Reece Pyrtle, Jr.', lastName: 'Pyrtle' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'A. Pyrtle', lastName: 'Pyrtle' }).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'B. Ross Pyrtle', lastName: 'Pyrtle' }).verdict).toBe('name_not_present');
   });
   it('verifies a vote line field by field', async () => {
     const rec = await record(RC_URL);
