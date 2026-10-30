@@ -270,9 +270,15 @@ export const MAX_ALIASES = 8;
  * hand that bypass to every page carrying a common first name. Two tokens keeps an alias at least
  * as specific as the full name it stands in for.
  */
-/** The last name in a full name, skipping a trailing suffix ("Frank Pallone, Jr." → "Pallone"). */
+/** A degree written after a comma ("Timothy Reeder, MD"): never a surname there. */
+const DEGREE = /^(m\.?d|ph\.?d|d\.?d\.?s|d\.?m\.?d|d\.?o|d\.?v\.?m|r\.?n|j\.?d|ed\.?d|esq|c\.?p\.?a|m\.?p\.?h|m\.?b\.?a)\.?$/i;
+
+/** The last name in a full name, skipping a trailing suffix ("Frank Pallone, Jr." → "Pallone") and a
+ *  degree set off by a comma ("Timothy Reeder, MD" → "Reeder"). */
 export function lastNameOf(name: string): string {
-  const parts = name.trim().replace(/,/g, ' ').split(/\s+/).filter(Boolean);
+  let s = name.trim();
+  for (let m = /,\s*([^,]+)$/.exec(s); m && DEGREE.test(m[1].trim()); m = /,\s*([^,]+)$/.exec(s)) s = s.slice(0, m.index);
+  const parts = s.replace(/,/g, ' ').split(/\s+/).filter(Boolean);
   while (parts.length > 1 && /^(jr|sr|ii|iii|iv|v)\.?$/i.test(parts[parts.length - 1])) parts.pop();
   return parts[parts.length - 1] ?? name;
 }

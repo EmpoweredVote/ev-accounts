@@ -66,6 +66,14 @@ describe('rollCallEvidence', () => {
     expect(lastNameOf('Brett Guthrie')).toBe('Guthrie');
     expect(lastNameOf('Jr.')).toBe('Jr.');
   });
+  it('takes the last name before a degree set off by a comma', () => {
+    expect(lastNameOf('Timothy Reeder, MD')).toBe('Reeder');
+    expect(lastNameOf('Frances Jackson, PhD')).toBe('Jackson');
+    expect(lastNameOf('Grant L. Campbell, M.D.')).toBe('Campbell');
+    expect(lastNameOf('A. Reece Pyrtle, Jr.')).toBe('Pyrtle');
+    // Without the comma a final word is the surname, whatever it spells.
+    expect(lastNameOf('Ana Do')).toBe('Do');
+  });
   it("refuses a line about someone else's surname", () => {
     expect(verifyRollCallLine(LINE, URL, XML, 'Barr').verdict).toBe('name_not_present');
   });

@@ -192,10 +192,18 @@ const fold = (s: string): string => normalizeText(s).replace(/[-.,]/g, ' ').repl
 
 /** Does LegiScan's person fit the politician's own name? */
 function personFits(p: Json, fullName: string, lastName: string): boolean {
-  if (fold(p.last_name ?? '') !== fold(lastName)) return false;
-  const want = fold(fullName).split(' ')[0] ?? '';
+  const last = fold(lastName);
+  const recLast = fold(p.last_name ?? '');
+  // A two-word last_name the record prints as one ("Capps Balkcom", printed "Jennifer Balkcom") fits
+  // the printed surname, and only when that word is one of the two.
+  const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';
+  if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return false;
+  // A leading initial ("A. Reece Pyrtle") gives way to the given name the person goes by.
+  const words = fold(fullName).split(' ');
+  const wants = [words[0] ?? ''];
+  if (wants[0].length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
   const have = [fold(p.first_name ?? '').split(' ')[0], fold(p.nickname ?? '')].filter(Boolean);
-  return have.some((h) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h));
+  return have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)));
 }
 
 /**
