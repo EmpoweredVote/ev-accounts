@@ -1,7 +1,7 @@
-# gun-policy — Season 3 draft, revision 4 (v3 r4, Draft B, CA_0338)
+# gun-policy — Season 3 draft, revision 4 `76a098af-cf9f-499c-abb8-5a0a0863114a` (v3 r4, Draft B, CA_0338)
 
-**Revision 4:** not yet applied. CA_0338 proposes and approves it (approved and parked) and pins it in the draft
-Season 3. The revision id is filled in on apply.
+**Revision 4 applied:** 2026-10-30 by CA_0338, which proposed and approved it (approved and parked) and pinned it in
+the draft Season 3. Season 2 keeps its pin (revision 2, served revision 3's text).
 
 **Status:** drafted 2026-10-30 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-gun-policy/`). The Season 2 annex (`../gun-policy.md`) stays as it is
