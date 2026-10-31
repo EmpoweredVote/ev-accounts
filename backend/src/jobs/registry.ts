@@ -37,6 +37,8 @@ import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
 import { runElectionDetection } from '../trivia/cron/electionDetection.js';
 import { runPipelineCron } from '../trivia/cron/pipelineCron.js';
 import { runLegiscanRefresh } from '../lib/legiscan/refresh.js';
+import { runFederalBillsRefresh } from '../lib/federal/federalBillsRefresh.js';
+import { runFederalVotesRefresh } from '../lib/federal/federalVotesRefresh.js';
 import { runJobHealthCheck } from '../lib/jobHealth.js';
 
 export type JobFn = () => Promise<unknown>;
@@ -71,6 +73,14 @@ export const JOBS: Record<string, JobFn> = {
   // Weekly state-legislature votes and bills from LegiScan datasets (ev-cto decision 0031). About 1 query per
   // state when nothing changed. Needs LEGISCAN_API_KEY and migration 1901. Never reads or stores party.
   'legiscan': () => runLegiscanRefresh(),
+  // Weekly federal bills and cosponsors for the Congress in session, from govinfo BILLSTATUS (public, no key,
+  // ~60 MB). Until 2026-10-31 nothing loaded federal bills on a schedule. Creates the session row when a new
+  // Congress starts. Run it BEFORE federal-votes (votes link to these bills). FEDERAL_DRY_RUN=1 rolls back.
+  'federal-bills': () => runFederalBillsRefresh(),
+  // Weekly House and Senate roll calls for the Congress in session, from LegiScan's US dataset. Adds only
+  // (member, roll call) pairs not stored yet, for members we hold a bioguide id for. Needs LEGISCAN_API_KEY.
+  // About 3 queries a run, none when the dataset is unchanged. FEDERAL_VOTES_DRY_RUN=1 writes nothing.
+  'federal-votes': () => runFederalVotesRefresh(),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
   // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.
   'cal-access': () => runAdapterForAll('cal_access'),
