@@ -16,8 +16,8 @@ any migration: this is the same state, the same statutes and the same publishers
 | --- | --- |
 | 0 legislature re-verify | ✅ **DONE 2026-10-31 — zero turnovers.** See below |
 | 1 ward geometry | ✅ **SETTLED 2026-10-31 — layer chosen and numbering proved.** Not yet loaded |
-| 2 Jackson offices | ▶ roster read; **term starts still open** |
-| 3 Hinds County | ▶ **BLOCKED ON A DEAD WEBSITE** — see below |
+| 2 Jackson offices | ▶ **roster and all 8 term starts sourced.** Inventory not yet closed |
+| 3 Hinds County | ▶ **UNBLOCKED** — the county moved back to its old host. Inventory read |
 | 4 portraits | ▶ open — 8 city, ~25 county, 173 legislators |
 | 5 banner | ▶ open — **the hardest adjacency in the programme**, see below |
 
@@ -161,6 +161,16 @@ Jackson only the enumerating sentence has been read. The Fort Wayne trap (an ele
 Grand Forks trap (an elected municipal judge named in one sentence on a staff page) are both
 unchecked here.
 
+🔴 **AND BALLOTPEDIA CANNOT CLOSE IT — IT SAYS SO ITSELF.** Its *City elections in Jackson,
+Mississippi (2025)* page ends with: *"Please note that there may have been more offices on the ballot
+in this capital city than what is listed on this page."* ▶ **A publisher declaring its own list
+non-exhaustive is the "include" trap stated out loud.** The remaining routes are the Jackson Code of
+Ordinances (its § 2-37 is cited in the council's own minutes, so the code exists and is citable) and
+the Municipal Clerk's 2025 candidate qualifying list.
+
+⚠ **The city's own ordinances page 404s** at the path its clerk sidebar links; the code has not been
+located yet.
+
 ### The roster — read from each member's own page, bound by ward
 
 | seat | officeholder | page `modified` |
@@ -179,36 +189,75 @@ unchecked here.
 is the one to store, with "Tina" as the used name — **the display name is not the full name**, which
 is MS-3's Biloxi finding (Mike / Robert Nail) in the same state.
 
-### 🟢 THE MAYOR'S DATE IS PUBLISHED, AND IT IS A STATEMENT ABOUT THE OFFICEHOLDER
+### 🟢 THE COUNCIL MINUTES ARE THE PRIMARY SOURCE, AND THEY BIND EVERY MEMBER TO A WARD
 
-The Municipal Clerk's own results page: *"Horhn began his term on **July 1, 2025**."*
-▶ That is a statement about *taking office*, not about an election and not an advertised ceremony —
-which is exactly what the programme's oath-date rule asks for. **Write 2025-07-01 at day precision.**
+The city publishes its council minutes as PDFs through the WordPress media library (34 dated files,
+2025-01-14 … 2025-12-30). **A bogus filename returns HTTP 404 with an HTML body**, which is the
+control. Two meetings straddle the 2025 transition and each opens with a roll of members *by ward*:
 
-🔴 **DO NOT COMPUTE THE COUNCIL'S DATES FROM THE MAYOR'S.** Mississippi has already produced three
-variants of this failure inside one slice: Biloxi's mayor was sworn **two days before** his
-advertised inauguration; Biloxi's Ward 7 ceremony was announced and never reported; and Harrison
-County's statutory first-Monday **moved for a holiday**, which only the minutes recorded. Note also
-that Biloxi's 2025 cohort took office on **2025-06-30** while Jackson's mayor took office on
-**2025-07-01** — two cities in one state, one day apart, each from its own record.
+| | 2025-06-17 regular (outgoing) | 2025-07-08 special (incoming) |
+| --- | --- | --- |
+| Mayor | Chokwe Antar Lumumba | **John A. Horhn** |
+| Ward 1 | Ashby Foote | Ashby Foote |
+| Ward 2 | Montyne Clay | Montyne Clay |
+| Ward 3 | Kenneth Stokes | Kenneth Stokes |
+| Ward 4 | Brian Grizzell | Brian Grizzell |
+| Ward 5 | Vernon Hartley | Vernon Hartley |
+| Ward 6 | Aaron Banks | **Lashia Brown-Thomas** |
+| Ward 7 | Virgi Lindsay | **Kevin Parkinson** |
 
-### 🔴 TWO SEATS ALMOST CERTAINLY PRE-DATE 2025, AND ONE HAS A SPECIAL ELECTION IN BETWEEN
+▶ **So the 2025 election changed the mayoralty and exactly two wards.** Five members continue. That
+is a *structural* fact from a primary document, and it is what every date below is checked against.
+The 2025-07-08 meeting is the organisational one: it elected Grizzell president and Hartley vice
+president under Miss. Code § 21-8-11 and Jackson Code of Ordinances § 2-37.
 
-`office_terms` records a **seat**, not a career — MS-2's Chris Johnson rule — but the mirror of it
-applies too: dating a continuously-held seat from the most recent election erases real tenure, which
-is what MS-3 avoided for Biloxi's Tisdale and Glavan.
+⚠ **THERE IS NO MINUTED OATH.** The minutes jump from 2025-06-17 to 2025-07-08, so no meeting on or
+near 1 July is recorded. The city holds **swearing-in photographs** (`MayorCouncilSwearingIN-2,3,6,7`)
+but they were uploaded 2026-02, and an upload date is not an event date.
 
-- **Ward 1, Foote.** His own page: *"In 2014, Ashby ran for and was elected as Councilman for Ward I
-  in Jackson, MS, where he continues to serve."* 🔴 **"Ran for and was elected in 2014" is a FIRST
-  ELECTED, not a term start.** Needs the date he took the seat, and confirmation of continuity.
-- **Ward 3, Stokes.** His page says he was elected to the Jackson City Council **in 1989** — a
-  career statement, and he has also served on the Hinds County Board of Supervisors in between, so
-  continuity is explicitly *not* safe to assume.
-- **Ward 2, Clay.** 🔴 **There was a Ward 2 SPECIAL ELECTION on 2024-10-01.** The Municipal Clerk's
-  page: *"The Jackson City Council has declared the Ward 2 City Council seat vacant, thereby
-  requiring a Special Election to be held October 1, 2024"* (notice dated 2024-08-19). If Clay won
-  that special and was then re-elected in June 2025, her tenure dates from 2024 — the Biloxi Ward 7
-  shape exactly. **Establish it; do not assume either way.**
+### The dates, and where each comes from
+
+The Municipal Clerk's own results page states: *"Horhn began his term on **July 1, 2025**."* That is
+a statement about *taking office* — not an election, not an advertised ceremony — which is what the
+programme's oath-date rule asks for. **Ballotpedia independently gives Horhn 2025-07-01**, so two
+sources agree on the one date we can check, which is what licenses using Ballotpedia for the rest.
+
+| seat | officeholder | `term_start` | precision | basis |
+| --- | --- | --- | --- | --- |
+| Mayor | John Horhn | **2025-07-01** | day | city's own results page **and** Ballotpedia |
+| Ward 1 | Ashby M. Foote, III | **2014-01-01** | **year** | BP "assumed office in 2014"; his page says elected 2014 |
+| Ward 2 | Montyne "Tina" Clay | **2024-11-01** | day | BP; follows the 2024-10-01 special |
+| Ward 3 | Kenneth Stokes | **2015-01-01** | **year** | BP "assumed office in 2015" |
+| Ward 4 | Brian C. Grizzell | **2021-07-01** | day | BP |
+| Ward 5 | Vernon Hartley | **2021-07-01** | day | BP |
+| Ward 6 | Lashia Brown-Thomas | **2025-07-01** | day | BP |
+| Ward 7 | Kevin Parkinson | **2025-07-01** | day | BP |
+
+🟢 **EVERY DATE AGREES WITH THE MINUTES ON THE ONLY THING THE MINUTES CAN SETTLE.** The three dated
+2025-07-01 are exactly the three seats the roll call shows changing hands; the five dated earlier are
+exactly the five members present at *both* meetings. **A date and a roll call are different kinds of
+fact, and they corroborate here.**
+
+🔴 **BALLOTPEDIA IS AN AGGREGATOR AND WAS TREATED AS ONE.** `scratchpad/bp-verify.mjs` asserts, from
+each page's own text, that it names **Jackson, Mississippi** and the **exact ward**, and reports any
+page saying "was appointed" — because BP publishes *appointed* and *assumed office* and **only the
+second is a `term_start`**. All eight pass; none mentions an appointment. A nonsense name 404s, which
+is the control. ⚠ Ward 2 has **no page under "Tina Clay"** (404) — it is under **`Montyne_Clay`**.
+**The used name is not the page name**, and a 404 nearly recorded a missing date that exists.
+
+🔴 **FOOTE AND STOKES ARE YEAR PRECISION AND MUST STAY THAT WAY.** BP gives both a bare year, and
+their own pages give *first elected* statements — Foote *"In 2014, Ashby ran for and was elected as
+Councilman for Ward I"*, Stokes *"In 1989, he was elected to the Jackson [City Council]"*. **"First
+elected" is not a term start**, and Stokes has served on the Hinds County Board of Supervisors in
+between, so his service is explicitly not continuous from 1989. Write `YYYY-01-01` with
+`start_precision => 'year'` and do not promote either without an oath record.
+
+⚠ **BILOXI AND JACKSON TOOK OFFICE ON DIFFERENT DAYS IN THE SAME STATE.** Biloxi's 2025 cohort is
+dated **2025-06-30** from its own inaugural record; Jackson's mayor **2025-07-01** from his.
+**Do not reconcile them.** Each is that city's own statement, and Mississippi has already produced
+three variants of the oath-date failure inside one slice — an oath two days before the advertised
+ceremony (Biloxi's mayor), a ceremony announced and never reported (Biloxi Ward 7), and a statutory
+day that moved for a holiday (Harrison County).
 
 ⚠ **THE RESULTS PAGE IS AN OPEN LIST — the Harrison County "include" trap.** It names Clay (2),
 Stokes (3), Hartley (5) and Parkinson (7) as *"among the candidates who prevailed"*, says the Ward 1
@@ -237,25 +286,76 @@ linked from it**.
 
 ---
 
-## ▶ Stage 3 — Hinds County, and why it is blocked
+## ▶ Stage 3 — Hinds County
 
 The four-answer probe needs a county supervisor, so Jackson is not done without Hinds.
 
-🔴 **THE COUNTY'S OWN WEBSITE IS DOWN** (above), which removes the source MS-4 used for Harrison's
-officer pages and portraits. The inventory must therefore come from where MS-4 said it should have
-come from in the first place: **the Secretary of State's certified recapitulation**, signed by the
-County Election Commission. `sos.ms.gov` is reachable.
+### 🟢🟢 THE COUNTY IS NOT OFFLINE — IT MOVED BACK TO ITS OLD HOST, AND SAYS SO IN A COMMENT
 
-⚠ **DO NOT REUSE HARRISON COUNTY'S INVENTORY AS A TEMPLATE.** Harrison's 27 offices came from a
-certified ballot, and even within one state MS-4 found that a county's own "elected officials" page
-was an **open list** that omitted the Justice Court Judges and Constables. Hinds also differs
-structurally: like Harrison it has **two judicial districts** (Jackson and Raymond), and MS-4's
-finding that Harrison's two were merely *courthouses* was specific to Harrison and **must be
-re-established here, not carried across**.
+`hindscountyms.com` is dead (HTTP 503 to Node, to a Chrome UA and to Playwright alike). The live
+site is **`www.co.hinds.ms.us`**, found in the *footer of a 404 page on the city's own website* —
+a link to the county's land-roll query. Its home page is five lines, and the fourth is the finding:
 
-🟢 **ONE USEFUL ARTEFACT ALREADY FOUND.** The city's own ArcGIS org carries
-`Export_SupervisorDist_4` (2023-09-12) — a Hinds supervisor-district export. It is one district by
-its name and it is the city's copy, not the county's. Treat it as a lead.
+```html
+<!--meta http-equiv="REFRESH" content="0;URL=http://www.hindscountyms.com"-->
+<meta http-equiv="REFRESH" content="0;URL=https://www.co.hinds.ms.us/pgs/newindex.asp">
+```
+
+▶ **The redirect to the dead `.com` is COMMENTED OUT.** The county has already moved back. A search
+engine still indexes the `.com` pages, so the search result looked current and the site looked gone.
+🔴 **"THE PUBLISHER IS OFFLINE" IS A CONCLUSION, NOT AN OBSERVATION** — one hostname was down, and
+the organisation was reachable the whole time at an address its own HTML names.
+
+🔴 **`co.hinds.ms.us` SOFT-404s.** A bogus path answers **HTTP 200** with the title *"The page cannot
+be found"*. Status means nothing there; read the title. This is MS-5's `harrisoncountysheriff.com`
+trap in the same state, one wave later.
+
+### 🟢 THE INVENTORY, FROM THE COUNTY'S OWN CERTIFIED RESULTS
+
+`co.hinds.ms.us/pgs/apps/electionresults.asp` publishes certified results **by year back to 1999**,
+with summary and per-precinct reports. The 2023 county cycle is the inventory.
+
+🔴 **THE LINK LABEL AND THE FILENAME DISAGREE, AND THE DOCUMENT SETTLES IT.** The row headed
+*"Tuesday, November 07, 2023 — Hinds County General Election"* links to files named `20230711 …`.
+The PDF's own first page reads **"Summary Results Report Official Election Results — 2023 General
+Election Hinds County — November 7, 2023"**, generated 11/17/2023. ▶ **Open the document; do not
+read the filename.** The digits are transposed, nothing more.
+
+From that certified report:
+
+| group | n | offices |
+| --- | --- | --- |
+| countywide | **8** | Chancery Clerk · Circuit Clerk · Coroner · County Attorney · **County Surveyor** · Sheriff · Tax Assessor · Tax Collector |
+| per district (×5) | 15 | Supervisor 1–5 · Justice Court Judge 1–5 · Constable 1–5 |
+| staggered | ? | Election Commissioner — **only Districts 2 and 4** on this ballot |
+| staggered | ? | **School Board** — **only "School Board 1"** on this ballot |
+
+🔴🔴 **HINDS IS NOT HARRISON, AND THE DIFFERENCES ARE REAL OFFICES.** Harrison has **no County
+Surveyor** and had **no school board contest**; Hinds elects both. Had MS-4's 27-office template
+been carried across, two kinds of office would have been missed outright. **This is
+`feedback_describe_offices_dont_standardise` paying for itself inside one state.**
+
+⚠ **ONE BALLOT DOES NOT ENUMERATE A MISSISSIPPI COUNTY.** MS-4 recorded this for Harrison's Election
+Commissioners and it holds again, twice over: Hinds shows **two** of five Election Commissioners and
+**one** school board seat. **The full size of both bodies is still unknown and must be established
+from the body's own roster, not from a ballot.**
+
+⚠ **`District Attorney District 07` is on the ballot and must NOT be seated here.** Like Harrison's
+Second Circuit DA, it is elected by a multi-county district. Record it as a debt.
+
+**Constables, certified 2023:** 1 Jerry Moore · 2 John Brown · 3 Lawrence Funchess ·
+4 Leon Seals · 5 Beverly Wade-Green.
+
+### Still to establish for Hinds
+
+1. The **full** Election Commission and school board, with the seats not on the 2023 ballot.
+2. Supervisor-district **geometry**. 🟢 Lead: the *city's* ArcGIS org carries
+   `Export_SupervisorDist_4` (2023-09-12) — one district, and the city's copy, not the county's.
+3. Whether Hinds's **two judicial districts** (Jackson and Raymond) duplicate any county office.
+   MS-4 established that Harrison's two were merely *courthouses*. 🔴 **That finding was about
+   Harrison. Re-establish it here; do not carry it across.**
+4. Term start dates, from the Board's own organising minute — the document that caught Harrison's
+   statutory day moving for a holiday.
 
 🔴 **`geo_id` 28049 IS HINDS COUNTY *AND* SENATE DISTRICT 49 *AND* HOUSE DISTRICT 49.** Measured in
 production: three `districts` rows share that `geo_id`, differing only by `mtfcc`/`district_type`.
@@ -307,10 +407,18 @@ at the asset rather than only the numbers.
 
 ## Open questions, in the order they block work
 
-1. **The certified 2025 municipal results.** They close the inventory, give Wards 4 and 6 their
-   winners, and date the seats. The city refers to an archive it does not link and the county site
-   is down.
-2. **Ward 2's 2024 special election result and the date Clay took the seat.**
-3. **Wards 1 and 3 — whether tenure is continuous, and from when.**
-4. **Whether Jackson elects anything besides the mayor and seven council members.**
-5. **Hinds County's full elected inventory**, from the certified recapitulation.
+1. **Whether Jackson elects anything besides the mayor and seven council members.** This is the only
+   thing blocking the Jackson migrations — the roster and all eight dates are sourced.
+   ▶ Route: the Jackson Code of Ordinances (§ 2-37 is cited in the council's own minutes), looking
+   for *"shall be elected"*, exactly as Biloxi's chapter 2 was read.
+2. **Hinds's full Election Commission and school board**, neither of which a single ballot shows.
+3. **Hinds supervisor-district geometry**, and a new `X` code read in the writing session.
+4. **Hinds term starts**, from the Board of Supervisors' organising minute.
+5. **Foote's and Stokes's oath records**, if day precision is ever wanted. Both are honestly at
+   `year` now and the schema says that is correct.
+
+⚠ **Jackson's 2025 municipal results are NOT in the county archive.** `YearId=2025` returns an empty
+table: the city ran that election itself, and the Municipal Clerk's "official results archive" is
+referred to on the city's site but not linked. ▶ It is a public-records request, not a fetch.
+The archive **does** carry Jackson municipal races historically — a *"July 24, 2012 Special City
+Council, Ward 3"* contest is listed — so it is a live route for Stokes's arrival date.
