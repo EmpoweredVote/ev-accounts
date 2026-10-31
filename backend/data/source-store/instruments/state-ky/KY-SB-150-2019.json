@@ -1,0 +1,672 @@
+{
+  "id": "KY-SB-150-2019",
+  "scope": "state:ky",
+  "title": "SB 150, AN ACT relating to carrying concealed weapons (2019 Ky. Acts ch. 10)",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/19rs/sb150.html",
+    "https://apps.legislature.ky.gov/law/acts/19RS/documents/0010.pdf",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/19RS/sb150/orig_bill.pdf",
+    "https://apps.legislature.ky.gov/record/19rs/sb150/vote_history.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 1 (new section of KRS ch. 237): (1) Persons age twenty-one (21) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110. (2) Nothing in this section shall be construed to allow the carrying or possession of any deadly weapon where it is prohibited by federal law.\nSec. 2, KRS 527.020(1): (1) A person is guilty of carrying a concealed weapon when he or she carries concealed a firearm or other deadly weapon on or about his or her person in violation of this section.\nSec. 2, KRS 527.020(4) (part): Persons[, except those specified in subsection (5) of this section,] carrying concealed weapons in accordance with Section 1 of this Act or licensed to carry a concealed deadly weapon pursuant to KRS 237.110 may carry a concealed firearm or other concealed deadly weapon on or about their persons at all times within the Commonwealth of Kentucky,\nSec. 3, KRS 237.115(1) (part): Except as provided in KRS 527.020, nothing contained in KRS 237.110 or Section 1 of this Act shall be construed to limit, restrict, or prohibit in any manner the right of a college, university, or any postsecondary education facility, including technical schools and community colleges, to control the possession of deadly weapons on any property owned or controlled by them",
+  "sponsors": [
+    {
+      "name": "B. Smith",
+      "role": "co",
+      "version": "filed"
+    },
+    {
+      "name": "D. Thayer; R. Alvarado; M. Castlen; C. Embry Jr.; P. Hornback; S. Meredith; R. Mills; J. Schickel; W. Schroder; D. Seum",
+      "role": "co",
+      "version": "filed"
+    },
+    {
+      "name": "B. Smith (first-named; the official record page prints \"Sponsors: B. Smith, D. Thayer, R. Alvarado, M. Castlen, C. Embry Jr., P. Hornback, S. Meredith, R. Mills, J. Schickel, W. Schroder, D. Seum\" with no prime marker)",
+      "role": "author"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "Sec. 1(2): \"Nothing in this section shall be construed to allow the carrying or possession of any deadly weapon where it is prohibited by federal law.\" No duty on local bodies beyond KRS 237.115 rules.",
+  "votes": [
+    {
+      "date": "2019-02-14",
+      "body": "KY Senate",
+      "motion": "Pass SB 150 (RSN# 802)",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 8,
+      "body_size": 38,
+      "note": "names from: pdf text",
+      "members": [
+        {
+          "name": "Alvarado",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Parrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Buford",
+          "vote": "yea"
+        },
+        {
+          "name": "Higdon",
+          "politician_id": "12d07bd4-98e4-4cfb-aec9-1b6f50ae5ca8",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Carpenter",
+          "politician_id": "32c23ded-b2c6-401a-b37c-7cbe3b3cd728",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornback",
+          "vote": "yea"
+        },
+        {
+          "name": "Schickel",
+          "vote": "yea"
+        },
+        {
+          "name": "Webb",
+          "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04",
+          "vote": "yea"
+        },
+        {
+          "name": "Castlen",
+          "vote": "yea"
+        },
+        {
+          "name": "Humphries",
+          "vote": "yea"
+        },
+        {
+          "name": "Schroder",
+          "vote": "yea"
+        },
+        {
+          "name": "West",
+          "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "politician_id": "3fc12c7a-9762-4219-b5b7-e5f4979760e2",
+          "vote": "yea"
+        },
+        {
+          "name": "Seum",
+          "vote": "yea"
+        },
+        {
+          "name": "Westerfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Embry",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith",
+          "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "politician_id": "2ed0f349-f4fc-4d82-ab9e-c7c3f51f4731",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2",
+          "vote": "yea"
+        },
+        {
+          "name": "Girdler",
+          "politician_id": "4dacfa0f-1e78-4c40-99aa-999385f73bd9",
+          "vote": "yea"
+        },
+        {
+          "name": "Mills",
+          "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd",
+          "vote": "yea"
+        },
+        {
+          "name": "Stivers",
+          "politician_id": "d68a846f-498d-4e14-a9f3-130e85849681",
+          "vote": "yea"
+        },
+        {
+          "name": "Wise",
+          "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736",
+          "vote": "yea"
+        },
+        {
+          "name": "Givens",
+          "politician_id": "ef8e611e-e0d7-46ba-99e4-c99d57a305a1",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll D",
+          "vote": "nay"
+        },
+        {
+          "name": "Harper Angel",
+          "vote": "nay"
+        },
+        {
+          "name": "McGarvey",
+          "politician_id": "9c8e165b-9079-4ed2-ad0a-0a9d98fd9931",
+          "vote": "nay"
+        },
+        {
+          "name": "Raque Adams",
+          "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c",
+          "vote": "nay"
+        },
+        {
+          "name": "Carroll J",
+          "vote": "nay"
+        },
+        {
+          "name": "Kerr",
+          "vote": "nay"
+        },
+        {
+          "name": "Neal",
+          "politician_id": "3009b2ae-1c46-474e-b917-fd8730f60992",
+          "vote": "nay"
+        },
+        {
+          "name": "Thomas",
+          "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2019-03-01",
+      "body": "KY House",
+      "motion": "Pass SB 150 (RCS# 196)",
+      "kind": "roll-call",
+      "yes": 60,
+      "no": 37,
+      "body_size": 100,
+      "note": "names from: pdf text",
+      "members": [
+        {
+          "name": "Bechler",
+          "vote": "yea"
+        },
+        {
+          "name": "Fugate",
+          "politician_id": "e4bd06f7-f25c-4af3-9b20-26f25f595cda",
+          "vote": "yea"
+        },
+        {
+          "name": "Maddox",
+          "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd",
+          "vote": "yea"
+        },
+        {
+          "name": "Santoro",
+          "vote": "yea"
+        },
+        {
+          "name": "Bentley",
+          "vote": "yea"
+        },
+        {
+          "name": "Goforth",
+          "vote": "yea"
+        },
+        {
+          "name": "Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Schamore",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanton",
+          "politician_id": "f1654643-6db1-42f3-904e-3908a6aa243c",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "McCool",
+          "politician_id": "ab35de00-9200-4dcb-8b76-b9bc7c51287e",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheldon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowling",
+          "politician_id": "95d8c886-63f2-4721-abe5-42af230bd7f3",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "politician_id": "18aafe90-9834-4152-836e-bced02687b83",
+          "vote": "yea"
+        },
+        {
+          "name": "McCoy",
+          "vote": "yea"
+        },
+        {
+          "name": "Sims",
+          "vote": "yea"
+        },
+        {
+          "name": "Bratcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Hart",
+          "politician_id": "2284cea5-d630-4abf-84db-9fcd5d53aa62",
+          "vote": "yea"
+        },
+        {
+          "name": "Meade",
+          "politician_id": "73842ff6-610a-459d-aa4e-db20efde35ad",
+          "vote": "yea"
+        },
+        {
+          "name": "St. Onge",
+          "vote": "yea"
+        },
+        {
+          "name": "Brenda",
+          "vote": "yea"
+        },
+        {
+          "name": "Hatton",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith",
+          "politician_id": "18152ace-e3fb-44a3-a419-18bb952c41dc",
+          "vote": "yea"
+        },
+        {
+          "name": "Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Bridges",
+          "politician_id": "84bbf8f6-c12f-4e47-99e8-e5175cf0ebda",
+          "vote": "yea"
+        },
+        {
+          "name": "Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Meyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tackett Laferty",
+          "politician_id": "0a790d4c-9524-48b7-858d-3a57e9b1512d",
+          "vote": "yea"
+        },
+        {
+          "name": "Carney",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles",
+          "politician_id": "436d1d7e-37af-4ac1-9ac8-f04be5bfbd75",
+          "vote": "yea"
+        },
+        {
+          "name": "Tate",
+          "politician_id": "6254ac29-9ee7-4cd9-ba98-114bc3c1a92b",
+          "vote": "yea"
+        },
+        {
+          "name": "Dossett",
+          "politician_id": "15401cda-980e-4368-8222-6721df351f78",
+          "vote": "yea"
+        },
+        {
+          "name": "Huff R",
+          "vote": "yea"
+        },
+        {
+          "name": "Osborne",
+          "politician_id": "cac083c7-4f4f-4ef0-8683-dd87245a9036",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "politician_id": "092a45ef-a72a-4ee3-a83e-5b97b240c29a",
+          "vote": "yea"
+        },
+        {
+          "name": "DuPlessis",
+          "vote": "yea"
+        },
+        {
+          "name": "Huff T",
+          "vote": "yea"
+        },
+        {
+          "name": "Petrie",
+          "politician_id": "21173e4e-ffd9-4cd2-8a8b-3747a478ac56",
+          "vote": "yea"
+        },
+        {
+          "name": "Tipton",
+          "politician_id": "f5365218-1cd8-47da-a550-37b0435db6d0",
+          "vote": "yea"
+        },
+        {
+          "name": "Elkins",
+          "vote": "yea"
+        },
+        {
+          "name": "King",
+          "politician_id": "682c3162-f77a-43be-9ac1-bb0fd50b69c2",
+          "vote": "yea"
+        },
+        {
+          "name": "Pratt",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Elliott",
+          "politician_id": "f31bb8c4-c296-4e39-b091-c5c5cb51e24c",
+          "vote": "yea"
+        },
+        {
+          "name": "Koch",
+          "politician_id": "7333e172-4490-4c84-a038-0730818d7b92",
+          "vote": "yea"
+        },
+        {
+          "name": "Prunty",
+          "vote": "yea"
+        },
+        {
+          "name": "Upchurch",
+          "politician_id": "42f75f4f-6f63-4d1f-b86c-ae8972ffc68c",
+          "vote": "yea"
+        },
+        {
+          "name": "Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Reed",
+          "vote": "yea"
+        },
+        {
+          "name": "Webber",
+          "vote": "yea"
+        },
+        {
+          "name": "Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis D",
+          "vote": "yea"
+        },
+        {
+          "name": "Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiederstein",
+          "vote": "yea"
+        },
+        {
+          "name": "Freeland",
+          "politician_id": "aec90872-6ab4-4c97-ad78-c2e4beb0d919",
+          "vote": "yea"
+        },
+        {
+          "name": "Lewis S",
+          "vote": "yea"
+        },
+        {
+          "name": "Rudy",
+          "politician_id": "35ba8996-3165-4787-b160-6bcf4e206289",
+          "vote": "yea"
+        },
+        {
+          "name": "Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Adkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Glenn",
+          "vote": "nay"
+        },
+        {
+          "name": "Kulkarni",
+          "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796",
+          "vote": "nay"
+        },
+        {
+          "name": "Riley",
+          "politician_id": "b82b480a-5515-484f-8cb7-6732c14e2fa6",
+          "vote": "nay"
+        },
+        {
+          "name": "Bojanowski",
+          "politician_id": "bddc46b3-f049-4d3a-852d-0a7ee6022bc0",
+          "vote": "nay"
+        },
+        {
+          "name": "Graham",
+          "vote": "nay"
+        },
+        {
+          "name": "Marzian",
+          "politician_id": "5f519979-310c-4c22-8d55-097b92915fbc",
+          "vote": "nay"
+        },
+        {
+          "name": "Rothenburger",
+          "vote": "nay"
+        },
+        {
+          "name": "Booker",
+          "politician_id": "b5cc94df-2ba3-4057-8abd-5760383b286b",
+          "vote": "nay"
+        },
+        {
+          "name": "Graviss",
+          "vote": "nay"
+        },
+        {
+          "name": "Meeks",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott",
+          "vote": "nay"
+        },
+        {
+          "name": "Branham Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller C",
+          "vote": "nay"
+        },
+        {
+          "name": "Sorolis",
+          "vote": "nay"
+        },
+        {
+          "name": "Brown G",
+          "vote": "nay"
+        },
+        {
+          "name": "Hinkle",
+          "vote": "nay"
+        },
+        {
+          "name": "Miller J",
+          "vote": "nay"
+        },
+        {
+          "name": "Stevenson",
+          "vote": "nay"
+        },
+        {
+          "name": "Burch",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoover",
+          "vote": "nay"
+        },
+        {
+          "name": "Minter",
+          "vote": "nay"
+        },
+        {
+          "name": "Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "Cantrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Moser",
+          "politician_id": "97efdda1-c546-4e3f-a7a1-542f92c69cf5",
+          "vote": "nay"
+        },
+        {
+          "name": "Westrom",
+          "vote": "nay"
+        },
+        {
+          "name": "Donohue",
+          "vote": "nay"
+        },
+        {
+          "name": "Keene",
+          "vote": "nay"
+        },
+        {
+          "name": "Nemes",
+          "politician_id": "4dcf5a57-4948-4863-a4db-20ca3bf83b93",
+          "vote": "nay"
+        },
+        {
+          "name": "Wheatley",
+          "vote": "nay"
+        },
+        {
+          "name": "Flood",
+          "vote": "nay"
+        },
+        {
+          "name": "Koenig",
+          "vote": "nay"
+        },
+        {
+          "name": "Palumbo",
+          "vote": "nay"
+        },
+        {
+          "name": "Willner",
+          "politician_id": "54f62e63-96ba-4bbb-a668-0435824216f8",
+          "vote": "nay"
+        },
+        {
+          "name": "Gentry",
+          "politician_id": "1f2924ca-d840-4648-8164-18c2cc369f2f",
+          "vote": "nay"
+        },
+        {
+          "name": "Moore",
+          "vote": "absent"
+        },
+        {
+          "name": "Rand",
+          "vote": "absent"
+        },
+        {
+          "name": "Raymond",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/KY_acts_2019_ch010.pdf",
+      "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "politician_id": "a543c55f-7c5b-4ebf-8a1a-4554c2bf5045",
+  "findings": [
+    {
+      "id": "043d25f7f0abce5ac832cadff0d5e8402553f71d50596f53f145613c2949fdfb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (Senate roll call 439); passed 27 to 18",
+      "note": "Senate roll call on SB 747, Elections Law Changes. Batch is listed among the Noes. The ratified bill text requires photo identification (G.S. 163-166.16) for same-day registration at early voting, adds failure to show photo ID as a ground for challenging a voter at the polls, and keeps photo voter ID card issuance rules. It also makes other changes to election observers, ballot retention and mail-ballot notices.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID challenges at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:03:00.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6dc0aad02022d3aa55290385098384839cdb89a03ed99d2d83a4d206ae66a19",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (Senate roll call 482); passed 30 to 19",
+      "note": "Senate vote to override the Governor's veto of SB 747, Elections Law Changes. Batch is listed among the Noes. The bill includes photo ID requirements for same-day registration and a photo ID challenge ground at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID challenges at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:03:00.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID challenges at the polls",
+        "mail or absentee ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Sydney_Batch names her as State Senate District 17 incumbent on the Nov 3, 2026 general-election ballot (her primary was canceled)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/S/434 (Senator Sydney Batch, District 17)",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "Ballotpedia: nothing on the subject",
+        "ncleg.gov bill page and roll calls for SB 747 (2023): two recorded votes saved",
+        "ncleg.gov bill text for SB 747 ratified version: read for ID provisions",
+        "not reviewed: https://www.sydneybatch.com (site is script-rendered, no readable text through curl)",
+        "not reviewed: ncleg.gov sponsor lists for other ID or citizenship bills (no search budget left; bill lookup pages need a bill number I could not find by search)",
+        "not reviewed: news search on her name plus voter ID (web search budget used up for the session)",
+        "nothing on the subject: Ballotpedia page text"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:03:00.834Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment (SB 921)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/434 and her introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/S/434 (election bills listed: Automatic Voter Registration S457 and Voter Fraud Prevention Act S652; neither sets an ID or citizenship rule; S652 is about legislators who switch party)",
+        "Bill page and text for S652 https://www.ncleg.gov/BillLookUp/2025/S652: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Sydney_Batch (confirms Senate District 17, on the 2026 general-election ballot): nothing on the subject",
+        "campaign site sydneybatch.com: only a footer reachable, nothing on the subject",
+        "news searches on name plus voter ID words and plus the 2026 photo ID amendment; fetched WUNC, WFAE, NC Newsline, WBTV and Ballotpedia News coverage of the amendment: none quotes her",
+        "already on file and not re-collected: NC-S-921-2023 votes"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:48:27.837Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

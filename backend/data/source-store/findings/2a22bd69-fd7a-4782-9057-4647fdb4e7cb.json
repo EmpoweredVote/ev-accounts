@@ -1,0 +1,146 @@
+{
+  "politician_id": "2a22bd69-fd7a-4782-9057-4647fdb4e7cb",
+  "findings": [
+    {
+      "id": "1c1f31122b0bd5e6e9082fca0bab3a346303111b2efb5eb845684497f76cb01a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2021/roll062.xml",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2021",
+      "act": "yea",
+      "motion": "On Passage, H.R. 1, For the People Act (roll call 62)",
+      "note": "Voted yea on passage. Section 1903 of the bill (govinfo engrossed text, https://www.govinfo.gov/content/pkg/BILLS-117hr1eh/html/BILLS-117hr1eh.htm) says that if a state requires ID to cast a ballot in a federal election, the voter may instead give a signed sworn written statement, under penalty of perjury, of identity and eligibility, in person or with a mail ballot. The same bill has other voting and election provisions not read in full.",
+      "subjects": [
+        "sworn statement in place of ID",
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:03.437Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc739ab58f2ad568bd081433a5e5f3e5407256e4a07e6cf16d821eda2fe9c9a5",
+      "kind": "own-words",
+      "url": "https://elaineforcongress.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I was proud to support legislation that overturns the disastrous Citizens United decision when in Congress, and I will continue to fight for the For the People Act to restore fairness and power back to the people.",
+      "note": "Campaign priorities page. She names the For the People Act (H.R. 1, an omnibus election bill) as one she will keep fighting for. The page frames it around dark money and campaign finance; it does not mention voter ID or proof of citizenship.",
+      "subjects": [
+        "omnibus election-law bill (For the People Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:03.437Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba0292e6837bb4a85255ebe187b7de4f9b2912552aca86c4f13a7b5734cb3189",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2019/roll118.xml",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2019",
+      "act": "yea",
+      "motion": "On Passage, For the People Act",
+      "note": "House roll call 118. She voted Yea on passage of H.R. 1, the For the People Act (234 yea, 193 nay).",
+      "subjects": [
+        "omnibus election-law bill (For the People Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:03.437Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed6020f63d986ace3ab63214ea8b167acd7b845f8bee7ef5aaa8c19f86a1b374",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2021/roll062.xml",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2021",
+      "act": "yea",
+      "motion": "On Passage, For the People Act",
+      "note": "House roll call 62. She voted Yea on passage of H.R. 1, the For the People Act, in the next Congress.",
+      "subjects": [
+        "omnibus election-law bill (For the People Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:03.437Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Elaine_Luria) says she is on the Nov 3, 2026 general-election ballot for U.S. House, Virginia District 2, after advancing from the Aug 4, 2026 primary",
+        "On the Record (0 appearances, extract-otr.mjs run)",
+        "campaign site elaineforcongress.com home, /issues, /about: nothing on the subject",
+        "Ballotpedia page: nothing on the subject beyond vote list",
+        "House Clerk roll call 2021 no. 62 (H.R. 1): reviewed",
+        "govinfo text of H.R. 1 (engrossed): reviewed",
+        "blocked: https://www.congress.gov/member/elaine-luria/L000591 (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/house-bill/1/text (HTTP 403)",
+        "not reviewed: news search and other web searches (session search budget used up)",
+        "not reviewed: congress.gov sponsorship and co-sponsorship lists (blocked)",
+        "not reviewed: debate, forum and interview videos, vote411, ontheissues.org"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:10:03.437Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "ID with mail ballots",
+        "omnibus election-law bill (For the People Act)",
+        "election integrity and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia: confirms she is on the Nov 3, 2026 general-election ballot for Virginia's 2nd District; nothing on the subject",
+        "campaign site elaineforcongress.com: priorities and issues pages and site search for voter ID, SAVE Act, election (only the For the People Act line found)",
+        "House Clerk roll-call pages for her 2019 and 2021 votes on H.R. 1",
+        "one news search on her name plus subject words: nothing in her words",
+        "not reviewed: https://www.congress.gov (sponsorship list)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:43:03.437Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "562cf9a1-ad60-41d9-b9a1-4a19240c39b3",
+  "findings": [
+    {
+      "id": "dfc39a04058c82229d45102b3f47f46856ef49437ff824116dc347b0ea3a5301",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "nay",
+      "motion": "SB 1174 Senate third reading vote (listed as Noe)",
+      "note": "Ochoa Bogh is listed among the No votes on the Senate floor vote on SB 1174, Elections: voter identification, which bars local governments from requiring ID to vote. Source is a state-data aggregator because the official leginfo page was blocked.",
+      "subjects": [
+        "local voter-ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:57:17.804Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting State Senator, District 19, term ends 2028; not on the 2026 ballot): https://ballotpedia.org/Rosilicie_Ochoa_Bogh",
+        "official Senate district site https://sd19.senate.ca.gov/ (redirected to another district's site; nothing on the subject)",
+        "not reviewed: her own Senate site (no working URL found)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (403)",
+        "CalMatters Digital Democracy bill page for SB 1174 (used for the vote record instead of leginfo): https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+        "two web searches on name plus subject words (nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:57:17.804Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

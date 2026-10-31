@@ -48,7 +48,7 @@ describe('planBatch', () => {
     }]);
     expect(r.passages).toEqual([{
       politician_id: PID, topic_key: 'voting-rights', season_id: SEASON, finding_id: words.id, kind: 'own-words',
-      passage: 'Every voter should be able to vote by mail.', source_url: 'https://x.example/a', source_date: '2026-09-01',
+      passage: 'Every voter should be able to vote by mail.', shown_text: null, source_url: 'https://x.example/a', source_date: '2026-09-01',
       source_date_precision: 'day', quote_check: 'passed', quote_checked_at: '2026-10-22T01:00:00Z', quote_checker: 'stage5-quote-checker',
     }]);
   });
@@ -79,11 +79,42 @@ describe('planBatch', () => {
     expect(plan([code({})], [person(PID, [words])], [check(words, { topic_key: 'healthcare' })]).passages).toEqual([]);
   });
 
-  it('a passage that names a party is refused even with a passed check', () => {
+  describe('party labels (RULINGS.md "Party labels never reach a reader")', () => {
     const party = mk({ kind: 'own-words', url: 'https://x.example/p', date: '2026-09-02', passage: 'The Republicans want mail voting gone.', note: 'n', subjects: ['mail voting'] });
-    const r = plan([code({ finding_ids: [party.id] })], [person(PID, [party])], [check(party)]);
-    expect(r.passages).toEqual([]);
-    expect(r.refused[0].reason).toMatch(/names a party/);
+    const shown = 'The [some lawmakers] want mail voting gone.';
+
+    it('a passage with a label and no shown text is refused, even with a passed check', () => {
+      const r = plan([code({ finding_ids: [party.id] })], [person(PID, [party])], [check(party)]);
+      expect(r.passages).toEqual([]);
+      expect(r.refused[0].reason).toMatch(/party label would reach voters/);
+    });
+
+    it('a clean bracket edit is stored beside the exact words, and the check covers the shown text', () => {
+      const r = plan([code({ finding_ids: [party.id] })], [person(PID, [party])], [check(party, { shown_text: shown, shown_sha256: shownSha256(shown) })]);
+      expect(r.refused).toEqual([]);
+      expect(r.passages.map((p) => [p.passage, p.shown_text])).toEqual([['The Republicans want mail voting gone.', shown]]);
+    });
+
+    it('a check hashed over the original words does not cover the shown text', () => {
+      const r = plan([code({ finding_ids: [party.id] })], [person(PID, [party])], [check(party, { shown_text: shown })]);
+      expect(r.passages).toEqual([]);
+      expect(r.refused[0].reason).toMatch(/text changed since its quote check/);
+    });
+
+    it('a shown text that changes more than the label, or uses a word off the list, is refused', () => {
+      for (const bad of ['The [some lawmakers] want voting gone.', 'The [conservatives] want mail voting gone.']) {
+        const r = plan([code({ finding_ids: [party.id] })], [person(PID, [party])], [check(party, { shown_text: bad, shown_sha256: shownSha256(bad) })]);
+        expect(r.passages, bad).toEqual([]);
+        expect(r.refused[0].reason, bad).toMatch(/not a clean bracket edit/);
+      }
+    });
+
+    it('a local record never carries a shown text', () => {
+      const r = plan([code({ finding_ids: [words.id, local.id], evidence_basis: 'joint' })], [person(PID, [words, local])],
+        [check(words), check(local, { shown_text: 'x [others]', shown_sha256: shownSha256('x [others]') })]);
+      expect(r.passages.map((p) => p.kind)).toEqual(['own-words']);
+      expect(r.refused[0].reason).toMatch(/only own words carry a bracketed shown text/);
+    });
   });
 
   it('a local record is shown in plain words; a legislative record is not shown', () => {
@@ -223,6 +254,18 @@ describe('applyBatch', () => {
     expect(deleteAt).toBeGreaterThan(outcomeAt);
     expect(passageAt).toBeGreaterThan(deleteAt);
     expect(calls[outcomeAt].params).toEqual([PID, TOPIC, SEASON, 'doesnt-fit', '2026-10-20', ['stage5-coder', 'stage5-quote-checker']]);
+  });
+
+  it('names shown_text only for a row that carries one (writes as before CA_0337 otherwise)', async () => {
+    const party = mk({ kind: 'own-words', url: 'https://x.example/p', date: '2026-09-02', passage: 'The GOP wants mail voting gone.', note: 'n', subjects: ['mail voting'] });
+    const shown = 'The [others] wants mail voting gone.';
+    const { q, calls } = fake();
+    await applyBatch(q, plan([code({ finding_ids: [words.id, party.id] })], [person(PID, [words, party])],
+      [check(words), check(party, { shown_text: shown, shown_sha256: shownSha256(shown) })]), SEASON);
+    const inserts = calls.filter((c) => /INSERT INTO inform\.own_words_passages/.test(c.sql));
+    expect(inserts.map((c) => /shown_text/.test(c.sql))).toEqual([false, true]);
+    expect(inserts[0].params).toHaveLength(12);
+    expect(inserts[1].params.at(-1)).toBe(shown);
   });
 
   it('refuses a topic the draft season does not ask, and rolls back', async () => {

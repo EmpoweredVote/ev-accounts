@@ -1,0 +1,168 @@
+{
+  "politician_id": "ac7faadb-52c2-4e13-9073-3a607a4f8e57",
+  "findings": [
+    {
+      "id": "f31364fa4f2a94cc30c56c5082a5714cfcaa873febd7929b815b2b3e14c719a4",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "The 2026 midterm elections are already underway. Your unsubstantiated allegations of noncitizen voter fraud, public recitation of unreliable data, and unwarranted conditioning of continued grant funding for state election security measures on compliance with politically motivated requests for voter data appear to be calculated efforts to undermine confidence in our elections and risks wrongly disenfranchising voters.",
+      "note": "Letter from Baldwin and other senators to the Homeland Security Secretary, published on her official site. It disputes claims of non-citizen registration and objects to pressure on states over voter-roll data.",
+      "subjects": [
+        "non-citizen voting claims",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04c7e86004c902ae9864e8f5aac2982fe88cdc197a782aa5fffb135c1cf9a23f",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "Since then, DHS has repeatedly pressured states to share their voter rolls and run them through the modified SAVE program, despite legal concerns and known accuracy issues.",
+      "note": "Same joint letter. Concerns the federal SAVE data system (a citizenship-status checking system), not the SAVE Act bill. It says the system's data on citizenship can be inaccurate.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8c8410607ec00cbcc1faf5fc24c52eceaf62bece418c74896bb68837aa008ea",
+      "kind": "own-words",
+      "url": "https://www.wbay.com/2026/02/13/save-act-draws-mixed-reactions-wisconsin-voters/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "“I am all about keeping our elections safe and secure, and trust our local clerks to do that, but that is simply not what this bill is about,” Baldwin said. “This bill is being pushed because Trump lost an election six years ago and has been lying about it and undermining faith in our elections ever since. This bill will make it harder for Americans to exercise their constitutional right to vote and to have their voices heard at the ballot box – and I am against that.”",
+      "note": "Statement to WBAY on the SAVE Act, the House-passed bill that would require proof of citizenship to register and photo ID to vote. She says she will not support it.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f1f032edd774e8dac238d0bf201fc8f59c7fd5291cdfc4a4db49a0b359d7ab2",
+      "kind": "own-words",
+      "url": "https://www.wpr.org/news/wisconsin-tammy-baldwin-gop-bill-restrict-voting",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "passage": "“I am highly suspicious of any legislation that makes it harder for people to exercise their constitutional right to vote and to intimidate people from accessing the ballot box,” Baldwin said.",
+      "note": "Remarks to reporters in Milwaukee, quoted by Wisconsin Public Radio, on the SAVE Act proof-of-citizenship and photo-ID bill.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cd77483482ae7556c56a5a130568e8edcdff317447939d04334f1db455f33da1",
+      "kind": "record",
+      "url": "https://watch.vote/votes/119-2026-s73",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Cloture on S.Amdt. 4732 (To require voters to provide photo identification) to S.Amdt. 4420 to S. 1383",
+      "note": "Senate roll call 73. The page lists her as voting nay. The cloture motion was rejected 53-47. Source is a third-party tracker; the official senate.gov page was blocked.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:49:47.816Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting U.S. Senator (Wisconsin), confirmed on https://www.baldwin.senate.gov/news/press-releases; current term runs to 2031 per 2024 re-election on Ballotpedia, so not on the 2026 ballot; in scope as a sitting member",
+        "On the Record (0 appearances)",
+        "official site press release list and site search (baldwin.senate.gov): one relevant release found",
+        "Ballotpedia https://ballotpedia.org/Tammy_Baldwin: nothing on the subject (only a Freedom to Vote: John R. Lewis Act vote mention, not reviewed in detail)",
+        "blocked: https://www.congress.gov/search (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/senate-bill/2747/cosponsors (page returned no cosponsor data)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: https://www.baldwin.senate.gov/about/voting-record"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:11:23.003Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "ID with mail ballots",
+        "voting access in general",
+        "election security and local clerks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WPR report 2026-02-06 and WBAY report 2026-02-13 (both name her as the Wisconsin US senator)",
+        "watch.vote Senate roll call 73 page (third-party record of the 2026-03-26 vote)",
+        "blocked: https://www.baldwin.senate.gov/news/press-releases (403)",
+        "blocked: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm (403)",
+        "not reviewed: https://www.wispolitics.com/2026/dc-wrap-wisconsin-lawmakers-split-on-gop-bill-to-require-proof-of-citizenship-to-register-to-vote/ (no Baldwin text found on fetch)",
+        "Senate floor schedule pages for March 2026 (vote tallies only)",
+        "news searches on name plus SAVE Act and voter ID",
+        "congress.gov not tried; her sponsorships and cosponsorships not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-27T21:49:47.816Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

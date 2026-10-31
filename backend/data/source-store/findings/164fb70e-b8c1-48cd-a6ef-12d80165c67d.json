@@ -1,0 +1,221 @@
+{
+  "politician_id": "164fb70e-b8c1-48cd-a6ef-12d80165c67d",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "d119b95683ba209e218dcc17b36d77ff17f0ec5eac1bc325ab88897201b47a09",
+      "kind": "own-words",
+      "url": "https://barr.house.gov/2022/6/barr-opposes-murphy-cornyn-bill",
+      "date": "2022-06",
+      "date_precision": "month",
+      "passage": "However, I remain opposed to and deeply concerned about provisions in this proposal that would authorize grants for red flag laws without sufficient due process.",
+      "note": "His statement on the 2022 Murphy/Cornyn bill; he objects to the red-flag grant provisions on due process grounds.",
+      "subjects": [
+        "red-flag orders",
+        "due process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d94b98c8dd19131d2a936452a906974366f76d95b7dc26d52aba3f0ec686aeb4",
+      "kind": "own-words",
+      "url": "https://barr.house.gov/2024/2/barr-introduces-protecting-privacy-in-purchases-act-to-stop-unconstitutional-tracking-of-gun-sales",
+      "date": "2024-02",
+      "date_precision": "month",
+      "passage": "I am proud to join Conference Chair Stefanik in standing against unnecessary and discriminatory surveillance. This bill would ensure the freedom and privacy of all Americans, guaranteeing that our Second Amendment rights are respected and protected.",
+      "note": "His quote on the Protecting Privacy in Purchases Act, which would bar use of a merchant category code to track gun-store sales.",
+      "subjects": [
+        "privacy of gun purchases",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ffb3216b6c5b7ccec1d93670fef3cd75cae8194a133a8a40132527b89c2affba",
+      "kind": "record",
+      "url": "https://barr.house.gov/2024/2/barr-introduces-protecting-privacy-in-purchases-act-to-stop-unconstitutional-tracking-of-gun-sales",
+      "date": "2024-02",
+      "date_precision": "month",
+      "act": "sponsor",
+      "motion": "Protecting Privacy in Purchases Act (introduced with two other members)",
+      "note": "Bill to prohibit financial institutions from using a merchant category code to track purchases at gun stores.",
+      "subjects": [
+        "privacy of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9f7126c60c0dc0e141caf6d287d112f61718bc79a810007800a2de540f825630",
+      "kind": "record",
+      "url": "https://barr.house.gov/2026/7/house-passes-barr-led-bill-protecting-second-amendment-privacy",
+      "date": "2026-07",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "House passage of Protecting Privacy in Purchases Act; his office says he helped lead it",
+      "note": "Office press release says the House passed the bill, which bars banks and card companies from using a new merchant category code to track firearm and ammunition purchases.",
+      "subjects": [
+        "privacy of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Andy_Barr says he advanced from the 2026 Senate primary on May 19, 2026 and is on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 meetings; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia https://ballotpedia.org/Andy_Barr (lists only the H.R. 22 vote already on file; no own words on the subject)",
+        "official site https://barr.house.gov/ (homepage, policy-issues page, RSS feed, press-releases page 1: nothing on the subject)",
+        "blocked: https://barr.house.gov/?p=search&filter=0&q=SAVE+Act (403, site search)",
+        "not reviewed: older pages of https://barr.house.gov/press-releases (pages 1-18+ not read one by one)",
+        "campaign site https://barrforsenate.com/ (home, issues, news pages: nothing on the subject)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/bills/119/hr22 (403)",
+        "blocked: web search (session search budget used up; no news search done)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:10.493Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "red-flag orders",
+        "gun purchase tracking",
+        "concealed carry reciprocity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (3 pages)",
+        "nothing on the subject: https://barr.house.gov/issues (404)",
+        "blocked: https://barr.house.gov/search (403)",
+        "blocked: https://www.congress.gov (not fetched)",
+        "concealed carry reciprocity cosponsorship: not confirmed, no page naming him found",
+        "web search on name plus subject words"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

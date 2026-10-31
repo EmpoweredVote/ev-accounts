@@ -1,0 +1,109 @@
+{
+  "politician_id": "38f9fb6c-b2de-4a79-a9fa-82f400a6a6f2",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "4fb1f6f27653fab831716f388e0b24347ffe1309257df3e38bd4c7eaaeeff407",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Ryan_Mackenzie",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Defend our democracy and demand election integrity by making it easy to vote and hard to cheat. Support voter ID, ban unsecured drop boxes and ballot harvesting, and prohibit private money from being used for election administration. Prohibit non-citizens from voting in any American elections and block efforts to pack the Supreme Court.",
+      "note": "Ballotpedia reproduces this text verbatim from his campaign Issues page (its footnote cites 'Ryan Mackenize U.S. Congress, Issues, accessed March 9, 2024'). The original page was not reached, so the date is approximate (2024 campaign). Ballotpedia's own date for the text is not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "drop boxes and ballot harvesting",
+        "non-citizen voting",
+        "private money in election administration",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:55.617Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "drop boxes and ballot harvesting",
+        "election integrity in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Ryan_Mackenzie) says he is the sitting U.S. House member for PA-7 and is on the November 3, 2026 general-election ballot after the May 19, 2026 primary",
+        "On the Record (0 appearances)",
+        "official site mackenzie.house.gov front page and press-release page 1 (nothing on the subject); pages 2-5 fetched by script, no subject words found; pages 6-13 not reviewed",
+        "official site votes-and-legislation page (nothing on the subject in text); in-the-news page (nothing on the subject)",
+        "Ballotpedia (one finding, quoting his Issues page)",
+        "blocked: https://www.congress.gov/member/ryan-mackenzie/M001204 (403)",
+        "blocked: https://api.congress.gov/v3/member/M001204 (no API key)",
+        "blocked: https://mackenzie.house.gov/search?q=voter (403)",
+        "not reviewed: news search on name plus subject words (search budget used up)",
+        "not reviewed: campaign site, ontheissues.org, Vote Smart, GovTrack, debate or interview video"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:11:55.617Z",
+      "by": "source-collector"
+    }
+  ]
+}

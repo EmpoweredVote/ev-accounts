@@ -1,0 +1,201 @@
+{
+  "politician_id": "0b95813c-bb9b-426d-91e1-e5102ef21543",
+  "findings": [
+    {
+      "id": "ff5c6b70295926e45a37c59035f55b83ac0264ab9a1630665614665293bc3e54",
+      "kind": "own-words",
+      "url": "https://ajc.com/opinion/opinion-both-parties-have-had-concerns-about-ga-election-processes/AJSKYUMVDRGKPIWQ23TBGSLHAA",
+      "date": "2021-03-20",
+      "date_precision": "day",
+      "passage": "Our decisions, the laws we pass, carry the weight of authority, but only when it’s with the consent of the governed. And that consent is only given when the people have faith that an election was fair and fairly won.",
+      "note": "Opening of his guest column in the Atlanta Journal-Constitution about the 2021 election bills. He says public faith in election results is the basis for the law's authority. The rest of the page text was garbled in the fetch, so only this clean opening is saved.",
+      "subjects": [
+        "election integrity laws in general",
+        "public confidence in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:38:00.034Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Brass'), linked to MATT BRASS (district 28) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Brass'), linked to MATT BRASS (district 28) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Brass'), linked to MATT BRASS (district 28) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Brass'), linked to Brass, Matt (district 28) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Brass'), linked to MATT BRASS (district 28) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0f558f7ff8b0d4877bef7206bb9bc5f25539977482795594c64d4417e474d38",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)",
+      "note": "Named as co sponsor ('Brass of the 28th') on the official bill text; linked to Brass, Matt via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "SB 202 votes"
+      ],
+      "places": [
+        "status: sitting Georgia state senator (District 6); on the 2026-11-03 general-election ballot for that seat, per https://ballotpedia.org/Matt_Brass",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/Matt_Brass): status and office only, no subject material found",
+        "Wikipedia (https://en.wikipedia.org/wiki/Matt_Brass): nothing on ID or citizenship",
+        "blocked: https://www.legis.ga.gov (official bill and vote pages load only through an app whose data calls return 401, so the SB 202 roll calls and sponsorship lists could not be read)",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (bot check)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/S (403)",
+        "AJC opinion column by him, 2021-03-20 (saved)",
+        "AJC and local news pages on the 2021 absentee-ID debate: no passage naming him",
+        "news search on name plus voter ID, absentee ID, citizenship proof: nothing further citable",
+        "official Senate and campaign site: not reviewed (not located)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:38:00.034Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

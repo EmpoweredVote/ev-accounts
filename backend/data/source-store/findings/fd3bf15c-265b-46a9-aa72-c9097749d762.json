@@ -1,0 +1,101 @@
+{
+  "politician_id": "fd3bf15c-265b-46a9-aa72-c9097749d762",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "8be95eece8270c56e55c2bfb13b76050fc5f8d9b39d500e79820c498e7a08921",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "nay",
+      "motion": "On adoption of amendment #1587 (H.5500), requiring a valid government-issued photo ID to vote at the polls, with a free state photo ID for registered voters who lack one; Yea and Nay No. 174, failed 27 to 131",
+      "note": "The House roll call lists Tyler as N (nay) on the FY2027 budget amendment that would require photo ID to vote in person.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:25:07.096Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Chynah_Tyler (7th Suffolk, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot)",
+        "On the Record (0 appearances)",
+        "legislature profile and sponsored-bills list: https://malegislature.gov/Legislators/Profile/C_T1/Sponsored (only election bills: H.873 felon voting rights, H.4090 Boston district councilor; neither on the subject)",
+        "legislature bill search 'voter identification': no bill listing her",
+        "Ballotpedia page: nothing on the subject",
+        "blocked: https://www.chynahtyler.com (no response)",
+        "not reviewed: news search (web search budget exhausted)",
+        "nothing on the subject: own words found nowhere reached"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:30:26.444Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "state legislature member page https://malegislature.gov/Legislators/Profile/C_T1 (Boston representative; filings include felon voting rights H.873 and Boston district councilor H.4090, neither on proof of identity or citizenship)",
+        "House journal for 2026-04-28 https://malegislature.gov/Journal/House/194/hj04282026.pdf (text of amendment and roll call number)",
+        "roll call page https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+        "news and web searches on name plus voter ID / SAVE Act (no own-words statements found)",
+        "not reviewed: official campaign site and Ballotpedia"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:25:07.096Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

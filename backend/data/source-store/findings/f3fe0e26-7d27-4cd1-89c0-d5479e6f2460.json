@@ -1,0 +1,140 @@
+{
+  "politician_id": "f3fe0e26-7d27-4cd1-89c0-d5479e6f2460",
+  "findings": [
+    {
+      "id": "21c596b82969e076d32b69c079b4a364e1a2b3a2fbcb99e91a53e1c7697d0d05",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/809",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (final House vote, 66 aye, 47 no)",
+      "note": "Her recorded vote on the bill's second reading was No. The staff summaries say the ratified bill would require the voter registration application to affirmatively state US citizenship (with a penalty-of-perjury form if left blank), use federal data to remove non-citizens and deceased voters from the rolls, and have DMV share full social security numbers with the State Board of Elections. The bill has no photo-ID or mail-ballot ID section in the summaries.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:32.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75c6c73bdde7ed6362cde5e7eafed041444f22c110230015a4de8b2c030c76ad",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/809",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House vote on Senate changes, 62 aye, 47 no)",
+      "note": "Her recorded vote on the motion to concur with the Senate version was No. The bill was ratified on August 6, 2026 and vetoed by the Governor on August 17, 2026, per the legislative staff summary at https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMCH-69(rat)-v-6. Part II (voter registration) summary: https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:32.458Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Lindsey_Prather names her as sitting NC House District 115 member on the 2026 general-election ballot (primary was canceled)",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.pratherfornc.com/ (fetched; nothing on the subject)",
+        "Ballotpedia (profile and 2022/2024 survey answers; nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/809 (nothing on the subject)",
+        "NC General Assembly vote record https://www.ncleg.gov/Members/Votes/H/809 (2025-2026 session; one election bill found)",
+        "NC General Assembly bill page and staff summaries for HB 958",
+        "not reviewed: news search on name plus subject words (the shared web-search budget was used up)",
+        "not reviewed: sponsorship list on ncleg.gov (the /Members/Bills page returned 404)",
+        "not reviewed: 2023-2024 session roll calls (the vote page covered 2025-2026 only)",
+        "not reviewed: floor amendments A1-A3 to HB 958 (contents not read)",
+        "not reviewed: HB 834 State Board of Elections Administrative Changes (contents not read)"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:16:32.458Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "state ID cards",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia shows incumbent, House District 115, on the 2026 general-election ballot; NC General Assembly list https://www.ncleg.gov/Members/MemberList/H names her",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC General Assembly bill list for the member, 2025 session, all bills incl. cosponsored: https://library.ncleg.gov/Members/IntroducedBills/H/809/2025/false",
+        "NC bill page and text for H475 (2025 session), State ID Cards for High School Students: she is a cosponsor, but the text never mentions voting, so not saved",
+        "Ballotpedia: nothing on the subject",
+        "one web search on her name plus voter ID: nothing in her own words",
+        "not reviewed: official House caucus page, campaign site and social media (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:21:16.293Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

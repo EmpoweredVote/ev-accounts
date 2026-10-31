@@ -1,0 +1,51 @@
+{
+  "id": "TX-HB-4544-2023",
+  "scope": "state:tx",
+  "title": "HB 4544 (88R): Relating to the public inspection of election records.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB4544",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=88R&Bill=HB4544",
+    "https://capitol.texas.gov/tlodocs/88R/billtext/html/HB04544I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(other) Sec 1: public inspection of election records (Election Code 1.012): 10-day availability, definition of election record, electronic copy fee cap of $50, voted ballots available for inspection by the 60th day after election day, redaction of voter personal information on ballots.\n(other) Sec 2: repeals Election Code 1.012(b).\n(other) Sec 3: effective date September 1, 2023.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Toth",
+      "role": "author",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Bumgarner",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Hayes",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Lopez, Janie",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Stucky",
+      "role": "co",
+      "version": "Introduced (only version)"
+    },
+    {
+      "name": "Thimesch",
+      "role": "co",
+      "version": "Introduced (only version)"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

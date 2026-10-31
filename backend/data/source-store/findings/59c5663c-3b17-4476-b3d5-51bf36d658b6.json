@@ -1,0 +1,59 @@
+{
+  "politician_id": "59c5663c-3b17-4476-b3d5-51bf36d658b6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Tom_Sell) lists him under 2026 general election and primary runoff (winner); The Texan reports he won the May 26, 2026 runoff for TX-19",
+        "On the Record (0 meetings, nothing on the subject)",
+        "campaign site https://www.selltexastrue.com/ (home, /issues, /about, /press): nothing on the subject; issues page covers border and immigration, energy, guns, life, agriculture, defense, Sharia law",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey text found)",
+        "Texas Tribune 2026-02-26 profile: nothing on the subject",
+        "The Texan runoff article: nothing on the subject",
+        "news searches on name plus voter ID / SAVE Act / election integrity / proof of citizenship: nothing found",
+        "not reviewed: congress.gov (candidate, not a legislator)",
+        "blocked: https://web.archive.org/web/20260928164852/https://www.selltexastrue.com/issues (fetch tool refused archive.org)",
+        "not reviewed: campaign YouTube/X/Facebook (https://www.youtube.com/@SellForTexas19, https://x.com/SellForTexas19)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:42:55.096Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "https://www.fox34.com/2026/05/22/tom-sell-makes-final-push-congressional-district-19-race/ (confirms he is a candidate for Texas 19th District, in a runoff then; a later news search says he won the nomination and is on the November 2026 ballot; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.selltexastrue.com/issues (all eight issue sections read; only border and immigration content; nothing on the subject)",
+        "https://ballotpedia.org/Tom_Sell (fetched; nothing on the subject)",
+        "https://www.bigcountryhomepage.com/big-country-politics/tom-sell-shares-goals-for-texas-19th-district/amp/ (interview coverage; nothing on the subject)",
+        "not applicable: congress.gov and legislature bill pages (not a sitting legislator)",
+        "two web searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:45:04.838Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "politician_id": "66cae409-332e-4b3c-a352-675dcbb58863",
+  "findings": [
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Clark, J'), linked to JASMINE CLARK (district 108) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Clark, J'), linked to JASMINE CLARK (district 108) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Clark, J'), linked to Jasmine Clark (district 108) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Jasmine_Clark (sitting House member; on the November 3, 2026 general election ballot for U.S. House Georgia District 13 after the May 19 primary; nothing on the subject)",
+        "campaign site https://www.jasmine4ga.com/ and https://www.jasmine4ga.com/news (nothing on the subject; /issues returned 404)",
+        "Georgia House press site search for her name plus voter ID (https://house-press.com/?s=Jasmine+Clark+voter+ID): only a hand-marked-ballots bill release and a civil rights act press conference; nothing on ID or citizenship",
+        "2022 candidate questionnaire https://www.gwinnettforum.com/wp-content/uploads/2022/10/Ga.House108_Demo_Jasmine-Clark-.docx.pdf (nothing on the subject)",
+        "news searches on her name plus voter ID, SB 202, SAVE Act (nothing attributable to her on the subject)",
+        "legis.ga.gov bill pages not tried (login token)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.677Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.406Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

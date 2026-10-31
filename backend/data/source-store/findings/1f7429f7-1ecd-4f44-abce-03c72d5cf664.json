@@ -1,0 +1,228 @@
+{
+  "politician_id": "1f7429f7-1ecd-4f44-abce-03c72d5cf664",
+  "findings": [
+    {
+      "id": "12c6dd6560cc14216907b6d19ba896b35aa429836d3ae12d0ffe5402ebf1c527",
+      "kind": "own-words",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2017/7703/0/S824-BD-NBC-2666",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "Requiring photo IDs for in-person voting is a solution in search of a problem. Instead, the real election problem is votes harvested illegally through absentee ballots, which this proposal fails to fix.",
+      "note": "Veto message from Governor Roy Cooper on Senate Bill 824, the act implementing the constitutional amendment requiring photographic identification to vote. The page is a scan of the signed message; the text was read from the image. It says photo ID for in-person voting addresses no real problem and points to absentee ballots as the real problem.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "absentee ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:59:10.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08852d8831ead0c93caf65500741e595ceb41479ca36f5ce5ffb2f4810721d94",
+      "kind": "own-words",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2017/7703/0/S824-BD-NBC-2666",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "In addition, the proposed law puts up barriers to voting that will trap honest voters in confusion and discourage them with new rules, some of which haven't even been written yet.",
+      "note": "Same veto message on SB 824. Says the law's new rules would confuse and discourage honest voters, and that some rules were not yet written.",
+      "subjects": [
+        "voter ID at the polls",
+        "barriers for voters without ID",
+        "implementation rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:59:10.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "633ce16dcad79289708fede766499aac38cab6e960f444ed45efe71a4b216c1b",
+      "kind": "own-words",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2017/7703/0/S824-BD-NBC-2666",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "Finally, the fundamental flaw in the bill is its sinister and cynical origins: It was designed to suppress the rights of minority, poor and elderly voters. The cost of disenfranchising those voters or any citizens is too high, and the risk of taking away the fundamental right to vote is too great, for this law to take effect.",
+      "note": "Same veto message on SB 824. States his reasons about the bill's purpose and its cost to voters' rights, ending with 'Therefore, I veto the bill.'",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "effect on minority, poor and elderly voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:59:10.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "879d679043228a3e895ee19afa84e02f33507b5d0593f19a5a9cdae57b746531",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "vetoed",
+      "motion": "Governor's veto of Senate Bill 824, Implementation of Voter ID Const. Amendment",
+      "note": "Governor vetoed the bill carrying out the voter photo ID constitutional amendment. The Senate overrode the veto 33-12 on 2018-12-18, and the House override motion passed 68-43 on 2018-12-19 (veto-override roll calls shown on the same page).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "086c3c4ec16470d95034cd655cd98a221ffca22d09676ebd0e898da7132bc585",
+      "kind": "own-words",
+      "url": "https://abc11.com/politics/gov-cooper-vetoes-voter-id-bill;-gop-vows-to-override/4899675/",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "\"Requiring photo IDs for in-person voting is a solution in search of a problem,\" Cooper wrote. \"Instead, the real election problem is votes harvested illegally through absentee ballots, which this proposal fails to fix.\"",
+      "note": "ABC11 (WTVD) quotes the governor's written veto explanation for SB 824, the bill putting the voter photo ID amendment into law. He says in-person photo ID is not needed and points to absentee ballots as the real problem.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "mail and absentee ballot fraud and ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3cbe1f51f98d61b5de849d7b73caf102f138ff79195ad1b5a75fe364b63d258",
+      "kind": "record",
+      "url": "https://www.whqr.org/local/2013-07-26/attorney-general-fires-off-letter-to-mccrory-urging-veto-on-voter-id-bill",
+      "date": "2013-07-26",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "other",
+      "motion": "Attorney General letter to Gov. McCrory urging a veto of the 2013 elections bill that added voter ID",
+      "note": "WHQR reports that as attorney general he sent the governor a letter urging a veto of the bill. The report says the letter called the voter ID requirements \"unnecessary, expensive and burdensome\" (the outlet's paraphrase and short quote, not the full letter).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:36:50.662Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e624a42fb2257fc42451190967ca12caa1ae8d560f3a7ccd93ecf3dd1f034ffd",
+      "kind": "own-words",
+      "url": "https://governor.nc.gov/news/governor-cooper-vetoes-voter-id-bill-signs-two-additional-bills-law",
+      "date": "2018-12-14",
+      "date_precision": "day",
+      "passage": "Requiring photo IDs for in-person voting is a solution in search of a problem. Instead, the real election problem is votes harvested illegally through absentee ballots, which this proposal fails to fix.",
+      "note": "Governor's office news release of 14 Dec 2018 announcing that Governor Roy Cooper vetoed Senate Bill 824 (implementing the photo-ID constitutional amendment), quoting his veto message. Same words as the scanned signed message; this page is text and names him. Live page now returns 404; the verifier reads it from the web archive.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "absentee ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 federal-held (Opus)",
+        "fetched_at": "2026-10-29T22:03:33.033Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "absentee/mail ballot fraud",
+        "proof of citizenship / SAVE Act",
+        "barriers for voters without ID"
+      ],
+      "places": [
+        "scope check: Ballotpedia https://ballotpedia.org/Roy_Cooper says he is on the Nov 3 2026 general-election ballot for U.S. Senate, North Carolina, after advancing from the March 3 2026 primary (candidate for U.S. Senate, not a sitting member of Congress; his prior offices were Governor 2017-2025 and Attorney General 2001-2017)",
+        "On the Record (0 appearances for this politician id; script run with name search found 0 sources)",
+        "campaign site https://www.roycooper.com (issue pages: food, health care, energy, child care, housing; nothing on the subject)",
+        "blocked: https://www.roycooper.com/issues (404)",
+        "Ballotpedia (fetched with curl; section 'Opposition to North Carolina's voter ID law (2013)' is a lead, its footnote links were not fetchable; no SAVE Act or proof-of-citizenship item)",
+        "NC General Assembly bill page for SB 824 (2017-2018) with veto document, fetched",
+        "NC General Assembly bill page for SB 747 (2023), veto document is a bill copy without readable veto message: not reviewed for subject, it concerns other election rules",
+        "congress.gov: no congressional record (never served in Congress), not searched",
+        "blocked: https://governor.nc.gov/news/press-releases/2018/12/14/governor-cooper-vetoes-voter-id-bill (404); governor.nc.gov other guessed veto pages also 404",
+        "blocked: https://www.wect.com/story/22977136/update-mccrory-plans-to-sign-voter-id-bill-despite-plea-from-cooper/ (404), so the 2013 letter to the then-governor was not reached",
+        "not reviewed: web search for news and 2026 Senate campaign statements on SAVE Act and voter ID (the session's web search budget was used up)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:59:10.342Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail and absentee ballot fraud and ID",
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Roy_Cooper (former governor and attorney general; on the 2026-11-03 general-election ballot for U.S. Senate in North Carolina; notes his 2013 opposition to the state voter ID law)",
+        "campaign site https://www.roycooper.com/ and /issues: nothing on the subject",
+        "legislature bill page https://www.ncleg.gov/BillLookUp/2017/S824 (governor's veto of SB 824 and the override votes)",
+        "news: ABC11 report of the 2018 veto message (own words quoted)",
+        "news: WHQR 2013 report of his letter urging a veto of the 2013 elections bill; the page paraphrases the letter, so it is not saved as own words",
+        "2026 Senate-race coverage of his post showing ID at the polls and the SAVE Act: Center Square story seen only in search results; not reviewed: https://www.suncommercial.com/news/national/article_21811530-3b57-5c7a-95fb-a08192b4ef0f.html (blocked, HTTP 429); blocked: https://www.columbiagorgenews.com/news/national/election-2026-cooper-social-post-is-now-you-see-it-now-you-don-t/article_0356ee1b-fe0e-516b-8570-99cc510bee52.html (no article text returned); blocked: https://www.aol.com/articles/election-2026-cooper-social-post-143400877.html (404)",
+        "blocked: https://ncnewsline.com/briefs/cooper-vetoes-voter-id-bill/ (bot challenge)",
+        "blocked: https://governor.nc.gov veto release (page not found)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:36:50.662Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "veto message on SB 824 in text form"
+      ],
+      "places": [
+        "https://governor.nc.gov/news/governor-cooper-vetoes-voter-id-bill-signs-two-additional-bills-law"
+      ],
+      "found": 1,
+      "at": "2026-10-29T22:03:33.033Z",
+      "by": "stage5 federal-held (Opus)"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "politician_id": "df2b0dba-63d7-4f18-b713-7cc0594ec61d",
+  "findings": [
+    {
+      "id": "75704283d222a3b5dd0a3ea892b9bfd388c35c1ff7ccdb1bd1f15f56d9bc2bb5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2739",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "other",
+      "motion": "Joint author of HB 2739, address on ID must match voter list",
+      "note": "Listed on HB 2739, a bill requiring the address on an ID shown by a voter to match the address on the voter list. It was left pending in House committee on 2025-04-17. The date the name was added is not shown on the page.",
+      "subjects": [
+        "ID address must match voter list",
+        "ID used at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe575c38dfb297300d4ad2f1523f3ad6b8830038cf5ffade00e37789bc9a0430",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "Cosponsor of SB 16, proof of citizenship to register to vote",
+      "note": "Listed as a House cosponsor of SB 16, which requires proof of citizenship to register to vote and lets a voter without proof cast a limited federal ballot. The Senate passed it on 2025-04-01 and a House committee reported it on 2025-05-25. The date the name was added is not shown on the page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98de0986a37d6e5fb596539bf12e0f3cb6a92e226f523f506ded04a1044301a1",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF#page=111",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Final House adoption of SJR 37, constitutional amendment that a voter must be a US citizen (Record 2196, 102 yeas, 14 nays, 22 present not voting)",
+      "note": "House Journal record vote on adopting SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The Journal lists this member as voting yea.",
+      "subjects": [
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9c2a61afe5a2e47c70672a3c493ef4e16e6aa1d7415a8252029ca9b184cbe42",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3736",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-3736-2023",
+      "act": "author",
+      "motion": "Joint author of HB 3736, study of accuracy of the statewide voter database",
+      "note": "Listed as a joint author of HB 3736, which asks the Secretary of State to study how accurate the statewide voter information database is. A House committee report was sent to calendars on 2023-05-06; the date the name was added is not shown on the page.",
+      "subjects": [
+        "voter-roll accuracy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1fd4d51ad7a274919af0332e9b59baeb2f750b9969b614e66bb4ac7bd63db8c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "author",
+      "motion": "author sponsor, Introduced (only version)",
+      "note": "Listed as author of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll citizenship checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia (HD 37 member, on the 2026 general-election ballot)",
+        "House member page, media, newsletters and biography pages (nothing on the subject)",
+        "campaign site janielopez.com home, issues and news pages (nothing on the subject beyond a general anti-corruption item)",
+        "Texas Legislature Online authored-bill lists for 88R, 89R, 89(1), 89(2)",
+        "Texas Legislature Online bill pages for HB 892, HB 2332, HB 2245, HB 2739, HB 3736, SB 16, SJR 37",
+        "Texas House Journal record vote on SJR 37",
+        "web search on name plus subject words (no own words found)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:31:14.410Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.519Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

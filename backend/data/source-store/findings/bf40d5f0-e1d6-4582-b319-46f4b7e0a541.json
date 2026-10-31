@@ -1,0 +1,51 @@
+{
+  "politician_id": "bf40d5f0-e1d6-4582-b319-46f4b7e0a541",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site: could not find one (guessed domains did not resolve, searches surfaced none)",
+        "House of Delegates member page apps.house.virginia.gov/members/H0407 (confirms 98th District seat)",
+        "local news (WHRO, WAVY) on the 2026 special election: nothing on the subject",
+        "BallotReady profile: no issue statements on the subject; not reviewed: https://ballotpedia.org/Andrew_Rice_(Virginia) (empty response)",
+        "blocked: lis.virginia.gov (not retried, per instruction)",
+        "news search on name plus election/voter words: nothing on the subject; took office March 2026, so no sponsorships found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:27:44.466Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun safety laws",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Andrew_Rice_(Virginia) (office confirmed: assumed office 2026-03-17 after special election; nothing on the subject)",
+        "WHRO 2026-03-17 (special election result; nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "two web searches on name plus gun words (no statement or bill found)",
+        "not reviewed: iVoterGuide profile (seen only in a search summary), campaign site, Virginia LIS 2026 bill pages (not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

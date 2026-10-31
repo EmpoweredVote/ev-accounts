@@ -1,0 +1,535 @@
+[
+  {
+    "row": "R-L002",
+    "person": "John Ward",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Per-member roll call for the Policy 631 adoption vote, Brainerd ISD 181 regular meeting 2024-02-12, if recorded; the minutes name only the two No votes, so Ward's Aye is inferred from the six members present"
+    ],
+    "cost": 2.8,
+    "reasoning": "Ward voted for Brainerd Policy 631 (4-2, 2024-02-12, a separate action item). Under the policy a Review Committee decides whether to retain or remove a challenged book, and \"Access to the material in question shall not be restricted until\" that decision is made. That matches \"Remove a challenged book for all students after a review body finds it unsuitable\" and rules out pulling the book until a review decides."
+  },
+  {
+    "row": "R-L004",
+    "person": "Michelle Brekken",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.78,
+    "reasoning": "Brekken moved and voted for Policy 631 (4-2, its own action item), whose reconsideration section says access to challenged material \"shall not be restricted until the procedures listed below have been fully completed and a decision to remove or restrict the materials has been made\", with a Review Committee deciding whether to retain or remove. That matches \"Remove a challenged book for all students after a review body finds it unsuitable\" and excludes pulling the book until a review decides and barring removal altogether."
+  },
+  {
+    "row": "R-L006",
+    "person": "Sarah Speer",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.81,
+    "reasoning": "Speer seconded and voted for (4-2) Policy 631, under which a Review Committee decides 'whether to retain, to remove, or to take other action' on a challenged book, and 'Access to the material in question shall not be restricted until the procedures listed below have been fully completed'. That is 'Remove a challenged book for all students after a review body finds it unsuitable'; the no-restriction-pending-review clause excludes 'Pull a challenged book from all students until a review decides', and the possibility of removal excludes the rung that bars removal."
+  },
+  {
+    "row": "R-L007",
+    "person": "Andrew Cruz",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Cruz's own words explaining his vote at the 2023-11-16 meeting (video or transcript; the minutes only paraphrase that he 'explained why he voted in favor of policy revisions')",
+      "Cruz's current term dates for Trustee Area 2, to confirm the 2023 vote is in a term of this office"
+    ],
+    "cost": 1.33,
+    "reasoning": "Cruz seconded and voted for the 3-2 adoption of the revised BP 6163.1 and AR 1312.2, which require that once a complaint is received the principal \"must remove the item\" pending a Board hearing and vote, and that challenged supplemental materials \"shall be restricted until a decision is made\". This matches \"Pull a challenged book from all students until a review decides\"; the Board review excludes removal with no review."
+  },
+  {
+    "row": "R-L008",
+    "person": "James Na",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "James Na's current term dates on the CVUSD board (to confirm 2023-11-16 is in-term)"
+    ],
+    "cost": 1.32,
+    "reasoning": "Na moved the 3-2 adoption of the revised BP 6163.1 and AR 1312.2. Under them, \"the principal of the school where the challenged material is located must remove the item\" once a complaint arrives, and the book stays out until a Board hearing decides; challenged supplemental materials are likewise \"restricted until a decision is made through the complaint process.\" That matches \"Pull a challenged book from all students until a review decides\". Removal depends on the review, so it is not the no-review rung."
+  },
+  {
+    "row": "R-L009",
+    "person": "Sonja Shaw",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "A roll call or vote record for item II.A.1 (CVUSD Board, 2023-11-16) that names Shaw among the Yes votes"
+    ],
+    "cost": 1.33,
+    "reasoning": "Shaw was among the three ayes on the 3-2 adoption of revised BP 6163.1/AR 1312.2 (2023-11-16), under which \"the principal of the school where the challenged material is located must remove the item\" on a formal complaint until the Board's hearing and vote, and challenged supplemental materials \"shall be restricted until a decision is made through the complaint process\". That matches \"Pull a challenged book from all students until a review decides\"; her vote is deduced (five members, Bridge and Monroe the only no votes), not named."
+  },
+  {
+    "row": "R-L010",
+    "person": "Ashley Gilhousen",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Topic annex list of Florida higher-law duties for school boards: whether F.S. 1006.28 (as amended 2023) itself requires challenged materials to be removed pending review, which would make the pending-review pull a mandated duty (small-body test 2)",
+      "Gilhousen's term dates for District 5 to confirm both votes are in-term"
+    ],
+    "cost": 5.24,
+    "reasoning": "Gilhousen voted Aye on the 2023 manual amendments, under which a challenged book is restricted for all students during the pendency of a challenge (\"will not be accessible by the students\" for instructional material), and on the 2024 Challenged Materials Policy, under which a challenged title is removed \"from the school shelves to a secure location\" until the review team decides. Both match \"Pull a challenged book from all students until a review decides\" as the furthest act, beside removal after review. Both were stand-alone action items on a five-member board, so the 0.6 small-body rule was applied instead of the tally test (the annex's interim line says to use the tally test, under which these 5-0 votes would be near-unanimous); flag for review."
+  },
+  {
+    "row": "R-L011",
+    "person": "Beth Clark",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 5.21,
+    "reasoning": "Clark voted Aye on two stand-alone action items of the five-member board: the April 2023 challenge procedures, under which challenged instructional material \"will not be accessible by the students\" and challenged library books are sequestered behind parental consent during the challenge, and the May 2024 Challenged Materials Policy, under which the media specialist must \"remove the title from the school shelves to a secure location\" until the review team decides. Both are the board's own provisions (only the 847.012 removal is a state duty), and both match \"Pull a challenged book from all students until a review decides\", its furthest act; neither removes with no review."
+  },
+  {
+    "row": "R-L012",
+    "person": "Erin Skipper",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Recording or transcript of Skipper's 2023-04-06 board member remarks on reading materials (the minutes only paraphrase her)"
+    ],
+    "cost": 3.69,
+    "reasoning": "Skipper voted Aye on two stand-alone action items: the 2023-04-06 challenged-materials procedures, under which challenged instructional material 'will not be accessible by the students' and challenged library books are sequestered behind parental consent during the challenge, and the 2024-05-02 policy revision, under which the media specialist must 'remove the title from the school shelves to a secure location' until the review team decides. Both match 'Pull a challenged book from all students until a review decides'. Neither states removal with no review, so rung 5 is excluded. On this 5-member board both votes clear the 0.6 Small bodies tests: each was its own roll-call action item, and the pull provision cites no higher-law duty."
+  },
+  {
+    "row": "R-L014",
+    "person": "Michele Hanson",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Hanson's own words (statement, questionnaire or campaign page) on how book challenges should be handled"
+    ],
+    "cost": 3.58,
+    "reasoning": "Hanson voted Aye on the April 6, 2023 amendment to the district's challenged-materials procedures, which provide that during a challenge the instructional material 'will not be accessible by the students' and challenged library books are sequestered behind parental consent until the review decides. That matches 'Pull a challenged book from all students until a review decides'; the review council's decision rules out the no-review rung. The vote was its own action item on a 5-member board, and the pull is not stated as a higher-law duty, so it passes the 0.6 small-body test (wording not yet ruled, so the row goes to review)."
+  },
+  {
+    "row": "R-L025",
+    "person": "Carissa Bergosh",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Florida higher-law duties for school-board challenge processes (F.S. 1006.28) listed in the education-library-books annex, to confirm the review-then-remove and Superintendent-determination provisions are the board's own choice and not a statutory duty",
+      "Escambia School Board minutes of 2024-11-19 confirming that the adopted text of Policy 2522 is the 'REVISED (1)' attachment (the snapshot shows redline residue such as 'fiveeight (8)')"
+    ],
+    "cost": 3.98,
+    "reasoning": "Bergosh voted Yes, each time on its own action item of a 5-member board, to adopt Policy 2522 (2024-11-19) and its revision (2025-10-21). Both texts remove a challenged book for everyone only after a reviewer (committee, Superintendent or Board) finds it unsuitable; they keep other books in circulation pending review. That is 'Remove a challenged book for all students after a review body finds it unsuitable'. The 5-day pull of sexual-content titles is stated as required 'pursuant to Florida law', so under the 0.6 small-body rule it is compliance and does not seat rung 4; the annex's note to keep the tally test until the small-body rule is ruled is overridden by codebook 0.6, which already contains that rule."
+  },
+  {
+    "row": "R-L026",
+    "person": "David Williams",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.99,
+    "reasoning": "Williams voted Yes, each time as its own action item, on Escambia Policy 2522 (2024) and its 2025 revision. The board's own provisions mean 'No challenged material may be removed ... except by action of the Board', and challenged material otherwise 'may not be removed from circulation pending the committee's recommendation'. That is 'Remove a challenged book for all students after a review body finds it unsuitable'. The only pull pending review is a duty the policy itself attributes to Florida law, so under the 0.6 small-body rule it shows compliance, not a choice, and it does not reach rung 4."
+  },
+  {
+    "row": "R-L027",
+    "person": "Kevin Adams",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Escambia Policy 2522 text as adopted at the 2024-10-15 meeting (item 7.D, 'with changes based on comments received')",
+      "Annex list of Florida higher-law duties (F.S. 1006.28) to confirm which parts of Policy 2522's review-and-removal process are the board's own choice (0.6 test 2)",
+      "Kevin Adams's current term dates for District 1"
+    ],
+    "cost": 4.02,
+    "reasoning": "Adams voted Yes on Escambia Policy 2522 as its own action item in 2024-11-19 and 2025-10-21 (5-member board, not consent). The board's own process says no challenged material 'may be removed ... except by action of the Board or as otherwise required or permitted in this policy', after a committee, Board or Superintendent review, and that material 'may not be removed from circulation pending the committee's recommendation'. That matches 'Remove a challenged book for all students after a review body finds it unsuitable'. The 5-day pull is attributed to Florida law, so it shows compliance and does not seat 'Pull a challenged book from all students until a review decides'."
+  },
+  {
+    "row": "R-L029",
+    "person": "Paul H. Fetsko",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Escambia School Board 2024-10-15 attachment '2522 CHALLENGES TO ADOPTION OR USE OF INSTRUCTIONAL, LIBRARY, OR READING LIST MATERIALS REVISED.pdf' (text adopted that day)",
+      "Escambia School Board minutes for 2024-11-19 and 2025-10-21 confirming the 2522 votes were separate roll calls",
+      "Topic annex list of Florida higher-law duties for school boards (F.S. 1006.28) for small-body test 2",
+      "Any first-person statement by Paul Fetsko on book challenges"
+    ],
+    "cost": 3.97,
+    "reasoning": "Fetsko moved final adoption of Escambia Policy 2522 (2024) and voted for its 2025 revision, each a separate action item; both texts say 'No challenged material may be removed ... except by action of the Board' after committee review, which matches 'Remove a challenged book for all students after a review body finds it unsuitable'. The pull of sexual-content books within five school days is tied in the text to Florida law, so under the 0.6 small-body rule it shows compliance and does not seat 'Pull a challenged book from all students until a review decides'."
+  },
+  {
+    "row": "R-L030",
+    "person": "Tom Harrell",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.89,
+    "reasoning": "Harrell moved (2025-10-21) and seconded (2024-11-19) adoption of Escambia Policy 2522 as stand-alone action items, 5-0. Its own provisions have a review committee, the Superintendent and the Board decide before a book is removed, and say challenged material 'may not be removed from circulation pending the committee's recommendation' except where Florida law requires it, so it meets 'Remove a challenged book for all students after a review body finds it unsuitable'. The five-day pull is a duty imposed by state law, so under the small-body rule it shows compliance only and does not lift the chair to 'Pull a challenged book from all students until a review decides'."
+  },
+  {
+    "row": "R-L063",
+    "person": "Ed Jackson",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.69,
+    "reasoning": "Jackson voted aye on final Senate passage of SB 2407 (2022), the Age-Appropriate Materials Act. The act is single-subject and requires that when the board determines a material is not appropriate, \"the school shall remove the material from the library collection\". That matches \"Remove a challenged book for all students after a review body finds it unsuitable\". The act states no pull during review and no removal without review."
+  },
+  {
+    "row": "R-L066",
+    "person": "Jack Johnson",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.69,
+    "reasoning": "Johnson prime-sponsored and voted for TN SB 2407 (Pub. Ch. 744, 2022), which requires the board to evaluate challenged library materials and provides that if the board determines a material is not appropriate \"the school shall remove the material from the library collection\". That is removal for all students after a review body finds it unsuitable (\"Remove a challenged book for all students after a review body finds it unsuitable\"); the act states no pull during review and no removal without review."
+  },
+  {
+    "row": "R-L067",
+    "person": "Jay D. Reedy",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 1.15,
+    "reasoning": "Reedy voted aye on final passage of SB 2407 (2022), which passed 73-21. The Act makes the board evaluate each challenged material and says 'then the school shall remove the material from the library collection' only after the board finds it unsuitable. That matches 'Remove a challenged book for all students after a review body finds it unsuitable'. The Act states no removal pending review and no removal without review."
+  },
+  {
+    "row": "R-L070",
+    "person": "Joey Hensley",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 1.17,
+    "reasoning": "Hensley co-sponsored and voted Aye (26-5) on TN SB 2407 (2022), the Age-Appropriate Materials Act, which requires the board to evaluate challenged material and provides that if it finds the material not appropriate \"the school shall remove the material from the library collection.\" That matches \"Remove a challenged book for all students after a review body finds it unsuitable\"; the act states no pull during review and no removal without review, so the higher rungs are not reached."
+  },
+  {
+    "row": "R-L071",
+    "person": "Mark Cochran",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Cochran's House term dates (essentials.legislative_service) to confirm the 2022 House vote is in-term",
+      "HB 2154 (112th GA) co-sponsor record showing Cochran's co-sponsorship (the public chapter lists him among HB 2154 sponsors; the HB 2154 bill text as filed names only Lamberth)"
+    ],
+    "cost": 2.34,
+    "reasoning": "Cochran voted aye (73-21) on final passage of SB 2407 (2022), the Age-Appropriate Materials Act. Its operative section has the board evaluate each book someone gives feedback on, and provides that if the board finds it not appropriate 'the school shall remove the material from the library collection'. That matches 'Remove a challenged book for all students after a review body finds it unsuitable', and the text states neither a pull pending review nor removal without review."
+  },
+  {
+    "row": "R-L072",
+    "person": "William Lamberth",
+    "expected": 3,
+    "chair": 3,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.98,
+    "reasoning": "Lamberth sponsored HB 2154 and voted Aye on its enacted companion SB 2407 (73-21), the Age-Appropriate Materials Act, which requires the board to evaluate each challenged material and, if it finds the material not appropriate, \"the school shall remove the material from the library collection.\" That is the rung \"Remove a challenged book for all students after a review body finds it unsuitable\"; the text neither pulls the book during review nor removes it without review."
+  },
+  {
+    "row": "R-L073",
+    "person": "Angela Paxton",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.43,
+    "reasoning": "Paxton moved and voted Yea on final adoption of SB 13 (89R), a single-subject school-library bill whose challenge section requires a district to \"prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge.\" That meets the rung \"Pull a challenged book from all students until a review decides\"; removal follows board action on the review, so it is not removal with no review."
+  },
+  {
+    "row": "R-L083",
+    "person": "Brad Buckley",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.49,
+    "reasoning": "Buckley sponsored SB 13 (89R, 2025) in the House and voted Yea on its conference report (81-48). The bill says a district that receives a challenge \"shall prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge\", and removal follows only after the board's review. That matches \"Pull a challenged book from all students until a review decides\", and the review rules out the no-review rung."
+  },
+  {
+    "row": "R-L085",
+    "person": "Charles Perry",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.11,
+    "reasoning": "Perry voted Yea (23-8) to adopt the conference report on SB 13 (2025), whose Sec. 33.027(g) requires a district that receives a challenge to \"prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge.\" That matches \"Pull a challenged book from all students until a review decides\"; under the annex's furthest-act rule, the later board review that can remove the book does not move it to the post-review-removal rung."
+  },
+  {
+    "row": "R-L087",
+    "person": "John Lujan",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.21,
+    "reasoning": "Lujan voted Yea (81-48) to adopt the conference report on SB 13 (2025), a single-subject school-library bill whose challenge provision requires a district to \"prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge.\" That matches \"Pull a challenged book from all students until a review decides\"; the board review that follows (rung 3) is a lower act, and the furthest act governs."
+  },
+  {
+    "row": "R-L088",
+    "person": "John McQueeney",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 2.11,
+    "reasoning": "McQueeney voted Yea (Record 4115, 81-48) to adopt the conference report on SB 13 (2025), whose operative challenge section says a district 'shall prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge.' That matches the rung 'Pull a challenged book from all students until a review decides'; the board's later removal on review is a nearer act, so under the furthest-act rule the chair is that rung."
+  },
+  {
+    "row": "R-L089",
+    "person": "Lois Kolkhorst",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 3.18,
+    "reasoning": "Kolkhorst voted Yea (23-8) to adopt the conference report on SB 13 (2025), whose Section 33.027(g) requires a district that receives a challenge to \"prohibit students enrolled in the district from accessing the library material until the district takes action in response to the challenge.\" That matches \"Pull a challenged book from all students until a review decides\". Under the annex's furthest-act rule, this sits above the board review that SB 13 also states (rung 3)."
+  },
+  {
+    "row": "R-L093",
+    "person": "Ariel Defay",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 1.17,
+    "reasoning": "Defay voted Yea (52-18) on final passage of Utah H.B. 29 (2024), whose operative section requires an LEA to \"immediately remove the challenged material from any school setting\" until it \"completes the LEA's full review\". That matches \"Pull a challenged book from all students until a review decides\"; removal ends on the review, so it is not \"with no review\"."
+  },
+  {
+    "row": "R-L095",
+    "person": "Chris H. Wilson",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 1.19,
+    "reasoning": "Wilson voted Yea on Senate final passage (19-8-2) of Utah H.B. 29 (2024), a single-subject law whose challenge process requires an LEA to \"immediately remove the challenged material from any school setting\" until it completes its full review. That matches \"Pull a challenged book from all students until a review decides\"; the content-rule and statewide-threshold parts are direction-only by themselves under the annex, so the stated challenge process decides the rung."
+  },
+  {
+    "row": "R-L096",
+    "person": "Heidi Balderree",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "Text of HB 29 Second Substitute as voted by the Senate on 2024-02-20, to confirm the enrolled section 53G-10-103(4)(a)(ii) matches the version she voted on"
+    ],
+    "cost": 1.17,
+    "reasoning": "Balderree voted Yea on Senate final passage of Utah HB 29 (2024), a single-subject statute that, once a challenge is found plausible, orders the LEA to \"immediately remove the challenged material from any school setting\" \"until the LEA completes the LEA's full review\". That matches the rung \"Pull a challenged book from all students until a review decides\"; the bill's review process excludes removal with no review."
+  },
+  {
+    "row": "R-L097",
+    "person": "Joseph Elison",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "HB 29 (2024 General Session) as introduced, to code Elison's cosponsorship on the bill as filed",
+      "Elison's Utah House term dates, to confirm the 2024 vote is in-term"
+    ],
+    "cost": 1.18,
+    "reasoning": "Elison voted Yea (52-18) on final passage of HB 29 (2024), a single-subject sensitive-materials bill whose challenge process requires the LEA to \"immediately remove the challenged material from any school setting\" until it \"completes the LEA's full review\". That matches \"Pull a challenged book from all students until a review decides\"; the bill's content-rule ban and statewide removal list do not by themselves set a different rung."
+  },
+  {
+    "row": "R-L098",
+    "person": "Ken Ivory",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "unanimous-chair",
+    "reasons": [
+      "confirm-failed"
+    ],
+    "match": true,
+    "needs_source": [],
+    "cost": 1.18,
+    "reasoning": "Ivory voted Yea (52-18) on final passage of HB 29 (2024), which he chief-sponsored and which requires an LEA to \"immediately remove the challenged material from any school setting\" until it completes its full review, then keep it inaccessible if the review finds it sensitive. That matches \"Pull a challenged book from all students until a review decides\"; the pull follows only an initial plausibility screen and covers one class of challenge (sexual content), which the annex rules still meets the rung."
+  },
+  {
+    "row": "R-L101",
+    "person": "Todd Weiler",
+    "expected": 4,
+    "chair": 4,
+    "blank_reason": null,
+    "outcome": "needs-source",
+    "reasons": [
+      "needs-source"
+    ],
+    "match": true,
+    "needs_source": [
+      "HB 29 Substitute 2 text as passed by the Senate on 2024-02-20 (to confirm Subsection (4)(a)(ii) was in the version Weiler voted on)"
+    ],
+    "cost": 1.12,
+    "reasoning": "Weiler was Senate sponsor of, and voted Yea on final passage (19-8) of, Utah HB 29 (2024), whose operative Subsection (4)(a)(ii) requires an LEA to \"immediately remove the challenged material from any school setting\" until it completes its full review. That matches \"Pull a challenged book from all students until a review decides\"; the removal ends with the review's finding, so it is not \"with no review\"."
+  }
+]

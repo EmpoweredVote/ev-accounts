@@ -1,0 +1,209 @@
+{
+  "politician_id": "90bf1d2e-db4c-4579-a485-55263c734cac",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "defbe65d4fcd90181545c76262daa4361441431c53a8d881a6f4bdbfcaf9dc0b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/665",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes. Second reading, final passage",
+      "note": "Representative Dennis Riddell's votes page on the NC General Assembly site lists this vote. The bill text cited is the Sixth Edition at the bill page; I did not confirm that edition is the one voted on in each case. The bill changes voter-ID and absentee rules, including the deadline to bring photo ID after a provisional ballot (third business day moved to fifth business day), ID checks for absentee ballots, and a rule on voters whose ID numbers do not match. Roll call shows Aye on this motion. Source for the bill text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v6.pdf",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voter with no photo ID",
+        "ID with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:25.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9e795db3c7fe4c6f9a5d195bd67fba0f2bc15e121faf657c23c04bfe3509772",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/665",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes. Motion to concur with Senate changes (M11 Concur)",
+      "note": "Representative Dennis Riddell's votes page on the NC General Assembly site lists this vote. The bill text cited is the Sixth Edition at the bill page; I did not confirm that edition is the one voted on in each case. The bill changes voter-ID and absentee rules, including the deadline to bring photo ID after a provisional ballot (third business day moved to fifth business day), ID checks for absentee ballots, and a rule on voters whose ID numbers do not match. Roll call shows Aye on this motion. Source for the bill text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v6.pdf",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voter with no photo ID",
+        "ID with mail or absentee ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:25.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d05a5407291064822821e1d310854564d130de87320669c396a28a5a27dcd0e1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/665",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes. A3 Dahle, Second Reading (amendment failed 47-66)",
+      "note": "Roll call shows No on a floor amendment to HB 958. I did not read the amendment text, so its content is not described here.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:25.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e43566f57353848ea9d36317c6d3fdd5c75405153f8b98f90ffa8877c160d88",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/665",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes. A2 Blackwell, Second Reading (amendment adopted 69-44)",
+      "note": "Roll call shows Aye on a floor amendment to HB 958. I did not read the amendment text, so its content is not described here.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:25.775Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voter with no photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: on 2026 general ballot, NC House District 64 (https://ballotpedia.org/Dennis_Riddell); NC General Assembly biography https://www.ncleg.gov/Members/Biography/H/665",
+        "On the Record (0 appearances; run with --names, no meetings)",
+        "campaign site https://riddell4nchouse64.com (home page only: nothing on the subject; /news returned 404)",
+        "Ballotpedia https://ballotpedia.org/Dennis_Riddell: nothing on the subject (no Candidate Connection survey for 2024 or 2026)",
+        "NC legislature introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/665: nothing on the subject (one election bill, Make Election Day A State Holiday, is off-subject)",
+        "NC legislature votes page https://www.ncleg.gov/Members/Votes/H/665 (2025-2026 session only; earlier sessions not reachable)",
+        "HB 958 bill text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v6.pdf",
+        "not reviewed: his YouTube channel https://www.youtube.com/@dennisriddell9380 and Facebook pages (video/social, not read)",
+        "own words on the subject: none found; web search budget was used up, so no news search was run"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:59:25.775Z",
+      "by": "source-collector"
+    }
+  ]
+}

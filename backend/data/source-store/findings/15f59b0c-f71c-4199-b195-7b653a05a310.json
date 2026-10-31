@@ -1,0 +1,57 @@
+{
+  "politician_id": "15f59b0c-f71c-4199-b195-7b653a05a310",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Barry_Finegold) says he is on the Nov 3, 2026 general ballot for MA Senate 2nd Essex and Middlesex",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "https://malegislature.gov/Legislators/Profile/BRF0/Sponsored (only sponsored election bill is S.515 campaign finance, not on the subject)",
+        "https://malegislature.gov/Legislators/Profile/BRF0/Cosponsored: nothing on the subject",
+        "official/campaign site https://www.barryfinegold.com (home page only): nothing on the subject",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up)",
+        "not reviewed: site-wide search of official site and bill search for voter ID bills for roll-call votes"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:35.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia page https://ballotpedia.org/Barry_R._Finegold (confirms 2nd Essex and Middlesex state senator, on the 2026-11-03 general-election ballot after the 2026-09-01 primary; nothing on the subject)",
+        "the legislature's profile page https://malegislature.gov/Legislators/Profile/BRF0 (sponsored-bill list reviewed; the only election-law petition is S.515 on campaign finance; nothing on voter ID, citizenship or ID for mail ballots)",
+        "NEPM report of 2021-10-28 (https://www.nepm.org/post/debates-heat-over-changing-voting-rules-mass): it names him as Senate chair of the election-laws committee and reports his debate remarks on making early and mail voting permanent; his words there are not about ID or citizenship, so not saved",
+        "https://newdealleaders.org/leader/barry-finegold/ (profile page; says he chairs the election-laws committee; not his own words on the subject)",
+        "not reviewed: record of the 2025-07-08 election-laws committee hearing on voter ID bills (H.802, H.833 and others); no remarks by him located",
+        "not reviewed: Senate roll-call votes on election bills; none located",
+        "campaign and Senate sites: not reached for the subject (no search-able issue page found)",
+        "web searches (2) on name plus voter ID, photo ID, citizenship, election laws committee: no statement by him on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:07:21.296Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

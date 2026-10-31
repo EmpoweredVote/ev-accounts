@@ -1,0 +1,224 @@
+{
+  "politician_id": "5205c14a-a599-4f5f-abfd-505fe7e2ef07",
+  "findings": [
+    {
+      "id": "5231336eeb9ff059a4c7cd881016f45f9e61d40e6da31f6a9d5a6d70953b59bd",
+      "kind": "own-words",
+      "url": "https://www.mayfieldforncsenate.com/",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "We face difficult challenges – specifically when it comes to protecting our communities and environment, enabling people to live healthy lives, ensuring elections are fair and free, and ensuring no one is left behind.",
+      "note": "Campaign home page lists fair and free elections among her challenges. It does not mention photo ID, mail-ballot ID or proof of citizenship. Date is the date the page was fetched; the page is undated.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:37.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfab597a19ef615c8ff3637fba258e2c0e01b509cb8c948e72d3154be6480ae5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/300",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Second Reading, SB 747 Elections Law Changes",
+      "note": "Senate roll call #300 lists her among the no votes (28 yes, 19 no). The bill text (S747v6, SL 2023-140) requires photo ID plus a proof-of-residence document for same-day registration at early voting, sets ID photocopy or affidavit rules for absentee ballots, lets an absentee ballot request use a driver license number, state ID number or last four digits of a Social Security number, and requires the State Board to review citizenship status of people excused from jury duty as non-citizens.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "ID with mail or absentee ballot",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:37.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb5d62a9219d67bf1328a1cc60e3426c1e73dfa476b8f05cccbe94350b57dea8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur in House committee substitute and House amendments, SB 747 Elections Law Changes",
+      "note": "Senate roll call #439 lists her among the no votes (27 yes, 18 no) on final passage of the House version, which the Governor then vetoed on 8/24/2023.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "ID with mail or absentee ballot",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:37.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a33b1930a73579ecbbca477dd3ae1ca5a43350abbe78fb4e38c615ea2fa320d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override, SB 747 Elections Law Changes",
+      "note": "Senate roll call #482 lists her among the no votes on overriding the veto (30 yes, 19 no). The bill became SL 2023-140.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "ID with mail or absentee ballot",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:37.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3796547db838879da2e8b0cee05b5022acf74cc192afe9682cbfebbb2f60e64c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading, HB 958 Election Law Changes",
+      "note": "Senate roll call #693 lists her among the no votes (28 yes, 13 no). The ratified text (H958v9) bars a county board from processing a voter registration unless the applicant affirms U.S. citizenship, sets a 30-day mailed-form fix with a statement under penalty of perjury for blank answers, and directs removal of voters flagged as possible non-citizens by a federal database check. The Governor vetoed it on 8/17/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:37.705Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e92092d8a7a02954d3f6db2c04aeb31615bd271bd3804aa8540c5d81adbf77f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Senate second reading, H 958 Election Law Changes (28-13)",
+      "note": "Listed among the Noes on the Senate second-reading vote on H 958, the election law changes bill. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a registration application to state that the applicant is a U.S. citizen before it is processed, with a 30-day sworn-statement fix if the answer is blank, and sets up a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows a Governor's veto on 2026-08-17.",
+      "subjects": [
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:09.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID or ID number with mail or absentee ballot",
+        "citizenship statement or proof to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Julie_Mayfield (NC Senate District 49, on the Nov 3, 2026 general-election ballot; March 3, 2026 primary was canceled)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances, name search found none)",
+        "campaign site https://www.mayfieldforncsenate.com/ (home and /issues fetched; /news empty; only a general line on fair and free elections)",
+        "official NC Senate biography page https://www.ncleg.gov/Members/Biography/S/432 (no statements on the subject)",
+        "ncleg.gov bill pages and Senate roll calls for SB 747 (2023) and HB 958 (2025-26); bill texts S747v6 and H958v9 read",
+        "Ballotpedia (2024 candidate survey read: nothing on voter ID or citizenship proof)",
+        "not reviewed: ncleg.gov Senate floor audio/debate on SB 747 and HB 958 (no transcript available)",
+        "not searched: news search by name plus subject words (shared web search budget was used up); floor speeches and news quotes may exist"
+      ],
+      "found": 5,
+      "at": "2026-10-22T23:47:37.705Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on voter registration",
+        "federal database checks of voter rolls for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Julie_Mayfield (Senate District 49; on the 2026 general-election ballot; nothing on the subject)",
+        "Senate roll call pages confirm her as a sitting Senate member",
+        "NC legislature bill page for H 958 and Senate roll calls #684-#693 (records found)",
+        "news search on name plus H 958, voter ID and citizenship terms (no quote of this person on the subject)",
+        "not reviewed: official Senate member page, campaign site and press releases"
+      ],
+      "found": 1,
+      "at": "2026-10-27T19:12:09.651Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

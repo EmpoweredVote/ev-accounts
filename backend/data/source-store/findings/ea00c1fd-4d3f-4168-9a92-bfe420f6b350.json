@@ -1,0 +1,365 @@
+{
+  "politician_id": "ea00c1fd-4d3f-4168-9a92-bfe420f6b350",
+  "findings": [
+    {
+      "id": "577a1b87af60151042666f2c977c137afa6b0a360f037a5d6ce657db65abf993",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/2023/01/12/mastriano-votes-for-bill-approved-by-senate-advancing-voter-id-amendment-to-state-constitution/",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "passage": "“This is commonsense measure to ensure voters are who they claim to be,” Mastriano said. “Pennsylvania needs to take steps like this to regain the trust of voters, many of whom are currently very skeptical about the election process.",
+      "note": "Statement from his official Senate site on his vote for SB 1, which would send to voters a constitutional amendment requiring valid identification before casting a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6f8485fe696524232e493b579b20ab7174a3c748b4fbdc7f2a10a25050edc4e",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/2023/01/12/mastriano-votes-for-bill-approved-by-senate-advancing-voter-id-amendment-to-state-constitution/",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "passage": "Requiring voters to authenticate their identity at the polling place and to vote by mail is necessary to protect the integrity of elections and access to the voting process.",
+      "note": "Same release. Applies identity checks to both in-person and mail voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b07a627f73768239c966ce9ea9a1da7d9884c586ba4df87ace171a498d9cf87f",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/2023/01/12/mastriano-votes-for-bill-approved-by-senate-advancing-voter-id-amendment-to-state-constitution/",
+      "date": "2023-01-12",
+      "date_precision": "day",
+      "passage": "“We can have election integrity and increased voter turnout at the same time,” Mastriano said.",
+      "note": "Same release, responding to the argument that ID laws reduce turnout; he cites Georgia's 2020 turnout.",
+      "subjects": [
+        "voter ID at the polls",
+        "turnout"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "888ca6697b923c2a467b51eafd0f37061ff0a0bff2c4fb16719b5c975a2e811f",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/?p=1997",
+      "date": "2022-01-28",
+      "date_precision": "day",
+      "passage": "“In the aftermath of the chaotic 2020 election, I drafted, introduced, and co-primed several bills to restore integrity to our elections.",
+      "note": "News release on his site. It then lists SB 403 (repeal no-excuse mail voting), SB 573 (poll watchers), SB 735 (constitutional amendment to mandate voter identification for all forms of voting), SB 819/821 (election commission) and SB 884 (end no-excuse mail voting and require signature verification).",
+      "subjects": [
+        "voter ID at the polls",
+        "no-excuse mail voting",
+        "mail-ballot signature verification",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f39328a77bd08483551a9d05eabed06639d13cc156ae4bbec5c435eeb4521809",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/?p=1997",
+      "date": "2022-01-28",
+      "date_precision": "day",
+      "passage": "“I welcome the eventual end of “no-excuse” mail-in voting in Pennsylvania.",
+      "note": "Statement on a Commonwealth Court ruling on Act 77.",
+      "subjects": [
+        "no-excuse mail voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "421b244e0ef0ebba8b0fd11b04c33f0eb19a1a77cfa33468b7aedbb73b3d0253",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/2023/09/23/mastriano-provides-statement-on-shapiros-unilateral-voter-registration-mandate/",
+      "date": "2023-09-23",
+      "date_precision": "day",
+      "passage": "Automatic registration makes it more difficult to verify the accuracy of our voter rolls. It significantly increases the likelihood of fraud, duplicate registrations, and the registration of non-citizens, illegal aliens, and temporary residents.",
+      "note": "Statement on the state's automatic voter registration at driver's license renewal; raises non-citizen registration and voter-roll accuracy.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll accuracy",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa116b5405ad034a8ae6986b573cc181a4be01a64b705632592a4668afaf6caf",
+      "kind": "own-words",
+      "url": "https://senatormastriano.com/2023/09/23/mastriano-provides-statement-on-shapiros-unilateral-voter-registration-mandate/",
+      "date": "2023-09-23",
+      "date_precision": "day",
+      "passage": "The irony is that Shapiro is opposed to voter ID but wants to register everyone to vote who gets a government issued ID (license).",
+      "note": "Same statement; links voter ID to the registration policy.",
+      "subjects": [
+        "voter ID at the polls",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:42.229Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf0a4ef7059b47f44027ad9494d31ebc113f2ea705fe22cae2416d6d548948da",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('MASTRIANO'), linked to Douglas Vincent Mastriano (district 33) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Mastriano'), linked to Douglas V. Mastriano (district 33) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('MASTRIANO') on the official bill page; linked to Douglas V. Mastriano via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43b2a92555fb2bda51da147426ba813860daa195cb428422b39760c676a796d3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as co sponsor ('MASTRIANO') on the official bill page; linked to Douglas Vincent Mastriano via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Mastriano'), linked to Douglas Vincent Mastriano (district 33) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e5ff8e270de8ea40f322f34633c1769c204dab09baf86bc62582ccca4d07c2f",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=S&type=B&bn=735",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 952 (as amended on third consideration, Senate, June 23, 2021). Read.",
+      "note": "Named as co sponsor ('MASTRIANO') on the official bill page; linked to Douglas Vincent Mastriano via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.713Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Mastriano'), linked to Douglas Vincent Mastriano (district 33) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.463Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll accuracy",
+        "non-citizen registration",
+        "no-excuse mail voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://senatormastriano.com (home page confirms State Senator, 33rd District, Franklin and Adams Counties; home page has no voter ID link)",
+        "official site news releases: 3 on the subject (2022-01-28, 2023-01-12, 2023-09-23)",
+        "blocked: https://ballotpedia.org/Doug_Mastriano (empty page returned)",
+        "two web searches on his name plus voter ID, and on his 2026 status; he is a sitting senator whose current term runs to 2028 and he said he would not run for governor in 2026 (news result, not saved)",
+        "campaign site: not reviewed (no separate campaign URL located)",
+        "legislature bill pages for sponsorships: not searched, linked separately",
+        "news interview in which he compared Afghan elections to Pennsylvania: not reviewed, not fetched (https://www.foxnews.com/politics/doug-mastriano-says-afghan-elections-were-more-secure-pennsylvanias-voter-id.amp)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:11:42.229Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:45:58.713Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.463Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

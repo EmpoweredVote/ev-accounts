@@ -1,0 +1,338 @@
+{
+  "politician_id": "96e589b9-d04a-4749-bf9f-9b66eaea5083",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "49a487d0e8e05b2b1a4d80b94ff0c880c9e747280f7e3f66b037e19750c41df7",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=4164",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "“Only U.S. citizens should vote in U.S. elections,” said Rep. Hern. “By closing loopholes and reinforcing accountability, we help ensure Americans' voices are accurately represented when they cast their ballots. The overwhelming majority of Americans support requiring ID to vote, and I’m proud to have cosponsored and helped pass this commonsense legislation out of the House so we can begin restoring trust in our elections.”",
+      "note": "Quote in his official press release 'Hern Votes to Restore Election Integrity', issued the day of his vote for the SAVE America Act. He says he cosponsored it and supports requiring ID to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d95bc743f71a7fe1bdcf208d347a73b179cec188c43ddad3277cc1dc8b7d87f",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=4164",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Congressman Kevin Hern (OK-01) voted today in support of the SAVE America Act, which protects the voice of every lawful American voter by requiring proof of citizenship for voter registration and photo ID when voting in federal elections, and ordering states to remove noncitizens from their lists of eligible voters.",
+      "note": "Statement issued by his office describing the SAVE America Act as requiring proof of citizenship to register, photo ID at federal elections, and removal of noncitizens from voter lists. The release also says the bill allows various forms of documentation and of photo ID, with provisions for name changes.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32f0f0dfea6761e53c8a8273fa7be48a79e24498a25f498c582c93d9195aeb34",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=3086",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“The SAVE Act is simple: only American citizens can vote in our elections,” said Chairman Hern. “It’s not controversial, it’s just common sense! After four years of dangerous open border policies, I’m proud to work alongside the Trump Administration to secure our border and protect Americans from Biden’s failed policies.”",
+      "note": "Quote in his official press release on House passage of H.R. 22, the SAVE Act, which he describes as requiring proof of citizenship to register to vote in federal elections. He ties it to border security.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b1967960cb6466f549fc7827ca84331cd5c5cd16abc8582e645825bb1236f11",
+      "kind": "own-words",
+      "url": "https://hernforsenate.com/promises-kept/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I am proud to cosponsor the SAVE America Act. Only American citizens should vote in American elections. The SAVE America Act, along with related legislation, has passed the House of Representatives multiple times with my support. This legislation would simply ensure that an individual provides proof of citizenship when registering to vote and photo identification when at the polls. These commonsense reforms are supported by the vast majority of Republicans, Democrats, and Independents. If elected to the Senate, I will continue to fight to ensure that the SAVE America Act is enacted into law.",
+      "note": "Senate campaign site 'promises kept' page (undated; it refers to Trump's first year back, so written in 2026). He says he cosponsors the SAVE America Act and will push for it in the Senate.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "049a86595403003837e54ddaeb134862de8e649bb7ee13c551187a266a08f6dd",
+      "kind": "own-words",
+      "url": "https://hernforsenate.com/promises-kept/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I voted against the Democrats so-called For the People Act (H.R.1) which would interject more Washington cronyism between voters and the ballot box, restrict their first amendment rights, and limit our states’ authority to administer their own electoral process.",
+      "note": "Senate campaign site (undated, 2026). He describes his vote against H.R. 1, For the People Act, as protecting states' authority to run their own elections. Related to election rules in general, not to ID itself.",
+      "subjects": [
+        "state control of elections",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f944d544df77bd4fb87586fc1e721040fdbf64d3d592a880a3829be420a884f8",
+      "kind": "record",
+      "url": "https://hernforsenate.com/promises-kept/",
+      "date": "2026",
+      "date_precision": "year",
+      "act": "sponsor",
+      "motion": "Cosponsor of the SAVE America Act (proof of citizenship to register, photo ID at federal elections), as stated on his campaign site; bill number not confirmed because congress.gov was blocked",
+      "note": "His own campaign page says he cosponsors the SAVE America Act. I could not check the congress.gov cosponsor list.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:38.663Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e76b32c68caa10bfb4558d9f4454270cbd449c72810ce9656c8dc25352f70824",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=585",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "“The bill we voted on today is an attack on our Second Amendment rights; it targets law-abiding citizens and takes away their right to due process.",
+      "note": "Press release quote after his vote on the June 2022 gun bill (red flag funding); he also says he will fight to protect Second Amendment rights.",
+      "subjects": [
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c6ded354efa69dd4c1d81f13e8dac531a496823cfcb0a588a8bff386ede14a3",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=309",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "We all believe that background checks are important, that we need to keep firearms out of the hands of criminals and people who pose a threat to their communities.",
+      "note": "Press release on his votes against H.R. 8 and H.R. 1446; the release lists objections to extra checks on private transfers and to the longer transfer window.",
+      "subjects": [
+        "background checks on gun sales",
+        "background checks on private sales",
+        "waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22890a3846f0d43d6085eb29064f7d2148bb52b85a41621a904289cb48cae299",
+      "kind": "own-words",
+      "url": "https://hern.house.gov/news/documentsingle.aspx?DocumentID=225",
+      "date": "2020-05-07",
+      "date_precision": "day",
+      "passage": "With H.R. 5717, the Gun Violence Prevention and Community Safety Act, Democrats want to leave Americans defenseless at our most vulnerable moment.",
+      "note": "His op-ed opposing H.R. 5717, which he says dictates gun-ownership and storage rules; also says the Second Amendment's “shall not be infringed” has no exceptions.",
+      "subjects": [
+        "Second Amendment",
+        "safe storage rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "removing noncitizens from voter rolls",
+        "election integrity laws in general",
+        "state control of elections",
+        "mail-ballot ID",
+        "no-ID fallback"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kevin_Hern says he advanced from the June 16, 2026 primary for U.S. Senate (Oklahoma) and is on the November 3, 2026 general election ballot; not running for re-election to the House",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "official House site hern.house.gov: press release list pages 1-6 (titles scanned for the subject), two release pages read, issues page, cosponsored-bills page (no subject items visible)",
+        "campaign site hernforsenate.com: home page and promises-kept page read; no separate issues page found",
+        "Ballotpedia (page read; no Candidate Connection survey answers from him)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/7296/cosponsors (Cloudflare challenge)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (Cloudflare challenge)",
+        "blocked: https://www.govtrack.us/congress/bills/119/hr7296 (Cloudflare challenge)",
+        "not reviewed: news search on his name plus the subject words (the shared web-search budget was used up)",
+        "not reviewed: ontheissues.org, Vote Smart, debate and interview video",
+        "nothing on the subject: mail-ballot ID, free state ID, provisional ballot or affidavit for voters without ID"
+      ],
+      "found": 6,
+      "at": "2026-10-22T21:57:38.663Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "red-flag orders",
+        "gun registry",
+        "gun transfers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (hern.house.gov)",
+        "web search (official site)",
+        "not reviewed: ballotpedia",
+        "not reviewed: congress.gov sponsorships"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

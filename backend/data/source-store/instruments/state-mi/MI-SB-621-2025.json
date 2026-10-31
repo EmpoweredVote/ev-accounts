@@ -1,0 +1,48 @@
+{
+  "id": "MI-SB-621-2025",
+  "scope": "state:mi",
+  "title": "SB 621 (2025-2026 Regular Session, Michigan Legislature (bill page title: \"Senate Bill 621 of 2025\")): Elections: voters; definition of identification for election purposes; clarify to exclude mobile licenses. Amends sec. 2 of 1954 PA 116 (MCL 168.2 ).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0621",
+    "https://www.legislature.mi.gov/documents/2025-2026/billintroduced/Senate/htm/2025-SIB-0621.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2 (as in the version read)\n(quote) (n) \"Identification for election purposes\" means, if issued to the individual presenting the card or document and if presented for voting purposes the name on the card or document sufficiently matches the individual's name in the individual's voter registration record so as to accurately identify the individual as the registered elector, or if issued to the individual presenting the card or document and if presented for voter registration purposes, any of the following:\n(section) Sec. 2 (as in the version read)\n(quote) (i) Except as otherwise provided in this subparagraph, an operator's or chauffeur's license issued under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or an enhanced driver license issued under the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.301 to 28.308.\n(section) Sec. 2 (as in the version read)\n(quote) (B) A mobile enhanced driver license issued under section 4 of the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.304.\n(section) Sec. 2 (as in the version read)\n(quote) (ii) Except as otherwise provided in this subparagraph, an official state personal identification card issued under 1972 PA 222, MCL 28.291 to 28.300, or an enhanced official state personal identification card issued under the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.301 to 28.308.\n(section) Sec. 2 (as in the version read)\n(quote) (A) A mobile official state personal identification card issued under section 2 of 1972 PA 222, MCL 28.292.\n(section) Sec. 2 (as in the version read)\n(quote) (B) A mobile enhanced official state personal identification card issued under section 4 of the enhanced driver license and enhanced official state personal identification card act, 2008 PA 23, MCL 28.304.\n(section) Sec. 2 (as in the version read)\n(quote) (iv) Except as otherwise provided in this subparagraph, a current state personal identification card issued by another state.\n(section) Sec. 2 (as in the version read)\n(quote) This subparagraph does not include a mobile state personal identification card issued by another state.\n(section) Sec. 2 (as in the version read)\n(quote) (v) A current state government issued photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (vi) A current United States passport or federal government issued photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (vii) A current military photo identification card. (viii) A current tribal photo identification card.\n(section) Sec. 2 (as in the version read)\n(quote) (ix) A current photo identification card issued by a local government.\n(section) Sec. 2 (as in the version read)\n(quote) (x) A current student photo identification card issued by an educational institution.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Only the section(s) quoted above are amended; no other subject.",
+  "sponsors": [
+    {
+      "name": "Erika Geiss (District 1)",
+      "role": "prime",
+      "version": "Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Sarah Anthony (District 21)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Sue Shink (District 14)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    },
+    {
+      "name": "Mary Cavanagh (District 6)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

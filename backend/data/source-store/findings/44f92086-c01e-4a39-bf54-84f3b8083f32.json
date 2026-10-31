@@ -1,0 +1,48 @@
+{
+  "politician_id": "44f92086-c01e-4a39-bf54-84f3b8083f32",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity: https://ballotpedia.org/Don_Lamb names him Indiana Director of Agriculture (appointed March 1, 2023, term ends January 8, 2029); not a legislator and not on a ballot",
+        "On the Record (0 appearances)",
+        "official site https://www.in.gov/isda/about-isda/director-don-lamb/ : nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "legislature bill pages: not applicable, not a legislator (iga.in.gov legislator list page did not render)",
+        "news search: not reviewed, web search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:27:28.886Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (provisional ballot, affidavit, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and election integrity generally"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Don_Lamb (confirms he is the appointed director of the Indiana State Department of Agriculture, not a legislator)",
+        "web search on name plus voter ID and election integrity: nothing on the subject; results are about farm policy",
+        "no campaign site (appointed official, not a candidate)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:57:01.632Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

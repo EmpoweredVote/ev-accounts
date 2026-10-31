@@ -1,0 +1,139 @@
+{
+  "politician_id": "01d02684-5189-4b52-9d38-e7827b4d6b42",
+  "findings": [
+    {
+      "id": "5579b3a5297349b804767fa110c5248d254bbd42626ad5c62f65e7717e3bf26d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "yea",
+      "motion": "adoption of conference committee report (Record 1128)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report (Record 1128), 2011-05-16: yea (tally 98–46); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.559Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "6d55cb8dee07b39e5ea52ead4029838ba84396b08933c954e0d7d6eb915e5fb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: yea (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Charlie_Geren (fetched by curl) shows he is the sitting Texas House District 99 member and is on the 2026 general-election ballot after winning his 2026 primary; https://house.texas.gov/members/member-page?district=99 also names him",
+        "On the Record (0 appearances for this politician)",
+        "Ballotpedia: nothing on the subject in the page text",
+        "Texas House member page: media tab link not opened; the page shows no election items",
+        "Texas Legislature Online 89R bill histories for SB 16, HB 5337, HB 304, HB 892, HB 1670: fetched; his name is not among the authors, coauthors or sponsors",
+        "campaign site: not located",
+        "news search (2 searches across this person): no own-words statement or sponsorship on the subject surfaced",
+        "blocked: https://app.legiplex.com/profile/charlie-geren-26 (aggregator, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T14:33:07.135Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "firearms regulation",
+        "gun rights",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://theballotbrief.com/candidate/charlie-geren-tx (lists him as Republican incumbent running for TX House District 99 in 2026; nothing on the subject)",
+        "blocked: https://texasscorecard.com/directory/officials/charlie-geren/ (HTTP 403)",
+        "blocked: https://ballotpedia.org/Charlie_Geren (not fetched after repeated empty Ballotpedia pages in this batch)",
+        "not reviewed: bill sponsorship pages on capitol.texas.gov (dynamic search, not reached)",
+        "two web searches (nothing quotable from him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

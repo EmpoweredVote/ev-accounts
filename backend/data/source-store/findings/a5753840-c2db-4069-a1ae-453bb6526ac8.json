@@ -1,0 +1,193 @@
+{
+  "politician_id": "a5753840-c2db-4069-a1ae-453bb6526ac8",
+  "findings": [
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "08efc6e3e3ec2782fb7b245af592d8e3d7bb419e6a61f1ccfeed9a4466629121",
+      "kind": "own-words",
+      "url": "https://www.house.texas.gov/pdfs/newsletters/89/2025-Newsletter-Legislative-Update.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Summary: This proposition is my favorite, because I had the honor of carrying and passing it in the Texas House.",
+      "note": "From her official House newsletter (written before the 2025-11-04 vote), on Proposition 16, SJR 37, 'Requiring US Citizenship to Vote.'",
+      "subjects": [
+        "citizenship required to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d95c4c91f0d4940a7b365b7f5d172d9965e9c354c7cd3d2ce2f1a2a790583787",
+      "kind": "own-words",
+      "url": "https://www.house.texas.gov/pdfs/newsletters/89/2025-Newsletter-Legislative-Update.pdf",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Passing this amendment will make it clear that non-citizens are disqualified from voting in any election in Texas.",
+      "note": "From her official House newsletter, explaining Proposition 16 (SJR 37) to voters.",
+      "subjects": [
+        "citizenship required to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c811109f91e85bc93ac97bf377e522aa61d6bb42e040b0a22913624c2fc09bc6",
+      "kind": "own-words",
+      "url": "https://votecandynoble.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "In the most recent session, Candy was House author of the bill to restore the Ten Commandments to public school classrooms and House author of the bill ensuring that only U.S. citizens can vote in Texas elections.",
+      "note": "From her campaign site (page undated; it says the amendment was approved by voters, so it was written after November 2025). The page lists 'Improving Border Security, Texas Security, Election Integrity' as a heading.",
+      "subjects": [
+        "citizenship required to vote",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e99a8637e9e20a39e3ebd76d06ac981fafb0a6e68670423d6127c74f1760a31b",
+      "kind": "own-words",
+      "url": "https://votecandynoble.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Sponsored a constitutional amendment, approved overwhelmingly by Texas voters, ensuring that only U.S. citizens can vote in Texas elections",
+      "note": "Bullet on her campaign site (page undated; written after November 2025) about the citizenship-to-vote amendment.",
+      "subjects": [
+        "citizenship required to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7b0a39a602492ba553cceeb8e9f7cfa6ff1e9bd6b22b8f9650341cd10f2d242",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "author",
+      "motion": "Author of HJR 161, constitutional amendment on citizenship to vote",
+      "note": "Official bill page shows her as author of HJR 161 (89th Legislature, 2025). Last action shown: laid on the table subject to call, 2025-05-09. Its Senate version SJR 37 went to the ballot.",
+      "subjects": [
+        "citizenship required to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9ec7568ece5e3ed2c52b6e0d13e6c959a83e323b00fadb5368d06e73201fd9b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "sponsor",
+      "motion": "House sponsor of SJR 37, constitutional amendment on citizenship to vote",
+      "note": "SJR 37 (89th Legislature, 2025) is titled 'Proposing a constitutional amendment clarifying that a voter must be a United States citizen.' Official bill page lists her as House sponsor. The page's action list shows House third reading on 2025-05-10 and adoption on 2025-05-12.",
+      "subjects": [
+        "citizenship required to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:25.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "citizenship required to vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House newsletter PDF, 2025 legislative update (her own words; saved)",
+        "campaign site https://votecandynoble.com (saved)",
+        "Texas Legislature Online bill history pages for HJR 161 and SJR 37 (2025)",
+        "Texas Legislature Online page for HB 892 and SB 16 (2025): she is not listed on either",
+        "official House member pages: search result lists house.texas.gov/members/3740 (page not fetched; not reviewed)",
+        "a Southeast Texas legal-news story on her committee testimony for the citizens-only voting resolution: blocked: https://setexasrecord.com/stories/671055385-texas-laws-should-be-decided-by-citizens-noble-says-during-hearing-on-citizens-only-voting (404 after redirect)",
+        "news searches on her name plus election integrity, voter ID and citizenship",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Candy_Noble",
+        "not reviewed: a mail-ballot or photo-ID bill search by author (no author search available)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T15:16:25.415Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

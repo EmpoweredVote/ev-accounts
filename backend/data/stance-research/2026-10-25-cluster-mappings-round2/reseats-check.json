@@ -1,0 +1,16 @@
+{
+  "note": "Post-write gate input for migration 1941. Only the 10 RE-SEATS are listed: a blank spoke seats no chair and owes this gate nothing. season_id scopes the lookup to Season 2 — without it the gate joins every context row to every answer row and can judge an untouched Season 1 row instead (the CA_0190 trap).",
+  "season_id": "86d893a1-c1a2-4bbf-b4e5-69ec43221194",
+  "rows": [
+    { "politician_id": "f865995d-ad3a-4d2d-827f-ed8a1a67af18", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "Michael J. Rodrigues / taxes" },
+    { "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "William N. Brownsberger / taxes" },
+    { "politician_id": "ab975fdf-b4f1-4955-94a4-97681a2a8d08", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "William J. Driscoll / taxes" },
+    { "politician_id": "2c53dc2c-38ae-4f39-873d-9ea1841b1c4c", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "Nick Collins / taxes" },
+    { "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "Michael D. Brady / taxes" },
+    { "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "John F. Keenan / taxes" },
+    { "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f", "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb", "chair_after": 2, "who": "Joan B. Lovely / taxes" },
+    { "politician_id": "c4c3ed02-2592-4505-a26c-0195d0b5314e", "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3", "chair_after": 3, "who": "Judith A. Garcia / housing" },
+    { "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c", "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3", "chair_after": 3, "who": "Samantha Montano / housing" },
+    { "politician_id": "fd3bf15c-265b-46a9-aa72-c9097749d762", "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3", "chair_after": 3, "who": "Chynah Tyler / housing" }
+  ]
+}

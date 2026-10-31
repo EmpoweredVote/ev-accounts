@@ -1,0 +1,88 @@
+{
+  "politician_id": "d7dda604-87e2-4613-8d13-3bf2c9f0e6fb",
+  "findings": [
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Cavitt'), linked to Cameron Cavitt (district 106) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.338Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Cameron Cavitt (District 106)') on the official bill page; linked to Cameron Cavitt via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.338Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity",
+        "mail ballot ID",
+        "voter-roll checks"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not run in this session)",
+        "official House member page https://gophouse.org/member/RepCamCavitt (about page and posts list: confirms 106th District member, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Cameron_Cavitt (page returned empty)",
+        "Wikipedia page: nothing on the subject",
+        "Michigan Votes joint resolution page (confirms name among co-sponsors; sponsorship linked separately)",
+        "campaign site: none found (cameroncavitt.com does not resolve; Branch page 404)",
+        "two web searches on name plus voter ID, proof of citizenship, election integrity: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:49:25.021Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.338Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

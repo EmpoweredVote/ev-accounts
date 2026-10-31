@@ -1,0 +1,266 @@
+{
+  "politician_id": "842f6e36-3ffa-423c-b445-f38f63060de6",
+  "findings": [
+    {
+      "id": "ddeed1f0681dfbce57dbd4ed60af75cfe69239b04661c092c6dae0c56db76edc",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2025/rep-zimmerman-votes-for-constitutional-amendment-to-require-voter-id/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "It is important for the citizens of a democracy to have faith in the electoral process.",
+      "note": "Quote in his press release on his vote for the photo ID constitutional amendment. The rest of the release is behind a subscriber login.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:01:15.733Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75034277f4533ef0374d656e0c44123ed9deb808ab75d7fb986c7628a6e58512",
+      "kind": "own-words",
+      "url": "https://www.wispolitics.com/2025/rep-zimmerman-votes-for-constitutional-amendment-to-require-voter-id/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "This constitutional amendment ensures that Wisconsinites will have full confidence in the integrity of our elections.",
+      "note": "Same release; he says the photo ID amendment supports confidence in elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:01:15.733Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Zimmerman') on the official bill page; linked to Shannon Zimmerman via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Zimmerman') on the official bill page; linked to Shannon Zimmerman via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('ZIMMERMAN'), linked to Shannon Zimmerman (district 30) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/30/zimmerman/ (confirms 30th District representative; nothing on the subject in the text returned)",
+        "candidacy confirmed: https://theballotbrief.com/state/wisconsin/pierce-county/wisconsin-assembly-district-30 lists him on the Nov 3 2026 ballot",
+        "blocked: https://ballotpedia.org/Shannon_Zimmerman_(Wisconsin) (empty page)",
+        "not reviewed: https://www.wispolitics.com/wp-content/uploads/2019/11/191122-Zimmerman.pdf (PDF text unreadable)",
+        "not reviewed: https://www.wispolitics.com/wp-content/uploads/Zimmerman-Campaign-Notice-2026.pdf (PDF text unreadable)",
+        "campaign site: none found (Ballot Brief notes no campaign site as of 2026-09-07)",
+        "news search on name plus voter ID / election integrity: one own-words release found; nothing on SAVE Act or proof of citizenship",
+        "legislature bill pages: not searched (votes and sponsorships linked separately)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T23:01:15.733Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T23:15:12.785Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

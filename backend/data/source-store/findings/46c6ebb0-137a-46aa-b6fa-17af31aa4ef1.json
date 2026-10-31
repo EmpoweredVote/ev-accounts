@@ -1,0 +1,185 @@
+{
+  "politician_id": "46c6ebb0-137a-46aa-b6fa-17af31aa4ef1",
+  "findings": [
+    {
+      "id": "c64eac991097494b030f4e25ffcae18e4b96075024fba31c6f7d1a03ce428394",
+      "kind": "own-words",
+      "url": "https://www.governor.virginia.gov/media/governorvirginiagov/governor-of-virginia/pdf/eo/EO-13-Ensuring-Secure,-Accurate,-and-Fair-Elections.pdf",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "The sanctity of accurate, fair, open, and secure elections is core to our identity as Americans and Virginians.",
+      "note": "Opening statement of Executive Order 13 (2026), signed by the Governor, on election security and voter-list accuracy.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85962ae976e85e23544216c90178ae0595354da538e234f505436dcf27c5586b",
+      "kind": "own-words",
+      "url": "https://www.governor.virginia.gov/media/governorvirginiagov/governor-of-virginia/pdf/eo/EO-13-Ensuring-Secure,-Accurate,-and-Fair-Elections.pdf",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "Over ninety percent of voters in Virginia submit electronic registration applications online through the Department of Elections, which requires a valid Department of Motor Vehicles credential, or submit registration applications when conducting transactions directly with the Department of Motor Vehicles.",
+      "note": "Executive Order 13 describes online registration as requiring a valid DMV credential, and DMV data sharing with the Department of Elections.",
+      "subjects": [
+        "ID or credential to register to vote",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b5a7a4c4d0d586f622d89a9ac1afdc884055e2bb32fa12c4f82eeb2ef29d3d4c",
+      "kind": "own-words",
+      "url": "https://www.governor.virginia.gov/media/governorvirginiagov/governor-of-virginia/pdf/eo/EO-13-Ensuring-Secure,-Accurate,-and-Fair-Elections.pdf",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "passage": "Marked absentee ballots may not be counted until the last four digits of a voter’s social security number and year of birth provided on the envelope are matched to the voter’s record in the statewide voter registration system.",
+      "note": "Executive Order 13 lists, among procedures the Elections Commissioner must certify (restating Executive Order 35 of 2024), a match of the last four digits of the SSN and birth year on a marked absentee ballot envelope.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcd79768035b7c9146dd053b7c89821f1d609ac424c718f0b465517557878a27",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/media/governorvirginiagov/governor-of-virginia/pdf/eo/EO-13-Ensuring-Secure,-Accurate,-and-Fair-Elections.pdf",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Executive Order 13 (2026), Ensuring Secure, Accurate, and Fair Elections: directs annual certification of election security steps, systematic removals of ineligible voters (including non-citizens) finished 90 days before federal elections, and rejoining ERIC",
+      "note": "Executive order signed by the Governor on 24 March 2026.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3779adedf80f4751b61012499af43b63e7b83dbc3d9c5969425d3dbe89b813fd",
+      "kind": "own-words",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/may-releases/name-1118109-en.html",
+      "date": "2026-05-19",
+      "date_precision": "day",
+      "passage": "I support the intent of this legislation, which is to protect the integrity of our voter rolls by ensuring that voters are not inappropriately or unduly removed.",
+      "note": "From the Governor's 19 May 2026 release on vetoes, about HB 111 (limits on how registrars cancel voter registrations).",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2172e9c8f1f17f74cbb4e69c238496eeccbc26b830c7dc3819b586d97b1c9a0",
+      "kind": "record",
+      "url": "https://www.governor.virginia.gov/newsroom/news-releases/2026/may-releases/name-1118109-en.html",
+      "date": "2026-05-19",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-111-2026",
+      "act": "vetoed",
+      "note": "HB 111 would limit cancelling a voter registration to approved state data sources. The Governor vetoed it on 19 May 2026.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a04fdee5070791c97d7a90bc71e51ef3f2056aa01fc5c68e359cac5848e256e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "On Passage, Safeguard American Voter Eligibility Act (documentary proof of citizenship to register to vote in federal elections); House roll call 345",
+      "note": "As U.S. Representative she was recorded 'No' on passage; the bill passed the House 221-198.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:55.968Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and list maintenance",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "governor's official site: executive actions page and Executive Order 13 PDF",
+        "governor's official site: 2026-05-19 veto news release",
+        "campaign site (abigailspanberger.com): nothing on the subject on the home page",
+        "Ballotpedia profile: nothing on the subject",
+        "House Clerk roll call pages 344 and 345 (2024) for her U.S. House votes",
+        "news search on her name plus voter ID and SAVE Act: no first-hand quote found; one opposition-site claim about her views on voter ID was not saved because it is not her own words",
+        "one local news report on the March 2026 executive order",
+        "blocked: https://electionlawblog.org/2026/governor-spanberger-marks-61st-anniversary-of-voting-rights-act-by-signing-election-security-bills/ (403 Cloudflare)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB111 (page needs JavaScript, no text)",
+        "not reviewed: 2025 debate and interview videos"
+      ],
+      "found": 7,
+      "at": "2026-10-28T16:25:55.968Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

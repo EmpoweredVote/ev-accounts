@@ -1,0 +1,169 @@
+{
+  "politician_id": "fb5368e7-35c6-4ae0-b97b-b2e1fb5fb9a6",
+  "findings": [
+    {
+      "id": "f781b481fe09cba0fddd797e639402f31a23777a108d00b5ffe540766da78d7d",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/allen-county-legislators-remind-hoosiers-of-oct.-10-voter-registration-deadline/",
+      "date": "2023-10-04",
+      "date_precision": "day",
+      "passage": "State Rep. Bob Morris (R-Fort Wayne) said to register, Indiana residents must be at least 18 years old on or before the upcoming election, have a valid Indiana Driver's License or Indiana State Identification Card, be a citizen of the United States, have lived in the same precinct for at least 30 days before the next election, and not currently imprisoned after being convicted of a crime.",
+      "note": "Joint press release from Allen County House members. Describes current registration requirements (state ID or driver's license, citizenship) as attributed to Morris in indirect speech. Describes existing law; does not say he wants it changed.",
+      "subjects": [
+        "ID to register to vote",
+        "citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:58:10.901Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6944f8a6f6a53de79cc78bd0a99dcca2ba91a358603cc383dd392de2ac58b52",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/fort-wayne-lawmakers-don-t-miss-oct.-5-voter-registration-deadline/",
+      "date": "2020-09-23",
+      "date_precision": "day",
+      "passage": "\"IndianaVoters.com provides a simple way to register and it takes just a few minutes,\" Morris said.",
+      "note": "Joint press release. Morris encourages online registration and checking eligibility. The same release lists the ID and citizenship rules for registering, but attributes that sentence to another member. No view on voter ID itself.",
+      "subjects": [
+        "voter registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:58:10.901Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "5501db6cfef221a1dd89c9459411cfd71374c39ebdd010ea0445d695c480754c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/morris-bill-to-require-non-photo-id-card-passes-out-of-senate/",
+      "date": "2015-03-26",
+      "date_precision": "day",
+      "passage": "“For those who hold certain religious beliefs against having their photograph taken, they have been unable to make use of those services because of the law. That is why I am proud to author this legislation that not only addresses this issue, but prevents against false information from being submitted as well.”",
+      "note": "Press release quoting him on his bill to let people with a religious objection to photos get a state non-photo ID. The release says the card does not allow the holder to vote.",
+      "subjects": [
+        "state photo-exempt ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:26:39.138Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b344100e2990c6221800b459649b2e209112f0f628a0e6f3b96b723ace39eabf",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/morris-bill-to-require-non-photo-id-card-passes-out-of-senate/",
+      "date": "2015-03-26",
+      "date_precision": "day",
+      "act": "author",
+      "motion": "HB 1631 (2015), state photo-exempt ID for religious objectors; passed the Senate 37-13",
+      "note": "He authored the bill. The Bureau of Motor Vehicles would issue a photo-exempt ID to U.S. citizens with a religious objection to being photographed. The release says the bill does not allow the holder to vote, and makes false information on the ID a felony. The release gives the number as HB 1631 in one place and HB 1361 in another.",
+      "subjects": [
+        "state photo-exempt ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:26:39.138Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "voter registration requirements"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Bob_Morris and https://ballotpedia.org/Indiana_House_of_Representatives_District_84 name Bob Morris as District 84 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 ballot",
+        "On the Record (0 appearances; run with --names, nothing found)",
+        "official site: House caucus member page https://www.indianahouserepublicans.com/members/general/bob-morris/ and three press releases reviewed",
+        "Ballotpedia Bob Morris page: sponsored-legislation table loaded without bill rows; nothing on the subject",
+        "blocked: https://iga.in.gov (legislature bill pages load by script, bill sponsorships and roll calls not readable)",
+        "blocked: https://www.indianahouserepublicans.com/search (404)",
+        "not reviewed: campaign Facebook https://www.facebook.com/profile.php?id=100008140180869",
+        "news search not run: web search budget used up",
+        "nothing on the subject beyond the findings listed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:58:10.901Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "state photo-exempt ID",
+        "ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "election security laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page under the name Bob Morris (confirms House District 84 seat, on the 2026 general-election ballot, won the 2026 primary; nothing on the subject)",
+        "House caucus member page https://www.indianahouserepublicans.com/members/general/bob-morris/ (found the 2015 press release on a state non-photo ID bill; also voter-registration-deadline reminders, not saved)",
+        "news and bill search (2 searches): no other bill or quote from him on the subject",
+        "campaign site: none found",
+        "not reviewed: legislature bill pages (not searched for votes, as instructed)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T22:26:39.138Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

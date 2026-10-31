@@ -1,0 +1,228 @@
+{
+  "politician_id": "b266c38d-9763-48d4-bcba-7b44adf79ab9",
+  "findings": [
+    {
+      "id": "0642d99d2de526ba909b2ea5fab2802dec0b2b74ab21f6ea457c72bb5588c230",
+      "kind": "own-words",
+      "url": "https://hopper4texas.com/platform/",
+      "date": "2025-12-31",
+      "date_precision": "day",
+      "passage": "Texans deserve elections they can trust. I will fight to ban hackable machines, clean up voter rolls, and make sure only citizens can vote.",
+      "note": "Under the heading Restore Election Integrity on his campaign platform page. The date is the page's last-modified date. He names voter-roll cleanup and citizen-only voting as goals. No detail on ID documents.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "voting machines"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:13.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55d980cfce260216e9998445db000886d1135e32e0122b02300e3b2a17e37202",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2332",
+      "date": "2025-03-14",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2332-2025",
+      "act": "author",
+      "motion": "HB 2332, citizenship shown on ID cards and licenses and used in election processes (filed and referred to the Elections committee)",
+      "note": "He is the author. The bill relates to how a personal identification certificate or driver's license issued to a U.S. citizen appears, and to using it in certain election processes. It was referred to committee on 2025-03-14.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "photo ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:13.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a177592d2f9f5560d19fc75e105f6e60de00c232d3d6ccb56bfc5d88381c5709",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1312",
+      "date": "2025-03-10",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-1312-2025",
+      "act": "sponsor",
+      "motion": "HB 1312, proof of citizenship to verify eligibility to vote: coauthor (referred to Elections committee)",
+      "note": "He is one of the House coauthors of HB 1312, relating to a person submitting proof of citizenship to verify eligibility to vote in Texas. The bill was referred to committee on 2025-03-10.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:13.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b6051c07053178ccab2c1e46bfc0d579d49a59dc72d8aaac4f1ac4160e31d57",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-15",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "sponsor",
+      "motion": "SJR 37, constitutional amendment clarifying that a voter must be a United States citizen: listed as House cosponsor",
+      "note": "He is listed among the House cosponsors of SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The bill history shows it filed with the Secretary of State on 2025-05-15.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:13.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e21596d2b5beec3a4a26d30be56ac425eb1e61e5c99b1fb22d7e1ce0cd335e1",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "SJR 37, constitutional amendment clarifying that a voter must be a United States citizen: adopted by the House, Record 2196, 102 yeas, 14 nays, 22 present not voting",
+      "note": "The House Journal lists Hopper among the yeas on final House adoption of SJR 37, the proposed amendment clarifying that a voter must be a United States citizen.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:13.690Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "976ca9d6116b8d50e94e54f6734c073466dcd79b534822c467c9e7620e911d20",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB892",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-892-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-892-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.513Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID on a driver's license showing citizenship",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "voting machines",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Andy_Hopper (confirms Texas House District 64, term ends 2027, next election 2026-11-03)",
+        "Texas House member page https://house.texas.gov/members/member-page/?district=64 (nothing on the subject)",
+        "campaign site https://hopper4texas.com/platform/ (election-integrity plank saved)",
+        "campaign site news list https://hopper4texas.com/news/ (first page only; no voter-ID or citizenship item seen in titles)",
+        "Texas Legislature Online bill history pages for HB 2332, HB 1312, SJR 37, HB 219, HB 304, HB 1670, HB 5337, SB 16 (89th regular session)",
+        "BillTrack50 page https://www.billtrack50.com/billdetail/1752416 (lead only; confirmed on the Texas Legislature page instead)",
+        "two news searches on his name plus voter ID and citizenship words (no statement by him found)",
+        "Texas House Journal for 2025-05-12 read for the recorded vote on SJR 37"
+      ],
+      "found": 5,
+      "at": "2026-10-28T15:16:13.690Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:55:41.513Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

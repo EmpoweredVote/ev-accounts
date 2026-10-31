@@ -1,0 +1,180 @@
+{
+  "politician_id": "016a6d2e-5e08-4b9f-a881-ca22b03ce3d8",
+  "findings": [
+    {
+      "id": "216aaa4af3aa5558c156ec06cb1cf4035d272c7ab24cb9e8f1c310ef96848801",
+      "kind": "own-words",
+      "url": "https://house-press.com/reps-burnough-davis-schofield-scott-stand-with-texas-democrats-issue-statements/",
+      "date": "2021-07-16",
+      "date_precision": "day",
+      "passage": "“As a former Lone Star State resident and voter, I am extremely proud of my fellow Texans for standing up for voting rights,” said Rep. Burnough. “Serving on the Georgia House Special Committee on Election Integrity opened my eyes to how fragile our right to vote is, and it is imperative that we all do our part to safeguard it.",
+      "note": "State House press-office release dated 2021-07-16 (the page text gives the posting date). She comments on Texas legislators leaving to block an election bill and on her service on the Georgia House Special Committee on Election Integrity. No ID or citizenship rule is named.",
+      "subjects": [
+        "election integrity laws",
+        "voting restrictions in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:54.840Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e832413f04e07cdc055049499ec44d45c89b08c16e73bfb3bcff8e54ed4ae7ca",
+      "kind": "own-words",
+      "url": "https://house-press.com/reps-burnough-davis-schofield-scott-stand-with-texas-democrats-issue-statements/",
+      "date": "2021-07-16",
+      "date_precision": "day",
+      "passage": "“We applaud the Texas Democrats for walking out to save Texas democracy,” said Reps. Burnough, Davis, Scott and Schofield. “Hoorah. Hoorah. We stand with Texas Democrats for walking out to block voting restrictions.",
+      "note": "Joint statement issued in her name and three other House members, in the same 2021-07-16 release, on Texas legislators blocking a voting bill.",
+      "subjects": [
+        "election integrity laws",
+        "voting restrictions in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:54.840Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b59ea13376dc5855a5752c2e54d30a5496b928f976ba172f0f4594366a644db0",
+      "kind": "own-words",
+      "url": "https://house-press.com/members-of-georgia-house-democratic-caucus-subcommittee-on-covid-19-oppose-ending-additional-federal-unemployment-insurance-benefits-support-state-advisory-council-reinstatement/",
+      "date": "2021-05-13",
+      "date_precision": "day",
+      "passage": "“With this reasoning, we would like to know why the governor wouldn’t veto Senate Bill 202 for significant infringements.”",
+      "note": "Joint statement of four House members including her, in a release dated 2021-05-13 mainly about unemployment benefits. It says Senate Bill 202 (2021 election law) took the secretary of state off the State Election Board and asks why the governor did not veto it.",
+      "subjects": [
+        "Georgia SB 202 (2021)",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:40:54.840Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Burnough'), linked to RHONDA BURNOUGH (district 77) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Burnough'), linked to RHONDA BURNOUGH (district 77) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Burnough'), linked to Rhonda Burnough (district 77) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "Georgia SB 202 (2021)"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Rhonda_Burnough (fetched by curl) shows she is the sitting House District 77 member, advanced from the 2026-05-19 primary and is on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances)",
+        "campaign/official site https://www.statereprhondaburnough.com (home page, blog feed, 2025 end-of-session reports page): fetched; script-built site, nothing on the subject found; /news, /issues, /about return 404",
+        "Georgia House press office (house-press.com) pages tagged with her name, pages 10, 11, 12 and the 2021 election-legislation notices: fetched; two statements on the subject saved",
+        "Ballotpedia: nothing on the subject",
+        "blocked: official legislature site https://www.legis.ga.gov (page loads by script; its data service returned 401), so her final votes on SB 202 (2021-03-25 House passage of the substitute) could not be read from the official page and are not saved",
+        "blocked: https://justfacts.votesmart.org/candidate/key-votes/168337/rhonda-burnough (403)",
+        "blocked: https://app.legiplex.com/profile/rhonda-burnough-930/ga/legislatures/2021/2021-r/legislation (403)",
+        "blocked: https://legiscan.com (challenge page)",
+        "web searches run: 3 of 10 (no news quote from her on ID, citizenship or mail ballots surfaced)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:40:54.840Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.398Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

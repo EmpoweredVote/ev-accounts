@@ -1,0 +1,114 @@
+{
+  "politician_id": "88fd133e-60e5-49a9-a7b4-7dcc2659f7b5",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Carpenter'), linked to KASEY CARPENTER (district 4) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Carpenter'), linked to KASEY CARPENTER (district 4) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Carpenter'), linked to Kasey Carpenter (district 4) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Kasey_Carpenter (member of the Georgia House, District 4, in office since 2017-11-20; sitting official, in scope)",
+        "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-4/candidates/kasey-carpenter (lists him in the 2026 general race; says he has no website or online information)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Kasey_Carpenter (fetch returned an empty page)",
+        "official House page and campaign site: none found",
+        "web search for name with voter ID and election integrity (nothing on the subject in his own words)",
+        "web search for 2026 primary (no own-words material)",
+        "web search for name with absentee and election bill (a 2021 AJC story at https://www.ajc.com/politics/capitol-recap-georgia-election-bills-start-moving-through-pipeline/RWLFVXJ4IBGV5JQCHFHCEYC6BM was fetched; its quoted-remarks passage about him concerns a sales-tax bill, not voting, so not saved)",
+        "HB 531 of 2021 and other bills in the store: not searched, as instructed",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.735Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.399Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

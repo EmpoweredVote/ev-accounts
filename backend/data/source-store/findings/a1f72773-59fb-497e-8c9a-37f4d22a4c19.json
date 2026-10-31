@@ -1,0 +1,254 @@
+{
+  "politician_id": "a1f72773-59fb-497e-8c9a-37f4d22a4c19",
+  "findings": [
+    {
+      "id": "d0104e76d75e8fbbbb8a02208016d4add6ab3acf77e84fb3d3f47e0b6fac13b3",
+      "kind": "own-words",
+      "url": "https://www.senatorhughes.com/voter-suppression-bill-disenfranchises-thousands-of-pennsylvania-voters-senator-hughes-says/",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "“Voting is a constitutional right.  Under the guise of preventing voter fraud, this bill would actually suppress the right to vote for many eligible voters in Pennsylvania who do not have a photo ID,” Hughes said.",
+      "note": "Release on the Senate passing House Bill 934, the photo-ID bill; he states his view of the bill on photo ID at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:04.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6a9aa14772fe2ac88a041fee275ac7ba10ec150ba378f1933e119193b959c63",
+      "kind": "own-words",
+      "url": "https://www.senatorhughes.com/voter-suppression-bill-disenfranchises-thousands-of-pennsylvania-voters-senator-hughes-says/",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "passage": "“The provisions of this bill almost amount to a poll tax, requiring mostly seniors to spend their valuable dollars to obtain a photo ID.”",
+      "note": "Same release; on the cost of obtaining an ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "cost of getting an ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:04.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cc12c766d1b8d92bc5818fda0f8a18553c03fbab7969c5a7cd561e909a4c7b6",
+      "kind": "own-words",
+      "url": "https://www.senatorhughes.com/senator-hughes-protests-voter-id-law-supports-repeal-legislation/",
+      "date": "2012-07-24",
+      "date_precision": "day",
+      "passage": "“This law is not about protecting against voter fraud, it is about the very real, systematic disenfranchisement of approximately 750,000 individuals – mostly the poor, the elderly, students and racial minorities. “It is voter suppression, plain and simple, and we must not stand for it.”",
+      "note": "Release on a Capitol rally against the 2012 voter ID law, where he also said he co-sponsored a bill to repeal it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:04.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49625390618395b57985c012a29bccc96dcc949a6a1c351e168c43d543d1ffb1",
+      "kind": "own-words",
+      "url": "https://www.senatorhughes.com/defendthevote/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "The bill attempts to enact unconstitutional voter ID requirements despite the thousands of people who don’t have what would be valid ID under the bill.  It also limits mail-in ballots and drop boxes, important choices for those who lack mobility or transportation.",
+      "note": "Text on his 'Defend the Vote' page about House Bill 1300 (voter ID and mail-ballot limits); page date taken from the page's publish metadata.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail ballot limits",
+        "voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:04.354Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('HUGHES'), linked to Vincent J. Hughes (district 7) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Hughes'), linked to Vincent Hughes (district 7) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Hughes'), linked to Vincent J. Hughes (district 7) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Hughes'), linked to Vincent J. Hughes (district 7) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Hughes'), linked to Vincent J. Hughes (district 7) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and free ID",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "automatic voter registration",
+        "election integrity in general"
+      ],
+      "places": [
+        "official site senatorhughes.com home page (confirms 7th Senate District, Philadelphia and Montgomery; sitting; the seat is not on the 2026 ballot as far as the page shows, not checked)",
+        "On the Record (0 appearances found)",
+        "official site tag page 'voter id' (7 items, 2012 to 2014)",
+        "official site pages: 2012-03-07 release, 2012-07-24 rally release, 2012-10-02 release, 2021 'Defend the Vote' page, 2022 Act 77 ruling statement",
+        "web searches on name plus voter ID, SAVE Act, 2025-2026: no statements from 2023 onward on voter ID or proof of citizenship found",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:12:04.354Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

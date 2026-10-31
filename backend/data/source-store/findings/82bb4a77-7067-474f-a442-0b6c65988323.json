@@ -1,0 +1,231 @@
+{
+  "politician_id": "82bb4a77-7067-474f-a442-0b6c65988323",
+  "findings": [
+    {
+      "id": "beec7b59ca554d5f2be448eb3d41a7968de565ffa2edc037d60a7b3a3d91c1e9",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/statehouse-spotlight-with-sen-schmitt-maintaining-indiana-s-secure-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voters are reminded to have a government-issued photo ID, like a driver's license or passport, when you cast your ballot.",
+      "note": "From his Statehouse Spotlight column ahead of the 2026 primary (it names the primary as Tuesday, May 5); the page shows no publication date. He reminds voters to bring photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID reminder to voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:23.262Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11d4bfaf3db83947fce8c0eada86fc6d46298930e21f76027847d1a6990cae34",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/statehouse-spotlight-with-sen-schmitt-maintaining-indiana-s-secure-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I believe one of my top priorities as a state senator is to ensure our state's elections are secure, transparent and voters understand the process, and in recent years the General Assembly has worked hard to make our elections even more secure.",
+      "note": "Same column. He describes election security as a priority; no ID or citizenship detail in this sentence.",
+      "subjects": [
+        "election integrity laws in general",
+        "election security in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:23.262Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbae33ebdb2317ab912063607d3cdcce1f5546f3ddb138075727014da23b5151",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/schmitt-election-transparency-bills-pass-senate",
+      "date": "2026-01-22",
+      "date_precision": "day",
+      "passage": "\"It is important to ensure that our elections are fair, and that is why I have made it my priority this session by authoring two bills targeted at protecting our election process,\" Schmitt said, \"These bills are one step closer to ensuring we maintain our democracy with free and fair elections here in Indiana.\"",
+      "note": "Senate news release quoting him on his two election bills (SB 112, SB 113).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:41:04.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba14697bfd2a99f8615b12bcbeb3c7fe3b842381ddfd242c2b6d08d482a068ce",
+      "kind": "record",
+      "url": "https://www.indianasenaterepublicans.com/schmitt-election-transparency-bills-pass-senate",
+      "date": "2026-01-22",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-113-2026",
+      "act": "author",
+      "note": "SB 113 requires election materials to be kept over two election cycles and available as evidence if someone is charged with election fraud. Enacted as SEA 113: 34 months retention and results published online (per Feb. 25, 2026 release).",
+      "subjects": [
+        "election integrity laws in general",
+        "election records retention"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:41:04.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5aa99f3d483e8f2199d622ebef0aeaf890eac2f691defb80d91152c9b671775",
+      "kind": "record",
+      "url": "https://www.indianasenaterepublicans.com/schmitt-governor-signs-election-bill-into-law",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-112-2026",
+      "act": "author",
+      "note": "SB 112 (SEA 112) updates a withdrawing candidate's voter registration address to match the address on the withdrawal form. Signed by the governor Feb. 24, 2026. Senator says it helps ensure Hoosiers vote where they live.",
+      "subjects": [
+        "voter-roll and registration address",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:41:04.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd5fd54fd5d04accd75ca8d3da5b11002fa84969072942cd9a4ad3379518f970",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/statehouse-spotlight-with-sen-schmitt-maintaining-indiana-s-secure-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "This year, I supported Senate Enrolled Act 12, a new law that prohibits the use of ranked choice voting in any state or local election.",
+      "note": "Same column. Says he supported SEA 12, a ban on ranked choice voting. Related election-law item, not about ID.",
+      "subjects": [
+        "election integrity laws in general",
+        "ranked choice voting ban"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:41:04.231Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "0a41541d49209a5a19bc65a0cd3530417d7df0ad9dd85b552dbfc8b709e5e81e",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/schmitt-election-bill-heads-to-governor-s-desk",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "\"There are a number of reasons a candidate for election withdraws from a race, including when they move and are no longer eligible to run for a specific seat,\" Schmitt said. \"Senate Enrolled Act 112 makes the process of changing the former candidate's voter registration easier and helps ensure Hoosiers are voting where they live.\"",
+      "note": "Caucus news release quoting him on Senate Enrolled Act 112, which he authored: it updates the voter registration of a withdrawing candidate when the address on the withdrawal form differs. Related voter-registration record item, not ID.",
+      "subjects": [
+        "voter registration records and residency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:37:23.262Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "ID with mail or absentee ballot",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll and registration address checks",
+        "election integrity laws in general",
+        "election records retention"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Daryl_Schmitt says Indiana State Senate District 48, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances)",
+        "official site https://www.indianasenaterepublicans.com/schmitt (news list reviewed for election items; fetched 7 election pages)",
+        "Ballotpedia (no issue positions; has not completed Candidate Connection survey)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_daryl_schmitt_1 (JavaScript page, no content returned)",
+        "not reviewed: bill pages for SB 112 and SB 113 text on iga.in.gov (JavaScript site)",
+        "not reviewed: news search (web search budget exhausted)",
+        "nothing on the subject: campaign site (none found), mail-ballot ID, proof of citizenship, SAVE Act"
+      ],
+      "found": 6,
+      "at": "2026-10-22T22:41:04.231Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID reminder to voters",
+        "proof of citizenship to register",
+        "voter registration records and residency",
+        "election security in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (fetched with curl): sitting Indiana Senate member, District 48, on the 2026 general-election ballot",
+        "Indiana Senate caucus page for Sen. Schmitt and his news releases (two read)",
+        "one news search on name plus subject words (a Hoodline item on SB 112 and SB 113 seen as a lead; not saved)",
+        "iga.in.gov and LegiScan not searched for votes, as instructed; the SB 10 roll calls are already on file"
+      ],
+      "found": 3,
+      "at": "2026-10-27T20:37:23.262Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

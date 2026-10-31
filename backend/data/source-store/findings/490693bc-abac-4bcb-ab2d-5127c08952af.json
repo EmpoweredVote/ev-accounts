@@ -1,0 +1,52 @@
+{
+  "politician_id": "490693bc-abac-4bcb-ab2d-5127c08952af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "Positive control: Ballotpedia confirms he holds Senate District 9 (took office 2026-02-19, current term ends 2027-01-11) and is on the November 2026 general-election ballot",
+        "his official Senate page: press room empty, nothing on the subject",
+        "his campaign site taylorfortx.com (home page and site searches for voter and election): nothing on the subject; the issues path returned 404",
+        "Branch voter-guide profile (lead only): lists economy, safety, health, education, energy positions; nothing on voting",
+        "Community Impact candidate Q&A of 2025-10-27, Texas Signal profile, and a Yahoo/Star-Telegram post-election story: nothing from him on the subject",
+        "his Senate record: the Texas Senate has not met in regular session since he took office, so no votes or bill sponsorships exist on the subject",
+        "three web searches on his name plus voter ID, SAVE Act, debate and forum words: nothing of his own found",
+        "not reviewed: video of any 2026 debate or forum, and his social media posts"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:01:11.873Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "gun restrictions for public safety",
+        "teachers carrying guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site rehmetfortexas.com (no gun text found)",
+        "iVoterGuide candidate page https://ivoterguide.com/candidate/88704/race/23449/election/1315 (both Second Amendment questions listed as not answered; nothing quoted)",
+        "web search on name plus gun terms (nothing in his own words)",
+        "Texas legislature bill pages: not reviewed, seat held since 2026 special election"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

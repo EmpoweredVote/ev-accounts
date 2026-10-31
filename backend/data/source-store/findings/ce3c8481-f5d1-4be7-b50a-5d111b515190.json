@@ -1,0 +1,129 @@
+{
+  "politician_id": "ce3c8481-f5d1-4be7-b50a-5d111b515190",
+  "findings": [
+    {
+      "id": "1dc2ff44a195725625ea01af5777b7fa04b6ade0c84f0e1b682b1d416a430417",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4227",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4227-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4227 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 509q, 509gg, 509\"",
+      "note": "Named as co sponsor ('James DeSana (District 29)') on the official bill page; linked to James DeSana via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b0bed011a34094763a68e6819a17303fd4a1a5ff554e885e9017c3c8d7f7864",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4324-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as prime sponsor ('James DeSana (District 29)') on the official bill page; linked to James DeSana via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('DeSana'), linked to James DeSana (district 29) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('James DeSana (District 29)') on the official bill page; linked to James DeSana via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.331Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID without a photo / no-ID options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 linked appearances)",
+        "official House posts https://gophouse.org/member/RepJamesDeSana/posts (12 recent posts and a search for election words, nothing on the subject)",
+        "web search on name plus subject words (nothing on the subject)",
+        "Ballotpedia not reviewed: https://ballotpedia.org/James_DeSana"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:48:48.358Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:55:46.331Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

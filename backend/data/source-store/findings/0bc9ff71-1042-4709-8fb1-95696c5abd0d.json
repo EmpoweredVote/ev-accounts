@@ -1,0 +1,59 @@
+{
+  "politician_id": "0bc9ff71-1042-4709-8fb1-95696c5abd0d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kimberly_Hardy names her as on the Nov 3, 2026 general-election ballot for NC-7 (primary canceled, she advanced)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.kimberlyhardyforcongress.com (home, /priorities, /meetkimberly, /media-hub): nothing on the subject; media-hub holds two videos (Affordability 9/23/26; Hardy: A Leader you deserve 10/12/26), not reviewed: https://www.kimberlyhardyforcongress.com/media-hub",
+        "Ballotpedia: nothing on the subject",
+        "Bluesky https://bsky.app/profile/kimberlyhardync.bsky.social (last 100 posts via public API): nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "not reviewed: https://x.com/kimberlyhardync",
+        "not reviewed: https://www.facebook.com/KimberlyHardyForCongress",
+        "news search: not done, web search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:49:57.089Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity",
+        "voting rights"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "https://ballotpedia.org/Kimberly_Hardy (confirms she is on the 2026-11-03 general ballot for U.S. House NC-7; no survey answers; nothing on the subject)",
+        "campaign site https://www.kimberlyhardyforcongress.com (home, /priorities, /meetkimberly, /media-hub: nothing on the subject)",
+        "https://www.ballotready.org/people/kimberly-michelle-hardy (nothing on the subject)",
+        "https://www.cityviewnc.com/?p=48186 (campaign interview, nothing on the subject)",
+        "https://www.wect.com/2026/10/13/candidate-forum-draws-voters-ahead-early-voting/ (forum report, does not quote her on the subject)",
+        "not reviewed: https://www.wect.com/2026/10/13/watch-now-forum-featuring-candidates-running-district-7-seat-us-house-representatives/ (forum video)",
+        "web searches on her name with voter ID, SAVE Act, election integrity, voting rights: nothing on the subject",
+        "congress.gov: not applicable, she has not served in Congress; no legislative record"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:58:49.544Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

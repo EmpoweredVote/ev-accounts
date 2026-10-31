@@ -1,0 +1,241 @@
+{
+  "politician_id": "5c631466-ba33-4731-89a3-ca017444cf78",
+  "findings": [
+    {
+      "id": "e0a4bf999be7013f89c52ebb683cd8ecf09341cbeb615df24ca9bb5e147533fb",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/74/green/media/xtfpcoya/voter-id-press-release.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“My goal is to make sure the people of Wisconsin have full confidence in the security and integrity of their elections,” said Green. “Voter ID is a common-sense requirement for every election.”",
+      "note": "Quoted in his office's release on the Assembly vote for Senate Joint Resolution 2 (voter ID constitutional amendment).",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:28.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f55f573efaf18268c210cd3c95c63a160dda05ea8ccd480d1db84345c7b1dbb",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/74/green/media/xtfpcoya/voter-id-press-release.pdf",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "“Election integrity is an important issue in my district,” said Green. “With the rise of activist judges in Wisconsin, we must protect voter ID by way of the constitution. I am confident that voters will approve this amendment overwhelmingly this April.”",
+      "note": "Same release. He ties protecting voter ID in the constitution to concern about courts.",
+      "subjects": [
+        "voter ID in the state constitution",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:28.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f51e41e6c8361fe218a6359096646cad42bca23f78571b974714a319d31c22a6",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/74/green/media/dcsacxbg/election-integrity-press-release.pdf",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "passage": "“With these reforms and constitutional amendments, elections in Wisconsin will be transparent and fair and would make Wisconsin one of the strongest states on election integrity,” said Rep. Green.",
+      "note": "Quoted in his office's release on an Assembly election package. The release lists ID for all indefinitely confined voters, added checks against non-citizen voting, and Assembly Joint Resolutions 76 (citizens-only electors), 77 (no private election funds) and 78 (voter ID in the constitution).",
+      "subjects": [
+        "election integrity",
+        "voter ID in the state constitution",
+        "ID for indefinitely confined absentee voters",
+        "non-citizen voting checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:58:28.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Green') on the official bill page; linked to Chanz Green via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "859b5c8ce4718a309615ebc193a6cd65c0c31ba55084517735acaa9c8a0dc903",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/ajr78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 9/29/2023 (first consideration); committee recommended adoption 11/6/2023; laid on the table 11/9/2023; died (Failed to adopt pursuant to Senate Joint Resolution 1, 4/15/2024)",
+      "note": "Named as co sponsor ('Green') on the official bill page; linked to Chanz Green via the official 2023 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('GREEN'), linked to Chanz Green (district 74) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Green') on the official bill page; linked to Chanz Green via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('GREEN'), linked to Chanz Green (district 74) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bff7ebb8d70b2c56770ba61c80e5c48e6eeb953970ea91ca07f3a04122b3427",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/sjr73",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2023 Enrolled Joint Resolution 9, first consideration); adopted by Senate 11/7/2023 and concurred by Assembly 11/9/2023",
+      "note": "Named as co sponsor ('Green') on the official bill page; linked to Chanz Green via the official 2023 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.784Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution",
+        "ID for indefinitely confined absentee voters",
+        "non-citizen voting checks",
+        "citizen-only voting amendment",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this id)",
+        "official Assembly press releases for District 74 (two releases read in full as PDFs)",
+        "https://www.wispolitics.com/2026/green-campaign-chanz-green-announces-re-election-for-the-74-th-assembly-district/ (confirms a 2026 re-election run, dated 2026-04-20; rest behind a subscriber wall; nothing on the subject)",
+        "web search on name plus voter ID",
+        "blocked: https://ballotpedia.org/Chanz_Green (empty page returned, nothing read)",
+        "not reviewed: campaign site (not located)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:58:28.195Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T23:15:12.784Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "politician_id": "786ac925-59d3-40e3-a9ce-b63a54f4caf4",
+  "findings": [
+    {
+      "id": "c2158b82a443b564335e2a4a9db363c1576174ee24927bf4642ca0c79a048915",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "listed as a co-author of HB 5337",
+      "note": "The official bill page lists him among the co-authors of HB 5337 by Isaac, relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The page shows the House committee report sent to Calendars on 2025-05-07 and names SB 16 by Hughes as its identical companion. The page does not give the date he was added as co-author.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:26.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "caec78a69de21115f57f7c9ac7bb8508999e65b59146e366c5f21342c9838dc2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4962",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-4962-2025",
+      "act": "other",
+      "motion": "listed as a co-author of HB 4962",
+      "note": "The official bill page lists him among the co-authors of HB 4962 by Pierson and Louderback, relating to the disclosure of citizenship of a candidate for public office. The last action shown is referral to the Elections committee on 2025-04-03. The page does not give the date he was added as co-author. Related topic: citizenship checks for candidates, not voters.",
+      "subjects": [
+        "candidate citizenship disclosure",
+        "non-citizen participation in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:26.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.527Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.527Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "no-ID voter options",
+        "candidate citizenship disclosure",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; run with name search, nothing found)",
+        "campaign site https://www.marclahood.com/ home, /about/ and /legislative-wins/ (lists his first-term bills; nothing on the subject)",
+        "official House page https://house.texas.gov/members/4595 (District 121 member page; nothing on the subject)",
+        "Texas Public Radio story https://www.tpr.org/news/2026-03-04/freshman-state-rep-marc-lahood-prevails-in-expensive-gop-primary-to-represent-hd-121 (confirms he won the 2026 primary and is on the general ballot; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Marc_LaHood (fetched; nothing on the subject)",
+        "Texas Legislature Online bill pages for HB 5337 and HB 4962 (89th session)",
+        "news and bill-tracker search on his name plus voter ID, proof of citizenship and election integrity (found the two co-authorships below, no own words)",
+        "not reviewed: House floor and committee video, and the House Journal, for his own words"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:15:26.699Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.527Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "red-flag orders",
+        "gun bills authored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page https://house.texas.gov/members/4595 (nothing on the subject)",
+        "https://www.tpr.org/news/2026-03-04/freshman-state-rep-marc-lahood-prevails-in-expensive-gop-primary-to-represent-hd-121 (in scope: won the March 2026 primary, faces a general-election opponent)",
+        "blocked: https://texasscorecard.com/state/gun-owners-rally-at-texas-capitol/",
+        "blocked: https://dallasexpress.com/state/texas-gun-owners-make-their-voices-heard-at-the-capitol/",
+        "not reviewed: Ballotpedia, campaign site, capitol.texas.gov bill-by-bill sponsor lists (budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

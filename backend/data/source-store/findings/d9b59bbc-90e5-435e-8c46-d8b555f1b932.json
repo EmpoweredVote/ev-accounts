@@ -1,0 +1,76 @@
+{
+  "politician_id": "d9b59bbc-90e5-435e-8c46-d8b555f1b932",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Michael_Kushmerek says he is on the Nov 3, 2026 general-election ballot for MA House 3rd Worcester after the Sept 1, 2026 primary",
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/MPK1 (lists no voting bills; only H.3716 on ID scanning, a transportation petition)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://www.mahouse.gov/Kushmerek (certificate mismatch)",
+        "not reviewed: campaign site and news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:25:23.294Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Michael_Kushmerek (confirms sitting 3rd Worcester representative, on the 2026 general-election ballot, unopposed in the primary)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/MPK1 (sponsored bills: nothing on the subject)",
+        "legislature cosponsored tab https://malegislature.gov/Legislators/Profile/MPK1/Cosponsor (not shown in the fetched page; not reviewed)",
+        "campaign site: blocked: https://www.mikekushmerek.com (domain does not resolve)",
+        "two news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:05:30.905Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

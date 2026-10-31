@@ -1,0 +1,157 @@
+{
+  "politician_id": "1ea857c4-5010-49bf-81f7-37d8f70f6537",
+  "findings": [
+    {
+      "id": "f9c9681844238672965f2746760929016fa47459af81ee20a442b3cd0700ebb7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-278-2025",
+      "act": "other",
+      "motion": "Co-sponsor (listed among additional sponsors, not primary) of HB 278, Protect Military Votes",
+      "note": "She is listed as a co-sponsor of HB 278. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H278v1.pdf) says covered voters voting a military-overseas ballot would not be required to include a photocopy of photo identification or the related affidavits when submitting a ballot. Referred to House Rules committee 2025-03-05.",
+      "subjects": [
+        "photo ID exemption for military-overseas ballots",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:29.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b407bd84b4abd1778bd10a13808491b38e488b275c01a1cb9909ac3d155aad28",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "other",
+      "motion": "Co-sponsor (listed among additional sponsors, not primary) of HB 1246, Safeguarding Elections Act",
+      "note": "She is listed as a co-sponsor of HB 1246. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v1.pdf) would make it a misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process. It also makes photographs for voter photo identification and photocopies of identification confidential records. Referred to House Rules committee 2026-08-04.",
+      "subjects": [
+        "proof of citizenship demands at the polls",
+        "voter ID records confidentiality",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:29.741Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "286c989112ff56ea5c54f1e8b736d1953bbfa985430e31caac1f1fd7d4fa226b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-278-2025",
+      "act": "sponsor",
+      "motion": "HB 278, Protect Military Votes (co-sponsor)",
+      "note": "Listed among the co-sponsors on the legislature's bill page (as F. Jackson). The bill text says: A covered voter voting under this Article shall not be required to include a photocopy of identification described in G.S. 163-166.16(a) or an affidavit as described in G.S. 163-166.16(d)(1), (d)(2), or (d)(3) when submitting a ballot in accordance with this Article. It writes into law the State Board of Elections rule that military and overseas ballots need no photo ID. Filed 2025-03-05 and referred to the Rules committee.",
+      "subjects": [
+        "photo ID exemption for military and overseas ballots",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:33:56.700Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for military-overseas ballots",
+        "proof of citizenship demands",
+        "election integrity laws in general",
+        "mail or absentee ballot ID"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia (https://ballotpedia.org/Frances_Jackson_(North_Carolina)) lists her as incumbent for NC House District 45 on the 2026 general-election ballot",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/803 (no bill list on page)",
+        "ncleg.gov introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/803 (primary sponsorships; none on voter ID; election bills checked: HB 691, HB 788 have no ID text on bill page, not reviewed in full text)",
+        "ncleg.gov bill pages and bill text for HB 278 and HB 1246 (co-sponsor listings)",
+        "Ballotpedia",
+        "not reviewed: official and campaign websites (links only on Ballotpedia; not fetched)",
+        "not reviewed: news and own-words search (web search budget for the session was used up)",
+        "nothing on the subject: no own-words passages found"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:36:29.741Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "photo ID exemption for military and overseas ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page of introduced bills https://library.ncleg.gov/Members/IntroducedBills/H/803 (confirms North Carolina House member; one bill on the subject, HB 278; also HB 31 election-day holiday and HB 691 on counting ballots under the rules in place on election day, both not about ID)",
+        "legislature bill page https://www.ncleg.gov/BillLookUp/2025/H278 and bill text PDF",
+        "2026 ballot: branch.vote race page https://branch.vote/races/2026-north-carolina-general-election-nc-state-state-representative-nc-state-house-45 says she is running unopposed for House District 45",
+        "state House caucus member page https://nchousedems.com/our-members/frances-jackson-phd-house-district-45/ (bio, nothing on the subject)",
+        "Ballotpedia: the page at https://ballotpedia.org/Frances_Jackson is a name list with no entry for her; nothing on the subject",
+        "campaign site: no separate site found",
+        "news search on name plus voter ID, photo ID, proof of citizenship: nothing on the subject in her own words"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:33:56.700Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

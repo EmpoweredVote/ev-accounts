@@ -1,0 +1,53 @@
+{
+  "politician_id": "9974fbb8-10d1-452c-ae8e-a853dd3f7d37",
+  "findings": [
+    {
+      "id": "6d55cb8dee07b39e5ea52ead4029838ba84396b08933c954e0d7d6eb915e5fb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: yea (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "2026 ballot status"
+      ],
+      "places": [
+        "status: withdrew 2025-08-21 (announced he would not seek re-election; retiring, not on the 2026 ballot). Page: https://en.wikipedia.org/wiki/2026_Texas_House_of_Representatives_election says: \"District 21 : Dade Phelan is retiring.\" and \"Incumbent Republican former Speaker of the House Dade Phelan is retiring.\"",
+        "On the Record (0 meetings)",
+        "https://ballotpedia.org/Dade_Phelan (fetch returned empty page)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

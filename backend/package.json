@@ -82,8 +82,12 @@
     "check:postgis-guard": "node scripts/check-postgis-spatial-ref-guard.mjs",
     "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs",
     "check:rls-coverage": "node scripts/check-rls-coverage.mjs",
+    "check:chamberless-orphans": "node scripts/check-chamberless-orphans.mjs",
+    "check:chamberless-orphans:verbose": "node scripts/check-chamberless-orphans.mjs --verbose",
     "check:stance-audit": "node scripts/check-stance-audit.mjs",
-    "check:entity-types": "node scripts/check-entity-types.mjs"
+    "check:entity-types": "node scripts/check-entity-types.mjs",
+    "check:instrument-contradictions": "node scripts/check-instrument-rung-contradictions.mjs",
+    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest"
   },
   "overrides": {
     "qs": "^6.16.0",
@@ -98,6 +102,7 @@
     "@supabase/supabase-js": "^2.118.0",
     "@types/compression": "^1.8.1",
     "@types/unzipper": "^0.10.11",
+    "@upstash/ratelimit": "^2.2.0",
     "@upstash/redis": "^1.39.0",
     "adm-zip": "^0.6.1",
     "cheerio": "^1.2.0",
@@ -127,6 +132,7 @@
     "pdfjs-dist": "6.4.299",
     "pg": "^8.23.1",
     "redis": "^6.3.0",
+    "remove-markdown": "^0.8.0",
     "rss-parser": "^3.13.0",
     "secrets.js-grempe": "^2.0.0",
     "shapefile": "^0.6.6",
@@ -145,6 +151,7 @@
     "@types/node": "^26.6.5",
     "@types/node-cron": "^3.0.11",
     "@types/pg": "^8.23.1",
+    "@types/remove-markdown": "^0.3.4",
     "@types/supertest": "^7.2.1",
     "@typescript-eslint/eslint-plugin": "^8.71.1",
     "@typescript-eslint/parser": "^8.0.0",

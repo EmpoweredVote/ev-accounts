@@ -1,0 +1,175 @@
+{
+  "politician_id": "c74a3a93-20e3-42cf-b522-6134c667347e",
+  "findings": [
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('KUZMA') on the official bill page; linked to Andrew Kuzma via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('KUZMA') on the official bill page; linked to Andrew Kuzma via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('KUZMA') on the official bill page; linked to Andrew Kuzma via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('KUZMA') on the official bill page; linked to Andrew Kuzma via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('KUZMA'), linked to Andrew Kuzma (district 39) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.850Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site https://www.repkuzma.com/ (About page confirms Rep. Andrew Kuzma, 39th District): site search for voter ID and election returned no results; the press release list (https://www.repkuzma.com/NewsGroup/All-News, 20 items) has nothing on the subject",
+        "blocked: https://ballotpedia.org/Andrew_Kuzma (403)",
+        "House caucus site search via web search (repkuzma.com, pahousegop.com): results were other members' releases, none naming him",
+        "bill sponsorship pages: not searched, linked separately",
+        "Summer 2026 newsletter PDF https://www.repkuzma.com/Display/SiteFiles/453/Newsletters/2026/KuzmaSummer2026_NL.pdf: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:11:56.813Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site https://www.repkuzma.com/ (About page confirms Rep. Andrew Kuzma, 39th District): site search for voter ID and election returned no results; the press release list (https://www.repkuzma.com/NewsGroup/All-News, 20 items) has nothing on the subject",
+        "blocked: https://ballotpedia.org/Andrew_Kuzma (403)",
+        "House caucus site search via web search (repkuzma.com, pahouse-caucus.com): results were other members' releases, none naming him",
+        "bill sponsorship pages: not searched, linked separately",
+        "Summer 2026 newsletter PDF https://www.repkuzma.com/Display/SiteFiles/453/Newsletters/2026/KuzmaSummer2026_NL.pdf: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:47:07.215Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-29T14:14:50.850Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

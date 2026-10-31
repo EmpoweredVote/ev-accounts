@@ -1,0 +1,52 @@
+{
+  "politician_id": "bca54df2-f059-44ce-81c3-f208f1e20752",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Christopher_Worrell) says he is on the Nov 3, 2026 general-election ballot for MA House 5th Suffolk after advancing from the Sept 1, 2026 primary; malegislature.gov profile https://malegislature.gov/Legislators/Profile/CJW1 names him as Representative for 5th Suffolk",
+        "On the Record (0 appearances)",
+        "malegislature.gov profile and sponsored-bill list (194th Court): nothing on the subject",
+        "Ballotpedia: nothing on the subject (no candidate survey completed)",
+        "not reviewed: official house site https://www.massrep.com/worrell (connection failed)",
+        "not reviewed: campaign sites (worrell4rep.com, chrisworrell.com; connection failed, no campaign site confirmed)",
+        "not reviewed: news search on name plus subject words (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:21:40.318Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://malegislature.gov/Legislators/Profile/CJW1 (confirms 5th Suffolk House member; no election or voter-ID bills listed on the profile)",
+        "https://ballotpedia.org/Christopher_Worrell (confirms he is on the 2026 general-election ballot; nothing on the subject)",
+        "campaign site worrellforboston.com (redirects to a link-hub page, not reviewed: https://worrellforboston-com.l.ink/)",
+        "web search on name plus voter ID words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:27:18.097Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

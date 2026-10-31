@@ -1,0 +1,26 @@
+{
+  "findings": [
+    {
+      "full_name": "Larry Krasner",
+      "topic_key": "jail-capacity",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kendra Brooks",
+      "topic_key": "taxes",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 43,
+    "high": 0,
+    "medium": 2,
+    "by_check": {
+      "statement-needs-review": 2
+    }
+  }
+}

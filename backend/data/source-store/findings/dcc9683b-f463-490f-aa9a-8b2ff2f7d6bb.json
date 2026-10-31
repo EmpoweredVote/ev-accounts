@@ -1,0 +1,53 @@
+{
+  "politician_id": "dcc9683b-f463-490f-aa9a-8b2ff2f7d6bb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID without ID at polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Nicole_Cole: nothing on the subject",
+        "https://www.fxbgadvance.com/p/talking-richmond-delegate-elect-nicole (her own column): nothing on the subject",
+        "campaign site not found (nicolecoleforva.com did not load)",
+        "On the Record: not reviewed (repo extract script not run in this task)",
+        "blocked: https://lis.virginia.gov (not retried)",
+        "blocked: legiscan.com and app.legiplex.com (not retried)",
+        "web searches: no own words or record on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:32:04.236Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "red-flag orders",
+        "background checks",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site: not found",
+        "Ballotpedia: not reviewed",
+        "Virginia LIS bill pages: not reviewed",
+        "Spotsylvania Gazette week-one update by Delegate Cole (https://spotsylvaniagazette.town.news/g/spotsylvania-courthouse-va/n/361978/nicole): nothing on the subject; her 13 filed bills are on schools, housing, utilities, farms",
+        "Spotsylvania Gazette delegate-elect story, Black Virginia News campaign-kickoff post, Fredericksburg Free Press story: no gun text found",
+        "The Weekly Ringer debate story (https://theweeklyringer.com/?p=36357) is a 2019 debate of Joshua Cole, a different person; not used",
+        "Search summary mentions March 2026 firearm votes (family-member assault purchase bill, unserialized firearms HB 40) on a tracking page; unverified, votes are linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

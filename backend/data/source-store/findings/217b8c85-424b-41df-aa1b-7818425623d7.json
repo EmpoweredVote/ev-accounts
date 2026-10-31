@@ -1,0 +1,107 @@
+{
+  "politician_id": "217b8c85-424b-41df-aa1b-7818425623d7",
+  "findings": [
+    {
+      "id": "ee72639ee2d2af998fe9ce60ebe123872f42ac431aef81a00a95630b07b55cd5",
+      "kind": "record",
+      "url": "https://bsquarebulletin.com/bill-that-would-regulate-indiana-voting-systems-to-ensure-one-person-one-vote-not-seen-as-essential-this-session/",
+      "date": "2021-02-21",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1288-2021",
+      "act": "sponsor",
+      "note": "Square Beacon article (published 2021-02-21) says Lauer sponsored HB 1288, an election-security bill requiring voting systems to store votes as whole numbers, and that it did not advance past the halfway mark. Not about ID or citizenship; saved as a related election-integrity item. Session year inferred from the article date; the bill page itself was not reached.",
+      "subjects": [
+        "election integrity: voting system vote counting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T01:10:49.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Ryan_Lauer names him as Indiana House District 59 incumbent on the Nov 3, 2026 general-election ballot (advanced from the May 5, 2026 primary)",
+        "On the Record (0 appearances, extract-otr run with --names)",
+        "Ballotpedia (fetched; no voter ID or election-law content on the page)",
+        "campaign site https://www.ryanlauer.com/ (home page text reviewed; nothing on the subject; /issues-2/ is a 404)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_ryan_lauer (page needs JavaScript; bill list not readable)",
+        "blocked: https://iga.in.gov/api/iga/legislators/v1/legislator/ryan_lauer (returns only the JavaScript shell)",
+        "blocked: https://indianahouserepublicans.com/members/ryan-lauer/ (404)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, Vote Smart, vote411 (lead-only, not reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:15.342Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in office: https://www.indianahouserepublicans.com/members/general/ryan-lauer/ shows Ryan Lauer as Representative for House District 59 (Bartholomew County); BallotReady page lists him as current office holder",
+        "On the Record (0 appearances)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_ryan_lauer_1100 (page loads no text without JavaScript)",
+        "blocked: https://www.therepublic.com/?p=565932 (bot challenge page)",
+        "blocked: https://ballotpedia.org/Ryan_Lauer (fetch returned no usable page text)",
+        "Indiana House member page: nothing on the subject",
+        "Ballotpedia 2023 Indiana House election-bill roundup and Democracy Docket mail-ballot ID article: fetched, neither names him; nothing on the subject",
+        "two web searches on name plus voter ID / election bills; no ID or citizenship bill or own words by him found",
+        "searched bill HB 1288 PDFs for 2023, 2025, 2026 sessions: those are other bills, not by him"
+      ],
+      "found": 1,
+      "at": "2026-10-27T01:10:49.935Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

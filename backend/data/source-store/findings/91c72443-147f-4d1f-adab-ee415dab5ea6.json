@@ -1,0 +1,213 @@
+{
+  "politician_id": "91c72443-147f-4d1f-adab-ee415dab5ea6",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "7772cc0b2f1920700539b5fca52e09916d3dec3c39447a05cc1bd25e30fa2e03",
+      "kind": "own-words",
+      "url": "https://carson.house.gov/media/press-releases/carson-statement-shooting-las-vegas",
+      "date": "2017-10-02",
+      "date_precision": "day",
+      "passage": "The American people deserve a vote on legislation that will curb gun violence, including reinstating an assault weapons ban and instituting new restrictions on gun trafficking.",
+      "note": "Statement issued in his name the day after the Las Vegas shooting; page date 2 Oct 2017.",
+      "subjects": [
+        "assault weapons ban",
+        "gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c06156d669876f1a13a697d7c126c0817f499ebc891dec390990499c370569a",
+      "kind": "own-words",
+      "url": "https://carson.house.gov/media/press-releases/carson-statement-shooting-las-vegas",
+      "date": "2017-10-02",
+      "date_precision": "day",
+      "passage": "Protecting our constitutional right to bear arms does not mean giving free rein to dangerous people to purchase the deadliest weapons on the market.",
+      "note": "Same statement; general view on gun rights and gun laws.",
+      "subjects": [
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03f6fb2f223a92a0df58cfa01fed93cc5d0a870b7b9ecb911ad8779f37be7806",
+      "kind": "own-words",
+      "url": "https://carson.house.gov/media/press-releases/congressman-carson-reacts-presidents-gun-violence-proposals",
+      "date": "2013-01-16",
+      "date_precision": "day",
+      "passage": "For now, I can say with certainty that Congress must act on legislation that closes loopholes and requires background checks on all gun sales.",
+      "note": "Statement reacting to the 2013 presidential gun violence proposals; page date 16 Jan 2013.",
+      "subjects": [
+        "background checks on all gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e35a4e79b25f663299461199b8824dc5bb4230742730a39971c3a52319ff5b5d",
+      "kind": "own-words",
+      "url": "https://carson.house.gov/media/press-releases/congressman-carson-reacts-presidents-gun-violence-proposals",
+      "date": "2013-01-16",
+      "date_precision": "day",
+      "passage": "He believes, as I do, that Americans should be able to own and collect guns and use them for self-defense, hunting or sport shooting.",
+      "note": "Same statement; on gun ownership.",
+      "subjects": [
+        "Second Amendment",
+        "gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e22aa0a5857d1fb1eb82a21edc5ac2c6fa3bb124100f23dd0644d4e7902ed12",
+      "kind": "own-words",
+      "url": "https://carson.house.gov/media/press-releases/congressman-carson-introduces-gun-safety-bill",
+      "date": "2025-07-17",
+      "date_precision": "day",
+      "passage": "As a former law enforcement officer, I know that responsible gun ownership means responsible gun storage.",
+      "note": "His quote on introducing the Gun Safety Incentive Act (page date 17 July 2025).",
+      "subjects": [
+        "safe gun storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks on all gun sales",
+        "gun trafficking",
+        "safe gun storage",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site search 'gun' (https://carson.house.gov/?s=gun, showed no gun items)",
+        "https://carson.house.gov/media/press-releases/carson-statement-shooting-las-vegas (names him as IN-07 representative)",
+        "https://carson.house.gov/media/press-releases/congressman-carson-reacts-presidents-gun-violence-proposals",
+        "https://carson.house.gov/media/press-releases/congressman-carson-introduces-gun-safety-bill",
+        "one news search",
+        "not reviewed: congress.gov, Ballotpedia, WFYI audio (budget)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

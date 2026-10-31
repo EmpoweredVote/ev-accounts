@@ -1,0 +1,120 @@
+{
+  "politician_id": "13a9c6b7-d781-415b-b44f-3f8ca06aa763",
+  "findings": [
+    {
+      "id": "b31aad87dd4cdf1fb0b3f7805c4ec78f9720ef39f053152c2930387e509f9776",
+      "kind": "record",
+      "url": "https://www.billsponsor.com/bills/814554/virginia-house-bill-78-session-2026",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-78-2026",
+      "act": "yea",
+      "motion": "Read third time and passed House (92-Y 6-N 0-A)",
+      "note": "HB 78, elections administration: makes certifying results a ministerial duty of local electoral boards, with removal and civil penalty for refusal. She voted yes on House passage. Related election-law vote, not a voter ID vote.",
+      "subjects": [
+        "election certification (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:36.904Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1cee199268092a4f933e270bc0f41ecf4abd4b09e65dfd821ad2f17fd3dd565",
+      "kind": "own-words",
+      "url": "https://www.wtkr.com/news/politics/spanberger-signs-twin-bills-banning-firearms-on-college-campuses-in-wake-of-2022-shooting",
+      "date": "2026-05",
+      "date_precision": "month",
+      "passage": "“Until today, we have not given our colleges and our police chiefs the tools they need to effectively enforce this restriction,” Callsen said. “It is a responsibility. It is about learning from tragedy, not just accepting it. It’s about being a fierce protector of our children and our students.”",
+      "note": "Direct quote of Callsen, reported by WTKR (published 2026-05-14) at the governor's signing of HB 626 and SB 272 at the University of Virginia; the story says the signing was 'on Tuesday'.",
+      "subjects": [
+        "firearms on college campuses",
+        "carry restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34c0d310c47617afe2e268d0bec5562b426fc2bda16e1cae001344c978a69665",
+      "kind": "record",
+      "url": "https://www.wtkr.com/news/politics/spanberger-signs-twin-bills-banning-firearms-on-college-campuses-in-wake-of-2022-shooting",
+      "date": "2026-05",
+      "date_precision": "month",
+      "instrument_id": "VA-HB-626-2026",
+      "act": "sponsor",
+      "note": "WTKR: \"House Bill 626 and Senate Bill 272, twin bills patroned by Del. Katrina Callsen and Sen. Creigh Deeds, rule that only law enforcement, ROTC cadets and U.S. military personnel are allowed to carry firearms on college campuses in Virginia.\" Official LIS page not read; date shown is the signing month.",
+      "subjects": [
+        "firearms on college campuses",
+        "carry restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "election certification (related)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page https://en.wikipedia.org/wiki/Katrina_Callsen (confirms 54th District delegate since 2024-01-10; nothing on the subject)",
+        "campaign site news list https://katrinacallsen.com/news (62 items, none on voter ID or citizenship); a Crozet Gazette forum report and a 29news look-back page were read: nothing on the subject from her",
+        "Ballotpedia: page returned empty text; not reviewed: https://ballotpedia.org/Katrina_Callsen",
+        "bill tracker pages (two results were other-state bills, no link to her) and the HB 78 (2026) vote page",
+        "blocked: https://legilist.com/states/virginia/category/elections-voting",
+        "not reviewed: https://lis.virginia.gov member and bill pages (script-only pages)",
+        "not reviewed: VPAP vote lists https://apiorigin.vpap.org/legislators/290695-katrina-callsen/list-votes/did_not_vote (need scripts)",
+        "news searches on name plus subject words: no voter ID or citizenship bill or statement found; her one election bill found, HB 630 on ranked choice voting, is off the subject"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:29:36.904Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns on college campuses",
+        "firearm carry restrictions",
+        "gun safety laws",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign / House site: not reviewed",
+        "Ballotpedia: not reviewed",
+        "Virginia LIS bill pages: not reviewed",
+        "FastDemocracy HB 626 page (names her as primary sponsor)",
+        "WTKR news story on the bill signing (saved)",
+        "billtrack50 / vacollegecarry.pages.dev: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

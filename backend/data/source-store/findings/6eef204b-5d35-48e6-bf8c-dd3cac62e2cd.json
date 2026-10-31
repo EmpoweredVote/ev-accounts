@@ -1,0 +1,52 @@
+{
+  "politician_id": "6eef204b-5d35-48e6-bf8c-dd3cac62e2cd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kate_Donaghue names her as 19th Worcester District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot (positive control)",
+        "On the Record (0 appearances for this politician id)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/K_D1 (sponsored bills reviewed: no bill on photo ID, mail-ballot ID or proof of citizenship; H.820 is polling-place access for voters with disabilities and H.4108 is death of candidates, both off the subject, not saved)",
+        "Ballotpedia (no issue positions on the subject; Candidate Connection survey link present, not read)",
+        "not reviewed: official site and campaign site (web search budget used up, no URL found by direct fetch)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: ontheissues.org not fetched (lead-only source)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:11.871Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/K_D1 (confirms Representative Kate Donaghue, 19th Worcester; her election bills cover polling-place access for voters with disabilities (H.820), death of a candidate (H.4108) and a Southborough local voting-age request (H.3874); nothing on ID or citizenship)",
+        "Ballotpedia https://ballotpedia.org/Kate_Donaghue (nothing on the subject)",
+        "Patch 2022 candidate profile (nothing on the subject)",
+        "official House site and campaign site not reached",
+        "one web search on name plus voting and elections (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:56:47.198Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

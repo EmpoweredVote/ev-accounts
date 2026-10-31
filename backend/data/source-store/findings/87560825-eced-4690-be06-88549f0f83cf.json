@@ -1,0 +1,147 @@
+{
+  "politician_id": "87560825-eced-4690-be06-88549f0f83cf",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "b30c65368549ea91b8d156b26d098abbe7223ccb0ae2271be01a8fcd1bca036a",
+      "kind": "own-words",
+      "url": "https://elfreth.house.gov/media/press-releases/elfreth-votes-no-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“Nearly 70 million American women, Democrats and Republicans alike, have an ID with a name on it that does not match their name at birth. My colleagues across the aisle contend that voter fraud is rampant and that non-citizens are voting or intending to vote in elections. The truth of it is that voter fraud occurs 0.0003 percent of the time, which means that you’re more likely to be struck by lightning than for a non-citizen to try to vote in our elections,” said Congresswoman Sarah Elfreth. “This bill is a solution in search of a problem, and by slapping these unnecessary ID laws onto our books, we only disenfranchise millions of Americans and millions of women.”",
+      "note": "Statement issued with her press release on her vote against H.R. 22, the SAVE Act, which requires documents showing proof of citizenship to register. She speaks about name-matching on IDs, how often non-citizens vote, and the effect of ID laws on women.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:37.987Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "13f808db87013111c09020802618a5f5bbc8b90999c0e36239abd1d71c41e768",
+      "kind": "own-words",
+      "url": "https://elfreth.house.gov/media/press-releases/elfreth-votes-no-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Elfreth is a member of the House Armed Services Committee and supports the fundamental right of servicemembers to vote in U.S. elections domestically and abroad.",
+      "note": "Sentence from the same press release issued by her office; it gives her office's reason tied to servicemembers who may be unable to confirm identity in person.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voting by servicemembers"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:33:37.987Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "ID with mail or absentee ballot",
+        "no-ID voter fallback",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Sarah_Elfreth lists her as incumbent in the 2026 general election for U.S. House Maryland District 3, after the June 23 primary (winner)",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "official site https://elfreth.house.gov/ (home page and press release pages 0 and 1): nothing on the subject",
+        "blocked: https://elfreth.house.gov/search?keys=voter+ID (HTTP 403, also SAVE+Act and election)",
+        "blocked: https://www.congress.gov/member/sarah-elfreth/E000300 (HTTP 403 bot challenge)",
+        "Ballotpedia: only the already-on-file SAVE Act (H.R. 22) nay vote; no own words on the subject",
+        "not reviewed: campaign site, news search, ontheissues.org (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:56:30.591Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE Act",
+        "non-citizen voting claims",
+        "voting by servicemembers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release list page 1 and page 10 (nothing on the subject on those pages)",
+        "official site search: blocked: https://elfreth.house.gov/search?query=SAVE+Act (403)",
+        "official press release on H.R. 22 vote",
+        "Ballotpedia: fetch returned no usable text",
+        "Maryland State Archives 2026 general election page (confirms she is listed for District 3)",
+        "news search on name plus SAVE Act / SAVE America Act (no source showing her own words on the 2026 bill)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T20:33:37.987Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

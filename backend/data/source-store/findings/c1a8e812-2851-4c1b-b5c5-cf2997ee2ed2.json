@@ -1,0 +1,88 @@
+{
+  "politician_id": "c1a8e812-2851-4c1b-b5c5-cf2997ee2ed2",
+  "findings": [
+    {
+      "id": "b70592cf13d6dd3abacd5fc7b2603570ed958b5d91bf957c62cfef3511adb437",
+      "kind": "own-words",
+      "url": "https://www.spotlightpa.org/news/2024/04/dave-sunday-pennsylvania-attorney-general-primary-election-2024/",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "passage": "When asked about lingering doubts about election integrity, Sunday said that in York County he assigned detectives to investigate criminal election complaints. “And as a result of that, we were able to see … that there was not material fraud in the county of York to have changed the York County election,” he said. “I can't speak to any other place.”",
+      "note": "Spotlight PA quoted him in its candidate guide; about election complaints in the county where he was district attorney. Page date taken from the fetch tool's reading.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b80fd11c6c32d3307ecf670bddf0e51f324700d0b6aea955bcbc6ab3c591c7d1",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-announces-charges-against-canvassers-pa-field-director-regarding-submissions-of-falsified-voter-registration-forms-in-multiple-counties/",
+      "date": "2025-10-24",
+      "date_precision": "day",
+      "passage": "“We are confident that the motive behind these crimes was personal financial gain, and not a conspiracy or organized effort to tip any election for any one candidate or party,” Attorney General Sunday said.",
+      "note": "Official release on charges over falsified voter registration forms. Date from the AG site search listing.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1317d38d3a22f5a8703d293b81eb7f84b45905b15aaa7df4f4c72b38b8367b9f",
+      "kind": "own-words",
+      "url": "https://www.attorneygeneral.gov/taking-action/ag-sunday-announces-charges-against-canvassers-pa-field-director-regarding-submissions-of-falsified-voter-registration-forms-in-multiple-counties/",
+      "date": "2025-10-24",
+      "date_precision": "day",
+      "passage": "County election offices have the most important role in ensuring the safety and integrity of our elections and voter rolls, and we received full cooperation from those offices in this investigation.",
+      "note": "Same release; says county election offices guard the voter rolls.",
+      "subjects": [
+        "election integrity and voter rolls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:26.490Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "official site https://www.attorneygeneral.gov (site search for 'voter ID': 6 results, none on ID rules)",
+        "AG release page, Oct 24 2025, falsified registration forms",
+        "Spotlight PA profile, 2024 primary",
+        "web search (standard, several queries on name plus subject words)",
+        "not reviewed: On the Record extract script (standing rules forbid running repo scripts)",
+        "blocked: https://ballotpedia.org (403)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:10:26.490Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

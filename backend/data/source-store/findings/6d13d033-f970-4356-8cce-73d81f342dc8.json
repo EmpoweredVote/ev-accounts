@@ -1,0 +1,56 @@
+{
+  "politician_id": "6d13d033-f970-4356-8cce-73d81f342dc8",
+  "findings": [
+    {
+      "id": "d41e38d92bbd58dad20834c25a7b11003be80f6c734d6341198cd5894665e17a",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "third reading and adoption of SJR 37, constitutional amendment clarifying that a voter must be a United States citizen (Record 2196, 102 Yeas, 14 Nays, 22 Present not voting)",
+      "note": "Listed among the Yeas on the House vote adopting SJR 37.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page (confirms Texas House District 22 and the 2026-11-03 general ballot; bill table did not load)",
+        "official Texas House member page (no statement on the subject)",
+        "Texas Legislature Online histories for HB 5337, SB 16, HB 892, HB 304, HB 1263, HB 1312, HB 219, HB 2245, HB 2332, HB 1670, SB 964, SB 309 (not listed as author, coauthor or sponsor of any)",
+        "Texas House Journal day 62 (2025-05-12) roll call for SJR 37",
+        "blocked: https://app.legiplex.com/profile/christian-manuel-55/legislation (403)",
+        "campaign site: not located",
+        "news search by name plus subject words: no own-words quote found",
+        "not reviewed: Texas House floor video"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:16:40.259Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

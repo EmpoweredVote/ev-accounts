@@ -1,0 +1,29 @@
+{
+  "politician_id": "e529eee5-ecec-4719-8b50-47ab9d31bc4d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID (statement or provisional ballot)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned no appearances, also searched by name)",
+        "official House/Senate member page: not reviewed (script-built page, no readable text)",
+        "campaign site: nothing reachable",
+        "Ballotpedia https://ballotpedia.org/Michael_Jones_(Virginia_state_senator) fetched: nothing on the subject",
+        "campaign site guess votemikejones.com did not resolve",
+        "web search: name plus voter ID/election integrity; results returned no statement by this person on the subject",
+        "blocked: lis.virginia.gov (not retried), legiscan and legiplex (not retried)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:07.452Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

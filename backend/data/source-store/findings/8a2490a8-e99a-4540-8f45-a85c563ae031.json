@@ -1,0 +1,93 @@
+{
+  "politician_id": "8a2490a8-e99a-4540-8f45-a85c563ae031",
+  "findings": [
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Nelson'), linked to SHEILA CLARK NELSON (district 125) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Nelson'), linked to SHEILA CLARK NELSON (district 125) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.403Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Sheila_Nelson_(politician) (member of the Georgia House, District 130, since 2026-04-16; earlier held District 125, 2017-2023; sitting official, in scope)",
+        "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-130/candidates/sheila-clark-nelson (listed in the 2026 general race; says her website has no information on voting and elections)",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Sheila_Nelson (fetch returned an empty page)",
+        "https://house-press.com/representative/sheila-nelson/ (House caucus release list; nothing by her on the subject)",
+        "https://www.higherheightsforamericapac.org/blog/listing/sheila-nelson/ (page not found)",
+        "web search for name with voter ID and election bill (nothing on the subject)",
+        "web search for name with voting rights and SB 202 (nothing on the subject)",
+        "official House page and campaign site: none found with relevant content",
+        "floor votes of 2021 (SB 202, HB 531): not searched, as instructed",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:28:59.737Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.403Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

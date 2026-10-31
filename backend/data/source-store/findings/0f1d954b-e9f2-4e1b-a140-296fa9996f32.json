@@ -1,0 +1,135 @@
+{
+  "politician_id": "0f1d954b-e9f2-4e1b-a140-296fa9996f32",
+  "findings": [
+    {
+      "id": "dcada7d6c708eefeef8a3f1397c2e325eefef88503cae638b5a953b9efbd364e",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2021/https://www.queerty.com/marvin-lim-made-history-georgias-first-filipino-lgbtq-state-rep-hes-not-finished-yet-20210617/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "“As my own experience has shown,” he declared in his speech, “it doesn’t matter even if folks are able to send acceptable voter ID with their absentee ballot applications and completed ballots. It’s unavoidable that voter ID laws will still flag many of them.”",
+      "note": "Quoted by Queerty (article dated 2021-06-17) from his first House floor speech against SB 202; the article places it in 2021 but the speech date is not stated. He describes being flagged as a non-citizen in 2008 on an absentee request and submitting proof of citizenship four times.",
+      "subjects": [
+        "mail-ballot ID",
+        "voter ID flagging absentee voters",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:37:53.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Lim'), linked to MARVIN LIM (district 99) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Lim'), linked to MARVIN LIM (district 99) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Lim'), linked to Marvin Lim (district 98) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.402Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with absentee ballot",
+        "proof of citizenship flagging",
+        "voter fraud claims",
+        "SB 202 floor remarks"
+      ],
+      "places": [
+        "status check: https://ballotpedia.org/Marvin_Lim shows him on the 2026-11-03 general-election ballot for Georgia House District 98 after advancing from the 2026-05-19 primary (in scope)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.marvinlimforga.com/ (page is script-rendered, no readable text on the subject)",
+        "Ballotpedia (campaign themes section present, nothing on the subject found in readable text)",
+        "web searches: 5 run (name plus voter ID, SB 202, SAVE Act, election integrity, absentee ID)",
+        "official legislature page https://www.legis.ga.gov/members/house/4999?session=1033: not reviewed (page is script-rendered; its API could not be read); SB 202 final House vote by member not retrieved",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (bot challenge)",
+        "blocked: https://www.intomore.com/impact/georgia-lawmaker-marvin-lim-wants-better-future/ (403)",
+        "blocked: https://www.queerty.com/marvin-lim-made-history-georgias-first-filipino-lgbtq-state-rep-hes-not-finished-yet-20210617/ (403; read through web.archive.org copy)",
+        "no SAVE Act statement found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:37:53.968Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.402Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

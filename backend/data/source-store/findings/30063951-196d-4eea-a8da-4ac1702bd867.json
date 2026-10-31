@@ -1,0 +1,140 @@
+{
+  "politician_id": "30063951-196d-4eea-a8da-4ac1702bd867",
+  "findings": [
+    {
+      "id": "6d55cb8dee07b39e5ea52ead4029838ba84396b08933c954e0d7d6eb915e5fb2",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: yea (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "65067f3d8162f884a0431ae8f02a7145bb535fdc33b04245f5d43bdb025aa88a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "House adoption of SJR 37 (constitutional amendment clarifying that a voter must be a U.S. citizen), Record 2196, 102 yeas, 14 nays",
+      "note": "The House journal (day 62, page 4129) lists \"Mr. Speaker(C)\" among the yeas on SJR 37. The Speaker is Dustin Burrows.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:48.100Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d62bd50b18f99905aeaf879c2ff41582a317e43095920565caf9b008bbee115",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "House passage of SJR 37 to third reading, Record 1897, 98 yeas, 18 nays",
+      "note": "The House journal (day 60, page 3737) lists \"Mr. Speaker(C)\" under present, not voting on this vote to pass SJR 37 to third reading. The Speaker is Dustin Burrows.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:59:48.100Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page for Dustin Burrows (https://ballotpedia.org/Dustin_Burrows): shows him as Speaker of the Texas House; nothing on the subject",
+        "Texas House member page for District 83 (https://www.house.texas.gov/members/member-page/?district=83): nothing on the subject",
+        "Texas Legislature Online bills-authored report for the 89th regular session: no bills authored, so no sponsorships on the subject",
+        "Texas Legislature Online history pages for SB 16 and SJR 37",
+        "House journal day 60 and day 62 (journals.house.texas.gov PDFs) for the SJR 37 votes",
+        "Texas Tribune (2025-05-28) and Votebeat (2025-05-28) coverage of SB 16: no statement from him on the subject",
+        "three news searches on his name plus the subject words: no direct quotes from him on the subject",
+        "nothing on the subject: dustinburrows.com (a different business site, not his campaign site)",
+        "not reviewed: House floor and speaker interview video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:59:48.100Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

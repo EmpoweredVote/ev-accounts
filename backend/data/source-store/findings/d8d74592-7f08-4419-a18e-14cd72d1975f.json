@@ -1,0 +1,133 @@
+{
+  "politician_id": "d8d74592-7f08-4419-a18e-14cd72d1975f",
+  "findings": [
+    {
+      "id": "7314eccc2f4e6e3c2d948a1ac7ea7a733f70c7b6d7d59033a3459d69b7f5f380",
+      "kind": "own-words",
+      "url": "https://www.repmikejones.com/News/33009/Press-Releases/Late-Night-Election-Wrangle-Would-Have-Caused-Chaos-at-the-Polls--Says-York-County-House-Republicans",
+      "date": "2023-10-05",
+      "date_precision": "day",
+      "passage": "“While the bill did include a watered-down version of voter identification requirement, the proposed changes to election processes and procedures, as written, would have disenfranchised millions of in-person voters and there was no way, in good conscience, we could support the bill.",
+      "note": "Joint statement of the six-member York County House delegation, which includes Jones, posted on his official site. It explains opposition to SB 224 (election code changes with a voter ID provision) and says the bill's other changes, including lifetime mail-in voting, were the problem.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity and election code changes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:11:09.247Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('JONES'), linked to Paul Michael Jones (district 93) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.327Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Jones'), linked to Paul Michael Jones (district 93) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.327Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('JONES, M.'), linked to Paul Michael Jones (district 93) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29c",
+        "fetched_at": "2026-10-29T14:22:46.327Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity and election code changes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.repmikejones.com (home page and press release list, one release on the subject)",
+        "official site search pages returned the home page only, nothing on the subject",
+        "caucus member page https://www.pahousegop.com/MikeJones (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mike_Jones_(Pennsylvania_politician)",
+        "blocked: https://penncapital-star.com/civil-rights-social-justice/with-new-amendment-strategy-pa-gop-could-target-voter-id-mail-in-ballots/",
+        "three web searches on name plus voter ID words",
+        "official page https://www.pahouse.com/Jones returned 404",
+        "Wikipedia (lead only, not fetched for passages)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:11:09.247Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:22:46.327Z",
+      "by": "identity-pa-2026-10-29c"
+    }
+  ]
+}

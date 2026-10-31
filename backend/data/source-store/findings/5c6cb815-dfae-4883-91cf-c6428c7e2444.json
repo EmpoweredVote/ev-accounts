@@ -1,0 +1,193 @@
+{
+  "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+  "findings": [
+    {
+      "id": "a2c9a2d8ec405bd51490ceb128a0affd42a72ed7ce2a24a50be08b2d8951f647",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "In 2025, I supported Senate Enrolled Act 10, which makes Indiana's already strong voter ID laws even stronger by removing loosely regulated college IDs as a legal form of voter ID to ensure only Indiana residents are voting in our elections.",
+      "note": "In his column he describes his support for SEA 10 (2025), which removes college IDs as a valid voter ID. Column is undated; the same column names 2026 bills as 'this year'.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted",
+        "college or student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:09:35.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ffa13e6ca900e40d3026f1fa93f6a2f88561ca9360b66c9e1cce7960d4d379c",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "That is why I have supported many bills to increase election transparency and crack down on voter fraud.",
+      "note": "General statement in the same column about backing election-integrity bills; also lists SEA 112, SEA 113 (keeping election materials 34 months) and HEA 1680 (2025, paper trail on voting machines).",
+      "subjects": [
+        "election integrity laws in general",
+        "voter fraud",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:09:35.769Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef4269305acb3d11dca0098947a6cee944a260f5864ba1377b2277b978095073",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported House Enrolled Act 1680 (2025) to require all electronic voting machines in Indiana to have a voter-verifiable paper trail and gave the Secretary of State more authority to perform post-election audits.",
+      "note": "Same column. Says he supported HEA 1680 (2025): paper trail on voting machines and more audit authority.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting machine paper trail and audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a71872fd88cf8d6c414347e7608315dda709758ac88b8cea172cbd43b0a0cd4",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported Senate Enrolled Act 113, which changes the amount of time election materials are preserved in county election offices from the current requirement of 22 months after an election to 34 months.",
+      "note": "Same column. Says he supported SEA 113: election materials kept 34 months instead of 22, so they can serve as evidence in election fraud cases.",
+      "subjects": [
+        "election integrity laws in general",
+        "election records retention"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64ec73802efc8475fba0a874fd9d52f123dd093ef4798d22886f0f876df6be4f",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-preparing-to-vote",
+      "date": "2024-10",
+      "date_precision": "month",
+      "passage": "To make sure your vote counts, I have supported laws that strengthen identification requirements for mail-in ballots, increase election security and ensure elections in Indiana are fair.",
+      "note": "Column by the senator before the 2024 general election (page says the election is on Nov. 5 and registration deadline is Oct. 7). Says he supported laws that strengthen ID requirements for mail-in ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jeff_Raatz lists him as 2026 primary winner and 2026 general-election candidate, Indiana State Senate District 27 (general election November 3, 2026)",
+        "On the Record (0 appearances)",
+        "official site https://www.indianasenaterepublicans.com/raatz (news list scanned; two election items found)",
+        "Ballotpedia (fetched; no voter ID statements)",
+        "Wikipedia (lead only)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_jeff_raatz_1 (JavaScript app, bill and vote pages did not load)",
+        "not reviewed: roll-call votes on SEA 10 (2025), SEA 112, SEA 113, HEA 1680 (2025) on iga.in.gov (page needs JavaScript)",
+        "news search not done: the shared web search budget was used up",
+        "campaign site: none found"
+      ],
+      "found": 5,
+      "at": "2026-10-22T22:34:27.348Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "college or student ID as voter ID",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Indiana Senate caucus site (his Raatz Roundup column on elections; page is undated, nearby items are October 2026)",
+        "Ballotpedia (confirms sitting Senate District 27, won the 2026-05-05 primary, on the 2026-11-03 ballot)",
+        "two web searches on his name plus voter ID words (found only the column above; no quote of him in news on the subject)",
+        "his bill pages and roll calls not searched: Indiana roll calls already on file",
+        "nothing on the subject: no separate campaign-site or interview pages found"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:09:35.769Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

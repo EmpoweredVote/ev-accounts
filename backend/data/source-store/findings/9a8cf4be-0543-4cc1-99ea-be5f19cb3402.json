@@ -1,0 +1,134 @@
+{
+  "politician_id": "9a8cf4be-0543-4cc1-99ea-be5f19cb3402",
+  "findings": [
+    {
+      "id": "9a8214dd19d8a370f618dae887b5335ed022850385995451d88c9dcde82c7ce1",
+      "kind": "own-words",
+      "url": "https://luther4texas.com/issues/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Securing elections from each citizen’s registration to the final count of legal votes by:\nRequiring proof of citizenship to register to vote.\nRequiring the Counties and the Secretary of State to update the voter rolls at least quarterly.\nRequiring a mandatory photo ID for every election, without exception.\nRestricting mail-in ballots to disabled, military, and eligible citizens who are out of their county for the entire voting period.",
+      "note": "Campaign issues page, under a 'Secure Texas Elections' heading in a priorities list. The page is undated; it was read on 2026-10-28 and carries 2026 campaign content. It backs proof of citizenship to register, quarterly voter-roll updates, photo ID at every election with no exceptions, and mail ballots only for disabled, military and out-of-county voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with no exceptions",
+        "proof of citizenship to register",
+        "mail-ballot limits",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:53.723Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e205a94ed5e75b1230c5fda0285941fb76e10414202043134c9d4cddaf5c184f",
+      "kind": "own-words",
+      "url": "https://luther4texas.com/constitutional-amendments-election/",
+      "date": "2025-11",
+      "date_precision": "month",
+      "passage": "Codifies in the Texas Constitution that only U.S. citizens can vote in Texas elections, emphasizing current laws.",
+      "note": "Her written summary of Prop 16 on the November 4, 2025 ballot (ballot wording: a voter must be a United States citizen). Her listed recommendation on that page is FOR. Page is undated; month taken from the election it describes.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:53.723Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61791fa9d59eac4f489091cca770be9802ff2e525a1faff95b34311f81b1b0cc",
+      "kind": "own-words",
+      "url": "https://luther4texas.com/legislative-accomplishments/",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "We had wins in Election Integrity like SB 2753 by Sen. Bob Hall which standardized in-person voting with no gap between early voting and Election Day",
+      "note": "Her 2025 session summary lists SB 2753 (in-person voting schedule) as an election integrity win. It is about voting schedules, not ID. Page is undated; year taken from the 2025 session it reports.",
+      "subjects": [
+        "election integrity laws in general",
+        "early voting schedule"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:15:53.723Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.528Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot limits",
+        "voter-roll updates",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House member page https://house.texas.gov/members/4645 (confirms District 62; no election items)",
+        "campaign site https://luther4texas.com/issues (election plank found), /legislative-accomplishments/ and /constitutional-amendments-election/ (both read as page text)",
+        "a ballot-guide page confirms she is in the 2026 general election for District 62: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-62/candidates/shelley-luther",
+        "blocked: https://ballotpedia.org/Shelley_Luther (page came back empty)",
+        "blocked: https://texasscorecard.com/local/luther-springer-debate-ahead-of-texas-senate-runoff/ (403, bot check) - a 2024 debate in which she reportedly named election integrity a priority; not read",
+        "blocked: https://dallasexpress.com/profiles/no-excuses-shelley-luther-on-tx-house-run-shaking-up-gop/ (403)",
+        "not reviewed: https://house.texas.gov/members/4645/legislation/R (fetch returned no bill list)",
+        "news and bill searches on her name with SB 16, proof of citizenship, mail ballots: no authored or voted ID or citizenship bill confirmed; a third-party tracker lists HB 4962 (citizenship of candidates), her role unconfirmed and not saved"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:15:53.723Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.528Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

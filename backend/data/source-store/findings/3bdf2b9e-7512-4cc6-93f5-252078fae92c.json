@@ -1,0 +1,265 @@
+{
+  "politician_id": "3bdf2b9e-7512-4cc6-93f5-252078fae92c",
+  "findings": [
+    {
+      "id": "d0ae134cd4f8e54f1e75427bfcdaed82bd218d8b0f56165ceff267d397a59e65",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "204c14df229e0e790acd1c22e03492d05f3cf642004696de80a12dd6317496c7",
+      "kind": "own-words",
+      "url": "https://senatedems.com/mcmorrow/2024/07/23/voters-guide/",
+      "date": "2024-07-23",
+      "date_precision": "day",
+      "passage": "When you arrive at your polling place to vote, state law requires you to either show a picture ID or sign an affidavit attesting that you are not in possession of a picture ID.",
+      "note": "Voter's Guide published on her state Senate site. It describes the existing Michigan photo-ID rule and the affidavit option; it describes current law and does not say whether she wants it changed.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement for voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:45.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f32fd2c1448c63a599d4e4156443a28de990d74add1baa8a4b564b35ac69bcf4",
+      "kind": "own-words",
+      "url": "https://senatedems.com/mcmorrow/2024/07/23/voters-guide/",
+      "date": "2024-07-23",
+      "date_precision": "day",
+      "passage": "Note: If you do not bring a picture ID to the polls or do not own a picture ID, you can vote like any other voter by signing an affidavit that will be provided to you.",
+      "note": "Same Voter's Guide. Explains that a voter without photo ID signs an affidavit and votes like any other voter. Describes current law.",
+      "subjects": [
+        "voter with no ID",
+        "sworn statement for voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:45.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77ed299959e770dbe0fb3bd278a646cf7ede15698ad3b4c1f24f137ec52fa8f8",
+      "kind": "own-words",
+      "url": "https://senatedems.com/mcmorrow/2024/07/23/voters-guide/",
+      "date": "2024-07-23",
+      "date_precision": "day",
+      "passage": "Note: If you are updating your registration in person, state law requires you to show a picture ID or sign an affidavit attesting to your identity and that you are not currently in possession of a picture ID.",
+      "note": "Same Voter's Guide. States the ID-or-affidavit rule for registering or updating registration in person.",
+      "subjects": [
+        "ID to register in person",
+        "sworn statement for voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:45.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e83d78278ee48f39d31edd5ba2d96e16b3eea4758e40f0728434330d4a7b000",
+      "kind": "own-words",
+      "url": "https://senatedems.com/mcmorrow/2022/08/22/a-guide-to-michigan-elections-how-to-register-how-to-vote/",
+      "date": "2022-08-22",
+      "date_precision": "day",
+      "passage": "When you arrive at your polling place to vote, state law requires you to either show a picture ID or sign an affidavit attesting that you are not in possession of a picture ID.",
+      "note": "2022 voter guide on her state Senate site; same description of the in-person photo-ID rule and affidavit option as the 2024 guide.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement for voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:45.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McMorrow'), linked to Mallory McMorrow (district 13) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McMorrow'), linked to Mallory McMorrow (district 8) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Mallory McMorrow (District 8)') on the official bill page; linked to Mallory McMorrow via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('McMorrow'), linked to Mallory McMorrow (district 8) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Mallory McMorrow (District 8)') on the official bill page; linked to Mallory McMorrow via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID (affidavit)",
+        "ID to register in person",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her state Senate site senatedems.com/mcmorrow (site search for voter ID, plus the voter guide and election-bills pages)",
+        "campaign site mcmorrowformichigan.com (home page and information-for-voters page: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mallory_McMorrow (403)",
+        "news searches (3): only a January 2025 Detroit ID card post, known only through an opposing outlet's article that shows her post as an image, so no own-words text could be copied; and a 2025 speech that mentions expanding voting rights but not ID",
+        "note: she suspended her U.S. Senate campaign on 2026-07-05 (https://www.spokesman.com/stories/2026/jul/05/mallory-mcmorrow-ends-her-us-senate-campaign/, seen only in a search result, not fetched); she is a sitting state senator, so the search was completed",
+        "floor votes and sponsorships: not searched, linked separately"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:43:45.718Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

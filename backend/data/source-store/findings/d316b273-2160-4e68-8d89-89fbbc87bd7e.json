@@ -1,0 +1,232 @@
+{
+  "politician_id": "d316b273-2160-4e68-8d89-89fbbc87bd7e",
+  "findings": [
+    {
+      "id": "cf779c66eaf94608ebab3f7c27f856b4aa9acd361fdb860e68f4b12cdd57ea2a",
+      "kind": "own-words",
+      "url": "https://www.butlereagle.com/?p=163828",
+      "date": "2022-05-02",
+      "date_precision": "day",
+      "passage": "“No. 1 with the election reform is instituting voter ID, signature verification and the elimination of drop boxes,” Mustello said.",
+      "note": "Quoted by the Butler Eagle (article by Eddie Trizzino, dated May 2, 2022, before the May 17, 2022 primary). She names voter ID, signature verification and removing drop boxes as her top election reform.",
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:54.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8df0252e639c102cd4b8ed87b116ca4b5fc77f3caab9d1c86bf183c49c273e8",
+      "kind": "own-words",
+      "url": "https://www.butlereagle.com/?p=21542",
+      "date": "2022-01-17",
+      "date_precision": "day",
+      "passage": "“Pennsylvanians must be able to trust the election process and results of our elections. I support the Voting Rights Protection Act, which includes, among many other things, provisions to tighten security by expanding voter identification requirements, requiring regular election audits, banning ballot harvesting and allowing public access to review ballots after an election,” Mustello said.",
+      "note": "Quoted by the Butler Eagle (Steve Ferris, Jan 17, 2022). She says she supports the Voting Rights Protection Act and names its voter identification expansion, audits, ballot-harvesting ban and public ballot review.",
+      "subjects": [
+        "voter ID at the polls",
+        "election audits",
+        "ballot harvesting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:54.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d715f358d65c2b5634fad180ef68f0d2e51e884a03f59f4a49bcd436def4444",
+      "kind": "own-words",
+      "url": "https://www.butlereagle.com/?p=21542",
+      "date": "2022-01-17",
+      "date_precision": "day",
+      "passage": "“We want to give confidence to people that their votes are being counted. Believe me, every vote counts,” she said.",
+      "note": "Quoted by the Butler Eagle in the same Jan 17, 2022 profile. General statement about voter confidence in election results.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:54.164Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('MUSTELLO'), linked to Marci Mustello (district 11) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Mustello'), linked to Marci Mustello (district 11) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Mustello'), linked to Marci Mustello (district 11) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('MUSTELLO'), linked to Marci Mustello (district 11) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.853Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification",
+        "ballot drop boxes",
+        "ballot harvesting and audits",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Marci_Mustello (403)",
+        "inaccessible: https://www.staterepmustello.com (no connection)",
+        "House caucus member page https://www.pahousegop.com/Mustello (page not found)",
+        "Butler Eagle 2022-01-17 candidate profile",
+        "Butler Eagle 2022-05-02 primary profile",
+        "Butler Eagle 2024-04-15 primary profile (voter ID support given only as the reporter's paraphrase, not saved)",
+        "Butler Eagle 2026-10-14 race profile (confirms she is on the 2026 general-election ballot; nothing on the subject)",
+        "Butler Eagle 2020 nominee story (nothing on the subject)",
+        "Wikipedia page (nothing on the subject)",
+        "one news search on her name plus voter ID",
+        "no page found on SAVE Act or proof of citizenship",
+        "sponsorships and floor votes: handled separately, not searched"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:12:54.164Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.696Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.457Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.853Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

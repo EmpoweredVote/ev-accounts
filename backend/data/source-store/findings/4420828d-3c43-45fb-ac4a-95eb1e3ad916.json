@@ -1,0 +1,31 @@
+{
+  "politician_id": "4420828d-3c43-45fb-ac4a-95eb1e3ad916",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Georgia House District 71 incumbent (Justin 'Jutt' Howard), on the 2026 general-election ballot (https://ballotpedia.org/Justin_Howard)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site https://jutthoward.com/ and its Spotlight on Legislation page (nothing on the subject; priorities are cost of living and safety, bills listed are on tax and education)",
+        "Branch voter-guide profile (says his website had nothing on voting and elections as of 2026-07-23; direct fetch timed out)",
+        "news search on his name plus ID, citizenship and election-integrity words (nothing on the subject)",
+        "blocked: https://www.legis.ga.gov/members/house/5073?session=1033 (script-loaded page, not readable)",
+        "not reviewed: official roll calls on SB 189 (2024) and HB 397 (2025); he first took office in 2025, so no SB 202 (2021) vote exists"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:51:34.935Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

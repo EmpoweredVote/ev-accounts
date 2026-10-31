@@ -1,0 +1,156 @@
+{
+  "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb",
+  "findings": [
+    {
+      "id": "4d7b18322d41def66c5ba05e782880ac590bd157c77138ab87604a4dca7ac572",
+      "kind": "own-words",
+      "url": "https://www.merritt4georgia.com/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We must continue to combat misinformation, protect public servants and civil liberties, and ensure equitable access to the polls for all Georgians.",
+      "note": "From the Safeguarding Democracy section of her campaign site. General statement on access to the polls; no ID or citizenship detail. The same list on the page includes the item 'Combatting voter suppression legislation that reduce voting access'.",
+      "subjects": [
+        "election access in general",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:49:46.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Merritt'), linked to NIKKI MERRITT (district 9) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Merritt'), linked to NIKKI MERRITT (district 9) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Merritt'), linked to NIKKI MERRITT (district 9) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Merritt'), linked to Merritt, Nikki (district 9) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship",
+        "voter no-ID fallback",
+        "non-citizen voting / voter rolls",
+        "election integrity laws in general",
+        "SB 202 (2021) votes"
+      ],
+      "places": [
+        "status: holds Georgia Senate District 9 seat; on the 2026-11-03 general election ballot (Ballotpedia, fetched)",
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Nikki_Merritt (confirms identity and office; no subject content)",
+        "campaign site https://www.merritt4georgia.com/ (one general election-access sentence saved; page lists related bills SB 538, SB 253 by number only)",
+        "official senate page: blocked: https://www.legis.ga.gov/members/senate/4978?session=1033 (app shell only, no data)",
+        "blocked: https://www.legis.ga.gov/ bill and vote pages for SB 202 (2021); her final vote on SB 202 not reached",
+        "news: AJC 2021-03-08 and 2021-02-23 absentee ID articles fetched, text returned does not name her (not saved); WTXL article: no text returned",
+        "not reviewed: SB 241 / SB 67 (2021) votes; no reachable official vote page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:49:46.456Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.413Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

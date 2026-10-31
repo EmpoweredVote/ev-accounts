@@ -1,0 +1,196 @@
+{
+  "politician_id": "634d4e4c-57e4-454d-9e40-94e6a0e46f04",
+  "findings": [
+    {
+      "id": "d2a7bce5f0439eb010e19178a01ce884f0f7377983f68c163913ffa75dd4703c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"A student ID gives very little information about the voter, only their name, university and a photo,\" Culp said. \"This bill would treat college students the same as other voters, ensuring they have a government-issued ID to vote, such as a drivers license.\"",
+      "note": "Quote in a House caucus press release issued in his name. He explains Senate Bill 10, which removes student IDs as accepted ID at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "student ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:24.765Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50efb9e1c08b5ab2e5fdb31346200979d1a5bd7c952643f604bde94e329f9815",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "sponsor",
+      "note": "He was the House sponsor of SB 10. Per the release, it removes student IDs as authorized proof of identification at the polls, requires county voter registration offices to keep updated voter lists, and requires local health officers to share death records with them every quarter.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance",
+        "student ID as proof of identity",
+        "voter-roll maintenance and death records"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "c185b75e23bb3cec160e1491a00aeea50b5ad2f1cfc7b4ba148f5030f398fff6",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"A student ID gives very little information about the voter, only their name, university and a photo,\" Culp said.",
+      "note": "House caucus press release on House passage of SB 10, which he sponsored. He explains why the bill removes student IDs as accepted proof of identity at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c38136990ecaa3405c75b636fd1a0363ac8eca74aeaf89fd71582981555f396",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"This bill would treat college students the same as other voters, ensuring they have a government-issued ID to vote, such as a drivers license.\"",
+      "note": "Same release. He says college students would need a government-issued ID, such as a driver's license, like other voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "503008a0d3c49dc7102fe94cb663413172355ff34119c54c0321732dc8c6f1c0",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/public-affairs/2025-04-01/house-republicans-vote-to-ban-use-of-college-student-ids-at-polling-places",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "passage": "\"A university ID does not prove that that is an Indiana resident,\" Culp said.",
+      "note": "Quoted by WFYI during House floor debate on SB 10, of which he was the House sponsor.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:59:13.172Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Kendell_Culp (House District 16, advanced from May 5, 2026 primary, on Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances for this politician)",
+        "official site: https://www.indianahouserepublicans.com/members/general/kendell-culp (press-release list scanned for subject words; one election item found)",
+        "Ballotpedia (no subject positions found)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_kendell_culp_1 (page needs JavaScript; bill pages unreadable)",
+        "blocked: https://www.kendellculp.com (no connection)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: SAVE Act, proof of citizenship, mail-ballot ID"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:36:24.765Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as proof of identity",
+        "voter-roll maintenance and death records",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page (confirms he is an Indiana House District 16 member, advanced from the 2026-05-05 primary and is on the 2026-11-03 general-election ballot)",
+        "Indiana House caucus press release of 2025-04-16 on SB 10",
+        "WFYI public radio report of 2025-04-01 on SB 10",
+        "Indiana Capital Chronicle and Ink Free News reports of April 2025 on SB 10 (his sponsor remarks)",
+        "news search on his name plus election, citizenship and ID bills (no citizenship-bill role for him found)",
+        "not reviewed: his House member page and campaign site",
+        "not reviewed: https://iga.in.gov (roll calls already on file, per brief)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T19:59:13.172Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "politician_id": "6121f45c-3508-43a7-a36e-871901303d73",
+  "findings": [
+    {
+      "id": "ef49019e54d64c6e324cda012130239b35ebae45b065baf7e3ade165db671624",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "sponsor",
+      "note": "DeAyala is listed as a House cosponsor of SB 16, relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof, and creating criminal offenses. Cosponsor date not read from the page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal ballot for voters without proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:27.387Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6887e2d91c572a9761930bd2314d49b2ffc3aa5ee4a1b85646bb6d90d08ad38",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "sponsor",
+      "note": "DeAyala is listed as a House cosponsor of SJR 37, proposing a constitutional amendment clarifying that a voter must be a United States citizen. Cosponsor date not read from the page.",
+      "subjects": [
+        "citizenship requirement to vote",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:02:27.387Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.525Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.525Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "ID with a mail ballot",
+        "proof of citizenship to register (SB 16)",
+        "citizenship requirement to vote (constitutional amendment SJR 37)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia district 133 page shows him as the incumbent on the 2026-11-03 general-election ballot (his own Ballotpedia page does not exist, 404)",
+        "On the Record (0 meetings found)",
+        "official Texas House member page (district 133): no issue statements",
+        "Texas Legislature bill pages for SB 16 and SJR 37 (89R): House cosponsor of both",
+        "blocked: https://manoforstaterep.com (403 from the site's security service, both fetch tool and curl)",
+        "not reviewed: https://dallasexpress.com/profiles/pushing-for-our-principles-deayala-on-re-election-bid/ (403 to curl)",
+        "not reviewed: other own-words search for him; two news searches returned no statements by him on the subject",
+        "not found: any floor vote of his on SB 16 (it did not reach a House vote in the pages reviewed); House vote on SJR 37 not itemised"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:02:27.387Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.525Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

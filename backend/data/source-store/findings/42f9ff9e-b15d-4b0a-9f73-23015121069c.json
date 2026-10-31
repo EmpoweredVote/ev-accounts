@@ -1,0 +1,413 @@
+{
+  "politician_id": "42f9ff9e-b15d-4b0a-9f73-23015121069c",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "ce3d62c3bb86bed5c5c130b49b75c6f31e50dc6a22191555ddb69e54218f8d56",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2024/07/10/video-leader-jeffries-floor-speech-on-extreme-maga-republican-voter-suppression-bill/",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "There is no evidence that has been presented to suggest that undocumented individuals have been participating in federal elections.",
+      "note": "Floor speech on H.R. 8281 (floor debate). Says no evidence has been shown of non-citizens voting in federal elections.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45e4a83f322b101e070449d31a284dc7ba56b9ebe032863ada981f97098085f7",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2024/07/10/video-leader-jeffries-floor-speech-on-extreme-maga-republican-voter-suppression-bill/",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "The extreme MAGA Republican voter suppression bill will not allow Americans to vote who have a state issued driver’s license.",
+      "note": "Floor speech on H.R. 8281. Objects that the bill's identity and citizenship documents rule would exclude state driver's licenses.",
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "photo ID at the polls",
+        "non-photo or alternative documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8325ae779d246cb60174b588a53a3e1b8979e1982fea95e209683ea09ce70d7f",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2024/07/10/video-leader-jeffries-floor-speech-on-extreme-maga-republican-voter-suppression-bill/",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "The extreme MAGA Republican voter suppression bill will not allow Americans who are serving in the military to use their military ID, while they’re serving this country, to vote.",
+      "note": "Same speech. Objects that military ID would not be accepted under the bill.",
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb6c3ea9ac3778cd9a3a12d3c1285e4905070c42a2f824da06c3ca6ee5b6acbd",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2024/07/10/video-leader-jeffries-floor-speech-on-extreme-maga-republican-voter-suppression-bill/",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "The extreme MAGA Republican voter suppression bill won’t allow young people, college students, who are attending state universities all across the land, who have been issued college IDs through their state colleges and universities, to vote.",
+      "note": "Same speech. Objects that state college IDs would not be accepted under the bill.",
+      "subjects": [
+        "accepted forms of ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1109dc5ad9c95dc4cf6f118384c542f1467ec6c2e7fc29013e2037bd52fbc77b",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/03/31/leader-jeffries-statement-on-donald-trumps-voter-suppression-executive-order/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "This action would allow the administration to unilaterally determine who is allowed to vote, subject state election officials to unnecessary investigations meant to intimidate those who oppose their voter suppression agenda and risk the privacy of millions of law-abiding Americans.",
+      "note": "Official statement on a presidential executive order on elections, issued in his name.",
+      "subjects": [
+        "federal executive order on elections",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93da57916c3fbaad6b199c6af3fbe40d7db2836163978ec104ad7ea88ed25821",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/03/31/leader-jeffries-statement-on-donald-trumps-voter-suppression-executive-order/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "Donald Trump has no power to change the way states conduct their elections.",
+      "note": "Same statement. Says the President lacks power over how states run elections. It also refers to the SAVE Act as a congressional priority.",
+      "subjects": [
+        "federal executive order on elections",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f33acb2483c77d311e6008729f8d507d8b4c45315ca511db90b51131f75c27e9",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/09/01/leader-jeffries-statement-on-republican-voter-suppression-legislation/",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "House Resolution 1490 explicitly calls for enactment of the so-called SAVE America Act, which is the top legislative priority of far-right extremists.",
+      "note": "Statement on H.Res. 1490, which calls for enactment of the SAVE America Act (proof-of-citizenship and ID bill).",
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4b3779a2ec69249a3aee8e3bb212b1054e2cd9484d8669c02ffc25a1ca124f2",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/09/01/leader-jeffries-statement-on-republican-voter-suppression-legislation/",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "Accordingly, I will vote No on the latest MAGA effort to rig the midterm elections.",
+      "note": "Same statement. States he will vote no on H.Res. 1490.",
+      "subjects": [
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2256e1493e7e1b7afd7c201f4850703fcbbf45dbca6a54006ef6d8f7a1a16b91",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/09/15/house-democrats-litigation-task-force-leads-150-current-and-former-house-democrats-republicans-in-urging-supreme-court-to-block-trump-dhs-voter-purge-database/",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "passage": "Those errors could result in eligible U.S. citizens being improperly flagged and removed from voter rolls, potentially denying an untold number of Americans their constitutional right to vote.",
+      "note": "Press release from a House caucus litigation task force, naming him as one of the leaders of an amicus brief against a federal citizenship-data database. Issued by his office, not a direct personal quote.",
+      "subjects": [
+        "voter-roll checks",
+        "federal citizenship database",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b99e50670c0ae260c3ce66fdc48414a60f8f91be90e7fb83492fab27b6b035af",
+      "kind": "own-words",
+      "url": "https://jeffries.house.gov/2026/09/15/house-democrats-litigation-task-force-leads-150-current-and-former-house-democrats-republicans-in-urging-supreme-court-to-block-trump-dhs-voter-purge-database/",
+      "date": "2026-09-15",
+      "date_precision": "day",
+      "passage": "And second, Congress has repeatedly declined to authorize the creation of state-by-state citizenship lists, most recently by failing to advance the SAVE Act and SAVE America Act, and so the Trump Administration is unconstitutionally violating the separation of powers by attempting to achieve through lawless executive action what it failed to achieve through legislation.",
+      "note": "Same release. Gives the brief's argument on the SAVE Act and SAVE America Act.",
+      "subjects": [
+        "SAVE Act",
+        "SAVE America Act",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:00:37.007Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7ceaf644eae331b8843b0584d4c371c8bc42cced8e2528571ad4954b5dc124b",
+      "kind": "own-words",
+      "url": "https://democraticleader.house.gov/media/press-releases/leader-jeffries-statement-republican-voter-suppression-legislation",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "House Resolution 1490 explicitly calls for enactment of the so-called SAVE America Act, which is the top legislative priority of far-right extremists. Accordingly, I will vote No on the latest MAGA effort to rig the midterm elections.",
+      "note": "Statement issued in his name as House minority leader. Says he will vote No on H.Res. 1490, which calls for enactment of the SAVE America Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "470780e98db82377c13707279c45a626bcec04ebc9c5fc431c2655e4ec2e0229",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/jeffries-accuses-republicans-voter-suppression-over-bill-requiring-voter-id-proof-citizenship.print",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "\"Republicans have adopted voter suppression as an electoral strategy. That's what the so-called SAVE Act is all about,\" Jeffries said.",
+      "note": "Quoted by Fox News on the day before the House vote on the SAVE America Act; the outlet is the source, not his own site.",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID to vote in federal elections",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4cfdb0ab34912310d4a0b0cc6affc218862c514ee94204214edf65f16ab0602",
+      "kind": "own-words",
+      "url": "https://www.foxnews.com/politics/jeffries-accuses-republicans-voter-suppression-over-bill-requiring-voter-id-proof-citizenship.print",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "\"It's not going to pass. If it squeaks by the House, it's dead on arrival in the Senate. They're wasting time,\" he said.",
+      "note": "Quoted by Fox News on his expectation for the SAVE America Act in the Senate.",
+      "subjects": [
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:51:34.004Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo and non-photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "documentary proof of citizenship (SAVE Act, SAVE America Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: on 2026 general ballot per https://ballotpedia.org/Hakeem_Jeffries (won June 23 2026 primary)",
+        "On the Record (0 appearances)",
+        "official site jeffries.house.gov (site search: SAVE Act, voter ID, election integrity, voting rights, citizenship, voter suppression; 6 pages read)",
+        "Ballotpedia (key votes only; no own words on subject)",
+        "blocked: https://www.congress.gov/member/hakeem-jeffries/J000294 (403)",
+        "blocked: https://www.ontheissues.org/Hakeem_Jeffries.htm (403, lead only)",
+        "campaign site: not reviewed",
+        "news search: not reviewed (web search budget used up)",
+        "mail-ballot ID: nothing on the subject found"
+      ],
+      "found": 10,
+      "at": "2026-10-22T22:00:37.007Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID to vote in federal elections",
+        "documentary proof of citizenship to register (SAVE Act, SAVE America Act)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House minority leader press-release page (identifies him; one statement on the subject)",
+        "one news search on name plus subject words",
+        "Fox News article of 2026-02-09 (quotes him)",
+        "not reviewed: https://www.ballotready.org/people/hakeem-jeffries (returned 404); 2026 ballot status not independently confirmed",
+        "not reviewed: https://ballotpedia.org/Hakeem_Jeffries (page returned no content)",
+        "not reviewed: congress.gov sponsorship lists and his member site"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:51:34.004Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

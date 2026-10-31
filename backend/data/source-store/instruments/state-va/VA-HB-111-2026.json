@@ -1,0 +1,613 @@
+{
+  "id": "VA-HB-111-2026",
+  "scope": "state:va",
+  "title": "HB 111 (2026 Regular Session (LIS session code 20261)): Voter registration; cancellation of registration, sources of data.",
+  "urls": [
+    "https://lis.virginia.gov/bill-details/20261/HB111",
+    "https://lis.virginia.gov/bill-details/20261/HB111",
+    "https://lis.blob.core.windows.net/files/1193831.HTML",
+    "https://lis.blob.core.windows.net/files/1225786.HTML (Governor veto explanation 5/19/2026; not read)",
+    "https://lis.blob.core.windows.net/files/1219452.HTML (Governor recommendation 4/13/2026; not read)",
+    "https://lis.blob.core.windows.net/files/1145801.HTML (committee substitute 2/13/2026; not read)",
+    "https://lis.blob.core.windows.net/files/1082434.HTML (introduced 1/2/2026; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) § 24.2-427 C (existing text reprinted in the enrolled bill, not marked as changed)\n(quote) C. The general registrar shall mail notice promptly to all persons known by him not to be United States citizens by reason of a report from the Department of Motor Vehicles pursuant to § 24.2-410.1 or from the Department of Elections based on information received from the Systematic Alien Verification for Entitlements Program (SAVE Program) pursuant to subsection E of § 24.2-404 prior to cancelling their registrations. The notice shall inform the person of the report from the Department of Motor Vehicles or from the Department of Elections and allow the person to submit his sworn statement that he is a United States citizen within 14 days of the date that the notice was mailed. The general registrar shall cancel the registrations of such persons who do not respond within 14 days to the notice that they have been reported not to be United States citizens.\n(section) § 24.2-427 B (existing text reprinted; the sentence beginning \"Except on the basis of\" is the new matter in this bill)\n(quote) B. The general registrar shall promptly cancel the registration of (i) all persons known by him to be deceased; (ii) all persons known by him to be disqualified to vote by reason of a felony conviction or adjudication of incapacity; (iii) all persons known by him not to be United States citizens by reason of reports from the Department of Motor Vehicles pursuant to § 24.2-410.1 or from the Department of Elections based on information received from the Systematic Alien Verification for Entitlements Program (SAVE Program) pursuant to subsection E of § 24.2-404 and in accordance with the requirements of subsection C; (iv) all persons for whom a notice has been received, signed by the voter, or from the registration official of another jurisdiction that the voter has moved from the Commonwealth; and (v) all persons for whom a notice has been received, signed by the voter, or from the registration official of another jurisdiction that the voter has registered to vote outside the Commonwealth, subsequent to his registration in Virginia. The notice received in clauses (iv) and (v) shall be considered as a written request from the voter to have his registration cancelled. Except on the basis of (i) a written request from the voter to have his registration cancelled or (ii) a certified or authenticated copy of a death certificate purporting to be issued by a governmental official or agency, the general registrar shall not cancel the registration of any voter based on data or reports provided to him by any source other than the Department of Elections or a state agency approved to provide such data or reports by the State Board of Elections. A voter's registration may be cancelled at any time during the year in which the general registrar discovers that the person is no longer entitled to be registered. The general registrar shall provide notice of any cancellation to the person whose registration is cancelled, by mail to the address listed in the voter's registration record and by email to the email address provided on the voter's registration application, if one was provided.\n(other) § 24.2-427: cancellation of registration by voter or for persons known to be deceased or disqualified to vote (subsection A voter cancellation; D felony list; E Driver License Compact notice)\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "Laufer",
+      "role": "author",
+      "version": "Enrolled (HB111ER, 3/6/2026); passed both chambers; vetoed by Governor 5/19/2026"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-02-17",
+      "body": "VA House",
+      "motion": "Read third time and passed House (26110367)",
+      "kind": "roll-call",
+      "yes": 61,
+      "no": 35,
+      "absent": 3,
+      "body_size": 99,
+      "note": "https://lis.virginia.gov/vote-details/20261/HB111/26110367",
+      "members": [
+        {
+          "name": "Kilgore, Terry G.",
+          "vote": "nay"
+        },
+        {
+          "name": "Watts, Vivian E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware, R. Lee",
+          "vote": "nay"
+        },
+        {
+          "name": "Wright, Thomas C., Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward, Jeion A.",
+          "vote": "yea"
+        },
+        {
+          "name": "McQuinn, Delores L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Herring, Charniele L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Carr, Betsy B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hope, Patrick A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Morefield, James W. (Will)",
+          "vote": "nay"
+        },
+        {
+          "name": "Torian, Luke E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt, Tony O.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hodges, M. Keith",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez, Alfonso H.",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn, Israel D.",
+          "vote": "nay"
+        },
+        {
+          "name": "Webert, Michael J.",
+          "vote": "nay"
+        },
+        {
+          "name": "Austin, Terry L.",
+          "vote": "nay"
+        },
+        {
+          "name": "Fowler, Hyland F., Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Leftwich, James A. (Jay), Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Simon, Marcus B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Rasoul, Sam",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloxom, Robert S., Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sullivan, Richard C. (Rip), Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Krizek, Paul E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Price, Marcia S. (Cia)",
+          "vote": "yea"
+        },
+        {
+          "name": "Hayes, C. E. (Cliff), Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Delaney, Karrie K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Convirs-Fowler, Kelly K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Guzman, Elizabeth R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Reid, David A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Tran, Kathy KL",
+          "vote": "yea"
+        },
+        {
+          "name": "McNamara, Joseph P.",
+          "vote": "nay"
+        },
+        {
+          "name": "Askew, Alex Q.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole, Joshua G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Helmer, Dan",
+          "vote": "yea"
+        },
+        {
+          "name": "Runion, Chris",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott, Don",
+          "vote": "yea"
+        },
+        {
+          "name": "Simonds, Shelly A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker, Wendell S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Willett, Rodney T.",
+          "vote": "absent"
+        },
+        {
+          "name": "Wyatt, Scott A.",
+          "vote": "nay"
+        },
+        {
+          "name": "Wiley, William D. (Bill)",
+          "vote": "nay"
+        },
+        {
+          "name": "Ballard, Jason S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett-Parker, Elizabeth B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherry, Mike A.",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark, Nadarius E.",
+          "vote": "absent"
+        },
+        {
+          "name": "Maldonado, Michelle Lopes",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, Phillip A.",
+          "vote": "nay"
+        },
+        {
+          "name": "Sewell, Briana D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Shin, Irene",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata, Anne Ferrell H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Wachsmann, Howard Otto, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams, Wren M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Glass, Jackie Hope",
+          "vote": "yea"
+        },
+        {
+          "name": "McLaughlin, Ellen H.",
+          "vote": "nay"
+        },
+        {
+          "name": "Seibold, Holly M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony, Bonita G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Callsen, Katrina E.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cohen, Laura Jane",
+          "vote": "yea"
+        },
+        {
+          "name": "Cousins, Rae C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis, Will P.",
+          "vote": "nay"
+        },
+        {
+          "name": "Feggans, Michael",
+          "vote": "yea"
+        },
+        {
+          "name": "Gardner, Debra D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Garrett, Thomas A., Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Griffin, Timothy P.",
+          "vote": "nay"
+        },
+        {
+          "name": "Henson, Rozia A., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hernandez, Phil M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent, Hillary Pugh",
+          "vote": "nay"
+        },
+        {
+          "name": "Keys-Gamarra, Karen",
+          "vote": "yea"
+        },
+        {
+          "name": "Laufer, Amy J.",
+          "vote": "yea"
+        },
+        {
+          "name": "LeVere Bolling, Destiny L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Martinez, Fernando J.",
+          "vote": "yea"
+        },
+        {
+          "name": "McClure, Adele Y.",
+          "vote": "yea"
+        },
+        {
+          "name": "Oates, Delores",
+          "vote": "nay"
+        },
+        {
+          "name": "Reaser, Atoosa R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas, Josh",
+          "vote": "yea"
+        },
+        {
+          "name": "Zehr, Eric",
+          "vote": "nay"
+        },
+        {
+          "name": "Phillips, Eric J.",
+          "vote": "nay"
+        },
+        {
+          "name": "Singh, JJ",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson, Jessica L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Carnegie, Karen Robins",
+          "vote": "yea"
+        },
+        {
+          "name": "Carroll, Stacey A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cole, Nicole",
+          "vote": "yea"
+        },
+        {
+          "name": "Cornett, Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dougherty, Lindsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Downey, Mark C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin, Lily V.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hamilton, Karen Fleming",
+          "vote": "nay"
+        },
+        {
+          "name": "McAuliff, John C",
+          "vote": "absent"
+        },
+        {
+          "name": "Mehta, Leslie Chambers",
+          "vote": "yea"
+        },
+        {
+          "name": "Nivar, May",
+          "vote": "yea"
+        },
+        {
+          "name": "Pence, Justin L.",
+          "vote": "nay"
+        },
+        {
+          "name": "Pope Adams, Kimberly",
+          "vote": "yea"
+        },
+        {
+          "name": "Thornton, Virgil Gene, Sr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Whittle, Madison",
+          "vote": "nay"
+        },
+        {
+          "name": "Schmidt, Charles H., Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bulova, Gretchen M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Franklin, Margaret Angela",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire, Garrett",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "body": "VA Senate",
+      "motion": "Passed Senate (SV768)",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 19,
+      "absent": 0,
+      "body_size": 40,
+      "note": "https://lis.virginia.gov/vote-details/20261/HB111/SV768",
+      "members": [
+        {
+          "name": "Lashrecse D. Aird",
+          "vote": "yea"
+        },
+        {
+          "name": "Lamont Bagby",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth B. Bennett-Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer B. Boysko",
+          "vote": "yea"
+        },
+        {
+          "name": "Jennifer D. Carroll Foy",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Creigh Deeds",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara A. Favola",
+          "vote": "yea"
+        },
+        {
+          "name": " Michael J. Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Mamie E. Locke",
+          "vote": "yea"
+        },
+        {
+          "name": "L. Louise Lucas",
+          "vote": "yea"
+        },
+        {
+          "name": "David W. Marsden",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy S. McPike",
+          "vote": "yea"
+        },
+        {
+          "name": "Stella G. Pekarsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Russet Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Danica A. Roem",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron R. Rouse",
+          "vote": "yea"
+        },
+        {
+          "name": "Saddam Azlan Salim",
+          "vote": "yea"
+        },
+        {
+          "name": "Kannan Srinivasan",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott A. Surovell",
+          "vote": "yea"
+        },
+        {
+          "name": "Schuyler T. VanValkenburg",
+          "vote": "yea"
+        },
+        {
+          "name": "Angelia Williams Graves",
+          "vote": "yea"
+        },
+        {
+          "name": "Luther Cifers, III",
+          "vote": "nay"
+        },
+        {
+          "name": "Christie New Craig",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill DeSteph",
+          "vote": "nay"
+        },
+        {
+          "name": "J.D. \"Danny\" Diggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Tara A. Durant",
+          "vote": "nay"
+        },
+        {
+          "name": "Timmy French",
+          "vote": "nay"
+        },
+        {
+          "name": "T. Travis Hackworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Christopher T. Head",
+          "vote": "nay"
+        },
+        {
+          "name": "Emily M. Jordan",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan T. McDougle",
+          "vote": "nay"
+        },
+        {
+          "name": "Tammy Brankley Mulchi",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark D. Obenshain",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark J. Peake",
+          "vote": "nay"
+        },
+        {
+          "name": "Todd E. Pillion",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryce E. Reeves",
+          "vote": "nay"
+        },
+        {
+          "name": "William M. Stanley, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard H. Stuart",
+          "vote": "nay"
+        },
+        {
+          "name": "Glen H. Sturtevant, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "David R. Suetterlein",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:50:01Z)",
+    "fetched_at": "2026-10-28T15:50:01Z",
+    "method": "curl"
+  }
+}

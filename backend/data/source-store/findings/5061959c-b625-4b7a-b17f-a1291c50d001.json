@@ -1,0 +1,272 @@
+{
+  "politician_id": "5061959c-b625-4b7a-b17f-a1291c50d001",
+  "findings": [
+    {
+      "id": "2348ed889d36563d9febead17eabf8675cfae0d36a7457daa01ac8703e73f40a",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: yea (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "fb86062630fbdbedf540fb4810c0f50e4278ecdd9b031337864396a0663cd645",
+      "kind": "record",
+      "url": "https://thevirginiastar.com/news/virginia-democrat-files-bill-to-make-identification-issued-by-any-private-entity-regulated-by-virginia-agencies-count-as-voter-id/tpappert/2023/12/26/",
+      "date": "2023-12-18",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "sponsor",
+      "note": "Reid filed HB 26 on 18 December 2023 to add as acceptable voter ID any photo ID card issued by a private entity licensed or certified by certain state health and social services departments. Source is a news report that quotes the bill text; the official LIS page could not be read.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:08.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72409f23f702420d5ed806eb8f36b804c4dde1a26549bef4bef535a711f66044",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Reid'), linked to David A. Reid via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "851ebc4c21105c0052f35d17363b61533538390128a5b8befc022dfc36b3ef32",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Reid'), linked to David A. Reid via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25b96690d0a9ac954e239ad21b0b7b18ecfa371e44561bbe5f87dcfec7ba4715",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Reid'), linked to David A. Reid via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Reid'), linked to David A. Reid via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b8bf3415dec617dd526df0d1b6443a8818718996e100484d5d6e248594deb82",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20240201/virginia-assembly-public-safety-firearms-subcommittee-to-hear-multiple-firearms-related-bills",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-270-2024",
+      "act": "sponsor",
+      "note": "Date is the date of the article, not of the filing. The article says: \"HB 270\" by \"Del. David Reid, creates a Class 6 felony for any person to import, sell, transfer, manufacture, or purchase a restricted rifle or large-capacity firearm magazines. HB 270 imposes civil liability for the acts of third parties, if a restricted firearm or magazine was transferred in violation of this legislation. Additionally, HB 270 implements a 3-day waiting period for firearm purchases and creates the Virginia Firearm Buy-Back Program.\" The source is a gun-rights group's summary, not the bill text.",
+      "subjects": [
+        "assault weapons and large-capacity magazine restrictions",
+        "waiting period",
+        "firearm buy-back program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "House member page https://house.vga.virginia.gov/members/H0301 (confirms 28th District delegate, member since 2018; bill list needs JavaScript)",
+        "campaign site delegatedavidreid.com home page: nothing on the subject",
+        "Ballotpedia profile (David_Reid_(Virginia)): nothing on the subject",
+        "Virginia Star report and Progress Virginia summary on HB 26 (2024)",
+        "On the Record (0 meetings)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (page needs JavaScript, no text)",
+        "blocked: https://www.vpap.org (voting record pages need JavaScript, no text)",
+        "blocked: https://legiscan.com (403)",
+        "news search on name plus voter ID: nothing on the subject by this person"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:26:08.565Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:53:04.519Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:58:27.791Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and magazines",
+        "waiting periods",
+        "firearm buy-back",
+        "background checks",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "billsponsor.com politician page (confirms Delegate, District 28; featured bills are not about firearms)",
+        "NRA-ILA article on the 2024 firearms subcommittee agenda (names him as patron of HB 270; the text is the group's description)",
+        "blocked: https://lis.virginia.gov (JavaScript app; official bill page not read)",
+        "campaign site: none found (davidreidva.com gave no page; reidforvirginia.com is an unrelated spam site, discarded)",
+        "Ballotpedia: not reviewed",
+        "news search: one search, no direct statement from him on guns found. VA House seats are not on the 2026 ballot"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

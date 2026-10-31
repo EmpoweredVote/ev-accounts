@@ -1,0 +1,129 @@
+{
+  "politician_id": "05a8fe10-5b46-493d-b9af-44162b2de2eb",
+  "findings": [
+    {
+      "id": "f4a879fcf3b335c68958df696c19b06f1c5e4535f64776bc08d90898505f9160",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "motion": "HB 691, Voter Protection and Reliance Act (listed among sponsors)",
+      "note": "Ya Liu is on the sponsor list of HB 691. The bill says a vote cast under the election rules in place on election day cannot be thrown out because of a later law, ruling or rule change, and it speeds up election lawsuits filed close to an election. It does not itself set an ID or citizenship rule. Saved as a related election-integrity bill.",
+      "subjects": [
+        "election integrity laws in general",
+        "election-rule changes after ballots are cast"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:31:40.362Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd0a046a2379dfb2841a97ca4ea7488029c1d3bf6613bbc8aae6cde5f4171a8e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "nay",
+      "note": "House roll call #810, third reading of SB 921, a constitutional amendment titled 'Const. Am./Require Photo ID For All Voters.' The roll call lists Liu among the Noes. The vote passed 73-45, sending the amendment to the November 2026 ballot (per Ballotpedia News). The amendment extends the photo ID requirement beyond in-person voting to mail voting.",
+      "subjects": [
+        "photo ID for all voters including mail ballots",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:02:35.096Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Ya_Liu names her as NC House District 21 incumbent on the Nov 3, 2026 general election ballot (primary canceled)",
+        "On the Record (0 appearances)",
+        "NCGA member page https://www.ncleg.gov/Members/Biography/H/806 (confirms Rep. Ya Liu, District 21)",
+        "NCGA introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/806 (primary-sponsored: HB 31 election-day holiday, off subject; Tribal ID for alcohol/tobacco, off subject)",
+        "NCGA bill page https://www.ncleg.gov/BillLookUp/2025/H691 (co-sponsor list)",
+        "campaign site https://yaliu4nc.com/ and /meet-ya/ (nothing on the subject; home page is dated to an earlier primary)",
+        "Ballotpedia (no positions on voter ID found)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: NCGA co-sponsorship list for other 2025 voter ID bills and roll-call votes (no member vote-record page fetched)",
+        "not reviewed: https://www.facebook.com/YaLiu4NC/ , https://x.com/YaLiu4NC (social pages not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:31:40.362Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID for all voters including mail ballots",
+        "voter ID at the polls",
+        "constitutional amendment on voter ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia profile (confirms she is on the 2026 general-election ballot for NC House District 21)",
+        "NC General Assembly member page (biography fetched; her vote list is a dynamic page that did not load)",
+        "NC General Assembly bill page and House roll call #810 for SB 921",
+        "Ballotpedia News report on SB 921",
+        "web search of her name plus voter ID (no own words found)",
+        "not reviewed: her official legislative contact page and campaign site (no issue pages located by search)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T17:02:35.096Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

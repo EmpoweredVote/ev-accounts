@@ -1,0 +1,19 @@
+{
+  "scope": "state:in",
+  "portals": [
+    {
+      "name": "Indiana General Assembly (iga.in.gov) bill API and PDFs",
+      "url": "https://iga.in.gov/api/getBillDetails?session_lpid=session_2025&bill_basename=SB0010",
+      "status": "works",
+      "how": "The bill pages are script-only. Call /api/getBillDetails?session_lpid=session_<year>&bill_basename=<SB0010> (endpoint found in the site JS bundle) with curl --compressed and a browser user agent; it lists versions and roll calls. Roll-call and bill PDFs are under https://iga.in.gov/pdf-documents/<GA>/<year>/<chamber>/bills/<BILL>/ (e.g. rollcalls/SB0010.340_H.pdf). /api/<year>/bills/... returns the app shell, not JSON.",
+      "checked_at": "2026-10-26T21:19:41Z",
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api"
+      }
+    }
+  ],
+  "rosters": [],
+  "higher_law_duties": []
+}

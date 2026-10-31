@@ -1,0 +1,131 @@
+{
+  "politician_id": "2a4695f6-047a-46bb-82f4-c7360b97f203",
+  "findings": [
+    {
+      "id": "b1aed73fc5f5284561d9645963c1f6a27f63db99397d421f0bbb48e42d5633e9",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/reps.-payne-engleman-highlight-new-laws-effective-july-1/",
+      "date": "2024-06-28",
+      "date_precision": "day",
+      "passage": "To help protect Indiana's elections, officials will have more tools to maintain accurate and up-to-date voter registration lists. Also, proof of citizenship will be required for individuals registering with temporary IDs and first-time voters will be required to provide proof of residency.",
+      "note": "Text from a joint press release issued by the House caucus in the names of Reps. Payne and Engleman, under the heading 'Increasing Election Security'. It is release text, not a direct quote of Payne. It describes new 2024 laws on voter-roll upkeep, proof of citizenship for people registering with temporary IDs, and proof of residency for first-time voters. It does not name a bill number.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "election security laws in general",
+        "proof of residency for first-time voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:22:41.149Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "c814870c1c96c6d04b3c79678606d9cb7cb563aac6fd0f203320187b2f3bcdd8",
+      "kind": "record",
+      "url": "https://www.wrtv.com/news/politics/republican-bill-would-restrict-absentee-voting-in-indiana",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "instrument_id": "IN-HB-1317-2022",
+      "act": "sponsor",
+      "motion": "Co-author of House Bill 1317, Various election law matters (status then: first reading, referred to committee)",
+      "note": "WRTV lists Payne as co-author of HB 1317. As described there, the bill would require an absentee ballot applicant to write in a driver's license number or last four digits of a Social Security number, bar pre-printing those numbers on the form, and bar the Election Commission from expanding vote-by-mail. This is a news description of the bill, not the bill text.",
+      "subjects": [
+        "ID number with absentee ballot application",
+        "vote-by-mail limits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:43:47.528Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll maintenance",
+        "election security laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Zach_Payne shows Indiana House District 66 incumbent on the 2026 general election ballot (November 3, 2026) after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "official caucus page https://www.indianahouserepublicans.com/members/general/zach-payne/ (lists him as Vice Chair of Elections and Apportionment; press list has nothing else on the subject)",
+        "caucus press release list https://www.indianahouserepublicans.com/news/press-releases/ (nothing on the subject by him)",
+        "Ballotpedia (no voter ID content found)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_zach_payne_1/ (page loads only a script shell; sponsorships and votes not readable)",
+        "not reviewed: Indiana General Assembly bill and vote pages for 2024 HB 1264 and later election bills (not readable without script)",
+        "not reviewed: news search and campaign site (web search budget used up; no campaign site found)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:22:41.149Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "ID number with absentee ballot application",
+        "vote-by-mail limits",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia: shows Zach Payne as Indiana House District 66 member on the Nov 3, 2026 ballot; nothing on the subject",
+        "Indiana House caucus press-release page (2021 early-voting release read; it is about early voting hours, not ID, so not saved)",
+        "blocked: http://www.indianahouserepublicans.com/members/zach-payne/ (404 Not Found)",
+        "one news search on his name plus subject words: found one bill co-authorship via WRTV",
+        "not reviewed: iga.in.gov and LegiScan (instructed not to search; floor votes already on file)",
+        "campaign site: not reviewed, none found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:43:47.528Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

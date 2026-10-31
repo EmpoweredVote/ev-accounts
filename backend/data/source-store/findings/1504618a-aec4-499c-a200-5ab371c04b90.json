@@ -1,0 +1,147 @@
+{
+  "politician_id": "1504618a-aec4-499c-a200-5ab371c04b90",
+  "findings": [
+    {
+      "id": "0f81e3c17f2166acabbb9a4428d376d73858a9cfc245d7c76ba0d2835f985612",
+      "kind": "own-words",
+      "url": "https://housedems.com/byrnes-applauds-passage-of-proposal-2-bill-package/",
+      "date": "2023-06-27",
+      "date_precision": "day",
+      "passage": "I'm proud to stand with the people of Michigan by introducing legislation that expands voter rights for Michiganders.",
+      "note": "Her statement on her bills carrying out the 2022 voting-rights ballot measure, which included a permanent absentee voter list. It does not mention ID.",
+      "subjects": [
+        "mail-ballot access",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:19.634Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c145cbbfb4aeafa2ecdfa6d0fcc4df6661ac49570e10450f0e0e1e01d0ace65",
+      "kind": "own-words",
+      "url": "https://www.wkar.org/wkar-news/2023-06-17/voting-rights-bills-moving-through-house-senate",
+      "date": "2023-06-17",
+      "date_precision": "day",
+      "passage": "Voting should be easy and accessible for all eligible Michiganders.",
+      "note": "Quoted by WKAR about the House voting-rights bill package.",
+      "subjects": [
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:19.634Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29f74167d7a02525bbd29623b7a28e08d5d9beb039d98c74e798afc14bdde181",
+      "kind": "own-words",
+      "url": "https://housedems.com/capitol-community-updates-34/",
+      "date": "2023-09-26",
+      "date_precision": "day",
+      "passage": "The implementation of Proposal 2 will create generational change for Michigan voters at a critical moment in our democracy.",
+      "note": "Statement in a House newsletter on her mail-voting law (Public Act 86 of 2023); newsletter dated 2023-10-06, article dated 2023-09-26.",
+      "subjects": [
+        "mail-ballot access",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:19.634Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Erin Byrnes (District 15)') on the official bill page; linked to Erin Byrnes via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Byrnes'), linked to Erin Byrnes (district 15) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID / absentee access",
+        "proof of citizenship (SAVE Act)",
+        "voting access and election laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus pages https://housedems.com/byrnes-applauds-passage-of-proposal-2-bill-package/ , https://housedems.com/capitol-community-updates-34/ , https://housedems.com/?p=254955 (identity confirmed; statements saved; no voter ID or SAVE Act text found on these pages)",
+        "https://www.wkar.org/wkar-news/2023-06-17/voting-rights-bills-moving-through-house-senate (news quote saved)",
+        "web search x1 (name plus voter ID / election bills); a 2026 SAVE Act graphic was mentioned in a search snippet only, not found on any page I fetched",
+        "not reviewed: Ballotpedia, personal campaign site, 2026 ballot status"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:19.634Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

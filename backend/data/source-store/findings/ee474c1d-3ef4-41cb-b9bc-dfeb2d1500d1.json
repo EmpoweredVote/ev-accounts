@@ -1,0 +1,56 @@
+{
+  "politician_id": "ee474c1d-3ef4-41cb-b9bc-dfeb2d1500d1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voting rights / election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "blocked: list-discovered-sources.ts could not run (required environment variables missing; .env not read per instructions)",
+        "blocked: https://ballotpedia.org/Courtney_McClain (fetch returned empty content)",
+        "blocked: https://www.courtneyforcongress.com (guessed URL, empty content; no campaign site found by search)",
+        "https://hoodline.com/2026/10/timmons-mcclain-clash-tonight-in-upstate-sc-congressional-debate/ (no statements on subject)",
+        "https://www.postandcourier.com/politics/courtney-mcclain-gen-z-congress-sc/article_88e40c3a-7ac8-4167-aa88-89e96aa662c0.html (reporter summary only: platform includes shoring up voting rights protections; no own words)",
+        "https://www.foxcarolina.com/2026/10/08/live-tonight-william-timmons-courtney-mcclain-face-off-congressional-debate/ (debate preview, no statements; full debate video not reviewed)",
+        "https://www.southcarolinapublicradio.org/sc-news/2026-03-20/4th-congressional-district-candidate-could-make-state-history-in-2026-election (no statements on subject)",
+        "web searches for campaign site, SAVE Act and voter ID (only other people named McClain returned)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:10:44.281Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voting rights protections in general",
+        "non-citizen voting and election integrity"
+      ],
+      "places": [
+        "found the person: Post and Courier profile of the 2026 SC-04 candidate (https://www.postandcourier.com/politics/courtney-mcclain-gen-z-congress-sc/article_88e40c3a-7ac8-4167-aa88-89e96aa662c0.html), only a reporter's paraphrase of a voting rights pledge, no direct words",
+        "SC Public Radio profile (2026-03-20), nothing on subject",
+        "FOX Carolina debate pages (2026-10-08) and Hoodline debate preview, previews only, no transcript",
+        "campaign site courtneyforcongress.com is a parked page that redirects to /lander, nothing usable",
+        "blocked: https://bluevoterguide.org/SC/candidate_Courtney_McClain/702242 (403)",
+        "blocked: https://scdailygazette.com/2026/03/26/republican-robert-e-lee-and-25-year-old-democrat-file-to-challenge-rep-timmons-in-upstate/ (403)",
+        "On the Record extract script not present in this workspace, not run",
+        "4 web searches, nothing on voter ID or citizenship proof by this person"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:38:47.018Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

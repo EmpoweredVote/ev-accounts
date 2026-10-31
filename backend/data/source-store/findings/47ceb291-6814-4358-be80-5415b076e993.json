@@ -1,0 +1,285 @@
+{
+  "politician_id": "47ceb291-6814-4358-be80-5415b076e993",
+  "findings": [
+    {
+      "id": "4b459cf6d470cb3c910509bd1776de274a6c4b5057383673e8d8e03a72a80468",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/smit-will-chair-elections-committee-supports-proposal-to-improve-election-integrity",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "passage": "Before, non-citizen voting was just a hypothetical, but now we know it’s really happening – and we’ll never know how often. This event proved that voter ID laws are long overdue.",
+      "note": "Statement in her name, issued when she became chair of the House election committee, linking a reported case of a non-citizen voting to the case for voter ID laws.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96542a80ba925676c313723cac48be62a19c2c7b5d1aed96a8d3998aea66bc45",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-smit-demands-further-investigation-into-sos-bensons-admission-of-non-citizens-voting-in-michigan-elections",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "passage": "Proof of citizenship should absolutely be required to vote in our elections, and I am sure the vast majority of my fellow election clerks would agree. Secretary Benson and her team should complete a thorough review of our voter rolls and ensure that only living U.S. citizens, who reside in Michigan, are able to validly cast a vote at the polls in the future.",
+      "note": "She says proof of citizenship should be required to vote and calls for a review of the voter rolls. Quoted in a House caucus release; the same quote also appears at https://www.michigannewssource.com/?p=60995 (2025-04-07).",
+      "subjects": [
+        "proof of citizenship to vote",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c5ade4eb0f9f81cf439b0a6b924f4602f9fdf38ab4138e9e8b204dd2a43a749",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/smit-slams-democrats-for-killing-voter-security-measures",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "passage": "My husband and I had to prove our citizenship when we adopted our children. Never once, in any of these life experiences, did I feel disenfranchised.",
+      "note": "Argues from personal experience that showing citizenship documents is not a burden, in support of House Joint Resolution B (proof of citizenship to register, photo ID to vote).",
+      "subjects": [
+        "proof of citizenship to register",
+        "photo ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a135db17ca1745d9a165fe282186817632ada6857b8fe3e9eafc56d951e0278b",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-smit-attends-white-house-leadership-summit-in-washington-d-c",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "passage": "I was glad to attend the hearing to support Rep. Bollin’s testimony on the MEGA Act. I hope to help craft and introduce similar legislation at the state level so we can continue working closely with our federal partners on election security.",
+      "note": "She backs a federal bill that sets voter ID, citizenship verification for registration and voter-list upkeep (as described on the same page) and says she wants similar state legislation; the page also says she joined in presenting a state House resolution backing the SAVE Act.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a77647912c6a3428c7c1339df758a3004b3be1d9efbbc5acd08595b776bbc42",
+      "kind": "own-words",
+      "url": "https://michiganpublic.org/politics-government/2026-08-12/republicans-promote-voter-id-amendment-after-new-allegation-of-noncitizen-voter-registration",
+      "date": "2026-08-12",
+      "date_precision": "day",
+      "passage": "“I think we need answers on that. How was he on the rolls, how was he not removed?”",
+      "note": "Quoted by Michigan Public at a Lansing press conference about a video alleging a non-citizen on the voter rolls; the same event backed a voter ID ballot amendment. The outlet quoted her; the page is not her own site.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting",
+        "voter ID ballot amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b3b89ee06c9eda946a67f08cbbb661ea3fc01c26cd0f7b0ec08049795f18dbd",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-smit-we-need-to-save-michigan-from-ongoing-foreign-voting-threats",
+      "date": "2026-08-13",
+      "date_precision": "day",
+      "passage": "The charges filed today are just the tip of the iceberg, and further underscore exactly why the U.S. Senate must approve the SAVE Act to safeguard our elections and ensure only U.S. citizens are voting in our elections.",
+      "note": "Statement in her name after state charges against five non-citizens; she calls on the U.S. Senate to pass the SAVE Act, which the release describes as requiring proof of citizenship to register and photo ID to vote.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "photo ID at the polls",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3946ed51bd176a1a4f4eea4e093a84b04fca8f1c9c685aa84603e9596595102b",
+      "kind": "own-words",
+      "url": "https://gophouse.org/posts/rep-smits-relentless-effort-to-ensure-election-integrity",
+      "date": "2026-09-28",
+      "date_precision": "day",
+      "passage": "Now that I am serving as Chair during this legislative term, my focus is to bring about good policies and laws that can be quickly passed to clean up our voter file, kick out illegal ballots from elections, and properly investigate serious and credible evidence of systemic voter fraud in our Michigan elections.",
+      "note": "Issue page on her official site (date taken from the page's own publish data) stating her goals as committee chair, including voter-file cleanup; the page also lists her election bills and press releases.",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73ea2a261f1896d21eb1f668bc5ed2227d4ced16d1f08e409036ea6b694ec8f9",
+      "kind": "own-words",
+      "url": "https://www.votebeat.org/michigan/2025/02/04/rachelle-smit-election-integrity-committee-2020-election-trump",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "“I absolutely think that it was stolen, yeah, and I’m not shy to say that,”",
+      "note": "Quoted by Votebeat from an interview, about the 2020 presidential election; saved as related election-integrity talk, not as a statement on ID. The outlet quoted her.",
+      "subjects": [
+        "2020 election claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:52:01.912Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1dc2ff44a195725625ea01af5777b7fa04b6ade0c84f0e1b682b1d416a430417",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4227",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4227-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4227 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 509q, 509gg, 509\"",
+      "note": "Named as co sponsor ('Rachelle Smit (District 43)') on the official bill page; linked to Rachelle Smit via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Smit'), linked to Rachelle Smit (district 43) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "194c9d57c501cdf8e0bf10a1c07a3890c98c8bb29c97004ceb06d884b4ccaa43",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-HJR-B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced text only (2025-HIJR-B.htm). The bill page lists no posted text of the House substitute H-1 adopted 2025-04-30 (HJ 41 Pg. 438), so the roll call on adoption (2025-05-01, not adopted 58-48, needs two-thirds) was on text that is not in this file. Quotes below are from the introduced text; section labels are Article II sections as printed.",
+      "note": "Named as co sponsor ('Rachelle Smit (District 43)') on the official bill page; linked to Rachelle Smit via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: incumbent House district 43 member, listed for the 2026 general-election ballot (https://theballotbrief.com/candidate/rachelle-smit-mi)",
+        "official House caucus site house-caucus.org: reviewed her releases of 2025-01-30, 2025-04-07, 2025-05-01, 2026-02-12, 2026-03-03 (election-law bills on candidate info, nothing on ID), 2026-08-13, 2026-08-27 (petition process, off subject) and her issue page of 2026-09-28",
+        "Michigan Public 2026-08-12; Votebeat 2025-02-04; Michigan News Source 2025-04-07",
+        "not reviewed: audio only, https://www.stevegruber.com/podcast/2025/03/rachelle-smit-bill-requiring-proof-of-citizenship-for-voter-registration-photo-id-for-ballots/ (no transcript)",
+        "not reviewed: audio only, https://stevegruber.com/podcast/2024/11/rachelle-smit-michigans-laws-enable-voter-fraud/ (no transcript)",
+        "not reviewed: On the Record extract script (not run in this session)",
+        "blocked: https://ballotpedia.org/Rachelle_Smit (403)",
+        "not reviewed: https://michiganadvance.com/2025/02/05/head-of-michigans-house-elections-committee-believes-the-2020-election-was-stolen/ (not fetched; same story covered by Votebeat)"
+      ],
+      "found": 8,
+      "at": "2026-10-28T22:52:01.912Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.330Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

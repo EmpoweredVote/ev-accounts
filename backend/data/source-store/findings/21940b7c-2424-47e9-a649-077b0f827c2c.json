@@ -1,0 +1,57 @@
+{
+  "politician_id": "21940b7c-2424-47e9-a649-077b0f827c2c",
+  "findings": [
+    {
+      "id": "d79f99089caab5279801c05e145de014bbefa6bb737d35116d20c7dc23fe6603",
+      "kind": "record",
+      "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Assembly floor third reading",
+      "note": "Roll listing for the Assembly floor vote on SB 1174 names him among the ayes (Digital Democracy bill page lists the voters; hearing page is the transcript).",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Digital Democracy bill page for SB 1174 (2023-24) with vote rolls and hearing transcripts",
+        "Digital Democracy bill page for AB 25 (2025-26 voter ID bill): no vote by this person",
+        "Secretary of State certified candidate list for 2026-11-03 (used to confirm 2026 candidacy)",
+        "news search on name plus voter ID and SAVE Act: nothing on the subject",
+        "blocked: https://ballotpedia.org/ (fetch tool returned empty; direct fetch not attempted further)",
+        "blocked: https://leginfo.legislature.ca.gov/ (403 bot challenge; legiscan also 403)",
+        "official site hart.asmdc.org (site search for voter ID and SAVE Act: no matching items)",
+        "Digital Democracy hearing transcript Assembly floor 2024-08-27: roll call only, no remarks by this person",
+        "status: on the 2026 general-election ballot for Assembly District 37 per https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:59:21.811Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

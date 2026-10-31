@@ -1,0 +1,202 @@
+{
+  "politician_id": "eedc8e98-44ea-4dd0-9fc1-c83492e0d379",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "78bd84913f7341f5b7f5922d799620162f7c731716a854b48ac8784da122b529",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: yea (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "541f0b530ae759c5beb3e773825d50e726b30cfe1f7d8963aeb30abe5e09655b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Reeves'), linked to Bryce E. Reeves via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "831e29dac705d3e8a562d8f6b7d9cfef371af8ec0c144435efdeaa5c0889099b",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Reeves'), linked to Bryce E. Reeves via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21e2ea04c5fe6eb8d90bb90fdcc89b35c3a7fe03fbb40e05b3df18675f108622",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "yea",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Reeves'), linked to Bryce E. Reeves via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.795Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b550d4c51c5ca8eab9483c89eb80fcec344cf595eb64aa48782aff8a21420724",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB900",
+      "date": "2023-01-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-900-2023",
+      "act": "sponsor",
+      "note": "Listed as a patron of SB 900 (2023) as filed (\"Patrons-- McDougle, Cosgrove, DeSteph, Dunnavant, Hackworth, Hanger, Newman, Norment, Obenshain, Peake, Pillion, Reeves, Ruff, Stanley, Stuart, Suetterlein and Vogel\"). The bill was left in the Senate Privileges and Elections Committee on 2023-02-08; it had no floor vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 va-01 (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-30T22:36:00Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement instead of ID",
+        "proof of citizenship to register",
+        "registration verification",
+        "mail-ballot rules",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page (fetched, nothing on the subject)",
+        "web searches on name plus subject words",
+        "Reeves campaign site bryce-reeves.com: blocked/unreachable (no response)",
+        "Virginia Mercury 2022-02-22: blocked by a bot-check page, not retried",
+        "WTOP 2022-01 and 2022-02, WRIC 2022, Cardinal News 2022-01-18 (fetched, none quote him)",
+        "blocked: LIS, legiscan, legiplex (not retried)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:32:10.711Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.522Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.795Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

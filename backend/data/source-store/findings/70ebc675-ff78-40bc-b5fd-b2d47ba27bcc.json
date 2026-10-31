@@ -1,0 +1,60 @@
+{
+  "politician_id": "70ebc675-ff78-40bc-b5fd-b2d47ba27bcc",
+  "findings": [
+    {
+      "id": "7de0d9c3c294e53f78678fe07bde7f030637a2bad7831a43fcd384c24aa37df6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: nay (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "blocked: https://ballotpedia.org/Helena_Scott (fetch returned empty page)",
+        "web search: name plus voter ID and proof of citizenship (no own-words result)",
+        "blocked: https://michiganadvance.com/2026/04/15/michigan-house-passes-controversial-voter-id-bill-along-party-lines/ (403)",
+        "blocked: https://michiganadvance.com/2026/03/17/gop-led-proof-of-citizenship-voting-bill-advances-despite-concerns-from-democratic-colleagues/ (403)",
+        "https://www.wnem.com/2026/03/04/michigan-house-committee-debates-bill-requiring-proof-citizenship-register-vote/ reviewed: names none of the five",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146047 reviewed only for Kunse; bill-level pages not itemised",
+        "https://housedems.com/helena-scott/: confirms Rep. Helena Scott, District 8; only general get-out-the-vote posts, nothing on voter ID",
+        "https://www.michiganvotes.org/legislators/2025/house/district-8/votes?page=29: nothing on the subject",
+        "blocked: https://michiganpublic.org/politics-government/2021-10-14/michigan-house-adopts-voter-id-legislation (certificate rejected); a search result snippet suggests a 2021 own-words quote there, so this is a gap to retry by the caller",
+        "2026 general-election ballot status not confirmed from fetched pages"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:44:39.517Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

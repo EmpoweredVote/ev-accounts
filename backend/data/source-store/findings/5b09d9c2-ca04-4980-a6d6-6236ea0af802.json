@@ -1,0 +1,160 @@
+{
+  "politician_id": "5b09d9c2-ca04-4980-a6d6-6236ea0af802",
+  "findings": [
+    {
+      "id": "d9d03f6e88fdfdea620e72a880316e35e12a860104798da1ddb5e7be5cac3742",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/gaskill-to-chair-senate-committee-on-elections",
+      "date": "2023-11-20",
+      "date_precision": "day",
+      "passage": "\"I am honored to have been chosen to serve as chairman of the Senate Committee on Elections,\" Gaskill said. \"I look forward to the challenge of maintaining and improving the integrity of our elections by working with my fellow senators on the committee and with the House Committee on Elections.\"",
+      "note": "Senate caucus news release on his appointment as chair of the Senate Committee on Elections for the 2024 session. He speaks of election integrity in general terms only; it names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity in general",
+        "chair of Senate Committee on Elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:17.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "c8183afa89d8efd12802a3bde444cdd985febd32e2f920ed72e4de4e55fa8ca3",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/gaskill-to-chair-senate-committee-on-elections",
+      "date": "2023-11-20",
+      "date_precision": "day",
+      "passage": "I look forward to the challenge of maintaining and improving the integrity of our elections by working with my fellow senators on the committee and with the House Committee on Elections.",
+      "note": "Quoted in a Senate caucus press release on his appointment as chair of the Senate Committee on Elections for the 2024 session. General statement about election integrity; names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:25.761Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a115a92ea97d1a9f3a0fdb60a44d98396e83ef68ba7279f34861ed60a7637f8",
+      "kind": "record",
+      "url": "https://www.wfyi.org/2024-03-01/indiana-legislature-approves-bill-adding-additional-verification-steps-to-voter-registration",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Senate sponsor of the 2024 voter-registration verification bill passed 34-13 by the Senate (bill number not shown on the page)",
+      "note": "AP story says he was the bill's Senate sponsor and called it a commonsense bill that adds protections against fraud. The bill, as described there, adds proof of residency for first-time in-person registrants unless a matching Indiana driver's license or Social Security number is given, lets the state use third-party credit data to check addresses, and has the state compare the voter list with Bureau of Motor Vehicles data to find noncitizens, who would have 30 days to give proof of citizenship or lose registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against state records",
+        "proof of residency to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:12:25.761Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Mike_Gaskill names him as Indiana State Senate District 25 incumbent, on the Nov 3, 2026 general-election ballot after winning the May 5, 2026 primary",
+        "On the Record (0 appearances, extract-otr.mjs run with name search)",
+        "Senate caucus official page https://www.indianasenaterepublicans.com/gaskill (news list, legislative-updates page, chair release, HB 1032 statement, end-of-session statement reviewed: nothing on photo ID or citizenship proof)",
+        "campaign site https://electmikegaskill.com/ (bio page only, nothing on the subject)",
+        "Ballotpedia (profile fetched; no voter ID statements found)",
+        "blocked: https://indianacapitalchronicle.com/2024/02/13/controversial-elections-security-bill-could-see-changes/ (HTTP 403, also with browser user agent)",
+        "blocked: https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/ (HTTP 403)",
+        "blocked: https://legiscan.com/legislator/Mike_Gaskill/people/ (bot challenge)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mike_gaskill_1 (page is script-rendered; no bill list readable, so sponsorships on the subject not confirmed)",
+        "HB 1264 (2024, election security) engrossed House text fetched from iga.in.gov: does not name him; Senate-stage versions not reachable",
+        "not reviewed: news searches on his name plus subject words (the shared web search budget was used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:36:17.616Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll checks against state records",
+        "proof of residency to register",
+        "election integrity laws in general",
+        "student ID as voting ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Senate caucus site (chair-of-elections release): https://www.indianasenaterepublicans.com/gaskill-to-chair-senate-committee-on-elections",
+        "campaign site https://electmikegaskill.com/ (nothing on the subject)",
+        "BallotReady page https://www.ballotready.org/people/mike-gaskill: confirms a 2026 general-election candidacy for Senate District 25; no stance text on the subject",
+        "news searches on his name plus the subject words (two searches)",
+        "AP story on the 2024 voter-registration bill via WFYI",
+        "Yahoo/Indiana Capital Chronicle story on 2025 vote-center study bill: no remarks on the subject by him",
+        "blocked: https://indianacapitalchronicle.com/2024/02/13/controversial-elections-security-bill-could-see-changes/ (403)",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 (403) and https://legiscan.com/IN/bill/HB1264/2024 (403), so his SB 10 authorship was not confirmed",
+        "blocked: https://iga.in.gov (pages load only through scripts, no bill text readable)",
+        "Ballotpedia page returned no readable text",
+        "votes for IN-SB-10-2025 are already on file; not searched"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:12:25.761Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

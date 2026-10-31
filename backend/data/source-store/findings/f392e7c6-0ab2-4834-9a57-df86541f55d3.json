@@ -1,0 +1,77 @@
+{
+  "politician_id": "f392e7c6-0ab2-4834-9a57-df86541f55d3",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/James_Arciero names him as 2nd Middlesex District state representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances, extract-otr.mjs run with politician id and name)",
+        "Ballotpedia: nothing on the subject",
+        "legislature member page https://malegislature.gov/Legislators/Profile/J_A1 (profile confirms Representative James Arciero, Westford): nothing on the subject in sponsored or cosponsored lists for the 194th court (no voting, ID, ballot or citizenship-proof bills)",
+        "legislature bill search https://malegislature.gov/Bills/Search?SearchTerms=voter%20identification (first page only, fetch summary): no Arciero bills seen; nothing on the subject",
+        "official and campaign site: not reviewed (no URL found; the web search budget was used up, so no news or own-words search was run)",
+        "news search on name plus subject words: not reviewed (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:44.634Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "malegislature.gov member profile (confirms sitting 2nd Middlesex representative from Westford; his filed bills list has nothing on voter ID, proof of citizenship or elections)",
+        "blocked: https://ballotpedia.org/James_Arciero (not retrieved; Ballotpedia returns a bot-check to scripted fetches)",
+        "campaign site: not found by search",
+        "web search on name plus voter ID or election (nothing on the subject)",
+        "2026 primary results PDF for Westford (https://insidelowell.com/wp-content/uploads/2026/09/WestfordElectionResults_2026Primary.pdf) lists him as the only name for the seat; November ballot listing not reviewed",
+        "no own-words statement on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:17:17.485Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

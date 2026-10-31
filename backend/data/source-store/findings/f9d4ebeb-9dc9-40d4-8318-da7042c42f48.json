@@ -1,0 +1,93 @@
+{
+  "politician_id": "f9d4ebeb-9dc9-40d4-8318-da7042c42f48",
+  "findings": [
+    {
+      "id": "e6ef7456ed0b7436d9a057fb298b263af2968f16c26fadafb441a11af5a59348",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+mbr+HB158",
+      "date": "2024-01-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-158-2024",
+      "act": "sponsor",
+      "note": "Listed as a House co-patron (not chief patron) of HB 158, firearm locking device required for sale or transfer of firearm. As passed by the House, it makes it a Class 3 misdemeanor for a licensed dealer, manufacturer or importer to sell or transfer a firearm to anyone else without providing a locking device and a warning about children's access (summary: https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB158). Date is the prefiling date.",
+      "subjects": [
+        "firearm locking devices",
+        "safe storage and child access"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df2462bcfe1899fcdbd997f1f60d460b5ade00b01585d2ba4b8760cf038f7a99",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+mbr+HJ76",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "VA-HJ-76-2024",
+      "act": "sponsor",
+      "note": "Listed as a House co-patron (not chief patron) of HJ 76, which directs the Joint Legislative Audit and Review Commission to conduct a two-year study of the social, physical, emotional and economic effects of gun violence on communities (summary: https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HJ76).",
+      "subjects": [
+        "gun violence study"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "official House page https://house.vga.virginia.gov/members/H0356: confirms office, nothing on the subject",
+        "campaign site: not found at guessed address",
+        "Ballotpedia: page returned empty",
+        "not reviewed: https://richmondfreepress.com/news/2024/dec/26/cousins-announces-re-election-bid-for-house-of-delegates (404)",
+        "not reviewed: On the Record extraction script (not run)",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "web searches on name plus subject words: nothing relevant"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:15.028Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun violence",
+        "firearm locking devices and safe storage",
+        "assault-style weapons",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Virginia LIS legacy bill pages (2024 HJ 76 and HB 158: fetched, patrons confirmed; HB 12 and HB 351 checked, she is not listed)",
+        "two web searches on name plus gun words (no statement of her own found)",
+        "not reviewed: official site, campaign site, Ballotpedia, 2025 and 2026 session gun bills (child access bill and 2025 HB 2064 not verified on LIS)",
+        "legiplex and wevoteproject pages need JavaScript (not readable)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

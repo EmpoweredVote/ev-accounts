@@ -26,6 +26,7 @@ programme is for.
 | 1 | Charlotte NC | 12 | 420 | 5 ✅LIVE | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 ✅LIVE | `2026-10-03-knight-fl-cities` (PR #857) |
 | 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅LIVE | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows queued and all 30 approved 2026-10-06 (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
+| 4 | **Philadelphia PA** | 25 | 1,300 | **4** ✅LIVE (Parker) | `2026-10-28-knight-phl-city` — ▶ OPEN: Parker 4 of 52 topics; 17 council + 7 row officers not started |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -36,6 +37,537 @@ cherry-picked only half of #855 and conflicted once #855 landed; the base was me
 verifier files were resolved to master, which is a strict superset. Charlotte’s five and Florida’s two
 were applied to the queue on 2026-10-06 and **approved the same day** — see the slice 3 section for
 why that sentence used to say they were "awaiting human approval" while nothing had been applied.
+
+## ▶️ THE BACKLOG — 17 cities with NO stances (measured in prod 2026-10-28)
+
+**47 of 287 seated Knight-city officials hold a chair. 240 do not.** Measured against production,
+not read off this tracker: seated people via `office_current_holder` from each city government's
+chambers; a "chair" is a `politician_answers` row with `value <> 0` in a non-draft season. The 287
+reconciles exactly with the 2026-10-02 scope table above.
+
+🔴 **The review queue was checked too, not just this file.** Every Knight-city row in
+`inform.stance_research_review` is `resolved` — nothing is sitting unapproved. The gap is
+unresearched work, not unpublished work.
+
+### Done or part-done (8 cities, 47 people)
+
+| City | Seated | With a chair | Note |
+| --- | --- | --- | --- |
+| San José CA | 11 | **11** | predates this programme |
+| Saint Paul MN | 8 | **8** | slice 3 |
+| Long Beach CA | 13 | 12 | predates this programme; 3 of the 12 are Season 1 only, and Season 1 is CLOSED |
+| Duluth MN | 10 | 9 | slice 3 (Clanaugh 0) |
+| Charlotte NC | 12 | 4 | slice 1 |
+| Bradenton FL | 6 | 1 | slice 2 |
+| Miami FL | 6 | 1 | slice 2 |
+| Detroit MI | 18 | 1 | predates this programme |
+
+### ▶️ OPEN — zero chairs, 17 cities, 203 people
+
+🔴 **ELECTION TIMING DECIDES THE ORDER, NOT SIZE OR ALPHABET.** Researching a council five weeks
+before it turns over seats chairs against people who are about to stop holding the seat. Chairs
+attach to the *person*, so the work is not destroyed — but the Knight purpose is a voter looking up
+who represents them now. **Check the city's next municipal election before opening a slice.**
+
+| City | Seated | Next city election | Open? |
+| --- | --- | --- | --- |
+| **Lexington KY** | **34** | 🔴 **2026-11-03, FIVE DAYS — all 15 council seats AND the mayor** | 🔴 **DO NOT OPEN NOW** |
+| ~~Philadelphia PA~~ | 25 | 2027-11-02, all seats | ✅ **DONE — slice 4** |
+| Columbus GA | 16 | May/June even years — 2026 PAST, winners seat Jan 2027 | ▶ **OPEN — slice 5, scoped to 13** |
+| Macon-Bibb GA | 15 | ⚠ verify | |
+| Akron OH | 14 | ⚠ verify (odd-year city) | |
+| **Boulder CO** | **8** (not 9 — see below) | 🔴 **2026-11-03, SIX DAYS** | 🔴 **DO NOT OPEN NOW** |
+| Gary IN | 12 | ⚠ verify (odd-year city) | |
+| Fort Wayne IN | 11 | ⚠ verify (odd-year city) | |
+| Aberdeen SD | 9 | ⚠ verify | |
+| Grand Forks ND | 9 | ⚠ verify | |
+| State College PA | 8 | ⚠ verify | |
+| Biloxi MS | 8 | ⚠ verify (2025 municipal → 2029) | |
+| Milledgeville GA | 7 | ⚠ verify | |
+| Wichita KS | 7 | ⚠ verify | |
+| Columbia SC | 7 | ⚠ verify | |
+| Myrtle Beach SC | 7 | ⚠ verify | |
+| Tallahassee FL | 5 | ⚠ verify (even-year city) | slice 2 reached it; it scored 0 |
+
+⚠ **Tallahassee is NOT untouched** — slice 2 covered it and found no seatable chair. Re-opening it
+is a re-research, not a first pass. Read the slice 2 batch before pricing it.
+
+### 🔴 LEXINGTON IS THE SECOND BOULDER, AND IT IS THE BIGGEST CITY ON THE BOARD
+
+Verified 2026-10-29, five days out: **Lexington votes 2026-11-03 for the mayor and ALL 15 Urban
+County Council seats.** The twelve district members sit two-year terms, so the whole district bench
+turns over every cycle. Its table row read `⚠ verify`, and at 34 seated people it is the largest
+slice left — so it is exactly what a session picks when it sorts the backlog by size.
+▶ **Re-measure the roster after 2026-11-03, then open it.** The same applies to Boulder, whose
+election is the same day and whose stale `Mark Wallach` row is still waiting on slot `CC_0308`.
+⚠ **Two of the three cities anyone would reach for first were about to turn over.** The `⚠ verify`
+marks in that table are not decoration — treat an unverified date as a blocker, not a formality.
+
+### 🔴 BOULDER — WHY IT IS NOT THE PLACE TO START, AND A DATA DEFECT IT EXPOSED
+
+Measured 2026-10-28, before any research:
+
+1. 🔴 **`Mark Wallach` STILL HOLDS A BOULDER SEAT IN PROD AND HAS NOT SINCE JULY.** He resigned
+   **2026-07-23**, effective immediately, as the lone "no" in an 8–1 vote to pursue FAA grants for
+   Boulder Municipal Airport. `office_terms` carries his term open-ended (`term_end IS NULL`) from
+   2021-11-16. Because he resigned **before Aug. 1**, the city charter keeps the seat **vacant until
+   the 2026-11-03 election** — so this is a real vacancy, not a succession. Fix is
+   `essentials.vacate_office(office_id, '2026-07-24', <source>)`.
+   - ▶ The city's own council page is the detector that caught it: eight members appear three times
+     each in the raw HTML; Wallach appears **once**, in the `alt` text of the December 2025 group
+     photo. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE** — it is exactly
+     as old as the photo, and it outlived the membership list beside it.
+   - ⚠ WebFetch's summary said only that he "does not appear in the Members list". The count that
+     settled it came from raw bytes.
+2. 🔴 **SIX OF NINE BOULDER SEATS ARE ON THE 2026-11-03 BALLOT.** The mayoralty (Brockett running,
+   against five including sitting member **Taishya Adams**) plus **five council seats**, 13
+   candidates, top-five-wins, no RCV. Adams is therefore leaving council whatever happens. Only
+   **Benjamin, Speer and Kaplan** are certain to be seated in December. New members seat in early
+   December (Kaplan's precedent: 2025-12-04).
+3. ⚠ **Boulder now elects in EVEN years.** Do not assume the Colorado odd-year municipal pattern
+   here; it is why a 2025 *and* a 2026 city election both exist.
+
+▶ **Re-open Boulder in December 2026**, against the seated council, and re-measure the roster first.
+
+## Slice 5 — Columbus, Georgia (opened 2026-10-29)
+
+**16 seated officials in the Columbus Consolidated Government** (`geo_id` 1319000, `mtfcc` G4110).
+Batch `2026-10-29-knight-columbus-ga`, branch `knight/stances-columbus-ga`, lease `place:1319000`.
+Bundle built: **12 people at `local` (52 topics, 23 of them own-words only) and 1 at `judicial`** —
+Probate Judge Marc D'Antonio, who takes the 8 judicial topics and only those.
+
+### 🔴 THE SLICE IS SCOPED TO 13 OF 16, AND THE REASON IS A JANUARY HANDOVER
+
+Columbus votes in **even years, in May, with June runoffs** — not in November, and not in odd years.
+The 2026 election is therefore **already past**, which is why this city passed the election-timing
+rule where Lexington and Boulder failed it. But the winners **take office in January 2027**, nine
+weeks out, so three of the sixteen seats are about to change hands:
+
+| Office | Holder in prod now | What happens in January |
+| --- | --- | --- |
+| **Mayor** | B.H. "Skip" Henderson III | 🔴 Term-limited. **Isaiah Hugley won the 2026-06-16 runoff**, 16,309 to 15,312, and becomes the city's first elected Black mayor |
+| **Council D7** | JoAnne Cogle | 🔴 Ran for mayor and lost; the seat changes |
+| **Council D3** | Bruce Huff | 🔴 Term ends 2026 |
+
+**Excluded from research for now**, because seating a chair on an officeholder who stops representing
+anyone in nine weeks is the thing the timing rule exists to prevent. Chairs attach to the *person*,
+so nothing is destroyed — it is simply not what a voter lookup needs.
+
+▶ **OWED IN JANUARY 2027: re-seat the Mayor and Districts 3 and 7, then research Hugley.** He is the
+highest-value subject in the city and cannot be researched as an officeholder until he holds office.
+
+### ✅ COMPLETE, 2026-10-29 — all 13 researched, 13 chairs. 🔴 READ `scope-review.md` FIRST
+
+| Who | Chairs |
+| --- | --- |
+| **Charmaine Crabb** | `homelessness` 5 · `rent-regulation` 5 · `gun-policy` 2 |
+| **Gary Allen** (Mayor Pro Tem) | `homelessness` 5 · `gun-policy` 2 |
+| **Travis L. Chambers** | `homelessness` 5 · `gun-policy` 2 |
+| **Walker Garrett** | `homelessness` 5 · `gun-policy` 2 |
+| **Toyia Tucker** | `homelessness` 5 · `gun-policy` 2 |
+| **Glenn Davis** | `homelessness` 5 — absent for the gun vote |
+| **Greg Countryman** (Sheriff) | `jail-capacity` 4 — the only row-officer chair |
+| Simi Barnes · Cathy Cook | documented zeros — seated 2026, both shared instruments predate them |
+| Britt · Forté · Bryan · D’Antonio | documented zeros — administrative offices, see §5 of the review |
+
+**✅ SLICE COMPLETE: all 13 subjects, 632 rows, gate `high=0`, 13 chairs, 0 duplicate pairs.**
+12 people × 52 local topics + D’Antonio × 8 judicial = 632, and every bundled person is covered.
+
+**Three instruments carry most of what has been found so far**, and each reaches several members at once:
+
+- **Ordinance 25-040** (camping on public property, 2025-08-12, nine to one) → `homelessness` **5**
+  for Allen, Chambers, Crabb, Davis, Garrett, Tucker. The chair turns on the penalty clause:
+  conviction in the recorder's court is criminal, and chair 4 requires civil penalties.
+- **Resolution 340-25** (asking the delegation to support H.B. 601, 2025-10-14) → `gun-policy` **2**
+  for Allen, Chambers, Crabb, Garrett, Tucker. Recorded as `statement`, not `record`.
+- **Resolution 373-23** (local anti-displacement authority, 2023-10-10, rescinded 2023-10-24) →
+  `rent-regulation` **5** for Crabb, on her vote plus her own words.
+
+### 🔴 FOUR THINGS THAT WILL COST THE NEXT SESSION IF IT DOES NOT READ THEM
+
+1. 🔴🔴 **ONE DOCUMENT GATES HALF THE SLICE.** The minutes host closes the connection on
+   `EmpoweredVoteBot/1.0`; no UA and a browser UA both get 200, and `fetchViaHttp` has no fallback
+   (`LEGACY_BROWSER_UA` is declared in that file and never used). **But the Wayback tier rescues
+   whatever is already archived** — meetings 2958 and 2876/2877 have captures, so `gun-policy` and
+   `rent-regulation` verify through it. **The 2025-08-12 minutes have no capture**, which is the only
+   reason all six `homelessness` rows sit `below-threshold` with good evidence behind them.
+   🔴 **New archiving is refused**: Save Page Now answers 429 — suspected abusive bot traffic. An
+   Internet Archive account with S3 keys would clear it, and that is an operator call, not a
+   research one. ⚠ Their `robots.txt` asks `Crawl-delay: 15`, our parser ignores it by design, and
+   this batch pulled 202 PDFs back to back. ▶ **Where two meetings evidence the same act, check CDX
+   and cite the archived one** — free, and it is the difference between a published citation and a
+   queued row.
+2. 🔴🔴 **A COMMA-LIST ROLL CALL CANNOT VERIFY A COMMON SURNAME.** Measured on the real page with the
+   real checker: five of six verify and **Glenn Davis returns `name_not_present`**. `TITLE_PATTERN`
+   matches `councilor` and not the plural `councilors` every tally uses, and the 30-character window
+   cannot reach past the third surname anyway. The Philadelphia suffix bug's sibling, and it
+   generalises to every city that writes tallies this way.
+3. 🔴🔴 **A KEYWORD COUNT IS NOT A READING.** The sweep found 77 firearms mentions and this programme's
+   own scope review summarised them in one line as "gun violence, not regulation", then wrote
+   `gun-policy` off. The Council has taken a recorded position on it twice. One member's blank shipped
+   saying the minutes held nothing while she had voted for the resolution.
+4. 🔴🔴 **DISTRICT 1 HAS HAD TWO COUNCILLOR BARNESES — FATHER AND DAUGHTER.** Jerry "Pops" Barnes to
+   2024, Simi Barnes from 2026-05-26. Nothing in the pipeline can tell them apart, and the verifier's
+   name check is satisfied by either.
+
+🟢 **The legislative agenda is the channel for every preempted topic** — 40 numbered position
+resolutions in the corpus. The table in `scope-review.md` §2a lists them; **most are still unread.**
+
+### 🟢 THE CITY'S OWN ELECTIONS PAGE CARRIES A `Term/Term Ends` COLUMN — READ IT FIRST
+
+`columbusga.gov/elections/Elected-Officials/Incumbents` prints a term-end year per office, which
+answered in one fetch what three news searches had left ambiguous: Mayor, D3, D5 and D7 end **2026**;
+D2, D4, D6, D8, the Sheriff, Clerk of Superior Court, Tax Commissioner, Coroner and Probate Judge end
+**2028**. ▶ **Look for that column in any consolidated-government city before pricing a slice.**
+
+🔴 **BUT THAT PAGE IS STALE AND THE COUNCIL PAGE IS NOT — THEY DISAGREE, AND BOTH ARE OFFICIAL.**
+The Incumbents page has no Simi Barnes and no Cathy Cook, both seated by 2026 special elections;
+`columbusga.gov/council/` lists them and matches prod exactly. So the elections page is right about
+*terms* and wrong about *people*, while the council page is right about people and silent on terms.
+**Take the term column from one and the roster from the other; do not trust either alone.**
+
+⚠ **D5 LOOKS LIKE A FOURTH CASUALTY AND IS NOT.** Charmaine Crabb's term also ends 2026, but she won
+re-election in May, so she continues without a gap. A term-end year is not by itself a departure —
+check whether the incumbent won.
+
+✅ **PROD'S ROSTER IS IN GOOD SHAPE AND SOMEBODY HAS BEEN HERE.** Sources read
+`ccg-council-roster-2026-09-01`, `gasos-certified-2026-05-19-special-council-district-1` (Barnes,
+seated 2026-05-26) and `gasos-certified-2026-06-16-special-council-post-9-runoff` (Cook, seated
+2026-07-14). The occupancy work this slice would normally start with is already done — the January
+re-seat is the only gap.
+
+## Slice 4 — Philadelphia (opened 2026-10-28)
+
+**25 seated officials**: 17 council, Mayor Parker, 7 city and county row officers. **✅ CITY SWEEP DONE 2026-10-29 — all 25 researched, record AND own-words channels; 22 chairs live, 4 queued, 17 documented blanks.** 52 local topics
+pinned in Season 2 → **1,300 rows**. Batch `2026-10-28-knight-phl-city`, branch
+`knight/stances-backlog`, lease `place:4260000`.
+
+Chosen over Boulder on **election timing**: Philadelphia's next city election is 2027-11-02, all
+seats, so the roster is stable for 15 months. Boulder's was six days away with six of nine seats on
+the ballot. ▶ The backlog table above now carries that rule.
+
+Roster verified against the city's own pages as RAW BYTES before any research. All 17 council
+members present; Krasner and Brady sworn in for new terms 2026-01-05; Deeley, Sabir, Bluestein on
+philadelphiavotes.com; Sabatina on the Register of Wills page; Bilal in office per Inquirer coverage
+through 2026-09.
+
+### Parker: 4 chairs seated of 52 topics (all auto-pushed, `audit-chair-evidence` clean)
+
+| Topic | Chair | Instrument |
+| --- | --- | --- |
+| `housing` | 4 | Bill #250568, the $800m H.O.M.E. bond ordinance |
+| `homelessness-response` | 2 | Executive Order No. 7-25, 1,000 shelter beds |
+| `public-safety-approach` | 4 | Executive Order No. 1-24 + the PPD 100-Day Report |
+| `local-immigration` | 2 | Chapter 21-3600, Bill 260057 of the ICE Out package |
+
+### ✅ SLICE 4 CITY SWEEP COMPLETE — 25 people, 22 chairs live, 3 queued, 13 documented blanks
+
+| Who | Chairs seated |
+| --- | --- |
+| Parker (Mayor) | housing 4 · homelessness-response 2 · public-safety-approach 4 · local-immigration 2 |
+| Johnson (Council President) | local-immigration 2 · gun-policy 3 · housing 4 |
+| Landau | local-immigration 2 · civil-rights 2 |
+| Gauthier | housing 3 · local-immigration 2 |
+| Thomas | civil-rights 2 · local-immigration 2 |
+| Ahmad · Bass · Brooks · Gilmore Richardson · Harrity · Lozada · O'Rourke · Phillips · Squilla | local-immigration 2 |
+
+**Queued, not published:** Krasner `jail-capacity` 2 (statement evidence), Jones and Young
+`local-immigration` 2 (below threshold — see the suffix defect). **Documented blanks:** 13.
+
+🟢 **THE SPONSORSHIP CHANNEL CARRIED THIS WHOLE SLICE.** Of the 18 chairs seated on council, **16
+rest on sponsorship and only two on a divided vote** — Thomas's Driving Equality (14-2) and the
+arena, which seated nobody. Bill 260057 passed 15-1, 250568 passed unanimously, 210633-A passed
+17-0, 250373-A passed 13-0: C46 refuses every one of them. ▶ On a 17-member body that mostly
+agrees, **a slice that only reads roll calls will come back nearly empty.**
+
+### 🔴🔴 THE OWN-WORDS PASS: FIVE FULL MEMBER CORPORA, ONE CHAIR — AND THE REASON IS STRUCTURAL
+
+The record pass seated 7 topics and left 23 of the 52 untouchable, because they are **own-words only
+at the local level**. A second pass swept the own-words channel properly for the five most vocal
+members, through **phlcouncil.com's per-member category archives** — the right tool, and better than
+keyword search: `wp-json/wp/v2/categories` gives a category id per member, and
+`posts?categories=<id>` returns their whole press corpus. **Brooks 217 posts · Gauthier 253 ·
+Johnson 280 · Landau 80 · O'Rourke 66.**
+
+**It produced one chair.** Brooks `taxes` 1, queued as statement evidence.
+
+🔴 **AND THE FAILURE IS NOT EFFORT, IT IS THE SHAPE OF THE QUESTION.** Of the 23 own-words-only
+topics, most are **national**: abortion legality, Medicare and Medicaid, tariffs, Ukraine, defense
+spending, military intervention, Israel aid, school vouchers, border security, social security,
+redistricting. A council press office writes about municipal programmes. So the corpus is full of
+genuine, in-term, quotable statements that **name a direction and never a rung**:
+
+- Brooks secured the first city money for Planned Parenthood and said the city must do everything in
+  its power to keep abortion providers open. Chairs 1, 2 and 3 all sit on that side; the ladder turns
+  on how late abortion stays lawful, and she has not said. **Blank.**
+- Landau led the city's first LGBTQ+ Equity Hearing on housing, healthcare, education and employment
+  disparities. `same-sex-marriage` chair 1 is **compound** — equal marriage *plus* anti-discrimination
+  — and only the second clause is evidenced. Seating it would assert the half she did not state.
+  **Blank.**
+- O'Rourke jointly announced the People's Tax Plan, but the release is the Minority Wing's prose and
+  attributes the wealth tax to his colleague; **his own quoted words cover only the refund**, which
+  fits chairs 1, 2 and 3 alike. **Blank.** ▶ On an own-words-only topic, a press release written
+  *about* someone is not that person's words.
+- Gauthier's Sustainable Business Tax Credit is $8,000 a year against one business tax, on a broad
+  triple-bottom-line test. `climate-change` chair 2 wants *major* subsidies for *clean energy*.
+  **Blank.**
+
+🟢 **THE ONE THAT WORKED SHOWS THE RULE.** `taxes` seated because **a city actually legislates on
+it**, so Brooks has an affirmative instrument in her own voice: the People's Tax Plan, whose
+centrepiece is a revised version of her own 2022 wealth tax — 0.4% on stocks and bonds above
+$100k, projected at **$200m a year** — announced in her words as making billionaires and corporations
+pay their fair share, with a 2023 statement naming the expanded services it would fund. Chair 3 fails
+(a wholly new tax on financial assets is not a targeted adjustment), chairs 4 and 5 fail outright,
+and chair 2 fails on its second half: it funds *existing* services, and her stated purpose is more.
+
+▶ **WHAT THIS MEANS FOR THE PROGRAMME.** Council press archives are the wrong instrument for the
+national own-words topics. Those need **candidate questionnaires, campaign sites and endorsement
+interviews** — and 🔴 **vote411.org and thevoterguide.org are barred outright**, which removes the
+single largest questionnaire corpus. **Price an own-words sweep of national topics as campaign-site
+work, or expect this result again in every city.**
+⚠ Every own-words chair is also a **separate reliability stratum** — a certification measured on
+record rows does not cover it, so these go to review until that stratum has its own blind gold.
+
+### 🟢🟢 LEGISTAR PUBLISHES PER-MEMBER ROLL CALLS AS PLAIN HTML — THE 403 COST US NOTHING
+
+`HistoryDetail.aspx?ID=…&GUID=…` returns **`Councilmember Driscoll Nays`, by name, for every
+member**, no key, for the action that carries the tally. The pairs are on the bill's own
+`LegislationDetail` page. This is the per-member attribution the Web API 403 was assumed to have
+denied us, and it **replaces reading tallies out of weekly-report prose** — which is proximity, not
+attribution.
+- ⚠ **IT IS AUTHORITATIVE BUT UNQUOTABLE.** The roll call is a table, so no contiguous span of it
+  exists in the raw HTML the verifier matches. Establish the vote from it; cite something else.
+- ▶ This is how Driscoll and O'Neill were settled: both recorded **Nays** on 260060.
+
+### 🔴🔴 A NAME SUFFIX DEFEATS SNIPPET VERIFICATION, AND IT IS REPO-WIDE
+
+`verify-stance-research.ts` passes `lastName: lastToken(canonical)`. For **`Curtis Jones, Jr.` that
+token is `Jr.`** — so `checkNameProximity` hunts for "jr" in the window, a page printing
+`Councilmember Jones` fails `name_not_present`, and the row goes `below-threshold` **however good the
+evidence is**. Jones and Young are the only two sponsors of 260057 not published, and that is the
+only reason.
+- **Measured 2026-10-29: 226 active politicians carry a suffix, 105 of them with a comma.** Every one
+  is exposed on any source that prints the surname alone — which is most official records.
+- 🔴 **IT FAILS SILENTLY INTO A QUEUE, NOT INTO AN ERROR.** Nothing says "the name check could not
+  match"; the row simply reads as unverified, which looks like a sourcing problem and invites
+  re-research that cannot possibly fix it.
+- ▶ The fix is a surname that skips the suffix, or an alias. Until then, **a suffixed politician needs
+  a source that prints the full name in prose near the snippet** — and note the roster sidebar does
+  not count: `Councilmember Curtis Jones, Jr. | District 4` appears on every phlcouncil page and in
+  WHYY's sponsor list, but only inside per-member tags, so no 25-word span contains it.
+
+### 🔴 A PROSECUTOR'S INSTRUMENT IS A POLICY, AND THE GATE HAS NO FORM FOR ONE
+
+Krasner's strongest chair rests on the **DAO New Policies memo of 15 February 2018**, which states
+its own purpose as an effort to end mass incarceration, charges retail theft at the summary level
+**because summary gradation greatly reduces pre-trial incarceration rates as no bail is required**,
+and directs attorneys to divert more. That is `jail-capacity` 2 almost word for word. But the memo
+carries no bill, act, ordinance or vote, so `NAMES_INSTRUMENT` cannot see it — the same class of gap
+as the executive-order gap that forced the tenth widening, and **general to every district attorney
+and sheriff in the corpus**.
+- 🔴 **DO NOT CLOSE IT WITH A BARE `Act`.** The pattern admits a bare `Act`/`Ordinance`, so a row can
+  pass by dropping the identifier — the cheap route the pattern file already warns is worse than
+  failing. A charging policy has no number to admit, so an eleventh widening is **not** obviously
+  right; this one wants a decision, not a regex.
+- ▶ **Recorded as `statement` instead, deliberately.** It is his own written words, it cannot name an
+  instrument by definition, and `statement` routes it to human review rather than auto-push — which
+  is the correct destination for a novel evidence class. The memo PDF **verified**.
+
+### ⚠ THE ROW OFFICERS MOSTLY HOLD NO LEVER, AND THAT IS THE ANSWER
+
+Five of the seven are documented zeros: the three **City Commissioners** administer elections but do
+not set who may vote or what identification is required — Pennsylvania law does; the **Register of
+Wills** issues marriage licences as a ministerial duty; the **City Controller** audits spending
+rather than setting it. Each is recorded as a blank naming the office's actual lever.
+- **Sheriff Bilal is a blank for a different and sharper reason.** Her office says it does not
+  cooperate with ICE; immigrant-rights groups say she lets arrests happen outside the Criminal
+  Justice Center; a congressional committee says her policies obstruct federal warrants. **Her own
+  site carries no immigration or detainer policy at all** — checked directly, and the page returned a
+  full 32,000-character copy with no such section, so the absence is real and not a failed fetch. On
+  a contested question with no instrument and no own words, every account is second-hand and the two
+  sides describe opposite policies. Blank.
+
+### ⚠ JOHNSON'S `housing` 4 CARRIES A KNOWN TENSION (ruling 2026-10-29, operator)
+
+He is the third-named sponsor of **210633-A**, Gauthier's mandatory inclusionary-zoning overlay —
+a binding rule on private developers, which is the one thing chair 4 says its holder does not do.
+His own flagship housing act is the **$800m H.O.M.E. bond he prime-sponsored**, which is subsidy
+with no mandate, and the overlay binds the 3rd and 7th districts rather than his own.
+**Ruled: keep 4 and record the tension.** ▶ Anyone re-auditing Philadelphia housing should start here.
+
+### Kenyatta Johnson (Council President, 2nd District): 3 chairs seated, 2 deliberate refusals
+
+| Topic | Chair | Instrument | Channel |
+| --- | --- | --- | --- |
+| `local-immigration` | 2 | Bill 260057, Chapter 21-3600 | sponsor |
+| `gun-policy` | 3 | Bill No. 200593, Chapter 10-2000 (ghost guns) | prime sponsor |
+| `housing` | 4 | Bill #250568, the H.O.M.E. bond ordinance | prime sponsor |
+
+🟢 **ALL THREE CAME THROUGH SPONSORSHIP, AND NONE COULD HAVE COME THROUGH A VOTE.** 260057 passed
+15-1 and 250568 passed unanimously — both under C46. This is slice 3's finding holding a second
+time: on a 17-member body that mostly agrees, **stop asking how people voted and ask who wrote it.**
+
+- `gun-policy` 3 is the cleanest row of the slice because **the adjacent chairs are excluded by the
+  sponsor's own sentence.** Johnson says his ghost gun law *does not prohibit the manufacturing of
+  guns, it just requires that it be done by licensed manufacturers* — which kills chair 2 (no class
+  of weapon is banned), while the fact that he wrote a new restriction kills chair 4. The ordinance
+  routes every path to a gun through the licensed channel that carries the background check, and the
+  city's own account says the kits could previously be sold without it. That is chair 3 and only 3.
+- `housing` 4 lands on the **same instrument that seated Parker at 4**, which is the right kind of
+  consistency: the H.O.M.E. bond is subsidy at scale with no binding rule on the private market.
+
+#### 🔴 THE TWO REFUSALS ARE THE MORE USEFUL RESULT
+
+- **`economic-development` is BLANK although the evidence is the strongest in the slice.** Johnson
+  chaired the Committee of the Whole on the 76 Place arena, the report names the four no votes and
+  says *all the other members in attendance voted yes*, and final passage was 12-5 — 29.4%, far past
+  C46. It still names no chair, because **this ladder's axis is how much public money you offer to
+  attract a business, and this deal offered none**: Bills #240963 and #240973 *removed* the site from
+  a tax increment financing district and a neighbourhood improvement district, and the developer paid
+  the city, with Johnson pushing the community benefits payment from $50m to $60m. Conditioning
+  support on a bigger community payment reads as chair 3 or chair 4 and nothing decides between them.
+  ▶ **A vote can be perfectly attributed, well past the threshold, and still seat nobody.**
+- **`rent-regulation` is BLANK** on Bill 250044-A (security deposits, 13-3). Every rung on that
+  ladder turns on rent levels: chair 2 would have him strengthening rent stabilisation and
+  Philadelphia has none, chair 3 would have him maintaining protections when he added one. A tenant
+  protection that leaves rents untouched is off the axis.
+
+#### 🔴 THE VERIFIER MATCHES RAW HTML — A SNIPPET MAY NOT CROSS AN ELEMENT BOUNDARY
+
+`normalizeText` in `src/lib/researchVerifier.js` **does not strip tags**; it lowercases and collapses
+whitespace and nothing else. So a snippet is only verifiable if it lies inside a single text node.
+This is general, not Philadelphian, and it costs real citations:
+
+- Legistar renders `Title:` and `Sponsors:` as **separate `<span>`s in separate `<td>`s**, so a span
+  running from the bill title into the sponsor list **can never verify**. The sponsor list is one
+  text node, but it only reaches the 25-word floor when the bill has roughly 13+ sponsors — 260057's
+  15 sponsors pass at 32 words; 200593's 9 sponsors are **19 words and cannot**.
+- A long bill title verifies only because Legistar repeats it in `<meta name="description">`. **That
+  copy is truncated**, and it is what the published citation is actually cut from.
+- A title carrying quotation marks is served as `&quot;` and will not match a snippet with real
+  quotes. 250568's title has none and verified; 200593's has them and did not.
+- 🔴 **DIAGNOSE THIS BY MEASURING, NOT BY RE-READING THE PAGE.** The snippet was verbatim-correct and
+  present in a fresh fetch under an HTML-stripping reader, and `curl` and `fetch` both returned the
+  page at HTTP 200 — every obvious check said the source was fine. Only running the span against the
+  verifier's own `normalizeText` showed the break, and showed it was at the tag.
+
+#### 🟢 EVERY PHILADELPHIA BILL IS ONE HOP AWAY, AND THE SLICE SHOULD USE THIS
+
+**`phlcouncil.com` weekly reports link `LegislationDetail.aspx?ID=…&GUID=…` for every bill number
+they print**, and WHYY's ICE Out page carries the pair for all seven of those bills. That is the
+bootstrap slice 3 had to walk meeting-by-meeting for. The **minimal `?ID=…&GUID=…` form is enough** —
+no `Options`/`Search` — and it returns the title, the **full sponsor list**, the tally and the
+attachments, including the **as-filed bill PDF**, which is what C37 actually needs. Confirmed on
+200593, 250568 and 260057.
+- The Web API stays shut: `phila` → **403**, with `charlottenc` → 200 as the control in the same run.
+- ⚠ **`ViewReport.ashx` HAS STOPPED VERIFYING** — the URL Parker's `local-immigration` row cites now
+  fails for **her row too**, though it still fetches at 200. Prefer `LegislationDetail` + the
+  as-filed PDF for new rows.
+
+#### Rules this member paid for
+
+1. 🔴 **REBUILDING THE BUNDLE WITH ONE `--politician` TRUNCATES `politicians.json` TO THAT PERSON.**
+   It reported `wrote 60 open-season topics and 1 politician(s)` and silently dropped the other 24,
+   which would have made every finished row in the batch an `unresolved-politician`. **Pass every
+   person in the batch on every rebuild**, not just the one you are researching.
+2. 🔴 **THE DIVIDED-VOTE INDEX MISNUMBERED EXACTLY AS WARNED.** The 13-3 indexes as `#250488`; the
+   bill is `#250044-A`. The index earned its keep anyway — the weekly reports name the no votes in
+   prose, which is real attribution — but **the number must come from the report, never the index.**
+3. ⚠ **THE GATE REFUSES `Bill 250568` WITH NO MARKER, DELIBERATELY.** Write the instrument exactly as
+   the snippet you cite spells it (`Bill #250568`). The other two rows passed only because they also
+   named a `Chapter`.
+4. ⚠ **A NEWS SWEEP FOR A COUNCIL PRESIDENT HITS THE NAV, NOT THE STORY.** Every "Kenyatta Johnson"
+   hit in the three ICE Out pages was `phlcouncil.com`'s member sidebar. His sponsorship came from
+   the Legistar sponsor list, not from the coverage.
+
+### 🔴 THE BINDING CONSTRAINT ON A MAYOR: HER INSTRUMENTS ARE SCANNED
+
+**Philadelphia's signed executive orders are images with no text layer.** 1-24, 11-24, 1-25 and
+7-25 all extract to **zero characters** while reporting a clean fetch and robots-allowed. So an
+order can never be cited as its own PDF — the verifier finds nothing and the row goes
+`below-threshold`.
+
+🔴 **AND THE PROSE SOURCES DO NOT CARRY THE NUMBER.** The Year One Report says Parker "established
+the Office of Clean and Green Initiatives by Executive Order in May 2024" and "signed her fourth
+executive order in March 2024". The Clean and Green brochure reproduces the order but its heading
+extracts as `EXECUTIVE ORDER NO. -24` — the digits are part of the image. So `city-sanitation` and
+`transportation-priorities` are **evidenced in substance and uncitable by number**, which is why
+they are not seated here.
+▶ The two that DID seat both had a numbered instrument in verifiable text: a council bill
+(phlcouncil.com) and a press release that quoted the order and named it (`7-25`).
+
+⚠ **The extractor is NOT the problem, and a positive control is what proved it.** Four empty
+extractions look exactly like a broken extractor; the PPD 100-Day Report from the same host returns
+**106,327 characters**. The wrong cause had already been written into a commit message before the
+control was run.
+
+### 🟢 Two unlocks worth reusing
+
+- **Every Philadelphia executive order is a queryable dataset.** The index renders client-side;
+  behind it is `api.phila.gov/phila/document-finder/v1/<postID>` (postID `196492`), which **403s
+  without a `Referer`**. 360 orders, 26 of them Parker's, saved to the batch corpus with numbers,
+  titles and links. ⚠ `admin.phila.gov` 403s for the documents; `www.phila.gov` serves the same paths.
+- 🟢 **`phila.legistar.com/ViewReport.ashx?…&N=Text&…` RETURNS FULL LEGISLATION TEXT AS A
+  TEXT-LAYER PDF**, carrying `File #: 260057` and the chapter number. That is a citable,
+  verifier-readable primary source for any Philadelphia ordinance — and it works although the
+  Legistar **Web API 403s for client `phila`** (500 means no such client; 403 means it exists and is
+  refused, so do not read one as the other).
+
+### ⚠ Banked for the 17 council members, before anyone starts them
+
+🔴 **C46 KILLS MOST OF THE ICE OUT PACKAGE FOR COUNCILMEMBERS.** It passed **16-1** — 5.9% against,
+under the 10% rule — so it cannot seat a councilmember. The mask ban and Safe Community Places
+passed **15-2** (11.8%) and can. Philadelphia's council is **17**, so the small-body exception never
+applies here. The rent price-fixing ban (Bill No. 240823) passed **17-0** and is likewise unusable.
+▶ As in slice 3, **sponsorship is the channel** for a near-unanimous body.
+
+### 🟢 THE DIVIDED-VOTE INDEX FOR THE 17 COUNCIL MEMBERS (built 2026-10-28)
+
+`corpus/phl-divided-votes.json`, from `sweep-weekly-reports.mjs` + `mine-divided-votes.mjs` in the
+batch dir. **160 council weekly reports** pulled through phlcouncil.com's WordPress API
+(`/wp-json/wp/v2/posts?search=weekly report`), mined for tallies: **38 divided votes, 33 of which
+clear C46's 10% bar.** Every current member except O'Neill and O'Rourke is named near at least one.
+
+🔴 **THE SERIES STOPS AT 2025-10-27 AND THE GAP IS REAL.** A control listing the newest posts
+regardless of search term returned plenty of 2026 content and **no weekly reports at all** — council
+stopped publishing them. So 2026 legislation, the ICE Out package included, is NOT in this index.
+
+🔴 **THE FIRST MATCHER FOUND 5 AND THAT WAS A FALSE ABSENCE.** It matched only "vote of 13-3". A
+phrasing census over the same corpus — counting the words that precede every plausible tally rather
+than assuming one form — showed "approved by a 13-3 vote", "passed 12-4" and "the final vote was
+14-2". Requiring a vote word within 40 characters before the tally took the count 5 → 38, sevenfold.
+▶ **CENSUS THE PHRASINGS BEFORE TRUSTING A COUNT OF THEM.**
+
+⚠ **IT IS A LEAD INDEX, NOT EVIDENCE.** The bill number is the nearest `#NNNNNN` in the context
+window and is sometimes the wrong one: the 13-3 on security deposits reads as `#250488` when the
+bill is `250044-A`. "Members named" is proximity, not vote attribution. **Open the report and read
+it before citing anything.**
+
+⚠ **THE CORRUPTION THAT PUT THIS PARAGRAPH BACK.** The first version of this section was written
+through `node -e "…"` from bash, and every backtick span in it was command-substituted away by the
+shell before node ever saw it — filenames, the API path and both bill numbers vanished, and the
+mangled text was committed. **Write prose through a file, never through a double-quoted shell
+string.**
+
+### Rules this slice has paid for so far
+
+1. 🔴 **A GROUP-PHOTO CAPTION IS A DATE-STAMPED ROSTER, NOT A CURRENT ONE.** It is exactly as old as
+   the photograph. Boulder's council page listed eight members and named a ninth, resigned since
+   July, only in the `alt` text of a December 2025 photo. Counting name occurrences in raw bytes
+   separated them: eight at 3 hits, the departed one at 1.
+2. ⚠ **A FAILED `curl` LEAVES THE PREVIOUS FETCH ON DISK.** The sheriff's site returned HTTP 000 and
+   the grep that followed happily reported the *commissioners'* counts again. Delete the target
+   before fetching, or the second result is the first one wearing a different URL.
+3. 🔴 **A STUDY DIRECTIVE IS STILL A REFUSAL, AND THE SIGNATURE ORDER IS ONE.** EO 3-25, Parker's
+   H.O.M.E. order, convenes stakeholders and reports in 30 days — C47 refuses it. The $800m bond
+   ordinance carries the position instead. ⚠ But EO 1-24 is NOT the same case: it directs a plan
+   **for** increasing officer numbers, an objective already decided, and the 100-Day Report records
+   129 officers actually assigned. **Read whether the plan decides the thing or implements it.**
+4. 🔴 **CHAIR 1 ON `local-immigration` IS EXCLUDED BY THE DOCUMENT**, exactly as in Duluth: Chapter
+   21-3600 preserves 8 U.S.C. §1373, so employees are not barred outright from sharing status
+   information. The chair is 2, and what makes it 2 rather than 3 is the detainer rule — defined so
+   that administrative warrants include detainer requests and exclude judicial warrants.
+   **Do not seat this from the information bill alone.**
 
 ## Slice 3 — Duluth and Saint Paul, Minnesota (opened 2026-10-04)
 

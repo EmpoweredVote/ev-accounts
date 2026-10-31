@@ -1,0 +1,179 @@
+{
+  "politician_id": "57517048-31a9-4974-bb5a-f82c3563a514",
+  "findings": [
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "a1026384e5633fa39e0e0efadb54de14988eb58a45273b6ab880f74550a1e79f",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+H1801V0009+HB0046",
+      "date": "2022-02-08",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House P&E Subcommittee #1, report HB 46 with substitute (6-Y 4-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. She is on the nay list.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c812df04481f5d344425d77c3c26da30db81ce47b617a8806f4ca49651447733",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+H18V0028+HB0046",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House Privileges and Elections committee, report HB 46 with substitute (12-Y 10-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. She is on the nay list.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d8ca945f7920b918fcbedaddd0f8607215e499bd943e27f27193a1f198fc68d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House passage of HB 46 (52-Y 48-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. She is on the nay list.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee25034200b3c4b386253782d7d3628cc59917955970c799724d84745a238f4b",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?241+sum+HB904",
+      "date": "2024-01-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-904-2024",
+      "act": "other",
+      "motion": "Co-patron of HB 904, voter registration list maintenance and record matches (listed on her member page as co-patron)",
+      "note": "The bill, as passed, requires set identifying information on lists sent to the Department of Elections for list maintenance and a record comparison. It passed the House 53-Y 45-N on 2024-02-13. Date is the prefiling date.",
+      "subjects": [
+        "voter-roll checks and list maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Subcommittee page: she chairs Privileges and Elections, Election Administration (https://house.vga.virginia.gov/subcommittees/H18001)",
+        "House member page H0349: not separately fetched",
+        "Ballotpedia: not reviewed (not fetched)",
+        "On the Record (0 appearances found)",
+        "Virginia legacy LIS bill, patron and vote pages for 2013 to 2024 sessions (https://lis.virginia.gov/cgi-bin/legp604.exe)",
+        "House member list page (https://house.vga.virginia.gov/members)",
+        "House subcommittee agenda (https://house.vga.virginia.gov/subcommittees/H18002/agendas/5384)",
+        "blocked: the 2025 and 2026 bill pages on the new LIS site (the page needs scripts), so 2025 and 2026 sponsorships and votes were not reached",
+        "blocked: https://legiscan.com/VA/votes/HB1318/2015 (bot check)",
+        "blocked: https://www.vpap.org/legislators/340307-phillip-scott/voting/?page=2",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legilist.com (403)",
+        "blocked: https://open.pluralpolicy.com/va/bills/2025/HB2434 (404)",
+        "web searches on name plus voter ID, citizenship and election words; no own-words statements on the subject found"
+      ],
+      "found": 4,
+      "at": "2026-10-28T16:26:43.481Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons",
+        "safe storage",
+        "gun violence prevention",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "New Journal and Guide article on 2024 advocacy day (fetched; names Delegate Jackie Hope Glass in a page description only, no words of hers; nothing on the subject in her own words)",
+        "one web search on name plus gun words (leads only: billsponsor.com cosponsor listings of 2025 HB1607 and HB1716, VPAP 2026 votes; not verified on an official page, not saved)",
+        "not reviewed: LIS 2025 and 2026 bill pages (legacy summary URLs return nothing for 2025)",
+        "not reviewed: her official House page and campaign site; Ballotpedia"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

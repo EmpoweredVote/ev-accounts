@@ -1,0 +1,26 @@
+{
+  "politician_id": "fabb0172-fe30-488b-b391-262499beb9ce",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "campaign site https://kannanforvirginia.com and /?p=167: issues pages, nothing on the subject",
+        "not reviewed: press release pdf on kannanforvirginia.com (404)",
+        "not reviewed: On the Record extraction script (not run)",
+        "blocked: LIS, legiscan, legiplex (not retried)",
+        "web searches on name plus subject words: nothing relevant"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:15.028Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

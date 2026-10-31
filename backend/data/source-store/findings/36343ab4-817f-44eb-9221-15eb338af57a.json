@@ -1,0 +1,59 @@
+{
+  "politician_id": "36343ab4-817f-44eb-9221-15eb338af57a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kristin_Kassner (state representative, 2nd Essex District, on the 2026 general-election ballot, advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances for this politician id)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/K_K2 (petitioner list of 25 bills, none on voting, ID or citizenship; cosponsor tab not reachable)",
+        "Massachusetts Legislature bill search for 'voter identification' (first page of 347 results, no sponsorship by this person; later pages not reviewed)",
+        "campaign site https://www.kristinkassner.org/ (home page and /issues: nothing on the subject)",
+        "Ballotpedia: no survey responses or campaign themes on the subject",
+        "blocked: https://www.kristinkassner.com (no connection)",
+        "not reviewed: web news search on name plus subject words (shared search budget was used up)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart, official house page beyond the legislature profile",
+        "not reviewed: roll-call votes on election bills (not searched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:22.968Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identified as the sitting state representative for the 2nd Essex district via https://malegislature.gov/Legislators/Profile/K_K2/Legislation",
+        "legislature legislation list on that page: no bill on voter ID, citizenship proof, ballots or elections; nothing on the subject",
+        "official site and campaign site: none found; nothing on the subject",
+        "Ballotpedia not reviewed (no page surfaced)",
+        "news search (1): nothing by her on the subject",
+        "recorded floor votes on identity or citizenship bills not reviewed: no vote page surfaced"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:31.550Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

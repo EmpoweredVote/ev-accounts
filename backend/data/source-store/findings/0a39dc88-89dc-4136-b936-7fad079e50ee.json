@@ -1,0 +1,211 @@
+{
+  "politician_id": "0a39dc88-89dc-4136-b936-7fad079e50ee",
+  "findings": [
+    {
+      "id": "84c60fe9046aea49aee0fb2dedab61d04262e81e7c46c6b080f4654f0760b61a",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/politics-government/2012-05-22/frankel-announces-package-of-bills-to-lessen-damaging-effects-of-new-pa-voter-id-law",
+      "date": "2012-05-22",
+      "date_precision": "day",
+      "passage": "\"That amounts to a poll tax for many people, in my view,\" said Frankel. \"In other words, you're going to have to pay something in order to get the right to vote. That's not constitutional. So my bill would reimburse everybody up to $50 for the cost of obtaining their birth certificates.\"",
+      "note": "Quoted by 90.5 WESA in 2012, about the then-new state photo ID law: birth certificate fees as a cost of getting an ID, and his bill to reimburse up to $50.",
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.635Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a21feb170fca2263eeb8e87cee0ec34b371bba69f3bd8ea8117428800e820da8",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/politics-government/2012-05-22/frankel-announces-package-of-bills-to-lessen-damaging-effects-of-new-pa-voter-id-law",
+      "date": "2012-05-22",
+      "date_precision": "day",
+      "passage": "\"They would go into communities, into senior centers, go to places where people with disabilities congregate, go into distressed areas and rural areas where people need to obtain these voter IDs.\"",
+      "note": "Quoted by 90.5 WESA in 2012: describes his proposal for state transportation department mobile outreach to help registered voters get the photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.635Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6ebd4eb376fcd6ae41d32010684a5541953dd7957416a368ec9e96c957e872f",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/politics-government/2012-05-22/frankel-announces-package-of-bills-to-lessen-damaging-effects-of-new-pa-voter-id-law",
+      "date": "2012-05-22",
+      "date_precision": "day",
+      "passage": "\"That just doesn't happen,\" said Frankel, \"and it certainly doesn't happen in a way that thousands of people are in a conspiracy to try this type of voter impersonation. It doesn't happen in Pennsylvania and it doesn't happen elsewhere.\"",
+      "note": "Quoted by 90.5 WESA in 2012: on whether in-person voter impersonation happens.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:02:00.635Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('FRANKEL'), linked to Dan B. Frankel (district 23) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Frankel'), linked to Dan Frankel (district 23) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Frankel'), linked to Dan B. Frankel (district 23) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.702Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('FRANKEL'), linked to Dan B. Frankel (district 23) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.856Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters getting an ID",
+        "proof of identity with a mail ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.pahouse.com/Frankel (homepage, news center and in-the-news list: nothing on the subject; the site search URL returned 404)",
+        "positive control: https://www.pahouse.com/Frankel names him as the sitting House member",
+        "web searches on his name plus voter ID, constitutional amendment, mail ballot: only 2012 items found",
+        "blocked: https://ballotpedia.org/Dan_Frankel (empty page, status 202; not retried)",
+        "blocked: https://pittnews.com/article/14653/archives/governor-signs-photo-voter-id-bill-into-law/amp (403; not retried)",
+        "https://www.wesa.fm/politics-government/2012-06-26/turzais-voter-id-comment-draws-democratic-fire (fetched; the saved page text does not contain his words, so nothing taken)",
+        "legislature bill pages: not reviewed (votes and sponsorships are linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:02:00.635Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.702Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.856Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

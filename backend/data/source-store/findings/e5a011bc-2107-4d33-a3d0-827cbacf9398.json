@@ -1,0 +1,86 @@
+{
+  "politician_id": "e5a011bc-2107-4d33-a3d0-827cbacf9398",
+  "findings": [
+    {
+      "id": "8a28d35ecfe763bfa4287f51db09746929f7b9f9502449d3eba522611a14e459",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "nay",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: nay (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Mark_Spencer_(Indiana_politician) (Indiana Senate District 3, took office 2024-11-06; sitting official, in scope)",
+        "identity confirmed: https://indianasenatedemocrats.org/senator-mark-spencer-addresses-state-accounting-error-affecting-the-cities-of-gary-east-chicago-and-michigan-city/ (Indiana State Senator Mark Spencer, Gary)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "caucus news page https://indianasenatedemocrats.org/caucus/mark-spencer/ (releases listed Jan 2025 to Feb 2026 cover SB 334, SB 164, SB 232, Gary public safety, a state accounting error; nothing on the subject)",
+        "caucus site search 'voter ID' https://indianasenatedemocrats.org/?s=voter+ID (no result naming Mark Spencer)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_mark_spencer_1 (page loads only by script; bill sponsorship list unreadable)",
+        "blocked: https://ballotpedia.org/Mark_Spencer (fetch returned no usable text)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "no personal campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:55:17.264Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity statements"
+      ],
+      "places": [
+        "Ballotpedia (https://ballotpedia.org/Mark_Spencer_(Indiana)): sitting Indiana Senate District 3 member, term ends 2028; nothing on the subject",
+        "On the Record (0 appearances)",
+        "Indiana Senate caucus caucus site (year-end release and 2026-10-23 election-monitoring release): nothing on the subject in his own name",
+        "news searches on name plus voter ID, SB 10 and proof of citizenship: nothing on the subject in his own words",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_mark_spencer_1 (page loads only by script; no bill list readable)",
+        "blocked: https://indianacapitalchronicle.com/2025/01/28/elections-bill-would-strike-down-student-ids-as-voting-option/ (403 to fetch tool; no mention of him found by curl)",
+        "blocked: https://bluevoterguide.org/fr/IN/candidate_Mark_Spencer/530429 (bot challenge page)",
+        "campaign site not found by search"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:08:34.787Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "politician_id": "86990d10-2dab-460c-89d0-783deea46cc4",
+  "findings": [
+    {
+      "id": "77a8c0074a76342fe03ca71b5a3d8be87a153cea9ad1966140543bac41c0c172",
+      "kind": "own-words",
+      "url": "https://old.flagpole.com/news/city-dope/2018/10/24/athens-sen-bill-cowsert-defends-kemp-on-voter-registration",
+      "date": "2018-10-24",
+      "date_precision": "day",
+      "passage": "“I don’t know where that 53,000 figure came from,” Cowsert said. “I know that he denies that, and it sounds like election-year politics from my standpoint… I don’t think the numbers reported are accurate.”",
+      "note": "Quoted by Flagpole at a candidate forum, answering a question on 53,000 voter registrations pending under the state's exact-match law.",
+      "subjects": [
+        "voter-roll checks",
+        "registration matching"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.727Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to BILL COWSERT (district 46) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to BILL COWSERT (district 46) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to BILL COWSERT (district 46) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "90a643ef6a6d3a2f2b23a2b98f5ccb465ce7b07ddee02bdf054354a620140bd0",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "yea",
+      "motion": "Senate: Motion to agree to the House substitute to SB 86 (final vote)",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to Bill Cowsert (district 46) via the official 2009 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to Cowsert, Bill (district 46) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Cowsert'), linked to BILL COWSERT (district 46) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "718f079c52684f8bcd8dd463d136c7e4d21ac20935cb22e9d6866e9b2812ea6e",
+      "kind": "record",
+      "url": "https://legis.ga.gov/legislation/60009 (the page shell loads; the detail API behind it answers 401 and was not bypassed). History from Senate Journal 2021 index pp. 867, 1053, 1145, 1270, 1272, 1313, 1322, 1323, 1344, 1345 and House Journal 2021 index pp. 2130, 2297, 2304.",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, AS PASSED SENATE (Senate Ethics Committee substitute LC 28 0292S (SCS), passed Senate 2021-03-08 29-20). House: first and second reading only; no House floor vote.",
+      "note": "Named as co sponsor ('Cowsert of the 46th') on the official bill text; linked to BILL COWSERT via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.409Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary (Attorney General race); still sitting state senator until January 2027 (https://ballotpedia.org/Bill_Cowsert)",
+        "On the Record (0 meetings)",
+        "Ballotpedia",
+        "Flagpole 2018 forum report",
+        "Capitol Beat / Augusta Press / GPB 2021 Senate reports (his bills there were on vote counting and reporting, not ID)",
+        "web searches on name plus voter ID, SB 189, attorney general race",
+        "not reviewed: SR 875 (2026) text and the Georgia Recorder crossover day article",
+        "not reviewed: legis.ga.gov bill pages (login token needed)",
+        "not reviewed: campaign site"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:28:59.727Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.409Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

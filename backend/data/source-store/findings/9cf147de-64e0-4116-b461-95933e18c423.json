@@ -1,0 +1,107 @@
+{
+  "politician_id": "9cf147de-64e0-4116-b461-95933e18c423",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "8cbbc59d430b3297e4655d80a097c953d24ec2b2968afd0556ea262e0fbfeec4",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "nay",
+      "motion": "On adoption of amendment #1587 (H.5500), recorded vote 27 yeas to 131 nays; amendment rejected",
+      "note": "Amendment 1587 to the FY2027 budget, titled 'An Act relative to identification to vote', would have required valid state or federal photo ID before a voter receives a ballot, with a free state photo ID for registered voters without one who sign an affidavit. Michlewitz is recorded as N on the roll call.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:48:48.189Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Aaron_Michlewitz names him as member of the Massachusetts House of Representatives, 3rd Suffolk District, advanced from the September 1, 2026 primary and on the November 3, 2026 general ballot; https://malegislature.gov/Legislators/Profile/AMM1 lists Representative Aaron Michlewitz, 3rd Suffolk",
+        "On the Record (0 appearances for this politician id; name search found no sources)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/AMM1 (no subject content)",
+        "campaign site https://aaronforrep.com and https://www.aaronforrep.com/issues: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no survey responses; no voter ID content)",
+        "malegislature.gov bill search 'voter identification', filtered to him as primary sponsor: only H.4430 (2022 supplemental budget amendment) and it contains no voter ID text; nothing on the subject",
+        "malegislature.gov bill search filtered to him: 'citizenship voting', 'non-citizen voting', 'voter registration citizenship': no results",
+        "malegislature.gov bill search filtered to him: 'election integrity' (H.5050, 2024 supplemental budget amendment) and 'mail ballot identification' (H.4430): both budget amendments, text has no ID or ballot content; nothing on the subject",
+        "not reviewed: web news search on his name plus subject words (session web search budget was used up)",
+        "not reviewed: roll-call vote pages for election bills other than the one already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:05.292Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state photo ID for voters without ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election access and registration (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Aaron_Michlewitz (confirms sitting 3rd Suffolk representative, on the 2026-11-03 general ballot after advancing from the 2026-09-01 primary)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/AMM1 (no voter ID or citizenship bills shown on the page; full sponsored lists not shown)",
+        "House roll call PDFs for the FY2027 budget (H.5500) amendment votes, Nos. 156-190",
+        "Beacon Hill Times 2018-06-15 (voting-access remarks only, nothing on ID or citizenship)",
+        "web news searches on name plus voter ID, proof of citizenship, SAVE Act, non-citizen voting: nothing in his own words on the subject",
+        "Fall River Reporter 2026-04-30 (lead to the budget amendment vote)",
+        "not reviewed: campaign site (not located); ontheissues.org (lead-only)"
+      ],
+      "found": 1,
+      "at": "2026-10-27T21:48:48.189Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

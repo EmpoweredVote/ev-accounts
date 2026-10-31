@@ -1,0 +1,177 @@
+{
+  "politician_id": "dde2b534-2b77-48f6-bb81-33e109a47092",
+  "findings": [
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Wilkerson'), linked to DAVID WILKERSON (district 38) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Wilkerson'), linked to DAVID WILKERSON (district 38) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Wilkerson'), linked to David Wilkerson (district 38) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.406Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a93418847d45712e5326aac45102c4a1a743ae617c6a637a382fcfbc43667c40",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=9625",
+      "date": "2021-03-30",
+      "date_precision": "day",
+      "passage": "If Republicans are willing to overhaul our elections with no support from across the aisle, they clearly don’t need the Democrats to be present for their work.",
+      "note": "House caucus release quoting House Minority Whip David Wilkerson on SB 202 as a whole. The fetch tool returned the sentence in two pieces; joined here. The quote names a party; no ID content.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-leads-2026-10-28",
+        "fetched_at": "2026-10-28T21:15:26.766Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcb306a664f22a08c440459f883ab403026e5f56d50701a878dd19b1055fa4f2",
+      "kind": "own-words",
+      "url": "https://ajc.com/opinion/opinion-ga-gops-essentially-made-it-legal-to-discount-your-ballot/U4FGJCORJNDANBL35WOLVYAVO4",
+      "date": "2021-04-03",
+      "date_precision": "day",
+      "passage": "With the passage of one of these omnibus bills, SB 202, the majority essentially made it legal to discount your ballot.",
+      "note": "AJC opinion column by David Wilkerson on SB 202 generally. The column does not discuss ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-leads-2026-10-28",
+        "fetched_at": "2026-10-28T21:15:26.766Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: confirmed unopposed on the 2026 general-election ballot for Georgia House District 38 via https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-38",
+        "not reviewed: On the Record extract script (not run in this session; standing rule bars running repo scripts)",
+        "blocked: https://ballotpedia.org/David_Wilkerson_(Georgia) (page returned empty)",
+        "blocked: https://app.legiplex.com/profile/david-wilkerson-518/legislation (403)",
+        "https://house-press.com/?p=9625 (2021-03-30 caucus release with a statement on SB 202 generally): not saved because the exact sentence names a party and this file may not",
+        "web search: voter ID, citizenship, absentee with his name: nothing on the subject in his own words",
+        "legis.ga.gov bill pages not opened (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.896Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.406Z",
+      "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: confirmed unopposed on the 2026 general-election ballot for Georgia House District 38 via https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-38",
+        "not reviewed: On the Record extract script (not run in this session; standing rule bars running repo scripts)",
+        "blocked: https://ballotpedia.org/David_Wilkerson_(Georgia) (page returned empty)",
+        "blocked: https://app.legiplex.com/profile/david-wilkerson-518/legislation (403)",
+        "https://house-press.com/?p=9625 (2021-03-30 caucus release with a statement on SB 202 generally): not saved because the exact sentence names a party and this file may not",
+        "web search: voter ID, citizenship, absentee with his name: nothing on the subject in his own words",
+        "legis.ga.gov bill pages not opened (login token needed)",
+        "lead check 2026-10-28: https://house-press.com/?p=9625 (2021-03-30) read again; quote saved",
+        "lead check 2026-10-28: https://ajc.com/opinion/opinion-ga-gops-essentially-made-it-legal-to-discount-your-ballot/U4FGJCORJNDANBL35WOLVYAVO4 (2021-04-03 op-ed by Wilkerson); no ID or citizenship content, general SB 202 statements only"
+      ],
+      "found": 2,
+      "at": "2026-10-28T21:15:26.766Z",
+      "by": "source-collector-leads-2026-10-28"
+    }
+  ]
+}

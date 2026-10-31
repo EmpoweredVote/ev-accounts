@@ -1,0 +1,149 @@
+{
+  "politician_id": "b78f058c-94de-4081-91fb-86ab7badb2fb",
+  "findings": [
+    {
+      "id": "034c285304e045273f9f1b39b37fcafebe73d22f8fff2da1be5490a9b2bd35a7",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2019118",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2019",
+      "act": "yea",
+      "motion": "H.R. 1, For the People Act, On Passage (Roll Call 118)",
+      "note": "Voted yes on passage of H.R. 1 as a member of the House. Section 1903 of the bill (text at https://www.congress.gov/116/bills/hr1/BILLS-116hr1eh.htm) says that where a state requires ID to vote, the state must let a voter in person or by mail meet it with a sworn written statement signed under penalty of perjury attesting to identity and eligibility. First-time voters who registered by mail are excepted.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:32:11.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "99f317fc58e7b6792fceae6c6563fcf122540485c4c0c26b2c54e91c53e208e7",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2019118",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2019",
+      "act": "yea",
+      "motion": "Passage of H.R. 1, For the People Act (Roll Call 118)",
+      "note": "McAdams voted yea on passage of H.R. 1, a broad elections bill; the bill passed 234 to 193. The page does not itself describe the bill's ID provisions.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting rights legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "86247e22f7b3943e6effc63e912182b50feaf3eb1c1358f8c34e6e1e270aaac5",
+      "kind": "own-words",
+      "url": "https://benmcadams.com/ben-mcadams-files-court-brief-to-defend-voters-and-fair-elections/",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "passage": "“Utahns believe in fair play,” he said. “You don’t rig the system to protect your own power. You don’t move the lines, especially after voters have already engaged in the current election. Fair elections mean stable rules, transparency, and respect for voters.”",
+      "note": "Campaign press release quoting him on fair elections, in a dispute over congressional district lines. It does not mention ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ae91d879053a11af3d8b4b3c61ff5493e7adda6659ac9330e2a930d893e265a",
+      "kind": "own-words",
+      "url": "https://benmcadams.com/defend-the-vote-endorses-ben-mcadams-for-congress/",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“When politicians try to change the rules or rig elections, it’s not them who pay the price – it’s us, the voters. They stay in power, and we lose our voice.”",
+      "note": "His quoted words in an endorsement release. The endorser's own words say he will support the Freedom to Vote Act and the John R. Lewis Voting Rights Advancement Act; those are the endorser's words, not his.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting rights legislation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.067Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://www.deseret.com/utah/2026/06/23/ap-ben-mcadams-wins-democratic-primary-in-utah-1st-district/ (won the June 23, 2026 primary for Utah's 1st District; on the November ballot)",
+        "On the Record (0 meetings; name search also 0)",
+        "campaign site benmcadams.com: priorities, FAQ, voting-information, court-brief press release, endorsement press release - nothing on the subject in his own words (FAQ voter-ID line is general voting information, not his stance)",
+        "Ballotpedia: page fetched, nothing on the subject",
+        "House Clerk roll calls for H.R. 1 (2019)",
+        "congress.gov text of H.R. 1 (116th, as passed House)",
+        "news searches (name plus voter ID / photo ID / SAVE Act / proof of citizenship / noncitizen voting): nothing quoting him on the subject",
+        "blocked: https://www.congress.gov/member/ben-mcadams/M001204 (403)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/141278/ben-mcadams (403)",
+        "blocked: https://www.axios.com/local/salt-lake-city/2026/06/25/rep-ben-mcadams-utah-congress-win-post-interview (403, post-primary Q&A not read)",
+        "not reviewed: ontheissues.org and Wikipedia (lead-only, not citable)",
+        "nothing on the subject: SAVE Act House passage in 2026 (he was not a member; no statement by him found)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:32:11.533Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity laws in general",
+        "voting rights legislation"
+      ],
+      "places": [
+        "status: in scope, won the 2026-06-23 primary for Utah's 1st District (https://news.ballotpedia.org/2026/06/24/ben-mcadams-d-defeated-nate-blouin-d-michael-farrell-d-and-liban-mohamed-d-in-the-democratic-primary-for-utahs-1st-congressional-district/); web search also named his general-election opponent",
+        "On the Record (0 appearances; extract-otr run by id, name-only search not done for lack of city)",
+        "campaign site benmcadams.com home, /priorities/ (nothing on the subject), /voting-information/ (nothing on the subject), press releases on voting",
+        "blocked: https://ballotpedia.org/Ben_McAdams (empty page by WebFetch and curl)",
+        "blocked: https://www.congress.gov/member/benjamin-mcadams/M001204 (HTTP 403)",
+        "House Clerk roll call 2019 no. 118 (record found)",
+        "web search: Ben McAdams plus voter ID / SAVE Act / proof of citizenship (nothing on the subject about him)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources, not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T00:57:16.067Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

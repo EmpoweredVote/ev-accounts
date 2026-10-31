@@ -118,8 +118,39 @@
 // Amendment #7" failed as "names no instrument". Admitted: `H.` + 3-5 digits, no space, which is the
 // printed form. `S.` + digits was already admitted. Refused: `H. Smith`, `H. 12` (a spaced short
 // number reads as a section or a page as often as a bill).
+// ⚠ NINTH WIDENING (2026-10-28, Knight Philadelphia slice). PHILADELPHIA numbers its council
+// legislation as a six-digit `Bill No. 250568` / `Bill #250568` — a two-digit year followed by a
+// four-digit sequence — and nothing in this pattern saw it. Mayor Parker’s housing row failed
+// `record-no-instrument` while its reasoning named Bill #250568, the ordinance authorising $800
+// million in H.O.M.E. bonds, read at phlcouncil.com.
+// 🔴 THE CHEAP WAY THROUGH THIS GATE WAS ALREADY OPEN, AND IT IS WORSE. A bare `Ordinance`
+// matches below, so a row could pass by DROPPING the number and keeping the generic word — and a
+// bare `Ordinance` is not identifier-bearing, so stanceGate never checks it against the snippets.
+// Admitting the number makes the gate STRICTER for these rows, not looser: `instrument-not-cited`
+// then has something it can look up.
+// One addition, identifier-bearing:
+//   · `Bill No. <6 digits>` / `Bill #<6 digits>` — the word "Bill", a "No." or "#", and exactly six
+//     digits. Refused: a bare six-digit number (an id, a dollar figure or a zip+4 fragment as often
+//     as a bill) and "Bill 250568" with no marker at all.
+// ⚠ TENTH WIDENING (2026-10-28, Knight Philadelphia slice). AN EXECUTIVE ORDER IS A MAYOR’S
+// PRIMARY INSTRUMENT AND THIS PATTERN HAD NO FORM FOR ONE. Nothing above matches "Executive Order
+// No. 7-25", so every mayor in the corpus was unseatable on their own orders — the gap is general,
+// not Philadelphian. Found on Mayor Parker’s homelessness-response row, seated on EO 7-25 ("One
+// Philly Response to Ending Street Homelessness", signed 2025-12-19), whose Section 1 orders the
+// Office of Homeless Services to "provide financial support to operate 1,000 new shelter beds … by
+// January 31, 2026". That is operative, not a study directive, so C47 does not refuse it.
+// One addition, identifier-bearing:
+//   · `Executive Order [No.] <1-4 digits>-<2 digits>` — the words "Executive Order" are REQUIRED, so
+//     the bare `7-25` that the R- form below deliberately refuses stays refused here too.
+// 🔴 LEADING ZEROS ARE A REAL HAZARD HERE AND ARE NOT SOLVED. Philadelphia’s own index lists
+//    "07-25" while the signed PDF heads itself "EXECUTIVE ORDER NO. 7-25", and
+//    canonicalizeInstrumentId collapses those to "725" and "0725" — different identifiers. Write the
+//    order in reasoning EXACTLY as the snippet you cite spells it, or instrument-not-cited fires on a
+//    row whose source names the very order its reasoning does.
+// Michigan letter-named joint resolutions (2026-10-30), identifier-bearing: `HJR B` / `HJRB` / `House Joint
+// Resolution B` (copied to stanceGate.ts INSTRUMENT_IDENTIFIER_PATTERNS).
 export const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\b[HS]JR\s?[A-Z]{1,2}\b|\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b|\bExecutive Order (?:No\.\s?)?\d{1,4}-\d{2}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 export const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

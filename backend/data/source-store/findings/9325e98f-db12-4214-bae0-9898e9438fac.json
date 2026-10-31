@@ -1,0 +1,369 @@
+{
+  "politician_id": "9325e98f-db12-4214-bae0-9898e9438fac",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "f7754550ab30fbceb3e6163c0c67f328777c0bc6b2c4c6d13dff54f0c942e6d2",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-votes-against-unconstitutional-democrat-plan-to-federalize-elections-and-threaten-free-speech/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "Americans do not want their tax dollars going to fund political contributions and, after the election integrity issues we faced in the presidential election, the last thing we should be doing is ending requirements for voter identification.",
+      "note": "Official press release quoting him on his vote against H.R. 1 (For the People Act). He says the bill would end voter ID requirements and that this should not happen.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0f88034cb8bf412baaa4bac4db51c017559902bbe53e15fcb7a8ebbd28dd24d",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-votes-against-unconstitutional-democrat-plan-to-federalize-elections-and-threaten-free-speech/",
+      "date": "2021-03-04",
+      "date_precision": "day",
+      "passage": "Getting rid of voter ID laws, which overturns commonsense election security measures;",
+      "note": "Item in a list of what the release calls harmful provisions of H.R. 1, issued in his name.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "525c8c00012c6e075816f430408a461be4a5843485bc2f4ace499411fd55d12f",
+      "kind": "record",
+      "url": "https://steube.house.gov/press-releases/steube-votes-against-unconstitutional-democrat-plan-to-federalize-elections-and-threaten-free-speech/",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2021",
+      "act": "nay",
+      "note": "Voted against H.R. 1, For the People Act, per his official release dated 2021-03-04 (which says he voted 'yesterday'). The release cites its voter ID, mail-in voting and felon voting provisions.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6b6753cc24be05f61fc7a04f632829fc73780869441a87038ba0a0cfb016bbe",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/rep-greg-steube-introduces-legislation-to-repeal-motor-voter-registration/",
+      "date": "2023-02-10",
+      "date_precision": "day",
+      "passage": "'Motor voter' registration threatens election integrity by allowing registration with little proof of citizenship.",
+      "note": "Official release quoting him on his bill to repeal the 'Motor Voter' parts of the National Voter Registration Act of 1993. He ties registration at the DMV to proof of citizenship.",
+      "subjects": [
+        "proof of citizenship to register",
+        "motor voter registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c81d4b1d8fd1d58d0adfc429385b612ea6175ed1ead01283264f91b6b4099b8",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/rep-greg-steube-introduces-legislation-to-repeal-motor-voter-registration/",
+      "date": "2023-02-10",
+      "date_precision": "day",
+      "passage": "U.S. citizens are the only ones who should vote in our elections.",
+      "note": "Same release; stated reason for the repeal bill.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7995d04d46c26d7a82411b122ede34da60cd54d000fc2e934efbc0473145cd3d",
+      "kind": "record",
+      "url": "https://steube.house.gov/press-releases/rep-greg-steube-introduces-legislation-to-repeal-motor-voter-registration/",
+      "date": "2023-02-09",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Bill to repeal certain provisions of the National Voter Registration Act of 1993 ('Motor Voter' registration), introduced Feb 9, 2023 per release",
+      "note": "Introduced a bill to repeal the 'Motor Voter' provisions. The release says it keeps the voter-roll maintenance rules and the criminal penalties for fraudulent registration or voting. Bill number not confirmed because congress.gov was blocked.",
+      "subjects": [
+        "motor voter registration",
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8b62246c4a06e4459f6bd6c0b11fd20152cdbeb4880ff320cb36a0dde3ae51",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-joins-colleagues-in-developing-legislative-solution-for-election-integrity/",
+      "date": "2021-01-18",
+      "date_precision": "day",
+      "passage": "If we don’t work to ensure our citizens have confidence in our election process then this body is not addressing a major reason for division in our country.",
+      "note": "Official release quoting him on joining colleagues to introduce the Save Democracy Act (an election-rules bill, not the SAVE Act).",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e08d76d0db64f783cbf68e86fde0de759c7b95e2b83b0aecd1d1fa1c42cf31d",
+      "kind": "record",
+      "url": "https://steube.house.gov/press-releases/steube-joins-colleagues-in-developing-legislative-solution-for-election-integrity/",
+      "date": "2021-01-18",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Save Democracy Act (introduced with colleagues; his role as sponsor or cosponsor and bill number not confirmed)",
+      "note": "Release says he joined colleagues in introducing the Save Democracy Act. For federal elections, it would require voter citizenship verification to register, prohibit automatic voter registration, prohibit states from sending unrequested absentee ballots, and require absentee ballots to arrive by the close of Election Day. Whether he is a sponsor or cosponsor is not stated.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acadf2ed4d59a5f662064a32a90e5156fc9f1be16a7531d1f65e8605683c5974",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-in-fox-news-op-ed-universal-mail-in-voting-dangerous-here-s-why-dems-plans-so-reckless/",
+      "date": "2020-09-01",
+      "date_precision": "day",
+      "passage": "Universal mail-in voting would be disastrous for our country, as there is no way of knowing who is actually voting.",
+      "note": "Op-ed in Fox News, reposted on his official site, on universal mail-in voting. He contrasts it with absentee voting, where a voter requests a ballot and identity is authenticated.",
+      "subjects": [
+        "mail-ballot rules",
+        "mail-ballot identity checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3e784c60ca97e72ae82761c4b8b2ff28ab231186a6737e0af84683bf70b96b8",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-in-fox-news-op-ed-universal-mail-in-voting-dangerous-here-s-why-dems-plans-so-reckless/",
+      "date": "2020-09-01",
+      "date_precision": "day",
+      "passage": "For traditional absentee ballots, a registered voter must request a ballot and their identity must be authenticated.",
+      "note": "Same op-ed, as published on his site.",
+      "subjects": [
+        "mail-ballot identity checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ab8aca4b1b34a51efd9d82423322d7caefd01cd5c7a4c40a0bc02cfa98ba6c7c",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/rep-steube-introduces-no-foreign-election-partnership-act/",
+      "date": "2025-08-01",
+      "date_precision": "day",
+      "passage": "Election integrity starts with securing the vote from foreign interference,",
+      "note": "Official release on his No Foreign Election Partnership Act, which bars international organizations from data-sharing or advisory agreements with federal election agencies. Related to election integrity, not to ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter data"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc9a0879e8b2d53284c39844100abb361c8840ba43c801b0ae4803912bd18941",
+      "kind": "own-words",
+      "url": "https://steube.house.gov/press-releases/steube-joins-colleagues-in-letter-to-president-trump-urging-a-doj-investigation-into-irregularities-in-the-2020-election/",
+      "date": "2020-12-11",
+      "date_precision": "day",
+      "passage": "Every single allegation of fraud should be thoroughly investigated, and anyone found unlawfully interfering in our electoral process should be held criminally accountable.",
+      "note": "Official release quoting him on a letter urging a Special Counsel to investigate 2020 election irregularities. Same-breath election integrity material.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:55:40.420Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot and absentee ballot rules",
+        "motor voter registration",
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "SAVE Act"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Greg_Steube says he is on the Nov 3, 2026 general-election ballot for Florida's 17th District and that the Aug 18, 2026 primary was canceled",
+        "On the Record (0 appearances for this politician id)",
+        "official site steube.house.gov: site search and site search API for voter ID, SAVE Act, citizenship, election integrity, noncitizen, mail ballot, photo ID, voter roll, elections; page text read through the site's own post API",
+        "Ballotpedia (page fetched; nothing on the subject in the text read)",
+        "nothing on the subject: no official-site item found that names the SAVE Act or a photo-ID bill by name",
+        "blocked: https://www.congress.gov/member/greg-steube/S001214 (bot check, 403), so bill numbers for the sponsorships below are not confirmed",
+        "not reviewed: https://steube.house.gov/flash-poll-election-integrity/ (page text had no readable poll content)",
+        "not reviewed: web news search (session search budget used up)"
+      ],
+      "found": 12,
+      "at": "2026-10-22T21:55:40.420Z",
+      "by": "source-collector"
+    }
+  ]
+}

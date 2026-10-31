@@ -1,0 +1,108 @@
+{
+  "politician_id": "e869ec2a-2b8e-4b1f-a725-3f8cd4a2c48a",
+  "findings": [
+    {
+      "id": "8814732e59c1c62f57080439164179639934aa2b0b21e2c3461816dd3c311cc0",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "abstain",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: abstain (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "d95d25ac5698c47fbcd7b18e412ae2d31ac03429a4809f7b560d79e965efd2b0",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/governor-ceremonially-signs-bill-authored-by-lawson-to-limit-hoas-protect-home-based-child-care-and-safeguard-traditional-elections/",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "passage": "Whether it’s improving how local boards operate, strengthening public safety coordination or ensuring clarity in election processes, these changes help build trust in the systems people rely on every day.",
+      "note": "Quoted in his caucus press release about laws signed in 2026; general remark on election processes, no mention of ID or citizenship. Same release says he sponsored Senate Enrolled Act 12, a ban on ranked choice voting.",
+      "subjects": [
+        "election rules in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T16:03:37.958Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope - Indiana House District 53, advanced from the May 5, 2026 primary, on the Nov 3, 2026 ballot (https://ballotpedia.org/Ethan_Lawson, fetched with curl)",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia (nothing on the subject; no candidate survey completed)",
+        "campaign site https://lawsonforindiana.com (nothing on the subject in the page text; site is a script-built page)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_ethan_lawson_1 (page loads only a script shell, no bill list readable)",
+        "not reviewed: legislature bill pages for sponsorships (could not be read)",
+        "blocked: https://www.indianahouserepublicans.com/members/ethan-lawson/ (404)",
+        "not reviewed: https://x.com/EthanJLawson (not fetched after redirect)",
+        "not reviewed: news search (session web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:55:57.084Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws",
+        "election rules in general"
+      ],
+      "places": [
+        "confirmed in office: Indiana House caucus member page names Ethan Lawson, House District 53, Elections and Apportionment committee (https://www.indianahouserepublicans.com/members/general/ethan-lawson/); the seat is up in 2026 per a BallotReady listing seen in search, not separately confirmed on the ballot",
+        "On the Record (0 appearances)",
+        "caucus press releases (3 election-related releases read): nothing on ID or citizenship; one on other election law",
+        "Ballotpedia: not reviewed",
+        "web news searches (2): nothing tying him to voter ID, citizenship proof or mail-ballot ID",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_ethan_lawson_1 (page needs scripts, no text returned)",
+        "no personal campaign site found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T16:03:37.958Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

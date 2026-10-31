@@ -1,0 +1,189 @@
+{
+  "politician_id": "deae1b6d-3aa5-43fe-aff3-df73052cc434",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "adf3582ba45ac616c272153f2a026e80abf21e169b0d1b0ed5954bc77ddd15a6",
+      "kind": "own-words",
+      "url": "https://newsweek.com/rep-crenshaw-ar-15-ownerexplains-gun-violence-measure-hed-ok-1715007",
+      "date": "2022-06-12",
+      "date_precision": "day",
+      "passage": "Obviously I'm not giving up my AR-15. That's mine,",
+      "note": "Said on a Fox News segment after the Uvalde shooting; quoted by Newsweek.",
+      "subjects": [
+        "assault-style weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88780adf3e4196dc6dc20dd2deb73239a43b2e9ac7c5dfcca4f35ef65aff81c2",
+      "kind": "own-words",
+      "url": "https://newsweek.com/rep-crenshaw-ar-15-ownerexplains-gun-violence-measure-hed-ok-1715007",
+      "date": "2022-06-12",
+      "date_precision": "day",
+      "passage": "So I don't think an arbitrary 21 versus 18 is really gonna change a whole lot of things when it comes to gun violence,",
+      "note": "On raising the minimum age to buy a firearm from 18 to 21; quoted by Newsweek.",
+      "subjects": [
+        "minimum age to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0237d6a17747d80177c77269d19e9bc84a9c7657a7ad32e6c0e2035e945735ae",
+      "kind": "own-words",
+      "url": "https://newsweek.com/rep-crenshaw-ar-15-ownerexplains-gun-violence-measure-hed-ok-1715007",
+      "date": "2022-06-12",
+      "date_precision": "day",
+      "passage": "That makes a lot of sense...if you're 18 and you have a terrible juvenile history, but we can't look at it in the background check...we should be able to look at that,",
+      "note": "On letting background checks see juvenile records of young buyers; quoted by Newsweek.",
+      "subjects": [
+        "background checks",
+        "juvenile records in background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c65fff5fce06fee5e232d08ebd3cabdf4c05625b364a3b5b032e1949f81959e",
+      "kind": "own-words",
+      "url": "https://newsweek.com/rep-crenshaw-ar-15-ownerexplains-gun-violence-measure-hed-ok-1715007",
+      "date": "2022-06-12",
+      "date_precision": "day",
+      "passage": "There's a lot of misconceptions on both sides of this argument, but fundamentally with a red flag you're trying to enforce a law before it's been broken, and that's a really difficult thing to do,",
+      "note": "On red-flag orders; quoted by Newsweek.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64ab35a4c8a8aa1d3451986027f0678c37b1d56d760ce2e9458344853104487",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/app/details/BILLS-119hr8297ih",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8297-2026",
+      "act": "sponsor",
+      "note": "Sponsor of H.R. 8297, District of Columbia Firearm Freedom Act (title and date per govinfo page; bill text not read).",
+      "subjects": [
+        "repealing gun laws",
+        "firearms in the District of Columbia"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapon and magazine bans",
+        "background checks",
+        "minimum age",
+        "red-flag orders",
+        "carry",
+        "Second Amendment general",
+        "DC firearm bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site: https://crenshaw.house.gov/issues/second-amendment returned 404; not reviewed",
+        "blocked: https://www.washingtontimes.com/news/2019/sep/4/ocasio-cortez-crenshaw-get-spat-over-loaning-guns-/",
+        "blocked: https://www.congress.gov/member/daniel-crenshaw/C001120",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/8297",
+        "Ballotpedia: not reviewed",
+        "news search on name plus gun words (one search)",
+        "Newsweek 2022-06-12 (fetched, text copied from page HTML)",
+        "govinfo bill page for H.R. 8297 (fetched)",
+        "Fox News 2023-01-25 ATF Accountability Act article (fetched via summary only; not copied)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

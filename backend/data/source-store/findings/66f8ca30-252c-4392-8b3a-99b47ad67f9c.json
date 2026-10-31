@@ -1,0 +1,51 @@
+{
+  "politician_id": "66f8ca30-252c-4392-8b3a-99b47ad67f9c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House site https://www.repwallen.com/ (confirms sitting state representative, 193rd District, sworn in 2026-04-13)",
+        "official site search for voter ID (https://www.repwallen.com/?s=voter+ID): nothing on the subject, only nine press releases on other topics",
+        "news report that she is on the November 2026 general-election ballot (Yahoo News results article)",
+        "candidate profile https://www.abc27.com/election/meet-the-candidates-special-election-for-parts-of-adams-and-cumberland-counties/amp/: nothing on the subject",
+        "two web searches on name plus voter ID and election integrity: nothing on the subject",
+        "not reviewed: Ballotpedia (not attempted)",
+        "not reviewed: campaign site",
+        "not reviewed: legislature bill pages (sponsorships linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:07:52.850Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation bills",
+        "Second Amendment and gun rights statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://webcms.pahousegop.com/News-Print/37830/Wallen-Takes-Oath-to-Serve-People-of-the-193rd-?SiteID=1 (confirms she took the oath for the 193rd District; nothing on the subject)",
+        "web searches for statements and bills: nothing; she took office April 13 2026 after a March 2026 special election, so no bill sponsorships were found",
+        "2026 general-election ballot status not confirmed: https://theballotbrief.com/state/pennsylvania/york-county/pennsylvania-house-district-193 returned 404 and the Ballotpedia 2026 page returned empty",
+        "Ballotpedia candidate page: not reviewed",
+        "palegis.us member page: not reviewed",
+        "campaign site (RepWallen.com): not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

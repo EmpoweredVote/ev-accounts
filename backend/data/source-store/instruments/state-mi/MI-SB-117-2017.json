@@ -1,0 +1,88 @@
+{
+  "id": "MI-SB-117-2017",
+  "scope": "state:mi",
+  "title": "SB 117 (2017-2018 Regular Session, Michigan Legislature (bill page title: \"Senate Bill 117 of 2017\")): Elections; absent voters; definition of absent voter; expand to include an elector who applies in person at the clerk's office and who presents photo identification. Amends secs. 758 & 759 of 1954 PA 116 (MCL 168.758 & 168.759).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2017-SB-0117",
+    "https://www.legislature.mi.gov/documents/2017-2018/billintroduced/Senate/htm/2017-SIB-0117.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 758 (as in the version read)\n(quote) (g) Applies for an absent voter ballot in person with the clerk of the township, city, or village in which he or she is registered, and he or she identifies himself or herself to the clerk by presenting an official state personal identification card issued to that elector under 1972 PA 222, MCL 28.291 to 28.300, an operator's or chauffeur's license issued to that elector under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or another generally recognized picture identification card.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 759: begins \"(1) At any time during the 75 days before a primary or special primary, but not later than 2 p.m. of the Saturday immediately befo\"",
+  "sponsors": [
+    {
+      "name": "Wayne Schmidt (District 37)",
+      "role": "prime",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Margaret O'Brien (District 20)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Peter MacGregor (District 28)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Dale Zorn (District 17)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Mike Shirkey (District 16)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Marty Knollenberg (District 13)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Goeff Hansen (District 34)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Judy Emmons (District 33)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Mike Nofs (District 19)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Tory Rocca (District 10)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Tom Casperson (District 38)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    },
+    {
+      "name": "Steven Bieda (District 9)",
+      "role": "co",
+      "version": "Text file header as saved: \"SENATE BILL No. 117 February 7, 2017, Introduced by Senators SCHMIDT, O'BRIEN, MACGREGOR, ZORN, SHIRKEY, KNOLLENBERG, HA\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

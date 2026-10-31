@@ -1,0 +1,258 @@
+{
+  "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf",
+  "findings": [
+    {
+      "id": "de200d2fc25aa12e58cedab358059abb81321dda30375eca1135072572dd7708",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/opinion-tears-in-the-senate-over-voting-and-the-past/RWI5WAJ7WRCQDPRJP6GL7XUXJI",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "“We all know what this is about,” Sen. Lucas said. “But I will not go home and tell people I took away their right to vote. Because that’s what this is.”",
+      "note": "Quoted by the AJC (column by Patricia Murphy) from his Senate floor remarks against SB 67, which would require an ID number or ID copy to request an absentee ballot. Column is dated 2021-02-24; remarks were the day before.",
+      "subjects": [
+        "ID with mail-ballot request",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.687Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "800dd60e32f4b7858974d5dc2499524370f6c89b9013e62775fbf0a4aac7bb39",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/opinion-tears-in-the-senate-over-voting-and-the-past/RWI5WAJ7WRCQDPRJP6GL7XUXJI",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "passage": "“It’s amazing. I did not think I had to come to the well after 45 years of being in this body,” Lucas said. “But I want to tell you, we are going to fight.”",
+      "note": "Quoted by the AJC from his Senate floor remarks on SB 67 (ID for absentee ballot requests).",
+      "subjects": [
+        "ID with mail-ballot request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.687Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95b446b9b5069d1f6923f0a5cd6381e17c6d1f6e26b802572e6aada80398c01c",
+      "kind": "own-words",
+      "url": "https://capitol-beat.org/2021/02/page/4/",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "passage": "“I’m going to tell you, we’re going to fight,” Lucas said. “There’s no question what’s going to happen. And you’re going to spend taxpayer money trying to defend it.”",
+      "note": "Quoted by Capitol Beat from his Senate floor remarks against the absentee voter ID bill (SB 67); he warned of court challenges. Archive page, article date approximate to the Senate vote.",
+      "subjects": [
+        "ID with mail-ballot request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:28:59.687Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Lucas'), linked to DAVID E. LUCAS SR. (district 26) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c76084b4c2894cdfecad43c8cc597e5aa44134e4563401efcb333071fd38dd3e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Lucas'), linked to DAVID E. LUCAS SR. (district 26) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Lucas'), linked to DAVID E. LUCAS SR. (district 26) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59fbc6cfd39d0f6e5bb7da0aeda0e3021dc0b3818a94b8e5ad52ecc82749b77f",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Lucas'), linked to David E. Lucas (district 139) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bee9949bb644c1cf808284a1f1ffce148e610d6c8d54eee1abb40f4f8ded29e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Lucas'), linked to David E. Lucas (district 139) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50175257e25239e0196936c2fd9115df255b22a4180a0a7c922b678221440547",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Lucas'), linked to David E. Lucas (district 139) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Lucas'), linked to DAVID E. LUCAS SR. (district 26) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.413Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number to request or return a mail ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Branch candidate page for Georgia Senate 26, 2026 general election (shows David Eugene Lucas as a candidate): https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-26",
+        "Ballotpedia David Lucas page (confirms a 2026 general election listing; nothing on the subject): https://ballotpedia.org/David_Lucas",
+        "news search on name plus voter ID (two 2021 articles on the Senate debate of SB 67 used)",
+        "not reviewed: official Georgia Senate site and campaign site (not searched beyond the web search; no pages fetched)",
+        "blocked: https://wabe.org/?p=86566 (403 to curl)",
+        "legis.ga.gov bill pages not tried (login token); no bill text PDFs searched"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:28:59.687Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.413Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

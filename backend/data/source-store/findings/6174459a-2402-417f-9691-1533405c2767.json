@@ -1,0 +1,270 @@
+{
+  "politician_id": "6174459a-2402-417f-9691-1533405c2767",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "d8a04cd47aa113913a888f36c4b858e2a8df45edd05bb61e78482d47f4ab292f",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/10/new-dem-whip-marilyn-strickland-on-save-act-disenfranchising-tens-of-millions-of-american-citizens/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "These extreme voter registration requirements and restrictions on absentee and mail-in voting are nothing more than voter suppression.",
+      "note": "Same statement; she describes the bill's registration and absentee/mail-in provisions in these terms.",
+      "subjects": [
+        "proof of citizenship to register",
+        "mail-ballot rules",
+        "SAVE Act",
+        "absentee and mail-in voting restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:55:57.138Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "002ab1fe821f87e480c012ed7a73256d31266db8c833b0e431384095e6132b03",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/10/new-dem-whip-marilyn-strickland-on-save-act-disenfranchising-tens-of-millions-of-american-citizens/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "They want to rig our elections by disenfranchising tens of millions of American citizens.",
+      "note": "Same statement. She says the bill would disenfranchise tens of millions of citizens. In the same statement she also says the bill is not safeguarding election integrity and rejects the claim that millions of non-citizens vote illegally.",
+      "subjects": [
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:45:14.268Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7098da68478a4bcdd81ae52d5435fea133399b098f274f2028b04b64e0fd0735",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2026/07/22/strickland-rejects-defense-bill-laced-with-voter-suppression/",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "While this bill includes bipartisan provisions that would benefit our servicemembers and strengthen our national defense, I will not support a bill that makes it harder for U.S. citizens to exercise their constitutionally protected right to vote.",
+      "note": "Press release statement on her vote against H.R. 8800 (FY2027 defense authorization). She gives voting restrictions in the bill as her reason. The page does not say which provisions she means.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter suppression claims in bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:45:14.268Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4dec799d105ba49ede235da4cb4acc72a9e29b912ef3e251f6b9fe77e18fd5d",
+      "kind": "record",
+      "url": "https://strickland.house.gov/2026/07/22/strickland-rejects-defense-bill-laced-with-voter-suppression/",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8800-2026",
+      "act": "nay",
+      "note": "Her press release says she voted against H.R. 8800, National Defense Authorization Act for Fiscal Year 2027, and ties the vote to voting provisions in the bill. The roll-call page on congress.gov was blocked, so the motion and exact vote date are unconfirmed (date is the release date).",
+      "subjects": [
+        "election integrity laws in general",
+        "voter suppression claims in bills"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:45:14.268Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60bfde2a50be717ec0f637cf8472b249205444433a41236bfcf705723eca4201",
+      "kind": "record",
+      "url": "https://strickland.house.gov/2026/09/29/3911/",
+      "date": "2026-09-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined amicus brief led by Rep. Raskin on the executive order on mail-in and absentee ballots",
+      "note": "Her site lists that she joined an amicus brief challenging a presidential executive order that created new procedures for absentee ballots and requested state citizenship lists. Date is taken from the page's URL path.",
+      "subjects": [
+        "mail-ballot rules",
+        "citizenship lists / voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:45:14.268Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7d739ea9c3ec7fdb667cc25e4e58d68af549e3618d60c8a3828f87b93d2532f",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/10/new-dem-whip-marilyn-strickland-on-save-act-disenfranchising-tens-of-millions-of-american-citizens/",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "With this regressive bill, House Republicans aren’t fooling anyone or safeguarding election integrity.",
+      "note": "Statement issued in her name on the day of the House vote on the SAVE Act (H.R. 22). It says the bill's registration requirements and limits on absentee and mail-in voting are voter suppression. It names married women who changed their last name, rural voters and overseas servicemembers as people affected, and calls claims of widespread non-citizen voting a lie.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "absentee and mail-in voting restrictions",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:55:57.138Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot / absentee ID and rules",
+        "election integrity",
+        "non-citizen voting claims",
+        "voter suppression claims in bills"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Marilyn_Strickland (advanced from the 2026-08-04 primary; on the 2026-11-03 general ballot, WA-10)",
+        "On the Record (0 appearances)",
+        "official site strickland.house.gov: voting-rights issue page, site search for voter ID / SAVE Act / photo ID / proof of citizenship / election integrity / mail ballot / citizenship, press releases and newsletters",
+        "Ballotpedia (key votes section lists the SAVE Act nay, already on file)",
+        "blocked: https://www.congress.gov/member/marilyn-strickland/S001159 (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/8800/actions (HTTP 403)",
+        "not reviewed: campaign site and news search (session web-search budget used up)",
+        "nothing on the subject: voter ID at the polls, photo ID, mail-ballot ID on the official site"
+      ],
+      "found": 5,
+      "at": "2026-10-22T21:45:14.268Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "absentee and mail-in voting restrictions",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House site strickland.house.gov (media center and voting-rights tag, 5 items)",
+        "Ballotpedia page (confirms she is on the 2026-11-03 general-election ballot for WA-10 after the 2026-08-04 primary)",
+        "one news search on her name plus SAVE Act and voter ID (nothing from her beyond the House-site statement)",
+        "the 2026-05-14 redistricting article on her site (nothing on the subject)",
+        "not reviewed: https://www.congress.gov (sponsorship list; votes already on file)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T19:55:57.138Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

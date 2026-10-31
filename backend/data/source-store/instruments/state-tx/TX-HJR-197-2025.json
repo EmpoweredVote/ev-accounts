@@ -1,0 +1,77 @@
+{
+  "id": "TX-HJR-197-2025",
+  "scope": "state:tx",
+  "title": "HJR 197 (89R): Proposing a constitutional amendment clarifying that a voter must be a United States citizen.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR197",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR197",
+    "https://capitol.texas.gov/tlodocs/89R/billtext/html/HJ00197I.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) SECTION 1 (amends Texas Constitution Art. VI, Sec. 1(a))\n(quote) (a) The following classes of persons shall not be allowed to vote in this State: (1) persons under 18 years of age; (2) persons who have been determined mentally incompetent by a court, subject to such exceptions as the Legislature may make; [and] (3) persons convicted of any felony, subject to such exceptions as the Legislature may make; and (4) persons who are not citizens of the United States.\n(note) This is a citizenship requirement for voting only. No document proving citizenship is named.\n(other) Sec 1: adds persons who are not United States citizens to the classes not allowed to vote (Art. VI, Sec. 1(a)).\n(other) Sec 2: election date November 4, 2025 and ballot proposition wording: \"The constitutional amendment clarifying that a voter must be a United States citizen.\"",
+  "sponsors": [
+    {
+      "name": "Patterson",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "4f6da77d-f516-4873-b705-3adeb23c1ffb"
+    },
+    {
+      "name": "Hull",
+      "role": "author",
+      "version": "Introduced (only version)",
+      "politician_id": "02288122-6afb-46c4-ae9f-a712152b1a73"
+    },
+    {
+      "name": "Curry",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "0fa291b4-7f6b-4004-8bb9-19a11b75ab26"
+    },
+    {
+      "name": "Hickland",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "82968d14-f39b-401d-821c-89825a9811ac"
+    },
+    {
+      "name": "Kerwin",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "d9dbb8f1-c49a-4a95-8a53-8aaf34809ffe"
+    },
+    {
+      "name": "Pierson",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "2d902ae4-2c04-4ecc-b9a4-55dccc848c70"
+    },
+    {
+      "name": "Richardson",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "f7ff0e3b-1d14-4563-8119-7919a5a9cd14"
+    },
+    {
+      "name": "Shofner",
+      "role": "co",
+      "version": "Introduced (only version)",
+      "politician_id": "e1b7592e-6f9a-411a-96c3-19f1ccc23435"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T14:43:40Z)",
+    "fetched_at": "2026-10-28T14:43:40Z",
+    "method": "curl"
+  }
+}

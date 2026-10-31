@@ -1,0 +1,231 @@
+{
+  "politician_id": "612c266e-4cb1-4584-8f47-7f79603eb4fe",
+  "findings": [
+    {
+      "id": "5e73d00a071898d17c32cbebc3f6492a9516d686e049b127e515ddc482664f25",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/senator-collett-reacts-to-legislative-attack-on-voting-rights/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "Pennsylvania can and should make its elections more transparent to assure voters that they are secure and free from fraud, but we must do so in a way that does not sacrifice accessibility or infringe on citizens’ sacred right to vote.",
+      "note": "Quoted in her Senate press release on her no vote on HB 1300, a bill with strict voter ID requirements and other election changes.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:48.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "feafca403deac4b734255532f7572a40a051cf3b685d87f8020ecc5131d6e813",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/senator-collett-reacts-to-legislative-attack-on-voting-rights/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "Imposing strict voter ID requirements, similar to those that have been ruled unconstitutional by PA courts.",
+      "note": "Item in the release's list of ways HB 1300 would make voting harder, issued in her name.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:48.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e860f63a8d81d71e38bf52ff8e6e4dc21c6694f54f7e893df392e81f87359e84",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/senator-collett-reacts-to-legislative-attack-on-voting-rights/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "Establishing a new signature verification process with limited time for voters to fix their ballots and confirm their identity.",
+      "note": "Item in the same list; concerns signature checks and fixing mail ballots.",
+      "subjects": [
+        "mail-ballot ID and signature checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:48.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "508e05014b5c2c2987871bf3d5798a30a0f2859210c0c737c9efd6a8a8f87749",
+      "kind": "own-words",
+      "url": "https://www.senatorcollett.com/senator-collett-reacts-to-legislative-attack-on-voting-rights/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "passage": "“Instead of adding new hurdles, we should be finding ways to improve accessibility at the polls.”",
+      "note": "Her comment after questioning the bill's author in committee about signature matching.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and signature checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:48.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "545907b60561f9faf42b6d2e12b6d220e5f190eb93f020163729a49cb98da10e",
+      "kind": "record",
+      "url": "https://www.senatorcollett.com/senator-collett-reacts-to-legislative-attack-on-voting-rights/",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate vote on HB 1300 (per her press release; official roll call linked separately)",
+      "note": "Her release says she voted no on HB 1300, which it describes as imposing voter ID requirements, a signature-match process and other changes.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and signature checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:48.530Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Collett'), linked to Maria Collett (district 12) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.710Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Collett'), linked to Maria Collett (district 12) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.710Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Collett'), linked to Maria Collett (district 12) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and signature checks",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter disinformation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site search for voter ID (25 results, https://www.senatorcollett.com/?s=voter+ID)",
+        "official Senate site issue page Protecting Democracy and Elections (https://www.senatorcollett.com/protectingdemocracy/)",
+        "Ballotpedia (confirms sitting state senator for District 12 and on the 2026 general-election ballot)",
+        "one web search on name plus voter ID and mail ballot: nothing on the subject",
+        "House caucus site page for this name returned 404 (she serves in the Senate)",
+        "not reviewed: https://www.senatorcollett.com/sen-collett-pushes-back-against-voter-disinformation/ (page has no readable text, likely video)",
+        "not reviewed: campaign site",
+        "not reviewed: legislature bill pages (sponsorships linked separately)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:04:48.530Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.710Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

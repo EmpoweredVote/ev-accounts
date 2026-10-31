@@ -1,0 +1,155 @@
+{
+  "politician_id": "f5ee39fe-6a9a-462b-b725-4da3eb85833e",
+  "findings": [
+    {
+      "id": "ed86f5fadf0ae92673f372634b0a9ad6eaeb1ba7abd87e85e0999ae1c55124e1",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34372/Banta-Disappointed-in-House-Democrats-Constant-Failure-in-Protecting-PA-Elections?SiteID=1",
+      "date": "2024-07-02",
+      "date_precision": "day",
+      "passage": "A voter ID requirement is simply a commonsense approach to ensure elections across our state stay secure. It’s a measure supported by Americans and Pennsylvanians.",
+      "note": "Statement issued in his name after his committee amendment to HB 2473 was not adopted; he says a voter ID requirement is a plain way to keep elections secure and is widely supported. Fetched with curl from the caucus site.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:33.868Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0343e1a962d457dcf87722f62097ade717f764696986e6685e921ab14ab446db",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34372/Banta-Disappointed-in-House-Democrats-Constant-Failure-in-Protecting-PA-Elections?SiteID=1",
+      "date": "2024-07-02",
+      "date_precision": "day",
+      "passage": "We show identification in every aspect of our lives, from boarding an airplane to applying for government documentation. Confirming one’s identity is an essential part of our lives.",
+      "note": "Same release: he compares showing ID to vote with showing ID in other parts of daily life.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:33.868Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "056afad83abfa314492e658157a95e4cb7c5c0567cb36ea6f9383b0ed49ac944",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/34372/Banta-Disappointed-in-House-Democrats-Constant-Failure-in-Protecting-PA-Elections?SiteID=1",
+      "date": "2024-07-02",
+      "date_precision": "day",
+      "passage": "Enacting voter ID laws is the only way to ensure we get our results right.",
+      "note": "Same release: closing line tying voter ID laws to the 2024 presidential election results.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:33.868Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49642dc72f3766d9dd679b615e7e10ca17dcc90507414648d288f4430baeb083",
+      "kind": "record",
+      "url": "https://webcms.pahousegop.com/News-Print/34372/Banta-Disappointed-in-House-Democrats-Constant-Failure-in-Protecting-PA-Elections?SiteID=1",
+      "date": "2024-07-02",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-2473-2024",
+      "act": "other",
+      "motion": "Amendment offered in the House State Government Committee to HB 2473",
+      "note": "Per the release, he offered an amendment to HB 2473 (election procedures and the federal Electoral Count Reform Act) that would have barred the Secretary of the Commonwealth from certifying any election result unless all voters were required to provide a form of identification before voting. The release is dated 2024-07-02; the committee meeting date is not stated.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:14:33.868Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BANTA'), linked to Jacob Daniel Banta (district 4) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.864Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter without ID does",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: on the 2026-11-03 general-election ballot and the sitting member, per https://theballotbrief.com/state/pennsylvania/erie-county/pennsylvania-house-district-4",
+        "On the Record (0 appearances)",
+        "official site https://www.repbanta.com (home page and press-release list): nothing further on the subject beyond the caucus release saved",
+        "House caucus site press release 2024-07-02 (saved)",
+        "legislature bill pages: not reviewed (sponsorships are linked separately)",
+        "blocked: https://ballotpedia.org/Jake_Banta (403)",
+        "blocked: https://www.yahoo.com/news/banta-fueled-discredited-conspiracies-eyes-092410940.html (429)",
+        "blocked: https://www.goerie.com/story/news/politics/elections/state/2022/10/17/pa-house-candidate-jake-banta-amplifies-election-covid-conspiracies-online/65361499007/ (402)",
+        "not reviewed: https://www.facebook.com/repbanta",
+        "https://www.jakebanta.com is an opponent-run tracking site, not his words; not used",
+        "web search (four to five queries on name plus voter ID, election integrity, mail-in, SAVE Act): no own words found beyond what is saved"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:14:33.868Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.864Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "politician_id": "99457307-afa4-4045-aebf-06ee8b39d28f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Brendan_Crighton) says he is on the Nov 3, 2026 general-election ballot for Massachusetts State Senate 3rd Essex after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances for this politician id; name search returned 0)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/BPC0 (Senator, Third Essex): sponsored and cosponsored lists for the 194th court reviewed, nothing on the subject (only S.1296, time off for voting, which is not about ID or citizenship)",
+        "official/campaign site https://www.brendancrighton.com (home, /issues, site searches for voter, photo ID, election): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search by name plus subject words (web search budget was exhausted for the session)",
+        "not reviewed: earlier General Courts' sponsored lists (page showed only the 194th court)",
+        "not reviewed: Senate roll-call records on election bills (no direct URL pattern found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:17:32.882Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/BPC0 (Senator Brendan P. Crighton, Third Essex; sponsored bills list has no voter ID or citizenship bills; one bill on time off to vote, not on the subject)",
+        "web searches on name plus voter ID, proof of citizenship, election: nothing on the subject; a search result says he sits on the Joint Committee on Election Laws",
+        "not reviewed: Ballotpedia, official Senate press page, campaign site (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:40:49.667Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

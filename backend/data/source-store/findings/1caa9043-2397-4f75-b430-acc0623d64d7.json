@@ -1,0 +1,77 @@
+{
+  "politician_id": "1caa9043-2397-4f75-b430-acc0623d64d7",
+  "findings": [
+    {
+      "id": "01399b2a2cf86e2a3e542fd97fb940a6aac2a9a0adf622f68d37ea5d5c48800e",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, motion: do pass and be re-referred to the Committee on Judiciary (bill failed)",
+      "note": "AB 25 (voter ID and election integrity bill by other authors) would repeal proof of citizenship by sworn statement on the registration form and require documentation of citizenship, plus voter ID. He is listed among the five no votes; two members voted yes.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.114Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6ead5946af139443b7a09baa00c0b8c94b86e2d7a410a85d0cdf7cb689b7318",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab25",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-25-2025",
+      "act": "nay",
+      "motion": "Assembly Elections Committee, motion: reconsideration of AB 25 (failed)",
+      "note": "Listed among the five no votes on the reconsideration motion for AB 25, voter ID and documentary proof of citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:07.114Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "local voter-ID rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly site https://a62.asmdc.org/ (home, press releases, site search for voter and citizenship; nothing on the subject)",
+        "CalMatters Digital Democracy page for AB 25 (committee roll call names him)",
+        "Jefferson Public Radio story on the AB 25 hearing (no words from him; fetched)",
+        "blocked: https://leginfo.legislature.ca.gov (bot challenge page on bill vote pages; SB 1174 of 2024 not applicable because he took office 2024-12-02)",
+        "not reviewed: https://ballotpedia.org/Jose_Luis_Solache_Jr.",
+        "two news searches on name plus subject words (no statement from him on the subject)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:59:07.114Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

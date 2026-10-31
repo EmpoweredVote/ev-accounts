@@ -1,0 +1,305 @@
+{
+  "politician_id": "6a2b1e44-55d7-4f9d-b179-d4522bf78e98",
+  "findings": [
+    {
+      "id": "66304f86d0336a5fdaaae121566324cfbdd3769fbea3ba6ccd8513cf11ff2bd2",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/04/Steffen/media/zmbpxllm/press-release-rep-steffen-joins-assembly-republicans-in-announcing-voter-id-constitutional-amendmentdocx.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "While Wisconsin has successfully implemented voter ID requirements for over a decade, enshrining voter ID into our state constitution will ensure that the security and integrity of our elections is constitutionally protected.",
+      "note": "Statement in his name in a press release about the voter ID constitutional amendment (second consideration). He says writing the photo ID rule into the state constitution will protect election security.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:01:20.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19fec32710cb1d2167fa916d3cd15053075234310738aba00a07a7749533e4b0",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/assembly/04/Steffen/media/zmbpxllm/press-release-rep-steffen-joins-assembly-republicans-in-announcing-voter-id-constitutional-amendmentdocx.pdf",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "passage": "A functioning democracy requires full faith in our electoral process and voter ID is a proven method for securing that process,",
+      "note": "Same statement, next sentence (the release ends the quote with a comma before the attribution). He calls voter ID a proven method of securing elections.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:01:20.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb13d77411383444e7d39f48a1ad742e30ab9fa6fd0be1ffe11c27b60d4573ab",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/candidates-wisconsin-assembly-district-4-100016513.html",
+      "date": "2022-10-14",
+      "date_precision": "day",
+      "passage": "I believe this is an area that we can get some bipartisan work accomplished next session.",
+      "note": "Green Bay Press-Gazette candidate Q&A (outlet quoting him; fetched through the fetch tool's quote mode). Asked about election integrity, he says it is a bipartisan area and that he authored several election-integrity bills the year before. He also says he plans two more bills, one on voters with disabilities and one on a text-message receipt for mail-in absentee voters (summary, not verbatim).",
+      "subjects": [
+        "election integrity laws in general",
+        "absentee ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:01:20.888Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05f8a142565de5b18a7bb52eccf388587e6178fcea0d942c4b6f4e87c5f035e1",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr1",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-1-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/6/2025 (second consideration, text of 2023 SJR 73); committee recommended adoption 1/9/2025 (5-2); laid on the table 1/14/2025; died (Failed to adopt pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Steffen') on the official bill page; linked to David Steffen via the official 2025 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f105cb8cc766b9ac9b7e2489ba36edc3c7ee78320f2205bd664bd72a8b747ad4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "yea",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "779275fa7bbaeebe4662128c64bf5bcae3b4ac6d33f8b9d378b77baba9327313",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/ajr133",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/16/2022 (first consideration); adopted by Assembly 2/24/2022 (59-36, 4 paired); died in Senate committee (Failed to concur in pursuant to Senate Joint Resolution 1, 3/15/2022)",
+      "note": "Named as co sponsor ('Steffen') on the official bill page; linked to David Steffen via the official 2022 member roll of the Assembly (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dcdd6812724e9ea085737c1a28378742e9b2599a364726fd8fb1c0b5f415b7f",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f30723e38f6bac08dfc861be5cb5156051e1eebf82a52f402ee921c9e9fdf26",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2017/av0362",
+      "date": "2018-12-04",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-884-2018",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0362)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2017 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b31b4288bd002fb7b4bbaa46b990e06d7b2eff283e39b1556d0e71f0bd7e00cb",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aac49f80b6252a05edb5b95b705c5111fbb94d9575b9dfdc762cc087dd25edd",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "52afc0d599e71925804c90692661774de3a4e6234e50f5798a0f86167fb91d4e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sjr2",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Enrolled joint resolution (2025 Enrolled Joint Resolution 1, second consideration); adopted by Senate 1/8/2025 (17-15) and concurred by Assembly 1/14/2025 (54-45); submitted to voters at the April 2025 election",
+      "note": "Named as co sponsor ('Steffen') on the official bill page; linked to David Steffen via the official 2025 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f37735cfc46365a2fe5a6cf819e19dbb60dbab9982d4680456fe62a5dc680974",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('STEFFEN'), linked to David Steffen (district 4) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.785Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID without ID: provisional ballot",
+        "proof of citizenship to register or vote",
+        "absentee/mail ballot rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Assembly site (District 4): press release list pages 1 to 6 by title; one release on the voter ID amendment, opened and copied",
+        "scope check: a 2026 preview page (jdjohn215.github.io) shows him as incumbent and a 2026 November candidate for Assembly District 4",
+        "blocked: https://ballotpedia.org/David_Steffen (fetch returned an empty page)",
+        "WisPolitics copy of the January 2025 release: text cut off by paywall, so the official site copy is cited",
+        "Green Bay Press-Gazette candidate Q&A (October 2022) via Yahoo: reached with the fetch tool only, direct download was empty",
+        "news search on name plus voter ID, citizenship, absentee: no statement on proof of citizenship found",
+        "campaign site not found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:01:20.888Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 9,
+      "at": "2026-10-28T23:15:12.785Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

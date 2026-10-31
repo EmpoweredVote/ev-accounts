@@ -1,0 +1,69 @@
+{
+  "politician_id": "94b1866a-cc0a-409a-bd21-367abf8be938",
+  "findings": [
+    {
+      "id": "2a8c1e6adeeb1b83990f54b1ca73fbb70a72c10f09939c42f1e1da2b2ae32867",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0004",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0004)",
+      "note": "Assembly roll call as printed ('JOHNSON'), linked to Tara Johnson (district 96) via the official 2025 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.790Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship",
+        "absentee ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/96/johnson/ (confirms sitting state representative, District 96)",
+        "official press releases list pages 1 to 3 (nothing on the subject)",
+        "official e-updates list (nothing on the subject)",
+        "official in-the-news list (nothing on the subject)",
+        "campaign site https://taraforwisconsin.com/ (homepage only; says she will protect democracy, nothing on ID or citizenship; other pages return 404 or are not linked)",
+        "news report of her 2026 re-election announcement, Apr 13, 2026: https://www.wxow.com/news/wisconsin-politics/rep-tara-johnson-announces-reelection-bid-for-96th-assembly-district/article_4a140b4e-77fa-4611-96a0-223851b525b4.html",
+        "blocked: https://ballotpedia.org/Tara_Johnson_(Wisconsin)",
+        "blocked: https://www.wispolitics.com/2026/johnson-campaign-representative-tara-johnson-announces-re-election-bid-in-96th-assembly-district/",
+        "two web searches on name plus voter ID words; nothing found in her own words"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:04:17.438Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.790Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

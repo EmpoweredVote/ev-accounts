@@ -1,0 +1,445 @@
+{
+  "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+  "findings": [
+    {
+      "id": "b1244edab908f33c03e28fc0aac00de80a171fc1b2c9853d2f0ac929bd410c0e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/76696",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2241-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2241P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Frank P Carroll') on the official bill page; linked to Frank P Carroll via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CARROLL'), linked to Frank P Carroll (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district 28) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district 28) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b714a91dbebc4fc5a84abb54b8a12c9e6fc1a76bf56608b1c785862bc0a9b256",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=188418&includeVotes=true",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2019 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district 28) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('CARROLL'), linked to Frank P Carroll (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9e34a3debf61bc19ab4a711c3da0f592bd77e6248725ec6f01f2213dd959adde",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/79268",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, SB1595H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Frank Carroll') on the official bill page; linked to Frank Carroll via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('CARROLL'), linked to Frank P Carroll (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('CARROLL'), linked to Frank Carroll (district 28) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('CARROLL'), linked to Frank P Carroll (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9357f2062d214a379805005502425864a980e90a2d20b10ed53278711606af62",
+      "kind": "own-words",
+      "url": "https://www.azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative28",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I've worked hard on the issues you tell me matter most - Election Integrity, Ending Illegal Immigration, Public Safety, Improving Transportation, Jobs, Quality Schools and School Choice, Water, and Protecting Our Constitutional Rights.",
+      "note": "His candidate statement in the state Clean Elections voter guide for Legislative District 28 (the page lists him as State Senator; the date of the guide is not shown on the page). He lists election integrity as a priority and gives no detail on ID or citizenship rules.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.478Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 16,
+      "at": "2026-10-28T22:53:15.884Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/frank-carroll shows him as a candidate for Arizona Senate District 28 on the 2026 general-election ballot",
+        "Clean Elections voter guide https://www.azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative28 (1 finding: candidate statement)",
+        "campaign site http://votefrankcarroll.com/issues (reached through myvotecarroll.com): nothing on the subject",
+        "blocked: https://ballotpedia.org/Frank_Carroll (empty page returned)",
+        "https://en.wikipedia.org/wiki/Frank_Carroll_(Arizona_politician): no direct quote by him on the subject; lead only",
+        "https://www.kjzz.org/content/1763121/arizona-senate-committee-passes-bill-requiring-proof-citizenship-vote: 2022 committee story; no quote by him found",
+        "not reachable: https://www.azsenaterepublicans.gov/_files/ugd/2f3470_381c6adeaa2e4e72b6d274d258e17df7.pdf (404)",
+        "web searches (3): news and statement searches found no own-words quote on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:13:34.967Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope check: https://www.ballotready.org/people/frank-carroll shows him as a candidate for Arizona Senate District 28 on the 2026 general-election ballot",
+        "Clean Elections voter guide https://www.azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative28 (1 finding: candidate statement)",
+        "campaign site http://votefrankcarroll.com/issues (reached through myvotecarroll.com): nothing on the subject",
+        "blocked: https://ballotpedia.org/Frank_Carroll (empty page returned)",
+        "https://en.wikipedia.org/wiki/Frank_Carroll_(Arizona_politician): no direct quote by him on the subject; lead only",
+        "https://www.kjzz.org/content/1763121/arizona-senate-committee-passes-bill-requiring-proof-citizenship-vote: 2022 committee story; no quote by him found",
+        "not reachable: https://www.azsenaterepublicans.gov/_files/ugd/2f3470_381c6adeaa2e4e72b6d274d258e17df7.pdf (404)",
+        "web searches (3): news and statement searches found no own-words quote on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.478Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "politician_id": "0761f7c4-67ba-4f38-9ea0-cd22c17b9065",
+  "findings": [
+    {
+      "id": "ba62d47174b3e801d68dfdb443ae5d4046b5a512458a94e6559988d4d0d9463f",
+      "kind": "record",
+      "url": "https://capitol-beat.org/?p=3573",
+      "date": "2021-01",
+      "date_precision": "month",
+      "instrument_id": "GA-SB-29-2021",
+      "act": "sponsor",
+      "note": "Sponsor of SB 29, which would require voters to give a photocopy of a photo ID (driver's license, passport or other valid ID card) when applying for an absentee ballot and again when returning it, in place of the current signature-match check. Capitol Beat dated its story 2021-01-28 and said the bill was filed the Tuesday before; another outlet said Wednesday, so only the month is given.",
+      "subjects": [
+        "ID with absentee ballot request or return",
+        "mail-ballot ID",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:42:46.438Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97ba611dc18a1017fa8c5d34f2e9f7a8dbb9c9a46748172aed066e1720b2e46d",
+      "kind": "record",
+      "url": "https://www.billtrack50.com/billdetail/1929573",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-563-2026",
+      "act": "sponsor",
+      "note": "One of five senators listed as sponsors of SR 563, a non-binding resolution urging the Secretary of State to comply with a U.S. Department of Justice request for the state voter registration list. Introduced 2026-01-14; adopted by the Senate 2026-02-02 per the page.",
+      "subjects": [
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:42:46.438Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Anavitarte'), linked to JASON ANAVITARTE (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anavitarte'), linked to JASON ANAVITARTE (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anavitarte'), linked to JASON ANAVITARTE (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Anavitarte'), linked to Anavitarte, Jason (district 31) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0f558f7ff8b0d4877bef7206bb9bc5f25539977482795594c64d4417e474d38",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (detail and vote pages answer 401 without the site token; not used)",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, House Rules Committee substitute (read and adopted in the House 28 March 2024; agreed to by the Senate the same day)",
+      "note": "Named as co sponsor ('Anavitarte of the 31st') on the official bill text; linked to Anavitarte, Jason via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot request or return",
+        "proof of citizenship to register",
+        "voter-roll maintenance",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in office (Georgia Senate District 31, Senate majority leader) and on the 2026-11-03 general ballot as incumbent, per https://ballotpedia.org/Jason_Anavitarte",
+        "On the Record (0 appearances found)",
+        "campaign site https://www.jasonanavitarte.com/ (issue pages cover taxes, education, life, gun rights, economy; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jason_Anavitarte (no survey answers on the subject)",
+        "legislature bill pages: SB 29 (2021) and SR 563 (2026) via news and BillTrack50 and the legislature's document download",
+        "news searches: 2021 coverage of SB 29 in Capitol Beat, Fox 5 Atlanta, TheGrio, Gilmer outlet; none carries a direct quote from him (he did not respond or comment)",
+        "not reviewed: https://www.legis.ga.gov/legislation/59827 (page loads only through scripts; his SB 202 final vote not retrieved)",
+        "blocked: https://legiscan.com/GA/bill/SB202/2021 (403)",
+        "blocked: https://justfacts.votesmart.org/bills/GA/2021/12/ (403)",
+        "blocked: a WABE radio story on SB 29 (403)",
+        "blocked: https://www.ajc.com/politics/bill-seeks-two-copies-of-photo-id-to-vote-absentee-in-georgia/2IC372BV2NC3VFNAYIWA4OPQKQ (no text returned)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:42:46.438Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

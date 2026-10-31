@@ -1,0 +1,115 @@
+{
+  "politician_id": "9b25cb45-ccd3-4d8d-bb74-c149ebf56753",
+  "findings": [
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('WILLIAMS, C.'), linked to Wendell Craig Williams (district 160) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29b",
+        "fetched_at": "2026-10-29T14:18:57.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Williams, C.'), linked to Wendell Craig Williams (district 160) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29b",
+        "fetched_at": "2026-10-29T14:18:57.938Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('WILLIAMS, C.'), linked to Wendell Craig Williams (district 160) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29b",
+        "fetched_at": "2026-10-29T14:18:57.938Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "drop boxes and pop-up voting centers"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "WHYY 2026 race guide https://whyy.org/articles/election-2026-pennsylvania-senate-160th-district-voter-guide/: confirms he is the sitting member for the 160th District and on the November 2026 ballot; no words by him on the subject",
+        "WHYY 2024 race guide https://whyy.org/articles/craig-williams-elizabeth-moro-160-district-election-2024: nothing by him on the subject",
+        "Chadds Ford Live rally story https://chaddsfordlive.com/?p=195570: written about him by a reporter and a rally organizer; he did not attend and was not reached for comment, so no own words",
+        "House caucus member page https://www.pahousegop.com/Williams: no content on the subject; news list page returned HTTP 429 (rate limited), https://www.pahousegop.com/Williams/News, not retried",
+        "blocked: https://delawarevalleyjournal.com/?p=40608 (HTTP 403), a lead said to quote him on a 2021 veto of an election bill",
+        "blocked: https://delawarevalleyjournal.com/?p=74081 (HTTP 403), a lead said to quote him on a discharge petition for voter ID",
+        "blocked: https://ballotpedia.org not fetched, no usable page located",
+        "campaign site: not located",
+        "news searches on name plus voter ID: only the two blocked articles and the rally story surfaced",
+        "legislature bill pages: not searched, sponsorships linked separately"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:08:14.018Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:18:57.938Z",
+      "by": "identity-pa-2026-10-29b"
+    }
+  ]
+}

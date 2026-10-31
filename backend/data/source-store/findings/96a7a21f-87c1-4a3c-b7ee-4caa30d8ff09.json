@@ -1,0 +1,31 @@
+{
+  "politician_id": "96a7a21f-87c1-4a3c-b7ee-4caa30d8ff09",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House member page https://house.texas.gov/members/4285 (confirms District 76; no election items)",
+        "campaign site: none found",
+        "a ballot-guide page lists him in the 2026 general election for District 76; it gives only a one-line summary by the site, not his words: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-76/candidates/suleman-lalani",
+        "blocked: https://ballotpedia.org/Suleman_Lalani (page came back empty)",
+        "a local news candidate Q&A from 2024 (answers cover school funding, health care and federal funding; nothing on the subject)",
+        "two House newsletters from 2023 read as text: they discuss local election turnout, not ID or citizenship rules",
+        "legislature bill pages: no voter ID or citizenship bill by him found in search",
+        "news searches on his name with voter ID, SB 16, SAVE Act, proof of citizenship: no quotes from him found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:14:13.848Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "politician_id": "dbb2888a-78f8-4f86-b793-52e90a9a2826",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "e436e972772d129c69eb8744add561725c98de9fc383aedfe06c20eb89f84cf0",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/1/fischbach-vows-protect-2nd-amendment-congress",
+      "date": "2021-01",
+      "date_precision": "month",
+      "passage": "It is enshrined in the United States Constitution that Americans shall have the right to bear arms, but we’ve seen growing attempts from radical Democrats to infringe upon the 2nd Amendment. This is against the very foundation of our country, and I will not allow the far left to encroach on the God-given rights of law-abiding gun owners.",
+      "note": "Statement ahead of her swearing-in, vowing to protect the 2nd Amendment.",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc977f9a584dd53b27aad6096a2fdb3bcc2c935147e84ce71a80b0ae697cd121",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/3/rep-fischbach-opposes-unconstitutional-gun-restrictions",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "Universal background checks criminalize the private transfer of firearms, making it nearly impossible for law-abiding gun owners to acquire, or even borrow or lend, firearms.",
+      "note": "Statement on House passage of H.R. 8 and H.R. 1446 (background check bills), opposing them and describing their effect on private transfers.",
+      "subjects": [
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "086fccad7dc2bdcbdc1f388c1374a7060c5d4a7a1b6335992ccb93cd068d76a9",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2021/3/rep-fischbach-opposes-unconstitutional-gun-restrictions",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "These bills do not stop criminals from getting guns, but they do undermine the ability of my constituents – many of whom are hunters and sportsmen – to exercise their Second Amendment rights.",
+      "note": "Same statement: says the background check bills do not stop criminals and undermine constituents' Second Amendment rights.",
+      "subjects": [
+        "background checks on private sales",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8eda459cda2ab9a1fba97189097f1dea295757ef5fede307852d8bcdad1bf477",
+      "kind": "own-words",
+      "url": "https://fischbach.house.gov/2022/7/rep-fischbach-defends-2nd-amendment-rights",
+      "date": "2022-07",
+      "date_precision": "month",
+      "passage": "Democrats are no longer disguising their radical agenda to ban guns and do away with the Constitution's Second Amendment.",
+      "note": "Floor remarks quoted on her site about a gun bill in July 2022 (the page names no bill number); says she sees the bill as a step toward banning guns.",
+      "subjects": [
+        "gun bans",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment general statements",
+        "universal background checks",
+        "gun bans",
+        "concealed carry reciprocity",
+        "suppressors",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (3 pages)",
+        "web search for sponsorships: only third-party tracker listings with no role shown, so none saved",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

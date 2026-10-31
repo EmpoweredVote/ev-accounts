@@ -1,0 +1,505 @@
+{
+  "id": "US-S-649-SAMDT-711-2013",
+  "scope": "federal",
+  "title": "S.Amdt. 711 to S. 649 (113th Congress): Assault Weapons Ban of 2013",
+  "urls": [
+    "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00101.htm",
+    "https://www.govinfo.gov/content/pkg/CREC-2013-04-11/pdf/CREC-2013-04-11-senate.pdf",
+    "https://www.govinfo.gov/content/pkg/CREC-2013-04-17/html/CREC-2013-04-17-pt1-PgS2699-5.htm",
+    "https://www.govinfo.gov/bulkdata/BILLSTATUS/113/s/BILLSTATUS-113s649.xml"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 402(a), new 18 USC 921(a)(36) (rifle limb): ‘‘(36) The term ‘semiautomatic assault weapon’ means any of the following, regardless of country of manufacture or caliber of ammunition accepted: ‘‘(A) A semiautomatic rifle that has the capacity to accept a detachable magazine and any 1 of the following: ‘‘(i) A pistol grip. ‘‘(ii) A forward grip.\nSec. 402(a), new 921(a)(37) (magazines): ‘‘(37) The term ‘large capacity ammunition feeding device’— ‘‘(A) means a magazine, belt, drum, feed strip, or similar device, including any such device joined or coupled with another in any manner, that has an overall capacity of, or that can be readily restored, changed, or converted to accept, more than 10 rounds of ammunition;\nSec. 403(a), new 922(v)(1)-(2) (ban and grandfathering): ‘‘(v)(1) It shall be unlawful for a person to import, sell, manufacture, transfer, or possess, in or affecting interstate or foreign commerce, a semiautomatic assault weapon. ‘‘(2) Paragraph (1) shall not apply to the possession, sale, or transfer of any semiautomatic assault weapon otherwise lawfully possessed under Federal law on the date of enactment of the Assault Weapons Ban of 2013.\nSec. 403(a), new 922(v)(3) (other guns stay legal): ‘‘(3) Paragraph (1) shall not apply to any firearm that— ‘‘(A) is manually operated by bolt, pump, lever, or slide action; ‘‘(B) has been rendered permanently inoperable; or ‘‘(C) is an antique firearm, as defined in section 921 of this title.\nSec. 403(a), new 922(w)(1)-(2) (magazines): ‘‘(w)(1) It shall be unlawful for a person to import, sell, manufacture, transfer, or possess, in or affecting interstate or foreign commerce, a large capacity ammunition feeding device. ‘‘(2) Paragraph (1) shall not apply to the possession of any large capacity ammunition feeding device otherwise lawfully possessed on or before the date of enactment of the Assault Weapons Ban of 2013.\nSec. 403(a), new 922(bb) (secure storage of grandfathered weapons): ‘‘(bb) SECURE STORAGE OR SAFETY DEVICE REQUIREMENT FOR GRANDFATHERED SEMIAUTOMATIC ASSAULT WEAPONS.—It shall be unlawful for any person, other than a licensed importer, licensed manufacturer, or licensed dealer, to store or keep under the dominion or control of that person any grandfathered semiautomatic assault weapon that the person knows, or has reasonable cause to believe, will be accessible to an individual prohibited from receiving or possessing a firearm under subsection (g), (n), or (x), or any provision of State law, unless the grandfathered semiautomatic assault weapon is—",
+  "sponsors": [
+    {
+      "name": "Feinstein (as printed in the amendment name on the vote page)",
+      "role": "prime",
+      "version": "amendment"
+    },
+    {
+      "name": "Mrs. FEINSTEIN (for herself, Mr. SCHUMER, Mr. DURBIN, Mr. WHITEHOUSE, Ms. KLOBUCHAR, Mr. FRANKEN, Mr. BLUMENTHAL, Mr. LEVIN, Mr. HARKIN, Mr. ROCKEFELLER, Ms. MIKULSKI, Mrs. BOXER, Mr. REED, Mr. CARPER, Mr. LAUTENBERG, Mr. MENENDEZ, Mr. CARDIN, Mrs. GILLIBRAND, Mr. SCHATZ, Mr. MURPHY, Ms. HIRONO, Ms. WARREN, and Mr. COWAN)",
+      "role": "co",
+      "version": "submitted"
+    },
+    {
+      "name": "Sen. Dianne Feinstein (printed \"Mrs. FEINSTEIN (for herself, Mr. SCHUMER, Mr. DURBIN, ...)\")",
+      "role": "prime"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "text not read",
+  "votes": [
+    {
+      "date": "2013-04-17",
+      "body": "US Senate",
+      "motion": "On the Amendment (Feinstein Amdt. No. 711) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 60,
+      "body_size": 100,
+      "note": "names from: page text",
+      "members": [
+        {
+          "name": "Baldwin (WI)",
+          "politician_id": "ac7faadb-52c2-4e13-9073-3a607a4f8e57",
+          "vote": "yea"
+        },
+        {
+          "name": "Blumenthal (CT)",
+          "politician_id": "bd630c8f-14da-4149-b95c-6da7eddaab8f",
+          "vote": "yea"
+        },
+        {
+          "name": "Boxer (CA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (OH)",
+          "vote": "yea"
+        },
+        {
+          "name": "Cantwell (WA)",
+          "politician_id": "750717e7-1f22-42a7-86fd-e065caf343de",
+          "vote": "yea"
+        },
+        {
+          "name": "Cardin (MD)",
+          "vote": "yea"
+        },
+        {
+          "name": "Carper (DE)",
+          "vote": "yea"
+        },
+        {
+          "name": "Casey (PA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Coons (DE)",
+          "politician_id": "eaab08fa-c93d-44de-ad8e-06275658dddc",
+          "vote": "yea"
+        },
+        {
+          "name": "Cowan (MA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Durbin (IL)",
+          "politician_id": "2c3372a7-dadc-4622-944c-1783abe57b56",
+          "vote": "yea"
+        },
+        {
+          "name": "Feinstein (CA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Franken (MN)",
+          "vote": "yea"
+        },
+        {
+          "name": "Gillibrand (NY)",
+          "politician_id": "463f8a89-e12c-4b92-8df1-0fed43dc4441",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkin (IA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Hirono (HI)",
+          "politician_id": "dc92c805-4734-4d4b-8ceb-597e59b0e268",
+          "vote": "yea"
+        },
+        {
+          "name": "Kaine (VA)",
+          "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk (IL)",
+          "vote": "yea"
+        },
+        {
+          "name": "Klobuchar (MN)",
+          "politician_id": "3d51cca6-7206-413b-ab8d-3199a58a6767",
+          "vote": "yea"
+        },
+        {
+          "name": "Lautenberg (NJ)",
+          "vote": "yea"
+        },
+        {
+          "name": "Leahy (VT)",
+          "vote": "yea"
+        },
+        {
+          "name": "Levin (MI)",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaskill (MO)",
+          "vote": "yea"
+        },
+        {
+          "name": "Menendez (NJ)",
+          "vote": "yea"
+        },
+        {
+          "name": "Merkley (OR)",
+          "politician_id": "0eabc969-c1a1-47b7-8d34-6113b723a170",
+          "vote": "yea"
+        },
+        {
+          "name": "Mikulski (MD)",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy (CT)",
+          "politician_id": "b700099a-8cab-44b6-81b8-d678d646ae88",
+          "vote": "yea"
+        },
+        {
+          "name": "Murray (WA)",
+          "politician_id": "0f06ced9-84c7-4020-98fd-82ac25d49027",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson (FL)",
+          "vote": "yea"
+        },
+        {
+          "name": "Reed (RI)",
+          "politician_id": "afd8d31b-9f88-4eb9-8a88-46e5ef914267",
+          "vote": "yea"
+        },
+        {
+          "name": "Reid (NV)",
+          "vote": "yea"
+        },
+        {
+          "name": "Rockefeller (WV)",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders (VT)",
+          "politician_id": "3cc5cece-cec0-4490-8faa-37a6b66231c7",
+          "vote": "yea"
+        },
+        {
+          "name": "Schatz (HI)",
+          "politician_id": "100de02f-b44d-4587-9b90-19aa5081708c",
+          "vote": "yea"
+        },
+        {
+          "name": "Schumer (NY)",
+          "politician_id": "af01a7ec-9318-4862-ba78-553e5908182c",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaheen (NH)",
+          "politician_id": "1d877e4d-8aaf-4db8-be5b-2a3de0a98783",
+          "vote": "yea"
+        },
+        {
+          "name": "Stabenow (MI)",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren (MA)",
+          "politician_id": "dd08c9de-076d-40ee-ab27-9298bbb72d1a",
+          "vote": "yea"
+        },
+        {
+          "name": "Whitehouse (RI)",
+          "politician_id": "c19c488e-ae48-4ed2-ba7c-3092b847c192",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyden (OR)",
+          "politician_id": "2147281e-e1b1-4416-a5d9-dae9d4f31be0",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander (TN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Ayotte (NH)",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrasso (WY)",
+          "politician_id": "e4b27d5e-59de-4e71-a8a7-28e7b9a80807",
+          "vote": "nay"
+        },
+        {
+          "name": "Baucus (MT)",
+          "vote": "nay"
+        },
+        {
+          "name": "Begich (AK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennet (CO)",
+          "politician_id": "535591bf-7151-48ba-81b4-e8d9983def72",
+          "vote": "nay"
+        },
+        {
+          "name": "Blunt (MO)",
+          "vote": "nay"
+        },
+        {
+          "name": "Boozman (AR)",
+          "politician_id": "3621bbef-a821-45fe-991c-e1744ad05203",
+          "vote": "nay"
+        },
+        {
+          "name": "Burr (NC)",
+          "vote": "nay"
+        },
+        {
+          "name": "Chambliss (GA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Coats (IN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Coburn (OK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Cochran (MS)",
+          "vote": "nay"
+        },
+        {
+          "name": "Collins (ME)",
+          "politician_id": "6b817122-f196-4b72-b0b4-2d9763c4be47",
+          "vote": "nay"
+        },
+        {
+          "name": "Corker (TN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Cornyn (TX)",
+          "politician_id": "2b022ce1-6272-40db-9332-015a057ec9f8",
+          "vote": "nay"
+        },
+        {
+          "name": "Crapo (ID)",
+          "politician_id": "2971d4f9-1433-4dcd-aaa7-193241ef3c95",
+          "vote": "nay"
+        },
+        {
+          "name": "Cruz (TX)",
+          "politician_id": "a8bda21a-a5ca-4c15-9612-10fad5d5c9d6",
+          "vote": "nay"
+        },
+        {
+          "name": "Donnelly (IN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Enzi (WY)",
+          "vote": "nay"
+        },
+        {
+          "name": "Fischer (NE)",
+          "politician_id": "3149d855-8d85-4080-b0d6-fb83be500533",
+          "vote": "nay"
+        },
+        {
+          "name": "Flake (AZ)",
+          "vote": "nay"
+        },
+        {
+          "name": "Graham (SC)",
+          "vote": "nay"
+        },
+        {
+          "name": "Grassley (IA)",
+          "politician_id": "dd5d3f6d-fc82-4774-b510-287ec47cbd84",
+          "vote": "nay"
+        },
+        {
+          "name": "Hagan (NC)",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatch (UT)",
+          "vote": "nay"
+        },
+        {
+          "name": "Heinrich (NM)",
+          "politician_id": "4fa06009-8f67-40f6-a8b3-d2d62712240d",
+          "vote": "nay"
+        },
+        {
+          "name": "Heitkamp (ND)",
+          "vote": "nay"
+        },
+        {
+          "name": "Heller (NV)",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoeven (ND)",
+          "politician_id": "e6596b34-8d9f-4593-bf0c-4fe7fc17cd26",
+          "vote": "nay"
+        },
+        {
+          "name": "Inhofe (OK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Isakson (GA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Johanns (NE)",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson (SD)",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson (WI)",
+          "politician_id": "00abc782-e86b-40f2-be0d-f07fad802688",
+          "vote": "nay"
+        },
+        {
+          "name": "King (ME)",
+          "politician_id": "4f4b2bff-0054-475f-8687-e83f68085f15",
+          "vote": "nay"
+        },
+        {
+          "name": "Landrieu (LA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee (UT)",
+          "politician_id": "4f62ca82-fda1-4386-9a4a-62dd84318f83",
+          "vote": "nay"
+        },
+        {
+          "name": "Manchin (WV)",
+          "vote": "nay"
+        },
+        {
+          "name": "McCain (AZ)",
+          "vote": "nay"
+        },
+        {
+          "name": "McConnell (KY)",
+          "politician_id": "f8d6555b-faea-4746-b8d8-27c41e08f4c4",
+          "vote": "nay"
+        },
+        {
+          "name": "Moran (KS)",
+          "politician_id": "2f52b4b6-f167-4452-be9b-d37a5b667e69",
+          "vote": "nay"
+        },
+        {
+          "name": "Murkowski (AK)",
+          "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul (KY)",
+          "politician_id": "4cc6f4af-a528-430e-975b-bd5a86382a13",
+          "vote": "nay"
+        },
+        {
+          "name": "Portman (OH)",
+          "vote": "nay"
+        },
+        {
+          "name": "Pryor (AR)",
+          "vote": "nay"
+        },
+        {
+          "name": "Risch (ID)",
+          "politician_id": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+          "vote": "nay"
+        },
+        {
+          "name": "Roberts (KS)",
+          "vote": "nay"
+        },
+        {
+          "name": "Rubio (FL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott (SC)",
+          "politician_id": "675778b0-7e6f-45ef-96b2-7bcb5d7e0af7",
+          "vote": "nay"
+        },
+        {
+          "name": "Sessions (AL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelby (AL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Tester (MT)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thune (SD)",
+          "politician_id": "661c0499-af4c-4cf9-a34b-eb0c20d5cd4b",
+          "vote": "nay"
+        },
+        {
+          "name": "Toomey (PA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Udall (CO)",
+          "vote": "nay"
+        },
+        {
+          "name": "Udall (NM)",
+          "vote": "nay"
+        },
+        {
+          "name": "Vitter (LA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Warner (VA)",
+          "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+          "vote": "nay"
+        },
+        {
+          "name": "Wicker (MS)",
+          "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+      "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+    }
+  }
+}

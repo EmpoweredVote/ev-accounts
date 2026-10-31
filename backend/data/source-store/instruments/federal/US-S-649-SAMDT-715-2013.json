@@ -1,0 +1,504 @@
+{
+  "id": "US-S-649-SAMDT-715-2013",
+  "scope": "federal",
+  "title": "S.Amdt. 715 to S. 649 (113th Congress): Public Safety and Second Amendment Rights Protection Act of 2013 (Manchin-Toomey)",
+  "urls": [
+    "https://web.archive.org/web/2024/https://www.senate.gov/legislative/LIS/roll_call_votes/vote1131/vote_113_1_00097.htm",
+    "https://www.govinfo.gov/content/pkg/CREC-2013-04-11/pdf/CREC-2013-04-11-senate.pdf",
+    "https://www.govinfo.gov/content/pkg/CREC-2013-04-11/html/CREC-2013-04-11-pt1-PgS2584-2.htm"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 122(a), new 18 USC 922(t)(1) (gun shows and advertised sales): ‘‘(t)(1) Beginning on the date that is 180 days after the date of enactment of this subsection and except as provided in paragraph (2), it shall be unlawful for any person other than a licensed dealer, licensed manufacturer, or licensed importer to complete the transfer of a firearm to any other person who is not licensed under this chapter, if such transfer occurs— ‘‘(A) at a gun show or event, on the curtilage thereof; or ‘‘(B) pursuant to an advertisement, posting, display or other listing on the Internet or in a publication by the transferor of his intent to transfer, or the transferee of his intent to acquire, the firearm.\nSec. 122(a), new 922(t)(2)(C) (family exception): ‘‘(C) the transfer is made between spouses, between parents or spouses of parents and their children or spouses of their children, between siblings or spouses of siblings, or between grandparents or spouses of grandparents and their grandchildren or spouses of their grandchildren, or between aunts or uncles or their spouses and their nieces or nephews or their spouses, or between first cousins,\nSec. 122(a), new 922(t)(2)(A) (permit in lieu of check): except that when processing a transfer under this chapter the licensee may accept in lieu of conducting a background check a valid permit issued within the previous 5 years by a State, or a political subdivision of a State, that allows the transferee to possess, acquire, or carry a firearm,\nSec. 129(2) (temporary transfers not covered): (2) to extend background check requirements to temporary transfers for purposes including lawful hunting or sporting or to temporary possession of a firearm for purposes of examination or evaluation by a prospective transferee.\nSec. 122(a), new 922(s)(1)(B)(iii) (gun-show wait): ‘‘(iii) in the case of an instant background check conducted at a gun show or event during the 4-year period beginning on the effective date under section 130(a) of the Public Safety and Second Amendment Rights Protection Act of 2013, 48 hours have elapsed since the licensee contacted the system,\nSec. 128, new 18 USC 926A(b) (transport): ‘‘(b) AUTHORIZATION.—Notwithstanding any provision of any law (including a rule or regulation) of a State or any political subdivision thereof, a person who is not prohibited by this chapter from possessing, transporting, shipping, or receiving a firearm or ammunition shall be entitled to—\nSec. 103 (registry bar): (2) allow the establishment, directly or indirectly, of a Federal firearms registry.",
+  "sponsors": [
+    {
+      "name": "Manchin (as printed in the amendment name on the vote page)",
+      "role": "prime",
+      "version": "amendment"
+    },
+    {
+      "name": "Mr. MANCHIN (for himself, Mr. TOOMEY, Mr. KIRK, and Mr. SCHUMER)",
+      "role": "co",
+      "version": "proposed"
+    },
+    {
+      "name": "Sen. Joe Manchin III (printed \"The Senator from West Virginia [Mr. MANCHIN] for himself, Mr. TOOMEY, Mr. KIRK, and Mr. SCHUMER, proposes an amendment numbered 715.\")",
+      "role": "prime"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "text not read",
+  "votes": [
+    {
+      "date": "2013-04-17",
+      "body": "US Senate",
+      "motion": "On the Amendment (Manchin Amdt. No. 715) to S. 649 (Safe Communities, Safe Schools Act of 2013)",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 46,
+      "body_size": 100,
+      "note": "names from: page text",
+      "members": [
+        {
+          "name": "Baldwin (WI)",
+          "politician_id": "ac7faadb-52c2-4e13-9073-3a607a4f8e57",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennet (CO)",
+          "politician_id": "535591bf-7151-48ba-81b4-e8d9983def72",
+          "vote": "yea"
+        },
+        {
+          "name": "Blumenthal (CT)",
+          "politician_id": "bd630c8f-14da-4149-b95c-6da7eddaab8f",
+          "vote": "yea"
+        },
+        {
+          "name": "Boxer (CA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown (OH)",
+          "vote": "yea"
+        },
+        {
+          "name": "Cantwell (WA)",
+          "politician_id": "750717e7-1f22-42a7-86fd-e065caf343de",
+          "vote": "yea"
+        },
+        {
+          "name": "Cardin (MD)",
+          "vote": "yea"
+        },
+        {
+          "name": "Carper (DE)",
+          "vote": "yea"
+        },
+        {
+          "name": "Casey (PA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins (ME)",
+          "politician_id": "6b817122-f196-4b72-b0b4-2d9763c4be47",
+          "vote": "yea"
+        },
+        {
+          "name": "Coons (DE)",
+          "politician_id": "eaab08fa-c93d-44de-ad8e-06275658dddc",
+          "vote": "yea"
+        },
+        {
+          "name": "Cowan (MA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Donnelly (IN)",
+          "vote": "yea"
+        },
+        {
+          "name": "Durbin (IL)",
+          "politician_id": "2c3372a7-dadc-4622-944c-1783abe57b56",
+          "vote": "yea"
+        },
+        {
+          "name": "Feinstein (CA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Franken (MN)",
+          "vote": "yea"
+        },
+        {
+          "name": "Gillibrand (NY)",
+          "politician_id": "463f8a89-e12c-4b92-8df1-0fed43dc4441",
+          "vote": "yea"
+        },
+        {
+          "name": "Hagan (NC)",
+          "vote": "yea"
+        },
+        {
+          "name": "Harkin (IA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Heinrich (NM)",
+          "politician_id": "4fa06009-8f67-40f6-a8b3-d2d62712240d",
+          "vote": "yea"
+        },
+        {
+          "name": "Hirono (HI)",
+          "politician_id": "dc92c805-4734-4d4b-8ceb-597e59b0e268",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson (SD)",
+          "vote": "yea"
+        },
+        {
+          "name": "Kaine (VA)",
+          "politician_id": "8cffe7a0-b56c-42fe-adbf-f57d63589973",
+          "vote": "yea"
+        },
+        {
+          "name": "King (ME)",
+          "politician_id": "4f4b2bff-0054-475f-8687-e83f68085f15",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk (IL)",
+          "vote": "yea"
+        },
+        {
+          "name": "Klobuchar (MN)",
+          "politician_id": "3d51cca6-7206-413b-ab8d-3199a58a6767",
+          "vote": "yea"
+        },
+        {
+          "name": "Landrieu (LA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Lautenberg (NJ)",
+          "vote": "yea"
+        },
+        {
+          "name": "Leahy (VT)",
+          "vote": "yea"
+        },
+        {
+          "name": "Levin (MI)",
+          "vote": "yea"
+        },
+        {
+          "name": "Manchin (WV)",
+          "vote": "yea"
+        },
+        {
+          "name": "McCain (AZ)",
+          "vote": "yea"
+        },
+        {
+          "name": "McCaskill (MO)",
+          "vote": "yea"
+        },
+        {
+          "name": "Menendez (NJ)",
+          "vote": "yea"
+        },
+        {
+          "name": "Merkley (OR)",
+          "politician_id": "0eabc969-c1a1-47b7-8d34-6113b723a170",
+          "vote": "yea"
+        },
+        {
+          "name": "Mikulski (MD)",
+          "vote": "yea"
+        },
+        {
+          "name": "Murphy (CT)",
+          "politician_id": "b700099a-8cab-44b6-81b8-d678d646ae88",
+          "vote": "yea"
+        },
+        {
+          "name": "Murray (WA)",
+          "politician_id": "0f06ced9-84c7-4020-98fd-82ac25d49027",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson (FL)",
+          "vote": "yea"
+        },
+        {
+          "name": "Reed (RI)",
+          "politician_id": "afd8d31b-9f88-4eb9-8a88-46e5ef914267",
+          "vote": "yea"
+        },
+        {
+          "name": "Rockefeller (WV)",
+          "vote": "yea"
+        },
+        {
+          "name": "Sanders (VT)",
+          "politician_id": "3cc5cece-cec0-4490-8faa-37a6b66231c7",
+          "vote": "yea"
+        },
+        {
+          "name": "Schatz (HI)",
+          "politician_id": "100de02f-b44d-4587-9b90-19aa5081708c",
+          "vote": "yea"
+        },
+        {
+          "name": "Schumer (NY)",
+          "politician_id": "af01a7ec-9318-4862-ba78-553e5908182c",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaheen (NH)",
+          "politician_id": "1d877e4d-8aaf-4db8-be5b-2a3de0a98783",
+          "vote": "yea"
+        },
+        {
+          "name": "Stabenow (MI)",
+          "vote": "yea"
+        },
+        {
+          "name": "Tester (MT)",
+          "vote": "yea"
+        },
+        {
+          "name": "Toomey (PA)",
+          "vote": "yea"
+        },
+        {
+          "name": "Udall (CO)",
+          "vote": "yea"
+        },
+        {
+          "name": "Udall (NM)",
+          "vote": "yea"
+        },
+        {
+          "name": "Warner (VA)",
+          "politician_id": "85d27350-e1b6-45b8-aee3-509ca88c5af4",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren (MA)",
+          "politician_id": "dd08c9de-076d-40ee-ab27-9298bbb72d1a",
+          "vote": "yea"
+        },
+        {
+          "name": "Whitehouse (RI)",
+          "politician_id": "c19c488e-ae48-4ed2-ba7c-3092b847c192",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyden (OR)",
+          "politician_id": "2147281e-e1b1-4416-a5d9-dae9d4f31be0",
+          "vote": "yea"
+        },
+        {
+          "name": "Alexander (TN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Ayotte (NH)",
+          "vote": "nay"
+        },
+        {
+          "name": "Barrasso (WY)",
+          "politician_id": "e4b27d5e-59de-4e71-a8a7-28e7b9a80807",
+          "vote": "nay"
+        },
+        {
+          "name": "Baucus (MT)",
+          "vote": "nay"
+        },
+        {
+          "name": "Begich (AK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Blunt (MO)",
+          "vote": "nay"
+        },
+        {
+          "name": "Boozman (AR)",
+          "politician_id": "3621bbef-a821-45fe-991c-e1744ad05203",
+          "vote": "nay"
+        },
+        {
+          "name": "Burr (NC)",
+          "vote": "nay"
+        },
+        {
+          "name": "Chambliss (GA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Coats (IN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Coburn (OK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Cochran (MS)",
+          "vote": "nay"
+        },
+        {
+          "name": "Corker (TN)",
+          "vote": "nay"
+        },
+        {
+          "name": "Cornyn (TX)",
+          "politician_id": "2b022ce1-6272-40db-9332-015a057ec9f8",
+          "vote": "nay"
+        },
+        {
+          "name": "Crapo (ID)",
+          "politician_id": "2971d4f9-1433-4dcd-aaa7-193241ef3c95",
+          "vote": "nay"
+        },
+        {
+          "name": "Cruz (TX)",
+          "politician_id": "a8bda21a-a5ca-4c15-9612-10fad5d5c9d6",
+          "vote": "nay"
+        },
+        {
+          "name": "Enzi (WY)",
+          "vote": "nay"
+        },
+        {
+          "name": "Fischer (NE)",
+          "politician_id": "3149d855-8d85-4080-b0d6-fb83be500533",
+          "vote": "nay"
+        },
+        {
+          "name": "Flake (AZ)",
+          "vote": "nay"
+        },
+        {
+          "name": "Graham (SC)",
+          "vote": "nay"
+        },
+        {
+          "name": "Grassley (IA)",
+          "politician_id": "dd5d3f6d-fc82-4774-b510-287ec47cbd84",
+          "vote": "nay"
+        },
+        {
+          "name": "Hatch (UT)",
+          "vote": "nay"
+        },
+        {
+          "name": "Heitkamp (ND)",
+          "vote": "nay"
+        },
+        {
+          "name": "Heller (NV)",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoeven (ND)",
+          "politician_id": "e6596b34-8d9f-4593-bf0c-4fe7fc17cd26",
+          "vote": "nay"
+        },
+        {
+          "name": "Inhofe (OK)",
+          "vote": "nay"
+        },
+        {
+          "name": "Isakson (GA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Johanns (NE)",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson (WI)",
+          "politician_id": "00abc782-e86b-40f2-be0d-f07fad802688",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee (UT)",
+          "politician_id": "4f62ca82-fda1-4386-9a4a-62dd84318f83",
+          "vote": "nay"
+        },
+        {
+          "name": "McConnell (KY)",
+          "politician_id": "f8d6555b-faea-4746-b8d8-27c41e08f4c4",
+          "vote": "nay"
+        },
+        {
+          "name": "Moran (KS)",
+          "politician_id": "2f52b4b6-f167-4452-be9b-d37a5b667e69",
+          "vote": "nay"
+        },
+        {
+          "name": "Murkowski (AK)",
+          "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul (KY)",
+          "politician_id": "4cc6f4af-a528-430e-975b-bd5a86382a13",
+          "vote": "nay"
+        },
+        {
+          "name": "Portman (OH)",
+          "vote": "nay"
+        },
+        {
+          "name": "Pryor (AR)",
+          "vote": "nay"
+        },
+        {
+          "name": "Reid (NV)",
+          "vote": "nay"
+        },
+        {
+          "name": "Risch (ID)",
+          "politician_id": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+          "vote": "nay"
+        },
+        {
+          "name": "Roberts (KS)",
+          "vote": "nay"
+        },
+        {
+          "name": "Rubio (FL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott (SC)",
+          "politician_id": "675778b0-7e6f-45ef-96b2-7bcb5d7e0af7",
+          "vote": "nay"
+        },
+        {
+          "name": "Sessions (AL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelby (AL)",
+          "vote": "nay"
+        },
+        {
+          "name": "Thune (SD)",
+          "politician_id": "661c0499-af4c-4cf9-a34b-eb0c20d5cd4b",
+          "vote": "nay"
+        },
+        {
+          "name": "Vitter (LA)",
+          "vote": "nay"
+        },
+        {
+          "name": "Wicker (MS)",
+          "politician_id": "d53cbad2-d166-4f8d-87a2-f7e5ddc7a237",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T1 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T1-docs/CREC-2013-04-11-senate.pdf",
+      "sha256": "5cbf6123ec6d0ee19de0b8748333db8dffcc46d276dd1e80d1692c182b9872fb"
+    }
+  }
+}

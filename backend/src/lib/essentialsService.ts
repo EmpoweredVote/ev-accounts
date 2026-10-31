@@ -62,6 +62,7 @@ import {
   UPCOMING_ELECTIONS_LATERAL,
   DISTRICT_SELECT_FIELDS,
   DISTRICT_JOINS,
+  OFFICE_DEDUP_KEY,
   buildDistrictQuery,
   buildStatewideQuery,
 } from './districtQueries.js';
@@ -111,7 +112,32 @@ export interface FinanceSummary {
  * Null string fields are coerced to '' (empty string) to match Go convention.
  */
 export interface PoliticianFlatRecord {
-  id: string;
+  /**
+   * 🔴 NULL ON A VACANT SEAT, AND THAT IS THE WHOLE POINT. This used to be typed `string`
+   * while the address path happily emitted `null` through an `as string` cast, so every
+   * consumer was told each row is a person. It is not: `office_current_holder` LEFT JOINs
+   * from `offices`, so a seat with no current term comes back as a row with a null id and
+   * an empty `full_name` — a blank card to a voter, and nothing in the type said so.
+   * Read `seat_status` instead of testing this for null.
+   */
+  id: string | null;
+  /**
+   * The SEAT's id — stable whether or not anyone holds it, and the only key a vacant row has.
+   * Added because the entire politician surface carried no office identity at all: a held row
+   * could be keyed on the person, and a vacancy could be keyed on nothing.
+   */
+  office_id: string;
+  /**
+   * Does this row describe a person, or an empty seat?
+   *
+   * 🔴 DERIVED FROM WHETHER A HOLDER RESOLVED, NEVER FROM `is_vacant`. Those are different
+   * questions and they disagree: `is_vacant` is a flag on the office that some rows carry
+   * while still having a current term (see "The `is_vacant` trap" in CLAUDE.md), and some
+   * genuinely empty seats were never flagged at all. `seat_status` answers the question a
+   * renderer actually has — "is there a name in this row?" — and `is_vacant` keeps answering
+   * the question the data asserts.
+   */
+  seat_status: 'held' | 'vacant';
   external_id: number | null;
   first_name: string;
   middle_initial: string;
@@ -220,11 +246,14 @@ export interface AddressSearchResult {
  * Matches Go server behavior of including images[] on every politician in list results.
  */
 async function batchFetchImages(
-  politicians: Array<{ id: string; images?: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }> }>
+  politicians: Array<{ id: string | null; images?: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }> }>
 ): Promise<void> {
   if (politicians.length === 0) return;
 
-  const ids = politicians.map((p) => p.id);
+  // A VACANT SEAT HAS A NULL id AND NO PHOTOS. Dropping the nulls here keeps a literal
+  // `null` out of the `= ANY($1)` array; the rows for those seats simply keep `images: []`.
+  const ids = politicians.map((p) => p.id).filter((id): id is string => id !== null);
+  if (ids.length === 0) return;
   const { rows } = await pool.query(
     `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point
      FROM essentials.politician_images
@@ -248,7 +277,7 @@ async function batchFetchImages(
 
   // Attach to each politician
   for (const p of politicians) {
-    p.images = imageMap.get(p.id) ?? [];
+    p.images = p.id ? imageMap.get(p.id) ?? [] : [];
   }
 }
 
@@ -266,11 +295,13 @@ async function batchFetchImages(
  *   urls = committee source URLs (empty array if none)
  */
 async function batchFetchCommittees(
-  politicians: Array<{ id: string; committees?: Array<{ name: string; position: string; urls: string[] }> }>
+  politicians: Array<{ id: string | null; committees?: Array<{ name: string; position: string; urls: string[] }> }>
 ): Promise<void> {
   if (politicians.length === 0) return;
 
-  const ids = politicians.map((p) => p.id);
+  // Same as batchFetchImages: a vacant seat has no person, so no committee memberships.
+  const ids = politicians.map((p) => p.id).filter((id): id is string => id !== null);
+  if (ids.length === 0) return;
   const { rows } = await pool.query(
     `SELECT m.politician_id,
             COALESCE(c.name, '') AS name,
@@ -294,7 +325,7 @@ async function batchFetchCommittees(
   }
 
   for (const p of politicians) {
-    p.committees = committeeMap.get(p.id) ?? [];
+    p.committees = p.id ? committeeMap.get(p.id) ?? [] : [];
   }
 }
 
@@ -381,6 +412,7 @@ export async function getPoliticiansFlatList(
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
+           o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -445,7 +477,9 @@ export async function getPoliticiansFlatList(
   const { rows } = await pool.query(queryText, params.length > 0 ? params : undefined);
 
   const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -611,7 +645,9 @@ export function buildLocality(
  */
 function mapPoliticianRow(row: Record<string, any>): PoliticianFlatRecord {
   return {
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
     middle_initial: row.middle_initial ?? '',
@@ -1905,7 +1941,7 @@ export async function getRepresentativesByJurisdiction(
     WHERE (${conditions.join(' OR ')})
     AND (p.is_active = true OR o.is_vacant = true)
     AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-    ORDER BY COALESCE(p.id, o.id)
+    ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 
   // Statewide politicians (senators, president, governor) — derive state from congressional GEOID.
@@ -1949,7 +1985,9 @@ export async function getRepresentativesByJurisdiction(
   });
 
   const politicians: PoliticianFlatRecord[] = uniqueRows.map((row) => ({
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',
@@ -2050,13 +2088,15 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
       AND d.geo_id = ANY($1::text[])
       AND (p.is_active = true OR o.is_vacant = true)
       AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
-    ORDER BY COALESCE(p.id, o.id)
+    ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 
   const result = await pool.query(queryText, [geoIds]);
 
   const politicians: PoliticianFlatRecord[] = (result.rows as Record<string, unknown>[]).map((row) => ({
-    id: row.id as string,
+    id: (row.id as string | null) ?? null,
+    office_id: (row.office_id as string | null) ?? '',
+    seat_status: row.id ? 'held' : 'vacant',
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: (row.first_name as string) ?? '',
     middle_initial: (row.middle_initial as string) ?? '',

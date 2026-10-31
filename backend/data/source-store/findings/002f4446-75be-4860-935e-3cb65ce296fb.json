@@ -1,0 +1,237 @@
+{
+  "politician_id": "002f4446-75be-4860-935e-3cb65ce296fb",
+  "findings": [
+    {
+      "id": "091e89b2d7b0e27f0f93c9ae609d65209a6d404e8a4e1d8299260918952bf847",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "note": "Gerdes is listed as a House coauthor of HB 5337 (author: Isaac), relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The bill history shows the committee report was sent to House calendars on 2025-05-07. Act is coauthor, not sponsor.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:31:10.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c41a92c625df5c56b9526e9e941bef5f53b9ebe808480d595bccf1b9120f30e",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "note": "Gerdes is listed among the House coauthors of SB 16 (Senate author: Hughes), relating to requiring a person to submit proof of citizenship to register to vote, including the eligibility of certain voters to vote a limited federal ballot if the voter cannot supply the required proof. Act is coauthor, not sponsor.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited ballot for voters without proof"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:31:10.764Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "401d3a0202f4b5c3226d1a568d73af8ef7a9f5ca713e67a3da2d2d387a774a95",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/members/4195/biography",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Representative Gerdes’ priorities also include protecting the right to life, defending individual liberties, and upholding the Second Amendment.",
+      "note": "Official Texas House biography page; the page is undated.",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fcd0d716095d665edb4f6ff3e81c79edfb8d1e121af3c9833d80b3dba84f1b4",
+      "kind": "own-words",
+      "url": "https://house.texas.gov/members/4195/biography",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Stan is a proud Camp Longhorn alumnus and a lifetime member of the Texas Exes, the Dallas Safari Club and the National Rifle Association.",
+      "note": "Official Texas House biography page; says he is a lifetime member of a gun-rights membership group. The page is undated.",
+      "subjects": [
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d34461bb47a640daf149da8ada45f8f402a08df673b7308419aac18eef8bec3",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A4195",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-644-2025",
+      "act": "sponsor",
+      "note": "Joint author (listed second) of HB 644, on civil liability of certain businesses in connection with allowing concealed handguns on the business premises. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "concealed carry on business premises"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f28cb87b7f3819c02040505762892e8494985cc1793d03c8c663b461fe453c78",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A4195",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-4201-2025",
+      "act": "sponsor",
+      "note": "Joint author (listed third) of HB 4201, on the locations where a handgun license holder may carry a handgun. Year is the legislative session; filing date not confirmed.",
+      "subjects": [
+        "places where handguns may be carried"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Stan_Gerdes (fetched by curl) shows he is the sitting Texas House District 17 member and is on the 2026 general-election ballot after winning his 2026 primary",
+        "On the Record (0 appearances for this politician)",
+        "Texas Legislature Online bill histories for 89R HB 5337, SB 16, HB 304: fetched; his name appears as a House coauthor on HB 5337 and SB 16 (the sponsorship record is the finding); not on HB 304",
+        "Ballotpedia: nothing on the subject in the page text",
+        "Texas House member page https://house.texas.gov/members/4195: not reviewed",
+        "campaign site: not located",
+        "blocked: https://app.legiplex.com/profile/stan-gerdes-22 (aggregator, not fetched; Texas Legislature Online used instead)",
+        "web searches run: 2 of 10; no own-words statement from him on the subject surfaced"
+      ],
+      "found": 2,
+      "at": "2026-10-28T14:31:10.764Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.522Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment statements",
+        "carry permits and permitless carry",
+        "firearm bans",
+        "background checks",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official page https://house.texas.gov/members/4195/biography (names him, State Representative, District 17 per search; also 2 findings)",
+        "Texas Legislature authored-bills reports code A4195: 89R (2 gun bills), 89(1), 89(2) and 88R (none by caption words)",
+        "https://kvue.com/article/news/local/texas/stan-gerdes-texas-house-district-17/269-fee225f4-6b4c-4a57-b542-cf38ff1eac6f : nothing on the subject in page text",
+        "2026 general-election ballot not confirmed by a page I fetched",
+        "Ballotpedia not reviewed",
+        "campaign site not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

@@ -1,0 +1,876 @@
+{
+  "id": "PA-HB-2473-2024",
+  "scope": "state:pa",
+  "title": "HB 2473 (2023-2024 Regular Session): An Act amending the act of June 3, 1937 (P.L.1333, No.320), known as the Pennsylvania Election Code, in returns of primaries and elections, further providing for appeals to court from decisions of the county board and for Secretary of the Commonwealth to tabulate, compute and canvass returns; and, in recounts and contests, further providing for entry and effect of decision and providing for appeal.",
+  "urls": [
+    "https://web.archive.org/web/20250923103234/https://www.palegis.us/legislation/bills/2023/hb2473",
+    "https://web.archive.org/web/20250726062843/https://www.palegis.us/legislation/bills/text/HTM/2023/0/HB2473/PN3459"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Election Code, returns: sets a deadline to decide appeals from county board of elections decisions and for the Secretary to tabulate/compute/canvass returns; recounts and contests: effect of decision and appeal. Committee-roll-call brief description: \"Establishes firm deadline to decide appeals of county Board of Elections, without limiting any right to appeal to align Pennsylvania with the new requirements of the federal Electoral Count Reform Act.\"\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [
+    {
+      "name": "SANCHEZ",
+      "role": "prime",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    },
+    {
+      "name": "GROVE",
+      "role": "co",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    },
+    {
+      "name": "KHAN",
+      "role": "co",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    },
+    {
+      "name": "WEBSTER",
+      "role": "co",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    },
+    {
+      "name": "T. DAVIS",
+      "role": "co",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    },
+    {
+      "name": "BRIGGS",
+      "role": "co",
+      "version": "PN 3459 (as introduced and as committed; only printer's number). Text page archived (2025-07-26); body not read for voter-ID content because the bill does not set voter-ID rules."
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2024-07-09",
+      "body": "PA House",
+      "motion": "House Bill 2473 PN 3459, FINAL PASSAGE (RCS No. 1419)",
+      "kind": "roll-call",
+      "yes": 105,
+      "no": 97,
+      "absent": 1,
+      "body_size": 203,
+      "note": "Printed: Yea 105, Nay 97, No Vote 0, Leave 1. The page prints the vote as an icon beside each member (check = Yea, X = Nay, question mark = Leave); no text label. Names are the surnames as printed. | 1040-1041 | https://web.archive.org/web/20250726062843/https://www.palegis.us/house/roll-calls/summary?sessYr=2023&sessInd=0&rcNum=1419",
+      "members": [
+        {
+          "name": "ABNEY",
+          "vote": "yea"
+        },
+        {
+          "name": "ARMANINI",
+          "vote": "nay"
+        },
+        {
+          "name": "BANTA",
+          "vote": "nay"
+        },
+        {
+          "name": "BARTON",
+          "vote": "nay"
+        },
+        {
+          "name": "BELLMON",
+          "vote": "yea"
+        },
+        {
+          "name": "BENHAM",
+          "vote": "yea"
+        },
+        {
+          "name": "BENNINGHOFF",
+          "vote": "nay"
+        },
+        {
+          "name": "BERNSTINE",
+          "vote": "nay"
+        },
+        {
+          "name": "BIZZARRO",
+          "vote": "yea"
+        },
+        {
+          "name": "BONNER",
+          "vote": "nay"
+        },
+        {
+          "name": "BOROWICZ",
+          "vote": "nay"
+        },
+        {
+          "name": "BOROWSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "BOYD",
+          "vote": "yea"
+        },
+        {
+          "name": "BOYLE",
+          "vote": "yea"
+        },
+        {
+          "name": "BRADFORD",
+          "vote": "yea"
+        },
+        {
+          "name": "BRENNAN",
+          "vote": "yea"
+        },
+        {
+          "name": "BRIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "BROWN, A.",
+          "vote": "yea"
+        },
+        {
+          "name": "BROWN, M.",
+          "vote": "nay"
+        },
+        {
+          "name": "BULLOCK",
+          "vote": "yea"
+        },
+        {
+          "name": "BURGOS",
+          "vote": "yea"
+        },
+        {
+          "name": "BURNS",
+          "vote": "yea"
+        },
+        {
+          "name": "C FREYTIZ",
+          "vote": "yea"
+        },
+        {
+          "name": "CABELL",
+          "vote": "yea"
+        },
+        {
+          "name": "CAUSER",
+          "vote": "nay"
+        },
+        {
+          "name": "CEPHAS",
+          "vote": "yea"
+        },
+        {
+          "name": "CERRATO",
+          "vote": "yea"
+        },
+        {
+          "name": "CIRESI",
+          "vote": "yea"
+        },
+        {
+          "name": "CONKLIN",
+          "vote": "yea"
+        },
+        {
+          "name": "COOK",
+          "vote": "nay"
+        },
+        {
+          "name": "COOPER",
+          "vote": "nay"
+        },
+        {
+          "name": "CURRY",
+          "vote": "yea"
+        },
+        {
+          "name": "CUTLER",
+          "vote": "nay"
+        },
+        {
+          "name": "D'ORSIE",
+          "vote": "nay"
+        },
+        {
+          "name": "DALEY",
+          "vote": "yea"
+        },
+        {
+          "name": "DAVANZO",
+          "vote": "nay"
+        },
+        {
+          "name": "DAVIS",
+          "vote": "yea"
+        },
+        {
+          "name": "DAWKINS",
+          "vote": "yea"
+        },
+        {
+          "name": "DEASY",
+          "vote": "yea"
+        },
+        {
+          "name": "DELLOSO",
+          "vote": "yea"
+        },
+        {
+          "name": "DELOZIER",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAMOND",
+          "vote": "nay"
+        },
+        {
+          "name": "DONAHUE",
+          "vote": "yea"
+        },
+        {
+          "name": "DUNBAR",
+          "vote": "nay"
+        },
+        {
+          "name": "ECKER",
+          "vote": "nay"
+        },
+        {
+          "name": "EMRICK",
+          "vote": "nay"
+        },
+        {
+          "name": "EVANS",
+          "vote": "yea"
+        },
+        {
+          "name": "FEE",
+          "vote": "nay"
+        },
+        {
+          "name": "FIEDLER",
+          "vote": "yea"
+        },
+        {
+          "name": "FINK",
+          "vote": "nay"
+        },
+        {
+          "name": "FLEMING",
+          "vote": "yea"
+        },
+        {
+          "name": "FLICK",
+          "vote": "nay"
+        },
+        {
+          "name": "FLOOD",
+          "vote": "nay"
+        },
+        {
+          "name": "FRANKEL",
+          "vote": "yea"
+        },
+        {
+          "name": "FREEMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "FRIEL",
+          "vote": "yea"
+        },
+        {
+          "name": "FRITZ",
+          "vote": "nay"
+        },
+        {
+          "name": "GALLAGHER",
+          "vote": "yea"
+        },
+        {
+          "name": "GAYDOS",
+          "vote": "nay"
+        },
+        {
+          "name": "GERGELY",
+          "vote": "yea"
+        },
+        {
+          "name": "GILLEN",
+          "vote": "nay"
+        },
+        {
+          "name": "GIRAL",
+          "vote": "yea"
+        },
+        {
+          "name": "GLEIM",
+          "vote": "nay"
+        },
+        {
+          "name": "GREEN",
+          "vote": "yea"
+        },
+        {
+          "name": "GREGORY",
+          "vote": "nay"
+        },
+        {
+          "name": "GREINER",
+          "vote": "nay"
+        },
+        {
+          "name": "GROVE",
+          "vote": "yea"
+        },
+        {
+          "name": "GUENST",
+          "vote": "yea"
+        },
+        {
+          "name": "GUZMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HADDOCK",
+          "vote": "yea"
+        },
+        {
+          "name": "HAMM",
+          "vote": "nay"
+        },
+        {
+          "name": "HANBIDGE",
+          "vote": "yea"
+        },
+        {
+          "name": "HARKINS",
+          "vote": "yea"
+        },
+        {
+          "name": "HARRIS",
+          "vote": "yea"
+        },
+        {
+          "name": "HEFFLEY",
+          "vote": "nay"
+        },
+        {
+          "name": "HOGAN",
+          "vote": "nay"
+        },
+        {
+          "name": "HOHENSTEIN",
+          "vote": "yea"
+        },
+        {
+          "name": "HOWARD",
+          "vote": "yea"
+        },
+        {
+          "name": "IRVIN",
+          "vote": "nay"
+        },
+        {
+          "name": "ISAACSON",
+          "vote": "yea"
+        },
+        {
+          "name": "JAMES",
+          "vote": "nay"
+        },
+        {
+          "name": "JONES, M.",
+          "vote": "nay"
+        },
+        {
+          "name": "JONES, T.",
+          "vote": "nay"
+        },
+        {
+          "name": "JOZWIAK",
+          "vote": "nay"
+        },
+        {
+          "name": "KAIL",
+          "vote": "nay"
+        },
+        {
+          "name": "KAUFER",
+          "vote": "nay"
+        },
+        {
+          "name": "KAUFFMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "KAZEEM",
+          "vote": "yea"
+        },
+        {
+          "name": "KEEFER",
+          "vote": "nay"
+        },
+        {
+          "name": "KENYATTA",
+          "vote": "yea"
+        },
+        {
+          "name": "KEPHART",
+          "vote": "nay"
+        },
+        {
+          "name": "KERWIN",
+          "vote": "absent"
+        },
+        {
+          "name": "KHAN",
+          "vote": "yea"
+        },
+        {
+          "name": "KIM",
+          "vote": "yea"
+        },
+        {
+          "name": "KINKEAD",
+          "vote": "yea"
+        },
+        {
+          "name": "KINSEY",
+          "vote": "yea"
+        },
+        {
+          "name": "KLUNK",
+          "vote": "nay"
+        },
+        {
+          "name": "KOSIEROWSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "KRAJEWSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "KRUEGER",
+          "vote": "yea"
+        },
+        {
+          "name": "KRUPA",
+          "vote": "nay"
+        },
+        {
+          "name": "KULIK",
+          "vote": "yea"
+        },
+        {
+          "name": "KUTZ",
+          "vote": "nay"
+        },
+        {
+          "name": "KUZMA",
+          "vote": "nay"
+        },
+        {
+          "name": "LABS",
+          "vote": "nay"
+        },
+        {
+          "name": "LAWRENCE",
+          "vote": "nay"
+        },
+        {
+          "name": "LEADBETER",
+          "vote": "nay"
+        },
+        {
+          "name": "MACKENZIE, M.",
+          "vote": "nay"
+        },
+        {
+          "name": "MACKENZIE, R.",
+          "vote": "nay"
+        },
+        {
+          "name": "MADDEN",
+          "vote": "yea"
+        },
+        {
+          "name": "MADSEN",
+          "vote": "yea"
+        },
+        {
+          "name": "MAJOR",
+          "vote": "nay"
+        },
+        {
+          "name": "MAKO",
+          "vote": "nay"
+        },
+        {
+          "name": "MALAGARI",
+          "vote": "yea"
+        },
+        {
+          "name": "MALONEY",
+          "vote": "nay"
+        },
+        {
+          "name": "MARCELL",
+          "vote": "nay"
+        },
+        {
+          "name": "MARKOSEK",
+          "vote": "yea"
+        },
+        {
+          "name": "MARSHALL",
+          "vote": "nay"
+        },
+        {
+          "name": "MATZIE",
+          "vote": "yea"
+        },
+        {
+          "name": "MAYES",
+          "vote": "yea"
+        },
+        {
+          "name": "MCANDREW",
+          "vote": "yea"
+        },
+        {
+          "name": "MCNEILL",
+          "vote": "yea"
+        },
+        {
+          "name": "MEHAFFIE",
+          "vote": "yea"
+        },
+        {
+          "name": "MENTZER",
+          "vote": "nay"
+        },
+        {
+          "name": "MERCURI",
+          "vote": "nay"
+        },
+        {
+          "name": "MERSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "METZGAR",
+          "vote": "nay"
+        },
+        {
+          "name": "MIHALEK",
+          "vote": "nay"
+        },
+        {
+          "name": "MILLER, B.",
+          "vote": "nay"
+        },
+        {
+          "name": "MILLER, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "MOUL",
+          "vote": "nay"
+        },
+        {
+          "name": "MULLINS",
+          "vote": "yea"
+        },
+        {
+          "name": "MUNROE",
+          "vote": "yea"
+        },
+        {
+          "name": "MUSTELLO",
+          "vote": "nay"
+        },
+        {
+          "name": "NEILSON",
+          "vote": "yea"
+        },
+        {
+          "name": "NELSON, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "NELSON, N.",
+          "vote": "yea"
+        },
+        {
+          "name": "O'MARA",
+          "vote": "yea"
+        },
+        {
+          "name": "O'NEAL",
+          "vote": "nay"
+        },
+        {
+          "name": "OBERLANDER",
+          "vote": "nay"
+        },
+        {
+          "name": "OLSOMMER",
+          "vote": "nay"
+        },
+        {
+          "name": "ORTITAY",
+          "vote": "nay"
+        },
+        {
+          "name": "OTTEN",
+          "vote": "yea"
+        },
+        {
+          "name": "OWLETT",
+          "vote": "nay"
+        },
+        {
+          "name": "PARKER",
+          "vote": "yea"
+        },
+        {
+          "name": "PASHINSKI",
+          "vote": "yea"
+        },
+        {
+          "name": "PICKETT",
+          "vote": "nay"
+        },
+        {
+          "name": "PIELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "PISCIOTTANO",
+          "vote": "yea"
+        },
+        {
+          "name": "POWELL",
+          "vote": "yea"
+        },
+        {
+          "name": "PROBST",
+          "vote": "yea"
+        },
+        {
+          "name": "PROKOPIAK",
+          "vote": "yea"
+        },
+        {
+          "name": "RABB",
+          "vote": "yea"
+        },
+        {
+          "name": "RADER",
+          "vote": "nay"
+        },
+        {
+          "name": "RAPP",
+          "vote": "nay"
+        },
+        {
+          "name": "RIGBY",
+          "vote": "nay"
+        },
+        {
+          "name": "ROAE",
+          "vote": "nay"
+        },
+        {
+          "name": "ROSSI",
+          "vote": "nay"
+        },
+        {
+          "name": "ROWE",
+          "vote": "nay"
+        },
+        {
+          "name": "ROZZI",
+          "vote": "yea"
+        },
+        {
+          "name": "RYNCAVAGE",
+          "vote": "nay"
+        },
+        {
+          "name": "SALISBURY",
+          "vote": "yea"
+        },
+        {
+          "name": "SAMUELSON",
+          "vote": "yea"
+        },
+        {
+          "name": "SANCHEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "SAPPEY",
+          "vote": "yea"
+        },
+        {
+          "name": "SCHEMEL",
+          "vote": "nay"
+        },
+        {
+          "name": "SCHEUREN",
+          "vote": "nay"
+        },
+        {
+          "name": "SCHLEGEL",
+          "vote": "nay"
+        },
+        {
+          "name": "SCHLOSSBERG",
+          "vote": "yea"
+        },
+        {
+          "name": "SCHMITT",
+          "vote": "nay"
+        },
+        {
+          "name": "SCHWEYER",
+          "vote": "yea"
+        },
+        {
+          "name": "SCIALABBA",
+          "vote": "nay"
+        },
+        {
+          "name": "SCOTT",
+          "vote": "yea"
+        },
+        {
+          "name": "SHUSTERMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SIEGEL",
+          "vote": "yea"
+        },
+        {
+          "name": "SMITH",
+          "vote": "nay"
+        },
+        {
+          "name": "SMITH-WADE-EL",
+          "vote": "yea"
+        },
+        {
+          "name": "SOLOMON",
+          "vote": "yea"
+        },
+        {
+          "name": "STAATS",
+          "vote": "nay"
+        },
+        {
+          "name": "STAMBAUGH",
+          "vote": "nay"
+        },
+        {
+          "name": "STEELE",
+          "vote": "yea"
+        },
+        {
+          "name": "STEHR",
+          "vote": "nay"
+        },
+        {
+          "name": "STENDER",
+          "vote": "nay"
+        },
+        {
+          "name": "STRUZZI",
+          "vote": "nay"
+        },
+        {
+          "name": "STURLA",
+          "vote": "yea"
+        },
+        {
+          "name": "TAKAC",
+          "vote": "yea"
+        },
+        {
+          "name": "TOMLINSON",
+          "vote": "nay"
+        },
+        {
+          "name": "TOPPER",
+          "vote": "nay"
+        },
+        {
+          "name": "TWARDZIK",
+          "vote": "nay"
+        },
+        {
+          "name": "VENKAT",
+          "vote": "yea"
+        },
+        {
+          "name": "VITALI",
+          "vote": "yea"
+        },
+        {
+          "name": "WARNER",
+          "vote": "nay"
+        },
+        {
+          "name": "WARREN",
+          "vote": "yea"
+        },
+        {
+          "name": "WATRO",
+          "vote": "nay"
+        },
+        {
+          "name": "WAXMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "WEBSTER",
+          "vote": "yea"
+        },
+        {
+          "name": "WENTLING",
+          "vote": "nay"
+        },
+        {
+          "name": "WHITE",
+          "vote": "nay"
+        },
+        {
+          "name": "WILLIAMS, C.",
+          "vote": "nay"
+        },
+        {
+          "name": "WILLIAMS, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "YOUNG",
+          "vote": "yea"
+        },
+        {
+          "name": "ZIMMERMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "MCCLINTON",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-29T12:00:00Z)",
+    "fetched_at": "2026-10-29T12:00:00Z",
+    "method": "curl"
+  }
+}

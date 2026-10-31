@@ -1,0 +1,74 @@
+{
+  "politician_id": "4b5d617c-2503-42ae-bc9e-d1d6ce3ee2f3",
+  "findings": [
+    {
+      "id": "81588cc6e591f32d2e0c490111107193a8ccda71f96082b7ab350e9730a5197e",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Robert_Dawson_(Georgia)",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am calling for the repeal of Georgia's restrictive voting laws and attempts to block fair access to the ballot",
+      "note": "Answer in his Ballotpedia Candidate Connection survey under voting rights, redistricting and voter suppression. Survey is undated on the page. No mention of ID itself.",
+      "subjects": [
+        "election integrity laws in general",
+        "repeal of Georgia voting laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:50:01.109Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bc1e388a0c029e241c2ebfe50decd379ca87e84bb3dad1bd3e30919d1396e50",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Robert_Dawson_(Georgia)",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I will fight to protect the integrity of our elections and combat attempts to disproportionately prevent minority applicants from registering to vote",
+      "note": "Same survey answer list. Speaks of election integrity and of voter registration; names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter registration access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:50:01.109Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-registration access"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "scope check: https://ballotpedia.org/Robert_Dawson_(Georgia) lists him in the 2026-11-03 race for House District 65; https://house-press.com/?p=14126 shows he was sworn in 2025-01-13, so he did not serve in 2021 and has no SB 202 vote",
+        "https://branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-65/candidates/robert-dawson (repeats the Ballotpedia survey answers; nothing on ID)",
+        "Wikipedia page (lists no campaign website; nothing on the subject)",
+        "no campaign site found",
+        "news search on his name plus voter ID, citizenship, election bill: nothing found on ID or citizenship",
+        "blocked: https://app.legiplex.com (403 for the other Georgia member; not retried for him)",
+        "not reviewed: legis.ga.gov sponsor and roll-call pages (load by script only, data API returns 401)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:50:01.109Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

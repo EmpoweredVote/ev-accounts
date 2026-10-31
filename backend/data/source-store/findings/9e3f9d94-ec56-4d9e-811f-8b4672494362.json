@@ -1,0 +1,123 @@
+{
+  "politician_id": "9e3f9d94-ec56-4d9e-811f-8b4672494362",
+  "findings": [
+    {
+      "id": "438021c25d6f1bbf9fc8921c3ce80c3563636ccc648eca28af8a3707c72eb08c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11e7616810bb37992084918a2c16da3c79026039977b4ae760a5bc96130af587",
+      "kind": "own-words",
+      "url": "https://ghazalaforvirginia.com/issues/",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "Fair and open elections are the foundation of our democracy and ensuring access to the ballot box is critical.",
+      "note": "From the voting section of her 2025 campaign issues page. Full paragraph also says: We must protect and continue to build on the [party word removed] successes of expanding early voting, mail-in ballots, and no-excuse absentee voting, and: we must protect our election technologies, ballots, and processes so that the integrity of the electoral system is maintained. Says nothing about ID or citizenship proof.",
+      "subjects": [
+        "election integrity",
+        "access to the ballot",
+        "mail ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:37.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Hashmi'), linked to Ghazala F. Hashmi via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (no repo scripts permitted)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "Ballotpedia profile (fetched by curl)",
+        "web searches on name plus voter ID words",
+        "campaign issues page https://ghazalaforvirginia.com/issues/"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:37.989Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:58:27.794Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

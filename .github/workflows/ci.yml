@@ -602,9 +602,19 @@ jobs:
       # upstream is WILLING to answer, not that an election is live — `no_election`
       # passes, only `unavailable` fails.
       #
-      # ⚠ Expect this RED until the Google key is fixed. That is the point; the card is
-      # empty for every voter right now. It runs on master and the schedule, never on a
-      # PR, so it reports the breakage without blocking anyone's merge.
+      # 🟢 THE OUTAGE IS OVER — re-measured 2026-10-25, GREEN: all three probe addresses
+      # returned `ok`, exit 0. A live probe of /api/essentials/voter-info agreed, and
+      # Atlanta came back with real drop-off sites and their hours. The line that stood
+      # here said "⚠ Expect this RED until the Google key is fixed", which stopped being
+      # true at some point nobody recorded.
+      #
+      # ⚠ A STANDING "EXPECT THIS RED" IS A GATE SWITCHED OFF IN PROSE. Nobody looks twice
+      # at a job they have been told will fail, so the next real breakage reads as the old
+      # one. If this goes red again, FIX IT OR DATE THE NOTE — do not re-add an open-ended
+      # expectation of failure.
+      #
+      # It runs on master and the schedule, never on a PR, so it reports breakage without
+      # blocking anyone's merge.
       - name: Check the voter-info upstream is answering
         if: ${{ !cancelled() }}
         run: npm run check:voter-info
@@ -1229,6 +1239,55 @@ jobs:
             echo "=== off-site links only (rot happens on other people's hosts, not in our bucket)"
             python scripts/check-headshot-faces.py --external-only --workers 8 --fail-on-unreachable
           fi
+
+  chamberless-orphans:
+    name: chamber-less orphans
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE: a check that talks to the database does not
+    # share a job, and it cannot join `static guards` — that job is dependency-free and this one needs
+    # `pg`. It watches the failure that hid Wichita: an office with `chamber_id IS NULL` is invisible to
+    # the landing-page browse query, whose `governments → chambers → offices` join is INNER, while
+    # address search keeps answering perfectly because it goes through `districts` and LEFT JOINs the
+    # chamber. Seven seated officials were dropped from the browse list with nothing erroring.
+    #
+    # ⚠ A NULL chamber_id IS NOT ITSELF A DEFECT — 349 offices carry one and most are correct (the whole
+    # DC Council, Puerto Rico's 78 mayors and its legislature, the territory delegates). The predicate
+    # and the reason it excludes those WITHOUT a carve-out are in scripts/check-chamberless-orphans.mjs.
+    #
+    # 🔴 THE POSITIVE CONTROL HAS TO BE MANUFACTURED, because a healthy database contains zero orphans
+    # and there is no standing example to lean on the way check-rls-coverage leans on spatial_ref_sys.
+    # The script opens a transaction, removes a chamber from a real seated office, confirms the detector
+    # reports it, and ALWAYS rolls back — it cannot write. If the planted orphan is not seen, the check
+    # ERRORS rather than passing, because an empty result would then mean nothing.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum). What it measures is PROD
+    # state: an office loses or gains a chamber when a migration is APPLIED by hand, which happens on
+    # the CALENDAR, not on our commits — a push applies nothing. Same reasoning as `rls coverage`,
+    # `spatial_ref_sys baseline` and `reachability`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret).
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check no seated office is hidden from its own government
+        run: npm run check:chamberless-orphans:verbose
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
   rls-coverage:
     name: rls coverage

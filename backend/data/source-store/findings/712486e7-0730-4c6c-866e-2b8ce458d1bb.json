@@ -1,0 +1,172 @@
+{
+  "politician_id": "712486e7-0730-4c6c-866e-2b8ce458d1bb",
+  "findings": [
+    {
+      "id": "3f40a200037499a1725335a35a21cf6ceb87f3257b7940e3fba2c9e7b2a0f382",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: nay (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "9ff688b88c44c9d03efb73dc5607a02e6107f0dabbcd2d3ae428c1d1b43aab2f",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "third reading and adoption of SJR 37, constitutional amendment clarifying that a voter must be a United States citizen (Record 2196, 102 Yeas, 14 Nays, 22 Present not voting)",
+      "note": "Shown as Present, not voting on the House vote adopting SJR 37.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b30bd2a955378974b3cc3666a0c6e4f51f8e5ecd7851167045ca28f7c41b0129",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "third reading and passage of SB 1, election integrity and security (Record 61, 80 Yeas, 41 Nays)",
+      "note": "Listed among the Nays on House passage of SB 1 in the second called session. This is a different vote from the conference report vote already on file.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44c71b0db19d2f4b6f09a38307a39a00fdfc041c497dead7c0f50a14f34d2206",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY41FINAL.PDF",
+      "date": "2021-05-06",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "nay",
+      "motion": "CSSB 7 passed to third reading (Record 841, 81 Yeas, 64 Nays)",
+      "note": "Listed among the Nays on House second-reading passage of CSSB 7, relating to election integrity and security, including preventing fraud in elections. The vote is recorded in the day 41 journal; the bill was read second time on 2021-05-06 and the vote came after a postponement later that day or the next.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0071a0178a1d916cc2ebf9c04d703572349ce6ccd6f704cacf7d19520e15018d",
+      "kind": "own-words",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "passage": "When Record No. 848 was taken, my vote failed to register. I would have voted no.",
+      "note": "Statement of vote printed in the House Journal, signed Cole, on final House passage of SB 7 (election integrity and security). The journal lists her as Absent on the roll call.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page (confirms Texas House District 46 and the 2026-11-03 general ballot)",
+        "official Texas House member page and biography (found via search; no statement on the subject)",
+        "Texas Legislature Online histories for HB 5337, SB 16, HB 892, HB 304, HB 1263, HB 1312, HB 219, HB 2245, HB 2332, HB 1670, SB 964, SB 309 (not listed as author or coauthor of any)",
+        "Texas House Journal day 62 (2025-05-12) for SJR 37; 87th session journals for SB 7 and SB 1 (2021)",
+        "blocked: Legiplex member pages (403)",
+        "campaign site: not located",
+        "news search by name plus subject words: no own-words quote found",
+        "not reviewed: Texas House floor video"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:16:40.259Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "background checks",
+        "gun safety",
+        "open carry on campuses"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas House member page https://www.house.texas.gov/members/46 (confirms Rep. Cole, Sheryl - District 46; nothing on the subject)",
+        "branch.vote candidate page https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-46/candidates/sheryl-cole (confirms 2026 general-election candidate, unopposed; its gun text is the site's own summary of her, not her words, so not saved)",
+        "https://www.fox7austin.com/news/texas-house-democrats-want-to-protect-texans-from-gun-violence (2019 press conference lists 'Cole' among speakers; no words of hers quoted; nothing saved)",
+        "not reviewed: bill sponsorship pages on capitol.texas.gov (dynamic search, not reached)",
+        "Ballotpedia (not fetched)",
+        "one web search"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

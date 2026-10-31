@@ -1,0 +1,273 @@
+{
+  "politician_id": "6a18fa31-ad05-481a-bf5e-ecaa5cd193d1",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "2aa986439fc20088ca09968c7e99d831aa6608f4381420f80a9d9149a4581ae3",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/20260216145543/https://www.valleycentral.com/news/local-news/rio-grande-valley-lawmakers-split-as-save-act-passes-house/",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "Under the guise of blocking noncitizens from participating in our political process, this bill actually makes it harder for tens of millions of American women, service members, senior citizens, and other eligible folks to register to vote and cast a ballot in-person or by mail.",
+      "note": "His written statement on the SAVE America Act (S. 1383, House passage Feb. 2026), quoted word for word by ValleyCentral (KVEO), published 2026-02-13; read from the Internet Archive copy because the live site blocks downloads. Explains his No vote; names no ID rule he would support.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "ID with mail or absentee ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "federal-01 review session (Chris Andrews review, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:16:16.287Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "c8eec1d18e4b328ab97b09e02eacb8847eb7b61947e54662eeb72afd04c236fb",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "It is critical that we act to reduce gun violence to keep our families safe. That's why I strongly support expanded background checks, waiting periods, red flag laws and a ban on high-capacity magazines that allow for the massacres we've seen in Uvalde, El Paso and Buffalo. But there are tens of millions of assault rifles already in circulation across America, many of them are used by responsible gun owners for hunting in South Texas.  And a ban on some of those models will do nothing to reduce overall risks. Our focus should be on keeping guns out of the hands of people who are a danger to themselves or others.",
+      "note": "Statement issued with his vote on H.R. 1808 (2022 assault weapons ban bill). Names the measures he supports and gives his reason on the assault rifle ban.",
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting periods",
+        "red-flag orders",
+        "high-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d1418933f5d9550d7d0eeb72bade080f4216d2fc932ae9700acc2a51d99e7a2",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-no-assault-weapons-ban-calls-senate-take-house",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "The Bipartisan Safer Communities Act was a critical first step. Now the Senate needs to stop sitting on its hands and take up House-passed legislation to ban high-capacity magazines, close the gun show loophole, and enhance background checks.",
+      "note": "Same release; calls on the Senate to act on House-passed magazine, gun show loophole and background check bills.",
+      "subjects": [
+        "high-capacity magazines",
+        "gun show loophole",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d17f8b53fd204c98a25e5fdb7ce4d79d499401f3a87a01f68973cf611208b99",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-votes-bipartisan-safer-communities-act-keep-our-children",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "Time and time again, guns have fallen into the wrong hands and have cost countless innocent lives\", said Congressman Gonzalez. \"I am proud to vote for this commonsense measure that will keep guns out of dangerous hands, protect our children, and bolster mental health programs. This bill does not punish responsible gun ownership.",
+      "note": "Statement on his vote for the Bipartisan Safer Communities Act. The release also lists the bill's contents: state crisis intervention order funding, boyfriend loophole closure, straw purchase penalties, and enhanced background checks for buyers under 21.",
+      "subjects": [
+        "Bipartisan Safer Communities Act",
+        "background checks for buyers under 21",
+        "red-flag orders",
+        "straw purchasing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb73966ed59b823baac0c322078fce01e4b1856fdee808d0eb0f05a54c7d130b",
+      "kind": "own-words",
+      "url": "https://gonzalez.house.gov/media/press-releases/congressman-gonzalez-statement-members-carrying-firearms-capitol-grounds",
+      "date": "2020-12-17",
+      "date_precision": "day",
+      "passage": "I trust and respect their decisions allowing Members of Congress who choose to carry firearms on the Capitol Grounds. There is a clear history of Members of Congress being targeted with violence. And if we want to carry for an added layer of protection, we should be able to do so.",
+      "note": "Statement on Members of Congress carrying firearms on Capitol grounds.",
+      "subjects": [
+        "carrying firearms on Capitol grounds",
+        "carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot, Texas 34th District, advanced from the March 3, 2026 primary (https://ballotpedia.org/Vicente_Gonzalez)",
+        "On the Record (0 appearances, 0 candidates)",
+        "official site gonzalez.house.gov home, press-releases page 1 and issues page: nothing on the subject",
+        "blocked: https://gonzalez.house.gov/search (403 for subject-word searches)",
+        "Ballotpedia: page fetched, no voter ID or proof-of-citizenship statement by him found",
+        "campaign site https://www.vicentegonzalez.com/ home page: nothing on the subject",
+        "blocked: https://www.congress.gov/member/vicente-gonzalez/G000581 (403, sponsorships not reviewed)",
+        "blocked: https://www.govtrack.us/congress/members/vicente_gonzalez/412717 (403)",
+        "not reviewed: news search and Vote Smart (shared web-search budget used up)",
+        "not reviewed: deeper press-release pages, floor speeches, social posts"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:46.350Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page https://ballotpedia.org/Vicente_Gonzalez shows a sitting member of Texas' 34th District running for re-election in 2026",
+        "On the Record (0 meetings)",
+        "official site https://gonzalez.house.gov (home page and site search for voter ID, SAVE Act, voter, election): nothing on the subject",
+        "Ballotpedia: nothing on the subject beyond the votes already on file",
+        "Congressional Record pages https://www.govinfo.gov/content/pkg/CREC-2024-07-10/html/CREC-2024-07-10-pt1-PgH4556.htm and https://www.govinfo.gov/content/pkg/CREC-2026-02-11/html/CREC-2026-02-11-pt1-PgH2138.htm: his name does not appear",
+        "two news searches on name plus subject words: no statement by him on the subject found",
+        "not reviewed: https://www.congress.gov (sponsorships not checked; Clerk and Congressional Record pages used instead)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T19:58:25.941Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting periods",
+        "red-flag orders",
+        "high-capacity magazines",
+        "gun show loophole",
+        "carrying firearms on Capitol grounds"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (gonzalez.house.gov), three releases fetched; they name him as Congressman Vicente Gonzalez (TX-15 at the time)",
+        "one news search on name plus gun subject words (results mixed with a different member with a similar surname; not used)",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

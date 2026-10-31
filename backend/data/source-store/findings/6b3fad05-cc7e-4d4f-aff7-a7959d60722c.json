@@ -1,0 +1,58 @@
+{
+  "politician_id": "6b3fad05-cc7e-4d4f-aff7-a7959d60722c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/James_Pittsford_III names him as candidate, Indiana House District 46, on the Nov 3, 2026 general-election ballot after the May 5, 2026 primary (positive control)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (no Candidate Connection survey completed; nothing on the subject)",
+        "campaign site https://www.pittsford4indiana.com/ and /about, /endorsements, /calendar (nothing on the subject; issue text covers utility reform, school vouchers, a toll road, emergency services)",
+        "campaign blog feed https://www.pittsford4indiana.com/blog-feed.xml (empty)",
+        "not reviewed: https://www.facebook.com/jimmy.pittsford",
+        "not reviewed: https://www.linkedin.com/in/james-pittsford-iii-16542b3aa/",
+        "not reviewed: Indiana General Assembly bill pages (challenger, not a legislator, no record)",
+        "not searched: news search (session web-search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:38:30.655Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Bloomington Chamber of Commerce candidate page (https://www.chamberbloomington.org/state-legislative-candidates-2026.html): confirms he is a House District 46 challenger on the November 2026 ballot; nothing on the subject",
+        "BallotReady profile (confirms 2026 general-election candidacy; no issue answers readable)",
+        "the student newspaper's 2026 primary guide (confirms he faces the primary winner in November)",
+        "iVoterGuide listing (name only, nothing on the subject)",
+        "Ballotpedia page (no candidate profile found)",
+        "news search: name plus subject words (two searches; nothing on the subject)",
+        "campaign site: not found in search results",
+        "not applicable: no legislative record (not a sitting legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T13:54:41.058Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

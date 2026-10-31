@@ -1,0 +1,124 @@
+{
+  "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "0401fc37ae4e86fbe1793162b3e46b574eb054526c6b8873652db99fda044c12",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor, with Rep. Owens, of H.849, An Act relative to inactive voters and municipal census administration. Referred to the Joint Committee on Election Laws. Related voter-roll topic; the bill page text read did not state its contents on ID.",
+      "subjects": [
+        "voter-roll maintenance and inactive voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:06:49.760Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e34b5241f37422fd02330b0b4e5f97abdf08d95f6ea9cc2386d99d129f764a3f",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H849.html",
+      "date": "2025-01-06",
+      "date_precision": "day",
+      "instrument_id": "MA-H-849-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor of H.849, An Act relative to inactive voters and municipal census administration. It amends G.L. c.51 s.37 so that a voter is made inactive after 2 consecutive years instead of the current year. This is about voter-roll upkeep, not ID or citizenship proof.",
+      "subjects": [
+        "voter-roll maintenance (inactive voters)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:48:51.567Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and inactive voters",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/David_LeBoeuf (on the Nov 3, 2026 general-election ballot, 17th Worcester; advanced from the Sept 1, 2026 primary)",
+        "On the Record (0 appearances; extract-otr returned no sources)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/DAL1 (sponsored list reviewed; one related bill, H.849)",
+        "malegislature.gov bill page H.849 (194th)",
+        "Ballotpedia (no voter ID statements found)",
+        "campaign site: not found; https://www.davidleboeuf.com is a parked redirect page, not confirmed as his",
+        "news search: not done, web search budget exhausted",
+        "nothing on the subject: no own-words passage on voter ID, proof of citizenship or mail-ballot ID found",
+        "not reviewed: https://malegislature.gov/Bills/194/H4359 amendment 7 text (page fetched did not show the amendment; vote already on file)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:06:49.760Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll maintenance (inactive voters)",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "malegislature.gov legislator profile DAL1 (confirms 17th Worcester District, lists sponsored bills; no ID or citizenship bill)",
+        "campaign site: davidleboeuf.com is a parked redirect page with no content; other guessed domains did not load",
+        "Ballotpedia (confirms on the 2026 general-election ballot; nothing on the subject)",
+        "news search on name plus voter ID / proof of citizenship: nothing by or about him on the subject",
+        "malegislature.gov bill H.849 page"
+      ],
+      "found": 1,
+      "at": "2026-10-27T18:48:51.567Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

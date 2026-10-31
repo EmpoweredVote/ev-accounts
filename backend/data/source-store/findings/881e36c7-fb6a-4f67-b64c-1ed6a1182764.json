@@ -1,0 +1,136 @@
+{
+  "politician_id": "881e36c7-fb6a-4f67-b64c-1ed6a1182764",
+  "findings": [
+    {
+      "id": "2ec6351d1c5a5a501ef372e0430d31dd927da21fd91f8127a9d5f8a12961ebc5",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-14",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in Senate substitute S-3",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI House, concurrence in Senate substitute S-3, 2021-10-14: yea (tally 56–51); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "1dc2ff44a195725625ea01af5777b7fa04b6ade0c84f0e1b682b1d416a430417",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4227",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4227-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4227 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 509q, 509gg, 509\"",
+      "note": "Named as co sponsor ('Matt Maddock (District 51)') on the official bill page; linked to Matt Maddock via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44aeef02a3561d8ee393774620e315e83bcdf826bd30f2b1a0263a98ce9bb0a6",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4324",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4324-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"HOUSE BILL NO. 4324 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Matt Maddock (District 51)') on the official bill page; linked to Matt Maddock via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "520c858db5afc9d85749d27ab3c925fdaa469930c5032a8ea9adc52f5698059e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "yea",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Maddock'), linked to Matt Maddock (district 51) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.330Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Matt_Maddock (page came back empty)",
+        "scope: https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-51/candidates/matt-maddock lists him as a candidate for House District 51 in the 2026 general election; page says his website had no information on voting and elections",
+        "official House caucus site: not reviewed, house-caucus.org is a script-built page that returned no text list",
+        "news search on name plus voter ID: nothing in his own words on the subject (https://bridgemi.com/michigan-government/i-am-certainly-not-dead-living-voters-contradict-michigan-gop-fraud-claims/ only quotes his wife and others, not him)",
+        "legislature sponsorship pages: not reviewed (separately linked)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:47:07.183Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:55:46.330Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

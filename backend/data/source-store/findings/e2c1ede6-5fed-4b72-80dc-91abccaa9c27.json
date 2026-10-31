@@ -1,0 +1,356 @@
+{
+  "politician_id": "e2c1ede6-5fed-4b72-80dc-91abccaa9c27",
+  "findings": [
+    {
+      "id": "b3eaf73bfd786b633c6fb95a40aef9da1ecf0c2ffd1678140465dd685f592ba3",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/fontana-calls-on-corbett-administration-to-bring-voter-id-services-into-communities",
+      "date": "2012-08-17",
+      "date_precision": "day",
+      "passage": "“If the Commonwealth is going to require voters to show photo identification at the polls on Election Day, the process of obtaining a valid photo identification card needs to be simpler and more convenient.",
+      "note": "Press release in his name on the 2012 photo ID law. Date taken from the release text, which refers to his August 17, 2012 letter and the court ruling of that week. He asks that state offices be allowed to issue IDs.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3094502d4ce8fc4c14162f4ff7cef9dab77f3aa9305c86c9dcc3ee9745b33460",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/fontana-calls-on-corbett-administration-to-bring-voter-id-services-into-communities",
+      "date": "2012-08-17",
+      "date_precision": "day",
+      "passage": "“There could be over 700,000 voters in Pennsylvania who do not have valid photo identification,” Fontana said.",
+      "note": "He states an estimate of voters lacking photo ID and says the 2012 law will disenfranchise thousands of voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4b426da5a6cd1751203995866f0f166e41ea62e53f1b604f89ab9a7ec4bb9f1",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-prods-governor-to-bring-voter-id-services-into-communities",
+      "date": "2012-08-17",
+      "date_precision": "day",
+      "passage": "While we can disagree on the validity and need for the new law, I hope you agree that we should be doing what we can to make the process as simple, easy and convenient as possible for citizens seeking to obtain the required photo identification.",
+      "note": "Text of his letter to the governor of that time, asking for neighborhood ID centers. Date from the 'August 17' reference in the sister release; the page itself shows no date.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b12a78c4ed805df6328bb428c46cb50cfa9c2a509a084804eb1e9bf044d57225",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/fontana-expresses-disappointment-with-administrations-decision-to-not-bring-voter-id-services-to-neighborhoods",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "“If the Commonwealth is going to require all voters to produce an acceptable photo ID to cast a vote, then we should be making the process of acquiring the ID as simple and convenient as possible, especially in light of the fact that Election Day is less than two months away.",
+      "note": "Statement after the administration declined his request. The month is inferred from 'less than two months' before the November election; day unknown. (Date set to the year only: the month was inferred, not printed.)",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e7537db45a86a789c2a073c8b45bc1a21113d1cbf4eaac74801e06987f8eab2",
+      "kind": "own-words",
+      "url": "https://pasenate.com/fontana-bill-would-make-pennsylvania-a-mail-in-ballot-state/",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "“My proposal to establish a mail-only voting system would be more accommodating, convenient, safer and less expensive,” Fontana said.",
+      "note": "Release on his plan to run elections by mail, with ballots sent to all registered voters. Written after the 2020 general election; exact date not on the page. Related to mail voting, not ID.",
+      "subjects": [
+        "mail voting in general (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:43:00.626Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('FONTANA'), linked to Wayne D. Fontana (district 42) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Fontana'), linked to Wayne Fontana (district 42) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Fontana'), linked to Wayne D. Fontana (district 42) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Fontana'), linked to Wayne D. Fontana (district 42) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Fontana'), linked to Wayne D. Fontana (district 42) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08313599ed6cb4e49e8912c6dd2c58fd8277675d0dc0d538425230c8acc73715",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "“These military-grade weapons have no legitimate place in civilian life,” Fontana said. “With poor accuracy, they have no useful purpose for hunting or self-defense. These rapid-fire weapons are specifically designed to spray bullets and kill many people quickly.”",
+      "note": "Press release announcing a bill to ban sale and use of 150 models of semi-automatic assault weapons and magazines over 10 rounds; quote is from the release on his own site.",
+      "subjects": [
+        "assault weapons ban",
+        "large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ff643143cc0666e039be75e3e40bf9b52f57716b4c871fd4403e7ac368ef388",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "“By enacting this ERPO process, our state would empower loved ones, who are closest to someone who is exhibiting dangerous behaviors, to temporarily take away their access to guns,” Fontana said.",
+      "note": "Same release, on his announced extreme risk protection order bill, which would let family members ask a court to suspend someone's access to firearms for up to one year.",
+      "subjects": [
+        "red-flag orders",
+        "extreme risk protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47743a9d2e892212a2dcd9a50d3c44357ad730aa461d1f715acafcec237a4f2e",
+      "kind": "own-words",
+      "url": "https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings",
+      "date": "2018-02-21",
+      "date_precision": "day",
+      "passage": "Fontana said it’s time for people on both sides of the gun issue to “seek common ground and workable solutions that protect second amendment rights while preventing the epidemic of mass shootings that have become endemic to America.”",
+      "note": "General statement on gun laws and the Second Amendment in the same release.",
+      "subjects": [
+        "Second Amendment",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "help getting a free photo ID",
+        "mail-ballot voting",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not permitted for this agent)",
+        "official Senate site senatorfontana.com (three 2012 voter ID releases read; also homepage fetched, not useful)",
+        "Senate caucus site pasenate.com (one release on mail voting)",
+        "news searches on name plus voter ID (two)",
+        "nothing on the subject: no statement from him found on the 2025 voter ID bills or on proof of citizenship",
+        "not reviewed: Ballotpedia, campaign site, bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:43:00.626Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons and large-capacity magazines",
+        "red-flag / extreme risk protection orders",
+        "Second Amendment",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://senatorfontana.com/sen-fontana-introduce-bills-aimed-preventing-mass-shootings (names him as Senator; press release dated 2018-02-21)",
+        "https://senatorfontana.com/?p=4634 (same press release)",
+        "web search (1): leads to pasenate.com and legiplex pages naming later bills (SB57, SB350, SB769) not fetched",
+        "not reviewed: https://pasenate.com/hatred-and-gun-violence-have-no-place-in-pennsylvania-we-must-act/",
+        "not reviewed: legislature bill pages for 2025-26 sponsorships (palegis.us blocks scripted fetches)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

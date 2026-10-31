@@ -1,0 +1,127 @@
+{
+  "politician_id": "a0e4e813-6c10-45d8-8f59-f444c6747b61",
+  "findings": [
+    {
+      "id": "5a273dd9aa1c1d10dc189dbb534e574525d298cb31826670c3de21798bb0a2cc",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/12/22/opinion/galvin-trump-voter-record/",
+      "date": "2025-12-22",
+      "date_precision": "day",
+      "passage": "Elections in this country are administered by states, in accordance with state law. Our laws in Massachusetts protect the privacy of our voters, and I will uphold those laws.",
+      "note": "Statement quoted by the Boston Globe editorial board on his refusal to give the U.S. Justice Department the full state voter file, which includes driver's license and partial Social Security numbers.",
+      "subjects": [
+        "federal demand for voter-roll data",
+        "voter privacy",
+        "state control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:50:18.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d06fbddc2695bea54d5f60b52fe4ffc02e54b36cd9ad9df4407947b49586060",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/12/22/opinion/galvin-trump-voter-record/",
+      "date": "2025-12-22",
+      "date_precision": "day",
+      "passage": "If you’re asking about procedure, wouldn’t it make more sense to ask about your voter list maintenance procedures and how you’re conducting them?",
+      "note": "Said to the Boston Globe editorial board, as quoted by it, about the Justice Department's request for the voter rolls; he says the state would discuss its list-maintenance practices.",
+      "subjects": [
+        "voter-roll maintenance",
+        "federal demand for voter-roll data"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:50:18.682Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "086f297e87477a92985720aa28304a8ffa7355d170f3d1208230b4ea58ac5ad3",
+      "kind": "own-words",
+      "url": "https://www.bostonglobe.com/2025/12/22/opinion/galvin-trump-voter-record/",
+      "date": "2025-12-22",
+      "date_precision": "day",
+      "passage": "The actual voter list is a public record — you can go to your local town hall and find out who are the voters.",
+      "note": "Said to the Boston Globe editorial board, as quoted by it, distinguishing the public voter list from the private data (Social Security number, driver's license) that federal officials requested.",
+      "subjects": [
+        "federal demand for voter-roll data",
+        "voter privacy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:50:18.682Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/William_Galvin_(Massachusetts_Secretary_of_the_Commonwealth)) says he advanced from the September 1, 2026 primary and is on the November 3, 2026 general ballot; nothing on the subject on that page",
+        "On the Record (0 appearances)",
+        "blocked: https://www.sec.state.ma.us/ (bot wall, no page text returned)",
+        "blocked: https://www.sec.state.ma.us/divisions/elections/voter-id/voter-id.htm",
+        "blocked: https://www.mass.gov/orgs/office-of-the-secretary-of-the-commonwealth/news (HTTP 403)",
+        "blocked: https://www.mass.gov/info-details/id-requirements-for-voting (HTTP 403)",
+        "campaign site: not reachable (guessed domains did not resolve; Ballotpedia lists no usable link)",
+        "not reviewed: news search on name plus subject words (the session web-search limit was used up)",
+        "legislature bill pages: not applicable, statewide office holder"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:55.967Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "federal demand for state voter-roll data",
+        "voter-list maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/William_F._Galvin: sitting Secretary of the Commonwealth, advanced from the 2026-09-01 primary, on the 2026-11-03 general-election ballot",
+        "WBUR https://www.wbur.org/news/2026/02/04/william-galvin-seek-ninth-term-state-commonwealth-massachusetts: his letter on seeking re-election; mentions federal efforts on registration and voting by mail; only partial quotes - not saved",
+        "Boston Globe editorial 2025-12-22: his quotes on the federal voter-data demand (saved)",
+        "https://www.yahoo.com/now/gop-push-require-voter-id-122300580.html: reporter paraphrase that he opposes a voter ID requirement; not his own words, not saved",
+        "https://www.nbcboston.com/news/politics/mass-gop-chair-proposes-ballot-question-requiring-voter-ids/2422991/: reporter paraphrase only - not saved",
+        "https://recorder.com/2018/09/07/more-voter-id-20005450/: his office declined to give a view on voter ID in 2018 - nothing on the subject",
+        "https://democracydocket.com/cases/massachusetts-voter-roll-access-challenge: lawsuit by a voter ID ballot committee against him; filings not his words",
+        "https://justice.gov/crt/letter-secretary-commonwealth-william-f-galvin: 2004 federal reply letter to him about ID rules for first-time voters; the DOJ's words, not his",
+        "blocked: https://www.sec.state.ma.us/divisions/elections/ (security block page returned to curl)",
+        "blocked: https://www.mass.gov/news/ag-campbell-secretary-galvin-applaud-courts-dismissal-of-dojs-lawsuit-demanding-massachusetts-voter-data (HTTP 403)",
+        "congress.gov and legislature bill pages: not applicable, he is not a sitting legislator",
+        "not reviewed: Galvin's Election Day registration ballot-measure text"
+      ],
+      "found": 3,
+      "at": "2026-10-27T14:50:18.682Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

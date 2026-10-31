@@ -1,0 +1,340 @@
+{
+  "id": "MI-SB-76-2023",
+  "scope": "state:mi",
+  "title": "Senate Bill 76, Weapons: firearms; license or background check for purchase of firearms; require",
+  "urls": [
+    "https://legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0076",
+    "https://legislature.mi.gov/documents/2023-2024/Journal/senate/pdf/2023-SJ-03-16-028.pdf",
+    "https://legislature.mi.gov/documents/2023-2024/billengrossed/Senate/pdf/2023-SEBS-0076.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 2(1)(b) (new text, shown in bold on page image 6): (b) Purchase or acquire a firearm that is not a pistol without a license as prescribed in this section. This subdivision does not apply to the purchase or acquisition of a firearm that occurred before the effective date of the amendatory act that added this subdivision.\nSec. 2(1)(a): (a) Purchase, carry, possess, or transport a pistol in this state without first having obtained a license for the pistol as prescribed in this section.\nSec. 2a(1) (page image 15): (1) The following individuals are not required to obtain a license under section 2 to purchase, carry, possess, use, or transport a firearm: (a) An individual licensed under section 5b, except for an individual who has an emergency license issued under section 5a(4) or a receipt serving as a concealed pistol license under section 5b(9) or 5l(3). (b) A federally licensed firearms dealer.\nSec. 2a(1)(d): (d) An individual purchasing a firearm other than a pistol who has a federal national instant criminal background check performed on the individual by a federally licensed firearms dealer not more than 5 days before the purchase.\nSec. 2a(1)(c) (STRUCK by the bill, page image 15): An individual who purchases a pistol from a federally licensed firearms dealer in compliance with 18 USC 922(t).",
+  "sponsors": [
+    {
+      "name": "Kevin Hertel",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Rosemary Bayer",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Mary Cavanagh",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sam Singh",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Mallory McMorrow",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sue Shink",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sean McCann",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Jeff Irwin",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Paul Wojno",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Dayna Polehanki",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Stephanie Chang",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Jeremy Moss",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Erika Geiss",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Darrin Camilleri",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Veronica Klinefelt",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Kristen McDonald Rivet",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "John Cherry",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sylvia A. Santana",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Winnie Brinks",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sarah Anthony",
+      "role": "co",
+      "version": "introduced"
+    },
+    {
+      "name": "Sen. Kevin Hertel (first listed and 'Introduced by' on the official bill page; the page lists 20 sponsors in all)",
+      "role": "author"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-03-16",
+      "body": "MI Senate",
+      "motion": "Passage, Roll Call No. 80",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 17,
+      "body_size": 38,
+      "note": "names from: pdf text",
+      "members": [
+        {
+          "name": "Anthony",
+          "politician_id": "d9736edf-11cc-4e09-8f84-41353ccff05d",
+          "vote": "yea"
+        },
+        {
+          "name": "Chang",
+          "politician_id": "1a9aea1b-b22e-444c-b71b-2edfbaadc62a",
+          "vote": "yea"
+        },
+        {
+          "name": "Klinefelt",
+          "politician_id": "d5663ee3-8182-4bba-89dd-ae57444ee7cc",
+          "vote": "yea"
+        },
+        {
+          "name": "Polehanki",
+          "politician_id": "d0e04fa1-05ee-49e8-a0c6-0d6f77789735",
+          "vote": "yea"
+        },
+        {
+          "name": "Bayer",
+          "politician_id": "eb205f75-40bb-4026-bd2f-6dbd6e7fb1e0",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherry",
+          "politician_id": "9f12fc5f-4827-443d-95da-80c66ca11ebf",
+          "vote": "yea"
+        },
+        {
+          "name": "McCann",
+          "politician_id": "78590658-b6fb-4e96-9bd5-e341c634b2e0",
+          "vote": "yea"
+        },
+        {
+          "name": "Santana",
+          "politician_id": "374b46e8-fd31-481c-b086-0588770f6466",
+          "vote": "yea"
+        },
+        {
+          "name": "Brinks",
+          "politician_id": "9d538855-3510-40ab-a48f-328d9c9bdba4",
+          "vote": "yea"
+        },
+        {
+          "name": "Geiss",
+          "politician_id": "4aaae9d8-5f9c-4cc7-a72c-2d80c6254e32",
+          "vote": "yea"
+        },
+        {
+          "name": "McDonald Rivet",
+          "politician_id": "7d800c44-7a73-440e-8023-14f93fde06c0",
+          "vote": "yea"
+        },
+        {
+          "name": "Shink",
+          "politician_id": "04b6a538-a78d-4e1a-b735-031e425ce81f",
+          "vote": "yea"
+        },
+        {
+          "name": "Camilleri",
+          "politician_id": "eda2337e-010a-4271-8898-91566d2c52ae",
+          "vote": "yea"
+        },
+        {
+          "name": "Hertel",
+          "politician_id": "cf6f5937-81d9-4962-af3a-b8c00518f677",
+          "vote": "yea"
+        },
+        {
+          "name": "McMorrow",
+          "politician_id": "3bdf2b9e-7512-4cc6-93f5-252078fae92c",
+          "vote": "yea"
+        },
+        {
+          "name": "Singh",
+          "politician_id": "75af1cd9-5037-4ce6-b03a-9ba068f40afd",
+          "vote": "yea"
+        },
+        {
+          "name": "Cavanagh",
+          "politician_id": "aec7ae44-e7a3-4e02-9d94-e7ba5a562b32",
+          "vote": "yea"
+        },
+        {
+          "name": "Irwin",
+          "politician_id": "98fad2ca-67b6-444a-a9ee-21150f8c7441",
+          "vote": "yea"
+        },
+        {
+          "name": "Moss",
+          "politician_id": "bcda2b48-b064-42b5-a843-f6152b1f6456",
+          "vote": "yea"
+        },
+        {
+          "name": "Wojno",
+          "politician_id": "8cbcbae5-10d4-4d09-98fb-c321b5a98074",
+          "vote": "yea"
+        },
+        {
+          "name": "Albert",
+          "politician_id": "263a3e60-33d9-40c8-8e2c-af8189584f31",
+          "vote": "nay"
+        },
+        {
+          "name": "Hauck",
+          "politician_id": "44808453-d7f5-48d9-abb9-6ce42ec7d1ed",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauwers",
+          "politician_id": "e2ebfe4d-f326-453b-9725-ead8244839cb",
+          "vote": "nay"
+        },
+        {
+          "name": "Outman",
+          "politician_id": "e118ad3d-4541-4710-bf50-f643f07f7921",
+          "vote": "nay"
+        },
+        {
+          "name": "Bellino",
+          "politician_id": "be36fee6-f81b-4e61-953c-0e89f9718bb4",
+          "vote": "nay"
+        },
+        {
+          "name": "Hoitenga",
+          "politician_id": "cde89f88-ac6f-429e-bc7d-e353de9bbeb5",
+          "vote": "nay"
+        },
+        {
+          "name": "Lindsey",
+          "politician_id": "cd3fb5b4-bc71-42cf-ae59-232692882a82",
+          "vote": "nay"
+        },
+        {
+          "name": "Runestad",
+          "politician_id": "732a5a3e-4571-45cf-9c6b-8e0bb5a9ecc9",
+          "vote": "nay"
+        },
+        {
+          "name": "Bumstead",
+          "politician_id": "c210b8b7-1154-4b90-b9e5-cef2b70ec240",
+          "vote": "nay"
+        },
+        {
+          "name": "Huizenga",
+          "politician_id": "01b896ff-57bb-42df-b137-0301d7abf063",
+          "vote": "nay"
+        },
+        {
+          "name": "McBroom",
+          "politician_id": "dfa7be6f-c195-4744-b044-25171abeb1fb",
+          "vote": "nay"
+        },
+        {
+          "name": "Theis",
+          "politician_id": "22e06b6c-20a7-4289-ad07-984968ae34fe",
+          "vote": "nay"
+        },
+        {
+          "name": "Daley",
+          "politician_id": "673bb91b-34fc-4ac8-8224-f83860bbbd77",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnson",
+          "politician_id": "3aa4dba3-51f6-4e54-b329-777472d34d4c",
+          "vote": "nay"
+        },
+        {
+          "name": "Nesbitt",
+          "politician_id": "868b57f4-dbfd-4405-be3a-460d721c2a68",
+          "vote": "nay"
+        },
+        {
+          "name": "Webber",
+          "politician_id": "448abed5-8af3-4542-abe6-de8970883328",
+          "vote": "nay"
+        },
+        {
+          "name": "Damoose",
+          "politician_id": "462fbada-42af-4bf0-8562-cb618e8752d1",
+          "vote": "nay"
+        },
+        {
+          "name": "Victory",
+          "politician_id": "8a85a630-0c68-498e-8e8f-631451fb59b1",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T3 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T3-docs/2023-SEBS-0076.pdf",
+      "sha256": "028ca04fb10c11c8fa040b47bcab77dc8b252576fae94d7bf73e3063b125abae"
+    }
+  }
+}

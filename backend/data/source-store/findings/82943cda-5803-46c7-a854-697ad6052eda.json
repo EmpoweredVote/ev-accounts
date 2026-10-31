@@ -1,0 +1,81 @@
+{
+  "politician_id": "82943cda-5803-46c7-a854-697ad6052eda",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7434ffbff10913f4332b2d715608f706c8190b392d7224e9e5ffa93f9a5f7ceb",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor of S.510, a petition for legislation to provide a photo identification card to be used for voting purposes. Referred to the Election Laws committee on 2/27/2025; hearing scheduled 7/8/2025. The bill page gives its purpose as 'to ensure safe and secure elections'.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID card for voting",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:14:26.817Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID card for voting",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope, on the 2026 general-election ballot (Ballotpedia https://ballotpedia.org/Peter_Durant; legislature profile https://malegislature.gov/Legislators/Profile/PJD0 names Senator Peter J. Durant, Worcester and Hampshire district)",
+        "On the Record (0 appearances for this politician id; nothing on the subject)",
+        "malegislature.gov sponsored-bills list (https://malegislature.gov/Legislators/Profile/PJD0/Sponsored): one bill on the subject found; no citizenship or mail-ballot bills listed",
+        "malegislature.gov bill search for voter identification filtered to this sponsor: S.510 and H.833 appear; only S.510 confirmed as his",
+        "Ballotpedia: nothing on the subject",
+        "campaign/personal site https://www.peterdurant.com: not his (photographer portfolio); nothing on the subject",
+        "not reviewed: official Senate page and news search; web search budget was exhausted, so no own-words search through news was possible",
+        "not reviewed: 193rd-session (2023-2024) sponsorships and floor remarks"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:14:26.817Z",
+      "by": "source-collector"
+    }
+  ]
+}

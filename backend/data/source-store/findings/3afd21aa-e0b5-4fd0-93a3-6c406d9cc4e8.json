@@ -1,0 +1,65 @@
+{
+  "politician_id": "3afd21aa-e0b5-4fd0-93a3-6c406d9cc4e8",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Persinger'), linked to Holt Persinger (district 119) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms he is on the 2026-11-03 general ballot for House District 119; he has not filled out the 2026 candidate survey)",
+        "Georgia House media office page for Rep. Persinger (nothing on the subject)",
+        "blocked: https://www.legis.ga.gov (loads by script; no roll call reachable)",
+        "web news searches on name plus subject words (no election-procedure bill or statement of his found; a foreign-funded political activity vote seen in a search summary was not fetched and is off the five positions)",
+        "SB 202 2021 vote: not applicable, took office 2023-03-06"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:49:46.983Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

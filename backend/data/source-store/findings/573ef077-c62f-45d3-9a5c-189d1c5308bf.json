@@ -1,0 +1,204 @@
+{
+  "politician_id": "573ef077-c62f-45d3-9a5c-189d1c5308bf",
+  "findings": [
+    {
+      "id": "80f316d441bacd17f6c9bced7e4b0cc9d4de694f657c7debfd130ac965388c3f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: nay (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "134727cc8d9823e1421e94f84bfb8795021870e83bd3dfee3d7b3409d2ed4aae",
+      "kind": "own-words",
+      "url": "https://web.archive.org/web/2016/https://www.theroanokestar.com/2015/05/12/2-gop-lawmakers-help-mcauliffe-kill-voter-id-bill",
+      "date": "2015-05-12",
+      "date_precision": "day",
+      "passage": "“A picture of someone’s photo doesn’t get compared with anything (at the election office.) It could be a picture of anyone,” Bloxom, of Mappsville, told Watchdog.org.",
+      "note": "Quoted by the Roanoke Star (from Watchdog.org) on a bill to require a photo copy with mail-in absentee ballot requests. Date taken from the article URL. In the same article he is quoted as saying “You need a way to double-check,” and the writer says he suggested sharing the DMV database.",
+      "subjects": [
+        "ID with a mail or absentee ballot or request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "916a918aebf47a1e787b2ec4775ec749062dff69e89ea0704f57005be5538696",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV1975+HB1318",
+      "date": "2015-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Passage of HB 1318, absentee ballot applications must include a copy of photo ID (62-Y 34-N)",
+      "note": "HB 1318 required a copy of an accepted ID with a mail or fax absentee ballot application, with exemptions for military, overseas and disabled voters. He is on the nay list.",
+      "subjects": [
+        "ID with a mail or absentee ballot or request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4af7127f9d2f85179f5c8d95add52c147b5f6d0db43daba69de7e4964d002fd",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?151+vot+HV2930+HB1318",
+      "date": "2015-04-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "House vote on the governor's veto of HB 1318 (record titled 'sustain governor's veto', 65-Y 34-N, 66 needed to override)",
+      "note": "A yea was a vote to override the veto; the override failed. He is on the nay list.",
+      "subjects": [
+        "ID with a mail or absentee ballot or request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dff43c14e83270ac9cc7ca0ebd39a0b7233c57e359b76a524a302b149a19e97d",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+H18V0028+HB0046",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "yea",
+      "motion": "House Privileges and Elections committee, report HB 46 with substitute (12-Y 10-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. He is on the yea list.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4171f18660ae769a1d47cb89999254478e816007505b2abb33752aa915fceca4",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "yea",
+      "motion": "House passage of HB 46 (52-Y 48-N)",
+      "note": "Elections; identification containing a photograph required (HB 46, 2022): requires showing photo ID to vote and replaces the sworn-statement option with a provisional ballot. He is on the yea list; the bill then stalled in a Senate committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:26:43.481Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Roanoke Star article (https://www.theroanokestar.com/2015/05/12/2-gop-lawmakers-help-mcauliffe-kill-voter-id-bill): blocked directly, read through the Internet Archive copy",
+        "Election Administration subcommittee page lists him as a member (https://house.vga.virginia.gov/subcommittees/H18001)",
+        "campaign site: not located",
+        "On the Record (0 appearances found)",
+        "Virginia legacy LIS bill, patron and vote pages for 2013 to 2024 sessions (https://lis.virginia.gov/cgi-bin/legp604.exe)",
+        "House member list page (https://house.vga.virginia.gov/members)",
+        "House subcommittee agenda (https://house.vga.virginia.gov/subcommittees/H18002/agendas/5384)",
+        "blocked: the 2025 and 2026 bill pages on the new LIS site (the page needs scripts), so 2025 and 2026 sponsorships and votes were not reached",
+        "blocked: https://legiscan.com/VA/votes/HB1318/2015 (bot check)",
+        "blocked: https://www.vpap.org/legislators/340307-phillip-scott/voting/?page=2",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legilist.com (403)",
+        "blocked: https://open.pluralpolicy.com/va/bills/2025/HB2434 (404)",
+        "web searches on name plus voter ID, citizenship and election words; no own-words statements on the subject found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T16:26:43.481Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "politician_id": "b46a6774-2d85-4750-813a-6d4ef2eefb5b",
+  "findings": [
+    {
+      "id": "8c52e2f21620740a5998e34c087327018bf818b1e03ab716004ea2940b4fa80a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S505/Senate/Bill/Text",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-505-2025",
+      "act": "sponsor",
+      "note": "She is the lead presenter of S.505, An Act establishing same day voter registration. The bill would let an eligible person register in person at the polling place or an early voting site by showing proof of residence (a valid photo ID, or a document such as a utility bill, bank statement or lease) and signing a citizenship oath under penalty of perjury. A person with no proof of residence may cast a provisional ballot and must bring proof within 2 business days after a primary or 6 days after an election. Date is when the Senate sent it to the Election Laws committee. The Election Laws committee reported it favorably on 2025-11-24 and it was referred to Senate Ways and Means.",
+      "subjects": [
+        "proof of residence to register",
+        "photo ID or non-photo documents at same-day registration",
+        "provisional ballot without proof of residence",
+        "citizenship oath to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:10:40.700Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Cynthia_Creem names her as Massachusetts State Senate Norfolk and Middlesex incumbent, advanced from the September 1, 2026 primary, on the November 3, 2026 ballot",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/CSC0 (names her, Majority Leader, Norfolk and Middlesex)",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov bill search for voter identification https://malegislature.gov/Bills/194/Search?searchTerms=voter%20identification: not reviewed (page returned no readable text)",
+        "malegislature.gov sponsorship page https://malegislature.gov/Legislators/Profile/CSC0/Sponsorship: not reviewed (no readable text)",
+        "campaign site https://www.cynthiacreem.com: blocked (no readable content)",
+        "news search: not reviewed (shared web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:43.182Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to register",
+        "proof of residence for same-day registration",
+        "provisional ballot for voters without documents",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://malegislature.gov/Legislators/Profile/CSC0 shows her as a current state senator, Majority Leader, 194th General Court",
+        "On the Record (0 appearances)",
+        "malegislature.gov bill pages: S.505 (same-day registration) found; S.503 and S.504 listed on her profile, not on the subject",
+        "malegislature.gov search for a voter ID bill she sponsored: none found; one search result was a 2011 House voter ID bill with other sponsors",
+        "Wikipedia (lead only): says she led the 2018 automatic registration act H.4671 with fraud safeguards; not cited as a source",
+        "Ballotpedia https://ballotpedia.org/Cynthia_Creem: fetch returned no usable content",
+        "her official Senate page and a press-release search: no statement of her own words on voter ID found in two web searches",
+        "not reviewed: the 2018 H.4671 roll-call vote record"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:10:40.700Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

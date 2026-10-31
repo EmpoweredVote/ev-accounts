@@ -1,0 +1,120 @@
+{
+  "politician_id": "b7612f49-c914-4ea7-a6da-559d71f313c2",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "a77a2597937fb130024efe230c32d69b15237a6a011316b97716074565ba65f2",
+      "kind": "own-words",
+      "url": "https://www.derektranforcongress.com/news/moms-demand-action-awards-congressman-derek-tran-2026-gun-sense-candidate-distinction",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“As an Army Veteran and a father of three kids, I have advocated for gun violence prevention measures to keep our communities safe. These common-sense strategies, including universal background checks and secure firearm storage, have strong bipartisan support among voters and in Congress. I’m proud to be in this fight with Moms Demand Action, and I’m committed to making sure we all feel safe in our communities.”",
+      "note": "Quote in a 2026 campaign release on receiving a gun violence prevention group's candidate distinction; release date not shown on the page text.",
+      "subjects": [
+        "background checks",
+        "secure firearm storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5df607dd7b7757753e6bc7c13fa01861f1d21c0c3e7302f1a64bf1659fdab95",
+      "kind": "own-words",
+      "url": "https://www.derektranforcongress.com/news/derek-responds-to-georgia-school-shooting",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "In Congress, I will fight every day for common-sense solutions to end the epidemic of gun violence.",
+      "note": "Statement as a candidate after the Apalachee High School shooting (page says 'today'; shooting was 4 Sept 2024). No specific policy named in his quote.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "universal background checks",
+        "secure firearm storage",
+        "gun violence prevention",
+        "minimum age for semi-automatic weapons"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site news list https://www.derektranforcongress.com/news/ (names him Congressman, Democratic nominee for CA-45 2026 re-election)",
+        "not reviewed: https://tran.house.gov/media/press-releases (search page returned no list)",
+        "blocked: https://derektran.house.gov (host not found)",
+        "news search: one search",
+        "not reviewed: congress.gov, Ballotpedia (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

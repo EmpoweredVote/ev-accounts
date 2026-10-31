@@ -1,0 +1,102 @@
+{
+  "politician_id": "70920806-a146-4dc3-8cc7-4566f9caf903",
+  "findings": [
+    {
+      "id": "9ff688b88c44c9d03efb73dc5607a02e6107f0dabbcd2d3ae428c1d1b43aab2f",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "third reading and adoption of SJR 37, constitutional amendment clarifying that a voter must be a United States citizen (Record 2196, 102 Yeas, 14 Nays, 22 Present not voting)",
+      "note": "Shown as Present, not voting on the House vote adopting SJR 37.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7774d4e874fe33ba16162aada07a9bc6e530b9b4649bc8bf39a4421add6b1c0",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB392",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-392-2025",
+      "act": "sponsor",
+      "note": "Listed as a coauthor of HB 392, relating to the provision of the reason for rejecting a voter registration application. The bill was reported out of committee 9 to 0. The date is the last-action date on the bill page, not the date he was added.",
+      "subjects": [
+        "voter registration process (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:16:40.259Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "voter registration rejection notices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page (confirms Texas House District 114 and the 2026-11-03 general ballot; bill table did not load)",
+        "Texas Legislature Online histories for HB 392 (89R), HB 5337, SB 16, HB 892, HB 304, HB 1263, HB 1312, HB 219, HB 2245, HB 2332, HB 1670, SB 964, SB 309",
+        "Texas House Journal day 62 (2025-05-12) roll call for SJR 37",
+        "blocked: https://app.legiplex.com/profile/john-bryant-49/legislation (403)",
+        "official site and campaign site: no page on the subject found",
+        "news search by name plus subject words: no own-words quote found",
+        "not reviewed: Texas House floor video"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:16:40.259Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "gun permits",
+        "assault weapon sales",
+        "Second Amendment statements",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity and 2026 ballot: https://theballotbrief.com/candidate/john-bryant-tx (Texas House District 114, on the November 3, 2026 ballot per that page); not an own-words source",
+        "campaign site https://www.johnbryantfortexas.com/ , /issues and /why-im-running: no gun text found in the page text",
+        "third-party summaries not saved because they are not his own words: https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-114-post-114/candidates/john-bryant-1 and The Ballot Brief",
+        "blocked: https://voterguide.dallasnews.com/2024-general/candidates/4388 (no readable text)",
+        "Texas House member page https://house.texas.gov/members/114 : nothing on the subject",
+        "Ballotpedia not reviewed",
+        "Texas bill pages: authored-bill list not reviewed for this member (member code not confirmed)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

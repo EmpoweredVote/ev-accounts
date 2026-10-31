@@ -1,0 +1,247 @@
+{
+  "politician_id": "382d9814-389e-4205-b48c-67f3b9f7b332",
+  "findings": [
+    {
+      "id": "6e2c669c9ac0a94aaf9ccd0c6b65fbebc5927a1ccd220c6a445114e8926c10e7",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB04902I.htm",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4902-2025",
+      "act": "author",
+      "note": "Lowe is the author. As filed, the bill would have the Secretary of State write rules requiring proof of citizenship to register to vote, to the extent federal law permits, and have registrars send mail applicants a notice of what proof they need. It also lets officials check voter addresses against real-estate records. Referred to the Elections committee on 2025-04-03; no later action shown.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ebc5e348ebbf8e30bba0dc51d3ba547e82e9dce3948250f1a56367fa1cadbe83",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB05101I.htm",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5101-2025",
+      "act": "author",
+      "note": "Lowe is the author. As filed, the bill would make voter registration certificates expire after each presidential election (November 30 following the next presidential election) instead of on January 1 of an even-numbered year, and adds a civil penalty. Referred to the Elections committee 2025-04-07; no later action shown.",
+      "subjects": [
+        "voter-roll maintenance",
+        "voter registration expiry"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68e4e2fbd79a6764615facd37d63b2f293f3fa669fc7cadb3738bfecf0f8ebff",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025-03-03",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "other",
+      "motion": "coauthor of HJR 161, constitutional amendment adding non-citizens to the classes of persons not allowed to vote (bill filed 2025-03-03; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor. The measure proposed a constitutional amendment adding individuals who are not United States citizens to the classes of persons not allowed to vote. It was reported favorably by the House Elections committee on 2025-04-28 and laid on the table subject to call on 2025-05-09.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f44679d25199c31bcfaf363cfd9f47e70e636b5fc786a703d9bcfd028b71564e",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/David_Lowe_(Texas)",
+      "date": "2024-01",
+      "date_precision": "month",
+      "passage": "Also, the voter rolls are completely outdated. David supports expiring voter registrations. Only living Texans should be voting in Texas.",
+      "note": "From his answers in a 2024 candidate survey as published on Ballotpedia (written in the third person in his name). He backs expiring voter registrations because of outdated rolls. The same answer says: Without free and fair elections, we don't have a representative form of government. It's time to reform our election laws and procedures.",
+      "subjects": [
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37a0bb63924a689608cdc48baa1aeea83a608b3f702d479c944d3747fc95d9a6",
+      "kind": "own-words",
+      "url": "https://www.davidlowefortexas.com/issues",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "With decades of elections seeing occurrences of illegal voting, invalid votes are being counted.",
+      "note": "Campaign site issues page, undated (it refers to the 88th session as past, so 2023-2024). Under the heading ELECTION INTEGRITY it continues: Every illegal, fraudulent, and invalid vote must be stopped, and every legal vote must be vehemently protected. No mention of ID or citizenship proof on this page.",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "554061485c8c4785584cfe93ecaf2a370933bb379fafd34bf4878319aebef2d4",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB4962",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4962-2025",
+      "act": "other",
+      "motion": "coauthor of HB 4962, disclosure of citizenship of a candidate for public office (filed 2025-03-13; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a bill requiring disclosure of a candidate's citizenship. Referred to the Elections committee 2025-04-03; no later action shown.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf7f115aacf29eac22a3d610b5967a37a4eee0d53c68a17e1e118fea5ba75f3d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5138",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5138-2025",
+      "act": "other",
+      "motion": "coauthor of HB 5138, attorney general duty to prosecute election-law offenses (filed 2025-03-13; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a bill on the attorney general's duty to prosecute criminal offenses under the state's election laws. The last action shown is the Senate appointing conferees on 2025-05-29.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d744016b8f302f08919915d1c2a2436bd03184b94c174042da7fea7e466fa861",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HJR189",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "TX-HJR-189-2025",
+      "act": "other",
+      "motion": "coauthor of HJR 189, constitutional amendment on attorney general authority to prosecute election-law offenses (filed 2025-03-12; date Lowe was added not shown)",
+      "note": "Lowe is listed as a coauthor of a proposed constitutional amendment specifying the attorney general's authority to prosecute election-law offenses. Referred to State Affairs 2025-04-02; no later action shown.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:07:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.523Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll maintenance",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: Ballotpedia page shows David Lowe, Texas House District 91, term ends 2027, on the 2026-11-03 general election ballot",
+        "On the Record (0 appearances; extract-otr run, nothing)",
+        "campaign site davidlowefortexas.com (home, issues, meet pages read)",
+        "official House page house.texas.gov/members/4643 (links to bill lists)",
+        "Texas Legislature Online author, coauthor and sponsor lists for the 89th session, plus bill histories and introduced texts of HB 4902, HB 5101, HB 4652, HB 4152, HJR 161, HB 4962, HB 1661",
+        "Ballotpedia (2024 candidate survey answers read)",
+        "web search x4 (name plus subject words; bill HB 4902); results were bill trackers, no direct quotes of him on voter ID",
+        "nothing on the subject: Fort Worth Report page ?p=97943 (no mention of him)",
+        "blocked: https://voterguide.dallasnews.com/2022-primary/candidates/2387 (404 / dead host)",
+        "blocked: https://www.texaspolicyresearch.com/bills/89th-legislature-hb-4902/ (403)",
+        "not reviewed: campaign YouTube channel and X account (video/social, not readable)",
+        "no Lowe sponsorship found on photo ID at the polls or mail-ballot ID bills"
+      ],
+      "found": 8,
+      "at": "2026-10-28T15:07:21.050Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.523Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

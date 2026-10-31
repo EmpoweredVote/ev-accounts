@@ -1,0 +1,77 @@
+{
+  "politician_id": "a6eb79f8-c7e7-41b0-8a1c-baf85e7cd22c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Mary_Keefe names her as 15th Worcester representative, on the Nov 3, 2026 general ballot after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/MSK1 (sponsored bills listed cover other topics; nothing on the subject; full bill search not run)",
+        "Ballotpedia page fetched; no voter ID or citizenship content seen",
+        "not reviewed: official site and campaign site (not fetched)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:58.769Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to H.4359",
+        "mail and absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/MSK1 with sponsored and co-sponsored bill lists for the 193rd and 194th courts: no bill on the subject",
+        "Ballotpedia https://ballotpedia.org/Mary_S._Keefe (on the 2026 general-election ballot, 15th Worcester): nothing on the subject",
+        "Spectrum News 2026 election piece https://spectrumnews1.com/ma/worcester/news/2026/08/26/mary-keefe-election-15th-worcester-massachusetts: seen in search only, not reviewed",
+        "two news searches on name plus voter ID words: nothing on the subject",
+        "campaign site: not reviewed",
+        "already on file and not re-collected: nay on amendment 7 to H.4359 (2022-01-27)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:50:11.793Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

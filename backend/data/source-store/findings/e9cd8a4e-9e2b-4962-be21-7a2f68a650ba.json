@@ -1,0 +1,77 @@
+{
+  "politician_id": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba",
+  "findings": [
+    {
+      "id": "e52498497ffbbc04b2a93b6cec030b37eb3226b4283896b316302f4d5a1f7434",
+      "kind": "own-words",
+      "url": "https://philforvirginia.com/issues/",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Protect the fundamental right to vote and stand up against any efforts that create barriers to the ballot box;",
+      "note": "Campaign issues page, undated, listed under a goal on a more inclusive Virginia. General voting-access language; does not mention ID or citizenship. Quote as returned by the fetch tool.",
+      "subjects": [
+        "election integrity laws in general",
+        "barriers to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:31:56.278Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "affidavit for voters without ID",
+        "mail/absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found by extract-otr)",
+        "Ballotpedia: blocked/empty on fetch (the fetch tool returned no page text); a browser-style curl retry was refused by the permission system and not retried",
+        "LIS, legiscan, legiplex: blocked or not reachable, not retried",
+        "web searches on name plus voter ID / election words: nothing on the subject from this person's own words except as listed",
+        "campaign site https://philforvirginia.com/ (home, issues, recent-news pages fetched)",
+        "fetch tool summarised the campaign issues page; quote is as returned by the tool, not checked against raw HTML",
+        "searched Hernandez election bills: listed on voter-registration/list-maintenance bills (HB 1177 2024, HB 319 2026) but not verified on bill pages (LIS blocked), so not saved"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:31:56.278Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "weapons in hospitals",
+        "gun safety general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign bio https://philforvirginia.com/bio/ (nothing on the subject; a search-result quote about 'common sense gun safety reforms' could not be found on the pages I could read)",
+        "Giffords endorsement https://giffords.org/candidates/phil-hernandez (group's description only, no quotes of him)",
+        "blocked: https://www.vpap.org/legislators/338205-phil-hernandez/ (403)",
+        "blocked: https://origin.vpap.org/legislators/338205-phil-hernandez (TLS handshake failure)",
+        "not reviewed: Virginia LIS pages (script-rendered); lead only: a search summary listed him as chief patron of HB229 (weapons possession in hospitals providing mental health services), year and status unverified",
+        "Ballotpedia not reached"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

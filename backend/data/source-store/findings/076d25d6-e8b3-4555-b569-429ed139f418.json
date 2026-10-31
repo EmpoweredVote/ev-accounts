@@ -1,0 +1,312 @@
+{
+  "politician_id": "076d25d6-e8b3-4555-b569-429ed139f418",
+  "findings": [
+    {
+      "id": "e363f21a141185584a62bf1f5861ef16063cf9e320bac12284d0cda708cbe163",
+      "kind": "own-words",
+      "url": "https://repheffley.com/News/32916/Latest-News/Heffley-Reacts-to-Automatic-Voter-Registration-Announcement-",
+      "date": "2023-09-20",
+      "date_precision": "day",
+      "passage": "Voters in Carbon County, like all Pennsylvania voters, want fair and transparent elections. We want to be certain that all legal, registered voters are participating. Unfortunately, the governor’s action only adds more questions and uncertainty to an election process that is broken. Until we can say with greater certainty that all votes cast are legal votes, the discussion should focus on a holistic review of elections in the Commonwealth rather than politicians like Gov. Shapiro putting their partisan desires first.",
+      "note": "Statement issued in his name on the governor's automatic voter registration plan: says election process is broken and calls for review so that all votes cast are legal votes. No ID requirement is named.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:28.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee3d23da95004e535007971e3f0680c3001ca92b591dfa762018e677b4415ccf",
+      "kind": "own-words",
+      "url": "https://repheffley.com/News/32916/Latest-News/Heffley-Reacts-to-Automatic-Voter-Registration-Announcement-",
+      "date": "2023-09-20",
+      "date_precision": "day",
+      "passage": "In September 2020, the Pennsylvania Supreme Court denied the Commonwealth Court the opportunity to hear and rule on election matters. In an unprecedented act of judicial activism, the Supreme Court rewrote key portions of the PA Election Code that pushed more uncertainty into the process, including eliminating signature verification and introducing unsecured drop boxes rather than keep important elements for election integrity.",
+      "note": "Same statement: criticises a 2020 state Supreme Court ruling for removing signature verification on mail ballots and allowing drop boxes.",
+      "subjects": [
+        "ID or signature check with mail ballot",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:28.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5c27e062bb44b090a7c4c533d2b702075848245036dc75b5c849de28947d2c8",
+      "kind": "own-words",
+      "url": "https://repheffley.com/News/36213/Latest-News/Heffley--Partisan-Election-Bill-Undermines-Trust--Burdens-Counties",
+      "date": "2025-05-16",
+      "date_precision": "day",
+      "passage": "This legislation does not secure elections; it makes them more uncertain. Voters deserve confidence that the system is fair, secure and transparent,",
+      "note": "Press release in his name on his no vote on HB 1396 (election code changes incl. permanent mail voting, drop boxes, removal of signature and date requirement). Quote ends with a comma in the source because the sentence continues with the attribution. No ID requirement is named.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot signature and date requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:01:28.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('HEFFLEY'), linked to Doyle Heffley (district 122) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Heffley'), linked to Doyle Heffley (district 122) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Heffley'), linked to Doyle Heffley (district 122) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.693Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Heffley'), linked to Doyle Heffley (district 122) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Heffley'), linked to Doyle Heffley (district 122) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.456Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('HEFFLEY') on the official bill page; linked to Doyle Heffley via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('HEFFLEY') on the official bill page; linked to Doyle Heffley via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('HEFFLEY'), linked to Doyle Heffley (district 122) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register",
+        "what happens to a voter with no ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://repheffley.com press releases (first page) and two election releases saved",
+        "web searches on his name plus voter ID: no voter ID statement found",
+        "Ballotpedia: not reviewed",
+        "2026 ballot status not confirmed from a page I fetched; official site shows him as the sitting 122nd District member",
+        "floor vote on HB 1396 left to the separate roll-call linking"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:01:28.810Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.693Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.456Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

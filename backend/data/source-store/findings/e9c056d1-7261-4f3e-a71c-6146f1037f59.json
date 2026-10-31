@@ -1,0 +1,275 @@
+{
+  "politician_id": "e9c056d1-7261-4f3e-a71c-6146f1037f59",
+  "findings": [
+    {
+      "id": "09cef2d4fe9fc82030c40a3bac51418317bc8388da0811b285af5ac9cafdcd4f",
+      "kind": "own-words",
+      "url": "https://senatorschwank.com/enews/2012_3_Schwank.htm",
+      "date": "2012-03",
+      "date_precision": "month",
+      "passage": "I voted against this measure for several reasons. This bill, which will likely become law, seeks to remedy a problem that simply does not exist in Pennsylvania. Voter fraud incidents in the commonwealth are isolated and rare.",
+      "note": "March 2012 newsletter under her name about the Senate-passed photo ID bill that requires an approved photo ID each time a voter goes to the polls. She says she voted against it, and gives the view that fraud is rare.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:47.499Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff2e84d5075c86f84056d29b163365974bf32c26f9ce5b3561a6c67d6cb5b7e1",
+      "kind": "own-words",
+      "url": "https://senatorschwank.com/enews/2012_3_Schwank.htm",
+      "date": "2012-03",
+      "date_precision": "month",
+      "passage": "At a time when we are facing a budget deficit and subsequent proposed state budget cuts to important programs and services, we simply cannot afford a voter ID law.",
+      "note": "Same newsletter. Cost argument: estimated at least $4 million to help people without state photo ID get one.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:47.499Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b70923b57ebd37466cd604721a509a6012846ae88591cb658dc5727135429574",
+      "kind": "own-words",
+      "url": "https://senatorschwank.com/enews/2012_3_Schwank.htm",
+      "date": "2012-03",
+      "date_precision": "month",
+      "passage": "Voting is a right. It should not be an endurance test.",
+      "note": "Closing lines of the same newsletter, after describing an elderly voter who would have had to cast a provisional ballot without photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:47.499Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc392fd04fd02b806b261baf6d2ffb3aad0b4d8d0488bb229ee90e826c147122",
+      "kind": "own-words",
+      "url": "https://senatorschwank.com/enews/2012_4_23_Schwank_voterID.htm",
+      "date": "2012-04-23",
+      "date_precision": "day",
+      "passage": "But starting this November, every voter will be required to show a valid form of identification in order to vote. If you do not have a valid form of identification, the state will provide one to you at no cost.",
+      "note": "Constituent newsletter (dated from the file name and the reference to the next day's primary) explaining the new law and offering her staff's help in getting a free state ID. It lists acceptable IDs and how to apply for a free ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:47.499Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d015cb73049c94fe9ea7c7c64d40e9c4650d867e26b1595ca9f95db81c35b51",
+      "kind": "own-words",
+      "url": "https://senatorschwank.com/?p=2030",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "“The judge’s decision was a fair ruling, in light of the confusion about the law among voters and administration officials alike over the past few months,” Schwank said.",
+      "note": "News release on the Commonwealth Court injunction that let voters vote without photo ID in the November 2012 election.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:10:47.499Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('SCHWANK'), linked to Judith L. Schwank (district 11) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Schwank'), linked to Judith L. Schwank (district 11) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43b2a92555fb2bda51da147426ba813860daa195cb428422b39760c676a796d3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/billinfo.cfm?syear=2021&sInd=0&body=S&type=B&bn=106",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1279 (House amended, Dec 14, 2021) read for text. PN 1857 (final, Senate amended July 7, 2022) NOT read: archive copy returned 404.",
+      "note": "Named as co sponsor ('SCHWANK') on the official bill page; linked to Judith L. Schwank via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Schwank'), linked to Judith L. Schwank (district 11) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Schwank'), linked to Judith L. Schwank (district 11) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.464Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "provisional ballot without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://senatorschwank.com (home page confirms State Senator, 11th District, Berks County; Vote 2026 page links only to registration and mail-ballot application help; nothing on proof of citizenship)",
+        "official site older newsletters and news posts (2 newsletters, 2 news posts on voter ID, 2012)",
+        "blocked: https://ballotpedia.org/Judy_Schwank (empty page returned)",
+        "two web searches on her name plus voter ID, SAVE Act, proof of citizenship: only 2012 items; nothing newer on the subject",
+        "legislature bill pages for sponsorships: not searched, linked separately"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:10:47.499Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.715Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.464Z",
+      "by": "identity-pa-2026-10-28b"
+    }
+  ]
+}

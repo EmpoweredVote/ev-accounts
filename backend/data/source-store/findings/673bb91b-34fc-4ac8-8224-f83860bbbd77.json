@@ -1,0 +1,375 @@
+{
+  "politician_id": "673bb91b-34fc-4ac8-8224-f83860bbbd77",
+  "findings": [
+    {
+      "id": "c61ddb490a93e9e5359dccbc13441b30fe262aa07f2a44901bdf2930956ccc12",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "yea",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: yea (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "07a3d32488c8007ec33a4a0d06d9077fcb9b15245a4c32884f23ea6588353531",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-disappointed-to-see-governor-veto-his-legislation-to-protect-election-integrity",
+      "date": "2020-10-21",
+      "date_precision": "day",
+      "passage": "“My bill would have made it a felony to knowingly submit another person’s name or personal identity information on a ballot application or attempt to obtain multiple ballots.",
+      "note": "Senate caucus statement in his name, responding to the governor's veto of his bills on false identity information on absentee ballot applications. He describes the bill's purpose.",
+      "subjects": [
+        "mail-ballot application identity fraud",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f1c212ce227459700b1c541d2f11ddb9e907cfcb09d2952538771879131fc0e",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-disappointed-to-see-governor-veto-his-legislation-to-protect-election-integrity",
+      "date": "2020-10-21",
+      "date_precision": "day",
+      "passage": "“I was very surprised to see the governor veto legislation that would have given Michiganders confidence in the security of their votes as we approach this unusual election.",
+      "note": "Same statement; he says the vetoed bill would have raised confidence in vote security.",
+      "subjects": [
+        "election integrity laws in general",
+        "mail-ballot application identity fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bfc74c9ad097ac66c211cdcc7c0fb8a5bf3ad627bb51424d04dbe07eafc63c9",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-legislation-would-increase-penalties-for-election-fraud",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "passage": "“With the secretary of state’s recent decision to mail absentee ballot request forms to every name on their lists, we need to increase efforts that ensure our elections are not compromised.”",
+      "note": "Quoted in a Senate caucus release on the day the Senate passed his bills (SB 977 and 978) making it a felony to submit another person's identity information on a ballot application. He ties the bills to the mass mailing of absentee ballot request forms.",
+      "subjects": [
+        "mail-ballot application identity fraud",
+        "mass mailing of absentee applications",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "faea3b52a503b7859f18a38283235ab37680e9ccc09f2e1f58649c14920ed98a",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-legislation-would-increase-penalties-for-election-fraud",
+      "date": "2020-06-25",
+      "date_precision": "day",
+      "passage": "“This is a good step toward decreasing illegal activity and protecting the integrity and security of our votes.",
+      "note": "Same release; his comment on SB 977 and 978.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78817b319aeb8e988d3610314f9fea67bc1818876658cf928d0e52c7e4cc1921",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-issues-statement-on-house-and-senate-oversight-committee-action-on-elections-integrity",
+      "date": "2020-11-07",
+      "date_precision": "day",
+      "passage": "“Voting is the foundation of our system of government, and people need to have confidence in the results and that their elections are being conducted honestly.",
+      "note": "Statement issued after oversight committees voted to subpoena election records. General election-integrity comment; does not name ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ef0d462006192f79bd5cb9bdd0c2ca91c2af2110ce01e6fcb6b6e1237dc5a61",
+      "kind": "own-words",
+      "url": "https://www.misenategop.com/daley-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "passage": "“It is our duty to restore faith in the election process and I believe these bills will spur a meaningful change in our state.”",
+      "note": "His quote in a release about an election reform package that, per the release, includes photo identification for in-person voting and with an absentee ballot application.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with absentee ballot application",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e007dbacd2dda9fd224465e06930b1e026c3cd5918fe753c92418490b6c59e4",
+      "kind": "record",
+      "url": "https://www.misenategop.com/daley-sponsors-bills-as-part-of-comprehensive-election-reform-package",
+      "date": "2021-03-24",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "2021 election reform package of over 30 bills, sponsored/introduced with other senators, referred to the Senate Elections Committee",
+      "note": "Release says he joined other lawmakers in introducing the package. The release says it includes requiring photo identification for in-person voting and when submitting an absentee ballot application, cleaning up outdated voter lists, and barring mass mailing of absentee applications. The release does not list which of the bills carry his name.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with absentee ballot application",
+        "voter-roll cleanup"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:48:27.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1301a6193a46e5209ab1f887aefbe5a0a908f3d01d7b794c65e1c294166eac23",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-14-062.htm",
+      "date": "2012-06-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5061-2011",
+      "act": "yea",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 471 Yeas 65 Nays 45",
+      "note": "House roll call as printed ('Daley'), linked to Kevin Daley (district 82) via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd95ddee2061d998986ef2d99ef24b31eafcfa281a17f58b157c88e6d3443a8c",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0285",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-285-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 285 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Kevin Daley (District 31)') on the official bill page; linked to Kevin Daley via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9077f27a3bf1090cb375a434cfd87abf2d1f22d14d51ec193bcc505232620c1a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators Barrett, Bumstead, Horn, Theis, Stama\"",
+      "note": "Named as co sponsor ('Kevin Daley (District 31)') on the official bill page; linked to Kevin Daley via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b80373e37268f784846b31b0ad107ac3e1160f61843d3dcd9e12f52b9b7bc81",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "yea",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Daley'), linked to Kevin Daley (district 31) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34da1f291657fe7b1bf04f306ad2c44d27e2528a9bc53ec76dfe94066fe35cbb",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"state of michigan 101st Legislature Regular session of 2021 Introduced by Senators VanderWall, LaSata, Horn, Theis, Stam\"",
+      "note": "Named as co sponsor ('Kevin Daley (District 31)') on the official bill page; linked to Kevin Daley via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0e183457158bfa0c25a4b302257044c90eb49033f45c9d9973cb01f843bbcf2",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Daley'), linked to Kevin Daley (district 26) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "179cd369fa4082a06daae230bb2f408d2c089b1510f164e87cac8d10d0f0cf44",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "nay",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Daley'), linked to Kevin Daley (district 26) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter-roll checks",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; script found no appearances)",
+        "personal Senate site https://www.senatorkevindaley.com/ (fetched; confirms he is the sitting senator for the 26th Senate District; no subject content on the front page)",
+        "Senate caucus site press releases (fetched 5 releases from 2020 and 2021 on election integrity; saved)",
+        "two more caucus-site releases seen only as search leads, not fetched, not reviewed: https://www.misenategop.com/daley-supports-resolution-calling-on-sos-benson-to-review-unlock-michigan-signatures",
+        "blocked: https://ballotpedia.org/Kevin_Daley",
+        "nothing on the subject found in 2025 or 2026 releases through search (proof of citizenship, SAVE Act); caucus site list for 2025-26 not paged through",
+        "three web searches on his name plus voter ID, citizenship, election integrity"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:48:27.061Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:55:46.335Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

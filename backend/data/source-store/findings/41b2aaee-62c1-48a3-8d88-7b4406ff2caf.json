@@ -1,0 +1,69 @@
+{
+  "politician_id": "41b2aaee-62c1-48a3-8d88-7b4406ff2caf",
+  "findings": [
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Lupton'), linked to Karen Lupton (district 83) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.417Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voter-roll challenges"
+      ],
+      "places": [
+        "in scope: Georgia House District 83 incumbent on the 2026 general-election ballot (https://ballotpedia.org/Karen_Lupton)",
+        "On the Record (0 meetings)",
+        "campaign site https://karenlupton.com/ga/ (nothing on the subject; the Voter Guide link content not reviewed)",
+        "Ballotpedia (nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "Branch voter-guide profile (only a general line about voting rights and gerrymandering; not on ID or citizenship)",
+        "blocked: https://www.legis.ga.gov/members/house/5035?session=1033 (page loads by script; no content returned)",
+        "not reviewed: member-by-member House roll calls for SB 189 (2024) and HB 397 (2025); not reachable through search or the legislature site. She took office in 2023, so no SB 202 (2021) vote exists",
+        "news search on her name plus election words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:46:41.350Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.417Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

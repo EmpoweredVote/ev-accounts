@@ -1,0 +1,30 @@
+{
+  "politician_id": "6f34c836-3166-408f-9e40-132f6b59377d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site repkozak.com home page and press-release list page 1 (about 20 items): nothing on the subject",
+        "official site video list (3 videos): nothing on the subject",
+        "House caucus swearing-in release (https://webcms.pahousegop.com/News/35376/Latest-News/Kozak-Sworn-in-to-Represent-14th-Legislative-District?SiteID=1): confirms him as 14th District member; nothing on the subject",
+        "PoliticsPA 2023 campaign-announcement article (https://politicspa.com/hd-14-kozak-targets-beaver-county-seat/128005/): confirms who he is; nothing on the subject",
+        "news searches on name plus subject words (two): nothing on the subject",
+        "not reviewed: Ballotpedia (not fetched for this person), bill pages and roll calls (linked separately by brief)",
+        "could not confirm a 2026 ballot line from a fetched page; he is a sitting member"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:05:57.986Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

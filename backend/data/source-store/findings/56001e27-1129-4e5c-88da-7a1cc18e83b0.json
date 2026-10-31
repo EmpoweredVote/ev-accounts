@@ -1,0 +1,61 @@
+{
+  "politician_id": "56001e27-1129-4e5c-88da-7a1cc18e83b0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot or request",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In office: House page showing the 75th District seat, member since 2026-01-14 (https://house.vga.virginia.gov/members/H0391); no elections committee or bill list shown there",
+        "VPM candidate interview pages (https://www.vpm.org/elections/2025-10-23/election-2025-hd-75-carrie-coyner-lindsey-dougherty-chesterfield-hopewell, https://www.vpm.org/generalassembly/2026-01-05/lindsey-dougherty-house-of-delegates-hd75-coyner-chesterfield-housing): nothing on the subject",
+        "Wikipedia page: nothing on the subject",
+        "Voting Rights subcommittee agenda 2026-02-06: she is not a member; the photo ID bill HB 1131 died there",
+        "On the Record (0 appearances found)",
+        "Virginia legacy LIS bill, patron and vote pages for 2013 to 2024 sessions (https://lis.virginia.gov/cgi-bin/legp604.exe)",
+        "House member list page (https://house.vga.virginia.gov/members)",
+        "House subcommittee agenda (https://house.vga.virginia.gov/subcommittees/H18002/agendas/5384)",
+        "blocked: the 2025 and 2026 bill pages on the new LIS site (the page needs scripts), so 2025 and 2026 sponsorships and votes were not reached",
+        "blocked: https://legiscan.com/VA/votes/HB1318/2015 (bot check)",
+        "blocked: https://www.vpap.org/legislators/340307-phillip-scott/voting/?page=2",
+        "blocked: https://app.legiplex.com (403)",
+        "blocked: https://legilist.com (403)",
+        "blocked: https://open.pluralpolicy.com/va/bills/2025/HB2434 (404)",
+        "web searches on name plus voter ID, citizenship and election words; no own-words statements on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:43.481Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault-style weapons",
+        "gun safety laws",
+        "sponsorships on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia https://en.wikipedia.org/wiki/Lindsey_Dougherty (confirms 75th District delegate since 2026-01-14; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Lindsey_Dougherty (page returned empty)",
+        "billsponsor.com politician page (only budget votes and commemorations visible; no gun bill sponsorship readable)",
+        "not reviewed: Virginia LIS bill pages (JavaScript only; legacy page not available)",
+        "ivoterguide 2019 profile (her gun answers listed as 'Did not answer')",
+        "third-party summaries only (Patch, Branch, Progressive Voters Guide): reporter wording, not her own words, not saved",
+        "campaign site: not found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

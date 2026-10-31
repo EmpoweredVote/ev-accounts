@@ -1,0 +1,111 @@
+{
+  "politician_id": "11a19d18-3b98-4b6a-b310-9ab4aba1f7c8",
+  "findings": [
+    {
+      "id": "3b8390dac027a7b8339f503992c57f9cc9b35c5e241b7853723136c67bf822c2",
+      "kind": "record",
+      "url": "https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "Roll Call 340, SB 10 (Voter registration), 3rd Reading, bill passed 66 yea to 26 nay",
+      "note": "Judy is listed among the 66 yea votes on House third reading of Senate Bill 10, titled Voter registration (author Culp). The roll call page gives only the title; the bill's detailed provisions were not read from an official page.",
+      "subjects": [
+        "voter registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:59:39.841Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Indiana_House_of_Representatives_District_83 names Christopher Judy as incumbent, advanced from the May 5, 2026 primary, on the November 3, 2026 general ballot for House District 83",
+        "On the Record (0 appearances, no meetings)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Judy (no 2026, 2024 or 2022 survey answers; nothing on the subject; sponsored-bill table not readable)",
+        "official House caucus page https://www.indianahouserepublicans.com/members/general/christopher-judy (news list reviewed; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page loads only an empty app shell; API at api.iga.in.gov needs a key), so bill sponsorships and votes on the subject were not reviewed",
+        "not reviewed: web news search on name plus subject words (session search budget used up)",
+        "campaign site: none found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:50.986Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter registration requirements",
+        "voter-roll maintenance"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia page https://ballotpedia.org/Christopher_N._Judy (confirms House District 83, on the 2026-11-03 general-election ballot, advanced from the 2026-05-05 primary; nothing on the subject)",
+        "the House caucus site: press release of 2020-09-23 on voter registration deadline (reviewed; his quoted words are about registering and having a voting plan, not ID or citizenship, so not saved)",
+        "blocked: https://www.indianahouserepublicans.com/members/chris-judy/ (404)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_christopher_judy_1022 (page loads no content without scripts)",
+        "blocked: https://legiscan.com/IN/bill/SB0010/2025 (403)",
+        "legislature roll-call PDF for SB 10 (2025) House third reading, reviewed",
+        "not reviewed: official roll call for 2023 HB 1334 (mail-ballot ID) House vote; roll call number not found, news says it passed 64-27 but Judy's own vote was not confirmed",
+        "web searches on name plus voter ID, election, citizenship: no own-words statement by him on ID or citizenship found",
+        "campaign site: none found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T00:59:39.841Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

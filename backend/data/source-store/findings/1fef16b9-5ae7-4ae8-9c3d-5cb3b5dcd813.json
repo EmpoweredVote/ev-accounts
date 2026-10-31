@@ -1,0 +1,56 @@
+{
+  "politician_id": "1fef16b9-5ae7-4ae8-9c3d-5cb3b5dcd813",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: left office, not in scope. Ballotpedia (https://ballotpedia.org/Alan_Morrison, fetched by curl) says: \"Alan Morrison is the Indiana Director of Natural Resources. He assumed office on January 17, 2025.\" and lists Indiana House District 42 years in office as 2012 - 2025, successor Tim Yocum. He is an appointed agency head, not a sitting legislator, and no 2026 ballot race appears on the page.",
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirmed person and office; no voter ID material on the page)",
+        "not reviewed: iga.in.gov bill pages, official site and news search (stopped after scope check; web search budget was also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:54.858Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr returned none)",
+        "identity check: https://www.wboi.org/2025-01-09/new-head-of-indiana-natural-resources-aims-to-make-regulations-more-friendly-to-business (a former Indiana House member for District 42 who became director of the state Department of Natural Resources in January 2025; not a candidate in 2026)",
+        "Ballotpedia https://ballotpedia.org/Alan_Morrison (House District 42 member until January 2025, appointed to the state agency post 2025; nothing on the subject)",
+        "Wikipedia page (lead only; nothing on elections legislation)",
+        "Indiana House caucus archive page: not found (the member page URL returned no page)",
+        "his House legislative record: nothing found on the subject. He was a House member (2012 to 2025) when the 2023 absentee-ballot ID bill (HB 1334) and the 2024 election security bill (HB 1264) passed, but no member-level roll call page for either was reachable",
+        "blocked: https://iga.in.gov (page is a script shell; API needs a key)",
+        "blocked: https://justfacts.votesmart.org/candidate/key-votes/139588/alan-morrison (403)",
+        "blocked: https://indianacapitalchronicle.com/2024/01/18/election-security-bill-with-citizenship-credit-agency-data-provisions-moves-to-house-floor/ (403)",
+        "blocked: https://www.pressreader.com/usa/post-tribune/20210407/281513638961285 (403)",
+        "https://fastdemocracy.com 2024 pages for HB 1133 (digitally altered media in elections, off subject) and no 2023 page exists for HB 1334",
+        "https://indianacitizen.org articles on HB 1264 and HB 1334 (only a 2020 committee remark by him about poll hours, which is off the subject; no own words on ID or citizenship)",
+        "news searches on his name plus voter ID, absentee, citizenship (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:15:01.124Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

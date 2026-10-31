@@ -1,0 +1,199 @@
+{
+  "politician_id": "c52c5db1-44b8-4658-b0d3-07406c63366e",
+  "findings": [
+    {
+      "id": "1abef592fd420e5a7754f530aecd628a31c41acca61fdf66ceefad9adb233b88",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab941",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-941-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 1/28/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Drake') on the official bill page; linked to Dora Drake via the official 2026 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8ff0856102363887c14146ae12f952c4830db92d5a7fe5cdb6078572f5db54dc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0252",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-133-2022",
+      "act": "nay",
+      "motion": "Assembly: Adopted (ADOPTION) (av0252)",
+      "note": "Assembly roll call as printed ('DRAKE'), linked to Dora Drake (district 11) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a92b3a1d28a863321f1e167225b5c089b8c96361cd62ca640dcf023216486cdc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0090",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-204-2021",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0090)",
+      "note": "Assembly roll call as printed ('DRAKE'), linked to Dora Drake (district 11) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdf48e7701ed601adf34eea22af1ad6ffbdfa957445f4bb4e435c7024f84405b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/sb931",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-931-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced 2/6/2026; referred to committee; died (Failed to pass pursuant to Senate Joint Resolution 1, 3/23/2026)",
+      "note": "Named as co sponsor ('Drake') on the official bill page; linked to Dora Drake via the official 2026 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d276d5ce64efb2eb6909119f31c4e388580944bb124791374d00949f15781e07",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0258",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-939-2022",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0258)",
+      "note": "Assembly roll call as printed ('DRAKE'), linked to Dora Drake (district 11) via the official 2021 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "173370a2da2254e9558211fd7d716d85ba2265e26f9f3d3e2282786165ffeebc",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0003",
+      "date": "2025-01-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-2-2025",
+      "act": "nay",
+      "motion": "Senate: Read a third time and adopted (PASSAGE) (sv0003)",
+      "note": "Senate roll call as printed ('DRAKE'), linked to Dora Drake (district 4) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b953b8ca77be5fb9ddafa6b70a382b4723ca94e06d8baa02c27e3b6f154dc83",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0119",
+      "date": "2023-11-09",
+      "date_precision": "day",
+      "instrument_id": "WI-SJR-73-2023",
+      "act": "nay",
+      "motion": "Assembly: Read a third time and concurred in (CONCURRENCE) (av0119)",
+      "note": "Assembly roll call as printed ('DRAKE'), linked to Dora Drake (district 11) via the official 2023 Assembly member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-wi-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "absentee ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed by https://www.wispolitics.com/2020/drake-campaign-announces-candidacy-for-the-11th-wisconsin-state-assembly-district/ (her 2020 candidacy; she is now a state senator, so no 2026 ballot check needed)",
+        "blocked: https://legis.wisconsin.gov/senate/04/drake/news/press-releases/ (404)",
+        "blocked: https://legis.wisconsin.gov/assembly/11/Drake/news/ (404)",
+        "blocked: https://wisconsinexaminer.com/2025/01/09/senate-quickly-passes-voter-id-amendment-tuesday-as-assembly-begins-consideration/ (403)",
+        "not reviewed: transcript linked from https://civicmedia.us/shows/paul-revere-show/2024/05/18/4th-senate-district-candidate-rep-dora-drake",
+        "news searches on name plus voter ID words (no statement of her own found)",
+        "Ballotpedia not fetched separately; bill sponsorships not searched (linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:05:08.678Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official WI legislature bill pages, journals and roll calls in bills/wi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T23:15:12.783Z",
+      "by": "identity-wi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "politician_id": "4a2dbdf1-1076-4b50-9e18-b296a0578f53",
+  "findings": [
+    {
+      "id": "b83233bacde73beae4d5d5652d2f470ea1dfad491478211d829b2235d5b94bf2",
+      "kind": "own-words",
+      "url": "https://www.weneedkaren.com/issues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "We must know our vote counts, that every legitimate vote cast is counted. The public must know that our state elections are free and fair.",
+      "note": "From the Election Integrity section of her campaign site. General statement that every legitimate vote should count and elections be free and fair; no ID or citizenship detail. The page also says she worked on this in a past session without naming a bill.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:50:37.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Mathiak'), linked to KAREN MATHIAK (district 73) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Mathiak'), linked to KAREN MATHIAK (district 73) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Mathiak'), linked to Karen Mathiak (district 74) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship",
+        "voter no-ID fallback",
+        "non-citizen voting / voter rolls",
+        "election integrity laws in general",
+        "SB 202 (2021) votes"
+      ],
+      "places": [
+        "status: holds Georgia House District 82 seat; on the 2026-11-03 general election ballot (Ballotpedia, fetched)",
+        "On the Record (0 appearances found)",
+        "Ballotpedia https://ballotpedia.org/Karen_Mathiak (confirms identity and office; no subject content)",
+        "campaign site https://www.weneedkaren.com/ and /issues (one election integrity passage saved; page is undated and mentions the earlier District 73 seat)",
+        "campaign site legislative recaps, 2026 weeks 5 to 12 (weneedkaren.com/week-N-legislative-session-recap-2026): nothing on ID or citizenship to vote",
+        "news and bill-list search: no election-ID or citizenship bill found for her",
+        "blocked: https://www.legis.ga.gov/members/house/4894?session=1033 and SB 202 (2021) vote pages (app shell only); her 2021 House vote on SB 202 not reached",
+        "blocked: https://legiscan.com (403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:50:37.564Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.407Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

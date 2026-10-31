@@ -1,0 +1,71 @@
+{
+  "politician_id": "80b9fe48-9f8c-4585-91ab-4d0ed1bc2229",
+  "findings": [
+    {
+      "id": "db4707dcb3b82c1f766fd78456172ef249123171a62dc71386b9c08609d0def6",
+      "kind": "record",
+      "url": "https://progressva.org/?p=7811",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1462-2024",
+      "act": "sponsor",
+      "note": "Per a Progress Virginia article dated 03/06/2024, HB1462 was sponsored by Delegate Amy Laufer and passed the House 51-49. The article says it and a Senate bill prohibit leaving firearms visible and unattended in vehicles, with some exceptions. Article quoted: 'HB1462 , sponsored by Delegate Amy Laufer, passed by a margin of 51-49 in the House and 21-19 in the Senate, respectively. The two bills prohibit people from leaving firearms visible and unattended in their vehicles (except in some cases.)' Official LIS page not readable; date is the article date.",
+      "subjects": [
+        "firearms left unattended in vehicles",
+        "secure storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll maintenance"
+      ],
+      "places": [
+        "campaign site amylaufer.com home/priorities/legislative-work (pages returned only home content, nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "one web search (HB215/HB640 votes seen only in a search summary, not fetched)",
+        "blocked/not reviewed: lis.virginia.gov (not fetched per instruction)",
+        "not reviewed: On the Record extract script (repo scripts not run)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:45.761Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "secure storage",
+        "gun safety general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Progress Virginia article https://progressva.org/?p=7811",
+        "blocked: https://elections.bradyunited.org/candidates/amy-laufer (403)",
+        "not reviewed: https://lauferfordelegate.com/ (page text not readable by curl; fetch tool only gave a summary, so nothing copied)",
+        "Giffords endorsement page https://giffords.org/candidates/amy-laufer (no direct quotes of her)",
+        "Ballotpedia (page came back empty)",
+        "not reviewed: Virginia LIS bill page for HB1462 (script-rendered, unreadable)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

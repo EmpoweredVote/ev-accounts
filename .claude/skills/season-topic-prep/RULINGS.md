@@ -106,6 +106,15 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
 - **Scope:** every topic.
 
+### Own words that back your own jurisdiction's current law
+- **Ruling:** own words that back the person's own jurisdiction's current law on the topic place them on the rung of
+  the furthest act that law states, read from the law in force at the statement's date. Describing the law, or citing
+  it only to oppose a new bill, does not count. Where the law in force states no rung act, or states acts from both
+  sides of the middle, the record stays `direction-only` / `adjacent-chairs`.
+- **Date and source:** Stage 2 Q2, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage2/drafts.md`
+  §7); the same reading as voting-rights W3-R8 (Stage 5).
+- **Scope:** every topic.
+
 ### Exposure
 - **Ruling:** an instrument the live ladder or its annex names is exposed. Its items stay in the test set and are
   scored apart from T1 and T3.
@@ -124,10 +133,13 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 
 ### Census — what one record is
 - **Ruling:** one record per instrument per chamber: its final vote (final passage, concurrence or conference
-  report; where a veto was overridden, the override vote). A recorded floor-amendment vote that is itself a provision
+  report; where a veto was overridden, the override vote; where a veto override failed, the chamber's last passage or
+  concurrence vote). A recorded floor-amendment vote that is itself a provision
   of the topic is its own record. Procedural votes and earlier readings do not count.
 - **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #26, a law with nine roll calls;
   `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
+  Failed override: J6, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage1/rulings.md`; VA SB 2
+  2024 Senate).
 - **Scope:** every census.
 
 ### Census — private funding of election offices
@@ -141,6 +153,12 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   read. A title or summary is a lead, not a record.
 - **Date and source:** 2026-10-21, Chris Andrews, from the KY HB 574 HFA 3 correction
   (`.planning/research/s3-prep-voting-rights/stage0/census.md`; `.planning/research/s3-prep-voting-rights/stage4/README.md`).
+- **Scope:** every census.
+
+### Census — a law's own penalty is not a second subject
+- **Ruling:** a penalty for breaking the bill's own rule is part of that rule and is not a second subject. A separate
+  sentence change for another crime makes the bill multi-subject while `judicial-criminal-justice` is served.
+- **Date and source:** census Q1, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage0/census.md`).
 - **Scope:** every census.
 
 ### Stage 1 sampling
@@ -187,6 +205,160 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Date and source:** C1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/c-lesson.md`, `.planning/research/s3-prep-voting-rights/stage2/drafts-c.md`).
 - **Scope:** every topic.
 
+### Stage 3: the voter-placement test (T7)
+- **Ruling:** Stage 3 adds a voter-placement test for every topic. Separate agents play ordinary voters: each reads only
+  one ladder's question, guidance and rungs, plus a list of first-person views in a seeded order, and picks the rung
+  that view would choose, or none. The views and their target rungs (or "none fits") are pre-registered with the other
+  Stage 3 rules. The score is the share of placements on target, reported beside T1–T6 for the control and every
+  draft. It measures what the record tests cannot: whether a voter can find their own view.
+- **Date and source:** 2026-10-26, Chris Andrews (`voting-rights`, `.planning/research/s3-prep-voting-rights/stage3-fg/`:
+  three voters per ladder, ten views; revision 4 placed 19/30, Draft F 25/30).
+- **Scope:** every topic, from 2026-10-26.
+
+### Stage 4: a draft that replaces an approved, unpublished revision
+- **Ruling:** when the winning draft replaces a revision that was approved but never published (for example, pinned in
+  a draft season that has not opened), the new revision is measured from the current published revision (its change
+  class, version and rung map), and the approved one is rejected in the same migration. Draft-season rows that cite
+  the approved revision are carried to the new one in that migration when Stage 3 shows none moves, or withdrawn,
+  by the runner's ruling.
+- **Date and source:** 2026-10-26, Chris Andrews (`voting-rights` revision 5, CA_0334, replacing revision 4).
+- **Scope:** every topic.
+
+## Stage 5 rulings
+
+### Local records support own words, never seat alone
+- **Ruling:** a local ordinance or resolution that shows which way a local official leans may serve as supporting
+  evidence beside that person's own words on the topic. It never seats anyone alone. A local law that only decides
+  which level may set a rule stays `adjacent` (codebook V2).
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 1
+  (`docs/superpowers/specs/2026-10-22-season-topic-prep-stage5-code-everyone-design.md` §5).
+- **Scope:** every topic with local officials in scope.
+
+### Shown quotes need no human hold
+- **Ruling:** a person's own words shown to voters as "own words, not on the scale" go live without human review,
+  once the AI quote check confirms the passage is on its source page word for word, is the person's own words
+  (codebook V1), and is on the topic. A failed check keeps it off the page.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2a (design §9).
+- **Scope:** every topic.
+
+### Own-words seats: the hold ends after a blind check
+- **Ruling:** a seat placed on own words alone keeps the `statement-evidence` human hold until a blind gold sample
+  of own-words seats on that topic agrees with the coder at the Stage 3 validation bar (≥ 95%). When it passes, the
+  hold is retired for that topic, and CLAUDE.md's "separate reliability stratum" rule is updated in the same PR.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2b (design §9).
+- **Scope:** every topic, decided per topic.
+
+### A vote on the record carries a joint seat
+- **Ruling:** a seat that rests on the person's own words together with a legislative record (a vote, sponsorship
+  or other act on an instrument, not a local record) is record evidence. It goes through the record gate and does
+  not take the `statement-evidence` hold. Only a seat on own words alone, or own words with a local record, keeps
+  the hold until the topic's blind check passes.
+- **Date and source:** 2026-10-23, Chris Andrews, Stage 5 Phase B review (`backend/scripts/lib/stage5Write.ts`
+  `planBatch`: `evidence_type = record` when any cited finding is a non-local record).
+- **Scope:** every topic.
+
+### The Stage 5 early-check bar
+- **Ruling:** the early check stops the run and asks whether to fix the rungs when "doesn't fit" is more than 1 in 5
+  of the people with any on-topic evidence, **or** any single theme from the theme pass holds more than 1 in 10 of
+  them. Doesn't-fit cases whose only record is a No vote (`nay-only`) or a gated vote (`gate`) are counted and
+  reported apart, and left out of both sides of both bars: no rung change can seat them.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 3 (design §6); the No-vote and gated cases ruled
+  apart the same day, after the `voting-rights` pilot (`.planning/research/s3-prep-voting-rights/stage5/`).
+- **Scope:** every topic.
+
+### The early check may run on a seeded sample
+- **Ruling:** when a unit is large, the early check may run on a seeded random sample of it (the seed and the draw
+  recorded before the draw). The rest of the unit is researched after the check passes; nothing found is wasted.
+- **Date and source:** 2026-10-22, Chris Andrews, `voting-rights` run: 300 of 1,452 federal people, plus every
+  state legislator in IN, NC and MA.
+- **Scope:** every topic.
+
+### A Candidate Connection survey answer is the candidate's own words
+- **Ruling:** a candidate's own answer to Ballotpedia's Candidate Connection survey counts as their own words and
+  may seat them, even when it is their only source. Every other Ballotpedia page (editorial bio, measure page)
+  still cannot seat anyone alone. The source must link the survey section (`#Campaign_themes`) and the quoted
+  words must sit inside that section (`backend/scripts/lib/candidate-connection.mjs`). The verifier cannot open
+  Ballotpedia, so such a seat always goes to a person for review; the batch keeps a saved copy of the section
+  (`survey-sections.json`) for the gate.
+- **Date and source:** 2026-10-07, Chris Andrews (Season 2 pilot); confirmed 2026-10-29, Chris Andrews, voting-rights
+  federal-held batch (Christy Peterson); confirmed again 2026-10-30, Chris Andrews, voting-rights W3-R17 ("Ballotpedia
+  is fine when it is their own words on their candidate survey"; `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`).
+- **Scope:** every topic.
+
+### A small group's joint statement is each signer's own words
+- **Ruling:** a statement put out jointly by a small, named group (for example a state's two senators, or two
+  committee chairs) counts as each signer's own words (codebook V1). A statement from a whole party or caucus, or a
+  letter signed by dozens of members, is a group statement: it is not any one signer's own words. When such a quote
+  is shown blinded, "we" becomes "I" (and "our" becomes "my" where it means the signers).
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights W3-R13 ("Joint statements are ok when it's a small
+  group of individuals, but not when it's the entire party"; line drawn the same day: a caucus letter is "too
+  large"). `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`.
+- **Scope:** every topic.
+
+### A "would have voted" statement is off topic
+- **Ruling:** a statement that only says how the person would have voted on a bill ("I was absent … I would have
+  voted no."), and names nothing the question asks about, fails the quote check's `on_topic` test. This holds even
+  when the bill has parts on the question: the words do not say which part the person meant.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights W3-R14 ("Yes, fail them"; TX House Journal
+  statements on SB 1, 2021). `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`.
+- **Scope:** every topic (ruled on voting-rights; proposed here as general, 2026-10-30).
+
+### A party word in a source address is fine
+- **Ruling:** a source's web address may carry a party word (a caucus site, for example). Only what a reader is shown
+  as text, shown quotes and evidence snippets, must be free of party labels ("Party labels never reach a reader"
+  below). The source link is where a reader sees the full words. This replaces the practice of leaving such sources
+  off.
+- **Date and source:** 2026-10-30, Chris Andrews, voting-rights W3-R15 (Ryan Clancy, WI;
+  `.planning/research/s3-prep-voting-rights/stage5/write/wi-01-clancy/`).
+- **Scope:** every topic.
+
+### OnTheIssues and Wikipedia are never sources
+- **Ruling:** OnTheIssues and Wikipedia are finding aids only: use them to find a primary source, then cite that.
+  Neither is cited as stance evidence, and neither is listed as an "examined" old source on a blank row. An answer
+  from an earlier season that rests only on them has no primary source behind it: a blank that replaces it is
+  written as an outcome row with no source and no review row.
+- **Date and source:** 2026-10-30, Chris Andrews, voting-rights W3-R16 ("we only use those to find primary sources,
+  but it seems that ontheissues tends to not be correct a lot of the time"; Josh Stein, NC,
+  `.planning/research/s3-prep-voting-rights/stage5/write/nc-01-stein/`). Codebook V3 already makes encyclopedia and
+  aggregator pages `not-evidence`.
+- **Scope:** every topic.
+
+### Mapping a blank to a V6 reason
+- **Ruling:** when `topic:stage5-write` lists a blank as "not in research.csv" (its detail fits no single codebook
+  V6 reason), map it this way: a blank that is off the question, shows no side, or rests only on a gated record
+  (an abstention, for example) → `no-evidence`; a blank whose evidence shows a side but not a rung →
+  `direction-only`.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights state batches (header of
+  `.planning/research/s3-prep-voting-rights/stage5/write/in-01/hand-rows.md`).
+- **Scope:** every topic.
+
+### Party labels never reach a reader; shown quotes bracket them out
+- **Ruling:** Empowered Vote is anti-partisan: no reader should get a party as a shortcut for whom to agree with. A
+  party label is a party's name or colour used for people or places ("Republicans", "the GOP", "Democratic
+  lawmakers", "R-Idaho", "(D-GA)", "red states"); "democratic process" is not one.
+  1. A quote shown to voters or to Stage 3 test voters (own-words passages, blinded quotes) replaces each party label
+     with a bracketed neutral word ("[some lawmakers]", "Sen. Jim Risch […] wrote"), so the edit is visible and the
+     person's point is kept.
+  2. An evidence snippet (the verifier's verbatim page text) is never edited: the builder picks a stretch with no
+     party label, and drops the snippet when the page has none near the person.
+  3. The quote check fails a passage for a party only when the party is its point (a call to back or oppose a
+     party); a passage that only mentions one passes once the label is bracketed out.
+  The bracket words are a fixed list, so no slanted word can be slipped in; it grows only by ruling: "[…]", "[some
+  lawmakers]", "[some officials]", "[some voters]", "[some states]", "[others]". No note explains the brackets: the
+  source link under every shown quote is where a reader sees the full words.
+- **Built (CA_0337, applied 2026-10-29; PR #1219):** `own_words_passages.shown_text` holds the bracketed text and the
+  public profile serves it; `passage` keeps the exact words. The quote checker writes `shown_text`; the writer
+  stores it only when `bracketEditProblem` (`backend/src/lib/partyLabels.ts`) finds nothing changed but labels into
+  listed words, and the check's `shown_sha256` covers it. `accumulateEvidence` skips a snippet with a label. One
+  detector (`namesParty`) serves quotes, notes and snippets, and adds party-state tags ("R-Idaho", "(D-GA)",
+  "D-N.Y.") and "Smith (R)"; the stance gate reads those tags and colours too. Stage 3 blinded quotes have no code
+  path: whoever builds them brackets labels by hand with the same list.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights federal-held batch
+  (`.planning/research/s3-prep-voting-rights/stage5/write/federal-held/PREVIEW.md`). Replaces "Quotes that name a
+  party are never shown" (2026-10-22), which failed every mention and never edited a quote. The same day, 7 draft-season
+  snippets that tagged people with a party were deleted (backup in that folder, `party-snippets-backup.json`).
+- **Scope:** every topic.
+
 ## Topic-scoped readings
 
 These change how a general rule reads for **one topic only**. They are not general. Do not apply them to another
@@ -215,9 +387,55 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Date and source:** D3, C-Q4, DC1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage3/disputes.md`,
   `.planning/research/s3-prep-voting-rights/stage3/disputes-C.md`); written into the codebook "Clarified 2026-10-21" header line and the Season 3 annex
   (`docs/codebook/annex/season3/voting-rights.md`, EmpoweredVote/ev-accounts#1096).
-- **Scope:** the Season 3 revision 4 of `voting-rights` only (CA_0318).
+- **Scope:** the Season 3 revisions 4 and 5 of `voting-rights` only (CA_0318; CA_0334, which keeps every act of
+  revision 4).
 - **Contrast:** the standing furthest-act rule (above). A record that states both a rung 3 and a rung 4 act sits at
   rung 4.
+
+### voting-rights — F-Q2 (citizenship documents beside a ballot rule)
+- **Reading:** a record that requires a document proving citizenship to register sits on rung 5 whatever ballot rule
+  it also states, an exception to the `adjacent-chairs` line ("acts from both sides of the middle") for this topic.
+  So a voter's "proved it once, at registration" view and the coder's reading of such a law land on the same rung.
+- **Date and source:** F-Q2, 2026-10-26, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/drafts-fg.md`
+  §7); written into the Season 3 annex (`docs/codebook/annex/season3/voting-rights.md`, CA_0334).
+- **Scope:** the Season 3 revision 5 of `voting-rights` only (CA_0334).
+- **Contrast:** the standing furthest-act rule, under which acts from both sides of the middle in one record are BLANK
+  `adjacent-chairs`.
+
+### voting-rights — H-P1, H-Q3, H-Q4 (fallback not stated → rung 4)
+- **Reading:** a photo-ID requirement whose own text states no sworn-statement path open to any voter sits at rung 4,
+  with or without a stated cure. Exceptions left to later law with none named ("which may include exceptions") are no
+  escape (H-Q3). A bill that sets the accepted-ID list is read on its own printed text; a sworn statement in a section
+  it neither prints nor restates is not read in (H-Q4; a cross-reference to another law's challenged-voter procedure
+  is not read in either, DH2). A person with a stated-escape record (3) and a silent photo-ID record (4) sits at 3
+  whatever the dates (H-P1, reading B); a stated polls escape beside a mail-ballot ID record sits at 4 (DH3). Own
+  words rejecting voting without photo ID state the rung 4 act (DH1).
+- **Date and source:** H-P1, H-Q3, H-Q4, DH1–DH3, 2026-10-27, Chris Andrews
+  (`.planning/research/s3-prep-voting-rights/stage2/drafts-h.md` §7, `.planning/research/s3-prep-voting-rights/stage3-h/results.md`,
+  `.planning/research/s3-prep-voting-rights/stage3-h/disputes-H.md`); written into the Season 3 annex
+  (`docs/codebook/annex/season3/voting-rights.md`, "Draft H lines").
+- **Scope:** the Season 3 revision 5 of `voting-rights` only (CA_0334; the text is unchanged, so no new revision).
+- **Contrast:** the codebook rule that the newest evidence governs ("superseded-by-later") still applies where a later
+  record states a different rule; H-P1 reads a silent record as not contradicting a stated escape.
+
+### gun-policy — Q5 (a federal bar on state carry permits)
+- **Reading:** a federal bill that bars states from requiring a carry permit is on-question and sits on rung 5: it
+  states the carry rule, not only which level decides.
+- **Date and source:** Q5, 2026-10-29, Chris Andrews (`.planning/research/s3-prep-gun-policy/stage2/drafts.md` §7);
+  written into the codebook "Clarified 2026-10-30" header line and the Season 3 annex
+  (`docs/codebook/annex/season3/gun-policy.md`).
+- **Scope:** the Season 3 revision 4 of `gun-policy` only (CA_0338).
+- **Contrast:** codebook V2 / H12: a law that only decides which level may act is `adjacent`.
+
+### gun-policy — J7, D4 (single-subject scope)
+- **Reading:** a self-defense part (no duty to retreat, a justifiable-homicide line) is not `judicial-criminal-justice`
+  evidence; a background-check notice to immigration enforcement is not `deportation` evidence. Neither makes a gun
+  law multi-subject.
+- **Date and source:** J7, 2026-10-29 (`.planning/research/s3-prep-gun-policy/stage1/rulings.md`); D4, 2026-10-30
+  (`.planning/research/s3-prep-gun-policy/stage3/disputes.md`); Chris Andrews. Written into the codebook "Clarified
+  2026-10-30" header line and the Season 3 annex.
+- **Scope:** the Season 3 revision 4 of `gun-policy` only (CA_0338).
+- **Contrast:** the strict single-subject test (codebook V4.1).
 
 ## How to add a ruling
 

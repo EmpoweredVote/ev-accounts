@@ -1,0 +1,76 @@
+{
+  "politician_id": "522d03a0-6fe8-4f48-b68a-cc4e12eba21b",
+  "findings": [
+    {
+      "id": "dbabf367591499ce9dfa5873300235b072c4ecde1e681df58225b4addb61eb85",
+      "kind": "own-words",
+      "url": "https://www.stellapekarsky.com/meet-stella",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "A champion for underdogs, vulnerable communities, and those too often left without a voice, Stella Pekarsky is grounded in the values that have guided her life and public service: investing in public education, protecting reproductive freedom, reducing gun violence, and standing up to corporate special interests",
+      "note": "Biography text on her campaign site, which lists reducing gun violence among her guiding values. Page is undated.",
+      "subjects": [
+        "gun violence",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement instead of ID",
+        "proof of identity to vote",
+        "acceptable non-photo ID documents"
+      ],
+      "places": [
+        "On the Record (0 appearances, searched by id and name)",
+        "Ballotpedia https://ballotpedia.org/Stella_Pekarsky: confirms current State Senate district 36 seat; nothing on the subject",
+        "legislature member page: not reviewed for bills (LIS is script-rendered)",
+        "blocked: https://legiscan.com/VA/rollcall/SB81/id/1364389 (403)",
+        "blocked: https://www.virginiamercury.com/blog-va/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://app.legiplex.com/va/legislature/2025/2025-r/bills/hb2434 (403)",
+        "blocked: https://lis.virginia.gov/bill-details/20251/SB764 (script-rendered, no content); open.pluralpolicy.com and legilist.com bill pages gave no per-member votes",
+        "5 web searches on the name plus voter ID words: no own-words found; third-party trackers list only committee tallies, no per-member vote",
+        "official Senate member page https://apps.senate.virginia.gov/Senator/memberpage.php?id=S124: nothing on the subject",
+        "campaign site session-update PDFs (two): nothing on the subject; other pages not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:22:06.364Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and magazines",
+        "background checks",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site stellapekarsky.com meet-stella page (one gun line)",
+        "Ballotpedia (confirms State Senate District 36 candidate 2023 and a withdrawn 2026 U.S. House candidacy; senate seat not on the 2026 ballot)",
+        "blocked: https://lis.virginia.gov (JavaScript app, not fetched for sponsorships)",
+        "progressivevotersguide.com: text could not be read as her own words; not saved",
+        "Giffords endorsement text: group's words, not saved",
+        "news search: two searches, nothing quoted from her on guns"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

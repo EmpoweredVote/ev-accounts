@@ -1,0 +1,531 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "lib-brekken",
+      "row_id": "R-L004",
+      "person": "Michelle Brekken",
+      "expected_chair": 3,
+      "politician_id": "323d5c20-2135-5d88-a441-596ca1f3ee32",
+      "office_id": "562235bb-0ceb-5917-9480-fa575795271e",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/5927/631_-_library_materials_02122024docx.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        },
+        {
+          "url": "https://docs.google.com/document/d/1d8AVK7pdfRMM2zk4A1D3r0uYDYFG7JyzZFHaMzXymJ4/export?format=txt",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-speer",
+      "row_id": "R-L006",
+      "person": "Sarah Speer",
+      "expected_chair": 3,
+      "politician_id": "5c0ccd1c-f298-52db-9093-e2ff08ac1249",
+      "office_id": "577bccce-f781-5aa2-b566-6c80d68e2c62",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://files.smartsites.parentsquare.com/5927/631_-_library_materials_02122024docx.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        },
+        {
+          "url": "https://docs.google.com/document/d/1d8AVK7pdfRMM2zk4A1D3r0uYDYFG7JyzZFHaMzXymJ4/export?format=txt",
+          "human_saved_path": null,
+          "instruments": [
+            "Brainerd Public Schools (ISD 181) Policy 631 Library Materials (adopted 2024-02-12)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-gilhousen",
+      "row_id": "R-L010",
+      "person": "Ashley Gilhousen",
+      "expected_chair": 4,
+      "politician_id": "9fb0b1b2-1c29-55cc-94e8-ab918eca2618",
+      "office_id": "b1b7df02-c4c5-5dd3-ad4e-b85517f383d5",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-clark",
+      "row_id": "R-L011",
+      "person": "Beth Clark",
+      "expected_chair": 4,
+      "politician_id": "860fd6b9-87fb-5dda-8471-065e3a5957f2",
+      "office_id": "c303ae72-426d-56cf-b10b-fdefb2dbb447",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-skipper",
+      "row_id": "R-L012",
+      "person": "Erin Skipper",
+      "expected_chair": 4,
+      "politician_id": "06efded0-0b18-5fd9-a357-b973df8cd372",
+      "office_id": "423054a8-9447-5c3c-a6a2-73f6d6ec9e36",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-hanson",
+      "row_id": "R-L014",
+      "person": "Michele Hanson",
+      "expected_chair": 4,
+      "politician_id": "c8a7d3e1-59bb-569d-bdbf-7e1a0f53e1ad",
+      "office_id": "ec048c1c-9fbf-503e-9a27-0d9cfd6b77d9",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-johnson",
+      "row_id": "R-L066",
+      "person": "Jack Johnson",
+      "expected_chair": 3,
+      "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67",
+      "office_id": "d378c1bc-4423-49e7-90e5-d1defaa9b99b",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-reedy",
+      "row_id": "R-L067",
+      "person": "Jay D. Reedy",
+      "expected_chair": 3,
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475",
+      "office_id": "cfee2c64-d805-4052-9e18-25c1a1dd6331",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-hensley",
+      "row_id": "R-L070",
+      "person": "Joey Hensley",
+      "expected_chair": 3,
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a",
+      "office_id": "4168a87d-5e39-40bc-90f6-630c8e330c03",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-cochran",
+      "row_id": "R-L071",
+      "person": "Mark Cochran",
+      "expected_chair": 3,
+      "politician_id": "b254c419-7168-458e-8a74-8d7e0dfa650d",
+      "office_id": "f4b3dd36-ab4e-4bfc-ae94-afdaec92f9a5",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-lamberth",
+      "row_id": "R-L072",
+      "person": "William Lamberth",
+      "expected_chair": 3,
+      "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62",
+      "office_id": "c1aea7bd-30fd-4e7c-a382-0770e7b158bc",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-paxton",
+      "row_id": "R-L073",
+      "person": "Angela Paxton",
+      "expected_chair": 4,
+      "politician_id": "46e0161a-6512-471a-8f75-945f78f721a0",
+      "office_id": "75e9633c-6ccd-40c4-910b-0a990f614fd7",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ05-31-F.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-buckley",
+      "row_id": "R-L083",
+      "person": "Brad Buckley",
+      "expected_chair": 4,
+      "politician_id": "d701afd5-c15c-48c4-8f16-54aa142a6769",
+      "office_id": "81a87645-a5e5-4b4d-a634-f4c6be99c620",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB13",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-perry",
+      "row_id": "R-L085",
+      "person": "Charles Perry",
+      "expected_chair": 4,
+      "politician_id": "eb7ef2a7-d0bb-475e-b2de-d96e6931932c",
+      "office_id": "3ba45ca8-73ba-459e-b883-3f498b0090cb",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ05-31-F.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-lujan",
+      "row_id": "R-L087",
+      "person": "John Lujan",
+      "expected_chair": 4,
+      "politician_id": "4001a833-a971-45ec-a625-cdb206d3c2ed",
+      "office_id": "a3e98e79-ae46-4a3f-891e-b52cc8b8cbe4",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY79FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-mcqueeney",
+      "row_id": "R-L088",
+      "person": "John McQueeney",
+      "expected_chair": 4,
+      "politician_id": "f920022b-4aa0-47ae-a5ae-c2edf3e17044",
+      "office_id": "a7e2718c-1637-41e6-ab94-cc9ca84dfcdc",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY79FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-kolkhorst",
+      "row_id": "R-L089",
+      "person": "Lois Kolkhorst",
+      "expected_chair": 4,
+      "politician_id": "2db78ab9-242e-46cd-ba95-5c504a2c8892",
+      "office_id": "06656722-b801-46a9-bc70-aff98e1c8b2d",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ05-31-F.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    }
+  ]
+}

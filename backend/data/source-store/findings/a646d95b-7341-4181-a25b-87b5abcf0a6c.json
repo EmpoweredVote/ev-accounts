@@ -1,0 +1,87 @@
+{
+  "politician_id": "a646d95b-7341-4181-a25b-87b5abcf0a6c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot, 7th Bristol (https://ballotpedia.org/Massachusetts_House_of_Representatives_7th_Bristol_District); listed as sitting member (https://malegislature.gov/Legislators/Members/House)",
+        "On the Record (0 appearances for this politician id; name search returned 0 sources)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/A_S1: only election-related item is H.5556, Fall River polling places (off subject)",
+        "nothing on the subject: legislature profile and sponsored bills list",
+        "not reviewed: https://malegislature.gov/Bills/Search?SearchTerms=voter+identification (results load by script, could not be read)",
+        "Ballotpedia person page: fetch returned another legislator's page, not usable; district page used for ballot status only",
+        "campaign site: none found (no web searches available, search budget used up)",
+        "news search: not done, web search budget used up",
+        "Wikipedia (lead only): confirms office, no subject content"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:33.339Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Alan_Silvia (fetched by curl) lists him as incumbent, MA House 7th Bristol, 2026 primary winner (Sept 1, 2026), next election Nov 3, 2026",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site / malegislature.gov: blocked: https://malegislature.gov/Legislators/Profile/A_S1/194/Biography (WebFetch timeout)",
+        "blocked: https://malegislature.gov/Bills/194/H5556 (WebFetch timeout; curl HTTP 503). H.5556 'An Act relative to Fall River polling places' seen only in search snippets; not about ID as far as known; not reviewed",
+        "Ballotpedia: nothing on the subject",
+        "Wikipedia https://en.wikipedia.org/wiki/Alan_Silvia: nothing on the subject",
+        "blocked: https://www.billtrack50.com/legislatordetail/17562 (sponsored bills section did not load)",
+        "campaign site: not found; not reviewed",
+        "news search (two searches on name plus voter ID / photo ID / non-citizen / election integrity): nothing on the subject",
+        "congress.gov: not applicable (state legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.067Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "politician_id": "8d19be64-ab26-4b43-b046-3dac10be5f32",
+  "findings": [
+    {
+      "id": "91ccaed8b27941371d911df90b822a1b3b1d82cb76348516229f1e2ddcf60aec",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/454",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading, HB 958 Election Law Changes (Senate; passed 28-13)",
+      "note": "Voted no on second reading of HB 958. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes a rule that a voter registration application is processed only if it states the applicant is a U.S. citizen, with a 30-day notice and a sworn citizenship statement if the answer is blank, and a process to remove voters flagged as possible non-citizens by a federal database. It also changes precinct officials, early voting days, ballot challenges and campaign finance. She also voted yes on Amendment 1 and no on Amendments 2, 3, 5 and 6 to 10 (motions to table) on the same day. She voted no on HB 1035 (Various Local Election Changes III) on 2026-06-16. The vote page was read through a page summary; confirm on the page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:58:33.245Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Woodson_Bradley) says she is the sitting State Senate District 42 member and is on the Nov 3, 2026 general ballot; the March 3, 2026 primary was canceled (fetched with curl)",
+        "On the Record (0 appearances for this person)",
+        "ncleg.gov member list and biography https://www.ncleg.gov/Members/Biography/S/454 (identity confirmed)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/454 (no bill on ID or citizenship; SB 652 Voter Fraud Prevention Act read in full: it is about legislators changing party, off subject, and she is a co-sponsor)",
+        "ncleg.gov votes https://www.ncleg.gov/Members/Votes/S/454 (first 100000 characters read; last 10396 characters not read)",
+        "ncleg.gov bill pages and text for HB 958 (ratified text and veto message read)",
+        "campaign site https://www.woodsonbradley.com/ (issue headings only; nothing on the subject)",
+        "Ballotpedia: no Candidate Connection survey answers from her",
+        "not reviewed: HB 58, HB 3, HB 1035 bill texts (titles only, not checked for ID provisions)",
+        "blocked: web search (session search budget used up), so no news search, no debate or interview search, no ontheissues or vote411 lead"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:58:33.245Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voters without ID",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia page https://ballotpedia.org/Woodson_Bradley shows a sitting NC Senate District 42 member on the 2026-11-03 general election ballot (positive control)",
+        "On the Record (0 appearances, extract script run with name)",
+        "Ballotpedia: nothing on the subject",
+        "legislature introduced-bills page https://house.ncleg.gov/Members/IntroducedBills/S/454: nothing on voter ID or citizenship; one list entry, SB 652 Voter Fraud Prevention Act, where she is not the primary sponsor; its bill page (https://www.ncleg.gov/BillLookUp/2025/S652) gives no bill text or summary, so not saved as on the subject",
+        "campaign site https://www.woodsonbradley.com: page content is script-rendered, text not readable, not reviewed",
+        "not reviewed: https://www.aol.com/news/woodson-bradley-democratic-nc-senate-172423777.html (candidate questionnaire; fetched but no readable text on the subject)",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, election bills: no statement or vote of hers on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:32:41.923Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

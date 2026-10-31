@@ -1,0 +1,232 @@
+{
+  "politician_id": "d836d812-17d4-407d-ac14-41457697e9f0",
+  "findings": [
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BROWN, A.'), linked to Amen Brown (district 190) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Brown, A.'), linked to Amen Brown (district 10) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Brown, A.'), linked to Amen Brown (district 10) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BROWN, A.'), linked to Amen Brown (district 10) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4abd2dde9190889022afa3ef3b3de4f67d8a45b50161a60e4696306ec917c3c0",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "“It is my job to do everything I can to fight for and protect my community,” Brown said.",
+      "note": "News release from his House office announcing an agreement he negotiated with a gun show promoter and the Attorney General's office to end sales of 80% receiver (ghost gun) kits at its shows. Quote is in his name in that release.",
+      "subjects": [
+        "ghost guns",
+        "gun show sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e01ed8c0cca4bcb8412b382dcecdbcd6f257fc8d5a695440dfa7d6741012b516",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "“While we work with businesses like Eagle Arms to reduce the number of guns coming to our streets, we also must make it known to those committing crime and assembling these guns and murdering innocent people that they will be held accountable for their actions and will not have a fast release,” Brown said.",
+      "note": "Same release. He ties limits on ghost gun kit sales to tougher sentences for people who commit gun crimes.",
+      "subjects": [
+        "ghost guns",
+        "penalties for illegal gun possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56ef8e707a78664db926eac494ec7ec156f6ce1fceedde1a155a32945a11bded",
+      "kind": "own-words",
+      "url": "https://pahouse.com/InTheNews/NewsRelease/?id=118872",
+      "date": "2021-03-15",
+      "date_precision": "day",
+      "passage": "Brown said he is preparing legislation to bring an end to violent crime in the state. He is proposing that any previously convicted felon who is found to be in possession of an illegal firearm would be subject to progressively stronger sentences and a minimum term of incarceration.",
+      "note": "Release text (written in the third person from his office) describing his planned bill on felons in possession of illegal firearms.",
+      "subjects": [
+        "felon in possession penalties",
+        "mandatory minimum sentences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.701Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "https://pahouse.com/RepAmen/About/Bio confirms Amen Brown, 10th district, state House (positive control); nothing on the subject; 2026 candidacy not stated",
+        "https://www.pahouse.com/RepAmen/InTheNews/NewsRelease/?id=136684 (oath of office release, 2025-01-07): nothing on the subject",
+        "official news list https://www.pahouse.com/RepAmen/InTheNews/News: not reviewed, page returned 404",
+        "blocked: https://ballotpedia.org/Amen_Brown (empty page)",
+        "web search on name plus voter ID: nothing on the subject",
+        "web search on name plus mail-in / election bill: nothing on the subject; bill-tracker scorecard pages mention pre-canvassing bills but were not fetched and do not show his own words",
+        "campaign site: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:43:49.478Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.855Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "gun show ID requirement",
+        "felon in possession penalties",
+        "firearm regulation general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site pahouse.com RepAmen NewsCenter page 4 (gun items listed; undated pieces not saved)",
+        "pahouse.com news release id=118872",
+        "news search (one search)",
+        "not reviewed: Ballotpedia, campaign site, palegis.us bill pages (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

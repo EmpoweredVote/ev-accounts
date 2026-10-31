@@ -1,0 +1,355 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "lib-gilhousen-r2",
+      "row_id": "R-L010",
+      "person": "Ashley Gilhousen",
+      "expected_chair": 4,
+      "politician_id": "9fb0b1b2-1c29-55cc-94e8-ab918eca2618",
+      "office_id": "b1b7df02-c4c5-5dd3-ad4e-b85517f383d5",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-media-services-manual-may-2024-draft-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Library Media Services Manual (May 2024 draft), adopted 2024-05-02 (item C11)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/instructional-manual-page-19paragraph-21-final-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-clark-r2",
+      "row_id": "R-L011",
+      "person": "Beth Clark",
+      "expected_chair": 4,
+      "politician_id": "860fd6b9-87fb-5dda-8471-065e3a5957f2",
+      "office_id": "c303ae72-426d-56cf-b10b-fdefb2dbb447",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-media-services-manual-may-2024-draft-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Library Media Services Manual (May 2024 draft), adopted 2024-05-02 (item C11)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/instructional-manual-page-19paragraph-21-final-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-skipper-r2",
+      "row_id": "R-L012",
+      "person": "Erin Skipper",
+      "expected_chair": 4,
+      "politician_id": "06efded0-0b18-5fd9-a357-b973df8cd372",
+      "office_id": "423054a8-9447-5c3c-a6a2-73f6d6ec9e36",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-media-services-manual-may-2024-draft-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Library Media Services Manual (May 2024 draft), adopted 2024-05-02 (item C11)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/instructional-manual-page-19paragraph-21-final-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-hanson-r2",
+      "row_id": "R-L014",
+      "person": "Michele Hanson",
+      "expected_chair": 4,
+      "politician_id": "c8a7d3e1-59bb-569d-bdbf-7e1a0f53e1ad",
+      "office_id": "ec048c1c-9fbf-503e-9a27-0d9cfd6b77d9",
+      "level": "school",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-meda-services-manual-change-to-page-18-23-1-4-all-markup-removed-2.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/challenged-materials-procedureinstructionaldocx-final-with-all-markup-removed-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2023-apr-6-regular-mtg.pdf",
+          "human_saved_path": "human-saved/clay-minutes-2023-04-06.txt",
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/042024-proposed-challenged-materials-policy-reconsideration-or-review-of-library-materials.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/2024-may-2-regular-mtg.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Challenged Materials Policy - Reconsideration or Review of Library Materials (2024-05-02)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/library-media-services-manual-may-2024-draft-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools Library Media Services Manual (May 2024 draft), adopted 2024-05-02 (item C11)"
+          ]
+        },
+        {
+          "url": "https://agenda.oneclay.net/content/files/instructional-manual-page-19paragraph-21-final-1.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Clay County District Schools amendment to the Library Media Services and Instructional Resources procedures manuals (Challenged Materials Procedure, 2023-04-06)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-cochran-r2",
+      "row_id": "R-L071",
+      "person": "Mark Cochran",
+      "expected_chair": 3,
+      "politician_id": "b254c419-7168-458e-8a74-8d7e0dfa650d",
+      "office_id": "f4b3dd36-ab4e-4bfc-ae94-afdaec92f9a5",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://www.capitol.tn.gov/Bills/112/Bill/HB2154.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee HB 2154 (2022), House companion of SB 2407, as filed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-lamberth-r2",
+      "row_id": "R-L072",
+      "person": "William Lamberth",
+      "expected_chair": 3,
+      "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62",
+      "office_id": "c1aea7bd-30fd-4e7c-a382-0770e7b158bc",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://publications.tnsosfiles.com/acts/112/pub/pc0744.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=SB2407&GA=112",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee SB 2407 / HB 2154 (2022), Public Chapter 744, Age-Appropriate Materials Act"
+          ]
+        },
+        {
+          "url": "https://www.capitol.tn.gov/Bills/112/Bill/HB2154.pdf",
+          "human_saved_path": null,
+          "instruments": [
+            "Tennessee HB 2154 (2022), House companion of SB 2407, as filed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-buckley-r2",
+      "row_id": "R-L083",
+      "person": "Brad Buckley",
+      "expected_chair": 4,
+      "politician_id": "d701afd5-c15c-48c4-8f16-54aa142a6769",
+      "office_id": "81a87645-a5e5-4b4d-a634-f4c6be99c620",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB13",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/89R/billtext/html/SB00013H.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials, House committee report version"
+          ]
+        },
+        {
+          "url": "https://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY79FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 13 (89th Leg., 2025), school library advisory councils and library materials"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "politician_id": "5160d735-3e19-45b2-a155-c11d6ce3b796",
+  "findings": [
+    {
+      "id": "a2b5b35965a129a2f18032cd28e09974aca647a34075a757dc3b2776dafc2040",
+      "kind": "own-words",
+      "url": "https://patch.com/pennsylvania/bethlehem/boscola-to-senate-gop-colleagues-i",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "“While I understand and support efforts to deter voter fraud, the state has demonstrated an inability to ensure individuals have access to the proper ID.",
+      "note": "Statement issued in her name on a court delaying the 2012 photo ID law, carried in full by Patch (posted 2012-10-03, statement made the Tuesday before).",
+      "subjects": [
+        "voter ID at the polls",
+        "access to ID",
+        "voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:19.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb7a7f4bec282cfd167f90f802b132004d1d024b71e5052a7333f7ba4cbbae23",
+      "kind": "own-words",
+      "url": "https://patch.com/pennsylvania/bethlehem/boscola-to-senate-gop-colleagues-i",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "“When the Senate approved the Voter ID legislation in March, I stood up on the Senate floor and offered an amendment to delay implementation of the law.",
+      "note": "She says she offered a floor amendment to delay the 2012 ID law to give voters time to obtain ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "time to obtain ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:19.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c045c80e4d78e83e77e0f2ae8621b5b8ec0f98a4acac86189a27efcb3e8a021",
+      "kind": "own-words",
+      "url": "https://senatorboscola.com/senate-approves-major-boscola-voting-reform-bill-that-includes-no-excuse-mail-in-option/",
+      "date": "2019-10-29",
+      "date_precision": "day",
+      "passage": "Finally, SB 421 would create a no excuse mail-in voting option for all Pennsylvania voters.",
+      "note": "Release in her name (she was prime sponsor of SB 421). It does not mention ID. Saved as related mail-ballot material; the quoted sentence is the release's summary, not a direct quote of her.",
+      "subjects": [
+        "mail voting access",
+        "mail-ballot (no ID discussed)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:19.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60239012543663525bdb73f46c58b8cfd139f10bb76f42d64f57b71265f66a1b",
+      "kind": "own-words",
+      "url": "https://pahouse.com/McNeill/InTheNews/NewsRelease/?id=143569",
+      "date": "2026-05-05",
+      "date_precision": "day",
+      "passage": "“At a time when the integrity of our elections is under constant attack from extremists who want to end vote-by-mail the last thing we need to do is hand them more rhetorical ammunition courtesy of this careless error by our county leadership.",
+      "note": "Joint statement issued by six Lehigh County legislators on an error that sent incorrect vote-by-mail ballots for the May 19 primary. About mail ballot accuracy, not ID. Posted on a co-signer's House page.",
+      "subjects": [
+        "vote-by-mail",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:09:19.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('BOSCOLA'), linked to Lisa M. Boscola (district 18) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.709Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Boscola'), linked to Lisa Boscola (district 18) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.709Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Boscola'), linked to Lisa M. Boscola (district 18) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.709Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39a578893eb20e4070d9819b9372288d6bf71943486aea4001dd9ce5298d3f5d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "yea",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Boscola'), linked to Lisa M. Boscola (district 18) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.709Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b775c5d9c9c4029435bc46ca3ba2314b9f2f6e517bb6f16b280890a05862f63",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Boscola'), linked to Lisa M. Boscola (district 18) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1270be44fe0ee716a70335701e366e01988b85939ba586c8e6042713b93bcb4a",
+      "kind": "own-words",
+      "url": "https://senatorboscola.com/members-of-pa-senate-democratic-caucus-request-disaster-declaration-on-gun-violence/",
+      "date": "2019-06-24",
+      "date_precision": "day",
+      "passage": "“We believe it is necessary to raise the public’s awareness of the massive loss of human life and the suffering inflicted on affected family, friends and neighbors where this tragedy is unfolding daily,” they wrote.",
+      "note": "Joint letter to the Governor from members of the Senate caucus (Boscola is listed among them on her site's release) asking for a disaster declaration on gun violence. The release lists asks: a health-department task force, more funding for the joint local-state firearm taskforce to take illegal guns off the street, and more law enforcement presence in high-violence areas. Statement is group-issued, not an individual quote.",
+      "subjects": [
+        "gun violence prevention",
+        "illegal guns enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d975fb65093c90efd328f5bbad221e3385dfbf05a451e6e9e9031c83aac84f3",
+      "kind": "record",
+      "url": "https://senatorboscola.com/senator-boscola-hosts-policy-hearing-on-gun-violence-prevention/",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Policy committee hearing on gun violence prevention hosted by Boscola (video page title only)",
+      "note": "Her site lists a video titled 'Senator Boscola Hosts Policy Hearing on Gun Violence Prevention'. Content of the video was not read.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballot",
+        "proof of citizenship",
+        "voter fraud",
+        "mail voting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate site senatorboscola.com: site search for voter ID returned releases on mail voting and a January 2023 release on Senate Bill 1 amendments (read in full; nothing about ID in her words)",
+        "blocked: https://delawarevalleyjournal.com/?p=40437 (Cloudflare block, 403)",
+        "The Star News Network January 2023 report on the Senate vote: names her vote, contains no words of hers",
+        "Ballotpedia: not reached (fetch tool returned an empty page earlier in the session)",
+        "web search x1 on name plus voter ID and mail ballots",
+        "bill pages: not searched, votes and sponsorships are linked separately",
+        "scope: sitting state senator; 2026 ballot status not checked",
+        "joint May 2026 statement on pahouse.com (co-signed by her) read in full"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:09:19.616Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.709Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun violence prevention general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site senatorboscola.com (site search 'gun': 4 results, all Feb-Jun 2019)",
+        "senatorboscola.com video pages (Feb 14 2019 remarks and hearing): video only, not reviewed: https://senatorboscola.com/sen-boscola-reducing-gun-violence-february-14-2019-2/",
+        "not reviewed: https://senatorboscola.com/senate-democratic-policy-committee-hearing-on-reducing-gun-violence/",
+        "legiplex bill lists and PA legislature bill pages: search leads only, no sponsorship on the subject confirmed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

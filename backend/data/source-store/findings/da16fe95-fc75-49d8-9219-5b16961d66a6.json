@@ -1,0 +1,156 @@
+{
+  "politician_id": "da16fe95-fc75-49d8-9219-5b16961d66a6",
+  "findings": [
+    {
+      "id": "bc18990641e6533b7795b382c1e056434f602fad06b723c7f24e9c2a49cf908f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/legislation/document/20252026/243655",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-838-2026",
+      "act": "sponsor",
+      "motion": "Senate Resolution 838, State Assurance of Voter Eligibility (SAVE) Amendment, listed among the senators on the By: line",
+      "note": "Constitutional amendment resolution that would limit voting to U.S. citizens and require registered electors to present photographic identification before casting a ballot in any election. The date is the creation date of the PDF file, not a floor action.",
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship to vote",
+        "constitutional amendment on voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T20:40:31.872Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Albers'), linked to JOHN ALBERS (district 56) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Albers'), linked to JOHN ALBERS (district 56) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Albers'), linked to Albers, John (district 56) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Albers'), linked to JOHN ALBERS (district 56) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail ballots",
+        "proof of citizenship to vote",
+        "constitutional amendment on citizen-only voting and photo ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.dailysignal.com/2021/05/07/what-media-got-wrong-on-georgias-new-election-law/ (403; a search summary says he spoke about absentee ID there, but nothing was copied)",
+        "blocked: https://ballotpedia.org/John_Albers (empty page)",
+        "legislature bill text PDF for Senate Resolution 838 (downloaded and read)",
+        "Senate press releases (one page on voter registration rules does not name him; one tag page on other bills has nothing on the subject)",
+        "WALB report on the 2026 citizen-only voting resolution (does not name him; not used)",
+        "not reviewed: his campaign site and Senate member page",
+        "identity: the Senate Resolution 838 text lists Albers of the 56th among its senators; his 2026 ballot status was not confirmed from a page I could read"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:40:31.872Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

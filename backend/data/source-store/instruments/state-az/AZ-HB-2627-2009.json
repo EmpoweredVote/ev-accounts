@@ -1,0 +1,698 @@
+{
+  "id": "AZ-HB-2627-2009",
+  "scope": "state:az",
+  "title": "HB 2627 (2009 - Forty-ninth Legislature - First Regular Session (azleg session id 87)): (NOW: voter identification; valid forms)",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/26092",
+    "https://www.azleg.gov/legtext/49leg/1R/bills/HB2627S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (a) A valid form of identification that bears the photograph, NAME and address of the elector that reasonably appears to be the same as the name and address in the precinct register, including an Arizona driver license, an Arizona nonoperating identification license, a tribal enrollment card or other form of tribal identification or a United States federal, state or local government issued identification.\n(b_no_id_remedy)\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (c) A valid form of identification that bears the photograph, name and address of the elector except that if the address on the identification does not reasonably appear to be the same as the address in the precinct register or the identification is a valid United States military identification card or a valid United States passport and does not bear an address, the identification must be accompanied by one of the items listed in subdivision (b) of this paragraph.\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16-584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16-452.\n(c_mail_ballot_id)\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) (b) Two different items that contain the name and address of the elector that reasonably appears to be the same as the name and address in the precinct register, including A utility bill, a bank or credit union statement that is dated within ninety days of the date of the election, a valid Arizona vehicle registration, an Arizona vehicle insurance card, Indian census card, tribal enrollment card or other form of tribal identification, a property tax statement, a recorder's certificate, a voter registration card, a valid United States federal, state or local government issued identification or any mailing that is \"official election material\".\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 2: Subject to the requirements of article IV, part 1, section 1, Constitution of Arizona, section 16-579, Arizona\n(quote) Identification is deemed valid unless it can be determined on its face that it has expired.\n(other) Sec. 1: Section 16-246, Arizona Revised Statutes, is amended to read:\n(other) Sec. 3: Repeal\n(other) Sec. 16: -579, Arizona Revised Statutes, as amended by Laws 2003, chapter 260, section 18, is repealed.\n(other) Sec. 4: Requirements for enactment; three-fourths vote\n(other) Sec. 5: Emergency",
+  "sponsors": [
+    {
+      "name": "David Gowan",
+      "role": "prime",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "David Stevens",
+      "role": "co",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jonathan Paton",
+      "role": "co",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Doris Goodale",
+      "role": "co",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Steve Montenegro",
+      "role": "co",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    },
+    {
+      "name": "Jerry Weiers",
+      "role": "co",
+      "version": "HB2627S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2009-06-09",
+      "body": "AZ House",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 59,
+      "no": 0,
+      "absent": 1,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53571&includeVotes=true",
+      "members": [
+        {
+          "name": "ABLESER",
+          "vote": "yea"
+        },
+        {
+          "name": "ANTENORI",
+          "vote": "yea"
+        },
+        {
+          "name": "ASH",
+          "vote": "yea"
+        },
+        {
+          "name": "BARNES",
+          "vote": "yea"
+        },
+        {
+          "name": "BARTO",
+          "vote": "yea"
+        },
+        {
+          "name": "BIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "BOONE",
+          "vote": "yea"
+        },
+        {
+          "name": "BRADLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "BROWN",
+          "vote": "yea"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "CAJERO BEDFORD",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL CH",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL CL",
+          "vote": "yea"
+        },
+        {
+          "name": "CHABIN",
+          "vote": "yea"
+        },
+        {
+          "name": "COURT",
+          "vote": "yea"
+        },
+        {
+          "name": "CRANDALL",
+          "vote": "yea"
+        },
+        {
+          "name": "CRUMP",
+          "vote": "yea"
+        },
+        {
+          "name": "DESCHENE",
+          "vote": "yea"
+        },
+        {
+          "name": "DRIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "FARLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "FLEMING",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA M",
+          "vote": "yea"
+        },
+        {
+          "name": "GOODALE",
+          "vote": "yea"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HEINZ",
+          "vote": "yea"
+        },
+        {
+          "name": "HENDRIX",
+          "vote": "yea"
+        },
+        {
+          "name": "JONES",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "KONOPNICKI",
+          "vote": "yea"
+        },
+        {
+          "name": "LESKO",
+          "vote": "yea"
+        },
+        {
+          "name": "LOPES",
+          "vote": "yea"
+        },
+        {
+          "name": "LUJAN",
+          "vote": "yea"
+        },
+        {
+          "name": "MASON",
+          "vote": "yea"
+        },
+        {
+          "name": "MCCOMISH",
+          "vote": "yea"
+        },
+        {
+          "name": "MCGUIRE",
+          "vote": "yea"
+        },
+        {
+          "name": "MCLAIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MEYER",
+          "vote": "yea"
+        },
+        {
+          "name": "MEZA",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA B",
+          "vote": "yea"
+        },
+        {
+          "name": "MONTENEGRO",
+          "vote": "yea"
+        },
+        {
+          "name": "MURPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "NICHOLS",
+          "vote": "yea"
+        },
+        {
+          "name": "PANCRAZI",
+          "vote": "yea"
+        },
+        {
+          "name": "PATTERSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PRATT",
+          "vote": "yea"
+        },
+        {
+          "name": "QUELLAND",
+          "vote": "yea"
+        },
+        {
+          "name": "REAGAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SCHAPIRA",
+          "vote": "yea"
+        },
+        {
+          "name": "SEEL",
+          "vote": "yea"
+        },
+        {
+          "name": "SINEMA",
+          "vote": "yea"
+        },
+        {
+          "name": "STEVENS",
+          "vote": "yea"
+        },
+        {
+          "name": "TOBIN",
+          "vote": "yea"
+        },
+        {
+          "name": "TOVAR",
+          "vote": "yea"
+        },
+        {
+          "name": "WATERS",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS J",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS JP",
+          "vote": "absent"
+        },
+        {
+          "name": "WILLIAMS",
+          "vote": "yea"
+        },
+        {
+          "name": "YARBROUGH",
+          "vote": "yea"
+        },
+        {
+          "name": "YOUNG WRIGHT",
+          "vote": "yea"
+        },
+        {
+          "name": "ADAMS",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2009-06-22",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 0,
+      "absent": 1,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53786&includeVotes=true",
+      "members": [
+        {
+          "name": "ABOUD",
+          "vote": "yea"
+        },
+        {
+          "name": "AGUIRRE",
+          "vote": "yea"
+        },
+        {
+          "name": "ALLEN C",
+          "vote": "yea"
+        },
+        {
+          "name": "ALLEN S",
+          "vote": "yea"
+        },
+        {
+          "name": "ALVAREZ",
+          "vote": "yea"
+        },
+        {
+          "name": "BURTON CAHILL",
+          "vote": "yea"
+        },
+        {
+          "name": "CHEUVRONT",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA",
+          "vote": "yea"
+        },
+        {
+          "name": "GORMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "GOULD",
+          "vote": "yea"
+        },
+        {
+          "name": "GRAY C",
+          "vote": "yea"
+        },
+        {
+          "name": "GRAY L",
+          "vote": "yea"
+        },
+        {
+          "name": "HALE",
+          "vote": "yea"
+        },
+        {
+          "name": "HARPER",
+          "vote": "yea"
+        },
+        {
+          "name": "HUPPENTHAL",
+          "vote": "yea"
+        },
+        {
+          "name": "LANDRUM TAYLOR",
+          "vote": "yea"
+        },
+        {
+          "name": "LEFF",
+          "vote": "yea"
+        },
+        {
+          "name": "LOPEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MCCUNE DAVIS",
+          "vote": "absent"
+        },
+        {
+          "name": "MELVIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA",
+          "vote": "yea"
+        },
+        {
+          "name": "NELSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PATON",
+          "vote": "yea"
+        },
+        {
+          "name": "PEARCE R",
+          "vote": "yea"
+        },
+        {
+          "name": "PIERCE S",
+          "vote": "yea"
+        },
+        {
+          "name": "RIOS",
+          "vote": "yea"
+        },
+        {
+          "name": "TIBSHRAENY",
+          "vote": "yea"
+        },
+        {
+          "name": "VERSCHOOR",
+          "vote": "yea"
+        },
+        {
+          "name": "WARING",
+          "vote": "yea"
+        },
+        {
+          "name": "BURNS",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2009-06-29",
+      "body": "AZ House",
+      "motion": "Final Reading: Passed",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 0,
+      "absent": 6,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=54026&includeVotes=true",
+      "members": [
+        {
+          "name": "ABLESER",
+          "vote": "yea"
+        },
+        {
+          "name": "ANTENORI",
+          "vote": "yea"
+        },
+        {
+          "name": "ASH",
+          "vote": "yea"
+        },
+        {
+          "name": "BARNES",
+          "vote": "yea"
+        },
+        {
+          "name": "BARTO",
+          "vote": "yea"
+        },
+        {
+          "name": "BIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "BOONE",
+          "vote": "yea"
+        },
+        {
+          "name": "BRADLEY",
+          "vote": "yea"
+        },
+        {
+          "name": "BROWN",
+          "vote": "yea"
+        },
+        {
+          "name": "BURGES",
+          "vote": "yea"
+        },
+        {
+          "name": "CAJERO BEDFORD",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL CH",
+          "vote": "yea"
+        },
+        {
+          "name": "CAMPBELL CL",
+          "vote": "yea"
+        },
+        {
+          "name": "CHABIN",
+          "vote": "yea"
+        },
+        {
+          "name": "COURT",
+          "vote": "yea"
+        },
+        {
+          "name": "CRANDALL",
+          "vote": "yea"
+        },
+        {
+          "name": "CRUMP",
+          "vote": "yea"
+        },
+        {
+          "name": "DESCHENE",
+          "vote": "yea"
+        },
+        {
+          "name": "DRIGGS",
+          "vote": "yea"
+        },
+        {
+          "name": "FARLEY",
+          "vote": "absent"
+        },
+        {
+          "name": "FLEMING",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA M",
+          "vote": "yea"
+        },
+        {
+          "name": "GOODALE",
+          "vote": "yea"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HEINZ",
+          "vote": "absent"
+        },
+        {
+          "name": "HENDRIX",
+          "vote": "yea"
+        },
+        {
+          "name": "JONES",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "KONOPNICKI",
+          "vote": "yea"
+        },
+        {
+          "name": "LESKO",
+          "vote": "yea"
+        },
+        {
+          "name": "LOPES",
+          "vote": "yea"
+        },
+        {
+          "name": "LUJAN",
+          "vote": "yea"
+        },
+        {
+          "name": "MASON",
+          "vote": "absent"
+        },
+        {
+          "name": "MCCOMISH",
+          "vote": "yea"
+        },
+        {
+          "name": "MCGUIRE",
+          "vote": "yea"
+        },
+        {
+          "name": "MCLAIN",
+          "vote": "yea"
+        },
+        {
+          "name": "MEYER",
+          "vote": "yea"
+        },
+        {
+          "name": "MEZA",
+          "vote": "absent"
+        },
+        {
+          "name": "MIRANDA B",
+          "vote": "yea"
+        },
+        {
+          "name": "MONTENEGRO",
+          "vote": "yea"
+        },
+        {
+          "name": "MURPHY",
+          "vote": "yea"
+        },
+        {
+          "name": "NICHOLS",
+          "vote": "yea"
+        },
+        {
+          "name": "PANCRAZI",
+          "vote": "yea"
+        },
+        {
+          "name": "PATTERSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PRATT",
+          "vote": "yea"
+        },
+        {
+          "name": "QUELLAND",
+          "vote": "absent"
+        },
+        {
+          "name": "REAGAN",
+          "vote": "yea"
+        },
+        {
+          "name": "SCHAPIRA",
+          "vote": "yea"
+        },
+        {
+          "name": "SEEL",
+          "vote": "yea"
+        },
+        {
+          "name": "SINEMA",
+          "vote": "absent"
+        },
+        {
+          "name": "STEVENS",
+          "vote": "yea"
+        },
+        {
+          "name": "TOBIN",
+          "vote": "yea"
+        },
+        {
+          "name": "TOVAR",
+          "vote": "yea"
+        },
+        {
+          "name": "WATERS",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS J",
+          "vote": "yea"
+        },
+        {
+          "name": "WEIERS JP",
+          "vote": "yea"
+        },
+        {
+          "name": "WILLIAMS",
+          "vote": "yea"
+        },
+        {
+          "name": "YARBROUGH",
+          "vote": "yea"
+        },
+        {
+          "name": "YOUNG WRIGHT",
+          "vote": "yea"
+        },
+        {
+          "name": "ADAMS",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

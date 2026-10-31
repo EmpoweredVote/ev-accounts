@@ -24,6 +24,9 @@ import {
   MIN_SNIPPET_WORDS, normalizeText, normName, normTopic, stanceKey, type EvidenceRow, type StanceRow,
 } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
+import { namesPartyTagOrColour } from '../../src/lib/partyLabels.js';
+import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine } from '../../src/lib/legiscanEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
 export interface ResearchRow {
@@ -150,6 +153,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bA\.?B\.?-?\s?\d+\b/,
   /\bLD\s?\d+\b/,
   /\bSJR\s?\d+\b/,
+  // Michigan names joint resolutions by letter: "HJR B" (reasoning), "HJRB" (LegiScan), "House Joint
+  // Resolution B" (the official heading); canonicalizeInstrumentId folds all three to "hjrb" (2026-10-30).
+  /\b[HS]JR\s?[A-Z]{1,2}\b/,
+  /\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b/,
   /\bChapter\s?\d+\b/,
   /\bResolution No\.?\s?\d+\b/,
   /\bOrdinance No\.?\s?\d+\b/,
@@ -160,6 +167,23 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /(?<![A-Za-z]\.)\bS\.?\s?\d{1,4}\b/,
   /\bBan of (?:19|20)\d{2}\b/,
   /\bR-\d{1,4}-\d{2}\b/,
+  // Philadelphia (2026-10-28). Matched by LOOKBEHIND so only the six digits are extracted: the city
+  // prints the same bill as "Bill #250568" (phlcouncil.com) and "Bill No. 250568" (Legistar), and
+  // canonicalizeInstrumentId keeps letter runs — so matching the whole phrase would canonicalize
+  // those two to "bill250568" and "billno250568" and raise instrument-not-cited on a row whose
+  // snippet names the very bill the reasoning does. Extracting "250568" alone is identical on both
+  // sides. The lookbehind still requires the "Bill" marker, so a bare six-digit number never matches.
+  /(?<=\bBill (?:No\.\s?|#))\d{6}\b/,
+  // Executive orders (2026-10-28). Lookbehind again, for the same reason as the Philadelphia bill
+  // above: a city writes "Executive Order No. 7-25" and "Executive Order 7-25" interchangeably, and
+  // keeping the words would canonicalize those to "executiveorderno725" and "executiveorder725".
+  // ⚠ This does NOT normalize leading zeros: "07-25" and "7-25" remain different identifiers, so a
+  // row must spell the order the way the snippet it cites spells it.
+  // Case-INSENSITIVE on purpose: extraction runs on the raw snippet, and a signed order heads itself
+  // "EXECUTIVE ORDER NO. 7-25" in capitals while prose writes "Executive Order 7-25". Without the flag the
+  // heading that carries the number is invisible and instrument-not-cited fires on a row citing the
+  // order itself. Measured on Parker/homelessness-response, 2026-10-28.
+  /(?<=\bExecutive Order (?:No\.\s?)?)\d{1,4}-\d{2}\b/i,
 ];
 
 /** Every identifier-bearing instrument mention in `text`, as raw matched substrings (may repeat). */
@@ -172,14 +196,25 @@ function extractInstrumentIdentifiers(text: string): string[] {
   return out;
 }
 
+// Spelled-out chamber forms fold to the short form, so the official heading "Senate Bill 303" and
+// "House Joint Resolution B" match a reasoning's "SB 303" and "HJR B" (Michigan, 2026-10-30).
+const SPELLED_OUT: [RegExp, string][] = [
+  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
+];
+
 /**
  * Canonical form for comparing an instrument identifier against snippet text: normalize (case,
  * whitespace, curly quotes — normalizeText), then collapse each run of letters or digits together with no
  * separator — "H.B. 1001", "HB 1001" and "HB1001" all become "hb1001". Digits stay grouped as their own run
  * (never split), so this cannot accidentally straddle an unrelated word boundary elsewhere in the snippet.
+ * A spelled-out chamber prefix folds to its short form (SPELLED_OUT), and the zero padding after a letter
+ * prefix is dropped ("SB0303", LegiScan's Michigan spelling, is "sb303"). An all-digit identifier keeps its
+ * zeros: the executive-order hazard in chair-evidence-patterns.mjs is not solved here.
  */
 function canonicalizeInstrumentId(text: string): string {
-  return (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
+  let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
+  for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
+  return c.replace(/^([a-z]+)0+(?=\d)/, '$1');
 }
 
 /** Text inside straight ("...") or curly (“...”) double quotes in `text`, in order, one entry per span. */
@@ -236,6 +271,9 @@ export function checkStanceRow(
     const forUrl = ctx.evidence.filter((e) => e.source_url === url);
     if (forUrl.length === 0) add('source-without-snippet', 'high', `no evidence.csv snippet for ${url}`);
     for (const e of forUrl) {
+      // A canonical roll-call or LegiScan line is checked field by field by the verifier, not by length.
+      if (isRollCallXmlUrl(url) && parseRollCallLine(e.snippet)) continue;
+      if (isLegiscanUrl(url) && parseLegiscanLine(e.snippet)) continue;
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);
     }
@@ -309,7 +347,8 @@ export function checkStanceRow(
       + (row.evidence_type === 'blank' ? ' — blank is only for value 0 with a blank_reason' : ''));
   }
 
-  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)) {
+  if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)
+    || namesPartyTagOrColour(row.reasoning)) {
     add('party-inference', 'high', 'reasoning names a party or partisan frame — party is never evidence');
   }
 
@@ -450,7 +489,22 @@ export function canonicalUrl(url: string): string {
  * displayed chair's context sources; `fetchable` says which of them still load (a dead page cannot
  * be examined, so it is not required). Pure; the verifier supplies both, because only it can read
  * what voters see and fetch the pages. Returns null when the rule is met.
+ *
+ * Summary sites are not required (ruling 2026-10-29, Chris Andrews): a page that only summarises a
+ * person — OnTheIssues, Wikipedia, a Ballotpedia bio, LCV's scorecard, GovTrack — can never seat a
+ * chair under the Season 3 codebook, so reading it cannot turn a blank into a seat. Season 1 chairs
+ * often rest on such pages alone (34 of 50 on the voting-rights federal batch). A Ballotpedia
+ * Candidate Connection survey is the candidate's own answer and is still required.
  */
+export const SUMMARY_SITE = /^(?:[a-z0-9-]+\.)*(ontheissues\.org|wikipedia\.org|lcv\.org|govtrack\.us)$/i;
+const isSummaryOnly = (url: string): boolean => {
+  try {
+    const host = new URL(url.trim()).hostname;
+    if (SUMMARY_SITE.test(host)) return true;
+    return isBallotpediaUrl(url) && !isCandidateConnectionUrl(url);
+  } catch { return false; }
+};
+
 export function checkBlankExaminedFallback(args: {
   row: Pick<ResearchRow, 'full_name' | 'topic_key' | 'source_urls'>;
   displayedValue: number;
@@ -459,7 +513,7 @@ export function checkBlankExaminedFallback(args: {
 }): GateFinding | null {
   const examined = new Set(args.row.source_urls.map(canonicalUrl));
   const missing = [...new Set(args.fallbackSources.map((u) => u.trim()).filter(Boolean))]
-    .filter((u) => !examined.has(canonicalUrl(u)) && args.fetchable(u));
+    .filter((u) => !examined.has(canonicalUrl(u)) && !isSummaryOnly(u) && args.fetchable(u));
   if (missing.length === 0) return null;
   return {
     full_name: args.row.full_name, topic_key: args.row.topic_key, check_id: 'blank-unexamined-fallback', severity: 'high',

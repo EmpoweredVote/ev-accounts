@@ -1,0 +1,58 @@
+{
+  "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca",
+  "findings": [
+    {
+      "id": "cfbe3c04deb12783524ea839a2cb1a573dc224616e7f71ec681484c1c090eb98",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/hearings/257988",
+      "date": "2024-05-21",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "Senate floor third reading",
+      "note": "Voted aye on the Senate floor vote on SB 1174 (passed 30 to 8); the transcript's roll call records his vote as aye.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:21.812Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID rules",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Digital Democracy bill page for SB 1174 (2023-24) with vote rolls and hearing transcripts",
+        "Digital Democracy bill page for AB 25 (2025-26 voter ID bill): no vote by this person",
+        "Secretary of State certified candidate list for 2026-11-03 (used to confirm 2026 candidacy)",
+        "news search on name plus voter ID and SAVE Act: nothing on the subject",
+        "blocked: https://ballotpedia.org/ (fetch tool returned empty; direct fetch not attempted further)",
+        "blocked: https://leginfo.legislature.ca.gov/ (403 bot challenge; legiscan also 403)",
+        "official site sd30.senate.ca.gov (site search for election integrity: no results)",
+        "Digital Democracy legislator page: his listed bills (SB 804, SB 296, SB 1124, SB 907) are not on the subject",
+        "Digital Democracy Senate floor transcript 2024-05-21: roll call only, no remarks by this person",
+        "status: on the 2026 general-election ballot for State Senate District 30 per https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:59:21.812Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

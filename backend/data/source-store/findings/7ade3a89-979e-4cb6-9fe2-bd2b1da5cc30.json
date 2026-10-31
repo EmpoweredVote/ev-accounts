@@ -1,0 +1,228 @@
+{
+  "politician_id": "7ade3a89-979e-4cb6-9fe2-bd2b1da5cc30",
+  "findings": [
+    {
+      "id": "489fec4ef471ef2a398c75e2430173fe8a199ceda276de844207cced401be885",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S747",
+      "date": "2023-06-01",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "sponsor",
+      "note": "Listed as an additional (co-)sponsor of S747, Elections Law Changes (filed 2023-06-01; became Session Law 2023-140 by veto override). Final text requires photo ID plus a proof-of-residence document to register and vote on the same day at early voting, and checks the driver license or Social Security number within two business days. It also adds a photo-ID challenge ground and allows a copy of photo ID or a residence document with a mail registration. Co-sponsor date is the filing date shown; the page does not give the date he was added.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "proof of residence to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:55:59.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a5718ffa6157bbf2a6cc16f66be13f378cfc9930cf2402603bc2955b0d40fbb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/300",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "S747 Elections Law Changes, Senate second reading (vote 28-19)",
+      "note": "Roll-call transcript lists Johnson among the Ayes on second reading of S747.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:55:59.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a450623a623c67491ffcc20742a50093188836053d748ce6ce5de2076c4607fa",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "S747 Elections Law Changes, Senate concur in House committee substitute (vote 27-18)",
+      "note": "Roll-call transcript lists Johnson among the Ayes on concurring with the House version of S747.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:55:59.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "132ba093e8e8ab1c78cf2b05d04f5a6047340b4548368cea33d3914878b518ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-09",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "S747 Elections Law Changes, Senate vote to override the governor's veto (vote 30-19)",
+      "note": "Roll-call transcript lists Johnson among the Ayes on the veto override of S747. The House overrode the next day and the bill became Session Law 2023-140.",
+      "subjects": [
+        "photo ID for same-day registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:55:59.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6c014586179347676a8f455d7d85db97aa91ee374a81cf77a05fdf17687fecb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S352",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-352-2023",
+      "act": "sponsor",
+      "note": "Listed as an additional (co-)sponsor of S352, Remove Foreign Citizens from Voting Rolls (filed 2023-03-22). The filed bill makes United States citizenship a juror requirement and has courts share the names of people excused from jury duty for lack of citizenship with the State Board of Elections, which reviews their voter registration. Date is the filing date; the page does not give the date he was added.",
+      "subjects": [
+        "non-citizen voting and voter-roll checks",
+        "citizenship check of registered voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:55:59.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "90339a73f7b5c15768eec539c8437d30161c8eb87e7f00bebc406a7eb0f7356a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Senate second reading (28-13). Johnson is listed among the Ayes.",
+      "note": "Legislative staff summary of Part II of the ratified bill: it requires DMV to send full Social Security numbers to the State Board of Elections monthly, requires the State Board to set a process to remove non-citizens from voter rolls using federal database information, and bars processing a registration application unless the applicant affirmatively says they are a U.S. citizen (with a sworn form if the question is left blank). The Governor vetoed it on 2026-08-17. Staff summary: https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8",
+      "subjects": [
+        "citizenship check on voter registration",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T20:36:48.155Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "proof of residence documents",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Todd_Johnson_(North_Carolina) says he is on the 2026 general-election ballot for NC Senate District 35 (March 3, 2026 primary was canceled); NC General Assembly biography https://www.ncleg.gov/Members/Biography/S/406 names Senator Todd Johnson, District 35",
+        "On the Record (0 appearances; extract-otr.mjs run with politician id and name)",
+        "official site: NC General Assembly member page (no personal site, no issue pages, no press list)",
+        "campaign site: not found (https://www.toddjohnsonnc.com does not resolve)",
+        "NC legislature bill pages: introduced bills 2019, 2021, 2023, 2025 reviewed; co-sponsorships and roll calls on S747 (2023) and S352 (2023) saved; S326 (2021), S88 (2023) and S994 (2025) reviewed and are about mail-ballot receipt deadline or early-voting sites, nothing on ID or citizenship",
+        "Ballotpedia: reviewed, nothing on the subject (no candidate survey answers)",
+        "blocked: https://justfacts.votesmart.org/candidate/133986 (403)",
+        "Wikipedia: lead only, no own words",
+        "own words (interviews, forums, questionnaires, posts): nothing found; web search budget was used up so no news search was run: not reviewed",
+        "nothing on the subject: voter ID law of 2018 (S824) predates his term, which began 2019-01-01"
+      ],
+      "found": 5,
+      "at": "2026-10-22T23:55:59.728Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID or ID number with an absentee or mail ballot request",
+        "proof of citizenship to register",
+        "citizenship check on voter registration applications",
+        "removing non-citizens from voter rolls",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page for Todd Johnson (Senator, district 35, Cabarrus and Union counties): https://www.ncleg.gov/Members/Biography/S/",
+        "BallotReady page: shows him as a candidate for the same Senate seat on the 2026 general-election ballot: https://www.ballotready.org/people/matthew-todd-t-johnson",
+        "NC General Assembly list of bills he sponsored (2025-2026): nothing on voter ID or citizenship; one early-voting bill (SB 994) and one local-commission bill, not on the subject",
+        "NC General Assembly roll-call record for the 2025-2026 session",
+        "NC General Assembly bill page and staff summaries for HB 958",
+        "campaign site and Ballotpedia: not reviewed, not found in search results",
+        "own words (interviews, forums, posts) on the subject: one web search, nothing found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T20:36:48.155Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

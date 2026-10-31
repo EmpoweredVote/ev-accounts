@@ -1,0 +1,63 @@
+{
+  "politician_id": "aa2ee278-9763-4a30-90a9-9231331ac129",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Kyle_Pierce_(Indiana) names him as Indiana House District 36 incumbent on the Nov 3, 2026 general election ballot",
+        "On the Record (0 appearances; extract-otr run with --names Kyle Pierce)",
+        "campaign site https://www.pierceforindiana.com/about and /kyles-record: nothing on the subject (about page mentions authoring a bill to modernize technology used by the Election Division, no ID or citizenship content)",
+        "Ballotpedia: nothing on the subject (sponsored-bill table is loaded by script and not readable)",
+        "blocked: https://iga.in.gov/legislative/2026/bills/house/1088/details (script-rendered page, no content readable)",
+        "blocked: https://api.iga.in.gov/ (403)",
+        "blocked: https://legiscan.com/IN/legislator/kyle-pierce/id/24161 (403)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for election bills (unreadable without script)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: https://indianahouserepublicans.com/members/ (no member link found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:48:15.993Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract script run)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/kyle-pierce/ (confirms State Representative, House District 36; full press-release list 2022-2026 reviewed; nothing on the subject; lists seat on Elections and Apportionment committee and a campaign-finance bill only)",
+        "Indiana House caucus press release: 2026 session wrap-up, nothing on the subject",
+        "Wikipedia 2026 Indiana House election page (lead only): shows him as the incumbent in the District 36 2026 race with a single declared primary candidate; in scope",
+        "Ballotpedia: fetched, page returned no usable text on his positions",
+        "one news search on name plus subject words: nothing on the subject",
+        "one search for 2024 and 2026 Indiana election bills: only general coverage of HB 1264 (2024) with no mention of Pierce",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_kyle_pierce_1130 (page loads only as an empty app shell)",
+        "blocked: https://api.iga.in.gov/2024/bills/hb1264 (403, needs API key), so roll-call votes were not read",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (403)",
+        "blocked: https://indianacapitalchronicle.com/?p=9173 (403 on fetch and curl)",
+        "not reviewed: https://www.larryinfishers.com/2024/07/16/podcast-state-representative-kyle-pierce/ (audio podcast, no transcript)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:10:09.248Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

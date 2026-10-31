@@ -1,0 +1,291 @@
+{
+  "politician_id": "0ffdcdb0-a5f4-44c6-93e3-30c797b3bfce",
+  "findings": [
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('FARRY'), linked to Frank A. Farry III (district 142) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Farry'), linked to Frank Farry (district 142) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "893f8342832548a6f8c1b29d9fc7caa128d6fb60fcc9a071fdabbec8e883164c",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Farry'), linked to Frank A. Farry (district 6) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89f2077680123850d001d5c1994220739e8aafb28315772e76e29b19e791556a",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=S&type=B&bn=1",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 385 (House reported, passed House May 22, 2023). PN 26 (passed Senate Jan 11, 2023) also read; the voter ID paragraph reads the same in both.",
+      "note": "Named as co sponsor ('FARRY') on the official bill page; linked to Frank A. Farry via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Farry'), linked to Frank A. Farry III (district 142) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Farry'), linked to Frank Farry (district 142) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Farry'), linked to Frank A. Farry III (district 142) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('FARRY') on the official bill page; linked to Frank A. Farry via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "204e130ffcd0a1bb7fdfa12ddb368c7ec1910b1e73fb18a4c535d303e40a17fc",
+      "kind": "record",
+      "url": "https://levittownnow.com/2014/05/06/gun-groups-meet-at-protest-outside-of-state-represenatives-office/",
+      "date": "2014-05-06",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Reported remarks on HB 921 (replace Pennsylvania Instant Check System with National Instant Check System); he had not decided his vote",
+      "note": "When he was a state representative, LevittownNow reported that Farry said he was disappointed a gun rally was held at his office and had not yet decided how he would vote on HB 921. The reporter's text (not a direct quote) reads: 'He added that he supported the second amendment and wanted responsible legislation that backed what the majority of residents felt.' Article date is publication date; the rally was the Monday before.",
+      "subjects": [
+        "Second Amendment",
+        "instant background check system",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (standing rule bars running repo scripts)",
+        "scope check: https://levittownnow.com/2026/05/19/frank-farry-steve-santarsiero-draw-challengers-for-pa-senate-seats/ shows him as sitting 6th District senator facing a general-election challenger (he sits in the Senate now, not the House)",
+        "official Senate site https://www.senatorfarry.com/ home page and site search for voter ID (7 results, none on the subject)",
+        "web searches (3) on his name with voter ID, election integrity, mail ballot: nothing on the subject",
+        "not reviewed: Ballotpedia, Senate bill pages (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:01:15.647Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "firearm sentencing",
+        "gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "LevittownNow 2014 article (via curl)",
+        "blocked: https://news.yahoo.com/gun-safety-advocates-urge-action-095809533.html",
+        "blocked: https://www.penncapital-star.com/government-politics/gop-lawmakers-introduce-bill-for-mandatory-minimum-sentence-for-illegal-firearms/",
+        "not reviewed: pasenategop.com member page, campaign site, Ballotpedia, palegis.us sponsorships (budget)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

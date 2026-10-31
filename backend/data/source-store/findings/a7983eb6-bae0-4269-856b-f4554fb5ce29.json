@@ -1,0 +1,153 @@
+{
+  "politician_id": "a7983eb6-bae0-4269-856b-f4554fb5ce29",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "a193c47839c3cf75dcf54294c4d9afa5f9bfe7e3efd7f85e8ad553cadb8c25f8",
+      "kind": "own-words",
+      "url": "https://kutv.com/news/politics/take-2-interview-with-celeste-maloy",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "I think a lot of times the conversation immediately turns to gun control, and I'm worried that's a little too far downstream. I think we need to go a little farther back and deal with why people are choosing violence before they ever pick up the gun.",
+      "note": "KUTV interview (Heidi Hatch) held Sept 4 2024, published Sept 5, after a school shooting and a call for gun reform; quoted answer on gun control.",
+      "subjects": [
+        "gun control",
+        "gun reform"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b015e675a1fa84ae2aa15408958a727bb0c4f884de8876688ebd0a2f980986f",
+      "kind": "own-words",
+      "url": "https://kutv.com/news/politics/take-2-interview-with-celeste-maloy",
+      "date": "2024-09-04",
+      "date_precision": "day",
+      "passage": "The devil is always in the details when it comes to legislation- but I I'm not going to do anything that curbs Second Amendment rights.",
+      "note": "Her answer, in the same KUTV interview, to whether she would look at a gun reform bill. The page also quotes: I'm very pro Second Amendment, I've been really clear about that.",
+      "subjects": [
+        "Second Amendment",
+        "gun reform legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun reform",
+        "concealed carry",
+        "suppressors",
+        "background checks"
+      ],
+      "places": [
+        "status check: won the 2026-06-23 Republican primary and is on the Nov 3 2026 ballot (https://www.deseret.com/politics/2026/06/23/utah-3rd-congressional-district-race-called-for-celeste-maloy-against-phil-lyman/); district number differs between sources",
+        "On the Record (0 meetings)",
+        "official site maloy.house.gov (home page; nothing on the subject)",
+        "KUTV interview 2024-09-05",
+        "web searches (two)",
+        "not reviewed: Ballotpedia (challenge page earlier for another person)",
+        "not reviewed: congress.gov (blocked earlier, not retried)",
+        "nothing found on sponsorships (legiplex lists unconfirmed, not saved)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

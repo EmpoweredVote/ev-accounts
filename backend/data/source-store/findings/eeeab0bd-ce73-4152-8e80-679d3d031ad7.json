@@ -1,0 +1,175 @@
+{
+  "politician_id": "eeeab0bd-ce73-4152-8e80-679d3d031ad7",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "08dc3c7ed57900854fbcdce3e33ae9af5a0262d42150b9be0aaf59b6045f0fe1",
+      "kind": "own-words",
+      "url": "https://frost.house.gov/media/press-releases/following-the-attempted-assassination-of-former-president-trump-reps-frost-and-mcbath-call-on-house-speaker-mike-johnson-to-bring-a-vote-on-assault-weapons-ban",
+      "date": "2024-07-19",
+      "date_precision": "day",
+      "passage": "Political violence like the attempted assassination of former President Donald Trump with an AR-15 assault rifle will continue unless we curb the means of political violence. The House of Representatives must take decisive and resolute action to bring H.R. 698, the Assault Weapons Ban of 2023 and H.R. 8600, the Gas-Operated Semi-Automatic Firearms Exclusion (GOSAFE) Act to a vote.",
+      "note": "Joint letter with another member to the Speaker asking for House votes on H.R. 698 and H.R. 8600. Date taken from the page title in search results.",
+      "subjects": [
+        "assault weapons ban",
+        "gas-operated semi-automatic firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14ad4b9779ff1a51340001e37c86179b8f7e748daf040b298a4154218edd3114",
+      "kind": "own-words",
+      "url": "https://frost.house.gov/media/press-releases/congressman-maxwell-frost-joins-house-leadership-and-gun-violence-prevention",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "passage": "There is no reason why someone should be able to buy an assault weapon in this country after we’ve seen mass shooting after mass shooting come to fruition at the hands of a semiautomatic weapon. There’s no reason that we should not ensure enough time for a background check to take place before a firearm is sold in order to protect innocent lives.",
+      "note": "Statement on signing discharge petitions for H.R. 698, H.R. 2403 and H.R. 715. Date taken from the page title in search results.",
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting period for gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91fecaaec2c772988fa3a607ad6b4ab4c214ae8c13d78e05b3725e31708ef206",
+      "kind": "record",
+      "url": "https://frost.house.gov/media/press-releases/congressman-maxwell-frost-joins-house-leadership-and-gun-violence-prevention",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "instrument_id": "US-HR-698-2023",
+      "act": "other",
+      "motion": "Signed discharge petition to force a House vote on H.R. 698, Assault Weapons Ban",
+      "note": "Signed discharge petitions for H.R. 698 (assault weapons ban), H.R. 2403 (Enhanced Background Checks Act) and H.R. 715 (background checks on firearm sales).",
+      "subjects": [
+        "assault weapons ban",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "waiting period for gun sales",
+        "gas-operated semi-automatic firearms",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases (frost.house.gov)",
+        "blocked: https://frost.house.gov/issues/gun-violence-prevention (HTTP 410)",
+        "one news search on name plus gun subject words",
+        "not reviewed: congress.gov sponsorship lists",
+        "not reviewed: Ballotpedia"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

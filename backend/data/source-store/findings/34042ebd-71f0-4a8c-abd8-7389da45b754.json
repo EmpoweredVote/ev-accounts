@@ -1,0 +1,174 @@
+{
+  "politician_id": "34042ebd-71f0-4a8c-abd8-7389da45b754",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "be751d2ee3c1056df80c744e34395b6bfa338cadce1ef2b454db3cc7875dd838",
+      "kind": "own-words",
+      "url": "https://www.wokv.com/news/local/aaron-bean-talks-gun-control-stand-your-ground/BMGuvoCE71cK9S857K7OgP",
+      "date": "2013-01-15",
+      "date_precision": "day",
+      "passage": "“The one thing I’m sure of that will not make our schools safer is taking guns out of the hands of the good guys,” says State Senator Aaron Bean, whose district includes Duval and Nassau counties. “Good guys with guns can protect against bad guys with guns,” he says.",
+      "note": "Radio interview as a Florida state senator after the 2012 school shooting debate; quoted by WOKV. Same story says he agrees with a review of Florida's gun laws before changes and that he co-sponsored Stand Your Ground.",
+      "subjects": [
+        "gun control debate after school shootings",
+        "guns in schools",
+        "Stand Your Ground"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d884a6046ae06db2de93625c54b7b24b94df683b73bb7b631c5c3481ed169c30",
+      "kind": "own-words",
+      "url": "https://www.wokv.com/news/local/aaron-bean-talks-gun-control-stand-your-ground/BMGuvoCE71cK9S857K7OgP",
+      "date": "2013-01-15",
+      "date_precision": "day",
+      "passage": "Nothing would break your heart than to hear of somebody defending their life, their liberty, their property and their own home, and then getting charged with a crime,",
+      "note": "Quoted by WOKV on why Stand Your Ground, which he co-sponsored as a state senator, would stay.",
+      "subjects": [
+        "Stand Your Ground",
+        "self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d724979f98976c9d24c219d2db6ae70642a9d534dce7bb3803b378e2555da8b7",
+      "kind": "own-words",
+      "url": "https://bean.house.gov/media/press-releases/bean-statement-caring-our-veterans-rebuilding-our-military-and-investing-our",
+      "date": "2025-06-27",
+      "date_precision": "day",
+      "passage": "Protecting the 2nd Amendment rights of veterans, preventing the VA from sending information to the FBI about veterans without a judge’s consent.",
+      "note": "Bullet in the 'KEY BACKGROUND' list of his office's statement on House passage of H.R. 3944 (MilCon-VA appropriations 2026); the bullet is office text under his statement, not the quoted paragraph. It is about the VA sharing records with the FBI background check system.",
+      "subjects": [
+        "veterans and background check records",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "school safety and guns",
+        "Stand Your Ground",
+        "veterans and firearms",
+        "ATF rules"
+      ],
+      "places": [
+        "status check: News4JAX 2026-08-17 primary roundup says 'in District 4, Republican incumbent Aaron Bean faced no primary challengers' and the Democratic winner 'will face the Republican incumbent Aaron Bean' in November (in scope)",
+        "On the Record (0 meetings)",
+        "official site bean.house.gov (press release search; one release found on the subject; its site search page returned nothing)",
+        "WOKV radio story, January 2013 (state senate years)",
+        "one general web search and one official-site search",
+        "not reviewed: congress.gov sponsor list (not fetched)",
+        "not reviewed: Ballotpedia (not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

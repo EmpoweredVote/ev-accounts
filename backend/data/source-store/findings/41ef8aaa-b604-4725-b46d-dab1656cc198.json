@@ -1,0 +1,31 @@
+{
+  "politician_id": "41ef8aaa-b604-4725-b46d-dab1656cc198",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "Proposition 39 voter ID initiative"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Fiona_Ma shows her as the sitting State Treasurer (term ends 2027-01-04), advanced from the 2026-06-02 primary for Lieutenant Governor and on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://fionama.com (home page; nothing on the subject; /issues page does not exist)",
+        "official site https://www.treasurer.ca.gov (home page; nothing on the subject)",
+        "Ballotpedia profile (nothing on the subject)",
+        "LAist voter guide for the Lieutenant Governor race (her entry does not mention voting rules)",
+        "KALW 2026-08-20 article on the Proposition 39 campaign (does not name her)",
+        "not reviewed: https://leginfo.legislature.ca.gov (her Assembly years were 2006-2012; no voter ID or citizenship vote identified, page needs scripts)",
+        "three news searches on name plus subject words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:58:19.228Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

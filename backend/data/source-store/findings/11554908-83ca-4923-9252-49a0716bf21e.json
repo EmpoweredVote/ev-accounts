@@ -1,0 +1,124 @@
+{
+  "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+  "findings": [
+    {
+      "id": "cc8240f08212345cffc35f0c2a35e39416ba9a68ef77031cf1500e42d4058369",
+      "kind": "own-words",
+      "url": "https://sophiafornc.com/",
+      "date": "2026-09-06",
+      "date_precision": "month",
+      "passage": "House Bill 958 is absolutely full of ways to make it harder to vote.",
+      "note": "Campaign-site Instagram feed post (the date is the feed timestamp). She describes House Bill 958 as an election-law bill with early voting cuts, easier vote challenges, voter registration hurdles and less campaign finance transparency, notes the governor vetoed it, and asks supporters to press to uphold the veto. The post does not mention voter ID.",
+      "subjects": [
+        "election law changes in general",
+        "early voting periods",
+        "challenges to voters",
+        "voter registration hurdles"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:32:31.446Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d01d32360dc187e31bdf150bb2040b4beac6a802ef001064ee2d0806ffbcea0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "NC-S-715-2025",
+      "act": "sponsor",
+      "note": "She is a listed co-sponsor (not primary) of Senate Bill 715, Student Voter ID Grant Program/CCs. The bill text gives community colleges grants of up to $20,000 each to upgrade equipment to produce student ID cards that can be used to vote in person under G.S. 163-166.16. Last action: re-referred to Appropriations/Base Budget on 3/26/2025.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID cards used as voter ID",
+        "free or low-cost voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:06:06.160Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b062ffe2a04f860f45a4beb1d6f44ef67829885b325f81e7e045782cd62a3242",
+      "kind": "own-words",
+      "url": "https://indyweek.com/news/n-c-senate-district-22-sophia-chitlik-2026/",
+      "date": "2026-02-19",
+      "date_precision": "month",
+      "passage": "I introduced legislation to make early registration possible for 16 and 17-year-olds (S385) and to make voter registration automatic (S45).",
+      "note": "In her Indy Week 2026 candidate questionnaire she lists registration bills under making it easier to vote. Date is approximate (the paper's Q&A is cited in February 2026). No mention of photo ID or proof of citizenship.",
+      "subjects": [
+        "voter registration access",
+        "automatic voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:06:06.160Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://sophiafornc.com (home page and platform page fetched; nothing on voter ID besides the election-law post saved here)",
+        "Wikipedia https://en.wikipedia.org/wiki/Sophia_Chitlik (confirms NC Senate District 22, in office since 2025-01-01)",
+        "blocked: https://ballotpedia.org/Sophia_Chitlik (fetch returned no content)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/884 (HTTP 500)",
+        "not reviewed: ncleg.gov bill pages for sponsorships (member page unreachable)",
+        "not reviewed: news search (web search budget used up)",
+        "not reviewed: Instagram posts https://www.instagram.com/sophiafornc/"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:32:31.446Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID cards used as voter ID",
+        "proof of identity to vote",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter registration access",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "https://9thstreetjournal.org/2026/03/04/sophia-chitlik-cruises-to-reelection-to-state-senate/ (she won the March 2026 primary, so she is in scope)",
+        "NC General Assembly introduced-bills page https://library.ncleg.gov/Members/IntroducedBills/S/452 and bill pages SB 715, SB 457, SB 386",
+        "Indy Week 2026 candidate questionnaire https://indyweek.com/news/n-c-senate-district-22-sophia-chitlik-2026/ (talks about registration and redistricting; nothing on photo ID or citizenship proof)",
+        "On the Record (0 appearances)",
+        "Wikipedia page for her (nothing on the subject)",
+        "not reviewed: her campaign site and her Senate roll-call votes on voter ID bills (not fetched)",
+        "not reviewed: SB 457 and SB 386 bill text (voter registration bills, not read in full)",
+        "blocked: https://www.aol.com/news/candidate-nc-senate-district-22-224255760.html (404)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:06:06.160Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

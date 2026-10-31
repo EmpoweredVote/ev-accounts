@@ -1,0 +1,287 @@
+{
+  "politician_id": "18000caa-76dd-4b8b-ba7d-1e6d786222ac",
+  "findings": [
+    {
+      "id": "023831ef84f5a12a09d9c5c0a6c17bccfeb6e863c2906225223a2aa071e1ad42",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2012-09-13",
+      "date_precision": "day",
+      "passage": "“The voter ID case involves the ability of all citizens to cast their vote on Election Day.   There is no evidence of voter fraud and obstacles to voting should not be permitted.  The requirement that voters have photo ID before their vote is counted will cause immediate harm for seniors, the poor, students and others.",
+      "note": "Statement as Senate floor leader on the Supreme Court hearing of the 2012 photo ID law. Quoted from his Voter ID archive page.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b3ecbe2743e02d8d529aefc6a91bd8d44e0279666129f52db25ece80045d8de",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2012-10-02",
+      "date_precision": "day",
+      "passage": "“Eligible voters should go and exercise their right to vote on Election Day and not worry about whether they have a photo ID.",
+      "note": "Statement on the Commonwealth Court order blocking the photo ID law for the November 2012 election.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3daf1bfc020467b4aa0f0f69c4906e130c39248ced839324b61f0dca086fc814",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "passage": "“Senate Democrats have said clearly and repeatedly that the voter ID law was an overreach that would result in the disenfranchisement of hundreds of thousands of voters.",
+      "note": "Reaction to the court striking down the 2012 photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "591de5130d98233b51b3b44e48032d4110e0e13517dea38d2820d2552111e7af",
+      "kind": "own-words",
+      "url": "https://senatorcosta.com/tag/voter-id/",
+      "date": "2014-05-08",
+      "date_precision": "day",
+      "passage": "“The case fell apart almost immediately because the court rightly saw there was no evidence of fraud.",
+      "note": "Statement on the administration's decision not to appeal the ruling against the photo ID law.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law in court"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.403Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('COSTA'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12a315c7021acce6f88535df7cbb333f9e8c78a13a73455d56adfd7709e5a2a2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2012/0/Sj20120307.pdf",
+      "date": "2012-03-07",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 3166)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2011-2012 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc316a91c15a9d69b8de8a31f201ccdfb2b8ddcf04549d215151894a08cf6992",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2023/0/Sj20230111.pdf",
+      "date": "2023-01-11",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "nay",
+      "motion": "Senate: Third consideration and final passage (PN 26)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa (district 43) via the official 2023-2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Costa'), linked to Jay Costa, Jr. (district 43) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.462Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff80cac0a16750ecaeb21c1b69e3bf0667ebd7a0907fee2d82d1e1e29ba0bb8e",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251202213448/https://www.palegis.us/legislation/bills/2023/sb224",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1171 (House Appropriations re-reported as amended, Oct. 17, 2023; the version that passed the House 104-99 on Oct. 18, 2023). Read. Earlier versions: PN 194 (introduced), PN 1059, PN 1097 (Senate-passed 45-2), PN 1159, PN 1160. Page copy dated 2025-12-02.",
+      "note": "Named as co sponsor ('COSTA') on the official bill page; linked to Jay Costa via the official 2023 member roll of the Senate (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus voter ID",
+        "web search: Senate voter ID constitutional amendment 2025 2026",
+        "official site https://senatorcosta.com (voter ID tag page and site search; statements 2012 to 2014, nothing newer found)",
+        "Ballotpedia not reviewed: not fetched",
+        "bill pages not searched, linked separately"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:00:24.403Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.462Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

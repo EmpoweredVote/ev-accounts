@@ -1,0 +1,29 @@
+{
+  "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity",
+        "SB 1174 of 2024"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Matt_Haney (confirms sitting Assembly District 17 member on the 2026 general-election ballot)",
+        "his official site https://a17.asmdc.org/ (first page of press releases and the site search page: nothing on the subject; later pages not reviewed)",
+        "web news searches (two): no statement or bill by him on voter ID, proof of citizenship, the SAVE Act or mail-ballot rules",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (page needs scripts); https://legiscan.com (403); his individual Assembly floor vote on SB 1174 not confirmed",
+        "Digital Democracy bill pages for SB 1174 and AB 25 (no individual votes shown in the page text)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:00:39.960Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

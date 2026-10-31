@@ -1,0 +1,377 @@
+{
+  "politician_id": "acb046eb-1db6-44bf-a50b-32d16df15057",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "245d5805d0e3beee7730cc8e63d98ee7ebe83c64bcd3ed538bbcb49ac2a7cf65",
+      "kind": "own-words",
+      "url": "https://grabien.com/story?id=571848",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Mr. Speaker, the SAVE Act is back before the House today, and right along with it is yet another attempt at voter suppression. It is no coincidence that this is happening right before the midterm elections.",
+      "note": "House floor remarks transcribed by Grabien (a media clip service, not the House record). Exact floor date not shown on the page; year inferred from the reference to the coming midterms and a January raid on the Fulton County election office. She links the SAVE Act to the midterms.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3260ef64b28e65dfa8883f4ee68fa32a25a8fd5a07eaab63e914f797f919a54a",
+      "kind": "own-words",
+      "url": "https://grabien.com/story?id=571848",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "The SAVE Act would make it harder for millions of Americans to get registered to vote by requiring in-person registration at elections offices, government offices with government hours, y’all.",
+      "note": "House floor remarks transcribed by Grabien. The page gives no date; remarks refer to a January FBI action in Fulton County and to the SAVE America Act, which the House took up in February 2026. Speaks on SAVE Act registration rules.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "in-person registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c30c3f473037abd71980aae65a176261dc3ec84d2dce06d201a97f528705b504",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-denounces-attempt-to-undermine-open-fair-and-accessible-elections",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "DPOC policies would discard this foundational American right by forcing Americans to pay significant financial, administrative, and personal costs simply to participate in democratic elections, creating a modern day poll tax.",
+      "note": "Same press release (the page text sits in the page's embedded data); the sentence's speaker is not shown in the text I copied, so treat it as release text issued by her office.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documentary proof of citizenship",
+        "cost of documents",
+        "documentary proof of citizenship to register",
+        "costs of proving citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fd06fb6ee1a75cd1afe99c81f316805b5a330bcb24e9194a67695074448a7863",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-denounces-attempt-to-undermine-open-fair-and-accessible-elections",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "Undoubtedly, our election system needs strengthening. To that end we have introduced several reform bills like the John Lewis Voting Rights Act, the Expanding the Vote Act, the election Mail Act, and the People over Long Lines (POLL) Act. These measures would keep elections secure, accessible, efficient, and fair.",
+      "note": "Same letter and release. The letter names bills it says would strengthen elections, and says it opposes the documentary proof of citizenship petition.",
+      "subjects": [
+        "election integrity laws in general",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a2d305bde9db8daafbb86f006b50e91c15aaf9aaf9e9244510bd6e71cf6dc2b5",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-denounces-attempt-to-undermine-open-fair-and-accessible-elections",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "The petition is part of a broader campaign, exemplified by Executive Order 14248 and the so-called SAVE Act, to manufacture disinformation about non-citizen voting as a pretext for shrinking the electorate.",
+      "note": "Same letter and release. She says claims about non-citizen voting are being used to justify rules that shrink the electorate.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2915fb665b96f32afe7f63486f2dd76f8ae6d868e0306c12a499622ed0bab627",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-leads-opposition-to-dhs-use-of-private-data-to-purge-voter-rolls",
+      "date": "2025-12-02",
+      "date_precision": "day",
+      "passage": "Like any massive database, the information from the overhauled SAVE system will almost certainly include errors and other inaccurate information.",
+      "note": "Letter she led to the DHS Chief Privacy Officer about the SAVE database (a federal citizenship-status check, not the SAVE Act bill) being used to check voter rolls. Quoted from her official press release.",
+      "subjects": [
+        "voter-roll checks",
+        "citizenship verification database",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a56d6bb12c560823d0b659f766b757d9df7d169636b249b9fedf25c281221f8",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-leads-opposition-to-dhs-use-of-private-data-to-purge-voter-rolls",
+      "date": "2025-12-02",
+      "date_precision": "day",
+      "passage": "Some Texas counties are sending out SAVE non-citizenship notices  that require registered voters identified by SAVE as potential non-citizens to provide documentary proof of citizenship to remain registered—one county that examined its list of voters before sending out such notices found that about a quarter of the people listed had already provided proof of citizenship when they registered.",
+      "note": "Same letter. She cites Texas counties that asked flagged voters for proof of citizenship, and says it is a burden on the right to vote.",
+      "subjects": [
+        "voter-roll checks",
+        "documentary proof of citizenship",
+        "citizenship verification database"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb6ef97040963a23c505136359ca47e2433c0eea8b4379e4d3603bf0e0afc4e6",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-statement-on-the-supreme-court-permitting-trump-administration-to-use-expanded-database-for-potential-voter-purges",
+      "date": "2026-09-25",
+      "date_precision": "day",
+      "passage": "The use of the SAVE system for the purpose of determining voter eligibility is dangerous and unreliable, and it will be used as a tool against our democracy and free and fair access to the ballot.",
+      "note": "Official statement after a Supreme Court order allowing DHS to use the expanded SAVE database to check voter rolls. Date taken from the site feed entry for this post.",
+      "subjects": [
+        "voter-roll checks",
+        "citizenship verification database"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34d2322157d828b00084f2dc01255b5e5322178b84f00fba2adc8816202384b3",
+      "kind": "own-words",
+      "url": "https://democrats-cha.house.gov/sites/evo-subsites/democrats-cha.house.gov/files/evo-media-document/nikema-williams-witness-statement.pdf",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "It made it harder to vote by mail, limited access to ballot dropboxes and early voting, let anyone challenge anyone else’s voter registration for any reason, and allowed the State Election Board to replace or override county election officials at will.",
+      "note": "Written testimony to the House Administration Committee Member Day (2023) about Georgia law SB 202. She says it made mail voting harder and allowed challenges to voter registrations. The testimony text does not mention photo ID.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity laws in general",
+        "voter-roll challenges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:43:38.267Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc0e183b1cb2dabb5779c08859c8d8647de2f9c2eae9368c5df5e6b74a62e7f2",
+      "kind": "own-words",
+      "url": "https://grabien.com/story?id=571848",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "The SAVE America Act is just another part of a scheme by House Republicans and the Trump Administration to take over our elections.",
+      "note": "Same floor remarks as above, as transcribed by Grabien (undated page).",
+      "subjects": [
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "203795230d0fcfcce6a835929f340ced037a9730609a8e2ab6e329b929716626",
+      "kind": "own-words",
+      "url": "https://nikemawilliams.house.gov/posts/congresswoman-nikema-williams-denounces-attempt-to-undermine-open-fair-and-accessible-elections",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "Congresswoman Nikema Williams (GA-05) led a letter, along with 31 Congressional colleagues, to the General Council of the U.S. Election Assistance Commission to strongly oppose any changes to the national voter registration application that would add documentary proof of citizenship (DPOC) or “show your papers” requirements.",
+      "note": "Press release from her office about a letter to the Election Assistance Commission on adding documentary proof of citizenship to the federal registration form.",
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "federal voter registration form"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:46:59.034Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and non-photo documents",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship (SAVE Act)",
+        "voter-roll checks and citizenship database",
+        "non-citizen voting claims",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Nikema_Williams (incumbent, on the Nov 3, 2026 general election ballot for GA-5, advanced from the May 19, 2026 primary)",
+        "On the Record (0 appearances, nothing on the subject)",
+        "official site nikemawilliams.house.gov (homepage, RSS feed of recent posts, two press releases fetched; press list search is script-loaded so older posts were found by web search, not by site search)",
+        "blocked: https://www.congress.gov/member/nikema-williams/W000822 (403)",
+        "Ballotpedia (no voter ID or SAVE Act position text found)",
+        "news search: name plus SAVE Act / voter ID / SB 202 absentee ID (floor remarks via Grabien transcript; no own words on photo ID at the polls or ID for mail ballots found)",
+        "2023 Committee on House Administration Member Day testimony PDF (fetched)",
+        "not reviewed: floor speech video (no video or Congressional Record page reached, so floor date unconfirmed)",
+        "nothing on the subject: campaign site not separately found; ontheissues.org and Wikipedia not used (lead-only)"
+      ],
+      "found": 9,
+      "at": "2026-10-22T21:43:38.267Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "photo ID to vote",
+        "in-person registration",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://nikemawilliams.house.gov/ (voting rights section; press release on proof of citizenship)",
+        "AJC April 2026 article confirming she won the May primary and is on the November 2026 ballot",
+        "Grabien transcript excerpt of House floor remarks",
+        "web searches: name plus SAVE Act, voter ID, proof of citizenship",
+        "blocked: https://ballotpedia.org/Nikema_Williams (fetch returned empty page)",
+        "blocked: https://nikemawilliams.house.gov/media/press-releases (404)",
+        "not reviewed: https://democrats-cha.house.gov/sites/evo-subsites/democrats-cha.house.gov/files/evo-media-document/nikema-williams-witness-statement.pdf (snippet only, topic unclear)"
+      ],
+      "found": 4,
+      "at": "2026-10-27T21:46:59.034Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

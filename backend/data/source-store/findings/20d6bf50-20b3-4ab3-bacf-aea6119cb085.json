@@ -1,0 +1,102 @@
+{
+  "politician_id": "20d6bf50-20b3-4ab3-bacf-aea6119cb085",
+  "findings": [
+    {
+      "id": "36a1f0d0b4564c695511e83099bf4b06cac88e6ab5999dc647fbbf1266dd2506",
+      "kind": "own-words",
+      "url": "https://wallaceforgovernor.us/voting-rights-election-integrity/",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "PLEASE NOTE all citizens on probation or parole can now vote. You just have to re-register, which you can do WHEN YOU VOTE. Bring a Maryland state ID or driver’s license, and if possible proof of residency to your polling place.",
+      "note": "From her 2022 governor campaign site (page footer says 2023). Voter guidance telling people with past convictions to re-register at the polls and bring a state ID or driver's license, plus proof of residency if possible. It is instruction on registration, not a stated view on ID rules.",
+      "subjects": [
+        "ID shown to register at the polls",
+        "documents accepted at the polling place"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:58:36.071Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "006eb4a8a7f8984d7e7da1684013f40a98aaae6b567e31d6b092e707e2e3843d",
+      "kind": "own-words",
+      "url": "https://wallaceforgovernor.us/voting-rights-election-integrity/",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "She has testified before our state legislature and other state legislatures showing them how only a paper ballot that has been verified by the voter can be a safe, accountable voting method.",
+      "note": "From her 2022 governor campaign site, written about her in the third person in her campaign's voice. Describes her election-integrity work on voter-verified paper ballots and audits. Not about ID.",
+      "subjects": [
+        "election integrity (voter-verified paper ballots)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:58:36.071Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID to register on election day",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter-verified paper ballots",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Nancy_Wallace lists her on the Nov 3, 2026 general ballot for U.S. House Maryland District 8",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site https://www.nancywallace.us/ , /issues/ , /meet-nancy/ , /privacy , /immigration-reform (nothing on the subject)",
+        "2022 governor campaign site https://wallaceforgovernor.us/issues/ , /voting-rights-election-integrity/ , /democracy-governance-reform/",
+        "Ballotpedia (candidate page and 2026 Maryland U.S. House page)",
+        "congress.gov: not applicable, never a legislator",
+        "web news search: not run, session search budget used up",
+        "not reviewed: https://www.youtube.com/@nancywallace3527",
+        "not reviewed: https://www.facebook.com/nancywallaceforcongress/",
+        "not reviewed: https://www.sway.co/g/v9ghishp"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:58:36.071Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity and voting procedures in general",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "confirmed on the November 2026 general-election ballot for Maryland 8th District (https://ballotpedia.org/Nancy_Wallace, and the Maryland candidate list)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.nancywallace.us (issues page and vote-for-nancy page: nothing on ID or citizenship; the vote-for-nancy page describes only how her own party ran its internal primary, left out as off-subject)",
+        "Ballotpedia (profile, nothing on the subject)",
+        "iVoterGuide profile (candidate did not answer)",
+        "a minor-party elections database page (no statements)",
+        "two news searches on name plus voter ID, election terms (nothing on the subject found)",
+        "congress.gov: not applicable, she holds no seat",
+        "blocked: https://marylandmatters.org/voter-guides/contests/8th-district/ (bot check page; a search summary hinted at a candidate statement there about in-person voting with ID, which I could not read or verify)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:39:02.622Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

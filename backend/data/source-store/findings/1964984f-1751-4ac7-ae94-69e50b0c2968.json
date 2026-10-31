@@ -1,0 +1,160 @@
+{
+  "politician_id": "1964984f-1751-4ac7-ae94-69e50b0c2968",
+  "findings": [
+    {
+      "id": "2348ed889d36563d9febead17eabf8675cfae0d36a7457daa01ac8703e73f40a",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: yea (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "01dc859e6d70046dc78a6e492047814edded46fd90cdea1cc48d96b6d8b8b536",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB213",
+      "date": "2019-12-27",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "sponsor",
+      "motion": "HB 213, Voter identification; accepted forms of identification, out-of-state student identification card (introduced by him; prefiled 2019-12-27)",
+      "note": "Bill adds a valid student photo ID card from a college or university in any other state or territory to the accepted forms of voter ID. It passed the House 57-41 on 2020-02-11 and the Senate 21-18 on 2020-02-24, and the Governor approved it as Chapter 1154 on 2020-04-11 (effective 7/1/20).",
+      "subjects": [
+        "accepted forms of voter ID",
+        "out-of-state student ID to vote",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:11.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b84674e73bd9d2cd403e884cef26d3c444dbe8cb20070cbc8643a2da5f472791",
+      "kind": "record",
+      "url": "https://www.insidenova.com/news/arlington/sullivan-student-voter-id-measure-again-falls/article_08d52498-2618-11e9-93eb-f721f13ccc22.html",
+      "date": "2019-01-29",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "2019 session bill by Del. Rip Sullivan to allow out-of-state student photo ID cards as voter ID (House subcommittee voted 4-2 to kill it on Jan. 29; bill number not given on the page)",
+      "note": "InsideNoVa reports: \"A subcommittee on Jan. 29 voted 4-2 to kill the measure proposed by Del. Rip Sullivan (D-48th) to allow student photo-ID cards from institutions outside the commonwealth to be used to prove identity while voting.\" Reporter's words, not his.",
+      "subjects": [
+        "out-of-state student ID to vote",
+        "accepted forms of voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:11.503Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a5becd34b7f60e0476e8317281a73e84e4362c6c4a223d78e7e22cdc23397371",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+HV0495+HB0026",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "yea",
+      "motion": "HB 26, Voter identification; accepted forms of identification, private entities licensed or certified, House passage (85-Y 11-N); he is listed among the YEAS",
+      "note": "Bill adds to the accepted voter IDs a photo ID card issued by a private entity licensed or certified by certain state health and social services agencies. Passed the Senate 21-17 on 2024-02-23; vetoed by the Governor 2024-04-08; House sustained the veto 2024-04-17.",
+      "subjects": [
+        "accepted forms of voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:11.503Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID",
+        "out-of-state student ID to vote",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "legacy Virginia LIS bill pages and roll-call pages for sessions through 2024 (HB213 of 2020, HB26 of 2024, HB1441 of 2024 read); the 2025 and 2026 sessions are not readable there",
+        "blocked: https://lis.virginia.gov bill pages for 2025 and 2026 (empty script shell)",
+        "blocked: https://www.legiscan.com/VA/sponsors/HB213/2020 (403)",
+        "https://www.insidenova.com/news/arlington/sullivan-student-voter-id-measure-again-falls/article_08d52498-2618-11e9-93eb-f721f13ccc22.html (2019 news item on his student-ID bill; only the reporter's words, no direct quote on the subject)",
+        "https://rvamag.com (2016 article, his quote is about easier voting in general; not on proof of identity; not saved)",
+        "two news searches on his name plus voter ID: no quote of his own on photo ID found",
+        "Ballotpedia https://ballotpedia.org/Richard_C._Sullivan_Jr. fetched; page showed only a stub, nothing on the subject",
+        "official House member page and campaign site: not reviewed",
+        "already on file and not collected again: VA-HB-1444-2023 and VA-HB-19-2020"
+      ],
+      "found": 3,
+      "at": "2026-10-28T16:28:11.503Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

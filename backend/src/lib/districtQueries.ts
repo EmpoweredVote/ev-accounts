@@ -42,10 +42,42 @@ export const UPCOMING_ELECTIONS_LATERAL = `
   ) upcoming ON true
 `;
 
+/**
+ * The de-duplication key for every "who holds office here" query: THE OFFICE.
+ *
+ * 🔴 IT IS NOT THE PERSON, AND IT USED TO BE. The key was `COALESCE(p.id, o.id)` — the
+ * politician when a seat was held — which collapsed two seats held by ONE person into a single
+ * row. A voter whose state representative also sits on their city council saw one of the two
+ * and had no way to know the other existed. Measured 2026-10-26: 27 active people hold two or
+ * more current seats; the Maine House members on Waterville's and Brewer's councils and South
+ * Portland's mayor-councillor each lost a row to it.
+ *
+ * 🟢 A DISTINCT IS STILL REQUIRED — this is not a case of deleting the de-dup. The
+ * geofence->districts join genuinely returns the same office more than once, because several
+ * geofence rows can share a geo_id and map to the same district type. Measured at five points
+ * the same day: Indianapolis 129 raw rows for 89 offices, Los Angeles 480 for 479. Remove the
+ * DISTINCT entirely and those duplicates reach the response.
+ *
+ * ▶ So the rule is ONE ROW PER OFFICE, which is what this endpoint means: an address resolves
+ *   to seats, and a person holding two of them is two answers, not one.
+ *
+ * ⚠ The INVERSE hazard is real and lives in essentialsService.ts, not here: a POLITICIAN-rooted
+ *   read (`?q=` list, getPoliticianById) joins the other way and fans out one row per office
+ *   that person holds — that one needs `DISTINCT ON (p.id)` and still does. See CLAUDE.md
+ *   "Reading": the two join directions do NOT carry the same guarantee.
+ *
+ * ⚠ Keying on the office also stops masking duplicate OFFICE rows. `CC_0295` retired two
+ *   (Indiana's Secretary of State and Treasurer each existed twice, held by the same person, so
+ *   the old key hid one of each for four years). A seat duplicated under a single holder will
+ *   now render twice — which is correct behaviour reporting a data defect, and is gated in
+ *   `CC_0295`'s post-verify at zero repo-wide.
+ */
+export const OFFICE_DEDUP_KEY = 'o.id';
+
 /** Politician/office/district column list. Callers add layer-specific columns
  *  (e.g. `gb.name AS geofence_name`) via buildDistrictQuery's extraSelect. */
 export const DISTRICT_SELECT_FIELDS = `
-    DISTINCT ON (COALESCE(p.id, o.id))
+    DISTINCT ON (${OFFICE_DEDUP_KEY})
     p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
@@ -56,7 +88,24 @@ export const DISTRICT_SELECT_FIELDS = `
     COALESCE(p.valid_to, '') AS term_end,
     COALESCE(p.term_date_precision, '') AS term_date_precision,
     COALESCE(p.appointment_date::text, '') AS appointment_date,
+    -- 🔴 THE ONLY KEY A VACANT ROW HAS. office_current_holder LEFT JOINs from offices, so a seat
+    -- with no current term returns a row whose p.* columns are all NULL — no p.id, no name. Until
+    -- this column existed the whole politician surface carried NO office identity, so such a row
+    -- could not be keyed on anything at all, and it reached voters as a blank card. Selected on
+    -- every politician query, held or not, so one shape answers both.
+    o.id AS office_id,
     o.title AS office_title, o.representing_state, o.representing_city,
+    -- 🔴 WITHOUT THIS THE ADDRESS PATH DROPPED EVERY OFFICE DESCRIPTION ON THE FLOOR. The mapper
+    -- has always read row.office_description, and this select never produced it, so the field
+    -- was a hard-coded '' for every address and coordinate lookup — 605 offices that carry real
+    -- description text, and the ?q= list and detail paths show it (essentialsService.ts selects
+    -- COALESCE(NULLIF(o.description,''), pd_specific.description, pd_generic.description, '')).
+    -- Found by writing a sentence onto a seat in CC_0299, probing the live endpoint, and getting
+    -- "" back: THE DATA WAS CORRECT AND THE READ PATH WAS NOT.
+    -- ⚠ Deliberately NOT the full COALESCE the other paths use. Adding the position_descriptions
+    -- fallback here would give a generic blurb to every one of ~10.6k held rows at once, which is
+    -- a product change, not a bug fix. This surfaces only text somebody wrote about THIS office.
+    o.description AS office_description,
     o.voting_powers, o.representation_note,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
     p.is_appointed, o.faces_retention_vote,
@@ -191,7 +240,7 @@ export function buildDistrictQuery(opts: {
     WHERE ${spatialPredicate}
     AND (p.is_active = true OR o.is_vacant = true)
     ${includeChallengers ? '' : INCUMBENTS_ONLY_CLAUSE}
-    ORDER BY COALESCE(p.id, o.id)${orderByTail}
+    ORDER BY ${OFFICE_DEDUP_KEY}${orderByTail}
   `;
 }
 
@@ -255,6 +304,6 @@ export function buildStatewideQuery(): string {
           AND NOT EXISTS (SELECT 1 FROM essentials.geofence_boundaries gsw
                            WHERE gsw.geo_id = d.geo_id AND gsw.mtfcc <> 'G4000'))
     )
-    ORDER BY COALESCE(p.id, o.id)
+    ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 }

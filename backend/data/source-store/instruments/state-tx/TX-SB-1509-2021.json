@@ -1,0 +1,77 @@
+{
+  "id": "TX-SB-1509-2021",
+  "scope": "state:tx",
+  "title": "SB 1509 (87R): Relating to identification requirements for early voting by mail.",
+  "urls": [
+    "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB1509",
+    "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=87R&Bill=SB1509",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB01509H.htm",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB01509E.htm (Senate engrossed; not read)",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB01509S.htm (Senate committee report; not read)",
+    "https://capitol.texas.gov/tlodocs/87R/billtext/html/SB01509I.htm (introduced; not read)"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) SECTION 2 (amends Election Code 84.002(a), adds (1-a))\n(quote) (1-a) the following information: (A) the applicant's driver's license number or the number of a personal identification card issued by the Department of Public Safety; or (B) if the applicant has not been issued a number described by Paragraph (A), the last four digits of the applicant's social security number;\n(section) SECTION 4 (adds Election Code 86.001(f))\n(quote) (f) If the information required under Section 84.002(a)(1-a) included on the application does not match the information on the applicant's application for voter registration under Section 13.002(c)(8), the clerk shall reject the application.\n(section) SECTION 5 (adds Election Code 86.002(g))\n(quote) (g) The carrier envelope must include a space that is hidden from view when the envelope is sealed for the voter to enter the following information: (1) the number of the voter's unexpired driver's license or personal identification card issued by the Department of Public Safety; or (2) if the voter has not been issued a number described by Subdivision (1), the last four digits of the voter's social security number.\n(section) SECTION 6 (amends Election Code 87.041(b), adds (b)(8))\n(quote) (8) the information required under Section 86.002(g) provided by the voter matches the information on the voter's application for voter registration under Section 13.002(c)(8).\n(d_proof_of_citizenship) not stated.\n(other) Sec 1: mail ballot application must be in writing and signed in ink on paper; electronic or photocopied signature not permitted (84.001(b)).\n(other) Sec 3: official application form must include a space for the ID information (84.011(a)(3-a)).\n(other) Sec 5(h): no record associating an individual voter with a ballot may be created (86.002(h)).\n(other) Sec 7: applies only to applications submitted on or after the effective date.\n(other) Sec 8: effective September 1, 2021.",
+  "sponsors": [
+    {
+      "name": "Creighton",
+      "role": "author",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Bettencourt",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Campbell",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Hughes",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Kolkhorst",
+      "role": "co",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Harris",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Cain",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Parker",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    },
+    {
+      "name": "Schofield",
+      "role": "prime",
+      "version": "House Committee Report (committee substitute for S.B. No. 1509; Senate passed CSSB 1509 04/28/2021; no enrolled version exists)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T15:13:39Z)",
+    "fetched_at": "2026-10-28T15:13:39Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "politician_id": "0408c7bf-e5f9-4754-b978-ad45e317afca",
+  "findings": [
+    {
+      "id": "62d822429e6df73f7698f4710a25b14495f91262a19466dcf3b41f2c84f807f3",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-patterson-highlights-new-laws-effective-july-1/",
+      "date": "2024-06-28",
+      "date_precision": "day",
+      "passage": "To help protect Indiana's elections, officials will have more tools to maintain accurate and up-to-date voter registration lists. Also, proof of citizenship will be required for individuals registering with temporary IDs and first-time voters will be required to provide proof of residency.",
+      "note": "Caucus press release issued in her name (Rep. Patterson highlights new laws effective July 1, 2024). Under the heading 'Increasing Election Security' she lists new laws on voter-roll upkeep, proof of citizenship for people registering with temporary IDs, and proof of residency for first-time voters.",
+      "subjects": [
+        "proof of citizenship to register",
+        "proof of residency for first-time voters",
+        "voter-roll maintenance",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:33.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c431893f2e66c76048a4e6f78648e66b837c00e1dbf1ff7ebb16b84baaf80135",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/patterson-highlights-new-state-laws-now-in-effect/",
+      "date": "2025-07-30",
+      "date_precision": "day",
+      "passage": "A new law ensures only government-issued IDs are accepted at election polls and that voter rolls are properly maintained to remove inactive and deceased voters. It specifies that student IDs, which cannot be used to register to vote, are not an acceptable form of identification at polling places.",
+      "note": "Caucus press release issued in her name (Patterson highlights new state laws now in effect, July 30, 2025). Under the heading 'Ensuring Election Integrity' she lists a new law limiting polling-place ID to government-issued IDs, excluding student IDs, and requiring removal of inactive and deceased voters from rolls.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types at polling places",
+        "student ID not accepted",
+        "voter-roll maintenance",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:33.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d7229a69777e99e04ca9e4df7acb27d6b9d50f958151e3ddace89a6d91541e5",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/southeast-indiana-lawmakers-voters-can-use-new-election-text-hotline-to-ask-questions-report-issues/",
+      "date": "2023-11-02",
+      "date_precision": "day",
+      "passage": "\"This new text hotline is another great tool for Hoosier voters,\" Patterson said. \"Whether it's checking your polling times and location, or asking about election security, this resource can help.\"",
+      "note": "Joint caucus release with other area legislators about a state election text hotline run by the Secretary of State's office. Related to election security and voter help, not to ID rules directly.",
+      "subjects": [
+        "election security",
+        "voter help hotline"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:33.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types at polling places",
+        "proof of citizenship to register",
+        "proof of residency for first-time voters",
+        "voter-roll maintenance",
+        "election security and integrity",
+        "voter help hotline"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Lindsay_Patterson names her as incumbent Indiana House District 55, advanced from the May 5, 2026 primary, on the Nov. 3, 2026 general ballot",
+        "On the Record (0 appearances, extract-otr run for politician id and by name)",
+        "official caucus page https://www.indianahouserepublicans.com/members/general/lindsay-patterson/ (press releases on the subject found)",
+        "caucus press release archive (checked 2024 and 2025 new-laws releases, 2023 hotline release, 2026 session-end, 2026 summer-study and other releases: nothing else on the subject)",
+        "Ballotpedia (profile and 2022 survey responses: nothing on the subject)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_lindsay_patterson_1 (page is a script-built app that returns no text to fetch or curl, so bill sponsorships and roll-call votes could not be read)",
+        "campaign site: not reviewed, none found (no web search budget left to find one)",
+        "news search: not done, web search budget exhausted",
+        "not reviewed: https://www.indianahouserepublicans.com/clientuploads/2026/Survey_Results/Patterson_2026_Survey_Handout_template__(1).pdf (issue survey handout, not opened)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:19:33.455Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page and press-release list (election items are only voter-registration-deadline reminders and a text hotline, nothing on ID or citizenship)",
+        "voter-guide page confirming she is a 2026 general-election candidate for Indiana House District 55 (sitting member)",
+        "legislature website member page (blocked: https://iga.in.gov/legislative/2026/legislators/lindsay-patterson_1, page shows no content)",
+        "Ballotpedia (page returned empty)",
+        "news searches on name plus election bills (no quote from her on the subject)",
+        "Indiana roll calls not searched, already on file",
+        "nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-10-27T17:09:55.431Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

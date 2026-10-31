@@ -1,0 +1,179 @@
+{
+  "politician_id": "42370d1a-2ffd-480b-a24f-b2a39405c929",
+  "findings": [
+    {
+      "id": "9081a3e9f6562c1b2e3094225923da75ec0dc3bc92b44fc29afc389db63131ac",
+      "kind": "own-words",
+      "url": "https://votebeat.org/texas/2025/04/25/house-bill-5337-proof-of-citizenship-voting",
+      "date": "2025-04-24",
+      "date_precision": "day",
+      "passage": "Isaac said the number of documented cases of noncitizens voting “may seem small” but said there was no reliable way to measure the scope of it “because the current system doesn’t require documentation of citizenship.”",
+      "note": "Quoted by Votebeat at the House Elections Committee hearing on HB 5337. Isaac says noncitizen voting cases may look few, but the scope cannot be measured because the current system does not require documentation of citizenship. Only the phrase in quotation marks is her own wording; the rest is the outlet's paraphrase.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:08.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "293fbf66009222abfb272e7cc3725c25836578610ac1ea9704203461c5cfb537",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "author",
+      "note": "Lead author of HB 5337, proof of citizenship to register to vote with criminal offenses. Heard in House Elections Committee 2025-04-24; committee report sent to Calendars 2025-05-07 (date shown is that last action). Identical to SB 16.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:08.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d7d2a8a9c22983bf7815d2f691ebb0aafaca94538ca428f49f9a122c6fb83a9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A4265",
+      "date": "2025-03-18",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2738-2025",
+      "act": "author",
+      "note": "Author of HB 2738, relating to acceptable forms of identification for voting. Referred to House Elections 2025-03-18 (date shown is the referral).",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:08.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44a0fb188bbb314f132f355bf4d204192ce4b7b79eab710b4ca3b5cab616383d",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A4265",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "author",
+      "note": "Author of HB 2739, requiring the address on an ID shown by a voter to match the address on the voter list. Left pending in committee 2025-04-17 (date shown is that action).",
+      "subjects": [
+        "voter ID at the polls",
+        "address on ID must match"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:08.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e0126bf1292ec49c0768377cf88a36a5f89cbdc284dd30ba7b39f465a08caf3",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/reports/report.aspx?ID=author&LegSess=89R&Code=A4265",
+      "date": "2025-04-17",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-4475-2025",
+      "act": "author",
+      "note": "Author of HB 4475, relating to acceptance of a voter executing a declaration of reasonable impediment; providing a limitation. Left pending in committee 2025-04-17 (date shown is that action).",
+      "subjects": [
+        "no ID: reasonable-impediment declaration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:58:08.495Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5f4d05d307e12866a9373ff4236e2e924f409c4bed6363c4e09ff7096a212e5",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=88R&Bill=HB3137",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-3137-2023",
+      "act": "author",
+      "note": "Lead author (first name on the author line) of HB 3137, captioned \"Relating to prohibited local regulation with respect to a firearm or air gun.\" Filed 03/01/2023; signed by the Governor 06/11/2023.",
+      "subjects": [
+        "state preemption of local gun regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment declaration",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas House official member page (confirms Rep. Carrie Isaac, District 73); media page says no media",
+        "Texas Legislature Online authored-bills report and bill history for HB 5337",
+        "not reviewed: campaign site (none found)",
+        "news search on HB 5337 (Votebeat report fetched)",
+        "not reviewed: full text of House Elections hearing video",
+        "Ballotpedia page (confirms House seat, term ends 2027; nothing on the subject)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T14:58:08.495Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "local gun regulation (preemption)",
+        "gun bill sponsorship"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one web search on name plus firearms",
+        "capitol.texas.gov HB 3137 (88R) bill history",
+        "capitol.texas.gov HB 3009 (89R) (about a violent-offender database, not firearms; not saved)",
+        "https://www.nraila.org/articles/20230605/thank-your-state-rep-carrie-isaac-for-passing-legislation-to-strengthen-texas-state-firearms-preemption-law (third-party statement, not her words; not saved)",
+        "not reviewed: campaign site, Ballotpedia, her 2026 ballot listing"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "politician_id": "fbd12fa6-c3af-4f3b-ae2c-4aac8e68f1f0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Utah,_2026 and https://ballotpedia.org/Taylor_Wright list Taylor Wright as a general-election candidate, Utah District 4, 2026",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://wrightforutah.com/ (home page, 3 news posts; nothing on the subject; site search for 'voter' returned no results; site search for 'ID' rate-limited)",
+        "Ballotpedia profile (no issue statements or survey answers on the subject)",
+        "not a legislator: no congress.gov sponsorship or vote record to check (no bill search run)",
+        "not reviewed: https://wrightforutah.com/utah-congressional-district-4-candidates-debate/ (debate video, 2026-04-27, cannot be read)",
+        "not reviewed: https://www.youtube.com/@teachingtape2226 (campaign-linked video channel)",
+        "not reviewed: https://www.instagram.com/savinghumanitypodcast/",
+        "not run: news search on name plus subject words (session web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:06:51.308Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity and voter rolls"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "positive control: https://www.ballotready.org/people/taylor-wright and https://ballotpedia.org/Taylor_Wright confirm he is on the 2026-11-03 general ballot for Utah District 4",
+        "campaign site wrightforutah.com (home page and news posts: nothing on the subject)",
+        "not reviewed: https://wrightforutah.com/utah-congressional-district-4-candidates-debate/ (debate video, 2026-04-27)",
+        "Ballotpedia (nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/94934 (voter ID question left unanswered; nothing on the subject)",
+        "BallotReady (issue stances listed only for foreign policy and government reform; nothing on the subject)",
+        "one news search on name plus subject words (nothing on the subject)",
+        "congress.gov: not applicable, not a sitting member"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:39:51.981Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "politician_id": "e96eddbe-4a4a-4499-8102-636f0cfac10e",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll and election integrity bills"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kate_Hogan names her as incumbent, 3rd Middlesex District, advanced from the September 1, 2026 primary and on the November 3, 2026 ballot",
+        "On the Record (0 appearances)",
+        "malegislature.gov roster https://malegislature.gov/Legislators/Members/House (confirms Kate Hogan, profile K_H1)",
+        "malegislature.gov bill search 'voter identification': H.833, H.834, H.3342 cosponsor pages checked, Hogan not listed",
+        "malegislature.gov legislator profile sponsored/cosponsored lists: bill lists did not load in fetched text, not reviewed: https://malegislature.gov/Legislators/Profile/K_H1",
+        "not reviewed: official site and campaign site (kate-hogan.com did not connect)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject in pages reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:01.116Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature members list https://malegislature.gov/Legislators/Members/House (names her, 3rd Middlesex)",
+        "Ballotpedia https://ballotpedia.org/Kate_Hogan (confirms she is on the 2026 general-election ballot; nothing on the subject)",
+        "legislature bills list https://malegislature.gov/Legislators/Profile/K_H1/Bills (nothing on the subject)",
+        "one web search on her name plus voter ID words; nothing on the subject",
+        "no campaign or official issue site with subject pages found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:17:28.710Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

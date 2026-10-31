@@ -1,0 +1,29 @@
+{
+  "politician_id": "a7128ce9-6e6d-40ef-9f54-b7dc2e51ad3c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Confirmed identity: Delegate, House District 89, member since 2026-01-14 (https://house.vga.virginia.gov/members/H0387)",
+        "Ballotpedia https://ballotpedia.org/Karen_Robins_Carnegie (nothing on the subject)",
+        "https://www.vpm.org/generalassembly/2026-01-09/kacey-carnegie-house-of-delegates-hd89-chesapeake-lamonea-affordability-health and progressive voters guide page (nothing on the subject)",
+        "preferred name Kacey Carnegie; campaign site not found, not reviewed",
+        "On the Record (0 meetings)",
+        "web search on name plus voter ID words (nothing on the subject; results were about other people or general history)",
+        "LIS / legiplex / legiscan bill pages: not reviewed, blocked or not reachable (open.pluralpolicy.com bill pages returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:04.888Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

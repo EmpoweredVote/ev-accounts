@@ -1,0 +1,31 @@
+{
+  "politician_id": "6e3e9f2e-c393-45ef-b702-8bba4c209220",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "voter ID and who is affected",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail or absentee ballot ID",
+        "what a voter with no ID can do",
+        "election integrity and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (page came back empty), no retry",
+        "Scope: office confirmed by the member's own legislature page; 2026 general-ballot status not confirmed (Ballotpedia empty, Milwaukee County results PDF returned 403: blocked https://county.milwaukee.gov/files/county/county-clerk/Election-Commission/ElectionResultsCopy-1/2026/08-11-26-Partisan-Primary-Election--Summary--Unofficial-Results.pdf)",
+        "official legislature site: home page and press-release list pages 1-4 for https://legis.wisconsin.gov/senate/22/wirch/ reviewed by title, nothing on the subject",
+        "not reviewed: https://legis.wisconsin.gov/senate/22/wirch/press/wirch-supports-evers-call-for-absentee-voting (404; about mailing absentee ballots to all voters, 2020, not about ID)",
+        "campaign site: none found",
+        "news searches on name plus voter ID or voter ID amendment: nothing on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:00:26.595Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

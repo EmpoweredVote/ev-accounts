@@ -1,0 +1,104 @@
+{
+  "politician_id": "ef8a23a0-7f93-425c-a773-dcec9eb96dfb",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "00da720649cbacb85eba977b8c7be88062f2aea369e73fe021c57c9513683a8a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H863",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-863-2025",
+      "act": "sponsor",
+      "note": "Filed H.863, An Act establishing same-day voter registration. Related to registration rules, not to proof of identity or citizenship. Referred to the Election Laws committee 2025-02-27; study order noted 2026-04-02.",
+      "subjects": [
+        "same-day voter registration",
+        "election laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:16:47.793Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Orlando_Ramos (9th Hampden, won Sept 1, 2026 primary, on Nov 3, 2026 ballot)",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/O_R1 and sponsored list https://malegislature.gov/Legislators/Profile/O_R1/Sponsored (194th court): election bills are H.863 same-day registration and H.864 postage-paid mail ballots; neither concerns ID or citizenship, nothing on the subject",
+        "H.864 text https://malegislature.gov/Bills/194/H864.pdf read: mail ballots postage prepaid, no ID provisions",
+        "campaign site https://voteorlandoramos.com/ and /issues/: nothing on the subject",
+        "not reviewed: https://www.facebook.com/RepresentativeOrlandoRamos/",
+        "not reviewed: https://twitter.com/orlando_ramos",
+        "not reviewed: news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:40.119Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "same-day voter registration",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "malegislature.gov member profile (confirms sitting 9th Hampden representative; lists H.863 on same-day registration; no voter ID bill)",
+        "malegislature.gov bill page H.863",
+        "blocked: https://ballotpedia.org/Orlando_Ramos (returned a bot-check, no content)",
+        "campaign site: not found by search",
+        "web search on name plus voter ID (nothing on voter ID or proof of citizenship; his election bills are same-day registration and a mail-ballot return-postage bill)",
+        "web search on 2026 ballot (a Wikipedia list of 2026 House races names him in the 9th Hampden contest; lead only, outcome of primary not shown)",
+        "no own-words statement on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:16:47.793Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

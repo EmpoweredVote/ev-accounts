@@ -1,0 +1,28 @@
+{
+  "politician_id": "94a1f084-689c-4774-8d36-fff2212af94d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Ellen_McLaughlin (page loads and names the person in office; nothing on the subject)",
+        "personal or official site https://house.vga.virginia.gov/members/H0350 (nothing on the subject)",
+        "web news searches on the name plus voter ID, photo ID, citizenship and election integrity (no own-words quote found; results were about other people or general background)",
+        "blocked: LIS, legiscan and legiplex (not retried, per instructions); floor votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:45.851Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -19,7 +19,18 @@
  * non-monotonic is reported UNCALIBRATED and no row in it is flagged.
  *
  * 🔴 Reads only. Emits a reading queue. Every flag must be read before anything is changed.
- *   node scripts/chair-inversion-scan.mjs --out <out.json>
+ *   node scripts/chair-inversion-scan.mjs --out <out.json> [--season "Season 1"]
+ *
+ * 🔴🔴 THE JOIN USED TO IGNORE THE SEASON, AND THAT IS A CORRECTNESS BUG, NOT A SCOPE CHOICE.
+ * Context and answers are both keyed (politician_id, topic_id, season_id). Joining on the pair
+ * alone CROSS-JOINS the seasons: a pair with rows in two seasons yields four, pairing SEASON 2
+ * REASONING WITH A SEASON 1 CHAIR and vice versa. Measured 2026-10-22: 4,728 of 34,501 pairs span
+ * more than one season, so the unscoped query returned 47,843 rows where season-matched joining
+ * returns 38,417 — ~9,400 phantom rows, ~20%. Those rows both MANUFACTURE inversions (a chair from
+ * one season judged against another season's prose) and DISTORT the per-topic calibration that
+ * decides which rows get flagged at all. The same trap is documented in audit-chair-evidence.mjs.
+ * `--season` additionally scopes the scan to one season; without it, every season is scanned but
+ * each row is now judged against its OWN season's chair.
  */
 import fs from 'node:fs';
 import pg from 'pg';
@@ -27,6 +38,7 @@ import pg from 'pg';
 const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const OUT = flag('--out', 'data/stance-retirement/2026-08-12-chair-inversion-scan.json');
+const SEASON = flag('--season');
 
 const env = fs.readFileSync('C:/EV-Accounts/backend/.env', 'utf8');
 const url = env.split(/\r?\n/).find((l) => /^DATABASE_URL=/.test(l)).replace(/^DATABASE_URL=/, '').trim();
@@ -35,15 +47,25 @@ const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: fal
 const { rows: stances } = await pool.query(
   `SELECT t.id AS topic_id, t.title, s.value, s.text
    FROM inform.compass_stances s JOIN inform.compass_topics t ON t.id = s.topic_id ORDER BY t.title, s.value`);
+// 🔴 a.season_id = c.season_id is NOT optional — see the header note on the cross-join.
 const { rows } = await pool.query(
-  `SELECT c.politician_id, c.topic_id, t.title AS topic, a.value, c.reasoning, c.sources, p.full_name
+  `SELECT c.politician_id, c.topic_id, t.title AS topic, a.value, c.reasoning, c.sources,
+          p.full_name, se.name AS season
    FROM inform.politician_context c
-   JOIN inform.politician_answers a ON a.politician_id=c.politician_id AND a.topic_id=c.topic_id
+   JOIN inform.politician_answers a
+     ON a.politician_id=c.politician_id AND a.topic_id=c.topic_id AND a.season_id=c.season_id
+   JOIN inform.seasons se ON se.id = c.season_id
    JOIN essentials.politicians p ON p.id=c.politician_id
    JOIN inform.compass_topics t ON t.id=c.topic_id
-   WHERE c.reasoning IS NOT NULL AND length(c.reasoning) > 20`);
+   WHERE c.reasoning IS NOT NULL AND length(c.reasoning) > 20
+     AND ($1::text IS NULL OR se.name = $1::text)`, [SEASON]);
 await pool.end();
-console.log(`rows with a chair and reasoning: ${rows.length}`);
+if (SEASON && rows.length === 0) {
+  // A season name that matches nothing would otherwise print a serene "0 flags".
+  console.error(`refusing: --season "${SEASON}" matched no rows. Check the season name.`);
+  process.exit(2);
+}
+console.log(`rows with a chair and reasoning${SEASON ? ` in ${SEASON}` : ''}: ${rows.length}`);
 
 /**
  * Polarity of the REASONING, measured only from how the politician is said to relate to the topic —
@@ -138,6 +160,7 @@ for (const [k, v] of Object.entries(byT).sort((a, b) => b[1].length - a[1].lengt
 
 fs.writeFileSync(OUT, JSON.stringify({
   pass: 'chair vs reasoning polarity — corpus-calibrated',
+  season_scope: SEASON || 'all seasons',
   caveat: 'A READING QUEUE. Polarity is inferred per topic from the corpus majority; topics with a '
         + 'weak or inconsistent pattern are UNCALIBRATED and contribute no flags. Every flag must be '
         + 'read: "supported removing the Confederate emblem" is PRO-worded on a correctly ANTI row.',

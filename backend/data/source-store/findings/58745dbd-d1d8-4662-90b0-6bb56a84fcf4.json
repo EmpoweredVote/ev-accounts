@@ -1,0 +1,135 @@
+{
+  "politician_id": "58745dbd-d1d8-4662-90b0-6bb56a84fcf4",
+  "findings": [
+    {
+      "id": "b965b569233573fdcd34ada98ab7623350a8764f853faef7ef44f794deaf0da2",
+      "kind": "own-words",
+      "url": "https://senatepress.net/sen-derek-mallow-statement-on-bryan-county-hearing-on-voter-challenges.html",
+      "date": "2024-10-11",
+      "date_precision": "day",
+      "passage": "The voter challenges happening in Bryan County today are a direct result of Senate Bill 202 and Senate Bill 189, which were pushed by the Republican Legislature and Governor Brian P. Kemp.",
+      "note": "Statement issued in his name after a Bryan County hearing on voter challenges. He ties the challenges to SB 202 and SB 189 and says he spoke against SB 189.",
+      "subjects": [
+        "SB 202 and SB 189 effects",
+        "voter registration challenges",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:49:13.230Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf1c95eef0aa026a948c2c5428222f18a82fe5a5384558cbf456d12812b6806b",
+      "kind": "own-words",
+      "url": "https://senatepress.net/sen-derek-mallow-statement-on-bryan-county-hearing-on-voter-challenges.html",
+      "date": "2024-10-11",
+      "date_precision": "day",
+      "passage": "I urge my colleagues to repeal these harmful laws.",
+      "note": "In the same statement he calls for repeal of SB 202 and SB 189, which he describes as letting almost anyone challenge a neighbor's registration and eligibility.",
+      "subjects": [
+        "SB 202 and SB 189 effects",
+        "voter registration challenges",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:49:13.230Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Mallow'), linked to DEREK J. MALLOW (district 163) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Mallow'), linked to Mallow, Derek (district 2) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.407Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SB 202 final votes",
+        "voter registration challenges",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed: Georgia state senator, District 2, unopposed on the 2026 general ballot (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-senator-ga-senate-2/candidates/derek-mallow)",
+        "Georgia Senate press office statement (https://senatepress.net/sen-derek-mallow-statement-on-bryan-county-hearing-on-voter-challenges.html): saved",
+        "Senate press office tag page for him: nothing else on the subject",
+        "Capitol Beat 2024-01-25 article: he spoke on the cost of removing ballot QR codes, off the subject, not saved",
+        "campaign and personal site: per the Branch profile, no voting and elections content",
+        "Ballotpedia: not reviewed (fetch tool returns no text)",
+        "official Georgia legislature bill and vote pages: not reachable (page loads by script); SB 202 member votes (he served in the House in 2021) not retrieved",
+        "blocked: https://www.wtoc.com/2021/04/27/savannah-area-elected-officials-protest-georgias-new-voting-law (does not quote him)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:49:13.230Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T20:51:14.407Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

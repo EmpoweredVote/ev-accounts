@@ -1,0 +1,91 @@
+{
+  "politician_id": "716717bf-d530-4885-9390-c4d53d594e12",
+  "findings": [
+    {
+      "id": "59031dab7d4dd7e6902b03c7de71b64d7ea00b61466a81f88eaeb7001916f0a8",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-HB-4698",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-HB-4698-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE Substitute For HOUSE BILL NO. 4698 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sec\"",
+      "note": "Named as co sponsor ('Sharon MacDonell (District 56)') on the official bill page; linked to Sharon MacDonell via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('MacDonell'), linked to Sharon MacDonell (district 56) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.333Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "blocked: https://ballotpedia.org/Sharon_MacDonell (fetch returned empty page)",
+        "web search: name plus voter ID and proof of citizenship (no own-words result)",
+        "blocked: https://michiganadvance.com/2026/04/15/michigan-house-passes-controversial-voter-id-bill-along-party-lines/ (403)",
+        "blocked: https://michiganadvance.com/2026/03/17/gop-led-proof-of-citizenship-voting-bill-advances-despite-concerns-from-democratic-colleagues/ (403)",
+        "https://www.wnem.com/2026/03/04/michigan-house-committee-debates-bill-requiring-proof-citizenship-register-vote/ reviewed: names none of the five",
+        "https://www.michiganvotes.org/Legislator.aspx?ID=146047 reviewed only for Kunse; bill-level pages not itemised",
+        "https://housedems.com/sharon-macdonell/: confirms Rep. Sharon MacDonell, District 56; nothing on the subject",
+        "campaign site guess www.sharonformichigan.com: blocked, host not found",
+        "2026 general-election ballot status not confirmed from fetched pages"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:44:39.517Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:55:46.333Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "politician_id": "a0dc1cc3-efcf-4109-9f9b-4d8b36452361",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://malegislature.gov/Legislators/Profile/MRS1 names Representative Margaret R. Scarsdale, 1st Middlesex; https://ballotpedia.org/Margaret_Scarsdale lists her as current member, 2026 incumbent, 2026 primary winner, 2026 general election candidate",
+        "On the Record (0 appearances, script returned no sources)",
+        "campaign site https://www.margaretscarsdale.com (home page only; nothing on the subject)",
+        "official legislature profile and sponsored/cosponsored lists, 194th Court (https://malegislature.gov/Legislators/Profile/MRS1/194/Bills/Sponsored and /Cosponsored): the lists returned were the same page as the profile; election-related item found is only a local school-committee vacancy petition; nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.scarsdaleforma.com (no response)",
+        "not reviewed: web search for news and own words (session search budget exhausted)",
+        "not reviewed: full bill-by-bill sponsorship search, roll-call votes and committee pages on malegislature.gov"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:15.961Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://malegislature.gov/Legislators/Profile/MRS1/194/Biography: confirms she is the sitting 1st Middlesex District representative since January 2023",
+        "https://malegislature.gov/Legislators/Profile/MRS1/194/SponsoredLegislation: 28 sponsored bills in the 2025-26 session; none on voter ID, citizenship or ballots (only H.5542, filling a school committee vacancy) - nothing on the subject",
+        "https://malegislature.gov/Legislators/Profile/MRS1/194/CosponsoredLegislation: page does not clearly separate cosponsored bills; none on the subject",
+        "https://malegislature.gov/Bills/194/H833 (voter identification bill, filed by another member): she is not listed as a petitioner; no roll call recorded; sent to a study order 2026-04-02",
+        "https://representativescarsdale.com and /legislative-agenda: official site, agenda is climate, seniors, veterans - nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Margaret_Scarsdale: she is running for re-election in 2026; no voter-ID statements",
+        "news searches (2) on her name plus subject words: only coverage of her own 2022 recount dispute, no stated policy view",
+        "not reviewed: newsletter archive and press releases on her site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:48:15.344Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

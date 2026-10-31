@@ -1,0 +1,55 @@
+{
+  "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/PMO (Senator Patrick M. O'Connor, First Plymouth and Norfolk, 194th General Court, sitting)",
+        "On the Record (0 meetings)",
+        "malegislature.gov profile sponsored list: nothing on the subject (only S.526 youth voter engagement in primaries, off-subject)",
+        "malegislature.gov bill search 'voter identification': no results",
+        "Wikipedia page for him: identity only, nothing on the subject",
+        "blocked: https://ballotpedia.org/Patrick_O'Connor (empty page returned)",
+        "not reviewed: campaign/official personal site (guessed domains did not resolve)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: 2026 ballot status not confirmed by a page; sitting senator only"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:26:49.185Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID card for voting",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature member page https://malegislature.gov/Legislators/Profile/PMO (confirms Senator Patrick M. O'Connor, First Plymouth and Norfolk district, 194th session); his sponsored list shows only an unrelated bill on youth voter engagement in primaries (S.526) and nothing on ID or citizenship",
+        "Massachusetts Legislature bill pages for 194th voter ID bills S.510 (photo ID card for voting) and H.833 (voter identification): he is not named among the petitioners",
+        "Massachusetts Legislature bill pages for earlier photo-ID bills 193 H.658, 192 H.762 and 190 H.372: he is not named",
+        "Wikipedia page on him (nothing on the subject)",
+        "three news searches on his name plus the subject words, including Beacon Hill Roll Call (nothing on the subject)",
+        "not reviewed: Senate floor roll-call records for voter ID amendments (none found by search)",
+        "nothing on the subject: official Senate page and Ballotpedia were not separately fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:05:49.640Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "politician_id": "05a68843-680e-45a9-8218-97dab0381324",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williamson'), linked to BRUCE WILLIAMSON (district 115) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Williamson'), linked to BRUCE WILLIAMSON (district 115) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Williamson'), linked to Bruce Williamson (district 112) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1946a9da0d39e0d7a9527af905599d499872afece46402da1ec78718ccb7874c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/ (HB 228 detail API answers 401; not bypassed). History from House Journal 2021 (first reading; referred to the Special Committee on Election Integrity) and 2022 House Journal index \"No Action in 2022\".",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-228-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, As introduced (LC 41 2783). Never left House Special Committee on Election Integrity.",
+      "note": "Named as co sponsor ('Williamson of the 115th') on the official bill text; linked to BRUCE WILLIAMSON via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "SB 202 vote"
+      ],
+      "places": [
+        "status confirmed: Georgia House District 112 incumbent, advanced from the 2026-05-19 primary, on the 2026-11-03 general ballot (https://ballotpedia.org/Bruce_Williamson_(Georgia))",
+        "On the Record (0 meetings found for this person)",
+        "campaign site williamsonforwalton.com: home page; the issues page had no usable text; nothing on the subject",
+        "candidate guide branch.vote 2026 page: its Voting & Elections entry says his website had no information on the issue",
+        "House press-release site: his representative page, pages 1-5, nothing on voting or ID (a 2019-era release on a bill requiring citizenship to serve on government boards is about holding office, not voting, so not saved)",
+        "Ballotpedia: no survey answers",
+        "two web searches on name plus election integrity, voter ID, SB 202: nothing on the subject",
+        "blocked: https://www.legis.ga.gov/legislation/59783 (page loads by script; his SB 202 final votes of 2021-03-25 not obtained)",
+        "blocked: https://legiscan.com/GA/rollcall/SB202/id/1023895 (HTTP 403)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:41:13.826Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

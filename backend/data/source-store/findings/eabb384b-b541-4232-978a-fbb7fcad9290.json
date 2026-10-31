@@ -1,0 +1,57 @@
+{
+  "politician_id": "eabb384b-b541-4232-978a-fbb7fcad9290",
+  "findings": [
+    {
+      "id": "c7d55f10b909ed3818a1d4a262d396a2a28df1dca15a843c420b9f52c28bea25",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2025/roll102.xml",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "On Passage, H R 22, SAVE Act (House roll call 102; passed 220-208)",
+      "note": "Voted yes on passage of the SAVE Act, which Ballotpedia describes as requiring documentary proof of citizenship when registering to vote in federal elections. The Clerk's file records Jack (GA) as Yea.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:52:32.764Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia says advanced from the May 19, 2026 primary and is on the Nov 3, 2026 general ballot (https://ballotpedia.org/Brian_Jack)",
+        "On the Record (0 meetings)",
+        "official site jack.house.gov: front page, press releases page 1-2, In the News page; nothing on the subject",
+        "campaign site brianjack.com: not reviewed",
+        "Ballotpedia (key votes list)",
+        "House Clerk roll call 102 (2025)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (page returned no content)",
+        "news search: not run, shared web search budget used up",
+        "not reviewed: https://x.com/repbrianjack, https://truthsocial.com/@repbrianjack"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:52:32.764Z",
+      "by": "source-collector"
+    }
+  ]
+}

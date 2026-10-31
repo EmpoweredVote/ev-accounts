@@ -1,0 +1,106 @@
+{
+  "politician_id": "24aa0b9f-356a-45af-a24d-8f66f53bf6ca",
+  "findings": [
+    {
+      "id": "b86cf40cd26f76a008c1d759abc5565b46aecf6dad06d57e8ab68341cea74854",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/836",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (passed 66-47)",
+      "note": "Voted no on second reading of HB 958. The ratified bill requires county boards to process a registration only if the applicant affirmatively states US citizenship, requires a sworn citizenship statement when the question is left blank, sets up removal of voters flagged as possible non-citizens from a federal database, and requires drivers license offices to proceed with a registration only if the applicant states citizenship. Bill page: https://www.ncleg.gov/BillLookup/2025/H958 ; ratified text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:16.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "73b8ac21bac523e0f4d44146d02c45075a236bc412487f4ed8a7c2c8b53f9a3e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/836",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote to concur with Senate changes, passed 62-47)",
+      "note": "Voted no on concurring with the Senate version of HB 958, the final House vote before ratification. Bill page shows it was vetoed 08/17/2026 by the Governor (https://www.ncleg.gov/BillLookup/2025/H958).",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:39:16.929Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "citizenship statement at drivers license office registration",
+        "voter-roll checks against federal database",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope, NC House District 107 member, on the 2026 general-election ballot (https://ballotpedia.org/Aisha_Dew ; https://www.ncleg.gov/Members/Biography/H/836)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/836",
+        "NC legislature recorded votes https://www.ncleg.gov/Members/Votes/H/836 (reviewed all rows for election-related bills)",
+        "NC legislature introduced bills page https://www.ncleg.gov/Members/IntroducedBills/H/836 (nothing on the subject found in extracted text; page is script-loaded, so partly not reviewed)",
+        "Ballotpedia https://ballotpedia.org/Aisha_Dew (no voter ID statements; 2024 survey lists reproductive justice, education, community safety)",
+        "campaign site: blocked: https://www.aishadew.com (Wix domain not connected, 404)",
+        "own-words search: not done, web search budget exhausted; no news search, no official-site issue pages, no debate or forum videos reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:39:16.929Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms sitting NC House member, District 107, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "NC House member party caucus page (priorities listed are not about this subject; nothing on the subject)",
+        "NC General Assembly introduced-bills and votes pages (titles scanned; no voter ID, citizenship or mail-ballot ID bill identified; one military-voting bill title was not opened)",
+        "web search: name plus voter ID (nothing on the subject)",
+        "not reviewed: https://www.wunc.org/post/mark-walker-first-out-2022-senate-gate (audio podcast where she was a guest; page text does not say what she said)",
+        "not reviewed: social media accounts and personal campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:33:34.678Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

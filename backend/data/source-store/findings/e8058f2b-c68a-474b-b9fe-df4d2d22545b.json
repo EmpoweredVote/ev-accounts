@@ -1,0 +1,121 @@
+{
+  "politician_id": "e8058f2b-c68a-474b-b9fe-df4d2d22545b",
+  "findings": [
+    {
+      "id": "347efafa9d5c165c48f7ff5e9dadc2909e401711fa4bdab6b009b45a18d2f5ca",
+      "kind": "own-words",
+      "url": "https://dallasvoice.com/venton-jones-makes-the-run-off/",
+      "date": "2022-03-11",
+      "date_precision": "day",
+      "passage": "“We need to make the voting process easy,” Jones said.",
+      "note": "Dallas Voice quotes him from his House District 100 runoff campaign. In the same article he is reported to favor same-day voter registration, longer voting hours, more poll staff and easier mail voting. The reporter paraphrased those points; only the quoted sentence is his own wording.",
+      "subjects": [
+        "voting access in general",
+        "vote by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a544c4e6ad9811a35510dcfb7e92ea9600fe68d9363073609d60d7e5c90b53c2",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY60FINAL.PDF",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "nay",
+      "motion": "SJR 37 passed to third reading, Record 1897 (98 yeas, 18 nays)",
+      "note": "SJR 37 proposes a constitutional amendment clarifying that a voter must be a United States citizen. He is listed among the nays (Jones, V.).",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e3d3a244b55ef503462acb4698fce91dffe76ed0d87d4158fb2a17766e71e2c",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "nay",
+      "motion": "SJR 37 adopted on third reading, Record 2196 (102 yeas, 14 nays)",
+      "note": "The House adopted SJR 37. He is listed among the nays (Jones, V.).",
+      "subjects": [
+        "proof of citizenship to vote (constitutional amendment SJR 37)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:45.472Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voting access and election laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Texas House member page (house.texas.gov/members/100): confirms Rep. Venton Jones, District 100; nothing on the subject",
+        "Ballotpedia: blocked: https://ballotpedia.org/Venton_Jones (empty page returned)",
+        "Texas Legislature Online: HB 304 (2025 limited-validity ID bill by another member) and SB 16 action pages checked; no floor vote and no sponsorship by him found",
+        "Dallas Voice 2022-03-11 (candidate profile)",
+        "Dallas Voice 2025-07-10 (statement on redistricting; nothing on the subject)",
+        "two news searches on his name plus subject words; no ID or citizenship statement found",
+        "campaign site: not reviewed (no working URL found)",
+        "House Journal 89th session days 60 and 62 (SJR 37 record votes)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:29:45.472Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault-style weapons",
+        "background checks",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "scope: https://www.branch.vote/races/2026-texas-primary-runoff-tx-state-state-representative-tx-state-house-100-d (won May 26, 2026 runoff, so on the general ballot)",
+        "On the Record (0 appearances)",
+        "house.texas.gov biography (nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Venton_Jones (nothing on the subject)",
+        "blocked: https://app.legiplex.com/profile/venton-jones-138/legislation?page=5",
+        "Ballotpedia https://ballotpedia.org/Venton_Jones (page returned no text)",
+        "not reviewed: capitol.texas.gov bill pages (no gun bill identified by search)",
+        "news searches x2 (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

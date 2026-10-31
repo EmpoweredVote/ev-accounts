@@ -1,0 +1,26 @@
+{
+  "politician_id": "9170233d-a01b-4fd0-bd68-6c961948ab79",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-07-21 primary (KJZZ report of 2026-07-23: https://www.kjzz.org/politics/2026-07-23/2-arizona-corporation-commissioners-ran-for-reelection-only-1-made-it-out-of-gop-primary ). He is a sitting Arizona Corporation Commissioner, not a legislator, and lost his renomination.",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org/Nick_Myers (empty page returned)",
+        "web search on his name plus voter ID and elections (found only the corporation commission role and the primary loss)",
+        "nothing on the subject in the KJZZ article"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:12:56.599Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "AZ-SB-1178-2023",
+  "scope": "state:az",
+  "title": "SB 1178 (2023 - Fifty-sixth Legislature - First Regular Session (azleg session id 127)): early voting; identification; signature",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/78784",
+    "https://www.azleg.gov/legtext/56leg/1R/bills/SB1178S.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (a) A valid form of identification that bears the photograph, name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including an Arizona driver license, an Arizona nonoperating identification license, a tribal enrollment card or other form of tribal identification or a United States federal, state or local government issued identification.\n(b_no_id_remedy)\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (c) A valid form of identification that bears the photograph, name and address of the elector except that if the address on the identification does not reasonably appear to be the same as the address in the precinct register or the identification is a valid United States military identification card or a valid United States passport and does not bear an address, the identification must be accompanied by one of the items listed in subdivision (b) of this paragraph.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. If the elector does not present identification that complies with paragraph 1 of this subsection, the elector is only eligible to vote a provisional ballot as prescribed by section 16-584 or a conditional provisional ballot as provided for in the secretary of state's instruction and procedures manual adopted pursuant to section 16-452.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 3)\n(quote) 3. If the voter surrenders the early ballot to the precinct inspector and the voter is not otherwise required to be issued a provisional ballot, the voter shall be issued a standard ballot after presenting identification pursuant to this subsection.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 4)\n(quote) 4. If a voter is issued an early ballot at any voting location during the period of early voting after presenting and confirming identification that complies with paragraph 1 of this subsection, the voter's early ballot is deemed ready for tabulating, and additional signature verification of the completed affidavit envelope as prescribed by section 16-550 is not required.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. If the electronic pollbook or other system indicates that the voter's early ballot has not been returned or accepted by the county recorder and the voter is not otherwise required to be issued a provisional ballot, the voter may be issued a standard ballot after presenting identification pursuant to subsection A of this section.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 2)\n(quote) 2. If the electronic pollbook or other system indicates that the voter's early ballot has been received or accepted by the county recorder, the voter may not be issued a standard ballot and may only be issued a provisional ballot as prescribed in section 16-584.\n(c_mail_ballot_id)\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) (b) Two different items that contain the name and address of the elector that reasonably appear to be the same as the name and address in the precinct register, including a utility bill, a bank or credit union statement that is dated within ninety days of the date of the election, a valid Arizona vehicle registration, an Arizona vehicle insurance card, an Indian census card, tribal enrollment card or other form of tribal identification, a property tax statement, a recorder's certificate, a voter registration card, a valid United States federal, state or local government issued identification or any mailing that is labeled as \"official election material\".\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 3)\n(quote) 3. If the voter surrenders the early ballot to the precinct inspector and the voter is not otherwise required to be issued a provisional ballot, the voter shall be issued a standard ballot after presenting identification pursuant to this subsection.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 4)\n(quote) 4. If a voter is issued an early ballot at any voting location during the period of early voting after presenting and confirming identification that complies with paragraph 1 of this subsection, the voter's early ballot is deemed ready for tabulating, and additional signature verification of the completed affidavit envelope as prescribed by section 16-550 is not required.\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read: (para 1)\n(quote) 1. If the electronic pollbook or other system indicates that the voter's early ballot has not been returned or accepted by the county recorder and the voter is not otherwise required to be issued a provisional ballot, the voter may be issued a standard ballot after presenting identification pursuant to subsection A of this section.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Bill text\n(quote) early voting; identification; signature\n(section) Sec. 3: Section 16-579, Arizona Revised Statutes, is amended to read:\n(quote) Identification is deemed valid unless it can be determined on its face that it has expired.\n(other) Sec. 1: Section 16-550, Arizona Revised Statutes, as amended by Laws 2022, chapter 271, section 2, is amended to read:\n(other) Sec. 2: Section 16-552, Arizona Revised Statutes, is amended to read:",
+  "sponsors": [
+    {
+      "name": "Ken Bennett",
+      "role": "prime",
+      "version": "SB1178S: Senate-engrossed version (text as it stood after the Senate acted)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-03-09",
+      "body": "AZ Senate",
+      "motion": "Third Reading: Passed",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 0,
+      "absent": 0,
+      "body_size": 30,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "members": [
+        {
+          "name": "ALSTON",
+          "vote": "yea"
+        },
+        {
+          "name": "BENNETT",
+          "vote": "yea"
+        },
+        {
+          "name": "BORRELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "BURCH",
+          "vote": "yea"
+        },
+        {
+          "name": "CARROLL",
+          "vote": "yea"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "yea"
+        },
+        {
+          "name": "EPSTEIN",
+          "vote": "yea"
+        },
+        {
+          "name": "FARNSWORTH",
+          "vote": "yea"
+        },
+        {
+          "name": "FERNANDEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "GABALDÓN",
+          "vote": "yea"
+        },
+        {
+          "name": "GONZALES",
+          "vote": "yea"
+        },
+        {
+          "name": "GOWAN",
+          "vote": "yea"
+        },
+        {
+          "name": "HATATHLIE",
+          "vote": "yea"
+        },
+        {
+          "name": "HERNANDEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "HOFFMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "KAISER",
+          "vote": "yea"
+        },
+        {
+          "name": "KAVANAGH",
+          "vote": "yea"
+        },
+        {
+          "name": "KERN",
+          "vote": "yea"
+        },
+        {
+          "name": "KERR",
+          "vote": "yea"
+        },
+        {
+          "name": "MARSH",
+          "vote": "yea"
+        },
+        {
+          "name": "MENDEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MESNARD",
+          "vote": "yea"
+        },
+        {
+          "name": "MIRANDA",
+          "vote": "yea"
+        },
+        {
+          "name": "ROGERS",
+          "vote": "yea"
+        },
+        {
+          "name": "SHAMP",
+          "vote": "yea"
+        },
+        {
+          "name": "SHOPE",
+          "vote": "yea"
+        },
+        {
+          "name": "SUNDARESHAN",
+          "vote": "yea"
+        },
+        {
+          "name": "TERÁN",
+          "vote": "yea"
+        },
+        {
+          "name": "WADSACK",
+          "vote": "yea"
+        },
+        {
+          "name": "PETERSEN",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "politician_id": "fd8faae9-dd49-4670-a783-e22107418689",
+  "findings": [
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Schlegel'), linked to John A. Schlegel (district 101) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.722Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('SCHLEGEL') on the official bill page; linked to John A. Schlegel via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('SCHLEGEL') on the official bill page; linked to John A. Schlegel via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('SCHLEGEL'), linked to John A. Schlegel (district 101) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.863Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election law and Act 77",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in office and seeking re-election: https://lebtown.com/2026/01/13/rep-john-schlegel-announces-re-election-bid-for-state-legislature/ (nothing on the subject in it)",
+        "2022 campaign launch story https://lebtown.com/2022/04/13/retired-educator-sets-sights-on-frank-ryans-legislative-seat-in-harrisburg/ (his quotes, nothing on the subject)",
+        "2022 post-election news story https://www.yahoo.com/news/101st-state-house-district-retired-121352502.html (reporter's paraphrase that he favors repeal of Act 77 and voter ID; no direct quote, so not saved)",
+        "blocked: https://ballotpedia.org/John_Schlegel (empty page)",
+        "House caucus member page https://www.pahousegop.com/Schlegel (page not found)",
+        "web search: name plus voter ID",
+        "legislature bill pages: sponsorships are being linked separately",
+        "campaign site not found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:13:22.057Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:45:58.722Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.863Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

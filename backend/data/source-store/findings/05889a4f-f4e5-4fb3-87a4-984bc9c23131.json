@@ -1,0 +1,146 @@
+{
+  "politician_id": "05889a4f-f4e5-4fb3-87a4-984bc9c23131",
+  "findings": [
+    {
+      "id": "866d6e41c1cf91f15c4e84df0309437e31dd07fd6f70e11979742e2f94b3750f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "vetoed",
+      "note": "Governor Josh Stein vetoed House Bill 958, an act making various changes to the election laws. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes weekly removal of deceased voters using state and federal death records, a process for possible non-citizens flagged from a federal database, and a requirement that a person registering at a drivers license office affirmatively state citizenship. The veto message does not mention ID or citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks (deceased, non-citizen)",
+        "citizenship statement on registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:59:37.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ab5e655f27f90840224649782693a9af09a4c99347b244b52e40b16585c93ab",
+      "kind": "own-words",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2025/10363/0/H958-BD-NBC-18144",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "passage": "This damaging bill eliminates a week of early voting in the primary, invites sore losers to try to overturn general elections by throwing out people's votes after the race is over, and sows distrust in our elections.",
+      "note": "Governor's written veto message on House Bill 958, issued in his name. It gives early voting and after-election vote challenges as reasons; it does not mention ID or citizenship proof.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll checks (deceased, non-citizen)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:59:37.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32c4f83dfdfc1818bdfe3746ef4b9bb322224c9822f656231d4ea4baf9f264f6",
+      "kind": "own-words",
+      "url": "https://ncdoj.gov/release-ncdoj-update-on-voter-id-litigation/",
+      "date": "2020-01-02",
+      "date_precision": "day",
+      "passage": "In the federal litigation over North Carolina’s photo identification voting requirement, the North Carolina Department of Justice will appeal the district court’s recent decision to enjoin the law pending a trial.",
+      "note": "Attorney General's office release (he was Attorney General then) saying it would appeal the court order blocking the state photo ID law, but would not seek a stay before the March 2020 primary to avoid voter confusion.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID litigation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:59:37.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dd12bd01d45129ba3b93f3317677d12b31d557e58ecc316c6d9be196a63053b2",
+      "kind": "own-words",
+      "url": "https://www.nccivitas.org/civitas-review/nc-senator-stein-opposes-voter-photo-id-legislation/",
+      "date": "2011-06-14",
+      "date_precision": "day",
+      "passage": "Stein also states that “10 percent of North Carolinians don’t have ID right now.”",
+      "note": "Quoted by the Civitas Institute (an advocacy group) about a video of then-State Senator Stein; only the quoted words in the passage are his. The article's wording about his views is the group's description, not his own words.",
+      "subjects": [
+        "voter ID at the polls",
+        "share of voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:59:37.345Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "scope: Wikipedia lists Josh Stein as incumbent NC governor since 2025-01-01 (https://en.wikipedia.org/wiki/Josh_Stein); not on the 2026 ballot",
+        "On the Record (0 appearances)",
+        "official site governor.nc.gov press-release list page 1 (nothing on the subject; Oct 15 2026 vote release only says voting is a fundamental right, no ID content)",
+        "blocked: https://governor.nc.gov/search?keys=voter+ID (site search returned no results list)",
+        "not reviewed: governor.nc.gov press releases pages 2-170",
+        "blocked: https://www.ncleg.gov/Legislation/Vetoes (404)",
+        "https://www.ncleg.gov/BillLookUp/2025/S382 (not on the subject)",
+        "Ballotpedia https://ballotpedia.org/Josh_Stein (page returned no usable content)",
+        "not reviewed: news search (web search budget exhausted)",
+        "not reviewed: campaign site, ncleg bill pages for ID bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:04.678Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID litigation",
+        "proof of citizenship to register",
+        "voter-roll checks (deceased, non-citizen)",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; no meetings found)",
+        "North Carolina legislature bill page for H958 (2025 session), including the governor's veto message",
+        "ncdoj.gov attorney general office release on voter ID litigation",
+        "Civitas Institute article (2011) quoting him",
+        "ABC11 article on the 2026 veto",
+        "Governor's site: not reviewed separately, veto message read from the legislature's copy",
+        "Ballotpedia: not reviewed",
+        "personal campaign site: not reviewed",
+        "web search for campaign-period voter ID statements: nothing usable",
+        "nothing found on mail-ballot ID or documentary proof of citizenship (SAVE Act) in his own words"
+      ],
+      "found": 4,
+      "at": "2026-10-27T00:59:37.345Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

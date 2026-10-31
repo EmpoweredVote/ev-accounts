@@ -1,0 +1,66 @@
+{
+  "politician_id": "ff67c697-abc4-4f4c-aae9-a5e8d557eb44",
+  "findings": [
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Hagan'), linked to Leesa Hagan (district 156) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.418Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope: confirmed as House District 156 member and the only name listed for the 2026 general race at https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-156",
+        "no election bill found in search results (billsponsor listing shows non-election bills)",
+        "On the Record (extract-otr: 0 appearances, 0 candidates)",
+        "blocked: https://ballotpedia.org (page returned empty to the fetch tool)",
+        "web searches on name plus voter ID, proof of citizenship, election integrity: no own words found",
+        "not reviewed: legis.ga.gov bill pages (login token needed, not attempted)",
+        "note: fetch tool returns summaries only and a plain curl re-read of pages was refused by the permission system, so no passage could be copied verbatim; nothing saved from summaries"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:32.100Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T20:51:14.418Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

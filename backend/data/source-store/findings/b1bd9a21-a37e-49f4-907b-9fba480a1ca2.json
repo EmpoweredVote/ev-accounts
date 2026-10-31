@@ -1,0 +1,255 @@
+{
+  "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+  "findings": [
+    {
+      "id": "179e6c8d698a0bf61b9958ec954a44b24875e18009041a6a871c4eef14aa6d68",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/S320",
+      "date": "2011-01-24",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-320-2011",
+      "act": "sponsor",
+      "note": "Senate bill 320 of the 187th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with other Senate petitioners. Referred to the Joint Committee on Election Laws on 1/24/2011. A hearing was scheduled for 9/21/2011. It was accompanied by a study order (S2364). The page does not show the bill text in the saved view.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be8edd180b843a5933f3fd93654570547a2398da7c28b9c59863a68c111f35c7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S339",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-339-2013",
+      "act": "sponsor",
+      "note": "Senate bill 339 of the 188th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with two co-petitioners. Referred to the committee on Election Laws on 1/22/2013. A hearing was scheduled for 12/04/2013. It was accompanied by a study order (H4145).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6e679bc19f7f8c47ba437f333f2c8e1742b48a8a4a66e3da5d36f74b5e78897",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S1273",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-1273-2025",
+      "act": "sponsor",
+      "note": "Senate bill 1273 of the 194th General Court, 'legislation relative the power of courts and judges to maintain election integrity', filed by Bruce E. Tarr and sent to the Judiciary committee. A hearing was scheduled for 6/03/2025. Related to election integrity in general; the listing does not mention ID.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "513f722c75b4b7239f51e0a41277cbd00367418ee6b303ad3d8b1d6cfe2fbf0b",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/S320.Html",
+      "date": "2011-01-20",
+      "date_precision": "day",
+      "instrument_id": "MA-S-320-2011",
+      "act": "sponsor",
+      "note": "Tarr presented S.320, An Act relative to voter identification. It would require a voter at the polls to show identification, such as a social security card or another pre-printed form that gives the name and either address, signature or photograph.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef1fe1d5bde614ff94fa22b8862d93debf1ed1bac86317fb23d8440b425914b7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S339.Html",
+      "date": "2013-01-18",
+      "date_precision": "day",
+      "instrument_id": "MA-S-339-2013",
+      "act": "sponsor",
+      "note": "Tarr presented S.339, An Act relative to voter identification, with two co-petitioners. Same wording as S.320: the voter shows identification such as a social security card or other pre-printed form with name and address, signature or photograph.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dca78c59cb7a2d227c8f7b7b0fcfe488458ffcbf8b52f1a332aea39dd891fb92",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S335/Cosponsor",
+      "date": "2013-01-17",
+      "date_precision": "day",
+      "instrument_id": "MA-S-335-2013",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.335, An Act requiring photo identification to receive a ballot (presented by another senator). Date is the Senate docket filing date shown on the bill's HTML page.",
+      "subjects": [
+        "photo ID to receive a ballot",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a502aca06ac9ef16286318c523ddcb0926311b5c236d6a4e78f3a0ec126d5530",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/S378.Html",
+      "date": "2015-01-15",
+      "date_precision": "day",
+      "instrument_id": "MA-S-378-2015",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.378, An Act establishing voter identification procedures. A voter would be told to show a Massachusetts driver's license, state photo ID card, U.S. passport or Social Security card; a person without the required ID would not be permitted to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "no ID means no ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3054a057f926c0fa4c1f9d8bd9fe4330351f2a0b811129bbd9ef962bde905d59",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/189/S389.Html",
+      "date": "2015-01-16",
+      "date_precision": "day",
+      "instrument_id": "MA-S-389-2015",
+      "act": "sponsor",
+      "note": "Tarr is listed as a petitioner on S.389, An Act requiring photo identification to receive a ballot. Valid photo IDs: Massachusetts driver's license, U.S. passport, student ID or Massachusetts ID card; a Massachusetts ID card would be issued at no cost.",
+      "subjects": [
+        "photo ID to receive a ballot",
+        "free state ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8e14aad73a0588523679e5070d3437fd5482cc5112ac532a4e65ccbbd8df692",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
+      "date": "2022-05",
+      "date_precision": "month",
+      "instrument_id": "MA-S-2545-2022",
+      "act": "other",
+      "motion": "Amendment S2545-44 (filed by Tarr and O'Connor): photo ID at the polls with affidavit option, and free ID process for homeless or indigent people",
+      "note": "Amendment to the 2022 Senate driver's license bill draft. Voters must show government-issued or tribal photo ID; a person without it may sign an affidavit and then receive a ballot. Also requires a process for homeless or indigent people to get a state ID with fees waived. The amendment page shows no date; month taken from the Senate debate week reported by Boston 25 on 2022-05-05.",
+      "subjects": [
+        "voter ID at the polls",
+        "affidavit for voter without ID",
+        "free state ID for homeless or indigent",
+        "non-citizen voting and driver's licenses"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T21:55:43.152Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Bruce_Tarr says he is on the Nov 3, 2026 general-election ballot for MA Senate 1st Essex and Middlesex and advanced from the Sept 1, 2026 primary; https://malegislature.gov/Legislators/Profile/BET0 names him in this office",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site / campaign site https://www.brucetarr.com (site search for 'voter ID' and 'election integrity' returned no results)",
+        "malegislature.gov bill search: 'voter identification' pages 1 and 2, 'proof of citizenship'; Tarr profile and press page",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "not reviewed: Wikipedia, ontheissues.org, Vote Smart (leads only; not fetched for citation)",
+        "nothing on the subject in own words: no quote, speech, interview or questionnaire answer found"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:22:18.390Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to receive a ballot",
+        "affidavit for voter without ID",
+        "free state ID for homeless or indigent",
+        "non-citizen voting and driver's licenses",
+        "proof of citizenship (SAVE Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "malegislature.gov bill pages (S.320, S.339, S.335, S.378, S.389, S.397, amendment S2545-44)",
+        "Ballotpedia (fetch returned no usable content)",
+        "two news searches on name plus voter ID / election integrity: no 2024-2026 own words found",
+        "news coverage of 2022 driver's license bill (Boston 25 page fetched; Tarr statements only paraphrased by reporter, not saved)",
+        "S.397 petitioner list: not confirmed from fetched page, not saved",
+        "nothing on the subject: no own-words statement on SAVE Act, proof of citizenship, or mail-ballot ID found"
+      ],
+      "found": 6,
+      "at": "2026-10-27T21:55:43.152Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

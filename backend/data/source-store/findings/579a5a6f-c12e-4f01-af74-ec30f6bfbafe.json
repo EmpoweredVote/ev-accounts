@@ -1,0 +1,143 @@
+{
+  "politician_id": "579a5a6f-c12e-4f01-af74-ec30f6bfbafe",
+  "findings": [
+    {
+      "id": "ca1621e603753133d3351960f94bc751c5e76e8172cda463130388bf00d0ab53",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: yea (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.561Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V124_SB00001I.htm",
+          "sha256": "b565cc4a6c9fe904a96d311629cb3783a07b1db04f234414f7d9e461f7e68d17"
+        }
+      }
+    },
+    {
+      "id": "07726f0f89e89b87bfa20282857ac34eacca2f6741271b98b4debbfad5f98742",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 5337 (companion to SB 16)",
+      "note": "Toth is on the coauthor list of HB 5337 by Isaac, which would require proof of citizenship to register to vote and create criminal offenses. The bill was reported out of the House Elections committee as substituted on 2025-04-28. The page does not show the date he was added as coauthor.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:48:39.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1fd4d51ad7a274919af0332e9b59baeb2f750b9969b614e66bb4ac7bd63db8c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "author",
+      "motion": "author sponsor, Introduced (only version)",
+      "note": "Listed as author of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.519Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope check: he won the 2026-03-03 primary for U.S. House Texas District 2 outright (https://news.ballotpedia.org/2026/03/04/steve-toth-r-defeated-incumbent-daniel-crenshaw-r-martin-etwop-r-and-nicholas-plumb-r-in-the-republican-primary-for-texas-2nd-congressional-district/); NBC calls him a heavy favorite in the November general; he also still holds his Texas House seat",
+        "campaign site stevetothforcongress.com (home page: nothing on the subject)",
+        "Texas Legislature Online bill history for HB 5337 (89R)",
+        "Texas Legislature Online bill histories for HB 4099 and HB 4319 (not on the subject)",
+        "NBC News primary story (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Steve_Toth (fetch returned empty page)",
+        "blocked: https://ballotpedia.org/Texas%27_2nd_Congressional_District_election,_2026 (fetch returned empty page)",
+        "not reviewed: house.texas.gov member page (redirect not followed)",
+        "web search on name plus subject words (2 searches): nothing about him on the subject",
+        "congress.gov not applicable (not yet a member of Congress)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:48:39.137Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.519Z",
+      "by": "identity-step-sponsors"
+    }
+  ]
+}

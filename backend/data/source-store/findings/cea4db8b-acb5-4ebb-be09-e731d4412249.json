@@ -1,0 +1,326 @@
+{
+  "politician_id": "cea4db8b-acb5-4ebb-be09-e731d4412249",
+  "findings": [
+    {
+      "id": "2348ed889d36563d9febead17eabf8675cfae0d36a7457daa01ac8703e73f40a",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: yea (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "72409f23f702420d5ed806eb8f36b804c4dde1a26549bef4bef535a711f66044",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0417+HB0544",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-544-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (51-Y 49-N)",
+      "note": "House roll call as printed ('Guzman'), linked to Elizabeth R. Guzman via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "851ebc4c21105c0052f35d17363b61533538390128a5b8befc022dfc36b3ef32",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0645+HB1090",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1090-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Guzman'), linked to Elizabeth R. Guzman via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25b96690d0a9ac954e239ad21b0b7b18ecfa371e44561bbe5f87dcfec7ba4715",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?221+vot+HV0967+HB0046",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-46-2022",
+      "act": "nay",
+      "motion": "House: VOTE: Passage (52-Y 48-N)",
+      "note": "House roll call as printed ('Guzman'), linked to Elizabeth R. Guzman via the official 2021 and 2023 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83bbee045d855b9db5f89cdd0f57c294216ce153daa1fea7c5f17868d059d82f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+HV0876+HB0213",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "House: VOTE: Passage (57-Y 41-N)",
+      "note": "House roll call as printed ('Guzman'), linked to Elizabeth R. Guzman via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.789Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a18fe3e0dfcff3d4bd020b195cf13ec3235d4358b030f555d8e5666a9fd2bf97",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Elizabeth_Guzman",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Elizabeth advocates for reinstating the federal ban on assault weapons, which proved effective in combating mass shootings when it was in effect from 1994 to 2004.",
+      "note": "Ballotpedia reproduces her campaign website text (2024), under the heading Elizabeth on Gun Violence Prevention. Third-person text on her own site.",
+      "subjects": [
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a66a7c19cd32b56292d55aff5720745220845a921a767a8f727f8bb2be52a3d",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Elizabeth_Guzman",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Elizabeth supports implementing federal red flag laws, especially for domestic abusers, to prevent tragedies and ensure responsible gun ownership.",
+      "note": "Same campaign website text (2024), as quoted on Ballotpedia.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e004fc7a68cd848b2755aae25020fc13e5d135a038c62743ce25d88c1926d8c",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Elizabeth_Guzman",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Elizabeth believes in closing this loophole to ensure that all gun sales—whether at gun shows or elsewhere—undergo thorough background checks.",
+      "note": "Same campaign website text (2024), as quoted on Ballotpedia; about the so-called gun show loophole.",
+      "subjects": [
+        "background checks on private sales",
+        "universal background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42e4452a36b8674e51618c5a412e53f6c33f4b08d6e29cc45ac0e87cb04528d6",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Elizabeth_Guzman",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Elizabeth emphasizes the importance of universal background checks for all gun purchases.",
+      "note": "Same campaign website text (2024), as quoted on Ballotpedia.",
+      "subjects": [
+        "universal background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72813cb45096404d2287817e8fd7c16730a41de4dbc73b4725f4f580263898f2",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Elizabeth_Guzman",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Reproductive freedom, common-sense gun safety reform, expanding workers rights, universal access to health care, investing in education, economic development in our communities, protecting immigrant rights, strengthening LGBTQ+ rights, housing affordability, access to public transit, voting rights, criminal justice reform, tax relief for veterans, and many more.",
+      "note": "Her answer in the 2024 Ballotpedia Candidate Connection survey to the question on policy areas she is personally passionate about.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "official Senate page: not found on the Senate member index page",
+        "campaign site: not reviewed, not found",
+        "On the Record (0 appearances)",
+        "blocked: Ballotpedia (fetch returned empty page)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "blocked: https://legilist.com/states/virginia/bill/2026/sb-544 (403)",
+        "blocked: lis.virginia.gov, legiscan, legiplex (not retried)",
+        "news searches on name plus voter ID, citizenship, non-citizen voting: no own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:31:20.090Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:53:04.517Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T17:58:27.789Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons ban",
+        "red-flag orders",
+        "background checks on private sales and gun shows",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms current member of the Virginia House of Delegates, assumed office 2026-01-14; quotes her 2024 campaign website; her 2024 Candidate Connection survey answers)",
+        "old campaign site guzmanforvirginia.com (House District 22 site; one gun safety heading)",
+        "blocked: https://lis.virginia.gov (JavaScript app; sponsorships not read)",
+        "campaign site guzmanforcongress.com/issues: spam page, discarded; elizabethguzman.com gave nothing",
+        "news search: one search; no firearm quote from her found (results were about a different delegate). VA House seats are not on the 2026 ballot",
+        "note: the website passages below are about federal policy (her 2024 congressional run)"
+      ],
+      "found": 5,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

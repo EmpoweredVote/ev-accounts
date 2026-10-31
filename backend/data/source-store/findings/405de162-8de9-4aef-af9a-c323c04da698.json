@@ -1,0 +1,78 @@
+{
+  "politician_id": "405de162-8de9-4aef-af9a-c323c04da698",
+  "findings": [
+    {
+      "id": "372a09d7b34400facaa7ca3291d01369999f644944a815c8d48eaa6a8021d9ee",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+S08V0016+SB0081",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-81-2024",
+      "act": "nay",
+      "motion": "Pass by indefinitely, Senate Privileges and Elections",
+      "note": "SB81 (voter identification; photograph required) would require a photo ID to vote and replace the sign-a-statement option with a provisional ballot. The Privileges and Elections committee voted 8-6 to pass it by indefinitely; he voted against that motion.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID (sworn statement, provisional ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:31.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae25abd85cc08ad4d09da92f847349cc6da601d76315dbb96180cb6f6552f8a0",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?241+vot+SV0583HB0026+HB0026",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-26-2024",
+      "act": "nay",
+      "motion": "Passage",
+      "note": "Voter identification; accepted forms of identification (adds photo ID cards from certain licensed private entities to the accepted list). Senate passage vote 21-17 on 2024-02-23.",
+      "subjects": [
+        "photo ID or other ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:24:31.811Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID or other ID documents",
+        "voters with no ID (sworn statement, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed in office: Senate of Virginia votes list him among senators; Wikipedia shows him as District 12 senator since 2024-01-10",
+        "On the Record (0 appearances found; the extract script was run with the politician id and name)",
+        "legacylis.virginia.gov SB81 (2024) summary and committee vote page; HB26 (2024) vote pages",
+        "Ballotpedia: not reviewed, page did not load",
+        "web searches on name plus voter ID, photo ID, citizenship verification: found SB1454 (2025, citizenship verification program, he is chief patron) only in search results; the official bill page could not be read",
+        "His own site or statements: no page found",
+        "blocked: https://legiscan.com and https://www.vpap.org and https://legilist.com and https://app.legiplex.com (403 errors, not worked around)",
+        "blocked: https://lis.virginia.gov/bill-details/20261/HB1131 (the new legislature site loads bill data by script, so 2025 and 2026 bill pages could not be read)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T16:24:31.811Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

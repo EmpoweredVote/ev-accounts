@@ -1,0 +1,55 @@
+{
+  "politician_id": "444ac209-7bfa-4f3a-a733-5666fd74fd66",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Sean_Reid names him as 11th Essex District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 appearances for this politician id)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/S_R1 and bills list: nothing on the subject (sponsored bills cover other topics)",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey, no issue positions)",
+        "campaign site: not reviewed: https://www.seanreidma.com did not resolve; no other campaign site URL found",
+        "official site mahouse.gov: not reviewed, only the legislature profile was fetched",
+        "blocked: https://www.mass.gov/doc/2026-state-primary-candidates-official-list/download (403)",
+        "news search: not reviewed, the shared web search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:07:29.609Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Sean_Reid shows him on the November 3, 2026 general-election ballot for Massachusetts House, 11th Essex District, having advanced from the September 1, 2026 primary; state results page https://electionstats.state.ma.us/elections/view/173307/ lists him in that primary",
+        "On the Record (0 meetings)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/S_R1/194 and its cosponsor page: listings fetched, none on the subject (the cosponsor tab returned the same text as the main page, so the full cosponsor list may not have loaded)",
+        "bill page https://malegislature.gov/Bills/194/H802 (photo ID to vote, filed by another member): his name does not appear on the page text",
+        "Ballotpedia: nothing on the subject",
+        "news searches on name plus subject words: nothing on the subject",
+        "blocked: https://ontheissues.org/MassScorecard/Reid_Sean.htm (403)",
+        "no campaign site reachable (seanreidma.com and reidforlynn.com did not respond)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T02:59:23.234Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

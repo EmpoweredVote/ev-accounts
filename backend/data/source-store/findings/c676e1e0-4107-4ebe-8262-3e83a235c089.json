@@ -1,0 +1,41 @@
+{
+  "politician_id": "c676e1e0-4107-4ebe-8262-3e83a235c089",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/John_Frankman: confirms a loss in the August 18, 2026 primary)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; confirms primary loss, not searched further)",
+        "not reviewed: https://johnfrankman.com (out of scope after primary loss)",
+        "web search: blocked, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:17:31.679Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida lists the incumbent as nominee for District 1 and Frankman, an Army veteran, among those eliminated in the primary)",
+        "On the Record (0 appearances)",
+        "one web search on name plus 2026 race: confirmed identity as the District 1 candidate",
+        "stopped after confirming out of scope, as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:28:05.000Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "politician_id": "e81ce3e4-8b6c-4c57-82c1-733ecd1ba931",
+  "findings": [
+    {
+      "id": "693922da03e9e2ba9b1f805c24724bceee0f35f25044b76f3d7781da3aeae6aa",
+      "kind": "own-words",
+      "url": "https://www.loftonfornc.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "He is working to protect our right to free and fair elections by fighting to finally end the practice of gerrymandering in North Carolina and oppose efforts to limit access to voting.",
+      "note": "Campaign issues page, undated (date is the page fetch date, not the writing date). General statement on voting access; names no ID rule. Page is written in the third person about the candidate.",
+      "subjects": [
+        "opposes efforts to limit access to voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:06.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b95e970b91427e5256b581c6b5b0a59ac592993ba577be51bcdae4dcdc1b4595",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor of House Bill 691, Voter Protection and Reliance Act (amends chapter 163 sections on election protests and results). It is not an ID bill. Last action: referred to House Rules on 4/3/2025.",
+      "subjects": [
+        "election integrity laws in general",
+        "protection of certified election results"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:06.737Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "aa9df9a671e312a596a5e5c5955fd1ab41c83705b2e04ca5a2d675d2564664fe",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Brandon_Lofton",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "The right to vote is foundational to the functioning of our democracy. I have supported legislation to protect voting rights, end partisan gerrymandering and stand up for rights of North Carolinians.",
+      "note": "From his 2022 Ballotpedia Candidate Connection answers. General statement about voting rights; it names no ID or citizenship rule.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:54.398Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "limits on access to voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Brandon_Lofton) lists him as District 104 incumbent on the Nov 3, 2026 general ballot; the March 3, 2026 primary was canceled; ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/751 confirms District 104",
+        "On the Record (0 appearances)",
+        "campaign site https://www.loftonfornc.com and /issues (one general line on voting access; nothing on ID)",
+        "https://www.brandonlofton.com (no voting content)",
+        "ncleg.gov introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/751 (2025 session: no ID bill seen; HB 31 and HB 691 election-related)",
+        "ncleg.gov HB 691 bill page and text",
+        "Ballotpedia (no voter ID text on page)",
+        "not reviewed: ncleg.gov House roll-call votes on voter ID or election-law bills (not located)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: Facebook, X, Instagram posts (https://www.facebook.com/LoftonforNC/)"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:13:06.737Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or military-overseas ballots",
+        "proof of citizenship to register",
+        "voting rights in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting NC House District 104 member, on the 2026 general-election ballot; 2022 Candidate Connection answers read; nothing specific on ID)",
+        "House Bill 278 (2025) co-sponsor list checked at https://www.ncleg.gov/BillLookUp/2025/H278: his name is not on it",
+        "official legislature page, campaign site, news search: not reviewed, no direct page fetched for him"
+      ],
+      "found": 1,
+      "at": "2026-10-27T22:07:54.398Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

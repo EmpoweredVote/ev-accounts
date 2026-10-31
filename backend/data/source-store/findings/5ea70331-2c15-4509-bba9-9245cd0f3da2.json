@@ -1,0 +1,207 @@
+{
+  "politician_id": "5ea70331-2c15-4509-bba9-9245cd0f3da2",
+  "findings": [
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('FRITZ'), linked to Jonathan A. Fritz (district 111) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "259cea2921b24ce64eae92e50734a01cd7bfd0fa7de8a711b0987d8b45e5a313",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1300",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1869 (as passed by House and Senate). Read.",
+      "note": "Named as co sponsor ('FRITZ') on the official bill page; linked to Jonathan A. Fritz via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Fritz'), linked to Jonathan A. Fritz (district 111) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Fritz'), linked to Jonathan A. Fritz (district 111) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('FRITZ'), linked to Jonathan A. Fritz (district 111) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.852Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 111, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/susquehanna-county (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repfritz.com): site search page for voter ID returned unrelated press releases; press release list page checked, no title on voting, elections or ID; nothing on the subject",
+        "House caucus site releases: 2019 and 2021 term-start releases fetched, nothing on the subject (the 2021 one mentions only reforms to rebuild confidence in government, no voting detail)",
+        "news searches on name plus voter ID, election integrity, citizenship: no statement by him found",
+        "blocked: https://ballotpedia.org/Jonathan_Fritz (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "blocked: https://www.pahousegop.com/Category//Page-383 (page not found; could not reach a December 2020 group statement that a search snippet linked to him)",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:07:33.004Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: in scope, a state House member for District 111, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/susquehanna-county (positive control; the page also says no campaign site was found)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repfritz.com): site search page for voter ID returned unrelated press releases; press release list page checked, no title on voting, elections or ID; nothing on the subject",
+        "House caucus site releases: 2019 and 2021 term-start releases fetched, nothing on the subject (the 2021 one mentions only reforms to rebuild confidence in government, no voting detail)",
+        "news searches on name plus voter ID, election integrity, citizenship: no statement by him found",
+        "blocked: https://ballotpedia.org/Jonathan_Fritz (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "blocked: https://www.pahousegop.com/Category//Page-383 (page not found; could not reach a December 2020 group statement that a search snippet linked to him)",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:31:40.406Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.852Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

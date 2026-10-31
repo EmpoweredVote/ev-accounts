@@ -156,7 +156,23 @@ export default function ProfilePage() {
   const [referral, setReferral] = useState<ReferralState | null>(null);
   const [activity, setActivity] = useState<ActivityEntry[]>([]);
   const [copied, setCopied] = useState(false);
+  // Password reset is deliberately a one-shot request, not a form. See the Account security
+  // card below for why we send a link rather than changing the password in place.
+  const [resetState, setResetState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const { isDark, toggle } = useTheme();
+
+  async function requestPasswordReset(email: string) {
+    setResetState('sending');
+    try {
+      await apiFetch<unknown>('/auth/forgot-password', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+      });
+      setResetState('sent');
+    } catch {
+      setResetState('error');
+    }
+  }
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -397,6 +413,52 @@ export default function ProfilePage() {
             )}
           </div>
         )}
+
+        {/* Account security — full width.
+            This sends a reset LINK rather than offering an in-place "old password / new
+            password" form, and that is a deliberate choice, not a stub. Passwords live in
+            either WorkOS or Supabase depending on the AUTHKIT_PRIMARY cutover flag, and
+            /api/auth/forgot-password is the one path that already branches correctly on it.
+            An in-place change would need a new authenticated endpoint covering both issuers
+            plus session rotation. Until that exists, this is the honest, working option —
+            and proving control of the inbox is a real check, not a weaker one. */}
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+          <div className="flex items-center gap-3 mb-5 text-gray-900 dark:text-white">
+            <LockIcon />
+            <h2 className="text-xl font-semibold">Account security</h2>
+          </div>
+
+          <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
+            We email a link to <span className="font-medium text-gray-900 dark:text-white">{me.email}</span>.
+            Open it to choose a new password. The link expires, and using it signs you out everywhere else.
+          </p>
+
+          {/* ⚠ Below, text-ev-teal in light and ev-teal-light only in dark. Measured against the
+              real build: ev-teal-light is 2.49:1 on white and 1.76:1 on the 15% tint, both far
+              under WCAG AA's 4.5:1, while dark mode is 7.1–7.4:1. The tint is fine; the
+              foreground is what has to change per theme. Same pairing as admin's sign-in link. */}
+          {resetState === 'sent' ? (
+            <p className="text-ev-teal dark:text-ev-teal-light text-sm font-medium" role="status">
+              Sent. Check {me.email} — if it has not arrived in a few minutes, look in spam.
+            </p>
+          ) : (
+            <>
+              <button
+                type="button"
+                onClick={() => void requestPasswordReset(me.email)}
+                disabled={resetState === 'sending'}
+                className="bg-ev-teal-light/15 text-ev-teal dark:text-ev-teal-light text-sm font-semibold px-4 py-2 rounded-xl hover:bg-ev-teal-light/25 disabled:opacity-60 disabled:cursor-not-allowed transition-colors"
+              >
+                {resetState === 'sending' ? 'Sending…' : 'Email me a password reset link'}
+              </button>
+              {resetState === 'error' && (
+                <p className="text-red-600 dark:text-red-400 text-sm mt-3" role="alert">
+                  That did not send. Try again in a moment, or use “Forgot your password?” on the sign-in page.
+                </p>
+              )}
+            </>
+          )}
+        </div>
 
       </main>
     </div>

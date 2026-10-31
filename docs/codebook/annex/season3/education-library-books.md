@@ -16,10 +16,14 @@ book* ↔ *a challenge removes a book for all students with no review.*
 
 **Levels with a lever:** school (the board's reconsideration policy) and state (a statute or rule that sets the
 challenge process for every district). A city or county council governs public libraries, not school
-libraries → `adjacent` unless the act covers school collections _(proposed)_.
+libraries: no lever, so a local act → `adjacent` unless it covers school collections _(ruled 2026-10-15, Q5)_.
+Congress holds no lever on a district's challenge process. The one known federal vote, H.R. 5 (Parents
+Bill of Rights Act, House 2023-03-24), is multi-subject under 0.5 and its library clause (post a list of
+library books) matches no rung → `adjacent` _(ruled 2026-10-15, Q6)_.
 
-**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal
-(codebook V2 "No-lever level").
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal,
+local (codebook V2 "No-lever level"; local changed by CA_0311, ruling 2026-10-15 Q5; federal kept, Q6). A mayor's,
+council member's or member of Congress's own stated view can seat a chair; their record cannot.
 
 **Synonyms:** "reconsideration policy", "request for reconsideration", "challenged material",
 "review committee", "media specialist", "collection development", "weeding", "harmful to minors",
@@ -50,8 +54,8 @@ from silence (V4.2).
      restriction for their own child, with no removal process.
    - Levels that hold a lever: school; state.
    - A standing opt-out (a restriction list open at any time, not the response to a challenge) does not meet
-     [a] → `adjacent` _(proposed; Stage 3 finding 3 — moving standing opt-outs onto this rung is an annex
-     change that needs a ruling)_.
+     [a] → `adjacent` _(ruled 2026-10-15: rung 2 stays tied to a challenge)_. Beside a review it does not change
+     the review's rung.
    - A checkout-record notice alone → `adjacent`.
 
 3. **"Remove a challenged book for all students after a review body finds it unsuitable"**
@@ -95,7 +99,7 @@ from silence (V4.2).
   statutory content test ("harmful to minors", described sexual conduct) sets **what** may be removed, not
   what a challenge does → `direction-only` by itself. If the act also states a challenge process, that process
   decides the rung.
-- **Removal lists** _(provisional, Stage 3 settlement 2026-10-15; Chris may overrule)_. A removal list compiled
+- **Removal lists** _(ruled 2026-10-15)_. A removal list compiled
   by another body is not a challenge in this district. An act that removes listed books, with or without
   review, is coded like a content-rule law: `direction-only` by itself; the challenge process the act states
   decides the rung.

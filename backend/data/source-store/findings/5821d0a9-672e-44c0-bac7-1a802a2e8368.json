@@ -1,0 +1,54 @@
+{
+  "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+  "findings": [
+    {
+      "id": "daa3ab48fe22960b9ebbe9027332fcc0ca5fdffb580ae352059a865d4c750536",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "yea",
+      "motion": "SB 1174 (Min) Senate Third Reading, Assembly Floor; passed 57 ayes, 16 noes, 6 abstentions",
+      "note": "Voted aye on the Assembly floor for SB 1174, which bars local governments from enacting or enforcing voter identification requirements for voting or submitting ballots. Roll call taken from the Digital Democracy bill page; the official leginfo vote page was blocked.",
+      "subjects": [
+        "local voter ID rules",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:56:32.467Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter ID rules",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (1 meeting, 2026-05-08; no passage on the subject)",
+        "official Assembly site https://a14.asmdc.org (nothing on the subject)",
+        "Ballotpedia page (nothing on the subject)",
+        "CalMatters Digital Democracy page for SB 1174 (member roll call; positive control: lists her as a member and shows her vote)",
+        "web news searches on her name plus voter ID / SAVE Act / proof of citizenship (nothing on the subject)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (bot challenge page and HTTP 403)",
+        "blocked: https://legiscan.com/CA/bill/SB1174/2023 (HTTP 403)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:56:32.467Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "politician_id": "3582a053-ee20-4391-904f-3905a2d13a52",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Members/House lists Bruce J. Ayers, 1st Norfolk (Quincy); profile https://malegislature.gov/Legislators/Profile/BJA1",
+        "On the Record (0 appearances)",
+        "malegislature.gov profile and sponsored bills (BJA1): only election-related bill is House No. 800, polling-place access for handicapped and elderly voters, nothing on ID or citizenship",
+        "Ballotpedia: page https://ballotpedia.org/Bruce_J._Ayers does not exist; nothing on the subject",
+        "not reviewed: official site, campaign site, news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:06:03.764Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID amendment to H.4359 (VOTES Act, 2022)",
+        "proof of citizenship to register or vote",
+        "election integrity and voting access in general"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Bruce_Ayers (on the 2026 general-election ballot for MA House 1st Norfolk; nothing on the subject)",
+        "MA legislature member profile page (confirms 1st Norfolk): nothing on the subject",
+        "On the Record (0 meetings)",
+        "malegislature.gov H.4359 amendment 7 page: amendment text and sponsor not shown, roll call not shown beyond the vote already on file; nothing from him",
+        "two web searches on his name and the 2022 voting bill: nothing he said or wrote",
+        "campaign site and his own news posts: not reviewed (none found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T18:44:58.336Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

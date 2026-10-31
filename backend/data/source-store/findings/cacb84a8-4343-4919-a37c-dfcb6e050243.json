@@ -1,0 +1,449 @@
+{
+  "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district 16) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f93846c1105ccda7a86e8e550ba1636fcbbc6405c70fba1df98bffb3f7fea0e",
+      "kind": "record",
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2492H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Teresa Martinez') on the official bill page; linked to Teresa Martinez via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07beb22391c4a87027116d0de8b5fc744a95f4fe4b0aa8071a98ee581de3d18a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77219",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2596-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2596P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Teresa Martinez') on the official bill page; linked to Teresa Martinez via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district 16) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67f1f8f7181db16165b8d24d99732ae95bfcc41434ceb827fc653bb873e6c692",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2025-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2025P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Teresa Martinez') on the official bill page; linked to Teresa Martinez via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district 16) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.881Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a19dde9cd91146160d922789a10691e919073823c0b5560d4f374a079cc2ea1",
+      "kind": "own-words",
+      "url": "https://tucson.com/news/local/govt-and-politics/article_1b12b2f2-845b-11ec-9030-ff847f645502.html",
+      "date": "2022-02-02",
+      "date_precision": "day",
+      "passage": "“As a person of color ... I am a little offended that we say, ‘Oh, poor people or minorities or people of color, they don’t have ID and we’ve got to make is super easy for them to vote,’ ‘’ said Rep. Teresa Martinez, R-Casa Grande.",
+      "note": "Quoted by Capitol Media Services in committee debate on a bill to require ID to drop off early ballots at polling places. She objects to the idea that some groups lack ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3046fd0159a4a60fc9747f88f76f64f052702d062639bbd2390bc198032c5a35",
+      "kind": "own-words",
+      "url": "https://tucson.com/news/local/govt-and-politics/article_1b12b2f2-845b-11ec-9030-ff847f645502.html",
+      "date": "2022-02-02",
+      "date_precision": "day",
+      "passage": "“I can assure you that people in Casa Grande, people in Stanfield, people in Pichacho, people in Superior, Hayden, Winkelman, they have ID,’’ Martinez said.",
+      "note": "Quoted by Capitol Media Services in the same committee debate. She says residents of her rural towns already carry ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "571bab1217b7fd08dda0c58e901521a081da97ad471cfe0e1b2ac7ebc5379334",
+      "kind": "own-words",
+      "url": "https://martinezforarizona.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "My other priorities include school choice and empowering parents, election integrity, preserving rural communities, protecting our Second Amendment and water.",
+      "note": "Campaign site lists election integrity among her priorities, with no detail on ID or citizenship rules. Page is undated.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:31:40.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('MARTINEZ'), linked to Teresa Martinez (district 16) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.510Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 14,
+      "at": "2026-10-28T22:53:15.881Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot per the Wikipedia 2026 Arizona House election page (two-candidate primary for district 16, both advance); lead only, official canvass not reviewed",
+        "On the Record: not run (repo scripts not permitted for this agent), so not reviewed",
+        "campaign site https://martinezforarizona.com/ (one page, a priorities list, no detail on the subject)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Teresa_Martinez (403)",
+        "news search on name plus subject words (two searches): Capitol Media Services story on the 2022 early-ballot ID bill, also carried by Rose Law Group Reporter",
+        "Arizona House news release of 2021-10-27 (her appointment): nothing on the subject beyond background",
+        "not reviewed: legislature member page and bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:13:01.397Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.510Z",
+      "by": "identity-az-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with an early ballot",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: on the 2026 general-election ballot per the Wikipedia 2026 Arizona House election page (two-candidate primary for district 16, both advance); lead only, official canvass not reviewed",
+        "On the Record: not run (repo scripts not permitted for this agent), so not reviewed",
+        "campaign site https://martinezforarizona.com/ (one page, a priorities list, no detail on the subject)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Teresa_Martinez (403)",
+        "news search on name plus subject words (two searches): Capitol Media Services story on the 2022 early-ballot ID bill, also carried by Rose Law Group Reporter",
+        "Arizona House news release of 2021-10-27 (her appointment): nothing on the subject beyond background",
+        "not reviewed: legislature member page and bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T23:31:40.405Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

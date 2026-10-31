@@ -1,0 +1,178 @@
+{
+  "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142",
+  "findings": [
+    {
+      "id": "eb149b37c62ebe4c96256c288e36b4ea2f9f1fbd0967b8ba18c1f30a8399cfd8",
+      "kind": "record",
+      "url": "https://theaugustapress.com/state-senate-approves-stricter-id-rules-for-vote-by-mail/",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Senate passage of Sen. Larry Walker III's absentee voter ID bill, 35-18",
+      "note": "News report (Augusta Press, published 2021-02-25; floor action on Tuesday, photo caption dates the Senate floor debate Feb. 23, 2021) says he voted in favour. The bill would require absentee voters to give a driver's licence or state ID number, or photocopies of a passport, employee ID card, utility bill or bank statement. Bill number is not on the page; the official roll call was not read.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID with absentee ballot request"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:43:02.463Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6a2b8c5c7502e0c8f2860d8af00531ab0fe1847ca03b026be06e09cb14cdd5",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Rhett'), linked to MICHAEL RHETT (district 33) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Rhett'), linked to MICHAEL RHETT (district 33) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbc41a5dc5b6e3576f0079507677b0e8754d955da94e8bdb2ef80b7a484d0b50",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Rhett'), linked to MICHAEL RHETT (district 33) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be4a476926561e348015bdb5f160d1424699525f67fc0ca8e334bd5b843039c5",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Rhett'), linked to Rhett, Michael A. (district 33) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7d9796af815875184b98ca9c514b16c643a7fd0abecf1e1587d68a7546b4e93",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "nay",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Rhett'), linked to MICHAEL RHETT (district 33) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "ID with absentee ballot",
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity",
+        "SB 202"
+      ],
+      "places": [
+        "status check: https://ballotpedia.org/Michael_A._Rhett shows him on the 2026-11-03 general-election ballot for Georgia State Senate District 33 after advancing from the primary (in scope)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.drmichaelrhett.com/ (home, bio, whats-going-on pages): nothing in readable text on the subject; the news page lists a video titled as his stand during a Senate elections subcommittee hearing with Rudy Giuliani: not reviewed, video not readable (https://www.drmichaelrhett.com/whats-going-on)",
+        "Ballotpedia",
+        "Wikipedia https://en.wikipedia.org/wiki/Michael_Rhett: nothing on the subject",
+        "Georgia Senate press office search: no results for him on voting",
+        "web searches: 3 run (name plus voter ID, SB 202, absentee, election integrity; SB 202 roll call; absentee ID vote)",
+        "official legislature page https://www.legis.ga.gov/members/senate/855?session=1033: not reviewed (script-rendered); his SB 202 vote (Senate, 2021-03-25) was not retrieved",
+        "no SAVE Act statement found"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:43:02.463Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T20:51:14.414Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

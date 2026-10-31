@@ -1,0 +1,88 @@
+{
+  "politician_id": "9c4aa310-5706-42e8-b3f1-b5dee9b6f6fa",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: sitting Indiana House member, District 30 (Ballotpedia https://ballotpedia.org/Michael_Karickhoff says his term ends November 4, 2026 and he did not file to run for re-election in 2026; announced November 3, 2025)",
+        "On the Record (0 appearances; extract-otr run with --names)",
+        "official House caucus page https://www.indianahouserepublicans.com/members/leadership/mike-karickhoff (nothing on the subject)",
+        "campaign site https://www.mikekarickhoff.com/ (nothing on the subject)",
+        "Ballotpedia (nothing on the subject; sponsored-bill list is a BillTrack50 widget that did not load)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_michael_karickhoff_1 (page is script-rendered, no content returned)",
+        "blocked: https://indianacapitalchronicle.com/2025/11/04/republican-rep-karickhoff-not-seeking-2026-reelection/ (HTTP 403)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for election bills (no readable bill index; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:16.459Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Michael_Karickhoff shows him as sitting Indiana House District 30 member since 2010, term ends November 2026, not filing for re-election (announced 2025-11-03)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site https://www.mikekarickhoff.com/ (page text lists Priority Issues; nothing on the subject found in the page text)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_michael_karickhoff_1000 (page loads only as a script shell)",
+        "not reviewed: House caucus member page (404 at tried URLs)",
+        "two web searches on name plus voter ID, election integrity and proof of citizenship (no statement or sponsorship by him found)"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:45:48.502Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9",
+  "findings": [
+    {
+      "id": "709284c3a0e10df4a6622a591966f30c849ecce3a4a4ee4fef00617c603c1cbd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('VILLEGAS'), linked to Betty J Villegas (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bad8ec15795229ce928c381bb8f76d5bf6ee55d2dbd63b877e9ed95ff6c44ea9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80715",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2670-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2670P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Betty J Villegas') on the official bill page; linked to Betty J Villegas via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d3fe91d34c5db7125e471be71d0287c2e7915c5da0d038d007934da226e0f5e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/80716",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2671-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2671P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Betty J Villegas') on the official bill page; linked to Betty J Villegas via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('VILLEGAS'), linked to Betty J Villegas (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ca67848aa733588751373129d47d11dfd2873eb2d867736bbfb2d87c05ade9c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('VILLEGAS'), linked to Betty J Villegas (district 20) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0182fcb8574a3883c579212fed0026affbe51ded5eb871413e17fcbc496ab00",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('VILLEGAS'), linked to Betty J Villegas (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.883Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d68905ce1e404a6c0cf9a53a7b8bf0dba4a51c755ac0dc62cef38e7fa3950ae4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "nay",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('VILLEGAS'), linked to Betty J Villegas (district 20) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.511Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:53:15.883Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "voting rights"
+      ],
+      "places": [
+        "scope: sitting District 20 House member (azleg.gov roster and member page); Tucson Spotlight (2026-06-29) says she is seeking reelection; a Tucson Spotlight primary report puts her second of four in an unofficial count with two seats to fill; the final result was not confirmed",
+        "not reviewed: On the Record (the extraction script is a repo script and was not run in this session)",
+        "blocked: https://ballotpedia.org/Betty_Villegas (empty page)",
+        "legislature member page (no personal site or press releases listed)",
+        "caucus page https://www.azhousedemocrats.com/betty-villegas (404)",
+        "KOLD interview page of 2026-07-20 (nothing on the subject)",
+        "Tucson Spotlight campaign profile (nothing on the subject)",
+        "Copper Courier 2026-06-24 and Arizona Daily Independent 2026-02-10 articles (she is not quoted)",
+        "two news searches on her name plus subject words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:09:36.478Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.511Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

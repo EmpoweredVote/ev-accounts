@@ -1,0 +1,567 @@
+{
+  "id": "UT-HB-60-2021",
+  "scope": "state:ut",
+  "title": "H.B. 60, Conceal Carry Firearms Amendments",
+  "urls": [
+    "https://le.utah.gov/~2021/bills/static/HB0060.html",
+    "https://le.utah.gov/~2021/bills/hbillenr/HB0060.pdf",
+    "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2021GS&voteid=278&house=H",
+    "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2021GS&voteid=307&house=S"
+  ],
+  "version": "enrolled",
+  "operative_text": "Long title: This bill modifies provisions related to carrying a concealed firearm and suicide prevention.\nHighlighted provisions: provides that an individual who is 21 years old or older, and may lawfully possess a firearm, may carry a concealed firearm in a public area without a permit;\nSec. 5, 76-10-523(5) (new, underlined in rendered page 6): (5) Subsections 76-10-504(1) and (2), and 76-10-505(1)(b) do not apply to a person 21 years old or older who may otherwise lawfully possess a firearm.\nSec. 5, 76-10-523(3)(a) (existing text, not underlined): (3) Subsections 76-10-504(1) and (2), and Section 76-10-505 do not apply to: (a) an individual to whom a permit to carry a concealed firearm has been issued: (i) pursuant to Section 53-5-704; or (ii) by another state or county;\nSec. 1, 53-5-707(5)(d): (d) No later than 90 days after the end of the fiscal year 50% of the fund balance shall be transferred to the Suicide Prevention and Education Fund, created in Section 62A-15-1104.",
+  "sponsors": [
+    {
+      "name": "Rep. Walt Brooks",
+      "role": "co",
+      "version": "all"
+    },
+    {
+      "name": "Sen. David P. Hinkins",
+      "role": "co",
+      "version": "Senate"
+    },
+    {
+      "name": "Sen. S. Eliason; Sen. D. Hinkins",
+      "role": "co",
+      "version": "substitutes"
+    },
+    {
+      "name": "enrolled cover lists House cosponsors including Kay J. Christofferson, Joel Ferry, Francis D. Gibson, Matthew H. Gwynn, Dan N. Johnson, Marsha Judkins, Candice B. Pierucci, Paul Ray, Adam Robertson, Mike Schultz, Travis M. Seegmiller, Rex P. Shipp, Christine F. Watkins, Ryan D. Wilcox, Mike Winder (page 1 of the enrolled PDF was not read in full; 35 cosponsors per the bill page)",
+      "role": "co",
+      "version": "enrolled"
+    },
+    {
+      "name": "Walt Brooks (Chief Sponsor); Senate Sponsor: David P. Hinkins",
+      "role": "prime"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-02-08",
+      "body": "UT House",
+      "motion": "Concur with Senate amendment (Concurred/Final Passage)",
+      "kind": "roll-call",
+      "yes": 51,
+      "no": 20,
+      "body_size": 75,
+      "note": "names from: reader summary",
+      "members": [
+        {
+          "name": "Abbott, N.",
+          "politician_id": "ec7d4cce-d016-48ba-82d1-4f246d44542e",
+          "vote": "yea"
+        },
+        {
+          "name": "Acton, C.K.",
+          "politician_id": "2798f59a-89d5-4a09-8d6b-252c91ce337e",
+          "vote": "yea"
+        },
+        {
+          "name": "Albrecht, C.",
+          "politician_id": "6cbb80d7-e32b-4ea8-9073-463e0e7c918a",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard, M.G.",
+          "politician_id": "acd23e3e-ef4c-451e-b227-e9c2b0c8a4cc",
+          "vote": "yea"
+        },
+        {
+          "name": "Barlow, S.",
+          "politician_id": "2b2cf5ad-b226-48f6-a49b-616805019c35",
+          "vote": "yea"
+        },
+        {
+          "name": "Birkeland, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Brammer, B.",
+          "politician_id": "070c1c1c-ac9d-42e0-bff2-3f4467504cba",
+          "vote": "yea"
+        },
+        {
+          "name": "Brooks, W.",
+          "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865",
+          "vote": "yea"
+        },
+        {
+          "name": "Burton, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Chew, S.",
+          "politician_id": "7dc8a341-6d22-48d9-b8fe-2c75fa3a3de5",
+          "vote": "yea"
+        },
+        {
+          "name": "Christiansen, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Eliason, S.",
+          "politician_id": "3e569f2a-041d-43e2-a96f-e007eb7d6656",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferry, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibson, F.",
+          "vote": "yea"
+        },
+        {
+          "name": "Gwynn, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Handy, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Hawkes, T.",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, D.N.",
+          "vote": "yea"
+        },
+        {
+          "name": "Judkins, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Kohler, M.",
+          "politician_id": "01a5c863-c3f4-4a6b-aaa5-99eb8235a183",
+          "vote": "yea"
+        },
+        {
+          "name": "Last, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lisonbee, K.",
+          "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b",
+          "vote": "yea"
+        },
+        {
+          "name": "Lund, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyman, P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Maloy, A.C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Moss, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Musselman, C.R.",
+          "politician_id": "5ad69df3-3a03-45ed-9156-bcac82c93167",
+          "vote": "yea"
+        },
+        {
+          "name": "Petersen, M.",
+          "politician_id": "e05c6491-0a71-4c42-a57a-1447d91e34f0",
+          "vote": "yea"
+        },
+        {
+          "name": "Peterson, V.",
+          "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169",
+          "vote": "yea"
+        },
+        {
+          "name": "Pierucci, C.",
+          "politician_id": "99198363-2ac9-4b56-9d80-7abfe7b2a01a",
+          "vote": "yea"
+        },
+        {
+          "name": "Pulsipher, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray, P.",
+          "vote": "yea"
+        },
+        {
+          "name": "Robertson, A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Sagers, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Seegmiller, T.",
+          "vote": "yea"
+        },
+        {
+          "name": "Shipp, R.P.",
+          "politician_id": "9dc08f3d-5bef-4291-b385-edcfecdecbbf",
+          "vote": "yea"
+        },
+        {
+          "name": "Snider, C.",
+          "politician_id": "a075db26-e31e-4d94-8a20-ddff7867725a",
+          "vote": "yea"
+        },
+        {
+          "name": "Snow, V. L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Spendlove, R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Stenquist, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Stratton, K.",
+          "politician_id": "80ec24cb-49d4-48a4-bc01-58d33caf15d7",
+          "vote": "yea"
+        },
+        {
+          "name": "Strong, M.A.",
+          "politician_id": "6b4748cf-5c32-4a6e-9476-80e2ed7d8d7d",
+          "vote": "yea"
+        },
+        {
+          "name": "Teuscher, J.",
+          "politician_id": "a3764449-b9d2-48f2-ac15-076a47ef11fb",
+          "vote": "yea"
+        },
+        {
+          "name": "Waldrip, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Ward, R.",
+          "politician_id": "9cccdb83-cf9e-48ef-97b5-6da255733f74",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins, C.",
+          "politician_id": "a3b3d1db-2305-452a-9d53-2627547d751f",
+          "vote": "yea"
+        },
+        {
+          "name": "Welton, D.",
+          "politician_id": "2477ac16-810e-4d5c-a71e-a4f3b8f29d1e",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilcox, R.",
+          "politician_id": "9140a0b5-fdfa-4677-984e-0c7d81ffb1ba",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson, B.",
+          "vote": "yea"
+        },
+        {
+          "name": "Winder, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bennion, G.",
+          "vote": "nay"
+        },
+        {
+          "name": "Briscoe, J.",
+          "vote": "nay"
+        },
+        {
+          "name": "Collard, C.",
+          "vote": "nay"
+        },
+        {
+          "name": "Dailey-Provost, J.",
+          "politician_id": "633a3500-8458-4719-bd0e-38c161321707",
+          "vote": "nay"
+        },
+        {
+          "name": "Dunnigan, J.",
+          "politician_id": "2627f1da-6783-4e12-911d-f54dfd2a7f42",
+          "vote": "nay"
+        },
+        {
+          "name": "Hall, C.",
+          "vote": "nay"
+        },
+        {
+          "name": "Harrison, S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Hollins, S.",
+          "politician_id": "c5d4b275-055f-4950-884e-96f63cf36bbd",
+          "vote": "nay"
+        },
+        {
+          "name": "King, Brian S.",
+          "vote": "nay"
+        },
+        {
+          "name": "Kwan, K.",
+          "politician_id": "93376853-c225-430c-bf89-dfee26c6c964",
+          "vote": "nay"
+        },
+        {
+          "name": "Lesser, R.",
+          "vote": "nay"
+        },
+        {
+          "name": "Matthews, A.",
+          "politician_id": "78af9e6a-adcb-4003-b719-32fe035feae8",
+          "vote": "nay"
+        },
+        {
+          "name": "Moss, C.",
+          "politician_id": "025945fe-7ea8-40aa-8ead-f7b8d5dfca29",
+          "vote": "nay"
+        },
+        {
+          "name": "Nelson, M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Owens, D.",
+          "politician_id": "38aec107-ca28-454a-a7f0-d9225fcd4d8b",
+          "vote": "nay"
+        },
+        {
+          "name": "Pitcher, S.",
+          "politician_id": "4f896b69-d922-4838-b54d-51a00a452e08",
+          "vote": "nay"
+        },
+        {
+          "name": "Romero, A.",
+          "politician_id": "00af7081-b2f4-4b2d-add0-dd1c3d3b4787",
+          "vote": "nay"
+        },
+        {
+          "name": "Stoddard, A.",
+          "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854",
+          "vote": "nay"
+        },
+        {
+          "name": "Weight, E.",
+          "vote": "nay"
+        },
+        {
+          "name": "Wheatley, M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Christofferson, K.",
+          "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e",
+          "vote": "absent"
+        },
+        {
+          "name": "Hawkins, J.",
+          "politician_id": "8928852d-0688-431b-aad2-bf55275583fb",
+          "vote": "absent"
+        },
+        {
+          "name": "Schultz, M.",
+          "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9",
+          "vote": "absent"
+        },
+        {
+          "name": "Thurston, N.",
+          "politician_id": "0b36a14c-3d2d-4e05-88ab-47a738d1283b",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-02-05",
+      "body": "UT Senate",
+      "motion": "Final Passage (3rd Reading)",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 6,
+      "body_size": 29,
+      "note": "names from: reader summary",
+      "members": [
+        {
+          "name": "Adams, J. S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderegg, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bramble, C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Buxton, D. G.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cullimore, K. A.",
+          "politician_id": "29a72e61-eb0b-44da-b535-974993a59838",
+          "vote": "yea"
+        },
+        {
+          "name": "Fillmore, L.",
+          "politician_id": "c361d768-2253-4731-954d-5df8b132b42e",
+          "vote": "yea"
+        },
+        {
+          "name": "Grover, K.",
+          "politician_id": "dd75cf82-f0b2-4820-9356-28ccf0ee58f9",
+          "vote": "yea"
+        },
+        {
+          "name": "Harper, W.",
+          "politician_id": "2d53f024-b180-47c1-9035-90835bc1ab2b",
+          "vote": "yea"
+        },
+        {
+          "name": "Hinkins, D.",
+          "politician_id": "f01f1d5b-aeca-4548-bd39-14137e552422",
+          "vote": "yea"
+        },
+        {
+          "name": "Ipson, D.",
+          "politician_id": "389df734-b0a0-4223-befd-e02105c4160b",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnson, J.",
+          "politician_id": "d8daeb9d-2437-4864-9efd-6031291fed86",
+          "vote": "yea"
+        },
+        {
+          "name": "Kennedy, M.",
+          "vote": "yea"
+        },
+        {
+          "name": "McCay, D.",
+          "politician_id": "6ca52345-ae36-4d19-8058-334f66076ee4",
+          "vote": "yea"
+        },
+        {
+          "name": "McKell, M.",
+          "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb",
+          "vote": "yea"
+        },
+        {
+          "name": "Millner, A.",
+          "politician_id": "8aeb0ff5-e0b0-4933-8e97-5be1339e4729",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens, D.R.",
+          "politician_id": "53162004-fa67-42f7-a2f8-6289dc8237b2",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandall, S.",
+          "politician_id": "b93948f7-8dbd-4229-93dd-8702c2695e76",
+          "vote": "yea"
+        },
+        {
+          "name": "Stevenson, J.",
+          "politician_id": "d8e92dad-6bb0-46e3-9c43-c3b7b3599d77",
+          "vote": "yea"
+        },
+        {
+          "name": "Thatcher, D.",
+          "vote": "yea"
+        },
+        {
+          "name": "Vickers, E.",
+          "politician_id": "34fcabbb-bbc3-44fc-bd7e-32c05d7abd42",
+          "vote": "yea"
+        },
+        {
+          "name": "Weiler, T.",
+          "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson, C.",
+          "politician_id": "98f08e54-df08-43df-ba89-2cabd738d6bb",
+          "vote": "yea"
+        },
+        {
+          "name": "Winterton, R.",
+          "politician_id": "8108dfd3-1039-4eab-b175-091d120ee213",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis, G.",
+          "vote": "nay"
+        },
+        {
+          "name": "Escamilla, L.",
+          "politician_id": "bccbcc1f-50fe-4d76-8d1d-528ebbf800bf",
+          "vote": "nay"
+        },
+        {
+          "name": "Iwamoto, J.",
+          "vote": "nay"
+        },
+        {
+          "name": "Kitchen, D.",
+          "vote": "nay"
+        },
+        {
+          "name": "Mayne, K.",
+          "vote": "nay"
+        },
+        {
+          "name": "Riebe, K.",
+          "politician_id": "497f54d5-f52e-4f0c-971d-dab4d65e8014",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-01-26",
+      "body": "UT House",
+      "motion": "Passed 3rd reading (earlier House passage)",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 19,
+      "body_size": 75,
+      "note": "names from: reader summary; member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+    "fetched_at": "2026-10-29T23:30:09.001Z",
+    "method": "webfetch",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/UT_HB0060_enrolled.pdf",
+      "sha256": "9f557ddd8492473f960c9ad62cec88bd194518ed33e745e7902f5f66eb7119ea"
+    }
+  }
+}

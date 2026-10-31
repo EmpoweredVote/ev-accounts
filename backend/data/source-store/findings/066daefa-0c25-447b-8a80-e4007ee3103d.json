@@ -1,0 +1,85 @@
+{
+  "politician_id": "066daefa-0c25-447b-8a80-e4007ee3103d",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: sitting Indiana House member, District 70 (term ends Nov 4, 2026); Ballotpedia says she did not file to run for re-election in 2026, so she is not on the 2026 ballot (https://ballotpedia.org/Karen_Engleman)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official caucus member page https://www.indianahouserepublicans.com/members/general/karen-engleman/ (news list reviewed; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Karen_Engleman (no voter ID or election-law positions listed; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_karen_engleman_1 (page is a script-built shell with no text; legislature API at api.iga.in.gov returned 403 Invalid API key), so bill sponsorships and roll calls could not be checked",
+        "not reviewed: web news search on her name plus subject words (shared search budget was used up)",
+        "not reviewed: campaign site, Vote Smart"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:19.500Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page (confirms she is the sitting state House member for District 70, term ending 4 Nov 2026, not running again)",
+        "Indiana House caucus site member page and site search: nothing on the subject",
+        "blocked: https://iga.in.gov (bill and roll-call pages load only through a script; no vote or sponsor list could be read)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2024 (bot check)",
+        "blocked: https://indianacapitalchronicle.com (bot check or 403)",
+        "BillTrack50 scorecard and a Citizens Action Coalition 2026 bill list: no voter-ID, mail-ballot ID or citizenship vote or sponsorship tied to this person",
+        "web searches on name plus subject words: nothing tying this person to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:02:28.780Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

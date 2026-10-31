@@ -1,0 +1,173 @@
+{
+  "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+  "findings": [
+    {
+      "id": "0e8a24915ea25366c0d5a32e24e9a9fd698ee04e90518e2070b216c541e028bf",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Renee_Price",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "As the District 50 Representative in the NC House, I will rise up, speak out, and, as the late John Lewis said, “get in good trouble” to protect and assure our right to the ballot and our right for representation.",
+      "note": "From her 2022 Ballotpedia Candidate Connection survey answer on key campaign messages (first message: the right to vote and the right to representation). It does not mention ID or citizenship rules.",
+      "subjects": [
+        "right to vote, general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:35.918Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b57ecfaf2cff03e1086e936e25af1888f2a2c2204f06207cb33fc2bd8645a2ae",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override (House roll call 596, passed 72-44)",
+      "note": "Listed among the No votes on the House vote to override the Governor's veto of S747, Elections Law Changes. The bill text includes photo-ID cross references (G.S. 163-166.16) alongside observer, same-day registration and other changes, so it is election law in general rather than a voter ID bill alone.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls (cross references only)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:35.918Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bac75b4f83cbc562558fd571f2f4abcc59438baa912571ef61b2712b2abce37",
+      "kind": "own-words",
+      "url": "https://indyweek.com/news/elections-news/candidate-questionnaire-renee-price-nc-house-50-2022/",
+      "date": "2022-10-20",
+      "date_precision": "day",
+      "passage": "the right to vote and the right to representation: The state should assure that all eligible voters have unhindered access to the ballot—i.e., no photo ID, fairly drawn districts.",
+      "note": "In her answer to INDY Week's 2022 general-election questionnaire (the page is dated 2022-10-20), she lists the right to vote as a top issue and gives \"no photo ID\" as an example of unhindered ballot access.",
+      "subjects": [
+        "voter ID at the polls",
+        "access to the ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:11.827Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "46c7723c4fc35bd14d7838b94c49559038c3cdcdc5788bceaab5ce64db456560",
+      "kind": "own-words",
+      "url": "https://indyweek.com/news/elections-news/candidate-questionnaire-price-house-50-primary-2022/",
+      "date": "2022-04-27",
+      "date_precision": "day",
+      "passage": "Members of the NCGA should enact legislation that encourages voting by all eligible voters, facilitates voter registration, and assures access to the ballot by all people. We need to thwart all attempts at voter intimidation and voter suppression.",
+      "note": "In her answer to INDY Week's 2022 primary questionnaire (page dated 2022-04-27), she says the legislature should encourage voting, ease registration and assure ballot access, and should stop voter intimidation and suppression. It does not name photo ID.",
+      "subjects": [
+        "access to the ballot",
+        "voter registration",
+        "voter suppression"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T17:07:11.827Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election law changes",
+        "right to vote"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Renee_Price) says she is on the Nov 3 2026 general ballot for NC House District 50 after winning the March 3 2026 primary",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "ncleg.gov member list and bill page for S747 (2023) and roll call H-596",
+        "Ballotpedia (Candidate Connection survey 2022; none for 2024)",
+        "blocked: https://reneeprice4nc.com (Cloudflare block)",
+        "not reviewed: https://www.reneeprice.com (no content returned)",
+        "not reviewed: official ncleg.gov sponsor list for 2025 bills and news search (web search budget used up)",
+        "nothing on the subject: ncleg member biography page (H/810)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:34:35.918Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "access to the ballot and voter suppression",
+        "state ID cards",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Renee_Price (on the 2026 general-election ballot, House District 50; nothing on the subject)",
+        "legislature member list https://www.ncleg.gov/Members/MemberList/H (confirms Renee A. Price, District 50, member 810)",
+        "legislature introduced and co-sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/810 (no bill on ID to vote or citizenship proof; co-sponsor of HB 475 State ID Cards for High School Students, which is about special ID cards and does not mention voting, so not saved; also co-sponsor of HB 1230 No Federal Interference in Elections, about election records and voter registration data, not ID)",
+        "legislature roll-call list https://www.ncleg.gov/Members/Votes/H/810 (no roll call on an ID or citizenship bill found by title)",
+        "news search (1) led to two INDY Week candidate questionnaires, both saved",
+        "campaign site: not found by search",
+        "not reviewed: Wikipedia and ontheissues (lead-only sources)"
+      ],
+      "found": 2,
+      "at": "2026-10-27T17:07:11.827Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

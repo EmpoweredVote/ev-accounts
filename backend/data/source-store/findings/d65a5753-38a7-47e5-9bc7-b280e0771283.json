@@ -1,0 +1,241 @@
+{
+  "politician_id": "d65a5753-38a7-47e5-9bc7-b280e0771283",
+  "findings": [
+    {
+      "id": "fabe4de836d377addb2a40c06052dff1f075139c7ec2ef6d560b04d75939ec17",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/27769/Day-Calls-For-Election-Security-Measures-and-Enforcement-of-Current-Election-Law?SiteID=1",
+      "date": "2022-05-05",
+      "date_precision": "day",
+      "passage": "“I am calling on Acting Secretary of State Chapman to listen to voters who have been disenfranchised, and secure election procedures in Pennsylvania.",
+      "note": "Statement issued in his name (House caucus release dated 5/5/2022) responding to the acting Secretary of State's concerns about a county plan to watch ballot drop boxes. Calls for secure election procedures.",
+      "subjects": [
+        "election integrity in general",
+        "ballot drop boxes"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:48.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "efb48fd43d0106b117d32b44f9f051dba6f94fa896a29d00abfae26a4e09960b",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/27769/Day-Calls-For-Election-Security-Measures-and-Enforcement-of-Current-Election-Law?SiteID=1",
+      "date": "2022-05-05",
+      "date_precision": "day",
+      "passage": "Requiring voter ID, reporting election misconduct and other provisions contained in the seven election security bills I authored, would go a long way in providing election security in Pennsylvania.”",
+      "note": "Same statement. He names requiring voter ID and reporting election misconduct as part of seven election security bills he says he authored.",
+      "subjects": [
+        "voter ID at the polls",
+        "election misconduct reporting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:48.929Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('DAY'), linked to Gary Day (district 187) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Day'), linked to Gary Day (district 187) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Day'), linked to Gary Day (district 187) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.692Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Day'), linked to Gary Day (district 187) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Day'), linked to Gary Day (district 187) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.455Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "election security bills",
+        "ballot drop boxes",
+        "proof of citizenship to register",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus press release of 2022-05-05 (issued in his name)",
+        "official site: newsroom front page and latest-news list (confirms he serves the 187th District; nothing on the subject in the current list)",
+        "official site: oath-of-office release (nothing on the subject)",
+        "official site: site search page (no results page)",
+        "blocked: https://www.staterepgaryday.com/Accomplishments (429)",
+        "blocked: https://www.yahoo.com/news/proof-id-vote-pennsylvania-bill-171304067.html (429)",
+        "blocked: https://ballotpedia.org/Gary_Day_(Pennsylvania) (403)",
+        "Penn Capital-Star rep-elect profile: blocked (403)",
+        "Lehigh Valley News 187th District race profile (his answers on spending, development, schools, abortion; nothing on the subject)",
+        "The Ballot Brief 187th District page (confirms he is on the 2026 general-election ballot)",
+        "two news searches on his name plus voter ID",
+        "no page found on SAVE Act or proof of citizenship",
+        "sponsorships and floor votes: handled separately, not searched"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:13:48.929Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.692Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.455Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "preemption of local gun rules",
+        "gun rights and Second Amendment statements",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Official site https://staterepgaryday.com/about (confirms Gary Day, 187th District): says he is a member of Ontelaunee Rod and Gun Club; membership only, not a policy statement",
+        "Third-party bill list https://foac-pac.org/PA-Legislator-Details/294 lists firearm bills (HB357, HB1066, HB1303) under his name, but no session or date per bill; the official page https://www.palegis.us/legislation/bills/2025/hb357 does not list him and is a different bill, so sponsorship is not confirmed",
+        "Ballotpedia: not reviewed (not fetched)",
+        "News search on name plus firearms: nothing in his own words",
+        "not reviewed: palegis.us sponsorship lists for earlier sessions"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

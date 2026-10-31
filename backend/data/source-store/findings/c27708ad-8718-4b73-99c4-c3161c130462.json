@@ -1,0 +1,150 @@
+{
+  "politician_id": "c27708ad-8718-4b73-99c4-c3161c130462",
+  "findings": [
+    {
+      "id": "00b492b3f1e76ca9f679ddd1c8e6811fe1ee85c6f8eed2a6201e252202b7fc7a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 1670, proof of citizenship to verify eligibility to vote",
+      "note": "She is listed as a coauthor of HB 1670 (author Leach), which would require documented proof of citizenship to register to vote, to the extent federal law allows. The bill was referred to the Elections committee on 2025-03-12.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2379a3602821b5ec0c4c9c7ed5f621c7e7672e0b84bf00a1d97c51307cd4a83",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2245",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2245-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 2245, verification of citizenship status of registered voters",
+      "note": "Listed as a coauthor of HB 2245 (author Leo Wilson), which deals with checking the citizenship status of people already registered to vote. The bill was referred to the Elections committee on 2025-03-14.",
+      "subjects": [
+        "voter-roll citizenship checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:28:23.677Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7d684180fc8b633e2cd604cdc42837e97d594e3375c3e01f630ef7549c66e15",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB1670",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-1670-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-1670-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.518Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.518Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Texas House member page (confirms District 19, nothing on the subject)",
+        "Ballotpedia (confirms she is on the 2026 general-election ballot for House District 19; no survey answers, nothing on the subject)",
+        "campaign site home and policy page (bio only, policy link points to a book page; nothing on the subject)",
+        "Texas Legislature Online bill history pages for HB 1670, HB 892, HB 5337, HJR 49, SB 16, HB 5138, HB 2245 (she is a coauthor of HB 1670 and HB 2245 only)",
+        "news and web search on her name plus the subject words (no direct quote found)",
+        "blocked: https://www.dailysignal.com/2026/10/23/texas-poll-election-integrity-proof-citizenship-support/ (403, and no mention of her found)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:28:23.677Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.518Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "gun bills authored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page https://house.texas.gov/members/19 (confirms Rep. Ellen Troxclair, District 19; nothing on the subject)",
+        "web search: name plus gun words (one search; result snippets only, not usable as sources)",
+        "blocked: https://kvue.com/article/news/politics/texas-this-week/texas-this-week-meet-the-candidates-running-for-texas-house-district-19/269-ee947c21-46f2-4615-8c7a-5f430e502122",
+        "blocked: https://dallasexpress.com/profiles/boldly-join-the-fight-rep-troxclair-runs-for-re-election/",
+        "not reviewed: Ballotpedia, campaign site, capitol.texas.gov sponsor lists, 2026 ballot status (budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

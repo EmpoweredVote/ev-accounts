@@ -1,0 +1,171 @@
+{
+  "politician_id": "f46a2bfc-628f-4991-9522-e8b75889cc6f",
+  "findings": [
+    {
+      "id": "42c9eee7b7bf3352fc92c2affb46a45a7a1aad7b234dcedbdd97a7572eca5b8b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (Senate Roll Call #439)",
+      "note": "Senate vote on Senate Bill 747, Elections Law Changes, to accept the House changes. Hunt is listed among the Noes. The motion passed 27 to 18. The bill is a broad elections bill; this review could not read the bill text, so whether it touches ID rules is unconfirmed. Saved as an election-law vote in general.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:45.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81a73ab77729ab410ec2064f71a3c5375383b02b2a37f26d0405877e15942fda",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (Senate Roll Call #482)",
+      "note": "Senate vote to override the Governor's veto of Senate Bill 747, Elections Law Changes. Hunt is listed among the Noes. The override passed 30 to 19. The bill text could not be read here, so whether it touches ID rules is unconfirmed. Saved as an election-law vote in general.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:45.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac0d724338526084c6900c6f71fde48d271ab9ec781cf046fe700938a26373c4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S892",
+      "date": "2024-05-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-892-2023",
+      "act": "sponsor",
+      "note": "Named as a primary sponsor, with Marcus and Meyer, of S892, Student Voter ID Grant Program/CCs. The text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S892v0.pdf) sets aside $500,000 for grants to community colleges to upgrade equipment so their student ID cards can be used as photo ID to vote in person under G.S. 163-166.16, and directs the State Board of Elections to review those colleges' applications for approval of their student ID cards. Referred to committee 2024-05-06.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted for voting",
+        "access to acceptable photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b978721673b793a35fa661094e1e538f02db540012ad59fe4b86ce4d91f63f04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/676",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "other",
+      "motion": "SB 921 Const. Am./Require Photo ID For All Voters, Second Reading, Roll Call #676: listed as an excused absence; did not vote",
+      "note": "The roll call lists her under Excused Absence. The motion passed 30 to 19.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35ff01986b29bbd7dde2ee5bce46fddc0f6cf9f63e5df8c0ab541642462a3da2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "other",
+      "motion": "SB 921 Const. Am./Require Photo ID For All Voters, Third Reading, Roll Call #677: listed as an excused absence; did not vote",
+      "note": "The roll call lists her under Excused Absence. The motion passed 30 to 19.",
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:21:16.302Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Lieutenant Governor of North Carolina since 2025-01-01 (Ballotpedia https://ballotpedia.org/Rachel_Hunt); state senator District 42 in 2023-2025",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Rachel_Hunt (survey answers cover schools, health care, reproductive rights; nothing on the subject)",
+        "Official site https://ltgov.nc.gov/ (home, news, press-releases, about: nothing on the subject; site search is Google-powered and not readable: not reviewed https://ltgov.nc.gov/search?keys=voter+ID)",
+        "Campaign site: blocked: https://www.rachelhuntnc.com (no connection); https://rachelhunt.com is not clearly her site, not used",
+        "ncleg.gov bill page and Senate roll calls for 2023 Senate Bill 747 (Elections Law Changes)",
+        "ncleg.gov bill text S747 PDF: blocked: https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S747v7.pdf (returned HTML, not readable)",
+        "Web news search: not run, shared web search budget used up; nothing on the subject from news; own-words search incomplete",
+        "ontheissues.org, vote411, debate or interview videos: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:16:45.063Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment on photo ID",
+        "student photo ID for voting",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: Ballotpedia shows her as the sitting Lieutenant Governor since 2025 (not on the 2026 ballot); she was a state Senator in the 2023-2024 session",
+        "On the Record (0 meetings, extract script returned none)",
+        "NC Senate roll calls for S921 (photo ID constitutional amendment): https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/676 and https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+        "NC bill page and text for S892 (2023 session)",
+        "official Lieutenant Governor site https://ltgov.nc.gov: front page only, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "two web searches on her name plus voter ID: no statements in her own words found",
+        "not reviewed: campaign site, debate or interview video, social media (not fetched)"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:21:16.302Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

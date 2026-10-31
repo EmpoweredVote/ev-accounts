@@ -1,0 +1,109 @@
+{
+  "politician_id": "b27f2dd8-fb3c-4797-aed5-ea904768e915",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    },
+    {
+      "id": "a6d3d5ca39e7ef2ef627fa78bc00942420e3a877d178d08d5b9175c00a902b7a",
+      "kind": "own-words",
+      "url": "https://indianapublicradio.org/news/2025/02/senate-republicans-advance-bill-to-ban-use-of-student-ids-when-voting/",
+      "date": "2025-02-06",
+      "date_precision": "day",
+      "passage": "“It was never intended to be used off campus,” Goode said.",
+      "note": "Quoted by Indiana Public Broadcasting (IPB News) during Senate action on SB 10 (2025), a bill to stop student IDs counting as voter ID. He is speaking about student IDs being used to vote. The reporter separately paraphrases that he said student IDs lack the rigor of other allowed IDs; that paraphrase is not his own wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T15:12:05.808Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Greg_Goode_(Indiana) says Indiana State Senate District 38, on the Nov 3, 2026 general-election ballot, advanced from the May 5, 2026 primary",
+        "On the Record (0 appearances, 0 sources)",
+        "official site https://www.indianasenaterepublicans.com/goode (news list and bio reviewed: nothing on the subject; he is listed on the Elections committee)",
+        "official site https://www.indianasenaterepublicans.com/2026-goode-legislative-updates (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_greg_goode_1 (page is script-rendered, no content returned; bill and vote records not reached)",
+        "blocked: https://api.iga.in.gov/ (403)",
+        "not reviewed: campaign site (no working URL found)",
+        "not reviewed: news search on name plus subject words (shared web search budget used up)",
+        "nothing on the subject: indianasenaterepublicans.com site search"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:47:43.120Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voting ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: sitting Indiana state senator for Terre Haute, named in https://indianapublicradio.org/news/2025/02/senate-republicans-advance-bill-to-ban-use-of-student-ids-when-voting/",
+        "Indiana roll calls for SB 10 (2025): already on file, not searched",
+        "blocked: https://iga.in.gov legislator page (no usable content loaded); bill sponsorships not reviewed: not reviewed: https://iga.in.gov",
+        "IPB News report of 2025-02-06: one direct quote found",
+        "web searches: name plus voter ID / student ID / SB 10; only the IPB-origin story and its reprints",
+        "personal or campaign site: not reviewed: none found"
+      ],
+      "found": 1,
+      "at": "2026-10-27T15:12:05.808Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

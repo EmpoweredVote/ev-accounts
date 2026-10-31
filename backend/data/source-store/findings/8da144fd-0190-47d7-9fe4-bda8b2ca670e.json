@@ -1,0 +1,211 @@
+{
+  "politician_id": "8da144fd-0190-47d7-9fe4-bda8b2ca670e",
+  "findings": [
+    {
+      "id": "5dcaa2bc162bedc2f6b9e91ae9e179a92b1c05081f2eec853183a760f1884258",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=S&rc_nbr=224",
+      "date": "2021-06-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "Senate: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 A2042 Final Passage)",
+      "note": "Senate roll call as printed ('KEARNEY'), linked to Timothy P. Kearney (district 26) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbe3c0f0546a6231771fc2eb2ca14e791584abef2001ceba50dfd88547754dfb",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2021/0/Sj20210623.pdf",
+      "date": "2021-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-735-2021",
+      "act": "nay",
+      "motion": "Senate: Shall the bill pass finally? (PN 952)",
+      "note": "Senate roll call as printed ('Kearney'), linked to Timothy P. Kearney (district 26) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.712Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8919f777e996df6017e73096f32be4cc18f382716845d0fdb1fbdab4e8d89660",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/SJ/2022/0/Sj20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "nay",
+      "motion": "Senate: Concurrence in House amendments as amended by the Senate (PN 1857)",
+      "note": "Senate roll call as printed ('Kearney'), linked to Timothy P. Kearney (district 26) via the official 2021-2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.463Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "70c90ea7b4c776baa179030ce5e52baf36e0c6ec7cbcf6253b0bc6fc6c0bd9ec",
+      "kind": "own-words",
+      "url": "https://pasenate.com/sen-tim-kearney-calls-for-special-session-on-gun-violence-extremism/",
+      "date": "2019-08-06",
+      "date_precision": "day",
+      "passage": "“We must use this special session to pass common-sense gun reforms that will save lives.”",
+      "note": "Quoted in a Senate release calling for a special session on gun violence. The release also lists bills he co-sponsored: SB 292 (assault weapons ban), SB 88 (universal background checks), SB 90 (extreme risk protection orders), SB 195 (firearms training course for a concealed carry permit), SB 625 (municipalities decide whether firearms are allowed in their buildings).",
+      "subjects": [
+        "general statement on gun safety",
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f227b38dc629713e4562624fee8f341262e7eee5d186d8660d80df436c3c4e57",
+      "kind": "own-words",
+      "url": "https://pasenate.com/delco-leaders-want-funding-for-red-flag-laws-urge-harrisburg-to-act/",
+      "date": "2022-07-11",
+      "date_precision": "day",
+      "passage": "“Now that Congress has achieved bipartisan efforts to address the gun epidemic…it’s time the Pennsylvania legislature follows suit and uses the money offered in this legislation to pass and enact red flag laws,” said Senator Tim Kearney.",
+      "note": "Quoted in a Senate release; date taken from the page's publication data.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ff9cfc29724e7487eada6b864189068b378c3538e399f277d2a141f68ec20e1",
+      "kind": "record",
+      "url": "https://pasenate.com/sen-tim-kearney-calls-for-special-session-on-gun-violence-extremism/",
+      "date": "2019-08-06",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-292-2019",
+      "act": "sponsor",
+      "note": "Release says he co-sponsored SB 292, a bill to enact an assault weapons ban in Pennsylvania. Bill page itself not fetched.",
+      "subjects": [
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll data",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://www.senatorkearney.com/ (home, newsroom and site search for voter ID reviewed; no page on voter ID, photo ID, or proof of citizenship)",
+        "https://www.senatorkearney.com/stop-the-new-steal/ (2021 op-ed on voter data subpoenas, Social Security digits and mail ballots; fetch tool only summarised it and gave fragments, so no whole-sentence passage could be copied; not saved)",
+        "Ballotpedia: blocked or empty page https://ballotpedia.org/Tim_Kearney",
+        "official page pahouse.com/Kearney returned 404 (he is a state senator)",
+        "news searches on name plus voter ID, SAVE Act, election integrity: nothing on the subject",
+        "legislature bill pages: not reviewed (sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:05:05.439Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.712Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.463Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "safe storage",
+        "ghost guns",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pasenate.com (two Kearney releases)",
+        "web search: one search (leads only)",
+        "Ballotpedia not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

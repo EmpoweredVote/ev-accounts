@@ -1,0 +1,73 @@
+{
+  "id": "MI-HB-5316-2014",
+  "scope": "state:mi",
+  "title": "HB 5316 (2013-2014 Regular Session, Michigan Legislature (bill page title: \"House Bill 5316 of 2014\")): Elections; absent voters; definition of absent voter; expand to include an elector who applies in person at the clerk's office and who presents photo identification. Amends secs. 758 & 759 of 1954 PA 116 (MCL 168.758 & 168.759).",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2013-HB-5316",
+    "https://www.legislature.mi.gov/documents/2013-2014/billintroduced/House/htm/2014-HIB-5316.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 758 (as in the version read)\n(quote) (g) Applies for an absent voter ballot in person with the clerk of the township, city, or village in which he or she is registered, and he or she identifies himself or herself to the clerk by presenting an official state personal identification card issued to that elector under 1972 PA 222, MCL 28.291 to 28.300, an operator's or chauffeur's license issued to that elector under the Michigan vehicle code, 1949 PA 300, MCL 257.1 to 257.923, or another generally recognized picture identification card.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 759: begins \"(1) At any time during the 75 days before a primary or special primary, but not later than 2 p.m. of the Saturday immediately befo\"",
+  "sponsors": [
+    {
+      "name": "Andy Schor (District 68)",
+      "role": "prime",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Harold L. Haugh (District 22)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Bill LaVoy (District 17)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Douglas A. Geiss (District 12)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Dian Slavens (District 21)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Marilyn Lane (District 31)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Gretchen Driskell (District 52)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Theresa Abed (District 71)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    },
+    {
+      "name": "Rudy Hobbs (District 35)",
+      "role": "co",
+      "version": "Text file header as saved: \"HOUSE BILL No. 5316 February 12, 2014, Introduced by Reps. Schor, Haugh, LaVoy, Geiss, Slavens, Lane, Driskell, Abed and\""
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T19:30:00Z)",
+    "fetched_at": "2026-10-28T19:30:00Z",
+    "method": "curl"
+  }
+}

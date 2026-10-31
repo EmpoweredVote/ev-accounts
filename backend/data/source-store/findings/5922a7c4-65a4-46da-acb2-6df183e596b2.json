@@ -1,0 +1,55 @@
+{
+  "politician_id": "5922a7c4-65a4-46da-acb2-6df183e596b2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Robert_Behning (fetched with curl; names him as District 91 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 ballot)",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia page fetched: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_robert_behning_1 (page loads only a heading, no content)",
+        "blocked: https://indianahouserepublicans.com/members/robert-behning (no content returned)",
+        "blocked: https://www.behningforhouse.com (no content returned)",
+        "not reviewed: Indiana General Assembly bill pages for sponsorships and votes (page needs scripts; no usable content)",
+        "not reviewed: news search on name plus subject words (shared search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:33:02.199Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll citizenship checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "https://ballotpedia.org/Robert_Behning (fetched; confirms House District 91 incumbent on the 2026 general-election ballot; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "the House caucus member page https://www.indianahouserepublicans.com/members/general/bob-behning/ (first 100000 characters read; nothing on the subject; the remaining 116078 characters not reviewed)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/4626/bob-behning (403)",
+        "blocked: https://legiscan.com/IN/legislator/robert-behning/people/5629 (403)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_robert_behning_1020 (page needs JavaScript; no bill list could be read)",
+        "no separate campaign site found",
+        "two web searches on name plus subject words: nothing on the subject; one result names a House bill he authored on school referendum timing, which is off the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T11:44:02.073Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

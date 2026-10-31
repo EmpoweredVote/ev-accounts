@@ -1,0 +1,90 @@
+{
+  "politician_id": "f7327a6f-1eb9-4714-9b3f-519916b436d5",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope: sitting Indiana Senate District 39 member; term ends 2026-11-04; Ballotpedia (https://ballotpedia.org/Eric_Bassler) says he did not file for re-election; not a 2026 candidate, so kept in scope as a sitting official",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/bassler and its 2026 updates and session-end statement pages: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_eric_bassler_1 (needs JavaScript)",
+        "blocked: https://api.iga.in.gov/2026/legislators/legislator_eric_bassler_1 (needs API key, 403)",
+        "not reviewed: legislature bill sponsorship lists (no reachable page)",
+        "not reviewed: news search (web search budget used up for the session)",
+        "campaign site, ontheissues.org, vote411: not reached"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:56:43.719Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voting ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in office: Ballotpedia page shows Indiana State Senate District 39, term ends 2026-11-04, did not file for re-election (still sitting)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "Indiana Senate caucus member page (https://www.indianasenaterepublicans.com/bassler): news list has nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2025/legislators/legislator_eric_bassler_1 (page returns no content without scripts); roll calls already on file",
+        "FastDemocracy pages for SB 31 (2025, sessions of the general assembly) and SB 170 (2024, co-author): not on the subject",
+        "no campaign site (not on the 2026 ballot)",
+        "blocked: https://indianacapitalchronicle.com/2025/05/08/indiana-elections-chief-defends-voting-ban-on-unsecured-student-ids-after-legal-challenge/ (403); search summaries do not name him",
+        "news searches (3) on name plus SB 10, voter ID, citizenship, elections: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T16:40:51.956Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

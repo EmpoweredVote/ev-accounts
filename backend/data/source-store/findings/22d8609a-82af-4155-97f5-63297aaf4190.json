@@ -1,0 +1,210 @@
+{
+  "politician_id": "22d8609a-82af-4155-97f5-63297aaf4190",
+  "findings": [
+    {
+      "id": "6e6cf72168a082bde184279852dfb090e3828e1b8cfc48b38b1237abf3af3f7e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1231-2025",
+      "act": "sponsor",
+      "note": "McNeely is listed among the sponsors of House Bill 1231, No Voter Registration Changes At DMV (primary sponsors are three other members). The bill would stop voters from changing an existing registration (address, name, party) at the DMV website or DMV offices and require those changes at county boards of elections. The bill text keeps the DMV question asking applicants whether they are U.S. citizens. Referred to the House Rules committee on 5/12/2026.",
+      "subjects": [
+        "voter registration changes at DMV",
+        "voter-roll integrity",
+        "citizenship question on DMV registration form"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:37:51.202Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1d2d449ef75398cd7d65a26d72738a95734ae5c647361737d7a48543307d9862",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/761",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (House passed 66-47)",
+      "note": "Member's vote page lists an Aye on second reading of HB 958, Election Law Changes. The ratified text (see the bill page) covers photo-ID cure deadlines for provisional ballots, a photocopy of ID with military and overseas ballots, a citizenship question at driver-license offices and on voter registration applications, and sharing of driver-license data with the State Board of Elections. The same vote page also shows an Aye on an amendment (A1 Blackwell, 112-0) and a No on amendment A3 Dahle (47-66, failed).",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "photo ID with military and overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll and DMV data sharing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01d8437a954b82979ff2536bb3d620be9710a8f0d8bd5cf0802fe66deedef37f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/761",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion to concur with Senate changes (passed 62-47)",
+      "note": "Member's vote page lists an Aye on the House vote to concur in the Senate version of HB 958. The bill page says it was ratified 2026-08-06 and vetoed by the Governor 2026-08-17; the page does not say whether the veto was overridden.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without ID",
+        "proof of citizenship to register",
+        "voter-roll and DMV data sharing"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3002d68ea26707a33ceb125e0c5d661c52042d487ff6f8f86771ae086894a0ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 Election Law Changes: veto by the Governor (context for the votes above)",
+      "note": "Bill page shows primary sponsors Blackwell and Stevens (McNeely is not listed), ratified 2026-08-06, vetoed 2026-08-17, placed on the calendar for 2026-09-02. Saved only as context for the two votes above.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fb1e14219adc20b51bb03815eaf505f5fa8b9c1bfc40dadca98a80a133ee12f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05",
+      "date_precision": "month",
+      "instrument_id": "NC-HB-1231-2026",
+      "act": "sponsor",
+      "motion": "HB 1231 No Voter Registration Changes At DMV: co-sponsor (primary sponsor Howard)",
+      "note": "McNeely is listed among co-sponsors of HB 1231, titled No Voter Registration Changes At DMV. The bill was filed 2026-05-11 and is in committee. The page gives no summary; the bill touches G.S. 163-82.19 (voter registration at driver-license offices). The date is the filing month; the date he joined is not shown.",
+      "subjects": [
+        "voter registration at the DMV",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T00:57:16.061Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter registration changes and voter-roll integrity",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jeffrey_McNeely (NC House District 84, on the 2026 general-election ballot; primary canceled)",
+        "On the Record (0 meetings)",
+        "campaign site https://jeffmcneely.com (home page only; nothing on the subject)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/761 (nothing on the subject in own words)",
+        "ncleg.gov introduced and sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/761 (277 bills reviewed by title; one on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jeffrey_McNeely (no voter ID or citizenship statements found)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/761 (roll-call list loads by script, not readable; no roll-call votes collected)",
+        "not reviewed: news search (the shared web search limit was used up)",
+        "not reviewed: Facebook https://www.facebook.com/RepJeffMcNeely and X https://x.com/mcneely_jeff (not readable without login)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:37:51.202Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee or military/overseas ballots",
+        "provisional ballot without ID",
+        "proof of citizenship to register",
+        "citizenship question at DMV voter registration",
+        "voter-roll and DMV data sharing",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician; extract-otr returned OTR_SOURCES=0)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/761 (confirms Rep. Jeffrey C. McNeely, House District 84, Iredell County, 2025-2026 session)",
+        "BallotReady https://www.ballotready.org/people/jeffrey-c-mcneely (lists him as candidate for NC House District 84 in the 2026 General Election)",
+        "ncleg.gov introduced bills page https://www.ncleg.gov/Members/IntroducedBills/H/761 (no bill title on voter ID or proof of citizenship to vote)",
+        "ncleg.gov member votes page https://www.ncleg.gov/Members/Votes/H/761 (read in full, both halves)",
+        "ncleg.gov bill pages HB 958, HB 1231, HB 31; HB 958 ratified text H958v6",
+        "official/campaign site https://www.jeffmcneely.com (nothing on the subject)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Jeff_McNeely and https://ballotpedia.org/Jeffrey_McNeely (fetch returned empty content); district page returned only a heading",
+        "news/web searches on name plus voter ID, election integrity, citizenship (3 searches; no quote by him on the subject)",
+        "not reviewed: S921 (photo ID constitutional amendment, SL 2024-58) House vote in 2024 session; the 2025-2026 votes page does not cover it, and the 2023-2024 votes page was not fetched"
+      ],
+      "found": 4,
+      "at": "2026-10-27T00:57:16.061Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

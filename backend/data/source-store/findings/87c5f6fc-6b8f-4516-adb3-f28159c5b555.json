@@ -1,0 +1,292 @@
+{
+  "politician_id": "87c5f6fc-6b8f-4516-adb3-f28159c5b555",
+  "findings": [
+    {
+      "id": "0db005e35d3be91e8430d2d679c0e39480391b4db9af2a7e4b7e52382e939484",
+      "kind": "own-words",
+      "url": "https://www.sungazette.com/news/top-news/2021/05/rep-rowe-talks-election-integrity-with-local-council-of-republican-women/",
+      "date": "2021-05",
+      "date_precision": "month",
+      "passage": "\"We want to make it easy to vote and hard to cheat,\" Rowe said.",
+      "note": "Direct quote in the Williamsport Sun-Gazette (May 20, 2021) from his talk to a county women's council. The reporter, not Rowe's own words, says he described ideas in the works including ballot watermarks, a signature match for mail ballots, and voter ID with a scannable barcode and free reissue by the state; the quote itself names no specific ID rule. Exact talk date is not given.",
+      "subjects": [
+        "election integrity in general",
+        "voter ID at the polls",
+        "mail-ballot signature verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:07:26.144Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('ROWE'), linked to David Hummer Rowe (district 85) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.698Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Rowe'), linked to David Hummer Rowe (district 85) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.698Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Rowe'), linked to David Hummer Rowe (district 85) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.459Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('ROWE') on the official bill page; linked to David H. Rowe via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95e5e71fc62d2f20e2a25ca8e1f97134e529be48aa0fa9b7b9a5b14655ee8e29",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240301174241/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1334",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1334-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1432 (as introduced; only printer's number). Read.",
+      "note": "Named as co sponsor ('ROWE') on the official bill page; linked to David Hummer Rowe via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fa6f6a9c0de3a6060accfd1d38128ffb586176acb583f0bb98c49bb1fae9f9",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250518235417/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2021&sind=0&body=H&type=B&bn=1596",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1596-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 2178 (reported from State Government as amended, Sept. 27, 2021). Read. Introduced as PN 1759 (June 10, 2021), caption \"further providing for qualifications of electors\".",
+      "note": "Named as co sponsor ('ROWE') on the official bill page; linked to David Hummer Rowe via the official 2021 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c6921fd2a1ce7ec2e794e65283401776fc6898f70f667b1f57b5be3275bab0b",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250923083828/https://www.palegis.us/legislation/bills/2023/hb2629",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-2629-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3762 (as introduced; only printer's number). Read. Page copy dated 2025-09-23. Memo subject: \"Proof of Citizenship to Vote\".",
+      "note": "Named as co sponsor ('ROWE') on the official bill page; linked to David Hummer Rowe via the official 2024 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('ROWE') on the official bill page; linked to David H. Rowe via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('ROWE'), linked to David Hummer Rowe (district 85) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and signature match",
+        "proof of citizenship to register",
+        "election integrity",
+        "voter registration access"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity and 2026 ballot: https://theballotbrief.com/state/pennsylvania/snyder-county/pennsylvania-house-district-85 (state representative, 85th district, listed for Nov 3 2026)",
+        "House caucus member press list search: page not found, nothing on the subject",
+        "blocked: https://penncapital-star.com/government-politics/general-assembly/state-rep-david-rowe-wants-to-make-it-easier-for-sportsmen-to-register-to-vote/ (403); a Yahoo copy was read: it is about registration forms with hunting and fishing licenses, off the subject, not saved",
+        "Ballotpedia: not reviewed",
+        "two news searches: one direct quote found (below); no own-site pages on the subject reached",
+        "not reviewed: PA House bill pages (sponsorships linked separately); campaign site not located"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:07:26.144Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.698Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:51:16.459Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

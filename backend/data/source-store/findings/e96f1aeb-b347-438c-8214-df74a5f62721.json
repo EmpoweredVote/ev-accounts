@@ -1,0 +1,271 @@
+{
+  "politician_id": "e96f1aeb-b347-438c-8214-df74a5f62721",
+  "findings": [
+    {
+      "id": "853b65f6d217e41079b6074dc8bc97a6f5c1b27031299c0adaa1b3dda9b70d17",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Burns/InTheNews/NewsRelease/?id=137731",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "passage": "“Voter ID is common sense and overwhelmingly supported by a majority of Pennsylvanians. These are the things we are sent here to accomplish, and it’s about time we get it done,” Tomlinson said.",
+      "note": "Quoted in a joint news release announcing House Bill 771, which would require a voter to show acceptable ID matching the name at the polling place, with a written identity affirmation if the voter has no acceptable ID. Same quote was reprinted by Patch (2025-03-18) and Bucks County Beacon (2025-03-26).",
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID: written affirmation"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:13:31.188Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('TOMLINSON'), linked to Kathleen C. Tomlinson (district 18) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Tomlinson'), linked to Kathleen Christine Tomlinson (district 18) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Tomlinson'), linked to Kathleen C. Tomlinson (district 18) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e0ef76bf52f257932f340675c18452f8d5491bf4a0f3213f323059945d572fba",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251030233525/https://www.palegis.us/legislation/bills/2025/hb771",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-771-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1624 (as reported from State Government as amended, May 6, 2025). Read. Page copy dated 2025-10-30.",
+      "note": "Named as co sponsor ('TOMLINSON') on the official bill page; linked to Kathleen C. Tomlinson via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('TOMLINSON'), linked to Kathleen Christine Tomlinson (district 18) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57fb258d6fa8a14cd46505a813f5e06e39f5cdaa44d39fac13d5eebdd00e115b",
+      "kind": "own-words",
+      "url": "https://lowerbuckssource.net/health-bensalem-township/rep-tomlinson-explains-yes-vote-on-long-gun-background-checks-bill/amp/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "People who sell long guns to others without knowing whether they are prohibited from having guns expose themselves to criminal prosecution. Ignorance of that fact is not a defense. Every new gun purchaser completes a criminal background check, and the same should be true for private transactions,",
+      "note": "Quoted by Lower Bucks Source from her constituent email digest, explaining her vote on HB 1593 (universal background checks for private long-gun transfers). Article year not confirmed; the bill passed the House 104 to 99 on September 30.",
+      "subjects": [
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf60ea30bba833899121277c5e46cec42ba0b5ac739c4796593f7e422ec471fe",
+      "kind": "own-words",
+      "url": "https://lowerbuckssource.net/health-bensalem-township/rep-tomlinson-explains-yes-vote-on-long-gun-background-checks-bill/amp/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Those who claim this creates a gun registry are just blatantly misinformed.",
+      "note": "Quoted by Lower Bucks Source from her email digest, on the private long-gun background check bill.",
+      "subjects": [
+        "background checks on private sales",
+        "gun registry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc0a56487ba241d1773bf4f2b681c679e054e27dd07120b87ee2e076753ab010",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2023/hb1592",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1592-2023",
+      "act": "sponsor",
+      "note": "Prime sponsor of HB 1592, which sets sentencing rules for persons not to possess, use, manufacture, control, sell or transfer firearms. Date is the referral to Judiciary (Printer's Number 1872).",
+      "subjects": [
+        "prohibited persons firearm sentencing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with a written identity affirmation",
+        "election integrity laws",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope: https://levittownnow.com/2026/02/04/incumbent-k-c-tomlinson-seeks-new-term/ (announced run for re-election in the 18th District) and https://theballotbrief.com/state/pennsylvania/bucks-county/pennsylvania-house-district-18 (lists her on the 2026 general-election ballot)",
+        "official House caucus site https://www.pahousegop.com/Tomlinson and its news room: page does not load readable text without scripts, nothing read",
+        "House co-sponsor news release hosted on https://pahouse.com/Burns (2025-03-17): own words saved",
+        "Patch and Bucks County Beacon (2025-03) repeat the same quote; read, not saved separately",
+        "blocked: https://ballotpedia.org (not fetched; earlier Ballotpedia fetches for other members in this session were blocked)",
+        "campaign site: none found (a ballot guide says no campaign site as of 2026-09-07)",
+        "web searches run: 2"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:13:31.188Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.699Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.854Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks on private sales",
+        "firearms sentencing for prohibited persons",
+        "general gun statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "palegis.us HB 1592 page",
+        "Lower Bucks Source article (via curl)",
+        "blocked: https://app.legiplex.com/profile/kathleen-tomlinson-17514/pa/legislatures/2023/2023-r/legislation",
+        "not reviewed: official house site, campaign site, Ballotpedia (budget)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

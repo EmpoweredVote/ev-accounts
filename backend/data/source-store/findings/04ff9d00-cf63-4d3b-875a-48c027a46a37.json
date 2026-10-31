@@ -1,0 +1,61 @@
+{
+  "politician_id": "04ff9d00-cf63-4d3b-875a-48c027a46a37",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_Braun confirms John Braun is on the Nov 3, 2026 general ballot for U.S. House WA-3 after advancing from the Aug 4, 2026 top-two primary",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.votebraun.com/issues (Where I Stand): nothing on the subject; topics are cost of living, education, crime, border and fentanyl, salmon, energy, veterans, guns, women's sports",
+        "campaign site https://www.votebraun.com/about: nothing on the subject",
+        "campaign site https://www.votebraun.com/news (press list through Jul 2026): headlines only, nothing on the subject",
+        "Ballotpedia John_Braun page text: nothing on the subject",
+        "official legislature caucus site https://johnbraun.src.wastateleg.org site search for 'voter ID', 'election integrity', 'citizenship': results were unrelated posts (budget, taxes), nothing on the subject",
+        "OPB poll article https://www.opb.org/article/2026/10/01/gluesenkamp-perez-braun-southwest-washington-3rd-district/: nothing by Braun on the subject",
+        "not reviewed: Washington Legislature sponsor/bill pages (https://app.leg.wa.gov/bi/report/Sponsor returned 404; no sponsor list reached), so state-level voter ID or citizenship bill sponsorships are not checked",
+        "not reviewed: news search on name plus subject words, and the other URL-pattern pages, because the shared web search budget was used up",
+        "not reviewed: x.com/votejohnbraun, Facebook, debate or forum videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:26.935Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE America Act",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.votebraun.com (home, about, issues, news list; nothing on the subject in his own words)",
+        "https://www.opb.org/article/2026/10/08/marie-gluesenkamp-perez-john-braun-debate/ (Oct 7 2026 debate story; confirms he is a general-election candidate; the reporter says in her own voice that he supports the SAVE America Act, which tightens proof-of-citizenship and photo-ID rules, but gives no quote from him, so not saved as his own words)",
+        "https://www.kuow.org/elections/2026-10-09/gluesenkamp-perez-and-braun-meet-in-first-debate-for-southwest-washingtons-battleground-house-district (same debate story, same reporter paraphrase, no quote)",
+        "https://www.thereflector.com/stories/john-braun-commentary-democrats-are-in-no-rush-to-settle-concerns-about-potential-fraud,400081 (April 2026 commentary is about childcare payment fraud, not elections; nothing on the subject)",
+        "blocked: https://ballotpedia.org/John_Braun (page returned empty)",
+        "not reviewed: debate video or recording of the Oct 7 2026 debate",
+        "not reviewed: Washington legislature sponsor and roll-call pages for Senate Bill 5112 (a voter registration bill; a letter to the editor says he voted no; unverified and not about ID)",
+        "web searches on name plus voter ID, proof of citizenship, election integrity: no direct statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:07:52.996Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

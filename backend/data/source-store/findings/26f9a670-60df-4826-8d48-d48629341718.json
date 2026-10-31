@@ -1,0 +1,51 @@
+{
+  "politician_id": "26f9a670-60df-4826-8d48-d48629341718",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (sworn statement, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia page fetched, nothing on the subject",
+        "VPAP legislator page (blocked or no subject content)",
+        "Virginia LIS legacy bill pages (sessions through 2024) and bill-tracker pages for 2026 voter ID bills HB 1131 and SB 544 (names not among recorded votes)",
+        "web searches on name plus voter ID, photo ID, citizenship, election integrity: nothing own-words found",
+        "official site and campaign site: not reviewed (not reached within allowance)",
+        "blocked: https://legilist.com (Cloudflare), https://www.vpap.org/bills/85470 (403), https://www.wavy.com SAVE America Act story (403), https://lis.virginia.gov (script-only page, 2025-26 bills not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:23:48.141Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun violence prevention",
+        "assault weapons",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Destiny_LeVere_Bolling (identifies her: Member of the Virginia House of Delegates from the 80th district; nothing on guns)",
+        "https://wevoteproject.com/officials/destiny-levere-bolling?page=4 (no bill titles rendered)",
+        "not reviewed: Virginia LIS sponsor list (JavaScript app)",
+        "Ballotpedia, official/campaign site: not reached",
+        "nothing on the subject in own words found"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

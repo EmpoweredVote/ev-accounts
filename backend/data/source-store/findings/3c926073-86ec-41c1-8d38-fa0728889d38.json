@@ -1,0 +1,47 @@
+{
+  "politician_id": "3c926073-86ec-41c1-8d38-fa0728889d38",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew (date not stated on page); Ballotpedia's page for the 2026 Alaska U.S. House race, certified primary results section, lists 'Withdrawn or disqualified candidates: Gerald Heikes' https://ballotpedia.org/United_States_House_of_Representatives_election_in_Alaska,_2026",
+        "On the Record (0 appearances)",
+        "Ballotpedia candidate page https://ballotpedia.org/Gerald_Heikes (fetched, no profile content found)",
+        "not reviewed: campaign site, congress.gov, news search (stopped as out of scope; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:17:24.615Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "scope: he is running for U.S. Senate (not House) in Alaska; Wikipedia 2026 Alaska Senate page, BallotReady (https://www.ballotready.org/people/gerald-l-heikes) and The Ballot Brief (https://theballotbrief.com/candidate/gerald-l-heikes-ak) show him advancing from the 2026-08-18 primary to the 2026-11-03 general ballot",
+        "blocked: https://alaskabeacon.com/voter-guides/contests/2026-u-s-senate/ (403 bot check; a search summary said one guide lists him as withdrawn, which I could not verify)",
+        "blocked: https://www.elections.alaska.gov/wp-content/uploads/2026/08/08252026_ElectionSummaryReportRPT.pdf (certificate error)",
+        "On the Record (0 meetings)",
+        "campaign site: none found (BallotReady and The Ballot Brief say he has no campaign website)",
+        "BallotReady and The Ballot Brief: nothing on the subject",
+        "Ballotpedia: not reviewed, page fetch returned no content",
+        "congress.gov: not applicable, never a member of Congress",
+        "two news searches on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:31:35.412Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

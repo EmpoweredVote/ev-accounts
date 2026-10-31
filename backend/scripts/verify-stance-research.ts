@@ -74,6 +74,7 @@ import {
   verifyEvidence,
   createPageFetcher,
   aliasesFrom,
+  lastNameOf,
   normTopic,
   stanceKey,
   type StanceRow,
@@ -85,6 +86,8 @@ import { createVerificationFetchSession, htmlToText } from '../src/lib/verificat
 import { markHumanSaved } from '../src/lib/humanSavedCopy.js';
 import { loadHumanSavedCopies } from './lib/humanSavedCopies.js';
 import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
+import { createLegiscanRecordFetcher, withLegiscanRecords } from '../src/lib/legiscanEvidence.js';
+import { legiscanQuery } from '../src/lib/legiscan/client.js';
 import {
   buildEvidenceRowsForInsert,
   buildReviewRowForInsert,
@@ -351,7 +354,6 @@ for (const p of nameRows) {
   nameMatchesByLower.set(k, [...(nameMatchesByLower.get(k) ?? []), p]);
 }
 
-const lastToken = (name: string) => name.trim().split(/\s+/).filter(Boolean).slice(-1)[0] ?? name;
 
 const politicianNames: PoliticianNames = {};
 const idByName = new Map<string, string | null>(); // csv name -> politician_id (or null if unmatched)
@@ -382,7 +384,7 @@ for (const name of csvNames) {
   // names. An unresolved row has no alternate names to offer.
   politicianNames[name] = {
     fullName: canonical,
-    lastName: lastToken(canonical),
+    lastName: lastNameOf(canonical),
     aliases: aliasesFrom(resolved?.alternate_names),
   };
   idByName.set(name, resolved?.id ?? null);
@@ -477,7 +479,16 @@ if (duplicatePairs.length) {
 const fetchSession = createVerificationFetchSession();
 // On the Record meeting pages are a JS SPA with no transcript in the HTML: resolve them through
 // the OTR transcript API instead (src/lib/otrTranscript.ts). Everything else takes the tiered ladder.
-const fetcher = withOtrTranscripts(createPageFetcher(fetchSession.fetch));
+// LegiScan bill and roll-call pages sit behind a bot challenge: resolve them through the LegiScan
+// API instead (src/lib/legiscanEvidence.ts), every call counted against the monthly cap.
+const legiscanKey = process.env.LEGISCAN_API_KEY ?? '';
+const fetcher = withLegiscanRecords(
+  withOtrTranscripts(createPageFetcher(fetchSession.fetch)),
+  createLegiscanRecordFetcher(async (op, params) => {
+    if (!legiscanKey) throw new Error('LEGISCAN_API_KEY is not set');
+    return legiscanQuery(legiscanKey, op, params);
+  }),
+);
 // URLs the batch declares as the person's own site (sources.json source_kind 'own-site'): attribution
 // there is by ownership, so the surname-proximity test is waived for them (ruling 2026-10-08).
 const ownSiteUrls = new Set<string>();

@@ -1,0 +1,30 @@
+{
+  "politician_id": "ea85dfe3-1092-468e-a799-cb8054c135db",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "ID number to register to vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia page https://ballotpedia.org/Malia_Cohen confirms she is the sitting State Controller (term ends January 2027) and is on the 2026-11-03 general-election ballot for re-election after advancing from the June 2026 primary; nothing on the subject",
+        "blocked: https://www.sco.ca.gov/ (Controller's official site, bot-check page returns 403 to curl and to the page fetcher)",
+        "blocked: https://www.sco.ca.gov/eo_about_bio.html (403)",
+        "campaign site: no working campaign site found (maliacohen.com only redirects to a placeholder page)",
+        "she holds no legislative seat, so no bill votes or sponsorships exist; SB 1174, AB 25 and AB 1116 are legislature bills she did not vote on",
+        "one web news search on name plus voter ID, proof of citizenship, election integrity: nothing by her on the subject",
+        "not reviewed: Controller press releases and 2026 candidate questionnaires, because the Controller's site was blocked"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:08:58.173Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

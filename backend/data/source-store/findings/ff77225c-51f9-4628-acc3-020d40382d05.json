@@ -1,0 +1,55 @@
+{
+  "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05",
+  "findings": [
+    {
+      "id": "5a85fb43ff487bdafa0d6628a1aec7466933c31d5ed89164b8ef686b4a3a92b1",
+      "kind": "record",
+      "url": "https://calmatters.digitaldemocracy.org/bills/ca_202320240sb1174",
+      "date": "2024-08-27",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1174-2024",
+      "act": "other",
+      "motion": "SB 1174 (Min), Elections: voter identification, Assembly floor third reading (57 yes, 16 no, 6 did not vote); he is listed among the six who did not vote",
+      "note": "Bill bars local governments, including charter cities, from requiring identification to vote unless state or federal law requires it. The vote page lists Rick Chavez Zbur under Did Not Vote.",
+      "subjects": [
+        "local bans on voter ID requirements",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:25:46.194Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "local bans on voter ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "https://dailybruin.com/2026/06/06/rick-chavez-zbur-colin-hernandez-advance-to-state-assembly-general-election/ (shows him advancing to the November 2026 general election for Assembly District 51)",
+        "official Assembly site https://a51.asmdc.org (its own search for 'voter ID' and for 'SAVE Act' returned no results; press release list showed nothing on the subject)",
+        "calmatters Digital Democracy legislator page (committee list does not include the elections committee; no voter ID bills authored)",
+        "calmatters Digital Democracy page for AB 25 (2025, photo ID bill failed in the elections committee, which he is not a member of; no floor vote)",
+        "Ballotpedia https://ballotpedia.org/Rick_Zbur (page text did not come through; nothing read)",
+        "one news search on his name plus SAVE Act / voter ID / proof of citizenship: nothing about him found",
+        "blocked: campaign sites zburforassembly.com and rickzbur.com (no connection)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:25:46.194Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

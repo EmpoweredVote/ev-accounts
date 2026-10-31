@@ -1,0 +1,86 @@
+{
+  "politician_id": "98023fc8-d83b-43ba-b7e1-5bd132122bbe",
+  "findings": [
+    {
+      "id": "02cbf49771406d24ee6815f9d4a9435e2cee18bb2eb028b42c4e6b968af899b7",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "nay",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: nay (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "Ballotpedia https://ballotpedia.org/Irene_Shin (page loads and names the person in office; nothing on the subject)",
+        "blocked: https://www.ireneshin.com (no response; other guessed campaign domains also did not load)",
+        "web news searches on the name plus voter ID, photo ID, citizenship and election integrity (no own-words quote found; results were about other people or general background)",
+        "blocked: LIS, legiscan and legiplex (not retried, per instructions); floor votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:45.852Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans and large-capacity magazines",
+        "background checks",
+        "ghost guns",
+        "safe storage and locking devices",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House of Delegates member list https://house.vga.virginia.gov/members (confirms Shin, Irene, District 8; House seats were not on the 2026 ballot)",
+        "https://patch.com/virginia/reston/finding-answers-one-our-greatest-challenges (nothing in her words; she is only named in a photo credit)",
+        "https://virginiapoliticalnewsletter.substack.com/p/firearm-violence-prevention-bill (does not mention her)",
+        "https://vpm.org/news/articles/32449/gridlocked-on-guns-virginia-lawmakers-debate-other-ways-to-address-violence (does not mention her)",
+        "https://www.branch.vote/races/2025-virginia-general-election-state-delegate-va-state-house-8/candidates/irene-shin (secondary summary, not her words; not reviewed further)",
+        "blocked: https://app.legiplex.com/profile/irene-shin-7830/va/legislatures/2025/2025-r/legislation/page/3",
+        "blocked: https://bradyunited.org/resources/podcast/virginia-is-for-gun-violence-prevention-lovers",
+        "not reviewed: https://lis.virginia.gov (bill pages load by script). A search summary lists her as sponsor of 2025 HB 351 (locking device) and HB 585 (home-based dealers near schools); not verified on an official page",
+        "campaign site not found (ireneshin.com does not resolve)",
+        "Ballotpedia not fetched (blocked for the other Virginia delegates in this batch)"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

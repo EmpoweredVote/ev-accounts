@@ -1,0 +1,134 @@
+{
+  "politician_id": "d5ac2998-5faa-4153-9c80-303090693ca4",
+  "findings": [
+    {
+      "id": "19a9d698f0690166b0e64a10aaeeefa10db152f0bbbd42956c65e3c88ea07f1f",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/michigan-lawmakers-clash-over-push-212357862.html",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "We must look at this resolution squarely and call it what it is: discriminatory.",
+      "note": "Quoted by WOOD TV (Grand Rapids, via Yahoo News), dated March 11, 2025, about the House joint resolution on proof of citizenship and voter ID changes. She calls the resolution discriminatory.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "constitutional amendment on citizenship and ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:55.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66f03651f3e5e57deb6224acbdf143ae2bd759bc09864f96c5292f567077f113",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/michigan-lawmakers-clash-over-push-212357862.html",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "It is a disproportionate tax and a negative policy on women and especially Black and brown communities at the voting poll.",
+      "note": "Quoted by WOOD TV (via Yahoo News), March 11, 2025, same story. She describes the resolution as a disproportionate tax and a harmful policy for women and Black and brown communities.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "constitutional amendment on citizenship and ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:55.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8272627a9e487cb90a000d9ceec9390dc15eebba44a1514b9d946b96f5b5a336",
+      "kind": "own-words",
+      "url": "https://housedems.com/hoskins-fellow-democrats-call-on-hall-to-take-up-mi-voting-rights-act/",
+      "date": "2026-06-23",
+      "date_precision": "day",
+      "passage": "We needed the federal Voting Rights Act to protect African Americans’ right to vote. With those federal protections now effectively gone, the responsibility falls to states to act. This is why we need to pass the Michigan Voting Rights Act now. We must protect African American and other minority voters from discriminatory practices that dilute political power, including racial gerrymandering,",
+      "note": "Press release of the House caucus on a press conference of 2026-06-23 (release dated 2026-06-24) about HB 5969-5972 (Michigan Voting Rights Act). It is about voting rights, not ID or citizenship. Saved as related material.",
+      "subjects": [
+        "voting rights act (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:51:55.074Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64bed1f7e34107fd77b620204b32f1e257a09f9c7059de0e75e88f88cb135549",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2025-2026/journal/House/htm/2025-HJ-05-01-042.htm",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "MI-HJR-B-2025",
+      "act": "nay",
+      "motion": "House: not adopted Roll Call #79 Yeas 58 Nays 48 Excused 0 Not Voting 4",
+      "note": "House roll call as printed ('Myers-Phillips'), linked to Tonya Phillips (district 7) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.339Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID or number with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voting rights"
+      ],
+      "places": [
+        "scope confirmed: https://housedems.com/tonya-myers-phillips/ (official page, Michigan House District 7); https://www.branch.vote/races/2026-michigan-general-election-mi-state-state-representative-mi-state-house-7/candidates/tonya-myers-phillips lists her as running in the 2026 general election; a Wayne County candidate list and an AI-written ballot site (leads, not fetched) also list her",
+        "official House caucus page https://housedems.com/tonya-myers-phillips/ and its site search: one voting-rights press release found (saved), nothing on ID or citizenship",
+        "On the Record: extract-otr script not run (standing rule for this session forbids running repo scripts); not reviewed",
+        "Ballotpedia https://ballotpedia.org/Tonya_Myers_Phillips: page came back empty (blocked)",
+        "blocked: https://www.yahoo.com/news/michigan-lawmakers-clash-over-push-212357862.html when fetched with plain curl (empty page); passages were taken from the fetch tool returning the page's exact sentences",
+        "https://www.yahoo.com/news/voter-registration-amendment-proposal-splits-032707080.html: she is not quoted",
+        "https://www.michiganvotes.org/legislators/2025/house/district-7/sponsorships page 1: one bill on voting procedures (HB 5972, linked separately as a sponsorship); other pages not reviewed",
+        "branch.vote page: no statement of hers on the subject (her site had none as of 2026-09-02 per that page)",
+        "campaign site: not located; not reviewed",
+        "web searches (2 on her name plus subject words)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:51:55.074Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:55:46.339Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

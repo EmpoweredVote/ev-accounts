@@ -1,0 +1,86 @@
+{
+  "politician_id": "8a3eb0a4-fa2a-4918-bf67-8d9ff22253f3",
+  "findings": [
+    {
+      "id": "592e893f1f27cbb96b59fabd81e2f085f428bd8edbc026a48c188ac65d279235",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Doriot: Motion Passed (roll call 352)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN Senate, SB 10 - Doriot: Motion Passed (roll call 352), 2025-04-07: yea (tally 39–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Spencer_Deery, fetched with curl) names him as Indiana State Senate District 23 incumbent, on the Nov 3, 2026 general-election ballot after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/deery (first page of news list only; nothing on the subject; no site search reachable)",
+        "campaign site https://www.spencerdeery.com/ (home page only; nothing on the subject; Wix site, issues pages not found)",
+        "Ballotpedia (nothing on the subject; no 2026 survey answers; 2022 survey answers do not mention the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_spencer_deery_1007 (page is script-rendered, no content returned; API needs a key)",
+        "blocked: https://www.indystar.com/story/news/politics/2026/09/10/indiana-supreme-court-rules-deery-winner-in-recount-case/91694946007/ (fetch refused)",
+        "not reviewed: news search on name plus subject words (session web-search budget exhausted)",
+        "not reviewed: legislature bill and roll-call pages for election bills (no usable fetchable listing)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:41:44.882Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Spencer_Deery: confirms he is the sitting Indiana Senate District 23 member, running for re-election on the November 3, 2026 ballot; nothing on the subject",
+        "campaign site https://www.spencerdeery.com/ : page loads as a bare re-election page; nothing on the subject",
+        "Senate caucus news pages https://www.indianasenaterepublicans.com/deery-bill-to-uphold-fair-elections-passes-committee and https://www.indianasenaterepublicans.com/deery-bill-to-uphold-fair-elections-passes-senate-unanimously : his 2024 statements concern AI disclaimers on campaign ads (HB 1133), which is not voter ID or citizenship proof; nothing on the subject",
+        "roll calls for IN-SB-10-2025: already on file, not searched",
+        "blocked: https://iga.in.gov (bill pages are script-driven and not readable; sponsorship list not reviewed)",
+        "news and web search (2 searches) on name plus voter ID, citizenship, absentee words: no page tied him to the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-27T14:26:40.964Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

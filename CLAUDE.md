@@ -74,27 +74,183 @@ SELECT count(*) AS total,
   JOIN essentials.offices o ON o.id = m.office_id;
 ```
 
-**Measured 2026-10-20: `433 / 194 / 239`.** The Knight trackers report it in exactly this
-`total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md` §"Flagging is
-load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since: 239 UNFLAGGED.
-Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared vacancy* and is
-deliberately not drift.
+**Measured 2026-10-27: `293 / 55 / 238`** (`CC_0300` seated Cornelius OR and `CC_0301` seated
+Caledonia WI; both were in the FLAGGED bucket, so total and flagged each fall and the 238 baseline
+does not move; was `295 / 57 / 238` on 2026-10-26, and `433 / 194 / 239` on 2026-10-20; the 136 that left
+are all 17 Maine cities being seated — `CC_0282` Augusta, `CC_0283` Westbrook, `CC_0291` Bath,
+`CC_0292` the nine all-at-large, `CC_0293` the final five). The Knight trackers report it in
+exactly this `total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md`
+§"Flagging is load-bearing twice over". **Baseline, LOWERED to 238 UNFLAGGED by `CC_0296` on
+2026-10-26** (239 from 2026-09-29 until then). **Treat a count above 238 unflagged as new drift.**
+A flagged seat is a *declared vacancy* and is deliberately not drift.
+
+⚠ **ONLY THE UNFLAGGED NUMBER IS A BASELINE — THE OTHER TWO ARE DATED OBSERVATIONS.** Seating a
+city moves `total` and `flagged` and must leave the baseline alone. It has, across every Maine
+wave: a wave that seats *flagged* seats shrinks the flagged bucket, never the baseline.
+
+🟢 **THE BASELINE FALLS ONLY ONE HONEST WAY: BY SEATING A SEAT THAT WAS UNFLAGGED AND UNSEATED.**
+That is what `CC_0296` did — Indiana's real Comptroller office sat empty inside the 239 while a
+duplicate office row held the officer, so merging the two seated it and took the baseline to 238.
+🔴 **That is the only reason to move it down. Never lower it to match a number you measured, and
+never raise it at all** — a lower baseline is a tighter net, and raising one hides the drift it
+was put there to catch.
+
+⚠ **THE OTHER TWO NUMBERS MOVE UNDER YOU BETWEEN SESSIONS.** `CC_0295` measured `297 / 58 / 239`
+and `CC_0296`, hours later, measured `296 / 57 / 239` before writing anything — another session had
+resolved one flagged seat and dated two more in between. Neither migration caused it and neither
+was wrong. ▶ **Gate a migration on the DELTA it creates, captured in its own transaction, not on a
+total somebody else can move while you write the file.** `CC_0296`'s post-verify shows the shape.
 
 ⚠ **READING THE TOTAL AGAINST THE BASELINE RAISES A FALSE ALARM**, and has: on 2026-10-20 a
 session reported "433 against a baseline of 239, +194 of drift". The +194 it had found was the
 flagged population itself — the metric was intact and nothing was wrong.
 
 The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in
-that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
+that 238; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
 hides drift, and 🔴 **never raise it to clear a red.**
 
-⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 194 flagged on 2026-10-20,
-only **13 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
-incumbent died or resigned; see `fl.md`). The other **181 are flagged with no date**, and **138 of
-those are Maine**: every municipal and school office in 17 Maine cities, 100% of them, none ever
-seated. That is "we have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a
-vacancy to voters and keeps the rows out of the drift metric. Seeding Maine municipalities is the
-fix; until then, **do not read a stable 239 as "occupancy is clean".**
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Measured 2026-10-26, across every
+`is_vacant` office and not just those in the view: **63 flagged, 41 dated, 22 undated** (was
+65 / 24 / 41 before `CC_0298`, and 64 / 40 / 24 before `CC_0301`). An undated flag asserts a
+vacancy to voters and keeps the row out of the drift metric. **Do not read a stable 238 as
+"occupancy is clean".**
+
+🔴 **AN UNDATED FLAG CANNOT TELL YOU WHICH KIND OF THING IT IS, AND THERE ARE FOUR KINDS.**
+`CC_0298` classified all 41 undated flags one at a time, and only 16 of them wanted a date:
+
+| kind | n | what it needs |
+| --- | --- | --- |
+| real vacancy, date citable | 16 + 1 | ✅ `CC_0298`; `CC_0301` added Three Valleys MWD Division 3 |
+| real vacancy, date not published | 1 + 1 | **nothing but an explanation in `description`** — Richland County SC SWCD, and now Torrance USD Trustee Area D (`CC_0301`). That is the correct shape |
+| ~~not vacant, a holder exists~~ | 2 | ✅ `CC_0300` Cornelius OR, `CC_0301` Caledonia WI |
+| **not vacant, awaiting its FIRST election** | 20 | explain it (`CC_0299`), then seat the winner |
+| ~~unseeded, emptiness unproven~~ | 3 | ✅ `CC_0301` — and the three came out **three different ways** |
+
+🔴 **"UNSEEDED, EMPTINESS UNPROVEN" IS A QUEUE OF SINGLETONS, NOT A BATCH.** The last three rows
+of this triage were checked against their own bodies' rosters and no two wanted the same thing:
+Three Valleys MWD Division 3 was vacant **with the date published on the district's page**;
+Torrance Area D was vacant with **no date published anywhere**; Caledonia WI Seat 2 **was not
+vacant at all**. Check them one at a time, against the body's own roster.
+
+🔴 **READ WHAT A SOURCE'S DATE IS A DATE *OF* BEFORE ADJUSTING IT.** `CC_0298` wrote
+departure + 1 because Ballotpedia publishes the member's LAST DAY. Three Valleys publishes
+"Vacant Effective June 3, 2026" — the date the vacancy TAKES EFFECT, which is already the first
+empty day, so it is written unadjusted. Same field, opposite handling, because the sources
+measure different events.
+
+🔴🔴 **A SEAT AWAITING ITS FIRST ELECTION LOOKS EXACTLY LIKE A VACANCY. ASK WHAT IS ON THE BALLOT.**
+Eight Los Angeles County bodies carry BOTH legacy `At-Large` office rows and newer by-district
+rows, because they are part-way through a **staggered** by-district conversion under the
+California Voting Rights Act. The at-large rows are the last holdovers and are still legitimately
+in office; the empty district rows are their successors. One set is replacing the other on a
+published schedule — Azusa elected Districts 2, 4 and 5 in November 2024 and elects 1 and 3 in
+November 2026, which is exactly which of its rows are seated and which are empty.
+
+⚠ **`CC_0298` CALLED THESE "DUPLICATE SEATS" AND THAT WAS WRONG** — wrong in a way that would have
+justified deleting real offices. The counting argument it used ("at-large + seated-district = the
+body's size") was TRUE and still pointed at the wrong conclusion. 🔴 **A COUNT CAN BE RIGHT AND
+MEAN SOMETHING ELSE.** What settled it was one query against data we already held: all 20 empty
+offices carry exactly one race, every one dated 2026-11-03, with candidates already filed.
+▶ **Before deciding what an empty seat is, read its races.** Then the chamber count tells you
+whether the body is whole, which is a different question.
+
+🔴 **A COMPLETE, FULLY-SEATED CHAMBER IS THE SIGNATURE OF A REAL VACANCY.** The 19 non-California
+undated flags all sat in rosters that were whole except for exactly the flagged seats (MO House
+163 offices / 155 seated / 8 flagged; MA House 160 / 158 / 2). That shape says the loader found
+everyone there was to find.
+
+🔴 **DO NOT CLEAR `is_vacant` ON AN UNSEATED OFFICE TO HIDE IT FROM ADDRESS SEARCH.** It works —
+unseated and unflagged is invisible — and it turns the **master-only** reachability gate red on
+whoever merges next. `check-address-reachability.mjs` reports DEAD_GEOGRAPHY for a district with
+`active_holders = 0 AND vacant_offices = 0`, so the flag is the only thing keeping such an office
+out of it, and the gate fires on **any new bucket**. Check `address-reachability-baseline.json`
+before clearing a flag in bulk.
+
+▶ **December 2026:** seat the 20 winners, retire the at-large holdovers in the bodies whose
+conversion completes, and **delete the `CC_0299` descriptions** — they name a past election and
+go false the moment a winner is seated.
+
+**Date a vacancy at the moment you establish it**, or the next session re-derives which kind it was.
+
+🟢 **MAINE IS FINISHED AND CLOSED (2026-10-26).** It was the bulk of this bucket: 138 municipal
+offices across 17 cities, 100% flagged-undated, none ever seated, plus one real state-level
+vacancy. **Not one Maine office at any level — city, school or state — is now flagged without a
+date** (`CC_0294` gates that statewide). The three that remain flagged are all dated and real:
+Brewer's council seat, South Portland Public Schools', and the Penobscot Nation's tribal seat,
+empty since 2015-05-27. Rules, sources and the dated follow-ups:
+`backend/data/seed-me-municipal-2026/ROSTERS.md` — **open it before any Maine work.**
+▶ **2026-12-02**: the 133rd Legislature convenes and PL 2026 c.705 gives the Mi'kmaq Nation a
+fourth tribal seat. Create it then, not before.
+
+🔴 **THE DATED VACANCIES BARELY MOVE WHILE THE UNDATED FELL 181 → 43.** Every seat a wave seats
+comes out of the undated pile, so that gap is the Maine backlog draining — not the audited
+vacancies being resolved. **Read the two sub-buckets separately, or a falling flagged total will
+look like progress on something it has not touched.** (13 → 15 are the two real additions, and
+they are different acts: Brewer's At-Large 5, `CC_0292` — a councillor who resigned in July 2026,
+so a wave can CREATE a documented vacancy as well as clear undated ones — and the Penobscot
+Nation's tribal seat, `CC_0294`, which was not created but **moved out of the undated pile by
+being dated**. That second kind changes no total and is the whole point of the sub-buckets.)
+
+🟢 **FIXED 2026-10-26 — A FLAGGED-VACANT OFFICE USED TO COME BACK AS A NAMELESS ROW.**
+`office_current_holder` LEFT JOINs from `offices`, so the read path emits an empty seat as a row
+whose `p.*` columns are all NULL. `PoliticianFlatRecord.id` was typed `string` and the mapper cast
+that NULL through with `as string`, so **the type told every consumer each row is a person** and a
+voter got a blank card. Measured live: a Santa Clarita address returned two of them. The row now
+says what it is:
+- **`id` is `string | null`.** The type no longer lies, and TypeScript found all seven mappers and
+  every `imageMap.get(p.id)` that assumed otherwise.
+- **`office_id` is on every politician row.** Before this the whole surface carried NO office
+  identity: a held row could be keyed on the person and a vacancy could be keyed on *nothing*.
+- **`seat_status: 'held' | 'vacant'`** — 🔴 **derived from whether a holder resolved, NEVER from
+  `is_vacant`.** Those answer different questions: `is_vacant` is an assertion on the office (see
+  **The `is_vacant` trap** below), `seat_status` is "is there a name in this row". ⚠ They agree on
+  every row in prod today — measured, zero flagged-and-held offices repo-wide — because the seating
+  migrations gate it to zero. That is a reason to keep them separate, not to collapse them: the
+  moment one flagged-and-held row appears, the collapsed version is wrong and silent.
+
+⚠ **THE DATA HALF IS STILL OPEN.** 40 of the 57 flagged offices carry no `vacant_since`, so they
+render as "vacant, date unknown" — honest about the record and still wrong about the world in most
+cases, because `is_vacant` was used to mean "not seeded". 21 of the 40 are Los Angeles County
+school boards and special districts; 8 are Missouri House seats. Each needs research, not a
+read-path change.
+⚠ **A `membership`-basis seat is the exception and is NOT affected** — it has no `geo_id` by
+design (ADR 0003) and `check:reachability` fails if one ever acquires geometry, so Maine's
+vacant Penobscot tribal seat is never returned for an address at all. Its
+`representation_note` is the only place a reader learns it exists.
+
+🟢 **FIXED 2026-10-26 — ADDRESS SEARCH USED TO RETURN AT MOST ONE SEAT PER PERSON.** The shared
+district query de-duplicated on `COALESCE(p.id, o.id)` — the PERSON — so someone holding two seats
+reachable from one address collapsed to one row and the voter never saw the second. `27` active
+people hold two or more current seats. The key is now **`OFFICE_DEDUP_KEY = 'o.id'`** in
+`src/lib/districtQueries.ts`: **one row per OFFICE**, which is what the endpoint means.
+- 🔴 **The DISTINCT itself is load-bearing and stays.** Several geofence rows can share a `geo_id`
+  and map to the same district type, so the join really does return an office twice: measured,
+  Indianapolis 129 raw rows for 89 offices. Removing it lets duplicates reach the response.
+- 🔴 **The INVERSE still applies to politician-rooted reads** (`?q=` list, `getPoliticianById`,
+  everything in `essentialsBrowseService.ts`): those fan out one row per office a person holds and
+  need `DISTINCT ON (p.id)`. See **Reading** above — the two join directions do NOT carry the same
+  guarantee, and the right key is opposite in each.
+- ⚠ **A de-dup keyed on the wrong column LAUNDERS the rows it keeps.** Keyed on the person, two
+  duplicate OFFICE rows held by one person showed as one and looked fine: Indiana's Secretary of
+  State and Treasurer each existed twice for four years, invisibly. `CC_0295` retired them, and its
+  post-verify gates at zero repo-wide the condition that would make this visible again.
+  ▶ When you fix a de-duplication, **diff the rows, not the count** — the rows it adds that should
+  not be there are the finding.
+- 🔴 **A DUPLICATE OFFICE CAN HIDE FOR THE OPPOSITE REASON, AND THE DE-DUP KEY HAS NOTHING TO DO
+  WITH IT.** `CC_0295`'s own gate then found a THIRD Indiana duplicate, `Comptroller x2`, split
+  the other way: the race-carrying copy was empty and the duplicate held the officer. `CC_0295`'s
+  PR reasoned from the de-dup key that both already showed, and **that was wrong** — measured
+  against the live endpoint, only one ever did, because `buildStatewideQuery` ends with
+  `AND (p.is_active = true OR o.is_vacant = true)` and an unseated, unflagged office satisfies
+  neither arm. That is the **Writing** rule above (*an office with no term is invisible*) wearing
+  a different hat. `CC_0296` merged it. ▶ **REASONING ABOUT A READ PATH IS NOT MEASURING IT** —
+  ask the live endpoint before you write down what a voter sees.
+- 🔴 **MERGING TWO OFFICE ROWS IS NOT DELETING ONE.** When the term sits on one copy and the race
+  on the other, move the term first, then delete: `office_terms.office_id` is `ON DELETE CASCADE`,
+  so deleting the held copy eats the term and silently unseats the officer. And repoint the
+  deprecated `politicians.office_id` snapshot in the same migration — **it has NO foreign key**, so
+  the delete leaves it dangling without complaint. Both hazards were confirmed by running `CC_0296`
+  with each step removed and watching its gates fail.
 
 Use the helpers rather than hand-rolling the two-step:
 
@@ -105,6 +261,28 @@ SELECT essentials.seat_officeholder(office_id, politician_id, term_start, source
 -- Close a term with no successor, as of the first VACANT day. Syncs is_vacant/vacant_since.
 SELECT essentials.vacate_office(office_id, first_vacant_day, source);
 ```
+
+🔴 **THE TWO HELPERS ARE NOT SYMMETRIC ABOUT THE FLAG, AND THE NAMES SUGGEST THEY ARE.**
+`vacate_office` SETS `is_vacant`/`vacant_since`. **`seat_officeholder` DOES NOT CLEAR THEM** — it
+only writes `office_terms` and never touches `essentials.offices`. So **seating someone into a
+flagged seat leaves it held AND vacant**, which is exactly the `is_vacant` trap below: a filter
+applied after the match emits a spurious all-NULL office row for the holder you just seated.
+Clear the flag yourself in the same migration and assert it:
+
+```sql
+UPDATE essentials.offices SET is_vacant = false, vacant_since = NULL WHERE id = <office>;
+```
+
+🔴 **`vacant_since` IS THE FIRST DAY THE SEAT WAS EMPTY, NOT THE DAY THE MEMBER LEFT.** The helper
+defines it: it writes `vacant_since = p_as_of` and closes the predecessor at `term_end = p_as_of - 1`.
+Almost every source publishes the *departure* date instead, so **a date copied straight off a
+source is one day early.** Ballotpedia's state-legislative tables head that column "DATE OF
+VACANCY", which reads like the same thing and is not: it gives Missouri Senate 10 as 2026-05-15,
+and the Missouri Senate's own page says "Senator Fitzwater resigned his seat on 05-15-2026".
+Departure + 1 also reproduces five of this repo's nine comparable existing rows exactly.
+⚠ **The column is already internally inconsistent** — four other rows (CA Senate 10, CA Assembly 3,
+VA House 20, TX Senate 22) disagree with that rule by one or two days, from earlier passes. Known,
+not new; do not "fix" one without re-sourcing it.
 
 Seating is a **two-step by design**: an open-ended term (`term_end IS NULL`) is an *infinite* range
 that overlaps every future span, so the predecessor must be closed before a successor can be
@@ -127,6 +305,33 @@ Honesty rules that the schema enforces:
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
+
+### Sourcing a seat from a roster or an election result
+
+Four rules the municipal seeding waves paid for, each after getting a real seat wrong:
+
+- 🔴 **A CERTIFIED RESULT IS NOT A FACT ABOUT WHO HOLDS THE SEAT.** It records who won an
+  election. Taking office is a separate, later event, and people decline, resign, die or are
+  appointed in between. Seat from a source about the *officeholder*, not about the count.
+- 🔴 **A SOURCE CAN BE AUTHORITATIVE FOR ONE FIELD AND STALE FOR ANOTHER.** A city's own council
+  page is the authority on who sits there and can still show term dates that expired two years
+  ago. Judge a page field by field, never as a whole.
+- 🔴 **"FIRST ELECTED" IS NOT A TERM START.** A roster label like that says how someone ARRIVED,
+  not when the current term began. Write an open-ended term with `start_precision => 'unknown'`
+  rather than reusing the number that happens to be printed.
+- 🔴 **A DEPARTED OFFICIAL'S URL CAN SERVE THEIR SUCCESSOR**, with no redirect and no error.
+  Assert that the page NAMES the person before you record it as their source.
+- 🔴 **THE CHAMBER'S OWN ROSTER OUTRANKS EVERY AGGREGATOR, AND THEY DO DISAGREE.** On 2026-10-26 a
+  web search reported the Missouri House as having five vacancies against our eight, which read
+  like stale data on our side; `house.mo.gov`'s member grid listed exactly our eight. For three of
+  them Ballotpedia still showed the member *sitting*. **A search summary is a lead. Open the
+  roster.**
+- 🟢 **WHEN THE AGGREGATORS DISAGREE, THE LEGISLATIVE JOURNAL SETTLES IT.** Those three Missouri
+  seats appear in no vacancy table anywhere, and the resignation letters are printed verbatim —
+  name, district, and the hour the resignation took effect — in the House Journal for the day they
+  were read in (`documents.house.mo.gov/billtracking/bills261/jrnpdf/jrnNNN.pdf`). A Wikipedia
+  infobox citation is often the fastest way to find the right journal number. Most chambers
+  publish the equivalent; reach for it before recording a date as unobtainable.
 
 ### The `is_vacant` trap
 
@@ -221,6 +426,20 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   house style; match it.
 - **Dry-run against prod first** by wrapping the body `BEGIN; ... ROLLBACK;` — and confirm the
   rollback actually reverted before trusting it.
+- 🔴 **A MIGRATION THAT OVERWRITES A VALUE MUST RECORD THE VALUE IT OVERWROTE, IN ITS OWN HEADER.**
+  There is no history table for most columns, and no `schema_migrations` to replay from, so an
+  `UPDATE` is final: the previous value exists nowhere the moment it commits.
+  - ⚠ **This cost a full production clone on 2026-10-27.** `CA_0335` replaced four
+    `users.display_name` values with generated pseudonyms, recording only the new ones. Undoing it
+    needed a Supabase "restore to a new project" of the whole database to read back four strings
+    — and the clone inherits `pg_cron` and `pg_net`, so it began firing this repo's scheduled jobs
+    at **production** the moment it came up (`cron.unschedule` every job before any read).
+  - 🔴 **It also destroyed the evidence for its own premise.** `CA_0335` said all four rows showed
+    a real name. They did not — two were invented handles. Nobody could check, because the values
+    were gone. **Write the old value down and the claim stays testable.**
+- 🔴 **`ev_api` CANNOT REACH EVERY SCHEMA — `apply-migration-file.mjs` FAILS ON `civic_spaces`**
+  with `permission denied for schema civic_spaces`. That is not a broken credential; it is the
+  role. Apply such a migration through the Supabase MCP, which connects privileged.
 - Numbers collide constantly because branches are long-lived. When renumbering, three things drift:
   filenames, cross-references in comments, **and migration numbers embedded in data already written
   to prod** (`source` columns, `COMMENT`s).
@@ -419,17 +638,90 @@ npm run steward --prefix backend -- extend  place:0642468 --hours 4
     ~1.4 MB here and overflowed `execFileSync`'s 1 MB default with `ENOBUFS`, which the error
     handler swallowed into an empty result. Without the control it would have said
     **"0 untracked, SAFE TO DELETE"** for a worktree full of files.
-  - 🔴 **Run a positive control on any detector that reports "nothing found"** — the rule this
-    encodes. Two detectors were silently broken on 2026-09-04 and only a control exposed them:
-    a file-mtime scan whose threshold predated the checkout, and a `curl` sweep where the host
-    had begun 403-ing every request, turning "this file does not exist" into "you are being
-    blocked".
+  - 🔴 **Run a positive control on any detector that reports "nothing found."** Two detectors were
+    silently broken on 2026-09-04 and only a control exposed them: a file-mtime scan whose
+    threshold predated the checkout, and a `curl` sweep where the host had begun 403-ing every
+    request, turning "this file does not exist" into "you are being blocked". The general form of
+    this rule, and the part about watching the control FAIL first, is in **Verification rules**
+    below.
+
+## Verification rules that each cost a real failure
+
+Every rule here is in the file because skipping it broke something. They are about *checking* —
+they belong to no one subsystem, so they sit on their own rather than inside the section where
+each was first learned.
+
+- 🔴🔴 **A UNIFORM ANSWER IS A BROKEN DETECTOR UNTIL A POSITIVE CONTROL PASSES — AND THE CONTROL
+  MUST BE WATCHED FAILING FIRST.** A control that has only ever passed proves nothing: it can pass
+  for the wrong reason, an earlier gate can shadow the one you meant to test, and a tamper that
+  cannot trip the comparison tests nothing at all. Plant the fault, see the detector go red, then
+  remove it and see it go green.
+  - ⚠ **A control proves a verifier CAN fail. It does not prove the verifier reads the RIGHT
+    ROWS** — for that, check the count it actually examined.
+  - 🔴 **A TAMPER THAT DID NOT APPLY IS A CONTROL THAT PROVED NOTHING, AND IT LOOKS LIKE A PASS.**
+    On 2026-10-26 a `sed` that built a tamper file failed on a quoting error, left a **0-byte**
+    file, and `dry-run-migration.mjs` reported **`DRY RUN OK`** on it — an empty migration passes
+    every gate it does not contain. **Assert the tamper is PRESENT in the file before running it**
+    (grep for a marker, or build it in a script that exits non-zero when the replacement misses).
+  - 🔴 **A CONTROL CAN FAIL CORRECTLY, FOR THE WRONG PROPERTY, AND STILL MISS THE DEFECT.**
+    `ev-jobs-legiscan` died of heap exhaustion; the fix shipped a real control proving a repeat
+    read re-parses — that nothing is **retained** — and the job died again, because the defect was
+    **allocation on the first read** (26,707 entries inflated back to back to read one integer).
+    Removing retention is not removing allocation. **Ask what the defect's MECHANISM is and pin
+    that**, not the nearest property that is easy to assert.
+  - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
+    is alive but not which guard holds which claim.
+- 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
+  on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
+  of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
+  clean permutation of a real one, so "this looks malformed" is a hypothesis, not a finding.
+- 🔴🔴 **GREEN CI IS NOT "THE SERVER BOOTS".** Four deploys have gone out green and failed to
+  start. Boot the built artifact against a **dead** `DATABASE_URL` and watch it come up; and note
+  that `npm install` passing is not `npm ci` passing — the lockfile is what the deploy resolves.
+- 🔴🔴 **PUT THE DIAGNOSTIC WHERE THE PROCESS CAN STILL REACH IT.** A summary printed after the
+  loop teaches a crash nothing. Log the size before, and progress from inside. For memory,
+  `heapUsed`, `external` and `rss` are three different answers — print all three, because the one
+  that grows tells you which thing is leaking.
+  ⚠ **A green run can be a no-op.** Read what it says it did, not just its exit code.
+- 🔴🔴 **`WebFetch` FABRICATES NAMES AND DATES AND FORMATS THEM AS QUOTATIONS.** It once invented
+  four officeholder names and three district labels and presented them as quoted text from the
+  page. Use it to LOCATE a document; never source a **name, a date or a count** from it. A web
+  search summary is a lead, not evidence — open the page and read it.
+- 🔴 **A WAF REJECTION CAN BE HTTP 200 OR 202, so never judge a fetch by `r.ok`.** F5 WAFs on
+  government hosts reject Node's `fetch` on its TLS fingerprint and answer 200 with a challenge
+  body; `curl` and Python `requests` get through. A 403 that persists even with a browser
+  `User-Agent` means **fetch it in Playwright**. Wikimedia 429s a generic UA. ⚠ The inverse
+  happens too, and a challenge may cover **pages** while leaving **files** open.
+- 🔴 **ONE DENIED COMMAND IS NOT A BLOCKED PATH.** Try a different shape before reporting a
+  capability as unavailable — and **never print a secret's value** while doing it. ⚠ An
+  unexplained break from the normal workflow usually means "I am doing this wrong", not "the
+  environment changed".
+- ⚠ **A WORKAROUND SIZED IN UNITS OF A BUG OUTLIVES THE BUG FIX.** When a constant is chosen to
+  dodge a defect, write down what it is dodging, or it becomes permanent and nobody can say why
+  it is that number. 🔴 Render instance of the same thing: **`NODE_OPTIONS` applies to the BUILD**,
+  so a heap flag meant for a job belongs on that job's START command.
+- **Image sourcing is measured, not eyeballed.** A no-monochrome rule that is not enforced in code
+  is not enforced — unenforced it cost 156 frames. **A badge is portrait-shaped: look at the image
+  before accepting it as a headshot.** **A bare CDN URL is not the original** — both the resize and
+  the quality loss can be hiding in the query string.
 
 ## Repo facts worth knowing
 
 - Party affiliation is **antipartisan** by design: party lives on `races.primary_party` (which ballot
   a voter requests), never on `race_candidates`.
 - `geofence_boundaries.state` holds **2-digit FIPS**, not USPS codes.
+- 🔴 **`districts.geo_id` IS A LOOKUP KEY, SO AN EMPTY ONE IS A KEY NOTHING CAN EVER MATCH.** A
+  district with `geo_id = ''` is invisible to every `geo_id`-keyed read — today that is the
+  `government_bodies` join in `DISTRICT_SELECT_FIELDS`, which simply never fires for it. The seats
+  still answer an address, because the statewide branch admits by `district_type` + `state`, so
+  nothing looks broken. `gen-state-exec-seed.mjs` already RAISEs on an empty `STATE_EXEC` geo_id
+  for the states it covers; `CC_0297` fixed the last multi-office one outside that list (Indiana's,
+  10 offices). ⚠ One single-office case is left on purpose — California's Board of Equalization
+  seat, which needs a BOE-district geo_id, not the state FIPS.
+  - ⚠ **A SHARED DISTRICT HOLDING SEVERAL OFFICES IS A LEGITIMATE VARIANT, NOT A DEFECT.** Measured
+    across all 51 jurisdictions: 48 give each statewide executive its own district; CA (17 offices),
+    OR (5) and IN (10) share one. Do not "normalise" one of those into per-office districts — check
+    whether its key is wrong before deciding its shape is.
 - The `essentials` frontend never queries `essentials.*` tables directly — it goes through this API.
 - **Not every seat is residency-based or full-voting.** Maine seats three non-voting *tribal*
   representatives; the territories and DC send non-voting delegates.

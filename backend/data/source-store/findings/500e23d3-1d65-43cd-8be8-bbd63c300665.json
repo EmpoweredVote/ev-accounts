@@ -1,0 +1,461 @@
+{
+  "politician_id": "500e23d3-1d65-43cd-8be8-bbd63c300665",
+  "findings": [
+    {
+      "id": "86c4d82bb8edf4940f13646cad8714954ee38442e04f2b65a3c493a50abc304d",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/33954/Cutler-New-Poll-Shows-Why-Voter-ID-Constitutional-Amendment-is-Worthwhile-Pursuit-?SiteID=1",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "passage": "“The poll released today by F&M shows that 73% of Pennsylvanians support requiring a photo identification each time someone goes to vote.",
+      "note": "Caucus release in his name. He cites a poll and backs a petition to bring a voter ID constitutional amendment to a House vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID each time"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3c1d7c0006cd417fd2a1d6dbb4e9facde7c071eca47a0c45a8373b62c30a158b",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/33954/Cutler-New-Poll-Shows-Why-Voter-ID-Constitutional-Amendment-is-Worthwhile-Pursuit-?SiteID=1",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "passage": "“If this amendment gets approved by the General Assembly by early July, it would be in a position to be considered on the ballot during the November General Election – a high turnout election that would ensure maximum voter participation on this important question,” Cutler said.",
+      "note": "He sets a timeline to put the voter ID amendment before voters in November 2024.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8f1f52ffdbe5dab3360bd14b5ee5b9bd583cc245da11e599c6cb9eb29cd9728",
+      "kind": "own-words",
+      "url": "https://gantnews.com/2024/03/26/pa-house-republicans-to-use-discharge-resolution-process-to-advance-voter-id-constitutional-amendment/",
+      "date": "2024-03-26",
+      "date_precision": "day",
+      "passage": "“Commonsense tells us that as more and more proposals are introduced to make our elections harder to administer and less secure, that simply requiring a state-provided identification at each election is the best way to enhance election integrity.",
+      "note": "Quoted at a House caucus press conference announcing the discharge petition. He describes a state-provided ID at each election. Page published 2024-03-26; press conference was the Monday before.",
+      "subjects": [
+        "voter ID at the polls",
+        "state-provided ID",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a56bb525f063fb20ded9cd722bf57f8db96da2478ab3874c39f234d070de86ad",
+      "kind": "own-words",
+      "url": "https://www.pahousegop.com/News/34119/Latest-News/Cutler-House-Democrats-Continue-to-Fail-Pennsylvanians-on-Election-Reform",
+      "date": "2024-05-01",
+      "date_precision": "day",
+      "passage": "“With 100 signatures on the voter identification constitutional amendment discharge petition, it is clear House Democrats need to get out of their own way and put up this easily achievable election reform for a vote in the House,” Cutler said.",
+      "note": "He presses for a floor vote on the voter ID amendment. The same release also mentions signature verification on mail ballots and pre-canvassing.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot signature verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2fcd993aa742ac74ae7294d8a81d8e5ea4c875792960553527b8204eec647f23",
+      "kind": "own-words",
+      "url": "https://www.pahousegop.com/News/35068/Latest-News/Cutler-Comments-on-Expansion-of-Voter-Registration-Fraud-Investigation-",
+      "date": "2024-10-29",
+      "date_precision": "day",
+      "passage": "“As we are now a week from Election Day, these ongoing issues make it clearer than ever that the most universal answer to many of today’s election integrity questions is requiring voters to show identification at each and every election.”",
+      "note": "Statement on county voter-registration fraud investigations; he ties them to ID at every election. Also mentions the 2021 Voting Rights Protection Act vetoed by the governor, which he says included enhanced voter identification.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter registration fraud",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec87869f68be9fb0059299b3c7175a52df558ef3dc3ca8e01b766ea055544469",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/31158/Cutler-Continues-Call-for-Election-Reforms-?SiteID=1",
+      "date": "2022-08-02",
+      "date_precision": "day",
+      "passage": "“Voters deserve the opportunity to make some of these changes on their own, which is why a bipartisan majority of both chambers supported constitutional amendments to reform Pennsylvania’s post-election auditing process, and voter identification requirements.",
+      "note": "Statement as Speaker after a court ruling on Act 77 (mail voting). He supports voter ID and audit amendments going to voters.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail voting law",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a16fd810e9359cafc163adab90c2f45b584d7454d092afd4adb1478b479c9f50",
+      "kind": "own-words",
+      "url": "https://inquirer.com/philly/news/local/20110624_Pennsylvania_House_backs_photo-ID_bill_for_voters.html",
+      "date": "2011-06-24",
+      "date_precision": "day",
+      "passage": "Rep. Bryan Cutler (R., Lancaster) challenged that assessment, calling the bill \"a move to ensure the constitutional guarantee of one person, one vote.\"",
+      "note": "Inquirer quote on the 2011 House photo ID bill; only the quoted phrase is his own words, the rest is the reporter's sentence.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:07.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('CUTLER'), linked to Bryan D. Cutler (district 100) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Cutler'), linked to Bryan Cutler (district 100) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e95b1d1af19803bdf58f2df5cf2904fb3e56a556ff92a4beded39fab15b6fce2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20201203143301/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2011&sind=0&body=H&type=B&bn=934",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 3166 (Senate amended; the version that became Act 18 of 2012). Read.",
+      "note": "Named as co sponsor ('CUTLER') on the official bill page; linked to Bryan Cutler via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Cutler'), linked to Bryan D. Cutler (district 100) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Cutler, Speaker'), linked to Bryan D. Cutler (district 100) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.707Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Cutler'), linked to Bryan Cutler (district 100) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Cutler, Speaker'), linked to Bryan D. Cutler (district 100) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.461Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a3d6fb831214f4c2211322133a08ec7a6197f94c3ff15992ef4e8946fe922f3",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20250919222333/https://www.palegis.us/legislation/bills/2025/hb437",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-437-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 418 (as introduced; the only printer's number). Text NOT read: no archived copy of the text page was found. Page copy dated 2025-09-19. Memo subject printed on the page: \"Voter ID Constitutional Amendment\".",
+      "note": "Named as co sponsor ('CUTLER') on the official bill page; linked to Bryan Cutler via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d13e52158fce5819ebb61b2e4e6c9ae0e263bc9ae23c829d12a44529c1a0e3a7",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241010200041/https://www.legis.state.pa.us/cfdocs/billinfo/bill_history.cfm?syear=2023&sind=0&body=H&type=B&bn=891",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-891-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 873 (as introduced; the only printer's number). Read. Archived history page copy dated 2024-10-10 still shows referral to State Government as the last action.",
+      "note": "Named as co sponsor ('CUTLER') on the official bill page; linked to Bryan D. Cutler via the official 2023 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('CUTLER'), linked to Bryan D. Cutler (district 100) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.859Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballot",
+        "proof of citizenship",
+        "voter registration fraud",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House caucus site pahousegop.com: five of his releases read in full; repcutler.com site search returned a page-not-found",
+        "Ballotpedia: not reviewed (the fetch tool returned an empty page for the sister file; not retried)",
+        "web search x2 on name plus voter ID, SAVE Act, mail ballot; no 2025-2026 statement found",
+        "bill pages: not searched, votes and sponsorships are linked separately",
+        "scope: sitting state representative, announced he will not seek re-election in 2026 (per a search result, not fetched)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:06:23.805Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:45:58.707Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballot",
+        "proof of citizenship",
+        "voter registration fraud",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official House caucus site pahouse-caucus.com: five of his releases read in full; repcutler.com site search returned a page-not-found",
+        "Ballotpedia: not reviewed (the fetch tool returned an empty page for the sister file; not retried)",
+        "web search x2 on name plus voter ID, SAVE Act, mail ballot; no 2025-2026 statement found",
+        "bill pages: not searched, votes and sponsorships are linked separately",
+        "scope: sitting state representative, announced he will not seek re-election in 2026 (per a search result, not fetched)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T22:47:07.225Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.461Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-29T14:14:50.859Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

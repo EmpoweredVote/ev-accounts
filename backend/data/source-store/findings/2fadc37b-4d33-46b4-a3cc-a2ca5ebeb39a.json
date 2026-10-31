@@ -1,0 +1,58 @@
+{
+  "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id; name search found 0 candidates)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/JDM1 (confirms Representative Joseph D. McKenna, 18th Worcester; no personal website listed)",
+        "legislature bill list https://malegislature.gov/Legislators/Profile/JDM1/Bills (194th Court: no sponsored bills on voter ID, citizenship or elections)",
+        "legislature voter ID bill search https://malegislature.gov/Bills/Search?SearchTerms=voter+identification (first page of results: no bill with him as lead sponsor)",
+        "legislature bill https://malegislature.gov/Bills/194/H833 (voter ID bill, lead petitioner another member; he is not listed as a cosponsor on the cosponsor page)",
+        "Ballotpedia https://ballotpedia.org/Joseph_McKenna (page fetched, no usable content on the subject)",
+        "not reviewed: https://ballotpedia.org/Massachusetts_House_of_Representatives_18th_Worcester_District (empty on fetch and curl)",
+        "not reviewed: https://electionstats.state.ma.us (search page returned no results; 2026 ballot status not confirmed)",
+        "campaign site: none found",
+        "news search: blocked, the shared web search budget was used up, so no news search on his name plus the subject words was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:04:50.106Z",
+      "by": "source-collector"
+    }
+  ]
+}

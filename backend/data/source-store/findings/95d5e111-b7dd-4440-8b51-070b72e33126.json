@@ -1,0 +1,80 @@
+{
+  "politician_id": "95d5e111-b7dd-4440-8b51-070b72e33126",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JKH1 (Representative James K. Hawkins of Attleboro); listed as incumbent, 2nd Bristol District, at https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026",
+        "On the Record (0 appearances)",
+        "legislature sponsored-bills list on profile JKH1: nothing on the subject (only an election-day holiday bill, H.3344, not on proof of identity)",
+        "legislature amendments page for H.4359: no extra record read beyond the vote already on file",
+        "Ballotpedia personal page: not found (page does not exist at James_Hawkins_(Massachusetts_politician))",
+        "blocked: web search budget used up, so no news search and no official or campaign site keyword search was run",
+        "not reviewed: official house site and campaign site"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:16:20.993Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/JKH1/194/Biography (confirms him as 2nd Bristol representative, 2018 to present)",
+        "legislature sponsored bill lists (194th Court): only an election-day-holiday petition, not on the subject; no voter ID bills",
+        "past-candidate profile https://www.massalliance.org/?p=1215: nothing on the subject",
+        "one news search on name plus voter ID and elections: nothing on the subject",
+        "his campaign site hawkins4rep.com: not reviewed",
+        "Ballotpedia: not reviewed",
+        "2026 ballot status not separately confirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:29:03.933Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

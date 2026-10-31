@@ -1,0 +1,290 @@
+{
+  "politician_id": "25bad59c-2f84-4c7e-a664-3aa33e1d6b41",
+  "findings": [
+    {
+      "id": "62d1ab45e7ef962047afb803830c40128b1b367a5f7c5c8c89ab9daaa71d1b88",
+      "kind": "own-words",
+      "url": "https://pahouse.com/Donahue/About/Biography",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "He will work to protect the integrity of elections.",
+      "note": "Office biography text (third person, issued by his House office). Same priority appears in his 2023-01-03 swearing-in release (https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149), which also lists wider access to the ballot. No mention of voter ID. Extraction via fetch tool, not raw HTML.",
+      "subjects": [
+        "election integrity laws in general",
+        "ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.419Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Donahue'), linked to Kyle Donahue (district 113) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Donahue'), linked to Kyle Timothy Donahue (district 113) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.721Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('DONAHUE'), linked to Kyle Timothy Donahue (district 113) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:01:24.715Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.721Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:47:07.212Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:52:01.934Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:59:56.355Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:05:26.597Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:13:34.916Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=127149 (2023-01-03 release)",
+        "https://pahouse.com/Donahue/InTheNews/NewsRelease/?id=136685 (2025-01-07 release, nothing on voter ID)",
+        "https://pahouse.com/Donahue/About/Biography",
+        "not reviewed: On the Record extraction (repo script not run in this session)",
+        "blocked: https://ballotpedia.org (empty page, not retried)",
+        "web searches on name plus voter ID, photo ID, election integrity: no own words on the subject beyond findings listed",
+        "legislature bill pages for sponsorships: not reviewed (votes and sponsorships are linked separately)",
+        "2026 general-election ballot status not confirmed from any page"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.419Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

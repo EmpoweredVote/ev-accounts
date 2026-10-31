@@ -1,0 +1,135 @@
+{
+  "politician_id": "a16b4745-7388-4818-abf4-ee50d4d4c520",
+  "findings": [
+    {
+      "id": "9e6ed7f9766930a75e7852e2d77bcf88661c83c35b1d3c9e69a6558232fbf2e0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/784",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS 758), passed 66-47",
+      "note": "Voted aye on second reading of HB 958. The 2026 version requires a county board to process a registration only if the applicant affirmatively states US citizenship (with a 30-day sworn-statement cure if left blank), and sets up removal of voters flagged as non-citizens from a federal database. The bill text does not add a photo-ID rule.",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship question on registration",
+        "non-citizen removal from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:46:42.637Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec72118273245cf3665cf905a81719ced9a42f3589238ae567c26cecdfada2ba",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/784",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur (RCS 801), passed 62-47",
+      "note": "Voted aye on concurring with the Senate changes to HB 958, the final House vote on the bill (same citizenship-on-registration and non-citizen removal provisions).",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship question on registration",
+        "non-citizen removal from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:46:42.637Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/H/784 (Representative Ben T. Moss, Jr., NC House District 52; member list page names him for Moore and Richmond counties); 2026 general-ballot status not confirmed",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia: page Ben_T._Moss_Jr. does not exist (nothing on the subject)",
+        "NC General Assembly biography page (fetched, no subject content)",
+        "campaign site: not reviewed: https://www.benmossnc.com (page is a script-rendered site; could not confirm it is his or read its text)",
+        "NC General Assembly bill sponsor lists: not reviewed: https://www.ncleg.gov/Legislation/Bills/ListBySponsor/2025/H/784 (page returned no readable bill list)",
+        "web news search: not reviewed (the session's 200-search budget was used up before this person)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:02:07.730Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "citizenship question on registration",
+        "non-citizen removal from voter rolls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia and the NC legislature member page show Ben T. Moss, Jr. is House District 52 incumbent on the 2026 general-election ballot (primary was cancelled)",
+        "On the Record (0 meetings found)",
+        "campaign site benmossnc.com: nothing on the subject",
+        "NC legislature introduced-bills list (2025-26): no election, ID or citizenship bills sponsored",
+        "NC legislature member roll-call page: HB 958 votes found",
+        "NC legislature bill page and ratified text of HB 958",
+        "Ballotpedia: nothing on the subject",
+        "iVoterGuide: nothing on the subject",
+        "two news/web searches on name plus subject words: nothing from him"
+      ],
+      "found": 2,
+      "at": "2026-10-27T14:46:42.637Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

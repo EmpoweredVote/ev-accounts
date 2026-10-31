@@ -1,0 +1,421 @@
+{
+  "politician_id": "e0a0c582-de13-4999-88fd-859a4dfba6c2",
+  "findings": [
+    {
+      "id": "c31d94e836e22f6fda486dd0995865d294ab0088a25625586d16314e013763cc",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/J._M._Lozano",
+      "date": "2012",
+      "date_precision": "year",
+      "passage": "Representative Lozano authored and fought for a bill that would require a photo on every voter registration card. That's how you fight voter fraud. (Source: Rep. Lozano, 82(R), HFA-CSSB14-Voter Registration Certificate Must Include Photo).",
+      "note": "Voter ID excerpt that Ballotpedia reports from his 2012 campaign website, written about him in the third person. It refers to a 2011 amendment on SB 14.",
+      "subjects": [
+        "photo on voter registration card",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cc193764d0138bd228e26ecb7c5a04c39b205c0ac3737c4c64babd273637f60",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY41FINAL.PDF#page=10",
+      "date": "2011-03-24",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "Third reading, SB 14, requirements to vote including proof of identification (Record 156, 101 yeas, 48 nays)",
+      "note": "House Journal record vote on passing SB 14, the 2011 photo ID law. The Journal lists this member among the nays.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf8c7ce0ad26e7c15b8988b325d7d46ac1916febd4ed3f1d22518701e44e517c",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY77FINAL.PDF#page=86",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "Adopting the conference committee report on SB 14 (Record 1128, 98 yeas, 46 nays)",
+      "note": "House Journal record vote on adopting the final conference report for SB 14. The Journal lists this member among the nays.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e8bde8e575ec209b86a2e2f13bf3d0514bc031f9a66abc72c7aa7a31a2be27d",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY79CFINAL.PDF#page=24",
+      "date": "2017-05-24",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "Third reading and passage, SB 5, requiring a voter to present proof of identification (Record 1715, 93 yeas, 55 nays)",
+      "note": "House Journal record vote on passing SB 5. The Journal lists this member among the yeas.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aeaf8f84698ab644ff41e9b3ec47481403beee6f2b5e3d099763f7c22f99eaa6",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "other",
+      "motion": "Cosponsor of SB 5, proof of identification to vote",
+      "note": "Listed as a House cosponsor of SB 5, a bill requiring a voter to present proof of identification. It took effect 2018-01-01. The date the name was added is not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "316c5043d9893170a0b1f9e91e18da0bd7a1d5e4907b6fb7286cdd467f2b12bc",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY42FINAL.PDF#page=9",
+      "date": "2021-05-07",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "yea",
+      "motion": "Third reading and passage, SB 7, election integrity and security (Record 848, 78 yeas, 64 nays)",
+      "note": "House Journal record vote on passing SB 7, a broad election bill. The Journal lists this member among the yeas.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b0e927e5b5ee94905c9d6ddce603a07ea09582278359e53323354ebeb8c1e3f",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=87R&Bill=SB7",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SB-7-2021",
+      "act": "other",
+      "motion": "Cosponsor of SB 7, election integrity and security",
+      "note": "Listed as a House cosponsor of SB 7, a broad election bill. The date the name was added is not shown on the page.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5083fb099b138c6ec46441f3919a03234be263d94fa82206fbb5d9896b2ec990",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY55FINAL.PDF#page=48",
+      "date": "2021-05-25",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1111-2021",
+      "act": "yea",
+      "motion": "Third reading and passage, SB 1111, residence address of a voter on a confirmation notice (Record 1451, 81 yeas, 65 nays)",
+      "note": "House Journal record vote on passing SB 1111, about the residence address a voter gives in reply to a registrar's confirmation notice. The Journal lists this member among the yeas.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba85002be559abdc59ea48f43c70bfa316f404aedfeab9db9e86051f2d4f0264",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF#page=3",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "Third reading and passage, SB 1 (second called session), election integrity and security (Record 61, 80 yeas, 41 nays)",
+      "note": "House Journal record vote on passing SB 1, a broad election bill. The Journal lists this member among the yeas.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b2f139a70e3e0bdca494bccd47a06e6c30c67c1a90cdf21d43f4fd156934d3bd",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF#page=5",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "Adopting the conference committee report on SB 1 (second called session) (Record 118, 80 yeas, 41 nays)",
+      "note": "House Journal record vote on adopting the final conference report for SB 1. The Journal lists this member among the yeas.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "656fdbe7f1434ff612abf5cdad38d2b201041ea959ba3f70f90986a7ae0a2d78",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "sponsor",
+      "motion": "House sponsor of SB 1 and member of its House conference committee (second called session)",
+      "note": "The bill page lists this member as a House sponsor of SB 1, a broad election bill, and as a member of the House conferees appointed 2021-08-27.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d334970d868771469eff2be2548c23177b83505e20e22394feb19d973d6a7214",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB2739",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 2739, address on ID must match voter list",
+      "note": "Listed on HB 2739, a bill requiring the address on an ID shown by a voter to match the address on the voter list. It was left pending in House committee on 2025-04-17. The date the name was added is not shown on the page.",
+      "subjects": [
+        "ID address must match voter list",
+        "ID used at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76df7f2c3a3c27ec96b3f87c348458e4cd79015587ad0e8d3c5a3ab060f07363",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SJR37",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "other",
+      "motion": "Cosponsor of SJR 37, constitutional amendment that a voter must be a US citizen",
+      "note": "Listed as a House cosponsor of SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The date the name was added is not shown on the page.",
+      "subjects": [
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98de0986a37d6e5fb596539bf12e0f3cb6a92e226f523f506ded04a1044301a1",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF#page=111",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Final House adoption of SJR 37, constitutional amendment that a voter must be a US citizen (Record 2196, 102 yeas, 14 nays, 22 present not voting)",
+      "note": "House Journal record vote on adopting SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The Journal lists this member as voting yea.",
+      "subjects": [
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64fa34e2edcb101db8082d58d211d3d5e2d0061184fd5387214334962a0ed12",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB2739",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-2739-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Introduced (only version)",
+      "note": "Listed as co of TX-HB-2739-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.522Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ea998983c7be9286060a6e945c3e7967d26a6b972212755372f9058642ec8a",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HJR161",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HJR-161-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HJR-161-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.522Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll citizenship checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia page J._M._Lozano (HD 43 member, on the 2026 general-election ballot; page quotes his 2012 campaign site)",
+        "House member page, media, newsletters and biography pages (nothing on the subject)",
+        "campaign site lozanofortexas.com home page and issues page (nothing on the subject; the live site is for an earlier campaign)",
+        "Texas Legislature Online authored-bill lists for 88R, 89R, 89(1), 89(2)",
+        "Texas Legislature Online bill pages and House Journal record votes for SB 14 (2011), SB 5 (2017), SB 7 and SB 1111 (2021), SB 1 (2021 second called session), SB 9 (2019, no vote found), SJR 37, HB 2739, SB 16 (not listed)",
+        "web search on name plus subject words (no own words found beyond the Ballotpedia quote)",
+        "not reviewed: 2011 House amendment HFA-CSSB14 (photo on voter registration certificate), the text of the amendment was not reached"
+      ],
+      "found": 14,
+      "at": "2026-10-28T15:31:14.410Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:55:41.522Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "carry permits and permitless carry",
+        "red-flag orders",
+        "Second Amendment statements",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed: https://house.texas.gov/members/2065/biography (State Representative, House District 43, 89th Legislature); nothing on the subject",
+        "Texas House member page https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A2065; nothing on the subject",
+        "Texas Legislature authored-bills report 89R https://capitol.texas.gov/reports/report.aspx?LegSess=89R&ID=author&Code=A2065; no firearm/gun/handgun/weapon/carry terms in the list; other sessions not reviewed",
+        "blocked: https://ballotpedia.org/J.M._Lozano (empty response)",
+        "news/web search on name plus gun words; nothing on the subject",
+        "no official campaign site found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

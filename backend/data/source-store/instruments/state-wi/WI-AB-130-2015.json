@@ -1,0 +1,33 @@
+{
+  "id": "WI-AB-130-2015",
+  "scope": "state:wi",
+  "title": "AB 130 (2015-2016 Wisconsin Legislature, regular session): tribal identification cards.",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2015/proposals/ab130",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2015/REG/AB130"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) s. 995.70 (created)\n(quote) Proof of identity for purchase of schedule II and III controlled substances. [s. 450.11, stats.] The bill specifies that a tribal identification card is sufficient identification for purposes of a law only if it includes the full name, address, and birth date of the card holder, a photograph of the card holder, and any other information required by the law.\n(other) LRB analysis (printed with the bill): The bill provides that identification cards issued by an American Indian tribe or band must be accepted as sufficient proof of identity for the purpose of any law that requires a person to present identification.\n(other) LRB analysis (printed with the bill): The bill includes provisions relating to enforcement that are modeled on provisions of the state open records law.",
+  "sponsors": [
+    {
+      "name": "Joint Legislative Council",
+      "role": "prime",
+      "version": "As introduced 3/27/2015 by the Joint Legislative Council; hearing 5/27/2015; died (Failed to pass pursuant to Senate Joint Resolution 1, 4/13/2016)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T23:12:49Z)",
+    "fetched_at": "2026-10-28T23:12:49Z",
+    "method": "curl"
+  }
+}

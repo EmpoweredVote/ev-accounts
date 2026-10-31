@@ -1,0 +1,175 @@
+{
+  "politician_id": "81932e53-b3f3-436a-90bb-61df43447953",
+  "findings": [
+    {
+      "id": "1e875e79e8e732cfa438463e595732c3f91c79e43b9c83b3693960d52cdf4a9c",
+      "kind": "own-words",
+      "url": "https://whartonfortexas.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Ensure the integrity of our elections",
+      "note": "One line in the 'Trey's Priorities For Texas' list on his campaign home page. Page was fetched 2026-10-28; exact posting date unknown.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:43.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "62534113df0ae50bc0d82c680196199f2ffc454ee5daa90bd2975129f42e5dcf",
+      "kind": "own-words",
+      "url": "https://whartonfortexas.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Finish the fight to close our primaries.",
+      "note": "First line in the same campaign priorities list. It is about who may vote in party primaries, a related election-rules topic. Page was fetched 2026-10-28; exact posting date unknown.",
+      "subjects": [
+        "who may vote in primaries (related election rule)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:43.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3ab0097206d998f4a5eae2385b9148ea634092d8173b7c4b720a78f9dfd5fae",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "sponsor",
+      "motion": "House cosponsor of SB 16, proof of citizenship to register to vote",
+      "note": "He is named in the House cosponsor list on the state's bill history page for SB 16 (89th regular session). A BillTrack50 summary says the bill requires documented proof of citizenship, such as a passport or birth certificate, to register to vote. The bill passed the Senate and stalled in the House.",
+      "subjects": [
+        "proof of citizenship to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:12:43.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.531Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8452811875ffd8d47ae142f799842b39773dd5b18d1b9eec537de75f7e3066c4",
+      "kind": "own-words",
+      "url": "https://whartonfortexas.com",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Support law enforcement and our 2nd Amendment rights.",
+      "note": "Line from his campaign site's list of priorities.",
+      "subjects": [
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail ballots",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "closed primaries",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia page confirms Trey Wharton, Texas House District 12, term ends 2027, on the 2026-11-03 general-election ballot",
+        "On the Record (0 meetings found)",
+        "campaign site (whartonfortexas.com): priorities list has two relevant lines",
+        "official Texas House member page (https://house.texas.gov/members/4795): nothing on the subject beyond a site-wide link",
+        "Ballotpedia: nothing on the subject",
+        "Texas Legislature Online history page for SB 16 (2025): lists him among House cosponsors",
+        "BillTrack50 page for SB 16: lists him among sponsors",
+        "news search on his name plus subject words: no direct statement from him found",
+        "blocked: https://legiscan.com/TX/bill/SB16/2160 (403)",
+        "not reviewed: Texas Legislature Online floor-vote records for other 2025 election bills"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:12:43.623Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.531Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun sponsorships",
+        "carry",
+        "firearm bans",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site whartonfortexas.com",
+        "Branch candidate profile",
+        "web search on name plus Second Amendment (no gun bill by him confirmed)",
+        "KWHI re-election announcement: nothing on the subject",
+        "Texas Gun Rights survey pages: advocacy group's rating, not his words, not saved",
+        "capitol.texas.gov bill pages: not reviewed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

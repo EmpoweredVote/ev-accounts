@@ -1,0 +1,204 @@
+{
+  "politician_id": "bfe038f2-7f9c-4b13-b52a-ddfc3177c418",
+  "findings": [
+    {
+      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+      "note": "Senate Journal roll call as printed ('Anderson, L.'), linked to LEE ANDERSON (district 24) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-67-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, L.'), linked to LEE ANDERSON (district 24) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cbe43a97c9f8d345a2aa9027876ead8d84d6e659e45b0906dfdb1f3999aa14b",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-241-2021",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 241 by Senate Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, L.'), linked to LEE ANDERSON (district 24) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3d751c81711dbe038f4ddbe59334eaa33fb1290fce8cd2a78ec644eadf36d79d",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Anderson'), linked to Lee Anderson (district 117) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+      "note": "Senate Journal roll call as printed ('Anderson, L.'), linked to Anderson, Lee (district 24) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+      "date": "2019-03-13",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-316-2019",
+      "act": "yea",
+      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+      "note": "Senate Journal roll call as printed ('Anderson, L.'), linked to LEE ANDERSON (district 24) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cef9abfaa5ac617848f52c1460adb05ef0b58cda026c11629c4a7abf2398bc0c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/60396 (unreadable JS; unconfirmed it is SB 202)",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, House Substitute to Senate Bill 202 (file label SB 202/HRCSFA; the PDF is headed HOUSE SUBSTITUTE TO SENATE BILL 202; the journal shows the Rules Committee substitute adopted as amended on the floor), passed by the House 2021-03-25 100-75 and agreed to by the Senate 2021-03-25 34-20; became Act 9. The enrolled Act text itself was not found on the document API.",
+      "note": "Named as co sponsor ('Anderson of the 24th') on the official bill text; linked to LEE ANDERSON via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.408Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Scope: thecandidate.com identifies him as State Senator, District 24; it does not say whether he is on the 2026 ballot, so scope is unconfirmed.",
+        "Identity page fetched: https://thecandidate.com/states/ga/legislature/senate/24/lee-anderson",
+        "On the Record (0 meetings; script found no appearances)",
+        "blocked: https://ballotpedia.org/Lee_Anderson_(Georgia) (page came back empty)",
+        "blocked: https://app.legiplex.com/profile/lee-anderson-286/ga/legislatures/2025/2025-r/legislation (403)",
+        "https://www.ballotready.org/people/lee-anderson (billsponsor.com sponsor list; no election, voter ID or citizenship bills shown, list is partial)",
+        "web searches by name plus voter ID, citizenship, election integrity: no own words and no sponsored bill on the subject found",
+        "not reviewed: legis.ga.gov bill pages (need a login token)",
+        "not reviewed: official legislature member page and any campaign site (not reached within the search; no campaign site turned up in searches)",
+        "Checked and rejected: Northeast Georgian 2023 article 'Anderson looks to secure voting integrity' is about a different person (Victor Anderson).",
+        "Local 2021 bills SB 282/SB 283 (Lincoln County election board) are about a county board, not proof of identity or citizenship; not saved.",
+        "Possible 2025-26 Senate bill on election-board rule timing was seen only in a search summary and not fetched; not saved."
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.749Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 7,
+      "at": "2026-10-28T20:51:14.408Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

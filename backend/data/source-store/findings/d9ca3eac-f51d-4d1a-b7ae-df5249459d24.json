@@ -1,0 +1,89 @@
+{
+  "politician_id": "d9ca3eac-f51d-4d1a-b7ae-df5249459d24",
+  "findings": [
+    {
+      "id": "8e4e6a70699bcb2f3b58431ce7ef362fddab45a6a6fdb7f335ea41b633f6c3f2",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "yea",
+      "motion": "SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "IN House, SB 10 - Culp - 3rd Reading: Bill Passed (roll call 340), 2025-04-01: yea (tally 66–26); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:19:41Z",
+        "method": "api",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/in/SB0010.04.ENRH.pdf",
+          "sha256": "ddcebf6ca26f2c35c890837309356c43ca79fb7490cdeb53d149767892672776"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Elizabeth_Rowray names her as Indiana House District 35 incumbent, on the Nov 3, 2026 general ballot after the May 5, 2026 primary",
+        "On the Record (0 meetings)",
+        "Ballotpedia: nothing on the subject",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/elizabeth-rowray/ (first page of press list, 2024-2026): nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_elizabeth_rowray_1 (page needs JavaScript; bill sponsorship lists not readable)",
+        "not reviewed: personal campaign site and social media (not located; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: older pages of the caucus press-release list and the Indiana House voting records on election bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:53:47.341Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "identity check: Elizabeth Rowray is the Indiana House District 35 member and is on the 2026-11-03 ballot per https://www.multistate.us/elections/results/indiana-2026 and https://www.indianahouserepublicans.com/members/general/elizabeth-rowray/",
+        "On the Record (0 meetings)",
+        "House caucus member page and its sampled news list (https://www.indianahouserepublicans.com/members/general/elizabeth-rowray/): nothing on the subject",
+        "Wikipedia member page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Elizabeth_Rowray (page returned empty)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_elizabeth_rowray_1 (page returned only a title)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/senate/10/details (page returned only a title; votes are already on file from the official feed)",
+        "campaign site: not found (guessed address did not resolve)",
+        "news and web search on name plus voter ID, proof of citizenship, SB 10 and HB 1680: nothing naming her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:52:46.631Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

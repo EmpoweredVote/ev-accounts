@@ -1,0 +1,244 @@
+{
+  "politician_id": "b0ef94c3-d047-4af3-907d-3d1da2b09e50",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "92e40c540708657f2ed5b4636c27ce65b93fc1f6db6400612819b8ebbd320058",
+      "kind": "own-words",
+      "url": "https://letlow.house.gov/media/press-releases/letlow-votes-pass-save-america-act",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "passage": "\"I voted for the SAVE America Act to ensure our elections are only decided by American citizens. This vital election integrity measure has been a huge priority for my constituents, who count on me to speak for them in our nation's capital. It's time for the Senate to act on securing our elections and stopping noncitizens from voting — because only American citizens should decide American elections.\"",
+      "note": "Official statement after House passage. The release describes the bill as barring noncitizens from voting and requiring photo ID to vote nationwide.",
+      "subjects": [
+        "SAVE America Act",
+        "non-citizen voting",
+        "photo ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4c1168b2f7ad0542ed3b28759440dce187592d25c9454c67b8352884e46562f",
+      "kind": "own-words",
+      "url": "https://letlow.house.gov/media/press-releases/letlow-senate-must-advance-save-america-act-talking-filibuster",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "“Only Americans should be voting in American elections, but election integrity has stalled in the Senate,” said Congresswoman Julia Letlow. “The modern filibuster is blocking a real debate on preventing fraud in our elections. The Senate should advance the SAVE America Act by enforcing a talking filibuster, if that’s what it takes to secure our elections.”",
+      "note": "Press release urging the Senate to use a talking filibuster to pass the SAVE America Act. The release says the bill requires proof of citizenship to register and photo ID to cast a ballot.",
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register",
+        "photo ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca3653fa5f985112dcf13dc6a0ecbc035019f544c52e67eedf1ceba71cb366c0",
+      "kind": "own-words",
+      "url": "https://letlow.house.gov/media/press-releases/letlow-senate-must-advance-save-america-act-talking-filibuster",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "“If Democrats want to obstruct this bill, they should have to stand on the floor and explain to the American people why they oppose proof of citizenship for voting,” added Letlow.",
+      "note": "Same release. She backs proof of citizenship for voting and criticizes opponents of the bill.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92a5025bf1bc97d77784a15a71951865c2352b3f71a55311e4bae814a855aa9a",
+      "kind": "own-words",
+      "url": "https://www.aol.com/articles/exclusive-rep-julia-letlow-urges-131948773.html",
+      "date": "2026-05-29",
+      "date_precision": "day",
+      "passage": "\"Voter fraud is a serious issue,\" Letlow said. \"If you don't want to show an ID to vote, I assume you want to cheat. And unfortunately, election integrity has stalled in the Senate even as President Trump pushes for secure elections.\"",
+      "note": "Quote from an interview with the Daily Caller News Foundation, republished by AOL. Date taken from the matching entry on letlow.house.gov (In the News), which shows May 29, 2026. She speaks on showing ID to vote and on voter fraud.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter fraud",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d40152719c4ba6e188ff2a95b803771d5dee9c924c84b5ab6564cb449c5a1c0b",
+      "kind": "own-words",
+      "url": "https://www.aol.com/articles/exclusive-rep-julia-letlow-urges-131948773.html",
+      "date": "2026-05-29",
+      "date_precision": "day",
+      "passage": "\"I firmly believe, as do most Americans, that only Americans should be voting in our elections. It's common sense and that's why I and so many others strongly support the Save America Act, including President Trump,\" Letlow, who has Trump's endorsement in her Senate race, said in an interview with the Daily Caller News Foundation.",
+      "note": "Interview statement of support for the SAVE America Act and for citizen-only voting. The clause about the endorsement is the reporter's, not hers.",
+      "subjects": [
+        "SAVE America Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f686201684deac37c5835aea3f88cf8b173a0541c8d5d50d771f09df0a9b25c8",
+      "kind": "own-words",
+      "url": "https://www.aol.com/articles/exclusive-rep-julia-letlow-urges-131948773.html",
+      "date": "2026-05-29",
+      "date_precision": "day",
+      "passage": "\"I'm not surprised Democrats don't support secure elections, but Senate Republicans shouldn't be letting the Save America Act die without a fight,\" Letlow told the DCNF. \"I believe Senators like Bill Cassidy should speak up and force Senate Democrats to defend their support for illegal immigrants voting in our elections.\"",
+      "note": "Interview statement pressing the Senate to pass the SAVE America Act. Connects the bill to non-citizen voting.",
+      "subjects": [
+        "SAVE America Act",
+        "non-citizen voting",
+        "Senate procedure (talking filibuster)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:31.529Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "non-citizen voting",
+        "election integrity / voter fraud",
+        "mail-ballot ID",
+        "voter with no ID"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "letlow.house.gov home page and press releases",
+        "letlow.house.gov In the News",
+        "AOL copy of Daily Caller News Foundation interview",
+        "web search for SAVE Act statements and the Feb 2026 House vote",
+        "blocked: backend list-discovered-sources.ts (not run: it needs environment variables that were missing; .env not read)",
+        "not checked: campaign site, Ballotpedia, clerk.house.gov roll call page"
+      ],
+      "found": 6,
+      "at": "2026-10-22T21:10:31.529Z",
+      "by": "source-collector"
+    }
+  ]
+}

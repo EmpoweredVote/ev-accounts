@@ -1,0 +1,129 @@
+{
+  "politician_id": "e91f21c8-43b5-4e33-a3eb-a8206817df78",
+  "findings": [
+    {
+      "id": "b0393e13832243fa893739cecb9dc0d69671d6645e2553ad96052072f3fd7156",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends",
+      "note": "Senate roll call 439 on SB 747, Elections Law Changes, passed 27 to 18. Salvador is listed among the Noes. The bill's subject tags on ncleg.gov include voter registration, aliens and ballots; the fetched pages did not show any photo ID or proof-of-citizenship text, so this is a related election-law vote only.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:31.952Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e9fa8ede695b4e06f6bd34d6698482bc084180db15c79f0938a85e422366e97",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override",
+      "note": "Senate roll call 482 on overriding the governor's veto of SB 747, Elections Law Changes, passed 30 to 19. Salvador is listed among the Noes. Related election-law vote only; no photo ID or proof-of-citizenship text was seen in the fetched pages.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:31.952Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d23f4bd0e994c100ea1f1ca8d732d21e7290e794c627796366b4657a4ee86d5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: nay (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/DeAndrea_Salvador (NC Senate District 39, on the 2026 general-election ballot; primary was canceled)",
+        "On the Record (0 meetings)",
+        "campaign site: blocked: https://deandreasalvador.com (Squarespace 'Website Expired')",
+        "official legislature member page: blocked: https://www.ncleg.gov/Members/Biography/S/783 (HTTP 500)",
+        "ncleg.gov bill page and Senate roll calls for SB 747 (2023), reviewed",
+        "ncleg.gov SB 747 bill summary page: nothing on the subject found in the fetched text",
+        "Ballotpedia: nothing on the subject",
+        "web news search on name plus subject words: not reviewed: search budget used up",
+        "own-words search (questionnaires, interviews, posts): not reviewed: search budget used up",
+        "ncleg.gov sponsorship lists on voter ID bills: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:13:31.952Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or military-overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (confirms sitting NC Senate District 39 member, on the 2026 general-election ballot; no 2026 survey answers; nothing on the subject)",
+        "news search on name plus voter ID words: nothing naming her",
+        "official legislature page and campaign site: not reviewed, no direct page fetched for her"
+      ],
+      "found": 0,
+      "at": "2026-10-27T22:08:05.344Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

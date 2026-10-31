@@ -1,0 +1,143 @@
+{
+  "politician_id": "e947c3c1-41f5-48d8-b105-5a0c39aa21ae",
+  "findings": [
+    {
+      "id": "0a101716fe8e38b391ae80456f5371dab159af096ecc4bc9a90254a61342b722",
+      "kind": "own-words",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-defends-arizonas-proof-citizenship-voter-registration-law-us",
+      "date": "2026-08-28",
+      "date_precision": "day",
+      "passage": "“Ensuring that only eligible citizens cast a ballot is vital to protecting the integrity of our elections, and Arizona has long been a national leader on this issue. I am proud to defend Arizona’s laws at the Supreme Court.”",
+      "note": "Her quote in an Attorney General's office press release announcing a brief at the U.S. Supreme Court defending Arizona's proof-of-citizenship requirement for people registering on the state form. The release also quotes her saying Arizona has clear authority to make sure the people registering to vote here are actually eligible.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:12.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06a4d7ef7a6b155ee43bbf68075358c719f33348b58ff9873612897265977253",
+      "kind": "own-words",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-issues-statement-secretary-noem-press-conference-remarks",
+      "date": "2026-02-13",
+      "date_precision": "day",
+      "passage": "In fact, Arizona already requires documentary proof of citizenship to register to vote.",
+      "note": "From a statement issued in her name replying to a federal official's remarks about Arizona elections. The same statement says voter fraud is exceedingly rare and has not played a meaningful role in the outcome of an election.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter fraud claims",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:12.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dea0373ec1001a6b8949a4f9bd7d9925e24e22d25a2e562e603e7da2d3f5abf4",
+      "kind": "record",
+      "url": "https://www.azag.gov/opinions/i24-015-r24-015",
+      "date": "2024-09-20",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attorney General Opinion I24-015 (R24-015), treatment of state voter registration forms not accompanied by documentary proof of citizenship",
+      "note": "Opinion issued by her to the Secretary of State. It says county recorders should run the standard motor-vehicle database check for proof of citizenship before rejecting a state form, and that missing proof may be supplied until 7:00 p.m. on election day.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:12.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fda409efccae332f5965e4a4feddf5bf770e58330b96926b84caf2209a520ece",
+      "kind": "record",
+      "url": "https://www.azag.gov/opinions/i25-007-r25-009",
+      "date": "2025-08-18",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attorney General Opinion I25-007 (R25-009), voters with legacy driver-license records and proof of citizenship",
+      "note": "Opinion issued by her to the Secretary of State. It says county recorders may ask affected voters for satisfactory evidence of citizenship but may not cancel a registration merely because of a records error or because the voter does not respond.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:12.716Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9bd8f7f412c6de798e16a9b94584f34b568e5e0cdaf62d6b6bf907c527510927",
+      "kind": "record",
+      "url": "https://www.azag.gov/press-release/attorney-general-mayes-and-secretary-state-fontes-join-multistate-lawsuit-against",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined multistate lawsuit over Executive Order 14248, including its documentary-proof-of-citizenship requirement for military and overseas voters",
+      "note": "Her office announced she joined 19 states suing over the order. The release challenges the provision requiring military and overseas voters to submit documentary proof of citizenship, saying the federal form has no such requirement.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "federal election executive order"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:12.716Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, extract-otr ran with her name)",
+        "in scope: https://theballotbrief.com/state/arizona lists her as the incumbent Attorney General and a candidate for re-election on the 2026 ballot",
+        "Attorney General office press releases (three fetched, saved below): 2026-08-28, 2026-02-13, 2025-04-03",
+        "Attorney General formal opinions I24-015 and I25-007 (fetched, saved as records)",
+        "campaign site https://krismayes.com and /issues: page text is script-rendered, no readable issue text",
+        "blocked: https://www.tucsonsentinel.com/local/report/101522_candidate_profile_mayes/ (bot check)",
+        "https://www.sanjuandailystar.com/post/voter-fraud-unit-in-arizona-will-shift-focus-to-voter-rights: fetched, page text not readable, not used",
+        "not reviewed: https://ballotpedia.org/Kris_Mayes",
+        "four web searches on her name plus subject words: no statement on photo ID or the SAVE Act found"
+      ],
+      "found": 5,
+      "at": "2026-10-28T23:18:12.716Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

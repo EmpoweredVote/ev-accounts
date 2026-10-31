@@ -1,0 +1,197 @@
+{
+  "politician_id": "04b6a538-a78d-4e1a-b735-031e425ce81f",
+  "findings": [
+    {
+      "id": "5faf7eff25ee99d2f01985b8c1067de656a33b1eed588a751226e3c19cc87ec4",
+      "kind": "own-words",
+      "url": "https://senatedems.com/shink/2026/05/20/voting-rights/",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "“While the U.S. Supreme Court, Congress, and the Trump administration are working to strip Americans of our fundamental voting rights, we must counteract these harmful decisions with voter empowerment and state protections,” said Sen. Shink.",
+      "note": "Her statement in a press release about a voting-rights town hall she hosted on 14 May 2026 with state and county election officials. It speaks of voting rights in general and does not name voter ID or proof of citizenship.",
+      "subjects": [
+        "election integrity laws in general",
+        "state voting protections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:26.030Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9fa0797cf1ac05255fe88a5680ed124be44e7c23ca6760e5d6a1bf3ce21277b4",
+      "kind": "own-words",
+      "url": "https://senatedems.com/shink/2026/05/20/voting-rights/",
+      "date": "2026-05-15",
+      "date_precision": "day",
+      "passage": "During the event, Sen. Shink and election officials provided updates on Michigan’s election laws, emphasizing the need for statewide voting protections amid voting rights rollbacks happening nationwide.",
+      "note": "Her office's release says the town hall covered Michigan's election laws and that residents raised the federal SAVE Act; it gives no position on it.",
+      "subjects": [
+        "SAVE Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:45:26.030Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Shink'), linked to Sue Shink (district 14) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Sue Shink (District 14)') on the official bill page; linked to Sue Shink via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Shink'), linked to Sue Shink (district 14) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Sue Shink (District 14)') on the official bill page; linked to Sue Shink via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00bc71bd1db70bc4671e9fcc476135332a3d1605bf81bae505a919c7e788715a",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2025-SB-0621",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-621-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"SENATE BILL NO. 621 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 (MCL 168.2), as\"",
+      "note": "Named as co sponsor ('Sue Shink (District 14)') on the official bill page; linked to Sue Shink via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "not reviewed: On the Record extract script (repo scripts not permitted in this session)",
+        "Senate caucus page https://senatedems.com/shink/2026/05/20/voting-rights/ confirms she serves the 14th Senate District",
+        "Senate caucus bio https://senatedems.com/shink/bio/ : nothing on the subject",
+        "Senate caucus site search for voter ID and SAVE Act: no matching posts",
+        "Michigan Daily 2022 candidate interview https://www.michigandaily.com/uncategorized/the-michigan-daily-sits-down-with-state-senate-district-14-candidates-ahead-of-elections/ : nothing on the subject in the lines checked",
+        "blocked: https://suesshink.com (no response)",
+        "not reviewed: Ballotpedia and the Michigan Votes page (not fetched for this person)",
+        "two news searches on name plus subject words: no own-words statement on voter ID or proof of citizenship"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:26.030Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:55:46.342Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

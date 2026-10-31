@@ -1,0 +1,185 @@
+{
+  "politician_id": "f6e50487-d839-479d-8efd-9937a09f9ab4",
+  "findings": [
+    {
+      "id": "0f86a3ba51f841b8e4bc6657343ff10a861c968e323badf2a5c8fb53d73a64c9",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "other",
+      "motion": "House cosponsor of SB 16",
+      "note": "Barry is on the House cosponsor list for SB 16 (2025), whose caption says it relates to requiring a person to submit proof of citizenship to register to vote, including a limited federal ballot for voters who cannot supply the proof. The bill history shows it left pending in the House Elections committee. The date he was added as cosponsor is not shown on the page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "limited federal-only ballot",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:17.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf7ccf54a19fab0f730aca83442b5b37aa35d7a549a4f48d0506e439f5b7d891",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337",
+      "date": "",
+      "date_precision": "unknown",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "other",
+      "motion": "House coauthor of HB 5337",
+      "note": "Barry is on the coauthor list of HB 5337 (2025), relating to requiring a person to submit proof of citizenship to register to vote and creating criminal offenses. The history shows the committee report sent to the House calendars on 2025-05-07. The date he was added is not on the page.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:17.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0307ef728b6235d39c357b576ec199721bdfba5fc6f481b383ca1bfb67f27aaa",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY60FINAL.PDF",
+      "date": "2025-05-09",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Passed to third reading, Record 1897 (98 yeas, 18 nays, 20 present not voting)",
+      "note": "House vote on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. Journal of the House, 60th day.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:17.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "02e0b3e402dd4adb47eeda980a38efa58456db89169c67cecfee811e106b7883",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "yea",
+      "motion": "Adopted, Record 2196 (102 yeas, 14 nays, 22 present not voting)",
+      "note": "Final House vote on SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. Journal of the House, 62nd day.",
+      "subjects": [
+        "voter must be a US citizen",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:29:17.301Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8797f835dff93d1e38977098cbc8b0700278ff3297f3693e3f2a385d03a1be5c",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/Authors.aspx?LegSess=89R&Bill=HB5337",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TX-HB-5337-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, House Committee Report (C.S.H.B. 5337; no engrossed or enrolled version exists)",
+      "note": "Listed as co of TX-HB-5337-2025 on the official Texas Legislature authors page (identity step 2026-10-28: printed name matched to one 89th Legislature member of that chamber, then to the roster by surname and first initial).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-step-sponsors",
+        "fetched_at": "2026-10-28T15:55:41.524Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "Ballotpedia page https://ballotpedia.org/Jeffrey_Barry (confirms sitting Texas House District 29 member on the 2026 general-election ballot; nothing on the subject)",
+        "Texas House member page https://house.texas.gov/members/4405 (no issue statements found)",
+        "campaign site https://www.votejeffbarry.com (page text not readable, site builds content with scripts; not reviewed in detail)",
+        "Texas Legislature Online bill history for SB 16 (89R)",
+        "Community Impact 2024 candidate Q&A https://communityimpact.com/houston/pearland-friendswood/election/2024/09/24/qa-meet-the-candidates-running-for-district-29-of-the-texas-house (nothing on the subject)",
+        "three web searches on his name plus subject words (no own words found)",
+        "blocked: https://texasscorecard.com/?p=98141 (HTTP 403)",
+        "blocked: https://legiscan.com/TX/bill/SB16/2025 (bot check page)",
+        "Texas Legislature Online bill history for HB 5337 (89R)",
+        "Texas House Journal 2025-05-09 and 2025-05-12 (SJR 37 roll calls, via the Texas Legislature Online bill history for SJR 37)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T15:29:17.301Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "sponsor lists"
+      ],
+      "places": [
+        "official Texas Legislature authors pages (instrument sponsor lists, identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:55:41.524Z",
+      "by": "identity-step-sponsors"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "lawful gun purchases",
+        "short-barrel firearms",
+        "right to keep and bear arms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun terms (two searches)",
+        "blocked: https://texasscorecard.com/?p=98141 (Cloudflare challenge page; a 2024 runoff piece the search snippet says quotes him on gun rights)",
+        "Texas Legislature Online bill histories HB 259 and HB 3934 (89R): not listed as author or coauthor",
+        "nothing on the subject in own words reached",
+        "not reviewed: official site, Ballotpedia, other bill pages"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

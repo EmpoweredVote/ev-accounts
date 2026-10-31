@@ -1,0 +1,222 @@
+{
+  "politician_id": "3142051c-9ded-4883-95fc-4af1de6e6eec",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "0057e22a5f328cdd034238d3a7fcf5f02439310cf79345ed21dee026aaec4f51",
+      "kind": "own-words",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1962",
+      "date": "2026-10-07",
+      "date_precision": "day",
+      "passage": "“Coloradans should be able to cast their ballots without fear or intimidation. Deploying armed guards at postal facilities just as voting begins demands an explanation and urgent action,” said Congresswoman Brittany Pettersen.",
+      "note": "Press release in her name about her letter to the Postal Inspection Service on armed guards at postal facilities where voters may drop off mail ballots. Related to mail-voting access, not to ID or citizenship rules. The memo it describes has guards checking IDs of people at postal sites, not voters.",
+      "subjects": [
+        "mail voting access and voter intimidation",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:53.644Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8a97f14965185003045c007fdc2dfe8b545a5bea85a145a8d2afc7ca95a7e03",
+      "kind": "own-words",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Colorado has one of the most accessible and most secure voting systems in the country. I’m disappointed — but not surprised — that Republicans unanimously opposed my amendment to make sure millions aren’t kicked off voter rolls.",
+      "note": "Pettersen's press statement after the House Rules Committee rejected her amendment to the SAVE Act, issued the day the House passed the bill. She describes Colorado's voting system and the amendment's aim of keeping eligible voters on the rolls.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll removals"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "25a948ba07e4fd9db72b4118cab0074ebf2b8d060a66fe097494402b30d74a48",
+      "kind": "own-words",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Requiring in-person voter registration, in addition to more paperwork, will make voting exceptionally hard for working women and women with caregiving responsibilities.",
+      "note": "From the fact list in her office's release on the SAVE Act. It also says about 69 million women have IDs that do not match their birth certificates because of a name change.",
+      "subjects": [
+        "proof of citizenship to register",
+        "in-person registration requirement",
+        "documents that must match a voter's name"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85abe172bd98e77b2e21f634dcdda6024799fda0852db6db2423b1443de334d3",
+      "kind": "record",
+      "url": "https://pettersen.house.gov/news/documentsingle.aspx?DocumentID=1598",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Pettersen amendment to the SAVE Act offered in House Rules Committee (rejected)",
+      "note": "Her office's release says the amendment would have delayed the bill's start until all state election officials certify that it will not reduce voting access. The release says Rules Committee members unanimously opposed it.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T18:45:09.629Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general",
+        "mail voting access and intimidation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Brittany_Pettersen (confirms she advanced from the June 30, 2026 primary for CO-07 and is on the general election ballot; lists the SAVE Act nay vote already on file; nothing else on the subject)",
+        "official site pettersen.house.gov: press release list (DocumentTypeID=27), news list (26, 1951) and RSS feed reviewed; one item on mail voting; nothing on voter ID, SAVE Act or proof of citizenship",
+        "campaign site brittanypettersen.com issues page: nothing on the subject",
+        "blocked: https://pettersen.house.gov/media/press-releases (404)",
+        "not reviewed: congress.gov sponsorship lists (not fetched)",
+        "not reviewed: web news search (search budget used up)",
+        "nothing on the subject: ontheissues.org, Vote Smart, govtrack (not fetched, lead-only or budget)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:11:53.644Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "voter ID at the polls",
+        "in-person registration requirement",
+        "documents that must match a voter's name",
+        "voter-roll removals"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release DocumentID=1598 (fetched)",
+        "blocked: https://pettersen.house.gov/media/press-releases (empty response)",
+        "capitolreleases.com mirror of the same release",
+        "two news searches on name plus subject words (secondary coverage only; vote on file not repeated)",
+        "Ballotpedia and congress.gov: not reviewed, floor votes already on file"
+      ],
+      "found": 3,
+      "at": "2026-10-27T18:45:09.629Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

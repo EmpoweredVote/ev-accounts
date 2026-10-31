@@ -1,15 +1,35 @@
-# voting-rights — Season 3 draft, served revision 08e7026f-2eb5-4386-9288-f1dbfc3185c3 (v3 r4, CA_0318)
+# voting-rights — Season 3 draft, revision 6 `1ed871b0-fceb-4f8c-ab02-92ea1d6d3e4c` (v3 r6, Draft I2, CA_0336; replaces 9429596c… v3 r5, Draft F, CA_0334)
 
-**Applied:** 2026-10-21 by CA_0318 (approved and parked; pinned in the draft Season 3 only).
+**Revision 6 applied:** 2026-10-29 by CA_0336, which rejected revision 5 (`9429596c…`), proposed and approved revision 6 (approved and parked), pinned it
+in the draft Season 3 and carried the 57 draft-season rows unchanged. Only rung 2's words change (Draft I2,
+Stage 3 2026-10-29, `stage3-i/`); rulings by Chris Andrews 2026-10-29: "Yes, start it", "Yes, count barrier talk",
+I-Q1 (I2), I-Q2–I-Q4 (reading A each), and the Stage 4 package.
+
+**Revision 5 applied:** 2026-10-26 by CA_0334, which rejected revision 4 (`08e7026f…`, Draft C, CA_0318, approved
+2026-10-21, never published), proposed and approved revision 5 (approved and parked), pinned it in the draft Season 3, and
+carried the 57 draft-season rows from revision 4 to revision 5 unchanged.
 
 **Status:** drafted 2026-10-21 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-voting-rights/`). The Season 2 annex (`../voting-rights.md`) stays as it
-is for Season 2 rows. Rulings by Chris Andrews, 2026-10-20/21: P1, census Q1, J1–J10, Q1–Q8, D1–D6, C1, C-Q1–C-Q5, DC1.
+is for Season 2 rows. Rulings by Chris Andrews, 2026-10-20/21: P1, census Q1, J1–J10, Q1–Q8, D1–D6, C1, C-Q1–C-Q5, DC1;
+2026-10-26 (Stage 3 for Drafts F and G, `stage3-fg/`): FG-Q6, F-Q1–F-Q4, DF1, SS-HB958, T7, and the Stage 4 package P1–P4.
+Revision 5 keeps every act of revision 4 and changes only the words: registration appeared only at rung 5, and a
+voter could not tell whether rung 1 meant registering, voting or both.
+2026-10-27 (Stage 3 for Draft H, `stage3-h/`): H3, H-P1 (reading B), H-Q3, H-Q4, DH1–DH3. Revision 5's text is
+unchanged and no revision was written; only the rung 3/4 reading changed ("Draft H lines" below): a photo-ID
+requirement with no sworn-statement path stated now sits at 4, with or without a cure.
 
-**Question:** "What proof of identity or citizenship should a person have to show to vote?"
+**Question:** "What proof of identity or citizenship should a person have to show to cast a ballot or to register to
+vote?"
 
-**Spectrum (L1):** how much proof a person must show before their vote counts. Pole 1: "No proof of identity".
-Pole 5: "Documents that prove citizenship". Stored as the first line of the revision's rationale; not shown to voters
+**Guidance (voters see it):** "Options 1 to 4 are about what a voter shows with a ballot, in person or by mail.
+Option 5 is about proving citizenship, usually when registering: choose it if you want that, whatever you want at the
+ballot. Federal law already requires anyone registering to vote to give a driver's license or Social Security number,
+if they have one. The trade-off: ineligible votes cast, or eligible voters turned away."
+
+**Spectrum (L1):** how much proof a person must show before their vote counts: proof of identity with the ballot,
+then proof of citizenship. Pole 1: "No proof of identity with the ballot". Pole 5: "A document that proves
+citizenship, such as a passport, birth certificate or naturalization papers". Stored as the first line of the revision's rationale; not shown to voters
 yet.
 
 **Orientation:** standard. Rung 1 asks for the least proof, rung 5 the most.
@@ -18,13 +38,14 @@ yet.
 at: local.
 
 **Rungs:**
-1. Require no proof of identity to vote.
-2. Accept non-photo documents, such as a utility bill or bank statement, as voter ID.
-3. Require photo ID to vote, with a sworn statement for a voter who has none.
+1. Require no proof of identity to cast a ballot.
+2. Do not require photo ID to cast a ballot. Accept other proof, such as a utility bill or a bank statement.
+3. Require photo ID to cast a ballot, with a sworn statement for a voter who has none.
 4. Require ID before a ballot counts: photo ID at the polls, or an ID number or a copy of an ID with each mail ballot.
-5. Require documentary proof of citizenship to register or to vote.
+5. Require a document that proves citizenship, such as a passport, birth certificate or naturalization papers, to
+   register to vote or to cast a ballot.
 
-**Rung map from revision 3:** identity (1→1 … 5→5).
+**Rung map from revision 3:** identity (1→1 … 5→5), as revision 4's.
 
 **Scope line — "proof a person shows" (annex, both drafts).** A document, an ID number, a copy of an ID, or a
 sworn statement that a law requires a person to give before a ballot counts or before registration is accepted,
@@ -34,6 +55,24 @@ ballot rules with no identity clause (drop boxes, deadlines, early voting, mail 
 access (same-day, automatic, online registration); citizen-only voting amendments and non-citizen voting in local
 elections; ballot design, counting and tabulators; and a law that bars another level from setting ID rules
 (preemption, V2 / H12), since no rung is about which level decides.
+
+## Revision 5 (Draft F) lines
+
+- **Which point each rung covers.** Rungs 1–4 are about what a voter shows to cast a ballot, in person or by mail.
+  Rung 5 is about a document proving citizenship, to register or to cast a ballot.
+- **F-Q2 (topic-scoped; ruled 2026-10-26).** A record that requires a document proving citizenship to register sits on
+  5 whatever ballot rule it also states (an exception to the `adjacent-chairs` line for this topic).
+- **The registration floor.** The ID number federal law asks of every registrant is the floor every rung assumes; a
+  record or words that only restate it meet no rung.
+- **Named documents are examples.** "A passport, birth certificate or naturalization papers" names kinds of
+  citizenship document; a records-match fallback the registrar runs beside a stated documents rule stays at 5 (D6).
+- **DF1 (ruled 2026-10-26).** KY SB 2 (2020): an affirmation allowed for a stated list of everyday impediments
+  (transportation, documents, work schedule, lost ID, illness, family duties, ID applied for) is open to any voter;
+  the law stays at 3.
+- **SS-HB958 (ruled 2026-10-26).** NC HB 958 (2025) is multi-subject (campaign-finance reporting; census data for
+  district maps); its votes and sponsorships seat no one.
+- **Named bills in own words (codebook H4).** A person who backs "the SAVE Act" by name is read by that bill's
+  operative text (documents to register: rung 5); such seats rest on own words and keep the `statement-evidence` hold.
 
 ## Lines for every rung
 
@@ -46,16 +85,40 @@ elections; ballot design, counting and tabulators; and a law that bars another l
   of any document → 2 (ruling D4). A repeal of a photo-only rule that leaves a list of
   non-photo documents → 2. An all-mail or signature-verification law that says nothing about ID → `adjacent`
   (silence is not a clause, V4.2). A law that bars **local** ID rules → `adjacent` (preemption, V2).
-- **Rung 2** needs a stated list of accepted documents that includes at least one document without a photo,
-  **accepted on its own, without a sworn statement** (ruling D2). Non-photo documents that only cure a provisional
-  ballot after election day are not accepted as voter ID (ruling D5). If the
-  list includes a non-photo document, the rung is 2 even when photo ID is listed first. A law that keeps such a
-  list against a move to photo only → 2. A bill that amends an ID law without setting what ID is accepted →
-  BLANK `no-evidence` (the existing law is not the person's position).
+- **Rung 2 — records (acts unchanged).** A record meets rung 2 when it **states** a list of accepted proof that
+  includes at least one document without a photo, **accepted on its own, without a sworn statement** (ruling D2), or
+  lets any voter vote on a signed statement in place of any document (D4). Non-photo documents that only cure a
+  provisional ballot after election day are not accepted as voter ID (ruling D5). If the list includes a non-photo
+  document, the rung is 2 even when photo ID is listed first. A law that keeps such a list against a move to photo
+  only → 2. A list of "any government-issued ID" with no photo condition and no named non-photo document states
+  neither (D1). **Silence is not "do not require photo ID"** (V4.2; the L5 reading of the rung's negative opening): a
+  bill that amends an ID law without setting what ID is accepted, or that ends or keeps a sworn-statement option
+  without stating what is accepted → BLANK `no-evidence` (the existing law is not the person's position).
+  List-widening and reprint-only bills stay direction-only (W2-R8, W3-R3, W3-R5).
+- **Rung 2 — own words (ruled 2026-10-29: "Yes, count barrier talk").** Own words that reject requiring photo ID (or
+  "voter ID") of every voter sit on 2, including calling photo-ID laws a barrier, harmful or a way to keep voters
+  from the polls ("voters should not need photo ID", "repeal the voter ID law", "I oppose voter ID requirements",
+  "the voter ID law is a failure"). Words that also say no proof at all should be asked ("only their signatures",
+  "no ID or documents at all") → 1. Words asking for a sworn-statement path beside photo ID → 3. Not enough on their
+  own: words about how strict a law is ("strict", "stricter", "restrictive", "harsher"); words about effects with no
+  rejection of the rule; conditional support ("ID is fine if it's free"); undated words. Words backing the state's
+  current law → W3-R8. DH1 unchanged: words rejecting voting **without** photo ID → 4.
+  - **I-Q2 (reading A).** Words against the state's photo-ID law **in force** (or one just struck down) reject the
+    rule → 2. Words against a pending bill, a proposed amendment or a ballot measure are not enough, unless they
+    speak of voter-ID laws as a class ("voter-ID laws like this", "laws like these").
+  - **I-Q3 (reading A).** Words calling photo-ID requirements **in general** harmful, discriminatory, burdensome, a
+    barrier, unnecessary or "a solution in search of a problem", or saying they keep or dissuade voters, count → 2.
+    The same words said only of one pending bill do not (I-Q2).
+  - **I-Q4 (reading A).** A Yes on a bill ruled direction-only for being broad cannot conflict with own words; the
+    seat stands. **But name the conflict:** when that bill's printed ID part points to another rung, the stance
+    summary says so in one plain sentence (for example "She later voted for SB 224 (2023), a broad election bill
+    whose ID part would discard mail ballots sent without ID.").
+- **Synonyms to add (rung 2):** "no photo ID", "repeal voter ID", "voter ID is a barrier", "keeps voters from the
+  polls", "affidavit in place of ID".
 - **Rung 3** needs photo ID **and** a stated sworn-statement path, open to any voter without photo ID, that lets the
   ballot count. A non-photo document accepted only together with that statement is part of this fallback (D2). One law
   usually states both; this is one law-stated condition (L5), and the rung is a single act. A photo-ID law that
-  states no fallback at all → BLANK `direction-only` (restriction side) under both drafts; Draft C rung 4 (a) gives the cure-only law its rung.
+  states no fallback at all → 4 (Draft H, 2026-10-27: "Fallback not stated", under Rung 4).
 - **Rung 5** needs a document that proves citizenship (passport, birth certificate, naturalization papers or
   similar), required at registration or before a ballot counts. A rule that is not documentary proof (an ID number
   or a database match at registration, a sworn statement of citizenship) matches no rung → BLANK
@@ -84,11 +147,16 @@ elections; ballot design, counting and tabulators; and a law that bars another l
   not state photo ID; a title does not govern. Such a list → 2 if it also states a non-photo document accepted on
   its own (D2), otherwise BLANK `direction-only` (restriction side). A rule that accepts an ID number at the polls
   in place of a photo → not branch (a).
-- **(a) Polls branch — the cure act.** The law must state that a voter without photo ID casts a provisional ballot
-  that counts once the voter shows ID (at the election office, within the period the law sets). A photo-ID law
-  that states no fallback and no cure → BLANK `direction-only` (silence, V4.2; other law may hold a sworn
-  statement). Every voter can cast a provisional ballot under federal law, so at the polls it is the counting rule,
-  not the requirement alone, that separates 3 from 4.
+- **(a) Polls branch — no sworn-statement path stated (Draft H, 2026-10-27; replaces "the cure act").** The law
+  requires photo ID at the polls (D1) and its own text states **no** sworn-statement path open to any voter without
+  photo ID. A stated cure (a provisional ballot that counts once the voter shows ID) is **no longer needed**: a law
+  that states a cure, or no fallback at all, is at 4. The coder asks one question: **does the record's own text
+  state a sworn-statement path open to any voter without photo ID?** Yes → 3 (escape rule, D3). No → 4. Nothing is
+  inferred from silence either way.
+- **"Before a ballot counts"** (rung 4's lead) is met by a stated requirement of photo ID at the polls, or of an ID
+  number or copy with each mail ballot. It does not need a stated cure or counting rule. It is not met by a
+  requirement that a stated sworn statement open to any voter can replace (→ 3 at the polls; BLANK on the mail
+  branch, C-Q4).
 - **The 3/4 line (D3; a topic-scoped reading of the furthest-act rule).** If **any** voter without ID can have the
   ballot count by signing a sworn statement — for any reason, or for a reasonable impediment — the law is at 3,
   **even when it also states a cure** (show ID later). If a sworn statement is open only to named exemptions (for
@@ -115,7 +183,41 @@ elections; ballot design, counting and tabulators; and a law that bars another l
   states either branch of rung 4 **and** documentary proof of citizenship → 5 (each lower act stated). A mail-ballot
   ID law that says nothing about the polls → 4; a strict photo-ID law that says nothing about mail ballots → 4.
 - **Synonyms to add:** "strict photo ID", "provisional ballot", "cure", "ID number on the return envelope",
-  "copy of ID with the ballot", "reasonable impediment" (for the 3/4 line).
+  "copy of ID with the ballot", "reasonable impediment" (for the 3/4 line), "photo ID required", "photo ID for every
+  voter", "government-issued photo ID", "which may include exceptions", "fallback not stated".
+
+## Draft H lines (ruled 2026-10-27; revision 5's text unchanged)
+Stage 3 for Draft H (`.planning/research/s3-prep-voting-rights/stage3-h/`, workspace root) kept every word voters see
+and changed only how rungs 3 and 4 are read, so that a plain photo-ID requirement with no stated fallback seats.
+- **Fallback not stated.** A record whose own text requires photo ID at the polls and states nothing about a voter
+  without one → 4. The record is coded on the instrument the person acted on. A sworn statement in an older statute
+  the record does not restate is not the person's act, so it does not move the record to 3.
+- **Printed text counts (H-Q4).** When the instrument reprints a section it amends, or itself states the path (for
+  example a notice the act prints: "you may still vote and have your vote counted by signing an affidavit of
+  reasonable impediment"), the path is stated → 3. A path in a section the instrument neither prints nor restates is
+  other law → not read in. A cross-reference to another law's challenged-voter procedure, not printed, is not a
+  stated sworn path (DH2; MA H.4359 Amendment 7 stays at 4).
+- **An amendment that sets the accepted-ID list (H-Q4).** A bill that sets which ID is accepted (for example
+  government-issued photo ID only, school IDs removed) states the photo condition and is read under rung 4 (a) on its
+  own printed text. The rung 2 line "a bill that amends an ID law without setting what ID is accepted → BLANK
+  `no-evidence`" stays for bills that set no list.
+- **A delegation of exceptions (H-Q3).** A requirement of photo ID for every voter that leaves details to later law
+  ("which may include exceptions", none named) states no escape → 4. An implementing law the person backs is coded
+  on its own text.
+- **Photo ID of mail voters as well.** A record that requires photo ID of every voter in person and by mail meets
+  branch (a) by its polls clause (and branch (b) when it requires a copy of a photo ID or an ID number with each mail
+  ballot) → 4. "All voters" with no channel named meets branch (a); nothing is inferred about mail.
+- **A rule for one group beside a photo-ID rule.** Citizenship documents asked only of registrants a records check
+  flags meet no rung (rung 5 needs them of every registrant or voter), do not trigger F-Q2 and do not make the record
+  `adjacent-chairs`. The record sits on its photo-ID rung.
+- **A person's records together (H-P1, reading B).** When a person's own affirmative records on the ballot-ID rule
+  include one that states a sworn-statement path open to any voter (3) and another that requires photo ID with no
+  path stated (4), the person sits at 3 whatever the dates: the silent record does not contradict the stated path.
+  H-P1 covers a **silent** photo-ID record only (DH3): a stated polls escape (3) beside a record that requires ID with
+  each mail ballot (4) → the person sits at 4, as "Furthest act, 3/4" reads one record.
+- **Own words (DH1).** Words that reject voting without photo ID (for example a questionnaire answer "Disagree" to
+  "People should be able to vote without photo identification") state the rung 4 act → 4. Such a seat rests on own
+  words alone and keeps the `statement-evidence` hold.
 
 ## Topic-scoped readings (also listed in RULINGS.md "Topic-scoped readings")
 - **D3 — 3/4 line (furthest act).** A sworn-statement path open to any voter with a reasonable impediment keeps a law
@@ -125,6 +227,9 @@ elections; ballot design, counting and tabulators; and a law that bars another l
   exemption.
 - **DC1 — request rule.** A mail-ballot request-ID rule whose failure still lets the ballot be sent and counted on
   documents that are not the requested ID does not meet rung 4.
+- **H-P1, H-Q3, H-Q4 (Draft H, 2026-10-27).** A photo-ID requirement whose own text states no sworn-statement path
+  open to any voter sits at 4 (fallback not stated; exceptions left to later law, none named; an accepted-ID list read
+  on its printed text). A person with a stated-escape record at 3 and a silent photo-ID record at 4 sits at 3.
 
 ## Hard cases
 - **Preemption is not the rule (codebook V2, H12).** A law that bars local ID rules → `adjacent`.

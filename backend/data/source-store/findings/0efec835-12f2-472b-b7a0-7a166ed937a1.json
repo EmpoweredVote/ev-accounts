@@ -1,0 +1,225 @@
+{
+  "politician_id": "0efec835-12f2-472b-b7a0-7a166ed937a1",
+  "findings": [
+    {
+      "id": "438021c25d6f1bbf9fc8921c3ce80c3563636ccc648eca28af8a3707c72eb08c",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "yea",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: yea (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bd2969d3400da1c6bc17d0e763c94cf999e2123b889ead93e555f24bc431ea00",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "nay",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: nay (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "23497395f67e5dec639ce98aa68ae962a3a2313267893bd9495444b815951272",
+      "kind": "own-words",
+      "url": "https://wjla.com/news/local/va-democrat-believes-its-ok-to-require-photo-id-to-enter-a-business-but-not-to-vote",
+      "date": "2022-01-20",
+      "date_precision": "day",
+      "passage": "“If a person shows up in person and they’ve got the appropriate credentials other than not having a photo ID, why should they be denied the right to vote?\" Sen. Lucas replied.",
+      "note": "Answer to a WJLA 7News reporter, in an interview this outlet describes as held on a Wednesday of the week its story was published (2022-01-20), asked why she does not want to reinstate photo ID to vote. She says a voter with other credentials should not be turned away. Date is the story's publication date.",
+      "subjects": [
+        "photo ID",
+        "voter ID at the polls",
+        "voter with no photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:45.924Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "938850fe7e1e3c1c761669e22e6287a8d39f5afaf4f496bb68c8b9549c2a5221",
+      "kind": "own-words",
+      "url": "https://wjla.com/news/local/va-democrat-believes-its-ok-to-require-photo-id-to-enter-a-business-but-not-to-vote",
+      "date": "2022-01-20",
+      "date_precision": "day",
+      "passage": "“When it comes to voting rights, this is just the camel’s nose under the tent,\" Sen. Lucas answered. \"This one passes and they will go on to the next one and then the next one and then the next one until they completely erode away people’s opportunity to go to the polls to vote. It’s a form of intimidation. A lot of people see it for what it is it’s an intimidation tactic. It’s a way to keep people from voting.”",
+      "note": "Same WJLA interview and publication date. She describes a photo ID requirement as a first step toward further limits on voting.",
+      "subjects": [
+        "photo ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:27:45.924Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7526c5e7b92d638648d8bf3f401f9a8433f7903be1928f3f0ad919bc453773",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+vot+SV0887HB0213+HB0213",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-213-2020",
+      "act": "yea",
+      "motion": "Senate: Passed Senate (21-Y 18-N)",
+      "note": "Senate roll call as printed ('Lucas'), linked to L. Louise Lucas via the official 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3cd0d4e83cae44f3283b75c4ac660847b0e313cd0a71b8fd7d64d413d0651b02",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?151+vot+SV0677HB1318+HB1318",
+      "date": "2015-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1318-2015",
+      "act": "nay",
+      "motion": "Senate: Passed Senate (20-Y 17-N)",
+      "note": "Senate roll call as printed ('Lucas'), linked to L. Louise Lucas via the official 2013 and 2020 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b34681954edb0741441741d7cedf52200a9a77cb9a906d6f497944e99f705a21",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+vot+SV0581HB1337+HB1337",
+      "date": "2013-02-15",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1337-2013",
+      "act": "nay",
+      "motion": "Senate: Passed Senate with amendment (20-Y 20-N)",
+      "note": "Senate roll call as printed ('Lucas'), linked to L. Louise Lucas via the official 2013 member list(s) (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-va-2026-10-28",
+        "fetched_at": "2026-10-28T17:58:27.794Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "photo ID",
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "documentary proof of citizenship (SAVE Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://ballotpedia.org/Louise_Lucas (confirms sitting senator for District 18, term to 2028; nothing on the subject)",
+        "https://wjla.com/news/local/va-democrat-believes-its-ok-to-require-photo-id-to-enter-a-business-but-not-to-vote (direct quotes saved)",
+        "https://cardinalnews.org/2022/01/18/senate-democrats-block-gop-effort-to-bring-back-photo-id-law/ (no words from her)",
+        "blocked: https://virginiamercury.com/briefs/va-senate-kills-gop-push-to-let-voters-self-impose-photo-id-rule/ (403)",
+        "official Senate page: blocked https://sov.senate.virginia.gov/ for curl; no subject content found",
+        "blocked: https://origin.vpap.org Lucas vote pages (SSL handshake failure); a search summary says she was marked not voting on 2026 HB 234, HB 113 and HB 835, which is unconfirmed and not saved",
+        "blocked: https://lis.virginia.gov bill pages (page loads its content with JavaScript, nothing readable)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:27:45.924Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:53:04.521Z",
+      "by": "identity-va-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official Virginia LIS roll calls in bills/va-bills-2.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T17:58:27.794Z",
+      "by": "identity-va-2026-10-28"
+    }
+  ]
+}

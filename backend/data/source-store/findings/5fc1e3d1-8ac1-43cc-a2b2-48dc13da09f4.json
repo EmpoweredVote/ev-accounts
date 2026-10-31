@@ -1,0 +1,111 @@
+{
+  "politician_id": "5fc1e3d1-8ac1-43cc-a2b2-48dc13da09f4",
+  "findings": [
+    {
+      "id": "a7dcdc56d43d6a58cb20051f5483347fc50cc0466e6e9dd5647307b195d3a421",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20251113050900/https://www.palegis.us/legislation/bills/2025/hb1061",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "PA-HB-1061-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, PN 1156 (as introduced; only printer's number). Text NOT read: no archived copy found. Page copy dated 2025-11-13. Memo subject: \"Proof of Citizenship to Vote\". The caption is word-for-word the caption of HB 2629 of 2023 (PN 3762).",
+      "note": "Named as co sponsor ('STEHR') on the official bill page; linked to Joanne Stehr via the official 2025 member roll of the House (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('STEHR'), linked to Joanne Carol Stehr (district 107) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "status: in scope, a state House member for District 107, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/northumberland-county (positive control)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repstehr.com): press release list (20 releases, 2024-10 to 2026-09), site search for voter, About page and home page: nothing on the subject",
+        "2022 local news candidate articles (Daily Item, News Item) fetched: no passage on voting rules, ID or citizenship",
+        "news searches on name plus voter ID, mail-in voting, election integrity: no statement by her found",
+        "blocked: https://ballotpedia.org/Joanne_Stehr (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:09:35.442Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballots",
+        "proof of citizenship to register",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope check: in scope, a state House member for District 107, listed for the 2026-11-03 ballot by https://theballotbrief.com/state/pennsylvania/northumberland-county (positive control)",
+        "On the Record (0 appearances for this person)",
+        "official House site (https://www.repstehr.com): press release list (20 releases, 2024-10 to 2026-09), site search for voter, About page and home page: nothing on the subject",
+        "2022 local news candidate articles (Daily Item, News Item) fetched: no passage on voting rules, ID or citizenship",
+        "news searches on name plus voter ID, mail-in voting, election integrity: no statement by her found",
+        "blocked: https://ballotpedia.org/Joanne_Stehr (page returned empty)",
+        "not reviewed: legislature bill pages for sponsorships and votes (linked separately per brief)",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:31:40.394Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

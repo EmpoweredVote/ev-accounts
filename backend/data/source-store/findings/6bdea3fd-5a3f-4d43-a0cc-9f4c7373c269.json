@@ -1,0 +1,29 @@
+{
+  "politician_id": "6bdea3fd-5a3f-4d43-a0cc-9f4c7373c269",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found by the extract script)",
+        "his Texas House member page https://house.texas.gov/members/member-page?district=77 (District 77) and its media, newsletter and biography pages: nothing on the subject",
+        "Ballotpedia: the name page is a disambiguation list; the District 77 page shows him as incumbent on the 2026 general-election ballot; no stated positions on the subject",
+        "campaign site https://www.vinceperez.com (home, newsroom, about, early-voting and fair-maps pages checked: redistricting and voting-map content only, nothing on ID or citizenship)",
+        "two web searches on his name plus subject words: no statement from him on ID or citizenship found",
+        "not reviewed: his three linked video recordings and press pages from 2025 (redistricting-focused)",
+        "not reviewed: his bill pages on Texas Legislature Online (no author search done)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:14:57.322Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

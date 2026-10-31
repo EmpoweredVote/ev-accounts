@@ -1,0 +1,391 @@
+{
+  "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+  "findings": [
+    {
+      "id": "f7b6f3837a9e8cce4e964bf2b03f6aad9273be34aaec40e414646e7de1e3d71e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81678",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2021-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2021P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Quang H Nguyen') on the official bill page; linked to Quang H Nguyen via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district 1) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f93846c1105ccda7a86e8e550ba1636fcbbc6405c70fba1df98bffb3f7fea0e",
+      "kind": "record",
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2492H: House-engrossed version (text as it stood after the House acted)",
+      "note": "Named as co sponsor ('Quang H Nguyen') on the official bill page; linked to Quang H Nguyen via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district 1) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "67f1f8f7181db16165b8d24d99732ae95bfcc41434ceb827fc653bb873e6c692",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77221",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HCR-2025-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HCR2025P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Quang H Nguyen') on the official bill page; linked to Quang H Nguyen via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district 1) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('NGUYEN'), linked to Quang H Nguyen (district 1) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.508Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 15,
+      "at": "2026-10-28T22:53:15.876Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope: listed on the House roster for District 1 at https://www.azleg.gov/memberroster/ (2026 ballot status not separately confirmed)",
+        "blocked: https://ballotpedia.org/Quang_Nguyen",
+        "blocked: https://azmirror.com/2025/01/10/republicans-prioritize-changes-to-speed-up-election-results-in-2026/",
+        "https://www.rawstory.com/republicans-prioritize-changes-to-speed-up-arizona-election-results-in-2026 (news text, not his words; bill already on file)",
+        "House press release of 2024-04-16: nothing on the subject",
+        "not reviewed: https://prescottenews.com/2025/02/21/conservatives-for-a-constitutional-republic-host-rep-quang-nguyen/",
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked (403)",
+        "the legislature's member roster (azleg.gov)",
+        "the legislature's House press release archive and news searches: nothing on the subject in this person's own words"
+      ],
+      "found": 0,
+      "at": "2026-10-28T23:12:23.976Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.508Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "politician_id": "c7f94731-2162-4fb7-803a-a2ff7443a9a1",
+  "findings": [
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.564Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V127_HB1444_ful.htm",
+          "sha256": "dc87e3cc526e87f6c4fdeaeb8077eb616216271be1304522b88078065a703c17"
+        }
+      }
+    },
+    {
+      "id": "5a7a7a9f5a821b8647ef68374659369bee38f1448a4d272d52c909eac864febe",
+      "kind": "own-words",
+      "url": "https://mikecherryforva.com/?p=468",
+      "date": "2022-02-13",
+      "date_precision": "day",
+      "passage": "This bill would require the state to offer free photo IDs to ensure that lack of an ID is not a barrier to voting.",
+      "note": "Campaign-site 'Dear Friend' newsletter 'Richmond Report: Week 5', signed 'Sincerely, Mike Cherry', first person; page byline lists Zachary Wood. Text came via a page summary tool, so check wording against the page. The same letter says HB1090 will reinstate the photo ID requirement for elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T17:41:54.274Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus subject words",
+        "Virginia legislature site vga.virginia.gov (home page only, no member page reached)",
+        "blocked: LIS (lis.virginia.gov), legiscan, legiplex and vpap.org (403), not retried",
+        "campaign site mikecherryforva.com (2 posts reviewed)",
+        "news search"
+      ],
+      "found": 1,
+      "at": "2026-10-28T17:41:54.274Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "assault weapons ban",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "gun rights general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia https://en.wikipedia.org/wiki/Mike_Cherry_(Virginia_politician) (confirms member of the House of Delegates for the 74th district; nothing on guns)",
+        "blocked: https://mikecherryforva.com/?p=733 (503)",
+        "blocked: https://www.mikecherryforva.com/?p=437 (503)",
+        "lead only: a search summary says his campaign site has a Second Amendment section; text not read, so nothing saved",
+        "blocked: VPAP pages (script-required)",
+        "not reviewed: Virginia LIS pages (script-rendered)",
+        "Ballotpedia not reached"
+      ],
+      "found": 0,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

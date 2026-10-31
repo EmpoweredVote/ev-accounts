@@ -1,0 +1,128 @@
+{
+  "politician_id": "d9486e4a-490a-4d87-a495-655cce9700e2",
+  "findings": [
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T1 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.560Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V123_SB00005I.htm",
+          "sha256": "18b37323350f88861d054d75ff34683e7f352060f68e94df86ea9246c91c8a93"
+        }
+      }
+    },
+    {
+      "id": "8af8643e42be2926723f097f389b416620d6e5aff643f9b25475b064b1a4af95",
+      "kind": "own-words",
+      "url": "https://www.texastribune.org/2011/03/22/the-brief-top-texas-news-for-march-22-2011",
+      "date": "2011-03-22",
+      "date_precision": "day",
+      "passage": "\"We don't want any Texans to have any type of suppression on their vote,\" Martinez said of the objection.",
+      "note": "Texas Tribune daily brief quoting him on his point of order against the 2011 voter ID bill (SB 14) on the House floor. The date is the brief's publication date; the floor action was reported the day before.",
+      "subjects": [
+        "voter ID at the polls",
+        "time limit to bring ID after voting without it"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:54.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "baaf840408da519983e60a528febd6b76fe9b74b01b8eb6df60cc656bfa749cc",
+      "kind": "record",
+      "url": "https://www.texastribune.org/2011/03/21/the-midday-brief-top-tx-headlines-of-march-21-2011",
+      "date": "2011-03-21",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "other",
+      "motion": "Point of order on SB 14 over \"days\" versus \"business days\" for a voter without ID to return with ID",
+      "note": "He raised a point of order that the voter ID bill said six business days while its analysis said six days. The point was sustained and the bill went back to committee for that day. Source is a Texas Tribune report.",
+      "subjects": [
+        "voter ID at the polls",
+        "time limit to bring ID after voting without it"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:54.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b978df10956517f8744a14c7e27b71d143c54f5e116cfb38943fd0c24cacf679",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY77FINAL.PDF",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "Adoption of the conference committee report on SB 14 (Record 1128)",
+      "note": "The House Journal lists Martinez among the Nays on the 98 to 46 vote adopting the SB 14 voter ID conference report.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:54.083Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "time limit to bring ID after voting without it",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (house.texas.gov, district 39): confirms Rep. Martinez, District 39; nothing on the subject",
+        "Ballotpedia: page returned no readable text; not reviewed: https://ballotpedia.org/Armando_Martinez_(Texas) (news results show him unopposed on the 2026 ballot for District 39)",
+        "campaign site: not found",
+        "House Journal 2011 day 77 (SB 14 conference report vote, Record 1128)",
+        "Texas Tribune 2011 briefs (March 21 and 22) and Austin Chronicle 2011 on the SB 14 floor debate",
+        "Texas Scorecard 2021 piece on the quorum break: mentions him only in passing, not his words; not saved",
+        "news searches on his name plus voter ID, proof of citizenship, election integrity, the 2021 quorum break: no 2021 or 2025 own words on ID or citizenship found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:31:54.083Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

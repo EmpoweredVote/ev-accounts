@@ -1,0 +1,76 @@
+{
+  "politician_id": "4fccbf85-d794-4cdc-a8b8-674ff1b48784",
+  "findings": [
+    {
+      "id": "0665266229098b390b43adaedcdc669d273089db2c686ebbd5bd970abe27cec8",
+      "kind": "own-words",
+      "url": "https://sr32.senate.ca.gov/sites/sr32.senate.ca.gov/files/SB-1174%20Veto%20Letter.pdf",
+      "date": "2024-08-21",
+      "date_precision": "day",
+      "passage": "In a time when public confidence in our elections is fading, the public’s confidence in national, state, local, and municipal elections should be a priority. Americans across the board agree that an ID requirement maintains the integrity and confidence in our elections. When local control is removed from a community and left to the State, trust is eroded.",
+      "note": "Part of his letter to the Governor asking for a veto of SB 1174, the bill that bars cities and counties from requiring voter ID in local elections. The letter is on his Senate site and signed by him.",
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID bans (SB 1174 of 2024)",
+        "election integrity",
+        "local control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:22.496Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3be09eadc1dc60471b72229e478c7d9fc50b669781f3092467eddf91e2850b6a",
+      "kind": "own-words",
+      "url": "https://sr32.senate.ca.gov/sites/sr32.senate.ca.gov/files/SB-1174%20Veto%20Letter.pdf",
+      "date": "2024-08-21",
+      "date_precision": "day",
+      "passage": "SB-1174 is unbridled government overreach and diminishes public trust, while imposing the will of the State on local community and municipality election processes in a time when election integrity is deteriorating.",
+      "note": "Closing argument of the same veto-request letter on SB 1174.",
+      "subjects": [
+        "local voter-ID bans (SB 1174 of 2024)",
+        "election integrity",
+        "local control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:59:22.496Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "local voter-ID bans (SB 1174 of 2024)",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity",
+        "local control of elections"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Kelly_Seyarto (confirms sitting State Senate District 32 member on the 2026 general-election ballot)",
+        "official Senate site file https://sr32.senate.ca.gov/sites/sr32.senate.ca.gov/files/SB-1174%20Veto%20Letter.pdf (his letter on SB 1174)",
+        "web news searches (two): no other statement found on proof of citizenship or the SAVE Act",
+        "blocked: https://www.courthousenews.com/california-bill-targeting-voter-id-heads-to-senate-floor/ (403; a search summary said he spoke at the Senate committee hearing on SB 1174, not copied because the page could not be read)",
+        "blocked: https://sd32.senate.ca.gov (503) and the other district site addresses tried (no response)",
+        "blocked: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB1174 (page needs scripts, no vote names in text); https://legiscan.com (403); his individual floor votes on SB 1174 not confirmed"
+      ],
+      "found": 2,
+      "at": "2026-10-28T15:59:22.496Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

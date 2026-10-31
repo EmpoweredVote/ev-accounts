@@ -1,0 +1,154 @@
+{
+  "politician_id": "75af1cd9-5037-4ce6-b03a-9ba068f40afd",
+  "findings": [
+    {
+      "id": "44d831dfc1eeb3fca116d2ec1f84e8cd7e68d144fad9d08bff5bac9206547e3b",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2017-2018/journal/House/htm/2018-HJ-04-19-038.htm",
+      "date": "2018-04-19",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5669-2018",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 234 Yeas 64 Nays 45",
+      "note": "House roll call as printed ('Singh'), linked to Samir Singh (district 69) via the official 2018 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Singh'), linked to Sam Singh (district 28) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Sam Singh (District 28)') on the official bill page; linked to Sam Singh via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Singh'), linked to Sam Singh (district 28) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Sam Singh (District 28)') on the official bill page; linked to Sam Singh via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.336Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll security",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record: not run (standing rules bar running repo scripts)",
+        "https://senatedems.com/singh/bio/ (official site; identity: Michigan Senator, first term; not seeking reelection per news search, term ends 2027-01-01)",
+        "site search for 'voter ID' on https://senatedems.com/singh/: nothing on voter ID or proof of citizenship (only general voting-rights and election-date newsletters)",
+        "blocked: https://news.yahoo.com/election-2022-candidates-michigan-senate-160830493.html (HTTP 429; a search snippet says he called Michigan's elections safe and secure in 2022, not copied)",
+        "web searches x2 on name plus voter ID, election security, 2026 status: nothing else on the subject",
+        "Ballotpedia, campaign site, legislature bill pages: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-28T22:46:10.495Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 5,
+      "at": "2026-10-28T22:55:46.336Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

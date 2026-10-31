@@ -1,0 +1,183 @@
+{
+  "politician_id": "60b7bab9-9e46-4cf4-9d9e-8e6592331e64",
+  "findings": [
+    {
+      "id": "0a8085c770a800ced32332780b1601bba2082bcc14c82e5b2121126ef3a8671f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/809",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "nay",
+      "motion": "S 921 Const. Am./Require Photo ID For All Voters, House Second Reading, Roll Call #809",
+      "note": "The House Roll Call #809 transcript lists Charles Smith among the Noes. The vote was 73 ayes to 45 noes. The bill proposes a constitutional amendment requiring photo ID for all voters, including by mail, for the Nov 2026 ballot (see https://news.ballotpedia.org/?p=40131).",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:53:25.296Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec3dd5e1229e48d08c75736183fcab6ff59749a84cb5e0bbea2358da641ffc43",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/810",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "nay",
+      "motion": "S 921 Const. Am./Require Photo ID For All Voters, House Third Reading, Roll Call #810",
+      "note": "The House Roll Call #810 transcript lists Charles Smith among the Noes. The vote was 73 ayes to 45 noes on the same photo ID constitutional amendment.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:53:25.296Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47ce4bd2b80fe37fe819e90a64354525dc5aae143dce4a3f7c09628eafb9927b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "H 958 Election Law Changes, House Second Reading, Roll Call #758",
+      "note": "The transcript lists Charles Smith among the Noes. The vote was 66 ayes to 47 noes. Bill text (ratified version, https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes a rule that a county board processes a registration only if the applicant affirmatively states US citizenship, a process to remove voters flagged as possible non-citizens from a federal database, and deceased-voter list removals.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:53:25.296Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d82757a39b16f5828863b20730f10f67940fd6584eb467ff8e12f0c8fbcf9d3",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "H 958 Election Law Changes, House motion M11 to concur with the Senate committee substitute, Roll Call #801",
+      "note": "The transcript lists Charles Smith among the Noes. The vote was 62 ayes to 47 noes. The bill page (https://www.ncleg.gov/BillLookUp/2025/H958) shows the bill was ratified and then vetoed by the Governor on 08/17/2026.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T11:53:25.296Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: ncleg.gov Biography/H/813 names Representative Charles Smith, District 44; Ballotpedia District 44 page shows him unopposed in the cancelled March 3, 2026 primary and running in the November 3, 2026 general election (https://ballotpedia.org/Charles_Smith_(North_Carolina_House_of_Representatives,_District_44))",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/813 (reviewed all titles; no ID or citizenship bill; election-related titles HB 93 literacy test repeal, HB 691 Voter Protection and Reliance Act, HB 1240 early voting amendment are not about proof of identity or citizenship; HB 93 lists him as a co-sponsor, HB 691 and HB 1240 sponsor pages do not name him)",
+        "Ballotpedia member page (no page for him under the House title; the similarly named page is a different person)",
+        "nothing on the subject: Ballotpedia district page",
+        "not reviewed: ncleg.gov roll-call votes on voter ID bills (no search of vote pages done)",
+        "not reviewed: official and campaign site, news search (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:49:24.004Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "photo ID amendment for all voters including mail",
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "removal of non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "ncleg.gov House member biography page H/813 (confirms Representative Charles Smith, District 44, Cumberland County, 2025-2026 session); introduced-bills page for the subject: nothing found",
+        "Ballotpedia North Carolina House elections 2026 page (lists Charles Smith as incumbent for District 44 in the Nov 3, 2026 general election)",
+        "ncleg.gov bill pages and roll call transcripts for S921 (2023 session) and H958 (2025 session), plus H958 ratified bill text",
+        "Ballotpedia News report on S921 (2024-12-13)",
+        "web searches on the name and on NC voter ID bills: found nothing in his own words",
+        "his House caucus member page and official or campaign site: not reviewed for subject statements",
+        "ncleg.gov roll calls H958 amendments (#755-757): nothing saved because I did not read the amendment texts; S382: bill page checked, no vote on it listed for him"
+      ],
+      "found": 4,
+      "at": "2026-10-27T11:53:25.296Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "politician_id": "91d28127-8183-4b67-a1fb-dc8a150f6199",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "f576536475a13672e1f0858e0f21ee65fdcc00575888228cc68e4a54b790365c",
+      "kind": "own-words",
+      "url": "https://wdet.org/2018/02/22/rep-debbie-dingell-lets-not-have-the-same-old-discussion-on-guns/",
+      "date": "2018-02-22",
+      "date_precision": "day",
+      "passage": "“My father shouldn’t have had access to guns,” she says. “I don’t think any child should have to hide in a closet, afraid they’re going to die.”",
+      "note": "Radio interview quote. The same article reports (in the host's words, not hers) that she was working with a colleague on a proposal including a bump stock ban and expanded background checks.",
+      "subjects": [
+        "gun safety laws general",
+        "bump stocks",
+        "background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b78fc468556b76fde33b2c9318e52fd28e62f8532c36276bbda4bc7549d1db8a",
+      "kind": "own-words",
+      "url": "https://debbiedingell.house.gov/media-center/in-the-news/mlive-dingell-touts-legislation-keep-guns-out-hands-abusers-stalkers-during",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Emotions in volatile and mentally unstable situations are unpredictable and far too often have disastrous outcomes,” Dingell wrote in a letter to Michigan Gov. Rick Snyder earlier this year.",
+      "note": "MLive story on her site quotes her letter to the Michigan governor about a state bill on concealed-weapons permits for people with a history of violence; the story says the governor then vetoed that bill. Page date not clear from its text.",
+      "subjects": [
+        "carry permits",
+        "concealed weapons permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb98ba66a56e98e6352fde908e9422472da0eac6180dfe8b82cb8d66f2a939c5",
+      "kind": "record",
+      "url": "https://debbiedingell.house.gov/media-center/in-the-news/mlive-dingell-touts-legislation-keep-guns-out-hands-abusers-stalkers-during",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "sponsor",
+      "motion": "Zero Tolerance for Domestic Abusers Act (introduced by her, per MLive; bill number not on page)",
+      "note": "The story says she introduced a bill to bar people who abused dating partners from buying or owning guns, closing a gap in the federal ban.",
+      "subjects": [
+        "domestic abusers and guns",
+        "boyfriend loophole"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Debbie_Dingell (fetched 2026-10-22) names her as U.S. House Michigan District 6 incumbent who advanced from the August 4, 2026 primary and is on the November 3, 2026 ballot",
+        "On the Record (0 appearances for this politician id; name search also 0 candidates)",
+        "official site https://dingell.house.gov/: home page fetched; keyword search URLs (documentquery.aspx?Keyword=...) return the same latest-news list for every keyword and no subject match; news RSS (12 latest items) has nothing on the subject; issues page has nothing on the subject",
+        "blocked: https://dingell.house.gov/search?term=SAVE+Act (403)",
+        "not reviewed: https://www.debbiedingellforcongress.com/ (page loads only script, no readable text; issues page same)",
+        "Ballotpedia: nothing on the subject (no position or survey text; she has not completed the 2026 Candidate Connection survey)",
+        "blocked: https://www.congress.gov/member/debbie-dingell/D000630 and https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/members/debbie_dingell/400718 (403)",
+        "not reviewed: web news search on name plus subject words (the session's shared web search budget was used up before this agent could search)",
+        "not reviewed: debate, interview and video sources (no search possible)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:00:07.203Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "no-ID voters and provisional ballots",
+        "voter-roll checks and non-citizen voting",
+        "federal voting-rights bills in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script returned no appearances)",
+        "Ballotpedia (https://ballotpedia.org/Debbie_Dingell: Michigan District 6 member, on the 2026 general-election ballot; confirms scope)",
+        "official House site (https://dingell.house.gov/media/press-releases list: nothing on the subject; site search blocked: https://dingell.house.gov/search?keys=voter+ID returned HTTP 403)",
+        "Congressional Record page for 2024-07-10 (https://www.govinfo.gov/content/pkg/CREC-2024-07-10/html/CREC-2024-07-10-pt1-PgH4556.htm: page does not name her)",
+        "congress.gov bill pages surfaced by search (not fetched as sources for her; votes already on file)",
+        "web search on her name with SAVE Act, voter ID and proof of citizenship words (no statement of her own found)",
+        "web search limited to official and congressional domains (no statement of her own found)",
+        "web search on her name with voting-rights bill cosponsorships (nothing naming her)",
+        "not reviewed: floor-speech or interview video, none located"
+      ],
+      "found": 0,
+      "at": "2026-10-27T21:31:09.673Z",
+      "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "bump stocks",
+        "domestic abusers and guns (boyfriend loophole)",
+        "concealed weapons permits",
+        "assault-style weapons",
+        "gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WDET interview Feb 22 2018",
+        "MLive story hosted on her official site (page shows several dates, none clearly its own)",
+        "web search (one query)",
+        "not reviewed: https://www.congress.gov (blocked with 403 for another member in this batch)",
+        "not reviewed: Ballotpedia, campaign site, Brady page (advocacy group, search lead only), WILX June 2026 report",
+        "nothing found in own words on an assault weapons ban"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

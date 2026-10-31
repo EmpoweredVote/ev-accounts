@@ -1,0 +1,199 @@
+{
+  "politician_id": "56dfd8dd-ac7a-482a-848a-7c1d0e979606",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "be838b0317c70df0d6f9ab642cd7d3d9319258064985a32f03a824c9da87ecbd",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "I also voted for H.R. 5427 to codify President Trump’s Order banning bump stocks and devices that turn legal weapons into machine guns. Finally, I voted for H.R. 3015 to require purchasers of a specific group of semi-automatic firearms, including AR-15s, to be 21 years of age, as they are already required to be in my district.",
+      "note": "Her statement on the June 2022 House gun package: says she voted for a bump-stock ban and a minimum age of 21 to buy certain semi-automatic firearms including AR-15s.",
+      "subjects": [
+        "bump stocks",
+        "minimum age for semi-automatic rifles",
+        "assault-style weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc60a63f73079b1ee382f1216edb5f5949ddac0da0cd48cf7712ea437ea0b1ee",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "Unfortunately, the Democrats passed, over my objection, legislation that I believe unduly burdens the rights of law-abiding gun owners and impedes their ability to protect themselves and their families with so-called safe storage laws.",
+      "note": "Says she objected to the safe storage bill in the June 2022 package, on the ground that it burdens law-abiding gun owners.",
+      "subjects": [
+        "safe storage laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "305eee6bc687d83dff974bbc9c9a2d16ef70b615b8a2b26b4784881a2136c162",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "I also voted against H.R. 2510 because it would make almost every handgun illegal in the United States.",
+      "note": "Explains her vote against H.R. 2510 in June 2022, saying it would make almost every handgun illegal.",
+      "subjects": [
+        "handgun ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a24015f83d2d48bb1802f3fd89cfceb0fa0c877358855895c490827f113c771",
+      "kind": "own-words",
+      "url": "https://malliotakis.house.gov/media/press-releases/malliotakis-takes-balanced-approach-end-gun-violence-protect-2nd-amendment",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "Taken together, H.R. 2280 and H.R. 3088 would assist the NYPD in dealing with the flow of guns from other states as the NYPD has seen a 300% increase in ghost gun interceptions.",
+      "note": "Says she voted for bills on gun trafficking, straw purchases and ghost guns, citing NYPD ghost gun interceptions.",
+      "subjects": [
+        "ghost guns",
+        "gun trafficking and straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons / semi-automatic rifle age",
+        "background checks",
+        "ghost guns",
+        "bump stocks",
+        "safe storage",
+        "handgun ban bill",
+        "concealed carry / reciprocity",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press release June 9 2022",
+        "official site in-the-news page June 9 2022",
+        "blocked: https://malliotakis.house.gov/search?q=second+amendment",
+        "blocked: https://www.congress.gov/member/nicole-malliotakis/M001204",
+        "web search (two queries): no sponsorship of concealed-carry reciprocity, red-flag or suppressor bill found",
+        "not reviewed: Ballotpedia, campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

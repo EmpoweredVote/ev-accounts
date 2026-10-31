@@ -448,7 +448,7 @@ freshness check on apply day, not just a source check.
 | 5 | DeKalb **D3 and D7 oath dates** | Special-election winners are seated on certification, not in January. |
 | 6 | **Ten Atlanta start dates** | No certified chain before 2025; bios carry no date language. Written `unknown`. |
 | 8 | **Fulton Surveyor, Fred Quinn, Jr.** | The only row in the wave with no post-2024 confirmation. Fulton publishes no Surveyor page. Seeded on the 2024 certified result; re-check when a source appears. |
-| 7 | **District polygon layers** | ✅ sourced and cross-county coverage proved — see "Geography". **One structural item remains:** the duplicate District 12 row must be resolved (dissolve vs defect) before any load. |
+| 7 | **District polygon layers** | ✅✅ **CLOSED 2026-10-25.** Sourced, cross-county coverage proved, **and loaded** — 12 districts, not 13. The District 12 question resolved as **DISSOLVE**, and the dissolve was already in production; verified end-to-end. See "District 12 — resolved" below. |
 
 ---
 
@@ -511,6 +511,45 @@ Layer [8] returns **13** Atlanta rows: District 12 appears **twice**. Measured r
 
 The geometries are **not** identical, so this is not a duplicated row. It is one district held by one
 person, stored as two single-part polygons: a main body plus a small **detached exclave**.
+
+### ✅ District 12 — resolved 2026-10-25: DISSOLVE, and it was already done
+
+**Measured against Fulton's layer in PostGIS, not inspected:**
+
+| | |
+| --- | --- |
+| `ST_Disjoint` / `ST_Touches` / `ST_Intersects` | **true / false / false** |
+| gap between the two polygons | **1,603 m** |
+| areas | main body **44.831 km²**, exclave **0.904 km²** (2.02%) |
+
+1.6 km of clear separation rules out the alternative. **A digitizing artifact touches or overlaps;
+it does not sit a mile away.** This is a genuine detached exclave — an annexed parcel — so the two
+rows are one district and must be **dissolved into a single multi-part geometry**, never loaded as
+two districts.
+
+🔴 **THE CONTROL IS WHAT MAKES THE "IS IT IN ATLANTA?" TEST READABLE, AND WITHOUT IT THE ANSWER
+INVERTS.** `ST_Covers(atlanta, exclave)` returns **false** — which reads as "this polygon is not in
+Atlanta" and would have condemned the row as a defect. Running the same test on the **main body**
+returns **false too**. The honest measure is the overlap: the exclave is **99.87%** inside Atlanta
+and the main body **99.90%** — the same figure. That residue is boundary-alignment tolerance
+between Fulton's layer and the Census place polygon, not a verdict about either piece.
+**Never read a bare `ST_Covers` false across two different sources without a control.**
+
+✅ **PRODUCTION ALREADY HOLDS THE DISSOLVE — nobody had recorded it.** `atlanta-ga-council-12` is a
+`ST_MultiPolygon` with **2 parts of 0.904 and 44.831 km², 1,603 m apart** — byte-for-byte the two
+source rows. All eleven other districts are single-part. The council chamber has **12 numbered
+districts plus `Atlanta Citywide`** (`1304000`) for the three at-large posts, which is the 13 that
+a naive count reports.
+
+🟢 **Proved end-to-end on prod, with a control**, which is the only detector this repo trusts:
+
+| Probe | Point | `POST /api/essentials/coordinate-lookup` returns |
+| --- | --- | --- |
+| **test** — inside the exclave | `33.654239, -84.423720` | 🟢 **Antonio Lewis, District 12** + 3 at-large |
+| **control** — inside the main body | `33.689884, -84.394457` | 🟢 **Antonio Lewis, District 12** + 3 at-large |
+
+Identical answers. The exclave is the piece that would have gone silent had the dissolve been
+skipped, and it resolves.
 
 ✅ **Dissolve on `DistrNum` into a MULTIPOLYGON.** The result is 12 districts, one of which has two parts.
 

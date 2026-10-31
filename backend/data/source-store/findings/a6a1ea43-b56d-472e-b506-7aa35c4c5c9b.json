@@ -1,0 +1,33 @@
+{
+  "politician_id": "a6a1ea43-b56d-472e-b506-7aa35c4c5c9b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record: not run (the standing rules for this session forbid running repo scripts); not reviewed",
+        "Ballotpedia: blocked (https://ballotpedia.org/Johnny_Chastain returned an empty page)",
+        "legiplex.com legislation list: blocked (403)",
+        "legiscan.com bill pages: blocked (403)",
+        "open.pluralpolicy.com bill pages: not found (404)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)",
+        "web searches: name plus subject words, news and press-release sites; no own words on the subject found",
+        "house-press.com / senatepress.net targeted searches: no results on the subject",
+        "Wikipedia: confirms he holds the Georgia House District 7 seat",
+        "search results name 2025 bills HB 661 and HB 699 (voter registration and qualifications) as his, but bill pages could not be read: not reviewed, sponsorship unverified"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:33:45.857Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

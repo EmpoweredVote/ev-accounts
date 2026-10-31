@@ -1,0 +1,48 @@
+{
+  "politician_id": "c0baa6ca-b02d-4bbe-8d90-5f36d31cba1e",
+  "findings": [
+    {
+      "id": "406cea0b0bf7ff1d7fe71f3bbbdb1cd24b8c9fbac67f39dab206c5208a49191c",
+      "kind": "own-words",
+      "url": "https://karenkeysgamarra.com/additionalimportantissues",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Only three years ago, Virginia was one of the worst states for voting. However, that changed in 2020 when the General Assembly reduced barriers to voter access, including previous voter ID requirements, excuses needed to vote early, and more.",
+      "note": "Campaign issue page (Voting Rights section, undated; wording implies 2023 campaign). Describes the 2020 reduction of voter ID requirements as a change from barriers. Page also says 'Voting is a fundamental right; we must fight all attempts to restrict access to those legally eligible.' Date is inferred. (Page undated; date set to unknown at import.)",
+      "subjects": [
+        "voter ID at the polls",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T16:28:26.265Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "web search on name plus voter ID",
+        "Ballotpedia (page has no own-words on the subject)",
+        "blocked: lis.virginia.gov (not retried)",
+        "campaign site karenkeysgamarra.com/additionalimportantissues"
+      ],
+      "found": 1,
+      "at": "2026-10-28T16:28:26.265Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

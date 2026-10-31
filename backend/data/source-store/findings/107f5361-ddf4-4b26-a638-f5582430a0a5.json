@@ -1,0 +1,79 @@
+{
+  "politician_id": "107f5361-ddf4-4b26-a638-f5582430a0a5",
+  "findings": [
+    {
+      "id": "f7484195b17fd75a90ed52349a7c18a4b96765f4bd567692efe6264dbe707265",
+      "kind": "record",
+      "url": "https://www.vcdl.org/va-alert-2-4-2026-vcdl-urgent-legislative-action-alert",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "VA-HB-871-2026",
+      "act": "other",
+      "motion": "House Public Safety Firearms subcommittee vote on reporting HB 871 (firearms locked and unloaded when a minor or prohibited person is in the home); she voted against reporting it, in a 3-3 tie and again in a 4-3 reconsideration vote",
+      "note": "Reported by a gun-rights group's alert dated 2026-02-04, which says the vote was the week before. Exact vote date not stated on the page. Source is not an official record. Official LIS record not checked.",
+      "subjects": [
+        "safe storage of firearms",
+        "locked storage requirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "photo ID",
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting",
+        "documentary proof of citizenship (SAVE Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://ballotpedia.org/Kimberly_Pope_Adams (confirms sitting delegate for District 82, took office 2026-01-14, term to 2028; nothing on the subject)",
+        "https://law.lis.virginia.gov/vacode/title24.2/chapter6/section24.2-602.1/ (2026 law on ID badges for electoral board members, not voter ID; page does not name a patron)",
+        "https://house.vga.virginia.gov/subcommittees/H18001/agendas/5356 and https://hodspeak.house.virginia.gov/committees/H18/bills/HB234/comments (no patron or own words readable)",
+        "blocked: https://cpo.soar.com (host not found) and https://origin.vpap.org/legislators/441964-kimberly-pope-adams (SSL handshake failure)",
+        "no campaign or official site reached; no site found by search",
+        "search summaries say she is chief patron of 2026 HB 234 (electoral board members wear ID badges); no official page naming her was reachable, and it is not about voter ID, so not saved",
+        "blocked: https://lis.virginia.gov bill pages (page loads its content with JavaScript, nothing readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:27:45.924Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "safe storage",
+        "gun bills sponsored",
+        "committee votes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search on name plus gun words",
+        "VCDL alert page fetched (advocacy group's account of a subcommittee vote, not an official record)",
+        "not reviewed: https://www.smithfieldtimes.com/?p=20322 (page returned no text)",
+        "not reviewed: https://giffords.org/candidates/kimberly-pope-adams",
+        "not reviewed: LIS bill pages (script-loaded)",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

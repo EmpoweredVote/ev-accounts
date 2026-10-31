@@ -1,0 +1,32 @@
+{
+  "politician_id": "049f5243-99f7-4a83-a2e5-fd8a471f1c73",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Sally_Lieber) shows her as the sitting State Board of Equalization District 2 member, term ending 2027, on the 2026-11-03 general-election ballot after the 2026-06-02 primary; this is a tax board, not a lawmaking or election-law body",
+        "On the Record (0 appearances; extract-otr run with name search)",
+        "official site https://boe.ca.gov/lieber and https://boe.ca.gov/lieber/about.htm (fetched, nothing on the subject)",
+        "blocked: https://boe.ca.gov/members/lieber/ (404)",
+        "campaign site https://www.sallylieber.com (fetched, nothing on the subject)",
+        "Ballotpedia (fetched, nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "web search: name plus SB 1174 voter ID, and name plus voter ID / proof of citizenship / election integrity (nothing on the subject; she is not in the Legislature, so no SB 1174 vote exists)",
+        "leginfo not applicable: she has not served in the Legislature since 2008"
+      ],
+      "found": 0,
+      "at": "2026-10-28T15:57:02.199Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

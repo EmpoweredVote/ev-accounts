@@ -1,0 +1,57 @@
+{
+  "politician_id": "0dc7e2da-505d-42b6-af05-a2105ce81379",
+  "findings": [
+    {
+      "id": "ddc2010b10d2036e216fa70366cf85b5929331411faa5ebd873d5b357a3025b0",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=892&Bill=HB295",
+      "date": "2025-08-28",
+      "date_precision": "day",
+      "instrument_id": "TX-HB-295-2025",
+      "act": "other",
+      "motion": "Coauthor of HB 295 (second called session), voters with a not-current residence address",
+      "note": "Listed as a coauthor (primary authors Swanson, Cain, Schofield, Gerdes). Caption: 'Relating to election procedures regarding accepting a voter with a residence address that is not current and the immediate effect of a voter's registration after the registrar's receipt of certain change of address notices.' The date is the House Elections committee hearing and favorable report.",
+      "subjects": [
+        "voter-roll and registration address checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T14:34:15.632Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://www.house.texas.gov/members/87 (Rep. Caroline Fairly, District 87; the brief's 'D88' is not what sources show)",
+        "2026 general ballot: branch.vote candidate page lists her for HD 87 with one named opponent (https://branch.vote/races/2026-texas-general-election-tx-state-state-representative-tx-state-house-87/candidates/caroline-fairly); ballot certification not confirmed",
+        "On the Record (0 appearances)",
+        "campaign site https://fairlyfortexas.com: border page only; nothing on the subject",
+        "Amarillo Pioneer 2026 primary voter guide questionnaire (https://www.amarillopioneer.com/2026-primary-voter-guide/cfairly) and 2024 guide: nothing on the subject",
+        "Texas Legislature Online 2025 bill pages: not on the author or coauthor list of the regular-session proof-of-citizenship bills HB 219, HB 892, HB 1312, SB 16 or HB 5337; not on HB 304; found on the coauthor list of HB 295 in the second called session",
+        "Texas Legislature Online bill search: blocked, results page not readable by the fetch tool, so her other 2025 coauthored bills were not fully listed",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Caroline_Fairly (only seen in search results)",
+        "two web searches on her name plus the subject words: nothing of her own on the subject",
+        "interview audio/video (a Texas Public Policy podcast episode): not reviewed: https://www.texaspolicy.com/multimedia/article/the-sherry-sylvester-show-episode-25-a-new-generation-of-leadership-with-caroline-fairly"
+      ],
+      "found": 1,
+      "at": "2026-10-28T14:34:15.632Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

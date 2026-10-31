@@ -73,6 +73,8 @@ beforeEach(() => {
 function makeRep(overrides: Partial<PoliticianFlatRecord>): PoliticianFlatRecord {
   return {
     id: 'p-default',
+    office_id: 'o-default',
+    seat_status: 'held',
     external_id: null,
     first_name: '',
     middle_initial: '',

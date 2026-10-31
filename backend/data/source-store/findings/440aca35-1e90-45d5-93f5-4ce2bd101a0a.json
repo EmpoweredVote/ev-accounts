@@ -1,0 +1,135 @@
+{
+  "politician_id": "440aca35-1e90-45d5-93f5-4ce2bd101a0a",
+  "findings": [
+    {
+      "id": "49440a35459a60b4b780a8d5949b036b99dc30d155e9416e6bbe66e876c206c3",
+      "kind": "own-words",
+      "url": "https://house-press.com/reps-davis-scott-schofield-announce-joint-priorities-vision-for-2024-legislative-session/",
+      "date": "2023-07-13",
+      "date_precision": "day",
+      "passage": "Reps. Davis, Scott and Schofield also continue to advocate for protecting and expanding voting rights. They believe that every eligible citizen should have the ability to exercise their right to vote without barriers or discrimination.",
+      "note": "Joint press release issued in the names of Reps. Viola Davis, Sandra Scott and Kim Schofield on their shared 2024 session agenda. It speaks of voting rights and barriers in general terms and names no ID rule, no citizenship proof and no bill.",
+      "subjects": [
+        "voting rights in general",
+        "barriers to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:50:02.160Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b743571b63821aa0b7232788af736b657a9cd31f4e8b7d010f6ac53133315574",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Davis'), linked to VIOLA DAVIS (district 87) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "651594353ed38a5127fce94793e8d3d68b610222c415888c846e1c920f596135",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Davis'), linked to VIOLA DAVIS (district 87) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8470e47b7f63f6d5a45832b7ae422fba96d7698e141c9477afd0b5a67582a450",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Davis'), linked to Viola Davis (district 87) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voting barriers",
+        "SB 202 vote"
+      ],
+      "places": [
+        "in scope: Georgia House District 87 incumbent, on the 2026 general-election ballot (https://ballotpedia.org/Viola_Davis)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site https://violadavis.com/ (the legislator's own site; nothing on the subject)",
+        "House caucus press site search on her name and voting words (one joint statement on voting rights saved)",
+        "news search on her name plus SB 202 and ID words (nothing usable; one rally report in which the speaker could not be confirmed as this person was not saved)",
+        "blocked: https://www.legis.ga.gov/legislation/55499 (SB 202 2021 page loads by script and its data service returns 401; her 2021-03-25 SB 202 votes could not be read)",
+        "blocked: https://www.legis.ga.gov/members/house/4947?session=1033 (script-loaded page, not readable)",
+        "not reviewed: official roll calls for SB 202 (2021), SB 189 (2024), HB 397 (2025)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:50:02.160Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.399Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

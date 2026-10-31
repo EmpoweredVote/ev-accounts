@@ -1,0 +1,88 @@
+{
+  "politician_id": "358ad74d-dab2-42f9-94ad-38ad1f40dd31",
+  "findings": [
+    {
+      "id": "a9d346ddbfedff437999d0fc4cd7a2552a28ede9f0e1c8d07e0d47065cc7ef6a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #677)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, Third Reading (roll call #677), 2024-12-02: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in scope. NC Senate District 31 (Forsyth, Stokes), confirmed at https://www.ncleg.gov/Members/Biography/S/449 and listed on https://ballotpedia.org/North_Carolina_State_Senate_elections,_2026 as Dana Caudill Jones (incumbent) on the District 31 general-election line",
+        "On the Record (0 appearances for this politician id; extract-otr.mjs run)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/S/449 (reviewed)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/449 (reviewed; no voter ID, citizenship or mail-ballot bill found; SB 1084 Reduce Early Voting Period is sponsored by others and only referred to Elections, nothing on the subject)",
+        "blocked: https://www.ncleg.gov/Members/Votes/S/449 (vote list loads by script, not readable; no roll-call checked)",
+        "Ballotpedia personal page: not reviewed, no NC page exists (https://ballotpedia.org/Dana_Jones is a Maryland legislator, not this person)",
+        "campaign site: not reviewed, guessed domains did not resolve",
+        "news search and other web searches: not reviewed, session search budget exhausted",
+        "nothing on the subject found in the places reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:41:09.598Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identified as the sitting state senator for District 31 via https://www.ncleg.gov/Members/Biography/S/449",
+        "legislature introduced-bills list https://library.ncleg.gov/Members/IntroducedBills/S/449: no voter ID, citizenship-proof or mail-ballot ID bill; the only elections bill is SB 1084 (reduce early voting period), about voting days, not identification, so not saved",
+        "https://www.ncleg.gov/BillLookUp/2025/S1084 checked: no mention of voter ID",
+        "official senate site and campaign site: no page found in searches; nothing on the subject",
+        "Ballotpedia: page returned empty, not reviewed: https://ballotpedia.org/Dana_Jones",
+        "news searches (2): nothing by her on the subject",
+        "recorded floor votes on voter ID bills not reviewed: no vote page surfaced"
+      ],
+      "found": 0,
+      "at": "2026-10-27T01:30:51.090Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

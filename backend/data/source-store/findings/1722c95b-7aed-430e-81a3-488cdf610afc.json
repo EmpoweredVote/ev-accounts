@@ -1,0 +1,136 @@
+{
+  "politician_id": "1722c95b-7aed-430e-81a3-488cdf610afc",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "78bd84913f7341f5b7f5922d799620162f7c731716a854b48ac8784da122b529",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: yea (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26) (filed version appended); earlier text: stage1 text-T2 (source-collector subagent, 2026-10-20), 2026-10-21T03:40:10.563Z, curl",
+        "fetched_at": "2026-10-26T21:28:55Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/filed/V126_SB1256_ful.htm",
+          "sha256": "bc8afdfce558c5bb6d56abf7a911ec1fbe823b75c4ab250a6b83e3997ae302f0"
+        }
+      }
+    },
+    {
+      "id": "bde0b6719cb3aa7c19c8c45fdbf75ae28566b757771a52718594cabf1447d3e7",
+      "kind": "record",
+      "url": "https://virginiapoliticalnewsletter.substack.com/p/an-update-from-the-senate-p-and-e",
+      "date": "2022-01-25",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-80-2022",
+      "act": "sponsor",
+      "note": "SB 80: bars state and local election officials from accepting money, grants, property or services from private individuals or non-government groups for voter education, voter registration or other election expenses. Newsletter reports he presented it to the Senate elections committee and it cleared. Date is the newsletter date; the committee hearing date is not stated. Related election-law bill, not a voter ID bill.",
+      "subjects": [
+        "private funding of elections (related)",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:31.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b550d4c51c5ca8eab9483c89eb80fcec344cf595eb64aa48782aff8a21420724",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+SB900",
+      "date": "2023-01-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-900-2023",
+      "act": "sponsor",
+      "note": "Listed as a patron of SB 900 (2023) as filed (\"Patrons-- McDougle, Cosgrove, DeSteph, Dunnavant, Hackworth, Hanger, Newman, Norment, Obenshain, Peake, Pillion, Reeves, Ruff, Stanley, Stuart, Suetterlein and Vogel\"). The bill was left in the Senate Privileges and Elections Committee on 2023-02-08; it had no floor vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 va-01 (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-30T22:36:00Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "statement in place of ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity",
+        "private funding of elections (related)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Bill_Stanley (confirms Virginia Senate District 7, current term ends 2028-01-12; no survey answers, nothing on the subject)",
+        "Wikipedia page for Bill Stanley (politician): nothing on the subject",
+        "official site https://senatorbillstanley.com/ (blocked: hosting account suspended notice only)",
+        "2022 newsletter report on the Senate elections committee (saved below)",
+        "a 2020 blog post about SB 65 (repeal of photo ID): describes his remarks in the blogger's words, no quote from him; not saved",
+        "blocked: https://legiscan.com (HTTP 403, roll calls for SB 1 of 2012 and SB 80 of 2022)",
+        "blocked: https://www.jurist.org/news/2013/02/virginia-senate-approves-bills-limiting-acceptable-voter-id (HTTP 403)",
+        "blocked: https://epic.org/2012/02/virginia-senate-narrowly-appro.html (HTTP 403); archive copy read: no roll call",
+        "not reviewed: https://origin.vpap.org/legislators/82732-bill-stanley/list-votes/close-votes/?page=6 (connection failed)",
+        "not reviewed: https://lis.virginia.gov bill pages (script-only); 2012 SB 1 individual vote and 2020 SB 65 vote not found",
+        "news searches on name plus subject words: no direct quote on voter ID found. Votes already on file (HB 19 of 2020, SB 1256 of 2013) not collected again."
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:31:31.892Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

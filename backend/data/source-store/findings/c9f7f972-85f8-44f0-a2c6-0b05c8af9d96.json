@@ -1,0 +1,257 @@
+{
+  "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96",
+  "findings": [
+    {
+      "id": "d32d02d4d4d13bc37853dc0dd2545aa0a838530d4d0e8ec00274865c7a2995d9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/822",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House roll call 759, passed 66-47)",
+      "note": "The member's vote column shows No on House passage of HB 958. Part II of the ratified bill (staff summary at https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8) has DMV send full social security numbers to the elections board monthly, requires removal of deceased voters, requires a process to remove non-eligible citizens found in a federal database, and bars processing a registration unless the applicant affirmatively states US citizenship (a sworn form if left blank). Bill page: https://www.ncleg.gov/BillLookUp/2025/H958. Veto status is on the bill page (see the 2026-08-17 veto finding).",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of non-citizens from voter rolls",
+        "voter-roll checks against federal data",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0c05915cf4f4f8d5777930c67a95997d79e4b6b71be9983ecb6faa3a4f9cff1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/822",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur with Senate changes (House roll call 802, passed 62-47)",
+      "note": "The member's vote column shows No on the House vote to concur in the Senate version of HB 958, the same bill with the citizenship-statement and non-citizen roll-removal provisions in Part II.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of non-citizens from voter rolls",
+        "voter-roll checks against federal data",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1bd2a4a1a136d42c435decf10ed09c6a0234ad8caf822de6ca8fa6279221714",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 vetoed by the Governor 2026-08-17 (context only; the member's votes on the bill are in the two findings above)",
+      "note": "Bill page shows ratified 2026-08-06 and vetoed 2026-08-17. No member vote on a veto override of HB 958 appears on the member's vote list as reviewed. This is context for the two votes above, not an act of the member.",
+      "subjects": [
+        "election integrity laws in general",
+        "citizenship statement on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9f30851a87b77a9418a9c3b1cc0f99c5c31894657fcd788bf31947acefc2e5e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2026",
+      "act": "sponsor",
+      "motion": "HB 1246 Safeguarding Elections Act, filed 2026-07-30, primary sponsor group (Buansi, Dahle, F. Jackson, Clark)",
+      "note": "Bill page lists Clark in the primary sponsor group; referred to House Rules 2026-08-04, no further action. Text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf) includes a Class 2 misdemeanor for demanding citizenship documentation from a voter other than what State law requires, a new citizenship ground for voter challenges, and a rule that voter photo-ID photographs and photocopies of ID for voting are confidential and not released to the federal government without a court order or warrant. It also covers voter intimidation, early voting hours, certification and forensic audits.",
+      "subjects": [
+        "citizenship documentation demanded of voters",
+        "confidentiality of voter photo ID records",
+        "voter intimidation",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "635ae1947c397c5e6b5325b0955cbcc1d4b114173750da66ef964f9d431341a0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "nay",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: nay (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    },
+    {
+      "id": "f7967087215cbdb9d37f8c08f61f0584c4997047da314337ab0932baf292bea0",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/822",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Clark voted No on second reading of HB 958 (Election Law Changes); the vote was 66 Aye to 47 No. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds a rule that a county board processes a voter registration application only if it states the applicant is a U.S. citizen, with a notice and a sworn statement under penalty of perjury if the answer is blank; it also orders a process to remove voters flagged as possible non-citizens by a federal database and sets list-maintenance changes. The vote-history page shows only her vote, not the reason.",
+      "subjects": [
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:57.429Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56776214c4b37a57a52212dbef35e47e6ecd8338387d17a537d7af58b42ef24a",
+      "kind": "record",
+      "url": "https://ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/822",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, motion to concur in the Senate version (House roll call 801)",
+      "note": "Clark voted No on the House concurrence vote on HB 958 (62 Aye to 47 No). The bill was ratified 8/6/2026 and vetoed by the Governor on 8/17/2026 per the ncleg.gov bill page.",
+      "subjects": [
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:57.429Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "342289e484778afaa65e2f63224e9aa339a5cf85480e2fa9e07177855efad7b1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1246-2025",
+      "act": "sponsor",
+      "note": "Clark is the primary sponsor of HB 1246, Safeguarding Elections Act, filed 7/30/2026 and referred to House Rules on 8/4/2026. The bill page gives no summary of its content; its listed keywords are elections, ballots, elections boards, records and privacy. Content on ID or citizenship not confirmed.",
+      "subjects": [
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T22:07:57.429Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on registration",
+        "voter-roll checks / non-citizen removal",
+        "election integrity laws in general",
+        "personal data of voters (photo ID copies)"
+      ],
+      "places": [
+        "in scope: Rep. Tracy Clark, NC House District 57 (Guilford), on the 2026 general-election ballot; Democratic primary of 2026-03-03 was canceled (https://ballotpedia.org/Tracy_Clark; https://www.ncleg.gov/Members/Biography/H/822)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site tracyclarkfornc.com (home, about-me, motivation-to-serve, nc-house-district-57, community-safety): nothing on the subject; issues/news/democracy/voting pages 404; no search function, so subject words were checked on each page fetched",
+        "ncleg.gov member pages: introduced bills (https://www.ncleg.gov/Members/IntroducedBills/H/822) and votes (https://www.ncleg.gov/Members/Votes/H/822) reviewed for election bills",
+        "ncleg.gov bill pages and texts for HB 958, HB 1246, HB 691 (HB 691 nothing on the subject)",
+        "Ballotpedia (candidate page; survey answers have nothing on the subject)",
+        "not reviewed: https://www.youtube.com/@RepTracyClark (video channel, cannot be read)",
+        "not reviewed: Facebook and Instagram pages",
+        "news search and Ballotpedia search not run: the session web-search budget was used up; no news search was possible",
+        "no own-words statement on the subject found"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:10:25.565Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship on a voter registration application",
+        "voter-roll checks against a federal database",
+        "election law changes in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "Ballotpedia (confirms Tracy Clark, NC House District 57, on the 2026 general election ballot)",
+        "ncleg.gov member vote history 2025-2026 (all election-related roll calls reviewed)",
+        "ncleg.gov list of bills she introduced (election-related ones checked)",
+        "ncleg.gov bill pages for H958, H1246, H691, H278",
+        "ratified text of H958 (ncleg.gov PDF)",
+        "campaign site tracyclarkfornc.com: nothing on the subject",
+        "web news search on name plus voter ID words: no own words found",
+        "own words on voter ID, citizenship proof or mail-ballot ID: nothing found"
+      ],
+      "found": 3,
+      "at": "2026-10-27T22:07:57.429Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "politician_id": "c01e3771-7930-479e-b1a0-710d58424660",
+  "findings": [
+    {
+      "id": "c7c28c3d6834ecc3c3db340419e15266a9ee4fb74a2e8e72dc03c7f983230819",
+      "kind": "own-words",
+      "url": "https://www.insidenova.com/headlines/trio-of-progressives-vie-for-democratic-nomination-in-virginia-s-redrawn-19th-house-district/article_fc7542be-0321-11ee-8ebe-dfccfe222cd0.html",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "“Woodbridge used to be a place where you can easily walk down the street, go to a 7-Eleven, walk down to the Popeyes, et cetera,” Henson said. “But now, especially during the night, you walking down the street you might get hit by a bullet … It’s now starting to become a dangerous thing if we do not put forth protective measures in order to prevent the gun safety issues we have in Prince William.”",
+      "note": "Direct quote of Henson in InsideNova's 2023 Democratic primary story (date not shown in fetched text; before the June 2023 primary). He ties gun safety problems to a need for protective measures. The reporter separately paraphrases him as wanting to ban military-grade weapons and crack down on unserialized 'ghost guns'; that paraphrase is not his own wording.",
+      "subjects": [
+        "gun safety laws",
+        "gun violence",
+        "ghost guns",
+        "assault-style weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "web search on name plus voter ID",
+        "Ballotpedia (page has no own-words on the subject)",
+        "blocked: lis.virginia.gov (not retried)",
+        "not reviewed: On the Record extract script (not run, searcher limited to web tools)",
+        "web search for own statements on voting rights (no quotes found)",
+        "Black Virginia News article on Henson (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:25:35.857Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault weapons ban",
+        "ghost guns",
+        "gun violence",
+        "gun safety laws",
+        "firearm bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site: not found (guessed domains did not resolve; search did not surface one)",
+        "Ballotpedia: not reviewed",
+        "Virginia LIS bill pages: not reviewed; search found no 2026 firearm bill with him as sponsor",
+        "FastDemocracy HB 626 (2026) page: lists him only as a House vote, not a sponsor",
+        "Giffords candidate page (third-party endorsement text, not his own words): https://giffords.org/candidates/rozia-henson/",
+        "InsideNova 2023 primary article (quote saved)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

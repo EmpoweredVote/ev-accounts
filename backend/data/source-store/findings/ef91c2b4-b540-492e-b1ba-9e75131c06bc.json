@@ -1,0 +1,268 @@
+{
+  "politician_id": "ef91c2b4-b540-492e-b1ba-9e75131c06bc",
+  "findings": [
+    {
+      "id": "641d241a62cd8fd140974c2652ce88ae51b21740388c2fa3b92bde452d70be02",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-house-drops-voter-id-passes-election-reforms",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "passage": "Democrats will not support any bills “that would impair or infringe the right to vote, let alone in the Constitution,” Bradford said.",
+      "note": "WITF reporting carried by WHYY quotes him after the House dropped a voter ID bill; he says his caucus will not back bills that impair or infringe the right to vote, including in the state constitution. The first half of the sentence is the reporter's wording; only the quoted part is his.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:22.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6d78d5fb7eb2a4120ec75bdc4091f12f2886edc62a52ba46125fe2c7ab31f45",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-house-drops-voter-id-passes-election-reforms",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "passage": "Voter ID responds to a “made-up issue,” Bradford said, originating in lies about election security pushed by President Donald Trump after his 2020 election loss.",
+      "note": "Same article. He calls the voter ID push a response to a made-up issue that came from election-security claims after the 2020 election. Only the quoted words 'made-up issue' are verbatim his; the rest is the reporter's wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "election security claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:22.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "971bf57be04bbaf14c9eb8a7faefb77cbc6cec5b8dc008fdbf43da7828f46a11",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-house-drops-voter-id-passes-election-reforms",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "passage": "“Democrats are a pragmatic group,” Bradford said. “We know we have had limited support for it. In the past, Republicans have clamored for this type of legislation.”",
+      "note": "He explains why a scheduled voter ID bill vote was pulled, saying the bill had limited support among his caucus.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID bill floor scheduling"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:12:22.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76f80a509ed22b7cb2506f37225d9a067a98049ade9cf560b3172eb1468be15d",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "nay",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BRADFORD'), linked to Matthew D. Bradford (district 70) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Bradford'), linked to Matthew D. Bradford (district 70) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Bradford'), linked to Matthew D. Bradford (district 70) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.701Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BRADFORD'), linked to Matthew D. Bradford (district 70) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.855Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78ed05623ca02ae0984715a90aa7601cb5af050b4800628340e79962ec2d733e",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-gun-safety-laws-legislature/",
+      "date": "2023-08-14",
+      "date_precision": "day",
+      "passage": "“We haven’t seen meaningful gun safety legislation until what we passed in the House for the better part of a decade now,” Bradford said.",
+      "note": "Quoted by WHYY from a Villanova University town hall on gun violence prevention held Monday night (article published 2023-08-15).",
+      "subjects": [
+        "gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44299fa5610872fda4515b4e88f08dd9b8f61212dce8b62032a7a9fc7eeb29e5",
+      "kind": "own-words",
+      "url": "https://whyy.org/articles/pennsylvania-gun-safety-laws-legislature/",
+      "date": "2023-08-14",
+      "date_precision": "day",
+      "passage": "“That reality will weigh heavily on those who sat on their hands,” he said.",
+      "note": "Quoted by WHYY from the same town hall, about House-passed gun bills stalled in the Senate and rising gun deaths.",
+      "subjects": [
+        "gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID in the state constitution",
+        "proof of citizenship",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election security claims"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site pahouse.com/Bradford (biography page confirms he is House Majority Leader; news release list page returned no text on the subject)",
+        "blocked: https://ballotpedia.org/Matthew_Bradford",
+        "web search x2 on name plus voter ID / proof of citizenship / SAVE / mail ballot",
+        "WHYY/WITF report of 2025-05-14 read (his quoted words)",
+        "not reviewed: https://www.bradfordera.com/2025/05/13/the-pa-house-is-set-to-approve-new-voter-id-rules-reversing-years-of-democratic-opposition (page text did not load, only site navigation)",
+        "2026 ballot status not confirmed by any page found",
+        "nothing on the subject found for SAVE Act, proof of citizenship, or mail-ballot ID"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:12:22.545Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:45:58.701Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.855Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety legislation",
+        "firearms regulation general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "WHYY article on Villanova town hall (via curl)",
+        "web search on name plus gun terms",
+        "not reviewed: pahouse.com member page, campaign site, Ballotpedia, palegis.us sponsorships (budget)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "politician_id": "e1d8c7bb-cde0-4ec5-8863-0b8ce838cb57",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "5f09cd0e60e6a478a08a6871e24f6da290a388a64d7d465ef9cb8fb59ec5e916",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/media/press-releases/congresswoman-tenney-releases-2026-second-amendment-plan",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "passage": "The Second Amendment is a fundamental Constitutional right that protects every law-abiding American's ability to defend themselves, their families, and their freedoms.",
+      "note": "Quote in her release announcing her 2026 Second Amendment plan. Fetch tool returned an extract of the page.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c139b2727e36b32ba4667171864569c0c12073b5b5c4c673057985774b75eeff",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/media/press-releases/congresswoman-tenneys-statement-houses-passage-senate-gun-control-bill",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "passage": "This overreaching gun control legislation will not stop the violent shootings taking place across our country",
+      "note": "Statement on House passage of the Senate gun bill. Same statement (extracts, not full sentences) says the bill expands support for red flag laws at the federal level and makes young buyers wait longer to purchase a firearm. Passage is an extract that stops mid-sentence.",
+      "subjects": [
+        "gun control legislation",
+        "red-flag orders",
+        "minimum age to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "989c4aef337bb63bcf2095ba7f503c5a3d9ea6ac00e701dff9e79dad74be698a",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/issues/second-amendment-plan",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I opposed the onerous NY SAFE Act and was the first to introduce formal legislation to repeal this law",
+      "note": "Issue page on her Second Amendment plan (undated). Extract; passage stops mid-sentence. Same page lists H.R. 38 Concealed Carry Reciprocity Act: anyone eligible to carry a concealed firearm in one state may do so in any other state.",
+      "subjects": [
+        "repeal of state gun law (NY SAFE Act)",
+        "carry permit reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a4f6bce678b1b2323c26624746b8f9255f3d140e3689897832c76c98fd8aace",
+      "kind": "own-words",
+      "url": "https://tenney.house.gov/issues/second-amendment-plan",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "This bill would ensure that anyone eligible to carry a concealed firearm in one state may do so in any other state",
+      "note": "Her issue page description of H.R. 38, Concealed Carry Reciprocity Act. Extract; undated.",
+      "subjects": [
+        "carry permit reciprocity"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "concealed carry reciprocity",
+        "NY SAFE Act repeal",
+        "gun control bills",
+        "red-flag laws",
+        "minimum age to buy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site tenney.house.gov (2026 Second Amendment plan release, 2022 statement, issues/second-amendment-plan page)",
+        "blocked: https://www.congress.gov (not attempted after Cloudflare block on another member page; sponsorships not reviewed, only as named on her own site)",
+        "one news search on name plus subject words (leads only)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

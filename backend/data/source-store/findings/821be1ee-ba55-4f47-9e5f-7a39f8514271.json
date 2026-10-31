@@ -1,0 +1,174 @@
+{
+  "politician_id": "821be1ee-ba55-4f47-9e5f-7a39f8514271",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "0861423a617a88770c962d8d28904885a1d5a2445c1a1c58dcca76359cf95dc3",
+      "kind": "own-words",
+      "url": "https://levin.house.gov/media/press-releases/rep-mike-levins-statement-regarding-the-supreme-courts-decision-to-reverse-the-federal-ban-on-bump-stocks",
+      "date": "2024-06-14",
+      "date_precision": "day",
+      "passage": "Congress must take action to right this wrong. We need to pass common sense measures to ban bump stocks and assault weapons. We must put an end to this senseless violence.",
+      "note": "Statement on the Supreme Court bump stock ruling; the date comes from the search result title for this page, not from the page text.",
+      "subjects": [
+        "bump stock ban",
+        "assault weapons ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75d5af0055cb262deb3e3cb22f8e416a1f5bfe52dc4c8de0b24f6541a15d8116",
+      "kind": "own-words",
+      "url": "https://levin.house.gov/media/press-releases/04/24/2023/rep-mike-levin-introduces-bipartisan-legislation-to-expand-safe-storage-of-firearms-and-reduce-gun-violence",
+      "date": "2023-04-24",
+      "date_precision": "day",
+      "passage": "There is an epidemic of gun violence in this country, and both Democrats and Republicans must come together to enact commonsense reforms to save lives,",
+      "note": "Quoted in his press release introducing the Prevent Family Fire Act.",
+      "subjects": [
+        "gun safety laws general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afc0af4eb3447453a8adec0f354f06791b0eb4df25a6919b5b3a4f6b79c08113",
+      "kind": "record",
+      "url": "https://levin.house.gov/media/press-releases/04/24/2023/rep-mike-levin-introduces-bipartisan-legislation-to-expand-safe-storage-of-firearms-and-reduce-gun-violence",
+      "date": "2023-04-24",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2770-2023",
+      "act": "sponsor",
+      "note": "Introduced the Prevent Family Fire Act, H.R. 2770, a 10 percent retailer tax credit (up to $40 per device) for external devices that lock or disable firearms and ammunition. Date from the URL and the press release date shown in search.",
+      "subjects": [
+        "safe storage of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bump stocks",
+        "assault weapons ban",
+        "safe storage of firearms",
+        "background checks",
+        "red-flag orders",
+        "carry",
+        "gun violence general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site levin.house.gov: 2024-06-14 and 2023-04-24 press releases fetched with curl; other press releases listed in search (2019-10-30, 2019-02-27, 2022-06-24, 2022-09-29) not read",
+        "congress.gov: not reviewed (403 for other members in this batch); bill number taken from his own press release link",
+        "Ballotpedia: not reviewed",
+        "campaign site https://www.mikelevin.org/agenda/gunviolence/: not reviewed",
+        "one news search on name plus gun words",
+        "scope: official site names him Rep. Mike Levin (CA-49); 2026 ballot status not checked on a separate page"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

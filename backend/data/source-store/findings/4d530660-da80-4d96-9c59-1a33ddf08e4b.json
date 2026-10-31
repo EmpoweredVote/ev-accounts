@@ -1,0 +1,201 @@
+{
+  "politician_id": "4d530660-da80-4d96-9c59-1a33ddf08e4b",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "185973d6668aceb5523cee1b48f446e2252b8389629a47ad9971eca10b950777",
+      "kind": "own-words",
+      "url": "https://kaptur.house.gov/media-center/press-releases/kaptur-slams-trump-era-supreme-court-backward-decision-ohio-voter-purge",
+      "date": "2018-06-12",
+      "date_precision": "day",
+      "passage": "Purging voters from the rolls is wrong, plain and simple and this 5-4 decision takes us backward. Voting should be easy and accessible, no matter who you are or where you live.",
+      "note": "Press release statement on a Supreme Court ruling that let Ohio keep removing voters from the rolls; she opposes the removals and says voting should be easy and accessible.",
+      "subjects": [
+        "voter-roll purges",
+        "barriers to voting in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:25.907Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e4775be2f2e352a90a1e9b8072c419dab69e8456945968181abd51e92695f31",
+      "kind": "own-words",
+      "url": "https://kaptur.house.gov/media-center/press-releases/kaptur-statement-house-passage-freedom-vote-john-r-lewis-act",
+      "date": "2022-01-13",
+      "date_precision": "day",
+      "passage": "From despicable efforts to overturn free and fair elections, to unconscionable measures that seek to further deny and restrict access to the ballot box, America is truly at a crossroads.",
+      "note": "Statement after the House passed the Freedom to Vote: John R. Lewis Act; she voted for it and urged the Senate to act. The statement does not mention ID or citizenship proof.",
+      "subjects": [
+        "voting rights and election laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:25.907Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd25b3f4809a411b8a9033e1dbe48347d0b8c59dadbcf96fa98de7327fc7447c",
+      "kind": "record",
+      "url": "https://kaptur.house.gov/media-center/press-releases/kaptur-statement-house-passage-freedom-vote-john-r-lewis-act",
+      "date": "2022-01-13",
+      "date_precision": "day",
+      "instrument_id": "US-HR-5746-2022",
+      "act": "yea",
+      "note": "Her release says she joined her caucus colleagues in the 220-203 vote that passed the Freedom to Vote: John R. Lewis Act, a voting rights bill; the release does not give the bill number, which is supplied from memory and should be checked on the Clerk roll call.",
+      "subjects": [
+        "voting rights and election laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T19:07:25.907Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marcy_Kaptur says she advanced from the May 5, 2026 primary and is on the Nov 3, 2026 general-election ballot for Ohio District 9",
+        "On the Record (1 meeting, House floor 2026-07-16, https://ontherecord.empowered.vote/meetings/df422410-4cfa-4110-8e2c-84ef2f46500c): nothing on the subject (speech about a utility-corruption bill)",
+        "official site https://kaptur.house.gov (home page, October 2026 news list): nothing on the subject",
+        "blocked: https://kaptur.house.gov/media/press-releases (404)",
+        "official site search by curl for voter ID, SAVE Act, voting rights, election: no results",
+        "Ballotpedia: no voter ID or proof-of-citizenship statements found on the page",
+        "blocked: https://www.congress.gov/member/marcy-kaptur/K000009 (403)",
+        "blocked: https://www.govtrack.us/congress/members/marcy_kaptur/400232 (403)",
+        "not reviewed: web news search and campaign site search (session web-search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:05:20.455Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and purges",
+        "voting rights and election laws in general"
+      ],
+      "places": [
+        "confirmed in scope: Ballotpedia page Marcy_Kaptur shows her on the 2026 general-election ballot",
+        "On the Record (1 meeting, 2026-07-16 House floor day: nothing on the subject)",
+        "official site kaptur.house.gov press releases (three on voting found and fetched; no release on voter ID or the SAVE Act found; press-release index page returned 404 and site search returned 403)",
+        "official site issues pages kaptur.house.gov/issues (no voting or election issue page)",
+        "not reviewed: https://www.congress.gov/bill/119th-congress/house-bill/7296/all-actions (returned no readable text)",
+        "Ballotpedia (nothing on the subject)",
+        "Common Cause Ohio release on petitions delivered to her office about H.R. 22 (written by the group, not her words; not saved)",
+        "two web searches on her name plus SAVE Act and voter ID (no statement by her on those)",
+        "votes on SAVE Act measures already on file, not collected again"
+      ],
+      "found": 3,
+      "at": "2026-10-27T19:07:25.907Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

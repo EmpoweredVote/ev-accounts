@@ -1,0 +1,136 @@
+{
+  "politician_id": "62e8a3ab-caa7-44a2-adf0-7c503411f11a",
+  "findings": [
+    {
+      "id": "94c09551c8f87fe98960fe047b097c1b82c06e2c6169e196a952a18ba96fac5c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (House roll call 758, passed 66-47)",
+      "note": "Branson is listed among the members voting aye. The ratified bill (text at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a county board to process a voter registration application only if it affirmatively states the applicant is a U.S. citizen, with a 30-day mail-back notice and a statement under penalty of perjury if the answer is blank, and directs the State Board to set up a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:04.316Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bab98bea52dd9f87549d8f66280574fb6ee3507bcd4077dcfb0e31a68a3d7c04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion 11 to concur with the Senate version (House roll call 801, passed 62-47)",
+      "note": "Branson is listed among the members voting aye on the final concurrence vote. The bill does not add a photo-ID rule; its identity-related parts are the citizenship statement on registration forms and removal of flagged non-citizens from the rolls.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T13:55:04.316Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Alan_Branson names him as NC House District 59 incumbent on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 meetings, extract-otr.mjs returned 0 appearances)",
+        "NCGA member page https://www.ncleg.gov/Members/Biography/H/821 (confirms identity; nothing on the subject)",
+        "NCGA introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/821 (2025-2026 list reviewed by title; nothing on the subject; election-related titles found were off-subject: Make Election Day A State Holiday, Reduce Early Voting Period, Reduce Early Voting Period for Primaries, No Voter Registration Changes At DMV)",
+        "NCGA votes https://www.ncleg.gov/Members/Votes/H/821 (titles scanned; nothing on the subject)",
+        "Ballotpedia (no positions on the subject on page)",
+        "blocked: https://bransonfornc.com (403 Forbidden)",
+        "not reviewed: https://www.facebook.com/profile.php?id=61559488653351 (social page, login-gated)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:50:00.580Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll checks against federal databases",
+        "non-citizen voting",
+        "election law changes"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/821 (confirms House District 59, Guilford County, 2025-2026 session)",
+        "Branson is the incumbent on the 2026-11-03 general-election ballot for House District 59 per Ballotpedia search listing; Ballotpedia page itself returned empty, not reviewed",
+        "NC legislature bill page and roll calls for HB 958 (fetched); he is not a listed sponsor",
+        "Branson campaign site: not found; Branch voter guide page says his website had no information on voting and elections as of 2026-01-05 (nothing on the subject)",
+        "news and own-words search: nothing by Branson on the subject found",
+        "fastdemocracy legislator page: no bill list in the fetched text"
+      ],
+      "found": 2,
+      "at": "2026-10-27T13:55:04.316Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

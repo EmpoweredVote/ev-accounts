@@ -1,0 +1,214 @@
+{
+  "politician_id": "897344a1-148f-4d99-b09a-4cbed4582fca",
+  "findings": [
+    {
+      "id": "311a32103fc2188a904442c61b378f198fe846ca6125279b860f1fabeac2db1b",
+      "kind": "own-words",
+      "url": "https://www.wesa.fm/wesa-voter-guide/2022-09-30/wesa-candidate-survey-mandy-steele-and-ted-tomson-on-the-issues",
+      "date": "2022-10-01",
+      "date_precision": "day",
+      "passage": "Steele: Yes. No-Excuse voting worked well in 2020 and I support it going forward. Not everyone can get to the polls for election days. People have limitations through their employment, child care and for health reasons. Giving our citizens an opportunity by mail voting has increased participation while taking off the travel burden to the polls for seniors, single parents and workers who cannot easily make it to the polling station. Furthermore, I am convinced that mail in voting can and is being implemented in Pennsylvania in a manner that protects the integrity of the vote count.",
+      "note": "Answer in a WESA candidate survey (2022 House District 33 race) to whether she supports no-excuse mail-in voting. Says nothing about ID; relates to mail voting and vote-count integrity.",
+      "subjects": [
+        "no-excuse mail voting",
+        "election integrity (mail ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:04:30.345Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Steele'), linked to Mandy Steele (district 33) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Steele'), linked to Mandy Steele (district 33) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.718Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('STEELE'), linked to Mandy Steele (district 33) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.861Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f22e56f971bb5849b042ee9ff7873ab91098de0aa4cc4a4e4906d1a216a653ea",
+      "kind": "own-words",
+      "url": "https://www.steeleforpa.com/platform",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "The right to own firearms is protected, and with that right comes responsibility. Law-abiding gun owners and hunters are an important part of our outdoor heritage and play a key role in wildlife conservation. As a representative, I will support responsible gun ownership and policies that promote public safety, including background checks and reasonable waiting periods.",
+      "note": "Campaign platform text under Gun Ownership; page carries no date.",
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "waiting periods",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a041e5c3ed79f2a09e9ff2ea9f395542fd426b9b33483da61749111dbd6eff7f",
+      "kind": "own-words",
+      "url": "https://www.lpallegheny.org/post/mandy-steele-s-gun-control-distraction-the-real-culprits-behind-chief-mcintyre-s-murder",
+      "date": "2025-10-01",
+      "date_precision": "day",
+      "passage": "A no vote is you knowingly sending our police out there to face down machine guns.",
+      "note": "Closing line of her House floor speech on 1 October 2025 as quoted by a critic's blog (LP Allegheny). The speech cited a police chief's killing with a pistol altered to fire automatically (a Glock switch). The post says the bill was rejected 101-102. Original transcript not reached.",
+      "subjects": [
+        "converted automatic pistols (Glock switches)",
+        "gun bill floor debate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "no-excuse mail voting and vote integrity",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House page https://pahouse.com/steele/ (names her as the member; nothing on the subject)",
+        "official House news release list (nothing on the subject)",
+        "campaign site https://www.mandysteele.com/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mandy_Steele (403)",
+        "two web searches on her name plus voter ID, mail ballot and election integrity; one hit with her own words (2022 candidate survey)",
+        "legislature bill pages: not reviewed (floor votes and sponsorships linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T22:04:30.345Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.718Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.861Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "background checks",
+        "waiting periods",
+        "converted automatic pistols (Glock switches)",
+        "3D-printed firearms",
+        "gun bill sponsorships"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.steeleforpa.com/platform",
+        "https://www.lpallegheny.org/post/mandy-steele-s-gun-control-distraction-the-real-culprits-behind-chief-mcintyre-s-murder (a critic's blog post that quotes her floor speech)",
+        "https://www.palegis.us/legislation/bills/2025/hb1324 (names her as a cosponsor; but the fetch tool's two summaries disagreed on the bill's subject, one saying bullying, so not recorded as a finding)",
+        "official site search https://www.pahouse.com/Steele/News?q=gun (nothing returned)",
+        "Ballotpedia: not reviewed",
+        "branch.vote candidate page: not reviewed",
+        "web search (1)"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

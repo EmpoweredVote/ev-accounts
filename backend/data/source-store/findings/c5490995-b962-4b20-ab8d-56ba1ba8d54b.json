@@ -1,0 +1,120 @@
+{
+  "politician_id": "c5490995-b962-4b20-ab8d-56ba1ba8d54b",
+  "findings": [
+    {
+      "id": "1ba4562965d6b9fb1aa019be69390f0799822b1cd76d6aacdae707c721634c7e",
+      "kind": "own-words",
+      "url": "https://royalexaminer.com/delegates-wiley-and-oats-criticize-redistricting-maps-gun-control-bills-in-richmond-update/",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "These proposals place new burdens on law-abiding Virginians while doing little to address violent crime,” Wiley said. “I opposed these measures and worked to slow their progress, amend harmful language where possible, and ensure that the voices of responsible gun owners in Winchester and Frederick County were heard.",
+      "note": "Quoted by the Royal Examiner (article published 2026-02-09) about the House gun bills passed 2-8 February 2026, which the article describes as bans on commonly owned firearms and magazines, permit-to-purchase requirements, waiting periods, expanded gun-free zones and stricter storage rules. He says he opposed them.",
+      "subjects": [
+        "assault weapons and magazine bans",
+        "permit to purchase",
+        "waiting periods",
+        "gun-free zones",
+        "firearm storage laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0db74abb09a79b616786bae251d6db0c730df80581f1239dd91bdb31d6656597",
+      "kind": "own-words",
+      "url": "https://royalexaminer.com/delegates-wiley-and-oats-criticize-redistricting-maps-gun-control-bills-in-richmond-update/",
+      "date": "2026-02",
+      "date_precision": "month",
+      "passage": "The legislation that passed the House will crossover to the Senate next week, providing us another opportunity to try and impart some commonsense,” he said.",
+      "note": "Quoted by the Royal Examiner (2026-02-09) on the House-passed gun bills moving to the Senate.",
+      "subjects": [
+        "gun control bills in 2026 session"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09716c23844a8107ad4b0c9610e3ffb78e349f90e5fbb7c0654447226a5f2b10",
+      "kind": "record",
+      "url": "https://lis.virginia.gov/cgi-bin/legp604.exe?231+mbr+HB1420",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "VA-HB-1420-2023",
+      "act": "sponsor",
+      "note": "Chief patron of HB 1420, 'Carrying a concealed handgun; permit not required,' which allows anyone otherwise eligible for a concealed handgun permit to carry a concealed handgun without a permit anywhere he may lawfully carry a handgun openly in Virginia (summary: https://lis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1420).",
+      "subjects": [
+        "permitless carry",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: name plus subject words",
+        "Virginia legislature site vga.virginia.gov (home page only, no member page reached)",
+        "blocked: LIS (lis.virginia.gov), legiscan, legiplex and vpap.org (403), not retried",
+        "no campaign site found",
+        "Royal Examiner interview page (article text not readable)",
+        "lead only, not fetched successfully: 2024 HB 1441 proof of citizenship bill listed under this name; pluralpolicy page 404, vpap 403"
+      ],
+      "found": 0,
+      "at": "2026-10-28T17:41:54.273Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "permitless carry",
+        "assault-style weapons and magazines",
+        "permit to purchase",
+        "waiting periods",
+        "gun-free zones",
+        "firearm storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Royal Examiner 2026-02-09 (office and statements confirmed: Delegate, 32nd District)",
+        "Virginia LIS legacy bill page 2023 HB 1420 (chief patron confirmed)",
+        "blocked: https://ballotpedia.org/William_D._Wiley (page returned empty)",
+        "one web search on name plus gun words; VPAP bill HB 1569 (concealed permit fees) and HB 1581 (safe tax credit) seen only in a search summary, not fetched, so not saved",
+        "not reviewed: official site, campaign site, 2026 session bill pages (LIS pages not readable)"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

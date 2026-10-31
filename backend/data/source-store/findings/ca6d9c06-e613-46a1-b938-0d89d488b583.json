@@ -1,0 +1,83 @@
+{
+  "politician_id": "ca6d9c06-e613-46a1-b938-0d89d488b583",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/DFC1 (Representative Daniel Cahill, 10th Essex, 194th General Court current; page does not say whether he is on the 2026 ballot)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov sponsored-bill list, 194th court: all sponsored bills read by title; none on voter ID, citizenship proof or election administration (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Daniel_Cahill (page is a disambiguation list with only a Kansas person; no Massachusetts page reachable)",
+        "not reviewed: https://electionstats.state.ma.us (search page returned no results, 2026 candidacy not confirmed)",
+        "not reviewed: official site, campaign site, news search (shared web search budget used up; no search possible)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:25:20.251Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Dan_Cahill_(Massachusetts)) says: 'He is on the ballot in the general election on November 3, 2026. He advanced from the primary on September 1, 2026.' (Rep., 10th Essex District)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site: none found by search (nothing on the subject)",
+        "campaign site: none found by search (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Dan_Cahill_(Massachusetts) (nothing on the subject; no voter ID positions)",
+        "blocked: https://malegislature.gov/Bills/193/H663 (service unavailable, also tried 194/H663, /Testify, /BillHistory, and curl with browser UA)",
+        "blocked: https://malegislature.gov/Legislators/Profile/DFC1 (timeout and service unavailable)",
+        "blocked: https://app.azure.legiplex.com/ma/legislature/2025/2025-r/bills/h663 (HTTP 403)",
+        "news search on name plus voter ID words (no Cahill statement or sponsorship of a voter ID bill surfaced)",
+        "not reviewed: https://justfacts.votesmart.org/candidate/biography/77732",
+        "not reviewed: https://gazettenet.com/2022/02/03/beacon-hill-roll-call-jan-24-to-jan-28-2022-44905014/ (the 2022 H.4359 amendment 7 vote is already on file)",
+        "lead only, not verified: search listed H.663 (193rd, increasing voting opportunities) and H.765 (192nd, accessible vote by mail advisory committee) as bills he filed; legislature pages were unreachable so nothing saved"
+      ],
+      "found": 0,
+      "at": "2026-10-27T00:57:16.070Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

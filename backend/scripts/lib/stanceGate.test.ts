@@ -60,6 +60,21 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
   it('snippet-too-short', () => {
     expect(ids(good, { evidence: [{ ...ev[0], snippet: 'Jane Doe voted yes on HB 1001.' }] })).toEqual(['snippet-too-short']);
   });
+  it('a canonical roll-call line on a House roll-call XML is not held to the snippet length', () => {
+    const url = 'https://clerk.house.gov/evs/2025/roll102.xml';
+    const line = 'House roll call 102 (2025), H R 22, On Passage: Doe (IN) voted Yea.';
+    const row = { ...good, reasoning: 'Voted YES on H.R. 22 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    // The same short line on any other page is still too short.
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
+  it('a canonical LegiScan line on a LegiScan bill URL is not held to the snippet length', () => {
+    const url = 'https://legiscan.com/IN/bill/HB1001/2025';
+    const line = 'LegiScan IN 2025 Regular Session HB1001: Jane Doe is listed as a primary sponsor.';
+    const row = { ...good, reasoning: 'Primary sponsor of HB 1001 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });
@@ -150,6 +165,12 @@ describe('refusals still refuse', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); Democratic nominee for the seat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a Democrat.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) as a lifelong democrat.' })).toContain('party-inference');
+    // Party tags and colours (RULINGS.md "Party labels never reach a reader", 2026-10-29).
+    for (const t of ['Voted YES on HB 1001 (2025), as did Sen. Risch (R-Idaho).', 'Voted YES on HB 1001 (2025) (D-GA).',
+      'Voted YES on HB 1001 (2025) like Smith (R).', 'Voted YES on HB 1001 (2025), as red states did.']) {
+      expect(ids({ ...good, reasoning: t }), t).toContain('party-inference');
+    }
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) on D-Day.' })).not.toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), citing the Federalist view of republican government.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025) to describe the republican government of the state.' })).toContain('party-inference');
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025): under republican government, taxes fell.' })).toContain('party-inference');
@@ -228,6 +249,48 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
     const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
     expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
   });
+  // Philadelphia prints the SAME bill as "Bill #250568" and "Bill No. 250568". Matching the whole
+  // phrase would canonicalize those to "bill250568" and "billno250568" and raise the finding on a row
+  // whose snippet names the very bill its reasoning does, so only the digits are extracted.
+  it.each([
+    ['Bill #250568', 'Bill No. 250568'],
+    ['Bill No. 250568', 'Bill #250568'],
+    ['Bill No.250568', 'Bill #250568'],
+  ])('Philadelphia reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
+    const row = { ...good, reasoning: `Signed ${reasoningForm}, authorising $800 million in H.O.M.E. bonds.` };
+    const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  // 🔴 A SIGNED ORDER SHOUTS ITS OWN HEADING. The PDF heads itself "EXECUTIVE ORDER NO. 7-25" while
+  // prose writes "Executive Order No. 7-25", and extraction runs on the RAW snippet — so without the
+  // /i flag the one line that carries the number is invisible and the finding fires on a row citing
+  // the order itself. That happened on Parker/homelessness-response before the flag was added.
+  it.each([
+    ['Executive Order No. 7-25', 'EXECUTIVE ORDER NO. 7-25'],
+    ['Executive Order No. 7-25', 'Executive Order 7-25'],
+    ['Executive Order 3-25', 'executive order no. 3-25'],
+  ])('executive-order reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
+    const row = { ...good, reasoning: `Signed ${reasoningForm}, which orders 1,000 new shelter beds.` };
+    const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
+    expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('still flags an executive order the snippets do not name', () => {
+    const row = { ...good, reasoning: 'Signed Executive Order No. 7-25, which orders 1,000 new shelter beds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Executive Order No. 5-25') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
+  // ⚠ NOT SOLVED, PINNED SO IT IS NOT MISTAKEN FOR A BUG LATER: leading zeros are different
+  // identifiers. Philadelphia's index lists "07-25" and the signed order says "7-25".
+  it('treats 07-25 and 7-25 as different orders (leading zeros are not normalized)', () => {
+    const row = { ...good, reasoning: 'Signed Executive Order No. 7-25, which orders 1,000 new shelter beds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Executive Order No. 07-25') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
+  it('still flags a Philadelphia bill the snippets do not name', () => {
+    const row = { ...good, reasoning: 'Signed Bill #250568, authorising $800 million in H.O.M.E. bonds.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('Bill #250999') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
+  });
   it('does not apply to a bare "Act" or "voted yes" — no identifier named, nothing to cross-check', () => {
     const row = { ...good, reasoning: 'Voted YES on the Clean Water Act (2025), which expands protections.' };
     expect(ids(row, { evidence: [{ ...ev[0], snippet: snippetWith('the Clean Water Act') }] })).not.toContain('instrument-not-cited');
@@ -265,6 +328,21 @@ describe('instrument-not-cited: federal spellings (2026-10-07)', () => {
     expect(ids({ ...good, reasoning: 'Voted Yea on H.J.Res. 44 (118th).' }, { evidence: j })).not.toContain('instrument-not-cited');
     expect(ids({ ...good, reasoning: 'Voted Yea on H.J.Res. 45 (118th).' }, { evidence: j })).toContain('instrument-not-cited');
   });
+});
+
+describe('instrument-not-cited: Michigan spellings (2026-10-30)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} Michigan Legislature Skip to content Michigan Compiled Laws Complete Through PA 114 of 2026 bill documents sponsors history` }];
+  it('reads the official "Senate Bill 303 of 2021" heading as SB 303', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on MI SB 303 (2021).' }, { evidence: snip('Senate Bill 303 of 2021 -') })).not.toContain('instrument-not-cited'));
+  it('reads a letter-named joint resolution: "HJR B" names an instrument and matches "House Joint Resolution B" or LegiScan "HJRB"', () => {
+    const row = { ...good, reasoning: 'Co-sponsor of MI HJR B (2025) as filed.' };
+    expect(ids(row, { evidence: snip('House Joint Resolution B of 2025 -') })).not.toContain('record-no-instrument');
+    expect(ids(row, { evidence: snip('House Joint Resolution B of 2025 -') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('LegiScan MI 103rd Legislature HJRB: Jane Doe is listed as a cosponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('House Joint Resolution C of 2025 -') })).toContain('instrument-not-cited');
+  });
+  it('still tells SB 303 from SB 3030', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SB 303 (2021).' }, { evidence: snip('Senate Bill 3030 of 2021 -') })).toContain('instrument-not-cited'));
 });
 
 describe('quote-not-in-snippet (C69)', () => {
@@ -430,6 +508,14 @@ describe('blank-unexamined-fallback — a blank removes a visible chair only aft
     expect(f).toMatchObject({ check_id: 'blank-unexamined-fallback', severity: 'high' });
     expect(f!.what).toContain('https://s1.gov/vote');
     expect(f!.what).not.toContain('https://a.gov/x ');
+  });
+  it('does not require summary sites, which can never seat a chair (ruling 2026-10-29)', () => {
+    const summary = ['https://www.ontheissues.org/House/Jane_Doe.htm', 'https://en.wikipedia.org/wiki/Jane_Doe',
+      'https://ballotpedia.org/Jane_Doe', 'https://www.lcv.org/congressional-scorecard/moc/jane-doe/', 'https://www.govtrack.us/congress/members/jane_doe/1'];
+    expect(checkBlankExaminedFallback({ row, displayedValue: 2, fallbackSources: summary, fetchable: all })).toBeNull();
+    // Her own site and a record still have to be examined.
+    expect(checkBlankExaminedFallback({ row, displayedValue: 2, fallbackSources: [...summary, 'https://janedoe.com/issues'], fetchable: all })!.what)
+      .toContain('https://janedoe.com/issues');
   });
   it('does not require a fallback source that no longer loads', () => {
     expect(checkBlankExaminedFallback({ row, displayedValue: 3, fallbackSources: ['https://dead.gov/gone'], fetchable: () => false })).toBeNull();

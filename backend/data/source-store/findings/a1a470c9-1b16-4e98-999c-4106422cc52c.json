@@ -1,0 +1,77 @@
+{
+  "politician_id": "a1a470c9-1b16-4e98-999c-4106422cc52c",
+  "findings": [
+    {
+      "id": "a7d046ab0f9800a4ceb9deb75e4de0e86cb2a36808ef8c757c86a77857d330c6",
+      "kind": "own-words",
+      "url": "https://laurajanecohen.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "A longtime Moms Demand Action volunteer, Laura Jane will fight to prevent gun violence and stop the NRA . She will work to strengthen Virginia’s secure storage and “red flag” laws, disarm domestic abusers, require microstamping and childproofing for new handguns, and prohibit high-capacity magazines, untraceable “ghost guns,” and assault-style weapons.",
+      "note": "Campaign site issue text (Prevent Gun Violence section) listing the gun policies she says she will work on. Page is undated.",
+      "subjects": [
+        "assault weapons ban",
+        "large-capacity magazines",
+        "ghost guns",
+        "red-flag orders",
+        "secure storage",
+        "microstamping"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "Confirmed identity: Delegate, House District 15 (https://ballotpedia.org/Laura_Jane_Cohen)",
+        "https://www.laurajanecohen.com (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "On the Record (0 meetings)",
+        "web search on name plus voter ID words (nothing on the subject; results were about other people or general history)",
+        "LIS / legiplex / legiscan bill pages: not reviewed, blocked or not reachable (open.pluralpolicy.com bill pages returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T16:26:04.888Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style weapons and high-capacity magazines",
+        "ghost guns",
+        "red-flag orders",
+        "secure storage",
+        "microstamping and childproofing",
+        "gun industry liability"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://laurajanecohen.com/",
+        "Ballotpedia (page returned empty to fetch tool)",
+        "Virginia LIS bill pages HB318 (2024; patron is another member, not her, so not saved) and HB201 (2024; transportation bill, not on subject)",
+        "web news search on name plus gun words (leads only: Giffords, Brady, VPAP pages; not saved as own words)",
+        "not reviewed: HB1678 LIS page (not available at legacy URL)"
+      ],
+      "found": 1,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

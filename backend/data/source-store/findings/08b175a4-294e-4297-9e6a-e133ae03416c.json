@@ -1,0 +1,227 @@
+{
+  "politician_id": "08b175a4-294e-4297-9e6a-e133ae03416c",
+  "findings": [
+    {
+      "id": "ed81776650547bd623ceef02d37a9716e4d9b482d944cec46da549fb50bbe8ac",
+      "kind": "own-words",
+      "url": "https://www.pahouse.com/Waxman/Video/?id=138526",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "passage": "PA state Rep. Ben Waxman voted no on recent Republican legislation that would expand PA's voter ID law.",
+      "note": "Text on his official House page for a May 7, 2025 video, headed 'Waxman Says No to New Voter ID Legislation'. The same page says he states there is no evidence of widespread voter fraud in the commonwealth and that the legislation would only serve as an attempt to address conspiracy theories and outright lies. The bill number is not given on the page. The page text is a description of the video, not a transcript, and the video itself was not viewed.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76c192319ad29c8af7a21a5b984bb6a845ceda23a90bee8f0f34943d82549c4a",
+      "kind": "record",
+      "url": "https://www.pahouse.com/Waxman/Video/?id=138526",
+      "date": "2025-05-07",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Vote against 2025 House bill expanding Pennsylvania's voter ID law (bill number not stated on the page)",
+      "note": "His official page says he voted no on a recent bill to expand the state voter ID law. The bill number and exact vote date are not on the page.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:00:24.092Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e3fe631b12c8ae62e81e619988d713c0873e05f232cde6d82f1a912c398b2e86",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.palegis.us/house/session/journals?sessYr=2025&sessInd=0&pdfName=20250513.pdf",
+      "date": "2025-05-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1396-2025",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 1688)",
+      "note": "House roll call as printed ('Waxman'), linked to Ben Waxman (district 182) via the official 2025-2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Waxman'), linked to Benjamin R. Waxman (district 182) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8dc878a63fe78e8da54f72af76e2784f10a8070e12ba87503a90bacd154880ec",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "yea",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('WAXMAN'), linked to Benjamin R. Waxman (district 182) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "01b49f3c811cbb5fe19ff288f99e3800816338bfdaa6564a69f083c35ad11407",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb837",
+      "date": "2025-03-10",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-837-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 837 (prime sponsor Melissa Shusterman), which would create a limit on handgun purchases and a Violence Prevention Account. Referred to Judiciary March 10, 2025.",
+      "subjects": [
+        "limit on handgun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15898fd12129d7f6a769bbf29218160b22f6d6872ff47da742a074b5167bca43",
+      "kind": "record",
+      "url": "https://www.palegis.us/legislation/bills/2025/hb887",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-887-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 887 (prime sponsor MaryLouise Isaacson), which would change the state limit on local regulation of firearms and ammunition and repeal the home-rule limit on municipal powers. Referred to Judiciary March 13, 2025.",
+      "subjects": [
+        "local regulation of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Ben_Waxman (empty page)",
+        "official site https://www.pahouse.com/Waxman/ (front page nothing on the subject; one video page found via search, saved)",
+        "web search on name plus voter ID (one lead, saved)",
+        "not reviewed: floor votes and sponsorships (linked separately)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:00:24.092Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:45:58.720Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.862Z",
+      "by": "identity-pa-2026-10-29"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation bills",
+        "handgun purchase limits",
+        "local regulation of firearms",
+        "gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "palegis.us bill pages HB 837, HB 887 (sponsorship)",
+        "web search for pahouse.com statements: nothing on the subject",
+        "Ballotpedia: not reviewed",
+        "official/campaign site: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

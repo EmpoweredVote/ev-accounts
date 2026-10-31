@@ -1,0 +1,146 @@
+{
+  "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "08d039d51ce27d1b6834c62a31d1f224c1f02705ad7fb2cd2e3753aeae174b23",
+      "kind": "own-words",
+      "url": "https://robertgarcia.house.gov/issues/ending-gun-violence-epidemic",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "He believes Congress needs to come together and pass legislation that mandates universal background checks for all firearm purchases, bans assault-style weapons, prohibits gun ownership by those under the age of 21 and establishes a strong federal licensing system.",
+      "note": "Issue page on his official House site, written in the third person in his name. Lists background checks, a ban on assault-style weapons, a minimum age of 21 and federal licensing.",
+      "subjects": [
+        "universal background checks",
+        "assault-style weapons ban",
+        "minimum age 21",
+        "federal licensing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3a8ae85a46d60f7268eec71ecba59c2942660510c8abf9925157374987f231a",
+      "kind": "own-words",
+      "url": "https://robertgarcia.house.gov/issues/ending-gun-violence-epidemic",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "He understands that we must also ensure that Congress enact and enforce red flag laws—a proven measure to prevent gun crimes before they occur—and provide local communities and organizations with the tools necessary to address the causes of gun violence—especially in our most marginalized neighborhoods.",
+      "note": "Same issue page; says Congress should enact and enforce red flag laws.",
+      "subjects": [
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66e56c7f65232d8eb36c1aa6f8da9abb6406cee907cc29b20fdd771404acf5ac",
+      "kind": "record",
+      "url": "https://robertgarcia.house.gov/media/press-releases/congressman-robert-garcia-and-senator-elizabeth-warren-reintroduce-ammo-act",
+      "date": "2025-06-27",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Reintroduced the Ammunition Modernization and Monitoring Oversight (AMMO) Act",
+      "note": "Press release: he and a senator reintroduced a bill requiring ammunition sellers to run buyer background checks and hold the same federal license as gun dealers, and applying straw-purchase bans to ammunition.",
+      "subjects": [
+        "ammunition background checks",
+        "dealer licensing",
+        "straw purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "universal background checks",
+        "assault-style weapons ban",
+        "minimum age",
+        "licensing",
+        "red-flag laws",
+        "ammunition sales"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site issue page and press releases (robertgarcia.house.gov)",
+        "not reviewed: ballotpedia",
+        "not reviewed: congress.gov sponsorships",
+        "no web search run"
+      ],
+      "found": 3,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

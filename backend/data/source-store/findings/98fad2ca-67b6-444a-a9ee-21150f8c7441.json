@@ -1,0 +1,246 @@
+{
+  "politician_id": "98fad2ca-67b6-444a-a9ee-21150f8c7441",
+  "findings": [
+    {
+      "id": "d0ae134cd4f8e54f1e75427bfcdaed82bd218d8b0f56165ceff267d397a59e65",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0303",
+      "date": "2021-10-06",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-303-2021",
+      "act": "nay",
+      "motion": "concurrence in House substitute as amended (S-3)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MI Senate, concurrence in House substitute as amended (S-3), 2021-10-06: nay (tally 20–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "222b92adda1e8904a30e10ba662258870efaa6cc061f23d7e423fcdbb78535df",
+      "kind": "own-words",
+      "url": "https://www.wxyz.com/news/michigan-senate-approves-bill-with-voting-restrictions",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "We have a system here that's secure. We have a system here that's dependable. This is about restricting voting.",
+      "note": "Quoted by WXYZ in its story on the Senate passing a bill with voter ID and absentee-ballot changes (page shows no date). He says the current system is secure and calls the bill a restriction on voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID and absentee applications"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:54.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82bb642dd12e6e6bf324633ce5714b7940328735bc139db37899b943aef0308d",
+      "kind": "own-words",
+      "url": "https://www.wemu.org/post/voter-identification-bills-pass-through-house",
+      "date": "2016-12-08",
+      "date_precision": "day",
+      "passage": "I believe that they are straightforwardly unconstitutional. The right to vote is the most fundamental right that we have as Americans. And the courts have said time and time again that you cannot have a poll tax.",
+      "note": "Quoted by WEMU (as a state representative) on the 2016 House voter ID bills; the sentences are reproduced from the page's separate quote lines. He describes the bills as unconstitutional and compares the cost of ID to a poll tax.",
+      "subjects": [
+        "voter ID at the polls",
+        "legal challenge to ID requirements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:47:54.430Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2fcee1a1294b540331046b0355fd9b3353ff06553377b120962c3af6cba55c97",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2011-2012/journal/House/htm/2012-HJ-06-14-062.htm",
+      "date": "2012-06-14",
+      "date_precision": "day",
+      "instrument_id": "MI-HB-5061-2011",
+      "act": "nay",
+      "motion": "House: Senate substitute S-1 concurred in Roll Call # 471 Yeas 65 Nays 45",
+      "note": "House roll call as printed ('Irwin'), linked to Jeff Irwin (district 53) via the official 2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e44c0f25167567c92541649cf8706c15abec2fa2f995ee8d7cd49f978073dac",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2021-2022/journal/Senate/htm/2021-SJ-10-07-078.htm",
+      "date": "2021-10-07",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-304-2021",
+      "act": "nay",
+      "motion": "Senate: HOUSE SUBSTITUTE (H-1) CONCURRED IN AS SUBSTITUTED (S-3) ROLL CALL: ROLL CALL # 372 YEAS 20 NAYS 16 EXCUSED 0 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Irwin'), linked to Jeff Irwin (district 18) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f33e4525c9124ac85d3d53c56f63ea56a438dd941e720e539f8d84a711478f",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 432 YEAS 21 NAYS 16 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Irwin'), linked to Jeff Irwin (district 15) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadfe831d813801bb893c13d452ac7442c4112dbae8cc43298109608b60a18fe",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0370",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-370-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 370 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending sections 7\"",
+      "note": "Named as co sponsor ('Jeff Irwin (District 15)') on the official bill page; linked to Jeff Irwin via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08f0e761d4a963324310ce8c431fed7110ec371e16e2ab9a21f4e387d94a795",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/documents/2023-2024/journal/Senate/htm/2023-SJ-06-28-063.htm",
+      "date": "2023-06-28",
+      "date_precision": "day",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "yea",
+      "motion": "Senate: HOUSE AMENDMENT(S) CONCURRED IN ROLL CALL # 434 YEAS 22 NAYS 15 EXCUSED 1 NOT VOTING 0",
+      "note": "Senate roll call as printed ('Irwin'), linked to Jeff Irwin (district 15) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e62b1f3190792cb280044b956783761d916e5ce61dd55603b226805b035fa5e",
+      "kind": "record",
+      "url": "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2023-SB-0373",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MI-SB-373-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, Text file header as saved: \"Substitute For SENATE BILL NO. 373 A bill to amend 1954 PA 116, entitled \"Michigan election law,\" by amending section 2 \"",
+      "note": "Named as co sponsor ('Jeff Irwin (District 15)') on the official bill page; linked to Jeff Irwin via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-mi-2026-10-28",
+        "fetched_at": "2026-10-28T22:55:46.335Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID and absentee applications",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://senatedems.com/irwin/ (403)",
+        "blocked: https://senatedems.com/irwin/?p=6000 (403)",
+        "blocked: https://michiganadvance.com/2021/10/06/michigan-senate-republicans-pass-voter-id-law-on-steroids/ (403)",
+        "blocked: https://www.metrotimes.com/news/michigan-senate-republicans-pass-voter-id-law-on-steroids-28223371/ (403)",
+        "blocked: https://ballotpedia.org/Jeff_Irwin (empty page)",
+        "news: wxyz article on the Senate voter ID bill (own words quoted)",
+        "news: WEMU 2016-12-08 article on House voter ID bills (own words quoted)",
+        "web search on name plus voter ID and on 2026 status (a search summary says he is term-limited and not on the 2026 Senate District 15 ballot; not confirmed by a fetched page)",
+        "not reviewed: legislature bill pages (votes and sponsorships linked separately)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:47:54.430Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official MI legislature bill pages, journals and roll calls in bills/mi-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 6,
+      "at": "2026-10-28T22:55:46.335Z",
+      "by": "identity-mi-2026-10-28"
+    }
+  ]
+}

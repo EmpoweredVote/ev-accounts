@@ -1,0 +1,287 @@
+{
+  "id": "AZ-HB-2038-2025",
+  "scope": "state:az",
+  "title": "HB 2038 (2025 - Fifty-seventh Legislature - First Regular Session (azleg session id 129)): (NOW: voter registration; citizenship proof)",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/81696",
+    "https://www.azleg.gov/legtext/57leg/1R/bills/HB2038H.htm"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Bill text\n(quote) (now: voter registration; citizenship proof)\n(section) Bill text\n(quote) PROVIDING for citizenship verification to maintain voter registration.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal (para A)\n(quote) A. If a county recorder receives or has received information from the motor vehicle division of the department of transportation that a registered voter used the state voter registration form and has not provided satisfactory evidence of United States citizenship to the motor vehicle division and the voter has not provided satisfactory evidence of United States citizenship to the county recorder by some other means, the county recorder shall:\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal\n(quote) (a) Unless the voter provides satisfactory proof of United States citizenship as otherwise provided by law to the county recorder within thirty-five days after notice is sent, the voter will be moved to not registered status and will not be eligible to vote until valid proof of United States citizenship is provided to the county recorder.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal\n(quote) (b) If the voter provides satisfactory proof of United States citizenship as otherwise provided by law before 7:00 P.M. on election day, the voter is eligible to vote a full ballot at that election.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal\n(quote) (c) Voters that were registered on or before January 24, 2005, are considered grandfathered and evidence of citizenship may not be required unless they register in a different Arizona county.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal\n(quote) (d) Voters that use an application for registration on a form produced by the United States election assistance commission may be made federal only voters if satisfactory evidence of United States citizenship is not provided to the county recorder.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal (para 2)\n(quote) 2. If the voter does not provide documentary proof of United States citizenship within the time prescribed, the voter s registration status will remain not registered and the voter will not be eligible to vote until valid proof of United States citizenship is provided.\n(section) Sec. 1: Voter registrants; satisfactory proof of citizenship; delayed repeal (para 2)\n(quote) If after the next general election, the voter has not provided satisfactory proof of United States citizenship, the county recorder shall cancel the voter s record.\n(e_other_rule) not stated.\n(other) Sec. 2: Emergency",
+  "sponsors": [
+    {
+      "name": "Alexander Kolodin",
+      "role": "prime",
+      "version": "HB2038H: House-engrossed version (text as it stood after the House acted)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-02-25",
+      "body": "AZ House",
+      "motion": "Third Reading: Passed (as amended)",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 27,
+      "absent": 0,
+      "body_size": 60,
+      "note": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "members": [
+        {
+          "name": "ABEYTIA",
+          "vote": "nay"
+        },
+        {
+          "name": "AGUILAR",
+          "vote": "nay"
+        },
+        {
+          "name": "AUSTIN",
+          "vote": "nay"
+        },
+        {
+          "name": "BIASIUCCI",
+          "vote": "yea"
+        },
+        {
+          "name": "BLACKMAN",
+          "vote": "yea"
+        },
+        {
+          "name": "BLATTMAN",
+          "vote": "nay"
+        },
+        {
+          "name": "BLISS",
+          "vote": "yea"
+        },
+        {
+          "name": "CARBONE",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER N",
+          "vote": "yea"
+        },
+        {
+          "name": "CARTER P",
+          "vote": "yea"
+        },
+        {
+          "name": "CAVERO",
+          "vote": "nay"
+        },
+        {
+          "name": "CHAPLIK",
+          "vote": "yea"
+        },
+        {
+          "name": "CONNOLLY",
+          "vote": "nay"
+        },
+        {
+          "name": "CONTRERAS L",
+          "vote": "nay"
+        },
+        {
+          "name": "CONTRERAS P",
+          "vote": "nay"
+        },
+        {
+          "name": "CREWS",
+          "vote": "nay"
+        },
+        {
+          "name": "DE LOS SANTOS",
+          "vote": "nay"
+        },
+        {
+          "name": "DIAZ",
+          "vote": "yea"
+        },
+        {
+          "name": "FINK",
+          "vote": "yea"
+        },
+        {
+          "name": "GARCIA",
+          "vote": "nay"
+        },
+        {
+          "name": "GILLETTE",
+          "vote": "yea"
+        },
+        {
+          "name": "GRESS",
+          "vote": "yea"
+        },
+        {
+          "name": "GRIFFIN",
+          "vote": "yea"
+        },
+        {
+          "name": "GUTIERREZ",
+          "vote": "nay"
+        },
+        {
+          "name": "HEAP",
+          "vote": "yea"
+        },
+        {
+          "name": "HENDRIX",
+          "vote": "yea"
+        },
+        {
+          "name": "HERNANDEZ A",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ C",
+          "vote": "nay"
+        },
+        {
+          "name": "HERNANDEZ L",
+          "vote": "nay"
+        },
+        {
+          "name": "KESHEL",
+          "vote": "yea"
+        },
+        {
+          "name": "KOLODIN",
+          "vote": "yea"
+        },
+        {
+          "name": "KUPPER",
+          "vote": "yea"
+        },
+        {
+          "name": "LIGUORI",
+          "vote": "nay"
+        },
+        {
+          "name": "LIVINGSTON",
+          "vote": "yea"
+        },
+        {
+          "name": "LOPEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "LUNA-NÁJERA",
+          "vote": "nay"
+        },
+        {
+          "name": "MÁRQUEZ",
+          "vote": "nay"
+        },
+        {
+          "name": "MARSHALL",
+          "vote": "yea"
+        },
+        {
+          "name": "MARTINEZ",
+          "vote": "yea"
+        },
+        {
+          "name": "MATHIS",
+          "vote": "nay"
+        },
+        {
+          "name": "NGUYEN",
+          "vote": "yea"
+        },
+        {
+          "name": "OLSON",
+          "vote": "yea"
+        },
+        {
+          "name": "PEÑA",
+          "vote": "yea"
+        },
+        {
+          "name": "PESHLAKAI",
+          "vote": "nay"
+        },
+        {
+          "name": "PINGERELLI",
+          "vote": "yea"
+        },
+        {
+          "name": "POWELL",
+          "vote": "yea"
+        },
+        {
+          "name": "RIVERO",
+          "vote": "yea"
+        },
+        {
+          "name": "SANDOVAL",
+          "vote": "nay"
+        },
+        {
+          "name": "SIMACEK",
+          "vote": "nay"
+        },
+        {
+          "name": "STAHL HAMILTON",
+          "vote": "nay"
+        },
+        {
+          "name": "TAYLOR",
+          "vote": "yea"
+        },
+        {
+          "name": "TRAVERS",
+          "vote": "nay"
+        },
+        {
+          "name": "TSOSIE",
+          "vote": "nay"
+        },
+        {
+          "name": "VILLEGAS",
+          "vote": "nay"
+        },
+        {
+          "name": "VOLK",
+          "vote": "nay"
+        },
+        {
+          "name": "WAY",
+          "vote": "yea"
+        },
+        {
+          "name": "WENINGER",
+          "vote": "yea"
+        },
+        {
+          "name": "WILLOUGHBY",
+          "vote": "yea"
+        },
+        {
+          "name": "WILMETH",
+          "vote": "yea"
+        },
+        {
+          "name": "MONTENEGRO",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave2 bill texts (source-collector subagent, voting-rights, 2026-10-28T20:00:00Z)",
+    "fetched_at": "2026-10-28T20:00:00Z",
+    "method": "curl"
+  }
+}

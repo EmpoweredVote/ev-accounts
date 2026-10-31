@@ -1,0 +1,73 @@
+{
+  "politician_id": "c58d68a1-3d5e-464f-9497-c192ecd62a72",
+  "findings": [
+    {
+      "id": "1f568385416a3a036d15fbb23f2956e3f40c07419934082aa5bc1cf8c8aec626",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (roll call #810)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, Third Reading (roll call #810), 2024-12-11: yea (tally 73–45); census gate: none.",
+      "subjects": [
+        "photo ID for all voters (constitutional amendment, in person and by mail)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26)",
+        "fetched_at": "2026-10-26T21:26:21Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/nc/S921v3.pdf",
+          "sha256": "409c91c0d2b43d99ac4aa8db2caef32a8dabb709e0313e62030441b648e6c223"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (page: https://ballotpedia.org/North_Carolina_House_of_Representatives_District_65 , states Seth Woodall defeated incumbent A. Reece Pyrtle, Jr. in the 2026-03-03 primary for NC House District 65; he is not on the 2026 general-election ballot)",
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/H/787 (Representative A. Reece Pyrtle, Jr., District 65, Rockingham)",
+        "On the Record (0 appearances)",
+        "not reviewed: https://www.ncleg.gov/Members/IntroducedBills/H/787 (stopped after out-of-scope finding)",
+        "blocked: web search budget used up; no news or own-words search run"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:07:20.827Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (House District 65 page, https://en.wikipedia.org/wiki/North_Carolina%27s_65th_House_district, shows he was not renominated; the winner took 57.52 percent to his 39.03 percent)",
+        "On the Record (0 appearances)",
+        "https://en.wikipedia.org/wiki/Reece_Pyrtle (identity page; no 2026 result listed)",
+        "one web search on name plus voter ID: nothing on the subject",
+        "stopped after confirming out of scope, as the brief directs"
+      ],
+      "found": 0,
+      "at": "2026-10-27T15:26:58.173Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

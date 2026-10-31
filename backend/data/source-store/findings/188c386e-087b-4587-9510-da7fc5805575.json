@@ -1,0 +1,408 @@
+{
+  "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+  "findings": [
+    {
+      "id": "ee2efa6b2719eb4781f7e001c5eb1a93ae2508ba5fe9dd0a0a363a978711ef9b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81696&billStatusActionId=232198&includeVotes=true",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2038-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district 19) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1244edab908f33c03e28fc0aac00de80a171fc1b2c9853d2f0ac929bd410c0e",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/76696",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2241-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2241P: as introduced (printed version)",
+      "note": "Named as co sponsor ('Gail Griffin') on the official bill page; linked to Gail Griffin via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8500c9be6e07b8e9f1dbd3dc6c1791fe27da67270ea118a8838f7bcee4681cb1",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=56599&includeVotes=true",
+      "date": "2011-04-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2011 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4531f29733c7dfee4dfc424ee16a4b016006a09645b3f08149bb39476010688",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=209634&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2821492d1c687f55e3f4161d375ea78aa33b52fafad686d2067d60ee474a7e4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223258&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cf505d93bd66bd7c75041cc66d163a3bd3cdb1892d9f2db25a481fbf733a4047",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=240878&includeVotes=true",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district 19) via the official 2026 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b714a91dbebc4fc5a84abb54b8a12c9e6fc1a76bf56608b1c785862bc0a9b256",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=188418&includeVotes=true",
+      "date": "2019-03-18",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2019 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d13ea4ab747e28da585dbb99feba8cff1df7ff3703b5d6dd3e7da7452184336",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=235732&includeVotes=true",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district 19) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4595be9b097c4b74d782ca75b34d661aa788a028804ae3e3079090b8a09ea949",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=219083&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ec2093480950ffc9deb5663480704889b59c996690d96ea54139285fbf54fee",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=211337&includeVotes=true",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052740ef3ab0362606f6b3e26dbf61c156eda2ab8cbec7f8382791531468a6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=219025&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d64d357e498f935c763a33c57b381a50d3c4a4e254de7529d279cefdf7bd1a36",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=219027&includeVotes=true",
+      "date": "2023-05-15",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2023 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b610273a3ef40c8417bb530372a6381c3355f335ee364b8204b420a1623cdd06",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=204259&includeVotes=true",
+      "date": "2021-05-26",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "House: Third Reading: failed to pass (as amended)",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5cf2840637b67c8e511244c2206b1eee06a63e80f1a418e47b37e3298409c64d",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209637&includeVotes=true",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district None) via the official 2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.879Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef797c071c908bb9a89fd0b5875af62d1c01cb74ef13ef41ac0296f1d593d761",
+      "kind": "own-words",
+      "url": "https://www.azvoterguide.com/candidate/state-house/griffin-gail/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I continue to champion issues on water… energy… election integrity… border security… strong economies with good jobs and the protection of property rights.",
+      "note": "Candidate statement in the Arizona Voter Guide for her State Senate District 19 run; page shows no date. Election integrity is named as one of her issues, with no specific rule.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:06:45.733Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbb9ee39d7ade6a2e208d394d7af23ac45487eae22e5da26f16b612718fe9717",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=236364&includeVotes=true",
+      "date": "2025-06-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed",
+      "note": "House roll call as printed ('GRIFFIN'), linked to Gail Griffin (district 19) via the official 2025 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28b",
+        "fetched_at": "2026-10-28T23:23:11.509Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 15,
+      "at": "2026-10-28T22:53:15.879Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidate roster page showing her on the 2026 general-election ballot for State Senate District 19: https://theballotbrief.com/state/arizona/cochise-county/arizona-senate-district-19",
+        "Arizona Voter Guide candidate page (own statement)",
+        "Arizona Legislature roster and House caucus member list (only member-page links; nothing on the subject)",
+        "campaign site: none found (a search hit at gailgriffin.com is an unrelated bookkeeping business)",
+        "blocked: https://ballotpedia.org/Gail_Griffin",
+        "news searches on name plus subject words (no quotes by her on the subject found)",
+        "not reviewed: social media pages"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:06:45.733Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:23:11.509Z",
+      "by": "identity-az-2026-10-28b"
+    }
+  ]
+}

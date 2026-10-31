@@ -1,0 +1,196 @@
+{
+  "politician_id": "67976bb1-b8db-463b-a646-4e74686d6257",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "d30a13baedb2389d3834b663058c15eddff6e0fd99e64e666f36cc2455cb8dba",
+      "kind": "own-words",
+      "url": "https://lucas.house.gov/posts/lucas-oklahomans-believe-in-the-fundamental-right-to-bear-arms",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Oklahoma has made it clear: Oklahomans believe in the fundamental right to bear arms.",
+      "note": "Official-site statement on a House gun bill; the page shows no date. It says Congress should not criminalize routine firearm transactions, curtail rights of those under 21, or encourage state gun confiscation orders (see next passage).",
+      "subjects": [
+        "Second Amendment",
+        "minimum age for gun purchase",
+        "red-flag orders",
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75a869018d5400d5d2f5f63e8b333d60f0e1e554afc65e5a63d6653c8be388a4",
+      "kind": "own-words",
+      "url": "https://lucas.house.gov/posts/lucas-oklahomans-believe-in-the-fundamental-right-to-bear-arms",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Oklahomans- and all Americans- support additional funds for school security and means to address mental health, but Congress has no right to criminalize routine firearm transactions, curtail the right of law-abiding citizens under the age of 21, or incentivizes states to adopt gun confiscation orders.",
+      "note": "Same statement; objects to provisions on firearm transactions, under-21 buyers and state extreme-risk incentives.",
+      "subjects": [
+        "background checks on private sales",
+        "minimum age for gun purchase",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "023a6e9276830661a107d44287a7ca28733215c7504f2c90f9818eefeb51d192",
+      "kind": "own-words",
+      "url": "https://lucas.house.gov/posts/congressman-lucas-opposes-gun-depriving-legislation",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Adding more bureaucracy and redundant background checks that already occur on all gun sales and undermining the National Instant Criminal Background Check System (NICS) already in place, H.R. 8 and H.R. 1446 fail to address the root problems of gun violence.",
+      "note": "Official-site statement about H.R. 8 (Bipartisan Background Check Act) and H.R. 1446 (Enhanced Background Checks Act); page shows no date.",
+      "subjects": [
+        "background checks on private sales",
+        "background check system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f34136d69c4215c575a664dcbafe5023512c78dce9b702357bd42a0cfc9b9382",
+      "kind": "own-words",
+      "url": "https://lucas.house.gov/posts/congressman-lucas-statement-on-presidents-gun-control-announcement",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Bypassing Congress to implement stricter gun laws is not the solution to preventing violence in our country.",
+      "note": "Official-site statement on a President's gun-control executive actions; page shows no date. He says he will oppose new laws infringing Second Amendment rights.",
+      "subjects": [
+        "gun control executive action",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "background checks",
+        "Second Amendment",
+        "minimum age for gun purchase",
+        "red-flag orders",
+        "concealed carry reciprocity",
+        "gun control executive action"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site lucas.house.gov (3 gun statements, found by web search; the pages carry no date)",
+        "web search: Rep. Frank Lucas Oklahoma Second Amendment guns",
+        "congress.gov sponsorships: not reviewed",
+        "Ballotpedia: not reviewed"
+      ],
+      "found": 4,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

@@ -1,0 +1,232 @@
+{
+  "politician_id": "55432c1f-2d1c-4848-8515-066bd1d3521a",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage4-f owed-sources (source-collector subagent, voting-rights, 2026-10-26); the 2024-07-10 roll call comes from voting-rights Stage 0 (collector A, 2026-10-20)",
+        "fetched_at": "2026-10-26T21:18:51Z",
+        "method": "curl",
+        "saved_copy": {
+          "path": "s3-prep-voting-rights/stage4-f/owed/raw/us/hr8281eh.htm",
+          "sha256": "11cc38a668361e1fb9b50c8d70f5f6d15a94c9c9194eba8cd68b02cb226add2c"
+        }
+      }
+    },
+    {
+      "id": "a726e2a0b6b5911c8e2df93f0d0d09d081861df95fb8fc132fb035a070d3ef65",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/issues/second-amendment",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "As a supporter of the Second Amendment, I believe the right to bear arms is a fundamental principle upon which the founders built our nation.",
+      "note": "General statement on his official issue page.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "27ad33f8bc674761e8597e1d90db68aa09f454f496901ddb4d770eb61a33d9ea",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/media-center/press-releases/moolenaar-defends-michiganders-second-amendment-rights",
+      "date": "2022-07-29",
+      "date_precision": "day",
+      "passage": "\"This far-left gun ban violates the Second Amendment and the rights of law-abiding Michiganders to defend themselves.",
+      "note": "Press release on his vote against the bill banning many commonly owned firearms; the release also says he earlier voted against funding states' red flag laws.",
+      "subjects": [
+        "assault weapons ban",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9997c0d9f814fdf7c784247394f8dd1f513d7d12a477c6daab688d399c5e072f",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/media-center/press-releases/moolenaar-votes-protect-michigan-residents-second-amendment-rights",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "passage": "Today, Congressman John Moolenaar voted against House Democrats' gun control legislation.",
+      "note": "Press release on a June 2022 House gun bill vote (bill number not stated on the page).",
+      "subjects": [
+        "gun control legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "097a844e1c3bf0896b8e7e2197c0ae74a49ffb0a3c359fd9270861974327d2e1",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/media-center/press-releases/moolenaar-votes-uphold-second-amendment-rights-law-abiding-americans",
+      "date": "2021-03-11",
+      "date_precision": "day",
+      "passage": "\"I will always defend the Second Amendment rights of law-abiding Americans,\" said Congressman Moolenaar.",
+      "note": "Press release on his votes against two background check bills; says unlimited FBI review time is an abuse of power.",
+      "subjects": [
+        "background checks on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f87956da555385f62acf1eecd095aac87e366b829e1c9bea827ac9257458dfec",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/media-center/press-releases/moolenaar-votes-protect-second-amendment-rights-americans",
+      "date": "2019-02-28",
+      "date_precision": "day",
+      "passage": "Today, House Democrats passed legislation that would curtail the Second Amendment rights of Americans.",
+      "note": "Press release objecting to a bill extending the background check review time from three days to ten business days.",
+      "subjects": [
+        "background checks on gun sales",
+        "waiting periods"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b51aa80c73cd08986bcb52235f98fb04b647230ab9d420e28a4cd464a3068824",
+      "kind": "own-words",
+      "url": "https://moolenaar.house.gov/media-center/press-releases/moolenaar-statement-protecting-americans-second-amendment-rights",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "passage": "The legislation would prohibit gun transfers between some family members, including cousins.",
+      "note": "Press release objecting to the bill on gun transfers between private parties.",
+      "subjects": [
+        "background checks on private sales",
+        "gun transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector subagent, gun-policy Stage 3 preview, 2026-10-29",
+        "fetched_at": "2026-10-30T13:29:50.971Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "background checks",
+        "assault weapons ban",
+        "red-flag orders",
+        "gun transfers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site Second Amendment issue page and press releases (moolenaar.house.gov)",
+        "not reviewed: ballotpedia",
+        "not reviewed: congress.gov sponsorships",
+        "no web search run"
+      ],
+      "found": 6,
+      "at": "2026-10-30T13:29:50.971Z",
+      "by": "gun-policy Stage 3 preview (Stage 5-style search)"
+    }
+  ]
+}

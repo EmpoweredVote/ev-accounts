@@ -1,0 +1,172 @@
+{
+  "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+  "findings": [
+    {
+      "id": "2f9e4d34dda87251f5f130757ce0e5c6ee1742a725353735e00e3ae4937510eb",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H3878",
+      "date": "2021-02-04",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-3878-2021",
+      "act": "sponsor",
+      "motion": "H.3878 An Act establishing identification at the voting polls (filed as Alyson M. Sullivan; a study order was attached 2022-09-12)",
+      "note": "She filed the bill. Per the filed text (https://malegislature.gov/Bills/192/H3878.Html), the state secretary would issue a photo ID card, on request and at no cost, for voting only, and a voter would show a photo ID card, MassHealth card or Medicare card before voting. The bill history shows 'Accompanied a study order, see H5026' on 9/12/2022.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:19:20.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "698452296702da841a578237ce9efac639be925b6ed3515a99fc8142c93f76b4",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H720",
+      "date": "2023-01-18",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-720-2023",
+      "act": "sponsor",
+      "motion": "H.720 An Act establishing identification at the voting polls (refiled; study order H4733 on 2024-07-15)",
+      "note": "She refiled the same bill in the next session. The filed text (https://malegislature.gov/Bills/193/H720.Html) reads: 'Any person who seeks to vote in a federal, state, local or primary election shall establish their qualification to vote by providing a valid photo identification card, MassHealth card or Medicare card to an election officer prior to voting.' Seven other House members were added as petitioners. It went to the Election Laws committee and had a hearing on 2023-09-19.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:19:20.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32b5087e4054c1c04b94b4b7e622260eb718b08fbfcf2e1805a26d0c7ad1554c",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/12/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4359-2022",
+      "act": "author",
+      "motion": "Amendment #12 to H.4359, Establishing identification at the voting polls (Ms. Sullivan of Abington); laid aside, no vote taken",
+      "note": "She offered a floor amendment to the 2022 House elections bill that carried the same free voting-ID-card and photo-ID-at-the-polls language as H.3878. The amendments list (https://malegislature.gov/Bills/192/H4359/Amendments/House) shows it as 'Laid aside'. Her earlier Amendment #1 with the same title is listed as 'Withdrawn'. The date is the House session day (roll call #139 is dated 01/27/2022); the amendment's own filing date was not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:19:20.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95a2895acdea9a5df134c52020c768689441ce8bf5058153e1d036ce9f2bfe66",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/192/HouseRollCall139.pdf",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4359-2022",
+      "act": "yea",
+      "motion": "Roll call No. 139, adoption of Amendment #7 to H.4359 (Voter Identification, Mr. Frost of Auburn); rejected 32 yeas to 126 nays",
+      "note": "The roll-call sheet lists 'Y Sullivan'. Amendment #7 (https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content) would require valid photo ID issued by the state or federal government to vote in person, with a provisional ballot for a voter who lacks it. The amendment page also lists 'Alyson M. Sullivan' among the additional co-sponsors added to Amendment #7, so the store's added co-sponsor entry matches this person (same legislator profile id AMS2 as her other 2022 amendments).",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (provisional ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:19:20.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "875efe6a681a1c864e13405371c6bdf7bd663795c094b8dac5d80a2af6b415d0",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4359-2022",
+      "act": "sponsor",
+      "motion": "Added as co-sponsor of Amendment #7 to H.4359, Voter Identification (lead: Mr. Frost of Auburn); rejected, roll call #139",
+      "note": "The amendment text ends with 'Additional co-sponsor(s) added to Amendment #7 to H4359 Voter Identification Representative: David Allen Robertson Colleen M. Garry Alyson M. Sullivan'. The date of the co-sponsor addition is not shown on the page; the date given is the roll-call date.",
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (provisional ballot)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-rerun",
+        "fetched_at": "2026-10-27T14:19:20.028Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "noncitizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Alyson_Sullivan-Almeida names her as incumbent, MA House 7th Plymouth District, advanced from the September 1, 2026 primary and on the November 3, 2026 general ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia (nothing on the subject)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/AMS2 (sponsored list shows no voter ID or election bill; page lists only a partial set of bills)",
+        "malegislature.gov bill H.833 (194th, voter identification, filed by another member): https://malegislature.gov/Bills/194/H833 ; blocked: cosponsor list https://malegislature.gov/Bills/194/H833/Cosponsor (loads empty, cosponsors not visible)",
+        "malegislature.gov bill search 'voter' (nothing naming her)",
+        "not reviewed: official site and campaign site (URLs not known; no web search budget left)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411 (lead-only; no search budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:51.398Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state-issued voting ID",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Alyson_Sullivan-Almeida (positive control: sitting member of the MA House, 7th Plymouth District, running for re-election, on the 2026-11-03 general-election ballot; nothing on the subject)",
+        "Legislature member page https://malegislature.gov/Legislators/Profile/AMS2 (positive control: Representative Alyson M. Sullivan-Almeida of Abington; the same profile id is linked from the 2022 amendments listed as by 'Sullivan, Alyson M.', so the 2022 'Ms. Sullivan of Abington' is this person)",
+        "Legislature pages for H.3878 (2021-22), H.720 (2023-24), H.4359 amendments #1, #7, #12 and House roll call #139 (PDF)",
+        "Legislature 194th-session bill list for her profile and a legislature bill search for 'identification at the voting polls': no voter-ID bill filed by her in the 2025-26 session found; other sponsors' 2025-26 voter ID bills not matched to her (her name not found on their co-sponsor pages)",
+        "no official site or campaign site located; no floor-speech transcript or own-words statement on the subject found",
+        "web search x2 on her name plus voter ID: only legislature pages"
+      ],
+      "found": 5,
+      "at": "2026-10-27T14:19:20.028Z",
+      "by": "source-collector-rerun"
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+  "findings": [
+    {
+      "id": "5c404ef2a0007c3c0eb227a4fb86c634b6ef7a8e8ab5e81bec8ddc2773a5f6b3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=28748&billStatusActionId=55645&includeVotes=true",
+      "date": "2011-02-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2303-2011",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2011 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d1130c6387f8bfd286661b9aea381ccd8e47703f412244d1a6a4fc154becc74",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76970&billStatusActionId=210697&includeVotes=true",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2492-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21a2498d56ed4f1916e342f62fb428b5fdfc03cc110978bb03e54c68bdc38b24",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=26092&billStatusActionId=53571&includeVotes=true",
+      "date": "2009-06-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "yea",
+      "motion": "House: Third Reading: Passed (as amended)",
+      "note": "House roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5b7c7e4a08287a333e25f1360a3b0f18dd640e63e767adf9a8979d22dd37662",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/26092",
+      "date": "2009",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2627-2009",
+      "act": "sponsor",
+      "motion": "prime sponsor, HB2627S: Senate-engrossed version (text as it stood after the Senate acted)",
+      "note": "Named as prime sponsor ('David Gowan') on the official bill page; linked to David Gowan via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dccd48f32b76eb8fc13b6396a53d87f5e98083832180cdb25007e7d564aa49b4",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81400&billStatusActionId=223261&includeVotes=true",
+      "date": "2024-02-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2785-2024",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2024 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "529cf90a71ccf9d645617ef3b60a7f27ca50e952001992f4c3fb68c019c62cfc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83527&billStatusActionId=246497&includeVotes=true",
+      "date": "2026-06-12",
+      "date_precision": "day",
+      "instrument_id": "AZ-HCR-2001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district 19) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba4bbab8ec97997d4fb86d0b3830076f32919bda55f035196b142276f76fd206",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81593&billStatusActionId=234554&includeVotes=true",
+      "date": "2025-03-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1001-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district 19) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d5e44b430b6e15ec69fa0d8dcf6796810e7555960b3cc2f14df58db5471c128",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=71189&billStatusActionId=186495&includeVotes=true",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1072-2019",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2019 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d2d451d27200c951c4ac0fce30e3b3b0798f1790b723f08f16cc5808b9b8c52",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=81927&billStatusActionId=233421&includeVotes=true",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1098-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district 19) via the official 2025 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "330408ec4896d61a3e54a41918f6a9cb34e65520c76a66a406068d0c72d8d724",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78743&billStatusActionId=216660&includeVotes=true",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1141-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43c31e9e19d446cfa257d435467eac22004793413fd5999c83ee78dbc70b3803",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78784&billStatusActionId=217557&includeVotes=true",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1178-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7deb26f92e06e44e7cbb8aec2ec13fe5ecaddde424e5a0aec256aaaa0bbf345",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=77405&billStatusActionId=210449&includeVotes=true",
+      "date": "2022-03-14",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1460-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c317edba5932851a547b9a08821e246d23e724e516c40a7a27f9d0a603f407a8",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79205&billStatusActionId=218058&includeVotes=true",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1518-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f88491a24de3b8fc57c195fa6e6dd0ec7429139072247414246681c16061fd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=79268&billStatusActionId=217410&includeVotes=true",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1595-2023",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2023 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d846cce7a43e3a899a2c302629e2c8cc5c660781bc29bdbdc95f2f00eb0626bb",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=75855&billStatusActionId=202926&includeVotes=true",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1713-2021",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2021 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aeb744ceacde5e405640f0f86456e7f9ce347bfb3561ffe01639c659dfec6bd",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=83528&billStatusActionId=241249&includeVotes=true",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1001-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district 19) via the official 2026 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95a18b5673d4baab12c071e130fcf26ef474c543ae4c5cea800334aec0de7904",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=76391&billStatusActionId=209313&includeVotes=true",
+      "date": "2022-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SCR-1012-2022",
+      "act": "yea",
+      "motion": "Senate: Third Reading: Passed (as amended)",
+      "note": "Senate roll call as printed ('GOWAN'), linked to David Gowan (district None) via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "812ac776d8359e015bc13713777a9a924a52e1f081f44a1d8197d28734c4a2a3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77624",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-SCR-1046-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, SCR1046P: as introduced (printed version)",
+      "note": "Named as co sponsor ('David Gowan') on the official bill page; linked to David Gowan via the official 2022 Senate member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T22:53:15.884Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07beb22391c4a87027116d0de8b5fc744a95f4fe4b0aa8071a98ee581de3d18a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/77219",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2596-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, HB2596P: as introduced (printed version)",
+      "note": "Named as co sponsor ('David Gowan') on the official bill page; linked to David Gowan via the official 2022 member roll of the other chamber (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-az-2026-10-28",
+        "fetched_at": "2026-10-28T23:15:12.945Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc6be5e4ecfeb49486571f8904ad72db4b0f71d88548a8727a11ec3385f20ce1",
+      "kind": "own-words",
+      "url": "https://azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative19",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I continue to fight for election integrity, secure borders, high-paying jobs, quality schools and school choice, taking care of our police and veterans, and more.",
+      "note": "From his candidate statement as State Senator, District 19, in the Citizens Clean Elections voter education guide (page footer says 2024). He lists election integrity among his priorities without naming a specific measure.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T23:18:25.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 18,
+      "at": "2026-10-28T22:53:15.884Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official AZ legislature bill pages, journals and roll calls in bills/az-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:15:12.945Z",
+      "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, extract-otr ran with his name)",
+        "in scope: https://theballotbrief.com/state/arizona/santa-cruz-county lists him as a candidate for Arizona House District 19 on the 2026-11-03 ballot (he is a sitting Senator; the same site and a search summary say he is not on the Senate ballot)",
+        "Citizens Clean Elections voter education guide, district 19 (https://azcleanelections.gov/arizona-elections/voter-education-guide/general-text-legislative19): his candidate statement, one finding; the page's footer says 2024 and he is described as Senator, so the statement is from an earlier cycle and the date is unknown",
+        "https://thecandidate.com/states/az/legislature/senate/19/david-gowan: nothing on the subject",
+        "https://www.azsenaterepublicans.gov/gowan: nothing on the subject",
+        "https://www.kawc.org/elections/2021-03-08/arizona-senate-to-take-up-early-voting-restrictions: his quoted words there are about early-ballot timing, not ID or citizenship, so not saved",
+        "blocked: https://ballotpedia.org/David_Gowan (empty page)",
+        "campaign site gowanforaz.com: the address returned an unrelated encyclopedia page, nothing usable",
+        "two web searches on his name plus subject words: no further own words on ID or citizenship"
+      ],
+      "found": 1,
+      "at": "2026-10-28T23:18:25.399Z",
+      "by": "source-collector-wave3"
+    }
+  ]
+}

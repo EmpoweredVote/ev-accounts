@@ -9,6 +9,8 @@
  */
 
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
+import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine } from './legiscanEvidence.js';
 
 /**
  * Decode a page's character references for DISPLAY, and nothing else. See
@@ -268,6 +270,19 @@ export const MAX_ALIASES = 8;
  * hand that bypass to every page carrying a common first name. Two tokens keeps an alias at least
  * as specific as the full name it stands in for.
  */
+/** A degree written after a comma ("Timothy Reeder, MD"): never a surname there. */
+const DEGREE = /^(m\.?d|ph\.?d|d\.?d\.?s|d\.?m\.?d|d\.?o|d\.?v\.?m|r\.?n|j\.?d|ed\.?d|esq|c\.?p\.?a|m\.?p\.?h|m\.?b\.?a)\.?$/i;
+
+/** The last name in a full name, skipping a trailing suffix ("Frank Pallone, Jr." → "Pallone") and a
+ *  degree set off by a comma ("Timothy Reeder, MD" → "Reeder"). */
+export function lastNameOf(name: string): string {
+  let s = name.trim();
+  for (let m = /,\s*([^,]+)$/.exec(s); m && DEGREE.test(m[1].trim()); m = /,\s*([^,]+)$/.exec(s)) s = s.slice(0, m.index);
+  const parts = s.replace(/,/g, ' ').split(/\s+/).filter(Boolean);
+  while (parts.length > 1 && /^(jr|sr|ii|iii|iv|v)\.?$/i.test(parts[parts.length - 1])) parts.pop();
+  return parts[parts.length - 1] ?? name;
+}
+
 export function aliasesFrom(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
   const out: string[] = [];
@@ -521,6 +536,22 @@ export async function verifyEvidence(args: {
         }
       } else {
         for (const ev of snippets) {
+          // Roll-call lane (rollCallEvidence.ts): a canonical vote line on a House roll-call XML is
+          // checked field by field against the record; the line itself is the published span.
+          if (isRollCallXmlUrl(url) && parseRollCallLine(ev.snippet)) {
+            const v = verifyRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
+          // LegiScan lane (legiscanEvidence.ts): a canonical sponsor or vote line on a LegiScan bill or
+          // roll-call URL, checked against the party-free record the API returned.
+          if (isLegiscanUrl(url) && parseLegiscanLine(ev.snippet)) {
+            const v = verifyLegiscanLine(ev.snippet, url, fetched.text, names);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
           const matchVerdict = matchSnippet(ev.snippet, fetched.text, match);
           if (matchVerdict.verdict !== 'verified') {
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: matchVerdict });

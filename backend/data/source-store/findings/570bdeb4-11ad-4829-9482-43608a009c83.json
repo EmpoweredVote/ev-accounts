@@ -1,0 +1,292 @@
+{
+  "politician_id": "570bdeb4-11ad-4829-9482-43608a009c83",
+  "findings": [
+    {
+      "id": "a28ae04c2b4e1da183fe5d8b233c628edad905d1a3c7d7b1ba1851f5b7daf1fc",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/politics-and-government/2020-10-07/republican-candidate-for-pa-171st-house-district-kerry-benninghoff-on-covid-19-and-safe-elections",
+      "date": "2020-10-07",
+      "date_precision": "day",
+      "passage": "As you may or may not know, it was the Republican majority that provided an opportunity through the mail in ballot system to let people have another opportunity on how to vote, which happened to be very timely with the COVID situation. Through the primary, we saw there were some problems when some counties chose to take it upon themselves and do more than what the state statute allows, as far as providing drop boxes, which were not necessarily monitored.",
+      "note": "Interview transcript (WPSU, answering how he works to keep voting secure). He describes the mail-in ballot system and criticises county drop boxes that went beyond state law.",
+      "subjects": [
+        "mail ballot rules",
+        "ballot drop boxes",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:37.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba275a39cfecfa52de91175c6684471fa13f17a705228ca5a37b3d33ab8e757e",
+      "kind": "own-words",
+      "url": "https://radio.wpsu.org/politics-and-government/2020-10-07/republican-candidate-for-pa-171st-house-district-kerry-benninghoff-on-covid-19-and-safe-elections",
+      "date": "2020-10-07",
+      "date_precision": "day",
+      "passage": "We should all want safe, secure election process so that your vote isn't canceled out by somebody who came by 24 hours, 48 hours later and tried to change the outcome.",
+      "note": "Same interview. He objects to counting mail ballots with no postmark that arrive days after election day. Nothing on voter ID.",
+      "subjects": [
+        "mail ballot deadline and postmark",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:37.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a7378e45946841ad57057133ea58e8d0647600af8fb51227977986ad212ff9d4",
+      "kind": "own-words",
+      "url": "https://webcms.pahousegop.com/News-Print/18695/House-and-Senate-Republicans-Issue-Letters-Calling-on-Congress-to-Dispute-Pennsylvanias-Electors-Law-Enforcement-to-Review-2020-Election?SiteID=1",
+      "date": "2020-12-04",
+      "date_precision": "day",
+      "passage": "I am alarmed and incredibly concerned about the numerous process failures, mistakes and reports of misdeeds in the 2020 election.",
+      "note": "Statement in his name (as House Majority Leader) in a caucus release about letters to Congress, the attorney general and the inspector general on the 2020 election. Nothing on voter ID.",
+      "subjects": [
+        "election integrity in general",
+        "2020 election review"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave3",
+        "fetched_at": "2026-10-28T22:05:37.880Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8bf480fd6870a907651eb9657b6bfebd89b56adf97511b28470ee21664670ae6",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20241110115700/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2021&sess_ind=0&rc_body=H&rc_nbr=406",
+      "date": "2021-06-22",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-1300-2021",
+      "act": "yea",
+      "motion": "House: HB 1300 PN 1869 final passage (page heading: House Bill 1300 PN 1869 FP)",
+      "note": "House roll call as printed ('BENNINGHOFF'), linked to Kerry A. Benninghoff (district 171) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Benninghoff'), linked to Kerry A. Benninghoff (district 171) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f86343f87234ac5ee0e2e809756082f174a8cc9ba03078a212d1a0a769a88dc2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2023/0/20230522.pdf",
+      "date": "2023-05-22",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-1-2023",
+      "act": "yea",
+      "motion": "House: Third consideration and final passage (PN 385)",
+      "note": "House roll call as printed ('Benninghoff'), linked to Kerry A. Benninghoff (district 171) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e634f22baeb04075ea841fe57fa2c24b1906453b6627c863d0170f6511c4af31",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2021/0/20211215.pdf",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 1279)",
+      "note": "House roll call as printed ('Benninghoff'), linked to Kerry A. Benninghoff (district 171) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28",
+        "fetched_at": "2026-10-28T22:45:58.691Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Benninghoff'), linked to Kerry A. Benninghoff (district 171) via the official 2011-2012 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.452Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32320314090051969c917b0997a877ed945a332219a9d8aad01fa3a04f4891c2",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2022/0/20220708.pdf",
+      "date": "2022-07-08",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-106-2021",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments to House amendments (PN 1857)",
+      "note": "House roll call as printed ('Benninghoff'), linked to Kerry A. Benninghoff (district 171) via the official 2021-2022 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-28b",
+        "fetched_at": "2026-10-28T22:51:16.452Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d94d639a1aa8ab9b5641faf5375a1702b59a1a4fd27d73237a321ac6f31b722",
+      "kind": "record",
+      "url": "https://web.archive.org/web/20240716164518/https://www.legis.state.pa.us/CFDOCS/Legis/RC/Public/rc_view_action2.cfm?sess_yr=2023&sess_ind=0&rc_body=H&rc_nbr=651",
+      "date": "2023-10-18",
+      "date_precision": "day",
+      "instrument_id": "PA-SB-224-2023",
+      "act": "nay",
+      "motion": "House: SB 224 PN 1171, FINAL PASSAGE (House RCS No. 651)",
+      "note": "House roll call as printed ('BENNINGHOFF'), linked to Kerry A. Benninghoff (district 171) via the official 2023-2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-29",
+        "fetched_at": "2026-10-29T14:14:50.851Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "mail ballot rules and drop boxes",
+        "election integrity in general",
+        "2020 election review"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "his official House site https://kerrybenninghoff.com/about (bio, no election content)",
+        "https://www.repbenninghoff.com/ (address does not exist)",
+        "re-election announcement 2026-04-09 (Lewistown Sentinel): confirms he seeks the 171st District seat in 2026; nothing on the subject",
+        "caucus press release of 2020-12-04 on election letters (own statement saved)",
+        "WPSU interview of 2020-10-07 (transcript saved)",
+        "blocked: https://ballotpedia.org/Kerry_Benninghoff (page came back empty)",
+        "web searches on name plus voter ID, mail ballot: no 2025-26 voter ID statements found"
+      ],
+      "found": 3,
+      "at": "2026-10-28T22:05:37.880Z",
+      "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 4,
+      "at": "2026-10-28T22:45:58.691Z",
+      "by": "identity-pa-2026-10-28"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 2,
+      "at": "2026-10-28T22:51:16.452Z",
+      "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official PA legislature bill pages, journals and roll calls in bills/pa-bills.json (identity step 2026-10-28)"
+      ],
+      "found": 1,
+      "at": "2026-10-29T14:14:50.851Z",
+      "by": "identity-pa-2026-10-29"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "politician_id": "ecfa0c48-799b-4bcb-a652-39e545d60313",
+  "findings": [
+    {
+      "id": "f45a6f36b90a5a9f408c09de790ab214036b08cbb125310bab8615694bddc0d1",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-202-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, as amended, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Bonner'), linked to JOSH BONNER (district 72) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f13bb1a23204a5d08df96939f8ca0a7c18b71edaf7928c787d5efc89a91f88a",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2021-belec-p-btext",
+      "date": "2021-03-01",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-531-2021",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute, the roll call was ordered and the vote was as follows",
+      "note": "House Journal roll call as printed ('Bonner'), linked to JOSH BONNER (district 72) via the official 2021 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e58278ca3d508c89f463458e252c6976de890ad5380160376072fc31a4763bd1",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/api/document/docs/default-source/house-journal-document-library/2024-house-journal.pdf",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-189-2024",
+      "act": "yea",
+      "motion": "House: On the passage of the Bill, by substitute (House Rules Committee substitute)",
+      "note": "House Journal roll call as printed ('Bonner'), linked to Josh Bonner (district 73) via the official 2024 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.398Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what a voter with no ID can do",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks and election integrity laws"
+      ],
+      "places": [
+        "On the Record: 0 appearances found by extract-otr.mjs",
+        "web search on name plus voter ID and election integrity (confirmed Josh Bonner is a Georgia House member for District 73 via https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-73/candidates/josh-bonner, which lists him in the 2026 general race)",
+        "web search on name plus 2020 election statements and SB 202 vote (nothing by him on the subject)",
+        "https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-73/candidates/josh-bonner fetched; summary written by the site, not his own words; not saved",
+        "blocked: https://ballotpedia.org/Josh_Bonner (403)",
+        "blocked: https://app.legiplex.com/profile/josh-bonner-927/legislation?page=3 (403)",
+        "blocked: https://thecitizen.com/2026/02/25/rep-josh-bonner-seeks-re-election-to-georgia-house-district-73/ (403)",
+        "official House page and campaign site: not reviewed (no URL reached)",
+        "legis.ga.gov bill pages: not reviewed (login token needed)"
+      ],
+      "found": 0,
+      "at": "2026-10-28T20:40:31.978Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.398Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}

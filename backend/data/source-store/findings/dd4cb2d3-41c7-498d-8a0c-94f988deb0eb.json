@@ -1,0 +1,52 @@
+{
+  "politician_id": "dd4cb2d3-41c7-498d-8a0c-94f988deb0eb",
+  "findings": [
+    {
+      "id": "6a4320a4746efc348b253c36aea0a668ad21c2d88f898cbe6f516bdc248bae6f",
+      "kind": "record",
+      "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF#page=111",
+      "date": "2025-05-12",
+      "date_precision": "day",
+      "instrument_id": "TX-SJR-37-2025",
+      "act": "abstain",
+      "motion": "Final House adoption of SJR 37, constitutional amendment that a voter must be a US citizen (Record 2196, 102 yeas, 14 nays, 22 present not voting)",
+      "note": "House Journal record vote on adopting SJR 37, a proposed constitutional amendment clarifying that a voter must be a United States citizen. The Journal lists this member as present, not voting.",
+      "subjects": [
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:31:14.410Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll citizenship checks and non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "Ballotpedia (HD 115 member, on the 2026 general-election ballot)",
+        "House member page, media, newsletters and biography pages (nothing on the subject)",
+        "campaign site cassandrafortexas.com home and about pages (nothing on the subject)",
+        "Texas Legislature Online authored-bill list for 89R, 89(1), 89(2): none on the subject",
+        "Texas Legislature Online bill pages for HB 892, HB 2332, HB 2245, HB 2739, HB 304, HB 4030, SB 16, SJR 37 (not listed on the author or sponsor lines)",
+        "Texas House Journal record vote on SJR 37",
+        "web search on name plus subject words (no own words found)"
+      ],
+      "found": 1,
+      "at": "2026-10-28T15:31:14.410Z",
+      "by": "source-collector-wave2"
+    }
+  ]
+}

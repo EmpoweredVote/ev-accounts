@@ -1,0 +1,183 @@
+{
+  "politician_id": "00f540aa-f0f1-4a6e-8a38-3eaca300bf11",
+  "findings": [
+    {
+      "id": "93211ee8fa59017867c810aa5f857192f1f28947e9a718c5850a5f9667b4ccc1",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/?p=98824",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "passage": "Sen. Randal Mangham, a Stone Mountain Democrat, opposed the legislation, saying it “creates political justification for reviving election rules by claiming a crisis in the system,” he said.",
+      "note": "Cobb County Courier story (published 2026-03-09, about the Senate Crossover Day vote the preceding Friday) quotes him on Senate Resolution 838, a proposed state constitutional amendment on proof of citizenship to vote.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:15.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "38003b1f3011fa530a8d43c96fd2dc5bc112858f6acbbbf9725176f8fcc4a2dc",
+      "kind": "own-words",
+      "url": "https://voz.us/en/just-the-news/260330/34542/georgia-senate-passes-revamped-legislation-requiring-hand-marked-ballots.html",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "passage": "Stone Mountain Democrat Randal Mangham said the bill's revision was like \"Groundhog Day\" and called it “a conspiracy theorist wishlist dressed up as election legislation.”",
+      "note": "Voz news story (2026-03-30) quotes him on the revised House Bill 960, an election bill requiring hand-marked paper ballots. Off the core ID question; saved as a related election-integrity-law remark.",
+      "subjects": [
+        "election integrity laws",
+        "hand-marked paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:15.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77f636da40f3acde8930a828840ea6dd273d0c7833425bf04302b12e2f657a3e",
+      "kind": "own-words",
+      "url": "https://voz.us/en/just-the-news/260330/34542/georgia-senate-passes-revamped-legislation-requiring-hand-marked-ballots.html",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "passage": "\"This is a concentrated effort from Washington, D.C. all the way to Georgia and that's the problem we have,\" Mangham said.",
+      "note": "Same Voz story (2026-03-30), a direct quote of him during Senate debate on revised House Bill 960 (hand-marked paper ballots).",
+      "subjects": [
+        "election integrity laws",
+        "hand-marked paper ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector-wave2",
+        "fetched_at": "2026-10-28T15:39:15.064Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59fbc6cfd39d0f6e5bb7da0aeda0e3021dc0b3818a94b8e5ad52ecc82749b77f",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2005-bv-p2-belec-p-btext/fulltext.text",
+      "date": "2005-03-31",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-244-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House adopt the report of the Committee of Conference on HB 244 (final vote in the House)",
+      "note": "House Journal roll call as printed ('Mangham'), linked to Randal Mangham (district 94) via the official 2005 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bee9949bb644c1cf808284a1f1ffce148e610d6c8d54eee1abb40f4f8ded29e",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2006-belec-p-btext/fulltext.text",
+      "date": "2006-01-25",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-84-2005",
+      "act": "nay",
+      "motion": "House: Motion that the House agree to the Senate amendment to the House substitute to SB 84 (final vote)",
+      "note": "House Journal roll call as printed ('Mangham'), linked to Randal Mangham (district 94) via the official 2006 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50175257e25239e0196936c2fd9115df255b22a4180a0a7c922b678221440547",
+      "kind": "record",
+      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl404-b2009-belec-p-btext/fulltext.text",
+      "date": "2009-04-03",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-86-2009",
+      "act": "nay",
+      "motion": "House: On the passage of the Bill, by substitute",
+      "note": "House Journal roll call as printed ('Mangham'), linked to Randal Mangham (district 94) via the official 2009 House member roll (identity step 2026-10-28).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ga-2026-10-28",
+        "fetched_at": "2026-10-28T20:51:14.414Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws",
+        "hand-marked paper ballots"
+      ],
+      "places": [
+        "in scope: Ballotpedia page https://ballotpedia.org/Randal_Mangham (fetched by curl) shows he is the sitting State Senate District 55 member, advanced from the 2026-05-19 primary and is on the 2026-11-03 general-election ballot",
+        "BallotReady profile https://www.ballotready.org/people/randal-mangham: fetched; confirms sitting Senate District 55 and candidate in 2026 general election",
+        "On the Record (0 appearances)",
+        "He took office in 2025, so no vote on Georgia SB 202 (2021) applies to him",
+        "blocked: official legislature site https://www.legis.ga.gov (page loads by script; its data service returned 401), so no official roll call for 2026 Senate Resolution 838 or House Bill 960 could be fetched",
+        "blocked: https://www.senate.ga.gov member page (no response)",
+        "blocked: https://www.facebook.com/SenatorMangham (HTTP 400)",
+        "Senate press office search https://senatepress.net/?s=Mangham+voter: fetched; nothing on the subject by him",
+        "Ballotpedia: nothing on the subject",
+        "WALB 2026-06-18 article on a proposed citizenship-only voting amendment: fetched; does not quote him",
+        "not reviewed: PBS Lawmakers Day 33 video https://www.pbs.org/video/voter-registration-and-hotel-scam-bills-2026-lawmakers-day-33-pdax0r/ (video)",
+        "web searches run: 2 of 10"
+      ],
+      "found": 3,
+      "at": "2026-10-28T15:39:15.064Z",
+      "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+      ],
+      "found": 3,
+      "at": "2026-10-28T20:51:14.414Z",
+      "by": "identity-ga-2026-10-28"
+    }
+  ]
+}
