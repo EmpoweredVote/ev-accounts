@@ -225,11 +225,12 @@ Run the check again every time you write a batch. The newest check for a finding
 the code was made never counts. Each line's `at` is an ISO timestamp with a time zone.
 
 **2. Dry run again; hand rows.** Run the dry run again (`research-stage5-1.csv`) so the passed checks count, and
-copy it to `research.csv`. Then add a row for each blank listed under **not in research.csv**, by the ruling in
-RULINGS.md "Mapping a blank to a V6 reason": off-question, no-side and gated blanks → `no-evidence`; blanks that
-show a side → `direction-only`. Write each one, with its reason, in `hand-rows.md`, and append the rows from the
-person's code file: write the ids and reasons to `hand-rows.json` and run `add_hand_rows.py <batch> <abs>/stage5
-<findings dir> --topic <key>`.
+copy it to `research.csv`. The writer maps each blank to a V6 reason by the ruling in RULINGS.md "Mapping a blank to a
+V6 reason": gated and off-question blanks, and blanks whose code says `shows_side: false`, → `no-evidence`; blanks
+whose code says `shows_side: true` (or carries the `direction-only` tag) → `direction-only`. A blank it still lists
+under **not in research.csv** is a code written before `shows_side` existed: decide it by the same ruling, write it,
+with its reason, in `hand-rows.md`, put the ids and reasons in `hand-rows.json`, and run `add_hand_rows.py <batch>
+<abs>/stage5 <findings dir> --topic <key>`.
 
 **3. Bundle.** Build the research-stances bundle for the coded people of this batch only:
 

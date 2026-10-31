@@ -102,4 +102,10 @@ describe('Stage5CodeSchema', () => {
   it('refuses an unknown tag', () => {
     expect(Stage5CodeSchema.safeParse(code({ tags: ['nonsense' as never] })).success).toBe(false);
   });
+  it('checks shows_side: doesnt-fit only, and never against a direction-only tag', () => {
+    const fit = { outcome: 'doesnt-fit' as const, value: undefined, open_note: 'Backs ID but names no kind.', finding_ids: [words.id], evidence_basis: 'own-words' as const, blank_class: 'wording' as const };
+    expect(checkCode(code({ ...fit, tags: ['unnamed-position'], shows_side: true }), person([words]))).toEqual([]);
+    expect(checkCode(code({ ...fit, tags: ['direction-only'], shows_side: false }), person([words])).join()).toMatch(/shows_side/);
+    expect(checkCode(code({ shows_side: true }), person([vote])).join()).toMatch(/shows_side/);
+  });
 });
