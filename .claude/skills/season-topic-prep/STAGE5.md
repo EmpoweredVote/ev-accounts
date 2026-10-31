@@ -157,16 +157,14 @@ any step can be undone and the diff can be read.
 
 **Tools.** The `topic:` scripts, `build-stance-topic-bundle.ts`, `stance-gate.ts`, `audit-chair-evidence.mjs`,
 `verify-stance-research.ts` and `legiscan-evidence-lines.ts` are in `backend/scripts/`. The batch tools named below
-(`build_evidence.py`, `party_sweep.mts`, `legiscan_rollcalls.mts`, `approve_batch.mts`, `pdf_pages.py`,
-`s1-sources.mts`, `fallback/fetch.mts`, `readback.mts`, and the per-state `add_*.py` / `merge.py` patterns) are
-being moved into `backend/scripts/stage5/`. Until that lands, they are in
-`.planning/research/s3-prep-voting-rights/stage5/write/` (`tools/`, `in-01/tools-in/`, `in-01/fallback/`,
-`va-01/tools-va/`, `ca-01/tools-ca/`) on Chris Andrews' machine. 🔴 Those copies hard-code the `voting-rights` topic
-id, the draft season id and the `.wt-vr-ca` worktree path: change all three before you run one for another topic.
+are in `backend/scripts/stage5/`; its [README](../../../backend/scripts/stage5/README.md) lists each one with its
+arguments. They take the topic, state and season as arguments, so they work for any topic. A one-off fix for a
+single batch (a sentence added by hand, a page uncited because the research text says it is unused) stays in that
+batch folder, with a line in its `PREVIEW.md`.
 
-**Running them.** Run every `tsx` helper from a backend folder whose `.env` is linked to
-`ev-accounts/backend/.env`, as `ADMIN_INGEST_TOKEN=placeholder npx tsx --env-file=.env <script>`. Run the Python
-tools as `python3 -I <tool> <batch dir>`. Three zsh traps:
+**Running them.** Run every tool from a worktree's `backend/` folder whose `.env` is linked to
+`ev-accounts/backend/.env`: `ADMIN_INGEST_TOKEN=placeholder npx tsx --env-file=.env scripts/stage5/<tool>.ts`, and
+`python3 -I scripts/stage5/<tool>.py`. Three zsh traps:
 
 - Write `"${p}:state"`, never `"$p:state"`: zsh reads `$p:s` as a modifier.
 - Do not `echo =====`: zsh expands a word that starts with `=` as a command path, and the command fails.
@@ -176,14 +174,17 @@ tools as `python3 -I <tool> <batch dir>`. Three zsh traps:
 **held**: their id goes in `held.txt`, and their rows come out of `research.csv` and `evidence.csv` (keep the full
 set as `research-with-held.csv` / `evidence-with-held.csv`). A coded person who is leaving and is left out of the
 batch on the runner's choice goes in `moved.txt`. Set both lists' code files aside before each `topic:stage5-write`
-run and put them back after (`in-01/dryrun.sh` does both). Nothing is written for a held person. They follow in a
+run and put them back after: `write-batch.sh` does both. Nothing is written for a held person. They follow in a
 small batch of their own (`<unit>-NN-<name>`) once the gap is fixed.
 
 **0. Dry run 0.**
 
 ```bash
-npm run topic:stage5-write --prefix backend -- --topic <key> --research <abs topic folder> --season draft --units state:xx --csv-out <abs>/stage5/write/<batch>/research-stage5-0.csv
+zsh scripts/stage5/write-batch.sh <abs>/stage5 <abs batch> <key> state:xx 0
 ```
+
+It runs `topic:stage5-write --season draft --units state:xx --csv-out <batch>/research-stage5-0.csv` with the held
+and moved codes set aside, and saves its output in `dry-run-0.txt`. Later dry runs take the next number.
 
 It reads the database only to find the draft season. It fetches each own-words passage's page again and keeps the
 passage only when it is there word for word, whatever the quote check said. A page that is not HTML (a PDF) or will
@@ -227,7 +228,8 @@ the code was made never counts. Each line's `at` is an ISO timestamp with a time
 copy it to `research.csv`. Then add a row for each blank listed under **not in research.csv**, by the ruling in
 RULINGS.md "Mapping a blank to a V6 reason": off-question, no-side and gated blanks → `no-evidence`; blanks that
 show a side → `direction-only`. Write each one, with its reason, in `hand-rows.md`, and append the rows from the
-person's code file (pattern: `in-01/tools-in/add_hand_rows.py`).
+person's code file: write the ids and reasons to `hand-rows.json` and run `add_hand_rows.py <batch> <abs>/stage5
+<findings dir> --topic <key>`.
 
 **3. Bundle.** Build the research-stances bundle for the coded people of this batch only:
 
@@ -242,7 +244,7 @@ batch.
 **4. Evidence.** `stance-gate` needs an `evidence.csv`, and Stage 5 has no other step that builds one.
 
 ```bash
-python3 -I build_evidence.py <batch> <abs>/stage5/roster.tsv <abs>/backend/data/source-store/findings --fetch --level state --state XX
+python3 -I scripts/stage5/build_evidence.py <batch> <abs>/stage5/roster.tsv <abs>/backend/data/source-store/findings --fetch --level state --state XX
 ```
 
 It rewrites `research.csv` (sources from the cited findings) and writes `evidence.csv` (snippets cut from each
@@ -257,27 +259,28 @@ early finds a new on-topic item while the person can still be re-coded, before t
 
 1. Run `stance-gate.ts --dir <batch>` and a verifier dry run (step 12) once, to get `publish-report.json`. Gate
    findings are expected at this point.
-2. `s1-sources.mts <batch>` lists, for every blank over a shown answer, the sources of that answer
+2. `s1-sources.ts --topic <key> <batch>` lists, for every blank over a shown answer, the sources of that answer
    (`fallback/fallback-required.json`).
 3. Drop OnTheIssues and Wikipedia (RULINGS.md "OnTheIssues and Wikipedia are never sources"). Load the rest
-   through the verifier's own fetch steps (`fallback/fetch.mts`), so a page the verifier cannot load is known now.
+   through the verifier's own fetch steps (`fallback-fetch.ts <batch>/fallback`, reading `fallback/urls.txt`), so a page the verifier cannot load is known now.
 4. One agent reads the loaded pages for the question (`fallback-read.json/.md`). Check its "nothing on topic"
    answers yourself.
 5. A page with a **new** on-topic item: hold the person (`held.txt`) for a re-code check. Otherwise list each loaded
-   page on the blank as examined, with a party-free snippet (pattern: `in-01/tools-in/add_fallback.py`).
+   page on the blank as examined, with a party-free snippet: `add_fallback.py <batch> --topic <key> --gloss "<what the
+   question asks>" --hold "<Name>"…`.
 6. A blank whose old answer rests only on OnTheIssues or Wikipedia is written as an outcome row with no source and
    no review row (as `nc-01-stein`).
 
 **6. Party sweep and fix.**
 
 ```bash
-npx tsx party_sweep.mts <batch>/evidence.csv > <batch>/party-sweep.jsonl
+npx tsx scripts/stage5/party-sweep.ts <batch>/evidence.csv > <batch>/party-sweep.jsonl
 ```
 
 It lists every snippet that names a party (`namesParty`, plus roll-call party letters: "CLANCY D N", "(R)",
 "R-Dist", "(D-Bloomington)"). A snippet is never edited inside: cut it before the label when the person and the act
 are still in what is left, or drop it. A page left with no snippet comes off the row's sources
-(`party-dropped.json`; pattern: `in-01/tools-in/party_fix.py`). The sweep must end at 0. A party word inside a
+(`party_fix.py <batch>`; list cuts in `party-cuts.json`; log in `party-dropped.json`). The sweep must end at 0. A party word inside a
 source's **web address** is fine (RULINGS.md "A party word in a source address is fine").
 
 **7. Roll calls: official or LegiScan, cross-checked.** For every vote and sponsorship a seat rests on, check the
@@ -296,11 +299,13 @@ prints no party by the names. Otherwise cite a LegiScan line instead. The legisl
 Steps:
 
 1. Map each official roll call to the LegiScan roll call of the same bill, chamber and counts
-   (`legiscan_rollcalls.mts <ST> <vote-pages.json> <out.json>`, or a per-state table as
-   `in-01/tools-in/legiscan_pairs.py`). Write `legiscan/pairs.csv` (`full_name, last_name, topic_key, source_url`).
+   (`legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>`), and record each match in `legiscan/rollcall-map.json`.
+   Then `legiscan_pairs.py <batch> <findings dir> --topic <key> --state XX --host <official host> --rollcalls
+   <batch>/legiscan/rollcall-map.json` writes `legiscan/pairs.csv` (IN also needs `--bill-pad 4`: LegiScan prints
+   SB0010).
 2. `npx tsx --env-file=.env scripts/legiscan-evidence-lines.ts --in <batch>/legiscan/pairs.csv --out <batch>/legiscan/legiscan-evidence.csv`.
    A pair with no line is reported: usually a name LegiScan prints another way. Hold that person; do not guess.
-3. Merge (pattern: `in-01/tools-in/merge.py`): cite the LegiScan URL; take an unreadable official page off the row
+3. Merge (`legiscan_merge.py <batch> --host <official host>`): cite the LegiScan URL; take an unreadable official page off the row
    only when every act of the person on it now has a line; and cross-check each vote line against the act in the
    finding (`legiscan/crosscheck.json`). 🔴 It must show **0 disagree**. LegiScan's totals can differ from the
    official tally by one (IN SB 10 House vote: official 66-26, LegiScan 66-25); what must agree is each person's
@@ -312,7 +317,7 @@ Every LegiScan call counts against the monthly cap (`LEGISCAN_API_KEY`). The lin
 the quote. Cite the bill text itself: the enrolled act from the official site, or the source store's saved copy
 (`backend/data/source-store/instruments/<juris>/<id>.json`, `provenance.saved_copy` and `urls`). Check its sha256
 against the store's copy, and add the sentences that hold each quote as passages: 25 words or more each
-(pattern: `in-01/tools-in/add_bill_text.py`; in IN this cleared 290 of 310 high findings). A bill names no voter,
+(`add_bill_text.py <batch> --topic <key> --url <bill text URL> --sentences <json>`; in IN this cleared 290 of 310 high findings). A bill names no voter,
 so the verifier does not count it as a source for the person; it only meets the gate's quote check.
 
 **9. Gate to 0 high.**
@@ -323,7 +328,7 @@ npx tsx scripts/stance-gate.ts --dir <batch>
 
 Work every high finding down to 0. Two tools, and they are not the same:
 
-- **Trim** (`overrides.json`, applied by `in-01/tools-in/apply_overrides.py`): an edit to the **research text
+- **Trim** (`overrides.json`, applied by `apply_overrides.py <batch>`): an edit to the **research text
   only**, never to a stance or a value. Use it for a side-list bill the seat does not rest on and with no readable
   page (drop its number), quote marks the coder put round its own words, or a quote that the page splits at a
   comma. Each entry records the old words, the new words and why. 🔴 The code file still says the old words; say
@@ -334,9 +339,9 @@ Medium `statement-needs-review` findings are expected for own-words seats: they 
 words alone is `statement` evidence, so it keeps the `statement-evidence` hold until the topic's blind check passes
 (section 8 below).
 
-**10. Party check on the research text.** Run `party_sweep.mts` on the research text too: make a temporary
-evidence-shaped CSV with one row per `research.csv` row and the reasoning as its snippet. Also
-`grep -ciE 'republican|democrat|\bGOP\b' research.csv`. Both must be 0, except party words inside web addresses.
+**10. Party check on the research text.** `party-sweep.ts --research <batch>/research.csv` sweeps the reasoning of
+every row. Also `grep -ciE 'republican|democrat|\bGOP\b' research.csv`. Both must be 0, except party words inside
+web addresses.
 
 **11. Audit.**
 
@@ -367,17 +372,17 @@ Write nothing until the runner says yes **for this batch**.
 **14. Write, queue for review, read back.** On yes:
 
 1. Run `topic:stage5-write` with `--apply` and without `--csv-out`, with held and moved codes set aside
-   (`dryrun.sh apply`). It writes the outcomes and passages in one transaction. Exit 3 with "WROTE" is fine. It
+   (`write-batch.sh <abs>/stage5 <abs batch> <key> state:xx apply`). It writes the outcomes and passages in one transaction. Exit 3 with "WROTE" is fine. It
    refuses to run while any code is refused: fix those codes and dry-run again first, or an earlier write for
    those people would stay live. Running it again for the same people replaces their outcome and their passages.
    It refuses any season but the draft one.
 2. `verify-stance-research.ts` with the step 12 flags plus `--apply --editor-id <editor uuid>`. It queues every row
    for review (review-all).
-3. Read back (`readback.mts <batch>/pids-write.txt`): outcomes by type, passages, and review rows by status must
+3. Read back (`readback.ts --topic <key> <batch>/pids-write.txt --batch-id <batch>`): outcomes by type, passages, and review rows by status must
    match the preview.
 4. Add the counts to `PREVIEW.md` under "WRITTEN", and a line to the topic's hand-over log.
 
-**15. Approve the review rows.** 🛑 A separate yes ("approve"). `approve_batch.mts <editor uuid> <batch>
+**15. Approve the review rows.** 🛑 A separate yes ("approve"). `approve-batch.ts <editor uuid> <batch>
 [--skip "Name"]…` resolves the pending rows. Skip every own-words seat while the topic's blind check (section 8) has not
 passed, unless the runner rules otherwise. Rows with no verified source cannot be approved. Read back again.
 
