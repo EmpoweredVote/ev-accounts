@@ -1,0 +1,10 @@
+# Raw source bytes and downloaded portraits are the wave's EVIDENCE and are kept on disk for
+# the length of the wave, not committed: they are large, they are re-fetchable from the URLs
+# recorded in ROSTERS.md, and the portraits are already mirrored into Supabase storage.
+# What IS committed: ROSTERS.md, the parsers, the derived roster JSON and the district geometry.
+*.html
+portraits/
+_contact-sheet-*.html
+_local-contact-sheet.html
+_m.html
+_s.html
