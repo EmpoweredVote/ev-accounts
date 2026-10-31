@@ -1,0 +1,488 @@
+[
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "kop",
+    "images": [
+      "https://akleg.gov/images/legislators/leadership/KOP.jpg",
+      "https://akleg.gov/images/legislators/rounded/KOP.png"
+    ],
+    "name": "Chuck Kopp",
+    "district": "10",
+    "party": "Republican",
+    "city": "Anchorage",
+    "position": "Majority Leader"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "edg",
+    "images": [
+      "https://akleg.gov/images/legislators/leadership/EDG.jpg",
+      "https://akleg.gov/images/legislators/rounded/EDG.png"
+    ],
+    "name": "Bryce Edgmon",
+    "district": "37",
+    "party": "Independent",
+    "city": "Dillingham",
+    "position": "Speaker of the House"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "jhs",
+    "images": [
+      "https://akleg.gov/images/legislators/leadership/JHS.jpg",
+      "https://akleg.gov/images/legislators/rounded/JHS.png"
+    ],
+    "name": "DeLena Johnson",
+    "district": "25",
+    "party": "Republican",
+    "city": "Palmer",
+    "position": "Minority Leader"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "alr",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/ALR.png"
+    ],
+    "name": "Jamie Allard",
+    "district": "23",
+    "party": "Republican",
+    "city": "Eagle River"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "byn",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/BYN.png"
+    ],
+    "name": "Jeremy Bynum",
+    "district": "1",
+    "party": "Republican",
+    "city": "Ketchikan"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "cai",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/CAI.png"
+    ],
+    "name": "Ashley Carrick",
+    "district": "35",
+    "party": "Democrat",
+    "city": "Fairbanks"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "cos",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/COS.png"
+    ],
+    "name": "Mia Costello",
+    "district": "15",
+    "party": "Republican",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "cou",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/COU.png"
+    ],
+    "name": "Julie Coulombe",
+    "district": "11",
+    "party": "Republican",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "dib",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/DIB.png"
+    ],
+    "name": "Maxine Dibert",
+    "district": "31",
+    "party": "Democrat",
+    "city": "Fairbanks"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "eis",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/EIS.png"
+    ],
+    "name": "Ted Eischeid",
+    "district": "22",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "ela",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/ELA.png"
+    ],
+    "name": "Bill Elam",
+    "district": "8",
+    "party": "Republican",
+    "city": "Nikiski"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "fie",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/FIE.png"
+    ],
+    "name": "Zack Fields",
+    "district": "17",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "fon",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/FON.png"
+    ],
+    "name": "Neal Foster",
+    "district": "39",
+    "party": "Democrat",
+    "city": "Nome"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "frb",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/FRB.png"
+    ],
+    "name": "Robyn Niayuq Frier",
+    "district": "40",
+    "party": "Democrat",
+    "city": "Utqiagvik"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "gal",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/GAL.png"
+    ],
+    "name": "Alyse Galvin",
+    "district": "14",
+    "party": "Not Affiliated",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "gry",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/GRY.png"
+    ],
+    "name": "Andrew Gray",
+    "district": "20",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "hll",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/HLL.png"
+    ],
+    "name": "Carolyn Hall",
+    "district": "16",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "hnn",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/HNN.png"
+    ],
+    "name": "Sara Hannan",
+    "district": "4",
+    "party": "Democrat",
+    "city": "Juneau"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "hms",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/HMS.png"
+    ],
+    "name": "Rebecca Himschoot",
+    "district": "2",
+    "party": "Not Affiliated",
+    "city": "Sitka"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "hla",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/HLA.png"
+    ],
+    "name": "Ky Holland",
+    "district": "9",
+    "party": "Not Affiliated",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "jim",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/JIM.png"
+    ],
+    "name": "Nellie Unangiq Jimmie",
+    "district": "38",
+    "party": "Democrat",
+    "city": "Toksook Bay"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "jos",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/JOS.png"
+    ],
+    "name": "Andy Josephson",
+    "district": "13",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "mca",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/MCA.png"
+    ],
+    "name": "Kevin McCabe",
+    "district": "30",
+    "party": "Republican",
+    "city": "Big Lake"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "mea",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/MEA.png"
+    ],
+    "name": "Donna Mears",
+    "district": "21",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "mna",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/MNA.png"
+    ],
+    "name": "Genevieve Mina",
+    "district": "19",
+    "party": "Democrat",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "moo",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/MOO.png"
+    ],
+    "name": "Elexie Moore",
+    "district": "28",
+    "party": "Republican",
+    "city": "Wasilla"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "ned",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/NED.png"
+    ],
+    "name": "David Nelson",
+    "district": "18",
+    "party": "Republican",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "neg",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/NEG.png"
+    ],
+    "name": "Garret Nelson",
+    "district": "29",
+    "party": "Republican",
+    "city": "Sutton"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "pra",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/PRA.png"
+    ],
+    "name": "Mike Prax",
+    "district": "33",
+    "party": "Republican",
+    "city": "North Pole"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "ruf",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/RUF.png"
+    ],
+    "name": "Justin Ruffridge",
+    "district": "7",
+    "party": "Republican",
+    "city": "Soldotna"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "sad",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/SAD.png"
+    ],
+    "name": "Dan Saddler",
+    "district": "24",
+    "party": "Republican",
+    "city": "Eagle River"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "scg",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/SCG.png"
+    ],
+    "name": "Calvin Schrage",
+    "district": "12",
+    "party": "Not Affiliated",
+    "city": "Anchorage"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "scw",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/SCW.png"
+    ],
+    "name": "Rebecca Schwanke",
+    "district": "36",
+    "party": "Republican",
+    "city": "Glennallen"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "stc",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/STC.png"
+    ],
+    "name": "Steve St. Clair",
+    "district": "26",
+    "party": "Republican",
+    "city": "Wasilla"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "spp",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/SPP.png"
+    ],
+    "name": "Will Stapp",
+    "district": "32",
+    "party": "Republican",
+    "city": "Fairbanks"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "sto",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/STO.png"
+    ],
+    "name": "Andi Story",
+    "district": "3",
+    "party": "Democrat",
+    "city": "Juneau"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "sts",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/STS.png"
+    ],
+    "name": "Louise Stutes",
+    "district": "5",
+    "party": "Republican",
+    "city": "Kodiak"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "tmz",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/TMZ.png"
+    ],
+    "name": "Frank Tomaszewski",
+    "district": "34",
+    "party": "Republican",
+    "city": "Fairbanks"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "und",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/UND.png"
+    ],
+    "name": "Jubilee Underwood",
+    "district": "27",
+    "party": "Republican",
+    "city": "Wasilla"
+  },
+  {
+    "chamber": "House",
+    "legislature": "34",
+    "code": "van",
+    "images": [
+      "https://akleg.gov/images/legislators/rounded/VAN.png"
+    ],
+    "name": "Sarah Vance",
+    "district": "6",
+    "party": "Republican",
+    "city": "Homer"
+  }
+]

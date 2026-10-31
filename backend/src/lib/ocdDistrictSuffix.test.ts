@@ -103,4 +103,50 @@ describe('ocdDistrictSuffix', () => {
       expect(ocdDistrictSuffix('')).toBe('0');
     });
   });
+
+  describe("Alaska's Senate codes — purely alphabetic, no number at all", () => {
+    // TIGER tl_2024_02_sldu.dbf SLDUST, read directly on 2026-10-30: '00A'..'00T', 20 records.
+    const akSenate = Array.from({ length: 20 }, (_, i) => `00${String.fromCharCode(65 + i)}`);
+
+    it("maps '00A' to 'A', not '0A' — the zeros are padding, not a district number", () => {
+      expect(ocdDistrictSuffix('00A')).toBe('A');
+      expect(ocdDistrictSuffix('00T')).toBe('T');
+    });
+
+    it('produces 20 distinct suffixes, A..T, for the real code set', () => {
+      const out = akSenate.map(ocdDistrictSuffix);
+      expect(out).toHaveLength(20);
+      expect(new Set(out).size).toBe(20);
+      expect(out.join('')).toBe('ABCDEFGHIJKLMNOPQRST');
+    });
+
+    it('uppercases, so a lower-case TIGER code cannot fork one district into two', () => {
+      expect(ocdDistrictSuffix('00a')).toBe('A');
+      expect(ocdDistrictSuffix('00a')).toBe(ocdDistrictSuffix('00A'));
+    });
+
+    it("Alaska's House codes are plain numbers and are unaffected", () => {
+      const akHouse = Array.from({ length: 40 }, (_, i) => String(i + 1).padStart(3, '0'));
+      const out = akHouse.map(ocdDistrictSuffix);
+      expect(new Set(out).size).toBe(40);
+      expect(out[0]).toBe('1');
+      expect(out[39]).toBe('40');
+    });
+
+    // 🔴 CONTROL. The branch added for Alaska keys on "the digits are ALL ZERO", and the whole
+    // safety argument is that no state already loaded can reach it. These are the real lettered
+    // code sets in production; if the branch ever widened to catch them, every one of these
+    // would lose its number and collapse onto its letter.
+    it('CONTROL: the states that already have lettered codes do NOT reach the new branch', () => {
+      expect(ocdDistrictSuffix('08A')).toBe('8A');   // Minnesota
+      expect(ocdDistrictSuffix('08B')).toBe('8B');   // Minnesota
+      expect(ocdDistrictSuffix('01A')).toBe('1A');   // Maryland / Minnesota
+      expect(ocdDistrictSuffix('1C')).toBe('1C');    // Maryland
+      expect(ocdDistrictSuffix('067B')).toBe('67B'); // Minnesota, widest padding
+      // and an all-zero code with NO letter still answers '0', as parseInt did
+      expect(ocdDistrictSuffix('000')).toBe('0');
+      expect(ocdDistrictSuffix('00')).toBe('0');
+      expect(ocdDistrictSuffix('0')).toBe('0');
+    });
+  });
 });
