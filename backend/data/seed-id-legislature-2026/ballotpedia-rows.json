@@ -1,0 +1,846 @@
+{
+  "senate": [
+    {
+      "district": 1,
+      "seat": null,
+      "name": "Jim Woodward",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 1"
+    },
+    {
+      "district": 2,
+      "seat": null,
+      "name": "Phil Hart",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 2"
+    },
+    {
+      "district": 3,
+      "seat": null,
+      "name": "Doug Okuniewicz",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 3"
+    },
+    {
+      "district": 4,
+      "seat": null,
+      "name": "Ben Toews",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 4"
+    },
+    {
+      "district": 5,
+      "seat": null,
+      "name": "Carl Bjerke",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 5"
+    },
+    {
+      "district": 6,
+      "seat": null,
+      "name": "Dan Foreman",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 6"
+    },
+    {
+      "district": 7,
+      "seat": null,
+      "name": "Cindy Carlson",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 7"
+    },
+    {
+      "district": 8,
+      "seat": null,
+      "name": "Christy Zito",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 8"
+    },
+    {
+      "district": 9,
+      "seat": null,
+      "name": "Brandon Shippy",
+      "party": "Republican",
+      "assumed": "July 18, 2024",
+      "office": "Idaho State Senate District 9"
+    },
+    {
+      "district": 10,
+      "seat": null,
+      "name": "Tammy Nichols",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 10"
+    },
+    {
+      "district": 11,
+      "seat": null,
+      "name": "Camille Blaylock",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 11"
+    },
+    {
+      "district": 12,
+      "seat": null,
+      "name": "Ben Adams",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 12"
+    },
+    {
+      "district": 13,
+      "seat": null,
+      "name": "Brian Lenney",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 13"
+    },
+    {
+      "district": 14,
+      "seat": null,
+      "name": "C. Scott Grow",
+      "party": "Republican",
+      "assumed": "August 15, 2018",
+      "office": "Idaho State Senate District 14"
+    },
+    {
+      "district": 15,
+      "seat": null,
+      "name": "Codi Galloway",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 15"
+    },
+    {
+      "district": 16,
+      "seat": null,
+      "name": "Alison Rabe",
+      "party": "Democratic",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 16"
+    },
+    {
+      "district": 17,
+      "seat": null,
+      "name": "Carrie Semmelroth",
+      "party": "Democratic",
+      "assumed": "November 30, 2021",
+      "office": "Idaho State Senate District 17"
+    },
+    {
+      "district": 18,
+      "seat": null,
+      "name": "Janie Ward-Engelking",
+      "party": "Democratic",
+      "assumed": "January 8, 2014",
+      "office": "Idaho State Senate District 18"
+    },
+    {
+      "district": 19,
+      "seat": null,
+      "name": "Melissa Wintrow",
+      "party": "Democratic",
+      "assumed": "December 1, 2020",
+      "office": "Idaho State Senate District 19"
+    },
+    {
+      "district": 20,
+      "seat": null,
+      "name": "Josh Keyser",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 20"
+    },
+    {
+      "district": 21,
+      "seat": null,
+      "name": "Treg Bernt",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 21"
+    },
+    {
+      "district": 22,
+      "seat": null,
+      "name": "Lori Den Hartog",
+      "party": "Republican",
+      "assumed": "December 1, 2014",
+      "office": "Idaho State Senate District 22"
+    },
+    {
+      "district": 23,
+      "seat": null,
+      "name": "Todd Lakey",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 23"
+    },
+    {
+      "district": 24,
+      "seat": null,
+      "name": "Glenneda Zuiderveld",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 24"
+    },
+    {
+      "district": 25,
+      "seat": null,
+      "name": "Josh Kohl",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho State Senate District 25"
+    },
+    {
+      "district": 26,
+      "seat": null,
+      "name": "Ron Taylor",
+      "party": "Democratic",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 26"
+    },
+    {
+      "district": 27,
+      "seat": null,
+      "name": "Kelly Anthon",
+      "party": "Republican",
+      "assumed": "2015",
+      "office": "Idaho State Senate District 27"
+    },
+    {
+      "district": 28,
+      "seat": null,
+      "name": "Jim Guthrie",
+      "party": "Republican",
+      "assumed": "December 1, 2012",
+      "office": "Idaho State Senate District 28"
+    },
+    {
+      "district": 29,
+      "seat": null,
+      "name": "James Ruchti",
+      "party": "Democratic",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 29"
+    },
+    {
+      "district": 30,
+      "seat": null,
+      "name": "Julie VanOrden",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 30"
+    },
+    {
+      "district": 31,
+      "seat": null,
+      "name": "Van Burtenshaw",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 31"
+    },
+    {
+      "district": 32,
+      "seat": null,
+      "name": "Kevin Cook",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 32"
+    },
+    {
+      "district": 33,
+      "seat": null,
+      "name": "David Lent",
+      "party": "Republican",
+      "assumed": "December 1, 2018",
+      "office": "Idaho State Senate District 33"
+    },
+    {
+      "district": 34,
+      "seat": null,
+      "name": "Doug Ricks",
+      "party": "Republican",
+      "assumed": "December 1, 2020",
+      "office": "Idaho State Senate District 34"
+    },
+    {
+      "district": 35,
+      "seat": null,
+      "name": "Mark Harris",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho State Senate District 35"
+    }
+  ],
+  "house": [
+    {
+      "district": 1,
+      "seat": "A",
+      "name": "Mark Sauter",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 1A"
+    },
+    {
+      "district": 1,
+      "seat": "B",
+      "name": "Cornel Rasor",
+      "party": "Republican",
+      "assumed": "September 30, 2024",
+      "office": "Idaho House of Representatives District 1B"
+    },
+    {
+      "district": 2,
+      "seat": "A",
+      "name": "Heather Scott",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 2A"
+    },
+    {
+      "district": 2,
+      "seat": "B",
+      "name": "Dale Hawkins",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 2B"
+    },
+    {
+      "district": 3,
+      "seat": "A",
+      "name": "Vito Barbieri",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 3A"
+    },
+    {
+      "district": 3,
+      "seat": "B",
+      "name": "Jordan Redman",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 3B"
+    },
+    {
+      "district": 4,
+      "seat": "A",
+      "name": "Joe Alfieri",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 4A"
+    },
+    {
+      "district": 4,
+      "seat": "B",
+      "name": "Elaine Price",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 4B"
+    },
+    {
+      "district": 5,
+      "seat": "A",
+      "name": "Ron Mendive",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 5A"
+    },
+    {
+      "district": 5,
+      "seat": "B",
+      "name": "Tony Wisniewski",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 5B"
+    },
+    {
+      "district": 6,
+      "seat": "A",
+      "name": "Lori McCann",
+      "party": "Republican",
+      "assumed": "May 17, 2021",
+      "office": "Idaho House of Representatives District 6A"
+    },
+    {
+      "district": 6,
+      "seat": "B",
+      "name": "Brandon Mitchell",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 6B"
+    },
+    {
+      "district": 7,
+      "seat": "A",
+      "name": "Kyle Harris",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 7A"
+    },
+    {
+      "district": 7,
+      "seat": "B",
+      "name": "Charlie Shepherd",
+      "party": "Republican",
+      "assumed": "December 1, 2020",
+      "office": "Idaho House of Representatives District 7B"
+    },
+    {
+      "district": 8,
+      "seat": "A",
+      "name": "Rob Beiswenger",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 8A"
+    },
+    {
+      "district": 8,
+      "seat": "B",
+      "name": "Faye Thompson",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 8B"
+    },
+    {
+      "district": 9,
+      "seat": "A",
+      "name": "John Shirts",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 9A"
+    },
+    {
+      "district": 9,
+      "seat": "B",
+      "name": "Judy Boyle",
+      "party": "Republican",
+      "assumed": "2008",
+      "office": "Idaho House of Representatives District 9B"
+    },
+    {
+      "district": 10,
+      "seat": "A",
+      "name": "Mike Moyle",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 10A"
+    },
+    {
+      "district": 10,
+      "seat": "B",
+      "name": "Bruce Skaug",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 10B"
+    },
+    {
+      "district": 11,
+      "seat": "A",
+      "name": "Kent Marmon",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 11A"
+    },
+    {
+      "district": 11,
+      "seat": "B",
+      "name": "Lucas Cayler",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 11B"
+    },
+    {
+      "district": 12,
+      "seat": "A",
+      "name": "Jeff Cornilles",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 12A"
+    },
+    {
+      "district": 12,
+      "seat": "B",
+      "name": "Jaron Crane",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 12B"
+    },
+    {
+      "district": 13,
+      "seat": "A",
+      "name": "Brent Crane",
+      "party": "Republican",
+      "assumed": "2006",
+      "office": "Idaho House of Representatives District 13A"
+    },
+    {
+      "district": 13,
+      "seat": "B",
+      "name": "Steve Tanner",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 13B"
+    },
+    {
+      "district": 14,
+      "seat": "A",
+      "name": "Ted Hill",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 14A"
+    },
+    {
+      "district": 14,
+      "seat": "B",
+      "name": "Josh Tanner",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 14B"
+    },
+    {
+      "district": 15,
+      "seat": "A",
+      "name": "Steve Berch",
+      "party": "Democratic",
+      "assumed": "December 1, 2018",
+      "office": "Idaho House of Representatives District 15A"
+    },
+    {
+      "district": 15,
+      "seat": "B",
+      "name": "Dori Healey",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 15B"
+    },
+    {
+      "district": 16,
+      "seat": "A",
+      "name": "Soñia Galaviz",
+      "party": "Democratic",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 16A"
+    },
+    {
+      "district": 16,
+      "seat": "B",
+      "name": "Annie Haws",
+      "party": "Democratic",
+      "assumed": "July 22, 2025",
+      "office": "Idaho House of Representatives District 16B"
+    },
+    {
+      "district": 17,
+      "seat": "A",
+      "name": "John L. Gannon",
+      "party": "Democratic",
+      "assumed": "December 1, 2012",
+      "office": "Idaho House of Representatives District 17A"
+    },
+    {
+      "district": 17,
+      "seat": "B",
+      "name": "Megan Egbert",
+      "party": "Democratic",
+      "assumed": "May 7, 2024",
+      "office": "Idaho House of Representatives District 17B"
+    },
+    {
+      "district": 18,
+      "seat": "A",
+      "name": "Ilana Rubel",
+      "party": "Democratic",
+      "assumed": "January 8, 2014",
+      "office": "Idaho House of Representatives District 18A"
+    },
+    {
+      "district": 18,
+      "seat": "B",
+      "name": "Brooke Green",
+      "party": "Democratic",
+      "assumed": "December 1, 2018",
+      "office": "Idaho House of Representatives District 18B"
+    },
+    {
+      "district": 19,
+      "seat": "A",
+      "name": "Monica Church",
+      "party": "Democratic",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 19A"
+    },
+    {
+      "district": 19,
+      "seat": "B",
+      "name": "Chris Mathias",
+      "party": "Democratic",
+      "assumed": "December 1, 2020",
+      "office": "Idaho House of Representatives District 19B"
+    },
+    {
+      "district": 20,
+      "seat": "A",
+      "name": "Joe Palmer",
+      "party": "Republican",
+      "assumed": "2008",
+      "office": "Idaho House of Representatives District 20A"
+    },
+    {
+      "district": 20,
+      "seat": "B",
+      "name": "James Holtzclaw",
+      "party": "Republican",
+      "assumed": "December 1, 2012",
+      "office": "Idaho House of Representatives District 20B"
+    },
+    {
+      "district": 21,
+      "seat": "A",
+      "name": "James Petzke",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 21A"
+    },
+    {
+      "district": 21,
+      "seat": "B",
+      "name": "Jeff Ehlers",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 21B"
+    },
+    {
+      "district": 22,
+      "seat": "A",
+      "name": "John Vander Woude",
+      "party": "Republican",
+      "assumed": "December 1, 2012",
+      "office": "Idaho House of Representatives District 22A"
+    },
+    {
+      "district": 22,
+      "seat": "B",
+      "name": "Jason Monks",
+      "party": "Republican",
+      "assumed": "December 1, 2012",
+      "office": "Idaho House of Representatives District 22B"
+    },
+    {
+      "district": 23,
+      "seat": "A",
+      "name": "Chris Bruce",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 23A"
+    },
+    {
+      "district": 23,
+      "seat": "B",
+      "name": "Shawn Dygert",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 23B"
+    },
+    {
+      "district": 24,
+      "seat": "A",
+      "name": "Clint Hostetler",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 24A"
+    },
+    {
+      "district": 24,
+      "seat": "B",
+      "name": "Steve Miller",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 24B"
+    },
+    {
+      "district": 25,
+      "seat": "A",
+      "name": "Donald Hall",
+      "party": "Republican",
+      "assumed": "December 12, 2025",
+      "office": "Idaho House of Representatives District 25A"
+    },
+    {
+      "district": 25,
+      "seat": "B",
+      "name": "David Leavitt",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 25B"
+    },
+    {
+      "district": 26,
+      "seat": "A",
+      "name": "Mike Pohanka",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 26A"
+    },
+    {
+      "district": 26,
+      "seat": "B",
+      "name": "Jack Nelsen",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 26B"
+    },
+    {
+      "district": 27,
+      "seat": "A",
+      "name": "Douglas T. Pickett",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 27A"
+    },
+    {
+      "district": 27,
+      "seat": "B",
+      "name": "Clay Handy",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 27B"
+    },
+    {
+      "district": 28,
+      "seat": "A",
+      "name": "Richard Cheatum",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 28A"
+    },
+    {
+      "district": 28,
+      "seat": "B",
+      "name": "Dan Garner",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 28B"
+    },
+    {
+      "district": 29,
+      "seat": "A",
+      "name": "Dustin W. Manwaring",
+      "party": "Republican",
+      "assumed": "December 1, 2020",
+      "office": "Idaho House of Representatives District 29A"
+    },
+    {
+      "district": 29,
+      "seat": "B",
+      "name": "Tanya Burgoyne",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 29B"
+    },
+    {
+      "district": 30,
+      "seat": "A",
+      "name": "David Cannon",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 30A"
+    },
+    {
+      "district": 30,
+      "seat": "B",
+      "name": "Ben Fuhriman",
+      "party": "Republican",
+      "assumed": "December 1, 2024",
+      "office": "Idaho House of Representatives District 30B"
+    },
+    {
+      "district": 31,
+      "seat": "A",
+      "name": "Jerald Raymond",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 31A"
+    },
+    {
+      "district": 31,
+      "seat": "B",
+      "name": "Rod Furniss",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 31B"
+    },
+    {
+      "district": 32,
+      "seat": "A",
+      "name": "Stephanie Mickelsen",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 32A"
+    },
+    {
+      "district": 32,
+      "seat": "B",
+      "name": "Erin Bingham",
+      "party": "Republican",
+      "assumed": "January 10, 2026",
+      "office": "Idaho House of Representatives District 32B"
+    },
+    {
+      "district": 33,
+      "seat": "A",
+      "name": "Barbara Ehardt",
+      "party": "Republican",
+      "assumed": "December 27, 2017",
+      "office": "Idaho House of Representatives District 33A"
+    },
+    {
+      "district": 33,
+      "seat": "B",
+      "name": "Marco Erickson",
+      "party": "Republican",
+      "assumed": "December 1, 2020",
+      "office": "Idaho House of Representatives District 33B"
+    },
+    {
+      "district": 34,
+      "seat": "A",
+      "name": "Jon Weber",
+      "party": "Republican",
+      "assumed": "December 1, 2020",
+      "office": "Idaho House of Representatives District 34A"
+    },
+    {
+      "district": 34,
+      "seat": "B",
+      "name": "Britt Raybould",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 34B"
+    },
+    {
+      "district": 35,
+      "seat": "A",
+      "name": "Mike Veile",
+      "party": "Republican",
+      "assumed": "September 24, 2025",
+      "office": "Idaho House of Representatives District 35A"
+    },
+    {
+      "district": 35,
+      "seat": "B",
+      "name": "Josh Wheeler",
+      "party": "Republican",
+      "assumed": "December 1, 2022",
+      "office": "Idaho House of Representatives District 35B"
+    }
+  ]
+}
