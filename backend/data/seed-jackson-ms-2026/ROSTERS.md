@@ -15,8 +15,8 @@ any migration: this is the same state, the same statutes and the same publishers
 | stage | status |
 | --- | --- |
 | 0 legislature re-verify | ✅ **DONE 2026-10-31 — zero turnovers.** See below |
-| 1 ward geometry | ✅ **SETTLED 2026-10-31 — layer chosen and numbering proved.** Not yet loaded |
-| 2 Jackson offices | ▶ **roster and all 8 term starts sourced.** Inventory not yet closed |
+| 1 ward geometry | ✅ **APPLIED 2026-10-31 — 7 ward polygons on `X0085`, +7 exact** |
+| 2 Jackson offices | ✅ **APPLIED 2026-10-31 — JACKSON IS SEATED. 8 offices, 8 seated, 0 vacant** (`CC_0320`/`CC_0321`) |
 | 3 Hinds County | ▶ **UNBLOCKED** — the county moved back to its old host. Inventory read |
 | 4 portraits | ▶ open — 8 city, ~25 county, 173 legislators |
 | 5 banner | ▶ open — **the hardest adjacency in the programme**, see below |
@@ -155,21 +155,53 @@ be read as evidence about wards 3, 5 and 7.
 ▶ **8 elected offices: Mayor + Wards 1–7.** Miss. Code Ann. 1972 § 21-8 (mayor-council form), the
 same statute Biloxi runs under.
 
-⚠ **STILL TO CONFIRM BEFORE WRITING: that nothing else is elected.** Biloxi's inventory was closed
-by two instruments — the ballot *and* the Code of Ordinances showing the clerk is appointed. For
-Jackson only the enumerating sentence has been read. The Fort Wayne trap (an elected clerk) and the
-Grand Forks trap (an elected municipal judge named in one sentence on a staff page) are both
-unchecked here.
+🔴 **BALLOTPEDIA CANNOT CLOSE IT AND SAYS SO ITSELF.** Its *City elections in Jackson, Mississippi
+(2025)* page ends: *"Please note that there may have been more offices on the ballot in this capital
+city than what is listed on this page."* ▶ **A publisher declaring its own list non-exhaustive is
+the "include" trap stated out loud.**
 
-🔴 **AND BALLOTPEDIA CANNOT CLOSE IT — IT SAYS SO ITSELF.** Its *City elections in Jackson,
-Mississippi (2025)* page ends with: *"Please note that there may have been more offices on the ballot
-in this capital city than what is listed on this page."* ▶ **A publisher declaring its own list
-non-exhaustive is the "include" trap stated out loud.** The remaining routes are the Jackson Code of
-Ordinances (its § 2-37 is cited in the council's own minutes, so the code exists and is citable) and
-the Municipal Clerk's 2025 candidate qualifying list.
+### 🟢 CLOSED AT EIGHT, FROM THE CODE OF ORDINANCES
 
-⚠ **The city's own ordinances page 404s** at the path its clerk sidebar links; the code has not been
-located yet.
+Jackson's code is on **Municode** (`library.municode.com/ms/jackson`), codified through Ordinance
+No. 2026-11(3) of 2026-02-24, Supp. 56. ⚠ Municode is behind a **Cloudflare challenge** — HTTP 403
+to every Node persona, real and bogus paths alike — so it must be read in **Playwright**.
+⚠ **There is no CHARTER node**, same as Biloxi: Mississippi's mayor-council form is statutory.
+
+Every other officer is appointed, and the code says so in its own words:
+
+- **City Clerk** — *"The city clerk is to be appointed by the mayor and confirmed by the city
+  council"* (§ 2-326). ▶ **The Fort Wayne trap is closed: Jackson does not elect a clerk.**
+- **City Attorney** — *"appointed by the mayor, and confirmed by a majority of the city council at
+  its first meeting in July"*; **Chief Administrative Officer** (§ 2-325) and **Chief Financial
+  Officer** likewise.
+- **Municipal judges** — Chapter 46 (17,940 characters) contains **no occurrence of "elected" or
+  "elective" at all**, and its court administrator is *"appointed by the city council"*. ▶ **The
+  Grand Forks trap is closed.** ⚠ That zero is trustworthy because the same query returned nine
+  "judge" sentences from the same body — the extractor was live, not blind.
+
+### 🔴🔴 "SHALL BE ELECTED" DOES NOT MEAN ELECTED BY THE VOTERS — READ WHO DOES THE ELECTING
+
+**Biloxi's inventory test was that its Chapter 2 contained *no occurrence of "shall be elected" at
+all*.** Run against Jackson, that same test returns **three results, and not one is a popular
+election**:
+
+| § | office | who elects |
+| --- | --- | --- |
+| 74-46 | **Chief of Police** | *"shall be elected **by the city council** at the same time as all other officers of the city"* |
+| 2-167 | **five school trustees** for the separate school district | *"There shall be elected **by the city council** five trustees…"* |
+| 2-37 | **Council President** | the council electing its own presiding officer |
+
+▶ **The phrase alone would have produced three false positives here**, one of them a police chief
+and one a five-member school board. The discriminating words are **"by the city council"** against
+**"by the qualified electors"**. This is the Maine rotating-chair rule in a new form: *a `Mayor` can
+be a rotating chair — read who ELECTS it.*
+
+🟢 **AND THE COMPLEMENTARY ZERO IS REAL.** A code-wide search for **`"qualified electors"` returns
+0 results**, and the search engine was proved working first: **`"elected by the city council"`
+returns exactly 2** — §§ 74-46 and 2-167, which are precisely the two found by reading the chapters.
+**The positive control passed before the zero was believed.**
+
+▶ **INVENTORY: 8 elected offices — Mayor + Wards 1–7. Nothing else in Jackson is elected by voters.**
 
 ### The roster — read from each member's own page, bound by ward
 
@@ -283,6 +315,138 @@ linked from it**.
   **A search result that matches the words can be the wrong place entirely** — the Mike Lee rule,
   applied to an institution rather than a person.
 - 🟢 `sos.ms.gov` answers a bare fetch (HTTP 200).
+
+---
+
+## ✅ APPLIED 2026-10-31 — JACKSON IS SEATED
+
+`CC_0320` (structure) + `CC_0321` (occupancy), plus `scripts/load-jackson-ward-boundaries.mjs` for
+the geometry: **7 ward polygons on `X0085`, 8 offices, 8 seated, 0 vacant, 8 people created,
+0 reused.** Single-member wards, so the polygon count is the seat count.
+
+| scope | before | after | expected |
+| --- | --- | --- | --- |
+| `geofence_boundaries` | 75,051 | **75,058** | +7 exact |
+| `politicians` | 91,308 | **91,316** | +8 exact |
+| `offices` | 10,911 | **10,919** | +8 exact |
+| `office_terms` | 11,007 | **11,015** | +8 exact |
+| `districts` | 11,232 | **11,240** | +8 exact |
+| `chambers` | 1,401 | **1,403** | +2 |
+| `governments` | 634 | **635** | +1 |
+| `offices_missing_terms` unflagged | 238 | **238** | must NOT move — unmoved |
+| CONTROL: MS legislative offices | 174 | 174 | unmoved |
+| CONTROL: Biloxi offices | 8 | 8 | unmoved |
+
+Ward areas total **113.40 sq mi**, and **sum of parts = union**, so the seven tile the city with no
+overlap. The loader is idempotent: a second run inserted 0 and found 7.
+
+### 🔴🔴 THE PROBE LOOKED BROKEN AND THE DATA WAS RIGHT — THE ADDRESSES WERE THE DEFECT
+
+The first end-to-end probe returned **Ward 7 for four different Jackson addresses**, which reads
+exactly like a collapsed or mis-joined geometry. It was none of those. City Hall, Fondren, Lakeland
+Drive and Riverside Drive are all in **east Jackson**, and Jackson's Ward 7 is the large eastern
+ward. ▶ **A UNIFORM ANSWER IS A BROKEN DETECTOR UNTIL YOU CHECK WHICH END IS BROKEN — and here the
+sample was.** The checks that settled it, in order: the office wiring was read row by row (ward N →
+"Council Member, Ward N" → the right person, 7/7); the wards were shown not to overlap; and then an
+independent anchor set was built.
+
+### 🟢🟢 THE NUMBERING IS ANCHORED OUTSIDE THE GIS, BY THE COUNCIL'S OWN MINUTES
+
+`scripts/verify-jackson-ward-numbering.mjs` proves new Ward N occupies old Ward N's ground, 7/7.
+🔴 **That rules out a permutation introduced by the 2024 redraw. It cannot rule out a labelling that
+was already wrong in BOTH layers** — a count can be right and mean something else.
+
+So a second check was built from a source outside the GIS entirely.
+`scripts/verify-jackson-wards-against-minutes.mjs` harvests the sentence the City Council votes on
+for every code-enforcement case —
+
+> *"…for Case #CE-25-619 located at **1237 Grand Ave.** parcel #132-8 **in Ward 5** of the City of
+> Jackson…"*
+
+— from 34 published minutes PDFs, geocodes each address with the **Census** geocoder (not the
+city's own service, so it cannot inherit the city's labelling) and asks PostGIS which ward contains
+it.
+
+**Result: 30 of 30, and every one of the seven wards is represented.** The `--control=shuffle`
+rotation collapses it to **0 of 30** and names the exact permutation. 🟢 **Two independent
+publishers — the GIS office and the Council clerk — agree ward for ward.**
+
+### ✅ All seven wards answer an address
+
+| anchor (minutes' ward) | council member | mayor | state rep | state senator |
+| --- | --- | --- | --- | --- |
+| 5822 Baxter Dr (1) | **Ashby M. Foote III** | Horhn | Christopher Bell | J. Walter Michel |
+| 716 Kirkley Dr (2) | **Montyne Clay** | Horhn | Christopher Bell | Kamesha B. Mumford |
+| 934 Carnation St (3) | **Kenneth Stokes** | Horhn | Earle S. Banks | Hillman Terome Frazier |
+| 202 Lindsey Dr (4) | **Brian C. Grizzell** | Horhn | Zakiya Summers | Hillman Terome Frazier |
+| 2709 Glenn St (5) | **Vernon Hartley** | Horhn | Ronnie C. Crudup | Sollie B. Norwood |
+| 827 Dorgan St (6) | **Lashia Brown-Thomas** | Horhn | Grace Butler-Washington | Sollie B. Norwood |
+| 1126 Crestview Ave (7) | **Kevin Parkinson** | Horhn | Earle S. Banks | David Blount |
+| CONTROL Mobile, Alabama | — | — | — | — |
+
+⚠ **Jackson scores 3 of 4 plus the mayor.** The county supervisor is stage 3 and is correct to be
+missing. 🟢 A nice corroboration fell out: Ward 2's senator is **Kamesha B. Mumford**, who holds
+SD-26 — the seat John Horhn vacated to become Mayor, and one of the two the stale Senate list still
+called VACANT when MS-2 ran.
+
+### The gates, all watched failing
+
+**Loader: seven controls** — bogus layer · ward-number set · the three name fields agreeing row by
+row · the population identity against a figure fetched live from TIGERweb · the coordinate range ·
+the cross-plan numbering · the probes and per-ward identity.
+
+**Migrations: nine controls**, each raising its own gate — district count · one office per ward ·
+the vacancy flag · an office on a district with no polygon · Ward 2's date · the precision split ·
+Ward 1/3 held at `year` · `is_incumbent` · the seated count.
+
+🔴 **FOUR OF THE SIXTEEN WERE SHADOWED OR INERT ON FIRST WRITING, AND ALL FOUR ARE THE SAME LESSON.**
+
+- Loader control 6 (rotate the ward labels) tripped **control 3** first, because rotating `Ward`
+  alone makes it disagree with `District` and `Name`. The tamper now rotates **all three together**
+  — which is also the realistic defect, since Harrison County's `DIST_ID` permutation was perfectly
+  consistent within each row.
+- Loader control 7 (displace the wards) tripped **control 5**'s coordinate box, because a shift big
+  enough to reach Gulfport leaves Mississippi. The tamper is now a 0.05° nudge.
+- 🔴🔴 **AND THE HALO PROBE THAT WAS ADDED TO CATCH IT WAS COMPUTED FROM THE WARD SET'S OWN BOUNDING
+  BOX, SO IT TRANSLATED WITH THE TAMPER AND COULD NEVER FIRE.** **A CONTROL DERIVED FROM THE DATA
+  UNDER TEST MOVES WITH THE DEFECT.** It is a fixed constant now.
+- The Ward 1/3 precision tamper tripped the **6-day/2-year split** gate first. Ward 1 is now moved
+  to `day` **and** Ward 4 to `year` in the same tamper, holding the split constant so only the
+  specific assertion can fire — MS-3's rule.
+
+⚠ **AND THE FIRST TAMPER HARNESS REPORTED SEVEN SILENT PASSES.** Its `grep` swallowed the error
+lines and its `$?` captured `head`, not `node`. **Seven identical silences is a broken detector**;
+reading the raw output took one command. The dry-run builder now **asserts the tamper is present in
+the file before running it**, and two tampers were caught by that assertion rather than passing
+vacuously.
+
+### The dry run
+
+🔴 **THE PAIR WAS NOT HANDED TO `dry-run-migration.mjs`.** That tool strips only the FIRST
+`BEGIN`/`COMMIT`, and a concatenated pair once **committed to production while printing
+"ROLLED BACK"**. The transaction was built instead, by a script that asserts on the built file:
+**0 COMMITs survive, exactly 1 BEGIN, exactly 1 ROLLBACK**, and the file is over 10 KB — because an
+empty migration passes every gate it does not contain.
+
+**The rollback was verified to have reverted** — 91,308 / 10,911 / 11,007 / 11,232 / 1,401 / 634 and
+zero Jackson rows — before the real apply. ⚠ The seven ward polygons correctly survived it: the
+loader writes outside the migration transaction.
+
+### Gates
+
+`check:occupancy` green ("every politicians INSERT names is_incumbent") · `check:migrations` green
+(2 added vs `origin/master`) · `check:reservations` green · **`check:reachability` nothing
+regressed** — `BAD_GEOMETRY` 4/4, `DEAD_GEOGRAPHY` 17/17, `UNREACHABLE` 7/7, every bucket exactly at
+baseline.
+
+### ⚠ Debts carried out of the Jackson wave
+
+- **Ward 1 and Ward 3 are dated to a year**, from a "first elected" statement. Promoting either
+  needs an oath record. Stokes's service is explicitly not continuous.
+- **The certified 2025 municipal results were never obtained.** The city refers to an archive it
+  does not link, and the Hinds County archive has no 2025 entry because the city ran that election.
+  It is a public-records request, not a fetch. Nothing in this wave depends on it.
+- **No portraits and no banner yet.**
 
 ---
 
