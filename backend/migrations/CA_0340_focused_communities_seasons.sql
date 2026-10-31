@@ -7,15 +7,15 @@ BEGIN;
 -- Created 2026-10-31 with Chris Andrews.
 --
 -- WHAT THIS DOES
--- Adds three read-only functions in the connect schema, callable ONLY by
--- focused_communities_app (CA_0323), that return a Compass topic as it stood in a
+-- Adds three read-only functions in the connect schema, intended for
+-- focused_communities_app (CA_0323; see SAFETY for who else can call them), that return a Compass topic as it stood in a
 -- given season:
 --   get_season_list(p_topic_id, p_include_drafts)
 --       the seasons a topic appears in (number, name, status, opened/closed).
 --   get_season_detail(p_topic_id, p_season_number, p_include_drafts)
 --       the topic revision pinned to that season: question, change class, season
 --       note, topic note, rationale and rung_map.
---   get_season_chairs(p_topic_id, p_season_number)
+--   get_season_chairs(p_topic_id, p_season_number, p_include_drafts)
 --       the stance ("chair") texts of that revision, in value order.
 --
 -- WHY RPCs, AND WHY SECURITY DEFINER
@@ -29,7 +29,10 @@ BEGIN;
 --   * Each function pins its own search_path (connect, inform, pg_temp). A SECURITY
 --     DEFINER function without one is a privilege-escalation hole, and these reach
 --     across a security boundary.
---   * REVOKE ALL ... FROM PUBLIC, then GRANT EXECUTE to focused_communities_app only.
+--   * REVOKE ALL ... FROM PUBLIC removes PUBLIC's EXECUTE; the GRANT then makes
+--     focused_communities_app the only module-level caller. service_role keeps EXECUTE
+--     through the connect schema's default ACL, exactly as it does for
+--     get_stances_for_community. anon and authenticated get nothing.
 --   * get_season_chairs returns `ordinal` (1-based, by value ascending) and NEVER the
 --     raw `value`. A chair's 1-5 number is never shown to users; ordinal exists only
 --     so the server can join a chair to the revision's rung_map.
@@ -84,7 +87,7 @@ AS $fn$
 $fn$;
 
 -- 3. The stance texts of that revision. ordinal is NOT the stance value (see header).
-CREATE OR REPLACE FUNCTION connect.get_season_chairs(p_topic_id uuid, p_season_number int)
+CREATE OR REPLACE FUNCTION connect.get_season_chairs(p_topic_id uuid, p_season_number int, p_include_drafts boolean)
 RETURNS TABLE(ordinal int, text text, description text, supporting_points text[], example_perspectives text[])
 LANGUAGE sql STABLE SECURITY DEFINER
 SET search_path TO 'connect', 'inform', 'pg_temp'
@@ -99,17 +102,17 @@ AS $fn$
   JOIN inform.compass_stance_revisions st ON st.topic_revision_id = sq.topic_revision_id
   WHERE sq.topic_id = p_topic_id
     AND s.number = p_season_number
-    AND s.status::text <> 'draft'
+    AND (p_include_drafts OR s.status::text <> 'draft')
   ORDER BY st.value ASC;
 $fn$;
 
 -- 4. Grants: the role is the only non-owner caller.
 REVOKE ALL ON FUNCTION connect.get_season_list(uuid, boolean) FROM PUBLIC;
 REVOKE ALL ON FUNCTION connect.get_season_detail(uuid, int, boolean) FROM PUBLIC;
-REVOKE ALL ON FUNCTION connect.get_season_chairs(uuid, int) FROM PUBLIC;
+REVOKE ALL ON FUNCTION connect.get_season_chairs(uuid, int, boolean) FROM PUBLIC;
 GRANT EXECUTE ON FUNCTION connect.get_season_list(uuid, boolean) TO focused_communities_app;
 GRANT EXECUTE ON FUNCTION connect.get_season_detail(uuid, int, boolean) TO focused_communities_app;
-GRANT EXECUTE ON FUNCTION connect.get_season_chairs(uuid, int) TO focused_communities_app;
+GRANT EXECUTE ON FUNCTION connect.get_season_chairs(uuid, int, boolean) TO focused_communities_app;
 
 -- 5. Post-verify gate.
 DO $$
@@ -120,13 +123,13 @@ BEGIN
   IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_detail(uuid, int, boolean)', 'EXECUTE') THEN
     RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_detail(uuid, integer, boolean)';
   END IF;
-  IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_chairs(uuid, int)', 'EXECUTE') THEN
-    RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_chairs(uuid, integer)';
+  IF NOT has_function_privilege('focused_communities_app', 'connect.get_season_chairs(uuid, int, boolean)', 'EXECUTE') THEN
+    RAISE EXCEPTION 'CA_0340: missing EXECUTE on connect.get_season_chairs(uuid, integer, boolean)';
   END IF;
   IF has_schema_privilege('focused_communities_app', 'inform', 'USAGE') THEN
     RAISE WARNING 'CA_0340: focused_communities_app can USE schema inform — investigate the wall';
   END IF;
-  RAISE NOTICE 'CA_0340 OK — season RPCs created (SECURITY DEFINER, search_path pinned), EXECUTE granted to focused_communities_app only.';
+  RAISE NOTICE 'CA_0340 OK — season RPCs created (SECURITY DEFINER, search_path pinned), EXECUTE granted to focused_communities_app (PUBLIC revoked).';
 END $$;
 
 COMMIT;
