@@ -36,6 +36,8 @@ function fakeApi(): { query: LegiscanQuery; calls: string[] } {
         // nickname "J.D.".
         { ...person(5621, 'Ronnie', 'Alting', { middle_name: 'J.' }), sponsor_type_id: 2, sponsor_order: 7, committee_sponsor: 0 },
         { ...person(20013, 'John', 'Prescott', { nickname: 'J.D.' }), sponsor_type_id: 2, sponsor_order: 8, committee_sponsor: 0 },
+        // GA records, 2026-10-31: LegiScan misspells Timothy Bearden's surname "Beardon" (SB 86 of 2009).
+        { ...person(3398, 'Timothy', 'Beardon'), sponsor_type_id: 2, sponsor_order: 9, committee_sponsor: 0 },
       ] },
     2000102: { bill_id: 2000102, state: 'TX', bill_number: 'SB16', session: SESSION, url: 'https://legiscan.com/TX/bill/SB16/2025', sponsors: [] },
     2100001: { bill_id: 2100001, state: 'TX', bill_number: 'HB5337', session: special, url: SPECIAL_URL, sponsors: [
@@ -205,6 +207,13 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'John Prescott', lastName: 'Prescott' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'J.R. Prescott', lastName: 'Prescott' }).verdict).toBe('name_not_present');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'J. Prescott', lastName: 'Prescott' }).verdict).toBe('name_not_present');
+  });
+  it('matches a surname LegiScan is known to misspell (Bearden printed "Beardon"), and nothing looser', async () => {
+    const rec = await record(BILL_URL);
+    const line = 'LegiScan TX 89th Legislature Regular Session HB5337: Timothy Beardon is listed as a cosponsor.';
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Timothy Bearden', lastName: 'Bearden' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Thomas Bearden', lastName: 'Bearden' }).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Timothy Bearder', lastName: 'Bearder' }).verdict).toBe('name_not_present');
   });
   it('verifies a vote line field by field', async () => {
     const rec = await record(RC_URL);
