@@ -173,23 +173,66 @@ export interface ColumnCursor {
   id: string;
 }
 
+/**
+ * A uuid in the one spelling Postgres gives back. Deliberately not a parser: uppercase,
+ * brace-wrapped and hyphen-less forms are all accepted by `::uuid` and would each mint their own
+ * cache entry for one row, so an id that is not already in canonical form is simply not an id here.
+ * (The `i` flag is kept so a correctly-shaped uppercase id is recognised and then lowercased for
+ * the key, rather than being rejected outright.)
+ */
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
- * A cursor only counts once its CONTENTS are usable, not merely once it parses. decodeCursor checks
- * that `t` and `id` are strings; a string is not a timestamptz and not a uuid, and handing one
- * straight to Postgres turns a crafted query string into an anonymous 500 with a raw database
- * message in the body. A cursor that does not survive this is treated as absent — the same thing
- * already done with one that does not base64-decode — so a stale or mangled link serves page one
- * rather than an error.
+ * The exact shape `ts()` emits: `2026-04-17T12:00:00+00:00`, with one to six optional fractional
+ * digits. The offset is `+00:00` on this database (session TimeZone is UTC); `Z` and other offsets
+ * are admitted because the same expression emits them under a different session timezone, and a
+ * cursor must stay readable if that ever changes.
+ */
+const ISO_TS_RE =
+  /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{1,6})?(?:Z|([+-])(\d{2}):(\d{2}))$/;
+
+const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+/**
+ * Is this a timestamp Postgres will accept?
+ *
+ * `Number.isNaN(Date.parse(t))` is not that question. JavaScript's parser is a superset of
+ * Postgres's: it reads `"1"` as the year 2001, `"x 1"` likewise, and rolls `2026-02-31` forward
+ * into March, while `select '1'::timestamptz` is a hard 22007. A validator that accepts more than
+ * its consumer does is not a validator — it just moves the failure one layer down, into an
+ * anonymous 500. So the shape is pinned by regex and then the fields are range-checked, which is
+ * where year 0000 (Postgres has no year zero), month 13, hour 25 and February 31 die.
+ */
+function isPostgresTimestamp(t: string): boolean {
+  const m = ISO_TS_RE.exec(t);
+  if (!m) return false;
+  const [, y, mo, d, h, mi, s, , offH, offM] = m;
+  const year = Number(y), month = Number(mo), day = Number(d);
+  if (year < 1 || month < 1 || month > 12) return false;
+  const leap = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  const maxDay = month === 2 && leap ? 29 : DAYS_IN_MONTH[month - 1];
+  if (day < 1 || day > maxDay) return false;
+  if (Number(h) > 23 || Number(mi) > 59 || Number(s) > 59) return false;
+  if (offH !== undefined && (Number(offH) > 14 || Number(offM) > 59)) return false;
+  // Belt as well as braces: anything that survived the above and still will not parse is not ours.
+  return !Number.isNaN(Date.parse(t));
+}
+
+/**
+ * A cursor only counts once its CONTENTS are usable, not merely once it base64-decodes.
+ * decodeCursor checks that `t` and `id` are strings; a string is neither a timestamptz nor a uuid,
+ * and handing one straight to Postgres turns a crafted query string into an anonymous 500.
+ *
+ * The returned object is rebuilt field by field rather than passed through, so nothing a caller
+ * smuggled into the encoded JSON can reach the cache key and fragment it.
  */
 function parseColumnCursor(raw: unknown): ColumnCursor | null {
-  if (typeof raw !== 'string' || raw === '') return null;
+  if (typeof raw !== 'string') return null;
   const decoded = decodeCursor(raw);
   if (!decoded) return null;
   if (!UUID_RE.test(decoded.id)) return null;
-  if (Number.isNaN(Date.parse(decoded.t))) return null;
-  return decoded;
+  if (!isPostgresTimestamp(decoded.t)) return null;
+  return { t: decoded.t, id: decoded.id.toLowerCase() };
 }
 
 interface ColumnParams {
@@ -198,12 +241,32 @@ interface ColumnParams {
   opposes: ColumnCursor | null;
 }
 
-/** Parsed once per request and shared by the queries and the cache key, so the two always agree. */
-function parseColumnParams(req: Request): ColumnParams {
+/**
+ * Parsed once per request and shared by the queries and the cache key, so the two always agree.
+ *
+ * A cursor that is PRESENT and unusable is a 400, not a silent restart at page one — and that
+ * includes one that does not even base64-decode, so there is one rule here rather than two. A
+ * cursor is never typed by a human: it is only ever echoed back from a response this API issued,
+ * so an unusable one means the client is broken or the link was mangled. Serving page one in that
+ * case answers a question nobody asked — the reader was on page three, the body comes back with
+ * `hasMore: true`, and a paginating client appends the same duplicates forever, because the same
+ * bad cursor keeps coming back. Refusing says what happened, once.
+ *
+ * This is a deliberate divergence from routes/threads.ts, which ignores a cursor it cannot read.
+ */
+function parseColumnParams(req: Request): { params: ColumnParams } | { invalid: string } {
+  const supports = req.query.supportsCursor;
+  const opposes = req.query.opposesCursor;
+  const parsedSupports = supports === undefined ? null : parseColumnCursor(supports);
+  if (supports !== undefined && parsedSupports === null) return { invalid: 'supportsCursor' };
+  const parsedOpposes = opposes === undefined ? null : parseColumnCursor(opposes);
+  if (opposes !== undefined && parsedOpposes === null) return { invalid: 'opposesCursor' };
   return {
-    limit: parseLimit(req.query.limit as string | undefined, COLUMN_PAGE_SIZE),
-    supports: parseColumnCursor(req.query.supportsCursor),
-    opposes: parseColumnCursor(req.query.opposesCursor),
+    params: {
+      limit: parseLimit(req.query.limit as string | undefined, COLUMN_PAGE_SIZE),
+      supports: parsedSupports,
+      opposes: parsedOpposes,
+    },
   };
 }
 
@@ -346,13 +409,22 @@ async function buildNode(
 //     only as an Authorization: Bearer header (middleware/auth.ts) — there is no cookie path.
 
 /**
+ * Which route is asking, so that two routes cannot name one key. `root:<id>` and `id:<id>` used to
+ * share a namespace, which meant `GET /claims/root:<community-uuid>` built the identical key as
+ * that community's root request and, once the root was cached, answered 200 with the root's body
+ * for an id that is not a claim id at all and owes a 404. The ids reaching these are uuid-shaped
+ * and lowercased by the routes, so one row has exactly one key.
+ */
+type CacheNamespace = 'id' | 'root';
+
+/**
  * The key is built from the DECODED, normalized cursors, never from the raw query strings: raw
  * strings joined with a delimiter let two different requests mint one key (a cursor containing the
  * delimiter), and every distinct piece of garbage would otherwise get its own entry for a body
  * identical to page one's.
  */
-function claimCacheKey(cacheId: string, params: ColumnParams): string {
-  return `fc:claim:${cacheId}:${JSON.stringify({
+function claimCacheKey(ns: CacheNamespace, id: string, params: ColumnParams): string {
+  return `fc:claim:${ns}:${id}:${JSON.stringify({
     limit: params.limit,
     supports: params.supports,
     opposes: params.opposes,
@@ -383,23 +455,62 @@ function carriesCredentials(req: Request): boolean {
 
 // --- Routes ----------------------------------------------------------------
 
+/**
+ * Every error here is no-store. A 404 or a 500 is a fact about this instant — the claim may exist
+ * a second from now, the database may be back — and a shared cache left to its own heuristics will
+ * happily hold a transient one for minutes.
+ */
 function notFound(res: Response): void {
+  res.set('Cache-Control', 'no-store');
   res.status(404).json({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
+}
+
+/**
+ * A query failed. The real message is for the logs; the caller gets a fixed string.
+ *
+ * A raw Postgres message in an anonymous response is the one hole in this module's leak discipline:
+ * it names columns, types and sometimes values, and it is the difference between a bad cursor
+ * costing an attacker a dull 500 and handing them a schema probe.
+ */
+function internalError(res: Response, context: string, err: unknown): void {
+  console.error(`[focused_communities] ${context}:`, (err as Error).message);
+  res.set('Cache-Control', 'no-store');
+  res.status(500).json({
+    error: { code: 'CLAIM_FETCH_FAILED', message: 'Could not read the claim' },
+  });
+}
+
+/** A cursor the client sent that this API could not have issued. */
+function invalidCursor(res: Response, field: string): void {
+  res.set('Cache-Control', 'no-store');
+  res.status(400).json({
+    error: { code: 'INVALID_CURSOR', message: `${field} is not a cursor this API issued` },
+  });
 }
 
 /**
  * Serve one claim as a node. `lookup` returns the claim row or null; a null — missing id,
  * malformed id, a community with no root — is a 404, never a 403: which claims exist is not
  * something an error code should teach.
+ *
+ * `id` is already uuid-shaped and lowercased when it gets here: the routes check that before the
+ * id reaches either the cache key or the database.
  */
 async function serveNode(
   req: Request,
   res: Response,
-  cacheId: string,
+  ns: CacheNamespace,
+  id: string,
   lookup: () => Promise<RootedClaimRow | null>
 ): Promise<void> {
-  const params = parseColumnParams(req);
-  const key = claimCacheKey(cacheId, params);
+  const parsed = parseColumnParams(req);
+  if ('invalid' in parsed) {
+    res.set('Vary', 'Authorization');
+    invalidCursor(res, parsed.invalid);
+    return;
+  }
+  const params = parsed.params;
+  const key = claimCacheKey(ns, id, params);
   const personalized = carriesCredentials(req);
 
   // The body varies on Authorization today (the cache branch) and will vary in its content as
@@ -432,7 +543,7 @@ async function serveNode(
   try {
     body = await buildNode(row, params);
   } catch (err) {
-    res.status(500).json({ error: { code: 'CLAIM_FETCH_FAILED', message: (err as Error).message } });
+    internalError(res, `claim node ${id}`, err);
     return;
   }
 
@@ -446,8 +557,13 @@ async function serveNode(
 // GET /communities/:id/claims/root — the community's single root claim, as a node.
 // Served by claims_one_root_per_community (unique, partial, on community_id WHERE parent IS NULL).
 claimsRouter.get('/communities/:id/claims/root', async (req: Request, res: Response) => {
-  const communityId = req.params.id as string;
-  await serveNode(req, res, `root:${communityId}`, async () => {
+  const raw = req.params.id as string;
+  if (!UUID_RE.test(raw)) {
+    notFound(res); // names no community: no key minted, no query run
+    return;
+  }
+  const communityId = raw.toLowerCase();
+  await serveNode(req, res, 'root', communityId, async () => {
     const { rows } = await pool.query<RootedClaimRow>(
       `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id
          FROM connect.claims c
@@ -465,9 +581,18 @@ claimsRouter.get('/communities/:id/claims/root', async (req: Request, res: Respo
 // so 404 here would hide nothing while making the whole subtree beneath it unreachable. The body
 // and the author are what hiding withholds, and toClaim withholds them. An id that does not exist,
 // or is not a uuid, still 404s — and nothing here ever answers 403.
+//
+// The uuid check happens BEFORE the id reaches the cache key or the database, not only because a
+// non-uuid cannot name a claim, but because an unconstrained id in a key is a way to reach another
+// route's entries.
 claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
-  const claimId = req.params.claimId as string;
-  await serveNode(req, res, claimId, async () => {
+  const raw = req.params.claimId as string;
+  if (!UUID_RE.test(raw)) {
+    notFound(res);
+    return;
+  }
+  const claimId = raw.toLowerCase();
+  await serveNode(req, res, 'id', claimId, async () => {
     const { rows } = await pool.query<RootedClaimRow>(
       `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id FROM connect.claims c WHERE c.id = $1`,
       [claimId]
@@ -488,16 +613,19 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
 //   1. NO TEXT, EVER. `body` is not merely stripped in the serializer — it is never selected. A
 //      whole-tree payload is the one response large enough that a hidden claim's wording could
 //      ride along unnoticed, so the SQL is the guard, not a filter someone has to remember.
-//   2. HIDDEN CLAIMS ARE INCLUDED. The columns tombstone a hidden claim rather than drop it, so a
-//      map that omitted one would disagree with what the reader can plainly see beside it. The
-//      shape is honest about what is there; what it withholds is what everything else withholds.
+//   2. HIDDEN CLAIMS ARE INCLUDED, AND MARKED. The columns tombstone a hidden claim rather than
+//      drop it, so a map that omitted one would disagree with what the reader can plainly see
+//      beside it. Drawing one as an ordinary node is the same disagreement moved: a minimap exists
+//      to show the pro/con balance at each depth, and counting a withdrawn claim as a live one
+//      misstates exactly that. So `isHidden` rides along — it leaks nothing, being already on
+//      every ClaimNode the same reader can fetch, and the payload still carries no text.
 //   3. BOUNDED. A community page loads this on every view, so the payload has a hard cap and says
 //      when it hit it.
 
 /**
  * The hard cap on nodes in one shape payload.
  *
- * At roughly 135 bytes of JSON per node (two uuids and three short fields) this bounds the body at
+ * At roughly 155 bytes of JSON per node (two uuids and four short fields) this bounds the body at
  * ~270 KB uncompressed, and far less over the wire since every key name repeats. It is well above
  * any community's tree today and above the size at which a minimap stops being legible — a few
  * thousand dots in a thumbnail is already a smear — so in practice nothing truncates, and the cap
@@ -515,6 +643,8 @@ export interface ShapeNode {
   depth: number;
   /** The Task 5 rating aggregate, for colouring the map. Null until it exists. */
   impact: number | null;
+  /** Mapped exactly as toClaim does it, so the map and the columns agree about one claim. */
+  isHidden: boolean;
 }
 
 export interface ShapeMeta {
@@ -527,6 +657,8 @@ interface ShapeRow {
   parent_claim_id: string | null;
   side: ClaimSide | null;
   depth: number;
+  /** Read only to derive isHidden. The raw column is never serialized, here or anywhere. */
+  moderation_status: string;
 }
 
 /**
@@ -538,7 +670,7 @@ interface ShapeRow {
  * this is an index scan plus a top-N sort, never a sequential scan of every community's claims.
  * Nothing filters on moderation_status: see property 2 above.
  */
-const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth
+const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth, c.moderation_status
        FROM connect.claims c
       WHERE c.community_id = $1
       ORDER BY c.depth, c.id
@@ -552,6 +684,7 @@ function toShapeNode(row: ShapeRow): ShapeNode {
     side: row.side,
     depth: row.depth,
     impact: null, // Task 5
+    isHidden: row.moderation_status !== 'visible',
   };
 }
 
@@ -564,8 +697,8 @@ function toShapeNode(row: ShapeRow): ShapeNode {
  *
  * Note what is deliberately missing: the node routes' isShareable guard. It exists because Task 5
  * puts the caller's own rating in a ClaimNode, and a body carrying one reader's rating must never
- * be handed to another. A ShapeNode has no such field and no room for one — it is five columns of
- * tree position. If a caller-varying field is ever added to it, this route must grow the same
+ * be handed to another. A ShapeNode has no such field and no room for one — it is tree position and
+ * a moderation flag every reader sees alike. If a caller-varying field is ever added to it, this route must grow the same
  * guard and the same credentials branch that serveNode has.
  */
 function shapeCacheKey(communityId: string): string {
@@ -598,7 +731,7 @@ claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Resp
       notFound(res); // a malformed id, as elsewhere in this module
       return;
     }
-    res.status(500).json({ error: { code: 'CLAIM_FETCH_FAILED', message: (err as Error).message } });
+    internalError(res, `claim shape ${communityId}`, err);
     return;
   }
 

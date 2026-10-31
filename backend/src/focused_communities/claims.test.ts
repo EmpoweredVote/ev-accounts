@@ -21,17 +21,20 @@ app.use('/fc/api', claimsRouter);
 
 const rows = (r: unknown[]) => ({ rows: r, rowCount: r.length });
 const TS = '2026-04-17T12:00:00.123456+00:00';
-const COMMUNITY = 'comm-1';
 
-/** A syntactically valid uuid — parseColumnCursor rejects anything else as a cursor id. */
+/** A canonical uuid. Both routes refuse anything else before it reaches a key or the database. */
 const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
+const COMMUNITY = uuid(900);
+const ROOT = uuid(100);
+const MISSING = uuid(999);
+
 const cursorFor = (t: string, id: string) =>
   Buffer.from(JSON.stringify({ t, id })).toString('base64url');
 const decode = (c: string) => JSON.parse(Buffer.from(c, 'base64url').toString('utf8'));
 
 /** A claims row as the DB hands it back (snake_case, ts() text timestamps). */
 const row = (over: Record<string, unknown> = {}) => ({
-  id: 'c-root',
+  id: ROOT,
   side: null,
   body: 'Root claim',
   author_display_name: null,
@@ -47,7 +50,7 @@ const row = (over: Record<string, unknown> = {}) => ({
 });
 
 const child = (id: string, side: 'supports' | 'opposes', over: Record<string, unknown> = {}) =>
-  row({ id, side, body: `${id} body`, author_display_name: 'Demo Finch', parent_claim_id: 'c-root', ...over });
+  row({ id, side, body: `${id} body`, author_display_name: 'Demo Finch', parent_claim_id: ROOT, ...over });
 
 /**
  * Queue one request's worth of queries. Order is fixed by the route: the claim lookup, then the
@@ -76,11 +79,11 @@ const columnCall = (side: 'supports' | 'opposes') =>
 /** A node body shaped like the route's, for testing the cache guard directly. */
 const nodeBody = (myRating: number | null, where: 'claim' | 'supports' = 'claim') => {
   const claim = {
-    id: 'c-root', side: null, body: 'b', authorPseudonym: null, impact: null, ratingCount: 0,
+    id: ROOT, side: null, body: 'b', authorPseudonym: null, impact: null, ratingCount: 0,
     childSupports: 0, childOpposes: 0, isHidden: false, mergedInto: null,
     createdAt: TS, updatedAt: TS, myRating: where === 'claim' ? myRating : null,
   };
-  const supporter = { ...claim, id: 'c-s1', myRating: where === 'supports' ? myRating : null };
+  const supporter = { ...claim, id: uuid(1), myRating: where === 'supports' ? myRating : null };
   return {
     data: { claim, breadcrumb: [], supports: [supporter], opposes: [] },
     meta: { supports: { cursor: null, hasMore: false }, opposes: { cursor: null, hasMore: false } },
@@ -96,15 +99,15 @@ describe('GET /communities/:id/claims/root', () => {
   it('returns the root with its two columns', async () => {
     mockNode({
       claim: row({ child_supports_count: 2, child_opposes_count: 1 }),
-      supports: [child('c-s1', 'supports'), child('c-s2', 'supports')],
-      opposes: [child('c-o1', 'opposes')],
+      supports: [child(uuid(1), 'supports'), child(uuid(2), 'supports')],
+      opposes: [child(uuid(3), 'opposes')],
     });
 
-    const res = await request(app).get('/fc/api/communities/comm-1/claims/root');
+    const res = await request(app).get(`/fc/api/communities/${COMMUNITY}/claims/root`);
 
     expect(res.status).toBe(200);
     expect(res.body.data.claim).toEqual({
-      id: 'c-root',
+      id: ROOT,
       side: null,
       body: 'Root claim',
       authorPseudonym: null,
@@ -119,8 +122,8 @@ describe('GET /communities/:id/claims/root', () => {
       myRating: null,
     });
     expect(res.body.data.breadcrumb).toEqual([]);
-    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual(['c-s1', 'c-s2']);
-    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual(['c-o1']);
+    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual([uuid(1), uuid(2)]);
+    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual([uuid(3)]);
     expect(res.body.meta).toEqual({
       supports: { cursor: null, hasMore: false },
       opposes: { cursor: null, hasMore: false },
@@ -128,12 +131,12 @@ describe('GET /communities/:id/claims/root', () => {
 
     // The root is found by the one-root-per-community index, not by guessing an id.
     expect(sqlOf(0)).toContain('c.parent_claim_id IS NULL');
-    expect(query.mock.calls[0][1]).toEqual(['comm-1']);
+    expect(query.mock.calls[0][1]).toEqual([COMMUNITY]);
   });
 
   it('404s a community with no root claim', async () => {
     mockNode({ claim: null });
-    const res = await request(app).get('/fc/api/communities/comm-nope/claims/root');
+    const res = await request(app).get(`/fc/api/communities/${uuid(777)}/claims/root`);
     expect(res.status).toBe(404);
     expect(res.body.error.code).toBe('CLAIM_NOT_FOUND');
   });
@@ -144,13 +147,13 @@ describe('GET /claims/:claimId', () => {
     // A 40-deep claim. Ancestry must cost one query, not forty.
     const path = Array.from({ length: 40 }, (_, i) => `anc-${i}`);
     mockNode({
-      claim: row({ id: 'c-deep', side: 'supports', body: 'Deep claim', path }),
+      claim: row({ id: uuid(40), side: 'supports', body: 'Deep claim', path }),
       breadcrumb: path.map((id, i) => ({
         id, body: `${id} body`, side: i === 0 ? null : 'supports', moderation_status: 'visible',
       })),
     });
 
-    const res = await request(app).get('/fc/api/claims/c-deep');
+    const res = await request(app).get(`/fc/api/claims/${uuid(40)}`);
 
     expect(res.status).toBe(200);
     expect(res.body.data.breadcrumb).toHaveLength(40);
@@ -166,7 +169,7 @@ describe('GET /claims/:claimId', () => {
 
   it('skips the ancestry query entirely for a root', async () => {
     mockNode({ claim: row({ path: [] }) });
-    await request(app).get('/fc/api/claims/c-root');
+    await request(app).get(`/fc/api/claims/${ROOT}`);
     expect(allSql().filter((s) => s.includes('array_position'))).toHaveLength(0);
     expect(query.mock.calls).toHaveLength(3);
   });
@@ -177,18 +180,18 @@ describe('GET /claims/:claimId', () => {
     // keyset predicate and the cursor payload together — see the note in claims.ts.
     mockNode({
       claim: row(),
-      supports: [child('c-s1', 'supports'), child('c-s2', 'supports')],
-      opposes: [child('c-o1', 'opposes'), child('c-o2', 'opposes')],
+      supports: [child(uuid(1), 'supports'), child(uuid(2), 'supports')],
+      opposes: [child(uuid(3), 'opposes'), child(uuid(4), 'opposes')],
     });
 
-    const res = await request(app).get('/fc/api/claims/c-root');
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
 
     const columns = allSql().filter((s) => s.includes('c.parent_claim_id = $2'));
     expect(columns).toHaveLength(2);
     for (const sql of columns) expect(sql).toContain('ORDER BY c.created_at DESC, c.id DESC');
     // Row order out of the database is the order the reader sees — no re-sorting in JS.
-    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual(['c-s1', 'c-s2']);
-    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual(['c-o1', 'c-o2']);
+    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual([uuid(1), uuid(2)]);
+    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual([uuid(3), uuid(4)]);
     // Every column query is bounded.
     for (const sql of columns) expect(sql).toContain('LIMIT $');
   });
@@ -197,37 +200,37 @@ describe('GET /claims/:claimId', () => {
     // claims_community_parent_idx is on (community_id, parent_claim_id). Without community_id in
     // the WHERE, Postgres cannot use it and sequentially scans every community's claims — twice
     // per request, on the hottest read in the feature.
-    mockNode({ claim: row(), supports: [child('c-s1', 'supports')] });
-    await request(app).get('/fc/api/claims/c-root');
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT}`);
 
     for (const side of ['supports', 'opposes'] as const) {
       const call = columnCall(side);
       expect(String(call[0])).toContain('c.community_id = $1');
-      expect(call[1]).toEqual([COMMUNITY, 'c-root', side, 21]);
+      expect(call[1]).toEqual([COMMUNITY, ROOT, side, 21]);
     }
     // The community id is used, never served.
-    expect(JSON.stringify((await request(app).get('/fc/api/claims/c-root')).body))
+    expect(JSON.stringify((await request(app).get(`/fc/api/claims/${ROOT}`)).body))
       .not.toContain(COMMUNITY);
   });
 
   it('renders a hidden claim as a tombstone with its children intact', async () => {
     mockNode({
       claim: row({
-        id: 'c-hidden',
+        id: uuid(50),
         side: 'opposes',
         body: 'something a moderator hid',
         author_display_name: 'Demo Finch',
         moderation_status: 'hidden',
         child_supports_count: 1,
         child_opposes_count: 1,
-        path: ['c-root'],
+        path: [ROOT],
       }),
-      breadcrumb: [{ id: 'c-root', body: 'Root claim', side: null, moderation_status: 'visible' }],
-      supports: [child('c-s1', 'supports')],
-      opposes: [child('c-o1', 'opposes')],
+      breadcrumb: [{ id: ROOT, body: 'Root claim', side: null, moderation_status: 'visible' }],
+      supports: [child(uuid(1), 'supports')],
+      opposes: [child(uuid(3), 'opposes')],
     });
 
-    const res = await request(app).get('/fc/api/claims/c-hidden');
+    const res = await request(app).get(`/fc/api/claims/${uuid(50)}`);
 
     expect(res.status).toBe(200);
     expect(res.body.data.claim.isHidden).toBe(true);
@@ -238,22 +241,22 @@ describe('GET /claims/:claimId', () => {
     expect(res.body.data.claim.side).toBe('opposes');
     expect(res.body.data.claim.childSupports).toBe(1);
     expect(res.body.data.claim.childOpposes).toBe(1);
-    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual(['c-s1']);
-    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual(['c-o1']);
+    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual([uuid(1)]);
+    expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual([uuid(3)]);
   });
 
   it('tombstones a hidden child inside a column rather than dropping it', async () => {
     mockNode({
       claim: row({ child_supports_count: 2 }),
       supports: [
-        child('c-s1', 'supports'),
-        child('c-s2', 'supports', { moderation_status: 'hidden', body: 'hidden child body' }),
+        child(uuid(1), 'supports'),
+        child(uuid(2), 'supports', { moderation_status: 'hidden', body: 'hidden child body' }),
       ],
     });
 
-    const res = await request(app).get('/fc/api/claims/c-root');
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
 
-    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual(['c-s1', 'c-s2']);
+    expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual([uuid(1), uuid(2)]);
     expect(res.body.data.supports[1].isHidden).toBe(true);
     expect(res.body.data.supports[1].body).toBeFalsy();
     expect(res.body.data.supports[1].authorPseudonym).toBeNull();
@@ -264,35 +267,72 @@ describe('GET /claims/:claimId', () => {
 
   it('withholds a hidden ancestor body from the breadcrumb', async () => {
     mockNode({
-      claim: row({ id: 'c-kid', side: 'supports', path: ['c-root', 'c-mid'] }),
+      claim: row({ id: uuid(60), side: 'supports', path: [ROOT, uuid(61)] }),
       breadcrumb: [
-        { id: 'c-root', body: 'Root claim', side: null, moderation_status: 'visible' },
-        { id: 'c-mid', body: 'hidden ancestor body', side: 'opposes', moderation_status: 'hidden' },
+        { id: ROOT, body: 'Root claim', side: null, moderation_status: 'visible' },
+        { id: uuid(61), body: 'hidden ancestor body', side: 'opposes', moderation_status: 'hidden' },
       ],
     });
 
-    const res = await request(app).get('/fc/api/claims/c-kid');
+    const res = await request(app).get(`/fc/api/claims/${uuid(60)}`);
 
     expect(res.body.data.breadcrumb).toEqual([
-      { id: 'c-root', body: 'Root claim', side: null },
-      { id: 'c-mid', body: '', side: 'opposes' },
+      { id: ROOT, body: 'Root claim', side: null },
+      { id: uuid(61), body: '', side: 'opposes' },
     ]);
     expect(JSON.stringify(res.body)).not.toContain('hidden ancestor body');
   });
 
   it('404s an unknown claim id', async () => {
     mockNode({ claim: null });
-    const unknown = await request(app).get('/fc/api/claims/c-missing');
+    const unknown = await request(app).get(`/fc/api/claims/${MISSING}`);
     expect(unknown.status).toBe(404);
     expect(unknown.body).toEqual({
       error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' },
     });
+  });
 
-    // A malformed uuid throws 22P02 in the lookup; it is not found either, and never a 403.
+  it('refuses an id that is not a canonical uuid before touching the key or the database', async () => {
+    // Not merely "a non-uuid 404s": it must 404 WITHOUT minting a cache key, because an
+    // unconstrained id in a key is a way to reach another route's entries — and without a query,
+    // because the uuid is the only thing standing between a path segment and ::uuid.
+    for (const bad of [
+      'not-a-uuid',
+      `root:${COMMUNITY}`,                      // the shape of the old root cache id
+      `{${ROOT}}`,                              // brace-wrapped, which ::uuid would have accepted
+      ROOT.replace(/-/g, ''),                   // hyphen-less, likewise
+    ]) {
+      query.mockReset();
+      store.clear();
+      const res = await request(app).get(`/fc/api/claims/${encodeURIComponent(bad)}`);
+      expect(res.status).toBe(404);
+      expect(res.body.error.code).toBe('CLAIM_NOT_FOUND');
+      expect(query.mock.calls).toHaveLength(0);
+      expect(store.size).toBe(0);
+    }
+  });
+
+  it('never serves a root body to /claims/root:<community id>', async () => {
+    // The two routes used to share one key namespace, so once a community's root was cached,
+    // GET /claims/root:<community-uuid> built the identical key and answered 200 with the root's
+    // body — for an id that is not a claim id and owes a 404, before any lookup ran.
+    mockNode({ claim: row() });
+    const root = await request(app).get(`/fc/api/communities/${COMMUNITY}/claims/root`);
+    expect(root.status).toBe(200);
+    expect(store.size).toBe(1);
+
+    const impostor = await request(app).get(`/fc/api/claims/${encodeURIComponent(`root:${COMMUNITY}`)}`);
+    expect(impostor.status).toBe(404);
+    expect(impostor.body).not.toHaveProperty('data');
+  });
+
+  it('404s a malformed id that still reaches the database', async () => {
+    // A uuid-shaped id can still be rejected by Postgres in some other query; 22P02 anywhere in
+    // the lookup is not-found, never a 403 and never a 500.
     query.mockRejectedValueOnce(Object.assign(new Error('invalid input syntax'), { code: '22P02' }));
-    const malformed = await request(app).get('/fc/api/claims/not-a-uuid');
-    expect(malformed.status).toBe(404);
-    expect(malformed.body.error.code).toBe('CLAIM_NOT_FOUND');
+    const res = await request(app).get(`/fc/api/claims/${MISSING}`);
+    expect(res.status).toBe(404);
+    expect(res.body.error.code).toBe('CLAIM_NOT_FOUND');
   });
 
   it('500s when a column query fails, without inventing an empty column', async () => {
@@ -300,10 +340,30 @@ describe('GET /claims/:claimId', () => {
     query.mockRejectedValueOnce(new Error('connection terminated'));
     query.mockResolvedValueOnce(rows([]));
 
-    const res = await request(app).get('/fc/api/claims/c-root');
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
 
     expect(res.status).toBe(500);
     expect(res.body.error.code).toBe('CLAIM_FETCH_FAILED');
+  });
+
+  it('never echoes the database message to the caller', async () => {
+    // A raw Postgres message names columns, types and sometimes values. It is the difference
+    // between a bad request costing an attacker a dull 500 and handing them a schema probe.
+    const secret = 'invalid input syntax for type timestamp with time zone: "connect.claims.foo"';
+    query.mockResolvedValueOnce(rows([row()]));
+    query.mockRejectedValueOnce(new Error(secret));
+    query.mockResolvedValueOnce(rows([]));
+
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
+
+    expect(res.status).toBe(500);
+    expect(JSON.stringify(res.body)).not.toContain(secret);
+    expect(JSON.stringify(res.body)).not.toContain('timestamp with time zone');
+    expect(res.body.error).toEqual({
+      code: 'CLAIM_FETCH_FAILED',
+      message: 'Could not read the claim',
+    });
+    expect(res.headers['cache-control']).toBe('no-store');
   });
 
   it('never serializes internal columns under any name', async () => {
@@ -311,17 +371,17 @@ describe('GET /claims/:claimId', () => {
       claim: row({
         author_id: 'user-9',
         depth: 2,
-        path: ['c-root', 'c-mid'],
-        merged_into_claim_id: 'c-other',
+        path: [ROOT, uuid(61)],
+        merged_into_claim_id: uuid(70),
       }),
       breadcrumb: [
-        { id: 'c-root', body: 'Root claim', side: null, moderation_status: 'visible' },
-        { id: 'c-mid', body: 'Mid claim', side: 'supports', moderation_status: 'visible' },
+        { id: ROOT, body: 'Root claim', side: null, moderation_status: 'visible' },
+        { id: uuid(61), body: 'Mid claim', side: 'supports', moderation_status: 'visible' },
       ],
-      supports: [child('c-s1', 'supports', { author_id: 'user-9' })],
+      supports: [child(uuid(1), 'supports', { author_id: 'user-9' })],
     });
 
-    const res = await request(app).get('/fc/api/claims/c-root');
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
     const text = JSON.stringify(res.body);
 
     for (const forbidden of ['author_id', 'community_id', 'moderation_status', 'depth', 'path',
@@ -329,7 +389,7 @@ describe('GET /claims/:claimId', () => {
       expect(text).not.toContain(forbidden);
     }
     // The one merge field the Claim type does carry, under its own name.
-    expect(res.body.data.claim.mergedInto).toBe('c-other');
+    expect(res.body.data.claim.mergedInto).toBe(uuid(70));
   });
 });
 
@@ -341,7 +401,7 @@ describe('column pagination', () => {
     );
     mockNode({ claim: row({ child_supports_count: 500 }), supports: many });
 
-    const res = await request(app).get('/fc/api/claims/c-root');
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
 
     expect(res.body.data.supports).toHaveLength(20);
     expect(res.body.meta.supports.hasMore).toBe(true);
@@ -363,65 +423,153 @@ describe('column pagination', () => {
       })
     );
     mockNode({ claim: row(), supports: many });
-    const first = await request(app).get('/fc/api/claims/c-root');
+    const first = await request(app).get(`/fc/api/claims/${ROOT}`);
     const last = first.body.data.supports[19];
     const cursor = first.body.meta.supports.cursor as string;
     expect(decode(cursor)).toEqual({ t: last.createdAt, id: last.id });
 
     mockNode({ claim: row(), supports: [child(uuid(20), 'supports')] });
-    const second = await request(app).get(`/fc/api/claims/c-root?supportsCursor=${cursor}`);
+    const second = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursor}`);
 
     expect(second.status).toBe(200);
     const call = columnCall('supports');
     expect(String(call[0])).toContain('c.created_at < $4::timestamptz');
     expect(String(call[0])).toContain('c.id < $5::uuid');
-    expect(call[1]).toEqual([COMMUNITY, 'c-root', 'supports', last.createdAt, last.id, 21]);
+    expect(call[1]).toEqual([COMMUNITY, ROOT, 'supports', last.createdAt, last.id, 21]);
   });
 
   it('numbers the keyset placeholders after the filter parameters', async () => {
     const cursor = cursorFor(TS, uuid(19));
     mockNode({ claim: row(), supports: [child(uuid(20), 'supports')] });
 
-    const res = await request(app).get(`/fc/api/claims/c-root?supportsCursor=${cursor}&limit=5`);
+    const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursor}&limit=5`);
 
     expect(res.status).toBe(200);
-    expect(columnCall('supports')[1]).toEqual([COMMUNITY, 'c-root', 'supports', TS, uuid(19), 6]);
+    expect(columnCall('supports')[1]).toEqual([COMMUNITY, ROOT, 'supports', TS, uuid(19), 6]);
     // The opposes column is untouched by the supports cursor.
-    expect(columnCall('opposes')[1]).toEqual([COMMUNITY, 'c-root', 'opposes', 6]);
+    expect(columnCall('opposes')[1]).toEqual([COMMUNITY, ROOT, 'opposes', 6]);
   });
 
-  it('treats a well-formed cursor with unusable contents as absent, not as a 500', async () => {
-    // decodeCursor only checks that t and id are strings. A string is not a timestamptz and not a
-    // uuid: handing one to Postgres turns a crafted query string into an anonymous 500 with a raw
-    // database message in the body.
-    for (const bad of [cursorFor('nope', 'nope'), cursorFor(TS, 'not-a-uuid'), cursorFor('nope', uuid(1))]) {
+  it('accepts every timestamp ts() can emit', async () => {
+    // The validator must not be stricter than the route's own output either: whole seconds and
+    // one-to-six fractional digits are all shapes `to_json(col) #>> '{}'` produces.
+    for (const t of [
+      '2026-04-17T12:00:00+00:00',
+      '2026-04-17T12:00:00.1+00:00',
+      '2026-04-17T12:00:00.123456+00:00',
+      '2024-02-29T23:59:59+00:00', // a real leap day
+      '2026-04-17T12:00:00Z',
+      '2026-04-17T12:00:00-07:00',
+    ]) {
       query.mockReset();
-      store.clear(); // each unusable cursor collapses onto the same page-one key
+      store.clear();
       mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
-      const res = await request(app).get(`/fc/api/claims/c-root?supportsCursor=${bad}`);
+      const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursorFor(t, uuid(19))}`);
       expect(res.status).toBe(200);
-      const call = columnCall('supports');
-      expect(String(call[0])).not.toContain('::timestamptz');
-      expect(call[1]).toEqual([COMMUNITY, 'c-root', 'supports', 21]);
+      expect(columnCall('supports')[1]).toEqual([COMMUNITY, ROOT, 'supports', t, uuid(19), 21]);
     }
+  });
+
+  it('400s a cursor whose timestamp Postgres would reject, rather than letting it 500', async () => {
+    // Date.parse is a far weaker check than ::timestamptz. Every value below passes Date.parse —
+    // "1" and "x 1" become the year 2001, "2026-02-31" rolls into March, year 0000 parses fine —
+    // and every one of them is a hard 22007 in Postgres. Verified against the live database with
+    // pg_input_is_valid: all five are rejected there.
+    // These five sail past Date.parse and die in Postgres — the exact gap this closes.
+    const passesDateParse = ['1', '12', 'x 1', '2026-02-31', '0000-01-01T00:00:00Z'];
+    for (const t of passesDateParse) expect(Number.isNaN(Date.parse(t))).toBe(false);
+
+    for (const t of [...passesDateParse,
+      '2026-02-31T00:00:00Z', '2026-13-01T00:00:00Z', '2026-04-17T25:00:00Z', 'nope']) {
+      query.mockReset();
+      store.clear();
+      const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursorFor(t, uuid(19))}`);
+      expect(res.status).toBe(400);
+      expect(res.body.error.code).toBe('INVALID_CURSOR');
+      expect(query.mock.calls).toHaveLength(0);
+      expect(store.size).toBe(0);
+    }
+  });
+
+  it('400s a present cursor it could not have issued, rather than silently serving page one', async () => {
+    // A cursor is never typed by a human — it is only ever echoed back from a previous response.
+    // An unusable one means the client is broken or the link was mangled, and quietly answering
+    // with page one gives a reader on page three duplicates forever, since the same bad cursor
+    // keeps coming back. One rule covers all of it, including a cursor that does not decode.
+    for (const bad of [
+      '%%%not-base64%%%',
+      cursorFor(TS, 'not-a-uuid'),
+      Buffer.from(JSON.stringify({ t: TS })).toString('base64url'), // no id at all
+      Buffer.from('not json at all').toString('base64url'),
+      '',
+    ]) {
+      query.mockReset();
+      store.clear();
+      const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${encodeURIComponent(bad)}`);
+      expect(res.status).toBe(400);
+      expect(res.body.error).toEqual({
+        code: 'INVALID_CURSOR',
+        message: 'supportsCursor is not a cursor this API issued',
+      });
+      expect(res.headers['cache-control']).toBe('no-store');
+      expect(query.mock.calls).toHaveLength(0);
+    }
+  });
+
+  it('names the column whose cursor was bad', async () => {
+    const res = await request(app).get(`/fc/api/claims/${ROOT}?opposesCursor=rubbish`);
+    expect(res.status).toBe(400);
+    expect(res.body.error.message).toContain('opposesCursor');
+  });
+
+  it('is not tripped by an absent cursor', async () => {
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    expect((await request(app).get(`/fc/api/claims/${ROOT}?limit=5`)).status).toBe(200);
   });
 });
 
 describe('caching', () => {
-  const keyFor = (id: string, limit = 20, supports: unknown = null, opposes: unknown = null) =>
-    `fc:claim:${id}:${JSON.stringify({ limit, supports, opposes })}`;
+  const keyFor = (
+    ns: 'id' | 'root',
+    id: string,
+    limit = 20,
+    supports: unknown = null,
+    opposes: unknown = null
+  ) => `fc:claim:${ns}:${id}:${JSON.stringify({ limit, supports, opposes })}`;
 
   it('serves a second anonymous reader from the shared cache', async () => {
-    mockNode({ claim: row(), supports: [child('c-s1', 'supports')] });
-    const first = await request(app).get('/fc/api/claims/c-root');
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    const first = await request(app).get(`/fc/api/claims/${ROOT}`);
     expect(first.status).toBe(200);
-    expect([...store.keys()]).toEqual([keyFor('c-root')]);
+    expect([...store.keys()]).toEqual([keyFor('id', ROOT)]);
 
     const callsAfterFirst = query.mock.calls.length;
-    const second = await request(app).get('/fc/api/claims/c-root');
+    const second = await request(app).get(`/fc/api/claims/${ROOT}`);
     expect(second.body).toEqual(first.body);
     expect(query.mock.calls).toHaveLength(callsAfterFirst);
     expect(second.headers['cache-control']).toBe('public, max-age=0, s-maxage=30');
+  });
+
+  it('gives each route its own key namespace', async () => {
+    // fc:claim:root:<id> and fc:claim:id:<id> are different keys even for the same string, which
+    // is what stops one route answering with the other's body.
+    mockNode({ claim: row() });
+    await request(app).get(`/fc/api/communities/${COMMUNITY}/claims/root`);
+    mockNode({ claim: row() });
+    await request(app).get(`/fc/api/claims/${COMMUNITY}`);
+    expect([...store.keys()].sort()).toEqual(
+      [keyFor('root', COMMUNITY), keyFor('id', COMMUNITY)].sort()
+    );
+  });
+
+  it('files one row under one key however the id was spelled', async () => {
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT.toUpperCase()}`);
+    expect([...store.keys()]).toEqual([keyFor('id', ROOT)]);
+    // And the uppercase spelling now reads that same entry rather than minting a second.
+    const again = await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect(again.status).toBe(200);
+    expect(store.size).toBe(1);
   });
 
   it('keys the cache on the decoded cursors, so no two requests can collide on one key', async () => {
@@ -430,36 +578,39 @@ describe('caching', () => {
     const a = cursorFor(TS, uuid(1));
     const b = cursorFor(TS, uuid(2));
     mockNode({ claim: row(), supports: [child(uuid(9), 'supports')] });
-    await request(app).get(`/fc/api/claims/c-root?supportsCursor=${a}&opposesCursor=${b}`);
+    await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${a}&opposesCursor=${b}`);
     mockNode({ claim: row(), supports: [child(uuid(9), 'supports')] });
-    await request(app).get(`/fc/api/claims/c-root?supportsCursor=${b}&opposesCursor=${a}`);
+    await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${b}&opposesCursor=${a}`);
 
     expect([...store.keys()].sort()).toEqual([
-      keyFor('c-root', 20, { t: TS, id: uuid(1) }, { t: TS, id: uuid(2) }),
-      keyFor('c-root', 20, { t: TS, id: uuid(2) }, { t: TS, id: uuid(1) }),
+      keyFor('id', ROOT, 20, { t: TS, id: uuid(1) }, { t: TS, id: uuid(2) }),
+      keyFor('id', ROOT, 20, { t: TS, id: uuid(2) }, { t: TS, id: uuid(1) }),
     ].sort());
   });
 
-  it('collapses every unusable cursor onto the page-one key', async () => {
-    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
-    await request(app).get('/fc/api/claims/c-root?supportsCursor=%%%not-base64%%%');
-    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
-    await request(app).get(`/fc/api/claims/c-root?supportsCursor=${cursorFor('nope', 'nope')}`);
-    // Both serve page one, so both belong on page one's key rather than minting garbage entries.
-    expect([...store.keys()]).toEqual([keyFor('c-root')]);
+  it('keeps a smuggled field out of the key', async () => {
+    // decodeCursor hands back whatever JSON it found. parseColumnCursor rebuilds {t, id}, so an
+    // extra field cannot reach JSON.stringify and fragment one page's cache across many entries.
+    const padded = Buffer.from(JSON.stringify({ t: TS, id: uuid(1), junk: 'x'.repeat(50) }))
+      .toString('base64url');
+    mockNode({ claim: row(), supports: [child(uuid(9), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${padded}`);
+    expect([...store.keys()]).toEqual([keyFor('id', ROOT, 20, { t: TS, id: uuid(1) })]);
   });
 
   it('keys the cache on the page size the reader asked for', async () => {
-    mockNode({ claim: row(), supports: [child('c-s1', 'supports')] });
-    await request(app).get('/fc/api/claims/c-root?limit=5');
-    mockNode({ claim: row(), supports: [child('c-s1', 'supports')] });
-    await request(app).get('/fc/api/claims/c-root');
-    expect([...store.keys()].sort()).toEqual([keyFor('c-root', 20), keyFor('c-root', 5)].sort());
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT}?limit=5`);
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect([...store.keys()].sort()).toEqual(
+      [keyFor('id', ROOT, 20), keyFor('id', ROOT, 5)].sort()
+    );
   });
 
   it('never reads or writes the shared cache for a request that carries credentials', async () => {
-    mockNode({ claim: row(), supports: [child('c-s1', 'supports')] });
-    const res = await request(app).get('/fc/api/claims/c-root').set('Authorization', 'Bearer user');
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`).set('Authorization', 'Bearer user');
     expect(res.status).toBe(200);
     expect(res.headers['cache-control']).toBe('private, no-store');
     expect(store.size).toBe(0);
@@ -467,18 +618,31 @@ describe('caching', () => {
 
   it('declares that the response varies on Authorization', async () => {
     mockNode({ claim: row() });
-    expect((await request(app).get('/fc/api/claims/c-root')).headers.vary).toBe('Authorization');
+    expect((await request(app).get(`/fc/api/claims/${ROOT}`)).headers.vary).toBe('Authorization');
     mockNode({ claim: row() });
-    const auth = await request(app).get('/fc/api/claims/c-root').set('Authorization', 'Bearer user');
+    const auth = await request(app).get(`/fc/api/claims/${ROOT}`).set('Authorization', 'Bearer user');
     expect(auth.headers.vary).toBe('Authorization');
     // Errors too — they are served from the same branch and must not be filed under one key.
     mockNode({ claim: null });
-    expect((await request(app).get('/fc/api/claims/c-missing')).headers.vary).toBe('Authorization');
+    expect((await request(app).get(`/fc/api/claims/${MISSING}`)).headers.vary).toBe('Authorization');
   });
 
-  it('does not cache an error', async () => {
+  it('tells a shared cache not to keep an error', async () => {
+    // A 404 is a fact about this instant. Left without a header, a CDN may heuristically hold a
+    // transient one for minutes and keep serving it after the claim appears.
     mockNode({ claim: null });
-    expect((await request(app).get('/fc/api/claims/c-missing')).status).toBe(404);
+    const missing = await request(app).get(`/fc/api/claims/${MISSING}`);
+    expect(missing.status).toBe(404);
+    expect(missing.headers['cache-control']).toBe('no-store');
+    expect(store.size).toBe(0);
+
+    query.mockReset();
+    query.mockResolvedValueOnce(rows([row()]));
+    query.mockRejectedValueOnce(new Error('connection terminated'));
+    query.mockResolvedValueOnce(rows([]));
+    const failed = await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect(failed.status).toBe(500);
+    expect(failed.headers['cache-control']).toBe('no-store');
     expect(store.size).toBe(0);
   });
 });
@@ -502,16 +666,27 @@ describe('isShareable — the one guard between Task 5 and a leaked rating', () 
     await cacheNodeIfShareable('fc:claim:test:anonymous', nodeBody(null));
     expect([...store.keys()]).toEqual(['fc:claim:test:anonymous']);
   });
+
+  it('is the door serveNode actually uses', async () => {
+    // Not merely that the guard works: that the route goes through it. Deleting the call from
+    // serveNode leaves nothing in the store on an anonymous read.
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect(res.status).toBe(200);
+    expect(store.size).toBe(1);
+    expect([...store.values()][0]).toEqual(res.body);
+  });
 });
 
 describe('GET /communities/:id/claims/shape', () => {
-  /** A shape row as the DB hands it back. The route selects these four columns and no others. */
+  /** A shape row as the DB hands it back. The route selects these five columns and no others. */
   const shapeRow = (
     id: string,
     parentId: string | null,
     side: 'supports' | 'opposes' | null,
-    depth: number
-  ) => ({ id, parent_claim_id: parentId, side, depth });
+    depth: number,
+    moderationStatus = 'visible'
+  ) => ({ id, parent_claim_id: parentId, side, depth, moderation_status: moderationStatus });
 
   /** A whole tree's worth of rows, already in the route's order (depth, then id). */
   const tree = () => [
@@ -537,10 +712,10 @@ describe('GET /communities/:id/claims/shape', () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       data: [
-        { id: 'c-root', parentId: null, side: null, depth: 0, impact: null },
-        { id: 'c-o1', parentId: 'c-root', side: 'opposes', depth: 1, impact: null },
-        { id: 'c-s1', parentId: 'c-root', side: 'supports', depth: 1, impact: null },
-        { id: 'c-s1a', parentId: 'c-s1', side: 'supports', depth: 2, impact: null },
+        { id: 'c-root', parentId: null, side: null, depth: 0, impact: null, isHidden: false },
+        { id: 'c-o1', parentId: 'c-root', side: 'opposes', depth: 1, impact: null, isHidden: false },
+        { id: 'c-s1', parentId: 'c-root', side: 'supports', depth: 1, impact: null, isHidden: false },
+        { id: 'c-s1a', parentId: 'c-s1', side: 'supports', depth: 2, impact: null, isHidden: false },
       ],
       meta: { truncated: false },
     });
@@ -576,9 +751,10 @@ describe('GET /communities/:id/claims/shape', () => {
     expect(shapeSql()).toHaveLength(1);
     expect(shapeSql()[0]).not.toContain('c.body');
 
-    // Nothing else internal travels under any name: a ShapeNode is exactly five fields.
+    // Nothing else internal travels under any name: a ShapeNode is exactly six fields, and the
+    // moderation one is the derived boolean, never the raw column.
     expect([...new Set(keysIn(res.body.data[0]))].sort()).toEqual([
-      'depth', 'id', 'impact', 'parentId', 'side',
+      'depth', 'id', 'impact', 'isHidden', 'parentId', 'side',
     ]);
     const text = JSON.stringify(res.body);
     for (const forbidden of ['author_id', 'author_display_name', 'community_id', COMMUNITY,
@@ -635,10 +811,34 @@ describe('GET /communities/:id/claims/shape', () => {
     ]);
     // The subtree under a hidden claim keeps its parent, so the map stays connected.
     expect(res.body.data[2].parentId).toBe('c-hidden');
-    // No moderation filter in the SQL at all — that is what keeps the map and the columns agreeing.
-    expect(shapeSql()[0]).not.toContain('moderation_status');
-    // And nothing in the payload says which one is hidden: a ShapeNode is where a claim sits, only.
-    expect(keysIn(res.body)).not.toContain('isHidden');
+    // No moderation FILTER in the SQL — that is what keeps the map and the columns agreeing.
+    expect(shapeSql()[0]).not.toContain("moderation_status = ");
+    expect(shapeSql()[0]).not.toContain('WHERE c.moderation_status');
+  });
+
+  it('marks a hidden claim rather than drawing it as a live one', async () => {
+    // Including a hidden claim is only half of agreeing with the columns, which tombstone it. A
+    // minimap exists to show the pro/con balance at each depth, and counting a withdrawn claim as
+    // a live one misstates exactly that. isHidden leaks nothing: it is already on every ClaimNode
+    // the same reader can fetch, and the payload still carries no text.
+    query.mockResolvedValueOnce(
+      rows([
+        shapeRow('c-root', null, null, 0),
+        shapeRow('c-hidden', 'c-root', 'opposes', 1, 'hidden'),
+        shapeRow('c-under', 'c-hidden', 'supports', 2),
+      ])
+    );
+
+    const res = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    expect(res.body.data.map((n: { isHidden: boolean }) => n.isHidden)).toEqual([
+      false, true, false,
+    ]);
+    // Derived exactly as toClaim derives it, and from a column that is read but never served.
+    expect(shapeSql()[0]).toContain('c.moderation_status');
+    const keys = keysIn(res.body);
+    expect(keys).not.toContain('moderation_status');
+    expect(keys).not.toContain('body');
   });
 
   it('404s a community with no claims, and an id that is not a uuid', async () => {
@@ -701,15 +901,15 @@ describe('GET /communities/:id/claims/shape', () => {
     // /communities/:id/claims/root and /communities/:id/claims/shape differ by a literal segment,
     // and `fc:claim:root:x` is not `fc:claims:shape:x` — neither route can serve the other's body.
     mockNode({ claim: row() });
-    const root = await request(app).get('/fc/api/communities/comm-1/claims/root');
-    expect(root.body.data.claim.id).toBe('c-root');
+    const root = await request(app).get(`/fc/api/communities/${COMMUNITY}/claims/root`);
+    expect(root.body.data.claim.id).toBe(ROOT);
 
     query.mockResolvedValueOnce(rows(tree()));
     const shape = await request(app).get('/fc/api/communities/comm-1/claims/shape');
     expect(shape.body.data).toHaveLength(4);
     expect([...store.keys()].sort()).toEqual(
       [
-        'fc:claim:root:comm-1:{"limit":20,"supports":null,"opposes":null}',
+        `fc:claim:root:${COMMUNITY}:{"limit":20,"supports":null,"opposes":null}`,
         'fc:claims:shape:comm-1',
       ].sort()
     );
