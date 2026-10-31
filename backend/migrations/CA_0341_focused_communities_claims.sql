@@ -57,7 +57,7 @@ BEGIN;
 -- failing loudly is the only honest option. This applies to a psql session too:
 -- set fc.actor_id first, or the UPDATE is refused.
 --
--- COUNTS SURVIVE CONCURRENCY AND MOVES
+-- COUNTS SURVIVE CONCURRENCY, MOVES AND DELETES
 -- child_supports_count / child_opposes_count are bumped with count = count ± 1
 -- inside the trigger's UPDATE — never read in one statement and written in
 -- another — so two sessions inserting a child of the same parent serialize on the
@@ -66,6 +66,10 @@ BEGIN;
 -- NEW parent's NEW side increments, so counts self-correct instead of drifting
 -- upward forever. Hiding a claim touches moderation_status only and is deliberately
 -- NOT counted — a hidden claim is still a child, and the read API filters.
+-- There is a DELETE branch too, even though nothing in the application may delete a
+-- claim. postgres owns these tables and is exempt from every grant below, so the only
+-- actor who can delete is the only actor the counts would silently break for. See the
+-- comment above trg_claims_bump_child_counts_delete.
 --
 -- NOTHING IS EVER DELETED
 -- No DELETE grant on any of the three tables, to any role — memory over moderation,
@@ -214,18 +218,26 @@ SECURITY DEFINER
 SET search_path TO 'connect', 'pg_temp'
 AS $fn$
 BEGIN
-  IF TG_OP = 'UPDATE' AND OLD.parent_claim_id IS NOT NULL THEN
-    UPDATE connect.claims
-       SET child_supports_count = child_supports_count - (COALESCE(OLD.side, '') = 'supports')::int,
-           child_opposes_count  = child_opposes_count  - (COALESCE(OLD.side, '') = 'opposes')::int
-     WHERE id = OLD.parent_claim_id;
+  -- OLD exists for UPDATE and DELETE; NEW exists for INSERT and UPDATE. Referencing the
+  -- wrong one raises "record is not assigned yet" at runtime, and SQL gives no guarantee
+  -- that AND short-circuits left to right — so the TG_OP guards are NESTED, never ANDed
+  -- with the field test.
+  IF TG_OP = 'UPDATE' OR TG_OP = 'DELETE' THEN
+    IF OLD.parent_claim_id IS NOT NULL THEN
+      UPDATE connect.claims
+         SET child_supports_count = child_supports_count - (COALESCE(OLD.side, '') = 'supports')::int,
+             child_opposes_count  = child_opposes_count  - (COALESCE(OLD.side, '') = 'opposes')::int
+       WHERE id = OLD.parent_claim_id;
+    END IF;
   END IF;
 
-  IF NEW.parent_claim_id IS NOT NULL THEN
-    UPDATE connect.claims
-       SET child_supports_count = child_supports_count + (COALESCE(NEW.side, '') = 'supports')::int,
-           child_opposes_count  = child_opposes_count  + (COALESCE(NEW.side, '') = 'opposes')::int
-     WHERE id = NEW.parent_claim_id;
+  IF TG_OP = 'INSERT' OR TG_OP = 'UPDATE' THEN
+    IF NEW.parent_claim_id IS NOT NULL THEN
+      UPDATE connect.claims
+         SET child_supports_count = child_supports_count + (COALESCE(NEW.side, '') = 'supports')::int,
+             child_opposes_count  = child_opposes_count  + (COALESCE(NEW.side, '') = 'opposes')::int
+       WHERE id = NEW.parent_claim_id;
+    END IF;
   END IF;
 
   RETURN NULL;  -- AFTER trigger: the return value is ignored.
@@ -250,6 +262,21 @@ AFTER UPDATE OF parent_claim_id, side ON connect.claims
 FOR EACH ROW
 WHEN (OLD.parent_claim_id IS DISTINCT FROM NEW.parent_claim_id
       OR OLD.side IS DISTINCT FROM NEW.side)
+EXECUTE FUNCTION connect.bump_claim_child_counts();
+
+-- 🔴 A DELETE branch on a table nothing is allowed to delete from is not dead code.
+-- Section 8 takes DELETE away from every role a grant can reach, but postgres OWNS these
+-- tables and is a superuser, so the one actor who CAN delete a claim is exactly the actor
+-- the counts would silently break for — and a stale count is invisible, because it reads
+-- as a legitimate number. Proven the hard way during review: probe rows were cleaned up
+-- with DELETE as postgres and a root was left claiming a supporting child it no longer
+-- had. The gate in section 9 now inserts a child, deletes it, and asserts the count
+-- returns to zero, so this branch is checked rather than assumed.
+DROP TRIGGER IF EXISTS trg_claims_bump_child_counts_delete ON connect.claims;
+CREATE TRIGGER trg_claims_bump_child_counts_delete
+AFTER DELETE ON connect.claims
+FOR EACH ROW
+WHEN (OLD.parent_claim_id IS NOT NULL)
 EXECUTE FUNCTION connect.bump_claim_child_counts();
 
 -- 6. Edit history, recording the real actor (see header).
@@ -368,11 +395,20 @@ WHERE NOT EXISTS (
 GRANT SELECT, INSERT, UPDATE ON connect.claims, connect.claim_ratings TO focused_communities_app;
 GRANT SELECT ON connect.claim_edits TO focused_communities_app;
 
--- claim_edits is written by a SECURITY DEFINER trigger and by nothing else. The connect
--- schema's ALTER DEFAULT PRIVILEGES (20260415214600) hands `authenticated` INSERT and
--- UPDATE on every new table in the schema; RLS already refuses them for want of a
--- policy, but an audit table should not carry the grant at all.
+-- claim_edits is written by a SECURITY DEFINER trigger and by nothing else — and that
+-- sentence has to be true of every role, not just the convenient ones. The connect
+-- schema's ALTER DEFAULT PRIVILEGES (20260415214600) hands INSERT/UPDATE on every new
+-- table in the schema to `authenticated` (arw), `service_role` (arwdDxtm) and `ev_api`
+-- (arwd). RLS refuses `authenticated` and `anon` for want of a policy, but service_role
+-- bypasses RLS entirely, so for it the grant is the only thing standing in the way.
+-- The audit trail is what makes a maven's move, merge and hide accountable; a role that
+-- can append to it directly can launder one.
+-- This cannot break the trigger: log_claim_edit is SECURITY DEFINER owned by postgres,
+-- which owns the table, so it writes regardless of the caller's grants.
 REVOKE INSERT, UPDATE ON connect.claim_edits FROM authenticated;
+REVOKE INSERT, UPDATE ON connect.claim_edits FROM service_role;
+REVOKE INSERT, UPDATE ON connect.claim_edits FROM ev_api;
+REVOKE INSERT, UPDATE ON connect.claim_edits FROM anon;
 
 -- 🔴 THIS IS WHERE THE ARGUMENT TREE DIFFERS FROM threads AND posts.
 -- That same ALTER DEFAULT PRIVILEGES also hands service_role (arwdDxtm) and ev_api
@@ -426,6 +462,9 @@ DECLARE
   v_probe_total       INT;
   v_probe_ok          BOOLEAN := false;
   v_probe_detail      TEXT;
+  v_probe_root        UUID;
+  v_probe_child       UUID;
+  v_probe_count       INT;
 BEGIN
   -- a. RLS is on for all three.
   FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings', 'claim_edits'] LOOP
@@ -443,19 +482,25 @@ BEGIN
   IF NOT has_table_privilege('focused_communities_app', 'connect.claim_edits', 'SELECT') THEN
     RAISE EXCEPTION 'CA_0341: missing SELECT on connect.claim_edits';
   END IF;
-  IF has_table_privilege('focused_communities_app', 'connect.claim_edits', 'INSERT')
-     OR has_table_privilege('focused_communities_app', 'connect.claim_edits', 'UPDATE') THEN
-    RAISE EXCEPTION 'CA_0341: focused_communities_app must not write connect.claim_edits directly — the trigger owns it';
-  END IF;
 
-  -- c. Nothing is ever deleted, asserted from the other side, for every role that a
-  --    grant can constrain. postgres owns the tables and is exempt by definition.
+  -- c. Two invariants, asserted from the other side for every role a grant can
+  --    constrain. postgres owns the tables and is exempt by definition — it is the
+  --    friction-free actor the DELETE branch of the count trigger exists for.
+  --      * nothing in the argument tree is ever deleted;
+  --      * claim_edits is written by the SECURITY DEFINER trigger and by nothing else,
+  --        so no role may INSERT or UPDATE it directly. A role that can append to the
+  --        audit trail can launder a move, a merge or a hide.
   FOREACH v_role IN ARRAY ARRAY['focused_communities_app', 'anon', 'authenticated', 'service_role', 'ev_api'] LOOP
     FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings', 'claim_edits'] LOOP
       IF has_table_privilege(v_role, 'connect.' || v_tbl, 'DELETE') THEN
         RAISE EXCEPTION 'CA_0341: % can DELETE connect.% — nothing in the argument tree is ever deleted', v_role, v_tbl;
       END IF;
     END LOOP;
+
+    IF has_table_privilege(v_role, 'connect.claim_edits', 'INSERT')
+       OR has_table_privilege(v_role, 'connect.claim_edits', 'UPDATE') THEN
+      RAISE EXCEPTION 'CA_0341: % can write connect.claim_edits directly — only the log_claim_edit trigger may, or the audit trail proves nothing', v_role;
+    END IF;
   END LOOP;
 
   -- d. One root per community, and no more.
@@ -483,7 +528,8 @@ BEGIN
       WHERE n.nspname = 'connect' AND c.relname = 'claims' AND NOT t.tgisinternal
         AND t.tgname IN ('trg_claims_bump_child_counts_insert',
                          'trg_claims_bump_child_counts_move',
-                         'trg_log_claim_edit')) <> 3 THEN
+                         'trg_claims_bump_child_counts_delete',
+                         'trg_log_claim_edit')) <> 4 THEN
     RAISE EXCEPTION 'CA_0341: the child-count and edit-log triggers are not all attached to connect.claims';
   END IF;
 
@@ -541,6 +587,35 @@ BEGIN
                                v_probe_total, v_probe_well_shaped);
     END IF;
 
+    -- The count trigger, up and back down again. The insert branch is exercised in
+    -- production on every reply, so it is the DELETE branch this is really here for:
+    -- postgres can delete a claim, and before the branch existed it left the parent
+    -- claiming a child it no longer had — a wrong number that reads as a right one.
+    IF v_probe_ok THEN
+      SELECT id INTO v_probe_root FROM connect.claims WHERE community_id = v_probe_id;
+
+      INSERT INTO connect.claims (community_id, parent_claim_id, side, body, path, depth)
+      SELECT community_id, id, 'supports', 'CA_0341 count probe child', path || id, depth + 1
+      FROM connect.claims WHERE id = v_probe_root
+      RETURNING id INTO v_probe_child;
+
+      SELECT child_supports_count INTO v_probe_count FROM connect.claims WHERE id = v_probe_root;
+      IF v_probe_count <> 1 THEN
+        v_probe_ok := false;
+        v_probe_detail := format('inserting one supporting child left the parent at child_supports_count = %s, expected 1', v_probe_count);
+      END IF;
+
+      IF v_probe_ok THEN
+        DELETE FROM connect.claims WHERE id = v_probe_child;
+
+        SELECT child_supports_count INTO v_probe_count FROM connect.claims WHERE id = v_probe_root;
+        IF v_probe_count <> 0 THEN
+          v_probe_ok := false;
+          v_probe_detail := format('deleting that child left the parent at child_supports_count = %s, expected 0 — the AFTER DELETE branch did not fire', v_probe_count);
+        END IF;
+      END IF;
+    END IF;
+
     -- Deliberate abort: this is how the probe cleans up after itself.
     RAISE EXCEPTION 'CA_0341 probe rollback' USING ERRCODE = 'CA341';
   EXCEPTION
@@ -558,7 +633,7 @@ BEGIN
     RAISE EXCEPTION 'CA_0341: the trigger probe left rows behind — the subtransaction did not unwind';
   END IF;
 
-  RAISE NOTICE 'CA_0341 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no DELETE anywhere), % root claims backfilled, snapshot/count/edit triggers attached, and connect.communities now seeds a root claim for every new community (verified by probe, rolled back).', v_roots;
+  RAISE NOTICE 'CA_0341 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no role but the owner can DELETE any of the three or write claim_edits), % root claims backfilled, snapshot/count/edit triggers attached, and connect.communities now seeds a root claim for every new community. Probe verified the root trigger and the count trigger up and back down through a DELETE, then rolled itself back.', v_roots;
 END $$;
 
 COMMIT;
