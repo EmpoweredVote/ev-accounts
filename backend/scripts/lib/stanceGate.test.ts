@@ -345,6 +345,19 @@ describe('instrument-not-cited: Michigan spellings (2026-10-30)', () => {
     expect(ids({ ...good, reasoning: 'Voted Yea on SB 303 (2021).' }, { evidence: snip('Senate Bill 3030 of 2021 -') })).toContain('instrument-not-cited'));
 });
 
+describe('instrument-not-cited: Georgia Senate Resolutions (2026-10-31)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} Georgia General Assembly bill documents sponsors history status` }];
+  it('reads "SR 838" as an instrument and matches LegiScan "SR838" or the heading "Senate Resolution 838"', () => {
+    const row = { ...good, reasoning: 'Co-sponsor of GA SR 838 (2026) as filed.' };
+    expect(ids(row, { evidence: snip('LegiScan GA 2025-2026 Regular Session SR838: Jane Doe is listed as a primary sponsor.') })).not.toContain('record-no-instrument');
+    expect(ids(row, { evidence: snip('LegiScan GA 2025-2026 Regular Session SR838: Jane Doe is listed as a primary sponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('Senate Resolution 838 -') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('Senate Resolution 8380 -') })).toContain('instrument-not-cited');
+  });
+  it('does not read a name suffix ("Sr.") as a resolution', () =>
+    expect(ids({ ...good, reasoning: 'John Doe Sr. voted Yea on HB 1001 (2025).' }, { evidence: [{ ...ev[0], snippet: `${'HB 1001'} roll call Yea John Doe` }] })).not.toContain('instrument-not-cited'));
+});
+
 describe('quote-not-in-snippet (C69)', () => {
   it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };

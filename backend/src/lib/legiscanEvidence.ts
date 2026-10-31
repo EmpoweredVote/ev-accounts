@@ -196,10 +196,18 @@ const fold = (s: string): string => normalizeText(s).replace(/[-.,]/g, ' ').repl
 const joinInitials = (s: string): string =>
   s.replace(/\b[A-Za-z]\.(?:\s*[A-Za-z]\.)+/g, (m) => m.replace(/[.\s]/g, ''));
 
+/**
+ * Surnames LegiScan is known to misspell, each checked by hand against the official record: our spelling →
+ * LegiScan's. Exact entries only (never a fuzzy match): the first name must still fit as usual.
+ * - GA, 2026-10-31: Timothy Bearden is printed "Timothy Beardon" (SB 86 of 2009 House roll call).
+ */
+const LEGISCAN_SURNAME_MISSPELLINGS: Readonly<Record<string, readonly string[]>> = { bearden: ['beardon'] };
+
 /** Does LegiScan's person fit the politician's own name? */
 function personFits(p: Json, fullName: string, lastName: string): boolean {
   const last = fold(lastName);
-  const recLast = fold(p.last_name ?? '');
+  let recLast = fold(p.last_name ?? '');
+  if (LEGISCAN_SURNAME_MISSPELLINGS[last]?.includes(recLast)) recLast = last;
   // A two-word last_name the record prints as one ("Capps Balkcom", printed "Jennifer Balkcom") fits
   // the printed surname, and only when that word is one of the two.
   const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';

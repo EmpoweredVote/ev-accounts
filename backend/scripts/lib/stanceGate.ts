@@ -157,6 +157,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // Resolution B" (the official heading); canonicalizeInstrumentId folds all three to "hjrb" (2026-10-30).
   /\b[HS]JR\s?[A-Z]{1,2}\b/,
   /\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b/,
+  // Georgia Senate Resolutions (2026-10-31): "SR 838" (reasoning), "SR838" (LegiScan), "Senate Resolution 838"
+  // (official heading); canonicalizeInstrumentId folds all three to "sr838". Case-sensitive: "Sr." never matches.
+  /\bSR\s?\d+\b/,
+  /\bSenate Resolution \d{1,4}\b/,
   /\bChapter\s?\d+\b/,
   /\bResolution No\.?\s?\d+\b/,
   /\bOrdinance No\.?\s?\d+\b/,
@@ -199,7 +203,7 @@ function extractInstrumentIdentifiers(text: string): string[] {
 // Spelled-out chamber forms fold to the short form, so the official heading "Senate Bill 303" and
 // "House Joint Resolution B" match a reasoning's "SB 303" and "HJR B" (Michigan, 2026-10-30).
 const SPELLED_OUT: [RegExp, string][] = [
-  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
+  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^senateresolution/, 'sr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
 ];
 
 /**
