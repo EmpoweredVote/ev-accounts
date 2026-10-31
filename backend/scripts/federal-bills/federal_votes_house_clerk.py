@@ -11,7 +11,8 @@ Needs DATABASE_URL. Downloads are cached in <out_dir>/xml/<year>/, so a rerun re
 Only members who match a politician row (by bioguide id) are loaded; no people are
 created. The bill link comes from <legis-num> matched to legislative_bills.external_id
 (<congress>-<TYPE>-<n>); procedural votes keep a null bill_id. Party is never stored.
-Refuses to run if votes already exist for the 108th-114th federal sessions.
+Loads votes ONLY for members who have no House Clerk votes yet, so a rerun after more
+politicians get a bioguide id adds just the new members. Never deletes.
 """
 import collections, datetime, glob, os, re, subprocess, sys, time
 import xml.etree.ElementTree as ET
@@ -72,16 +73,18 @@ def fetch_year(args):
 SQL = r"""\set ON_ERROR_STOP on
 BEGIN;
 set local statement_timeout = '15min';
-do $$ begin
-  if exists (select 1 from essentials.legislative_votes v
-             join essentials.legislative_sessions s on s.id = v.session_id
-             where s.jurisdiction = 'federal' and s.external_id::int between 108 and 114) then
-    raise exception 'votes already exist for the 108th-114th; refusing to insert again';
-  end if;
-end $$;
 create temp table stg_votes (external_vote_id text, politician_id uuid, bill_key text, congress int,
   vote_question text, position text, vote_date date, result text, yea_count int, nay_count int) on commit drop;
 \copy stg_votes from '{out}/stg_votes.tsv'
+-- safety: refuse if any staged member already has House Clerk votes (no double loading)
+create temp table stg_pol on commit drop as select distinct politician_id from stg_votes;
+analyze stg_pol;
+do $$ begin
+  if exists (select 1 from stg_pol p join essentials.legislative_votes v on v.politician_id = p.politician_id
+             where v.source = 'house-clerk') then
+    raise exception 'a staged member already has House Clerk votes; refusing to insert again';
+  end if;
+end $$;
 insert into essentials.legislative_votes
   (politician_id, bill_id, session_id, external_vote_id, vote_question, position, vote_date, result, yea_count, nay_count, source)
 select s.politician_id, b.id, se.id, s.external_vote_id, s.vote_question, s.position, s.vote_date, s.result,
@@ -116,6 +119,9 @@ def main():
         bg[g].add(pid)
     for pid, g in psql("select politician_id, id_value from essentials.legislative_politician_id_map where id_type='bioguide'"):
         bg[g].add(pid)
+    have = {r[0] for r in psql("select distinct politician_id from essentials.legislative_votes where source='house-clerk'")}
+    bg = {g: p for g, p in bg.items() if not (len(p) == 1 and next(iter(p)) in have)}
+    print(f'members already loaded (skipped): {len(have)}')
     n = rc = nobill = 0
     unknown = collections.Counter()
     seen = set()
