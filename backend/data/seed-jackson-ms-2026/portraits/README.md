@@ -1,7 +1,8 @@
-# Jackson portraits — prepared, awaiting approval
+# Jackson portraits — applied
 
-**Status 2026-10-31: eight portraits prepared and presented on a contact sheet. NOTHING IS
-UPLOADED AND NOTHING IS BOUND.** All eight Jackson officeholders still render blank in production.
+✅ **APPROVED BY THE OPERATOR AND BOUND 2026-10-31 (`CC_0324`).** All eight objects are uploaded,
+byte-verified, and **all eight render a real JPEG from the live API** — read from
+`api.empowered.vote`, not inferred from the database rows.
 
 Contact sheet: <https://claude.ai/artifact/K7Ld2V74URvqZNZSzEUd7Z> (private to the operator).
 
@@ -38,7 +39,7 @@ Normalising every face to 0.40 of the crop width pushed **five of eight into ups
 ×1.31) to buy a consistency the city's own set already had — its seven portraits already sit at
 face/width 0.36–0.45 as published. The largest crop each source allows is taken instead.
 
-## When approval arrives
+## How it was applied
 
 1. Re-run `scripts/jackson-process-portraits.py` (sources are public URLs; `jx-manifest.json` has
    every one, so the set is reproducible without the scratchpad).
