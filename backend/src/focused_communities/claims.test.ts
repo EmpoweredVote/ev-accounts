@@ -896,10 +896,9 @@ describe('GET /communities/:id/claims/shape', () => {
     expect(keys).not.toContain('body');
   });
 
-  it('marks a merged claim, which is a duplicate of a node already in the payload', async () => {
-    // merged_into_claim_id references connect.claims and claims_no_self_merge keeps it pointing
-    // elsewhere, so a merged-away claim is the SAME argument as a node drawn beside it. Without
-    // the flag the map inflates that side by exactly the number of merges: one argument, two dots.
+  it('marks a merged claim, which is a duplicate of another claim', async () => {
+    // A merged-away claim is the same argument as the one it was folded into. Without the flag
+    // the map inflates that side by exactly the number of merges: one argument, two dots.
     query.mockResolvedValueOnce(
       rows([
         shapeRow('c-root', null, null, 0),
@@ -913,12 +912,44 @@ describe('GET /communities/:id/claims/shape', () => {
     expect(res.body.data.map((n: { mergedInto: string | null }) => n.mergedInto)).toEqual([
       null, null, 'c-keep',
     ]);
-    // The target is in the payload, so a client can fold the duplicate onto the node it names.
+    // Here the target happens to be in the payload, so a client can fold the duplicate onto it.
+    // That is a property of THIS tree, not a guarantee — see the next test.
     expect(res.body.data.map((n: { id: string }) => n.id)).toContain('c-keep');
     // An id, under ClaimNode's name for it. No wording, and not the raw column.
     expect(shapeSql()[0]).toContain('c.merged_into_claim_id');
     expect(keysIn(res.body)).not.toContain('merged_into_claim_id');
     expect(keysIn(res.body)).not.toContain('body');
+  });
+
+  it('serves a merge target that is not in the payload, rather than hiding the edge', async () => {
+    // The schema guarantees only that the target is a real claim and is not this one
+    // (claims_merged_into_claim_id_fkey, claims_no_self_merge). Nothing pins it to the same
+    // community and nothing makes it shallower, so it can sit below the cut, in the partial
+    // boundary level, or outside this tree entirely. The route reports the edge it was given: a
+    // client that cannot find the id draws an ordinary node, because a visible duplicate beats a
+    // node that vanishes into nothing, and must not read the absence as bad data.
+    query.mockResolvedValueOnce(
+      rows([
+        shapeRow('c-root', null, null, 0),
+        shapeRow('c-dupe', 'c-root', 'supports', 1, { merged_into_claim_id: 'c-elsewhere' }),
+        // A chain: the target of this one is itself merged. One hop is not enough to fold.
+        shapeRow('c-a', 'c-root', 'supports', 1, { merged_into_claim_id: 'c-b' }),
+        shapeRow('c-b', 'c-root', 'supports', 1, { merged_into_claim_id: 'c-elsewhere' }),
+      ])
+    );
+
+    const res = await request(app).get(shapeUrl());
+
+    const ids = res.body.data.map((n: { id: string }) => n.id);
+    expect(ids).not.toContain('c-elsewhere');
+    // The node is still served, in place, with the edge intact — not dropped, not nulled out.
+    expect(res.body.data[1]).toEqual({
+      id: 'c-dupe', parentId: 'c-root', side: 'supports', depth: 1,
+      impact: null, isHidden: false, mergedInto: 'c-elsewhere',
+    });
+    // And a chain survives as a chain: following one hop from c-a lands on another merged node.
+    expect(res.body.data[2].mergedInto).toBe('c-b');
+    expect(res.body.data[3].mergedInto).toBe('c-elsewhere');
   });
 
   it('404s a community with no claims', async () => {

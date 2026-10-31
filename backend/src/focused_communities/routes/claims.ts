@@ -620,9 +620,10 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
 //      misstates exactly that. So `isHidden` rides along — it leaks nothing, being already on
 //      every ClaimNode the same reader can fetch, and the payload still carries no text.
 //   3. MERGED CLAIMS ARE INCLUDED, AND MARKED. Same principle, sharper consequence. A merged-away
-//      claim is a DUPLICATE of a node already in this payload, so drawing both as live nodes
-//      inflates that side by exactly the number of merges: the map draws one argument as two.
-//      `mergedInto` is an id, not wording, and ClaimNode already carries it for the same reader.
+//      claim is a DUPLICATE of another claim — often one drawn beside it — so drawing both as
+//      live nodes inflates that side by exactly the number of merges: the map draws one argument
+//      as two. `mergedInto` is an id, not wording, and ClaimNode already carries it for the same
+//      reader. What it is NOT is a promise that the target is in this payload: see ShapeNode.
 //   4. BOUNDED, AND HONEST ABOUT WHERE IT STOPS. A community page loads this on every view, so the
 //      payload has a hard cap — and says not just THAT it was cut but how deep it is still whole
 //      (see ShapeMeta.completeThroughDepth).
@@ -652,11 +653,23 @@ export interface ShapeNode {
   /** Mapped exactly as toClaim does it, so the map and the columns agree about one claim. */
   isHidden: boolean;
   /**
-   * The claim this one was merged into, when it was — an id already present in this payload
-   * (`merged_into_claim_id` references connect.claims, and claims_no_self_merge guarantees it
-   * points elsewhere). A minimap that draws a merged claim as a live one draws one argument as
-   * two and inflates that side's apparent weight by exactly the number of merges. The id leaks no
-   * wording, and ClaimNode carries the same field for the same reader.
+   * The claim this one was merged into, when it was: a duplicate argument folded onto another.
+   * Drawing a merged claim as a live one inflates that side by exactly the number of merges — the
+   * map draws one argument as two — which is why the flag is here. It is an id, never wording,
+   * and ClaimNode carries the same field for the same reader.
+   *
+   * What the schema guarantees about the target is only this: claims_merged_into_claim_id_fkey
+   * makes it a real row of connect.claims, and claims_no_self_merge keeps it from being this
+   * claim. In particular it is NOT guaranteed to appear in `data`. Nothing pins the target to the
+   * same community, and nothing makes it shallower than the claim that names it, so a target can
+   * sit below the truncation cut or in the partial boundary level.
+   *
+   * So the contract is: look the id up in `data`; if it is there, fold this node onto it. If it
+   * is NOT there, draw this node as an ordinary node — a visible duplicate is better than a node
+   * that vanishes into nothing — and do not read the absence as bad data. And do not assume one
+   * hop: A merged into B and B merged into C is allowed, so a client that folds must follow the
+   * chain and bound the walk, since nothing in the schema forbids a cycle either. This endpoint
+   * resolves none of that; it reports the edge it was given.
    */
   mergedInto: string | null;
 }
@@ -684,6 +697,10 @@ export interface ShapeMeta {
    * preceded by all nodes at depth < d: derive_claim_position sets depth := parent.depth + 1, and
    * claims_root_or_child_shape pins cardinality(path) = depth. So the first row past the cap names
    * the first level that is incomplete, and everything above it is whole.
+   *
+   * `0` is a legitimate value, and it means only the root is whole. It is NOT "nothing was cut",
+   * so `if (meta.completeThroughDepth)` is a bug: null is the one encoding of "the question does
+   * not apply", and the two fields are read together or not at all.
    */
   completeThroughDepth: number | null;
 }
@@ -793,6 +810,12 @@ claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Resp
 
   // The first row that did not fit is what tells the reader where the map stops being whole: its
   // own depth is the one cut part-way through, so every level above it is complete.
+  //
+  // `- 1` cannot go negative, and is deliberately not clamped. claims_one_root_per_community
+  // (UNIQUE, partial, on community_id WHERE parent_claim_id IS NULL) allows exactly one depth-0
+  // row per community, so with a cap in the thousands the first row past it is always at depth
+  // >= 1. A defensive Math.max(0, …) here would buy nothing today and would quietly swallow the
+  // real bug — a second root — on the day that constraint changes.
   const firstCut = rows[SHAPE_NODE_LIMIT];
   const body: { data: ShapeNode[]; meta: ShapeMeta } = {
     data: rows.slice(0, SHAPE_NODE_LIMIT).map(toShapeNode),
