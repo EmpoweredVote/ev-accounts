@@ -314,11 +314,20 @@ Steps:
 Every LegiScan call counts against the monthly cap (`LEGISCAN_API_KEY`). The lines print no party.
 
 **8. Bill text.** When the reasoning quotes a bill's words and the cited page cannot be read, the gate cannot find
-the quote. Cite the bill text itself: the enrolled act from the official site, or the source store's saved copy
-(`backend/data/source-store/instruments/<juris>/<id>.json`, `provenance.saved_copy` and `urls`). Check its sha256
-against the store's copy, and add the sentences that hold each quote as passages: 25 words or more each
-(`add_bill_text.py <batch> --topic <key> --url <bill text URL> --sentences <json>`; in IN this cleared 290 of 310 high findings). A bill names no voter,
-so the verifier does not count it as a source for the person; it only meets the gate's quote check.
+the quote. Run the gate once (step 9) to list those quotes, then:
+
+```bash
+python3 -I scripts/stage5/bill_text_auto.py <batch> <abs>/backend/data/source-store/findings --topic <key> --saved-root <abs>/.planning/research
+```
+
+For each high `quote-not-in-snippet` finding it looks for the quoted words in the bills the person's own findings
+name: first the store's operative text (verbatim from the act), then the act's saved copy (`provenance.saved_copy`,
+sha256 checked). It cites that bill's text URL with a passage of whole sentences, 25 words or more, that holds the
+quote. `bill-text.json` lists every quote it placed and every quote it could not. A quote it could not place is
+usually the coder's own words in quote marks (trim them, step 9) or a bill the store does not hold (add it with
+`add_bill_text.py`, by hand). On in-01 it placed the same 290 of 310 quotes the hand step did, leaving the same 20
+high findings. A bill names no voter, so the verifier does not count it as a source for the person; it only meets
+the gate's quote check.
 
 **9. Gate to 0 high.**
 
