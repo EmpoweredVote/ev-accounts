@@ -122,6 +122,52 @@ export function unsafeDropTargets(sql) {
 }
 
 /**
+ * How many outermost `BEGIN;` / `COMMIT;` statements the file actually contains, counted on the
+ * CODE only — comments and string literals are stripped first, so prose about COMMIT does not
+ * count. Line-anchored, matching stripOwnTransaction.
+ */
+export function countOwnTransactionMarkers(sql) {
+  const code = stripCommentsAndStrings(sql);
+  return {
+    begins: (code.match(/^[ \t]*BEGIN[ \t]*;/gim) ?? []).length,
+    commits: (code.match(/^[ \t]*COMMIT[ \t]*;/gim) ?? []).length,
+  };
+}
+
+/**
+ * 🔴🔴 REFUSES A FILE THAT CARRIES MORE THAN ONE TRANSACTION. This is what the note on
+ * `stripOwnTransaction` has always PROMISED — "silently removing one would be worse than failing
+ * loudly" — and what, until 2026-10-30, the code did not do.
+ *
+ * ⚠ IT COST AN UNINTENDED PRODUCTION WRITE, AND THE TOOL PRINTED "ROLLED BACK — prod is
+ *   unchanged" WHILE IT HAPPENED. Two migrations were concatenated into one file to rehearse them
+ *   together, because the second one's pre-flight depends on the first having run.
+ *   `stripOwnTransaction` removes only the FIRST `BEGIN;` and the FIRST `COMMIT;` — the regexes
+ *   carry no `g` flag — so the SECOND file's `COMMIT;` survived in the middle of the script and
+ *   committed everything before it. The runner's own ROLLBACK then found no transaction to roll
+ *   back and the script reported success anyway.
+ *
+ * 🔴 THE ONLY TELL WAS TWO EASILY-MISSED NOTICES: "there is already a transaction in progress"
+ *    and "there is no transaction in progress". Neither is an error, and the summary line said
+ *    the opposite of the truth. A green that cannot be trusted is worse than a red.
+ *
+ * ▶ Rehearsing two dependent migrations together is a reasonable thing to want. Do it by applying
+ *   the first for real and dry-running the second, or by running them as separate files inside one
+ *   transaction you own — never by concatenating them into one file for this tool.
+ */
+export function assertSingleTransaction(sql, file = 'the migration') {
+  const { begins, commits } = countOwnTransactionMarkers(sql);
+  if (begins > 1 || commits > 1) {
+    throw new Error(
+      `${file} contains ${begins} BEGIN; and ${commits} COMMIT; statements. This tool strips only `
+      + `the FIRST of each, so every later COMMIT; would run for real — committing to the database `
+      + `while the run still reports "ROLLED BACK". That is how two concatenated migrations were `
+      + `written to production on 2026-10-30. Rehearse one migration per file.`
+    );
+  }
+}
+
+/**
  * The file with its own outermost BEGIN;/COMMIT; removed, so the RUNNER owns the transaction
  * and can roll back whatever the file would have committed.
  *
