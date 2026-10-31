@@ -224,20 +224,22 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
       if (prev) {
         // Decoration only: a failed lookup yields null markers, never a failed page.
         try {
-        if (prev.status === 'open') {
-          const { rows } = await pool.query(
-            'SELECT position, text FROM connect.get_stances_for_community($1) ORDER BY position ASC',
-            [req.params.id]
-          );
-          previousTexts = [...rows].sort((a, b) => a.position - b.position).map((r) => r.text);
-        } else {
-          const { rows } = await pool.query(
-            'SELECT ordinal, text FROM connect.get_season_chairs($1, $2, $3) ORDER BY ordinal ASC',
-            [topicId, prev.season_number, includeDrafts]
-          );
-          previousTexts = [...rows].sort((a, b) => a.ordinal - b.ordinal).map((r) => r.text);
-        }
-        } catch {
+          if (prev.status === 'open') {
+            const { rows } = await pool.query(
+              'SELECT position, text FROM connect.get_stances_for_community($1) ORDER BY position ASC',
+              [req.params.id]
+            );
+            previousTexts = [...rows].sort((a, b) => a.position - b.position).map((r) => r.text);
+          } else {
+            const { rows } = await pool.query(
+              'SELECT ordinal, text FROM connect.get_season_chairs($1, $2, $3) ORDER BY ordinal ASC',
+              [topicId, prev.season_number, includeDrafts]
+            );
+            previousTexts = [...rows].sort((a, b) => a.ordinal - b.ordinal).map((r) => r.text);
+          }
+        } catch (err) {
+          // Badges vanish rather than the page; log it so a permanently broken lookup is visible.
+          console.warn('[focused_communities] previous-season lookup failed:', (err as Error).message);
           previousTexts = null;
         }
       }
