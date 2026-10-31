@@ -21,6 +21,7 @@ describe('sweepHit', () => {
     'CLANCY D N',
     'Smith (R) voted',
     'Republicans passed it',
+    '"FullName":"Oscar De Los Santos","Party":"D","Vote":"N"',
   ])('flags %s', (t) => expect(sweepHit(t)).toBe(true));
   it.each([
     'the democratic process',

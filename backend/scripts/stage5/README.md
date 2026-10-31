@@ -38,6 +38,10 @@ Notes:
 
 - `build_evidence.py` also reads an `overrides.json` of the older shape `{name: {column: value}}`; a `{"trims": …}`
   file is ignored by it (no row is named "trims").
+- **One party test for every step that cuts reader-facing text.** `build_evidence.py` and `add_fallback.py` ask
+  `party-check.ts` (through `_party.py`), which answers with the same `sweepHit` that `party-sweep.ts` uses:
+  `namesParty()` from `src/lib/partyLabels.ts` plus roll-call letters and a vote API's `"Party":"R"` field. So a
+  snippet a builder keeps is never one the sweep then flags. Add a new marker to `lib.ts`, never to a tool.
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`) and their tests; `batch-db.ts` resolves the topic id and
   the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text

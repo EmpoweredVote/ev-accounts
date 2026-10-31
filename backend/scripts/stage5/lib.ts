@@ -21,8 +21,11 @@ export function readCsv(text: string): Record<string, string>[] {
   return (body ?? []).map((r) => Object.fromEntries(head.map((h, k) => [h, r[k] ?? ''])));
 }
 
-/** A roll-call party letter that namesParty() does not read as a label: "CLANCY D N", "(R)", "R-Dist", "D-12". */
-const LETTER = /\b[A-Z][A-Z'-]+ [DRI] (?:Y|N|NV|x)\b|\((?:D|R|I)\)|\b[DR]-[A-Z][a-z]|\b[DR]-\d/;
+/**
+ * A party marker that namesParty() does not read as a label: roll-call letters ("CLANCY D N", "(R)", "R-Dist", "D-12")
+ * and a vote API's party field ("Party":"R", azleg.gov).
+ */
+const LETTER = /\b[A-Z][A-Z'-]+ [DRI] (?:Y|N|NV|x)\b|\((?:D|R|I)\)|\b[DR]-[A-Z][a-z]|\b[DR]-\d|"Party"\s*:\s*"[A-Z]/;
 
 /** True when text shown to a reader (a snippet, a research-text line) names a party. */
 export const sweepHit = (text: string): boolean => namesParty(text) || LETTER.test(text);
