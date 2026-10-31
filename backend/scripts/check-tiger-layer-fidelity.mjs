@@ -173,14 +173,15 @@ async function ourRows(mtfcc, withGeometry) {
       `SELECT geo_id${withGeometry ? `,
               public.ST_Area(geometry::public.geography) AS area,
               public.ST_X(public.ST_Centroid(geometry)) AS lon,
-              public.ST_Y(public.ST_Centroid(geometry)) AS lat` : ''}
+              public.ST_Y(public.ST_Centroid(geometry)) AS lat,
+              public.ST_XMax(geometry) - public.ST_XMin(geometry) AS lon_span` : ''}
          FROM essentials.geofence_boundaries
         WHERE mtfcc = $1 AND geo_id > $2 ORDER BY geo_id LIMIT 2000`,
       [mtfcc, after]
     );
     for (const r of rows) {
       m.set(String(r.geo_id), withGeometry
-        ? { area: Number(r.area), lat: Number(r.lat), lon: Number(r.lon) }
+        ? { area: Number(r.area), lat: Number(r.lat), lon: Number(r.lon), lonSpan: Number(r.lon_span) }
         : null);
     }
     if (rows.length < 2000) break;
@@ -281,7 +282,27 @@ try {
         // round the planet — because ST_Centroid averaged longitudes either side of the line.
         // That is this method's own false positive, not a defect, so skip anything out there
         // rather than baselining a number that was never true.
-        const nearAntimeridian = Math.abs(t.lon) > 170 || Math.abs(mine.lon ?? 0) > 170;
+        //
+        // 🔴 THE CENTROID'S POSITION IS THE WRONG THING TO TEST, AND THAT COST A RED ON MASTER.
+        // The ±170 test asks where the centroid LANDED. It catches 02016, whose bogus centroid
+        // happens to land out near the line — but it misses a polygon with enough mass on the
+        // mainland to drag the average back to an ordinary-looking longitude. Measured
+        // 2026-10-31, when Alaska's legislative districts were loaded: House District 37 (02037)
+        // and Senate District S (0200S) both reach the WESTERN ALEUTIANS, so their parts run
+        // from -179.231 to +179.860 — a longitude span of 359°. Their naive centroids land at
+        // -150.7 and -153.2, which the ±170 test waves straight through, and the check then
+        // called them 529 km and 414 km out of place. Both polygons are byte-identical to
+        // TIGER: same 38 and 41 parts, same 314,305 and 388,713 km², same longitude range.
+        // Nothing was wrong with the data.
+        //
+        // ▶ So ask the GEOMETRY whether it crosses the line, not the centroid where it ended up.
+        // No genuine district spans more than 180° of longitude; one that appears to is wrapped.
+        // Every other Alaska district spans 12-31°, so this separates cleanly and does NOT widen
+        // into a blanket Alaska exemption — the other 58 are still displacement-tested.
+        // 🔴 NOT BASELINED. A baseline entry would have recorded these two as REAL defects
+        // awaiting repair, which is what that list means, and they are not defects at all.
+        const wrapsAntimeridian = Number.isFinite(mine.lonSpan) && mine.lonSpan > 180;
+        const nearAntimeridian = wrapsAntimeridian || Math.abs(t.lon) > 170 || Math.abs(mine.lon ?? 0) > 170;
         if (!nearAntimeridian && Number.isFinite(t.lat) && Number.isFinite(t.lon) && Number.isFinite(mine.lat)) {
           const km = kmBetween(mine.lat, mine.lon, t.lat, t.lon);
           const radiusKm = Math.sqrt(t.area / Math.PI) / 1000;
