@@ -100,7 +100,8 @@ def roll_lines(pid, fs):
             break
     return out
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')).strip().lower()
-PARTY = re.compile(r'\b(republican\w*|democrat\w*|GOP\w*|D-[A-Z]{2}|R-[A-Z]{2}|\((D|R)\))\b', re.I)
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _party.py sits beside this file
+from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))
     span = end - pos
@@ -109,7 +110,7 @@ def window(t, i, j, n=30):
         for a in dict.fromkeys(starts):
             if a > pos or a + size < end: continue
             x = ' '.join(w[a:a + size])
-            if len(x.split()) >= 25 and not PARTY.search(x): return x
+            if len(x.split()) >= 25 and not names_party(x): return x
     return None
 def _cites(num, u):
     # Federal: the old substring test. State: the bill number must stand alone in the URL ("Bill=SB1", "/SB00001F.htm"),
@@ -150,7 +151,7 @@ for r in rows:
         need = need[:MAXU]
         sur = r['full_name'].split()[-1].strip(',.'); idx = 0; k = 0
         for u in need:
-            if PARTY.search(u.replace('-', ' ')): miss.append((r['full_name'], u, 'blank fallback: party word in the address; not cited')); continue
+            # A party word in the ADDRESS is fine (RULINGS.md "A party word in a source address is fine", W3-R15).
             t = text_of(u)
             if not t: miss.append((r['full_name'], u, 'blank fallback: no page')); continue
             nt = norm(t); i = nt.find(norm(r['full_name']))

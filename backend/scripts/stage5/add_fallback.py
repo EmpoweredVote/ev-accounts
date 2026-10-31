@@ -16,8 +16,7 @@ USAGE = 'add_fallback.py <batch dir> --topic <key> --gloss "<question gloss>" [-
 B = positional(1, USAGE)[0]; F = f'{B}/fallback'
 TOPIC, GLOSS = opt('--topic', required=True, usage=USAGE), opt('--gloss', required=True, usage=USAGE)
 HELD, SEEN = set(opts('--hold')), set(opts('--seen')); DATE = opt('--date', datetime.date.today().isoformat())
-# Party labels in a snippet window: names, "(R)", "R-12", "R-LD", and "(D-Bloomington)" / "R-Goshen" city tags.
-PARTY = re.compile(r'Republican|Democrat|\bGOP\b|\bParty\b|\((?:R|D|I)\)|\b[DR]-\d|\b(?:R|D)\s*-\s*(?:LD|District)|\b[DR]-[A-Z][a-z]', re.I)
+from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
 req = json.load(open(f'{F}/fallback-required.json')); rd = json.load(open(f'{F}/fallback-read.json'))
 idx = json.load(open(f'{F}/pages/index.json'))
 rows = list(csv.DictReader(open(f'{B}/research.csv'))); cols = list(rows[0].keys()); uc = [c for c in cols if c.startswith('source_url_')]
@@ -26,7 +25,7 @@ def snip(t, sur, n=34):
     w = t.split(); ats = [len(t[:m.start()].split()) for m in re.finditer(re.escape(sur), t)]
     for a in [max(0, x - k) for x in ats for k in (n // 2, 8, 1, -2)] + list(range(0, max(1, len(w) - n), 8)):
         s = ' '.join(w[a:a + n])
-        if len(s.split()) >= 25 and not PARTY.search(s): return s
+        if len(s.split()) >= 25 and not names_party(s): return s
     return None
 held, none, nowin, done, log = [], [], [], 0, []
 for name, q in req.items():
