@@ -125,7 +125,19 @@ interface DetailRow {
   season_note: string | null;
   topic_note: string | null;
   rationale: string | null;
-  // rung_map is deliberately not read: its values are the raw 1-5 chair numbers.
+  // Read only to decide changeSince; never copied into the response (its values are the raw 1-5 chair numbers).
+  rung_map: unknown;
+}
+
+/**
+ * True only for exactly {"1":1,"2":2,"3":3,"4":4,"5":5}. Deliberately identity-only: the map's direction is
+ * undocumented, so a permutation cannot yield a correct marker. A wrong marker is worse than none.
+ */
+function isIdentityRungMap(m: unknown): boolean {
+  if (typeof m !== 'object' || m === null || Array.isArray(m)) return false;
+  const o = m as Record<string, unknown>;
+  if (Object.keys(o).length !== 5) return false;
+  return [1, 2, 3, 4, 5].every((n) => o[String(n)] === n);
 }
 
 interface ChairRow {
@@ -180,7 +192,7 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
     }
 
     const { rows: detail } = await pool.query(
-      'SELECT season_number, season_name, question_text, change_class, season_note, topic_note, rationale FROM connect.get_season_detail($1, $2, $3)',
+      'SELECT season_number, season_name, question_text, change_class, season_note, topic_note, rationale, rung_map FROM connect.get_season_detail($1, $2, $3)',
       [topicId, target.season_number, includeDrafts]
     ) as { rows: DetailRow[] };
     const d = detail[0];
@@ -203,6 +215,34 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
       chairRows = [...rows].sort((a, b) => a.ordinal - b.ordinal);
     }
 
+    // Markers only when this season's rung_map is exactly identity; compared with the previous season in the visible list.
+    let previousTexts: string[] | null = null;
+    if (isIdentityRungMap(d.rung_map)) {
+      const prev = visible
+        .filter((r) => r.season_number < target.season_number)
+        .sort((a, b) => b.season_number - a.season_number)[0];
+      if (prev) {
+        if (prev.status === 'open') {
+          const { rows } = await pool.query(
+            'SELECT position, text FROM connect.get_stances_for_community($1) ORDER BY position ASC',
+            [req.params.id]
+          );
+          previousTexts = [...rows].sort((a, b) => a.position - b.position).map((r) => r.text);
+        } else {
+          const { rows } = await pool.query(
+            'SELECT ordinal, text FROM connect.get_season_chairs($1, $2, $3) ORDER BY ordinal ASC',
+            [topicId, prev.season_number, includeDrafts]
+          );
+          previousTexts = [...rows].sort((a, b) => a.ordinal - b.ordinal).map((r) => r.text);
+        }
+      }
+    }
+    const changeSince = (i: number, text: string): Chair['changeSince'] => {
+      const before = previousTexts?.[i];
+      if (before === undefined) return null;
+      return before === text ? 'carried' : 'reworded';
+    };
+
     const view: SeasonView = {
       season: {
         number: target.season_number,
@@ -217,12 +257,12 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
       topicNote: d.topic_note ?? null,
       rationale: includeDrafts ? (d.rationale ?? null) : null,
       isFallback,
-      chairs: chairRows.map((c): Chair => ({
+      chairs: chairRows.map((c, i): Chair => ({
         text: c.text,
         description: c.description ?? null,
         supportingPoints: c.supporting_points ?? [],
         examplePerspectives: c.example_perspectives ?? [],
-        changeSince: null,
+        changeSince: changeSince(i, c.text),
       })),
     };
     const body = { data: view };

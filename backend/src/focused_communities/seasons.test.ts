@@ -135,7 +135,7 @@ describe('GET /communities/:id/seasons/:number', () => {
   const list = rows([s(1, 'closed'), s(2, 'open'), s(3, 'draft')]);
   const detail = (over: Record<string, unknown> = {}) => rows([{
     season_number: 2, season_name: 'S2', status: 'open', question_text: 'Q?', change_class: 'substantive',
-    season_note: 'sn', topic_note: 'tn', rationale: 'why', rung_map: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }, ...over,
+    season_note: 'sn', topic_note: 'tn', rationale: 'why', rung_map: null, ...over,
   }]);
   const openChairs = (n = 3) => rows(Array.from({ length: n }, (_, i) => ({
     position: i + 1, text: `chair ${i}`, description: i === 0 ? null : 'd', supporting_points: ['p'], example_perspectives: ['e'],
@@ -148,6 +148,14 @@ describe('GET /communities/:id/seasons/:number', () => {
     .mockResolvedValueOnce(detail()).mockResolvedValueOnce(openChairs());
   const closedFlow = () => query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
     .mockResolvedValueOnce(detail({ season_number: 1, status: 'closed' })).mockResolvedValueOnce(closedChairs());
+
+  const IDENT = { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 };
+  const markers = (res: { body: { data: { chairs: { changeSince: unknown }[] } } }) => res.body.data.chairs.map((c) => c.changeSince);
+  // Season 2 (open) with the given rung_map; previous season 1 chairs are fed to get_season_chairs.
+  const markFlow = (rung_map: unknown, prev: string[] = ['chair 0', 'chair 1', 'chair 2']) => query
+    .mockResolvedValueOnce(community).mockResolvedValueOnce(list).mockResolvedValueOnce(detail({ rung_map }))
+    .mockResolvedValueOnce(openChairs())
+    .mockResolvedValueOnce(rows(prev.map((text, i) => ({ ordinal: i + 1, text }))));
 
   it('returns the question, chairs and notes for a season', async () => {
     openFlow();
@@ -196,7 +204,8 @@ describe('GET /communities/:id/seasons/:number', () => {
   });
 
   it('never includes rung_map in the body, even for a maven', async () => {
-    openFlow();
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list).mockResolvedValueOnce(detail({ rung_map: IDENT }))
+      .mockResolvedValueOnce(openChairs()).mockResolvedValueOnce(closedChairs());
     const res = await request(app).get(`${SP}/2`).set('Authorization', 'Bearer maven');
     expect(res.status).toBe(200);
     expect(JSON.stringify(res.body)).not.toContain('rung_map');
@@ -348,6 +357,70 @@ describe('GET /communities/:id/seasons/:number', () => {
     const again = await request(app).get(`${SP}/2`);
     expect(again.body.data.questionText).toBe('Q?');
     expect(query).toHaveBeenCalledTimes(6);
+  });
+
+  describe('changeSince', () => {
+    it('marks a chair carried when rung_map is identity and the text is unchanged', async () => {
+      markFlow(IDENT);
+      const res = await request(app).get(`${SP}/2`);
+      expect(markers(res)).toEqual(['carried', 'carried', 'carried']);
+    });
+
+    it('marks a chair reworded when rung_map is identity and the text differs', async () => {
+      markFlow(IDENT, ['chair 0', 'other', 'chair 2']);
+      const res = await request(app).get(`${SP}/2`);
+      expect(markers(res)).toEqual(['carried', 'reworded', 'carried']);
+      expect(query.mock.calls[4][1]).toEqual(['t1', 1, false]);
+      expect(sql(4)).toContain('connect.get_season_chairs($1, $2, $3)');
+    });
+
+    it('derives the previous season from the list, not n - 1', async () => {
+      const gap = rows([s(1, 'closed'), s(4, 'closed'), s(7, 'open')]);
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(gap)
+        .mockResolvedValueOnce(detail({ season_number: 7, rung_map: IDENT })).mockResolvedValueOnce(openChairs())
+        .mockResolvedValueOnce(rows([{ ordinal: 1, text: 'chair 0' }]));
+      const res = await request(app).get(`${SP}/7`);
+      expect(query.mock.calls[4][1]).toEqual(['t1', 4, false]);
+      expect(markers(res)).toEqual(['carried', null, null]);
+    });
+
+    it('suppresses the marker when rung_map is null', async () => {
+      markFlow(null);
+      const res = await request(app).get(`${SP}/2`);
+      expect(markers(res)).toEqual([null, null, null]);
+      expect(query).toHaveBeenCalledTimes(4);
+    });
+
+    it('suppresses the marker when rung_map collapses two chairs into one', async () => {
+      markFlow({ 1: 1, 2: 1, 3: 3, 4: 4, 5: 5 });
+      expect(markers(await request(app).get(`${SP}/2`))).toEqual([null, null, null]);
+    });
+
+    it('suppresses the marker when rung_map contains the "invalidated" sentinel', async () => {
+      markFlow({ 1: 1, 2: 'invalidated', 3: 3, 4: 4, 5: 5 });
+      const res = await request(app).get(`${SP}/2`);
+      expect(res.status).toBe(200);
+      expect(markers(res)).toEqual([null, null, null]);
+    });
+
+    it('suppresses the marker when rung_map is a non-identity permutation', async () => {
+      markFlow({ 1: 2, 2: 1, 3: 3, 4: 4, 5: 5 });
+      expect(markers(await request(app).get(`${SP}/2`))).toEqual([null, null, null]);
+    });
+
+    it('suppresses the marker for the earliest season of a topic', async () => {
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+        .mockResolvedValueOnce(detail({ season_number: 1, status: 'closed', rung_map: IDENT })).mockResolvedValueOnce(closedChairs());
+      const res = await request(app).get(`${SP}/1`);
+      expect(markers(res)).toEqual([null, null, null]);
+      expect(query).toHaveBeenCalledTimes(4);
+    });
+
+    it('does not serialize rung_map or its values with markers on', async () => {
+      markFlow(IDENT);
+      const res = await request(app).get(`${SP}/2`);
+      expect(JSON.stringify(res.body)).not.toMatch(/rung|"ordinal"|"position"/);
+    });
   });
 
   it('404s an unknown community', async () => {
