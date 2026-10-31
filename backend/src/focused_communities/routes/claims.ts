@@ -603,12 +603,12 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
 
 // --- Tree shape: the whole argument as position only ------------------------
 //
-// GET /communities/:id/claims/shape answers `{ data: ShapeNode[], meta: { truncated } }` — every
-// claim in the community reduced to where it sits. The node routes above serve ONE claim with its
-// text; this serves EVERY claim with none, so the frontend can draw a small coloured map of the
-// whole argument with the reader's position marked.
+// GET /communities/:id/claims/shape answers `{ data: ShapeNode[], meta }` — every claim in the
+// community reduced to where it sits. The node routes above serve ONE claim with its text; this
+// serves EVERY claim with none, so the frontend can draw a small coloured map of the whole
+// argument with the reader's position marked.
 //
-// Three properties hold this route up:
+// Four properties hold this route up:
 //
 //   1. NO TEXT, EVER. `body` is not merely stripped in the serializer — it is never selected. A
 //      whole-tree payload is the one response large enough that a hidden claim's wording could
@@ -619,17 +619,23 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
 //      to show the pro/con balance at each depth, and counting a withdrawn claim as a live one
 //      misstates exactly that. So `isHidden` rides along — it leaks nothing, being already on
 //      every ClaimNode the same reader can fetch, and the payload still carries no text.
-//   3. BOUNDED. A community page loads this on every view, so the payload has a hard cap and says
-//      when it hit it.
+//   3. MERGED CLAIMS ARE INCLUDED, AND MARKED. Same principle, sharper consequence. A merged-away
+//      claim is a DUPLICATE of a node already in this payload, so drawing both as live nodes
+//      inflates that side by exactly the number of merges: the map draws one argument as two.
+//      `mergedInto` is an id, not wording, and ClaimNode already carries it for the same reader.
+//   4. BOUNDED, AND HONEST ABOUT WHERE IT STOPS. A community page loads this on every view, so the
+//      payload has a hard cap — and says not just THAT it was cut but how deep it is still whole
+//      (see ShapeMeta.completeThroughDepth).
 
 /**
  * The hard cap on nodes in one shape payload.
  *
- * At roughly 155 bytes of JSON per node (two uuids and four short fields) this bounds the body at
- * ~270 KB uncompressed, and far less over the wire since every key name repeats. It is well above
- * any community's tree today and above the size at which a minimap stops being legible — a few
- * thousand dots in a thumbnail is already a smear — so in practice nothing truncates, and the cap
- * exists to keep a runaway tree from turning the hottest read on the page into a megabyte.
+ * At roughly 190 bytes of JSON per node (two or three uuids and four short fields) this bounds the
+ * body at ~380 KB uncompressed, and far less over the wire since every key name repeats. It is a
+ * ceiling, not a typical size: it is well above any community's tree today and above the size at
+ * which a minimap stops being legible — a few thousand dots in a thumbnail is already a smear — so
+ * in practice nothing truncates, and the cap exists to keep a runaway tree from turning the
+ * hottest read on the page into a megabyte.
  *
  * Exported because it is part of the contract: a client that sees `truncated: true` is seeing
  * exactly this many nodes.
@@ -645,11 +651,41 @@ export interface ShapeNode {
   impact: number | null;
   /** Mapped exactly as toClaim does it, so the map and the columns agree about one claim. */
   isHidden: boolean;
+  /**
+   * The claim this one was merged into, when it was — an id already present in this payload
+   * (`merged_into_claim_id` references connect.claims, and claims_no_self_merge guarantees it
+   * points elsewhere). A minimap that draws a merged claim as a live one draws one argument as
+   * two and inflates that side's apparent weight by exactly the number of merges. The id leaks no
+   * wording, and ClaimNode carries the same field for the same reader.
+   */
+  mergedInto: string | null;
 }
 
 export interface ShapeMeta {
   /** True when the tree is larger than SHAPE_NODE_LIMIT and the deepest nodes were cut. */
   truncated: boolean;
+  /**
+   * The deepest level this payload is known to hold WHOLE — or null when nothing was cut.
+   *
+   * `truncated` alone cannot say where the map stops being true, and the gap falls on the one
+   * thing a minimap exists to show. The cut lands at an arbitrary point INSIDE a depth level,
+   * because the tie-break is `id` and an id is a random uuid: the siblings that survive at the
+   * boundary depth are an unmarked, arbitrary sample. A level holding 400 supports and 390
+   * opposes, cut four nodes in, renders as "3 supports, 1 oppose" — and looks finished. Per-depth
+   * pro/con balance is the entire purpose of the thing.
+   *
+   * So the contract is: at depths <= completeThroughDepth every claim of the community is present
+   * and a tally is true. Deeper than that, the nodes present are a sample and no count, balance or
+   * "this branch died out" may be drawn from them. null with `truncated: false` means the whole
+   * tree is here; read the two fields together, never this one alone.
+   *
+   * Derived from the first row that did NOT fit — the one extra row the query already fetches.
+   * That is sound because ORDER BY depth, id returns a prefix in which every node at depth d is
+   * preceded by all nodes at depth < d: derive_claim_position sets depth := parent.depth + 1, and
+   * claims_root_or_child_shape pins cardinality(path) = depth. So the first row past the cap names
+   * the first level that is incomplete, and everything above it is whole.
+   */
+  completeThroughDepth: number | null;
 }
 
 interface ShapeRow {
@@ -659,18 +695,21 @@ interface ShapeRow {
   depth: number;
   /** Read only to derive isHidden. The raw column is never serialized, here or anywhere. */
   moderation_status: string;
+  merged_into_claim_id: string | null;
 }
 
 /**
  * ORDER BY depth, id — the brief's order, and the one that makes truncation survivable: cutting at
  * a LIMIT drops the DEEPEST nodes, which is the right end to lose. A map missing its deep tips is
- * still a map; one missing a trunk node would have orphaned everything under it.
+ * still a map; one missing a trunk node would have orphaned everything under it. What it does NOT
+ * make survivable on its own is the boundary level, which is why meta carries completeThroughDepth.
  *
  * community_id is the whole WHERE clause and the leading column of claims_community_parent_idx, so
  * this is an index scan plus a top-N sort, never a sequential scan of every community's claims.
  * Nothing filters on moderation_status: see property 2 above.
  */
-const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth, c.moderation_status
+const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth, c.moderation_status,
+             c.merged_into_claim_id
        FROM connect.claims c
       WHERE c.community_id = $1
       ORDER BY c.depth, c.id
@@ -685,6 +724,7 @@ function toShapeNode(row: ShapeRow): ShapeNode {
     depth: row.depth,
     impact: null, // Task 5
     isHidden: row.moderation_status !== 'visible',
+    mergedInto: row.merged_into_claim_id ?? null,
   };
 }
 
@@ -695,11 +735,13 @@ function toShapeNode(row: ShapeRow): ShapeNode {
  * query to vary on here and no caller identity in the body, so one entry per community is the
  * whole cache — and `fc:claims:shape:{communityId}` is exactly the key Task 8 deletes.
  *
+ * It takes a canonical, lower-case uuid and nothing else. See the route.
+ *
  * Note what is deliberately missing: the node routes' isShareable guard. It exists because Task 5
  * puts the caller's own rating in a ClaimNode, and a body carrying one reader's rating must never
- * be handed to another. A ShapeNode has no such field and no room for one — it is tree position and
- * a moderation flag every reader sees alike. If a caller-varying field is ever added to it, this route must grow the same
- * guard and the same credentials branch that serveNode has.
+ * be handed to another. A ShapeNode has no such field and no room for one — it is tree position
+ * plus two flags every reader sees alike. If a caller-varying field is ever added to it, this
+ * route must grow the same guard and the same credentials branch that serveNode has.
  */
 function shapeCacheKey(communityId: string): string {
   return `fc:claims:shape:${communityId}`;
@@ -708,11 +750,23 @@ function shapeCacheKey(communityId: string): string {
 // GET /communities/:id/claims/shape — the whole tree's shape, for the minimap.
 //
 // A community with no claims is a 404, as its root is: there is no argument to map, and the page
-// is already showing that. A community id that is not a uuid is a 404 too — it names no community
-// — while a real query failure is a 500, because an empty map is a claim about the tree and this
-// route does not make claims it cannot support.
+// is already showing that. A real query failure is a 500, because an empty map is a claim about
+// the tree and this route does not make claims it cannot support.
+//
+// The id is checked and lower-cased BEFORE it reaches the cache key or the database, as it now is
+// on both node routes. An id that is not a uuid names no community, so it 404s having minted no
+// key and run no query. And canonicalising matters even for an id that IS one: Postgres reads
+// `{A0EEBC99-…}`, the hyphenless spelling and every mixed case as the same row, so a key built
+// from the raw text would give each spelling its own ~380 KB entry on the shared Upstash instance
+// — the exact quota exhaustion src/lib/cache.ts records as a P1 — and Task 8's `del` of the
+// lower-case key would miss every one of them, leaving stale maps behind each alias.
 claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Response) => {
-  const communityId = req.params.id as string;
+  const raw = req.params.id as string;
+  if (!UUID_RE.test(raw)) {
+    notFound(res); // names no community: no key minted, no query run
+    return;
+  }
+  const communityId = raw.toLowerCase();
   const key = shapeCacheKey(communityId);
 
   const cached = await cache.get<unknown>(key);
@@ -724,13 +778,10 @@ claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Resp
 
   let rows: ShapeRow[];
   try {
-    // One more than the cap, so "there is more" is observed rather than guessed at.
+    // One more than the cap, so "there is more" — and where it stopped — is observed, not guessed.
     ({ rows } = await pool.query<ShapeRow>(SHAPE_SQL, [communityId, SHAPE_NODE_LIMIT + 1]));
   } catch (err) {
-    if ((err as { code?: string }).code === '22P02') {
-      notFound(res); // a malformed id, as elsewhere in this module
-      return;
-    }
+    // No 22P02 branch: UUID_RE ran before the query, so the id cannot be malformed by now.
     internalError(res, `claim shape ${communityId}`, err);
     return;
   }
@@ -740,9 +791,15 @@ claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Resp
     return;
   }
 
+  // The first row that did not fit is what tells the reader where the map stops being whole: its
+  // own depth is the one cut part-way through, so every level above it is complete.
+  const firstCut = rows[SHAPE_NODE_LIMIT];
   const body: { data: ShapeNode[]; meta: ShapeMeta } = {
     data: rows.slice(0, SHAPE_NODE_LIMIT).map(toShapeNode),
-    meta: { truncated: rows.length > SHAPE_NODE_LIMIT },
+    meta: {
+      truncated: firstCut !== undefined,
+      completeThroughDepth: firstCut === undefined ? null : firstCut.depth - 1,
+    },
   };
 
   await cache.set(key, body, CLAIM_TTL_SECONDS).catch(() => {});
