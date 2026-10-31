@@ -281,7 +281,55 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   Ballotpedia, so such a seat always goes to a person for review; the batch keeps a saved copy of the section
   (`survey-sections.json`) for the gate.
 - **Date and source:** 2026-10-07, Chris Andrews (Season 2 pilot); confirmed 2026-10-29, Chris Andrews, voting-rights
-  federal-held batch (Christy Peterson).
+  federal-held batch (Christy Peterson); confirmed again 2026-10-30, Chris Andrews, voting-rights W3-R17 ("Ballotpedia
+  is fine when it is their own words on their candidate survey"; `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`).
+- **Scope:** every topic.
+
+### A small group's joint statement is each signer's own words
+- **Ruling:** a statement put out jointly by a small, named group (for example a state's two senators, or two
+  committee chairs) counts as each signer's own words (codebook V1). A statement from a whole party or caucus, or a
+  letter signed by dozens of members, is a group statement: it is not any one signer's own words. When such a quote
+  is shown blinded, "we" becomes "I" (and "our" becomes "my" where it means the signers).
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights W3-R13 ("Joint statements are ok when it's a small
+  group of individuals, but not when it's the entire party"; line drawn the same day: a caucus letter is "too
+  large"). `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`.
+- **Scope:** every topic.
+
+### A "would have voted" statement is off topic
+- **Ruling:** a statement that only says how the person would have voted on a bill ("I was absent … I would have
+  voted no."), and names nothing the question asks about, fails the quote check's `on_topic` test. This holds even
+  when the bill has parts on the question: the words do not say which part the person meant.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights W3-R14 ("Yes, fail them"; TX House Journal
+  statements on SB 1, 2021). `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`.
+- **Scope:** every topic (ruled on voting-rights; proposed here as general, 2026-10-30).
+
+### A party word in a source address is fine
+- **Ruling:** a source's web address may carry a party word (a caucus site, for example). Only what a reader is shown
+  as text, shown quotes and evidence snippets, must be free of party labels ("Party labels never reach a reader"
+  below). The source link is where a reader sees the full words. This replaces the practice of leaving such sources
+  off.
+- **Date and source:** 2026-10-30, Chris Andrews, voting-rights W3-R15 (Ryan Clancy, WI;
+  `.planning/research/s3-prep-voting-rights/stage5/write/wi-01-clancy/`).
+- **Scope:** every topic.
+
+### OnTheIssues and Wikipedia are never sources
+- **Ruling:** OnTheIssues and Wikipedia are finding aids only: use them to find a primary source, then cite that.
+  Neither is cited as stance evidence, and neither is listed as an "examined" old source on a blank row. An answer
+  from an earlier season that rests only on them has no primary source behind it: a blank that replaces it is
+  written as an outcome row with no source and no review row.
+- **Date and source:** 2026-10-30, Chris Andrews, voting-rights W3-R16 ("we only use those to find primary sources,
+  but it seems that ontheissues tends to not be correct a lot of the time"; Josh Stein, NC,
+  `.planning/research/s3-prep-voting-rights/stage5/write/nc-01-stein/`). Codebook V3 already makes encyclopedia and
+  aggregator pages `not-evidence`.
+- **Scope:** every topic.
+
+### Mapping a blank to a V6 reason
+- **Ruling:** when `topic:stage5-write` lists a blank as "not in research.csv" (its detail fits no single codebook
+  V6 reason), map it this way: a blank that is off the question, shows no side, or rests only on a gated record
+  (an abstention, for example) → `no-evidence`; a blank whose evidence shows a side but not a rung →
+  `direction-only`.
+- **Date and source:** 2026-10-29, Chris Andrews, voting-rights state batches (header of
+  `.planning/research/s3-prep-voting-rights/stage5/write/in-01/hand-rows.md`).
 - **Scope:** every topic.
 
 ### Party labels never reach a reader; shown quotes bracket them out
