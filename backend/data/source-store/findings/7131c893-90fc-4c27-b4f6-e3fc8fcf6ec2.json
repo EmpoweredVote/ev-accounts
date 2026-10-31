@@ -2,12 +2,12 @@
   "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
   "findings": [
     {
-      "id": "2f9e4d34dda87251f5f130757ce0e5c6ee1742a725353735e00e3ae4937510eb",
+      "id": "9979a58520ccb69d8c784249674d05f866f768341637a811f769641113f08f37",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/192/H3878",
       "date": "2021-02-04",
       "date_precision": "day",
-      "instrument_id": "MA-HB-3878-2021",
+      "instrument_id": "MA-H-3878-2021",
       "act": "sponsor",
       "motion": "H.3878 An Act establishing identification at the voting polls (filed as Alyson M. Sullivan; a study order was attached 2022-09-12)",
       "note": "She filed the bill. Per the filed text (https://malegislature.gov/Bills/192/H3878.Html), the state secretary would issue a photo ID card, on request and at no cost, for voting only, and a voter would show a photo ID card, MassHealth card or Medicare card before voting. The bill history shows 'Accompanied a study order, see H5026' on 9/12/2022.",
@@ -25,12 +25,12 @@
       }
     },
     {
-      "id": "698452296702da841a578237ce9efac639be925b6ed3515a99fc8142c93f76b4",
+      "id": "b62355c4c9dd8266d7052bd3936f1a9f7ab6af962d6c22fd360145599bf51af7",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/193/H720",
       "date": "2023-01-18",
       "date_precision": "day",
-      "instrument_id": "MA-HB-720-2023",
+      "instrument_id": "MA-H-720-2023",
       "act": "sponsor",
       "motion": "H.720 An Act establishing identification at the voting polls (refiled; study order H4733 on 2024-07-15)",
       "note": "She refiled the same bill in the next session. The filed text (https://malegislature.gov/Bills/193/H720.Html) reads: 'Any person who seeks to vote in a federal, state, local or primary election shall establish their qualification to vote by providing a valid photo identification card, MassHealth card or Medicare card to an election officer prior to voting.' Seven other House members were added as petitioners. It went to the Election Laws committee and had a hearing on 2023-09-19.",
@@ -48,13 +48,13 @@
       }
     },
     {
-      "id": "32b5087e4054c1c04b94b4b7e622260eb718b08fbfcf2e1805a26d0c7ad1554c",
+      "id": "61c1362fec9a9cc24d38a4dcfa14e25c8c07fdc440db956ebca276d5cda2609f",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/12/House/Content",
       "date": "2022-01-27",
       "date_precision": "day",
-      "instrument_id": "MA-HB-4359-2022",
-      "act": "author",
+      "instrument_id": "MA-H-4359-AMDT-12-2022",
+      "act": "sponsor",
       "motion": "Amendment #12 to H.4359, Establishing identification at the voting polls (Ms. Sullivan of Abington); laid aside, no vote taken",
       "note": "She offered a floor amendment to the 2022 House elections bill that carried the same free voting-ID-card and photo-ID-at-the-polls language as H.3878. The amendments list (https://malegislature.gov/Bills/192/H4359/Amendments/House) shows it as 'Laid aside'. Her earlier Amendment #1 with the same title is listed as 'Withdrawn'. The date is the House session day (roll call #139 is dated 01/27/2022); the amendment's own filing date was not shown.",
       "subjects": [
@@ -71,15 +71,15 @@
       }
     },
     {
-      "id": "95a2895acdea9a5df134c52020c768689441ce8bf5058153e1d036ce9f2bfe66",
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
       "kind": "record",
-      "url": "https://malegislature.gov/RollCall/192/HouseRollCall139.pdf",
+      "url": "https://malegislature.gov/Bills/192/H4359",
       "date": "2022-01-27",
       "date_precision": "day",
-      "instrument_id": "MA-HB-4359-2022",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
       "act": "yea",
-      "motion": "Roll call No. 139, adoption of Amendment #7 to H.4359 (Voter Identification, Mr. Frost of Auburn); rejected 32 yeas to 126 nays",
-      "note": "The roll-call sheet lists 'Y Sullivan'. Amendment #7 (https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content) would require valid photo ID issued by the state or federal government to vote in person, with a provisional ballot for a voter who lacks it. The amendment page also lists 'Alyson M. Sullivan' among the additional co-sponsors added to Amendment #7, so the store's added co-sponsor entry matches this person (same legislator profile id AMS2 as her other 2022 amendments).",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none. Roll call 139 lists her as 'Sullivan' (Alyson M. Sullivan, now Sullivan-Almeida).",
       "subjects": [
         "voter ID at the polls",
         "no-ID fallback (provisional ballot)"
@@ -91,15 +91,18 @@
         "fetched_by": "source-collector-rerun",
         "fetched_at": "2026-10-27T14:19:20.028Z",
         "method": "webfetch"
+      },
+      "gate_by_topic": {
+        "voting-rights": "none"
       }
     },
     {
-      "id": "875efe6a681a1c864e13405371c6bdf7bd663795c094b8dac5d80a2af6b415d0",
+      "id": "1ea0058d2f92b33cf581f5123be9f832ad992a379fdb42d322c24f2812b7c59d",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content",
       "date": "2022-01-27",
       "date_precision": "day",
-      "instrument_id": "MA-HB-4359-2022",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
       "act": "sponsor",
       "motion": "Added as co-sponsor of Amendment #7 to H.4359, Voter Identification (lead: Mr. Frost of Auburn); rejected, roll call #139",
       "note": "The amendment text ends with 'Additional co-sponsor(s) added to Amendment #7 to H4359 Voter Identification Representative: David Allen Robertson Colleen M. Garry Alyson M. Sullivan'. The date of the co-sponsor addition is not shown on the page; the date given is the roll-call date.",
@@ -114,6 +117,58 @@
         "fetched_by": "source-collector-rerun",
         "fetched_at": "2026-10-27T14:19:20.028Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Sullivan-Almeida'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Sullivan-Almeida'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
       }
     }
   ],

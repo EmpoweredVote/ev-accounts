@@ -2,12 +2,12 @@
   "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
   "findings": [
     {
-      "id": "179e6c8d698a0bf61b9958ec954a44b24875e18009041a6a871c4eef14aa6d68",
+      "id": "d35afbc15ef44c217e1489d3dbd44e1779f7fede4d8da3a41aa511f26a893f26",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/187/S320",
       "date": "2011-01-24",
       "date_precision": "day",
-      "instrument_id": "MA-SB-320-2011",
+      "instrument_id": "MA-S-320-2011",
       "act": "sponsor",
       "note": "Senate bill 320 of the 187th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with other Senate petitioners. Referred to the Joint Committee on Election Laws on 1/24/2011. A hearing was scheduled for 9/21/2011. It was accompanied by a study order (S2364). The page does not show the bill text in the saved view.",
       "subjects": [
@@ -23,12 +23,12 @@
       }
     },
     {
-      "id": "be8edd180b843a5933f3fd93654570547a2398da7c28b9c59863a68c111f35c7",
+      "id": "1ffb75c5511774ce38f0900d91aae5f7b58fd812e1dbb1a654c2ee7ebc6c99cf",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/188/S339",
       "date": "2013-01-22",
       "date_precision": "day",
-      "instrument_id": "MA-SB-339-2013",
+      "instrument_id": "MA-S-339-2013",
       "act": "sponsor",
       "note": "Senate bill 339 of the 188th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with two co-petitioners. Referred to the committee on Election Laws on 1/22/2013. A hearing was scheduled for 12/04/2013. It was accompanied by a study order (H4145).",
       "subjects": [
@@ -174,13 +174,13 @@
       }
     },
     {
-      "id": "f8e14aad73a0588523679e5070d3437fd5482cc5112ac532a4e65ccbbd8df692",
+      "id": "af7dba272767f5b536083c5aefa492a7fab7e913d457b4ebc0d1c583361d6251",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
-      "date": "2022-05",
+      "date": "2021-10",
       "date_precision": "month",
-      "instrument_id": "MA-S-2545-2022",
-      "act": "other",
+      "instrument_id": "MA-S-2545-AMDT-44-2021",
+      "act": "sponsor",
       "motion": "Amendment S2545-44 (filed by Tarr and O'Connor): photo ID at the polls with affidavit option, and free ID process for homeless or indigent people",
       "note": "Amendment to the 2022 Senate driver's license bill draft. Voters must show government-issued or tribal photo ID; a person without it may sign an affidavit and then receive a ballot. Also requires a process for homeless or indigent people to get a state ID with fees waived. The amendment page shows no date; month taken from the Senate debate week reported by Boston 25 on 2022-05-05.",
       "subjects": [
@@ -196,6 +196,28 @@
         "fetched_by": "source-collector-rerun",
         "fetched_at": "2026-10-27T21:55:43.152Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "d16c44ca605e34045d46da62288100515320bfe0227c663cca0fa667dd422269",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510/Cosponsor",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.510, 'An Act relative to safe and secure elections' (referred 2025-02-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
       }
     }
   ],

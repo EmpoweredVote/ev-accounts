@@ -1,0 +1,56 @@
+{
+  "id": "MA-H-3878-2021",
+  "scope": "state:ma",
+  "title": "An Act establishing identification at the voting polls (H.3878, filed 2021; accompanied a study order (H5026) 2022-09-12)",
+  "urls": [
+    "https://malegislature.gov/Bills/192/H3878",
+    "https://malegislature.gov/Bills/192/H3878.Html",
+    "https://malegislature.gov/Bills/192/H3878/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Chapter 51 of the General Laws is hereby amended by adding the following section:- Section 67. The state secretary shall issue, upon request and at no cost to the voter, a photo identification card to be used for voting purposes only. Upon determination that a person meets the qualifications of a voter described in section 1, the secretary photograph the voter, and said photograph shall appear on the voting identification card and be a straightforward looking view of the voter without eyeglasses. The identification card shall be clearly marked “FOR VOTING PURPOSES ONLY.” SECTION 2. Chapter 54 of the General Laws is hereby amended by striking out section 76B and inserting in place thereof the following section:- Section 76B. Any person who seeks to vote in a federal, state, local or primary election shall establish their qualification to vote by providing a valid photo identification card, MassHealth card or Medicare card to an election officer prior to voting. Acceptable forms of photo identification shall be a voting identification card issued pursuant to section 67 of chapter 51, current driver’s license, government employee identification card, pilot’s license, military identification, state identification card issued pursuant to section 8E of chapter 90 or United States passport.",
+  "sponsors": [
+    {
+      "name": "Alyson M. Sullivan",
+      "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.3878, session 192"
+    },
+    {
+      "name": "Lenny Mirra",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.3878, session 192"
+    },
+    {
+      "name": "Michael J. Soter",
+      "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.3878, session 192"
+    },
+    {
+      "name": "David Allen Robertson",
+      "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.3878, session 192"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/192_H3878.Html.htm",
+      "sha256": "58ce5609f3a30d86f76f3932d5c16aeb91735c4b3ba4ad2ad0d431c43263b556"
+    }
+  }
+}

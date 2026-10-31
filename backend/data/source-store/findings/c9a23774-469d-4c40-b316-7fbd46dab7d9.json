@@ -23,13 +23,13 @@
       }
     },
     {
-      "id": "5829325c1c858aa86dfddc4614a28f2373114a8aebf97ceed81ebc658d27194d",
+      "id": "3eff5ecb4e2e7135e182bb7a6d2077e77db2aa5940c010a3dc77670fa680efa0",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/193/H720.pdf",
       "date": "2023-02-14",
       "date_precision": "day",
       "instrument_id": "MA-H-720-2023",
-      "act": "other",
+      "act": "sponsor",
       "motion": "Added as a petitioner (co-signer) of H.720, An Act establishing identification at the voting polls",
       "note": "Vaughn is one of eight legislators named on the petition for H.720, added 2/14/2023. The bill has the state secretary issue a free photo ID card for voting only, and requires a person voting in a federal, state, local or primary election to show a valid photo ID, MassHealth card or Medicare card to an election officer before voting. The bill went to the Election Laws committee and on 2024-07-15 accompanied a study order (H4733).",
       "subjects": [
@@ -85,6 +85,58 @@
         "fetched_by": "source-collector-rerun",
         "fetched_at": "2026-10-27T22:06:14.608Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Vaughn'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Vaughn'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
       }
     }
   ],

@@ -47,6 +47,142 @@
         "fetched_at": "2026-10-22T23:23:31.321Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1a3a57590b75b0c435761cea03f7703afb40e783eed9cc6c343cf577a4d26617",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S335/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-S-335-2013",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.335, 'An Act requiring photo identification to receive a ballot' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "6537347ffd7933f4bd8b5fb6b2cfeabd0ac29bd2f93083e715670ba04db4c9f7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H687/Cosponsor",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-687-2023",
+      "act": "sponsor",
+      "note": "Listed as presenter of H.687, 'An Act ensuring the election integrity through voter identification' (filed 2023-02-16).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "4601334a66b8653660d2004203cfeef7faec1b34eac50085ebe2a80e09e16bbc",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/12/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-12-2022",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of Amendment #12 to H.4359, 'Establishing identification at the voting polls' (2022-01-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bcd1a87a7452c6aec9f56454248eee195addf3aa76b483dcab2a1466956ed383",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of Amendment #7 to H.4359, 'Voter Identification' (2022-01-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Garry'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "d16c44ca605e34045d46da62288100515320bfe0227c663cca0fa667dd422269",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510/Cosponsor",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.510, 'An Act relative to safe and secure elections' (referred 2025-02-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

@@ -160,7 +160,8 @@
         },
         {
           "name": "Sullivan",
-          "vote": "yea"
+          "vote": "yea",
+          "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2"
         },
         {
           "name": "Vieira",
@@ -783,5 +784,31 @@
     "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
     "fetched_at": "2026-10-21T03:40:10.569Z",
     "method": "curl"
-  }
+  },
+  "sponsors": [
+    {
+      "name": "Frost",
+      "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529",
+      "role": "prime",
+      "version": "amendment as offered 2022-01-27 (\"Mr. Frost of Auburn moves to amend\")"
+    },
+    {
+      "name": "David Allen Robertson",
+      "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Colleen M. Garry",
+      "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Alyson M. Sullivan",
+      "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+      "role": "co",
+      "version": "added co-sponsor"
+    }
+  ]
 }

@@ -1,0 +1,55 @@
+{
+  "id": "MA-H-1981-2011",
+  "scope": "state:ma",
+  "title": "An Act establishing identification requirements for voters who registered by mail (H.1981, filed 2011; reported favorably by Election Laws 2012-05-30; no floor vote)",
+  "urls": [
+    "https://malegislature.gov/Bills/187/H1981",
+    "https://malegislature.gov/Bills/187/H1981.Html",
+    "https://malegislature.gov/Bills/187/H1981/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1.Section 76B of chapter 54 of the general laws, as appearing in the 2008 Official Edition, is hereby amended by striking subsection (b)(1) and inserting in its place the following:- (b)(1) Subject to paragraph (3), a person asserting a right to vote in a primary, caucus, preliminary, or other election shall present identification under paragraph (2) if: (a) the person registered to vote in the city or town by mail after January 1, 2003; and (b) the person has not previously voted in a primary, caucus, preliminary, or other election in the commonwealth. SECTION 2. This act shall take effect upon its passage.",
+  "sponsors": [
+    {
+      "name": "Alice Hanlon Peisch",
+      "politician_id": "ac853e6e-d419-4d05-b89c-77d11bb68fb2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.1981, session 187"
+    },
+    {
+      "name": "Joseph F. Wagner",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.1981, session 187"
+    },
+    {
+      "name": "Chris Walsh",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.1981, session 187"
+    },
+    {
+      "name": "David Paul Linsky",
+      "politician_id": "fa6beaf8-acfe-4365-82a2-6f282aa1b688",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.1981, session 187"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/187_H1981.Html.htm",
+      "sha256": "165e049a75a7384de7100f6500aff01e929f86e61c32737d262e058f968c5283"
+    }
+  }
+}
