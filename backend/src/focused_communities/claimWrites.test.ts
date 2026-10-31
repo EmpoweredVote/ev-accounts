@@ -145,13 +145,26 @@ describe('POST /claims/:parentId/children', () => {
     }
   });
 
-  it('rejects a blank or oversized body', async () => {
-    for (const body of [undefined, '', '   ', 'x', 42, 'y'.repeat(1001)]) {
+  it('rejects a blank, too-short or oversized body', async () => {
+    // Under 10 rules out "Yes", "No." and "+1" — votes rather than claims. Over 500 is several
+    // claims written as one, which is what the tree exists to split up.
+    for (const body of [undefined, '', '   ', 'x', 'No.', '+1', 'nine char', '  nine chr  ', 42, 'y'.repeat(501)]) {
       query.mockReset();
       const res = await post(PARENT, { side: 'supports', body });
       expect(res.status, `body=${JSON.stringify(body)?.slice(0, 20)}`).toBe(400);
       expect(res.body.error.code).toBe('INVALID_BODY');
+      expect(res.body.error.message).toBe('body must be 10-500 characters');
       expect(query).not.toHaveBeenCalled();
+    }
+  });
+
+  it('accepts a body at both bounds, measured after trimming', async () => {
+    for (const body of ['y'.repeat(10), `  ${'y'.repeat(10)}  `, 'y'.repeat(500)]) {
+      query.mockReset();
+      mockCreate({ body: body.trim() });
+      const res = await post(PARENT, { side: 'supports', body });
+      expect(res.status, `len=${body.trim().length}`).toBe(201);
+      expect(insertCall()[1][2]).toBe(body.trim());
     }
   });
 
@@ -182,6 +195,40 @@ describe('POST /claims/:parentId/children', () => {
     expect(res.status).toBe(404);
     expect(res.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
     expect(insertSqlWasRun()).toBe(false);
+  });
+
+  // ── The hide race ──────────────────────────────────────────────────────────────────────
+  // A parent can be hidden (or moved, or merged) between the quota-guard read and the write.
+  // The guarantee is in the writing statement: the visibility predicate sits under FOR UPDATE,
+  // so READ COMMITTED re-evaluates it against the post-hide row and the INSERT inserts nothing.
+  // pool.query is mocked here, so these pin the two halves a mock CAN see — the shape of the
+  // statement that carries the guarantee, and what the route does with the zero rows it returns.
+  // The semantics in between belong to Postgres, and EXPLAIN was used to confirm the filter sits
+  // beneath the LockRows node rather than above it.
+
+  it('makes the visibility check part of the write, under the parent row lock', async () => {
+    mockCreate();
+    await post();
+
+    const sql = insertSql();
+    expect(sql).toContain("p.moderation_status = 'visible'");
+    expect(sql).toContain('FOR UPDATE OF p');
+    // The predicate must be in the statement that WRITES, not only in the read before it.
+    expect(sql.indexOf('INSERT')).toBeLessThan(sql.indexOf("moderation_status = 'visible'"));
+  });
+
+  it('cannot attach a child to a parent hidden while the write is in flight', async () => {
+    // The guard read saw a visible parent; by the time the locked INSERT ran, it was hidden,
+    // so the statement affected no rows.
+    query.mockResolvedValueOnce(rows([{ id: PARENT, moderation_status: 'visible' }]));
+    query.mockResolvedValueOnce(rows([]));
+
+    const res = await post();
+
+    // 404 and not 500: zero rows is the race being caught, not a failure. And the same body a
+    // parent hidden an hour ago gets, so the writer cannot tell the two apart.
+    expect(res.status).toBe(404);
+    expect(res.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
   });
 
   it('404s a parentId that is not a uuid, without touching the database', async () => {

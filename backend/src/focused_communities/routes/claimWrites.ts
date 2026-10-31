@@ -40,14 +40,23 @@ const SIDES: readonly string[] = ['supports', 'opposes'];
 
 /**
  * Body bounds. The database forbids only a blank body (claims_body_not_blank); these are the
- * interface's bounds, not the schema's. A claim is one proposition that has to read as a line in
- * a column beside its siblings, so the ceiling is far below a forum post's 5,000.
+ * interface's bounds, not the schema's, and both are named so the next person changes a number
+ * rather than a condition.
  *
- * OPEN: nobody has fixed 1,000 as the product answer. It is a deliberate first choice, not a
- * constraint inherited from anywhere, and it is the one number in this file worth revisiting.
+ * A claim is not a forum post. It is a single assertion that another claim supports or opposes,
+ * and the whole value of the tree is that a long argument gets SPLIT into claims rather than
+ * written as one. The house conventions are threads.ts:122 (title 5-150) and threads.ts:129
+ * (body 10-5000); this takes the minimum from the second and goes an order of magnitude below it
+ * at the top.
+ *
+ *   MIN 10  — the house minimum for a body. It rules out "Yes", "No." and "+1", which are votes
+ *             rather than claims; agreement belongs in the Task 5 rating control, not in a child.
+ *   MAX 500 — a claim needing 5,000 characters is several claims, and letting someone write it as
+ *             one defeats the structure the tree exists to impose. 500 is also Kialo's own limit,
+ *             and Kialo is the stated model for this feature.
  */
-const BODY_MIN = 5;
-const BODY_MAX = 1000;
+const BODY_MIN = 10;
+const BODY_MAX = 500;
 
 /**
  * A uuid in the one spelling Postgres gives back — the same guard, and the same reasoning, as
@@ -175,6 +184,49 @@ function toClaim(row: InsertedClaimRow): Claim {
 //     instead of a 500 out of a RAISE.
 //
 // The INSERT names four columns. That is the whole statement.
+//
+// --- Visibility is checked INSIDE the write, under the same lock --------------------------
+//
+// What the trigger does NOT do is notice that the parent has been HIDDEN. Hiding is a Task 7
+// UPDATE of moderation_status; the derivation reads only path, depth and community_id, none of
+// which hiding changes, so a child would sail straight through. A pre-flight SELECT does not
+// close that either: it answers about an instant that is over by the time the INSERT runs, and
+// the trigger's own FOR UPDATE makes it worse rather than better — our insert blocks on the
+// in-flight hide, wakes AFTER it commits, finds path and depth unchanged, and cheerfully
+// attaches a child to a claim that has just been withdrawn.
+//
+// So the predicate lives in the writing statement, under the row lock:
+//
+//   INSERT INTO connect.claims (…)
+//   SELECT p.id, … FROM connect.claims p
+//    WHERE p.id = $1 AND p.moderation_status = 'visible'
+//      FOR UPDATE OF p
+//
+// This is the same mechanism §4a already relies on, stated in its own words: "T1 blocks, and when
+// it wakes READ COMMITTED re-evaluates the lookup". That re-evaluation is the point. FOR UPDATE
+// waits on the hider's row lock; when the hider commits, READ COMMITTED re-checks this statement's
+// quals against the NEW row version, the row no longer satisfies `moderation_status = 'visible'`,
+// the SELECT yields nothing and the INSERT inserts nothing. Zero rows back is not an error here —
+// it is the race being caught, and it answers 404 like any other hidden parent. `EXPLAIN` confirms
+// the shape the argument depends on: the filter sits on the scan BENEATH the LockRows node, so it
+// is part of what gets re-evaluated, not applied before the wait.
+//
+// The same lock closes the moved-parent and merged-parent variants of the window, because all
+// three are UPDATEs to the parent row that this now serializes against.
+//
+// WHY ONE STATEMENT RATHER THAN BEGIN / SELECT FOR UPDATE / INSERT / COMMIT
+// The explicit transaction gives the identical guarantee and costs more to hold: this pool is
+// max: 3 (config/database.ts) in front of a shared Supavisor pooler, so a checked-out client
+// across four round trips ties up a third of the module's connections for the duration and adds a
+// ROLLBACK-and-release path that has to be right on every branch. A single statement is its own
+// transaction, cannot leak a client, and cannot be left open by an early return.
+//
+// NO NEW DEADLOCK. The lock order is unchanged — FOR UPDATE on the parent, then the AFTER INSERT
+// count trigger's UPDATE of it — and this merely takes that first lock a moment earlier in the
+// same transaction. The derivation trigger's own FOR UPDATE on the same row then finds a lock the
+// transaction already holds, which is a no-op, not a wait. 🔴 Note this is FOR UPDATE and not FOR
+// SHARE, for exactly the reason §4a gives: a shared lock here would need upgrading when the count
+// trigger runs, which is the lock-upgrade deadlock that migration was written to avoid.
 
 // --- Route -----------------------------------------------------------------
 
@@ -211,7 +263,11 @@ claimWritesRouter.post(
       return;
     }
 
-    // The parent, for `hidden` and for a clean 404 — see "Position is not ours to set".
+    // The parent, read once up front. This is a QUOTA GUARD, not the guarantee: attaching to a
+    // claim that is absent or was withdrawn an hour ago should cost a writer nothing out of five
+    // an hour, and finding that out needs a cheap read before the limiter. The guarantee that a
+    // concurrently hidden parent cannot gain a child is the predicate in the INSERT below, and it
+    // holds whether or not this read ran. See "Visibility is checked INSIDE the write".
     let parent: { moderation_status: string } | null;
     try {
       const { rows } = await pool.query<{ moderation_status: string }>(
@@ -248,7 +304,10 @@ claimWritesRouter.post(
     try {
       const { rows } = await pool.query<InsertedClaimRow>(
         `INSERT INTO connect.claims (parent_claim_id, side, body, author_id)
-         VALUES ($1, $2, $3, $4)
+         SELECT p.id, $2::text, $3::text, $4::uuid
+           FROM connect.claims p
+          WHERE p.id = $1 AND p.moderation_status = 'visible'
+            FOR UPDATE OF p
          RETURNING ${RETURNING_COLUMNS}`,
         [parentId, side, trimmedBody, user.id]
       );
@@ -258,8 +317,12 @@ claimWritesRouter.post(
       return;
     }
 
+    // Zero rows is the race being caught, not a failure: the parent was hidden (or moved, or
+    // merged) between the read above and this statement, and the locked re-evaluation dropped it.
+    // It gets the same 404 as a parent that was already hidden — the writer cannot tell which,
+    // and should not be able to.
     if (!row) {
-      internalError(res, `claim create under ${parentId}`, new Error('INSERT returned no row'));
+      notFound(res);
       return;
     }
 
