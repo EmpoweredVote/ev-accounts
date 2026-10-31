@@ -4,6 +4,7 @@ import path from 'node:path';
 import {
   stripCommentsAndStrings, tempTablesCreated, unsafeDropTargets,
   stripOwnTransaction, ownsItsTransaction,
+  assertSingleTransaction, countOwnTransactionMarkers,
 } from './migration-file-guards.mjs';
 
 // apply-migration-file.mjs exists so nobody hand-pastes a migration body into another channel.
@@ -146,5 +147,68 @@ describe('the migrations directory', () => {
       '1818_retire_app_auth_credentials.sql',
       '1819_drop_app_auth_schema.sql',
     ]);
+  });
+});
+
+describe('assertSingleTransaction — one migration per file', () => {
+  const one = 'BEGIN;\nSELECT 1;\nCOMMIT;\n';
+  const two = one + one;
+
+  it('counts the markers in code only, not in prose about them', () => {
+    expect(countOwnTransactionMarkers(one)).toEqual({ begins: 1, commits: 1 });
+    expect(countOwnTransactionMarkers(two)).toEqual({ begins: 2, commits: 2 });
+    // A comment that talks about COMMIT must not count, or every migration in this repo trips.
+    const chatty = '-- this migration ends with COMMIT;\n-- BEGIN; is stripped by the runner\n' + one;
+    expect(countOwnTransactionMarkers(chatty)).toEqual({ begins: 1, commits: 1 });
+  });
+
+  it('allows the house style: exactly one BEGIN; and one COMMIT;', () => {
+    expect(() => assertSingleTransaction(one, 'f.sql')).not.toThrow();
+  });
+
+  it('allows a file with no transaction of its own', () => {
+    expect(() => assertSingleTransaction('SELECT 1;\n', 'f.sql')).not.toThrow();
+  });
+
+  // 🔴 THE REGRESSION. Two migrations concatenated to rehearse them together: stripOwnTransaction
+  // removes only the FIRST of each marker, so the second COMMIT; survived and committed to
+  // production while the runner still printed "ROLLED BACK — prod is unchanged".
+  it('refuses two concatenated migrations, naming both counts', () => {
+    expect(() => assertSingleTransaction(two, 'pair.sql'))
+      .toThrow(/pair\.sql contains 2 BEGIN; and 2 COMMIT;/);
+  });
+
+  it('refuses an unbalanced file too — a stray second COMMIT; is the dangerous half', () => {
+    expect(() => assertSingleTransaction('BEGIN;\nSELECT 1;\nCOMMIT;\nSELECT 2;\nCOMMIT;\n', 'f.sql'))
+      .toThrow(/1 BEGIN; and 2 COMMIT;/);
+  });
+
+  // CONTROL: this is what the defect looked like. stripOwnTransaction is deliberately left
+  // alone — it still removes only the first of each — so the guard above is the only thing
+  // standing between a concatenated file and a real commit. If someone "fixes" the stripper
+  // with a /g flag instead, this test keeps saying what the shape actually is.
+  it('CONTROL: stripOwnTransaction still leaves the second pair behind', () => {
+    const stripped = stripOwnTransaction(two);
+    expect(stripped).toContain('COMMIT;');
+    expect(countOwnTransactionMarkers(stripped)).toEqual({ begins: 1, commits: 1 });
+  });
+
+  // 🔴 ONE EXISTING MIGRATION REALLY DOES CARRY TWO TRANSACTIONS, and this test is how it was
+  // found. 919_palmdale_complete.sql opens at line 16, commits at 98, then opens again at 108
+  // and commits at 115. It is already applied, so nothing is rewritten here — but it means
+  // dry-running THAT file would have committed its first part for real, exactly as the
+  // concatenated pair did. Named rather than excluded, so the number stays visible.
+  it('exactly one existing migration carries more than one transaction', () => {
+    const files = readdirSync(MIGRATIONS).filter((f) => f.endsWith('.sql'));
+    expect(files.length).toBeGreaterThan(100);
+    const refused = files.filter((f) => {
+      try {
+        assertSingleTransaction(readFileSync(path.join(MIGRATIONS, f), 'utf8'), f);
+        return false;
+      } catch {
+        return true;
+      }
+    });
+    expect(refused).toEqual(['919_palmdale_complete.sql']);
   });
 });

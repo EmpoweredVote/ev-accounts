@@ -54,7 +54,21 @@ export function ocdDistrictSuffix(districtNum: string | null | undefined): strin
   const m = /^0*(\d+)([A-Za-z]*)$/.exec(raw);
   if (m) {
     const digits = m[1] === '' ? '0' : m[1];
-    return `${digits}${m[2].toUpperCase()}`;
+    const letters = m[2].toUpperCase();
+
+    // 🔴 ALASKA: THE DIGITS CAN BE PURE PADDING. Its SLDUST codes are '00A'..'00T' — the Senate
+    //    districts are LETTERED, with no number at all, so the leading zeros are fixed-width
+    //    padding and nothing more. The strip above leaves one zero behind and yields '0A', making
+    //    an OCD-ID of .../sldu:0A where the standard says .../sldu:a. Alaska is the first state
+    //    loaded here whose district code is PURELY alphabetic; MN '08A' and MD '1A' both carry a
+    //    real number, so neither reaches this branch.
+    // ⚠ MEASURED BEFORE CHANGING IT, on 2026-10-30: ZERO existing STATE_UPPER/STATE_LOWER rows in
+    //    production have a suffix matching ^0+[A-Za-z]+$ — every lettered suffix already there
+    //    (MN, MD) has a non-zero number in front. So this moves no existing row. The test file
+    //    pins that as a control rather than leaving it as a claim.
+    if (letters !== '' && /^0+$/.test(digits)) return letters;
+
+    return `${digits}${letters}`;
   }
 
   // Not a district code at all. Fall through to exactly what the old rule produced, so no
