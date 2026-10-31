@@ -16,8 +16,17 @@ vi.mock('../lib/cache.js', () => ({
   },
 }));
 
+// The engine's optionalAuth, reduced to a guest: the seasons route only needs a predicate here.
+// roleService's own dependency on supabase.js process.exit()s without env vars, so stub it.
+vi.mock('../lib/supabase.js', () => ({ supabaseAdmin: {}, adminRpc: async () => ({ data: [], error: null }) }));
+vi.mock('../lib/roleService.js', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../lib/roleService.js')>()),
+  getCachedUserRoles: async () => [],
+}));
+
 // The engine's requireAuth, reduced to the three outcomes the module depends on.
 vi.mock('../middleware/auth.js', () => ({
+  optionalAuth: async (_req: express.Request, _res: express.Response, next: express.NextFunction) => { next(); },
   requireAuth: async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const h = req.headers.authorization;
     if (!h) { res.status(401).json({ error: 'Missing authorization header' }); return; }
@@ -330,6 +339,20 @@ describe('GET /users/:id/posts', () => {
       postExcerpt: 'hello there', createdAt: TS, isEdited: false, authorPseudonym: 'P',
     }]);
     expect(query.mock.calls[0][1]).toEqual(['u1', 21]);
+  });
+});
+
+describe('seasons router is mounted', () => {
+  it('serves GET /communities/:id/seasons as a 200 on the /fc/api mount', async () => {
+    query
+      .mockResolvedValueOnce(rows([{ topic_id: 't1' }]))
+      .mockResolvedValueOnce(rows([{ season_number: 1, season_name: 'S1', status: 'open', opened_at: TS, closed_at: null }]));
+    const res = await request(app).get('/fc/api/communities/c1/seasons');
+    expect(res.status).toBe(200);
+    expect(res.body.data).toEqual([{ number: 1, name: 'S1', status: 'open', openedAt: TS, closedAt: null }]);
+    expect(res.body.meta.defaultSeason).toBe(1);
+    expect(query.mock.calls[0][1]).toEqual(['c1']);
+    expect(query.mock.calls[1][1]).toEqual(['t1', false]);
   });
 });
 

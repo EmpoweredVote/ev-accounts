@@ -26,6 +26,7 @@ import { stancesRouter } from './routes/stances.js';
 import { threadsRouter } from './routes/threads.js';
 import { postsRouter } from './routes/posts.js';
 import { usersRouter } from './routes/users.js';
+import { seasonsRouter } from './routes/seasons.js';
 
 export const focusedCommunitiesRouter = Router();
 
@@ -36,6 +37,7 @@ focusedCommunitiesRouter.use(stancesRouter);
 focusedCommunitiesRouter.use(threadsRouter);
 focusedCommunitiesRouter.use(postsRouter);
 focusedCommunitiesRouter.use(usersRouter);
+focusedCommunitiesRouter.use(seasonsRouter);
 
 // The standalone's global error handler, scoped to these routes.
 focusedCommunitiesRouter.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
