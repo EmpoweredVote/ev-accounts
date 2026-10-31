@@ -417,9 +417,60 @@ describe('GET /communities/:id/seasons/:number', () => {
     });
 
     it('does not serialize rung_map or its values with markers on', async () => {
-      markFlow(IDENT);
+      const distinct = { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 };
+      markFlow(distinct);
       const res = await request(app).get(`${SP}/2`);
-      expect(JSON.stringify(res.body)).not.toMatch(/rung|"ordinal"|"position"/);
+      const body = JSON.stringify(res.body);
+      expect(body).not.toMatch(/rung|"ordinal"|"position"/);
+      // Nothing but the chair fields: no stray key could be carrying the map's values.
+      expect(Object.keys(res.body.data).sort()).toEqual(
+        ['chairs', 'changeClass', 'isFallback', 'questionText', 'rationale', 'season', 'seasonNote', 'topicNote'].sort());
+      expect(Object.keys(res.body.data.chairs[0]).sort()).toEqual(
+        ['changeSince', 'description', 'examplePerspectives', 'supportingPoints', 'text']);
+      expect(body).not.toMatch(/{"1":1|"1":1,"2":2/);
+    });
+
+    it.each([
+      ['an extra sixth key', { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6 }],
+      ['numeric strings instead of numbers', { 1: '1', 2: '2', 3: '3', 4: '4', 5: '5' }],
+      ['a missing key', { 1: 1, 2: 2, 3: 3, 4: 4 }],
+      ['an array', [1, 2, 3, 4, 5]],
+    ])('suppresses the marker for %s', async (_n, map) => {
+      markFlow(map);
+      const res = await request(app).get(`${SP}/2`);
+      expect(res.status).toBe(200);
+      expect(markers(res)).toEqual([null, null, null]);
+    });
+
+    it('passes includeDrafts=true to the previous-season fetch for a maven', async () => {
+      const l = rows([s(1, 'closed'), s(2, 'closed'), s(3, 'draft')]);
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(l)
+        .mockResolvedValueOnce(detail({ season_number: 3, status: 'draft', rung_map: IDENT })).mockResolvedValueOnce(closedChairs())
+        .mockResolvedValueOnce(rows(['old 0', 'x', 'old 2'].map((text, i) => ({ ordinal: i + 1, text }))));
+      const res = await request(app).get(`${SP}/3`).set('Authorization', 'Bearer maven');
+      expect(sql(4)).toContain('get_season_chairs');
+      expect(query.mock.calls[4][1]).toEqual(['t1', 2, true]);
+      expect(markers(res)).toEqual(['carried', 'reworded', 'carried']);
+    });
+
+    it('reads the predecessor from the live stances when the previous season is the open one', async () => {
+      // A draft follows the open season; its predecessor is open, whose chairs live in compass_stances.
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+        .mockResolvedValueOnce(detail({ season_number: 3, status: 'draft', rung_map: IDENT })).mockResolvedValueOnce(closedChairs())
+        .mockResolvedValueOnce(rows(['old 0', 'changed', 'old 2'].map((text, i) => ({ position: i + 1, text }))));
+      const res = await request(app).get(`${SP}/3`).set('Authorization', 'Bearer maven');
+      expect(sql(4)).toContain('connect.get_stances_for_community($1)');
+      expect(sql(4)).not.toContain('get_season_chairs');
+      expect(query.mock.calls[4][1]).toEqual(['c1']);
+      expect(markers(res)).toEqual(['carried', 'reworded', 'carried']);
+    });
+
+    it('returns null markers, not a 500, when the previous-season lookup fails', async () => {
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(list).mockResolvedValueOnce(detail({ rung_map: IDENT }))
+        .mockResolvedValueOnce(openChairs()).mockRejectedValueOnce(new Error('boom'));
+      const res = await request(app).get(`${SP}/2`);
+      expect(res.status).toBe(200);
+      expect(markers(res)).toEqual([null, null, null]);
     });
   });
 

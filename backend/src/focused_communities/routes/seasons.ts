@@ -222,6 +222,8 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
         .filter((r) => r.season_number < target.season_number)
         .sort((a, b) => b.season_number - a.season_number)[0];
       if (prev) {
+        // Decoration only: a failed lookup yields null markers, never a failed page.
+        try {
         if (prev.status === 'open') {
           const { rows } = await pool.query(
             'SELECT position, text FROM connect.get_stances_for_community($1) ORDER BY position ASC',
@@ -234,6 +236,9 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
             [topicId, prev.season_number, includeDrafts]
           );
           previousTexts = [...rows].sort((a, b) => a.ordinal - b.ordinal).map((r) => r.text);
+        }
+        } catch {
+          previousTexts = null;
         }
       }
     }
