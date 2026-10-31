@@ -203,7 +203,7 @@ describe('GET /communities/:id/seasons/:number', () => {
     expect(JSON.stringify(res.body)).not.toContain('rungMap');
   });
 
-  it('asks the database for chairs in explicit ladder order', async () => {
+  it('asks the database for chairs in explicit ladder order (SQL)', async () => {
     openFlow();
     await request(app).get(`${SP}/2`);
     expect(sql(3)).toMatch(/ORDER BY position ASC/);
@@ -227,19 +227,76 @@ describe('GET /communities/:id/seasons/:number', () => {
     expect(query.mock.calls[2][1]).toEqual(['t1', 2, true]);
   });
 
-  it('404s a draft season for a non-maven, never 403', async () => {
-    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list);
+  it('treats a draft season requested by a non-maven exactly like an unknown one: 200 fallback to the default', async () => {
+    // The database omits drafts for a guest, so the list never contains season 3.
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(2, 'open')]))
+      .mockResolvedValueOnce(detail()).mockResolvedValueOnce(openChairs());
     const res = await request(app).get(`${SP}/3`);
-    expect(res.status).toBe(404);
-    expect(query).toHaveBeenCalledTimes(2);
+    expect(res.status).toBe(200);
+    expect(res.body.data.isFallback).toBe(true);
+    expect(res.body.data.season.number).toBe(2);
+    expect(res.body.data.questionText).toBe('Q?');
+    expect(query.mock.calls[1][1]).toEqual(['t1', false]);
   });
 
-  it('serves a draft season to a maven', async () => {
+  it('falls back to the closed season, not a draft, for a guest on a topic with both', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed')]))
+      .mockResolvedValueOnce(detail({ season_number: 1, season_name: 'S1', status: 'closed' })).mockResolvedValueOnce(closedChairs());
+    const res = await request(app).get(`${SP}/9`);
+    expect(res.status).toBe(200);
+    expect(res.body.data.isFallback).toBe(true);
+    expect(res.body.data.season.number).toBe(1);
+    expect(query.mock.calls[1][1]).toEqual(['t1', false]);
+    expect(query.mock.calls[2][1]).toEqual(['t1', 1, false]);
+  });
+
+  it('serves a draft season to a maven with its chairs, passing includeDrafts to both calls', async () => {
     query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
       .mockResolvedValueOnce(detail({ season_number: 3, status: 'draft' })).mockResolvedValueOnce(closedChairs());
     const res = await request(app).get(`${SP}/3`).set('Authorization', 'Bearer maven');
     expect(res.status).toBe(200);
     expect(res.body.data.season.number).toBe(3);
+    expect(res.body.data.chairs.map((c: { text: string }) => c.text)).toEqual(['old 0', 'old 1', 'old 2']);
+    expect(query.mock.calls[2][1]).toEqual(['t1', 3, true]);
+    expect(query.mock.calls[3][1]).toEqual(['t1', 3, true]);
+  });
+
+  it('passes includeDrafts=false to the detail and chairs calls for a guest', async () => {
+    closedFlow();
+    await request(app).get(`${SP}/1`);
+    expect(query.mock.calls[2][1]).toEqual(['t1', 1, false]);
+    expect(query.mock.calls[3][1]).toEqual(['t1', 1, false]);
+  });
+
+  it('returns open-season chairs in ladder order when the rows arrive shuffled', async () => {
+    const shuffled = rows([3, 1, 2].map((p) => ({ position: p, text: `p${p}`, description: null, supporting_points: [], example_perspectives: [] })));
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list).mockResolvedValueOnce(detail()).mockResolvedValueOnce(shuffled);
+    const res = await request(app).get(`${SP}/2`);
+    expect(res.body.data.chairs.map((c: { text: string }) => c.text)).toEqual(['p1', 'p2', 'p3']);
+  });
+
+  it('returns closed-season chairs in ladder order when the rows arrive shuffled', async () => {
+    const shuffled = rows([2, 3, 1].map((o) => ({ ordinal: o, text: `o${o}`, description: null, supporting_points: [], example_perspectives: [] })));
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+      .mockResolvedValueOnce(detail({ season_number: 1, status: 'closed' })).mockResolvedValueOnce(shuffled);
+    const res = await request(app).get(`${SP}/1`);
+    expect(res.body.data.chairs.map((c: { text: string }) => c.text)).toEqual(['o1', 'o2', 'o3']);
+  });
+
+  it('passes a null description through as null on the closed path', async () => {
+    closedFlow();
+    const res = await request(app).get(`${SP}/1`);
+    expect(res.body.data.chairs[0].description).toBeNull();
+  });
+
+  it('bounds the cache keyspace by the resolved season, not the requested number', async () => {
+    openFlow();
+    await request(app).get(`${SP}/9`);
+    for (const n of ['99', '999', 'abc']) {
+      query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(2, 'open')]));
+      await request(app).get(`${SP}/${n}`);
+    }
+    expect([...store.keys()]).toEqual(['fc:season:t1:2:true:false']);
   });
 
   it('falls back to the default season when the topic is absent from the requested one', async () => {
@@ -264,8 +321,8 @@ describe('GET /communities/:id/seasons/:number', () => {
     expect(res.status).toBe(404);
   });
 
-  it('does not fall back to a draft for a non-maven', async () => {
-    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(3, 'draft')]));
+  it('404s when the only season is a draft and the caller is a guest', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([]));
     expect((await request(app).get(`${SP}/9`)).status).toBe(404);
   });
 
@@ -286,11 +343,11 @@ describe('GET /communities/:id/seasons/:number', () => {
   it('caches guest responses per season and drafts flag', async () => {
     openFlow();
     await request(app).get(`${SP}/2`);
-    expect([...store.keys()]).toEqual(['fc:season:t1:2:false']);
-    query.mockResolvedValueOnce(community);
+    expect([...store.keys()]).toEqual(['fc:season:t1:2:false:false']);
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(2, 'open')]));
     const again = await request(app).get(`${SP}/2`);
     expect(again.body.data.questionText).toBe('Q?');
-    expect(query).toHaveBeenCalledTimes(5);
+    expect(query).toHaveBeenCalledTimes(6);
   });
 
   it('404s an unknown community', async () => {

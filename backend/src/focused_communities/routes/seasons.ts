@@ -120,7 +120,6 @@ export interface SeasonView {
 interface DetailRow {
   season_number: number;
   season_name: string;
-  status: SeasonStatus;
   question_text: string;
   change_class: ChangeClass;
   season_note: string | null;
@@ -159,56 +158,49 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
   }
 
   const requested = Number.parseInt(String(req.params.number), 10);
-  const key = `fc:season:${topicId}:${Number.isNaN(requested) ? 'default' : requested}:${includeDrafts}`;
-  if (includeDrafts) {
-    res.set('Cache-Control', 'private, no-store');
-  } else {
-    const cached = await cache.get<unknown>(key);
-    if (cached !== null) { res.json(cached); return; }
-  }
+  if (includeDrafts) res.set('Cache-Control', 'private, no-store');
 
   try {
-    // Always list with drafts: a draft the caller may not see must 404 rather than silently fall back.
-    const { rows: all } = await pool.query(
+    // A draft is invisible to a non-maven, so it is simply absent here and falls back like any unknown number.
+    const { rows: visible } = await pool.query(
       'SELECT season_number, season_name, status, opened_at, closed_at FROM connect.get_season_list($1, $2)',
-      [topicId, true]
+      [topicId, includeDrafts]
     ) as { rows: SeasonRow[] };
 
-    const match = Number.isNaN(requested) ? undefined : all.find((r) => r.season_number === requested);
-    let target: SeasonRow | undefined = match;
-    let isFallback = false;
-    if (match) {
-      if (match.status === 'draft' && !includeDrafts) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
-    } else {
-      const visible = all.filter((r) => includeDrafts || r.status !== 'draft');
-      const def = resolveDefaultSeason(visible);
-      target = visible.find((r) => r.season_number === def);
-      isFallback = true;
-    }
+    const match = Number.isNaN(requested) ? undefined : visible.find((r) => r.season_number === requested);
+    const isFallback = !match;
+    const target = match ?? visible.find((r) => r.season_number === resolveDefaultSeason(visible));
     if (!target) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
 
+    // Keyed on the RESOLVED season so arbitrary :number values cannot grow the keyspace.
+    const key = `fc:season:${topicId}:${target.season_number}:${isFallback}:${includeDrafts}`;
+    if (!includeDrafts) {
+      const cached = await cache.get<unknown>(key);
+      if (cached !== null) { res.json(cached); return; }
+    }
+
     const { rows: detail } = await pool.query(
-      'SELECT season_number, season_name, status, question_text, change_class, season_note, topic_note, rationale FROM connect.get_season_detail($1, $2, $3)',
+      'SELECT season_number, season_name, question_text, change_class, season_note, topic_note, rationale FROM connect.get_season_detail($1, $2, $3)',
       [topicId, target.season_number, includeDrafts]
     ) as { rows: DetailRow[] };
     const d = detail[0];
     if (!d) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
 
     // The open season reads the live stances (complete); closed seasons read their revisions.
-    // Ordering is explicit: with the numbers stripped, row order is all that carries the ladder.
+    // Ordering is explicit, in SQL and again in JS: with the numbers stripped, row order is all that carries the ladder.
     let chairRows: ChairRow[];
     if (target.status === 'open') {
       const { rows } = await pool.query(
         'SELECT position, text, supporting_points, description, example_perspectives FROM connect.get_stances_for_community($1) ORDER BY position ASC',
         [req.params.id]
       );
-      chairRows = rows;
+      chairRows = [...rows].sort((a, b) => a.position - b.position);
     } else {
       const { rows } = await pool.query(
         'SELECT ordinal, text, description, supporting_points, example_perspectives FROM connect.get_season_chairs($1, $2, $3) ORDER BY ordinal ASC',
         [topicId, target.season_number, includeDrafts]
       );
-      chairRows = rows;
+      chairRows = [...rows].sort((a, b) => a.ordinal - b.ordinal);
     }
 
     const view: SeasonView = {
