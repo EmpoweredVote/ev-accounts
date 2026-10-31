@@ -6,12 +6,13 @@ LegiScan US bulk dataset into essentials.legislative_votes.
   federal_votes_legiscan.py <legiscan_ds_dir> <out_dir> --rehearse  run, then ROLL BACK
   federal_votes_legiscan.py <legiscan_ds_dir> <out_dir> --commit    run and COMMIT
 
-Needs DATABASE_URL. Replaces the 804 older federal-session votes (mis-filed Senate rows) with the full
-set; refuses to run twice. Only members who match a politician row are loaded (by bioguide id, else by
-a LegiScan id in legislative_politician_id_map); other members are skipped, no people
-are created. The bill link comes from the LegiScan bill number, matched to
-legislative_bills.external_id (<congress>-<TYPE>-<n>); unmatched roll calls keep a
-null bill_id. Party is never stored.
+Needs DATABASE_URL. Loads votes ONLY for members who have no LegiScan federal votes yet,
+so it is safe to run again after more politicians get a bioguide id (it adds just the
+new members). It never deletes anything. Only members who match a politician row are
+loaded (by bioguide id, else by a LegiScan id in legislative_politician_id_map); other
+members are skipped, no people are created. The bill link comes from the LegiScan bill
+number, matched to legislative_bills.external_id (<congress>-<TYPE>-<n>); unmatched
+roll calls keep a null bill_id. Party is never stored.
 """
 import collections, glob, json, os, re, subprocess, sys
 
@@ -42,20 +43,21 @@ def esc(v):
 
 
 SQL = r"""\set ON_ERROR_STOP on
-\echo '== backup of existing federal-session votes (replaced below; they are mis-filed under the 119th)'
-\copy (select * from essentials.legislative_votes where session_id in (select id from essentials.legislative_sessions where jurisdiction='federal')) to '{out}/existing_federal_votes.copy'
 BEGIN;
 set local statement_timeout = '15min';
-delete from essentials.legislative_votes where session_id in (select id from essentials.legislative_sessions where jurisdiction='federal');
--- refuse to run twice (a per-row duplicate check is too slow on the big votes table)
-do $$ begin
-  if exists (select 1 from essentials.legislative_votes v join essentials.legislative_bills b on b.id = v.bill_id where b.jurisdiction = 'federal') then
-    raise exception 'federal votes already loaded; refusing to insert again';
-  end if;
-end $$;
 create temp table stg_votes (external_vote_id text, politician_id uuid, bill_key text, congress int,
   vote_question text, position text, vote_date date, result text, yea_count int, nay_count int) on commit drop;
 \copy stg_votes from '{out}/stg_votes.tsv'
+-- safety: refuse if any staged member already has LegiScan federal votes (no double loading)
+create temp table stg_pol on commit drop as select distinct politician_id from stg_votes;
+analyze stg_pol;
+do $$ begin
+  if exists (select 1 from stg_pol p join essentials.legislative_votes v on v.politician_id = p.politician_id
+             where v.source = 'legiscan'
+               and v.session_id in (select id from essentials.legislative_sessions where jurisdiction = 'federal')) then
+    raise exception 'a staged member already has LegiScan federal votes; refusing to insert again';
+  end if;
+end $$;
 insert into essentials.legislative_votes
   (politician_id, bill_id, session_id, external_vote_id, vote_question, position, vote_date, result, yea_count, nay_count, source)
 select s.politician_id, b.id, se.id, s.external_vote_id, s.vote_question, s.position, s.vote_date, s.result,
@@ -64,11 +66,11 @@ from stg_votes s
 join essentials.legislative_sessions se on se.jurisdiction='federal' and se.external_id=s.congress::text
 left join essentials.legislative_bills b on b.jurisdiction='federal' and b.external_id=s.bill_key;
 \echo '== results (inside the transaction)'
-select count(*) as federal_votes, count(distinct politician_id) as members, count(distinct external_vote_id) as roll_calls,
+select count(*) as legiscan_federal_votes, count(distinct politician_id) as members, count(distinct external_vote_id) as roll_calls,
        count(*) filter (where bill_id is null) as no_bill
-from essentials.legislative_votes v where session_id in (select id from essentials.legislative_sessions where jurisdiction='federal');
-select position, count(*) from essentials.legislative_votes
-where session_id in (select id from essentials.legislative_sessions where jurisdiction='federal') group by 1 order by 2 desc;
+from essentials.legislative_votes where source='legiscan' and session_id in (select id from essentials.legislative_sessions where jurisdiction='federal');
+select position, count(*) from essentials.legislative_votes where source='legiscan'
+and session_id in (select id from essentials.legislative_sessions where jurisdiction='federal') group by 1 order by 2 desc;
 \if {commit}
 COMMIT;
 \echo '== COMMITTED'
@@ -97,6 +99,10 @@ def main():
         s = bg.get(p.get('bioguide_id') or '') or lg.get(str(p['people_id']))
         if s and len(s) == 1:
             member[p['people_id']] = next(iter(s))
+    have = {r[0] for r in psql("select distinct politician_id from essentials.legislative_votes where source='legiscan' "
+                               "and session_id in (select id from essentials.legislative_sessions where jurisdiction='federal')")}
+    member = {k: v for k, v in member.items() if v not in have}
+    print(f'members already loaded (skipped): {len(have)}; members to add: {len(set(member.values()))}')
     # LegiScan bill id -> our external_id
     bill_key = {}
     for f in glob.glob(os.path.join(ds, 'US-*/US/*/bill/*.json')):
