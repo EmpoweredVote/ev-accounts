@@ -17,7 +17,7 @@ any migration: this is the same state, the same statutes and the same publishers
 | 0 legislature re-verify | ✅ **DONE 2026-10-31 — zero turnovers.** See below |
 | 1 ward geometry | ✅ **APPLIED 2026-10-31 — 7 ward polygons on `X0085`, +7 exact** |
 | 2 Jackson offices | ✅ **APPLIED 2026-10-31 — JACKSON IS SEATED. 8 offices, 8 seated, 0 vacant** (`CC_0320`/`CC_0321`) |
-| 3 Hinds County | ▶ **UNBLOCKED** — the county moved back to its old host. Inventory read |
+| 3 Hinds County | ✅ **APPLIED 2026-10-31 — HINDS IS SEATED. 28 offices, 28 seated, 0 vacant** (`CC_0322`/`CC_0323`) |
 | 4 portraits | ▶ open — 8 city, ~25 county, 173 legislators |
 | 5 banner | ▶ open — **the hardest adjacency in the programme**, see below |
 
@@ -509,6 +509,125 @@ Second Circuit DA, it is elected by a multi-county district. Record it as a debt
 
 **Constables, certified 2023:** 1 Jerry Moore · 2 John Brown · 3 Lawrence Funchess ·
 4 Leon Seals · 5 Beverly Wade-Green.
+
+## ✅ APPLIED 2026-10-31 — HINDS COUNTY IS SEATED, AND JACKSON SCORES 4 OF 4
+
+`CC_0322` (structure) + `CC_0323` (occupancy), plus `scripts/load-hinds-supervisor-districts.mjs`:
+**5 supervisor-district polygons on `G4040`, 28 offices, 28 seated, 0 vacant, 28 people created,
+0 reused.**
+
+| scope | before | after | expected |
+| --- | --- | --- | --- |
+| `geofence_boundaries` | 75,058 | **75,063** | +5 exact |
+| `politicians` | 91,316 | **91,344** | +28 exact |
+| `offices` | 10,919 | **10,947** | +28 exact |
+| `office_terms` | 11,015 | **11,043** | +28 exact |
+| `districts` | 11,240 | **11,245** | +5 — the county row is ADOPTED, not created |
+| `chambers` | 1,403 | **1,408** | +5 |
+| `governments` | 635 | **636** | +1 |
+| `offices_missing_terms` unflagged | 238 | **238** | must NOT move — unmoved |
+| CONTROL: MS legislative / Harrison / Jackson | 174 / 27 / 8 | 174 / 27 / 8 | unmoved |
+
+### 🟢🟢 NO `X` CODE: MISSISSIPPI'S SUPERVISOR DISTRICTS ARE TIGER COUNTY SUBDIVISIONS
+
+Measured across the whole state: all 82 counties have exactly five `G4040` subdivisions named
+"District 1" … "District 5". That is **Miss. Const. art. 6 § 170**, which fixes five supervisor
+districts per county — so the uniform answer is the law, not a parser default, and the loader
+prints the distribution rather than asserting a number.
+
+🔴 **AND THE METHOD WAS PROVED BEFORE IT WAS USED, ON A COUNTY ANCHORED THE HARD WAY.** Harrison's
+own ArcGIS layer carried a `DIST_ID` that was a clean permutation (MS-4).
+`scripts/verify-ms-cousub-are-supervisor-districts.mjs` overlaps TIGER's five **Harrison**
+subdivisions against the `X0074` polygons MS-4 anchored on 18 certified precincts, 49 polling
+places and the certified winners: **diagonal strongest 5/5**, and **0/5** with the labels rotated.
+
+⚠ **SO HARRISON'S X0074 IS A HAND-MADE DUPLICATE OF A LAYER THAT ALREADY EXISTED.** Two Mississippi
+counties now hold the same kind of thing two different ways. Harrison's rows are correct and
+anchored and were **not** touched. ▶ **This is a debt, not a defect** — consolidating it is a
+separate, deliberate act.
+
+### 🔴 A CERTIFIED RESULT IS NOT A FACT ABOUT WHO HOLDS THE SEAT — AND IT CAUGHT ONE
+
+The certified 2023 winners and the county's own phone book agree on 26 of 27 and **disagree on the
+Coroner**: certified **Sharon Grisham-Stewart**, phone book **Howard**. The Board's own minutes of
+**2024-12-02** settle both the fact and the spelling:
+
+> *"Appoint **Jeremiah Howard** Interim Coroner, **Effective January 1, 2025**"*
+
+Grisham-Stewart retired after 25 years; Howard was appointed interim from 2025-01-01 and won the
+special election of 2025-12-02 for the remainder. One open term from **2025-01-01**, `how_started`
+**`appointed`**. ⚠ **Three spellings circulate** — *Jeremiah* (the Board's resolution), *Jermiah*
+(the county phone book), *Jeramiah* (press). The formal resolution is the authority.
+
+### 🔴 THE DATES ARE `year`, AND HINDS IS NOT HARRISON ABOUT THIS
+
+Hinds's Board met **Tuesday 2024-01-02** — the same holiday shift Harrison had, 2024-01-01 being
+New Year's Day. But where **Harrison's** minute recites *"for the term of four years commencing on
+this date"*, **Hinds's does not**. It records the Board meeting under § 19-3-13, electing Graham
+president and Evers vice-president, and approving bonds *"for the four-year term … per Section
+25-1-19"*. That proves they **held office** on 2024-01-02; it does not say when the term **began**.
+▶ **So the day is not written.** All 24 officers elected in 2023 are `2024-01-01` at `year`
+precision. Borrowing another county's recital is exactly what MS-4 refused to do for its own
+undated officers.
+
+🔴 **AND THREE ELECTION COMMISSIONERS CARRY NO DATE AT ALL.** Only Districts 2 and 4 were on the
+2023 ballot. Districts 1, 3 and 5 (Kidada Brown, Jermal Clark, Felicia McClinton) are named by the
+county's phone book — **evidence of incumbency, not of arrival**. They get an open term with
+`start_precision => 'unknown'` and a NULL `term_start`, and a gate asserts the NULL.
+
+### ✅ Jackson City Hall returns 17 officeholders, and all four answers
+
+| answer | officeholder |
+| --- | --- |
+| **council member** | **Kevin Parkinson**, Jackson Ward 7 |
+| **county supervisor** | **Bobby McGowan**, Hinds District 5 |
+| **state representative** | **Zakiya Summers**, HD-67 |
+| **state senator** | **David Blount**, SD-29 |
+
+plus Mayor Horhn, the eight countywide county officers, District 5's Justice Court Judge, Constable
+and Election Commissioner, and the U.S. Representative. **Raymond and Clinton** return county, state
+and federal but no city offices; **Gulfport** returns Harrison's officials; **Mobile, Alabama**
+returns nothing.
+
+### The gates, all watched failing
+
+**Loader: five controls** — the district number set · the population identity against a live
+TIGERweb figure · the coordinate range · **the five tiling the county polygon** (100.00% clean,
+74.79% with one withheld) · out-of-county probes.
+
+🔴🔴 **AND ONE CONTROL FAILED A CLEAN RUN, CORRECTLY REPORTING A DEFECT THAT WAS ITS OWN.** The
+per-district identity check first used the mean of the largest ring's vertices as an "interior
+point". **THE CENTROID OF A RING IS NOT GUARANTEED TO BE INSIDE IT.** For Jackson's compact wards it
+landed inside every time; for Hinds's large irregular District 5 it landed inside **District 4** and
+reported correct data as broken. It now uses `ST_PointOnSurface`, which PostGIS guarantees is inside
+the polygon — in both the pre-write control and the post-write re-check.
+
+**Migrations: nine controls**, each raising its own gate — office count · four offices per district ·
+28 distinct titles · an office on a district with no polygon · the Coroner's date and `how_started` ·
+an undated commissioner given a date · `is_incumbent` · the term count · the district count.
+
+🔴 **THREE WERE SHADOWED ON FIRST WRITING AND WERE RE-AIMED**, which is now the expected outcome
+rather than a surprise: the per-district tamper tripped the **total office count**, the no-polygon
+tamper tripped the **district count**, and a title tamper did not apply at all (the builder's own
+"tamper must be present" assertion caught it). The working versions move one constable between
+districts, retitle every district office without changing any count, and **delete a polygon inside
+the transaction** so only the geometry gate can see it.
+
+**The rollback was verified to have reverted** — 91,316 / 10,919 / 11,015 / 11,240 / 1,403 / 635 and
+zero Hinds rows — before the apply.
+
+`check:occupancy` · `check:migrations` · `check:reservations` green; **`check:reachability` nothing
+regressed** — 4 / 17 / 7, every bucket at baseline.
+
+### ⚠ Debts carried out of the Hinds wave
+
+- **24 officers at `year` precision**, because Hinds's organising minute has no commencement recital.
+- **Three Election Commissioners undated.** 🔴 **Do not copy 2024 onto them.**
+- **The District Attorney (Circuit Court District 7) is not seated** — multi-county, like Harrison's.
+- **The Hinds County School District board is not seated.** It is a different government with its own
+  boundary, serving the county outside Jackson, and this wave did not load it.
+- **Harrison's `X0074` duplicates TIGER `G4040`** — see above.
+- **No portraits for any of the 28.**
 
 ### Still to establish for Hinds
 
