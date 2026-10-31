@@ -17,6 +17,14 @@ Party is never stored. Members with no politician row stay unlinked.
 """
 import os, subprocess, sys, json
 
+def run_psql(cmd, **kw):
+    """subprocess.run for psql that never prints the command (it holds the DB password)."""
+    try:
+        return subprocess.run(cmd, check=True, **kw)
+    except subprocess.CalledProcessError as e:
+        sys.exit(f'psql failed (exit {e.returncode}); see output above')
+
+
 SEP = '\x1f'  # joins topic tags inside one TSV field
 
 
@@ -170,7 +178,7 @@ def main():
         f.write(SQL.format(bk=bk, out=out, commit='true' if commit else 'false'))
     print(f'wrote {out}/apply.sql, {nb} bills, {nc} cosponsor links (before matching)')
     if commit or rehearse:
-        subprocess.run(['psql', os.environ['DATABASE_URL'], '-X', '-f', os.path.join(out, 'apply.sql')], check=True)
+        run_psql(['psql', os.environ['DATABASE_URL'], '-X', '-f', os.path.join(out, 'apply.sql')])
     else:
         print('files only; database not touched')
 

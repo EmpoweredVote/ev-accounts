@@ -14,6 +14,14 @@ import collections, json, os, re, subprocess, sys
 import xml.etree.ElementTree as ET
 from multiprocessing import Pool
 
+def run_psql(cmd, **kw):
+    """subprocess.run for psql that never prints the command (it holds the DB password)."""
+    try:
+        return subprocess.run(cmd, check=True, **kw)
+    except subprocess.CalledProcessError as e:
+        sys.exit(f'psql failed (exit {e.returncode}); see output above')
+
+
 TYPES = ('hr', 's', 'hjres', 'sjres', 'hres', 'sres', 'hconres', 'sconres')
 TYPE_SLUG = {'hr': 'house-bill', 's': 'senate-bill', 'hjres': 'house-joint-resolution',
              'sjres': 'senate-joint-resolution',
@@ -99,8 +107,8 @@ def parse_file(path):
 
 
 def psql(sql):
-    out = subprocess.run(['psql', os.environ['DATABASE_URL'], '-X', '-A', '-t', '-F', '\t', '-c', sql],
-                         capture_output=True, text=True, check=True).stdout
+    out = run_psql(['psql', os.environ['DATABASE_URL'], '-X', '-A', '-t', '-F', '\t', '-c', sql],
+                         capture_output=True, text=True).stdout
     return [l.split('\t') for l in out.splitlines() if l]
 
 
