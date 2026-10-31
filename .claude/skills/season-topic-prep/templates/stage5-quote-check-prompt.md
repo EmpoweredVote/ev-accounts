@@ -42,10 +42,16 @@ Answer four questions. Each is true or false; there is no "mostly".
    named measure (`motion` or `instrument_id`); if the finding has a `passage`, that must be on the page too.
    A page that will not load, or loads without the text, fails.
 2. **`own_words`** — Codebook V1. The words are the person's own: spoken or written by them, or put out under
-   their name by their office or campaign. Not a reporter's paraphrase, not a group's statement they signed onto,
-   not a colleague's words. For a local record: the act is this person's own vote or action, by name.
+   their name by their office or campaign. Not a reporter's paraphrase, not a colleague's words. A joint statement
+   by a small, named group (a state's two senators, two committee chairs) is each signer's own words; a statement
+   from a whole party or caucus, or a letter signed by dozens of members, is not (RULINGS.md "A small group's joint
+   statement is each signer's own words"). A candidate's own answers on Ballotpedia's Candidate Connection survey
+   are own words; Ballotpedia's own text is not. OnTheIssues and Wikipedia pages are never the source: fail them.
+   For a local record: the act is this person's own vote or action, by name.
 3. **`on_topic`** — Codebook V2. The passage is about {{TOPIC_NAME}} as the question asks it, not a neighbouring
-   subject.
+   subject. A line that only says how the person would have voted on a bill, and names nothing the question asks
+   about, is off topic, even when the bill has parts on the question (RULINGS.md "A 'would have voted' statement is
+   off topic").
 4. **`names_party`** — True only when a party is the passage's **point**: it calls on people to back or oppose a
    party ("vote Republican", "we must stop the Democrats"). Bracketing that out would hide what the person said, so
    the passage fails. A passage that only **mentions** a party is `names_party: false`; bracket the labels out (5).
