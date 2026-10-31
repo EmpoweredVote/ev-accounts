@@ -19,6 +19,13 @@ BEGIN;
 --                         rating time so weighting can be recomputed later.
 --   connect.claim_edits   append-only history. Written ONLY by the trigger below.
 --
+-- A root claim is not only backfilled for the 44 communities that exist today — section
+-- 7a puts an AFTER INSERT trigger on connect.communities so every community created from
+-- now on gets one too. The root read is the entry point for the whole argument band; a
+-- community without a root is a tree that 404s on first load with nothing to explain why.
+-- Section 9's gate proves the trigger works by actually inserting a throwaway community
+-- and rolling it back, not merely by finding a row in pg_trigger.
+--
 -- WHY THE TREE IS NOT SEASONED
 -- Compass topics move through editorial seasons (CA_0340). The argument tree does
 -- not: a claim about a problem outlives the season in which it was written, so
@@ -306,9 +313,48 @@ WHEN (OLD.body                 IS DISTINCT FROM NEW.body
    OR OLD.moderation_status    IS DISTINCT FROM NEW.moderation_status)
 EXECUTE FUNCTION connect.log_claim_edit();
 
--- 7. Seed one root per community. The root's body is the community's name — the problem
---    statement the whole tree hangs from. Guarded so a re-run is a no-op; the unique
---    index would reject a duplicate anyway.
+-- 7a. Every community gets a root claim, forever — not just the 44 that exist today.
+--     The root read is the entry point for the whole argument band, so a community with
+--     no root is a tree that 404s on first load with nothing to explain why. A one-time
+--     backfill (7b) cannot promise that; a trigger can. The body is the community's
+--     name: a topic label that is always honest, rather than a description field that
+--     frames a real question for some communities and opens with instructional filler
+--     for others. A better framing is an editorial act, not something to synthesize here.
+CREATE OR REPLACE FUNCTION connect.seed_community_root_claim()
+RETURNS TRIGGER
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path TO 'connect', 'pg_temp'
+AS $fn$
+BEGIN
+  IF btrim(COALESCE(NEW.name, '')) = '' THEN
+    RAISE EXCEPTION
+      'connect.seed_community_root_claim: community % has a blank name, so its root claim would have no body. The root of an argument tree is its problem statement — name the community first.',
+      NEW.id;
+  END IF;
+
+  -- No-op if a root is already there, so this trigger and the 7b backfill can never
+  -- collide, in either order, however many times either one runs.
+  INSERT INTO connect.claims (community_id, body, path, depth)
+  SELECT NEW.id, NEW.name, '{}'::uuid[], 0
+  WHERE NOT EXISTS (
+    SELECT 1 FROM connect.claims k
+    WHERE k.community_id = NEW.id AND k.parent_claim_id IS NULL
+  );
+
+  RETURN NULL;  -- AFTER trigger: the return value is ignored.
+END;
+$fn$;
+
+DROP TRIGGER IF EXISTS trg_communities_seed_root_claim ON connect.communities;
+CREATE TRIGGER trg_communities_seed_root_claim
+AFTER INSERT ON connect.communities
+FOR EACH ROW
+EXECUTE FUNCTION connect.seed_community_root_claim();
+
+-- 7b. Backfill the communities that already exist. Same shape the trigger produces, same
+--     NOT EXISTS guard, so a re-run is a no-op; the unique index would reject a duplicate
+--     anyway.
 INSERT INTO connect.claims (community_id, body, path, depth)
 SELECT c.id, c.name, '{}'::uuid[], 0
 FROM connect.communities c
@@ -375,6 +421,11 @@ DECLARE
   v_tbl         TEXT;
   v_role        TEXT;
   v_trigdef     TEXT;
+  v_probe_id          UUID;
+  v_probe_well_shaped INT;
+  v_probe_total       INT;
+  v_probe_ok          BOOLEAN := false;
+  v_probe_detail      TEXT;
 BEGIN
   -- a. RLS is on for all three.
   FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings', 'claim_edits'] LOOP
@@ -443,7 +494,71 @@ BEGIN
     RAISE EXCEPTION 'CA_0341: a seeded root claim is not shaped like a root';
   END IF;
 
-  RAISE NOTICE 'CA_0341 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no DELETE anywhere), % root claims seeded, snapshot/count/edit triggers attached.', v_roots;
+  -- h. The root-claim trigger is attached to connect.communities...
+  SELECT pg_get_triggerdef(t.oid) INTO v_trigdef
+  FROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid JOIN pg_namespace n ON n.oid = c.relnamespace
+  WHERE n.nspname = 'connect' AND c.relname = 'communities'
+    AND t.tgname = 'trg_communities_seed_root_claim' AND NOT t.tgisinternal;
+  IF v_trigdef IS NULL THEN
+    RAISE EXCEPTION 'CA_0341: trg_communities_seed_root_claim is not attached to connect.communities — community #45 would have no root claim and its tree would 404';
+  END IF;
+
+  -- i. ...and it actually works. A gate that only reads pg_trigger proves the trigger
+  --    exists, not that it seeds anything, so this inserts a throwaway community, checks
+  --    what appeared, and unwinds. The RAISE at the end of the inner block aborts the
+  --    implicit subtransaction that plpgsql opens for any BEGIN...EXCEPTION block, which
+  --    rolls back the probe community AND its root claim. plpgsql variables are not
+  --    transactional, so the verdict computed inside survives the unwind. The probe
+  --    therefore leaves nothing behind whether the outer transaction commits or not.
+  BEGIN
+    INSERT INTO connect.communities (topic_id, slug, name)
+    VALUES (gen_random_uuid(),
+            'ca0341-root-trigger-probe-' || gen_random_uuid()::text,  -- slug is UNIQUE; never collide
+            'CA_0341 root trigger probe')
+    RETURNING id INTO v_probe_id;
+
+    SELECT count(*) INTO v_probe_total
+    FROM connect.claims WHERE community_id = v_probe_id;
+
+    SELECT count(*) INTO v_probe_well_shaped
+    FROM connect.claims
+    WHERE community_id = v_probe_id
+      AND parent_claim_id IS NULL
+      AND side IS NULL
+      AND author_id IS NULL
+      AND author_display_name IS NULL          -- the WHEN guard held: no invented "Unknown"
+      AND body = 'CA_0341 root trigger probe'  -- body is the community's name
+      AND cardinality(path) = 0
+      AND depth = 0
+      AND moderation_status = 'visible'
+      AND child_supports_count = 0
+      AND child_opposes_count = 0;
+
+    IF v_probe_total = 1 AND v_probe_well_shaped = 1 THEN
+      v_probe_ok := true;
+    ELSE
+      v_probe_detail := format('%s claim(s) for the probe community, %s of them a well-shaped root; expected 1 and 1',
+                               v_probe_total, v_probe_well_shaped);
+    END IF;
+
+    -- Deliberate abort: this is how the probe cleans up after itself.
+    RAISE EXCEPTION 'CA_0341 probe rollback' USING ERRCODE = 'CA341';
+  EXCEPTION
+    WHEN SQLSTATE 'CA341' THEN
+      NULL;  -- expected; any other error propagates and fails the migration, as it should
+  END;
+
+  IF NOT v_probe_ok THEN
+    RAISE EXCEPTION 'CA_0341: the root-claim trigger did not seed exactly one well-shaped root for a new community — %',
+      COALESCE(v_probe_detail, 'the probe did not run to completion');
+  END IF;
+
+  IF EXISTS (SELECT 1 FROM connect.communities WHERE id = v_probe_id)
+     OR EXISTS (SELECT 1 FROM connect.claims WHERE community_id = v_probe_id) THEN
+    RAISE EXCEPTION 'CA_0341: the trigger probe left rows behind — the subtransaction did not unwind';
+  END IF;
+
+  RAISE NOTICE 'CA_0341 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no DELETE anywhere), % root claims backfilled, snapshot/count/edit triggers attached, and connect.communities now seeds a root claim for every new community (verified by probe, rolled back).', v_roots;
 END $$;
 
 COMMIT;
