@@ -147,8 +147,10 @@
 //    canonicalizeInstrumentId collapses those to "725" and "0725" — different identifiers. Write the
 //    order in reasoning EXACTLY as the snippet you cite spells it, or instrument-not-cited fires on a
 //    row whose source names the very order its reasoning does.
+// Michigan letter-named joint resolutions (2026-10-30), identifier-bearing: `HJR B` / `HJRB` / `House Joint
+// Resolution B` (copied to stanceGate.ts INSTRUMENT_IDENTIFIER_PATTERNS).
 export const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b|\bExecutive Order (?:No\.\s?)?\d{1,4}-\d{2}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\b[HS]JR\s?[A-Z]{1,2}\b|\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b|\bBill (?:No\.\s?|#)\d{6}\b|\bExecutive Order (?:No\.\s?)?\d{1,4}-\d{2}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 export const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;

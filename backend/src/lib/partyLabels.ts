@@ -25,15 +25,21 @@ const STATE_ABBREVS = String.raw`Ala|Ariz|Ark|Calif|Colo|Conn|Del|Fla|Ga|Ill|Ind
 const PARTY_STATE_TAG = new RegExp(String.raw`\b[RD]\s?[-–—]\s?(?:(?:${STATE_CODES})\b|(?:${STATE_NAMES})\b|(?:${STATE_ABBREVS})(?:\.|\b))`);
 // "Smith (R)", "Jones (D)", "(R.)".
 const PARTY_LETTER = /\((?:R|D)\.?\)/;
+// State-press "party-town" and "party-district" tags (Michigan, 2026-10-30): "(D-Grand Rapids)", "Lindsey, R-Allen",
+// "R-Brighton Township", "(D-Tucson)", "(R-79)". A capital after the dash; "D-Day" is kept out by name, "R-rated"
+// and "Section D-1" by the capital and the brackets.
+const PARTY_TOWN_TAG = /\b[RD]\s?[-–—]\s?(?!Day\b)[A-Z][a-z]+(?:\s[A-Z][a-z]+){0,2}\b/;
+const PARTY_DISTRICT_TAG = /\((?:R|D)\s?[-–—]\s?\d{1,3}\)/;
 
-const PATTERNS = [PARTY_RE, PARTY_NAME_CASED, PARTY_COLOUR, PARTY_STATE_TAG, PARTY_LETTER];
+const PATTERNS = [PARTY_RE, PARTY_NAME_CASED, PARTY_COLOUR, PARTY_STATE_TAG, PARTY_LETTER, PARTY_TOWN_TAG, PARTY_DISTRICT_TAG];
 
 /**
- * Party tags and colours only ("R-Idaho", "(D-GA)", "Smith (R)", "red states"), without the party names. For the
+ * Party tags and colours only ("R-Idaho", "(D-GA)", "(D-Warren)", "Smith (R)", "red states"), without the party names. For the
  * stance gate, which reads party names with its own rules (stanceGate.ts PARTY_NAMES / PARTY_NOUNS_ANY_CASE).
  */
 export function namesPartyTagOrColour(text: string): boolean {
-  return PARTY_STATE_TAG.test(text) || PARTY_LETTER.test(text) || PARTY_COLOUR.test(text);
+  return PARTY_STATE_TAG.test(text) || PARTY_LETTER.test(text) || PARTY_COLOUR.test(text)
+    || PARTY_TOWN_TAG.test(text) || PARTY_DISTRICT_TAG.test(text);
 }
 
 /** True when the text carries a party label. Fails safe: a false hit costs one quote or snippet. */

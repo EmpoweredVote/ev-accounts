@@ -35,17 +35,19 @@ type Json = any;
 /** One LegiScan API call: (op, params) -> parsed response with status OK, or a thrown error. */
 export type LegiscanQuery = (op: string, params: Record<string, string>) => Promise<Json>;
 
-const BILL_URL = /^https:\/\/legiscan\.com\/([A-Z]{2})\/bill\/([A-Z]{1,5}\d+[A-Z]?)\/(\d{4})(\/[A-Za-z0-9]+)?\/?$/;
-const ROLLCALL_URL = /^https:\/\/legiscan\.com\/([A-Z]{2})\/rollcall\/([A-Z]{1,5}\d+[A-Z]?)\/id\/(\d+)\/?$/;
+// A bill number: letters then digits ("HB5337", "SB0303"), or a Michigan letter-named joint resolution ("HJRB").
+const BILL_NO = String.raw`(?:[A-Z]{1,5}\d+[A-Z]?|[HS]JR[A-Z]{1,2})`;
+const BILL_URL = new RegExp(String.raw`^https:\/\/legiscan\.com\/([A-Z]{2})\/bill\/(${BILL_NO})\/(\d{4})(\/[A-Za-z0-9]+)?\/?$`);
+const ROLLCALL_URL = new RegExp(String.raw`^https:\/\/legiscan\.com\/([A-Z]{2})\/rollcall\/(${BILL_NO})\/id\/(\d+)\/?$`);
 
 const ROLES = { 0: 'sponsor', 1: 'primary sponsor', 2: 'cosponsor', 3: 'joint sponsor' } as const;
 type Role = (typeof ROLES)[keyof typeof ROLES];
 const VOTES = ['Yea', 'Nay', 'NV', 'Absent'] as const;
 const CHAMBERS: Record<string, string> = { H: 'House', S: 'Senate', A: 'Assembly', J: 'Joint' };
 
-const SPONSOR_LINE = /^LegiScan ([A-Z]{2}) (.+) ([A-Z]{1,5}\d+[A-Z]?): (.+) is listed as an? (primary sponsor|cosponsor|joint sponsor|sponsor)\.$/;
+const SPONSOR_LINE = new RegExp(String.raw`^LegiScan ([A-Z]{2}) (.+) (${BILL_NO}): (.+) is listed as an? (primary sponsor|cosponsor|joint sponsor|sponsor)\.$`);
 const VOTE_LINE = new RegExp(
-  `^LegiScan ([A-Z]{2}) (.+) ([A-Z]{1,5}\\d+[A-Z]?), roll call (\\d+) \\((\\w+), (\\d{4}-\\d{2}-\\d{2}), "(.*)"\\): (.+) voted (${VOTES.join('|')})\\.$`,
+  `^LegiScan ([A-Z]{2}) (.+) (${BILL_NO}), roll call (\\d+) \\((\\w+), (\\d{4}-\\d{2}-\\d{2}), "(.*)"\\): (.+) voted (${VOTES.join('|')})\\.$`,
 );
 
 export type LegiscanLine =
