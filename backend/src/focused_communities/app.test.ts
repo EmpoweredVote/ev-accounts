@@ -120,8 +120,22 @@ describe('GET /communities/:id/stances', () => {
       .mockResolvedValueOnce(rows([{ '?column?': 1 }]))
       .mockResolvedValueOnce(rows([{ position: 1, text: 'T', supporting_points: null, description: null, example_perspectives: null }]));
     const res = await request(app).get('/fc/api/communities/c1/stances');
-    expect(res.body).toEqual({ data: [{ position: 1, text: 'T', supportingPoints: [], description: '', examplePerspectives: [] }] });
+    expect(res.body).toEqual({ data: [{ text: 'T', supportingPoints: [], description: '', examplePerspectives: [] }] });
     expect(query.mock.calls[1][0]).toContain('connect.get_stances_for_community($1)');
+    expect(query.mock.calls[1][0]).toContain('ORDER BY position ASC');
+  });
+
+  it('never serializes position in the response body', async () => {
+    query
+      .mockResolvedValueOnce(rows([{ '?column?': 1 }]))
+      .mockResolvedValueOnce(rows([
+        { position: 1, text: 'A', supporting_points: null, description: null, example_perspectives: null },
+        { position: 2, text: 'B', supporting_points: null, description: null, example_perspectives: null },
+      ]));
+    const res = await request(app).get('/fc/api/communities/c1/stances');
+    expect(res.text).not.toContain('"position"');
+    for (const s of res.body.data) expect(Object.keys(s)).not.toContain('position');
+    expect(res.body.data.map((s: { text: string }) => s.text)).toEqual(['A', 'B']);
   });
 
   it('returns 404 when the community does not exist', async () => {
