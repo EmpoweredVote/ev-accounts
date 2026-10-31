@@ -192,6 +192,10 @@ const SUFFIX = /\b(jr|sr|ii|iii|iv|v)\b\.?/g;
 /** Accents and case folded as the verifier folds names; hyphens and periods become spaces; suffixes dropped. */
 const fold = (s: string): string => normalizeText(s).replace(/[-.,]/g, ' ').replace(SUFFIX, '').replace(/\s+/g, ' ').trim();
 
+/** "J.D." / "J. D." → "JD": two or more dotted initials are one name the person goes by, not two letters. */
+const joinInitials = (s: string): string =>
+  s.replace(/\b[A-Za-z]\.(?:\s*[A-Za-z]\.)+/g, (m) => m.replace(/[.\s]/g, ''));
+
 /** Does LegiScan's person fit the politician's own name? */
 function personFits(p: Json, fullName: string, lastName: string): boolean {
   const last = fold(lastName);
@@ -201,10 +205,10 @@ function personFits(p: Json, fullName: string, lastName: string): boolean {
   const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';
   if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return false;
   // A leading initial ("A. Reece Pyrtle") gives way to the given name the person goes by.
-  const words = fold(fullName).split(' ');
+  const words = fold(joinInitials(fullName)).split(' ');
   const wants = [words[0] ?? ''];
   if (wants[0].length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
-  const have = [fold(p.first_name ?? '').split(' ')[0], fold(p.nickname ?? '')].filter(Boolean);
+  const have = [fold(p.first_name ?? '').split(' ')[0], fold(joinInitials(p.nickname ?? ''))].filter(Boolean);
   return have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)));
 }
 
