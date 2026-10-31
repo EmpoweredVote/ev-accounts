@@ -10,7 +10,7 @@
 
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
-import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine } from './legiscanEvidence.js';
+import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine, type GovernorTerm } from './legiscanEvidence.js';
 
 /**
  * Decode a page's character references for DISPLAY, and nothing else. See
@@ -455,7 +455,11 @@ export interface VerifyResult {
 }
 
 export interface PoliticianNames {
-  [fullName: string]: { fullName: string; lastName: string; aliases?: string[] };
+  [fullName: string]: {
+    fullName: string; lastName: string; aliases?: string[];
+    /** Terms as governor (essentials.office_terms), for the LegiScan signing line. */
+    governorTerms?: GovernorTerm[];
+  };
 }
 
 /**

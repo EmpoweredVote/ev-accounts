@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
-  createLegiscanRecordFetcher, formatLegiscanLine, isLegiscanUrl, legiscanLinesFor, parseLegiscanLine, verifyLegiscanLine,
+  createLegiscanRecordFetcher, formatLegiscanLine, heldGovernorship, isLegiscanUrl, legiscanLinesFor, parseLegiscanLine, verifyLegiscanLine,
   withLegiscanRecords, type LegiscanQuery,
 } from './legiscanEvidence.js';
 import { verifyEvidence, type EvidenceRow, type PageFetcher, type StanceRow } from './researchVerifier.js';
@@ -23,6 +23,9 @@ function fakeApi(): { query: LegiscanQuery; calls: string[] } {
   const bills: Record<number, unknown> = {
     1916334: { bill_id: 1916334, state: 'TX', bill_number: 'HB5337', session: SESSION, url: BILL_URL,
       state_link: 'https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337',
+      // IN SB 10 of 2025, 2026-10-31: the history prints the signing, never the governor's name.
+      history: [{ date: '2025-06-20', chamber: 'H', action: 'Sent to the Governor' },
+        { date: '2025-06-22', chamber: 'H', action: 'Signed by the Governor' }, { date: '2025-06-22', chamber: 'H', action: 'Effective on 9/1/25' }],
       sponsors: [
         { ...person(24086, 'Carrie', 'Isaac'), sponsor_type_id: 1, sponsor_order: 1, committee_sponsor: 0 },
         { ...person(5848, 'Gary', 'Gates'), sponsor_type_id: 2, sponsor_order: 2, committee_sponsor: 0 },
@@ -232,6 +235,50 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(SPONSOR_LINE, RC_URL, await record(RC_URL), names).verdict).toBe('snippet_not_found');
     expect(verifyLegiscanLine(VOTE_LINE, BILL_URL, await record(BILL_URL), { fullName: 'Sarah Eckhardt', lastName: 'Eckhardt' }).verdict)
       .toBe('snippet_not_found');
+  });
+});
+
+describe("a governor's signing line", () => {
+  const SIGNED = 'LegiScan TX 89th Legislature Regular Session HB5337: Signed by the Governor on 2025-06-22.';
+  const gov = (start: string | null, end: string | null = null, state = 'TX') => ({
+    fullName: 'Greg Abbott', lastName: 'Abbott', governorTerms: [{ state, start, end }] });
+  async function record() { return createLegiscanRecordFetcher(fakeApi().query)(BILL_URL); }
+
+  it('parses and formats the line', () => {
+    expect(parseLegiscanLine(SIGNED)).toEqual({ kind: 'signed', state: 'TX', session: '89th Legislature Regular Session', bill: 'HB5337', date: '2025-06-22' });
+    expect(formatLegiscanLine(parseLegiscanLine(SIGNED)!)).toBe(SIGNED);
+  });
+  it('keeps only the signing steps of the bill history', async () => {
+    expect(JSON.parse(await record()).bills[0].signed).toEqual([{ date: '2025-06-22', action: 'Signed by the Governor' }]);
+  });
+  it('verifies when a dated term as governor of that state covers the day', async () => {
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, await record(), gov('2015-01-20')).verdict).toBe('verified');
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, await record(), gov('2025-06-22', '2025-06-22')).verdict).toBe('verified');
+  });
+  it('refuses an undated term, a term that does not cover the day, another state, or no term', async () => {
+    const rec = await record();
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, rec, gov(null)).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, rec, gov('2025-07-01')).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, rec, gov('2015-01-20', '2025-06-21')).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, rec, gov('2015-01-20', null, 'OK')).verdict).toBe('name_not_present');
+    expect(verifyLegiscanLine(SIGNED, BILL_URL, rec, { fullName: 'Gary Gates', lastName: 'Gates' }).verdict).toBe('name_not_present');
+  });
+  it('refuses a date or bill the history does not show', async () => {
+    const rec = await record();
+    expect(verifyLegiscanLine(SIGNED.replace('2025-06-22', '2025-06-20'), BILL_URL, rec, gov('2015-01-20')).verdict).toBe('snippet_not_found');
+    const sb16 = await createLegiscanRecordFetcher(fakeApi().query)('https://legiscan.com/TX/bill/SB16/2025');
+    expect(verifyLegiscanLine(SIGNED.replace('HB5337', 'SB16'), 'https://legiscan.com/TX/bill/SB16/2025', sb16, gov('2015-01-20')).verdict)
+      .toBe('snippet_not_found');
+  });
+  it('is written for the governor who held office that day, and for no one else', async () => {
+    const rec = await record();
+    expect(legiscanLinesFor(BILL_URL, rec, gov('2015-01-20'))).toEqual([SIGNED]);
+    expect(legiscanLinesFor(BILL_URL, rec, gov(null))).toEqual([]);
+  });
+  it('heldGovernorship needs a dated start', () => {
+    expect(heldGovernorship([{ state: 'IN', start: '2025-01-13', end: null }], 'IN', '2025-04-16')).toBe(true);
+    expect(heldGovernorship([{ state: 'IN', start: null, end: null }], 'IN', '2025-04-16')).toBe(false);
+    expect(heldGovernorship(undefined, 'IN', '2025-04-16')).toBe(false);
   });
 });
 

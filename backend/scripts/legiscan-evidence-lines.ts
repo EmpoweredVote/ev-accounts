@@ -18,6 +18,7 @@ import { parseArgs } from 'node:util';
 import { pool } from '../src/lib/db.js';
 import { legiscanQuery } from '../src/lib/legiscan/client.js';
 import { createLegiscanRecordFetcher, legiscanLinesFor } from '../src/lib/legiscanEvidence.js';
+import { loadGovernorTerms } from '../src/lib/governorTerms.js';
 
 const { values } = parseArgs({ options: { in: { type: 'string' }, out: { type: 'string' } } });
 if (!values.in || !values.out) {
@@ -56,6 +57,15 @@ const col = (name: string) => {
 const [iName, iLast, iTopic, iUrl] = ['full_name', 'last_name', 'topic_key', 'source_url'].map(col);
 
 const records = createLegiscanRecordFetcher((op, params) => legiscanQuery(key, op, params));
+// A governor's signing line needs the person's dated terms as governor: names resolve to one
+// politician by exact full name (case folded); a name that matches none or several gets no terms.
+const allNames = [...new Set(lines.map((l) => (parseLine(l)[iName] ?? '').trim()))];
+const { rows: byName } = await pool.query<{ id: string; full_name: string }>(
+  `SELECT id::text AS id, full_name FROM essentials.politicians WHERE lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
+  [allNames]);
+const idOf = new Map<string, string | null>();
+for (const r of byName) { const k = r.full_name.toLowerCase(); idOf.set(k, idOf.has(k) ? null : r.id); }
+const terms = await loadGovernorTerms((q, p) => pool.query(q, p as unknown[]), [...idOf.values()].filter((v): v is string => !!v));
 const out = ['full_name,topic_key,source_url,snippet,snippet_index'];
 const index = new Map<string, number>();
 let missing = 0;
@@ -64,7 +74,8 @@ for (const raw of lines) {
   const [fullName, lastName, topic, url] = [f[iName], f[iLast], f[iTopic], f[iUrl]].map((s) => (s ?? '').trim());
   let found: string[] = [];
   try {
-    found = legiscanLinesFor(url, await records(url), { fullName, lastName });
+    const id = idOf.get(fullName.toLowerCase());
+    found = legiscanLinesFor(url, await records(url), { fullName, lastName, governorTerms: id ? terms.get(id) : undefined });
   } catch (err) {
     console.warn(`${fullName} ${url}: ${(err as Error).message}`);
   }

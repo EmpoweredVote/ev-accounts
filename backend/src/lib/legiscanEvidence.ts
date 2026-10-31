@@ -20,6 +20,14 @@
  * a nickname of it, and last name; hyphens, accents and suffixes folded). The checked line is what a
  * voter reads.
  *
+ * A governor's signature is a third kind of line (Indiana SEA 10 of 2025, 2026-10-31). LegiScan's bill
+ * history prints "Signed by the Governor" with a date but never the governor's name, so the name check
+ * is replaced by an office check: the politician must hold a DATED term as governor of that state that
+ * covers the signing day (`governorTerms`, from essentials.office_terms). An undated term proves nothing
+ * about the day and never passes.
+ *
+ *   LegiScan IN 2025 Regular Session SB0010: Signed by the Governor on 2025-04-16.
+ *
  * LegiScan has four sponsor kinds only (sponsor, primary sponsor, cosponsor, joint sponsor), so a
  * line never says "author": Texas authors and joint authors are both LegiScan primary sponsors.
  *
@@ -46,6 +54,9 @@ const VOTES = ['Yea', 'Nay', 'NV', 'Absent'] as const;
 const CHAMBERS: Record<string, string> = { H: 'House', S: 'Senate', A: 'Assembly', J: 'Joint' };
 
 const SPONSOR_LINE = new RegExp(String.raw`^LegiScan ([A-Z]{2}) (.+) (${BILL_NO}): (.+) is listed as an? (primary sponsor|cosponsor|joint sponsor|sponsor)\.$`);
+const SIGNED_LINE = new RegExp(String.raw`^LegiScan ([A-Z]{2}) (.+) (${BILL_NO}): Signed by the Governor on (\d{4}-\d{2}-\d{2})\.$`);
+/** The bill-history action LegiScan prints for a governor's signature. */
+const SIGNED_ACTION = /^signed by (?:the )?governor\.?$/i;
 const VOTE_LINE = new RegExp(
   `^LegiScan ([A-Z]{2}) (.+) (${BILL_NO}), roll call (\\d+) \\((\\w+), (\\d{4}-\\d{2}-\\d{2}), "(.*)"\\): (.+) voted (${VOTES.join('|')})\\.$`,
 );
@@ -53,7 +64,19 @@ const VOTE_LINE = new RegExp(
 export type LegiscanLine =
   | { kind: 'sponsor'; state: string; session: string; bill: string; name: string; role: Role }
   | { kind: 'vote'; state: string; session: string; bill: string; rollCallId: number; chamber: string;
-      date: string; motion: string; name: string; vote: (typeof VOTES)[number] };
+      date: string; motion: string; name: string; vote: (typeof VOTES)[number] }
+  | { kind: 'signed'; state: string; session: string; bill: string; date: string };
+
+/** One term as governor: two-letter state, ISO start and end days (null when unknown or still serving). */
+export interface GovernorTerm { state: string; start: string | null; end: string | null }
+
+/** The politician a line is checked for: names from the bundle, and their terms as governor (if any). */
+export interface LegiscanPerson { fullName: string; lastName: string; governorTerms?: GovernorTerm[] }
+
+/** Did this person hold a dated term as governor of `state` on `date`? An undated start never counts. */
+export function heldGovernorship(terms: GovernorTerm[] | undefined, state: string, date: string): boolean {
+  return (terms ?? []).some((t) => t.state === state && t.start !== null && t.start <= date && (t.end === null || date <= t.end));
+}
 
 export function isLegiscanUrl(url: string): boolean {
   const u = url.trim();
@@ -62,6 +85,7 @@ export function isLegiscanUrl(url: string): boolean {
 
 export function formatLegiscanLine(l: LegiscanLine): string {
   const head = `LegiScan ${l.state} ${l.session} ${l.bill}`;
+  if (l.kind === 'signed') return `${head}: Signed by the Governor on ${l.date}.`;
   if (l.kind === 'sponsor') return `${head}: ${l.name} is listed as ${/^[aeiou]/.test(l.role) ? 'an' : 'a'} ${l.role}.`;
   return `${head}, roll call ${l.rollCallId} (${l.chamber}, ${l.date}, "${l.motion}"): ${l.name} voted ${l.vote}.`;
 }
@@ -73,6 +97,8 @@ export function parseLegiscanLine(text: string): LegiscanLine | null {
     return { kind: 'vote', state: v[1], session: v[2], bill: v[3], rollCallId: Number(v[4]), chamber: v[5],
       date: v[6], motion: v[7], name: v[8].trim(), vote: v[9] as (typeof VOTES)[number] };
   }
+  const g = SIGNED_LINE.exec(t);
+  if (g) return { kind: 'signed', state: g[1], session: g[2], bill: g[3], date: g[4] };
   const s = SPONSOR_LINE.exec(t);
   if (s) return { kind: 'sponsor', state: s[1], session: s[2], bill: s[3], name: s[4].trim(), role: s[5] as Role };
   return null;
@@ -100,7 +126,8 @@ const personOf = (p: Json) => Object.fromEntries(PERSON_FIELDS.map((f) => [f, p?
  * Build the URL -> record function the verifier reads. Each record is JSON text:
  *  - bill URL: `{ kind: 'bill', state, bill_number, bills: [{ session_name, sponsors: [...] }] }`: the
  *    ONE bill whose LegiScan page is this URL. A regular session and its special sessions reuse bill
- *    numbers for unrelated bills (Texas 2025 has three SB16s), so a session is a candidate only if it
+ *    numbers for unrelated bills (each bill also carries `signed: [{ date, action }]`, its "Signed by
+ *    the Governor" history steps) (Texas 2025 has three SB16s), so a session is a candidate only if it
  *    began in the URL's year and is regular for a URL with no session suffix (special for one with a
  *    suffix), and the bill is kept only if LegiScan's own `url` for it is this URL;
  *  - roll-call URL: `{ kind: 'rollcall', state, bill_number, session_name, roll_call_id, chamber,
@@ -134,6 +161,8 @@ export function createLegiscanRecordFetcher(query: LegiscanQuery): (url: string)
         session_name: bill.session?.session_name ?? s.session_name,
         sponsors: (bill.sponsors ?? []).filter((sp: Json) => sp.people_id && !sp.committee_sponsor)
           .map((sp: Json) => ({ ...personOf(sp), sponsor_type_id: sp.sponsor_type_id, sponsor_order: sp.sponsor_order })),
+        signed: (bill.history ?? []).filter((h: Json) => SIGNED_ACTION.test(String(h.action ?? '').trim()))
+          .map((h: Json) => ({ date: h.date, action: h.action })),
       });
     }
     if (!bills.length) throw new Error(`LegiScan bill ${state} ${number} (${year}) not found`);
@@ -227,12 +256,19 @@ function personFits(p: Json, fullName: string, lastName: string): boolean {
  * when it does, for a person whose name is not this politician's.
  */
 export function verifyLegiscanLine(
-  line: string, url: string, recordText: string, names: { fullName: string; lastName: string },
+  line: string, url: string, recordText: string, names: LegiscanPerson,
 ): SnippetVerdict {
   const l = parseLegiscanLine(line);
   let rec: Json;
   try { rec = JSON.parse(recordText); } catch { return { verdict: 'snippet_not_found' }; }
   if (!l || !isLegiscanUrl(url) || rec.state !== l.state || rec.bill_number !== l.bill) return { verdict: 'snippet_not_found' };
+  if (l.kind === 'signed') {
+    if (rec.kind !== 'bill') return { verdict: 'snippet_not_found' };
+    const bill = (rec.bills ?? []).find((b: Json) => b.session_name === l.session);
+    if (!(bill?.signed ?? []).some((h: Json) => h.date === l.date)) return { verdict: 'snippet_not_found' };
+    return heldGovernorship(names.governorTerms, l.state, l.date)
+      ? { verdict: 'verified', matchOffset: 0 } : { verdict: 'name_not_present' };
+  }
   const sameName = (p: Json) => fold(p.name ?? '') === fold(l.name);
 
   let who: Json | undefined;
@@ -253,10 +289,10 @@ export function verifyLegiscanLine(
 
 /**
  * Every canonical line a record holds for this politician: one per sponsorship on a bill URL (per
- * session), one vote on a roll-call URL. This is how an evidence builder writes the lines, so they
+ * session), one per governor's signature they made as governor, one vote on a roll-call URL. This is how an evidence builder writes the lines, so they
  * are exactly what verifyLegiscanLine accepts.
  */
-export function legiscanLinesFor(url: string, recordText: string, names: { fullName: string; lastName: string }): string[] {
+export function legiscanLinesFor(url: string, recordText: string, names: LegiscanPerson): string[] {
   const rec: Json = JSON.parse(recordText);
   const out: LegiscanLine[] = [];
   if (rec.kind === 'bill') {
@@ -265,6 +301,11 @@ export function legiscanLinesFor(url: string, recordText: string, names: { fullN
         const role = ROLES[sp.sponsor_type_id as keyof typeof ROLES];
         if (role && personFits(sp, names.fullName, names.lastName)) {
           out.push({ kind: 'sponsor', state: rec.state, session: b.session_name, bill: rec.bill_number, name: sp.name, role });
+        }
+      }
+      for (const h of b.signed ?? []) {
+        if (heldGovernorship(names.governorTerms, rec.state, h.date)) {
+          out.push({ kind: 'signed', state: rec.state, session: b.session_name, bill: rec.bill_number, date: h.date });
         }
       }
     }
