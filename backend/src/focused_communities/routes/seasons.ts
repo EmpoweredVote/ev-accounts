@@ -94,3 +94,149 @@ seasonsRouter.get('/communities/:id/seasons', optionalAuth, async (req: Request,
   if (!includeDrafts) await cache.set(key, body, TTL.SEASONS).catch(() => {});
   res.json(body);
 });
+
+export type ChangeClass = 'editorial' | 'clarifying' | 'substantive' | null;
+
+/** A chair in ladder order. Its 1-5 number never leaves the API: array order carries the ladder. */
+export interface Chair {
+  text: string;
+  description: string | null;
+  supportingPoints: string[];
+  examplePerspectives: string[];
+  changeSince: 'carried' | 'reworded' | null;
+}
+
+export interface SeasonView {
+  season: SeasonSummary;
+  questionText: string;
+  changeClass: ChangeClass;
+  seasonNote: string | null;
+  topicNote: string | null;
+  rationale: string | null;
+  isFallback: boolean;
+  chairs: Chair[];
+}
+
+interface DetailRow {
+  season_number: number;
+  season_name: string;
+  status: SeasonStatus;
+  question_text: string;
+  change_class: ChangeClass;
+  season_note: string | null;
+  topic_note: string | null;
+  rationale: string | null;
+  // rung_map is deliberately not read: its values are the raw 1-5 chair numbers.
+}
+
+interface ChairRow {
+  text: string;
+  description: string | null;
+  supporting_points: string[] | null;
+  example_perspectives: string[] | null;
+}
+
+seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: Request, res: Response) => {
+  const notFound = (code: string, message: string) => res.status(404).json({ error: { code, message } });
+
+  let topicId: string | null = null;
+  try {
+    const { rows } = await pool.query('SELECT topic_id FROM connect.communities WHERE id = $1', [req.params.id]);
+    topicId = rows[0]?.topic_id ?? null;
+  } catch {
+    // a malformed id throws (22P02): treated as not found
+  }
+  if (!topicId) { notFound('COMMUNITY_NOT_FOUND', 'Community not found'); return; }
+
+  const userId = (req as Request & { userId?: string }).userId;
+  let includeDrafts = false;
+  if (userId) {
+    try {
+      includeDrafts = checkRole(await getCachedUserRoles(userId), 'maven');
+    } catch {
+      includeDrafts = false;
+    }
+  }
+
+  const requested = Number.parseInt(String(req.params.number), 10);
+  const key = `fc:season:${topicId}:${Number.isNaN(requested) ? 'default' : requested}:${includeDrafts}`;
+  if (includeDrafts) {
+    res.set('Cache-Control', 'private, no-store');
+  } else {
+    const cached = await cache.get<unknown>(key);
+    if (cached !== null) { res.json(cached); return; }
+  }
+
+  try {
+    // Always list with drafts: a draft the caller may not see must 404 rather than silently fall back.
+    const { rows: all } = await pool.query(
+      'SELECT season_number, season_name, status, opened_at, closed_at FROM connect.get_season_list($1, $2)',
+      [topicId, true]
+    ) as { rows: SeasonRow[] };
+
+    const match = Number.isNaN(requested) ? undefined : all.find((r) => r.season_number === requested);
+    let target: SeasonRow | undefined = match;
+    let isFallback = false;
+    if (match) {
+      if (match.status === 'draft' && !includeDrafts) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
+    } else {
+      const visible = all.filter((r) => includeDrafts || r.status !== 'draft');
+      const def = resolveDefaultSeason(visible);
+      target = visible.find((r) => r.season_number === def);
+      isFallback = true;
+    }
+    if (!target) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
+
+    const { rows: detail } = await pool.query(
+      'SELECT season_number, season_name, status, question_text, change_class, season_note, topic_note, rationale FROM connect.get_season_detail($1, $2, $3)',
+      [topicId, target.season_number, includeDrafts]
+    ) as { rows: DetailRow[] };
+    const d = detail[0];
+    if (!d) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
+
+    // The open season reads the live stances (complete); closed seasons read their revisions.
+    // Ordering is explicit: with the numbers stripped, row order is all that carries the ladder.
+    let chairRows: ChairRow[];
+    if (target.status === 'open') {
+      const { rows } = await pool.query(
+        'SELECT position, text, supporting_points, description, example_perspectives FROM connect.get_stances_for_community($1) ORDER BY position ASC',
+        [req.params.id]
+      );
+      chairRows = rows;
+    } else {
+      const { rows } = await pool.query(
+        'SELECT ordinal, text, description, supporting_points, example_perspectives FROM connect.get_season_chairs($1, $2, $3) ORDER BY ordinal ASC',
+        [topicId, target.season_number, includeDrafts]
+      );
+      chairRows = rows;
+    }
+
+    const view: SeasonView = {
+      season: {
+        number: target.season_number,
+        name: target.season_name,
+        status: target.status,
+        openedAt: target.opened_at,
+        closedAt: target.closed_at,
+      },
+      questionText: d.question_text,
+      changeClass: d.change_class ?? null,
+      seasonNote: d.season_note ?? null,
+      topicNote: d.topic_note ?? null,
+      rationale: includeDrafts ? (d.rationale ?? null) : null,
+      isFallback,
+      chairs: chairRows.map((c): Chair => ({
+        text: c.text,
+        description: c.description ?? null,
+        supportingPoints: c.supporting_points ?? [],
+        examplePerspectives: c.example_perspectives ?? [],
+        changeSince: null,
+      })),
+    };
+    const body = { data: view };
+    if (!includeDrafts) await cache.set(key, body, TTL.SEASONS).catch(() => {});
+    res.json(body);
+  } catch (err) {
+    res.status(500).json({ error: { code: 'SEASON_FETCH_FAILED', message: (err as Error).message } });
+  }
+});

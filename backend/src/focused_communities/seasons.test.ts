@@ -129,3 +129,172 @@ describe('GET /communities/:id/seasons', () => {
     expect((await request(app).get(PATH)).status).toBe(404);
   });
 });
+
+describe('GET /communities/:id/seasons/:number', () => {
+  const SP = '/fc/api/communities/c1/seasons';
+  const list = rows([s(1, 'closed'), s(2, 'open'), s(3, 'draft')]);
+  const detail = (over: Record<string, unknown> = {}) => rows([{
+    season_number: 2, season_name: 'S2', status: 'open', question_text: 'Q?', change_class: 'substantive',
+    season_note: 'sn', topic_note: 'tn', rationale: 'why', rung_map: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 }, ...over,
+  }]);
+  const openChairs = (n = 3) => rows(Array.from({ length: n }, (_, i) => ({
+    position: i + 1, text: `chair ${i}`, description: i === 0 ? null : 'd', supporting_points: ['p'], example_perspectives: ['e'],
+  })));
+  const closedChairs = (n = 3) => rows(Array.from({ length: n }, (_, i) => ({
+    ordinal: i + 1, text: `old ${i}`, description: i === 0 ? null : 'd', supporting_points: ['p'], example_perspectives: ['e'],
+  })));
+  const sql = (i: number) => String(query.mock.calls[i][0]);
+  const openFlow = () => query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+    .mockResolvedValueOnce(detail()).mockResolvedValueOnce(openChairs());
+  const closedFlow = () => query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+    .mockResolvedValueOnce(detail({ season_number: 1, status: 'closed' })).mockResolvedValueOnce(closedChairs());
+
+  it('returns the question, chairs and notes for a season', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`);
+    expect(res.status).toBe(200);
+    expect(res.body.data).toMatchObject({
+      season: { number: 2, name: 'S2', status: 'open', openedAt: TS, closedAt: null },
+      questionText: 'Q?', changeClass: 'substantive', seasonNote: 'sn', topicNote: 'tn', isFallback: false,
+    });
+    expect(res.body.data.chairs.map((c: { text: string }) => c.text)).toEqual(['chair 0', 'chair 1', 'chair 2']);
+    expect(res.body.data.chairs[0]).toEqual({
+      text: 'chair 0', description: null, supportingPoints: ['p'], examplePerspectives: ['e'], changeSince: null,
+    });
+  });
+
+  it('reads chairs from compass_stances for the open season', async () => {
+    openFlow();
+    await request(app).get(`${SP}/2`);
+    expect(sql(3)).toContain('connect.get_stances_for_community($1)');
+    expect(query.mock.calls[3][1]).toEqual(['c1']);
+    expect(query.mock.calls.some((c) => String(c[0]).includes('get_season_chairs'))).toBe(false);
+  });
+
+  it('reads chairs from revisions for a closed season', async () => {
+    closedFlow();
+    const res = await request(app).get(`${SP}/1`);
+    expect(sql(3)).toContain('connect.get_season_chairs($1, $2, $3)');
+    expect(query.mock.calls[3][1]).toEqual(['t1', 1, false]);
+    expect(res.body.data.chairs.map((c: { text: string }) => c.text)).toEqual(['old 0', 'old 1', 'old 2']);
+    expect(query.mock.calls.some((c) => String(c[0]).includes('get_stances_for_community'))).toBe(false);
+  });
+
+  it('never includes a position or ordinal number in the body (open season path)', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`);
+    const body = JSON.stringify(res.body);
+    expect(body).not.toMatch(/"position"/);
+    expect(body).not.toMatch(/"ordinal"/);
+    expect(body).not.toMatch(/"value"/);
+  });
+
+  it('never includes ordinal in the body (closed season path)', async () => {
+    closedFlow();
+    const res = await request(app).get(`${SP}/1`);
+    expect(JSON.stringify(res.body)).not.toMatch(/"ordinal"|"position"/);
+  });
+
+  it('never includes rung_map in the body, even for a maven', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`).set('Authorization', 'Bearer maven');
+    expect(res.status).toBe(200);
+    expect(JSON.stringify(res.body)).not.toContain('rung_map');
+    expect(JSON.stringify(res.body)).not.toContain('rungMap');
+  });
+
+  it('asks the database for chairs in explicit ladder order', async () => {
+    openFlow();
+    await request(app).get(`${SP}/2`);
+    expect(sql(3)).toMatch(/ORDER BY position ASC/);
+    closedFlow();
+    await request(app).get(`${SP}/1`);
+    expect(sql(7)).toMatch(/ORDER BY ordinal ASC/);
+  });
+
+  it('omits rationale for a non-maven caller', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`).set('Authorization', 'Bearer user');
+    expect(res.body.data.rationale).toBeNull();
+  });
+
+  it('includes rationale for a maven and bypasses the cache', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`).set('Authorization', 'Bearer maven');
+    expect(res.body.data.rationale).toBe('why');
+    expect(res.headers['cache-control']).toBe('private, no-store');
+    expect(store.size).toBe(0);
+    expect(query.mock.calls[2][1]).toEqual(['t1', 2, true]);
+  });
+
+  it('404s a draft season for a non-maven, never 403', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list);
+    const res = await request(app).get(`${SP}/3`);
+    expect(res.status).toBe(404);
+    expect(query).toHaveBeenCalledTimes(2);
+  });
+
+  it('serves a draft season to a maven', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+      .mockResolvedValueOnce(detail({ season_number: 3, status: 'draft' })).mockResolvedValueOnce(closedChairs());
+    const res = await request(app).get(`${SP}/3`).set('Authorization', 'Bearer maven');
+    expect(res.status).toBe(200);
+    expect(res.body.data.season.number).toBe(3);
+  });
+
+  it('falls back to the default season when the topic is absent from the requested one', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/9`);
+    expect(res.status).toBe(200);
+    expect(res.body.data.isFallback).toBe(true);
+    expect(res.body.data.season.number).toBe(2);
+  });
+
+  it('resolves a non-numeric :number to the default season', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/abc`);
+    expect(res.status).toBe(200);
+    expect(res.body.data.season.number).toBe(2);
+    expect(res.body.data.isFallback).toBe(true);
+  });
+
+  it('404s when there is no season to fall back to', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([]));
+    const res = await request(app).get(`${SP}/1`);
+    expect(res.status).toBe(404);
+  });
+
+  it('does not fall back to a draft for a non-maven', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(3, 'draft')]));
+    expect((await request(app).get(`${SP}/9`)).status).toBe(404);
+  });
+
+  it('renders a chair whose description is null as null', async () => {
+    openFlow();
+    const res = await request(app).get(`${SP}/2`);
+    expect(res.body.data.chairs[0].description).toBeNull();
+    expect(res.body.data.chairs[1].description).toBe('d');
+  });
+
+  it('passes an editorial changeClass and null notes through', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(list)
+      .mockResolvedValueOnce(detail({ change_class: 'editorial', season_note: null, topic_note: null })).mockResolvedValueOnce(openChairs());
+    const res = await request(app).get(`${SP}/2`);
+    expect(res.body.data).toMatchObject({ changeClass: 'editorial', seasonNote: null, topicNote: null });
+  });
+
+  it('caches guest responses per season and drafts flag', async () => {
+    openFlow();
+    await request(app).get(`${SP}/2`);
+    expect([...store.keys()]).toEqual(['fc:season:t1:2:false']);
+    query.mockResolvedValueOnce(community);
+    const again = await request(app).get(`${SP}/2`);
+    expect(again.body.data.questionText).toBe('Q?');
+    expect(query).toHaveBeenCalledTimes(5);
+  });
+
+  it('404s an unknown community', async () => {
+    query.mockResolvedValueOnce(rows([]));
+    expect((await request(app).get(`${SP}/1`)).status).toBe(404);
+  });
+});
