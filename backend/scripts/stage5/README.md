@@ -23,7 +23,8 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 7 | `legiscan_pairs.py <batch> <findings> --topic --state --host --rollcalls <json> [--bill-pad N]` | official votes/authorships → `legiscan/pairs.csv` |
 | 7 | `../legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv` | the LegiScan lines (counted API calls) |
 | 7 | `legiscan_merge.py <batch> --host <official host>` | cites the lines, uncites covered official pages, cross-checks every vote (exit 1 on any disagreement) |
-| 8 | `add_bill_text.py <batch> --topic --url --sentences <json> [--text <file>]` | bill text as cited passages for quotes the gate cannot find |
+| 8 | `bill_text_auto.py <batch> <findings> --topic <key> [--instruments <dir>] [--saved-root <dir>]` | finds each quote the gate cannot place in the person's bills (store operative text, then the saved copy) and cites that bill with a 25+-word passage |
+| 8 | `add_bill_text.py <batch> --topic --url --sentences <json> [--text <file>]` | the same by hand, for a bill the store does not hold |
 | 9 | `apply_overrides.py <batch>` | research-text trims from `overrides.json` (`{"trims": [...]}`), never a stance or value |
 | 14 | `readback.ts --topic <key> <ids file> [--batch-id <id>]` | outcomes, passages and review rows the draft season now holds |
 | 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve" |
