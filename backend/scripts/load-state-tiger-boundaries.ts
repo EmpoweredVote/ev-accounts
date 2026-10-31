@@ -806,7 +806,43 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // Refresh the view after loading: REFRESH MATERIALIZED VIEW CONCURRENTLY
   // essentials.geofence_child_county (outside a transaction; see migration 1696).
   IL: new Set(['place']),
-  AK: new Set(['place']),
+  // AK. TWO WAVES SHARE THIS ONE ENTRY, and they must stay merged.
+  //   place  — the 149 G4110 Alaska places, loaded 2026-10-06 for city-name resolution.
+  //            ⚠ Juneau is a "city and borough" and Anchorage a "municipality"; the identity
+  //            anchors below name them in that form. No `county`: Alaska's 30 G4020 boroughs and
+  //            census areas are already in production from the national load, and the
+  //            place->county mapping (essentials.geofence_child_county) joins against them.
+  //   sldu   — 20 Senate districts, added 2026-10-30 for the Alaska Legislature deep seed.
+  //   sldl   — 40 House districts, same wave.
+  // 🔴 THE LEGISLATIVE WAVE FIRST ADDED A SECOND `AK:` KEY INSTEAD OF EXTENDING THIS ONE. A later
+  //    duplicate key in an object literal SILENTLY WINS, so `place` quietly stopped being an
+  //    allowed layer for Alaska and nothing errored — the sldu/sldl load ran fine and said
+  //    nothing. `no-dupe-keys` in CI caught it. ▶ When adding a state here, CHECK WHETHER IT IS
+  //    ALREADY PRESENT; this allowlist is keyed by state, not by wave.
+  //
+  // Production held ZERO G5210 and ZERO G5220 rows for FIPS 02 and ZERO state legislative
+  // offices before 2026-10-30, measured that day.
+  //
+  // 🔴 ALASKA'S SENATE DISTRICTS ARE LETTERED A..T, AND THE HOUSE IS NUMBERED 1..40. Read from
+  //    the real TIGER .dbf: SLDUST is '00A'..'00T' (20 records, G5210) and SLDLST is '001'..'040'
+  //    (40 records, G5220). This is the INVERSE of Idaho, whose pre-flight asserts that lettered
+  //    codes are ABSENT; here the letters are the real district identity and their absence is the
+  //    failure. Both assertions are made explicitly in the pre-flight below, so neither state's
+  //    rule can be pasted over the other's.
+  //
+  // 🔴 THE DIGITS IN '00A' ARE PADDING, NOT A NUMBER. `ocdDistrictSuffix` carries the branch that
+  //    turns '00A' into 'A' rather than '0A'; Alaska is the first state here whose district code
+  //    is purely alphabetic. See src/lib/ocdDistrictSuffix.ts.
+  //
+  // 🔴 EVERY SENATE DISTRICT IS EXACTLY TWO HOUSE DISTRICTS: Senate letter N covers House 2N-1
+  //    and 2N. Measured 2026-10-30 against TIGER 2024 two independent ways — all 40 House
+  //    interior points fall inside Senate ceil(N/2), and all 20 Senate ALAND values equal the sum
+  //    of their two House ALAND values to within 0.1%. ⚠ That pairing is the exact thing Alaska's
+  //    2021-22 redistricting litigation was about (the Eagle River / East Anchorage pairings were
+  //    struck down twice), so it is asserted in CC_0316's post-verify against the loaded polygons
+  //    rather than assumed. It is a STRUCTURAL check and NOT a vintage check — the 2013 plan
+  //    nests the same way — which is why the two live apart.
+  AK: new Set(['place', 'sldu', 'sldl']),
   // HI. sldu/sldl ONLY, and deliberately no `place`: Hawaii has NO INCORPORATED PLACES AT
   // ALL — TIGERweb's Incorporated Places layer returns zero features for state 15, against
   // 483 for California, so a place load here would import nothing and the empty result
@@ -830,32 +866,6 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // ⚠ whose TIGER BASENAME is 'Boise City', not 'Boise' (the city's legal name is "City of
   // Boise City"), so a name search for 'Boise' alone is a false-absence trap. Match the GEOID.
   ID: new Set(['sldu', 'sldl', 'place']),
-  // AK. Alaska Legislature deep seed. Production held ZERO G5210 and ZERO G5220 rows for FIPS 02
-  // and ZERO state legislative offices before this wave; measured 2026-10-30. `county` and
-  // `place` are EXCLUDED and must NOT be re-run — Alaska's 30 G4020 boroughs/census areas and
-  // 149 G4110 places are already in production from the national load and from CC_0303
-  // (Anchorage), and a place re-run here would buy nothing.
-  //
-  // 🔴 ALASKA'S SENATE DISTRICTS ARE LETTERED A..T, AND THE HOUSE IS NUMBERED 1..40. Read from
-  //    the real TIGER .dbf on 2026-10-30: SLDUST is '00A'..'00T' (20 records, G5210) and SLDLST
-  //    is '001'..'040' (40 records, G5220). This is the INVERSE of Idaho, whose pre-flight
-  //    asserts that lettered codes are ABSENT; here the letters are the real district identity
-  //    and their absence is the failure. Both assertions are made explicitly below so neither
-  //    state's rule can be pasted over the other's.
-  //
-  // 🔴 THE DIGITS IN '00A' ARE PADDING, NOT A NUMBER. `ocdDistrictSuffix` carries the branch that
-  //    turns '00A' into 'A' rather than '0A'; Alaska is the first state here whose district code
-  //    is purely alphabetic. See src/lib/ocdDistrictSuffix.ts.
-  //
-  // 🔴 EVERY SENATE DISTRICT IS EXACTLY TWO HOUSE DISTRICTS: Senate letter N covers House 2N-1
-  //    and 2N. Measured 2026-10-30 against TIGER 2024 two independent ways — all 40 House
-  //    interior points fall inside Senate ceil(N/2), and all 20 Senate ALAND values equal the sum
-  //    of their two House ALAND values to within 0.1%. ⚠ That pairing is the exact thing Alaska's
-  //    2021-22 redistricting litigation was about (the Eagle River / East Anchorage pairings were
-  //    struck down twice), so it is asserted in CC_0316's post-verify against the loaded polygons
-  //    rather than assumed. It is a STRUCTURAL check and NOT a vintage check — the 2013 plan
-  //    nests the same way — which is why the two live apart.
-  AK: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
