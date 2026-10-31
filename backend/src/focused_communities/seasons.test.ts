@@ -305,7 +305,7 @@ describe('GET /communities/:id/seasons/:number', () => {
       query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(2, 'open')]));
       await request(app).get(`${SP}/${n}`);
     }
-    expect([...store.keys()]).toEqual(['fc:season:t1:2:true:false']);
+    expect([...store.keys()]).toEqual(['fc:season:c1:2:true:false']);
   });
 
   it('falls back to the default season when the topic is absent from the requested one', async () => {
@@ -352,7 +352,7 @@ describe('GET /communities/:id/seasons/:number', () => {
   it('caches guest responses per season and drafts flag', async () => {
     openFlow();
     await request(app).get(`${SP}/2`);
-    expect([...store.keys()]).toEqual(['fc:season:t1:2:false:false']);
+    expect([...store.keys()]).toEqual(['fc:season:c1:2:false:false']);
     query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(2, 'open')]));
     const again = await request(app).get(`${SP}/2`);
     expect(again.body.data.questionText).toBe('Q?');

@@ -185,7 +185,7 @@ seasonsRouter.get('/communities/:id/seasons/:number', optionalAuth, async (req: 
     if (!target) { notFound('SEASON_NOT_FOUND', 'Season not found'); return; }
 
     // Keyed on the RESOLVED season so arbitrary :number values cannot grow the keyspace.
-    const key = `fc:season:${topicId}:${target.season_number}:${isFallback}:${includeDrafts}`;
+    const key = `fc:season:${req.params.id}:${target.season_number}:${isFallback}:${includeDrafts}`;
     if (!includeDrafts) {
       const cached = await cache.get<unknown>(key);
       if (cached !== null) { res.json(cached); return; }
