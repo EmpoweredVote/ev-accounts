@@ -30,6 +30,12 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 
 Notes:
 
+- ⚠ **`build_evidence.py` and `pdf_pages.py` fetch with a browser user-agent.** This is a deliberate exception to
+  decision 0003 (ev-cto `knowledge/decisions/0003-scraping-toolchain.md`), ruled 2026-10-31 (Chris Andrews), for local research runs only. Never copy it into a live or
+  scheduled fetch path. A page these tools read is not proof the verifier can read it: the verifier sends the honest
+  `EmpoweredVoteBot` identity (`src/lib/verificationFetch.ts`). iga.in.gov, for example, serves its PDFs and JSON to
+  a browser identity only, so Indiana's records come from LegiScan or the official keyed API (`api.iga.in.gov`).
+
 - `build_evidence.py` also reads an `overrides.json` of the older shape `{name: {column: value}}`; a `{"trims": …}`
   file is ignored by it (no row is named "trims").
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`) and their tests; `batch-db.ts` resolves the topic id and
