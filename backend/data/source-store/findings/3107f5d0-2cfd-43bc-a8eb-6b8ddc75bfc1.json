@@ -47,6 +47,50 @@
         "fetched_at": "2026-10-22T23:05:19.475Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5c357b1e70a86f59217fe418cb01e3e643c3b107535d66911daeaf46d68c74a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H592/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-592-2013",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.592, 'An Act requiring photo identification for voting' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "6537347ffd7933f4bd8b5fb6b2cfeabd0ac29bd2f93083e715670ba04db4c9f7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H687/Cosponsor",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-687-2023",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.687, 'An Act ensuring the election integrity through voter identification' (filed 2023-02-16).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,56 @@
+{
+  "id": "MA-H-762-2021",
+  "scope": "state:ma",
+  "title": "An Act requiring photo ID’s to vote (H.762, filed 2021; accompanied a study order (H5026) 2022-09-12)",
+  "urls": [
+    "https://malegislature.gov/Bills/192/H762",
+    "https://malegislature.gov/Bills/192/H762.Html",
+    "https://malegislature.gov/Bills/192/H762/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: Section 76B, Chapter 54 of the General Laws is hereby amended by adding the following subsection:- (c) -- Any person who seeks to vote in a public election is required to establish his or her qualifications to vote by providing a current valid photo form of identification to election officials prior to voting. Acceptable forms of photo identification provided is either a current driver’s license, a government employee card, a pilot’s license, military identification, a Medicaid or Medicare card, and for students, a photo identification university card.",
+  "sponsors": [
+    {
+      "name": "Donald R. Berthiaume, Jr.",
+      "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.762, session 192"
+    },
+    {
+      "name": "Kelly W. Pease",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.762, session 192"
+    },
+    {
+      "name": "Angelo L. D'Emilia",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.762, session 192"
+    },
+    {
+      "name": "Ryan C. Fattman",
+      "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.762, session 192"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/192_H762.Html.htm",
+      "sha256": "0cb9a0392570e6532ecdc1f0f006c218d58c00b40abc53f1b2b9f6050fcaaf1b"
+    }
+  }
+}

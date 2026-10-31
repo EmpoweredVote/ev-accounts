@@ -1,0 +1,95 @@
+{
+  "id": "MA-S-389-2015",
+  "scope": "state:ma",
+  "title": "An Act requiring photo identification to receive a ballot (S.389, filed 2015; heard in Election Laws 2016-01-19; no floor vote)",
+  "urls": [
+    "https://malegislature.gov/Bills/189/S389",
+    "https://malegislature.gov/Bills/189/S389.Html",
+    "https://malegislature.gov/Bills/189/S389/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Section 76 of chapter 54 of the General Laws, as appearing in the 2014 Official Edition, is hereby amended by striking the section in its entirety and inserting the following words:- Section 76. Each voter desiring to vote at a polling place shall provide a name, residential address, and valid photo identification. Valid forms of photo identification are: a Massachusetts driver’s license, U.S. Passport, Student ID, or Massachusetts ID card. If a voter needs to obtain valid identification, a Massachusetts ID card will be issued at no cost by the Department of Transportation’s Registry of Motor Vehicles. If such name is found on the voting list, the election officer shall check and repeat the name and shall admit the voter to the space enclosed by the guard rail and, in case of official ballots, other than those marked \"Challenged Ballots\" as provided by section thirty-five A, are used, such voter shall be given one ballot. The use of electronic means such as tape recording equipment or radio broadcasting equipment for the recording or broadcasting of the names of the voters not yet checked as having voted shall be prohibited. SECTION 2. Section 76B of chapter 54, as so appearing, is hereby amended by striking out, in line 2, the words “when so requested by an election officer”.",
+  "sponsors": [
+    {
+      "name": "Richard J. Ross",
+      "role": "prime",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Timothy R. Whelan",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Shawn Dooley",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Leonard Mirra",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Stephen L. DiNatale",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Bruce E. Tarr",
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Robert L. Hedlund",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Donald F. Humason, Jr.",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Viriato M. deMacedo",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Ryan C. Fattman",
+      "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Leah Cole",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    },
+    {
+      "name": "Kevin J. Kuros",
+      "role": "co",
+      "version": "as filed; petitioners tab, S.389, session 189"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/189_S389.Html.htm",
+      "sha256": "b4eb6a7ba4b8a2feb02a1e76821a9509fb9899735e1cdd87eae91d80a5db7501"
+    }
+  }
+}

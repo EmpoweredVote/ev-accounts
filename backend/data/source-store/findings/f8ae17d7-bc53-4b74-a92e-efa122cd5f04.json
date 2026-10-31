@@ -25,6 +25,72 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "44d42c55accdc6dbda2c4e5d2aa2b5f6ca147d9714d44d54b9e9759f9e821a66",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H3878/Cosponsor",
+      "date": "2021-06-15",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3878-2021",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.3878, 'An Act establishing identification at the voting polls' (filed 2021-06-15).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "4601334a66b8653660d2004203cfeef7faec1b34eac50085ebe2a80e09e16bbc",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/12/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-12-2022",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of Amendment #12 to H.4359, 'Establishing identification at the voting polls' (2022-01-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "bcd1a87a7452c6aec9f56454248eee195addf3aa76b483dcab2a1466956ed383",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/7/House/Content",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of Amendment #7 to H.4359, 'Voter Identification' (2022-01-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

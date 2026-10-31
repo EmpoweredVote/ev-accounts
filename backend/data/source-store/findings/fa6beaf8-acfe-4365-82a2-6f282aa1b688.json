@@ -46,6 +46,27 @@
         "fetched_at": "2026-10-27T22:25:50.478Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1447a7d5aa739d1bbc9b22d0a18212b4363db44c820f8711c4e317affd157717",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/H1981/Cosponsor",
+      "date": "2011-01-24",
+      "date_precision": "day",
+      "instrument_id": "MA-H-1981-2011",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.1981, 'An Act establishing identification requirements for voters who registered by mail' (filed 2011-01-24).",
+      "subjects": [
+        "ID for first-time voters who registered by mail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

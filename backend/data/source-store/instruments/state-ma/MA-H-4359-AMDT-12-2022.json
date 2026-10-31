@@ -1,0 +1,62 @@
+{
+  "id": "MA-H-4359-AMDT-12-2022",
+  "scope": "state:ma",
+  "title": "Amendment #12 to H.4359, 'Establishing identification at the voting polls' (2022; offered by Ms. Sullivan of Abington; no roll call)",
+  "urls": [
+    "https://malegislature.gov/Bills/GetAmendmentContent/192/H4359/12/House/Content",
+    "https://malegislature.gov/Bills/192/H4359/Amendments/House"
+  ],
+  "version": "other",
+  "operative_text": "Ms. Sullivan of Abington moves to amend the bill, as amended, by adding the following new sections: \"SECTION XX. Chapter 51 of the General Laws is hereby amended by adding the following section:- Section 67. The state secretary shall issue, upon request and at no cost to the voter, a photo identification card to be used for voting purposes only. Upon determination that a person meets the qualifications of a voter described in section 1, the secretary photograph the voter, and said photograph shall appear on the voting identification card and be a straightforward looking view of the voter without eyeglasses. The identification card shall be clearly marked “FOR VOTING PURPOSES ONLY.” SECTION XX. Chapter 54 of the General Laws is hereby amended by striking out section 76B and inserting in place thereof the following section:- Section 76B. Any person who seeks to vote in a federal, state, local or primary election shall establish their qualification to vote by providing a valid photo identification card, MassHealth card or Medicare card to an election officer prior to voting. Acceptable forms of photo identification shall be a voting identification card issued pursuant to section 67 of chapter 51, current driver’s license, government employee identification card, pilot’s license, military identification, state identification card issued pursuant to section 8E of chapter 90 or United States passport.\" Additional co-sponsor(s) added to Amendment #12 to H4359 Establishing identification at the voting polls Representative: David Allen Robertson Colleen M. Garry Joseph D. McKenna Donald R. Berthiaume, Jr.",
+  "sponsors": [
+    {
+      "name": "Alyson M. Sullivan",
+      "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+      "role": "prime",
+      "version": "amendment as offered 2022-01-27"
+    },
+    {
+      "name": "David Allen Robertson",
+      "politician_id": "f8ae17d7-bc53-4b74-a92e-efa122cd5f04",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Colleen M. Garry",
+      "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Joseph D. McKenna",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a",
+      "role": "co",
+      "version": "added co-sponsor"
+    },
+    {
+      "name": "Donald R. Berthiaume, Jr.",
+      "politician_id": "329212d4-14ef-4685-9d95-cc7473aad949",
+      "role": "co",
+      "version": "added co-sponsor"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/192_H4359_amdt12.htm",
+      "sha256": "7cdcd4c78516bc50df5bb15f7293d6372142b5b67e143dc90fc711892916a329"
+    }
+  }
+}

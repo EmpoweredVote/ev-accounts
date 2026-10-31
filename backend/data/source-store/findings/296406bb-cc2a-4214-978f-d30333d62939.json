@@ -46,6 +46,72 @@
         "fetched_at": "2026-10-22T23:02:30.329Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "64470d3ebda6a1448b5d69ae8c941fa41f26b435bd8a963574bc64e42713541a",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H762/Cosponsor",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-762-2021",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.762, 'An Act requiring photo ID’s to vote' (filed 2021-03-29).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "6537347ffd7933f4bd8b5fb6b2cfeabd0ac29bd2f93083e715670ba04db4c9f7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H687/Cosponsor",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-687-2023",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.687, 'An Act ensuring the election integrity through voter identification' (filed 2023-02-16).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "cdb533d1d8aa241602d9c35cf3dcec62eddf8acf057084883a9b8730b4e64356",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H720/Cosponsor",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-720-2023",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.720, 'An Act establishing identification at the voting polls' (filed 2023-02-16).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

@@ -25,6 +25,50 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "44d42c55accdc6dbda2c4e5d2aa2b5f6ca147d9714d44d54b9e9759f9e821a66",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H3878/Cosponsor",
+      "date": "2021-06-15",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3878-2021",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.3878, 'An Act establishing identification at the voting polls' (filed 2021-06-15).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "cdb533d1d8aa241602d9c35cf3dcec62eddf8acf057084883a9b8730b4e64356",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/193/H720/Cosponsor",
+      "date": "2023-02-16",
+      "date_precision": "day",
+      "instrument_id": "MA-H-720-2023",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of H.720, 'An Act establishing identification at the voting polls' (filed 2023-02-16).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

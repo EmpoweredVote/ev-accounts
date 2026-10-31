@@ -25,6 +25,28 @@
         "fetched_at": "2026-10-21T03:40:10.569Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "5c357b1e70a86f59217fe418cb01e3e643c3b107535d66911daeaf46d68c74a5",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/H592/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-H-592-2013",
+      "act": "sponsor",
+      "note": "Listed as presenter of H.592, 'An Act requiring photo identification for voting' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

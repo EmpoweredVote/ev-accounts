@@ -1,0 +1,68 @@
+{
+  "id": "MA-H-687-2023",
+  "scope": "state:ma",
+  "title": "An Act ensuring the election integrity through voter identification (H.687, filed 2023; accompanied a study order (H4733) 2024-07-15)",
+  "urls": [
+    "https://malegislature.gov/Bills/193/H687",
+    "https://malegislature.gov/Bills/193/H687.Html",
+    "https://malegislature.gov/Bills/193/H687/Cosponsor"
+  ],
+  "version": "as-filed",
+  "operative_text": "Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows: SECTION 1. Section 76 of Chapter 54 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended by striking out the first sentence in its entirety and replacing it with the following sentences:— “An election officer shall ask each voter desiring to vote at a polling place for his full name and current residence address and repeat the full name and address stated by the voter. The officer shall ask the voter to present any one of the following forms of identification: his Commonwealth of Massachusetts voter registration card, his social security card, his valid Massachusetts driver’s license, or any other identification card issued by a government agency by the Commonwealth, one of its political subdivisions, or the United States; or any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer’s business.” SECTION 2. Section 76B of Chapter 54 of the General Laws, as appearing in the 2010 Official Edition, is hereby amended by striking the entire section and inserting the following section in place thereof:—“Section 76B. Any person desiring to vote who fails to present suitable identification shall not be permitted to vote.”",
+  "sponsors": [
+    {
+      "name": "Colleen M. Garry",
+      "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+      "role": "prime",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    },
+    {
+      "name": "Joseph D. McKenna",
+      "politician_id": "2fadc37b-4d33-46b4-a3cc-a2ca5ebeb39a",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    },
+    {
+      "name": "Steven S. Howitt",
+      "politician_id": "3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    },
+    {
+      "name": "Kelly W. Pease",
+      "politician_id": "296406bb-cc2a-4214-978f-d30333d62939",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    },
+    {
+      "name": "Angelo L. D'Emilia",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    },
+    {
+      "name": "Ryan C. Fattman",
+      "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+      "role": "co",
+      "version": "as filed; petitioners tab, H.687, session 193"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+    "fetched_at": "2026-10-31T03:30:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/193_H687.Html.htm",
+      "sha256": "f16ec92a512ddc68ba81df3f2aa8b2c4dd33cf7cd3c319abb305f0066f20658d"
+    }
+  }
+}

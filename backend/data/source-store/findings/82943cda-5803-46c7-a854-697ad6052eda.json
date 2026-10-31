@@ -48,6 +48,28 @@
         "fetched_at": "2026-10-22T23:14:26.817Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1a3a57590b75b0c435761cea03f7703afb40e783eed9cc6c343cf577a4d26617",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S335/Cosponsor",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-S-335-2013",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.335, 'An Act requiring photo identification to receive a ballot' (filed 2013-01-22).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-30)",
+        "fetched_at": "2026-10-31T03:30:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [
