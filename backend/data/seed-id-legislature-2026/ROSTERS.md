@@ -192,6 +192,34 @@ absence explicitly, so a future TIGER that started splitting them would abort ra
 | `start_precision = year` | 4 |
 | `start_precision = unknown` | 0 |
 
+## Statewide executive — the two offices production was missing
+
+Idaho Const. Art. IV §1 names **seven** executive officers; production held five. `CC_0311` added
+the **State Controller** and the **Superintendent of Public Instruction** and seated them;
+`CC_0315` gave both a portrait.
+
+| Office | Holder | term_start | precision | Portrait |
+| --- | --- | --- | --- | --- |
+| State Controller | Brandon D. Woolf | 2012-10-15 | day (appointed) | `sco.idaho.gov`, 135x133 PNG |
+| Superintendent of Public Instruction | Debbie Critchfield | 2023-01-02 | day (elected) | `sde.idaho.gov`, 900x900 WebP |
+
+⚠ **THE CONTROLLER'S PORTRAIT IS 135x133 AND THAT IS NOT A SCRAPING ERROR.** It is the only size
+any Idaho state source publishes. The SCO home page serves exactly one image of him; the
+un-cropped and un-suffixed variants of that filename all 404; the office has no bio page;
+Ballotpedia soft-404s on all four name forms tried (`/Brandon_Woolf`, `/Brandon_D._Woolf`,
+`/Brandon_Woolf_(Idaho)`, `/Brandon_Woolf_(Idaho_Controller)`, each HTTP 200 with a
+"does not exist" body); and Wikimedia Commons has nothing — its two hits for "Brandon Woolf" are
+a 1910s genealogy book and an unrelated military exercise photograph. It upscales softly in the
+4:5 frame but the face is centred and unmistakably his. ▶ Replace it if the office ever publishes
+a larger one.
+
+Both files are stored in their **native format** — one PNG, one WebP, neither re-encoded.
+Production already carries 87 PNG and 22 WebP default images alongside the JPEGs.
+
+Both pages' own `alt` attributes name the person *and* the office, which is the strongest
+identity signal available for a portrait:
+`alt="State Controller Brandon D Woolf Photo"` and `alt="Superintendent Debbie Critchfield headshot"`.
+
 ## ▶ Open items
 
 - 🔴 **2026-12-01 — RE-SEAT ALL 105.** Terms run "from and after the first day of December next
