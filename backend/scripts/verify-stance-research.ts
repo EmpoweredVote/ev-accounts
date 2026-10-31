@@ -87,6 +87,7 @@ import { markHumanSaved } from '../src/lib/humanSavedCopy.js';
 import { loadHumanSavedCopies } from './lib/humanSavedCopies.js';
 import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
 import { createLegiscanRecordFetcher, withLegiscanRecords } from '../src/lib/legiscanEvidence.js';
+import { loadGovernorTerms } from '../src/lib/governorTerms.js';
 import { legiscanQuery } from '../src/lib/legiscan/client.js';
 import {
   buildEvidenceRowsForInsert,
@@ -388,6 +389,13 @@ for (const name of csvNames) {
     aliases: aliasesFrom(resolved?.alternate_names),
   };
   idByName.set(name, resolved?.id ?? null);
+}
+// A governor's signature on a LegiScan bill page is checked against their dated terms as governor.
+const governorTerms = await loadGovernorTerms((q, p) => pool.query(q, p),
+  [...idByName.values()].filter((id): id is string => id !== null));
+for (const [name, id] of idByName) {
+  const terms = id ? governorTerms.get(id) : undefined;
+  if (terms?.length) politicianNames[name].governorTerms = terms;
 }
 
 // 🔴 The open season's question set — not is_live. A stance can only be written to a

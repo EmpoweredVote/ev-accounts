@@ -21,6 +21,29 @@
         "fetched_at": "2026-10-27T14:46:04.733Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "13d14a67912e684c11ef0d0da4d2ef22c136b82606ab67bca20ad81a1b4f1c37",
+      "kind": "record",
+      "url": "https://legiscan.com/IN/bill/SB0010/2025",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "signed",
+      "motion": "Signed by the Governor",
+      "note": "LegiScan bill history for IN SB 10 (2025 Regular Session): 'Signed by the Governor' on 2025-04-16, then 'Public Law 70' the same day. LegiScan prints no governor's name; Mike Braun held the office that day (term from 2025-01-13, Indiana Constitution art. 5 sec. 9; office_terms CA_0340). Enrolled SEA 10 is the act signed.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "runner (signature lane)",
+        "fetched_at": "2026-10-31T20:45:45.139Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -72,6 +95,19 @@
       "found": 1,
       "at": "2026-10-27T14:46:04.733Z",
       "by": "source-collector-rerun"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "governor's bill actions"
+      ],
+      "places": [
+        "LegiScan bill history for IN SB 10 (2025), signature lane 2026-10-31"
+      ],
+      "found": 1,
+      "at": "2026-10-31T20:45:45.139Z",
+      "by": "runner (signature lane)"
     }
   ]
 }
