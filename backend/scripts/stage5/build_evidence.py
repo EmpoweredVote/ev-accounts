@@ -29,6 +29,10 @@ for x in csv.DictReader(open(f'{B}/research-pre-evidence.csv')):
     n0 = x['full_name'][1:-1].replace('""', '"') if x['full_name'].startswith('"') and x['full_name'].endswith('"') else x['full_name']
     ps = by_name.get(n0, [])
     PRE[bname.get(ps[0], n0) if len(ps) == 1 else n0] = x
+# ⚠ BROWSER USER-AGENT — a deliberate exception to decision 0003 (ev-cto knowledge/decisions/0003-scraping-toolchain.md), ruled
+# 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. Some sites
+# (iga.in.gov) serve their files only to a browser identity. A page read this way is NOT proof the verifier can read it:
+# the verifier sends the honest EmpoweredVoteBot identity (src/lib/verificationFetch.ts), so it may still fail there.
 def text_of(url):
     f = f'{B}/pages/{hashlib.sha1(url.encode()).hexdigest()}.txt'
     if not os.path.exists(f):
