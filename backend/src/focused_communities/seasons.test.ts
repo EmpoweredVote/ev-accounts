@@ -23,9 +23,16 @@ vi.mock('../middleware/auth.js', () => ({
     next();
   },
 }));
-vi.mock('../lib/roleService.js', () => ({
-  getCachedUserRoles: async (userId: string) => (userId === 'u-maven' ? [{ role_slug: 'maven' }] : []),
-  checkRole: (grants: Array<{ role_slug: string }>, slug: string) => grants.some((g) => g.role_slug === slug),
+// roleService's own dependency on supabase.js process.exit()s without env vars, so stub it.
+vi.mock('../lib/supabase.js', () => ({ supabaseAdmin: {}, adminRpc: async () => ({ data: [], error: null }) }));
+// Only the role lookup is mocked; the real checkRole runs against grants shaped like UserRoleGrant.
+const grant = (slug: string) => ({
+  id: 'g1', role_id: 'r1', slug, name: slug, granted_at: '2026-01-01T00:00:00+00:00',
+  feature_scope: 'compass', jurisdiction_geoid: null, resource_id: null, granted_by_display_name: null,
+});
+vi.mock('../lib/roleService.js', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../lib/roleService.js')>()),
+  getCachedUserRoles: async (userId: string) => (userId === 'u-maven' ? [grant('maven')] : []),
 }));
 
 const { seasonsRouter } = await import('./routes/seasons.js');
@@ -78,9 +85,10 @@ describe('GET /communities/:id/seasons', () => {
   });
 
   it('falls back to the latest season when none is open', async () => {
-    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed')]));
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(2, 'closed'), s(1, 'closed')]));
     const res = await request(app).get(PATH);
-    expect(res.body.meta.defaultSeason).toBe(1);
+    expect(res.body.meta.defaultSeason).toBe(2);
+    expect(res.body.data.map((d: { number: number }) => d.number)).toEqual([1, 2]);
   });
 
   it('never writes a maven response to the shared cache, so a later guest sees no drafts', async () => {
@@ -93,6 +101,23 @@ describe('GET /communities/:id/seasons', () => {
     expect(guest.body.data.map((d: { number: number }) => d.number)).toEqual([1, 2]);
     expect(query.mock.calls[3][1]).toEqual(['t1', false]);
     expect([...store.keys()]).toEqual(['fc:seasons:t1:false']);
+  });
+
+  it('answers 200 with an empty list and a null default when the topic has no seasons', async () => {
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([]));
+    const res = await request(app).get(PATH);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ data: [], meta: { defaultSeason: null } });
+  });
+
+  it('does not serve a cached guest body to a maven', async () => {
+    const pinned = { data: [{ number: 99 }], meta: { defaultSeason: 99 } };
+    store.set('fc:seasons:t1:false', pinned);
+    query.mockResolvedValueOnce(community).mockResolvedValueOnce(rows([s(1, 'closed'), s(3, 'draft')]));
+    const res = await request(app).get(PATH).set('Authorization', 'Bearer maven');
+    expect(res.body).not.toEqual(pinned);
+    expect(res.body.data.map((d: { number: number }) => d.number)).toEqual([1, 3]);
+    expect(store.get('fc:seasons:t1:false')).toBe(pinned);
   });
 
   it('404s for an unknown, malformed, or topic-less community', async () => {

@@ -26,8 +26,9 @@ interface SeasonRow {
   closed_at: string | null;
 }
 
-/** The open season's number if the topic has one, else the highest season_number present. */
-function resolveDefaultSeason(rows: Pick<SeasonRow, 'season_number' | 'status'>[]): number {
+/** The open season's number if the topic has one, else the highest season_number present (null if none). */
+function resolveDefaultSeason(rows: Pick<SeasonRow, 'season_number' | 'status'>[]): number | null {
+  if (rows.length === 0) return null;
   const open = rows.find((r) => r.status === 'open');
   if (open) return open.season_number;
   return Math.max(...rows.map((r) => r.season_number));
@@ -77,8 +78,6 @@ seasonsRouter.get('/communities/:id/seasons', optionalAuth, async (req: Request,
     res.status(500).json({ error: { code: 'SEASONS_FETCH_FAILED', message: (err as Error).message } });
     return;
   }
-
-  if (rows.length === 0) { notFound(); return; }
 
   const sorted = [...rows].sort((a, b) => a.season_number - b.season_number);
   const body = {
