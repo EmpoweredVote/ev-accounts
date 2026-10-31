@@ -174,13 +174,13 @@
       }
     },
     {
-      "id": "f8e14aad73a0588523679e5070d3437fd5482cc5112ac532a4e65ccbbd8df692",
+      "id": "af7dba272767f5b536083c5aefa492a7fab7e913d457b4ebc0d1c583361d6251",
       "kind": "record",
       "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
-      "date": "2022-05",
+      "date": "2021-10",
       "date_precision": "month",
-      "instrument_id": "MA-S-2545-2022",
-      "act": "other",
+      "instrument_id": "MA-S-2545-AMDT-44-2021",
+      "act": "sponsor",
       "motion": "Amendment S2545-44 (filed by Tarr and O'Connor): photo ID at the polls with affidavit option, and free ID process for homeless or indigent people",
       "note": "Amendment to the 2022 Senate driver's license bill draft. Voters must show government-issued or tribal photo ID; a person without it may sign an affidavit and then receive a ballot. Also requires a process for homeless or indigent people to get a state ID with fees waived. The amendment page shows no date; month taken from the Senate debate week reported by Boston 25 on 2022-05-05.",
       "subjects": [
@@ -196,6 +196,28 @@
         "fetched_by": "source-collector-rerun",
         "fetched_at": "2026-10-27T21:55:43.152Z",
         "method": "webfetch"
+      }
+    },
+    {
+      "id": "d16c44ca605e34045d46da62288100515320bfe0227c663cca0fa667dd422269",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S510/Cosponsor",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-510-2025",
+      "act": "sponsor",
+      "note": "Listed as a petitioner (co-sponsor) of S.510, 'An Act relative to safe and secure elections' (referred 2025-02-27).",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
       }
     }
   ],

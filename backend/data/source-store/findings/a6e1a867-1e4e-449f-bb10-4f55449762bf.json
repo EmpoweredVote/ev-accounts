@@ -47,6 +47,58 @@
         "fetched_at": "2026-10-31T03:30:00Z",
         "method": "curl"
       }
+    },
+    {
+      "id": "c19ad6437e734ddf5bc5c2c42cca9771db548fc3dc8d5503d540427c366ff8a1",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall42.pdf",
+      "date": "2025-04-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4000-AMDT-409-2025",
+      "act": "yea",
+      "motion": "On adoption of amendment #409 (H.4000) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 42, On adoption of amendment #409 (H.4000) - failed, 2025-04-29: yea (tally 25–131); the sheet lists 'Jones'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "031da260f8e422347d5016f4a54a60c19a73e3efaba279ce2f337d18bdbfcb4e",
+      "kind": "record",
+      "url": "https://malegislature.gov/RollCall/194/HouseRollCall174.pdf",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "MA-H-5500-AMDT-1587-2026",
+      "act": "yea",
+      "motion": "On adoption of amendment #1587 (H.5500) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, roll call 174, On adoption of amendment #1587 (H.5500) - failed, 2026-04-28: yea (tally 27–131); the sheet lists 'Jones'. The amendment requires valid State or Federal photo identification before receiving a ballot.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
     }
   ],
   "searches": [

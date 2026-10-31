@@ -1,0 +1,44 @@
+{
+  "id": "MA-S-2545-AMDT-44-2021",
+  "scope": "state:ma",
+  "title": "Senate Amendment #44 to S.2545 (VOTES Act draft, October 2021), 'Voter identification' (Messrs. Tarr and O'Connor; no roll call found)",
+  "urls": [
+    "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
+    "https://malegislature.gov/Bills/192/S2545"
+  ],
+  "version": "other",
+  "operative_text": "Messrs. Tarr and O'Connor move that the proposed new draft be amended by inserting at the end thereof following:- SECTION_ Each prospective voter must present identification to a properly designated poll worker, which identification must have been issued by a branch of the United States government or of the Commonwealth or by a tribal authority recognized by either the United States or the Commonwealth and must include a picture of the prospective voter. Should any person fail to present such identification, he or she may choose to execute an affidavit attesting to his or her identity and residence, in which case such person shall be given a ballot. SECTION _.Section 8E of Chapter 90 of the General Laws as appearing in the 2018 edition is hereby amended by including at the end the following: When establishing criteria for identification cards, the registrar’s regulations shall include a process for a person who is homeless or indigent or is an unaccompanied homeless or indigent youth to apply for a Massachusetts identification card and to waive any fees associated with obtaining the identification card; provided, however, that the process shall allow for a person who is homeless or indigent or is an unaccompanied homeless or indigent youth, or a homeless or indigent person to submit proof of ability to vote under State and Federal Election laws. The registrar and the state secretary shall enter into a memorandum of understanding under section 42G ½ of chapter 51 to implement this paragraph, as appropriate. For the purposes of this section, the following terms shall have the following meanings: “Homeless”, shall have the same meaning as in section 103 of the Stewart B. McKinney Homeless Assistance Act of 1987, 42 USC 11302(a), as amended. “Unaccompanied homeless youth”, a person who is 18 - 24 years of age; (ii) is not in the physical custody or care of a parent or legal guardian; and (iii) lacks a fixed, regular and adequate nighttime residence.",
+  "sponsors": [
+    {
+      "name": "Tarr",
+      "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+      "role": "prime",
+      "version": "amendment as offered"
+    },
+    {
+      "name": "O'Connor",
+      "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
+      "role": "co",
+      "version": "amendment as offered"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+    "fetched_at": "2026-10-31T05:00:00Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "s3-prep-voting-rights/stage5/raw/ma-id-bills/192_S2545_amdt44.htm",
+      "sha256": "5f014edd39e5f679158f155bafc5a14b46f651c1414c1183ac53c35a592d33d5"
+    }
+  }
+}

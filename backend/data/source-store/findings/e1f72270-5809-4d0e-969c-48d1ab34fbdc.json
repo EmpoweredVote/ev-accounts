@@ -1,6 +1,29 @@
 {
   "politician_id": "e1f72270-5809-4d0e-969c-48d1ab34fbdc",
-  "findings": [],
+  "findings": [
+    {
+      "id": "793ed10edde969de72d9b6233996d9fc3d39b2c69a52267e4d2c64729cbb57ed",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/GetAmendmentContent/192/S2545/44/Senate/Content",
+      "date": "2021-10",
+      "date_precision": "month",
+      "instrument_id": "MA-S-2545-AMDT-44-2021",
+      "act": "sponsor",
+      "note": "Co-mover, with Senator Tarr, of Senate Amendment #44 to S.2545 ('Voter identification'), offered in the October 2021 Senate debate of the VOTES Act draft.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted forms of ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage5 ma-01 follow-up (Claude Code session, voting-rights, 2026-10-31)",
+        "fetched_at": "2026-10-31T05:00:00Z",
+        "method": "curl"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
