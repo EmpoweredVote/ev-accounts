@@ -15,9 +15,17 @@ describe('namesParty', () => {
       expect(namesParty(t), t).toBe(true);
     }
   });
+  it('finds party-and-town tags and party-district numbers (Michigan press, 2026-10-30)', () => {
+    for (const t of ['said state Rep. Stephen Wooden (D-Grand Rapids), vice chair', 'said Lindsey, R-Allen.',
+      'Rep. Jane Doe (D-Warren) said', 'said Bollin, R-Brighton Township.', 'Sen. Smith (D-Detroit)',
+      'Rep. Pauline Wendzel (R-79)', 'Rep. Gonzales (D-Tucson)']) {
+      expect(namesParty(t), t).toBe(true);
+    }
+  });
   it('leaves plain words alone', () => {
     for (const t of ['Every eligible voter should be able to vote.', 'a democratic process', 'D-Day landings',
-      'an R-rated film', 'a red light camera', 'Section D-1 of the act', 'the R&D budget']) {
+      'an R-rated film', 'a red light camera', 'Section D-1 of the act', 'the R&D budget', 'Plan D-Day was set',
+      'W3-R2 applies', 'HB 2492 (R-1 form)']) {
       expect(namesParty(t), t).toBe(false);
     }
   });
@@ -28,6 +36,9 @@ describe('bracketEditProblem', () => {
     expect(bracketEditProblem('Sen. Jim Risch (R-Idaho) wrote that voters deserve it.', 'Sen. Jim Risch […] wrote that voters deserve it.')).toBeNull();
     expect(bracketEditProblem('Democrats want you to believe the rolls are clean.', '[Some lawmakers] want you to believe the rolls are clean.')).toBeNull();
     expect(bracketEditProblem('My Republican colleagues and I support ID.', '[some lawmakers] and I support ID.')).toBeNull();
+    expect(bracketEditProblem('said state Rep. Mai Xiong (D-Warren). Mothers should not pay.', 'said state Rep. Mai Xiong […]. Mothers should not pay.')).toBeNull();
+    expect(bracketEditProblem('said Lindsey, R-Allen. This session matters.', 'said Lindsey, […]. This session matters.')).toBeNull();
+    expect(bracketEditProblem('said Rep. Stephen Wooden (D-Grand Rapids), vice chair.', 'said Rep. Stephen Wooden […], vice chair.')).toBeNull();
     expect(bracketEditProblem('Red states have cut early voting.', '[Some states] have cut early voting.')).toBeNull();
     expect(bracketEditProblem('Republicans and Democrats agree.', '[Others] and [others] agree.')).toBeNull();
   });

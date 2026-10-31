@@ -73,6 +73,11 @@ describe('legiscanEvidence lines', () => {
     expect(formatLegiscanLine(v)).toBe(VOTE_LINE);
     for (const l of [SPONSOR_LINE, VOTE_LINE]) expect(l).not.toMatch(/\b(Republican|Democrat\w*|Independent)\b|\((R|D|I)\)|\bparty\b/i);
   });
+  it('parses lines on a letter-named joint resolution (MI HJRB, 2026-10-30)', () => {
+    const l = 'LegiScan MI 103rd Legislature HJRB, roll call 1602971 (House, 2025-05-01, "House Third Reading: Not Adopted Roll Call #79"): Mike Harris voted Yea.';
+    expect(parseLegiscanLine(l)).toMatchObject({ kind: 'vote', bill: 'HJRB', rollCallId: 1602971, name: 'Mike Harris', vote: 'Yea' });
+    expect(parseLegiscanLine('LegiScan MI 103rd Legislature HJRB: Karl Bohnak is listed as a cosponsor.')).toMatchObject({ kind: 'sponsor', bill: 'HJRB' });
+  });
   it('parses a motion that itself holds parentheses', () => {
     const l = VOTE_LINE.replace('"Read 3rd time"', '"Senate concurs in House amendment(s)"');
     expect(parseLegiscanLine(l)).toMatchObject({ motion: 'Senate concurs in House amendment(s)', vote: 'Nay' });
@@ -80,6 +85,8 @@ describe('legiscanEvidence lines', () => {
   it('recognises LegiScan bill and roll-call URLs only, never the API', () => {
     expect(isLegiscanUrl(BILL_URL)).toBe(true);
     expect(isLegiscanUrl(RC_URL)).toBe(true);
+    expect(isLegiscanUrl('https://legiscan.com/MI/rollcall/HJRB/id/1602971')).toBe(true);
+    expect(isLegiscanUrl('https://legiscan.com/MI/bill/HJRB/2025')).toBe(true);
     expect(isLegiscanUrl('https://api.legiscan.com/?key=x&op=getBill&id=1')).toBe(false);
     expect(isLegiscanUrl('https://legiscan.com/TX/text/HB5337/id/3180471')).toBe(false);
     expect(isLegiscanUrl('https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=HB5337')).toBe(false);

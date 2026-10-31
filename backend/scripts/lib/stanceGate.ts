@@ -153,6 +153,10 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bA\.?B\.?-?\s?\d+\b/,
   /\bLD\s?\d+\b/,
   /\bSJR\s?\d+\b/,
+  // Michigan names joint resolutions by letter: "HJR B" (reasoning), "HJRB" (LegiScan), "House Joint
+  // Resolution B" (the official heading); canonicalizeInstrumentId folds all three to "hjrb" (2026-10-30).
+  /\b[HS]JR\s?[A-Z]{1,2}\b/,
+  /\b(?:House|Senate) Joint Resolution [A-Z]{1,2}\b/,
   /\bChapter\s?\d+\b/,
   /\bResolution No\.?\s?\d+\b/,
   /\bOrdinance No\.?\s?\d+\b/,
@@ -192,14 +196,25 @@ function extractInstrumentIdentifiers(text: string): string[] {
   return out;
 }
 
+// Spelled-out chamber forms fold to the short form, so the official heading "Senate Bill 303" and
+// "House Joint Resolution B" match a reasoning's "SB 303" and "HJR B" (Michigan, 2026-10-30).
+const SPELLED_OUT: [RegExp, string][] = [
+  [/^housejointresolution/, 'hjr'], [/^senatejointresolution/, 'sjr'], [/^housebill/, 'hb'], [/^senatebill/, 'sb'],
+];
+
 /**
  * Canonical form for comparing an instrument identifier against snippet text: normalize (case,
  * whitespace, curly quotes — normalizeText), then collapse each run of letters or digits together with no
  * separator — "H.B. 1001", "HB 1001" and "HB1001" all become "hb1001". Digits stay grouped as their own run
  * (never split), so this cannot accidentally straddle an unrelated word boundary elsewhere in the snippet.
+ * A spelled-out chamber prefix folds to its short form (SPELLED_OUT), and the zero padding after a letter
+ * prefix is dropped ("SB0303", LegiScan's Michigan spelling, is "sb303"). An all-digit identifier keeps its
+ * zeros: the executive-order hazard in chair-evidence-patterns.mjs is not solved here.
  */
 function canonicalizeInstrumentId(text: string): string {
-  return (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
+  let c = (normalizeText(text).match(/[a-z]+|\d+/g) ?? []).join('');
+  for (const [re, short] of SPELLED_OUT) c = c.replace(re, short);
+  return c.replace(/^([a-z]+)0+(?=\d)/, '$1');
 }
 
 /** Text inside straight ("...") or curly (“...”) double quotes in `text`, in order, one entry per span. */

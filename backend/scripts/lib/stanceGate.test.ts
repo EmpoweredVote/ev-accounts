@@ -330,6 +330,21 @@ describe('instrument-not-cited: federal spellings (2026-10-07)', () => {
   });
 });
 
+describe('instrument-not-cited: Michigan spellings (2026-10-30)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} Michigan Legislature Skip to content Michigan Compiled Laws Complete Through PA 114 of 2026 bill documents sponsors history` }];
+  it('reads the official "Senate Bill 303 of 2021" heading as SB 303', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on MI SB 303 (2021).' }, { evidence: snip('Senate Bill 303 of 2021 -') })).not.toContain('instrument-not-cited'));
+  it('reads a letter-named joint resolution: "HJR B" names an instrument and matches "House Joint Resolution B" or LegiScan "HJRB"', () => {
+    const row = { ...good, reasoning: 'Co-sponsor of MI HJR B (2025) as filed.' };
+    expect(ids(row, { evidence: snip('House Joint Resolution B of 2025 -') })).not.toContain('record-no-instrument');
+    expect(ids(row, { evidence: snip('House Joint Resolution B of 2025 -') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('LegiScan MI 103rd Legislature HJRB: Jane Doe is listed as a cosponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('House Joint Resolution C of 2025 -') })).toContain('instrument-not-cited');
+  });
+  it('still tells SB 303 from SB 3030', () =>
+    expect(ids({ ...good, reasoning: 'Voted Yea on SB 303 (2021).' }, { evidence: snip('Senate Bill 3030 of 2021 -') })).toContain('instrument-not-cited'));
+});
+
 describe('quote-not-in-snippet (C69)', () => {
   it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };
