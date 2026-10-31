@@ -201,10 +201,11 @@ describe('planBatch', () => {
   });
 
   it('a blank with no V6 reason that fits is left out of research.csv and listed', () => {
-    const r = plan([code({ tags: ['related-question'], blank_class: 'off-question' })], [person(PID, [words])], [check(words)]);
+    // A wording blank coded without shows_side: no single reason fits (an off-question blank now maps).
+    const r = plan([code({ tags: ['unnamed-position'], blank_class: 'wording' })], [person(PID, [words])], [check(words)]);
     expect(r.outcomes).toHaveLength(1);
     expect(parse(r.researchCsv, { columns: true })).toEqual([]);
-    expect(r.notInCsv).toEqual([{ politician_id: PID, reason: expect.stringMatching(/off-question/) }]);
+    expect(r.notInCsv).toEqual([{ politician_id: PID, reason: expect.stringMatching(/wording/) }]);
   });
 });
 
@@ -215,7 +216,21 @@ describe('blankReasonFor', () => {
     expect(blankReasonFor(code({ tags: [], blank_class: 'nay-only' }))).toBe('direction-only');
     expect(blankReasonFor(code({ tags: [], blank_class: 'no-lever' }))).toBe('scope-unavailable');
     expect(blankReasonFor(code({ tags: ['between-rungs'], blank_class: 'wording' }))).toBe('adjacent-chairs');
-    expect(blankReasonFor(code({ tags: [], blank_class: 'gate' }))).toBeNull();
+  });
+  it('maps gated and off-question blanks to no-evidence (runner ruling 2026-10-29)', () => {
+    expect(blankReasonFor(code({ tags: [], blank_class: 'gate' }))).toBe('no-evidence');
+    expect(blankReasonFor(code({ tags: [], blank_class: 'off-question' }))).toBe('no-evidence');
+    expect(blankReasonFor(code({ tags: ['related-question'], blank_class: 'off-question' }))).toBe('no-evidence');
+  });
+  it('maps a blank by shows_side: a side is direction-only, no side is no-evidence', () => {
+    expect(blankReasonFor(code({ tags: ['unnamed-position'], blank_class: 'wording', shows_side: true }))).toBe('direction-only');
+    expect(blankReasonFor(code({ tags: ['related-question'], blank_class: 'off-question', shows_side: true }))).toBe('direction-only');
+    expect(blankReasonFor(code({ tags: ['unnamed-position'], blank_class: 'wording', shows_side: false }))).toBe('no-evidence');
+    // A gated record shows no side whatever the field says (the ruling names gated blanks).
+    expect(blankReasonFor(code({ tags: [], blank_class: 'gate', shows_side: true }))).toBe('no-evidence');
+  });
+  it('still leaves a wording blank without shows_side to a hand row (codes written before the field)', () => {
+    expect(blankReasonFor(code({ tags: ['unnamed-position'], blank_class: 'wording' }))).toBeNull();
   });
 });
 

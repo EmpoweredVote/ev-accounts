@@ -73,13 +73,21 @@ export function assertDraftSeason(t: SeasonTarget): void {
   }
 }
 
-/** The codebook V6 blank reason for a Stage 5 blank, or null when no single reason fits. */
+/**
+ * The codebook V6 blank reason for a Stage 5 blank, or null when no single reason fits (a hand row).
+ * Gated and off-question blanks, and blanks that show no side, are `no-evidence`; blanks that show a side are
+ * `direction-only` (RULINGS.md "Mapping a blank to a V6 reason", runner ruling 2026-10-29). `shows_side` is the
+ * coder's answer to that question; a wording blank coded before the field existed stays a hand row.
+ */
 export function blankReasonFor(code: Stage5Code): BlankReason | null {
   if (code.outcome === 'no-stance') return 'no-evidence';
   if (code.outcome !== 'doesnt-fit') return null;
   if (code.tags.includes('direction-only') || code.blank_class === 'nay-only') return 'direction-only';
   if (code.blank_class === 'no-lever' || code.tags.includes('other-level-lever')) return 'scope-unavailable';
   if (code.tags.includes('between-rungs')) return 'adjacent-chairs';
+  if (code.blank_class === 'gate') return 'no-evidence';
+  if (code.shows_side === true) return 'direction-only';
+  if (code.blank_class === 'off-question' || code.shows_side === false) return 'no-evidence';
   return null;
 }
 
