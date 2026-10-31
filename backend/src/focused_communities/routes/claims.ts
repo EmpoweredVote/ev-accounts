@@ -13,7 +13,7 @@
 // Three things in here are deliberate and worth reading before changing them:
 //   1. The breadcrumb is ONE query at any depth (see loadBreadcrumb).
 //   2. A hidden claim is a tombstone, not a hole (see toClaim and the note on GET /claims/:id).
-//   3. Column ordering has a single home (see COLUMN_ORDER_BY) so Task 5 can drop `impact` in.
+//   3. A column's ORDER BY, its keyset predicate and its cursor are one unit (see "Column order").
 
 import { Router } from 'express';
 import type { Request, Response } from 'express';
@@ -29,6 +29,9 @@ const CLAIM_TTL_SECONDS = 30;
 
 /** Children per column per request. A claim with 500 children serves a page, never 500 rows. */
 const COLUMN_PAGE_SIZE = 20;
+
+/** What an anonymous body may be held for downstream — the same window the server holds it. */
+const ANON_CACHE_CONTROL = `public, max-age=0, s-maxage=${CLAIM_TTL_SECONDS}`;
 
 // --- Types -----------------------------------------------------------------
 
@@ -92,6 +95,8 @@ interface ClaimRow {
 interface RootedClaimRow extends ClaimRow {
   /** Root-first ancestor ids, excluding self. A root's is empty. */
   path: string[] | null;
+  /** Read to key the children queries on the indexed leading column. Never serialized. */
+  community_id: string;
 }
 
 interface BreadcrumbRow {
@@ -107,16 +112,94 @@ const CLAIM_COLUMNS = `c.id, c.side, c.body, c.author_display_name, c.moderation
          c.child_supports_count, c.child_opposes_count, c.merged_into_claim_id,
          ${ts('c.created_at')}, ${ts('c.updated_at')}`;
 
-// Column ordering lives here and nowhere else.
+// --- Column order: ORDER BY, keyset predicate and cursor, together ----------
 //
-// Task 5 adds `impact`, the rating aggregate each column is meant to be ranked by. It does not
-// exist yet, so until it does a column is ordered by recency alone. When it lands, this block is
-// the whole change: put `c.impact DESC NULLS LAST,` in front of COLUMN_ORDER_BY and point
-// COLUMN_CURSOR_COLUMN at whatever remains the cursor's tiebreak. Nothing else in this file names
-// a sort column — loadColumn builds its ORDER BY, its keyset predicate and its cursor from these
-// two constants, so there is no second copy to miss.
-const COLUMN_CURSOR_COLUMN = 'c.created_at';
-const COLUMN_ORDER_BY = `${COLUMN_CURSOR_COLUMN} DESC, c.id DESC`;
+// These three are one unit. The ORDER BY decides what "the next page" means; the predicate has to
+// express "strictly after this row" in exactly those keys; and the cursor has to carry exactly the
+// values the predicate compares. If any one of them names a different set of keys than the other
+// two, nothing fails to compile and nothing fails a test — the column just silently re-serves some
+// children and permanently drops others. That is why columnCursorOf() lives beside
+// columnKeysetPredicate() instead of being inlined at the call site: the value written into a
+// cursor and the values read back out of it are produced three lines apart.
+//
+// TASK 5, the settled design. Task 5 adds `impact`, the rating aggregate a column is meant to be
+// ranked by; until it exists, a column is ordered by recency alone. Adding it is NOT a matter of
+// prefixing the ORDER BY — that alone is the exact silent bug described above. All three change:
+//
+//   1. ORDER BY becomes `c.impact DESC NULLS LAST, c.created_at DESC, c.id DESC`.
+//   2. The cursor payload grows a third value, the impact of the last row served. encodeCursor /
+//      decodeCursor in ../lib/utils.js carry only {t, id}, so this needs a wider payload (and the
+//      validation in parseColumnCursor grows a third check).
+//   3. The predicate becomes a three-term keyset with explicit NULLS LAST handling, because a null
+//      impact sorts after every non-null one. "Strictly after the cursor" is then, in order:
+//      a non-null cursor impact admits rows with a smaller impact and rows with a null impact; a
+//      null cursor impact admits only other null-impact rows; and ties on impact fall through to
+//      the existing (created_at, id) comparison. Note that `c.impact < $n::timestamptz` is what
+//      you get if you merely repoint the old predicate at a numeric column.
+//
+// And the consequence to document in the API, not to engineer away: impact is mutable, so keyset
+// paging over it is approximate. A child whose rating changes between two page requests can appear
+// twice or not at all. Capping and sorting in JS would avoid that, but meta.cursor is already a
+// shipped contract with a test behind it, so the approximation is the accepted trade.
+
+const COLUMN_ORDER_BY = 'c.created_at DESC, c.id DESC';
+
+/** The sort key of a row, as a cursor carries it. Must name exactly the ORDER BY keys. */
+function columnCursorOf(claim: Claim): string {
+  return encodeCursor(claim.createdAt, claim.id);
+}
+
+/**
+ * "Strictly after `cursor`" under COLUMN_ORDER_BY. Appends its values to `params` and numbers the
+ * placeholders from where they land, so the predicate does not care how many parameters precede it.
+ */
+function columnKeysetPredicate(cursor: ColumnCursor, params: unknown[]): string {
+  params.push(cursor.t, cursor.id);
+  const t = `$${params.length - 1}::timestamptz`;
+  const id = `$${params.length}::uuid`;
+  return `(c.created_at < ${t} OR (c.created_at = ${t} AND c.id < ${id}))`;
+}
+
+// --- Request parameters ----------------------------------------------------
+
+export interface ColumnCursor {
+  t: string;
+  id: string;
+}
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+/**
+ * A cursor only counts once its CONTENTS are usable, not merely once it parses. decodeCursor checks
+ * that `t` and `id` are strings; a string is not a timestamptz and not a uuid, and handing one
+ * straight to Postgres turns a crafted query string into an anonymous 500 with a raw database
+ * message in the body. A cursor that does not survive this is treated as absent — the same thing
+ * already done with one that does not base64-decode — so a stale or mangled link serves page one
+ * rather than an error.
+ */
+function parseColumnCursor(raw: unknown): ColumnCursor | null {
+  if (typeof raw !== 'string' || raw === '') return null;
+  const decoded = decodeCursor(raw);
+  if (!decoded) return null;
+  if (!UUID_RE.test(decoded.id)) return null;
+  if (Number.isNaN(Date.parse(decoded.t))) return null;
+  return decoded;
+}
+
+interface ColumnParams {
+  limit: number;
+  supports: ColumnCursor | null;
+  opposes: ColumnCursor | null;
+}
+
+/** Parsed once per request and shared by the queries and the cache key, so the two always agree. */
+function parseColumnParams(req: Request): ColumnParams {
+  return {
+    limit: parseLimit(req.query.limit as string | undefined, COLUMN_PAGE_SIZE),
+    supports: parseColumnCursor(req.query.supportsCursor),
+    opposes: parseColumnCursor(req.query.opposesCursor),
+  };
+}
 
 // --- Serialization ---------------------------------------------------------
 
@@ -155,7 +238,7 @@ function toClaim(row: ClaimRow): Claim {
  * `path` already holds every ancestor id in order, so there is nothing to walk: fetch the set and
  * let `array_position` restore the order. A 40-deep claim costs the same one query as a 1-deep one.
  */
-async function loadBreadcrumb(path: string[] | null): Promise<BreadcrumbItem[]> {
+async function loadBreadcrumb(claimId: string, path: string[] | null): Promise<BreadcrumbItem[]> {
   if (!path || path.length === 0) return [];
   const { rows } = await pool.query<BreadcrumbRow>(
     `SELECT c.id, c.body, c.side, c.moderation_status
@@ -164,6 +247,13 @@ async function loadBreadcrumb(path: string[] | null): Promise<BreadcrumbItem[]> 
       ORDER BY array_position($1::uuid[], c.id)`,
     [path]
   );
+  if (rows.length !== path.length) {
+    // The breadcrumb shortens rather than fails, but a path pointing at a row that is not there
+    // means the tree is damaged; say so once rather than letting it look like a shallow claim.
+    console.warn(
+      `[focused_communities] claim ${claimId}: breadcrumb resolved ${rows.length} of ${path.length} ancestors`
+    );
+  }
   return rows.map((r) => ({
     id: r.id,
     body: r.moderation_status === 'visible' ? r.body : '',
@@ -172,26 +262,25 @@ async function loadBreadcrumb(path: string[] | null): Promise<BreadcrumbItem[]> 
 }
 
 /**
- * One column of children, bounded. Hidden children are included (as tombstones) — a column shows
- * what is there, and filtering them out would silently renumber a parent's child counts.
+ * One column of children, bounded.
+ *
+ * community_id leads the WHERE because claims_community_parent_idx is on
+ * (community_id, parent_claim_id): without it this is a sequential scan of every community's
+ * claims plus a sort, twice per request, on the hottest read in the feature.
+ *
+ * Hidden children are included (as tombstones) — a column shows what is there, and filtering them
+ * out would silently contradict the parent's child counts.
  */
 async function loadColumn(
+  communityId: string,
   parentId: string,
   side: ClaimSide,
-  rawCursor: string | undefined,
+  cursor: ColumnCursor | null,
   limit: number
 ): Promise<{ claims: Claim[]; page: ColumnPage }> {
-  const params: unknown[] = [parentId, side];
-  const where = ['c.parent_claim_id = $1', 'c.side = $2'];
-
-  const decoded = rawCursor ? decodeCursor(rawCursor) : null;
-  if (decoded) {
-    params.push(decoded.t, decoded.id);
-    where.push(
-      `(${COLUMN_CURSOR_COLUMN} < $3::timestamptz` +
-        ` OR (${COLUMN_CURSOR_COLUMN} = $3::timestamptz AND c.id < $4::uuid))`
-    );
-  }
+  const params: unknown[] = [communityId, parentId, side];
+  const where = ['c.community_id = $1', 'c.parent_claim_id = $2', 'c.side = $3'];
+  if (cursor) where.push(columnKeysetPredicate(cursor, params));
   params.push(limit + 1);
 
   const { rows } = await pool.query<ClaimRow>(
@@ -209,7 +298,7 @@ async function loadColumn(
   return {
     claims,
     page: {
-      cursor: hasMore && last ? encodeCursor(last.createdAt, last.id) : null,
+      cursor: hasMore && last ? columnCursorOf(last) : null,
       hasMore,
     },
   };
@@ -218,13 +307,12 @@ async function loadColumn(
 /** The claim, its breadcrumb and both columns: at most four queries, whatever the depth. */
 async function buildNode(
   row: RootedClaimRow,
-  req: Request
+  params: ColumnParams
 ): Promise<{ data: ClaimNode; meta: ClaimNodeMeta }> {
-  const limit = parseLimit(req.query.limit as string | undefined, COLUMN_PAGE_SIZE);
   const [breadcrumb, supports, opposes] = await Promise.all([
-    loadBreadcrumb(row.path),
-    loadColumn(row.id, 'supports', req.query.supportsCursor as string | undefined, limit),
-    loadColumn(row.id, 'opposes', req.query.opposesCursor as string | undefined, limit),
+    loadBreadcrumb(row.id, row.path),
+    loadColumn(row.community_id, row.id, 'supports', params.supports, params.limit),
+    loadColumn(row.community_id, row.id, 'opposes', params.opposes, params.limit),
   ]);
   return {
     data: {
@@ -248,18 +336,39 @@ async function buildNode(
 //   - isShareable() refuses to STORE a body that carries any caller-specific field. The day
 //     myRating stops being null, these bodies stop entering the shared cache by themselves.
 //   - a request that carries credentials never READS the shared (anonymous) body, and is marked
-//     private, no-store so nothing downstream keeps it either.
+//     private, no-store so nothing downstream keeps it either. Identity in this codebase arrives
+//     only as an Authorization: Bearer header (middleware/auth.ts) — there is no cookie path.
 
-function claimCacheKey(claimId: string, req: Request): string {
-  const limit = parseLimit(req.query.limit as string | undefined, COLUMN_PAGE_SIZE);
-  const supportsCursor = (req.query.supportsCursor as string | undefined) ?? '';
-  const opposesCursor = (req.query.opposesCursor as string | undefined) ?? '';
-  return `fc:claim:${claimId}:${limit}:${supportsCursor}:${opposesCursor}`;
+/**
+ * The key is built from the DECODED, normalized cursors, never from the raw query strings: raw
+ * strings joined with a delimiter let two different requests mint one key (a cursor containing the
+ * delimiter), and every distinct piece of garbage would otherwise get its own entry for a body
+ * identical to page one's.
+ */
+function claimCacheKey(cacheId: string, params: ColumnParams): string {
+  return `fc:claim:${cacheId}:${JSON.stringify({
+    limit: params.limit,
+    supports: params.supports,
+    opposes: params.opposes,
+  })}`;
 }
 
-/** True only while nothing in the body depends on who asked. */
-function isShareable(node: ClaimNode): boolean {
+/** True only while nothing in the body depends on who asked. Exported so it can be tested. */
+export function isShareable(node: ClaimNode): boolean {
   return [node.claim, ...node.supports, ...node.opposes].every((c) => c.myRating === null);
+}
+
+/**
+ * The only path by which a node body reaches the shared cache. Exported as a seam so the guard can
+ * be tested directly — while myRating is hardcoded null, nothing else can produce a body that
+ * exercises it.
+ */
+export async function cacheNodeIfShareable(
+  key: string,
+  body: { data: ClaimNode; meta: ClaimNodeMeta }
+): Promise<void> {
+  if (!isShareable(body.data)) return;
+  await cache.set(key, body, CLAIM_TTL_SECONDS).catch(() => {});
 }
 
 function carriesCredentials(req: Request): boolean {
@@ -283,13 +392,20 @@ async function serveNode(
   cacheId: string,
   lookup: () => Promise<RootedClaimRow | null>
 ): Promise<void> {
-  const key = claimCacheKey(cacheId, req);
+  const params = parseColumnParams(req);
+  const key = claimCacheKey(cacheId, params);
   const personalized = carriesCredentials(req);
+
+  // The body varies on Authorization today (the cache branch) and will vary in its content as
+  // soon as Task 5 lands, so every response says so, including the errors.
+  res.set('Vary', 'Authorization');
+
   if (personalized) {
     res.set('Cache-Control', 'private, no-store');
   } else {
     const cached = await cache.get<unknown>(key);
     if (cached !== null) {
+      res.set('Cache-Control', ANON_CACHE_CONTROL);
       res.json(cached);
       return;
     }
@@ -308,14 +424,15 @@ async function serveNode(
 
   let body: { data: ClaimNode; meta: ClaimNodeMeta };
   try {
-    body = await buildNode(row, req);
+    body = await buildNode(row, params);
   } catch (err) {
     res.status(500).json({ error: { code: 'CLAIM_FETCH_FAILED', message: (err as Error).message } });
     return;
   }
 
-  if (!personalized && isShareable(body.data)) {
-    await cache.set(key, body, CLAIM_TTL_SECONDS).catch(() => {});
+  if (!personalized) {
+    await cacheNodeIfShareable(key, body);
+    res.set('Cache-Control', ANON_CACHE_CONTROL);
   }
   res.json(body);
 }
@@ -323,12 +440,13 @@ async function serveNode(
 // GET /communities/:id/claims/root — the community's single root claim, as a node.
 // Served by claims_one_root_per_community (unique, partial, on community_id WHERE parent IS NULL).
 claimsRouter.get('/communities/:id/claims/root', async (req: Request, res: Response) => {
-  await serveNode(req, res, `root:${req.params.id}`, async () => {
+  const communityId = req.params.id as string;
+  await serveNode(req, res, `root:${communityId}`, async () => {
     const { rows } = await pool.query<RootedClaimRow>(
-      `SELECT ${CLAIM_COLUMNS}, c.path
+      `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id
          FROM connect.claims c
         WHERE c.community_id = $1 AND c.parent_claim_id IS NULL`,
-      [req.params.id]
+      [communityId]
     );
     return rows[0] ?? null;
   });
@@ -345,7 +463,7 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
   const claimId = req.params.claimId as string;
   await serveNode(req, res, claimId, async () => {
     const { rows } = await pool.query<RootedClaimRow>(
-      `SELECT ${CLAIM_COLUMNS}, c.path FROM connect.claims c WHERE c.id = $1`,
+      `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id FROM connect.claims c WHERE c.id = $1`,
       [claimId]
     );
     return rows[0] ?? null;
