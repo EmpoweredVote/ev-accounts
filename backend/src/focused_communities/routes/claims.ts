@@ -2,18 +2,24 @@
 //
 // A community's claims form a Kialo-style tree: one root claim per community, and every other
 // claim `supports` or `opposes` its parent. A reader sees one claim at a time — its ancestry as a
-// breadcrumb, and its children split into two columns. These two routes serve exactly that view:
+// breadcrumb, and its children split into two columns. These routes serve exactly that view:
 //
 //   GET /communities/:id/claims/root  — the community's root claim, as a node
 //   GET /claims/:claimId              — any claim, as a node
 //
-// Both answer `{ data: ClaimNode, meta }`. Paths are bare because app.ts mounts this router under
-// the Focused Communities mount points (/fc/api and /api/fc), exactly as for its siblings.
+// Both answer `{ data: ClaimNode, meta }`. A third route serves the minimap that sits beside that
+// view — the whole tree, as position only:
 //
-// Three things in here are deliberate and worth reading before changing them:
+//   GET /communities/:id/claims/shape — every claim in the community, with no text at all
+//
+// Paths are bare because app.ts mounts this router under the Focused Communities mount points
+// (/fc/api and /api/fc), exactly as for its siblings.
+//
+// Four things in here are deliberate and worth reading before changing them:
 //   1. The breadcrumb is ONE query at any depth (see loadBreadcrumb).
 //   2. A hidden claim is a tombstone, not a hole (see toClaim and the note on GET /claims/:id).
 //   3. A column's ORDER BY, its keyset predicate and its cursor are one unit (see "Column order").
+//   4. The shape payload never selects body, let alone serializes it (see "Tree shape").
 
 import { Router } from 'express';
 import type { Request, Response } from 'express';
@@ -468,4 +474,145 @@ claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
     );
     return rows[0] ?? null;
   });
+});
+
+// --- Tree shape: the whole argument as position only ------------------------
+//
+// GET /communities/:id/claims/shape answers `{ data: ShapeNode[], meta: { truncated } }` — every
+// claim in the community reduced to where it sits. The node routes above serve ONE claim with its
+// text; this serves EVERY claim with none, so the frontend can draw a small coloured map of the
+// whole argument with the reader's position marked.
+//
+// Three properties hold this route up:
+//
+//   1. NO TEXT, EVER. `body` is not merely stripped in the serializer — it is never selected. A
+//      whole-tree payload is the one response large enough that a hidden claim's wording could
+//      ride along unnoticed, so the SQL is the guard, not a filter someone has to remember.
+//   2. HIDDEN CLAIMS ARE INCLUDED. The columns tombstone a hidden claim rather than drop it, so a
+//      map that omitted one would disagree with what the reader can plainly see beside it. The
+//      shape is honest about what is there; what it withholds is what everything else withholds.
+//   3. BOUNDED. A community page loads this on every view, so the payload has a hard cap and says
+//      when it hit it.
+
+/**
+ * The hard cap on nodes in one shape payload.
+ *
+ * At roughly 135 bytes of JSON per node (two uuids and three short fields) this bounds the body at
+ * ~270 KB uncompressed, and far less over the wire since every key name repeats. It is well above
+ * any community's tree today and above the size at which a minimap stops being legible — a few
+ * thousand dots in a thumbnail is already a smear — so in practice nothing truncates, and the cap
+ * exists to keep a runaway tree from turning the hottest read on the page into a megabyte.
+ *
+ * Exported because it is part of the contract: a client that sees `truncated: true` is seeing
+ * exactly this many nodes.
+ */
+export const SHAPE_NODE_LIMIT = 2000;
+
+export interface ShapeNode {
+  id: string;
+  parentId: string | null;
+  side: ClaimSide | null;
+  depth: number;
+  /** The Task 5 rating aggregate, for colouring the map. Null until it exists. */
+  impact: number | null;
+}
+
+export interface ShapeMeta {
+  /** True when the tree is larger than SHAPE_NODE_LIMIT and the deepest nodes were cut. */
+  truncated: boolean;
+}
+
+interface ShapeRow {
+  id: string;
+  parent_claim_id: string | null;
+  side: ClaimSide | null;
+  depth: number;
+}
+
+/**
+ * ORDER BY depth, id — the brief's order, and the one that makes truncation survivable: cutting at
+ * a LIMIT drops the DEEPEST nodes, which is the right end to lose. A map missing its deep tips is
+ * still a map; one missing a trunk node would have orphaned everything under it.
+ *
+ * community_id is the whole WHERE clause and the leading column of claims_community_parent_idx, so
+ * this is an index scan plus a top-N sort, never a sequential scan of every community's claims.
+ * Nothing filters on moderation_status: see property 2 above.
+ */
+const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth
+       FROM connect.claims c
+      WHERE c.community_id = $1
+      ORDER BY c.depth, c.id
+      LIMIT $2`;
+
+/** The allowlist, built by construction. A column not named here cannot reach a reader. */
+function toShapeNode(row: ShapeRow): ShapeNode {
+  return {
+    id: row.id,
+    parentId: row.parent_claim_id ?? null,
+    side: row.side,
+    depth: row.depth,
+    impact: null, // Task 5
+  };
+}
+
+/**
+ * The cache key, built by hand for the same reason the node routes build theirs by hand: the
+ * shared cacheMiddleware keys on path AND query, and Task 8 has to be able to delete this entry on
+ * every claim write without knowing which query strings were ever served under it. There is no
+ * query to vary on here and no caller identity in the body, so one entry per community is the
+ * whole cache — and `fc:claims:shape:{communityId}` is exactly the key Task 8 deletes.
+ *
+ * Note what is deliberately missing: the node routes' isShareable guard. It exists because Task 5
+ * puts the caller's own rating in a ClaimNode, and a body carrying one reader's rating must never
+ * be handed to another. A ShapeNode has no such field and no room for one — it is five columns of
+ * tree position. If a caller-varying field is ever added to it, this route must grow the same
+ * guard and the same credentials branch that serveNode has.
+ */
+function shapeCacheKey(communityId: string): string {
+  return `fc:claims:shape:${communityId}`;
+}
+
+// GET /communities/:id/claims/shape — the whole tree's shape, for the minimap.
+//
+// A community with no claims is a 404, as its root is: there is no argument to map, and the page
+// is already showing that. A community id that is not a uuid is a 404 too — it names no community
+// — while a real query failure is a 500, because an empty map is a claim about the tree and this
+// route does not make claims it cannot support.
+claimsRouter.get('/communities/:id/claims/shape', async (req: Request, res: Response) => {
+  const communityId = req.params.id as string;
+  const key = shapeCacheKey(communityId);
+
+  const cached = await cache.get<unknown>(key);
+  if (cached !== null) {
+    res.set('Cache-Control', ANON_CACHE_CONTROL);
+    res.json(cached);
+    return;
+  }
+
+  let rows: ShapeRow[];
+  try {
+    // One more than the cap, so "there is more" is observed rather than guessed at.
+    ({ rows } = await pool.query<ShapeRow>(SHAPE_SQL, [communityId, SHAPE_NODE_LIMIT + 1]));
+  } catch (err) {
+    if ((err as { code?: string }).code === '22P02') {
+      notFound(res); // a malformed id, as elsewhere in this module
+      return;
+    }
+    res.status(500).json({ error: { code: 'CLAIM_FETCH_FAILED', message: (err as Error).message } });
+    return;
+  }
+
+  if (rows.length === 0) {
+    notFound(res);
+    return;
+  }
+
+  const body: { data: ShapeNode[]; meta: ShapeMeta } = {
+    data: rows.slice(0, SHAPE_NODE_LIMIT).map(toShapeNode),
+    meta: { truncated: rows.length > SHAPE_NODE_LIMIT },
+  };
+
+  await cache.set(key, body, CLAIM_TTL_SECONDS).catch(() => {});
+  res.set('Cache-Control', ANON_CACHE_CONTROL);
+  res.json(body);
 });

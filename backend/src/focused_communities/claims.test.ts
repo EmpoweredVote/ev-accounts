@@ -15,7 +15,7 @@ vi.mock('../lib/cache.js', () => ({
 }));
 
 const claims = await import('./routes/claims.js');
-const { claimsRouter, isShareable, cacheNodeIfShareable } = claims;
+const { claimsRouter, isShareable, cacheNodeIfShareable, SHAPE_NODE_LIMIT } = claims;
 const app = express();
 app.use('/fc/api', claimsRouter);
 
@@ -501,5 +501,217 @@ describe('isShareable — the one guard between Task 5 and a leaked rating', () 
     expect(store.size).toBe(0);
     await cacheNodeIfShareable('fc:claim:test:anonymous', nodeBody(null));
     expect([...store.keys()]).toEqual(['fc:claim:test:anonymous']);
+  });
+});
+
+describe('GET /communities/:id/claims/shape', () => {
+  /** A shape row as the DB hands it back. The route selects these four columns and no others. */
+  const shapeRow = (
+    id: string,
+    parentId: string | null,
+    side: 'supports' | 'opposes' | null,
+    depth: number
+  ) => ({ id, parent_claim_id: parentId, side, depth });
+
+  /** A whole tree's worth of rows, already in the route's order (depth, then id). */
+  const tree = () => [
+    shapeRow('c-root', null, null, 0),
+    shapeRow('c-o1', 'c-root', 'opposes', 1),
+    shapeRow('c-s1', 'c-root', 'supports', 1),
+    shapeRow('c-s1a', 'c-s1', 'supports', 2),
+  ];
+
+  /** Every key appearing anywhere in a parsed body, however deeply nested. */
+  const keysIn = (v: unknown): string[] =>
+    v !== null && typeof v === 'object'
+      ? Object.entries(v as Record<string, unknown>).flatMap(([k, val]) => [k, ...keysIn(val)])
+      : [];
+
+  const shapeSql = () => allSql().filter((s) => s.includes('c.parent_claim_id,'));
+
+  it('returns the whole tree as position only, shallowest first', async () => {
+    query.mockResolvedValueOnce(rows(tree()));
+
+    const res = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      data: [
+        { id: 'c-root', parentId: null, side: null, depth: 0, impact: null },
+        { id: 'c-o1', parentId: 'c-root', side: 'opposes', depth: 1, impact: null },
+        { id: 'c-s1', parentId: 'c-root', side: 'supports', depth: 1, impact: null },
+        { id: 'c-s1a', parentId: 'c-s1', side: 'supports', depth: 2, impact: null },
+      ],
+      meta: { truncated: false },
+    });
+
+    // One query, the whole community, in the brief's order.
+    expect(query.mock.calls).toHaveLength(1);
+    expect(sqlOf(0)).toContain('ORDER BY c.depth, c.id');
+    // community_id leads the WHERE and is the leading column of claims_community_parent_idx:
+    // without it this is a sequential scan of every community's claims on every page view.
+    expect(sqlOf(0)).toContain('c.community_id = $1');
+    expect(query.mock.calls[0][1]).toEqual(['comm-1', 2001]);
+  });
+
+  it('omits claim bodies entirely', async () => {
+    // The point of this endpoint: a whole-tree payload that cannot leak a hidden claim's wording
+    // however large the tree gets. Not "this node has no body" — no body anywhere, ever.
+    query.mockResolvedValueOnce(
+      rows(
+        tree().map((r) => ({
+          ...r,
+          body: 'wording that must not travel',
+          author_display_name: 'Demo Finch',
+        }))
+      )
+    );
+
+    const res = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    expect(res.status).toBe(200);
+    expect(keysIn(res.body)).not.toContain('body');
+    expect(JSON.stringify(res.body)).not.toContain('wording that must not travel');
+    // Body is never SELECTed either, so there is no row in flight to leak by accident.
+    expect(shapeSql()).toHaveLength(1);
+    expect(shapeSql()[0]).not.toContain('c.body');
+
+    // Nothing else internal travels under any name: a ShapeNode is exactly five fields.
+    expect([...new Set(keysIn(res.body.data[0]))].sort()).toEqual([
+      'depth', 'id', 'impact', 'parentId', 'side',
+    ]);
+    const text = JSON.stringify(res.body);
+    for (const forbidden of ['author_id', 'author_display_name', 'community_id', COMMUNITY,
+      'moderation_status', 'path', 'parent_claim_id', 'Demo Finch']) {
+      expect(text).not.toContain(forbidden);
+    }
+  });
+
+  it('caps the payload and flags truncation on a large tree', async () => {
+    // The route asks for one more than the cap so "there is more" is observed, not guessed.
+    const many = Array.from({ length: SHAPE_NODE_LIMIT + 1 }, (_, i) =>
+      shapeRow(uuid(i), i === 0 ? null : 'c-root', i === 0 ? null : 'supports', i === 0 ? 0 : 1)
+    );
+    query.mockResolvedValueOnce(rows(many));
+
+    const res = await request(app).get('/fc/api/communities/comm-big/claims/shape');
+
+    expect(res.status).toBe(200);
+    expect(res.body.data).toHaveLength(SHAPE_NODE_LIMIT);
+    expect(res.body.meta.truncated).toBe(true);
+    expect(query.mock.calls[0][1]).toEqual(['comm-big', SHAPE_NODE_LIMIT + 1]);
+    expect(sqlOf(0)).toContain('LIMIT $2');
+    // ORDER BY depth, id means the cut falls on the DEEPEST nodes — the right end to lose.
+    expect(res.body.data.at(-1).id).toBe(uuid(SHAPE_NODE_LIMIT - 1));
+  });
+
+  it('does not flag truncation on a tree that exactly fills the cap', async () => {
+    const exact = Array.from({ length: SHAPE_NODE_LIMIT }, (_, i) =>
+      shapeRow(uuid(i), i === 0 ? null : 'c-root', i === 0 ? null : 'supports', i === 0 ? 0 : 1)
+    );
+    query.mockResolvedValueOnce(rows(exact));
+
+    const res = await request(app).get('/fc/api/communities/comm-big/claims/shape');
+
+    expect(res.body.data).toHaveLength(SHAPE_NODE_LIMIT);
+    expect(res.body.meta.truncated).toBe(false);
+  });
+
+  it('includes hidden claims so the shape stays honest', async () => {
+    // A hidden claim is a tombstone in its parent's column, not a hole. A map that dropped it
+    // would disagree with what the reader can plainly see beside it.
+    query.mockResolvedValueOnce(
+      rows([
+        shapeRow('c-root', null, null, 0),
+        { ...shapeRow('c-hidden', 'c-root', 'opposes', 1), moderation_status: 'hidden' },
+        { ...shapeRow('c-under', 'c-hidden', 'supports', 2), moderation_status: 'visible' },
+      ])
+    );
+
+    const res = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    expect(res.body.data.map((n: { id: string }) => n.id)).toEqual([
+      'c-root', 'c-hidden', 'c-under',
+    ]);
+    // The subtree under a hidden claim keeps its parent, so the map stays connected.
+    expect(res.body.data[2].parentId).toBe('c-hidden');
+    // No moderation filter in the SQL at all — that is what keeps the map and the columns agreeing.
+    expect(shapeSql()[0]).not.toContain('moderation_status');
+    // And nothing in the payload says which one is hidden: a ShapeNode is where a claim sits, only.
+    expect(keysIn(res.body)).not.toContain('isHidden');
+  });
+
+  it('404s a community with no claims, and an id that is not a uuid', async () => {
+    query.mockResolvedValueOnce(rows([]));
+    const empty = await request(app).get('/fc/api/communities/comm-empty/claims/shape');
+    expect(empty.status).toBe(404);
+    expect(empty.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
+
+    query.mockRejectedValueOnce(Object.assign(new Error('invalid input syntax'), { code: '22P02' }));
+    const malformed = await request(app).get('/fc/api/communities/not-a-uuid/claims/shape');
+    expect(malformed.status).toBe(404);
+    expect(malformed.body.error.code).toBe('CLAIM_NOT_FOUND');
+
+    expect(store.size).toBe(0); // neither is cached
+  });
+
+  it('500s a failed query rather than serving an empty map', async () => {
+    // An empty map is a claim about the tree. A route that cannot read the tree makes no claim.
+    query.mockRejectedValueOnce(new Error('connection terminated'));
+
+    const res = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    expect(res.status).toBe(500);
+    expect(res.body.error.code).toBe('CLAIM_FETCH_FAILED');
+    expect(store.size).toBe(0);
+  });
+
+  it('caches one entry per community, under the key Task 8 deletes', async () => {
+    query.mockResolvedValueOnce(rows(tree()));
+    const first = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+    expect(first.status).toBe(200);
+    // Exactly the key a claim write invalidates. If this string moves, Task 8 stops working and
+    // readers keep a stale map until the TTL expires.
+    expect([...store.keys()]).toEqual(['fc:claims:shape:comm-1']);
+
+    const second = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+    expect(second.body).toEqual(first.body);
+    expect(query.mock.calls).toHaveLength(1); // served from the cache, no second query
+    expect(second.headers['cache-control']).toBe('public, max-age=0, s-maxage=30');
+  });
+
+  it('shares one cached body with a credentialed reader, since none of it depends on who asked', async () => {
+    // The node routes refuse the shared cache for a credentialed request because a ClaimNode will
+    // carry the caller's own rating. A ShapeNode has no caller-specific field, so there is one
+    // body and one entry for everybody.
+    query.mockResolvedValueOnce(rows(tree()));
+    const anon = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+
+    const auth = await request(app)
+      .get('/fc/api/communities/comm-1/claims/shape')
+      .set('Authorization', 'Bearer user');
+
+    expect(auth.status).toBe(200);
+    expect(auth.body).toEqual(anon.body);
+    expect(query.mock.calls).toHaveLength(1);
+    expect([...store.keys()]).toEqual(['fc:claims:shape:comm-1']);
+  });
+
+  it('does not collide with the node routes on a path or a cache key', async () => {
+    // /communities/:id/claims/root and /communities/:id/claims/shape differ by a literal segment,
+    // and `fc:claim:root:x` is not `fc:claims:shape:x` — neither route can serve the other's body.
+    mockNode({ claim: row() });
+    const root = await request(app).get('/fc/api/communities/comm-1/claims/root');
+    expect(root.body.data.claim.id).toBe('c-root');
+
+    query.mockResolvedValueOnce(rows(tree()));
+    const shape = await request(app).get('/fc/api/communities/comm-1/claims/shape');
+    expect(shape.body.data).toHaveLength(4);
+    expect([...store.keys()].sort()).toEqual(
+      [
+        'fc:claim:root:comm-1:{"limit":20,"supports":null,"opposes":null}',
+        'fc:claims:shape:comm-1',
+      ].sort()
+    );
   });
 });
