@@ -87,6 +87,50 @@
         "fetched_at": "2026-10-28T22:51:16.454Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3679b52077d54e9c08f36dedf183a6741f7fc380ba87e7b496edfd6622b0c3f0",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2011/0/20110623.pdf",
+      "date": "2011-06-23",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Shall the bill pass finally? (PN 2166)",
+      "note": "House roll call as printed ('Culver'), linked to Lynda Schlegel-Culver (district 108) via the official 2011-2012 House member roll; same person as Lynda J. Schlegel Culver (district 108, roll-call name Culver) on the 2021-2022 and 2023-2024 House rolls (identity step 2026-10-31, pa-01: hyphenated name missed by the linker).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-culver",
+        "fetched_at": "2026-10-31T16:01:47.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19b7fd8c83a3388f709b40484f03f00f7b5eb502c43c60f77b82ca42ef74a500",
+      "kind": "record",
+      "url": "https://web.archive.org/web/2id_/https://www.legis.state.pa.us/WU01/LI/HJ/2012/0/20120314.pdf",
+      "date": "2012-03-14",
+      "date_precision": "day",
+      "instrument_id": "PA-HB-934-2011",
+      "act": "yea",
+      "motion": "House: Concur in Senate amendments (PN 3166)",
+      "note": "House roll call as printed ('Culver'), linked to Lynda Schlegel-Culver (district 108) via the official 2011-2012 House member roll; same person as Lynda J. Schlegel Culver (district 108, roll-call name Culver) on the 2021-2022 and 2023-2024 House rolls (identity step 2026-10-31, pa-01: hyphenated name missed by the linker).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-pa-2026-10-31-culver",
+        "fetched_at": "2026-10-31T16:01:47.607Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -138,6 +182,19 @@
       "found": 1,
       "at": "2026-10-28T22:51:16.454Z",
       "by": "identity-pa-2026-10-28b"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls"
+      ],
+      "places": [
+        "official PA House journals for HB 934 (2011-12), identity step 2026-10-31"
+      ],
+      "found": 2,
+      "at": "2026-10-31T16:01:47.607Z",
+      "by": "identity-pa-2026-10-31-culver"
     }
   ]
 }
