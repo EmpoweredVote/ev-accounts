@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
+import { readdirSync, readFileSync } from 'node:fs';
 import { MAX_CLAIM_DEPTH } from './lib/utils.js';
 
 const query = vi.fn();
@@ -1321,5 +1322,52 @@ describe('GET /communities/:id/claims/shape', () => {
         `fc:claims:shape:${COMMUNITY}`,
       ].sort()
     );
+  });
+});
+
+// ── The privacy wall's table list ──────────────────────────────────────────────────────────
+
+describe('config/database.ts privacy wall', () => {
+  it('names every connect table the module actually reads or writes', () => {
+    // 🔴 THAT PARAGRAPH IS THE ONE A REVIEWER READS TO DECIDE WHETHER A NEW QUERY IS IN SCOPE.
+    // It said "ONLY the five connect tables" and listed them long after CA_0341 added three
+    // more with real grants — so the wall a future reader was measuring against had three
+    // holes in it that were not holes at all, and the next genuine widening would have looked
+    // exactly the same. A list that is wrong is worse than no list, because it is trusted.
+    //
+    // The scan reads the tables out of the SQL rather than out of a second list: anything
+    // after FROM, JOIN, INTO or UPDATE, minus the `connect.fn(...)` calls, which a following
+    // `(` tells apart from a relation.
+    const dir = new URL('./', import.meta.url);
+    const walk = (d: URL): URL[] =>
+      readdirSync(d, { withFileTypes: true }).flatMap((e) =>
+        e.isDirectory()
+          ? walk(new URL(`${e.name}/`, d))
+          : e.name.endsWith('.ts') && !e.name.endsWith('.test.ts')
+            ? [new URL(e.name, d)]
+            : []
+      );
+
+    const tables = new Set<string>();
+    for (const file of walk(dir)) {
+      const source = readFileSync(file, 'utf8');
+      for (const m of source.matchAll(/\b(?:FROM|JOIN|INTO|UPDATE)\s+connect\.([a-z_]+)(?![a-z_(])/gi)) {
+        tables.add((m[1] as string).toLowerCase());
+      }
+    }
+
+    // A guard on the scan itself: if the regex ever stops matching, an empty set would make
+    // the assertion below pass by accident.
+    expect(tables.size).toBeGreaterThanOrEqual(8);
+    expect(tables).toContain('claims');
+    expect(tables).toContain('claim_ratings');
+    expect(tables).toContain('claim_edits');
+
+    const config = readFileSync(new URL('./config/database.ts', import.meta.url), 'utf8');
+    const wall = config.slice(config.indexOf('PRIVACY WALL'), config.indexOf('const { Pool }'));
+    expect(wall.length).toBeGreaterThan(0);
+    for (const table of tables) {
+      expect(wall, `the privacy wall paragraph does not name connect.${table}`).toContain(table);
+    }
   });
 });

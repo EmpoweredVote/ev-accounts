@@ -29,7 +29,7 @@ BEGIN;
 -- against. The one thing still owed by hand is the descendant sweep after a move: the
 -- derivation fires for the claim whose own parent changed, not for its subtree.
 --
--- A root claim is not only backfilled for the 44 communities that exist today — section
+-- A root claim is not only backfilled for the communities that exist today — section
 -- 7a puts an AFTER INSERT trigger on connect.communities so every community created from
 -- now on gets one too. The root read is the entry point for the whole argument band; a
 -- community without a root is a tree that 404s on first load with nothing to explain why.
@@ -50,7 +50,7 @@ BEGIN;
 --     🔴 The WHEN (NEW.author_id IS NOT NULL) clause on that trigger is load
 --     bearing: the function stamps 'Unknown' when author_id is NULL, and every
 --     root claim has a NULL author by design. Without the WHEN clause this
---     migration would invent an author named "Unknown" for all 44 roots. The
+--     migration would invent an author named "Unknown" for every one of the roots. The
 --     post-verify gate in section 9 asserts both the clause and its effect.
 --
 -- WHY log_claim_edit DOES NOT COPY log_post_edit
@@ -154,7 +154,10 @@ CREATE TABLE IF NOT EXISTS connect.claims (
   -- unreachable from the root, and any WITH RECURSIVE walk over parent_claim_id loops
   -- forever. Task 7 still does its own check so the maven gets a 409 and a sentence;
   -- this is the backstop that makes the ring impossible rather than merely unlikely.
-  -- Valid against all 44 live rows: every root has an empty path.
+  -- Valid against every row section 7b backfills: a root has an empty path. (That was 44
+  -- rows when this was written and is 61 now, because CA_0342 added seventeen communities
+  -- and 7a seeded a root for each. The count is recorded here only so a later reader does
+  -- not take a stale one from this file; nothing in the migration depends on it.)
   CONSTRAINT claims_not_own_ancestor CHECK (NOT (path @> ARRAY[id])),
   CONSTRAINT claims_counts_nonnegative CHECK (child_supports_count >= 0 AND child_opposes_count >= 0),
 
@@ -484,7 +487,7 @@ WHEN (OLD.body                 IS DISTINCT FROM NEW.body
    OR OLD.moderation_status    IS DISTINCT FROM NEW.moderation_status)
 EXECUTE FUNCTION connect.log_claim_edit();
 
--- 7a. Every community gets a root claim, forever — not just the 44 that exist today.
+-- 7a. Every community gets a root claim, forever — not just the ones that exist today.
 --     The root read is the entry point for the whole argument band, so a community with
 --     no root is a tree that 404s on first load with nothing to explain why. A one-time
 --     backfill (7b) cannot promise that; a trigger can. The body is the community's
