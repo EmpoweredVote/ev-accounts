@@ -1,0 +1,17 @@
+# Working material, reproducible from hc-manifest.json + hc-imglist.txt.
+# A trailing comment on a pattern line is NOT a comment -- git reads the whole
+# line, spaces and all, as the pattern. Keep every comment on its own line.
+
+# downloaded county originals
+src/
+# the 600x750 crops
+processed/
+# alternates checked and rejected
+alt/
+# archived county pages
+pages/
+# the contact sheet (published as an artifact; URL in README.md)
+sheet.html
+# inspection montages
+_*.png
+*.log
