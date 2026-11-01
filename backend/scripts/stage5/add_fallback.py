@@ -19,16 +19,23 @@ HELD, SEEN = set(opts('--hold')), set(opts('--seen')); DATE = opt('--date', date
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
 req = json.load(open(f'{F}/fallback-required.json')); rd = json.load(open(f'{F}/fallback-read.json'))
 idx = json.load(open(f'{F}/pages/index.json'))
-rows = list(csv.DictReader(open(f'{B}/research.csv'))); cols = list(rows[0].keys()); uc = [c for c in cols if c.startswith('source_url_')]
-ev = list(csv.DictReader(open(f'{B}/evidence.csv'))); ec = list(ev[0].keys())
+# Column names come from the header, not the first row: a batch whose evidence.csv has no rows yet (every row a blank
+# with no snippet, w3-r24 2026-10-31) is normal here, and reading row 0 crashed.
+def read_csv(path):
+    rd_ = csv.DictReader(open(path)); data = list(rd_); return data, list(rd_.fieldnames or [])
+rows, cols = read_csv(f'{B}/research.csv'); uc = [c for c in cols if c.startswith('source_url_')]
+ev, ec = read_csv(f'{B}/evidence.csv')
+if not ec: ec = ['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index']
 def snip(t, sur, n=34):
     w = t.split(); ats = [len(t[:m.start()].split()) for m in re.finditer(re.escape(sur), t)]
     for a in [max(0, x - k) for x in ats for k in (n // 2, 8, 1, -2)] + list(range(0, max(1, len(w) - n), 8)):
         s = ' '.join(w[a:a + n])
         if len(s.split()) >= 25 and not names_party(s): return s
     return None
-held, none, nowin, done, log = [], [], [], 0, []
+held, none, nowin, unread, done, log = [], [], [], [], 0, []
 for name, q in req.items():
+    # A blank the reader agent never read (no entry in fallback-read.json) is not touched: read it first.
+    if name not in rd: unread.append(name); continue
     vs = rd[name]['urls']
     if name in HELD or any(v['verdict'] == 'on-topic' for v in vs) and name not in SEEN:
         held.append(name); continue
@@ -55,5 +62,5 @@ for r in rows:
     for c in cols: r.setdefault(c, '')
 w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(rows)
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=ec); w.writeheader(); w.writerows(ev)
-json.dump({'examined': log, 'held': held, 'no_loadable_source': none, 'no_party_free_window': nowin}, open(f'{F}/blank-examined-log.json', 'w'), indent=1)
-print('examined', done, 'held', held, 'no loadable source', none, 'no party-free window', nowin)
+json.dump({'examined': log, 'held': held, 'no_loadable_source': none, 'no_party_free_window': nowin, 'not_read': unread}, open(f'{F}/blank-examined-log.json', 'w'), indent=1)
+print('examined', done, 'held', held, 'no loadable source', none, 'no party-free window', nowin, 'not read (no fallback-read.json entry)', unread)
