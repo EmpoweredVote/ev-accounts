@@ -8,7 +8,7 @@
       "date": "2015-08-05",
       "date_precision": "day",
       "passage": "“In light of ongoing voter fraud, it is imperative that Texas has a voter ID law that prevents cheating at the ballot box. Texas will continue to fight for its voter ID requirement to ensure the integrity of elections in the Lone Star State.”",
-      "note": "Governor's statement after a federal appeals court ruling on the state's voter ID law; he says the state will keep defending the ID requirement.",
+      "note": "Governor's statement after a federal appeals court ruling on the state's voter ID law; he says the state will keep defending the ID requirement. The Texas voter ID law in force on that date is SB 14 (2011), linked here so its rung can be read (W3-R8; blind check run 3, 2026-10-31).",
       "subjects": [
         "voter ID at the polls",
         "election integrity"
@@ -20,7 +20,8 @@
         "fetched_by": "source-collector-wave2",
         "fetched_at": "2026-10-28T15:17:40.958Z",
         "method": "webfetch"
-      }
+      },
+      "instrument_id": "TX-SB-14-2011"
     },
     {
       "id": "837358ef8579e92a1a979ef9345edf1cea1bb785dec354e5b5acecc707f54185",
