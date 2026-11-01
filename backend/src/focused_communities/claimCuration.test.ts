@@ -80,13 +80,25 @@ vi.mock('../lib/roleService.js', async (importOriginal) => ({
   },
 }));
 
-// requireAdmin, reduced to its two outcomes. The real one queries public.admin_users through
+// requireAdmin, reduced to its THREE outcomes. The real one queries public.admin_users through
 // supabaseAdmin, which a route file may not import (tests/integration/architecture.test.ts) —
 // which is exactly why the guard reuses this middleware instead of repeating its query.
+//
+// The third outcome is the point of `adminOutage`. postgrest-js RESOLVES on a transport error
+// rather than throwing it, so an unreachable Supabase does not reach holdsAdmin as an
+// exception — it reaches it as a written response. The real middleware now writes 503 for that
+// and keeps 403 for "not an admin"; this mock reproduces both so the guard's reading of them is
+// what the test exercises. (src/middleware/requireAdmin.test.ts pins the other half: that the
+// middleware really does split the two.)
 let adminThrows = false;
+let adminOutage = false;
 vi.mock('../middleware/requireAdmin.js', () => ({
   requireAdmin: async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (adminThrows) throw new Error('supabase unreachable');
+    if (adminOutage) {
+      res.status(503).json({ error: 'Could not verify admin access' });
+      return;
+    }
     if ((req as express.Request & { userId?: string }).userId === ADMIN) {
       next();
       return;
@@ -96,8 +108,26 @@ vi.mock('../middleware/requireAdmin.js', () => ({
 }));
 
 const { claimCurationRouter } = await import('./routes/claimCuration.js');
+const { touchedClaims } = await import('./middleware/claimsTouched.js');
+
+/**
+ * What middleware/claimInvalidation.ts would read off this response.
+ *
+ * Captured the same way the real middleware does — by wrapping res.json — because the ids a
+ * curation marks appear in NO response body: markClaimsTouched is the only channel, and the
+ * cost of a missing id is a page that stays stale for 30s with nothing to show that it is.
+ */
+let touched: readonly string[] = [];
 const app = express();
 app.use(express.json());
+app.use((_req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const send = res.json.bind(res);
+  res.json = ((body: unknown) => {
+    touched = touchedClaims(res);
+    return send(body);
+  }) as express.Response['json'];
+  next();
+});
 app.use('/fc/api', claimCurationRouter);
 
 const rows = (r: unknown[]) => ({ rows: r, rowCount: r.length });
@@ -134,6 +164,10 @@ const subject = (over: Record<string, unknown> = {}) => ({
   under_moving_claim: false,
   has_hidden_ancestor: false,
   deepest_descendant: 5,
+  // Read off path[depth - 1] by LOCK_PAIR: the claim sits at ROOT/GRANDPARENT/OLD_PARENT, so
+  // the level above its parent is GRANDPARENT. A move changes OLD_PARENT's child counts, which
+  // is exactly what GRANDPARENT's column shows, so GRANDPARENT's cached page goes stale too.
+  parent_parent_claim_id: GRANDPARENT,
   ...over,
 });
 
@@ -149,6 +183,7 @@ const destination = (id: string, over: Record<string, unknown> = {}) => ({
   under_moving_claim: false,
   has_hidden_ancestor: false,
   deepest_descendant: 5,
+  parent_parent_claim_id: ROOT,
   ...over,
 });
 
@@ -278,6 +313,8 @@ beforeEach(() => {
   release.mockReset();
   rolesThrow = false;
   adminThrows = false;
+  adminOutage = false;
+  touched = [];
 });
 
 // ── The guard: Maven OR Admin, which is not a chain of two middlewares ─────────────────────
@@ -342,6 +379,41 @@ describe('requireMavenOrAdmin', () => {
     expect(res.body.error.code).toBe('CLAIM_CURATION_FAILED');
     expect(query).not.toHaveBeenCalled();
     warn.mockRestore();
+  });
+
+  it('500s rather than 403s when the ADMIN lookup cannot answer, not only when it throws', async () => {
+    // 🔴 THE SAME RULE AS THE TEST ABOVE, ON THE HALF THAT USED TO BREAK IT. postgrest-js
+    // resolves on a transport failure instead of throwing, so an unreachable Supabase arrives
+    // at requireAdmin as a populated `error` and leaves as a WRITTEN response — never as an
+    // exception the guard's catch could see. holdsAdmin therefore read it as a plain `false`,
+    // indistinguishable from "this person is not an admin", and an admin curating during an
+    // outage was told "Curating the argument tree is a maven action": sent to request a role
+    // they do not need and that would not have helped.
+    //
+    // The caller here is an admin who is not a maven — the exact person the misdiagnosis hits.
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    adminOutage = true;
+
+    for (const res of [await move(CLAIM, undefined, AS_ADMIN),
+                       await merge(CLAIM, undefined, AS_ADMIN),
+                       await hide(CLAIM, AS_ADMIN)]) {
+      expect(res.status).toBe(500);
+      expect(res.body.error.code).toBe('CLAIM_CURATION_FAILED');
+      expect(res.body.error.code).not.toBe('MAVEN_REQUIRED');
+    }
+    // Still fail-closed: nothing was curated, and no client was checked out.
+    expect(query).not.toHaveBeenCalled();
+    expect(release).not.toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it('still 403s a plain contributor, which is the answer the 503 must not swallow', async () => {
+    // The other side of the same split. A 403 out of requireAdmin is an ORDINARY outcome for
+    // this guard — most callers are not admins — so turning every non-next() answer into a 500
+    // would break the common path. Only a status that is not 403 is "could not ask".
+    const res = await hide(CLAIM, AS_CONTRIBUTOR);
+    expect(res.status).toBe(403);
+    expect(res.body.error.code).toBe('MAVEN_REQUIRED');
   });
 
   it('pins the root refusal in every write WHERE, not only in the pre-flight check', () => {
@@ -607,6 +679,105 @@ describe('POST /claims/:claimId/move', () => {
     const update = sql('SET parent_claim_id');
     expect(update).toMatch(/updated_at = CASE WHEN parent_claim_id IS DISTINCT FROM/);
     expect(update).toMatch(/OR side IS DISTINCT FROM/);
+  });
+
+  it('names BOTH grandparents for invalidation, not only the new one', async () => {
+    mockMove();
+
+    const res = await move();
+    expect(res.status).toBe(200);
+
+    // middleware/claimInvalidation.ts states the rule: a grandparent's column shows each
+    // child's childSupports/childOpposes, so the invalidation walks one level up. A move
+    // changes those counts on the OLD parent exactly as it does on the new one. Leaving
+    // GRANDPARENT out made the rule true on the receiving side only — a stale count on a
+    // cached page with nothing to show that it is stale.
+    expect(touched).toContain(OLD_PARENT);
+    expect(touched).toContain(GRANDPARENT);
+    expect(touched).toContain(NEW_PARENT);
+    expect(touched).toContain(NP_PARENT);
+  });
+
+  it('reads the old grandparent off path[depth - 1] in the locking read', async () => {
+    mockMove();
+    await move();
+
+    // The old grandparent is knowable from nothing else once the claim is re-parented: the row
+    // stops naming its old parent, let alone the level above it. path is ancestors-excluding-
+    // self, so path[depth] is the parent and path[depth - 1] is the grandparent; an
+    // out-of-range subscript is NULL, which is the right answer for a depth-1 claim.
+    expect(sql('FOR UPDATE OF c')).toContain(
+      'c.path[array_length(c.path, 1) - 1] AS parent_parent_claim_id'
+    );
+  });
+
+  it('runs no sweep when the parent did not change', async () => {
+    // A side flip, or a client resending a request it was not sure landed. Every refusal
+    // passes, and the claim's own UPDATE is already a no-op by design — but the sweep used to
+    // run unconditionally and rewrite every descendant's path and depth to the values they
+    // already held: a dead tuple per row, churn on claims_path_gin_idx, and up to
+    // MAX_NODE_KEYS cache deletes for rows nobody changed. The hide and edit routes were both
+    // written to be no-op-clean; this one was not.
+    mockMove(subject(), destination(OLD_PARENT), {
+      path: [ROOT, GRANDPARENT, OLD_PARENT],
+      depth: 3,
+    });
+
+    const res = await move(CLAIM, { newParentId: OLD_PARENT, side: 'opposes' });
+
+    expect(res.status).toBe(200);
+    expect(sent().some((s) => s.includes(SWEEP))).toBe(false);
+    // The claim's own UPDATE still runs: `side` genuinely changed, and the statement is what
+    // lets trg_log_claim_edit decide whether there is history to write.
+    expect(sql('SET parent_claim_id')).toBeTruthy();
+  });
+
+  it('still sweeps a move to a DIFFERENT parent at the same depth', async () => {
+    // The skip above compares parent ids, not depths, and this is why: a sideways move leaves
+    // every depth alone and changes every descendant's path.
+    mockMove(subject(), destination(NEW_PARENT, { depth: 2 }), {
+      path: [ROOT, NP_PARENT, NEW_PARENT],
+      depth: 3,
+    });
+
+    const res = await move();
+
+    expect(res.status).toBe(200);
+    expect(sent().some((s) => s.includes(SWEEP))).toBe(true);
+  });
+
+  it('refuses to move a claim that has already been merged', async () => {
+    // The SUBJECT's own state, which this route used to ignore entirely. A merged claim's
+    // children were re-parented onto the target when the merge happened, so there is no
+    // subtree left to relocate; all a move would do is put the redirect stub under a parent
+    // whose argument it is no longer part of. Same code and sentence as /merge's refusal of an
+    // already-merged subject — the same fact about the same row.
+    mockMove(subject({ merged_into_claim_id: TARGET }));
+
+    const res = await move();
+
+    expect(res.status).toBe(409);
+    expect(res.body.error.code).toBe('CLAIM_ALREADY_MERGED');
+    expect(res.body.error.mergedInto).toBe(TARGET);
+    expect(wrote()).toBe(false);
+  });
+
+  it('still moves a HIDDEN claim, which is the one subject state it does not refuse', async () => {
+    // Deliberate, and the header says so. Hiding withdraws one claim's text, not the subtree
+    // beneath it — those children stay in the tree and stay readable under the tombstone — so
+    // a hidden claim is often exactly the row carrying live arguments that are in the wrong
+    // place. Nothing unhides, so refusing the move would strand them permanently.
+    mockMove(subject({ moderation_status: 'hidden' }), destination(NEW_PARENT), {
+      moderation_status: 'hidden',
+    });
+
+    const res = await move();
+
+    expect(res.status).toBe(200);
+    expect(wrote()).toBe(true);
+    // Still a tombstone in the response: the move did not restore the text.
+    expect(res.body.data.isHidden).toBe(true);
+    expect(res.body.data.body).toBe('');
   });
 
   it('allows a move that lands exactly on the depth cap', async () => {
@@ -965,6 +1136,26 @@ describe('POST /claims/:claimId/merge', () => {
     expect(res.body.error.code).toBe('CLAIM_ALREADY_MERGED');
     expect(res.body.error.mergedInto).toBe(uuid(888));
     expect(wrote()).toBe(false);
+  });
+
+  it('still merges a HIDDEN claim, which is the one subject state it does not refuse', async () => {
+    // The same decision /move takes, pinned here so the pair cannot drift apart. The subject's
+    // moderation_status is deliberately ignored: hiding withdraws a claim's text, not the live
+    // subtree beneath it, so a hidden claim can still be the one whose children belong under
+    // the target. It stays hidden afterwards — the merge writes merged_into_claim_id and the
+    // timestamp, nothing else — and hidden-AND-merged is a state the module already
+    // anticipates, which is why the rating route orders those two refusals.
+    mockMerge({
+      claim: subject({ moderation_status: 'hidden' }),
+      updated: { moderation_status: 'hidden' },
+    });
+
+    const res = await merge();
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.mergedInto).toBe(TARGET);
+    expect(res.body.data.isHidden).toBe(true);
+    expect(res.body.data.body).toBe('');
   });
 
   it('422s a merge whose transplant would breach the depth cap', async () => {

@@ -211,7 +211,11 @@ function answer(res: Response, refusal: Refusal): void {
 // 🔴 MAVEN **OR** ADMIN CANNOT BE WRITTEN AS A CHAIN OF THE TWO SHARED MIDDLEWARES. Express
 // middleware composes with AND: requireRole('maven') 403s an admin who is not a maven, and
 // requireAdmin 403s a maven who is not an admin, so `requireRole('maven'), requireAdmin` means
-// "both" in either order. Hence one local guard. The shared middleware is not modified.
+// "both" in either order. Hence one local guard. Neither shared middleware is given OR
+// semantics, and neither is wrapped or re-implemented here. (requireAdmin was later given a
+// 503 branch so that "could not ask" is distinguishable from "not an admin" — see holdsAdmin.
+// That is a change to what it REPORTS, not to who it admits, and every caller that branches on
+// `res.headersSent` is unaffected.)
 //
 // The maven half is the same call routes/seasons.ts already makes — getCachedUserRoles plus the
 // pure checkRole — so there is one answer in this module to "is this person a maven?".
@@ -232,17 +236,41 @@ function answer(res: Response, refusal: Refusal): void {
  * requireAdmin's answer, as a question.
  *
  * The middleware reports by WRITING to the response; here its verdict is one half of a decision,
- * so it gets a sink — a Response-shaped object that records nothing and sends nothing — and the
- * verdict is read off whether `next` was called. A throw propagates: a Supabase that cannot
- * answer is a 500, not a 403 (see the guard).
+ * so it gets a sink — a Response-shaped object that sends nothing — and the verdict is read off
+ * whether `next` was called. A throw propagates: a Supabase that cannot answer is a 500, not a
+ * 403 (see the guard).
+ *
+ * 🔴 AND A THROW IS NOT THE ONLY WAY THE LOOKUP CAN FAIL TO ANSWER. postgrest-js resolves on a
+ * transport error rather than throwing it, so an unreachable Supabase reaches requireAdmin as a
+ * populated `error` and not as an exception. That used to arrive here as a plain `false` —
+ * indistinguishable from "this person is not an admin" — and the guard then told an admin in
+ * the middle of an outage that curating is a maven action. Fail-closed, but it is the exact
+ * misdiagnosis the paragraph below was written to prevent, and it was the one place in this
+ * module where the documented fail-safe was not implemented.
+ *
+ * So the sink RECORDS THE STATUS. requireAdmin now writes 403 for "not an admin" and 503 for
+ * "could not ask" (see src/middleware/requireAdmin.ts), and anything that is neither `next()`
+ * nor a 403 is treated as an unanswered question and thrown — which requireMavenOrAdmin's catch
+ * turns into a 500, the same answer a Redis outage on the maven half already gets. A status the
+ * sink never saw is also an unanswered question: a middleware that returned without calling
+ * next and without writing has told us nothing.
  */
 async function holdsAdmin(req: Request): Promise<boolean> {
   let allowed = false;
-  const sink = { status: () => sink, json: () => sink } as unknown as Response;
+  let status: number | null = null;
+  const sink = {
+    status: (code: number) => {
+      status = code;
+      return sink;
+    },
+    json: () => sink,
+  } as unknown as Response;
   await requireAdmin(req, sink, (() => {
     allowed = true;
   }) as NextFunction);
-  return allowed;
+  if (allowed) return true;
+  if (status === 403) return false;
+  throw new Error(`admin lookup did not answer (status ${status ?? 'none'})`);
 }
 
 async function requireMavenOrAdmin(req: Request, res: Response, next: NextFunction): Promise<void> {
@@ -371,6 +399,16 @@ interface CurationRow {
   has_hidden_ancestor: boolean;
   /** The deepest row in the curated claim's subtree, or 0 when it has none. */
   deepest_descendant: number;
+  /**
+   * This row's GRANDparent, for cache invalidation only — never for a decision.
+   *
+   * On the curated claim it is the OLD grandparent, which nothing else in a move knows: once
+   * the claim is re-parented, the row no longer names its old parent, let alone the level above
+   * it. A grandparent's column shows each child's childSupports/childOpposes, so the old
+   * parent's counts changing makes the old grandparent's page stale exactly as the new
+   * grandparent's is (middleware/claimInvalidation.ts states the one-level-up rule).
+   */
+  parent_parent_claim_id: string | null;
 }
 
 /**
@@ -383,6 +421,15 @@ interface CurationRow {
  * `deepest_descendant` is the same value on both rows — it is a fact about the curated claim, not
  * about the row it is attached to — and it rides along here rather than in a statement of its own
  * so the whole decision is taken from one snapshot.
+ *
+ * `parent_parent_claim_id` is read off `path` rather than through a second lookup on the parent.
+ * A claim's path is its ancestors from the root down, EXCLUDING itself, so for a row at depth d
+ * it holds d elements with the parent last — path[d] is the parent and path[d-1] is the
+ * grandparent. (claims_root_or_child_shape audits cardinality(path) = depth on every swept row,
+ * so that is a guaranteed shape, not an assumption.) Out-of-range subscripts are NULL in
+ * Postgres, so a depth-1 claim and a root both yield NULL with no special case. It is used for
+ * cache invalidation only and never for a decision, which is why it does not matter that the
+ * subscript reads an unlocked column of the same locked row.
  */
 const LOCK_PAIR = `
     SELECT c.id,
@@ -396,7 +443,8 @@ const LOCK_PAIR = `
                     WHERE a.id = ANY (c.path) AND a.moderation_status <> 'visible')
              AS has_hidden_ancestor,
            (SELECT COALESCE(MAX(d.depth), 0) FROM connect.claims d
-             WHERE d.path @> ARRAY[$1::uuid]) AS deepest_descendant
+             WHERE d.path @> ARRAY[$1::uuid]) AS deepest_descendant,
+           c.path[array_length(c.path, 1) - 1] AS parent_parent_claim_id
       FROM connect.claims c
      WHERE c.id = ANY (ARRAY[$1::uuid, $2::uuid])
      ORDER BY c.id
@@ -456,6 +504,16 @@ function fitsUnderCap(claimDepth: number, deepest: number, newDepth: number): bo
 //   itself            409  the one-hop cycle (claims_no_self_parent is the backstop)
 //   absent            404  either id
 //   a root            409  R53: the community's question is not anyone's contribution
+//   already merged    409  the SUBJECT, not the parent. A merged claim has no children left to
+//                          relocate and moving it only relocates the redirect.
+//
+// 🔴 A HIDDEN SUBJECT IS DELIBERATELY MOVABLE, AND THAT IS THE ONLY STATE OF THE CURATED CLAIM
+// THIS ROUTE DOES NOT REFUSE. Hiding withdraws one claim's TEXT; it does not withdraw the
+// subtree, which stays in the tree and stays readable under the tombstone (see the hide route's
+// header). So a hidden claim is frequently exactly the row a maven needs to move — it is
+// carrying live arguments that are in the wrong place. Refusing the move would strand them
+// with no route to fix it, since nothing unhides. The destination's state is still checked:
+// NEW_PARENT_NOT_VISIBLE keeps the subtree from landing somewhere unreachable.
 //   its own descendant 409 the longer cycle (claims_not_own_ancestor is the backstop). A ring is
 //                          unreachable from the root and every recursive walk over it hangs.
 //   another community 409  derive_claim_position copies community_id from the parent, so this
@@ -521,7 +579,21 @@ claimCurationRouter.post('/claims/:claimId/move', ...curator, async (req: Reques
 
     if (!claim) refusal = notFound;
     else if (claim.parent_claim_id === null) refusal = rootNotCuratable;
-    else if (!parent) {
+    else if (claim.merged_into_claim_id !== null) {
+      // 🔴 THE SUBJECT'S OWN STATE, WHICH THIS ROUTE USED TO IGNORE ENTIRELY. See the header.
+      // A merged claim is superseded: its children were re-parented onto the target when the
+      // merge happened, so there is no subtree left to relocate and all a move would do is
+      // relocate the redirect — putting the stub that says "this point is now made over there"
+      // under a parent whose argument it is no longer part of. Same code and sentence as
+      // /merge's refusal of an already-merged subject, because it is the same fact about the
+      // same row, and the target rides along for the same reason.
+      refusal = {
+        status: 409,
+        code: 'CLAIM_ALREADY_MERGED',
+        message: 'This claim has already been merged into another',
+        mergedInto: claim.merged_into_claim_id,
+      };
+    } else if (!parent) {
       // A maven is a trusted role: "which of the two ids was wrong?" is the first thing they
       // will ask and there is nothing here to withhold from them.
       refusal = { status: 404, code: 'NEW_PARENT_NOT_FOUND', message: 'New parent claim not found' };
@@ -584,21 +656,52 @@ claimCurationRouter.post('/claims/:claimId/move', ...curator, async (req: Reques
       }
 
       // ...and then its subtree, spliced onto where the claim has just landed.
-      const { rows: swept } = await client.query<{ id: string }>(SWEEP, [
-        claimId,
-        [...row.path, claimId],
-        sliceFrom(claimRow.depth),
-        row.depth - claimRow.depth,
-      ]);
+      //
+      // 🔴 NOT WHEN THE PARENT DID NOT CHANGE. A move to the claim's current parent — a side
+      // flip, or a client resending a request it was not sure landed — passes every refusal,
+      // and the UPDATE above is already a no-op by design (the derivation is idempotent, the
+      // count and log triggers' WHEN clauses do not fire, updated_at is guarded by its CASE).
+      // The sweep is the one statement that was not: it would rewrite every descendant's path
+      // and depth to the values they already hold, producing a dead tuple per row, churn on
+      // claims_path_gin_idx, and up to MAX_NODE_KEYS cache deletes for rows nobody changed.
+      //
+      // The parent is the whole test. `side` does not appear in any descendant's path or
+      // depth, and a parent that is unchanged means trg_claims_derive_position re-derived the
+      // same path and the same depth for the claim, so every splice below it is the identity.
+      // A move to a DIFFERENT parent at the same depth still changes paths, which is why this
+      // compares ids and not depths. Both sides are canonical lowercase — `parentId` from the
+      // request, `claimRow.parent_claim_id` out of Postgres.
+      const reparented = claimRow.parent_claim_id !== parentId;
+      const swept = reparented
+        ? (
+            await client.query<{ id: string }>(SWEEP, [
+              claimId,
+              [...row.path, claimId],
+              sliceFrom(claimRow.depth),
+              row.depth - claimRow.depth,
+            ])
+          ).rows
+        : [];
 
       // What this write made stale beyond the claim itself, which the middleware works out on
-      // its own: the OLD parent, which the row no longer names; the new parent and ITS parent,
-      // whose columns and child counts both ends of the move just changed; and every swept
-      // descendant, whose breadcrumb was rebuilt a statement ago. Marking is not deleting — the
-      // middleware acts only if this transaction commits and the response is a 2xx.
+      // its own: the OLD parent, which the row no longer names, and the old parent's OWN parent;
+      // the new parent and ITS parent, whose columns and child counts both ends of the move just
+      // changed; and every swept descendant, whose breadcrumb was rebuilt a statement ago.
+      // Marking is not deleting — the middleware acts only if this transaction commits and the
+      // response is a 2xx.
+      //
+      // 🔴 BOTH GRANDPARENTS, NOT ONLY THE NEW ONE. middleware/claimInvalidation.ts says the
+      // invalidation "walks one level up" because a grandparent's column shows each child's
+      // childSupports/childOpposes. A move changes those counts on the old parent exactly as it
+      // does on the new one, so leaving the old grandparent out made the rule true on the
+      // receiving side only — one stale count on one cached page, inside the documented 30s
+      // bound, but by accident rather than by choice. claimRow.parent_parent_claim_id is the
+      // old side's equivalent of parent.parent_claim_id; markClaimsTouched drops the nulls and
+      // de-duplicates downstream, so a no-op move naming the same id twice costs nothing.
       markClaimsTouched(
         res,
         claimRow.parent_claim_id,
+        claimRow.parent_parent_claim_id,
         parentId,
         parent?.parent_claim_id,
         ...swept.map((d) => d.id)
@@ -648,6 +751,14 @@ claimCurationRouter.post('/claims/:claimId/move', ...curator, async (req: Reques
 //   move and carries everything the move route does — the derivation trigger fires per child, the
 //   count triggers debit the merged claim and credit the target, and what is below the children
 //   needs the same splice.
+//
+//   A HIDDEN SUBJECT IS DELIBERATELY MERGEABLE. The subject's moderation_status is the one
+//   state of the curated claim this route does not refuse, and it is the same decision /move
+//   takes for the same reason: hiding withdraws a claim's text, not the live subtree beneath
+//   it, so a hidden claim can still be the one whose children belong under the target. The
+//   claim stays hidden afterwards — the merge writes merged_into_claim_id and nothing else —
+//   and hidden-AND-merged is a state the module already anticipates (routes/claimWrites.ts's
+//   rating refusal orders the two). The subject's merged_into_claim_id IS refused, below.
 //
 //   RATINGS DO NOT MOVE, AND THAT NEEDS NO CODE. connect.bump_claim_rating_aggregate keys on
 //   claim_ratings.claim_id, which a merge does not touch, so the ratings stay on the merged claim
