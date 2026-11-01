@@ -9,7 +9,7 @@
 //   GET    /claims/:claimId/edits     — that claim's edit history, to anyone
 //
 // The paths are bare because app.ts mounts this router under the Focused Communities mount points
-// (/fc/api and /api/fc), exactly as for its siblings. Mounting is Task 8's.
+// (/fc/api and /api/fc), exactly as for its siblings.
 //
 // Five things in here are deliberate and worth reading before changing them:
 //
@@ -542,12 +542,13 @@ claimWritesRouter.post(
       return;
     }
 
-    // Cache invalidation is Task 8's, together with mounting this router: the node and shape
-    // entries routes/claims.ts writes are keyed by claim id and column cursors, and the keys to
-    // drop are the parent's node entries and the community's shape entry. Until that lands, a new
-    // claim is invisible for up to CLAIM_TTL_SECONDS (30s) in the minimap and in its parent's
-    // column. Deliberately NOT papered over here with a partial invalidation that drops one key
-    // and leaves the rest, which is harder to reason about than a uniform 30-second lag.
+    // Cache invalidation is NOT done here, and not because it is missing. It lives in
+    // middleware/claimInvalidation.ts, mounted above this router, which fires on any non-GET
+    // under /claims/ that answered 2xx — so this handler, and any write route added after it, is
+    // covered without anyone remembering. What that buys and what it does not is written out
+    // there: the community's shape entry is dropped exactly, the default-parameter node pages are
+    // dropped for the claims this write changed, and anything keyed by a deeper cursor carries a
+    // deliberate 30-second staleness. Do not add a second, partial invalidation here.
 
     // 🔴 myRating is null, and not because it is unimplemented. A claim created a millisecond
     // ago has no ratings — least of all from its author, who does not get a free one for
@@ -828,10 +829,11 @@ claimWritesRouter.put(
     // sent, so echoing it would add nothing and would make this body look like one that could
     // carry somebody else's.
     //
-    // Cache invalidation is Task 8's, with mounting: a rating moves `impact` on the claim, which
-    // changes its node body, its parent's column ordering and the community's shape payload.
-    // Until that lands a rating is visible to its own rater immediately (their reads carry
-    // credentials and are never cached) and to everyone else within CLAIM_TTL_SECONDS.
+    // A rating moves `impact` on the claim, which changes its node body, its parent's column
+    // ordering and the community's shape payload. All three are dropped by
+    // middleware/claimInvalidation.ts, mounted above this router — see the note on the create
+    // handler. The rater sees their own rating immediately whatever the cache holds: their reads
+    // carry credentials and a personalized body is never cached (isShareable in routes/claims.ts).
     res.json({
       data: { impact: Number(aggregate.impact), ratingCount: aggregate.rating_count },
     });
@@ -1028,10 +1030,13 @@ claimWritesRouter.patch(
       return;
     }
 
-    // Cache invalidation is Task 8's, with mounting: an edit changes the claim's node body, its
-    // entry in its parent's column and the community's shape payload. Until that lands the new
-    // text is visible to its own author immediately (their reads carry credentials and are never
-    // cached) and to everyone else within CLAIM_TTL_SECONDS.
+    // An edit changes the claim's node body, its entry in its parent's column and the community's
+    // shape payload. All three are dropped by middleware/claimInvalidation.ts, mounted above this
+    // router — see the note on the create handler. The author sees their own new text immediately
+    // whatever the cache holds: their reads carry credentials and are never cached.
+    //
+    // 🔴 One thing stays inside the 30-second bound on purpose: a descendant's breadcrumb carries
+    // this claim's body, and the invalidation walks one level up rather than the whole subtree.
 
     // myRating is READ BACK rather than stated null. It is the one per-caller field in a Claim,
     // and an author may well have rated their own claim before fixing a typo in it; a response
