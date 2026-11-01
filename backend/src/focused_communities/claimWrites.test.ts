@@ -794,6 +794,28 @@ describe('PUT /claims/:claimId/rating', () => {
     expect(hidden.body).toEqual(absent.body);
   });
 
+  // A root is the community's question — no author, no side, nobody advanced it — so "how much
+  // weight does this deserve" has no meaning for it. An impact on a root is not inert either: it
+  // is served on the root node body and drawn as the depth-0 dot on the minimap, where it reads
+  // as a rating of the topic itself. The id is one public GET away, so this was reachable by any
+  // connected account until the write statement grew its parent_claim_id predicate.
+  it('refuses to rate a root claim, and the predicate is in the writing statement', async () => {
+    mockRateRefused({ moderation_status: 'visible', merged_into_claim_id: null });
+    const res = await rate();
+
+    expect(res.status).toBe(404);
+    expect(res.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
+
+    // The guard has to be in the statement that WRITES, under the same lock as the other two —
+    // a pre-flight check would let a root rated concurrently with its own creation through.
+    const insert = String(query.mock.calls[0][0]);
+    expect(insert).toContain('INSERT INTO connect.claim_ratings');
+    expect(insert).toContain('c.parent_claim_id IS NOT NULL');
+    expect(insert.indexOf('c.parent_claim_id IS NOT NULL')).toBeLessThan(
+      insert.indexOf('FOR UPDATE OF c')
+    );
+  });
+
   it('409s a merged claim and names the one that supersedes it', async () => {
     const TARGET = uuid(500);
     mockRateRefused({ moderation_status: 'visible', merged_into_claim_id: TARGET });

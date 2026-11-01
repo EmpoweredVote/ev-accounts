@@ -747,6 +747,7 @@ claimWritesRouter.put(
           WHERE c.id = $1
             AND c.moderation_status = 'visible'
             AND c.merged_into_claim_id IS NULL
+            AND c.parent_claim_id IS NOT NULL
             FOR UPDATE OF c
          ON CONFLICT (claim_id, user_id) DO UPDATE
             SET value                     = EXCLUDED.value,
@@ -762,8 +763,8 @@ claimWritesRouter.put(
       return;
     }
 
-    // Zero rows: the claim is absent, hidden or merged — or was one of those by the time the
-    // locked statement re-evaluated its quals. Unlike the child route, the classifying lookup
+    // Zero rows: the claim is absent, hidden, merged or a ROOT — or was one of those by the time
+    // the locked statement re-evaluated its quals. Unlike the child route, the classifying lookup
     // runs HERE rather than before the write, so the happy path costs two round trips and only a
     // refusal pays for a third. Nothing is lost by the ordering: the question is about the
     // claim's state, and the state that matters is the one the write saw.
@@ -792,6 +793,19 @@ claimWritesRouter.put(
         claimMerged(res, claim.merged_into_claim_id);
         return;
       }
+      // 🔴 A ROOT CANNOT BE RATED, and the refusal is a 404 like every other.
+      //
+      // A root is the community's question, seeded by trg_communities_seed_root_claim with no
+      // author and no side. It is not a proposition anybody advanced, so "how much weight does
+      // this deserve" has no meaning for it — and an impact on a root is not inert: it is served
+      // on the root node body and drawn as the depth-0 dot on the minimap, where it reads as a
+      // rating of the topic itself. The id is one public GET away, so this was reachable by any
+      // connected account.
+      //
+      // Every other write in the module already refuses a root — move, merge and hide by R53,
+      // edit by R44's author check falling through on author_id IS NULL. Rating was the one hole.
+      // It is 404 rather than 422 for the reason the rest of this branch is: the rater learns
+      // nothing about the claim from the refusal.
       notFound(res);
       return;
     }
