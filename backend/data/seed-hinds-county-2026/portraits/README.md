@@ -132,3 +132,64 @@ twelve, so the set is reproducible by re-running `hinds-fetch-portraits.py` once
 
 ▶ **To resume:** run `py -3 backend/scripts/hinds-fetch-portraits.py` from this directory. It skips
 anything already in `src/`. Space the passes out; if it 429s again, wait longer rather than faster.
+
+## 🟢 RULING 2026-10-31 (operator): BLANK ANY PORTRAIT CARRYING A PHOTOGRAPHER'S WATERMARK
+
+*"blank the ones with photographer watermark."*
+
+So the disposition is settled before the files arrive, and it is **not** a crop decision:
+
+- A visible photographer's signature is a **third party asserting ownership**. The county's
+  permission to publish is not a sublicence to us, so the seat is **left blank**.
+- 🔴 **NEVER CROP THE SIGNATURE OFF.** That converts "we cannot licence this" into "we removed the
+  author's attribution to use it anyway", which is worse, and it drags the crop away from the face.
+- **A blank beats a wrong link**, and a blank is findable by every "who still needs a headshot"
+  query. This is the same answer Ché Alexander got in Atlanta.
+
+⚠ **WHICH ONES ARE SIGNED IS NOT KNOWN YET — IT IS A LOOKING TASK, NOT A MEASURING ONE.**
+Supervisor District 3 is confirmed signed (*"Jay D. Johnson"*). The other eleven have not been
+seen, because ten are still behind the archive block. A watermark cannot be detected numerically
+with any confidence — faint corner text survives every statistic we compute. ▶ **Open every image
+and look at it before it goes on the sheet**, and blank the signed ones there, so the sheet the
+operator approves already reflects this ruling rather than asking it again.
+
+
+## APPLIED 2026-10-31 — 4 BOUND, 24 DELIBERATELY BLANK (`CC_0325`)
+
+Contact sheet: <https://claude.ai/artifact/CMzCFoPS6oNxbp2HxVFbba> (private to the operator).
+
+| seat | officeholder | source | enlargement |
+| --- | --- | --- | --- |
+| County Attorney | Gerald A. Mumford | `gerald-mumford-2x3-website.jpg` 347x521 | x1.73 |
+| Sheriff | Tyree D. Jones | `Tyree_D_Jones.jpg` 1012x1012 | x0.74 (reduced) |
+| Tax Assessor | Charles E. Stokes | `stokes-page.jpg` 400x478 | x1.57 |
+| Tax Collector | Eddie J. Fair | `fair-page.jpg` 400x478 | x1.57 |
+
+⚠ **THE FILE NAMED `5x7` IS SMALLER THAN THE ONE NAMED `2x3`.** `gerald-mumford-5x7-website.jpg`
+is 240x336; the `2x3` is 347x521. Every alternate checked was smaller than the file already in
+hand, including the Chancery Clerk's, which settled that no larger original exists. **A filename
+that states a size is not a measurement.**
+
+**Verified after applying, in this order:**
+1. the four objects re-fetched from the PUBLIC CDN and sha256-compared to the local files, with a
+   never-uploaded key as the control (HTTP 400, not an image, so a match means something);
+2. the database read back: scalar, `images[]` and `photo_origin_url` all as intended, and the
+   scalar and the `images[]` row pointing at the SAME object;
+3. 🔴 **the RENDERED page, not the API** — `essentials.empowered.vote/politician/<id>` shows the
+   sheriff's portrait at naturalWidth 600 x 750 with alt "Tyree D. Jones portrait", and the other
+   three decode from the CDN at 600x750.
+
+⚠ **THE API SERVES THE SCALAR UNDER THE KEY `photo_origin_url`** — `essentialsService.ts` selects
+`COALESCE(p.photo_custom_url, p.photo_origin_url, '')` under that alias, and exposes no
+`photo_custom_url` key at all. So an API response showing a CDN url in `photo_origin_url` is
+CORRECT, and a check that reads that field expecting a *source page* will misread every bound row.
+
+**The gates were watched failing**, one tamper at a time, each asserted present in its file first:
+swapping two objects between people tripped the own-uuid gate (`1 row(s) name an object that is
+not that politician's own uuid`); deleting the `politician_images` INSERT tripped the images gate
+(`expected 4 ... found 0`); and adding a watermarked supervisor to the set tripped the blanks gate
+(`expected the other 24 ... found 23 blank`). Three tampers, three different gates, no shadowing.
+
+▶ **The 24 blanks are gated.** `CC_0325`'s post-verify asserts the other 24 Hinds officeholders
+still carry no photo, so if a later pass fills one from a watermarked or composite source, that
+number moves and the next session sees it.

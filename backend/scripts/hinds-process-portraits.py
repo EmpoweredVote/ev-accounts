@@ -10,13 +10,16 @@ CONTROLS, all watched FAILING before use:
     dark TEXTURED image, untouched (deframe._control);
   * channel spread is measured, because a monochrome portrait is a defect.
 """
-import json, os, sys
+import json, os, sys, argparse
 import cv2
 import numpy as np
 from PIL import Image, ImageOps
 from hinds_deframe import border_box, _control as deframe_control
 
 sys.stdout.reconfigure(encoding='utf-8')
+ap = argparse.ArgumentParser(); ap.add_argument('--dir', default='.')
+args = ap.parse_args()
+os.chdir(args.dir)
 OUT = 'processed'
 os.makedirs(OUT, exist_ok=True)
 
@@ -31,7 +34,7 @@ print('CONTROL OK  flat grey yields no face, so the detector can report absence'
 deframe_control()
 print('CONTROL OK  the border trimmer finds a planted frame, and spares unframed/dark-textured')
 
-man = json.load(open('manifest.json'))
+man = json.load(open('hc-manifest.json'))
 rows = []
 for p in man:
     src = next((f'src/{p["key"]}{e}' for e in ('.jpg', '.jpeg', '.png')

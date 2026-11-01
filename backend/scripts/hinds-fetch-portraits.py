@@ -1,33 +1,52 @@
-import os, sys, time, urllib.request
-from PIL import Image
-UA = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36'}
-D = os.path.dirname(os.path.abspath(__file__))
-os.makedirs(os.path.join(D,'src'), exist_ok=True)
-jobs = []
-for line in open(os.path.join(D,'imglist.txt')):
-    p = line.split()
-    if len(p) == 3: jobs.append(tuple(p))
+#!/usr/bin/env python3
+"""
+Fetch the Hinds County portrait sources from the Internet Archive -- POLITELY.
 
-for attempt in range(12):
-    left = []
-    for name, ts, url in jobs:
-        dest = os.path.join(D,'src',name)
-        if os.path.exists(dest) and os.path.getsize(dest) > 3000: continue
-        try:
-            req = urllib.request.Request(f'https://web.archive.org/web/{ts}im_/{url}', headers=UA)
-            with urllib.request.urlopen(req, timeout=60) as r:
-                d = r.read()
-            if len(d) > 3000:
-                open(dest,'wb').write(d)
-                im = Image.open(dest)
-                print(f'IMG {name:22} {im.size[0]}x{im.size[1]} {im.mode} {len(d)}b')
-            else:
-                left.append(name); print(f'   pass{attempt+1} {name} short {len(d)}b')
-        except Exception as e:
-            left.append(name); print(f'   pass{attempt+1} {name} {type(e).__name__}')
+The county's own site was replaced by its vendor and now 404s /sites/default/files/*, so the
+archive is the only source. Run from backend/data/seed-hinds-county-2026/portraits/ (or pass
+--dir). Anything already in src/ is skipped, so a blocked run costs nothing.
+
+🔴 THIS SCRIPT CANNOT "TRY HARDER". wayback_fetch stops the run on three consecutive 429s, by
+design -- see the module docstring for how this machine got block-listed on 2026-10-31.
+"""
+import argparse, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from wayback_fetch import WaybackClient, Blocked, UA
+
+ap = argparse.ArgumentParser()
+ap.add_argument('--dir', default='.')
+ap.add_argument('--min-gap', type=float, default=12.0, help='seconds between requests')
+args = ap.parse_args()
+
+listing = os.path.join(args.dir, 'hc-imglist.txt')
+if not os.path.exists(listing):
+    sys.exit(f'no hc-imglist.txt in {os.path.abspath(args.dir)}')
+
+jobs = [l.split() for l in open(listing) if len(l.split()) == 3]
+src = os.path.join(args.dir, 'src')
+os.makedirs(src, exist_ok=True)
+
+have = [j for j in jobs if os.path.exists(os.path.join(src, j[0]))]
+todo = [j for j in jobs if j not in have]
+print(f'{len(jobs)} sources, {len(have)} already on disk, {len(todo)} to fetch')
+print(f'identifying as: {UA}')
+print(f'pacing: 1 request per {args.min_gap:.0f}s, aborting on 3 consecutive 429s\n')
+
+client = WaybackClient(min_gap=args.min_gap)
+ok = fail = 0
+try:
+    for name, ts, url in todo:
+        dest = os.path.join(src, name)
+        if client.save(f'https://web.archive.org/web/{ts}im_/{url}', dest):
+            print(f'  got  {name}  {os.path.getsize(dest)}b'); ok += 1
+        else:
+            print(f'  miss {name}'); fail += 1
         sys.stdout.flush()
-        time.sleep(45)
-    print(f'--- pass {attempt+1}: {len(left)} missing ---'); sys.stdout.flush()
-    if not left: break
-    time.sleep(120)
-print('IMAGES DONE')
+except Blocked as e:
+    print(f'\n🔴 {e}')
+    print(f'\n{ok} fetched this run, {len(todo)-ok-fail} never attempted. Re-run later; '
+          f'nothing already on disk is re-fetched.')
+    sys.exit(2)
+
+print(f'\n{ok} fetched, {fail} missed, {len(have)} already had. '
+      f'{len(have)+ok}/{len(jobs)} complete.')

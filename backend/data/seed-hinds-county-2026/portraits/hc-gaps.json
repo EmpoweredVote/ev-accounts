@@ -1,19 +1,82 @@
 [
- {"title":"County Surveyor","name":"Jeffrey Maurice Lewis","why":"The county site has no page for this office at all (zero hits for \"surveyor\" across the whole archived nav). No press or official portrait found."},
- {"title":"Coroner","name":"Jeremiah Howard","why":"PENDING"},
- {"title":"Justice Court Judge, District 1","name":"Don Palmer","why":"The county's judge page carries the courthouse address and phone only — no portrait. Same for all five districts."},
- {"title":"Justice Court Judge, District 2","name":"Tabitha Britton-Porter","why":"Judge page carries address and phone only. A BallotReady profile shows a headshot, but its licence is not stateable."},
- {"title":"Justice Court Judge, District 3","name":"Frank L. Sutton, Sr.","why":"Judge page carries address and phone only."},
- {"title":"Justice Court Judge, District 4","name":"Kenny W. Lewis","why":"Judge page carries address and phone only."},
- {"title":"Justice Court Judge, District 5","name":"Pearlie Brown Owens","why":"Judge page carries address and phone only."},
- {"title":"Constable, District 1","name":"Jerry Moore","why":"The county's constable page names him and his district, and carries no photograph. Same for all five."},
- {"title":"Constable, District 2","name":"John Brown","why":"Constable page names him; no photograph."},
- {"title":"Constable, District 3","name":"Lawrence Funchess","why":"Constable page names him; no photograph."},
- {"title":"Constable, District 4","name":"Leon Seals","why":"Constable page names him; no photograph."},
- {"title":"Constable, District 5","name":"Beverly Wade-Green","why":"Constable page names her (as Beverly Green); no photograph."},
- {"title":"Election Commissioner, District 1","name":"Kidada Brown","why":"The Election Commission page is a contact table — name, district and email only, for all five. Ballotpedia does not cover these seats."},
- {"title":"Election Commissioner, District 2","name":"Bobbie McClure Graves","why":"Contact table only."},
- {"title":"Election Commissioner, District 3","name":"Jermal Clark","why":"Contact table only."},
- {"title":"Election Commissioner, District 4","name":"Yvonne R. Horton","why":"Contact table only."},
- {"title":"Election Commissioner, District 5","name":"Felicia McClinton","why":"Contact table only."}
+ {
+  "title": "County Surveyor",
+  "name": "Jeffrey Maurice Lewis",
+  "why": "The county site has no page for this office at all (zero hits for \"surveyor\" across the whole archived nav). No press or official portrait found."
+ },
+ {
+  "title": "Justice Court Judge, District 1",
+  "name": "Don Palmer",
+  "why": "The county's judge page carries the courthouse address and phone only \u00e2\u20ac\u201d no portrait. Same for all five districts."
+ },
+ {
+  "title": "Justice Court Judge, District 2",
+  "name": "Tabitha Britton-Porter",
+  "why": "Judge page carries address and phone only. A BallotReady profile shows a headshot, but its licence is not stateable."
+ },
+ {
+  "title": "Justice Court Judge, District 3",
+  "name": "Frank L. Sutton, Sr.",
+  "why": "Judge page carries address and phone only."
+ },
+ {
+  "title": "Justice Court Judge, District 4",
+  "name": "Kenny W. Lewis",
+  "why": "Judge page carries address and phone only."
+ },
+ {
+  "title": "Justice Court Judge, District 5",
+  "name": "Pearlie Brown Owens",
+  "why": "Judge page carries address and phone only."
+ },
+ {
+  "title": "Constable, District 1",
+  "name": "Jerry Moore",
+  "why": "The county's constable page names him and his district, and carries no photograph. Same for all five."
+ },
+ {
+  "title": "Constable, District 2",
+  "name": "John Brown",
+  "why": "Constable page names him; no photograph."
+ },
+ {
+  "title": "Constable, District 3",
+  "name": "Lawrence Funchess",
+  "why": "Constable page names him; no photograph."
+ },
+ {
+  "title": "Constable, District 4",
+  "name": "Leon Seals",
+  "why": "Constable page names him; no photograph."
+ },
+ {
+  "title": "Constable, District 5",
+  "name": "Beverly Wade-Green",
+  "why": "Constable page names her (as Beverly Green); no photograph."
+ },
+ {
+  "title": "Election Commissioner, District 1",
+  "name": "Kidada Brown",
+  "why": "The Election Commission page is a contact table \u00e2\u20ac\u201d name, district and email only, for all five. Ballotpedia does not cover these seats."
+ },
+ {
+  "title": "Election Commissioner, District 2",
+  "name": "Bobbie McClure Graves",
+  "why": "Contact table only."
+ },
+ {
+  "title": "Election Commissioner, District 3",
+  "name": "Jermal Clark",
+  "why": "Contact table only."
+ },
+ {
+  "title": "Election Commissioner, District 4",
+  "name": "Yvonne R. Horton",
+  "why": "Contact table only."
+ },
+ {
+  "title": "Election Commissioner, District 5",
+  "name": "Felicia McClinton",
+  "why": "Contact table only."
+ }
 ]

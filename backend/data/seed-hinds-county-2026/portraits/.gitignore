@@ -1,0 +1,8 @@
+# Working material, reproducible from hc-manifest.json + hc-imglist.txt:
+src/            # downloaded county originals
+processed/      # the 600x750 crops
+alt/            # alternates checked and rejected
+pages/          # archived county pages
+sheet.html      # the contact sheet (published as an artifact; URL in README.md)
+_*.png          # inspection montages
+*.log
