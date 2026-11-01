@@ -10,3 +10,13 @@ data/seed-mn-legislature-2026/_house-profiles/
 data/seed-mn-legislature-2026/_senate-bios/
 data/seed-mn-cities-2026/_*
 data/seed-mn-counties-2026/_*
+
+# Python bytecode and test caches. Regenerated on every run, never source.
+# Python lives all over this tree -- 112 files directly in scripts/, plus
+# scripts/stage5, stance-news, wa-sweep, federal-bills, gold-desk and several
+# data/seed-* directories -- so these are deliberately unanchored and match at
+# any depth. Untracked bytecode is what makes `check:deletable` refuse to
+# retire a finished worktree.
+__pycache__/
+*.py[cod]
+.pytest_cache/
