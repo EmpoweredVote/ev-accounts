@@ -1020,15 +1020,66 @@ describe('PUT /claims/:claimId/rating', () => {
     warn.mockRestore();
   });
 
-  it('500s rather than 404s when the read-back finds nothing, because the rating was stored', async () => {
+  it('does not report a stored rating as a failure when the read-back ERRORS', async () => {
+    // 🔴 THE UPSERT COMMITTED IN ITS OWN TRANSACTION BEFORE THIS STATEMENT RAN. A dropped
+    // connection, the max: 3 pool timing out at connectionTimeoutMillis under load, a
+    // transient pooler error — any of them used to produce
+    // `500 { CLAIM_RATING_FAILED, 'Could not save the rating' }` about a rating that is in the
+    // table. That is false twice: the rater is told their own action did not happen, and the
+    // non-2xx skips middleware/claimInvalidation.ts, so the PRE-rating impact survives the
+    // full 30s TTL. They retry, see the old number, and have no way to tell the write landed.
+    query.mockResolvedValueOnce(rows([{ claim_id: RATED }]));
+    query.mockRejectedValueOnce(new Error('Connection terminated unexpectedly'));
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+    const res = await rate();
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      data: { impact: null, ratingCount: null, aggregateUnavailable: true },
+    });
+    // No invented number in place of the one that could not be read. 0, the old value, or the
+    // caller's own value dressed up as the mean would each be a plausible falsehood about how
+    // much the argument moved — the one kind of wrong this platform cannot afford.
+    expect(res.body.data.impact).toBeNull();
+    // It still reaches the log, with the real message, which the body never carries.
+    expect(warn).toHaveBeenCalled();
+    expect(JSON.stringify(res.body)).not.toContain('Connection terminated');
+    warn.mockRestore();
+  });
+
+  it('does not report a stored rating as a failure when the read-back finds NOTHING either', async () => {
+    // Previously a 500 "Could not save the rating", directly beneath a comment that had just
+    // established the rating WAS stored. The row cannot ordinarily vanish — the upsert matched
+    // it a moment ago and connect.claims has no DELETE grant — so this is the same degraded
+    // success as the error above, not a 404 and not a failure.
     query.mockResolvedValueOnce(rows([{ claim_id: RATED }]));
     query.mockResolvedValueOnce(rows([]));
     const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
 
     const res = await rate();
 
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      data: { impact: null, ratingCount: null, aggregateUnavailable: true },
+    });
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it('still 500s when the UPSERT itself fails, which is a rating that was NOT stored', async () => {
+    // The line the degraded 200 must not cross. Everything before the upsert commits is a
+    // genuine failure and keeps "Could not save the rating", because there is nothing in the
+    // table to be honest about — and a 2xx here would invalidate a cache that is still correct.
+    query.mockRejectedValueOnce(new Error('could not serialize access'));
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+    const res = await rate();
+
     expect(res.status).toBe(500);
-    expect(res.body.error.code).toBe('CLAIM_RATING_FAILED');
+    expect(res.body).toEqual({
+      error: { code: 'CLAIM_RATING_FAILED', message: 'Could not save the rating' },
+    });
     warn.mockRestore();
   });
 

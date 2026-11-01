@@ -169,6 +169,20 @@ function badRequest(res: Response, code: string, message: string): void {
   res.status(400).json({ error: { code, message } });
 }
 
+/**
+ * The rating is in the table; the aggregate could not be read back.
+ *
+ * A 2xx, deliberately, and the one body in this file that reports a number as `null`. See the
+ * long note above the read-back in the rating handler for why this is not a 500 and why no
+ * number is invented in place of the one that could not be read — in short: the write committed
+ * in its own transaction before this statement ran, so "Could not save the rating" would be
+ * false, and a non-2xx would additionally skip middleware/claimInvalidation.ts and leave the
+ * PRE-rating impact cached for the full 30s TTL.
+ */
+function ratingStoredWithoutAggregate(res: Response): void {
+  res.json({ data: { impact: null, ratingCount: null, aggregateUnavailable: true } });
+}
+
 /** A request that is well-formed and refers to real things, but asks for something disallowed. */
 function unprocessable(res: Response, code: string, message: string): void {
   res.status(422).json({ error: { code, message } });
@@ -620,6 +634,13 @@ claimWritesRouter.post(
 // That is correct — `impact` is a live aggregate, not a receipt for this request — and it is why
 // the response carries the aggregate rather than an echo of what was sent.
 //
+// 🔴 AND BECAUSE THE FIRST STATEMENT HAS ALREADY COMMITTED, THE SECOND ONE CANNOT FAIL THE
+// REQUEST. If the read-back errors or finds nothing, the answer is still a 200 —
+// `{ data: { impact: null, ratingCount: null, aggregateUnavailable: true } }` — never a 500
+// saying "Could not save the rating" about a rating that is in the table. The full reasoning,
+// including why no number is substituted for the one that could not be read, is at the
+// read-back itself; `ratingStoredWithoutAggregate` is the body.
+//
 // --- The two snapshot columns -------------------------------------------------------------
 //
 // rater_account_age_days and rater_verification_status are written on every rating, including a
@@ -812,6 +833,30 @@ claimWritesRouter.put(
 
     // The aggregate, after the AFTER trigger. See "Shape of the write" for why this cannot be
     // folded into the statement above.
+    //
+    // 🔴 EVERYTHING FROM HERE DOWN RUNS AFTER A WRITE THAT HAS ALREADY COMMITTED, AND THE
+    // RESPONSE MUST NEVER SAY OTHERWISE. The upsert above is its own transaction: by the time
+    // this second statement runs, the rating is in the table whatever happens next. A 500 with
+    // "Could not save the rating" would be false twice over — it tells the rater their own
+    // action did not happen, and, because middleware/claimInvalidation.ts fires only on a 2xx,
+    // it leaves the PRE-rating `impact` in the cache for the full 30s TTL. The rater then
+    // retries, is served the old number, and has no way to tell the write landed.
+    //
+    // So a failed read-back is a DEGRADED SUCCESS, not a failure. The shape:
+    //
+    //   200 { data: { impact: null, ratingCount: null, aggregateUnavailable: true } }
+    //
+    // `impact` and `ratingCount` are NULL rather than absent and rather than a guess. This
+    // route is the only place the new aggregate is served, and inventing one — 0, the old
+    // value, the caller's own value as if it were the mean — would be exactly the plausible
+    // falsehood this platform cannot afford. Null says "the number exists and I could not read
+    // it", which is what happened. `aggregateUnavailable` is the flag a client branches on
+    // (keep the number you had, re-fetch the claim); the two nulls are what a client that does
+    // not branch sees, and null is safe to render as "—" in a way that 0 is not.
+    //
+    // The caller's own `value` is still not echoed, for the reason the happy path gives below:
+    // they sent it and they got a 200, so it carries no information they do not already have.
+    // What is NOT optional is the 200 itself, because that is what drops the stale cache.
     let aggregate: ClaimAggregateRow | null;
     try {
       const { rows } = await pool.query<ClaimAggregateRow>(
@@ -820,20 +865,27 @@ claimWritesRouter.put(
       );
       aggregate = rows[0] ?? null;
     } catch (err) {
-      internalError(res, `claim rating aggregate ${claimId}`, err, RATING_FAILED);
+      // A dropped connection, a max: 3 pool timing out at connectionTimeoutMillis under load, a
+      // transient pooler error. The rating is stored; only the number is missing.
+      console.error(
+        `[focused_communities] claim rating aggregate ${claimId}:`,
+        (err as Error).message
+      );
+      ratingStoredWithoutAggregate(res);
       return;
     }
 
     if (!aggregate) {
       // The upsert matched this row a moment ago and connect.claims has no DELETE grant, so
-      // there is no ordinary way to be here. 500 rather than 404: the rating WAS stored, and
-      // telling the caller the claim does not exist would be the worse lie.
-      internalError(
-        res,
-        `claim rating aggregate ${claimId}`,
-        new Error('the claim vanished between its rating and the read-back'),
-        RATING_FAILED
+      // there is no ordinary way to be here. Not a 404: the rating WAS stored, and telling the
+      // caller the claim does not exist would be the worse lie. Not a 500 either, for the same
+      // reason — the comment used to say the rating was stored and then send a body asserting
+      // it was not.
+      console.error(
+        `[focused_communities] claim rating aggregate ${claimId}:`,
+        'the claim vanished between its rating and the read-back'
       );
+      ratingStoredWithoutAggregate(res);
       return;
     }
 
