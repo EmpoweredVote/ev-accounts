@@ -160,9 +160,19 @@ export function claimWriteInvalidation(req: Request, res: Response, next: NextFu
     // error after a body) must not queue a second invalidation behind a send that cannot happen.
     res.json = sendJson;
     if (res.statusCode < 200 || res.statusCode >= 300) return sendJson(body);
-    void invalidate(subject, res).then(() => {
-      sendJson(body);
-    });
+    // 🔴 THE CATCH IS BEFORE THE THEN, SO THE BODY IS SENT ON EXACTLY ONE PATH AND ON EVERY
+    // PATH. invalidate() is written never to reject — it guards its pool.query and attaches a
+    // .catch to cacheDel — but "written never to" is an audit, not a guarantee, and the cost of
+    // being wrong is specific: no sendJson, no error handler (this wrapper has already restored
+    // res.json), and a client holding an open socket until timeout on a request whose write
+    // COMMITTED. That is the one outcome this whole file exists to prevent. Recovering here
+    // makes it unconditional. A rejection handler attached AFTER .then would also fire when
+    // sendJson itself threw, and would then try to send the body a second time.
+    void invalidate(subject, res)
+      .catch((err: Error) => warn(`invalidation for claim ${subject} threw: ${err.message}`))
+      .then(() => {
+        sendJson(body);
+      });
     return res;
   }) as Response['json'];
 
