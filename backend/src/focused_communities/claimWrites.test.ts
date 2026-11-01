@@ -9,7 +9,22 @@ import { MAX_CLAIM_DEPTH } from './lib/utils.js';
 // in here needs a live database — the route's contract with Postgres is "what it sends and what
 // it does with what comes back", and both are visible in these calls.
 const query = vi.fn();
-vi.mock('./config/database.js', () => ({ pool: { query: (...a: unknown[]) => query(...a) } }));
+/**
+ * PATCH /claims/:claimId is the one route in the module that checks a client OUT of the pool,
+ * because set_config('fc.actor_id', …, true) and the UPDATE have to share a transaction.
+ *
+ * The client's `query` is the SAME spy as the pool's, so every assertion in this file still
+ * reads one ordered list of statements whether they were sent on a pooled connection or inside
+ * the transaction. `release` is a spy of its own, because releasing it on EVERY path — commit,
+ * zero rows, thrown statement — is the thing the transaction has to get right.
+ */
+const release = vi.fn();
+vi.mock('./config/database.js', () => ({
+  pool: {
+    query: (...a: unknown[]) => query(...a),
+    connect: async () => ({ query: (...a: unknown[]) => query(...a), release }),
+  },
+}));
 
 // The engine's requireAuth, reduced to the outcomes this route depends on (as app.test.ts does).
 vi.mock('../middleware/auth.js', () => ({
@@ -112,6 +127,7 @@ const insertSql = () => String(insertCall()[0]);
 
 beforeEach(() => {
   query.mockReset();
+  release.mockReset();
   limit.mockReset();
   limit.mockResolvedValue({ success: true, reset: Date.now() + 1000 });
   ratingLimit.mockReset();
@@ -1018,6 +1034,577 @@ describe('PUT /claims/:claimId/rating', () => {
     // moved them too would double every rating, and a stale count reads as a legitimate number.
     expect(all).not.toMatch(/rating_(count|sum)\s*=/);
     expect(all).not.toContain('UPDATE connect.claims');
+  });
+});
+
+// ── PATCH /claims/:claimId ─────────────────────────────────────────────────────────────────
+
+const EDITED = uuid(300);
+const NEW_BODY = 'The budget covers the first three years, not the first two.';
+
+/** The row the UPDATE hands back: the insert's columns plus the caller's own rating. */
+const editedRow = (over: Record<string, unknown> = {}) => ({
+  ...inserted({ id: EDITED, body: NEW_BODY }),
+  my_rating: null,
+  ...over,
+});
+
+/**
+ * The four statements a successful edit sends: BEGIN, set_config, the UPDATE, COMMIT.
+ * They all land on the same spy, so a test can read them in order.
+ */
+function mockEdit(over: Record<string, unknown> = {}) {
+  query.mockResolvedValueOnce(rows([])); // BEGIN
+  query.mockResolvedValueOnce(rows([{ set_config: AUTHOR }])); // set_config
+  query.mockResolvedValueOnce(rows([editedRow(over)])); // the UPDATE
+  query.mockResolvedValueOnce(rows([])); // COMMIT
+}
+
+/** The UPDATE matched nothing; the route then asks why, on a pooled connection. */
+function mockEditRefused(state: Record<string, unknown> | null) {
+  query.mockResolvedValueOnce(rows([])); // BEGIN
+  query.mockResolvedValueOnce(rows([{ set_config: AUTHOR }])); // set_config
+  query.mockResolvedValueOnce(rows([])); // the UPDATE, matching nothing
+  query.mockResolvedValueOnce(rows([])); // COMMIT
+  query.mockResolvedValueOnce(rows(state ? [state] : [])); // the classifying lookup
+}
+
+const patch = (claimId: string = EDITED, body: unknown = { body: NEW_BODY }) =>
+  request(app).patch(`/fc/api/claims/${claimId}`).set(...AUTH).send(body as object);
+
+const updateCall = () => query.mock.calls.find((c) => String(c[0]).startsWith('UPDATE'))!;
+const updateSql = () => String(updateCall()[0]);
+const actorCall = () => query.mock.calls.find((c) => String(c[0]).includes('set_config'))!;
+
+describe('PATCH /claims/:claimId', () => {
+  it('lets the author edit after the claim has ratings and children', async () => {
+    // 🔴 The case the brief names, and the one with a consequence worth stating: ratings cast
+    // against the OLD wording carry over to the new one verbatim, and the children argue with
+    // text that has changed under them. The edit is allowed anyway — withholding it would mean
+    // the first rating freezes a typo forever — so the statement must not touch either.
+    mockEdit({ impact: '6.6000', rating_count: 20, child_supports_count: 4, child_opposes_count: 2 });
+
+    const res = await patch();
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.body).toBe(NEW_BODY);
+    expect(res.body.data.ratingCount).toBe(20);
+    expect(res.body.data.impact).toBe(6.6);
+    expect(res.body.data.childSupports).toBe(4);
+    expect(res.body.data.childOpposes).toBe(2);
+  });
+
+  it('writes body and updated_at and nothing else', async () => {
+    mockEdit();
+    await patch();
+
+    const sql = updateSql();
+    // The SET list, exactly. rating_count, rating_sum and impact belong to CA_0345's triggers
+    // and its generated column; path, depth and community_id belong to trg_claims_derive_position
+    // (BEFORE INSERT OR UPDATE OF parent_claim_id, which a body edit does not fire); the child
+    // counts belong to trg_claims_bump_child_counts_move. An edit that moved any of them would
+    // be silently rewriting somebody else's arithmetic.
+    const setList = /SET\s+([\s\S]*?)\s+WHERE/.exec(sql)![1];
+    for (const forbidden of ['rating_count', 'rating_sum', 'impact', 'path', 'depth',
+      'community_id', 'child_supports_count', 'child_opposes_count', 'parent_claim_id',
+      'side', 'author_id', 'author_display_name', 'moderation_status', 'merged_into_claim_id']) {
+      expect(setList, forbidden).not.toContain(forbidden);
+    }
+    expect(setList).toContain('body');
+    expect(setList).toContain('updated_at');
+    expect(query.mock.calls.map((c) => String(c[0])).join(' ')).not.toMatch(/\bDELETE\b/i);
+  });
+
+  it('records the edit in history with the actor', async () => {
+    mockEdit();
+    await patch();
+
+    // 🔴 The route writes NO claim_edits row. connect.log_claim_edit does, and it refuses to —
+    // it RAISES — unless fc.actor_id is set, so the only thing this route owes the audit trail
+    // is the actor, set with is_local = true in the SAME transaction as the UPDATE.
+    const statements = query.mock.calls.map((c) => String(c[0]));
+    expect(statements[0]).toBe('BEGIN');
+    expect(statements[1]).toContain("set_config('fc.actor_id'");
+    expect(statements[1]).toContain('true'); // is_local: dies with the transaction
+    expect(statements[2]).toMatch(/^UPDATE/);
+    expect(statements[3]).toBe('COMMIT');
+    expect(actorCall()[1]).toEqual([AUTHOR]);
+    expect(statements.join(' ')).not.toContain('claim_edits');
+
+    // And the trigger really is what the route is relying on. Read from the migration rather
+    // than trusted, because nothing else in this suite can see it: the setting's name, the
+    // RAISE when it is unset, and the AFTER UPDATE trigger that calls the function.
+    const migration = readFileSync(
+      new URL('../../migrations/CA_0341_focused_communities_claims.sql', import.meta.url),
+      'utf8'
+    );
+    expect(migration).toContain("current_setting('fc.actor_id', true)");
+    expect(migration).toContain('AFTER UPDATE ON connect.claims');
+    expect(migration).toContain('EXECUTE FUNCTION connect.log_claim_edit()');
+  });
+
+  it('releases the client on every path, and only ever holds one', async () => {
+    mockEdit();
+    await patch();
+    expect(release).toHaveBeenCalledTimes(1);
+
+    // Zero rows: the transaction still ends and the client still goes back.
+    query.mockReset();
+    release.mockReset();
+    mockEditRefused(null);
+    await patch();
+    expect(release).toHaveBeenCalledTimes(1);
+
+    // A thrown statement: ROLLBACK, release, and only then a response.
+    query.mockReset();
+    release.mockReset();
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    query.mockResolvedValueOnce(rows([])); // BEGIN
+    query.mockResolvedValueOnce(rows([{ set_config: AUTHOR }]));
+    query.mockRejectedValueOnce(new Error('canceling statement due to statement timeout'));
+    query.mockResolvedValueOnce(rows([])); // ROLLBACK
+    const res = await patch();
+    expect(res.status).toBe(500);
+    expect(release).toHaveBeenCalledTimes(1);
+    expect(query.mock.calls.map((c) => String(c[0]))).toContain('ROLLBACK');
+    warn.mockRestore();
+  });
+
+  it('404s a non-author editor, and never 403', async () => {
+    mockEditRefused(null);
+
+    const res = await patch();
+
+    // 🔴 403 would confirm two things at once: that this uuid names a claim, and that somebody
+    // else wrote it. 404 says neither. The ownership predicate is in the UPDATE itself, so a
+    // non-author's statement matches no row rather than being refused after a read.
+    expect(res.status).toBe(404);
+    expect(res.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
+
+    // The predicate itself, because a mocked pool cannot show a stranger being refused — only
+    // the statement that refuses them. EQUALITY against the caller's own parameter: `author_id
+    // IS NOT NULL` would satisfy a looser assertion and let anybody edit anybody's claim.
+    const where = /WHERE([\s\S]*?)RETURNING/.exec(updateSql())![1];
+    const owner = /AND author_id = \$(\d)::uuid/.exec(where);
+    expect(owner, 'the UPDATE must test author_id against a parameter').not.toBeNull();
+    expect(updateCall()[1][Number(owner![1]) - 1]).toBe(AUTHOR);
+  });
+
+  it('cannot edit a root claim, because a root has no author', async () => {
+    // All 61 roots are seeded by trg_communities_seed_root_claim with author_id NULL — they are
+    // the community's question, not anyone's contribution. `author_id = $caller` is NULL, and
+    // therefore false, for every caller, so a root is uneditable with no special case. This pins
+    // it so a later reader does not "fix" the NULL comparison into something that admits one.
+    mockEditRefused({ merged_into_claim_id: null });
+
+    const res = await patch();
+
+    expect(res.status).toBe(404);
+    expect(res.body.error.code).toBe('CLAIM_NOT_FOUND');
+    expect(updateSql()).not.toContain('IS NULL OR');
+    expect(updateSql()).not.toContain('COALESCE');
+  });
+
+  it('404s a hidden claim, byte-identical to an absent one', async () => {
+    mockEditRefused(null); // the classifying lookup is scoped to visible rows, so hidden reads empty
+    const hidden = await patch();
+
+    query.mockReset();
+    release.mockReset();
+    mockEditRefused(null);
+    const absent = await patch();
+
+    expect(hidden.status).toBe(404);
+    expect(hidden.body).toEqual(absent.body);
+    expect(updateSql()).toContain("moderation_status = 'visible'");
+  });
+
+  it('409s a merged claim and names the one that supersedes it', async () => {
+    const TARGET = uuid(500);
+    mockEditRefused({ merged_into_claim_id: TARGET });
+
+    const res = await patch();
+
+    // Readers follow the merge to the target, so a rewrite of the superseded copy is text
+    // nobody will meet — the same reason POST /children refuses a merged parent. 409 with
+    // somewhere to go, rather than a 404 that loses the draft. The classifying lookup is
+    // scoped to the caller's OWN visible claims, so nobody else learns the target exists.
+    expect(res.status).toBe(409);
+    expect(res.body).toEqual({
+      error: {
+        code: 'CLAIM_MERGED',
+        message: 'This point has been merged into another claim',
+        mergedInto: TARGET,
+      },
+    });
+    const classify = String(query.mock.calls[4][0]);
+    expect(classify).toContain('author_id');
+    expect(classify).toContain("moderation_status = 'visible'");
+    expect(updateSql()).toContain('merged_into_claim_id IS NULL');
+  });
+
+  it('accepts an unchanged body: 200, and no history is manufactured', async () => {
+    // trg_log_claim_edit has a WHEN clause gating on OLD.body IS DISTINCT FROM NEW.body, so
+    // resending the same text writes no history row. The route agrees rather than 422ing, and
+    // — the part that is actually ours — it does not bump updated_at either, so a client
+    // retrying cannot make an unedited claim LOOK edited with nothing behind it.
+    mockEdit({ body: BODY, updated_at: TS });
+
+    const res = await patch(EDITED, { body: BODY });
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.updatedAt).toBe(TS);
+    const setList = /SET\s+([\s\S]*?)\s+WHERE/.exec(updateSql())![1];
+    expect(setList).toMatch(/updated_at\s*=\s*CASE WHEN body IS DISTINCT FROM/);
+  });
+
+  it('reuses the create route bounds rather than declaring its own', async () => {
+    for (const body of [undefined, '', '   ', 'x', 'No.', '+1', 'nine char', 42, 'y'.repeat(501)]) {
+      query.mockReset();
+      const res = await patch(EDITED, { body });
+      expect(res.status, `body=${JSON.stringify(body)?.slice(0, 20)}`).toBe(400);
+      expect(res.body.error.code).toBe('INVALID_BODY');
+      // 🔴 The same sentence the create route sends. An edit that could produce a body POST
+      // /children would have refused is a hole, not a feature.
+      expect(res.body.error.message).toBe('body must be 10-500 characters');
+      expect(query).not.toHaveBeenCalled();
+    }
+
+    // And the constants are declared exactly once in the route file.
+    const route = readFileSync(new URL('./routes/claimWrites.ts', import.meta.url), 'utf8');
+    expect(route.match(/const BODY_MIN/g)).toHaveLength(1);
+    expect(route.match(/const BODY_MAX/g)).toHaveLength(1);
+  });
+
+  it('accepts a body at both bounds, measured after trimming', async () => {
+    for (const body of ['y'.repeat(10), `  ${'y'.repeat(10)}  `, 'y'.repeat(500)]) {
+      query.mockReset();
+      release.mockReset();
+      mockEdit({ body: body.trim() });
+      const res = await patch(EDITED, { body });
+      expect(res.status, `len=${body.trim().length}`).toBe(200);
+      expect(updateCall()[1]).toContain(body.trim());
+    }
+  });
+
+  it('404s a claimId that is not a uuid, without touching the database', async () => {
+    for (const bad of ['not-a-uuid', '123', `${EDITED}x`, `{${EDITED}}`]) {
+      query.mockReset();
+      const res = await patch(bad);
+      expect(res.status, bad).toBe(404);
+      expect(res.body.error.code).toBe('CLAIM_NOT_FOUND');
+      expect(query).not.toHaveBeenCalled();
+      expect(release).not.toHaveBeenCalled();
+    }
+  });
+
+  it('canonicalises an uppercase claim id before it reaches the database', async () => {
+    mockEdit();
+    const res = await patch(EDITED.toUpperCase());
+    expect(res.status).toBe(200);
+    expect(updateCall()[1][0]).toBe(EDITED);
+  });
+
+  it('is not rate limited, matching posts', async () => {
+    mockEdit();
+    await patch();
+    // An edit creates no row a maven has to moderate and adds nothing to the tree — it replaces
+    // text the author already got through the limiter once. PATCH /posts/:id is unmetered for
+    // the same reason, and metering an edit would leave a contributor stuck with a typo.
+    expect(limit).not.toHaveBeenCalled();
+    expect(ratingLimit).not.toHaveBeenCalled();
+  });
+
+  it('requires a connected account, and a signed-in caller at all', async () => {
+    const inform = await request(app)
+      .patch(`/fc/api/claims/${EDITED}`)
+      .set('Authorization', 'Bearer inform')
+      .send({ body: NEW_BODY });
+    expect(inform.status).toBe(403);
+    expect(inform.body.reason).toBe('tier');
+
+    const anonymous = await request(app).patch(`/fc/api/claims/${EDITED}`).send({ body: NEW_BODY });
+    expect(anonymous.status).toBe(401);
+
+    expect(query).not.toHaveBeenCalled();
+    expect(release).not.toHaveBeenCalled();
+  });
+
+  it('500s with a fixed message when the UPDATE fails, leaking no Postgres text', async () => {
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    query.mockResolvedValueOnce(rows([])); // BEGIN
+    query.mockResolvedValueOnce(rows([{ set_config: AUTHOR }]));
+    query.mockRejectedValueOnce(
+      new Error('new row for relation "claims" violates check constraint "claims_body_not_blank"')
+    );
+    query.mockResolvedValueOnce(rows([])); // ROLLBACK
+    query.mockResolvedValueOnce(rows([])); // a classifying lookup, which must NOT happen
+
+    const res = await patch();
+
+    expect(res.status).toBe(500);
+    expect(res.body).toEqual({
+      error: { code: 'CLAIM_EDIT_FAILED', message: 'Could not save the edit' },
+    });
+    // 🔴 A statement that THREW is not the same as one that matched no row, and the route must
+    // not fall through into the refusal path and answer 404 — telling an author their claim is
+    // gone because the database hiccuped. Four statements: BEGIN, set_config, the UPDATE,
+    // ROLLBACK. The fifth mock above is deliberately left unconsumed.
+    expect(query.mock.calls).toHaveLength(4);
+    // Not the create route's code: a client retrying on one and not the other needs to tell
+    // them apart, and "Could not create the claim" is a lie here.
+    expect(JSON.stringify(res.body)).not.toContain('constraint');
+    expect(JSON.stringify(res.body)).not.toContain('CLAIM_CREATE_FAILED');
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it('500s rather than 404s when the classifying lookup itself fails', async () => {
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    query.mockResolvedValueOnce(rows([])); // BEGIN
+    query.mockResolvedValueOnce(rows([{ set_config: AUTHOR }]));
+    query.mockResolvedValueOnce(rows([])); // the UPDATE matched nothing
+    query.mockResolvedValueOnce(rows([])); // COMMIT
+    query.mockRejectedValueOnce(new Error('connection terminated'));
+
+    const res = await patch();
+
+    // A database that cannot answer is not a missing claim. 404 would tell an author their
+    // own claim is gone, which is a different and much worse thing to be wrong about.
+    expect(res.status).toBe(500);
+    expect(res.body.error.code).toBe('CLAIM_EDIT_FAILED');
+    warn.mockRestore();
+  });
+
+  it('serves the author their own rating back rather than nulling it', async () => {
+    // 🔴 myRating is the one per-caller field in a Claim. An author who rated their own claim
+    // and then fixed a typo must not get a body back that says they never rated it — a client
+    // that replaces its local claim with this response would wipe the rating from the UI.
+    mockEdit({ my_rating: 8 });
+
+    const res = await patch();
+
+    expect(res.body.data.myRating).toBe(8);
+    expect(updateSql()).toContain('connect.claim_ratings');
+    expect(updateSql()).toContain('AS my_rating');
+  });
+
+  it('serializes the Claim shape and no internal field', async () => {
+    mockEdit();
+    const res = await patch();
+
+    expect(res.body).toEqual({
+      data: {
+        id: EDITED,
+        side: 'supports',
+        body: NEW_BODY,
+        authorPseudonym: 'Demo Finch',
+        impact: 5,
+        ratingCount: 0,
+        childSupports: 0,
+        childOpposes: 0,
+        isHidden: false,
+        mergedInto: null,
+        createdAt: TS,
+        updatedAt: TS,
+        myRating: null,
+      },
+    });
+    const serialized = JSON.stringify(res.body);
+    for (const leaked of ['author_id', 'community_id', 'path', 'depth', 'moderation_status',
+      'child_supports_count', 'merged_into_claim_id', AUTHOR, 'Abraham Lincoln']) {
+      expect(serialized, leaked).not.toContain(leaked);
+    }
+  });
+});
+
+// ── DELETE /claims/:claimId ────────────────────────────────────────────────────────────────
+
+describe('DELETE /claims/:claimId', () => {
+  it('answers DELETE with 405 and an Allow header', async () => {
+    const res = await request(app).delete(`/fc/api/claims/${EDITED}`).set(...AUTH);
+
+    // Memory over Moderation, as for threads and posts: a claim is withdrawn, not removed, and
+    // connect.claims carries no DELETE grant for any role this process can be. 405 names the
+    // methods that DO work rather than pretending the route is missing.
+    expect(res.status).toBe(405);
+    expect(res.headers.allow).toBe('GET, PATCH');
+    expect(res.body).toEqual({
+      error: { code: 'DELETE_NOT_ALLOWED', message: 'Claims cannot be deleted' },
+    });
+    expect(query).not.toHaveBeenCalled();
+  });
+
+  it('refuses the method before it asks who is calling', async () => {
+    // No Authorization header at all. 405 is a fact about the resource, not about the caller,
+    // so answering 401 first would make "can this be deleted?" an authenticated question.
+    const res = await request(app).delete(`/fc/api/claims/${EDITED}`);
+    expect(res.status).toBe(405);
+    expect(query).not.toHaveBeenCalled();
+  });
+});
+
+// ── GET /claims/:claimId/edits ─────────────────────────────────────────────────────────────
+
+const editRow = (over: Record<string, unknown> = {}) => ({
+  id: uuid(900),
+  old_body: 'The budget covers the first two years.',
+  by_author: true,
+  edited_at: TS,
+  ...over,
+});
+
+/** The two statements the history read runs: the visibility lookup, then the history. */
+function mockHistory(history: Record<string, unknown>[], status: string | null = 'visible') {
+  query.mockResolvedValueOnce(rows(status ? [{ moderation_status: status }] : []));
+  if (status) query.mockResolvedValueOnce(rows(history));
+}
+
+const getEdits = (claimId: string = EDITED) => request(app).get(`/fc/api/claims/${claimId}/edits`);
+
+describe('GET /claims/:claimId/edits', () => {
+  it('serves edit history without authentication', async () => {
+    mockHistory([editRow()]);
+
+    const res = await getEdits();
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      data: [{ id: uuid(900), oldBody: 'The budget covers the first two years.', byAuthor: true, editedAt: TS }],
+    });
+  });
+
+  it('never serves actor_id or any other account identifier', async () => {
+    // 🔴 connect.claim_edits.actor_id is a raw account uuid and this endpoint is anonymous, so
+    // returning it would publish a stable identifier for every editor to every reader. The
+    // column is not even SELECTed: the comparison against the claim's author happens in SQL, so
+    // no account uuid reaches this process, let alone the response.
+    mockHistory([editRow()]);
+    const res = await getEdits();
+
+    expect(JSON.stringify(res.body)).not.toContain(AUTHOR);
+    expect(Object.keys(res.body.data[0]).sort()).toEqual(['byAuthor', 'editedAt', 'id', 'oldBody']);
+    const sql = String(query.mock.calls[1][0]);
+    expect(sql).toContain('(e.actor_id IS NOT DISTINCT FROM c.author_id) AS by_author');
+    // The column may appear ONLY inside that comparison. `e.actor_id AS by_author` would pass
+    // every assertion above — the mock decides what comes back, not the SQL — and would ship a
+    // raw account uuid to anonymous readers.
+    expect(sql).not.toMatch(/e\.actor_id(?!\s+IS NOT DISTINCT FROM)/);
+    expect(sql).not.toContain('author_display_name');
+  });
+
+  it('serves kind = edit only, and never a curation row', async () => {
+    // move, merge, unmerge and hide are Task 7's Maven actions. A `hide` row carries old_body,
+    // so serving it here would hand back the exact text the tombstone exists to withhold — and
+    // publishing who moved or merged what is a product decision nobody has made.
+    mockHistory([editRow()]);
+    const res = await getEdits();
+
+    const sql = String(query.mock.calls[1][0]);
+    expect(sql).toContain("kind = 'edit'");
+    for (const curation of ['move', 'merge', 'unmerge', 'hide']) {
+      expect(sql, curation).not.toContain(`'${curation}'`);
+    }
+    // And the kind is a filter, not a field: there is only one kind in the response, so
+    // naming it on every entry would only invite the other four to be added beside it.
+    expect(res.body.data[0]).not.toHaveProperty('kind');
+  });
+
+  it('serves no history at all for a hidden claim, and never its old body', async () => {
+    const SECRET = 'the text the tombstone exists to withhold';
+    mockHistory([editRow({ old_body: SECRET })], 'hidden');
+
+    const res = await getEdits();
+
+    // Like GET /claims/:id, a hidden claim is a tombstone rather than a 404: it is already
+    // visible as one in its parent's column, so 404 here would hide nothing. What it must not
+    // do is serve the body. The history query never runs.
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ data: [] });
+    expect(JSON.stringify(res.body)).not.toContain(SECRET);
+    expect(query.mock.calls).toHaveLength(1);
+  });
+
+  it('404s an absent claim, and a non-uuid id without touching the database', async () => {
+    mockHistory([], null);
+    const absent = await getEdits();
+    expect(absent.status).toBe(404);
+    expect(absent.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
+
+    for (const bad of ['not-a-uuid', '123', `${EDITED}x`]) {
+      query.mockReset();
+      const res = await getEdits(bad);
+      expect(res.status, bad).toBe(404);
+      expect(query).not.toHaveBeenCalled();
+    }
+  });
+
+  it('orders newest first, so each entry after-text is the entry above it', async () => {
+    // 🔴 connect.claim_edits HAS NO new_body. One row records the text BEFORE one edit, so the
+    // text AFTER an entry is the oldBody of the entry above it — and, for the newest entry, the
+    // claim's current body. Newest-first is what makes that reading work, and it is the same
+    // order GET /posts/:id/edits serves.
+    const older = editRow({ id: uuid(901), old_body: 'first draft of the claim', edited_at: '2026-04-16T12:00:00.000000+00:00' });
+    const newer = editRow({ id: uuid(902), old_body: 'second draft of the claim' });
+    mockHistory([newer, older]);
+
+    const res = await getEdits();
+
+    expect(res.body.data.map((e: { oldBody: string }) => e.oldBody)).toEqual([
+      'second draft of the claim',
+      'first draft of the claim',
+    ]);
+    expect(String(query.mock.calls[1][0])).toContain('ORDER BY e.edited_at DESC');
+  });
+
+  it('selects edited_at in the PostgREST text form, not as a Date', async () => {
+    mockHistory([editRow()]);
+    await getEdits();
+    expect(String(query.mock.calls[1][0])).toContain("to_json(e.edited_at) #>> '{}' AS edited_at");
+  });
+
+  it('serves an empty history for a claim nobody has edited', async () => {
+    mockHistory([]);
+    const res = await getEdits();
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ data: [] });
+  });
+
+  it('500s with a fixed message when the history query fails, leaking no Postgres text', async () => {
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    query.mockResolvedValueOnce(rows([{ moderation_status: 'visible' }]));
+    query.mockRejectedValueOnce(new Error('relation "connect.claim_edits" does not exist'));
+
+    const res = await getEdits();
+
+    // 🔴 Unlike GET /posts/:id/edits, which echoes err.message back, this is an ANONYMOUS
+    // endpoint: a raw Postgres message names tables, columns and types, which turns a failed
+    // read into a schema probe.
+    expect(res.status).toBe(500);
+    expect(res.body).toEqual({
+      error: { code: 'CLAIM_EDITS_FETCH_FAILED', message: 'Could not read the edit history' },
+    });
+    expect(JSON.stringify(res.body)).not.toContain('relation');
+    warn.mockRestore();
+  });
+
+  it('500s rather than 404s when the visibility lookup itself fails', async () => {
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+    query.mockRejectedValueOnce(new Error('connection terminated'));
+
+    const res = await getEdits();
+
+    expect(res.status).toBe(500);
+    expect(res.body.error.code).toBe('CLAIM_EDITS_FETCH_FAILED');
+    warn.mockRestore();
+  });
+
+  it('never writes anything', async () => {
+    mockHistory([editRow()]);
+    await getEdits();
+    const all = query.mock.calls.map((c) => String(c[0])).join(' ');
+    expect(all).not.toMatch(/\b(INSERT|UPDATE|DELETE)\b/i);
+    expect(release).not.toHaveBeenCalled();
   });
 });
 

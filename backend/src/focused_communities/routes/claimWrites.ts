@@ -2,8 +2,11 @@
 //
 // routes/claims.ts reads the tree; this is what adds to it and rates it:
 //
-//   POST /claims/:parentId/children — attach a `supports` or `opposes` claim to a parent
-//   PUT  /claims/:claimId/rating    — this reader's 1-9 impact rating for one claim
+//   POST   /claims/:parentId/children — attach a `supports` or `opposes` claim to a parent
+//   PUT    /claims/:claimId/rating    — this reader's 1-9 impact rating for one claim
+//   PATCH  /claims/:claimId           — the author rewrites their own claim
+//   DELETE /claims/:claimId           — 405: a claim is withdrawn, never removed
+//   GET    /claims/:claimId/edits     — that claim's edit history, to anyone
 //
 // The paths are bare because app.ts mounts this router under the Focused Communities mount points
 // (/fc/api and /api/fc), exactly as for its siblings. Mounting is Task 8's.
@@ -25,6 +28,7 @@
 
 import { Router } from 'express';
 import type { Request, Response } from 'express';
+import type { PoolClient } from 'pg';
 import { pool } from '../config/database.js';
 import { ts } from '../lib/sql.js';
 import { requireAuth, type FcRequest } from '../middleware/auth.js';
@@ -171,7 +175,7 @@ function unprocessable(res: Response, code: string, message: string): void {
 }
 
 /**
- * The two things that can fail in this file, as the caller is told about them.
+ * The four things that can fail in this file, as the caller is told about them.
  *
  * They are separate because "Could not create the claim" is a lie when a rating failed, and a
  * client that retries on one and not the other needs to be able to tell them apart. Frozen
@@ -184,6 +188,14 @@ const CREATE_FAILED = Object.freeze({
 const RATING_FAILED = Object.freeze({
   code: 'CLAIM_RATING_FAILED',
   message: 'Could not save the rating',
+});
+const EDIT_FAILED = Object.freeze({
+  code: 'CLAIM_EDIT_FAILED',
+  message: 'Could not save the edit',
+});
+const EDITS_FETCH_FAILED = Object.freeze({
+  code: 'CLAIM_EDITS_FETCH_FAILED',
+  message: 'Could not read the edit history',
 });
 
 /**
@@ -246,8 +258,13 @@ const RETURNING_COLUMNS = `id, side, body, author_display_name, moderation_statu
  * appear in a response — isHidden is the only thing a reader learns about moderation. A row
  * created a millisecond ago is always visible, so the hidden branch is unreachable here; it is
  * kept so this function stays interchangeable with the reader's.
+ *
+ * `myRating` is a PARAMETER rather than a field of the row, because it is the one per-caller
+ * value in a Claim and the two writers that build one know it from different places: a claim
+ * created a millisecond ago has none (null, stated), and an edited claim may well have one the
+ * author cast themselves (read back, see the edit route).
  */
-function toClaim(row: InsertedClaimRow): Claim {
+function toClaim(row: InsertedClaimRow, myRating: number | null): Claim {
   const isHidden = row.moderation_status !== 'visible';
   return {
     id: row.id,
@@ -262,12 +279,7 @@ function toClaim(row: InsertedClaimRow): Claim {
     mergedInto: row.merged_into_claim_id ?? null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-    // 🔴 Null, and not because it is unimplemented. A claim created a millisecond ago has no
-    // ratings — least of all from its author, who does not get a free one for writing it — so
-    // `myRating` is null and `impact` is the neutral 5 the prior puts an unrated claim at.
-    // This is the only field in the response the route states rather than reads back, because
-    // the row it would read is one this statement did not and must not create.
-    myRating: null,
+    myRating,
   };
 }
 
@@ -537,7 +549,12 @@ claimWritesRouter.post(
     // column. Deliberately NOT papered over here with a partial invalidation that drops one key
     // and leaves the rest, which is harder to reason about than a uniform 30-second lag.
 
-    res.status(201).json({ data: toClaim(row) });
+    // 🔴 myRating is null, and not because it is unimplemented. A claim created a millisecond
+    // ago has no ratings — least of all from its author, who does not get a free one for
+    // writing it — so it is null and `impact` is the neutral 5 the prior puts an unrated claim
+    // at. This is the only field in the response this route states rather than reads back,
+    // because the row it would read is one this statement did not and must not create.
+    res.status(201).json({ data: toClaim(row, null) });
   }
 );
 
@@ -820,3 +837,335 @@ claimWritesRouter.put(
     });
   }
 );
+
+// --- Editing a claim -------------------------------------------------------
+//
+// PATCH /claims/:claimId — the author rewrites their own claim.
+//
+// 🔴 THIS IS THE ONE ROUTE IN THE MODULE THAT HOLDS A POOL CLIENT ACROSS ROUND TRIPS, and the
+// reason is connect.log_claim_edit. That trigger reads current_setting('fc.actor_id', true) and
+// RAISES when it is unset — claim_edits.actor_id is NOT NULL, and an edit with no recorded actor
+// is an unaudited edit — so the setting and the UPDATE must be in the SAME transaction. There is
+// no way to say that in one statement:
+//
+//   * set_config(…, true) is transaction-local, and a single pool.query is its own transaction,
+//     so the setting would be gone before the UPDATE's trigger ran.
+//   * set_config(…, false) would survive, which is worse: it would survive onto the next request
+//     that checks out the same connection, and attribute THAT person's edit to this one.
+//   * A CTE — WITH cfg AS (SELECT set_config(…)) UPDATE … — is not a guarantee. The evaluation
+//     order of a CTE relative to a data-modifying statement's AFTER triggers is not something to
+//     bet a NOT NULL audit column on.
+//
+// So: BEGIN, set_config, UPDATE, COMMIT, and the client goes back in a `finally`. The pool is
+// max: 3 behind a shared Supavisor pooler, which is exactly why this is the only place that does
+// it: edits are rare and unmetered, while creates and ratings — the frequent writes — keep their
+// single statement. Nothing else goes inside the transaction, and in particular there is NO
+// pre-flight SELECT in it: everything the route needs to decide is in the UPDATE's own WHERE.
+//
+// --- Why the ownership test is a predicate and not a read -------------------------------------
+//
+// `author_id = $caller` sits in the UPDATE, so a non-author's statement matches no row. The
+// answer is 404, NOT 403, and the difference matters: 403 confirms both that this uuid names a
+// claim and that somebody else wrote it. 404 says neither, and stays byte-identical to the answer
+// for an id that names nothing at all.
+//
+// That also settles a case with no special code in it. Every root claim has author_id IS NULL —
+// a root is the community's question, seeded by trg_communities_seed_root_claim, not anyone's
+// contribution — and `NULL = $caller` is NULL, therefore not true, for every caller. A root is
+// uneditable through this route by the same predicate that keeps strangers out. Do not "fix" the
+// NULL comparison.
+//
+// --- What an edit must not disturb ------------------------------------------------------------
+//
+// The SET list is two columns, and the rest of the row is other people's arithmetic:
+//
+//   * rating_count and rating_sum belong to connect.bump_claim_rating_aggregate, and `impact` is
+//     GENERATED ALWAYS from them (CA_0345). 🔴 RATINGS CAST AGAINST THE OLD WORDING CARRY OVER TO
+//     THE NEW ONE VERBATIM. That is deliberate — the brief allows editing a claim that already
+//     has ratings and children — but it is a real consequence: an author can rewrite a claim out
+//     from under twenty ratings. Resetting the aggregate instead would make the first rating
+//     freeze a typo forever, which is worse, and is why this is left as it is rather than solved
+//     here.
+//   * path, depth and community_id belong to trg_claims_derive_position, which is BEFORE INSERT
+//     OR UPDATE OF parent_claim_id — a body edit does not fire it, and must not start to.
+//     CA_0344's claims_depth_within_cap is therefore untouched.
+//   * child_supports_count and child_opposes_count belong to the count triggers.
+//
+// --- A no-op edit succeeds, and manufactures nothing -------------------------------------------
+//
+// trg_log_claim_edit is AFTER UPDATE … WHEN (OLD.body IS DISTINCT FROM NEW.body OR …), so
+// resending the identical body writes no history row. The route agrees with the trigger rather
+// than 422ing: a client retrying a request it is not sure landed gets 200 and the claim, and
+// cannot manufacture history by doing it twice.
+//
+// The CASE on updated_at is the other half of that agreement, and it is ours rather than the
+// trigger's. connect.claims has no touch trigger — "updated_at is set by the routes", CA_0341 —
+// so an unconditional `updated_at = now()` would move the one timestamp a reader uses to tell an
+// edited claim from an untouched one, with no history row behind it. In SET, the unqualified
+// `body` on the right-hand side is the OLD value, which is what makes the comparison work.
+
+/** The UPDATE's RETURNING: the serializer's columns, plus this caller's own rating. */
+interface EditedClaimRow extends InsertedClaimRow {
+  /** INTEGER or NULL — the author's own 1-9 rating of the claim they just edited. */
+  my_rating: number | null;
+}
+
+/** What the classifying lookup reads when the UPDATE matched nothing. */
+interface EditedClaimState {
+  merged_into_claim_id: string | null;
+}
+
+claimWritesRouter.patch(
+  '/claims/:claimId',
+  ...requireAuth,
+  requireConnected,
+  async (req: Request, res: Response) => {
+    const user = (req as FcRequest).user!;
+
+    const raw = req.params.claimId as string;
+    if (!UUID_RE.test(raw)) {
+      notFound(res); // names no claim: no client checked out, no query run
+      return;
+    }
+    const claimId = raw.toLowerCase();
+
+    // 🔴 THE CREATE ROUTE'S BOUNDS, NOT A SECOND PAIR. An edit that could produce a body POST
+    // /claims/:parentId/children would have refused is a hole, not a feature — so the constants
+    // and the sentence the caller gets are both the same ones.
+    const { body } = req.body as { body?: unknown };
+    const trimmedBody = (typeof body === 'string' ? body : '').trim();
+    if (trimmedBody.length < BODY_MIN || trimmedBody.length > BODY_MAX) {
+      badRequest(res, 'INVALID_BODY', `body must be ${BODY_MIN}-${BODY_MAX} characters`);
+      return;
+    }
+
+    // 🔴 NO RATE LIMITER, matching PATCH /posts/:id. An edit creates no row a maven has to
+    // moderate and adds nothing to the tree — it replaces text that already cost the author one
+    // of their five an hour. Metering it would leave a contributor stuck with a typo, and the
+    // existence-oracle argument that puts the limiter in front of the lookups on the other two
+    // routes does not apply: this one answers 404 for every claim the caller did not write, so
+    // it teaches nothing about which uuids are real.
+
+    let client: PoolClient;
+    try {
+      client = await pool.connect();
+    } catch (err) {
+      internalError(res, `claim edit connect ${claimId}`, err, EDIT_FAILED);
+      return;
+    }
+
+    // The failure is CARRIED out of the block rather than answered inside it, so the client is
+    // back in the pool before anything is serialized — on the thrown path as well as the happy
+    // one. A max: 3 pool cannot afford a connection held for the length of a response.
+    let row: EditedClaimRow | null = null;
+    let failure: unknown = null;
+    try {
+      await client.query('BEGIN');
+      // is_local = true: the setting dies with this transaction and cannot reach the next
+      // request that checks out this connection.
+      await client.query("SELECT set_config('fc.actor_id', $1, true)", [user.id]);
+      const { rows } = await client.query<EditedClaimRow>(
+        `UPDATE connect.claims
+            SET body = $2::text,
+                updated_at = CASE WHEN body IS DISTINCT FROM $2::text THEN now() ELSE updated_at END
+          WHERE id = $1
+            AND author_id = $3::uuid
+            AND moderation_status = 'visible'
+            AND merged_into_claim_id IS NULL
+         RETURNING ${RETURNING_COLUMNS},
+                   (SELECT r.value FROM connect.claim_ratings r
+                     WHERE r.claim_id = $1 AND r.user_id = $3::uuid) AS my_rating`,
+        [claimId, trimmedBody, user.id]
+      );
+      row = rows[0] ?? null;
+      // COMMIT on both paths: a zero-row UPDATE wrote nothing, and ending the transaction the
+      // same way either way leaves this block one exit.
+      await client.query('COMMIT');
+    } catch (err) {
+      failure = err;
+      await client.query('ROLLBACK').catch(() => {});
+    } finally {
+      client.release();
+    }
+
+    if (failure) {
+      internalError(res, `claim edit ${claimId}`, failure, EDIT_FAILED);
+      return;
+    }
+
+    // Zero rows: the claim is absent, hidden, merged, or not this caller's — or was one of those
+    // by the time the UPDATE took the row lock and READ COMMITTED re-evaluated its quals against
+    // the new version. Only one of those has anywhere to send the author, so the classifying
+    // lookup runs HERE, on the pool, and only a refusal pays for it.
+    if (!row) {
+      let claim: EditedClaimState | null;
+      try {
+        // 🔴 SCOPED TO THE CALLER'S OWN VISIBLE CLAIMS. This query exists to produce a 409, and a
+        // 409 names a merge target; asked without `author_id = $2`, it would hand that target to
+        // anybody who guessed the id, and would turn the 404 back into an existence oracle.
+        const { rows } = await pool.query<EditedClaimState>(
+          `SELECT c.merged_into_claim_id
+             FROM connect.claims c
+            WHERE c.id = $1 AND c.author_id = $2::uuid AND c.moderation_status = 'visible'`,
+          [claimId, user.id]
+        );
+        claim = rows[0] ?? null;
+      } catch (err) {
+        // A database that cannot answer is not a missing claim. 404 here would tell an author
+        // their own claim is gone, which is a different and much worse thing to be wrong about.
+        internalError(res, `claim edit lookup ${claimId}`, err, EDIT_FAILED);
+        return;
+      }
+
+      // Superseded, not withdrawn: readers follow the merge to the target, so a rewrite of this
+      // copy is text nobody will meet. Same answer, and the same reasoning, as a merged parent on
+      // POST /children. Everything else — absent, hidden, somebody else's — is the one 404.
+      if (claim && claim.merged_into_claim_id !== null) {
+        claimMerged(res, claim.merged_into_claim_id);
+        return;
+      }
+      notFound(res);
+      return;
+    }
+
+    // Cache invalidation is Task 8's, with mounting: an edit changes the claim's node body, its
+    // entry in its parent's column and the community's shape payload. Until that lands the new
+    // text is visible to its own author immediately (their reads carry credentials and are never
+    // cached) and to everyone else within CLAIM_TTL_SECONDS.
+
+    // myRating is READ BACK rather than stated null. It is the one per-caller field in a Claim,
+    // and an author may well have rated their own claim before fixing a typo in it; a response
+    // that said otherwise would wipe that rating out of a client that replaces its local copy.
+    res.json({ data: toClaim(row, row.my_rating ?? null) });
+  }
+);
+
+// DELETE /claims/:claimId — never.
+//
+// Memory over Moderation, as for threads and posts, and here it is more than a convention:
+// CA_0341 revokes DELETE and TRUNCATE on connect.claims from every role this process could be,
+// precisely so "a claim is withdrawn, not removed" cannot be undone by a future route. A claim is
+// hidden by a maven (Task 7) and its tombstone stays where readers can see it.
+//
+// 405 and not 404: the resource is there, and the Allow header names the methods that do work, so
+// a client learns what to send instead. No auth in front of it — whether a claim can be deleted
+// is a fact about the resource, not about the caller, and 401ing first would make it look like an
+// authenticated caller might get a different answer.
+claimWritesRouter.delete('/claims/:claimId', (_req: Request, res: Response) => {
+  res.setHeader('Allow', 'GET, PATCH');
+  res.status(405).json({
+    error: { code: 'DELETE_NOT_ALLOWED', message: 'Claims cannot be deleted' },
+  });
+});
+
+// --- The edit history ------------------------------------------------------
+//
+// GET /claims/:claimId/edits — what this claim used to say, to anyone.
+//
+// Unauthenticated, like GET /posts/:id/edits: the point of keeping the history is that a reader
+// can see a claim was rewritten after people argued with it, and a history only its author can
+// read would not do that.
+//
+// 🔴 THREE THINGS ARE WITHHELD, AND EACH IS A SEPARATE DECISION.
+//
+//   1. THE ACTOR. connect.claim_edits.actor_id is a raw account uuid and NOT NULL. Serving it
+//      from an anonymous endpoint would publish a stable identifier for every editor, and this
+//      project treats account data as off-limits by default. The column is not even SELECTed:
+//      `by_author` is computed in SQL, so no account uuid reaches this process. There is no
+//      display name on claim_edits to serve instead, and inventing one is not an option — naming
+//      editors is a later, deliberate transparency decision, and additive when it is made.
+//
+//   2. THE CURATION ROWS. log_claim_edit writes five kinds; four of them — move, merge, unmerge,
+//      hide — are Task 7's Maven actions, and this serves only the rewrite kind. A withdrawal row
+//      carries old_body, so serving it would hand back the exact text the tombstone exists to
+//      withhold, past a guard that was reviewed and built on purpose. And publishing who moved or
+//      merged what, and when, is a moderation record nobody has decided to make public.
+//
+//   3. A HIDDEN CLAIM'S HISTORY, ENTIRELY. A withdrawn claim answers with an empty history, the
+//      same shape as a claim nobody has edited. This matches its node: GET /claims/:id serves a
+//      hidden claim as a 200 tombstone rather than 404, because it is already visible as one in
+//      its parent's column — so this discloses nothing that read does not, and the body, which is
+//      what hiding withholds, is withheld here too. An id that names nothing still 404s.
+//
+// --- There is no new_body, and that is not an omission to patch around -------------------------
+//
+// One claim_edits row records the text BEFORE one edit. So the text AFTER an entry is the
+// oldBody of the entry above it in this list, and for the newest entry it is the claim's CURRENT
+// body, which the caller already has from the claim itself. Newest-first is what makes that
+// reading work, and it is the order GET /posts/:id/edits already serves. Do not synthesize an
+// `after` field here: it would duplicate the next row for all but one entry and guess for that
+// one, on an endpoint whose whole value is that nothing in it is guessed.
+
+/** One history row, as the query hands it back. Note what is absent: the actor, and the kind. */
+interface ClaimEditRow {
+  id: string;
+  old_body: string | null;
+  by_author: boolean;
+  edited_at: string;
+}
+
+claimWritesRouter.get('/claims/:claimId/edits', async (req: Request, res: Response) => {
+  const raw = req.params.claimId as string;
+  if (!UUID_RE.test(raw)) {
+    notFound(res); // names no claim: no query run
+    return;
+  }
+  const claimId = raw.toLowerCase();
+
+  // The claim first, for the two answers the history query cannot give: 404 for an id that names
+  // nothing, and an empty history for one that has been withdrawn.
+  let claim: { moderation_status: string } | null;
+  try {
+    const { rows } = await pool.query<{ moderation_status: string }>(
+      `SELECT c.moderation_status FROM connect.claims c WHERE c.id = $1`,
+      [claimId]
+    );
+    claim = rows[0] ?? null;
+  } catch (err) {
+    internalError(res, `claim edits visibility ${claimId}`, err, EDITS_FETCH_FAILED);
+    return;
+  }
+
+  if (!claim) {
+    notFound(res);
+    return;
+  }
+  if (claim.moderation_status !== 'visible') {
+    // The tombstone, in this endpoint's shape. The history query does not run, so a hidden
+    // claim's old bodies are never even read out of the table.
+    res.json({ data: [] });
+    return;
+  }
+
+  let history: ClaimEditRow[];
+  try {
+    ({ rows: history } = await pool.query<ClaimEditRow>(
+      `SELECT e.id,
+              e.old_body,
+              (e.actor_id IS NOT DISTINCT FROM c.author_id) AS by_author,
+              ${ts('e.edited_at')}
+         FROM connect.claim_edits e
+         JOIN connect.claims c ON c.id = e.claim_id
+        WHERE e.claim_id = $1 AND e.kind = 'edit'
+        ORDER BY e.edited_at DESC`,
+      [claimId]
+    ));
+  } catch (err) {
+    // 🔴 A FIXED STRING, unlike GET /posts/:id/edits, which echoes err.message. This endpoint is
+    // anonymous, and a raw Postgres message names tables, columns and types — the difference
+    // between a dull 500 and a schema probe.
+    internalError(res, `claim edits ${claimId}`, err, EDITS_FETCH_FAILED);
+    return;
+  }
+
+  res.json({
+    data: history.map((e) => ({
+      id: e.id,
+      oldBody: e.old_body,
+      // True when this edit was the claim's own author. IS NOT DISTINCT FROM, so a root claim's
+      // NULL author_id reads false rather than null: a maven editing a root is not its author.
+      byAuthor: e.by_author,
+      editedAt: e.edited_at,
+    })),
+  });
+});
