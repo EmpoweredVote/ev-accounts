@@ -4,7 +4,7 @@
  *   npx tsx --env-file=.env scripts/stage5/approve-batch.ts <editor uuid> <batch,...> [--skip "Full Name"]...
  *
  * 🛑 Needs the runner's own "approve", separate from the write's yes. Skip every own-words seat while the
- * topic's blind check has not passed. Each row goes through resolveResearchReview, so a row with no verified
+ * topic's blind check has not passed (passed so far: voting-rights, 2026-10-31; RULINGS.md "Own-words seats"). Each row goes through resolveResearchReview, so a row with no verified
  * source fails here exactly as it would in the admin queue; it is reported, not forced.
  */
 import { pool } from '../../src/lib/db.js';
