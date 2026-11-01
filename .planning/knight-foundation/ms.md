@@ -14,7 +14,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — BILOXI IS SEATED. 7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant** (`CC_0171`/`CC_0172`). City Hall now scores 4 of 4 bar the county |
 | 4 county waves | ✅ **APPLIED 2026-09-28 — HARRISON COUNTY IS SEATED. 5 supervisor-district polygons on `X0074`, 27 offices, 27 seated, 0 vacant** (`CC_0173`/`CC_0174`). **Biloxi City Hall now scores 4 of 4** |
-| **5 assets** | 🟡 **BANNER SHIPPED · 18 OF 35 CITY AND COUNTY HEADSHOTS APPLIED (`CC_0175`) · THE LEGISLATURE'S 174 WAIT ON A PERMISSION LETTER — SENT 2026-09-28, DO NOT SEND IT AGAIN** |
+| **5 assets** | 🟡 **BANNER SHIPPED · 18 OF 35 CITY AND COUNTY HEADSHOTS APPLIED (`CC_0175`) · THE LEGISLATURE'S 174 WAIT ON A PERMISSION LETTER — SENT 2026-09-28, DO NOT SEND IT AGAIN · RE-CHECKED 2026-11-01, NO REPLY** |
 
 ---
 
@@ -1281,7 +1281,7 @@ shape, because only one of them needs anybody's permission.
 | --- | --- |
 | Biloxi banner | ✅ **MERGED AND LIVE** — `cities/biloxi.jpg`, essentials PR #170, confirmed in the live `banners.json` |
 | 35 city + county headshots | ✅ **18 APPLIED** (`CC_0175`); the other 17 are deliberately blank |
-| 174 legislature headshots | ⏳ **AWAITING A REPLY** — permission letter **SENT 2026-09-28**; do not re-send |
+| 174 legislature headshots | ⏳ **AWAITING A REPLY** — permission letter **SENT 2026-09-28**; do not re-send. **Re-checked 2026-11-01: still no reply, terms page still Lorem ipsum** |
 
 **Measured against production before anything was written: 0 of 209.** 0 of 8 Biloxi, 0 of 27
 Harrison County, 0 of 174 legislators. The five MS statewide officials who *do* carry a portrait
@@ -1388,6 +1388,38 @@ the defect class the write order exists to prevent. All 18 objects were re-fetch
 [`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). A sent request is **not a grant, and
 neither is silence** — import nothing and set no `photo_license` until a reply arrives, and
 there is no timeout after which silence becomes permission.
+
+#### ⏳ RE-CHECKED 2026-11-01 — still blocked, and every part of the premise still holds
+
+**34 days after the letter. No reply. Nothing imported, no `photo_license` set.** The operator
+confirmed on 2026-11-01 that no reply has arrived. 🔴 **That changes nothing and starts no
+clock** — re-read the rule above: there is no timeout after which silence becomes permission.
+The premise was re-verified rather than assumed, because a five-week-old finding about someone
+else's website is a dated observation, not a standing fact:
+
+- 🔴 **The terms page is STILL the CMS template.** `legislature.ms.gov/terms-and-conditions/`
+  answers HTTP 200, titled *"Terms and Conditions | MISSISSIPPI LEGISLATURE"*, and its body is
+  still *"This is an example of a general page. Aenean ultricies mi vitae est… Lorem ipsum
+  dolor sit amet…"*. Unchanged since 2026-09-28. **Still no grant and still no refusal.**
+- ⚠ **The TLS chain fix is still load-bearing, and three clients failed before it.** `urllib`,
+  `requests` and `curl` each refused with `unable to get local issuer certificate` until the
+  **GlobalSign RSA OV SSL CA 2018** intermediate was supplied; then HTTP 200 with
+  `ssl_verify=0`. 🔴 **Verification was never disabled.**
+- **The source is unmoved, and their typo is unfixed.** `house/butler-washington.jpg` returns
+  HTTP 200 `image/jpeg`; the Legislature's own record still points at `butler-washinton.jpg`
+  and still 404s. A control name that cannot exist also 404s, so **the host does not soft-404**
+  and those statuses mean what they say.
+
+⚠ **AND THE "0 OF 174" ABOVE IS NOW 1 OF 174 — BUT NOT BECAUSE ANYTHING HERE WAS IMPORTED.**
+Measured 2026-11-01: 122 House + 52 Senate seats, **all 174 seated**, **173 blank**. The one
+portrait belongs to **Rep. Jeffrey Hulum III**, and it is **not a Legislature photograph**: it
+arrived through a person-merge, sits under `politician_photos/dedupe/2026-10/`, and is licensed
+`cc_by_2.0`. **No breach of this block.** 🔴 **But its `photo_origin_url` is NULL, so the
+attribution CC BY requires is recorded nowhere** — and that is not local to Mississippi:
+**123 of 325 CC-licensed portrait rows repo-wide carry no `photo_origin_url`**, and the licence
+strings are unnormalised (`cc_by_sa`, `cc_by-sa_4.0`, `cc_by_sa_4.0`, `cc-by-sa-4.0` are four
+spellings of one licence, so any filter on them is already wrong). **Owed its own pass; do not
+fold it into the permission question, which it does not touch.**
 
 - **All 178 portraits exist**, at `billstatus.ls.state.ms.us/members/{house,senate}/<IMG_NAME>`,
   typically **675×900** — larger than our 600×750, so nothing would be upscaled. The directory sits
