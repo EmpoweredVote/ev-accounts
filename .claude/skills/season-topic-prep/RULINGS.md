@@ -247,6 +247,12 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   hold is retired for that topic, and CLAUDE.md's "separate reliability stratum" rule is updated in the same PR.
 - **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2b (design §9).
 - **Scope:** every topic, decided per topic.
+- **Retired for `voting-rights`** (2026-10-31, Chris Andrews: "Run 4 confirmation"): blind check run 4 agreed on
+  35 of 35 own-words seats; the pass mark (34 of 35) was set before the draw, with the setup unchanged from run 3.
+  Runs 2 (69%) and 3 (89.5%) failed; their misses led to setup fixes (bill texts named only in words, rulings given
+  without names) and ruling W3-R24, so run 4 confirms repeatability on the same seats rather than testing new ones.
+  Record: the local planning folder `s3-prep-voting-rights/stage5/blind-check/` (runs 2 to 4). Other topics
+  keep the hold.
 
 ### A vote on the record carries a joint seat
 - **Ruling:** a seat that rests on the person's own words together with a legislative record (a vote, sponsorship

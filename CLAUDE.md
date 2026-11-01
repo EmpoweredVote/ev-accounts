@@ -847,7 +847,10 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - **Voters see no label** — they see the sources (the evidence chain). An own-words chair is compared
   with the voter's view like any other chair.
 - 🔴 **An own-words chair is a separate reliability stratum.** A certification measured on `record` rows
-  never covers it; own-words rows go to review until that stratum has its own blind gold.
+  never covers it; own-words rows go to review until that stratum has its own blind gold. **Passed for
+  `voting-rights`** (Season 3, 2026-10-31: blind check run 4, 35 of 35 against a pre-set 34; `.claude/skills/
+  season-topic-prep/RULINGS.md` "Own-words seats: the hold ends after a blind check"), so its own-words seats are
+  approved like any other row. Every other topic keeps the hold until its own blind check passes.
 - The election-cycle rule for statements (codebook V5, Q4) applies unchanged.
 - **What a voter sees is decided by the lenses, not by `compass_topic_roles`.** The essentials compass
   draws its spokes from the active lens's curated topic list (or the voter's own compass), and with no
