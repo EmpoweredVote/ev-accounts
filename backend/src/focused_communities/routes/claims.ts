@@ -26,7 +26,8 @@ import type { Request, Response } from 'express';
 import { pool } from '../config/database.js';
 import { ts } from '../lib/sql.js';
 import { cache } from '../../lib/cache.js';
-import { encodeCursor, decodeCursor, parseLimit, MAX_CLAIM_DEPTH } from '../lib/utils.js';
+import { optionalAuth } from '../../middleware/auth.js';
+import { parseLimit, MAX_CLAIM_DEPTH } from '../lib/utils.js';
 
 export const claimsRouter = Router();
 
@@ -48,8 +49,18 @@ export interface Claim {
   side: ClaimSide | null;
   body: string;
   authorPseudonym: string | null;
-  /** The Task 5 rating aggregate. Null until it exists. */
-  impact: number | null;
+  /**
+   * The rating aggregate: a Bayesian-weighted mean of this claim's 1-9 ratings, pulled
+   * toward the neutral midpoint while the sample is small. See connect.claims.impact
+   * (CA_0345) for the formula and the weight.
+   *
+   * 🔴 NEVER NULL, AND NOT OPTIONAL. A claim nobody has rated reads exactly 5 — the
+   * midpoint — not null, because that is what makes the ordering mean anything: a claim
+   * carrying one rating of 1 scores 4.3333 and sorts BELOW an untouched one. "No rating
+   * yet" is `ratingCount === 0`, which is a different question and has its own field.
+   */
+  impact: number;
+  /** How many people have rated this claim. 0 for a new one; `impact` is 5 either way. */
   ratingCount: number;
   childSupports: number;
   childOpposes: number;
@@ -57,7 +68,14 @@ export interface Claim {
   mergedInto: string | null;
   createdAt: string;
   updatedAt: string;
-  /** The caller's own rating, which only the server can know. Task 5 fills it; null until then. */
+  /**
+   * The caller's own rating, 1-9, or null when this caller has not rated this claim —
+   * which is also what an anonymous reader always gets.
+   *
+   * 🔴 THE ONE PER-CALLER FIELD IN THIS BODY. Everything else here is the same for every
+   * reader. isShareable() is what keeps a body carrying one OUT of the shared cache; see
+   * the caching section.
+   */
   myRating: number | null;
 }
 
@@ -91,11 +109,22 @@ interface ClaimRow {
   body: string;
   author_display_name: string | null;
   moderation_status: string;
+  /**
+   * 🔴 A STRING, NOT A NUMBER. connect.claims.impact is NUMERIC and node-postgres hands
+   * NUMERIC to JavaScript as text, because not every numeric fits a float64. CA_0345
+   * rounds the stored value to four decimals precisely so this one does, and so that the
+   * value written into a cursor is the value that comes back out of it (see "Column
+   * order"). Typed as a string here so nothing treats it as arithmetic by accident.
+   */
+  impact: string;
+  rating_count: number;
   child_supports_count: number;
   child_opposes_count: number;
   merged_into_claim_id: string | null;
   created_at: string;
   updated_at: string;
+  /** The viewer's own rating, or null — anonymous, or signed in and yet to rate this one. */
+  my_rating: number | null;
 }
 
 interface RootedClaimRow extends ClaimRow {
@@ -114,9 +143,27 @@ interface BreadcrumbRow {
 
 // --- SQL -------------------------------------------------------------------
 
-const CLAIM_COLUMNS = `c.id, c.side, c.body, c.author_display_name, c.moderation_status,
+/**
+ * The claim columns, plus the one field that depends on who is asking.
+ *
+ * `viewerParam` is the 1-based placeholder number holding the reader's user id, or NULL
+ * for an anonymous reader. It is a parameter rather than two SQL texts on purpose: ONE
+ * statement serves both readers, so there is no second query shape to keep in step, and
+ * an anonymous read cannot accidentally be given the authenticated one. `r.user_id = NULL`
+ * is never true, so the subquery yields NULL and my_rating comes back null — which is
+ * exactly the answer an anonymous reader owes.
+ *
+ * The subquery is an index probe on claim_ratings_one_per_user (UNIQUE on
+ * (claim_id, user_id)), one per row, at most 41 rows a request.
+ */
+function claimColumns(viewerParam: number): string {
+  return `c.id, c.side, c.body, c.author_display_name, c.moderation_status,
+         c.impact, c.rating_count,
          c.child_supports_count, c.child_opposes_count, c.merged_into_claim_id,
-         ${ts('c.created_at')}, ${ts('c.updated_at')}`;
+         ${ts('c.created_at')}, ${ts('c.updated_at')},
+         (SELECT r.value FROM connect.claim_ratings r
+           WHERE r.claim_id = c.id AND r.user_id = $${viewerParam}::uuid) AS my_rating`;
+}
 
 // --- Column order: ORDER BY, keyset predicate and cursor, together ----------
 //
@@ -128,50 +175,92 @@ const CLAIM_COLUMNS = `c.id, c.side, c.body, c.author_display_name, c.moderation
 // columnKeysetPredicate() instead of being inlined at the call site: the value written into a
 // cursor and the values read back out of it are produced three lines apart.
 //
-// TASK 5, the settled design. Task 5 adds `impact`, the rating aggregate a column is meant to be
-// ranked by; until it exists, a column is ordered by recency alone. Adding it is NOT a matter of
-// prefixing the ORDER BY — that alone is the exact silent bug described above. All three change:
+// A column is ranked by `impact`, the rating aggregate (CA_0345), with recency and then id as
+// the tie-breaks. All three of the above moved together when impact arrived, which is the whole
+// reason this block exists.
 //
-//   1. ORDER BY becomes `c.impact DESC NULLS LAST, c.created_at DESC, c.id DESC`.
-//   2. The cursor payload grows a third value, the impact of the last row served. encodeCursor /
-//      decodeCursor in ../lib/utils.js carry only {t, id}, so this needs a wider payload (and the
-//      validation in parseColumnCursor grows a third check).
-//   3. The predicate becomes a three-term keyset with explicit NULLS LAST handling, because a null
-//      impact sorts after every non-null one. "Strictly after the cursor" is then, in order:
-//      a non-null cursor impact admits rows with a smaller impact and rows with a null impact; a
-//      null cursor impact admits only other null-impact rows; and ties on impact fall through to
-//      the existing (created_at, id) comparison. Note that `c.impact < $n::timestamptz` is what
-//      you get if you merely repoint the old predicate at a numeric column.
+// 🔴 `DESC NULLS LAST` IS A NO-OP AND IS WRITTEN ANYWAY. connect.claims.impact is a NOT NULL
+// generated column: an unrated claim reads 5, the neutral midpoint, never null. So the clause can
+// never bite, and the keyset predicate below has NO null branch — "a null impact sorts after
+// every non-null one" describes a state the schema forbids, and a branch for it would be
+// untestable code pretending to be a safeguard. The clause stays in the ORDER BY because
+// claims_column_order_idx is declared `impact DESC NULLS LAST` to match it: a mismatched nulls
+// ordering is an index the planner will NOT use to deliver a sort, even on a NOT NULL column, and
+// losing that would silently reinstate the per-page sort over the whole child set that the stored
+// column was chosen to avoid.
+//
+// The cursor therefore carries three values — impact, created_at, id — and the predicate compares
+// exactly those three. ../lib/utils.js's encodeCursor/decodeCursor carry only {t, id} and are
+// shared with routes/threads.ts and routes/posts.ts, so the wider payload is encoded HERE rather
+// than by widening theirs: this is the one place where the ORDER BY, the predicate and the cursor
+// have to be read together, and the point of keeping them in one block is undone by putting a
+// third of it in a shared module.
+//
+// 🔴 WHY IMPACT ROUND-TRIPS EXACTLY. A cursor value makes a round trip Postgres NUMERIC -> text
+// (node-postgres) -> Number -> JSON -> Number -> text -> `::numeric`, and a keyset is wrong if the
+// value changes anywhere in it. CA_0345 rounds impact to four decimals, so every value is in
+// [1, 9] with at most five significant digits; a decimal that short is exactly representable
+// through a float64 and Number#toString gives back the shortest string that round-trips, which is
+// the same digits. Sixteen fractional digits — what unrounded numeric division produces — would
+// not survive this, and the cursor would land between two rows. The rounding in the migration and
+// the arithmetic here are one decision; do not drop either half.
 //
 // And the consequence to document in the API, not to engineer away: impact is mutable, so keyset
 // paging over it is approximate. A child whose rating changes between two page requests can appear
 // twice or not at all. Capping and sorting in JS would avoid that, but meta.cursor is already a
 // shipped contract with a test behind it, so the approximation is the accepted trade.
 
-const COLUMN_ORDER_BY = 'c.created_at DESC, c.id DESC';
+const COLUMN_ORDER_BY = 'c.impact DESC NULLS LAST, c.created_at DESC, c.id DESC';
 
 /** The sort key of a row, as a cursor carries it. Must name exactly the ORDER BY keys. */
 function columnCursorOf(claim: Claim): string {
-  return encodeCursor(claim.createdAt, claim.id);
+  return Buffer.from(
+    JSON.stringify({ i: claim.impact, t: claim.createdAt, id: claim.id })
+  ).toString('base64url');
 }
 
 /**
  * "Strictly after `cursor`" under COLUMN_ORDER_BY. Appends its values to `params` and numbers the
  * placeholders from where they land, so the predicate does not care how many parameters precede it.
+ *
+ * Three descending keys, so "after" is: a smaller impact; or the same impact and an earlier
+ * created_at; or both equal and a smaller id. Written out rather than as a ROW() comparison
+ * because `(a, b, c) < (x, y, z)` would need the keys to share a direction AND would compare
+ * `c.impact` against a timestamptz if anyone reordered it — the explicit form fails to parse
+ * instead of comparing the wrong things.
  */
 function columnKeysetPredicate(cursor: ColumnCursor, params: unknown[]): string {
-  params.push(cursor.t, cursor.id);
+  params.push(cursor.i, cursor.t, cursor.id);
+  const i = `$${params.length - 2}::numeric`;
   const t = `$${params.length - 1}::timestamptz`;
   const id = `$${params.length}::uuid`;
-  return `(c.created_at < ${t} OR (c.created_at = ${t} AND c.id < ${id}))`;
+  return (
+    `(c.impact < ${i}` +
+    ` OR (c.impact = ${i} AND c.created_at < ${t})` +
+    ` OR (c.impact = ${i} AND c.created_at = ${t} AND c.id < ${id}))`
+  );
 }
 
 // --- Request parameters ----------------------------------------------------
 
 export interface ColumnCursor {
+  /** The impact of the last row served. Names the leading ORDER BY key. */
+  i: number;
   t: string;
   id: string;
 }
+
+/**
+ * The bounds a cursor's impact must sit inside to be one this API issued.
+ *
+ * impact = (5*5 + rating_sum) / (5 + rating_count) with every rating in 1-9, so it is bounded
+ * strictly between 1 and 9 and tends to the extremes only as the sample grows without limit.
+ * Checking the closed interval is deliberately a touch looser than the open one: it rejects
+ * every value that cannot be an impact without pretending to know how many people have rated
+ * anything. Outside it, the client did not get the number from here.
+ */
+const IMPACT_MIN = 1;
+const IMPACT_MAX = 9;
 
 /**
  * A uuid in the one spelling Postgres gives back. Deliberately not a parser: uppercase,
@@ -219,20 +308,32 @@ function isPostgresTimestamp(t: string): boolean {
 }
 
 /**
- * A cursor only counts once its CONTENTS are usable, not merely once it base64-decodes.
- * decodeCursor checks that `t` and `id` are strings; a string is neither a timestamptz nor a uuid,
- * and handing one straight to Postgres turns a crafted query string into an anonymous 500.
+ * A cursor only counts once its CONTENTS are usable, not merely once it base64-decodes. A string
+ * is neither a timestamptz nor a uuid, and handing one straight to Postgres turns a crafted query
+ * string into an anonymous 500 — so every one of the three values is checked against what its
+ * placeholder will cast it to.
+ *
+ * `i` in particular: JSON admits strings, nulls, objects and (via JSON.parse) numbers that are
+ * neither finite nor in range, and `$n::numeric` would take 'NaN' and 'Infinity' happily and then
+ * compare them against every row. So the check is typeof, finiteness AND range, not just typeof.
  *
  * The returned object is rebuilt field by field rather than passed through, so nothing a caller
  * smuggled into the encoded JSON can reach the cache key and fragment it.
  */
 function parseColumnCursor(raw: unknown): ColumnCursor | null {
   if (typeof raw !== 'string') return null;
-  const decoded = decodeCursor(raw);
-  if (!decoded) return null;
-  if (!UUID_RE.test(decoded.id)) return null;
-  if (!isPostgresTimestamp(decoded.t)) return null;
-  return { t: decoded.t, id: decoded.id.toLowerCase() };
+  let decoded: unknown;
+  try {
+    decoded = JSON.parse(Buffer.from(raw, 'base64url').toString('utf8'));
+  } catch {
+    return null;
+  }
+  if (decoded === null || typeof decoded !== 'object') return null;
+  const { i, t, id } = decoded as { i?: unknown; t?: unknown; id?: unknown };
+  if (typeof i !== 'number' || !Number.isFinite(i) || i < IMPACT_MIN || i > IMPACT_MAX) return null;
+  if (typeof id !== 'string' || !UUID_RE.test(id)) return null;
+  if (typeof t !== 'string' || !isPostgresTimestamp(t)) return null;
+  return { i, t, id: id.toLowerCase() };
 }
 
 interface ColumnParams {
@@ -277,8 +378,17 @@ function parseColumnParams(req: Request): { params: ColumnParams } | { invalid: 
  * id, side, timestamps and child counts remain so the subtree under it stays navigable. Hiding one
  * claim must not orphan every argument beneath it.
  *
- * author_id, community_id, path, depth, moderation_status and the raw count column names never
- * appear in a response — isHidden is the only thing a reader learns about moderation.
+ * author_id, community_id, path, depth, moderation_status, rating_sum and the raw count column
+ * names never appear in a response — isHidden is the only thing a reader learns about moderation,
+ * and `impact` with `ratingCount` is all anyone learns about the ratings.
+ *
+ * 🔴 IMPACT AND ratingCount SURVIVE HIDING, AND myRating SURVIVES IT TOO. Only the body and the
+ * author are withheld from a tombstone; the counts already are not, because the subtree beneath a
+ * hidden claim stays navigable and a column that showed no numbers for it would disagree with the
+ * parent's child counts. A rating is a number about a claim, not content of it.
+ *
+ * `impact` arrives as a NUMERIC string and is turned into a Number exactly once, here, so there
+ * is one place where that conversion can be wrong. See ClaimRow.impact.
  */
 function toClaim(row: ClaimRow): Claim {
   const isHidden = row.moderation_status !== 'visible';
@@ -287,16 +397,30 @@ function toClaim(row: ClaimRow): Claim {
     side: row.side,
     body: isHidden ? '' : row.body,
     authorPseudonym: isHidden ? null : (row.author_display_name ?? null),
-    impact: null, // Task 5
-    ratingCount: 0, // Task 5
+    impact: Number(row.impact),
+    ratingCount: row.rating_count,
     childSupports: row.child_supports_count,
     childOpposes: row.child_opposes_count,
     isHidden,
     mergedInto: row.merged_into_claim_id ?? null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-    myRating: null, // Task 5
+    myRating: row.my_rating ?? null,
   };
+}
+
+/**
+ * The reader's own id, when there is one.
+ *
+ * optionalAuth sets req.userId only from a Bearer token it verified, so a non-null answer here
+ * ALWAYS implies carriesCredentials(req) is true — which is the implication the cache depends on,
+ * and which has a test of its own. The uuid check is belt and braces: a userId that is not a uuid
+ * would reach `$n::uuid` and turn a signed-in read into an anonymous 500 (22P02), and reading as
+ * an anonymous viewer is the safe way to be wrong.
+ */
+function viewerId(req: Request): string | null {
+  const id = (req as Request & { userId?: unknown }).userId;
+  return typeof id === 'string' && UUID_RE.test(id) ? id.toLowerCase() : null;
 }
 
 // --- Loading ---------------------------------------------------------------
@@ -361,16 +485,19 @@ async function loadColumn(
   communityId: string,
   parentId: string,
   side: ClaimSide,
+  viewer: string | null,
   cursor: ColumnCursor | null,
   limit: number
 ): Promise<{ claims: Claim[]; page: ColumnPage }> {
-  const params: unknown[] = [communityId, parentId, side];
+  // The viewer goes in BEFORE the cursor values so its placeholder number is fixed at $4 whether
+  // or not a cursor is present; columnKeysetPredicate numbers itself from wherever it lands.
+  const params: unknown[] = [communityId, parentId, side, viewer];
   const where = ['c.community_id = $1', 'c.parent_claim_id = $2', 'c.side = $3'];
   if (cursor) where.push(columnKeysetPredicate(cursor, params));
   params.push(limit + 1);
 
   const { rows } = await pool.query<ClaimRow>(
-    `SELECT ${CLAIM_COLUMNS}
+    `SELECT ${claimColumns(4)}
        FROM connect.claims c
       WHERE ${where.join(' AND ')}
       ORDER BY ${COLUMN_ORDER_BY}
@@ -390,15 +517,22 @@ async function loadColumn(
   };
 }
 
-/** The claim, its breadcrumb and both columns: at most four queries, whatever the depth. */
+/**
+ * The claim, its breadcrumb and both columns: at most four queries, whatever the depth.
+ *
+ * `viewer` is threaded into the two column queries and nothing else. The claim itself already
+ * carries my_rating from its own lookup, and a breadcrumb item is {id, body, side} — an ancestor
+ * is a place in the argument, not a claim the reader is being offered to rate.
+ */
 async function buildNode(
   row: RootedClaimRow,
+  viewer: string | null,
   params: ColumnParams
 ): Promise<{ data: ClaimNode; meta: ClaimNodeMeta }> {
   const [breadcrumb, supports, opposes] = await Promise.all([
     loadBreadcrumb(row.id, row.path),
-    loadColumn(row.community_id, row.id, 'supports', params.supports, params.limit),
-    loadColumn(row.community_id, row.id, 'opposes', params.opposes, params.limit),
+    loadColumn(row.community_id, row.id, 'supports', viewer, params.supports, params.limit),
+    loadColumn(row.community_id, row.id, 'opposes', viewer, params.opposes, params.limit),
   ]);
   return {
     data: {
@@ -414,16 +548,22 @@ async function buildNode(
 // --- Caching ---------------------------------------------------------------
 //
 // The shared cacheMiddleware keys on path + query with NO caller identity, so it may only ever
-// hold a body that has no caller identity in it either. Today these are anonymous reads and every
-// body qualifies — but Task 5 puts the caller's own rating in `myRating`, and a body carrying one
-// reader's rating must never be handed to another. So the cache is driven by hand here, behind two
+// hold a body that has no caller identity in it either. 🔴 THIS BODY NOW HAS ONE: `myRating` is
+// the reader's own 1-9 rating, and handing one reader's to another is the failure this whole
+// hand-rolled cache exists to make impossible. So the cache is driven by hand here, behind two
 // guards that are code rather than a comment someone has to notice:
 //
-//   - isShareable() refuses to STORE a body that carries any caller-specific field. The day
-//     myRating stops being null, these bodies stop entering the shared cache by themselves.
+//   - isShareable() refuses to STORE a body that carries any caller-specific field. Nothing has
+//     to remember to call it: cacheNodeIfShareable is the only writer, and it asks first.
 //   - a request that carries credentials never READS the shared (anonymous) body, and is marked
 //     private, no-store so nothing downstream keeps it either. Identity in this codebase arrives
 //     only as an Authorization: Bearer header (middleware/auth.ts) — there is no cookie path.
+//
+// The two guards overlap on purpose, and the overlap is total: optionalAuth sets req.userId only
+// from a Bearer header, carriesCredentials() is true whenever that header is present, and
+// viewerId() reads nothing else — so a non-null myRating implies personalized, which means the
+// store is never even reached. isShareable is what catches the day that implication stops
+// holding. Neither guard is the belt and neither is the braces; a test pins each.
 
 /**
  * Which route is asking, so that two routes cannot name one key. `root:<id>` and `id:<id>` used to
@@ -454,9 +594,9 @@ export function isShareable(node: ClaimNode): boolean {
 }
 
 /**
- * The only path by which a node body reaches the shared cache. Exported as a seam so the guard can
- * be tested directly — while myRating is hardcoded null, nothing else can produce a body that
- * exercises it.
+ * The only path by which a node body reaches the shared cache. Exported as a seam so the guard
+ * can be tested directly as well as through the route — the route reaches it only on the
+ * anonymous branch, so a direct test is the only way to watch it refuse a personalized body.
  */
 export async function cacheNodeIfShareable(
   key: string,
@@ -518,7 +658,7 @@ async function serveNode(
   res: Response,
   ns: CacheNamespace,
   id: string,
-  lookup: () => Promise<RootedClaimRow | null>
+  lookup: (viewer: string | null) => Promise<RootedClaimRow | null>
 ): Promise<void> {
   const parsed = parseColumnParams(req);
   if ('invalid' in parsed) {
@@ -529,9 +669,10 @@ async function serveNode(
   const params = parsed.params;
   const key = claimCacheKey(ns, id, params);
   const personalized = carriesCredentials(req);
+  const viewer = viewerId(req);
 
-  // The body varies on Authorization today (the cache branch) and will vary in its content as
-  // soon as Task 5 lands, so every response says so, including the errors.
+  // 🔴 The body varies on Authorization in two ways now — which branch runs, and what `myRating`
+  // holds — so every response says so, including the errors.
   res.set('Vary', 'Authorization');
 
   if (personalized) {
@@ -547,7 +688,7 @@ async function serveNode(
 
   let row: RootedClaimRow | null = null;
   try {
-    row = await lookup();
+    row = await lookup(viewer);
   } catch {
     // a malformed id throws (22P02): treated as not found, as elsewhere in this module
   }
@@ -558,7 +699,7 @@ async function serveNode(
 
   let body: { data: ClaimNode; meta: ClaimNodeMeta };
   try {
-    body = await buildNode(row, params);
+    body = await buildNode(row, viewer, params);
   } catch (err) {
     internalError(res, `claim node ${id}`, err);
     return;
@@ -573,19 +714,24 @@ async function serveNode(
 
 // GET /communities/:id/claims/root — the community's single root claim, as a node.
 // Served by claims_one_root_per_community (unique, partial, on community_id WHERE parent IS NULL).
-claimsRouter.get('/communities/:id/claims/root', async (req: Request, res: Response) => {
+//
+// optionalAuth, not requireAuth: this is a public read that gains ONE field for a signed-in
+// reader (`myRating`). A bad or absent token reads as a guest rather than 401ing, which is what
+// optional auth means — and it also refuses a revoked, deleted or suspended account, so the only
+// way a userId reaches this handler is as a live account that presented a good Bearer token.
+claimsRouter.get('/communities/:id/claims/root', optionalAuth, async (req: Request, res: Response) => {
   const raw = req.params.id as string;
   if (!UUID_RE.test(raw)) {
     notFound(res); // names no community: no key minted, no query run
     return;
   }
   const communityId = raw.toLowerCase();
-  await serveNode(req, res, 'root', communityId, async () => {
+  await serveNode(req, res, 'root', communityId, async (viewer) => {
     const { rows } = await pool.query<RootedClaimRow>(
-      `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id
+      `SELECT ${claimColumns(2)}, c.path, c.community_id
          FROM connect.claims c
         WHERE c.community_id = $1 AND c.parent_claim_id IS NULL`,
-      [communityId]
+      [communityId, viewer]
     );
     return rows[0] ?? null;
   });
@@ -602,17 +748,17 @@ claimsRouter.get('/communities/:id/claims/root', async (req: Request, res: Respo
 // The uuid check happens BEFORE the id reaches the cache key or the database, not only because a
 // non-uuid cannot name a claim, but because an unconstrained id in a key is a way to reach another
 // route's entries.
-claimsRouter.get('/claims/:claimId', async (req: Request, res: Response) => {
+claimsRouter.get('/claims/:claimId', optionalAuth, async (req: Request, res: Response) => {
   const raw = req.params.claimId as string;
   if (!UUID_RE.test(raw)) {
     notFound(res);
     return;
   }
   const claimId = raw.toLowerCase();
-  await serveNode(req, res, 'id', claimId, async () => {
+  await serveNode(req, res, 'id', claimId, async (viewer) => {
     const { rows } = await pool.query<RootedClaimRow>(
-      `SELECT ${CLAIM_COLUMNS}, c.path, c.community_id FROM connect.claims c WHERE c.id = $1`,
-      [claimId]
+      `SELECT ${claimColumns(2)}, c.path, c.community_id FROM connect.claims c WHERE c.id = $1`,
+      [claimId, viewer]
     );
     return rows[0] ?? null;
   });
@@ -665,8 +811,16 @@ export interface ShapeNode {
   parentId: string | null;
   side: ClaimSide | null;
   depth: number;
-  /** The Task 5 rating aggregate, for colouring the map. Null until it exists. */
-  impact: number | null;
+  /**
+   * The rating aggregate, for colouring the map — the same number, from the same column, that
+   * ClaimNode carries for the same claim. Never null: an unrated claim is 5, the neutral
+   * midpoint, so every dot on the map has a colour. See Claim.impact.
+   *
+   * There is deliberately no ratingCount here. A minimap colours by impact; a count would
+   * double this payload's useful width for a number nobody can render at thumbnail size, and
+   * the node routes serve it for the one claim a reader is actually looking at.
+   */
+  impact: number;
   /** Mapped exactly as toClaim does it, so the map and the columns agree about one claim. */
   isHidden: boolean;
   /**
@@ -730,6 +884,8 @@ interface ShapeRow {
   /** Read only to derive isHidden. The raw column is never serialized, here or anywhere. */
   moderation_status: string;
   merged_into_claim_id: string | null;
+  /** NUMERIC, so a string over the wire. See ClaimRow.impact. */
+  impact: string;
 }
 
 /**
@@ -743,7 +899,7 @@ interface ShapeRow {
  * Nothing filters on moderation_status: see property 2 above.
  */
 const SHAPE_SQL = `SELECT c.id, c.parent_claim_id, c.side, c.depth, c.moderation_status,
-             c.merged_into_claim_id
+             c.merged_into_claim_id, c.impact
        FROM connect.claims c
       WHERE c.community_id = $1
       ORDER BY c.depth, c.id
@@ -756,7 +912,7 @@ function toShapeNode(row: ShapeRow): ShapeNode {
     parentId: row.parent_claim_id ?? null,
     side: row.side,
     depth: row.depth,
-    impact: null, // Task 5
+    impact: Number(row.impact),
     isHidden: row.moderation_status !== 'visible',
     mergedInto: row.merged_into_claim_id ?? null,
   };
@@ -771,11 +927,14 @@ function toShapeNode(row: ShapeRow): ShapeNode {
  *
  * It takes a canonical, lower-case uuid and nothing else. See the route.
  *
- * Note what is deliberately missing: the node routes' isShareable guard. It exists because Task 5
- * puts the caller's own rating in a ClaimNode, and a body carrying one reader's rating must never
- * be handed to another. A ShapeNode has no such field and no room for one — it is tree position
- * plus two flags every reader sees alike. If a caller-varying field is ever added to it, this
- * route must grow the same guard and the same credentials branch that serveNode has.
+ * Note what is deliberately missing: the node routes' isShareable guard and their optionalAuth.
+ * Those exist because a ClaimNode carries the caller's own rating in `myRating`, and a body
+ * carrying one reader's rating must never be handed to another. A ShapeNode has no such field and
+ * no room for one — it is tree position, two flags and `impact`, all of which every reader sees
+ * alike. That is also why this route is not behind optionalAuth: there is nothing it could do
+ * with an identity, so verifying one would be a JWKS round trip bought for nothing on the read a
+ * community page makes on every view. If a caller-varying field is ever added to a ShapeNode,
+ * this route must grow the same guard and the same credentials branch that serveNode has.
  */
 function shapeCacheKey(communityId: string): string {
   return `fc:claims:shape:${communityId}`;

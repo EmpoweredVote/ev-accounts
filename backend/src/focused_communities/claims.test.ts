@@ -15,6 +15,20 @@ vi.mock('../lib/cache.js', () => ({
   },
 }));
 
+// optionalAuth, reduced to the one outcome these routes depend on: a Bearer token the engine
+// verified leaves req.userId behind, and anything else leaves the request anonymous. The real
+// one also refuses revoked, deleted and suspended accounts, none of which this route branches
+// on: by the time it runs the question is only whether there is a userId.
+vi.mock('../middleware/auth.js', () => ({
+  optionalAuth: (req: express.Request, _res: express.Response, next: express.NextFunction) => {
+    if (req.headers.authorization === `Bearer ${VIEWER_TOKEN}`) Object.assign(req, { userId: VIEWER });
+    // A token that verified but resolved to something that is not a uuid. The real middleware
+    // should never produce one; viewerId refuses it anyway, and this is how that is observed.
+    if (req.headers.authorization === `Bearer ${MALFORMED_TOKEN}`) Object.assign(req, { userId: 'not-a-uuid' });
+    next();
+  },
+}));
+
 const claims = await import('./routes/claims.js');
 const { claimsRouter, isShareable, cacheNodeIfShareable, SHAPE_NODE_LIMIT } = claims;
 const app = express();
@@ -28,9 +42,16 @@ const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0
 const COMMUNITY = uuid(900);
 const ROOT = uuid(100);
 const MISSING = uuid(999);
+/** A signed-in reader, and the token the optionalAuth mock recognises. */
+const VIEWER = uuid(777);
+const VIEWER_TOKEN = 'a-reader';
+/** A reader whose verified identity is not uuid-shaped. */
+const MALFORMED_TOKEN = 'a-reader-with-a-broken-id';
+const asViewer = (url: string) => request(app).get(url).set('Authorization', `Bearer ${VIEWER_TOKEN}`);
 
-const cursorFor = (t: string, id: string) =>
-  Buffer.from(JSON.stringify({ t, id })).toString('base64url');
+/** A cursor as the route issues one: impact first, then the recency tie-breaks. */
+const cursorFor = (t: string, id: string, i = 5) =>
+  Buffer.from(JSON.stringify({ i, t, id })).toString('base64url');
 const decode = (c: string) => JSON.parse(Buffer.from(c, 'base64url').toString('utf8'));
 
 /** A claims row as the DB hands it back (snake_case, ts() text timestamps). */
@@ -40,6 +61,11 @@ const row = (over: Record<string, unknown> = {}) => ({
   body: 'Root claim',
   author_display_name: null,
   moderation_status: 'visible',
+  // NUMERIC comes off node-postgres as a string; 5.0000 is what CA_0345's generated column
+  // reads for a claim nobody has rated - the neutral midpoint, never null.
+  impact: '5.0000',
+  rating_count: 0,
+  my_rating: null,
   child_supports_count: 0,
   child_opposes_count: 0,
   merged_into_claim_id: null,
@@ -80,7 +106,7 @@ const columnCall = (side: 'supports' | 'opposes') =>
 /** A node body shaped like the route's, for testing the cache guard directly. */
 const nodeBody = (myRating: number | null, where: 'claim' | 'supports' = 'claim') => {
   const claim = {
-    id: ROOT, side: null, body: 'b', authorPseudonym: null, impact: null, ratingCount: 0,
+    id: ROOT, side: null, body: 'b', authorPseudonym: null, impact: 5, ratingCount: 0,
     childSupports: 0, childOpposes: 0, isHidden: false, mergedInto: null,
     createdAt: TS, updatedAt: TS, myRating: where === 'claim' ? myRating : null,
   };
@@ -112,7 +138,9 @@ describe('GET /communities/:id/claims/root', () => {
       side: null,
       body: 'Root claim',
       authorPseudonym: null,
-      impact: null,
+      // 5, not null. An unrated claim sits at the neutral midpoint so the ordering can place
+      // it; 'nobody has rated this' is ratingCount === 0, a different question.
+      impact: 5,
       ratingCount: 0,
       childSupports: 2,
       childOpposes: 1,
@@ -132,7 +160,8 @@ describe('GET /communities/:id/claims/root', () => {
 
     // The root is found by the one-root-per-community index, not by guessing an id.
     expect(sqlOf(0)).toContain('c.parent_claim_id IS NULL');
-    expect(query.mock.calls[0][1]).toEqual([COMMUNITY]);
+    // $2 is the viewer, null for this anonymous read — the parameter that fills `myRating`.
+    expect(query.mock.calls[0][1]).toEqual([COMMUNITY, null]);
   });
 
   it('404s a community with no root claim', async () => {
@@ -225,9 +254,11 @@ describe('GET /claims/:claimId', () => {
   });
 
   it('orders each column by impact descending', async () => {
-    // Impact is the Task 5 rating aggregate and does not exist yet, so the column order currently
-    // resolves to its documented fallback: recency, then id. Task 5 changes the ORDER BY, the
-    // keyset predicate and the cursor payload together — see the note in claims.ts.
+    // The ORDER BY, the keyset predicate and the cursor payload are one unit; this pins the
+    // first of the three, and 'feeds the cursor it issued straight back' pins that they agree.
+    // NULLS LAST is written although connect.claims.impact is NOT NULL: claims_column_order_idx
+    // is declared to match it, and the planner will not use an index whose nulls ordering
+    // differs to deliver a sort.
     mockNode({
       claim: row(),
       supports: [child(uuid(1), 'supports'), child(uuid(2), 'supports')],
@@ -238,7 +269,8 @@ describe('GET /claims/:claimId', () => {
 
     const columns = allSql().filter((s) => s.includes('c.parent_claim_id = $2'));
     expect(columns).toHaveLength(2);
-    for (const sql of columns) expect(sql).toContain('ORDER BY c.created_at DESC, c.id DESC');
+    for (const sql of columns)
+      expect(sql).toContain('ORDER BY c.impact DESC NULLS LAST, c.created_at DESC, c.id DESC');
     // Row order out of the database is the order the reader sees — no re-sorting in JS.
     expect(res.body.data.supports.map((c: { id: string }) => c.id)).toEqual([uuid(1), uuid(2)]);
     expect(res.body.data.opposes.map((c: { id: string }) => c.id)).toEqual([uuid(3), uuid(4)]);
@@ -256,7 +288,9 @@ describe('GET /claims/:claimId', () => {
     for (const side of ['supports', 'opposes'] as const) {
       const call = columnCall(side);
       expect(String(call[0])).toContain('c.community_id = $1');
-      expect(call[1]).toEqual([COMMUNITY, ROOT, side, 21]);
+      // $4 is the viewer, null for this anonymous read. It sits before any cursor values so
+      // its placeholder number does not move with the presence of a cursor.
+      expect(call[1]).toEqual([COMMUNITY, ROOT, side, null, 21]);
     }
     // The community id is used, never served.
     expect(JSON.stringify((await request(app).get(`/fc/api/claims/${ROOT}`)).body))
@@ -476,16 +510,50 @@ describe('column pagination', () => {
     const first = await request(app).get(`/fc/api/claims/${ROOT}`);
     const last = first.body.data.supports[19];
     const cursor = first.body.meta.supports.cursor as string;
-    expect(decode(cursor)).toEqual({ t: last.createdAt, id: last.id });
+    expect(decode(cursor)).toEqual({ i: last.impact, t: last.createdAt, id: last.id });
 
     mockNode({ claim: row(), supports: [child(uuid(20), 'supports')] });
     const second = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursor}`);
 
     expect(second.status).toBe(200);
     const call = columnCall('supports');
-    expect(String(call[0])).toContain('c.created_at < $4::timestamptz');
-    expect(String(call[0])).toContain('c.id < $5::uuid');
-    expect(call[1]).toEqual([COMMUNITY, ROOT, 'supports', last.createdAt, last.id, 21]);
+    // 🔴 THE WHOLE PREDICATE, not three substrings of it. Asserting that each term APPEARS
+    // passes happily for `(TRUE OR c.impact < $5 OR ...)`, which serves every row of every
+    // page forever. The shape is what has to hold: three descending keys, compared in the
+    // ORDER BY's own order, with impact as ::numeric and nothing widening the match.
+    expect(String(call[0])).toMatch(
+      /\(c\.impact < \$5::numeric OR \(c\.impact = \$5::numeric AND c\.created_at < \$6::timestamptz\) OR \(c\.impact = \$5::numeric AND c\.created_at = \$6::timestamptz AND c\.id < \$7::uuid\)\)/
+    );
+    expect(String(call[0])).not.toMatch(/\bTRUE\b/i);
+    expect(call[1]).toEqual([
+      COMMUNITY, ROOT, 'supports', null, last.impact, last.createdAt, last.id, 21,
+    ]);
+  });
+
+  it('carries an impact through the cursor without losing a digit', async () => {
+    // 🔴 The keyset is only correct if the number the cursor CARRIES is the number the
+    // predicate SENDS. A cursor value makes the round trip NUMERIC -> string (node-postgres)
+    // -> Number -> JSON -> Number -> string -> ::numeric, and CA_0345 rounds impact to four
+    // decimals precisely so that trip is lossless. Unrounded numeric division gives sixteen
+    // fractional digits, which a float64 cannot hold, and the cursor would land between two
+    // rows — re-serving some children forever and dropping others.
+    const many = Array.from({ length: 21 }, (_, i) =>
+      child(uuid(i), 'supports', { impact: '5.6667', created_at: `2026-04-17T12:00:${String(i).padStart(2, '0')}.000000+00:00` })
+    );
+    mockNode({ claim: row(), supports: many });
+    const first = await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect(first.body.data.supports[19].impact).toBe(5.6667);
+
+    const cursor = first.body.meta.supports.cursor as string;
+    expect(decode(cursor).i).toBe(5.6667);
+
+    mockNode({ claim: row(), supports: [child(uuid(20), 'supports')] });
+    await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursor}`);
+
+    // The value handed to Postgres, and the text node-postgres will send for it.
+    const sent = columnCall('supports')[1][4];
+    expect(sent).toBe(5.6667);
+    expect(String(sent)).toBe('5.6667');
   });
 
   it('numbers the keyset placeholders after the filter parameters', async () => {
@@ -495,9 +563,11 @@ describe('column pagination', () => {
     const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursor}&limit=5`);
 
     expect(res.status).toBe(200);
-    expect(columnCall('supports')[1]).toEqual([COMMUNITY, ROOT, 'supports', TS, uuid(19), 6]);
+    expect(columnCall('supports')[1]).toEqual([
+      COMMUNITY, ROOT, 'supports', null, 5, TS, uuid(19), 6,
+    ]);
     // The opposes column is untouched by the supports cursor.
-    expect(columnCall('opposes')[1]).toEqual([COMMUNITY, ROOT, 'opposes', 6]);
+    expect(columnCall('opposes')[1]).toEqual([COMMUNITY, ROOT, 'opposes', null, 6]);
   });
 
   it('accepts every timestamp ts() can emit', async () => {
@@ -516,7 +586,9 @@ describe('column pagination', () => {
       mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
       const res = await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${cursorFor(t, uuid(19))}`);
       expect(res.status).toBe(200);
-      expect(columnCall('supports')[1]).toEqual([COMMUNITY, ROOT, 'supports', t, uuid(19), 21]);
+      expect(columnCall('supports')[1]).toEqual([
+        COMMUNITY, ROOT, 'supports', null, 5, t, uuid(19), 21,
+      ]);
     }
   });
 
@@ -552,6 +624,18 @@ describe('column pagination', () => {
       Buffer.from(JSON.stringify({ t: TS })).toString('base64url'), // no id at all
       Buffer.from('not json at all').toString('base64url'),
       '',
+      // The impact leg, which `$n::numeric` would otherwise be handed raw. Postgres accepts
+      // 'NaN' as a numeric and would then compare it against every row; 'Infinity' likewise.
+      Buffer.from(JSON.stringify({ t: TS, id: uuid(19) })).toString('base64url'), // no impact
+      Buffer.from(JSON.stringify({ i: '5', t: TS, id: uuid(19) })).toString('base64url'),
+      Buffer.from(JSON.stringify({ i: null, t: TS, id: uuid(19) })).toString('base64url'),
+      cursorFor(TS, uuid(19), 0),   // below the 1 a rating can be
+      cursorFor(TS, uuid(19), 9.5), // above the 9
+      cursorFor(TS, uuid(19), -1),
+      Buffer.from('{"i":NaN,"t":"' + TS + '","id":"' + uuid(19) + '"}').toString('base64url'),
+      Buffer.from('{"i":1e999,"t":"' + TS + '","id":"' + uuid(19) + '"}').toString('base64url'),
+      Buffer.from(JSON.stringify([5, TS, uuid(19)])).toString('base64url'), // not an object
+      Buffer.from(JSON.stringify(null)).toString('base64url'),
     ]) {
       query.mockReset();
       store.clear();
@@ -633,19 +717,21 @@ describe('caching', () => {
     await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${b}&opposesCursor=${a}`);
 
     expect([...store.keys()].sort()).toEqual([
-      keyFor('id', ROOT, 20, { t: TS, id: uuid(1) }, { t: TS, id: uuid(2) }),
-      keyFor('id', ROOT, 20, { t: TS, id: uuid(2) }, { t: TS, id: uuid(1) }),
+      keyFor('id', ROOT, 20, { i: 5, t: TS, id: uuid(1) }, { i: 5, t: TS, id: uuid(2) }),
+      keyFor('id', ROOT, 20, { i: 5, t: TS, id: uuid(2) }, { i: 5, t: TS, id: uuid(1) }),
     ].sort());
   });
 
   it('keeps a smuggled field out of the key', async () => {
-    // decodeCursor hands back whatever JSON it found. parseColumnCursor rebuilds {t, id}, so an
-    // extra field cannot reach JSON.stringify and fragment one page's cache across many entries.
-    const padded = Buffer.from(JSON.stringify({ t: TS, id: uuid(1), junk: 'x'.repeat(50) }))
-      .toString('base64url');
+    // The decoded JSON is whatever the caller encoded. parseColumnCursor rebuilds {i, t, id}
+    // field by field, so an extra one cannot reach JSON.stringify and fragment one page's
+    // cache across as many entries as an attacker cares to mint.
+    const padded = Buffer.from(
+      JSON.stringify({ i: 5, t: TS, id: uuid(1), junk: 'x'.repeat(50) })
+    ).toString('base64url');
     mockNode({ claim: row(), supports: [child(uuid(9), 'supports')] });
     await request(app).get(`/fc/api/claims/${ROOT}?supportsCursor=${padded}`);
-    expect([...store.keys()]).toEqual([keyFor('id', ROOT, 20, { t: TS, id: uuid(1) })]);
+    expect([...store.keys()]).toEqual([keyFor('id', ROOT, 20, { i: 5, t: TS, id: uuid(1) })]);
   });
 
   it('keys the cache on the page size the reader asked for', async () => {
@@ -697,10 +783,10 @@ describe('caching', () => {
   });
 });
 
-describe('isShareable — the one guard between Task 5 and a leaked rating', () => {
-  // myRating is hardcoded null today, so no route response can exercise this guard. It is the
-  // entire justification for hand-rolling the cache, so it is tested directly rather than left
-  // to be discovered when Task 5 lands.
+describe('isShareable — the one guard between a reader and a leaked rating', () => {
+  // The entire justification for hand-rolling the cache. It is tested directly as well as
+  // through the route, because the route only ever reaches it on the ANONYMOUS branch — so a
+  // direct call is the only way to watch it refuse a body that carries somebody's rating.
   it('passes a body in which nothing depends on who asked', () => {
     expect(isShareable(nodeBody(null).data)).toBe(true);
   });
@@ -728,11 +814,135 @@ describe('isShareable — the one guard between Task 5 and a leaked rating', () 
   });
 });
 
+describe('myRating — the one field that depends on who asked', () => {
+  /** Every call that selected claim columns, i.e. everything but the breadcrumb. */
+  const claimCalls = () =>
+    query.mock.calls.filter((c) => String(c[0]).includes('AS my_rating'));
+
+  it('fills the reader own rating from the row, and leaves it null where there is none', async () => {
+    mockNode({
+      claim: row({ my_rating: 7, impact: '6.6000', rating_count: 20 }),
+      supports: [child(uuid(1), 'supports', { my_rating: 2 }), child(uuid(2), 'supports')],
+      opposes: [child(uuid(3), 'opposes')],
+    });
+
+    const res = await asViewer(`/fc/api/claims/${ROOT}`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.claim.myRating).toBe(7);
+    expect(res.body.data.supports.map((c: { myRating: number | null }) => c.myRating)).toEqual([2, null]);
+    expect(res.body.data.opposes[0].myRating).toBeNull();
+    // The aggregate is the same number for everybody; only myRating varies.
+    expect(res.body.data.claim.impact).toBe(6.6);
+    expect(res.body.data.claim.ratingCount).toBe(20);
+  });
+
+  it('asks for it in the statement that reads the claim, not in a query of its own', async () => {
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    await asViewer(`/fc/api/claims/${ROOT}`);
+
+    // Three queries for a root: the claim and the two columns. A fourth would mean the rating
+    // was fetched separately — a round trip per request on a pool that is max: 3.
+    expect(query.mock.calls).toHaveLength(3);
+    expect(claimCalls()).toHaveLength(3);
+    for (const call of claimCalls()) {
+      expect(String(call[0])).toContain('FROM connect.claim_ratings r');
+      // 🔴 BOTH halves of the subquery's WHERE. `r.claim_id = c.id` alone would return SOME
+      // person's rating of this claim - whichever row the scan reached first - and serve it
+      // to everybody as their own. That is the leak this whole field is fenced against, and
+      // it would pass a test that only checked the claim half.
+      expect(String(call[0])).toMatch(/r\.claim_id = c\.id AND r\.user_id = \$\d+::uuid/);
+      expect(call[1]).toContain(VIEWER);
+    }
+  });
+
+  it('asks the same question of an anonymous reader, with a null answer', async () => {
+    // One SQL text serves both readers. `r.user_id = NULL` is never true, so the subquery yields
+    // NULL and an anonymous body carries no rating — rather than there being a second query
+    // shape that could drift from this one.
+    mockNode({ claim: row(), supports: [child(uuid(1), 'supports')] });
+    const res = await request(app).get(`/fc/api/claims/${ROOT}`);
+
+    expect(res.body.data.claim.myRating).toBeNull();
+    for (const call of claimCalls()) {
+      expect(String(call[0])).toContain('AS my_rating');
+      expect(call[1]).toContain(null);
+      expect(call[1]).not.toContain(VIEWER);
+    }
+  });
+
+  it('reads as anonymous when the userId is not a uuid, rather than letting it reach ::uuid', async () => {
+    // A userId that is not uuid-shaped would be a 22P02 out of the claim lookup — a signed-in
+    // reader's page turning into an anonymous 500. Reading as a guest is the safe way to be
+    // wrong about an identity.
+    mockNode({ claim: row({ my_rating: 4 }), supports: [] });
+    const res = await request(app)
+      .get(`/fc/api/claims/${ROOT}`)
+      .set('Authorization', `Bearer ${MALFORMED_TOKEN}`);
+
+    expect(res.status).toBe(200);
+    for (const call of claimCalls()) {
+      expect(call[1]).toContain(null);
+      expect(call[1]).not.toContain('not-a-uuid');
+    }
+    // Still treated as credentialed, so nothing is cached for it either - carriesCredentials
+    // asks about the header, not about whether the id turned out to be usable.
+    expect(store.size).toBe(0);
+  });
+
+  // ── The dangerous line ─────────────────────────────────────────────────────────────────
+  // A body carrying one reader's rating must never be handed to another. Two independent
+  // guards stand in the way and each gets its own test, because either one alone would make
+  // the other's failure invisible.
+
+  it('never writes a body carrying a rating into the shared cache', async () => {
+    mockNode({
+      claim: row({ my_rating: 9 }),
+      supports: [child(uuid(1), 'supports', { my_rating: 1 })],
+    });
+
+    const res = await asViewer(`/fc/api/claims/${ROOT}`);
+
+    expect(res.status).toBe(200);
+    expect(res.body.data.claim.myRating).toBe(9);
+    // 🔴 Nothing was stored. Guard one: the request carries credentials, so the cache branch is
+    // never taken at all.
+    expect(store.size).toBe(0);
+    expect(res.headers['cache-control']).toBe('private, no-store');
+    expect(res.headers.vary).toBe('Authorization');
+  });
+
+  it('never serves one reader a body another reader is in', async () => {
+    // End to end, because the two guards are only worth what they are worth together: a
+    // personalized read must leave nothing behind for the anonymous read that follows it.
+    mockNode({ claim: row({ my_rating: 9 }), supports: [] });
+    const mine = await asViewer(`/fc/api/claims/${ROOT}`);
+    expect(mine.body.data.claim.myRating).toBe(9);
+
+    mockNode({ claim: row(), supports: [] });
+    const theirs = await request(app).get(`/fc/api/claims/${ROOT}`);
+    expect(theirs.body.data.claim.myRating).toBeNull();
+
+    // And the one body that DID reach the store is the anonymous one, with nothing in it.
+    expect(store.size).toBe(1);
+    const stored = [...store.values()][0] as { data: { claim: { myRating: number | null } } };
+    expect(stored.data.claim.myRating).toBeNull();
+  });
+
+  it('refuses the body at the cache door too, even if it ever reached it', async () => {
+    // Guard two, exercised directly: cacheNodeIfShareable is the only writer, and it asks
+    // isShareable first. Deleting the credentials branch above would leave THIS between a
+    // reader's rating and the shared cache. Deleting both is what the two tests together catch.
+    await cacheNodeIfShareable('fc:claim:test:rated', nodeBody(9));
+    expect(store.size).toBe(0);
+  });
+});
+
 describe('GET /communities/:id/claims/shape', () => {
   /** A community id with hex LETTERS in it, so case actually differs. */
   const MIXED = '0a0eebc9-9c0b-4ef8-bb6d-6bb9bd380a11';
 
-  /** A shape row as the DB hands it back. The route selects these six columns and no others. */
+  /** A shape row as the DB hands it back. The route selects these seven columns and no others. */
   const shapeRow = (
     id: string,
     parentId: string | null,
@@ -746,14 +956,17 @@ describe('GET /communities/:id/claims/shape', () => {
     depth,
     moderation_status: 'visible',
     merged_into_claim_id: null,
+    impact: '5.0000',
     ...over,
   });
 
   /** A whole tree's worth of rows, already in the route's order (depth, then id). */
   const tree = () => [
     shapeRow('c-root', null, null, 0),
-    shapeRow('c-o1', 'c-root', 'opposes', 1),
-    shapeRow('c-s1', 'c-root', 'supports', 1),
+    shapeRow('c-o1', 'c-root', 'opposes', 1, { impact: '3.2500' }),
+    // Two nodes away from the neutral default, so a serializer that hardcoded 5 - or dropped
+    // the column - would be visible here rather than agreeing with the fixture by accident.
+    shapeRow('c-s1', 'c-root', 'supports', 1, { impact: '7.8000' }),
     shapeRow('c-s1a', 'c-s1', 'supports', 2),
   ];
 
@@ -783,10 +996,10 @@ describe('GET /communities/:id/claims/shape', () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({
       data: [
-        { id: 'c-root', parentId: null, side: null, depth: 0, impact: null, isHidden: false, mergedInto: null },
-        { id: 'c-o1', parentId: 'c-root', side: 'opposes', depth: 1, impact: null, isHidden: false, mergedInto: null },
-        { id: 'c-s1', parentId: 'c-root', side: 'supports', depth: 1, impact: null, isHidden: false, mergedInto: null },
-        { id: 'c-s1a', parentId: 'c-s1', side: 'supports', depth: 2, impact: null, isHidden: false, mergedInto: null },
+        { id: 'c-root', parentId: null, side: null, depth: 0, impact: 5, isHidden: false, mergedInto: null },
+        { id: 'c-o1', parentId: 'c-root', side: 'opposes', depth: 1, impact: 3.25, isHidden: false, mergedInto: null },
+        { id: 'c-s1', parentId: 'c-root', side: 'supports', depth: 1, impact: 7.8, isHidden: false, mergedInto: null },
+        { id: 'c-s1a', parentId: 'c-s1', side: 'supports', depth: 2, impact: 5, isHidden: false, mergedInto: null },
       ],
       // Nothing was cut, so there is no boundary to report: read the two fields together.
       meta: { truncated: false, completeThroughDepth: null },
@@ -798,6 +1011,9 @@ describe('GET /communities/:id/claims/shape', () => {
     // community_id leads the WHERE and is the leading column of claims_community_parent_idx:
     // without it this is a sequential scan of every community's claims on every page view.
     expect(sqlOf(0)).toContain('c.community_id = $1');
+    // impact is SELECTED, not defaulted: the serializer reads a column, and a payload that
+    // stopped fetching it would colour every node neutral while still looking well-formed.
+    expect(sqlOf(0)).toContain('c.impact');
     expect(query.mock.calls[0][1]).toEqual([COMMUNITY, 2001]);
   });
 
@@ -995,7 +1211,7 @@ describe('GET /communities/:id/claims/shape', () => {
     // The node is still served, in place, with the edge intact — not dropped, not nulled out.
     expect(res.body.data[1]).toEqual({
       id: 'c-dupe', parentId: 'c-root', side: 'supports', depth: 1,
-      impact: null, isHidden: false, mergedInto: 'c-elsewhere',
+      impact: 5, isHidden: false, mergedInto: 'c-elsewhere',
     });
     // And a chain survives as a chain: following one hop from c-a lands on another merged node.
     expect(res.body.data[2].mergedInto).toBe('c-b');
