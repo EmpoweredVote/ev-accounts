@@ -92,6 +92,7 @@ import type { PoolClient } from 'pg';
 import { pool } from '../config/database.js';
 import { ts } from '../lib/sql.js';
 import { requireAuth } from '../middleware/auth.js';
+import { markClaimsTouched } from '../middleware/claimsTouched.js';
 import { MAX_CLAIM_DEPTH } from '../lib/utils.js';
 import { requireAdmin } from '../../middleware/requireAdmin.js';
 import { checkRole, getCachedUserRoles } from '../../lib/roleService.js';
@@ -417,12 +418,18 @@ const LOCK_PAIR = `
  *       path plus the target
  *   $3  where the surviving tail of each descendant's path begins (1-indexed: oldDepth + 2)
  *   $4  how much every descendant's depth shifts
+ *
+ * RETURNING id, and read at both call sites. Each swept row's breadcrumb is derived from the
+ * `path` this statement just rewrote, so each one has a cached node page that is now wrong, and
+ * these ids are the only record of which rows they were — the curation response names none of
+ * them. middleware/claimInvalidation.ts is the reader; markClaimsTouched is how it gets them.
  */
 const SWEEP = `
     UPDATE connect.claims d
        SET path  = $2::uuid[] || d.path[($3::int):],
            depth = d.depth + $4::int
-     WHERE d.path @> ARRAY[$1::uuid]`;
+     WHERE d.path @> ARRAY[$1::uuid]
+ RETURNING d.id`;
 
 /** The slice bound and the shift, from the two depths they are derived from. */
 function sliceFrom(oldDepth: number): number {
@@ -577,12 +584,25 @@ claimCurationRouter.post('/claims/:claimId/move', ...curator, async (req: Reques
       }
 
       // ...and then its subtree, spliced onto where the claim has just landed.
-      await client.query(SWEEP, [
+      const { rows: swept } = await client.query<{ id: string }>(SWEEP, [
         claimId,
         [...row.path, claimId],
         sliceFrom(claimRow.depth),
         row.depth - claimRow.depth,
       ]);
+
+      // What this write made stale beyond the claim itself, which the middleware works out on
+      // its own: the OLD parent, which the row no longer names; the new parent and ITS parent,
+      // whose columns and child counts both ends of the move just changed; and every swept
+      // descendant, whose breadcrumb was rebuilt a statement ago. Marking is not deleting — the
+      // middleware acts only if this transaction commits and the response is a 2xx.
+      markClaimsTouched(
+        res,
+        claimRow.parent_claim_id,
+        parentId,
+        parent?.parent_claim_id,
+        ...swept.map((d) => d.id)
+      );
     }
 
     // COMMIT on the refusal path too: nothing was written, and ending the transaction the same
@@ -606,8 +626,9 @@ claimCurationRouter.post('/claims/:claimId/move', ...curator, async (req: Reques
     return;
   }
 
-  // Cache invalidation is Task 8's, with mounting. See the note at the foot of this file for
-  // what a curation write makes stale — it is more than the claim that was curated.
+  // The cache entries this made stale are dropped by middleware/claimInvalidation.ts, which
+  // wraps this res.json: the ids above reached it through markClaimsTouched. See the note at the
+  // foot of this file for what a curation write makes stale, and what is only bounded.
   res.json({ data: toClaim(row!) });
 });
 
@@ -802,13 +823,24 @@ claimCurationRouter.post('/claims/:claimId/merge', ...curator, async (req: Reque
         // already-correct path a second time; the predicate excludes them for free, and this
         // comment is here because that looks like luck rather than design.
         const prefix = [...(children[0] as { path: string[] }).path];
-        await client.query(SWEEP, [
+        const { rows: swept } = await client.query<{ id: string }>(SWEEP, [
           claimId,
           prefix,
           sliceFrom(claimRow.depth),
           targetRow.depth - claimRow.depth,
         ]);
+        markClaimsTouched(res, ...swept.map((d) => d.id));
       }
+
+      // The target gained every one of those children, so its column and its child counts moved
+      // and so did the page its own parent serves. The children themselves changed parent, which
+      // is their breadcrumb. See the move route for why marking here is safe before the commit.
+      markClaimsTouched(
+        res,
+        targetId,
+        targetRow.parent_claim_id,
+        ...children.map((c) => c.id)
+      );
 
       // The redirect itself. TWO columns: merged_into_claim_id and the timestamp. Nothing is
       // deleted, the body stays, the ratings stay, and the child counts have already been
@@ -965,8 +997,9 @@ claimCurationRouter.post('/claims/:claimId/hide', ...curator, async (req: Reques
 
 // --- What a curation write makes stale -------------------------------------
 //
-// Task 8 mounts this router and owns invalidation; this is the list it needs, written here
-// because this file is the one that knows which rows moved.
+// This is the list, written here because this file is the one that knows which rows moved.
+// middleware/claimInvalidation.ts acts on it; what it does with each line is noted below, and
+// its own header says why the node pages are dropped only for the default cursor page.
 //
 //   fc:claims:shape:{communityId}            — every one of the three. The shape payload is the
 //                                              whole tree's structure, which is exactly what a
@@ -982,7 +1015,14 @@ claimCurationRouter.post('/claims/:claimId/hide', ...curator, async (req: Reques
 //   fc:claim:root:{communityId}:{params}     — when the claim or its new parent is a child of
 //                                              the root, or when the subtree reaches it.
 //
-// The subtree list is not knowable from the response, so the sweep is the place to collect it:
-// adding `RETURNING id` to SWEEP hands Task 8 exactly the ids whose breadcrumbs moved, at no
-// extra round trip. It is deliberately NOT added here, because a RETURNING nobody reads is a
-// column list the next person has to work out the purpose of.
+// The subtree list is not knowable from the response, so the sweep is where it is collected:
+// SWEEP now carries `RETURNING d.id` and both call sites read it, at no extra round trip.
+//
+// HOW MUCH OF THAT ACTUALLY HAPPENS. The shape key is deleted exactly — it takes no parameters,
+// so a community has one entry. The node keys are deleted for the DEFAULT cursor page only:
+// `params` is part of the key, `limit` is a range and the cursors are opaque, so "every cursor
+// combination" is not enumerable and the shared cache has no pattern delete. A deep cursor page
+// therefore keeps the old arrangement for up to CLAIM_TTL_SECONDS (30s) — the same bound
+// `s-maxage=30` already gives every anonymous reader, with a correct shape map beside it. That
+// is a chosen bound, not an oversight, and middleware/claimInvalidation.ts spells out the
+// alternative that was rejected and why.

@@ -27,6 +27,10 @@ import { threadsRouter } from './routes/threads.js';
 import { postsRouter } from './routes/posts.js';
 import { usersRouter } from './routes/users.js';
 import { seasonsRouter } from './routes/seasons.js';
+import { claimsRouter } from './routes/claims.js';
+import { claimWritesRouter } from './routes/claimWrites.js';
+import { claimCurationRouter } from './routes/claimCuration.js';
+import { claimWriteInvalidation } from './middleware/claimInvalidation.js';
 
 export const focusedCommunitiesRouter = Router();
 
@@ -39,6 +43,23 @@ focusedCommunitiesRouter.use(postsRouter);
 focusedCommunitiesRouter.use(usersRouter);
 focusedCommunitiesRouter.use(seasonsRouter);
 
+// The argument tree: reads, then writes, then maven curation.
+//
+// claimWriteInvalidation goes first and is not a router. It no-ops on everything except a
+// non-GET under /claims/ that answers 2xx, and for those it drops the cache entries
+// routes/claims.ts wrote before the response is sent. It is above the three so that a write
+// route added to any of them is covered without anyone remembering to wire it up.
+focusedCommunitiesRouter.use(claimWriteInvalidation);
+focusedCommunitiesRouter.use(claimsRouter);
+focusedCommunitiesRouter.use(claimWritesRouter);
+focusedCommunitiesRouter.use(claimCurationRouter);
+
+// 🔴 THE ERROR HANDLER IS LAST, AND EVERY ROUTER ADDED ABOVE MUST STAY ABOVE IT. Express picks
+// the first error handler registered AFTER the layer that failed, so a router mounted below this
+// one would have its thrown errors answered by Express's own HTML default instead of the JSON
+// envelope every caller of this module parses. app.test.ts pins both the ordering and the
+// envelope.
+//
 // The standalone's global error handler, scoped to these routes.
 focusedCommunitiesRouter.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   console.error('[focused_communities] error:', err.message);

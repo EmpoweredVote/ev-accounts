@@ -572,15 +572,39 @@ async function buildNode(
  * for an id that is not a claim id at all and owes a 404. The ids reaching these are uuid-shaped
  * and lowercased by the routes, so one row has exactly one key.
  */
-type CacheNamespace = 'id' | 'root';
+export type CacheNamespace = 'id' | 'root';
+
+/**
+ * The parameters a request that sends no query string is parsed into — page one of both columns,
+ * which is the page every link into the tree lands on.
+ *
+ * It exists so that the write side can name ONE node key per claim without enumerating cursors
+ * (middleware/claimInvalidation.ts explains why it cannot), and it is built by calling parseLimit
+ * exactly as parseColumnParams does rather than by writing COLUMN_PAGE_SIZE out again — so the
+ * key a write deletes cannot drift from the key a read mints.
+ */
+const DEFAULT_COLUMN_PARAMS: ColumnParams = Object.freeze({
+  limit: parseLimit(undefined, COLUMN_PAGE_SIZE),
+  supports: null,
+  opposes: null,
+});
 
 /**
  * The key is built from the DECODED, normalized cursors, never from the raw query strings: raw
  * strings joined with a delimiter let two different requests mint one key (a cursor containing the
  * delimiter), and every distinct piece of garbage would otherwise get its own entry for a body
  * identical to page one's.
+ *
+ * EXPORTED FOR THE WRITE SIDE, which calls it with no `params` to name the default page. It is
+ * exported rather than copied because a second hand-written `fc:claim:…` template is how the
+ * canonicalisation rule below gets lost: `id` must already be a lower-case uuid, on the delete
+ * side exactly as on the read side, or the delete names a key nothing ever wrote.
  */
-function claimCacheKey(ns: CacheNamespace, id: string, params: ColumnParams): string {
+export function claimCacheKey(
+  ns: CacheNamespace,
+  id: string,
+  params: ColumnParams = DEFAULT_COLUMN_PARAMS
+): string {
   return `fc:claim:${ns}:${id}:${JSON.stringify({
     limit: params.limit,
     supports: params.supports,
@@ -925,7 +949,9 @@ function toShapeNode(row: ShapeRow): ShapeNode {
  * query to vary on here and no caller identity in the body, so one entry per community is the
  * whole cache — and `fc:claims:shape:{communityId}` is exactly the key Task 8 deletes.
  *
- * It takes a canonical, lower-case uuid and nothing else. See the route.
+ * It takes a canonical, lower-case uuid and nothing else. See the route — and see
+ * middleware/claimInvalidation.ts, which is the `del` this comment anticipated and which imports
+ * this function rather than writing the template out a second time.
  *
  * Note what is deliberately missing: the node routes' isShareable guard and their optionalAuth.
  * Those exist because a ClaimNode carries the caller's own rating in `myRating`, and a body
@@ -936,7 +962,7 @@ function toShapeNode(row: ShapeRow): ShapeNode {
  * community page makes on every view. If a caller-varying field is ever added to a ShapeNode,
  * this route must grow the same guard and the same credentials branch that serveNode has.
  */
-function shapeCacheKey(communityId: string): string {
+export function shapeCacheKey(communityId: string): string {
   return `fc:claims:shape:${communityId}`;
 }
 
