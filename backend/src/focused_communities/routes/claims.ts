@@ -26,7 +26,7 @@ import type { Request, Response } from 'express';
 import { pool } from '../config/database.js';
 import { ts } from '../lib/sql.js';
 import { cache } from '../../lib/cache.js';
-import { encodeCursor, decodeCursor, parseLimit } from '../lib/utils.js';
+import { encodeCursor, decodeCursor, parseLimit, MAX_CLAIM_DEPTH } from '../lib/utils.js';
 
 export const claimsRouter = Router();
 
@@ -306,17 +306,34 @@ function toClaim(row: ClaimRow): Claim {
  *
  * `path` already holds every ancestor id in order, so there is nothing to walk: fetch the set and
  * let `array_position` restore the order. A 40-deep claim costs the same one query as a 1-deep one.
+ *
+ * BOUNDED, because "one query" is not the same as "a bounded response". MAX_CLAIM_DEPTH caps how
+ * deep a claim may be written (routes/claimWrites.ts) and CA_0344 caps it in the table, but this
+ * read must not depend on either holding: rows predating the constraint, or any future way of
+ * deepening the tree, would otherwise turn one claim into an unbounded breadcrumb — served to
+ * anonymous readers as `public, s-maxage=30`, so cached and re-served rather than computed once.
+ * The LIMIT is one past the cap so an over-cap claim is detectable rather than silently trimmed
+ * to look legal.
  */
+const BREADCRUMB_LIMIT = MAX_CLAIM_DEPTH + 1;
+
 async function loadBreadcrumb(claimId: string, path: string[] | null): Promise<BreadcrumbItem[]> {
   if (!path || path.length === 0) return [];
   const { rows } = await pool.query<BreadcrumbRow>(
     `SELECT c.id, c.body, c.side, c.moderation_status
        FROM connect.claims c
       WHERE c.id = ANY($1::uuid[])
-      ORDER BY array_position($1::uuid[], c.id)`,
+      ORDER BY array_position($1::uuid[], c.id)
+      LIMIT ${BREADCRUMB_LIMIT}`,
     [path]
   );
-  if (rows.length !== path.length) {
+  if (path.length > BREADCRUMB_LIMIT) {
+    // Over the cap, so the shortfall below is this LIMIT doing its job, not damage. Distinct
+    // message: "damaged tree" and "claim deeper than the cap allows" need different fixes.
+    console.warn(
+      `[focused_communities] claim ${claimId}: breadcrumb truncated at ${BREADCRUMB_LIMIT} of ${path.length} ancestors (deeper than MAX_CLAIM_DEPTH)`
+    );
+  } else if (rows.length !== path.length) {
     // The breadcrumb shortens rather than fails, but a path pointing at a row that is not there
     // means the tree is damaged; say so once rather than letting it look like a shallow claim.
     console.warn(

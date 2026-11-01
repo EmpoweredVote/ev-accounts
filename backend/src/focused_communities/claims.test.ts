@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
+import { MAX_CLAIM_DEPTH } from './lib/utils.js';
 
 const query = vi.fn();
 vi.mock('./config/database.js', () => ({ pool: { query: (...a: unknown[]) => query(...a) } }));
@@ -165,6 +166,55 @@ describe('GET /claims/:claimId', () => {
     expect(ancestry[0]).toContain('c.id = ANY($1::uuid[])');
     // Four queries in total at any depth: the claim, the ancestry, and one per column.
     expect(query.mock.calls).toHaveLength(4);
+  });
+
+  it('bounds the ancestry query by the depth cap', async () => {
+    // One query is not the same as a bounded response. The write route and CA_0344's CHECK both
+    // cap depth, but this read must not depend on either holding — a pre-cap row, or any future
+    // way of deepening the tree, would otherwise turn one claim into an unbounded breadcrumb,
+    // served to anonymous readers as `public, s-maxage=30` and so cached and re-served.
+    const path = Array.from({ length: 10 }, (_, i) => `anc-${i}`);
+    mockNode({
+      claim: row({ id: uuid(41), side: 'supports', body: 'Deep claim', path }),
+      breadcrumb: path.map((id) => ({ id, body: `${id} body`, side: 'supports', moderation_status: 'visible' })),
+    });
+
+    await request(app).get(`/fc/api/claims/${uuid(41)}`);
+
+    // One past the cap, so an over-cap claim is detectable rather than silently trimmed to
+    // look legal.
+    const ancestry = allSql().filter((s) => s.includes('array_position'));
+    expect(ancestry[0]).toContain(`LIMIT ${MAX_CLAIM_DEPTH + 1}`);
+  });
+
+  it('warns distinctly for a claim deeper than the cap and for a damaged path', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+
+    // Deeper than the cap: the shortfall is the LIMIT working, not damage.
+    const deep = Array.from({ length: MAX_CLAIM_DEPTH + 5 }, (_, i) => `anc-${i}`);
+    mockNode({
+      claim: row({ id: uuid(42), side: 'supports', body: 'Over-cap claim', path: deep }),
+      breadcrumb: deep.slice(0, MAX_CLAIM_DEPTH + 1).map((id) => ({
+        id, body: `${id} body`, side: 'supports', moderation_status: 'visible',
+      })),
+    });
+    await request(app).get(`/fc/api/claims/${uuid(42)}`);
+    expect(warn.mock.calls.flat().join(' ')).toContain('deeper than MAX_CLAIM_DEPTH');
+
+    // Within the cap but short of its path: that is a damaged tree, and says so differently.
+    warn.mockClear();
+    query.mockReset();
+    const shallow = ['anc-0', 'anc-1', 'anc-2'];
+    mockNode({
+      claim: row({ id: uuid(43), side: 'supports', body: 'Damaged claim', path: shallow }),
+      breadcrumb: [{ id: 'anc-0', body: 'a', side: null, moderation_status: 'visible' }],
+    });
+    await request(app).get(`/fc/api/claims/${uuid(43)}`);
+    const damaged = warn.mock.calls.flat().join(' ');
+    expect(damaged).toContain('breadcrumb resolved 1 of 3 ancestors');
+    expect(damaged).not.toContain('deeper than MAX_CLAIM_DEPTH');
+
+    warn.mockRestore();
   });
 
   it('skips the ancestry query entirely for a root', async () => {

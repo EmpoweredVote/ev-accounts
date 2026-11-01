@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
+import { MAX_CLAIM_DEPTH } from './lib/utils.js';
 
 // ── Mocks ────────────────────────────────────────────────────────────────────────────────
 // The pool is a queue of canned results; every test asserts the SQL it expects to run. No test
@@ -65,8 +66,20 @@ const inserted = (over: Record<string, unknown> = {}) => ({
   ...over,
 });
 
+/**
+ * The parent-state row the pre-flight reads. Everything the route branches on before writing:
+ * withdrawn, unreachable (hidden ancestor), superseded (merged), or already at the depth cap.
+ */
+const parentState = (over: Record<string, unknown> = {}) => ({
+  moderation_status: 'visible',
+  merged_into_claim_id: null,
+  depth: 3,
+  has_hidden_ancestor: false,
+  ...over,
+});
+
 /** Queue the two queries a successful create runs: the parent lookup, then the insert. */
-function mockCreate(over: Record<string, unknown> = {}, parent: Record<string, unknown> | null = { id: PARENT, moderation_status: 'visible' }) {
+function mockCreate(over: Record<string, unknown> = {}, parent: Record<string, unknown> | null = parentState()) {
   query.mockResolvedValueOnce(rows(parent ? [parent] : []));
   if (parent) query.mockResolvedValueOnce(rows([inserted(over)]));
 }
@@ -96,11 +109,17 @@ describe('POST /claims/:parentId/children', () => {
     // BEFORE INSERT trigger connect.derive_claim_position reads them off the parent under
     // FOR UPDATE and discards whatever the caller supplied. A route that sent them would be
     // lying about what decides them — and would race a concurrent curation move of the parent.
+    //
+    // Asserted against the INSERT's COLUMN LIST rather than the whole statement, because the
+    // statement legitimately READS p.path now (to check the ancestors for a hidden one).
+    // Reading the parent's ancestry and supplying a position are different things; only the
+    // second is forbidden, and only the column list can tell them apart.
     const [sql, params] = insertCall();
-    expect(String(sql)).not.toMatch(/\bpath\b/);
-    expect(String(sql)).not.toMatch(/\bdepth\b/);
-    expect(String(sql)).not.toMatch(/community_id/);
-    expect(String(sql)).toContain('INSERT INTO connect.claims (parent_claim_id, side, body, author_id)');
+    const columns = /INSERT INTO connect\.claims \(([^)]*)\)/.exec(String(sql))![1];
+    expect(columns).toBe('parent_claim_id, side, body, author_id');
+    for (const derived of ['path', 'depth', 'community_id']) {
+      expect(columns, derived).not.toContain(derived);
+    }
     expect(params).toEqual([PARENT, 'supports', BODY, AUTHOR]);
   });
 
@@ -190,7 +209,7 @@ describe('POST /claims/:parentId/children', () => {
     // Hidden — indistinguishable from absent. Never 403: which claims exist, and which have
     // been withdrawn, is not something a status code should teach.
     query.mockReset();
-    query.mockResolvedValueOnce(rows([{ id: PARENT, moderation_status: 'hidden' }]));
+    query.mockResolvedValueOnce(rows([parentState({ moderation_status: 'hidden' })]));
     res = await post();
     expect(res.status).toBe(404);
     expect(res.body).toEqual({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
@@ -220,7 +239,7 @@ describe('POST /claims/:parentId/children', () => {
   it('cannot attach a child to a parent hidden while the write is in flight', async () => {
     // The guard read saw a visible parent; by the time the locked INSERT ran, it was hidden,
     // so the statement affected no rows.
-    query.mockResolvedValueOnce(rows([{ id: PARENT, moderation_status: 'visible' }]));
+    query.mockResolvedValueOnce(rows([parentState()]));
     query.mockResolvedValueOnce(rows([]));
 
     const res = await post();
@@ -281,16 +300,151 @@ describe('POST /claims/:parentId/children', () => {
     expect(identifier).not.toBe(AUTHOR); // namespaced away from the thread/reply bucket
   });
 
-  it('answers 429 with Retry-After when the bucket is empty, and writes nothing', async () => {
+  it('answers 429 with Retry-After when the bucket is empty, and never touches the database', async () => {
     limit.mockResolvedValueOnce({ success: false, reset: Date.now() + 90_000 });
-    query.mockResolvedValueOnce(rows([{ id: PARENT, moderation_status: 'visible' }]));
 
     const res = await post();
 
     expect(res.status).toBe(429);
     expect(res.body).toEqual({ reason: 'rate_limited' });
     expect(Number(res.headers['retry-after'])).toBeGreaterThan(0);
+    // 🔴 The limiter runs BEFORE the parent lookup, so a rate-limited caller learns nothing
+    // about whether the id names a real claim. Without that ordering, an unlimited stream of
+    // failed lookups is a free existence oracle over claim ids. Not one query ran.
+    expect(query).not.toHaveBeenCalled();
+  });
+
+  it('refuses the write when the rate limiter itself fails, rather than waving it through', async () => {
+    limit.mockRejectedValueOnce(new Error('ECONNREFUSED upstash'));
+    const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+    const res = await post();
+
+    // Fail CLOSED. connect.claims has no DELETE grant, so anything written is permanent and
+    // has to be hidden one claim at a time; an unbounded flood during a Redis outage is the
+    // unrecoverable failure, and a contributor retrying in a minute is the recoverable one.
+    expect(res.status).toBe(500);
+    expect(res.body).toEqual({
+      error: { code: 'CLAIM_CREATE_FAILED', message: 'Could not create the claim' },
+    });
+    expect(query).not.toHaveBeenCalled();
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  // ── Unreachable, superseded and too deep ───────────────────────────────────────────────
+
+  it('404s distinctly when an ANCESTOR is hidden, so the subtree cannot gain a child', async () => {
+    query.mockResolvedValueOnce(rows([parentState({ has_hidden_ancestor: true })]));
+
+    const res = await post();
+
+    // A claim under a hidden ancestor is unreachable — no reader can walk to it — yet it would
+    // still bump its parent's child count, corrupting the balance readers DO see.
+    expect(res.status).toBe(404);
+    expect(res.body).toEqual({
+      error: {
+        code: 'ANCESTOR_NOT_VISIBLE',
+        message: 'The discussion above this point was removed',
+      },
+    });
     expect(insertSqlWasRun()).toBe(false);
+  });
+
+  it('tells a withdrawn point apart from a withdrawn discussion above it', async () => {
+    query.mockResolvedValueOnce(rows([parentState({ moderation_status: 'hidden' })]));
+    const hiddenParent = await post();
+
+    query.mockReset();
+    query.mockResolvedValueOnce(rows([parentState({ has_hidden_ancestor: true })]));
+    const hiddenAncestor = await post();
+
+    // Both 404 — there is nothing to attach to either way — but a contributor who just typed a
+    // paragraph can tell which happened, and only one suggests arguing somewhere else.
+    expect(hiddenParent.status).toBe(404);
+    expect(hiddenAncestor.status).toBe(404);
+    expect(hiddenParent.body).not.toEqual(hiddenAncestor.body);
+    // And the hidden PARENT stays byte-identical to an absent one, which is untouched.
+    query.mockReset();
+    query.mockResolvedValueOnce(rows([]));
+    expect((await post()).body).toEqual(hiddenParent.body);
+  });
+
+  it('409s a merged parent and names the claim that supersedes it', async () => {
+    const TARGET = uuid(500);
+    query.mockResolvedValueOnce(rows([parentState({ merged_into_claim_id: TARGET })]));
+
+    const res = await post();
+
+    // 409, not 404: the claim is there and readable, and the write is refused because of its
+    // state. The target rides along so the client can redirect rather than lose the draft.
+    expect(res.status).toBe(409);
+    expect(res.body).toEqual({
+      error: {
+        code: 'CLAIM_MERGED',
+        message: 'This point has been merged into another claim',
+        mergedInto: TARGET,
+      },
+    });
+    expect(insertSqlWasRun()).toBe(false);
+  });
+
+  it('asks about a merged PARENT but never a merged ancestor', async () => {
+    mockCreate();
+    await post();
+
+    // Hiding removes; merging redirects. A merged ancestor leaves the subtree readable and
+    // correctly counted, so it must NOT be rejected — the asymmetry with the hidden-ancestor
+    // rule is deliberate, and this pins it so a later reader cannot "fix" it into symmetry.
+    // Only the SQL can carry this: both statements scope the ancestor question to visibility.
+    for (const sql of query.mock.calls.map((c) => String(c[0]))) {
+      const ancestorSubquery = /a\.id = ANY \(p\.path\)[^)]*/.exec(sql)?.[0];
+      if (!ancestorSubquery) continue;
+      expect(ancestorSubquery).toContain('moderation_status');
+      expect(ancestorSubquery).not.toContain('merged_into_claim_id');
+    }
+    // The parent's own merge state is asked about in both.
+    expect(String(query.mock.calls[0][0])).toContain('p.merged_into_claim_id');
+    expect(insertSql()).toContain('p.merged_into_claim_id IS NULL');
+  });
+
+  it('422s when the parent is already at the maximum depth', async () => {
+    query.mockResolvedValueOnce(rows([parentState({ depth: MAX_CLAIM_DEPTH })]));
+
+    const res = await post();
+
+    expect(res.status).toBe(422);
+    expect(res.body).toEqual({
+      error: {
+        code: 'MAX_DEPTH_REACHED',
+        message: 'This discussion has reached its maximum depth',
+      },
+    });
+    // The message names no number: the reader can do nothing with "50", and the cap may move.
+    expect(JSON.stringify(res.body)).not.toContain(String(MAX_CLAIM_DEPTH));
+    expect(insertSqlWasRun()).toBe(false);
+  });
+
+  it('allows a child one level short of the cap, and refuses one at it', async () => {
+    mockCreate({}, parentState({ depth: MAX_CLAIM_DEPTH - 1 }));
+    expect((await post()).status).toBe(201);
+
+    query.mockReset();
+    query.mockResolvedValueOnce(rows([parentState({ depth: MAX_CLAIM_DEPTH })]));
+    expect((await post()).status).toBe(422);
+  });
+
+  it('checks the whole ancestor line inside the writing statement, not only before it', async () => {
+    mockCreate();
+    await post();
+
+    // The concurrency guarantee can only be carried by the SQL text, as with the parent's own
+    // visibility: these predicates are re-evaluated under FOR UPDATE, which a mock cannot see.
+    const sql = insertSql();
+    expect(sql).toContain('NOT EXISTS');
+    expect(sql).toContain('a.id = ANY (p.path)');
+    expect(sql).toContain("a.moderation_status <> 'visible'");
+    expect(sql.indexOf('INSERT')).toBeLessThan(sql.indexOf('NOT EXISTS'));
   });
 
   it('serializes the Claim shape and no internal field', async () => {
@@ -331,7 +485,7 @@ describe('POST /claims/:parentId/children', () => {
   });
 
   it('500s with a fixed message when the insert fails, leaking no Postgres text', async () => {
-    query.mockResolvedValueOnce(rows([{ id: PARENT, moderation_status: 'visible' }]));
+    query.mockResolvedValueOnce(rows([parentState()]));
     query.mockRejectedValueOnce(new Error('new row for relation "claims" violates check constraint "claims_body_not_blank"'));
     const warn = vi.spyOn(console, 'error').mockImplementation(() => {});
 

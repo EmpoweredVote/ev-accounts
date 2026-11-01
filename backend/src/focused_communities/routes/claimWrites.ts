@@ -25,6 +25,7 @@ import { ts } from '../lib/sql.js';
 import { requireAuth, type FcRequest } from '../middleware/auth.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { postRateLimiter } from '../lib/rateLimit.js';
+import { MAX_CLAIM_DEPTH } from '../lib/utils.js';
 import type { Claim, ClaimSide } from './claims.js';
 
 export const claimWritesRouter = Router();
@@ -92,8 +93,51 @@ function notFound(res: Response): void {
   res.status(404).json({ error: { code: 'CLAIM_NOT_FOUND', message: 'Claim not found' } });
 }
 
+/**
+ * A hidden ANCESTOR, told apart from a hidden parent.
+ *
+ * Still a 404 — there is nothing to attach to either way — but a contributor who just typed a
+ * paragraph deserves to know whether it was THIS point that was removed or the discussion above
+ * it, because only one of those suggests finding another place to make the argument.
+ *
+ * This discloses nothing the read API does not. GET /claims/:id serves any claim the caller can
+ * name, and loadBreadcrumb already returns a hidden ancestor with an empty body — so anyone
+ * holding this parent's id can already see that an ancestor was withdrawn. The hidden PARENT case
+ * stays byte-identical to the absent one; that constraint is untouched.
+ */
+function ancestorHidden(res: Response): void {
+  res.status(404).json({
+    error: {
+      code: 'ANCESTOR_NOT_VISIBLE',
+      message: 'The discussion above this point was removed',
+    },
+  });
+}
+
+/**
+ * The parent has been merged into another claim, so it is superseded rather than withdrawn.
+ *
+ * 409 rather than 404: the claim is there, readable, and the write is refused because of its
+ * state. The target id rides along so the client can offer the contributor the claim that now
+ * carries this argument instead of silently losing what they wrote.
+ */
+function parentMerged(res: Response, mergedInto: string): void {
+  res.status(409).json({
+    error: {
+      code: 'CLAIM_MERGED',
+      message: 'This point has been merged into another claim',
+      mergedInto,
+    },
+  });
+}
+
 function badRequest(res: Response, code: string, message: string): void {
   res.status(400).json({ error: { code, message } });
+}
+
+/** A request that is well-formed and refers to real things, but asks for something disallowed. */
+function unprocessable(res: Response, code: string, message: string): void {
+  res.status(422).json({ error: { code, message } });
 }
 
 /**
@@ -214,6 +258,38 @@ function toClaim(row: InsertedClaimRow): Claim {
 // The same lock closes the moved-parent and merged-parent variants of the window, because all
 // three are UPDATEs to the parent row that this now serializes against.
 //
+// --- Three more things the writing statement has to establish --------------------------------
+//
+// VISIBLE PARENT is necessary but not sufficient. Two further states make a child pointless or
+// harmful, and both belong in the same statement for the same reason.
+//
+//   1. A HIDDEN ANCESTOR. A claim whose grandparent is hidden is unreachable — no reader can walk
+//      down to it — and yet it still increments its parent's child_supports_count or
+//      child_opposes_count. So it would corrupt the pro/con balance readers DO see while being
+//      invisible itself, which is strictly worse than refusing it. The parent row already carries
+//      `path`, its root-first ancestors, so the whole line is one NOT EXISTS away.
+//
+//      🔴 RESIDUAL RACE, DELIBERATELY LEFT OPEN: FOR UPDATE OF p locks the parent, not the
+//      ancestors, so an ancestor hidden between this statement's snapshot and its commit still
+//      admits one child. Closing it properly belongs to Task 7 — hiding a claim should mark or
+//      reject its subtree — not to a wider lock here, which would serialize every write in a
+//      community behind every other. This is a known gap with an owner, not an oversight.
+//
+//   2. A MERGED PARENT. merged_into_claim_id means the claim has been superseded: readers follow
+//      the merge to the target, so a child hung here is live text nobody will ever meet.
+//
+//      🔴 DIRECT PARENT ONLY, AND THIS ASYMMETRY IS DELIBERATE. A merged ANCESTOR is NOT rejected.
+//      Merging keeps the subtree readable — the merge is a redirect, not a removal — so a claim
+//      under a merged ancestor is still reachable and still counted correctly. Hiding removes;
+//      merging redirects. Do not "fix" this into symmetry with the ancestor rule above.
+//
+//   3. DEPTH is NOT in this statement. It is enforced by the route (a 422 the contributor can
+//      understand) and by CA_0344's CHECK constraint (which binds postgres too, exempt from every
+//      grant). Adding it here as a fourth predicate would turn an over-deep write into a silent
+//      zero-row 404 that says nothing useful; letting the CHECK raise instead keeps the loud
+//      failure loud. Task 7's move will hit that same constraint rather than silently deepening
+//      the tree, which is the point of putting it in the table.
+//
 // WHY ONE STATEMENT RATHER THAN BEGIN / SELECT FOR UPDATE / INSERT / COMMIT
 // The explicit transaction gives the identical guarantee and costs more to hold: this pool is
 // max: 3 (config/database.ts) in front of a shared Supavisor pooler, so a checked-out client
@@ -232,10 +308,19 @@ function toClaim(row: InsertedClaimRow): Claim {
 
 // POST /claims/:parentId/children — attach a claim to a parent, on one side or the other.
 //
-// Order is: canonicalise the id, validate the body, confirm the parent is there and visible,
-// spend quota, write. Validation precedes the limiter (as in threads.ts and posts.ts) so a client
-// bug cannot burn a writer's hourly allowance, and the parent check precedes it too so attaching
-// to a claim that was withdrawn a second ago costs nothing either.
+// Order is: canonicalise the id, validate the request, SPEND QUOTA, read the parent, write.
+//
+// Validation precedes the limiter (as in threads.ts and posts.ts) so a client bug cannot burn a
+// writer's hourly allowance — validation needs no database and tells the caller nothing it did
+// not already know.
+//
+// 🔴 THE LIMITER PRECEDES THE PARENT LOOKUP, and that ordering is the security property, not a
+// detail. The lookup answers "is this uuid a real, visible, unmerged claim?". Behind the limiter
+// that question costs quota; in front of it, an unlimited stream of failed lookups costs nothing
+// and the endpoint becomes a free existence oracle over claim ids — a caller could enumerate
+// which uuids are real claims without ever spending a token. The price is that attaching to a
+// claim withdrawn a second ago now costs one of five an hour. That is the right trade: it is
+// five an hour, it is recoverable by waiting, and the alternative is unbounded and silent.
 claimWritesRouter.post(
   '/claims/:parentId/children',
   ...requireAuth,
@@ -263,15 +348,48 @@ claimWritesRouter.post(
       return;
     }
 
-    // The parent, read once up front. This is a QUOTA GUARD, not the guarantee: attaching to a
-    // claim that is absent or was withdrawn an hour ago should cost a writer nothing out of five
-    // an hour, and finding that out needs a cheap read before the limiter. The guarantee that a
-    // concurrently hidden parent cannot gain a child is the predicate in the INSERT below, and it
-    // holds whether or not this read ran. See "Visibility is checked INSIDE the write".
-    let parent: { moderation_status: string } | null;
+    // 🔴 FAIL CLOSED. A limiter that cannot answer refuses the write; it does not wave it
+    // through. Everything written here is permanent — there is no DELETE grant on
+    // connect.claims (CA_0341), so spam has to be hidden by a maven one claim at a time, and
+    // there is no undo. Failing open during a Redis outage trades a recoverable inconvenience
+    // (a contributor retries in a minute) for an unrecoverable one (an unbounded flood of rows
+    // nobody can remove). Note the limiter already degrades to an always-allow stub when
+    // Upstash is simply unconfigured (lib/rateLimit.ts), so reaching this catch means a
+    // configured limiter actually failed — which is exactly when caution is worth its cost.
+    let success: boolean;
+    let reset: number;
     try {
-      const { rows } = await pool.query<{ moderation_status: string }>(
-        'SELECT moderation_status FROM connect.claims WHERE id = $1',
+      ({ success, reset } = await postRateLimiter.limit(`${RATE_LIMIT_NAMESPACE}${user.id}`));
+    } catch (err) {
+      internalError(res, `claim rate limit for ${user.id}`, err);
+      return;
+    }
+    if (!success) {
+      // reset is in milliseconds; Retry-After is in seconds
+      res.set('Retry-After', String(Math.ceil((reset - Date.now()) / 1000)));
+      res.status(429).json({ reason: 'rate_limited' });
+      return;
+    }
+
+    // The parent, read once. This exists to produce a DISTINGUISHABLE error — withdrawn point
+    // versus withdrawn discussion versus merged versus too deep — none of which a zero-row
+    // INSERT could tell apart. It is not the guarantee: the predicates in the writing statement
+    // below hold whether or not this read ran. See "Visibility is checked INSIDE the write".
+    interface ParentState {
+      moderation_status: string;
+      merged_into_claim_id: string | null;
+      depth: number;
+      has_hidden_ancestor: boolean;
+    }
+    let parent: ParentState | null;
+    try {
+      const { rows } = await pool.query<ParentState>(
+        `SELECT p.moderation_status, p.merged_into_claim_id, p.depth,
+                EXISTS (SELECT 1 FROM connect.claims a
+                         WHERE a.id = ANY (p.path) AND a.moderation_status <> 'visible')
+                  AS has_hidden_ancestor
+           FROM connect.claims p
+          WHERE p.id = $1`,
         [parentId]
       );
       parent = rows[0] ?? null;
@@ -282,16 +400,29 @@ claimWritesRouter.post(
       return;
     }
 
+    // Absent and hidden stay byte-identical, and neither is ever a 403.
     if (!parent || parent.moderation_status !== 'visible') {
       notFound(res);
       return;
     }
 
-    const { success, reset } = await postRateLimiter.limit(`${RATE_LIMIT_NAMESPACE}${user.id}`);
-    if (!success) {
-      // reset is in milliseconds; Retry-After is in seconds
-      res.set('Retry-After', String(Math.ceil((reset - Date.now()) / 1000)));
-      res.status(429).json({ reason: 'rate_limited' });
+    // Unreachable subtree: still a 404, but one the contributor can act on differently.
+    if (parent.has_hidden_ancestor) {
+      ancestorHidden(res);
+      return;
+    }
+
+    // Superseded, not removed — so 409 with somewhere to go. Direct parent only; see the comment
+    // block above for why a merged ANCESTOR is deliberately allowed.
+    if (parent.merged_into_claim_id !== null) {
+      parentMerged(res, parent.merged_into_claim_id);
+      return;
+    }
+
+    // A child of a parent at the cap would be MAX_CLAIM_DEPTH + 1. The message names no number:
+    // "50" is not something the reader can do anything with, and the cap may move.
+    if (parent.depth >= MAX_CLAIM_DEPTH) {
+      unprocessable(res, 'MAX_DEPTH_REACHED', 'This discussion has reached its maximum depth');
       return;
     }
 
@@ -306,7 +437,13 @@ claimWritesRouter.post(
         `INSERT INTO connect.claims (parent_claim_id, side, body, author_id)
          SELECT p.id, $2::text, $3::text, $4::uuid
            FROM connect.claims p
-          WHERE p.id = $1 AND p.moderation_status = 'visible'
+          WHERE p.id = $1
+            AND p.moderation_status = 'visible'
+            AND p.merged_into_claim_id IS NULL
+            AND NOT EXISTS (
+                  SELECT 1 FROM connect.claims a
+                   WHERE a.id = ANY (p.path) AND a.moderation_status <> 'visible'
+                )
             FOR UPDATE OF p
          RETURNING ${RETURNING_COLUMNS}`,
         [parentId, side, trimmedBody, user.id]
@@ -317,10 +454,11 @@ claimWritesRouter.post(
       return;
     }
 
-    // Zero rows is the race being caught, not a failure: the parent was hidden (or moved, or
-    // merged) between the read above and this statement, and the locked re-evaluation dropped it.
-    // It gets the same 404 as a parent that was already hidden — the writer cannot tell which,
-    // and should not be able to.
+    // Zero rows is a race being caught, not a failure: between the read above and this statement
+    // the parent was hidden, merged, or moved under something hidden, and the locked
+    // re-evaluation dropped it. Which of those it was is not worth a second round trip to find
+    // out — the contributor retries and the read above then tells them precisely. So: the plain
+    // 404, the same one an already-hidden parent gets.
     if (!row) {
       notFound(res);
       return;
