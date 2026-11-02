@@ -1,9 +1,9 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0343: mark the 17 staged Season 2 topics live
+-- CA_0344: mark the 17 staged Season 2 topics live
 -- =============================================================================
--- Created 2026-10-31 with Chris Andrews. Follows CA_0342, which gave these same
+-- Created 2026-10-31 with Chris Andrews. Follows CA_0343, which gave these same
 -- 17 topics their Focused Communities.
 --
 -- WHAT THIS DOES
@@ -78,7 +78,7 @@ BEGIN
   SELECT EXISTS (SELECT 1 FROM inform.seasons WHERE number = 2 AND status = 'open')
     INTO v_season_open;
   IF NOT v_season_open THEN
-    RAISE EXCEPTION 'CA_0343: Season 2 is not open — making its topics live would publish them into no season';
+    RAISE EXCEPTION 'CA_0344: Season 2 is not open — making its topics live would publish them into no season';
   END IF;
 
   SELECT string_agg(bad.topic_key || ' (' || bad.why || ')', '; ' ORDER BY bad.topic_key)
@@ -110,7 +110,7 @@ BEGIN
   WHERE bad.why <> '';
 
   IF v_bad IS NOT NULL THEN
-    RAISE EXCEPTION 'CA_0343: refusing to make incomplete topics live — %', v_bad;
+    RAISE EXCEPTION 'CA_0344: refusing to make incomplete topics live — %', v_bad;
   END IF;
 END $$;
 
@@ -146,14 +146,14 @@ BEGIN
   WHERE t.is_live = false;
 
   IF v_s2_not_live <> 0 THEN
-    RAISE EXCEPTION 'CA_0343: % of % Season 2 topics are still not live', v_s2_not_live, v_s2_total;
+    RAISE EXCEPTION 'CA_0344: % of % Season 2 topics are still not live', v_s2_not_live, v_s2_total;
   END IF;
 
   -- Every live topic can say when it went live.
   SELECT count(*) INTO v_no_stamp
   FROM inform.compass_topics WHERE is_live AND went_live_at IS NULL;
   IF v_no_stamp <> 0 THEN
-    RAISE EXCEPTION 'CA_0343: % live topics have no went_live_at', v_no_stamp;
+    RAISE EXCEPTION 'CA_0344: % live topics have no went_live_at', v_no_stamp;
   END IF;
 
   -- Nothing outside Season 2 was touched. The three remaining staged topics are
@@ -169,10 +169,10 @@ BEGIN
       WHERE sq.topic_id = t.id
     );
   IF v_other_live <> 0 THEN
-    RAISE EXCEPTION 'CA_0343: % live topics belong to no closed or open season', v_other_live;
+    RAISE EXCEPTION 'CA_0344: % live topics belong to no closed or open season', v_other_live;
   END IF;
 
-  RAISE NOTICE 'CA_0343 OK — all % Season 2 topics live, % live topics in total, 3 staged topics left untouched.',
+  RAISE NOTICE 'CA_0344 OK — all % Season 2 topics live, % live topics in total, 3 staged topics left untouched.',
     v_s2_total, v_live_total;
 END $$;
 

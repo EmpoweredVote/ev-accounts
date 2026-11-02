@@ -11,17 +11,17 @@ import { env } from '../../lib/env.js';
 //   communities                      read                      (CA_0323)
 //   threads, posts                   read / insert / update    (CA_0323)
 //   thread_edits, post_edits         read                      (CA_0323)
-//   claims                           read / insert / update    (CA_0341)
-//   claim_ratings                    read / insert / update    (CA_0341)
-//   claim_edits                      read                      (CA_0341)
+//   claims                           read / insert / update    (CA_0342)
+//   claim_ratings                    read / insert / update    (CA_0342)
+//   claim_edits                      read                      (CA_0342)
 //
 // plus EXECUTE on connect.get_stances_for_community. Nothing else: NOT
 // connect.connected_profiles (identity, PRIVACY-ARCHITECTURE property A), NOT the gem/XP/invite
 // tables that share the schema, NOT any other schema. The standalone service used the broad
-// service_role key, which reaches all of them. See migrations CA_0323 and CA_0341.
+// service_role key, which reaches all of them. See migrations CA_0323 and CA_0342.
 //
 // No DELETE and no TRUNCATE is granted on any of the eight — Memory over Moderation is a grant,
-// not only a route — and CA_0341 section 8 revokes both from the four grantable roles on the
+// not only a route — and CA_0342 section 8 revokes both from the four grantable roles on the
 // three claim tables outright, along with INSERT and UPDATE on claim_edits, so the audit trail
 // is writable by nothing but its SECURITY DEFINER trigger.
 //

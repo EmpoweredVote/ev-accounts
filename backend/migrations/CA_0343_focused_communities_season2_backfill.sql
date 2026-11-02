@@ -1,7 +1,7 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0342: a Focused Community for every Season 2 Compass question
+-- CA_0343: a Focused Community for every Season 2 Compass question
 -- =============================================================================
 -- Created 2026-10-31 with Chris Andrews.
 --
@@ -24,7 +24,7 @@ BEGIN;
 --
 -- All 17 topics here are is_live = false. Chris chose on 2026-10-31 to create the
 -- communities ahead of the Compass rather than wait, knowing the cost: the argument
--- tree (CA_0341) is permanent across seasons by design, so claims written against
+-- tree (CA_0342) is permanent across seasons by design, so claims written against
 -- these questions now are rooted in wording the Compass has not shipped and could
 -- still revise. That is the drift the seasons feature exists to make visible, and
 -- it is a product call, not a technical one.
@@ -42,7 +42,7 @@ BEGIN;
 --         must tolerate it. Fill them editorially.
 --
 -- WHAT HAPPENS AUTOMATICALLY
--- CA_0341 §7a put an AFTER INSERT trigger on connect.communities that seeds each
+-- CA_0342 §7a put an AFTER INSERT trigger on connect.communities that seeds each
 -- new community its argument-tree root claim. These 17 arrive complete: no
 -- backfill, no second migration, and the §9 gate below proves it row by row.
 --
@@ -50,7 +50,7 @@ BEGIN;
 -- lets a DB rebuild re-apply it. Idempotent — safe to re-run.
 -- =============================================================================
 
--- 0. Preconditions. This migration assumes CA_0341 has run.
+-- 0. Preconditions. This migration assumes CA_0342 has run.
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -60,7 +60,7 @@ BEGIN
     WHERE n.nspname = 'connect' AND c.relname = 'communities'
       AND t.tgname = 'trg_communities_seed_root_claim' AND NOT t.tgisinternal
   ) THEN
-    RAISE EXCEPTION 'CA_0342: trg_communities_seed_root_claim is missing — run CA_0341 first, or these communities would be created without argument-tree roots';
+    RAISE EXCEPTION 'CA_0343: trg_communities_seed_root_claim is missing — run CA_0342 first, or these communities would be created without argument-tree roots';
   END IF;
 END $$;
 
@@ -104,7 +104,7 @@ BEGIN
   WHERE NOT EXISTS (SELECT 1 FROM connect.communities c WHERE c.topic_id = sq.topic_id);
 
   IF v_s2_missing <> 0 THEN
-    RAISE EXCEPTION 'CA_0342: % of % Season 2 topics still have no Focused Community', v_s2_missing, v_s2_total;
+    RAISE EXCEPTION 'CA_0343: % of % Season 2 topics still have no Focused Community', v_s2_missing, v_s2_total;
   END IF;
 
   -- b. Every community has exactly one root claim — the trigger did its work for
@@ -112,14 +112,14 @@ BEGIN
   SELECT count(*) INTO v_communities FROM connect.communities;
   SELECT count(*) INTO v_roots FROM connect.claims WHERE parent_claim_id IS NULL;
   IF v_roots <> v_communities THEN
-    RAISE EXCEPTION 'CA_0342: % root claims for % communities — expected one each', v_roots, v_communities;
+    RAISE EXCEPTION 'CA_0343: % root claims for % communities — expected one each', v_roots, v_communities;
   END IF;
 
   SELECT count(*) INTO v_rootless
   FROM connect.communities c
   WHERE NOT EXISTS (SELECT 1 FROM connect.claims k WHERE k.community_id = c.id AND k.parent_claim_id IS NULL);
   IF v_rootless <> 0 THEN
-    RAISE EXCEPTION 'CA_0342: % communities have no root claim', v_rootless;
+    RAISE EXCEPTION 'CA_0343: % communities have no root claim', v_rootless;
   END IF;
 
   -- c. Each new root carries its community's name as its body, and no author.
@@ -133,7 +133,7 @@ BEGIN
      OR k.depth <> 0
      OR cardinality(k.path) <> 0;
   IF v_blank <> 0 THEN
-    RAISE EXCEPTION 'CA_0342: % root claims are not shaped like roots of their community', v_blank;
+    RAISE EXCEPTION 'CA_0343: % root claims are not shaped like roots of their community', v_blank;
   END IF;
 
   -- d. The Compass pointer matches, for every community without exception.
@@ -142,10 +142,10 @@ BEGIN
   JOIN inform.compass_topics t ON t.id = c.topic_id
   WHERE t.fc_community_slug IS DISTINCT FROM c.slug;
   IF v_slug_gaps <> 0 THEN
-    RAISE EXCEPTION 'CA_0342: % topics disagree with their community slug', v_slug_gaps;
+    RAISE EXCEPTION 'CA_0343: % topics disagree with their community slug', v_slug_gaps;
   END IF;
 
-  RAISE NOTICE 'CA_0342 OK — % communities, all % Season 2 topics covered, % root claims seeded by trigger, fc_community_slug in step.',
+  RAISE NOTICE 'CA_0343 OK — % communities, all % Season 2 topics covered, % root claims seeded by trigger, fc_community_slug in step.',
     v_communities, v_s2_total, v_roots;
 END $$;
 

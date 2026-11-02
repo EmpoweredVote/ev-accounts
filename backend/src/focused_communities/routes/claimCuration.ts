@@ -24,7 +24,7 @@
 //      connect.bump_claim_child_counts, which the writes below fire correctly by themselves.
 //   5. path, depth and community_id for the CURATED claim are not written either — the
 //      derivation trigger owns them. The sweep writes path and depth for its DESCENDANTS,
-//      which that trigger deliberately does not cover (CA_0341 §4a says so in its own header).
+//      which that trigger deliberately does not cover (CA_0342 §4a says so in its own header).
 //   6. Nothing is ever deleted. A merged claim keeps its id, its URL, its body and its history.
 //
 // --- The trigger fires on MENTION, not on change ----------------------------------------------
@@ -82,7 +82,7 @@
 // failure mode without it is a detected deadlock (a retryable 500), not a corrupt tree.
 // (b) The descendants. The depth-cap check below reads the deepest one without holding it, so a
 // child inserted deep in the subtree between the check and the commit can still push the tree
-// past the cap; CA_0344's CHECK constraint is the backstop that makes that a loud failure rather
+// past the cap; CA_0345's CHECK constraint is the backstop that makes that a loud failure rather
 // than a silent one. Locking a whole subtree would serialize every write in the community behind
 // every curation.
 
@@ -188,7 +188,7 @@ const rootNotCuratable: Refusal = {
 /**
  * 422, and a sentence with no number in it, matching routes/claimWrites.ts. "50" is not something
  * the reader can act on and the cap may move; what they can act on is "pick a shallower parent".
- * CA_0344's CHECK stays as the backstop — this only makes the common case legible instead of a
+ * CA_0345's CHECK stays as the backstop — this only makes the common case legible instead of a
  * constraint violation surfacing as an anonymous 500.
  */
 const maxDepthReached: Refusal = {

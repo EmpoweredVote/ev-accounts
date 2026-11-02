@@ -1,7 +1,7 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0345: impact — the rating aggregate, stored on connect.claims
+-- CA_0346: impact — the rating aggregate, stored on connect.claims
 -- =============================================================================
 -- Created 2026-10-31 with Chris Andrews. Task 5 of the argument-tree build
 -- (rulings R37, R38, R39).
@@ -19,7 +19,7 @@ BEGIN;
 -- plus the composite index the column read's ORDER BY walks, and the grant check
 -- for the module's role.
 --
--- CA_0341 created connect.claim_ratings but gave connect.claims nowhere to keep the
+-- CA_0342 created connect.claim_ratings but gave connect.claims nowhere to keep the
 -- aggregate. Verified live before writing this: connect.claims had no impact and no
 -- rating_count column, and connect.claim_ratings holds 0 rows across 61 claims.
 --
@@ -80,7 +80,7 @@ BEGIN;
 --   5        (5*5 + 9)/(5+1)  = 5.6667  (5*5 + 140)/(5+20) = 6.6000  0.93 of margin - right
 --
 -- Weight 1 is not an option. 5 passes with room and is the value this migration uses;
--- CA_0345's gate re-runs that exact comparison against the real table rather than
+-- CA_0346's gate re-runs that exact comparison against the real table rather than
 -- trusting the arithmetic above.
 --
 -- WHY round(..., 4). Without it, numeric division yields ~16 fractional digits
@@ -103,9 +103,9 @@ BEGIN;
 -- that note cannot be read as disagreeing.
 --
 -- -----------------------------------------------------------------------------
--- WHY THE TRIGGER CARRIES A DELETE BRANCH (R39, and CA_0341's R14)
+-- WHY THE TRIGGER CARRIES A DELETE BRANCH (R39, and CA_0342's R14)
 -- -----------------------------------------------------------------------------
--- Section 8 of CA_0341 takes DELETE on connect.claim_ratings away from every role a grant
+-- Section 8 of CA_0342 takes DELETE on connect.claim_ratings away from every role a grant
 -- can reach. `postgres` owns the table and is exempt from all of it — so the one actor who
 -- CAN delete a rating is exactly the actor a missing DELETE branch would silently corrupt
 -- the aggregate for, and a stale impact is invisible because it reads as a legitimate
@@ -125,13 +125,13 @@ BEGIN;
 --     columns are written at rating time (routes/claimWrites.ts) because they cannot be
 --     reconstructed afterwards, and the aggregate ignores them for now. Changing the
 --     formula later is an ALTER of the generated expression; see reason 3 above.
---   * It adds no grant. CA_0341 already granted SELECT, INSERT, UPDATE on connect.claims
+--   * It adds no grant. CA_0342 already granted SELECT, INSERT, UPDATE on connect.claims
 --     to focused_communities_app AT TABLE LEVEL, which covers columns added afterwards.
 --     A table-level grant cannot be partially revoked — REVOKE UPDATE (rating_count) is a
 --     no-op with a warning — so the role nominally holds UPDATE on the two count columns
 --     exactly as it already does on child_supports_count. What keeps them correct is the
 --     trigger plus the fact that no route names them in an UPDATE, which is the same
---     answer CA_0341 settled on for the child counts.
+--     answer CA_0342 settled on for the child counts.
 --   * It adds no DELETE anywhere. Nothing in the argument tree is ever deleted.
 --
 -- SAFE ON LIVE DATA
@@ -155,21 +155,21 @@ BEGIN;
 -- DB rebuild re-apply it. Idempotent — safe to re-run.
 -- =============================================================================
 
--- 0. Preconditions. This migration extends CA_0341's tables; it does not create them.
+-- 0. Preconditions. This migration extends CA_0342's tables; it does not create them.
 DO $$
 BEGIN
   IF to_regclass('connect.claims') IS NULL OR to_regclass('connect.claim_ratings') IS NULL THEN
-    RAISE EXCEPTION 'CA_0345: connect.claims and connect.claim_ratings must exist — apply CA_0341 first';
+    RAISE EXCEPTION 'CA_0346: connect.claims and connect.claim_ratings must exist — apply CA_0342 first';
   END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_constraint
                  WHERE conrelid = 'connect.claim_ratings'::regclass
                    AND conname = 'claim_ratings_one_per_user') THEN
-    RAISE EXCEPTION 'CA_0345: claim_ratings_one_per_user is missing — the upsert in routes/claimWrites.ts and the one-rating-per-person invariant both depend on it';
+    RAISE EXCEPTION 'CA_0346: claim_ratings_one_per_user is missing — the upsert in routes/claimWrites.ts and the one-rating-per-person invariant both depend on it';
   END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_constraint
                  WHERE conrelid = 'connect.claim_ratings'::regclass
                    AND conname = 'claim_ratings_value_range') THEN
-    RAISE EXCEPTION 'CA_0345: claim_ratings_value_range is missing — rating_sum BETWEEN rating_count AND 9*rating_count below assumes every value is 1-9';
+    RAISE EXCEPTION 'CA_0346: claim_ratings_value_range is missing — rating_sum BETWEEN rating_count AND 9*rating_count below assumes every value is 1-9';
   END IF;
 END $$;
 
@@ -219,7 +219,7 @@ END $$;
 COMMENT ON COLUMN connect.claims.impact IS
   'Bayesian-weighted mean of connect.claim_ratings.value, pulled toward the neutral '
   'midpoint while the sample is small: round((W*N + rating_sum)/(W + rating_count), 4) '
-  'with W = IMPACT_PRIOR_WEIGHT = 5 and N = IMPACT_NEUTRAL = 5 (CA_0345). Never NULL: an '
+  'with W = IMPACT_PRIOR_WEIGHT = 5 and N = IMPACT_NEUTRAL = 5 (CA_0346). Never NULL: an '
   'unrated claim reads 5.0000. Derived — write rating_count and rating_sum, never this.';
 
 -- 3. The index the column read walks.
@@ -235,7 +235,7 @@ COMMENT ON COLUMN connect.claims.impact IS
 -- impact is NOT NULL and the clause never bites.
 --
 -- claims_community_parent_idx is left in place: it is cheaper for the shape read's
--- `WHERE community_id = $1` and for Task 7's parent lookups, and dropping an index CA_0341
+-- `WHERE community_id = $1` and for Task 7's parent lookups, and dropping an index CA_0342
 -- chose is not this migration's call.
 CREATE INDEX IF NOT EXISTS claims_column_order_idx
   ON connect.claims (community_id, parent_claim_id, side,
@@ -275,7 +275,7 @@ BEGIN
 END;
 $fn$;
 
--- Three triggers, one function, for CA_0341's reason: a WHEN clause may not mention OLD
+-- Three triggers, one function, for CA_0342's reason: a WHEN clause may not mention OLD
 -- on a trigger whose event list includes INSERT, so the branches are declared apart.
 --
 -- 🔴 These UPDATE connect.claims and therefore brush past its own triggers. They are safe
@@ -296,7 +296,7 @@ EXECUTE FUNCTION connect.bump_claim_rating_aggregate();
 
 -- UPDATE OF value, claim_id and not merely value: a rating moved to another claim has to
 -- debit the old one. Nothing moves a rating today, and a column list that quietly assumed
--- nothing ever would is the kind of assumption CA_0341's DELETE branch was added for.
+-- nothing ever would is the kind of assumption CA_0342's DELETE branch was added for.
 -- The WHEN clause makes a re-rate at the SAME value a no-op, which is what the route's
 -- ON CONFLICT DO UPDATE produces when somebody taps the control they already chose.
 DROP TRIGGER IF EXISTS trg_claim_ratings_bump_aggregate_update ON connect.claim_ratings;
@@ -315,7 +315,7 @@ EXECUTE FUNCTION connect.bump_claim_rating_aggregate();
 
 -- 5. Post-verify gate — fail loudly if this migration did not achieve what it claims.
 --
--- Structured as CA_0341 §9 is: lookups first, then ONE behavioural probe inside a
+-- Structured as CA_0342 §9 is: lookups first, then ONE behavioural probe inside a
 -- BEGIN...EXCEPTION block (an implicit subtransaction) whose every exit is a RAISE, so
 -- every row it wrote is unwound whether the outer transaction commits or not. plpgsql
 -- variables are not transactional, so the verdict survives the unwind.
@@ -356,13 +356,13 @@ BEGIN
      WHERE a.attrelid = 'connect.claims'::regclass AND a.attname = v_col AND NOT a.attisdropped;
 
     IF v_notnull IS NULL THEN
-      RAISE EXCEPTION 'CA_0345 gate: connect.claims.% does not exist', v_col;
+      RAISE EXCEPTION 'CA_0346 gate: connect.claims.% does not exist', v_col;
     END IF;
     IF NOT v_notnull THEN
-      RAISE EXCEPTION 'CA_0345 gate: connect.claims.% is nullable — the generated impact expression would yield NULL for it', v_col;
+      RAISE EXCEPTION 'CA_0346 gate: connect.claims.% is nullable — the generated impact expression would yield NULL for it', v_col;
     END IF;
     IF v_default IS DISTINCT FROM '0' THEN
-      RAISE EXCEPTION 'CA_0345 gate: connect.claims.% defaults to %, expected 0', v_col, COALESCE(v_default, 'nothing');
+      RAISE EXCEPTION 'CA_0346 gate: connect.claims.% defaults to %, expected 0', v_col, COALESCE(v_default, 'nothing');
     END IF;
   END LOOP;
 
@@ -377,16 +377,16 @@ BEGIN
    WHERE a.attrelid = 'connect.claims'::regclass AND a.attname = 'impact' AND NOT a.attisdropped;
 
   IF v_notnull IS NULL THEN
-    RAISE EXCEPTION 'CA_0345 gate: connect.claims.impact does not exist';
+    RAISE EXCEPTION 'CA_0346 gate: connect.claims.impact does not exist';
   END IF;
   IF v_generated <> 's' THEN
-    RAISE EXCEPTION 'CA_0345 gate: connect.claims.impact is not a STORED generated column (attgenerated = %) — something other than the formula can write it', COALESCE(NULLIF(v_generated::text, ''), 'none');
+    RAISE EXCEPTION 'CA_0346 gate: connect.claims.impact is not a STORED generated column (attgenerated = %) — something other than the formula can write it', COALESCE(NULLIF(v_generated::text, ''), 'none');
   END IF;
   IF NOT v_notnull THEN
-    RAISE EXCEPTION 'CA_0345 gate: connect.claims.impact is nullable — an unrated claim must read 5.0000, not NULL, or the ordering cannot place it';
+    RAISE EXCEPTION 'CA_0346 gate: connect.claims.impact is nullable — an unrated claim must read 5.0000, not NULL, or the ordering cannot place it';
   END IF;
   IF v_genexpr IS NULL OR v_genexpr NOT LIKE '%rating_sum%' OR v_genexpr NOT LIKE '%rating_count%' THEN
-    RAISE EXCEPTION 'CA_0345 gate: connect.claims.impact is generated from %, which does not read both rating_sum and rating_count', COALESCE(v_genexpr, 'nothing');
+    RAISE EXCEPTION 'CA_0346 gate: connect.claims.impact is generated from %, which does not read both rating_sum and rating_count', COALESCE(v_genexpr, 'nothing');
   END IF;
 
   -- (c) All three trigger branches are attached. R39: the DELETE one is for `postgres`,
@@ -401,7 +401,7 @@ BEGIN
        WHERE n.nspname = 'connect' AND c.relname = 'claim_ratings'
          AND NOT t.tgisinternal AND t.tgname = v_trigname
     ) THEN
-      RAISE EXCEPTION 'CA_0345 gate: % is not attached to connect.claim_ratings', v_trigname;
+      RAISE EXCEPTION 'CA_0346 gate: % is not attached to connect.claim_ratings', v_trigname;
     END IF;
   END LOOP;
 
@@ -418,10 +418,10 @@ BEGIN
    WHERE c.rating_count <> COALESCE(r.n, 0) OR c.rating_sum <> COALESCE(r.s, 0);
 
   IF v_mismatched > 0 THEN
-    RAISE EXCEPTION 'CA_0345 gate: % claim(s) disagree with a direct count over connect.claim_ratings', v_mismatched;
+    RAISE EXCEPTION 'CA_0346 gate: % claim(s) disagree with a direct count over connect.claim_ratings', v_mismatched;
   END IF;
   IF (SELECT count(*) FROM connect.claim_ratings) = 0 AND v_nonzero > 0 THEN
-    RAISE EXCEPTION 'CA_0345 gate: % claim(s) carry a non-zero aggregate while no rating exists', v_nonzero;
+    RAISE EXCEPTION 'CA_0346 gate: % claim(s) carry a non-zero aggregate while no rating exists', v_nonzero;
   END IF;
 
   -- (e) The index the ORDER BY walks. Checked by DEFINITION, not merely by name: an index
@@ -434,17 +434,17 @@ BEGIN
        AND indexdef LIKE '%impact DESC%'
        AND indexdef LIKE '%created_at DESC%'
   ) THEN
-    RAISE EXCEPTION 'CA_0345 gate: claims_column_order_idx is missing or does not descend on impact and created_at — the column read would sort every child on every page';
+    RAISE EXCEPTION 'CA_0346 gate: claims_column_order_idx is missing or does not descend on impact and created_at — the column read would sort every child on every page';
   END IF;
 
   -- (f) The module's role can still read connect.claims, including the new columns.
   --
   -- 🔴 ONE CALL PER PRIVILEGE. has_table_privilege(role, table, 'SELECT,INSERT,UPDATE')
   -- is OR, not AND — it answers "any of these" — so written the comma way this check could
-  -- never fail. Same bug CA_0341 §9(b) calls out.
+  -- never fail. Same bug CA_0342 §9(b) calls out.
   FOREACH v_priv IN ARRAY ARRAY['SELECT', 'INSERT', 'UPDATE'] LOOP
     IF NOT has_table_privilege('focused_communities_app', 'connect.claim_ratings', v_priv) THEN
-      RAISE EXCEPTION 'CA_0345 gate: focused_communities_app is missing % on connect.claim_ratings — the rating upsert needs INSERT and UPDATE and reads the row back', v_priv;
+      RAISE EXCEPTION 'CA_0346 gate: focused_communities_app is missing % on connect.claim_ratings — the rating upsert needs INSERT and UPDATE and reads the row back', v_priv;
     END IF;
   END LOOP;
   -- And per COLUMN for the three new ones, since a table-level grant is what covers them
@@ -452,19 +452,19 @@ BEGIN
   -- became unreadable.
   FOREACH v_col IN ARRAY ARRAY['rating_count', 'rating_sum', 'impact'] LOOP
     IF NOT has_column_privilege('focused_communities_app', 'connect.claims', v_col, 'SELECT') THEN
-      RAISE EXCEPTION 'CA_0345 gate: focused_communities_app cannot SELECT connect.claims.%', v_col;
+      RAISE EXCEPTION 'CA_0346 gate: focused_communities_app cannot SELECT connect.claims.%', v_col;
     END IF;
   END LOOP;
-  -- Nothing gains DELETE. CA_0341's rule, restated for the role this migration touches.
+  -- Nothing gains DELETE. CA_0342's rule, restated for the role this migration touches.
   IF has_table_privilege('focused_communities_app', 'connect.claim_ratings', 'DELETE') THEN
-    RAISE EXCEPTION 'CA_0345 gate: focused_communities_app can DELETE connect.claim_ratings — nothing in the argument tree is ever deleted';
+    RAISE EXCEPTION 'CA_0346 gate: focused_communities_app can DELETE connect.claim_ratings — nothing in the argument tree is ever deleted';
   END IF;
 
   -- (g) It all actually WORKS. Everything above proves things EXIST; this proves they do
   --     what the header says, against real rows, and then unwinds.
   BEGIN
     INSERT INTO connect.communities (topic_id, slug, name)
-    VALUES (gen_random_uuid(), 'ca0345-probe-' || gen_random_uuid()::text, 'CA_0345 probe')
+    VALUES (gen_random_uuid(), 'ca0345-probe-' || gen_random_uuid()::text, 'CA_0346 probe')
     RETURNING id INTO v_probe_comm;
 
     SELECT id INTO v_probe_root FROM connect.claims WHERE community_id = v_probe_comm;
@@ -479,10 +479,10 @@ BEGIN
     END IF;
 
     INSERT INTO connect.claims (parent_claim_id, side, body)
-    VALUES (v_probe_root, 'supports', 'CA_0345 probe claim A — one enthusiast')
+    VALUES (v_probe_root, 'supports', 'CA_0346 probe claim A — one enthusiast')
     RETURNING id INTO v_probe_a;
     INSERT INTO connect.claims (parent_claim_id, side, body)
-    VALUES (v_probe_root, 'supports', 'CA_0345 probe claim B — twenty supporters')
+    VALUES (v_probe_root, 'supports', 'CA_0346 probe claim B — twenty supporters')
     RETURNING id INTO v_probe_b;
 
     ----------------------------------------------------- INSERT branch, and the brief's case
@@ -574,7 +574,7 @@ BEGIN
     END;
 
     -- Every assertion passed. Abort anyway: this is how the probe cleans up after itself.
-    RAISE EXCEPTION 'CA_0345 probe rollback' USING ERRCODE = 'CA345';
+    RAISE EXCEPTION 'CA_0346 probe rollback' USING ERRCODE = 'CA345';
   EXCEPTION
     WHEN SQLSTATE 'CA345' THEN
       v_probe_ok := TRUE;
@@ -583,7 +583,7 @@ BEGIN
   END;
 
   IF NOT v_probe_ok THEN
-    RAISE EXCEPTION 'CA_0345: the behavioural probe failed — %',
+    RAISE EXCEPTION 'CA_0346: the behavioural probe failed — %',
       COALESCE(v_probe_detail, 'the probe did not run to completion');
   END IF;
 
@@ -591,7 +591,7 @@ BEGIN
   IF EXISTS (SELECT 1 FROM connect.communities WHERE id = v_probe_comm)
      OR EXISTS (SELECT 1 FROM connect.claims WHERE community_id = v_probe_comm)
      OR EXISTS (SELECT 1 FROM connect.claim_ratings WHERE user_id = v_rater) THEN
-    RAISE EXCEPTION 'CA_0345: the behavioural probe left rows behind — the subtransaction did not unwind';
+    RAISE EXCEPTION 'CA_0346: the behavioural probe left rows behind — the subtransaction did not unwind';
   END IF;
 
   -- (i) ...and the live aggregate is still exactly what it was before the probe ran.
@@ -601,10 +601,10 @@ BEGIN
                  FROM connect.claim_ratings GROUP BY claim_id) r ON r.claim_id = c.id
    WHERE c.rating_count <> COALESCE(r.n, 0) OR c.rating_sum <> COALESCE(r.s, 0);
   IF v_mismatched > 0 THEN
-    RAISE EXCEPTION 'CA_0345: % claim(s) disagree with connect.claim_ratings after the probe', v_mismatched;
+    RAISE EXCEPTION 'CA_0346: % claim(s) disagree with connect.claim_ratings after the probe', v_mismatched;
   END IF;
 
-  RAISE NOTICE 'CA_0345 OK — connect.claims gains rating_count, rating_sum and a NOT NULL generated impact (prior weight 5, neutral 5, 4 dp), claims_column_order_idx for the column ORDER BY, and the insert/update/delete aggregate trigger on connect.claim_ratings. % claims live, all at the aggregate a direct count gives. Probe verified, then rolled back: an unrated claim at 5.0000, one 9 (5.6667) ranking below twenty 7s (6.6000), a re-rate through ON CONFLICT DO UPDATE moving the sum but not the count, a repeat of the same value moving neither, a delete returning the aggregate to zero, the coherence constraint refusing an incoherent pair, and no claim_edits row written by any of it.',
+  RAISE NOTICE 'CA_0346 OK — connect.claims gains rating_count, rating_sum and a NOT NULL generated impact (prior weight 5, neutral 5, 4 dp), claims_column_order_idx for the column ORDER BY, and the insert/update/delete aggregate trigger on connect.claim_ratings. % claims live, all at the aggregate a direct count gives. Probe verified, then rolled back: an unrated claim at 5.0000, one 9 (5.6667) ranking below twenty 7s (6.6000), a re-rate through ON CONFLICT DO UPDATE moving the sum but not the count, a repeat of the same value moving neither, a delete returning the aggregate to zero, the coherence constraint refusing an incoherent pair, and no claim_edits row written by any of it.',
     (SELECT count(*) FROM connect.claims);
 END $$;
 

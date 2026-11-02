@@ -62,7 +62,7 @@ const row = (over: Record<string, unknown> = {}) => ({
   body: 'Root claim',
   author_display_name: null,
   moderation_status: 'visible',
-  // NUMERIC comes off node-postgres as a string; 5.0000 is what CA_0345's generated column
+  // NUMERIC comes off node-postgres as a string; 5.0000 is what CA_0346's generated column
   // reads for a claim nobody has rated - the neutral midpoint, never null.
   impact: '5.0000',
   rating_count: 0,
@@ -199,7 +199,7 @@ describe('GET /claims/:claimId', () => {
   });
 
   it('bounds the ancestry query by the depth cap', async () => {
-    // One query is not the same as a bounded response. The write route and CA_0344's CHECK both
+    // One query is not the same as a bounded response. The write route and CA_0345's CHECK both
     // cap depth, but this read must not depend on either holding — a pre-cap row, or any future
     // way of deepening the tree, would otherwise turn one claim into an unbounded breadcrumb,
     // served to anonymous readers as `public, s-maxage=30` and so cached and re-served.
@@ -534,7 +534,7 @@ describe('column pagination', () => {
   it('carries an impact through the cursor without losing a digit', async () => {
     // 🔴 The keyset is only correct if the number the cursor CARRIES is the number the
     // predicate SENDS. A cursor value makes the round trip NUMERIC -> string (node-postgres)
-    // -> Number -> JSON -> Number -> string -> ::numeric, and CA_0345 rounds impact to four
+    // -> Number -> JSON -> Number -> string -> ::numeric, and CA_0346 rounds impact to four
     // decimals precisely so that trip is lossless. Unrounded numeric division gives sixteen
     // fractional digits, which a float64 cannot hold, and the cursor would land between two
     // rows — re-serving some children forever and dropping others.
@@ -1330,7 +1330,7 @@ describe('GET /communities/:id/claims/shape', () => {
 describe('config/database.ts privacy wall', () => {
   it('names every connect table the module actually reads or writes', () => {
     // 🔴 THAT PARAGRAPH IS THE ONE A REVIEWER READS TO DECIDE WHETHER A NEW QUERY IS IN SCOPE.
-    // It said "ONLY the five connect tables" and listed them long after CA_0341 added three
+    // It said "ONLY the five connect tables" and listed them long after CA_0342 added three
     // more with real grants — so the wall a future reader was measuring against had three
     // holes in it that were not holes at all, and the next genuine widening would have looked
     // exactly the same. A list that is wrong is worse than no list, because it is trusted.

@@ -1,7 +1,7 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0344: a depth ceiling on connect.claims
+-- CA_0345: a depth ceiling on connect.claims
 -- =============================================================================
 -- Created 2026-10-31 with Chris Andrews. Task 4 fix round 2 (review finding R35).
 --
@@ -23,11 +23,11 @@ BEGIN;
 -- 🔴 WHY A CONSTRAINT AND NOT ONLY A ROUTE CHECK
 -- routes/claimWrites.ts already answers 422 when the parent is at the cap, and that is
 -- the check a contributor sees. It is not the one that BINDS. `postgres` is exempt from
--- every grant and every policy in CA_0323 and CA_0341, so a psql session, a future
+-- every grant and every policy in CA_0323 and CA_0342, so a psql session, a future
 -- migration, or a maven tool running as the owner can deepen the tree past any number a
 -- route knows about. Only a CHECK constraint is in the way of all of them. This is the
 -- same reasoning that put the DELETE branch on connect.bump_claim_child_counts in
--- CA_0341 (review finding R14): the grant says DELETE cannot happen, and the trigger
+-- CA_0342 (review finding R14): the grant says DELETE cannot happen, and the trigger
 -- handles it anyway, because `postgres` is not bound by the grant.
 --
 -- THE THIRD ENFORCEMENT POINT
@@ -46,7 +46,7 @@ BEGIN;
 --
 -- SAFE ON LIVE DATA
 -- At the time of writing connect.claims holds 61 rows, every one of them a root at
--- depth 0 (one per community, seeded by CA_0341 §7 and CA_0342). Maximum depth live is
+-- depth 0 (one per community, seeded by CA_0342 §7 and CA_0343). Maximum depth live is
 -- 0 and nothing is within 50 levels of the cap, so this constraint validates against the
 -- existing table without rewriting or rejecting a single row. Section 2 proves that
 -- rather than asserting it.
@@ -57,9 +57,9 @@ BEGIN;
 
 -- 1. The constraint.
 --
--- Guarded, because the house style in CA_0341 is that re-running a migration is a no-op
+-- Guarded, because the house style in CA_0342 is that re-running a migration is a no-op
 -- rather than an error: an unguarded ADD CONSTRAINT raises 42710 on the second apply.
--- depth is NOT NULL (CA_0341 §1), so there is no NULL case to admit here.
+-- depth is NOT NULL (CA_0342 §1), so there is no NULL case to admit here.
 DO $$
 BEGIN
   IF NOT EXISTS (
@@ -73,7 +73,7 @@ BEGIN
 END $$;
 
 COMMENT ON CONSTRAINT claims_depth_within_cap ON connect.claims IS
-  'Argument tree depth ceiling (CA_0344). Mirrors MAX_CLAIM_DEPTH in '
+  'Argument tree depth ceiling (CA_0345). Mirrors MAX_CLAIM_DEPTH in '
   'src/focused_communities/lib/utils.ts, which routes/claimWrites.ts and routes/claims.ts '
   'both read. Raising it means changing the constant and this constraint together.';
 
@@ -82,7 +82,7 @@ COMMENT ON CONSTRAINT claims_depth_within_cap ON connect.claims IS
 -- Proves three things and ROLLS THE WHOLE MIGRATION BACK if any of them fails: that the
 -- constraint is really there, that it was validated against the rows that already exist,
 -- and that it actually BITES. A constraint nobody has tested is a comment with extra
--- syntax, so the third one is a real refused write, in CA_0341 §9's style, not a lookup
+-- syntax, so the third one is a real refused write, in CA_0342 §9's style, not a lookup
 -- in pg_constraint.
 DO $$
 DECLARE
@@ -103,10 +103,10 @@ BEGIN
      AND conname = 'claims_depth_within_cap';
 
   IF v_convalidated IS NULL THEN
-    RAISE EXCEPTION 'CA_0344 gate: constraint claims_depth_within_cap does not exist';
+    RAISE EXCEPTION 'CA_0345 gate: constraint claims_depth_within_cap does not exist';
   END IF;
   IF NOT v_convalidated THEN
-    RAISE EXCEPTION 'CA_0344 gate: claims_depth_within_cap exists but is NOT VALID — the rows already in the table were never checked';
+    RAISE EXCEPTION 'CA_0345 gate: claims_depth_within_cap exists but is NOT VALID — the rows already in the table were never checked';
   END IF;
 
   -- (b) No existing row violates it. Implied by (a), and stated anyway because this is
@@ -116,7 +116,7 @@ BEGIN
     FROM connect.claims;
 
   IF v_over_cap > 0 THEN
-    RAISE EXCEPTION 'CA_0344 gate: % existing claim(s) are deeper than the cap', v_over_cap;
+    RAISE EXCEPTION 'CA_0345 gate: % existing claim(s) are deeper than the cap', v_over_cap;
   END IF;
 
   -- (c) It BITES.
@@ -126,7 +126,7 @@ BEGIN
   -- over. A root at depth 51 violates claims_root_or_child_shape (a root must be depth 0)
   -- and collides with claims_one_root_per_community, so it would be refused whether or
   -- not THIS constraint exists, and the gate would pass on a migration that did nothing.
-  -- A child cannot be inserted over-cap either, because CA_0341 §4a derives depth from
+  -- A child cannot be inserted over-cap either, because CA_0342 §4a derives depth from
   -- the parent and discards what the statement supplies.
   --
   -- So: insert a legitimate child (the trigger puts it at depth 1), then UPDATE it to
@@ -143,12 +143,12 @@ BEGIN
   -- survives the probe, which section (d) then proves rather than assumes.
   SELECT id INTO v_root FROM connect.claims WHERE parent_claim_id IS NULL LIMIT 1;
   IF v_root IS NULL THEN
-    RAISE EXCEPTION 'CA_0344 gate: no root claim to probe against';
+    RAISE EXCEPTION 'CA_0345 gate: no root claim to probe against';
   END IF;
 
   BEGIN
     INSERT INTO connect.claims (parent_claim_id, side, body)
-    VALUES (v_root, 'supports', 'CA_0344 gate probe')
+    VALUES (v_root, 'supports', 'CA_0345 gate probe')
     RETURNING id INTO v_child;
 
     UPDATE connect.claims
@@ -174,18 +174,18 @@ BEGIN
   END;
 
   IF NOT v_probe_ok THEN
-    RAISE EXCEPTION 'CA_0344: the behavioural probe failed — %',
+    RAISE EXCEPTION 'CA_0345: the behavioural probe failed — %',
       COALESCE(v_probe_detail, 'the probe did not run to completion');
   END IF;
 
   -- (d) Belt and braces: the probe unwound completely. A future change that breaks the
   --     unwind must not pass quietly, and least of all leave a stray claim in a real
   --     community's tree.
-  IF EXISTS (SELECT 1 FROM connect.claims WHERE body = 'CA_0344 gate probe') THEN
-    RAISE EXCEPTION 'CA_0344 gate: the probe claim survived — the subtransaction did not unwind';
+  IF EXISTS (SELECT 1 FROM connect.claims WHERE body = 'CA_0345 gate probe') THEN
+    RAISE EXCEPTION 'CA_0345 gate: the probe claim survived — the subtransaction did not unwind';
   END IF;
 
-  RAISE NOTICE 'CA_0344 gate PASSED: claims_depth_within_cap exists, is validated and refuses an over-cap row; % claims live, deepest is %, cap is 50',
+  RAISE NOTICE 'CA_0345 gate PASSED: claims_depth_within_cap exists, is validated and refuses an over-cap row; % claims live, deepest is %, cap is 50',
     (SELECT count(*) FROM connect.claims), v_max_depth;
 END $$;
 

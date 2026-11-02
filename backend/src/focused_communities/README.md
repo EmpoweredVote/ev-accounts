@@ -15,7 +15,7 @@ paths) and **`/api/fc`** (tidy) in `src/index.ts`; the seam is `app.ts`.
 
 ## The argument tree
 A Kialo-style tree of claims under each community's question, added by migrations
-**CA_0341 – CA_0345**. Three routers, mounted in `app.ts` in this order, all under the same
+**CA_0342 – CA_0346**. Three routers, mounted in `app.ts` in this order, all under the same
 prefixes as the rest of the module:
 
 | Router | Routes |
@@ -32,7 +32,7 @@ prefixes as the rest of the module:
   curates, edits or rates one** — four separate routes refuse it.
 - **Position is derived, never sent.** `path` and `depth` come from
   `trg_claims_derive_position`; a move or a merge rewrites the whole subtree in one sweep.
-  `impact` is `GENERATED ALWAYS` from the rating aggregate (CA_0345) and is never written.
+  `impact` is `GENERATED ALWAYS` from the rating aggregate (CA_0346) and is never written.
 - **Nothing is deleted and nothing is folded.** A hidden claim becomes a tombstone (empty body,
   no pseudonym, counts intact); a merged claim keeps its id, URL, body and history and gains a
   `mergedInto` pointer that a client follows a hop at a time.

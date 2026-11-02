@@ -523,7 +523,7 @@ describe('POST /claims/:parentId/children', () => {
     // 🔴 A new claim is unrated, so the neutral 5 and the count 0 are what the generated
     // column will actually say - which makes a route that HARDCODED them indistinguishable
     // from one that reads them, until the formula changes and only one of the two follows.
-    // CA_0345 owns the arithmetic; this file must own none of it. So: a row carrying numbers
+    // CA_0346 owns the arithmetic; this file must own none of it. So: a row carrying numbers
     // the route could not have guessed.
     mockCreate({ impact: '6.6000', rating_count: 20 });
 
@@ -701,7 +701,7 @@ describe('PUT /claims/:claimId/rating', () => {
   it('keeps a single 9 below a well-supported 7', async () => {
     // 🔴 THE LOW-n STABILITY CASE, AND WHY IT IS ASSERTED LIKE THIS.
     //
-    // The route does no arithmetic — connect.claims.impact is a generated column and CA_0345
+    // The route does no arithmetic — connect.claims.impact is a generated column and CA_0346
     // owns the formula, which is the whole point of ruling R38. So a unit test against a mocked
     // pool cannot observe the aggregation by running it. What it CAN do is two things that
     // together pin the decision:
@@ -739,7 +739,7 @@ describe('PUT /claims/:claimId/rating', () => {
     // The migration must still say 5. Read from the file rather than trusted, because the
     // formula lives there and nothing else in this test suite can see it.
     const migration = readFileSync(
-      new URL('../../migrations/CA_0345_claim_impact.sql', import.meta.url),
+      new URL('../../migrations/CA_0346_claim_impact.sql', import.meta.url),
       'utf8'
     );
     expect(migration).toContain('round((5 * 5 + rating_sum)::numeric / (5 + rating_count), 4)');
@@ -1172,7 +1172,7 @@ describe('PATCH /claims/:claimId', () => {
     await patch();
 
     const sql = updateSql();
-    // The SET list, exactly. rating_count, rating_sum and impact belong to CA_0345's triggers
+    // The SET list, exactly. rating_count, rating_sum and impact belong to CA_0346's triggers
     // and its generated column; path, depth and community_id belong to trg_claims_derive_position
     // (BEFORE INSERT OR UPDATE OF parent_claim_id, which a body edit does not fire); the child
     // counts belong to trg_claims_bump_child_counts_move. An edit that moved any of them would
@@ -1208,7 +1208,7 @@ describe('PATCH /claims/:claimId', () => {
     // than trusted, because nothing else in this suite can see it: the setting's name, the
     // RAISE when it is unset, and the AFTER UPDATE trigger that calls the function.
     const migration = readFileSync(
-      new URL('../../migrations/CA_0341_focused_communities_claims.sql', import.meta.url),
+      new URL('../../migrations/CA_0342_focused_communities_claims.sql', import.meta.url),
       'utf8'
     );
     expect(migration).toContain("current_setting('fc.actor_id', true)");

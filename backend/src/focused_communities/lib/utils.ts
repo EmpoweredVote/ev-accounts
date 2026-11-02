@@ -44,7 +44,7 @@ export function generateExcerpt(body: string, maxLength = 200): string {
  *
  * 🔴 It lives here, not in a route, because THREE places have to agree on it and two of them are
  * sibling routers: routes/claimWrites.ts rejects a child of a parent already at the cap,
- * routes/claims.ts bounds the breadcrumb query by it, and CA_0344 puts it in a CHECK constraint
+ * routes/claims.ts bounds the breadcrumb query by it, and CA_0345 puts it in a CHECK constraint
  * so it binds `postgres` too, which is exempt from every grant. Change it in all three or not at
  * all — the constraint is the one that will tell you.
  */

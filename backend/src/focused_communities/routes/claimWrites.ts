@@ -23,7 +23,7 @@
 //      without the compiler saying so.
 //   5. 🔴 A RATING IS WRITTEN, NEVER SUMMED HERE. The route writes one row of
 //      connect.claim_ratings; connect.bump_claim_rating_aggregate maintains rating_count and
-//      rating_sum on the claim, and connect.claims.impact derives the mean from those (CA_0345).
+//      rating_sum on the claim, and connect.claims.impact derives the mean from those (CA_0346).
 //      The Bayesian formula exists in exactly one place and this file is not it.
 
 import { Router } from 'express';
@@ -96,8 +96,8 @@ const RATING_RATE_LIMIT_NAMESPACE = 'rating:';
 
 /**
  * The rating scale, as the only values that count. The same two bounds live in
- * connect.claim_ratings' CHECK (value BETWEEN 1 AND 9) (CA_0341) and in the neutral midpoint
- * CA_0345's impact formula is built on; the database is what BINDS, and this is what gives a
+ * connect.claim_ratings' CHECK (value BETWEEN 1 AND 9) (CA_0342) and in the neutral midpoint
+ * CA_0346's impact formula is built on; the database is what BINDS, and this is what gives a
  * contributor a sentence instead of a 500 out of a constraint violation.
  *
  * 🔴 NINE POINTS, AND THE MIDPOINT MATTERS. 5 is neutral — it is the value an unrated claim's
@@ -240,7 +240,7 @@ interface InsertedClaimRow {
   moderation_status: string;
   /**
    * NUMERIC, so node-postgres hands it over as a string. See ClaimRow.impact in
-   * routes/claims.ts for why CA_0345 rounds it to four decimals.
+   * routes/claims.ts for why CA_0346 rounds it to four decimals.
    *
    * It is read back rather than assumed to be 5: `impact` is GENERATED ALWAYS, so a row
    * fresh out of INSERT ... RETURNING already carries whatever the formula says, and
@@ -301,7 +301,7 @@ function toClaim(row: InsertedClaimRow, myRating: number | null): Claim {
 //
 // 🔴 READ THIS BEFORE ADDING path, depth OR community_id TO THE INSERT BELOW.
 //
-// connect.derive_claim_position (CA_0341 §4a) is a BEFORE INSERT OR UPDATE OF parent_claim_id
+// connect.derive_claim_position (CA_0342 §4a) is a BEFORE INSERT OR UPDATE OF parent_claim_id
 // trigger. It looks the parent up FOR UPDATE and sets NEW.path, NEW.depth and NEW.community_id
 // from it, DISCARDING whatever the statement supplied for those three. So sending them is not
 // merely redundant — it is code that claims to decide something it does not decide, and the next
@@ -376,7 +376,7 @@ function toClaim(row: InsertedClaimRow, myRating: number | null): Claim {
 //      merging redirects. Do not "fix" this into symmetry with the ancestor rule above.
 //
 //   3. DEPTH is NOT in this statement. It is enforced by the route (a 422 the contributor can
-//      understand) and by CA_0344's CHECK constraint (which binds postgres too, exempt from every
+//      understand) and by CA_0345's CHECK constraint (which binds postgres too, exempt from every
 //      grant). Adding it here as a fourth predicate would turn an over-deep write into a silent
 //      zero-row 404 that says nothing useful; letting the CHECK raise instead keeps the loud
 //      failure loud. Task 7's move will hit that same constraint rather than silently deepening
@@ -442,7 +442,7 @@ claimWritesRouter.post(
 
     // 🔴 FAIL CLOSED. A limiter that cannot answer refuses the write; it does not wave it
     // through. Everything written here is permanent — there is no DELETE grant on
-    // connect.claims (CA_0341), so spam has to be hidden by a maven one claim at a time, and
+    // connect.claims (CA_0342), so spam has to be hidden by a maven one claim at a time, and
     // there is no undo. Failing open during a Redis outage trades a recoverable inconvenience
     // (a contributor retries in a minute) for an unrecoverable one (an unbounded flood of rows
     // nobody can remove). Note the limiter already degrades to an always-allow stub when
@@ -580,7 +580,7 @@ claimWritesRouter.post(
 // 🔴 WHAT THIS ROUTE DOES NOT DO: arithmetic. It writes ONE row of connect.claim_ratings. The
 // trigger connect.bump_claim_rating_aggregate keeps rating_count and rating_sum on the claim in
 // step with that table, and connect.claims.impact is a generated column deriving the
-// Bayesian-weighted mean from the two (CA_0345, rulings R37/R38). Computing the mean here would
+// Bayesian-weighted mean from the two (CA_0346, rulings R37/R38). Computing the mean here would
 // put the formula in two places, and the two would drift the first time the prior weight moved.
 // The route's whole contribution to the number is sending the value through unchanged.
 //
@@ -646,7 +646,7 @@ claimWritesRouter.post(
 // rater_account_age_days and rater_verification_status are written on every rating, including a
 // re-rate, although the aggregate ignores both today. They are properties of the rater AT THE
 // MOMENT OF RATING and cannot be reconstructed afterwards: an account that verifies next month
-// must not retroactively reweight what it said today (CA_0341 section 2 says the same from the
+// must not retroactively reweight what it said today (CA_0342 section 2 says the same from the
 // schema side). Writing them later is impossible; writing them now is two fields on a row that
 // is being written anyway. The re-rate refreshes them because a replaced value is a NEW rating
 // cast at a new moment, and a snapshot describing the value it no longer accompanies would be
@@ -948,7 +948,7 @@ claimWritesRouter.put(
 // The SET list is two columns, and the rest of the row is other people's arithmetic:
 //
 //   * rating_count and rating_sum belong to connect.bump_claim_rating_aggregate, and `impact` is
-//     GENERATED ALWAYS from them (CA_0345). 🔴 RATINGS CAST AGAINST THE OLD WORDING CARRY OVER TO
+//     GENERATED ALWAYS from them (CA_0346). 🔴 RATINGS CAST AGAINST THE OLD WORDING CARRY OVER TO
 //     THE NEW ONE VERBATIM. That is deliberate — the brief allows editing a claim that already
 //     has ratings and children — but it is a real consequence: an author can rewrite a claim out
 //     from under twenty ratings. Resetting the aggregate instead would make the first rating
@@ -956,7 +956,7 @@ claimWritesRouter.put(
 //     here.
 //   * path, depth and community_id belong to trg_claims_derive_position, which is BEFORE INSERT
 //     OR UPDATE OF parent_claim_id — a body edit does not fire it, and must not start to.
-//     CA_0344's claims_depth_within_cap is therefore untouched.
+//     CA_0345's claims_depth_within_cap is therefore untouched.
 //   * child_supports_count and child_opposes_count belong to the count triggers.
 //
 // --- A no-op edit succeeds, and manufactures nothing -------------------------------------------
@@ -967,7 +967,7 @@ claimWritesRouter.put(
 // cannot manufacture history by doing it twice.
 //
 // The CASE on updated_at is the other half of that agreement, and it is ours rather than the
-// trigger's. connect.claims has no touch trigger — "updated_at is set by the routes", CA_0341 —
+// trigger's. connect.claims has no touch trigger — "updated_at is set by the routes", CA_0342 —
 // so an unconditional `updated_at = now()` would move the one timestamp a reader uses to tell an
 // edited claim from an untouched one, with no history row behind it. In SET, the unqualified
 // `body` on the right-hand side is the OLD value, which is what makes the comparison work.
@@ -1114,7 +1114,7 @@ claimWritesRouter.patch(
 // DELETE /claims/:claimId — never.
 //
 // Memory over Moderation, as for threads and posts, and here it is more than a convention:
-// CA_0341 revokes DELETE and TRUNCATE on connect.claims from every role this process could be,
+// CA_0342 revokes DELETE and TRUNCATE on connect.claims from every role this process could be,
 // precisely so "a claim is withdrawn, not removed" cannot be undone by a future route. A claim is
 // hidden by a maven (Task 7) and its tombstone stays where readers can see it.
 //

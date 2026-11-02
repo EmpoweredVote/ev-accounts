@@ -1,9 +1,26 @@
 BEGIN;
 
 -- =============================================================================
--- CA_0341: the argument tree — connect.claims, claim_ratings, claim_edits
+-- CA_0342: the argument tree — connect.claims, claim_ratings, claim_edits
 -- =============================================================================
 -- Created 2026-10-31 with Chris Andrews. Task 1 of the argument-tree build.
+--
+-- 🔴 THE FIVE ARGUMENT-TREE MIGRATIONS WERE RENUMBERED ON 2026-11-01 (0341-0345 -> 0342-0346),
+-- AND THE DATABASE STILL RECORDS THE OLD NAMES. They were applied under the old numbering, and
+-- supabase_migrations.schema_migrations keeps those names:
+--
+--   file (now)                                    applied as
+--   CA_0342_focused_communities_claims            CA_0341_focused_communities_claims (+2 follow-ups)
+--   CA_0343_focused_communities_season2_backfill  CA_0342_focused_communities_season2_backfill
+--   CA_0344_season2_topics_live                   ca_0343_season2_topics_live
+--   CA_0345_claims_depth_cap                      ca_0344_claims_depth_cap
+--   CA_0346_claim_impact                          ca_0345_claim_impact
+--
+-- WHY. The seasons migration had taken slot CA_340 without reserving it; the LegiScan lane then
+-- reserved 340 properly and landed its own file on master, so the seasons file moved to 341 and
+-- everything stacked above it moved up one. Apply ORDER is the timestamped version column, never
+-- the filename, so nothing reorders and re-running any of these is a no-op — but if you are
+-- matching files to applied rows, this table is the map.
 --
 -- WHAT THIS DOES
 -- Adds the three tables every later task reads or writes, plus their indexes,
@@ -37,7 +54,7 @@ BEGIN;
 -- and rolling it back, not merely by finding a row in pg_trigger.
 --
 -- WHY THE TREE IS NOT SEASONED
--- Compass topics move through editorial seasons (CA_0340). The argument tree does
+-- Compass topics move through editorial seasons (CA_0341). The argument tree does
 -- not: a claim about a problem outlives the season in which it was written, so
 -- claims carries no season_id and is keyed to the community, not a revision.
 --
@@ -114,13 +131,13 @@ BEGIN
     SELECT 1 FROM pg_type t JOIN pg_namespace n ON n.oid = t.typnamespace
     WHERE n.nspname = 'connect' AND t.typname = 'moderation_status'
   ) THEN
-    RAISE EXCEPTION 'CA_0341: connect.moderation_status is missing — this migration reuses that enum, it does not create it';
+    RAISE EXCEPTION 'CA_0342: connect.moderation_status is missing — this migration reuses that enum, it does not create it';
   END IF;
   IF NOT EXISTS (
     SELECT 1 FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace
     WHERE n.nspname = 'connect' AND p.proname = 'snapshot_author_display_name'
   ) THEN
-    RAISE EXCEPTION 'CA_0341: connect.snapshot_author_display_name() is missing — this migration attaches it, it does not create it';
+    RAISE EXCEPTION 'CA_0342: connect.snapshot_author_display_name() is missing — this migration attaches it, it does not create it';
   END IF;
 END $$;
 
@@ -155,7 +172,7 @@ CREATE TABLE IF NOT EXISTS connect.claims (
   -- forever. Task 7 still does its own check so the maven gets a 409 and a sentence;
   -- this is the backstop that makes the ring impossible rather than merely unlikely.
   -- Valid against every row section 7b backfills: a root has an empty path. (That was 44
-  -- rows when this was written and is 61 now, because CA_0342 added seventeen communities
+  -- rows when this was written and is 61 now, because CA_0343 added seventeen communities
   -- and 7a seeded a root for each. The count is recorded here only so a later reader does
   -- not take a stale one from this file; nothing in the migration depends on it.)
   CONSTRAINT claims_not_own_ancestor CHECK (NOT (path @> ARRAY[id])),
@@ -171,7 +188,7 @@ CREATE TABLE IF NOT EXISTS connect.claims (
   )
 );
 
--- CA_0341 was already applied once, so CREATE TABLE IF NOT EXISTS above is a no-op on the
+-- CA_0342 was already applied once, so CREATE TABLE IF NOT EXISTS above is a no-op on the
 -- live database and its inline constraints would never reach it. Everything added after
 -- the first apply therefore also appears here as a guarded ALTER. The inline forms are
 -- what a fresh rebuild gets; these are what the live table gets. Keep the two in step.
@@ -624,7 +641,7 @@ BEGIN
   FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings', 'claim_edits'] LOOP
     IF NOT (SELECT c.relrowsecurity FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
             WHERE n.nspname = 'connect' AND c.relname = v_tbl) THEN
-      RAISE EXCEPTION 'CA_0341: RLS is not enabled on connect.%', v_tbl;
+      RAISE EXCEPTION 'CA_0342: RLS is not enabled on connect.%', v_tbl;
     END IF;
   END LOOP;
 
@@ -640,12 +657,12 @@ BEGIN
   FOREACH v_priv IN ARRAY ARRAY['SELECT', 'INSERT', 'UPDATE'] LOOP
     FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings'] LOOP
       IF NOT has_table_privilege('focused_communities_app', 'connect.' || v_tbl, v_priv) THEN
-        RAISE EXCEPTION 'CA_0341: focused_communities_app is missing % on connect.%', v_priv, v_tbl;
+        RAISE EXCEPTION 'CA_0342: focused_communities_app is missing % on connect.%', v_priv, v_tbl;
       END IF;
     END LOOP;
   END LOOP;
   IF NOT has_table_privilege('focused_communities_app', 'connect.claim_edits', 'SELECT') THEN
-    RAISE EXCEPTION 'CA_0341: missing SELECT on connect.claim_edits';
+    RAISE EXCEPTION 'CA_0342: missing SELECT on connect.claim_edits';
   END IF;
 
   -- c. Two invariants, asserted from the other side for every role a grant can
@@ -658,13 +675,13 @@ BEGIN
   FOREACH v_role IN ARRAY ARRAY['focused_communities_app', 'anon', 'authenticated', 'service_role', 'ev_api'] LOOP
     FOREACH v_tbl IN ARRAY ARRAY['claims', 'claim_ratings', 'claim_edits'] LOOP
       IF has_table_privilege(v_role, 'connect.' || v_tbl, 'DELETE') THEN
-        RAISE EXCEPTION 'CA_0341: % can DELETE connect.% — nothing in the argument tree is ever deleted', v_role, v_tbl;
+        RAISE EXCEPTION 'CA_0342: % can DELETE connect.% — nothing in the argument tree is ever deleted', v_role, v_tbl;
       END IF;
     END LOOP;
 
     IF has_table_privilege(v_role, 'connect.claim_edits', 'INSERT')
        OR has_table_privilege(v_role, 'connect.claim_edits', 'UPDATE') THEN
-      RAISE EXCEPTION 'CA_0341: % can write connect.claim_edits directly — only the log_claim_edit trigger may, or the audit trail proves nothing', v_role;
+      RAISE EXCEPTION 'CA_0342: % can write connect.claim_edits directly — only the log_claim_edit trigger may, or the audit trail proves nothing', v_role;
     END IF;
   END LOOP;
 
@@ -672,7 +689,7 @@ BEGIN
   SELECT count(*) INTO v_communities FROM connect.communities;
   SELECT count(*) INTO v_roots FROM connect.claims WHERE depth = 0;
   IF v_roots <> v_communities THEN
-    RAISE EXCEPTION 'CA_0341: % root claims for % communities — expected one each', v_roots, v_communities;
+    RAISE EXCEPTION 'CA_0342: % root claims for % communities — expected one each', v_roots, v_communities;
   END IF;
 
   -- e. The WHEN clause on the snapshot trigger, and its effect. If this is ever dropped,
@@ -681,10 +698,10 @@ BEGIN
   FROM pg_trigger t JOIN pg_class c ON c.oid = t.tgrelid JOIN pg_namespace n ON n.oid = c.relnamespace
   WHERE n.nspname = 'connect' AND c.relname = 'claims' AND t.tgname = 'trg_claims_snapshot_display_name';
   IF v_trigdef IS NULL OR v_trigdef NOT LIKE '%author_id IS NOT NULL%' THEN
-    RAISE EXCEPTION 'CA_0341: trg_claims_snapshot_display_name is missing its WHEN (NEW.author_id IS NOT NULL) guard';
+    RAISE EXCEPTION 'CA_0342: trg_claims_snapshot_display_name is missing its WHEN (NEW.author_id IS NOT NULL) guard';
   END IF;
   IF EXISTS (SELECT 1 FROM connect.claims WHERE author_id IS NULL AND author_display_name IS NOT NULL) THEN
-    RAISE EXCEPTION 'CA_0341: an authorless claim was given a display name — the snapshot trigger fired where it must not';
+    RAISE EXCEPTION 'CA_0342: an authorless claim was given a display name — the snapshot trigger fired where it must not';
   END IF;
 
   -- f. The count and edit triggers are attached.
@@ -696,14 +713,14 @@ BEGIN
                          'trg_claims_bump_child_counts_move',
                          'trg_claims_bump_child_counts_delete',
                          'trg_log_claim_edit')) <> 5 THEN
-    RAISE EXCEPTION 'CA_0341: the derivation, child-count and edit-log triggers are not all attached to connect.claims';
+    RAISE EXCEPTION 'CA_0342: the derivation, child-count and edit-log triggers are not all attached to connect.claims';
   END IF;
 
   -- g. Seeded roots start at zero and are shaped as roots.
   IF EXISTS (SELECT 1 FROM connect.claims WHERE depth = 0
              AND (parent_claim_id IS NOT NULL OR side IS NOT NULL OR author_id IS NOT NULL
                   OR cardinality(path) <> 0 OR child_supports_count <> 0 OR child_opposes_count <> 0)) THEN
-    RAISE EXCEPTION 'CA_0341: a seeded root claim is not shaped like a root';
+    RAISE EXCEPTION 'CA_0342: a seeded root claim is not shaped like a root';
   END IF;
 
   -- h. The root-claim trigger is attached to connect.communities...
@@ -712,7 +729,7 @@ BEGIN
   WHERE n.nspname = 'connect' AND c.relname = 'communities'
     AND t.tgname = 'trg_communities_seed_root_claim' AND NOT t.tgisinternal;
   IF v_trigdef IS NULL THEN
-    RAISE EXCEPTION 'CA_0341: trg_communities_seed_root_claim is not attached to connect.communities — community #45 would have no root claim and its tree would 404';
+    RAISE EXCEPTION 'CA_0342: trg_communities_seed_root_claim is not attached to connect.communities — community #45 would have no root claim and its tree would 404';
   END IF;
 
   -- i. ...and so does everything else. Reading pg_trigger proves a trigger exists, not
@@ -739,7 +756,7 @@ BEGIN
     INSERT INTO connect.communities (topic_id, slug, name)
     VALUES (gen_random_uuid(),
             'ca0341-probe-' || gen_random_uuid()::text,  -- slug is UNIQUE; never collide
-            'CA_0341 probe')
+            'CA_0342 probe')
     RETURNING id INTO v_probe_id;
 
     SELECT count(*) INTO v_probe_total
@@ -752,7 +769,7 @@ BEGIN
       AND side IS NULL
       AND author_id IS NULL
       AND author_display_name IS NULL   -- the WHEN guard held: no invented "Unknown"
-      AND body = 'CA_0341 probe'        -- body is the community's name
+      AND body = 'CA_0342 probe'        -- body is the community's name
       AND cardinality(path) = 0
       AND depth = 0
       AND moderation_status = 'visible'
@@ -770,7 +787,7 @@ BEGIN
     ------------------------------------------- derivation, and counts on INSERT
     -- Child A is inserted WITHOUT path or depth: the derivation trigger owes them.
     INSERT INTO connect.claims (community_id, parent_claim_id, side, body)
-    VALUES (v_probe_id, v_probe_root, 'supports', 'CA_0341 probe child A')
+    VALUES (v_probe_id, v_probe_root, 'supports', 'CA_0342 probe child A')
     RETURNING id INTO v_probe_child_a;
 
     IF NOT EXISTS (SELECT 1 FROM connect.claims
@@ -786,7 +803,7 @@ BEGIN
     -- path, a wrong depth and someone else's community. All three must be discarded.
     INSERT INTO connect.claims (community_id, parent_claim_id, side, body, path, depth)
     VALUES ((SELECT id FROM connect.communities WHERE id <> v_probe_id LIMIT 1),
-            v_probe_root, 'supports', 'CA_0341 probe child B',
+            v_probe_root, 'supports', 'CA_0342 probe child B',
             ARRAY[gen_random_uuid()], 97)
     RETURNING id INTO v_probe_child_b;
 
@@ -800,7 +817,7 @@ BEGIN
     END IF;
 
     INSERT INTO connect.claims (community_id, parent_claim_id, side, body)
-    VALUES (v_probe_id, v_probe_root, 'opposes', 'CA_0341 probe child C')
+    VALUES (v_probe_id, v_probe_root, 'opposes', 'CA_0342 probe child C')
     RETURNING id INTO v_probe_child_c;
 
     SELECT child_supports_count, child_opposes_count INTO v_probe_count, v_probe_count2
@@ -878,11 +895,11 @@ BEGIN
 
     -- A plain body edit, well after the merge: it must NOT inherit the merge target, or
     -- this maven reads as the one who performed the merge.
-    UPDATE connect.claims SET body = 'CA_0341 probe child B, rewritten' WHERE id = v_probe_child_b;
+    UPDATE connect.claims SET body = 'CA_0342 probe child B, rewritten' WHERE id = v_probe_child_b;
     IF NOT EXISTS (SELECT 1 FROM connect.claim_edits
                    WHERE claim_id = v_probe_child_b AND kind = 'edit'
                      AND actor_id = v_probe_actor
-                     AND old_body = 'CA_0341 probe child B'
+                     AND old_body = 'CA_0342 probe child B'
                      AND merge_target_claim_id IS NULL) THEN
       v_probe_detail := 'a plain body edit after a merge did not log kind=edit with the old body and a NULL merge target';
       RAISE EXCEPTION 'probe failed' USING ERRCODE = 'CA342';
@@ -893,7 +910,7 @@ BEGIN
     -- be refused. An edit nobody is accountable for is not an edit this table accepts.
     PERFORM set_config('fc.actor_id', '', true);
     BEGIN
-      UPDATE connect.claims SET body = 'CA_0341 probe unattributed' WHERE id = v_probe_child_b;
+      UPDATE connect.claims SET body = 'CA_0342 probe unattributed' WHERE id = v_probe_child_b;
       v_probe_detail := 'an UPDATE with fc.actor_id cleared was allowed through — log_claim_edit did not refuse an unattributed edit';
       RAISE EXCEPTION 'probe failed' USING ERRCODE = 'CA342';
     EXCEPTION
@@ -916,7 +933,7 @@ BEGIN
     END IF;
 
     -- Every assertion passed. Abort anyway: this is how the probe cleans up after itself.
-    RAISE EXCEPTION 'CA_0341 probe rollback' USING ERRCODE = 'CA341';
+    RAISE EXCEPTION 'CA_0342 probe rollback' USING ERRCODE = 'CA341';
   EXCEPTION
     WHEN SQLSTATE 'CA341' THEN
       v_probe_ok := true;
@@ -925,7 +942,7 @@ BEGIN
   END;
 
   IF NOT v_probe_ok THEN
-    RAISE EXCEPTION 'CA_0341: the behavioural probe failed — %',
+    RAISE EXCEPTION 'CA_0342: the behavioural probe failed — %',
       COALESCE(v_probe_detail, 'the probe did not run to completion');
   END IF;
 
@@ -936,10 +953,10 @@ BEGIN
      OR EXISTS (SELECT 1 FROM connect.claim_edits
                 WHERE claim_id IN (v_probe_root, v_probe_child_a, v_probe_child_b, v_probe_child_c)
                    OR actor_id = v_probe_actor) THEN
-    RAISE EXCEPTION 'CA_0341: the behavioural probe left rows behind — the subtransaction did not unwind';
+    RAISE EXCEPTION 'CA_0342: the behavioural probe left rows behind — the subtransaction did not unwind';
   END IF;
 
-  RAISE NOTICE 'CA_0341 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no role but the owner can DELETE any of the three or write claim_edits), % root claims backfilled. Probe verified, then rolled back: the root-claim trigger, path/depth/community derivation on insert and on move (including discarding hostile caller values), child counts on insert, move and delete, the edit log for move, merge, unmerge and edit with the real actor and no inherited merge target, and the refusal of an edit with fc.actor_id cleared.', v_roots;
+  RAISE NOTICE 'CA_0342 OK — connect.claims / claim_ratings / claim_edits created, RLS on, scoped to focused_communities_app (no role but the owner can DELETE any of the three or write claim_edits), % root claims backfilled. Probe verified, then rolled back: the root-claim trigger, path/depth/community derivation on insert and on move (including discarding hostile caller values), child counts on insert, move and delete, the edit log for move, merge, unmerge and edit with the real actor and no inherited merge target, and the refusal of an edit with fc.actor_id cleared.', v_roots;
 END $$;
 
 COMMIT;

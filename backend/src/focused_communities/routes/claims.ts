@@ -52,7 +52,7 @@ export interface Claim {
   /**
    * The rating aggregate: a Bayesian-weighted mean of this claim's 1-9 ratings, pulled
    * toward the neutral midpoint while the sample is small. See connect.claims.impact
-   * (CA_0345) for the formula and the weight.
+   * (CA_0346) for the formula and the weight.
    *
    * 🔴 NEVER NULL, AND NOT OPTIONAL. A claim nobody has rated reads exactly 5 — the
    * midpoint — not null, because that is what makes the ordering mean anything: a claim
@@ -111,7 +111,7 @@ interface ClaimRow {
   moderation_status: string;
   /**
    * 🔴 A STRING, NOT A NUMBER. connect.claims.impact is NUMERIC and node-postgres hands
-   * NUMERIC to JavaScript as text, because not every numeric fits a float64. CA_0345
+   * NUMERIC to JavaScript as text, because not every numeric fits a float64. CA_0346
    * rounds the stored value to four decimals precisely so this one does, and so that the
    * value written into a cursor is the value that comes back out of it (see "Column
    * order"). Typed as a string here so nothing treats it as arithmetic by accident.
@@ -175,7 +175,7 @@ function claimColumns(viewerParam: number): string {
 // columnKeysetPredicate() instead of being inlined at the call site: the value written into a
 // cursor and the values read back out of it are produced three lines apart.
 //
-// A column is ranked by `impact`, the rating aggregate (CA_0345), with recency and then id as
+// A column is ranked by `impact`, the rating aggregate (CA_0346), with recency and then id as
 // the tie-breaks. All three of the above moved together when impact arrived, which is the whole
 // reason this block exists.
 //
@@ -198,7 +198,7 @@ function claimColumns(viewerParam: number): string {
 //
 // 🔴 WHY IMPACT ROUND-TRIPS EXACTLY. A cursor value makes a round trip Postgres NUMERIC -> text
 // (node-postgres) -> Number -> JSON -> Number -> text -> `::numeric`, and a keyset is wrong if the
-// value changes anywhere in it. CA_0345 rounds impact to four decimals, so every value is in
+// value changes anywhere in it. CA_0346 rounds impact to four decimals, so every value is in
 // [1, 9] with at most five significant digits; a decimal that short is exactly representable
 // through a float64 and Number#toString gives back the shortest string that round-trips, which is
 // the same digits. Sixteen fractional digits — what unrounded numeric division produces — would
@@ -432,7 +432,7 @@ function viewerId(req: Request): string | null {
  * let `array_position` restore the order. A 40-deep claim costs the same one query as a 1-deep one.
  *
  * BOUNDED, because "one query" is not the same as "a bounded response". MAX_CLAIM_DEPTH caps how
- * deep a claim may be written (routes/claimWrites.ts) and CA_0344 caps it in the table, but this
+ * deep a claim may be written (routes/claimWrites.ts) and CA_0345 caps it in the table, but this
  * read must not depend on either holding: rows predating the constraint, or any future way of
  * deepening the tree, would otherwise turn one claim into an unbounded breadcrumb — served to
  * anonymous readers as `public, s-maxage=30`, so cached and re-served rather than computed once.
