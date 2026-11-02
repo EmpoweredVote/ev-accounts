@@ -18,6 +18,7 @@ import {
   upsertConnectedProfile,
   chooseOpenSlice,
   findActiveSliceForGeoid,
+  upsertSliceMember,
 } from './sliceAssigner.js'
 import type { AccountData } from './accountsApi.js'
 
@@ -144,7 +145,14 @@ describe('slice assignment invariants', () => {
 })
 
 describe('upsertConnectedProfile display_name guard', () => {
-  beforeEach(() => queryMock.mockReset())
+  beforeEach(() => {
+    // 🔴 Braces, not an expression body. mockReset() returns the mock, and vitest treats
+    // whatever a beforeEach returns as a cleanup function — so the arrow-expression form
+    // hands vitest the mock itself and it gets CALLED, with no arguments, after every test.
+    // Harmless while the mock had a blanket mockResolvedValue; a router that throws on an
+    // unrouted query reports it as a query for `undefined`.
+    queryMock.mockReset()
+  })
 
   it('coalesces a blank name to a non-blank pseudonym', async () => {
     // The target column civic_spaces.connected_profiles.display_name is NOT NULL — a blank
@@ -209,7 +217,14 @@ describe('placement: only the two newest slices are open (design §4.3)', () => 
 })
 
 describe('placement: what findActiveSliceForGeoid does with the chooser', () => {
-  beforeEach(() => queryMock.mockReset())
+  beforeEach(() => {
+    // 🔴 Braces, not an expression body. mockReset() returns the mock, and vitest treats
+    // whatever a beforeEach returns as a cleanup function — so the arrow-expression form
+    // hands vitest the mock itself and it gets CALLED, with no arguments, after every test.
+    // Harmless while the mock had a blanket mockResolvedValue; a router that throws on an
+    // unrouted query reports it as a query for `undefined`.
+    queryMock.mockReset()
+  })
 
   const sliceRows = (rows: Array<[number, number]>) => ({
     rows: rows.map(([i, n]) => ({ id: `slice-${i}`, sibling_index: i, current_member_count: n })),
@@ -249,5 +264,200 @@ describe('placement: what findActiveSliceForGeoid does with the chooser', () => 
 
     const sql = queryMock.mock.calls[0][0] as string
     expect(sql).not.toMatch(/current_member_count\s*</)
+  })
+})
+
+describe('a full frontier slice splits rather than opening an empty one', () => {
+  beforeEach(() => {
+    // 🔴 Braces, not an expression body. mockReset() returns the mock, and vitest treats
+    // whatever a beforeEach returns as a cleanup function — so the arrow-expression form
+    // hands vitest the mock itself and it gets CALLED, with no arguments, after every test.
+    // Harmless while the mock had a blanket mockResolvedValue; a router that throws on an
+    // unrouted query reports it as a query for `undefined`.
+    queryMock.mockReset()
+  })
+
+  /**
+   * Route by SQL text rather than by call order, and throw on anything unrouted — a mock
+   * that returns a default for a query the test never modelled will happily prove whatever
+   * the test hoped for.
+   */
+  function route(handlers: Array<[RegExp, (params: unknown[]) => unknown]>) {
+    queryMock.mockImplementation(async (sql: string, params: unknown[] = []) => {
+      for (const [re, fn] of handlers) if (re.test(sql)) return fn(params)
+      throw new Error(`unrouted query in test: ${sql.replace(/\s+/g, ' ').trim()}`)
+    })
+  }
+
+  const sliceFull = Object.assign(new Error('slice_full: slice is at capacity'), { code: 'P0001' })
+  const rows = (r: unknown[]) => ({ rows: r })
+  const slice = (i: number, n: number) => ({
+    id: `slice-${i}`,
+    sibling_index: i,
+    current_member_count: n,
+  })
+
+  const calls = (re: RegExp) => queryMock.mock.calls.filter((c) => re.test(c[0] as string))
+
+  /** city/4858016 with both open slices at the cap; the frontier is slice-2. */
+  function fullJurisdiction() {
+    const state = { split: false }
+    let joins = 0
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          joins += 1
+          // The first attempt lands on the slice placement picked before it filled.
+          if (joins === 1) throw sliceFull
+          return rows([])
+        },
+      ],
+      [/SELECT slice_type, geoid FROM slices/, () => rows([{ slice_type: 'city', geoid: '4858016' }])],
+      [/is_splittable_slice_type/, () => rows([{ splittable: true }])],
+      [/ORDER BY sibling_index DESC/, () => rows([state.split ? slice(3, 3000) : slice(2, 6000)])],
+      [
+        /split_slice/,
+        () => {
+          state.split = true
+          return rows([{ split_slice: 'slice-3' }])
+        },
+      ],
+      [
+        /SELECT id, sibling_index, current_member_count FROM slices/,
+        () =>
+          rows(
+            state.split
+              ? [slice(1, 6000), slice(2, 3000), slice(3, 3000)]
+              : [slice(1, 6000), slice(2, 6000)]
+          ),
+      ],
+    ])
+    return state
+  }
+
+  it('S1 calls split_slice on the frontier when slice_full comes back', async () => {
+    fullJurisdiction()
+    await upsertSliceMember('user-1', 'slice-2')
+
+    const split = calls(/split_slice/)
+    expect(split, 'split_slice was never called').toHaveLength(1)
+    expect(split[0][1]).toEqual(['slice-2'])
+  })
+
+  it('S1b calls split_slice ONCE, into a result, never inside a predicate', async () => {
+    // 🔴 split_slice is VOLATILE and it mutates. Called in a WHERE clause or a join
+    // condition the planner evaluates it per row, which divides the jurisdiction more than
+    // once — caught in the rehearsal, where the second call was refused by the frontier
+    // guard and the double-split went unreported. The engine's call must be a bare SELECT.
+    fullJurisdiction()
+    await upsertSliceMember('user-1', 'slice-2')
+
+    const sql = (calls(/split_slice/)[0][0] as string).replace(/\s+/g, ' ').trim()
+    expect(sql).toBe('SELECT civic_spaces.split_slice($1)')
+  })
+
+  it('S2 joins the member to the SECOND-newest slice, not the one the split returned', async () => {
+    // 🔴 split_slice returns the NEW slice (slice-3), and that is not where the member
+    // goes. After a split the parent is the second-newest and fills first (§4.3), so the
+    // newest keeps its room for the next arrivals. Seating the member in the returned
+    // slice would fill the newest first — the design exactly inverted, and invisible,
+    // because both answers are a real slice in the right jurisdiction.
+    fullJurisdiction()
+    await upsertSliceMember('user-1', 'slice-2')
+
+    const join = calls(/INSERT INTO slice_members/).at(-1)!
+    expect(join[1]).toEqual(['user-1', 'slice-2'])
+    expect((join[1] as unknown[])[1]).not.toBe('slice-3')
+  })
+
+  it('S3 inserts no slice row of its own on the slice_full path', async () => {
+    // Opening the next room is the split's job now. A sibling created here would be empty.
+    fullJurisdiction()
+    await upsertSliceMember('user-1', 'slice-2')
+
+    expect(calls(/INSERT INTO slices/), 'an empty sibling was created').toHaveLength(0)
+  })
+
+  it('S4 does NOT split when a closed slice fills but an open one still has room', async () => {
+    // 🔴 Review Focus 1. A member seated in a closed slice by the admin override can hit
+    // slice_full there while the open pair is half empty. Splitting the frontier then would
+    // divide a jurisdiction that had plenty of room, on the strength of a cap reached
+    // somewhere else entirely. Placement just moves on.
+    let joins = 0
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          joins += 1
+          if (joins === 1) throw sliceFull
+          return rows([])
+        },
+      ],
+      [/SELECT slice_type, geoid FROM slices/, () => rows([{ slice_type: 'city', geoid: '4858016' }])],
+      [
+        /SELECT id, sibling_index, current_member_count FROM slices/,
+        () => rows([slice(1, 6000), slice(2, 6000), slice(3, 2000)]),
+      ],
+    ])
+
+    await upsertSliceMember('user-1', 'slice-1')
+
+    expect(calls(/split_slice/), 'a closed slice filling triggered a split').toHaveLength(0)
+    expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-3'])
+  })
+
+  it('S5 still gives up after three retries rather than splitting forever', async () => {
+    // Without the ceiling a jurisdiction that refuses every insert divides once per attempt.
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          throw sliceFull
+        },
+      ],
+      [/SELECT slice_type, geoid FROM slices/, () => rows([{ slice_type: 'city', geoid: '4858016' }])],
+      [/is_splittable_slice_type/, () => rows([{ splittable: true }])],
+      [/ORDER BY sibling_index DESC/, () => rows([slice(2, 6000)])],
+      [/split_slice/, () => rows([{ split_slice: 'slice-3' }])],
+      [
+        /SELECT id, sibling_index, current_member_count FROM slices/,
+        () => rows([slice(1, 6000), slice(2, 3000)]),
+      ],
+    ])
+
+    await expect(upsertSliceMember('user-1', 'slice-2')).rejects.toThrow(/Max retries exceeded/)
+    expect(calls(/split_slice/).length).toBeLessThanOrEqual(3)
+  })
+
+  it('S6 opens a plain sibling for a type that does not split, rather than failing', async () => {
+    // 🔴 `volunteer` is a role, not a place, so civic_spaces.is_splittable_slice_type says
+    // no and split_slice would refuse it. The pre-split overflow path is still the right
+    // answer there and must stay reachable — it is dormant, not dead.
+    let joins = 0
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          joins += 1
+          if (joins === 1) throw sliceFull
+          return rows([])
+        },
+      ],
+      [
+        /SELECT slice_type, geoid FROM slices/,
+        () => rows([{ slice_type: 'volunteer', geoid: 'VOLUNTEER' }]),
+      ],
+      [/SELECT id, sibling_index, current_member_count FROM slices/, () => rows([slice(1, 6000)])],
+      [/is_splittable_slice_type/, () => rows([{ splittable: false }])],
+      [/SELECT sibling_index FROM slices/, () => rows([{ sibling_index: 1 }])],
+      [/INSERT INTO slices/, () => rows([{ id: 'slice-v2' }])],
+    ])
+
+    await upsertSliceMember('user-1', 'slice-1')
+
+    expect(calls(/split_slice/), 'volunteer was sent to split_slice').toHaveLength(0)
+    expect(calls(/INSERT INTO slices/)[0][1]).toEqual(['volunteer', 'VOLUNTEER', 2])
+    expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-v2'])
   })
 })

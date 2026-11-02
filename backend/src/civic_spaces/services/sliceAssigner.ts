@@ -195,22 +195,95 @@ export async function findActiveSliceForGeoid(
 }
 
 /**
+ * Opens the next slice for a jurisdiction whose open pair is full, and answers where the
+ * member should go once it is open.
+ *
+ * 🔴 SPLIT, DO NOT CREATE. Until Phase 19-01 this path inserted an empty sibling: a room
+ * with six thousand neighbours next door and nobody in it, no conversation, nothing to join.
+ * civic_spaces.split_slice moves the most recently joined half of the frontier across and
+ * seeds the new slice with a forked window of the parent's threads, so the people who arrive
+ * next walk into a town that is already talking.
+ *
+ * 🔴 THE ENGINE CANNOT DO THE COPY ITSELF, and that is the point of the function existing.
+ * This pool connects as `civic_spaces_app`, which holds DML on slices, slice_members and
+ * connected_profiles and NOTHING ELSE — it cannot read a post, let alone duplicate one (see
+ * config/database.ts, migration CA_0112). Widening the role to make the seed possible would
+ * cross a stated privacy boundary for implementation convenience and permanently enlarge what
+ * a compromised accounts service can read. So the engine decides a split should happen, and
+ * one EXECUTE grant lets it ask.
+ *
+ * 🔴 It splits THE FRONTIER, not the slice that happened to be full. Only the newest slice
+ * divides (design §4.4): a full slice with a newer sibling beside it simply closes, because a
+ * split exists to open the NEXT room and that room is already open. Passing the caller's full
+ * slice id straight through would ask a closed slice to divide, which split_slice refuses.
+ */
+async function openNextSliceForGeoid(sliceType: string, geoid: string): Promise<string> {
+  // 🔴 Asked, not assumed. The five splittable types are listed in SQL
+  // (civic_spaces.is_splittable_slice_type) and in civic-spaces' writeAccess.ts, pinned
+  // against each other by check:write-access. A third copy here would be pinned to nothing,
+  // and a drifted copy routes a split down the wrong branch in silence. One round trip on a
+  // path that fires once per 6000 members buys a single source of truth.
+  const { rows: splittable } = await pool.query<{ splittable: boolean }>(
+    `SELECT civic_spaces.is_splittable_slice_type($1) AS splittable`,
+    [sliceType]
+  )
+
+  if (!splittable[0]?.splittable) {
+    // `volunteer` is a role, not a place, so it does not divide. The pre-split overflow is
+    // still the right answer there: a plain sibling, which fills from empty. Dormant — a
+    // volunteer slice reaching 6000 is not expected — but reachable on purpose.
+    return findOrCreateSiblingSlice(sliceType, geoid)
+  }
+
+  const { rows: frontier } = await pool.query<{ id: string }>(
+    `SELECT id FROM slices
+      WHERE slice_type = $1 AND geoid = $2
+      ORDER BY sibling_index DESC
+      LIMIT 1`,
+    [sliceType, geoid]
+  )
+  if (!frontier[0]) throw new Error(`No slice to split for ${sliceType}/${geoid}`)
+
+  try {
+    // 🔴 ONCE, INTO A RESULT. split_slice is VOLATILE and it MUTATES, so a call placed in a
+    // WHERE clause or a join condition is evaluated per row and divides the jurisdiction
+    // repeatedly. That happened while the rehearsal was being written, and the second call's
+    // refusal masked it — a function without the frontier guard would have split twice in
+    // silence. A bare SELECT is the contract.
+    await pool.query(`SELECT civic_spaces.split_slice($1)`, [frontier[0].id])
+  } catch (err) {
+    // P0001 is split_slice refusing: another request split this jurisdiction first, so the
+    // row read above is no longer the frontier. Not an error — the room we wanted opened is
+    // open. Any other code is a real failure and is rethrown.
+    if (pgErrorCode(err) !== 'P0001') throw err
+  }
+
+  // 🔴 Re-place rather than taking split_slice's return value. It returns the NEW slice, and
+  // that is not where this member goes: after a split the parent is the SECOND-newest, and
+  // the second-newest fills first (§4.3) so the newest keeps its room for the arrivals after.
+  // Seating the member in the returned slice would fill the newest first — the design exactly
+  // inverted, and invisible, because the answer is still a real slice in the right place.
+  const placed = await findActiveSliceForGeoid(sliceType, geoid)
+  if (!placed) throw new Error(`No slice open after splitting ${sliceType}/${geoid}`)
+  return placed
+}
+
+/**
  * Where to put a member: the open slice if there is one, otherwise whatever opening the next
  * one takes.
  *
- * 🔴 findActiveSliceForGeoid no longer opens anything itself. Until Phase 19-01 a full
- * jurisdiction got an EMPTY sibling here — a room with six thousand neighbours next door and
- * nobody in it, which is the failure the whole splitting design exists to avoid. Task 5
- * replaces the fallback below with a split, which carries people and a conversation across.
+ * 🔴 findActiveSliceForGeoid no longer opens anything itself; it answers "nowhere open" and
+ * openNextSliceForGeoid splits the frontier, which carries people and a conversation across
+ * instead of leaving a new room empty.
  */
 async function findOrOpenSliceForGeoid(sliceType: string, geoid: string): Promise<string> {
   const open = await findActiveSliceForGeoid(sliceType, geoid)
   if (open) return open
 
-  return findOrCreateSiblingSlice(sliceType, geoid)
+  return openNextSliceForGeoid(sliceType, geoid)
 }
 
-async function upsertSliceMember(userId: string, sliceId: string, retries = 3): Promise<void> {
+export async function upsertSliceMember(userId: string, sliceId: string, retries = 3): Promise<void> {
   try {
     await pool.query(
       `INSERT INTO slice_members (user_id, slice_id)
@@ -222,7 +295,9 @@ async function upsertSliceMember(userId: string, sliceId: string, retries = 3): 
     const code = pgErrorCode(err)
     const msg = pgErrorMessage(err)
     // enforce_slice_cap() raises P0001 'slice_full: ...' when the target slice filled up
-    // between findActiveSliceForGeoid and this insert. Find/create a sibling and retry.
+    // between placement and this insert. Re-place, splitting the frontier if nothing is open,
+    // and retry. The three-attempt ceiling is what stops a jurisdiction that refuses every
+    // insert from dividing once per attempt.
     if (msg.includes('slice_full') || code === 'P0001') {
       if (retries <= 0) {
         throw new Error('Max retries exceeded for slice_full condition', { cause: err })
@@ -235,8 +310,13 @@ async function upsertSliceMember(userId: string, sliceId: string, retries = 3): 
       if (!rows[0]) {
         throw new Error(`Failed to query slice for retry: ${msg}`, { cause: err })
       }
-      const siblingId = await findOrCreateSiblingSlice(rows[0].slice_type, rows[0].geoid)
-      return upsertSliceMember(userId, siblingId, retries - 1)
+      // 🔴 Re-place BEFORE splitting. A member seated in a closed slice by the admin
+      // override can hit slice_full there while the open pair is half empty — splitting the
+      // frontier then would divide a jurisdiction that had plenty of room, on the strength of
+      // a cap reached somewhere else entirely. findOrOpenSliceForGeoid asks placement first
+      // and only opens the next slice when there is genuinely nowhere to put anyone.
+      const nextId = await findOrOpenSliceForGeoid(rows[0].slice_type, rows[0].geoid)
+      return upsertSliceMember(userId, nextId, retries - 1)
     }
     throw err
   }
