@@ -48,7 +48,7 @@ search result is a lead, never a source. Do not use Playwright.
 For each politician, attempt these URLs via WebFetch. Replace `[First_Last]` with the politician's name (underscores, title-case) and `[First]`/`[Last]` as needed:
 
 **Tier 1 — Always try first:**
-- `https://ballotpedia.org/[First_Last]` — voting record summaries, ratings, campaign positions
+- `https://ballotpedia.org/[First_Last]` — leads only (voting record summaries, ratings, campaign positions); cite it only as the Candidate Connection survey link `#Campaign_themes`
 - `https://www.ontheissues.org/[First_Last].htm` — structured issue positions (best for anyone with a
   congressional record). **LEAD ONLY, never citable**: `build-and-check.mjs` flags any quote or
   stance source on this domain `invalid-source` (high) — it is a secondary aggregator, not an
@@ -84,8 +84,8 @@ Use these for any politician running for or serving on the LA City Council or as
 - `https://abc7.com/politics` — ABC7 Eyewitness News; covers major LA candidate debates
 - `https://www.lwvlac.org/` — League of Women Voters of Los Angeles City; hosts forums with transcripts or summaries
 - `https://www.vote411.org/ballot` — Vote411 (LWV national). **POINTER-ONLY: use it to find the candidate's own answer, never cite it.** LWV terms bar reproducing it, so no `source_url` in research.csv (stance or quote) may be a vote411.org or thevoterguide.org URL; cite the candidate's own page instead.
-- `https://ballotpedia.org/Los_Angeles_City_Council_elections,_2026` — Ballotpedia LA elections; candidate summaries and positions
-- `https://ballotpedia.org/Los_Angeles_mayoral_election,_2026` — Ballotpedia LA mayor race
+- `https://ballotpedia.org/Los_Angeles_City_Council_elections,_2026` — Ballotpedia LA elections; leads only, never cited
+- `https://ballotpedia.org/Los_Angeles_mayoral_election,_2026` — Ballotpedia LA mayor race; leads only, never cited
 
 *Additional local coverage:*
 - `https://www.lacitybeat.com/` — LA CityBeat; independent local political coverage
@@ -109,7 +109,7 @@ Use these for any politician running for or serving on the LA City Council or as
 
 Statewide executives do not cast legislative roll-call votes. Map their *executive actions* to compass topics — and do not over-read a role description as a stance.
 
-- **Governor** — Score from **bills signed or vetoed**, **executive orders**, **budget proposals/line-item vetoes**, and **emergency declarations**. A signed abortion-restriction bill, a vetoed gun bill, an EO on immigration enforcement, or a budget that zeroes a program are documentable stances. State .gov press/bill-action pages and Ballotpedia (gubernatorial actions) are primary sources. Do NOT score a topic from a campaign slogan when a signing/veto record exists — the record outweighs the slogan.
+- **Governor** — Score from **bills signed or vetoed**, **executive orders**, **budget proposals/line-item vetoes**, and **emergency declarations**. A signed abortion-restriction bill, a vetoed gun bill, an EO on immigration enforcement, or a budget that zeroes a program are documentable stances. State .gov press/bill-action pages are primary sources; Ballotpedia's list of gubernatorial actions is a lead to them, never the citation. Do NOT score a topic from a campaign slogan when a signing/veto record exists — the record outweighs the slogan.
 - **Attorney General** — Score from **lawsuits the office filed or joined**, **amicus briefs**, and **multistate coalition letters/actions**. An AG who sued to block (or defend) a federal abortion rule, joined an amicus on Second Amendment, or led a multistate suit on environmental regulation has a documentable stance on that topic. **Multistate-coalition membership counts ONLY when the coalition has a published position directly ON that topic** — do not infer a stance on topic X from membership in a coalition that acted on topic Y. NAAG, the state AG office press-release page, and amicus/lawsuit trackers are primary sources.
 - **Treasurer** — Score from **investment or divestment decisions** and **documented fund actions** (e.g., divesting a state pension from fossil fuels or from firms over a policy; ESG-investment policy). Do NOT score from a budget-overview page or generic "manages state funds" description.
 - **Secretary of State** — Score from **specific election-administration actions** (voter-roll purges, mail-ballot rule changes, voter-ID implementation, certification disputes). Do NOT score voting-rights from "the SoS administers elections" role text.
@@ -149,6 +149,9 @@ with per-topic notes, are the SCHOOL-BOARD RULES block in the research contract 
 - **Reasoning may never be blank on a scored row** — the gate refuses an empty reasoning (`reasoning-empty`).
 - **Do not cite ONLY ballotpedia.org.** A row whose every source_url is ballotpedia.org is refused
   (`ballotpedia-only`) — cite the record, filing or report the bio itself draws on.
+- **Cite Ballotpedia only for a Candidate Connection survey answer** (`#Campaign_themes` deep link; ruling
+  2026-11-02). Any other Ballotpedia page — bio, election, measure, Ballotpedia News — is a lead, never a
+  source_url or evidence row, on any row including blanks (`ballotpedia-non-survey`).
 - **Give a source URL a real path, not a bare domain root** — a bare `https://example.gov` is flagged
   (`source-no-path`); link the specific page.
 - **An instrument named in reasoning must appear in a cited snippet, not just in reasoning** — a bill,

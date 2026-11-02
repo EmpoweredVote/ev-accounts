@@ -43,6 +43,9 @@ Notes:
   `party-check.ts` (through `_party.py`), which answers with the same `sweepHit` that `party-sweep.ts` uses:
   `namesParty()` from `src/lib/partyLabels.ts` plus roll-call letters and a vote API's `"Party":"R"` field. So a
   snippet a builder keeps is never one the sweep then flags. Add a new marker to `lib.ts`, never to a tool.
+- **Ballotpedia: survey answers only** (ruling 2026-11-02). `build_evidence.py` uncites any Ballotpedia page but a
+  Candidate Connection `#Campaign_themes` link (logged in `evidence-missing.json`) and `add_fallback.py` skips it,
+  through `_ballotpedia.py`. The stance gate refuses the same pages (`ballotpedia-non-survey`).
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`) and their tests; `batch-db.ts` resolves the topic id and
   the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text

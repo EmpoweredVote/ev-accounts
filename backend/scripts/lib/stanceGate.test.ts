@@ -218,6 +218,31 @@ describe('ballotpedia-only (C57)', () => {
   });
 });
 
+describe('ballotpedia-non-survey (ruling 2026-11-02)', () => {
+  const blank: ResearchRow = { ...good, value: 0, evidence_type: 'blank', blank_reason: 'no-evidence', reasoning: 'Nothing on the topic.' };
+  it('flags a Ballotpedia bio, election or news page beside a primary source', () => {
+    for (const bp of ['https://ballotpedia.org/Jane_Doe', 'https://ballotpedia.org/Indiana_elections,_2026',
+      'https://news.ballotpedia.org/2026/05/01/x/']) {
+      expect(ids({ ...good, source_urls: ['https://a.gov/x', bp] }, { evidence: [ev[0], { ...ev[0], source_url: bp }] }))
+        .toContain('ballotpedia-non-survey');
+    }
+  });
+  it('flags it on a blank row too, where ballotpedia-only does not run', () => {
+    const bp = 'https://ballotpedia.org/Jane_Doe';
+    const got = ids({ ...blank, source_urls: [bp] }, { evidence: [{ ...ev[0], source_url: bp }] });
+    expect(got).toContain('ballotpedia-non-survey');
+    expect(got).not.toContain('ballotpedia-only');
+  });
+  it('flags a Ballotpedia page that is only on the evidence side', () => {
+    expect(ids(good, { evidence: [ev[0], { ...ev[0], source_url: 'https://ballotpedia.org/Jane_Doe' }] })).toContain('ballotpedia-non-survey');
+  });
+  it('does not flag a Candidate Connection survey link', () => {
+    const cc = 'https://ballotpedia.org/Jane_Doe#Campaign_themes';
+    expect(ids({ ...good, source_urls: ['https://a.gov/x', cc] }, { evidence: [ev[0], { ...ev[0], source_url: cc }] }))
+      .not.toContain('ballotpedia-non-survey');
+  });
+});
+
 describe('source-no-path (C58)', () => {
   it('does not flag a source URL that has a path', () => {
     expect(ids(good)).not.toContain('source-no-path');
