@@ -7,7 +7,10 @@ BEGIN;
 -- CA_0350 (PR #1273), which left sixteen backup/scratch tables on the Supabase
 -- advisor's INFO `rls_enabled_no_policy` list as drop candidates, undecided.
 --
--- Apply as `postgres` (owner of all sixteen). STATUS: NOT APPLIED.
+-- Apply as `postgres` (owner of all sixteen). STATUS: APPLIED to prod 2026-11-02
+-- (operator approval: Chris Andrews), via psql as postgres. Verified after: the
+-- four are gone, all twelve archives present, live civic_spaces.posts 12 and
+-- essentials.quotes 4,212 unchanged.
 --
 -- HOW EACH TABLE WAS JUDGED (2026-11-02, live)
 -- For every table: the migration that created it and why; every reader, by
