@@ -102,6 +102,7 @@ def roll_lines(pid, fs):
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')).strip().lower()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _party.py sits beside this file
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))
     span = end - pos
@@ -239,6 +240,12 @@ for r in rows:
         for snip in kept:
             idx += 1; ev.append({'full_name': r['full_name'], 'topic_key': r['topic_key'], 'source_url': u, 'snippet': snip, 'snippet_index': idx})
     out.append(r)
+# A Ballotpedia page other than a Candidate Connection survey is never cited, on any row (ruling 2026-11-02).
+for r in out:
+    for k in cols:
+        if k.startswith('source_url') and ballotpedia_non_survey(r.get(k)):
+            miss.append((r['full_name'], r[k], 'Ballotpedia non-survey page: not cited (ruling 2026-11-02)')); r[k] = ''
+ev = [e for e in ev if not ballotpedia_non_survey(e['source_url'])]
 w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(out)
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index']); w.writeheader(); w.writerows(ev)
 json.dump(miss, open(f'{B}/evidence-missing.json', 'w'), indent=1)

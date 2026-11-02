@@ -291,6 +291,14 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   is fine when it is their own words on their candidate survey"; `.planning/research/s3-prep-voting-rights/stage5/wave3/rulings.md`).
 - **Scope:** every topic.
 
+### Ballotpedia is cited only for a Candidate Connection survey answer
+- **Ruling:** the survey answer above is the only Ballotpedia page that may be cited, as its `#Campaign_themes`
+  link. A bio, election, measure or Ballotpedia News page may lead the coder to a record, but never goes in a
+  row's sources or evidence, on any row, blanks included. The stance gate refuses it (`ballotpedia-non-survey`).
+- **Date and source:** 2026-11-02, Chris Andrews, after the voting-rights sweep found 10 blank rows citing a
+  Ballotpedia bio whose stored snippet was the site header (ev-cto task `verifier-blocked-sources-official-feeds`).
+- **Scope:** every topic.
+
 ### A small group's joint statement is each signer's own words
 - **Ruling:** a statement put out jointly by a small, named group (for example a state's two senators, or two
   committee chairs) counts as each signer's own words (codebook V1). A statement from a whole party or caucus, or a

@@ -6,7 +6,8 @@ Per blank: the source URL goes on the row, plus a party-free snippet (25+ words)
 reasoning: "Old Season 1 sources examined (<date>): <hosts> — nothing on <gloss>."
 Reads fallback/fallback-required.json (s1-sources.ts), fallback/fallback-read.json (the reader agent:
 {name: {urls: [{url, verdict: on-topic | nothing-on-topic | not-loadable | excluded-source}]}}) and fallback/pages/index.json.
-Not-loadable and excluded (OnTheIssues, Wikipedia) URLs are skipped. Anyone in --hold, or with an on-topic page that
+Not-loadable and excluded (OnTheIssues, Wikipedia) URLs are skipped, and so is any Ballotpedia page but a
+Candidate Connection survey (ruling 2026-11-02). Anyone in --hold, or with an on-topic page that
 is not in --seen (pages the coder already weighed), is NOT touched: hold them for a re-code check.
 Log -> fallback/blank-examined-log.json."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
@@ -17,6 +18,7 @@ B = positional(1, USAGE)[0]; F = f'{B}/fallback'
 TOPIC, GLOSS = opt('--topic', required=True, usage=USAGE), opt('--gloss', required=True, usage=USAGE)
 HELD, SEEN = set(opts('--hold')), set(opts('--seen')); DATE = opt('--date', datetime.date.today().isoformat())
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 req = json.load(open(f'{F}/fallback-required.json')); rd = json.load(open(f'{F}/fallback-read.json'))
 idx = json.load(open(f'{F}/pages/index.json'))
 # Column names come from the header, not the first row: a batch whose evidence.csv has no rows yet (every row a blank
@@ -39,7 +41,7 @@ for name, q in req.items():
     vs = rd[name]['urls']
     if name in HELD or any(v['verdict'] == 'on-topic' for v in vs) and name not in SEEN:
         held.append(name); continue
-    use = [v['url'] for v in vs if v['verdict'] in ('nothing-on-topic', 'on-topic')]
+    use = [v['url'] for v in vs if v['verdict'] in ('nothing-on-topic', 'on-topic') and not ballotpedia_non_survey(v['url'])]
     if not use: none.append(name); continue
     r = next(x for x in rows if x['full_name'] == name)
     surname = re.sub(r',.*$', '', name).replace('"', '').split()[-1]
