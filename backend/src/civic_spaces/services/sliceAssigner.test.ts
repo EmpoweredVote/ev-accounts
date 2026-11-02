@@ -12,7 +12,13 @@ vi.mock('../../lib/env.js', () => ({ env: {} }))
 const { queryMock } = vi.hoisted(() => ({ queryMock: vi.fn() }))
 vi.mock('../config/database.js', () => ({ pool: { query: queryMock } }))
 
-import { SLICE_CAPACITY, SLICE_ASSIGNMENTS, upsertConnectedProfile } from './sliceAssigner.js'
+import {
+  SLICE_CAPACITY,
+  SLICE_ASSIGNMENTS,
+  upsertConnectedProfile,
+  chooseOpenSlice,
+  findActiveSliceForGeoid,
+} from './sliceAssigner.js'
 import type { AccountData } from './accountsApi.js'
 
 type Jurisdiction = NonNullable<AccountData['jurisdiction']>
@@ -154,5 +160,94 @@ describe('upsertConnectedProfile display_name guard', () => {
     await upsertConnectedProfile('user-123', 'Explorer', 'active')
     const params = queryMock.mock.calls[0][1] as unknown[]
     expect(params[1]).toBe('Explorer')
+  })
+})
+
+describe('placement: only the two newest slices are open (design §4.3)', () => {
+  // 🔴 These assert against chooseOpenSlice, a PURE function, not against SQL through a
+  // mocked pool. The rule used to live in a WHERE clause, and a mocked pool.query cannot
+  // test a WHERE clause — the mock returns whatever the test hands it, so "picks slice 3"
+  // would pass against any query text at all, including today's wrong one. Moving the
+  // decision into TypeScript is what makes it provable; see the ruling in the 19-01 ledger.
+
+  const row = (i: number, n: number) => ({
+    id: `slice-${i}`,
+    sibling_index: i,
+    current_member_count: n,
+  })
+
+  it('P1 fills the SECOND-newest first, not the oldest with room', () => {
+    // 1 and 2 are closed. 3 and 4 are open; 3 is the second-newest, so it fills first.
+    expect(chooseOpenSlice([row(1, 6000), row(2, 6000), row(3, 3000), row(4, 3000)])).toBe('slice-3')
+  })
+
+  it('P2 moves on to the newest once the second-newest is full', () => {
+    expect(chooseOpenSlice([row(1, 6000), row(2, 6000), row(3, 6000), row(4, 3000)])).toBe('slice-4')
+  })
+
+  it('P3 places into the only slice there is', () => {
+    // A jurisdiction with one slice has no second-newest. max - 1 must not exclude it.
+    expect(chooseOpenSlice([row(1, 3000)])).toBe('slice-1')
+  })
+
+  it('P5 does NOT place into an old slice that still has room', () => {
+    // 🔴 The regression test. Slice 1 is half empty and today's `ORDER BY sibling_index ASC`
+    // over the whole set chooses it — which is the entire behaviour this change removes.
+    // A member placed there joins a closed room: the conversation has moved on, and the
+    // two open slices are where everyone else is being put. P1-P4 all pass without this.
+    expect(chooseOpenSlice([row(1, 500), row(2, 6000), row(3, 3000)])).toBe('slice-3')
+  })
+
+  it('returns none when both open slices are full, regardless of older room', () => {
+    expect(chooseOpenSlice([row(1, 500), row(2, 6000), row(3, 6000)])).toBeNull()
+  })
+
+  it('ignores a slice sitting one over the cap, rather than treating it as room', () => {
+    // current_member_count is trigger-maintained and can drift. `< CAPACITY`, never `!=`.
+    expect(chooseOpenSlice([row(1, 6001), row(2, 6000)])).toBeNull()
+  })
+})
+
+describe('placement: what findActiveSliceForGeoid does with the chooser', () => {
+  beforeEach(() => queryMock.mockReset())
+
+  const sliceRows = (rows: Array<[number, number]>) => ({
+    rows: rows.map(([i, n]) => ({ id: `slice-${i}`, sibling_index: i, current_member_count: n })),
+  })
+
+  it('P4 creates sibling_index 1 when the jurisdiction has no slice at all', async () => {
+    queryMock.mockResolvedValueOnce(sliceRows([]))
+    queryMock.mockResolvedValueOnce({ rows: [{ id: 'slice-new' }] })
+
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-new')
+
+    const insert = queryMock.mock.calls.find((c) => /INSERT INTO slices/.test(c[0] as string))
+    expect(insert, 'no INSERT was issued for an empty jurisdiction').toBeDefined()
+    expect((insert as unknown[])[1]).toEqual(['city', '4858016', 1])
+  })
+
+  it('P6 returns null when both open slices are full, and creates nothing', async () => {
+    // 🔴 The whole point of Task 4. The old code reached findOrCreateSiblingSlice here and
+    // opened an EMPTY slice — a room with a cap's worth of neighbours next door and nobody
+    // in it. Opening the next room is now the split's job, and a split carries people and a
+    // conversation with it. This function's only remaining answer is "nowhere open".
+    queryMock.mockResolvedValueOnce(sliceRows([[1, 6000], [2, 6000]]))
+
+    await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBeNull()
+
+    const inserts = queryMock.mock.calls.filter((c) => /INSERT INTO slices/.test(c[0] as string))
+    expect(inserts, 'an empty sibling was created').toHaveLength(0)
+  })
+
+  it('reads every slice for the jurisdiction, not just the ones with room', async () => {
+    // The restriction is "the two highest sibling_index values", which cannot be computed
+    // from a set already filtered by current_member_count — the newest slice is often the
+    // full one, and filtering it out first silently shifts the window down.
+    queryMock.mockResolvedValueOnce(sliceRows([[1, 6000], [2, 3000]]))
+
+    await findActiveSliceForGeoid('city', '4858016')
+
+    const sql = queryMock.mock.calls[0][0] as string
+    expect(sql).not.toMatch(/current_member_count\s*</)
   })
 })

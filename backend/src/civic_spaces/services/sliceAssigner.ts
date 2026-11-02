@@ -101,31 +101,78 @@ async function findOrCreateSiblingSlice(sliceType: string, geoid: string): Promi
   }
 }
 
-async function findActiveSliceForGeoid(sliceType: string, geoid: string): Promise<string> {
-  const { rows: available } = await pool.query<{ id: string }>(
-    `SELECT id FROM slices
-      WHERE slice_type = $1 AND geoid = $2 AND current_member_count < $3
-      ORDER BY sibling_index ASC
-      LIMIT 1`,
-    [sliceType, geoid, SLICE_CAPACITY]
+/** One row of `slices` as the placement query returns it. */
+export type OpenSliceCandidate = {
+  id: string
+  sibling_index: number
+  current_member_count: number
+}
+
+/**
+ * Which slice a new member joins, given every slice a jurisdiction has (design §4.3).
+ *
+ * 🔴 AT MOST TWO SLICES ARE OPEN: the newest and the second-newest. Everything older is
+ * CLOSED — it keeps its members and its conversation and takes no new arrivals. Closed is
+ * not a state a slice is put into; it is the absence of candidacy, and it falls out of this
+ * one comparison. A stored `is_closed` column would be a second source of truth that has to
+ * be written at every split, can disagree with sibling_index, and would need backfilling for
+ * every slice that already exists. There is nothing here for it to drift from.
+ *
+ * 🔴 WITHIN the open pair the order is still ASCENDING, and that is not an oversight left
+ * over from the old query. Lowest-first across the two open slices IS "fill the second-newest
+ * first": the newest stays mostly empty until its neighbour is full, so there is always a
+ * room with space in it when the frontier divides. Sorting DESC instead would fill the newest
+ * and starve the second-newest, which is the design exactly inverted.
+ *
+ * 🔴 PURE, and deliberately not a WHERE clause. This was SQL until Phase 19-01. A mocked
+ * pool.query cannot test a WHERE clause — it returns whatever the test handed it — so the
+ * placement rule was the one rule in this module with no way to prove it. It is the rule
+ * Task 4 exists to make single; it has to be somewhere a test can reach.
+ *
+ * Returns null when both open slices are full. That is not a failure: it means the frontier
+ * must divide before anyone else can be placed, which is the caller's job, not this one's.
+ */
+export function chooseOpenSlice(slices: OpenSliceCandidate[]): string | null {
+  if (slices.length === 0) return null
+
+  const newest = Math.max(...slices.map((s) => s.sibling_index))
+
+  return (
+    slices
+      .filter((s) => s.sibling_index >= newest - 1)
+      .filter((s) => s.current_member_count < SLICE_CAPACITY)
+      .sort((a, b) => a.sibling_index - b.sibling_index)[0]?.id ?? null
   )
+}
 
-  if (available[0]) return available[0].id
-
-  // No available slice — check if any slice exists at all
-  const { rows: anySlice } = await pool.query<{ id: string }>(
-    `SELECT id FROM slices WHERE slice_type = $1 AND geoid = $2 LIMIT 1`,
+/**
+ * The open slice a member should join, or null if both open slices are full.
+ *
+ * Exported for the test suite. Null is an answer, not an error — see chooseOpenSlice.
+ */
+export async function findActiveSliceForGeoid(
+  sliceType: string,
+  geoid: string
+): Promise<string | null> {
+  // 🔴 Every slice, unfiltered. The window is "the two highest sibling_index values", and
+  // that cannot be computed from a set already filtered by current_member_count: the newest
+  // slice is usually the full one, and dropping it first slides the window down onto two
+  // closed slices without anything looking wrong.
+  const { rows: slices } = await pool.query<OpenSliceCandidate>(
+    `SELECT id, sibling_index, current_member_count FROM slices
+      WHERE slice_type = $1 AND geoid = $2
+      ORDER BY sibling_index ASC`,
     [sliceType, geoid]
   )
 
-  if (anySlice.length === 0) {
-    // No slice exists at all — create the initial one
+  if (slices.length === 0) {
+    // No slice exists at all — create the initial one.
     try {
       const { rows } = await pool.query<{ id: string }>(
         `INSERT INTO slices (slice_type, geoid, sibling_index)
-         VALUES ($1, $2, 1)
+         VALUES ($1, $2, $3)
          RETURNING id`,
-        [sliceType, geoid]
+        [sliceType, geoid, 1]
       )
       if (!rows[0]) throw new Error('Initial slice insert returned no data')
       return rows[0].id
@@ -144,7 +191,22 @@ async function findActiveSliceForGeoid(sliceType: string, geoid: string): Promis
     }
   }
 
-  // All slices are full — create a sibling
+  return chooseOpenSlice(slices)
+}
+
+/**
+ * Where to put a member: the open slice if there is one, otherwise whatever opening the next
+ * one takes.
+ *
+ * 🔴 findActiveSliceForGeoid no longer opens anything itself. Until Phase 19-01 a full
+ * jurisdiction got an EMPTY sibling here — a room with six thousand neighbours next door and
+ * nobody in it, which is the failure the whole splitting design exists to avoid. Task 5
+ * replaces the fallback below with a split, which carries people and a conversation across.
+ */
+async function findOrOpenSliceForGeoid(sliceType: string, geoid: string): Promise<string> {
+  const open = await findActiveSliceForGeoid(sliceType, geoid)
+  if (open) return open
+
   return findOrCreateSiblingSlice(sliceType, geoid)
 }
 
@@ -243,7 +305,7 @@ export async function assignUserToSlices(
     }
 
     await removeStaleGeoMemberships(userId, sliceType, geoid)
-    const sliceId = await findActiveSliceForGeoid(sliceType, geoid)
+    const sliceId = await findOrOpenSliceForGeoid(sliceType, geoid)
     await upsertSliceMember(userId, sliceId)
     assigned.push(sliceId)
   }
@@ -288,7 +350,7 @@ export async function assignUnifiedIfNotAssigned(userId: string): Promise<string
   const existing = await isAlreadyAssignedToType(userId, 'unified', UNIFIED_GEOID)
   if (existing) return existing
 
-  const sliceId = await findActiveSliceForGeoid('unified', UNIFIED_GEOID)
+  const sliceId = await findOrOpenSliceForGeoid('unified', UNIFIED_GEOID)
   await upsertSliceMember(userId, sliceId)
   return sliceId
 }
@@ -307,7 +369,7 @@ export async function assignVolunteerIfEligible(
   const existing = await isAlreadyAssignedToType(userId, 'volunteer', VOLUNTEER_GEOID)
   if (existing) return existing
 
-  const sliceId = await findActiveSliceForGeoid('volunteer', VOLUNTEER_GEOID)
+  const sliceId = await findOrOpenSliceForGeoid('volunteer', VOLUNTEER_GEOID)
   await upsertSliceMember(userId, sliceId)
   return sliceId
 }
