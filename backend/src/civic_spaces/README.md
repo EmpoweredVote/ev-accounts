@@ -36,6 +36,7 @@ in `jobs/registry.ts`). Served under `EV_ROLE=api` like every other route.
 - `slice_full` (P0001 at the 6000 cap): up-to-3 retry that re-places the member, **splitting
   the frontier slice** if nothing is open. The three-attempt ceiling is what stops a
   jurisdiction that refuses every insert from dividing once per attempt.
+- Unified auto-assign + geo assign + `removeStaleGeoMemberships` on jurisdiction change.
 
 ## Splitting (Phase 19-01)
 
@@ -59,11 +60,24 @@ convenience. The engine decides a split should happen; two `EXECUTE` grants let 
 🔴 `volunteer` does not split — it is a role, not a place. It falls through to the original
 create-a-sibling overflow, which is dormant but deliberately still reachable.
 
-🔴 **Nothing calls the split on a schedule yet.** It fires only on the `slice_full` retry
-path, which runs inside `POST /api/civic-spaces/assign` — a pool with
-`statement_timeout = 10s`, called fire-and-forget by the frontend. A 6000-member split may
-not fit in that budget. Scheduling is open; see the civic-spaces design doc §9.4 and §10.
-- Unified auto-assign + geo assign + `removeStaleGeoMemberships` on jurisdiction change.
+🔴 **Nothing calls the split on a schedule yet, and the design says this call site is wrong.**
+§5.1: *"It also cannot run inside the assign request."* It does — it fires on the `slice_full`
+retry path, inside `POST /api/civic-spaces/assign`, on a pool with `statement_timeout = 10s`
+that the frontend calls fire-and-forget. A 6000-member split copies a fortnight of threads on
+top of a 3000-row `UPDATE`, and **nobody has measured whether that fits**. Proper scheduling —
+a queue, or the `pg_cron` already installed in `public` — is owed. Until then
+`openNextSliceForGeoid` treats any non-`P0001` failure as "degrade, do not wedge": it logs
+loudly and opens an overflow sibling, because an empty room is recoverable and a jurisdiction
+nobody can join is not. See the civic-spaces design doc §5.1, §9.4 and §10.
+
+🔴 **Apply the migrations BEFORE deploying this.** The three live in civic-spaces
+(`20261102000000`, `...000100`, `...000200`) with a runbook at
+`.planning/phases/19-the-town-divides/19-01-APPLY.md`. Deployed the other way round, every
+reference to `split_slice` / `is_splittable_slice_type` raises `42883`; that is handled (the
+overflow fallback catches it) so nothing breaks, but every full jurisdiction silently opens an
+empty sibling instead of dividing, and no split will ever happen there afterwards — the empty
+slice becomes the frontier. Applying the SQL first is free: the migrations add two nullable
+columns and two functions, and **change no data at all** until this module calls them.
 
 ## Cutover
 The civic-spaces frontend builds `${VITE_SLICE_ASSIGNMENT_URL}/assign`. Point that env var at

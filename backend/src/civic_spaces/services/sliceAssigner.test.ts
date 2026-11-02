@@ -407,8 +407,19 @@ describe('a full frontier slice splits rather than opening an empty one', () => 
     expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-3'])
   })
 
-  it('S5 still gives up after three retries rather than splitting forever', async () => {
-    // Without the ceiling a jurisdiction that refuses every insert divides once per attempt.
+  it('S5 splits at most three times, then gives up rather than dividing forever', async () => {
+    // 🔴 THE FIXTURE IS THE ASSERTION HERE. Written the obvious way — placement always
+    // answers with a slice that has room — `findActiveSliceForGeoid` never returns null, the
+    // split path is never reached, and `expect(splits).toBeLessThanOrEqual(3)` passes on
+    // ZERO calls. It would read identically with the whole split branch deleted. That is the
+    // shape this repo keeps shipping, so: placement must answer "nowhere open" on the way IN
+    // to every attempt, and the count is asserted exactly, not as a ceiling.
+    //
+    // Alternating is what a real retry looks like: the member arrives, nothing is open, the
+    // frontier divides, placement finds the parent — and the insert STILL fails, because
+    // something else is wrong. The ceiling is the only thing between that and a jurisdiction
+    // that divides once per sign-in, irreversibly, forever.
+    let placementCalls = 0
     route([
       [
         /INSERT INTO slice_members/,
@@ -422,12 +433,19 @@ describe('a full frontier slice splits rather than opening an empty one', () => 
       [/split_slice/, () => rows([{ split_slice: 'slice-3' }])],
       [
         /SELECT id, sibling_index, current_member_count FROM slices/,
-        () => rows([slice(1, 6000), slice(2, 3000)]),
+        () => {
+          placementCalls += 1
+          // Odd call: on the way in, nothing is open, so the frontier must divide.
+          // Even call: straight after that split, the parent has room again.
+          return placementCalls % 2 === 1
+            ? rows([slice(1, 6000), slice(2, 6000)])
+            : rows([slice(1, 6000), slice(2, 3000), slice(3, 3000)])
+        },
       ],
     ])
 
     await expect(upsertSliceMember('user-1', 'slice-2')).rejects.toThrow(/Max retries exceeded/)
-    expect(calls(/split_slice/).length).toBeLessThanOrEqual(3)
+    expect(calls(/split_slice/), 'the split path was never reached').toHaveLength(3)
   })
 
   it('S6 opens a plain sibling for a type that does not split, rather than failing', async () => {
@@ -537,5 +555,137 @@ describe('the lifecycle: where members land as a jurisdiction divides (E2, E4)',
 
     jurisdiction(slice(1, 6000), slice(2, 6000), slice(3, 6000), slice(4, 3000), slice(5, 3000))
     await expect(findActiveSliceForGeoid('city', '4858016')).resolves.toBe('slice-4')
+  })
+})
+
+describe('a split that cannot finish degrades, it does not wedge the jurisdiction', () => {
+  // 🔴 THE SPEC SAYS THIS CALL DOES NOT BELONG HERE AT ALL. Design §5.1: "It also cannot run
+  // inside the assign request." POST /api/civic-spaces/assign is called fire-and-forget by the
+  // frontend and this pool sets statement_timeout = 10s (config/database.ts), and a split of a
+  // 6000-member slice copies a fortnight of posts and replies on top of a 3000-row UPDATE.
+  // Nobody has measured whether that fits. Proper scheduling — a queue, or pg_cron — is still
+  // owed and is tracked in the civic-spaces 19-01 runbook.
+  //
+  // What these assert is the floor underneath that: when the split cannot complete, placement
+  // must still place somebody. Without this, a cancelled statement (57014) is rethrown, the
+  // assign request 500s, and the NEXT request repeats it — so a jurisdiction whose open pair
+  // has filled can never admit another member until a human intervenes. An empty sibling is a
+  // poor room; a jurisdiction nobody can join is worse, and it is silent.
+
+  beforeEach(() => {
+    queryMock.mockReset()
+  })
+
+  function route(handlers: Array<[RegExp, (params: unknown[]) => unknown]>) {
+    queryMock.mockImplementation(async (sql: string, params: unknown[] = []) => {
+      for (const [re, fn] of handlers) if (re.test(sql)) return fn(params)
+      throw new Error(`unrouted query in test: ${sql.replace(/\s+/g, ' ').trim()}`)
+    })
+  }
+
+  const sliceFull = Object.assign(new Error('slice_full: slice is at capacity'), { code: 'P0001' })
+  const rows = (r: unknown[]) => ({ rows: r })
+  const slice = (i: number, n: number) => ({
+    id: `slice-${i}`,
+    sibling_index: i,
+    current_member_count: n,
+  })
+  const calls = (re: RegExp) => queryMock.mock.calls.filter((c) => re.test(c[0] as string))
+
+  /** A full jurisdiction whose split fails with `code`, and whose overflow path is open. */
+  function splitFailsWith(code: string) {
+    let joins = 0
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          joins += 1
+          if (joins === 1) throw sliceFull
+          return rows([])
+        },
+      ],
+      [/SELECT slice_type, geoid FROM slices/, () => rows([{ slice_type: 'city', geoid: '4858016' }])],
+      [/is_splittable_slice_type/, () => rows([{ splittable: true }])],
+      [/ORDER BY sibling_index DESC/, () => rows([slice(2, 6000)])],
+      [
+        /split_slice/,
+        () => {
+          throw Object.assign(new Error(`split failed (${code})`), { code })
+        },
+      ],
+      [
+        /SELECT id, sibling_index, current_member_count FROM slices/,
+        () => rows([slice(1, 6000), slice(2, 6000)]),
+      ],
+      [/SELECT sibling_index FROM slices/, () => rows([{ sibling_index: 2 }])],
+      [/INSERT INTO slices/, () => rows([{ id: 'slice-3' }])],
+    ])
+  }
+
+  it('C1a a cancelled statement (57014) seats the member anyway', async () => {
+    // 57014 is statement_timeout. It is NOT P0001, so before this it was rethrown and every
+    // assign into this jurisdiction 500d, for good.
+    splitFailsWith('57014')
+
+    await expect(upsertSliceMember('user-1', 'slice-2')).resolves.toBeUndefined()
+    expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-3'])
+  })
+
+  it('C1b a missing function (42883) seats the member anyway', async () => {
+    // 🔴 The deploy-ordering case, and the likelier of the two. If ev-accounts ships before
+    // the migrations are applied, every reference to civic_spaces.split_slice and
+    // is_splittable_slice_type raises 42883 — and the pre-19-01 behaviour (quietly open a
+    // sibling) is exactly the right thing to fall back to, because that is what the database
+    // on the other end still expects.
+    splitFailsWith('42883')
+
+    await expect(upsertSliceMember('user-1', 'slice-2')).resolves.toBeUndefined()
+    expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-3'])
+  })
+
+  it('C1c a split that succeeds but opens nothing still seats the member', async () => {
+    // Belt and braces: the split returns without error and placement still finds nowhere
+    // open. Should not happen — a split leaves the parent at half the cap — but "should not
+    // happen" is how a jurisdiction gets wedged, and the cost of covering it is one branch.
+    let joins = 0
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          joins += 1
+          if (joins === 1) throw sliceFull
+          return rows([])
+        },
+      ],
+      [/SELECT slice_type, geoid FROM slices/, () => rows([{ slice_type: 'city', geoid: '4858016' }])],
+      [/is_splittable_slice_type/, () => rows([{ splittable: true }])],
+      [/ORDER BY sibling_index DESC/, () => rows([slice(2, 6000)])],
+      [/split_slice/, () => rows([{ split_slice: 'slice-3' }])],
+      [
+        /SELECT id, sibling_index, current_member_count FROM slices/,
+        () => rows([slice(1, 6000), slice(2, 6000)]),
+      ],
+      [/SELECT sibling_index FROM slices/, () => rows([{ sibling_index: 2 }])],
+      [/INSERT INTO slices/, () => rows([{ id: 'slice-4' }])],
+    ])
+
+    await expect(upsertSliceMember('user-1', 'slice-2')).resolves.toBeUndefined()
+    expect(calls(/INSERT INTO slice_members/).at(-1)![1]).toEqual(['user-1', 'slice-4'])
+  })
+
+  it('C1d a failure that is not about the split is still raised', async () => {
+    // 🔴 The counterweight. Degrading on everything would swallow a genuine fault — a dropped
+    // connection, a permission error — and turn it into a silently wrong placement. Only the
+    // split itself is allowed to fail softly.
+    route([
+      [
+        /INSERT INTO slice_members/,
+        () => {
+          throw Object.assign(new Error('connection terminated'), { code: '08006' })
+        },
+      ],
+    ])
+
+    await expect(upsertSliceMember('user-1', 'slice-2')).rejects.toThrow(/connection terminated/)
   })
 })

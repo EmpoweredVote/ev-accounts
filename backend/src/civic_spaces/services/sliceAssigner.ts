@@ -254,8 +254,33 @@ async function openNextSliceForGeoid(sliceType: string, geoid: string): Promise<
   } catch (err) {
     // P0001 is split_slice refusing: another request split this jurisdiction first, so the
     // row read above is no longer the frontier. Not an error — the room we wanted opened is
-    // open. Any other code is a real failure and is rethrown.
-    if (pgErrorCode(err) !== 'P0001') throw err
+    // open, and the re-placement below finds it.
+    if (pgErrorCode(err) !== 'P0001') {
+      // 🔴 EVERYTHING ELSE DEGRADES RATHER THAN WEDGING, and the reason is that this call is
+      // in the wrong place to begin with. Design §5.1 says the split "cannot run inside the
+      // assign request": that is this request, on a pool with statement_timeout = 10s, and a
+      // 6000-member split copies a fortnight of threads on top of a 3000-row UPDATE. Nobody
+      // has measured whether it fits. Scheduling it properly is still owed.
+      //
+      // So the two failures worth naming are both live possibilities. 57014 is the statement
+      // being cancelled at ten seconds. 42883 is the function not existing yet — ev-accounts
+      // deployed ahead of the migrations, which is the ordinary deploy race between two
+      // repositories. Neither is P0001, so both used to be rethrown, which 500s the assign
+      // request and leaves the jurisdiction exactly as it was: the NEXT request repeats the
+      // whole thing and fails the same way. A jurisdiction whose open pair has filled would
+      // then never admit another member until a human noticed.
+      //
+      // Falling through to the pre-19-01 overflow gives that jurisdiction an empty sibling,
+      // which is the room this whole design exists to avoid. It is still much the better of
+      // the two: the empty slice fills, becomes the frontier, and divides correctly from then
+      // on, whereas nobody being able to join is permanent and silent.
+      console.error(
+        `[civic_spaces] split of ${sliceType}/${geoid} failed (${pgErrorCode(err) ?? 'no code'}): ` +
+          `${pgErrorMessage(err)} — falling back to an overflow sibling. ` +
+          `This jurisdiction has opened an EMPTY slice; see civic-spaces 19-01.`
+      )
+      return findOrCreateSiblingSlice(sliceType, geoid)
+    }
   }
 
   // 🔴 Re-place rather than taking split_slice's return value. It returns the NEW slice, and
@@ -264,8 +289,16 @@ async function openNextSliceForGeoid(sliceType: string, geoid: string): Promise<
   // Seating the member in the returned slice would fill the newest first — the design exactly
   // inverted, and invisible, because the answer is still a real slice in the right place.
   const placed = await findActiveSliceForGeoid(sliceType, geoid)
-  if (!placed) throw new Error(`No slice open after splitting ${sliceType}/${geoid}`)
-  return placed
+  if (placed) return placed
+
+  // The split reported success and still left nowhere open. It should not be reachable — a
+  // split leaves the parent at half the cap — but "should not be reachable" is how the wedge
+  // above happens, and one branch is cheaper than finding out in production.
+  console.error(
+    `[civic_spaces] ${sliceType}/${geoid} has no open slice after a successful split — ` +
+      `falling back to an overflow sibling`
+  )
+  return findOrCreateSiblingSlice(sliceType, geoid)
 }
 
 /**
