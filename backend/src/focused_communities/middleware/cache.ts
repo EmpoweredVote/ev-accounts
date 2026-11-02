@@ -12,6 +12,7 @@ export const TTL = {
   STANCES: 30 * 60,       // 30 minutes
   THREAD_LIST: 30,        // 30 seconds
   THREAD_DETAIL: 30,      // 30 seconds
+  SEASONS: 5 * 60,        // 5 minutes
 } as const;
 
 export function cacheMiddleware(ttlSeconds: number) {
