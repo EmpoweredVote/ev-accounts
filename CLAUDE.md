@@ -356,6 +356,22 @@ Four rules the municipal seeding waves paid for, each after getting a real seat 
   infobox citation is often the fastest way to find the right journal number. Most chambers
   publish the equivalent; reach for it before recording a date as unobtainable.
 
+- 🔴🔴 **NAMESAKES REACH PRODUCTION, AND NOTHING ERRORS.** A full-name match is not an identity —
+  this repo has shipped **Mark Harris as NC-8**, and a 2026-11-02 audit found two more live:
+  the portrait on Bell CA's **Ali Saleh** was *Ali Abdullah Saleh, the late President of Yemen*,
+  and Manhattan Beach's **Joe Franklin** was *the New York talk-show host*. ▶ Check a person
+  against **the body's own roster**, not against a name search, and open the image.
+- 🔴 **BALLOTPEDIA PUBLISHES BOTH *APPOINTED* AND *ASSUMED OFFICE*, AND ONLY THE SECOND IS A
+  `term_start`.** An appointment date precedes the tenure and sometimes by weeks.
+- 🔴 **BALLOTPEDIA'S OWN EXPLANATORY NOTE CAN BE STALE WHILE ITS TABLE IS CURRENT — AND THEY
+  CONTRADICT EACH OTHER.** Read the data, not the prose above it.
+- 🔴 **"SHALL BE ELECTED" DOES NOT MEAN "ELECTED BY VOTERS".** A charter clause often means elected
+  *by the body, from among its members* — a rotating chair, not a seat on the ballot. **Read who
+  elects** before creating an office or seating a winner.
+- ⚠ **WHAT A BODY PUBLISHES IS A FINDING, NOT A SEARCH FAILURE.** When a roster gives photographs
+  for 12 of 28 members, that is the body's practice and the answer to the question. Record it;
+  do not keep hunting for a completeness that does not exist.
+
 ### The `is_vacant` trap
 
 If a query filters `AND o.is_vacant = false`, that condition must constrain the **match**, not a
@@ -711,6 +727,19 @@ each was first learned.
     that**, not the nearest property that is easy to assert.
   - Change one thing per tamper. A tamper that trips three assertions at once tells you the suite
     is alive but not which guard holds which claim.
+- 🔴🔴 **A FLAT CONTROL TESTS NOTHING, AND A CONTROL DERIVED FROM THE DATA UNDER TEST MOVES WITH
+  THE DEFECT.** A blank grey frame proves a detector can return "nothing"; it proves nothing about
+  what the detector does with real input. Worse, a threshold or baseline computed *from the same
+  rows you are checking* shifts when they shift, so the check silently follows the fault instead of
+  catching it. **Derive the control independently of the data under test.**
+- ⚠ **A UNIFORM PROBE RESULT CAN BE A PROPERTY OF YOUR SAMPLE, NOT OF THE DATA.** Before concluding
+  "they are all like this", check that the sample was not itself selected by the thing you are
+  measuring.
+- ⚠ **A PERCENTAGE COLUMN MAY BE COUNTING BLANKS IN ITS DENOMINATOR** — a reported 47.5% was really
+  58.2%. Ask what the denominator contains before quoting a rate.
+- 🔴 **A MASTER-ONLY GATE CANNOT VET THE MERGE THAT TRIPS IT.** It reads production data and runs
+  after the merge, so it fails on *the next* PR and names an innocent author. Carry the check into
+  the migration's own post-verify, as a delta, if you need it to block the guilty change.
 - 🔴🔴 **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.** Before naming or acting
   on the class some `WHERE` clause catches, `GROUP BY` the discriminating field and read a sample
   of real rows. **Deleting raises that bar, it does not lower it.** ⚠ A lookalike key can be a
@@ -737,6 +766,12 @@ each was first learned.
   body; `curl` and Python `requests` get through. A 403 that persists even with a browser
   `User-Agent` means **fetch it in Playwright**. Wikimedia 429s a generic UA. ⚠ The inverse
   happens too, and a challenge may cover **pages** while leaving **files** open.
+- ⚠ **READ THE BODY OF A 503 BEFORE CALLING A HOST DEAD.** Government sites commonly answer 503
+  with "site is being rebuilt" or a maintenance notice — a temporary state with a successor URL in
+  it, not an outage to retry forever.
+- ⚠ **A PUBLISHER'S OWN HUB CAN SERVE A SUPERSEDED MAP**, with the same district count over the
+  same area and different answers per address. A plausible count is not evidence of the right
+  vintage — check which map legally governs.
 - 🔴 **ONE DENIED COMMAND IS NOT A BLOCKED PATH.** Try a different shape before reporting a
   capability as unavailable — and **never print a secret's value** while doing it. ⚠ An
   unexplained break from the normal workflow usually means "I am doing this wrong", not "the
