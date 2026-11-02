@@ -8,8 +8,21 @@
  * `photo_custom_url`. That is wrong, and the reason is in `photoCoverage.ts`: a non-empty
  * `photo_custom_url` IS the definition of coverage. Filling it would report every restricted
  * person as having a portrait, drop them out of the headshot backlog because they look done,
- * and inflate every coverage rollup — the same defect that already leaves 86 politicians
- * rendering a roster PAGE URL as their face.
+ * and inflate every coverage rollup — the same defect that once left 86 politicians rendering a
+ * roster PAGE URL as their face.
+ *
+ * ⚠ THAT 86 IS HISTORY, NOT A LIVE COUNT. Re-measured 2026-11-02: 12 rows would still render a
+ * page URL instead of a photograph, and every one of them is `is_active = false`, so no voter
+ * can reach any of them. Active politicians in that state: ZERO.
+ *
+ * The argument above does not rest on the number — parking a placeholder in `photo_custom_url`
+ * would be wrong at a count of zero — but a bare "already leaves 86" reads as a live problem and
+ * sends the next person hunting for 86 broken faces that are not there. Dated rather than
+ * silently updated, because the historical figure is what motivated this design.
+ *
+ * ▶ To re-measure, mind WHICH field each surface renders: the profile prefers `images[]` and
+ * falls back to the aliased `photo_origin_url`, while both compass cards do the opposite and
+ * prefer the alias. A count taken against only one of those two orders is not the exposure.
  *
  * So the placeholder is drawn by the render layer, and the database carries only the FACT:
  *
