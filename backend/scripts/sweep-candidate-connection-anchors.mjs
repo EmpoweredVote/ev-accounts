@@ -58,7 +58,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
-import { CC_SECTION_ID, CC_ANCHOR_PATTERN, withoutFragment, NO_SURVEY_NOTICE, sectionText }
+import { CC_SECTION_ID, CC_ANCHOR_PATTERN, withoutFragment, NO_SURVEY_NOTICE, sectionText, statesCompletedSurvey }
   from './lib/candidate-connection.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -87,18 +87,8 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
  * ⚠ The 2026-10-08 sweep's published regex has this same shape, so its "0 pages carrying nothing
  * from the candidate" may be partly an artifact of it. This sweep was re-run after the fix.
  * The match is therefore rejected when negated within the 24 characters before it.
+ * statesCompletedSurvey now lives in lib/candidate-connection.mjs, shared with the stance gate.
  */
-const COMPLETED_SURVEY = /completed\s+Ballotpedia'?s?\s+(?:\d{4}\s+)?Candidate\s+Connection\s+survey/gi;
-const NEGATED_BEFORE = /\b(?:not|never|hasn't|haven't|didn't)\b[^.]{0,24}$/i;
-
-/** True when the page affirmatively states a completed survey, negations excluded. */
-function statesCompletedSurvey(text) {
-  for (const m of text.matchAll(COMPLETED_SURVEY)) {
-    const before = text.slice(Math.max(0, m.index - 24), m.index);
-    if (!NEGATED_BEFORE.test(before)) return true;
-  }
-  return false;
-}
 /** Own words without a survey: a quoted campaign website, or a bare year heading above a quote. */
 const CAMPAIGN_WEBSITE = /campaign\s+website/i;
 const YEAR_HEADING = /\b(19|20)\d{2}\b/;
