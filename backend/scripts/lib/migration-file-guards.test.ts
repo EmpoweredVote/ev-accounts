@@ -124,7 +124,7 @@ describe('stripOwnTransaction / ownsItsTransaction', () => {
 // 🔴 A POSITIVE CONTROL AGAINST THE REAL CORPUS. A guard that passes on hand-written fixtures and
 //    refuses the actual migrations directory would be exactly the bug being fixed here, so this
 //    reads the files on disk. It asserts BOTH directions: the temp-table users are allowed, and
-//    the two that really drop tables in a schema are still refused.
+//    the ones that really drop tables in a schema are still refused.
 describe('the migrations directory', () => {
   const files = readdirSync(MIGRATIONS).filter((f) => f.endsWith('.sql'));
   const withDrop = files.filter((f) => /\bDROP\s+TABLE\b/i.test(readFileSync(path.join(MIGRATIONS, f), 'utf8')));
@@ -141,11 +141,12 @@ describe('the migrations directory', () => {
     expect(wronglyRefused).toEqual([]);
   });
 
-  it('still refuses the two that drop real tables in a schema', () => {
+  it('still refuses the three that drop real tables in a schema', () => {
     const refused = withDrop.filter((f) => unsafeDropTargets(readFileSync(path.join(MIGRATIONS, f), 'utf8')).length > 0);
     expect(refused.sort()).toEqual([
       '1818_retire_app_auth_credentials.sql',
       '1819_drop_app_auth_schema.sql',
+      'CA_0351_drop_expired_backup_tables.sql',
     ]);
   });
 });
