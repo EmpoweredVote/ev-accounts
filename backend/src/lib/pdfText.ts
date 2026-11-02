@@ -37,3 +37,36 @@ export async function extractPdfText(data: Uint8Array): Promise<string> {
     await task.destroy();
   }
 }
+
+/** One positioned text run of a PDF page: page (from 1), left x, baseline y (PDF units, y grows upward), width. */
+export interface PdfTextItem {
+  page: number;
+  x: number;
+  y: number;
+  w: number;
+  str: string;
+}
+
+/**
+ * Extract a PDF's text runs with their positions, for layouts that the joined text loses: a roll call
+ * prints members in four columns, and only the positions tell one name from the next. Empty runs are
+ * dropped. Throws on a bad PDF.
+ */
+export async function extractPdfItems(data: Uint8Array): Promise<PdfTextItem[]> {
+  const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs');
+  const task = getDocument({ data: new Uint8Array(data), verbosity: 0 });
+  const doc = await task.promise;
+  try {
+    const out: PdfTextItem[] = [];
+    for (let p = 1; p <= doc.numPages; p++) {
+      const tc = await (await doc.getPage(p)).getTextContent();
+      for (const i of tc.items) {
+        if (!('str' in i) || !i.str.trim()) continue;
+        out.push({ page: p, x: i.transform[4], y: i.transform[5], w: i.width, str: i.str });
+      }
+    }
+    return out;
+  } finally {
+    await task.destroy();
+  }
+}

@@ -75,6 +75,13 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
     expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
   });
+  it('a canonical Indiana roll-call line on an iga.in.gov roll-call PDF is not held to the snippet length', () => {
+    const url = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.340_H.pdf';
+    const line = 'Indiana House roll call 340 (2025), SB 10 - Culp - 3rd Reading: Doe voted Yea.';
+    const row = { ...good, reasoning: 'Voted YES on SB 10 (2025).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });

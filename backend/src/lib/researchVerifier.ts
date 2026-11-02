@@ -10,6 +10,7 @@
 
 import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollCallEvidence.js';
+import { isIgaRollCallUrl, parseIgaRollCallLine, verifyIgaRollCallLine } from './igaRollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine, type GovernorTerm } from './legiscanEvidence.js';
 
 /**
@@ -544,6 +545,14 @@ export async function verifyEvidence(args: {
           // checked field by field against the record; the line itself is the published span.
           if (isRollCallXmlUrl(url) && parseRollCallLine(ev.snippet)) {
             const v = verifyRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
+          // Indiana roll-call lane (igaRollCallEvidence.ts): the same check on an iga.in.gov roll-call
+          // PDF, against the party-free render the IGA adapter made of it.
+          if (isIgaRollCallUrl(url) && parseIgaRollCallLine(ev.snippet)) {
+            const v = verifyIgaRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
               ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
             continue;

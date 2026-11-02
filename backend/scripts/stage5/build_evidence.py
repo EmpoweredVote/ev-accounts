@@ -30,13 +30,15 @@ for x in csv.DictReader(open(f'{B}/research-pre-evidence.csv')):
     ps = by_name.get(n0, [])
     PRE[bname.get(ps[0], n0) if len(ps) == 1 else n0] = x
 # ⚠ BROWSER USER-AGENT — a deliberate exception to decision 0003 (ev-cto knowledge/decisions/0003-scraping-toolchain.md), ruled
-# 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. Some sites
-# (iga.in.gov) serve their files only to a browser identity. A page read this way is NOT proof the verifier can read it:
-# the verifier sends the honest EmpoweredVoteBot identity (src/lib/verificationFetch.ts), so it may still fail there.
+# 2026-10-31 by Chris Andrews: kept for LOCAL research runs only, never in a live or scheduled fetch path. A page read
+# this way is NOT proof the verifier can read it: the verifier sends the honest EmpoweredVoteBot identity
+# (src/lib/verificationFetch.ts), so it may still fail there. iga.in.gov is NOT fetched this way: it goes through the
+# official MyIGA API (_iga.py → iga-pages.ts, the same reader the verifier uses).
 def text_of(url):
     f = f'{B}/pages/{hashlib.sha1(url.encode()).hexdigest()}.txt'
     if not os.path.exists(f):
         if not FETCH: return None
+        if is_iga(url): return iga_text(url, f'{B}/pages')
         time.sleep(1)
         r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-A', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36', url], capture_output=True)
         if r.stdout[:5] == b'%PDF-':  # a PDF is read with pdftotext, never stripped as HTML
@@ -102,6 +104,7 @@ def roll_lines(pid, fs):
 norm = lambda s: re.sub(r'\s+', ' ', s.replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"').replace('–', '-').replace('—', '-')).strip().lower()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _party.py sits beside this file
 from _party import names_party  # the one party test the sweep and the writer use (party-check.ts)
+from _iga import is_iga, iga_text  # iga.in.gov through the official API, never the browser UA
 from _ballotpedia import ballotpedia_non_survey  # survey answers only (ruling 2026-11-02)
 def window(t, i, j, n=30):
     w = t.split(' '); pos = len(t[:i].split(' ')) - 1; end = len(t[:j].split(' '))

@@ -409,3 +409,33 @@ describe('createVerificationFetchSession — congress.gov adapter tier', () => {
     expect(httpCalled).toBe(true);
   });
 });
+
+describe('createVerificationFetchSession — iga.in.gov adapter tier', () => {
+  const url = 'https://iga.in.gov/pdf-documents/124/2025/senate/bills/SB0010/rollcalls/SB0010.66_S.pdf';
+  const shortRender = 'Indiana Senate roll call 66 (2025): Bill Passed.\nMotion: SB 10 - Doriot - 3rd Reading';
+
+  it('returns the IGA adapter result ahead of tier 1, even when it is short', async () => {
+    let httpCalled = false;
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => null,
+      igaAdapter: async () => shortRender,
+      robotsAllows: async () => true,
+      httpFetch: async () => { httpCalled = true; return 'tier1'; },
+      wayback: async () => null,
+    });
+    expect(await session.fetch(url)).toBe(shortRender);
+    expect(httpCalled).toBe(false);
+  });
+
+  it('falls through to the ladder when the adapter returns null', async () => {
+    const page = 'x'.repeat(800);
+    const session = createVerificationFetchSession({
+      congressAdapter: async () => null,
+      igaAdapter: async () => null,
+      robotsAllows: async () => true,
+      httpFetch: async () => page,
+      wayback: async () => null,
+    });
+    expect(await session.fetch(url)).toBe(page);
+  });
+});
